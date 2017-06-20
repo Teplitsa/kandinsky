@@ -1,0 +1,417 @@
+/*---------------------------------------------------------
+ Presets (_presets.scss)
+-------------------------------------------------------- */
+
+//Fonts
+$body:	     'Open Sans',Arial, sans-serif; 
+$heading:    'Roboto Condensed', "HelveticaNeue-CondensedBold", "Helvetica Neue", Helvetica Neue, Helvetica,sans-serif;
+$title:      'Roboto Condensed', "HelveticaNeue-CondensedBold", "Helvetica Neue", Helvetica Neue, Helvetica,sans-serif;
+$nav:        'Roboto Condensed', "HelveticaNeue-CondensedBold", "Helvetica Neue", Helvetica Neue, Helvetica,sans-serif;
+
+$sans:       'Open Sans',Arial, sans-serif;
+$mono: 	     "Lucida Sans Typewriter", "Lucida Console", Monaco, monospace;
+
+
+//Break points
+$one: 	       480px; //small
+$two:          767px; //medium
+$three:	       984px; //large
+$four:         1200px; //exlarge
+$five:         1400px; //xxlarge
+
+//Page layout
+$full_cont:    1400px;
+$page_cont:    1200px;
+$col:		   54px;
+$gut:	       30px;
+
+
+
+//Baseline
+$base: 24px;
+
+
+//Colors
+$color-text:   rgba(0,0,0, 0.9);
+$color-white:  #ffffff;
+
+$color-link-one:   #33a3ce;
+$color-link-two:   #ff1744; // #EF2737;
+$color-link-three: #D82332; 
+
+$color-text-black:			#000000;
+$color-text-semi:			rgba(0,0,0, 0.6);
+$color-text-light:			rgba(0,0,0, 0.45);
+$color-secondary:			#f5f5f5;
+$color-secondary-dark:		#e5e5e5;
+$color-secondary-alt:		#f2f2f2;
+$color-secondary-black:		#191411;
+
+
+$color-border-normal: #dfdfdf;
+$color-border-light:  #eeeeee;
+$color-border-link:   #eeeeee;
+
+$color-form-invalid: #ED1C24;
+
+$leyka_green : #1DB318;
+
+//Layout Settings
+$adminbar_large_screen: 32px;
+$adminbar_small_screen: 46px;
+
+//Element
+$indent: 1.55em;
+$rule: 	 1px solid $color-border-normal;
+$fixed_side: 222px;
+
+
+/** Mixins **/
+
+
+// Typo
+@mixin body-text($mod: default) {
+	font-family: $body;
+	color: $color-text;
+	font-weight: normal;
+	
+	font-size: 14px;	
+	line-height: 1.5;
+	
+	@include for(medium-screens) {
+		font-size: 18px;	
+		line-height: 1.45;
+	}
+		
+	@if $mod == summary {		
+		font-size: 12px;	
+		line-height: 1.5;
+		
+		@include for(medium-screens) {
+			font-size: 14px;	
+			line-height: 1.5;
+		}		
+	}
+	@else if $mod == semi {		
+		font-size: 15px;	
+		line-height: 1.35;
+		
+		@include for(medium-screens) {
+			font-size: 16px;	
+			line-height: 1.4;
+		}	
+	}
+	@else if $mod == larger {
+		font-size: 18px;	
+		line-height: 1.45;
+		
+		@include for(medium-screens) {
+			font-size: 21px;	
+			line-height: 1.45;
+		}	
+	}
+	@if $mod == small {		
+		font-size: 11px;	
+		line-height: 1.45;
+		
+		@include for(medium-screens) {
+			font-size: 12px;	
+			line-height: 1.5;
+		}		
+	}
+}
+
+@mixin nav-text($mod: default) {
+	
+	font-family: $nav;
+	text-transform: uppercase;
+	font-weight: normal;
+	
+	font-size: 16px;	
+	line-height: 1;	
+	
+	@if $mod == multiline {
+		line-height: 20px;
+	}
+	@else if $mod == meta {
+		font-size: 16px;
+		line-height: 16px;
+	}
+	@else if $mod == meta_small {
+		font-size: 14px;
+		line-height: 16px;
+	}
+	@else if $mod == menu {
+		font-size: 16px;
+		letter-spacing: 0.5px;
+		font-weight: 700;
+	}
+	@else if $mod == lowercase {		
+		text-transform: none;
+	}
+}
+
+@mixin post-title($mod: default) {
+	font-family: $title;
+	color: $color-text-black;
+	font-weight: normal;
+	text-transform: none;
+	
+	font-size: 21px;
+	line-height: 24px;
+	@include hyphens(none);
+			
+	@if $mod == small_title {
+		font-size: 18px;
+		line-height: 24px;
+		font-weight: 700;
+		letter-spacing: 0.5px;
+	}
+	@else if $mod == featured {
+		font-size: 26px;
+		line-height: 1.1;	
+			
+		@include for(medium-screens){
+			font-size: 28px;
+			line-height: 1.1;	
+		}
+	}	
+}
+
+@mixin sub-title($mod: default) {		
+	font-family: $sans;
+	font-weight: normal;
+	text-transform: uppercase;
+	letter-spacing: normal;
+	color: $color-text-semi;
+		
+	font-size: 12px;	
+	line-height: 1.5;
+	
+	@if $mod == small {				
+		font-size: 11px;		
+	}
+	@else if $mod == extend {
+		font-size: 14px;
+	}
+}
+
+@mixin form-text($mod: default) {	
+	font-family: $sans;
+	color: $color-text;
+	font-weight: normal;
+	text-transform: none;
+	letter-spacing: normal;
+	
+	font-size: 14px;	
+	line-height: 1.5;
+	
+	@if $mod == small {
+		font-size: 12px;
+	}
+	@if $mod == semi {
+		font-size: 16px;
+	}
+}
+
+
+@mixin header-title($mod: default){
+	font-family: $heading;
+	color: $color-text-black;
+	font-weight: normal;
+	text-transform: uppercase;
+	
+	font-size: 16px;	
+	line-height: 1.5;
+	
+	
+	@if $mod == section {
+		font-size: 42px;
+		@include for(large-screens) { font-size: 54px; }
+		line-height: 1.1;
+	}
+	@if $mod == single {
+		font-size: 36px;
+		@include for(medium-screens) { font-size: 42px; }
+		@include for(large-screens) { font-size: 54px; }
+		line-height: 1.05;
+	}
+	@else if $mod == widget {
+		font-size: 27px;
+		line-height: 1.2;
+	}
+	@else if $mod == head_title {
+		font-size: 40px;
+		line-height: 1.2;
+	}
+	@else if $mod == quote_title {
+		font-size: 36px;		
+		line-height: 1.2;
+	}
+}
+
+@mixin button($mod: default){
+	display: inline-block;
+	font-family: $nav;	
+	text-transform: uppercase;
+	color: $color-white;
+	background: $color-link-three;
+	border: 1px solid $color-link-three;	
+	@include transition(all 0.3s);
+	
+	padding: 14px 24px;
+	font-size: 16px;
+	line-height: 18px;
+	
+	&:visited {
+		color: $color-white;
+	}
+	&:hover, &:focus, &:active {
+		//background: darken($color-link-three, 10%);
+		background: $color-link-two;
+		color: $color-white;
+		border-color: $color-link-two;
+	}
+	
+	@if $mod == white {
+		background: $color-white;
+		border: 1px solid $color-white;
+		color: $color-link-three;
+		&:visited { color: $color-link-three; }
+		
+		&:hover, &:focus, &:active {			
+			background: $color-link-two;
+			color: $color-white;
+			border-color: $color-link-two;
+		}
+	}
+	@else if $mod == leyka {
+		background: $leyka_green;
+		border: 1px solid $leyka_green;
+		
+		&:hover, &:focus, &:active {			
+			background: darken($leyka_green, 10%);
+			border-color: darken($leyka_green, 10%);			
+		}
+	}
+}
+
+
+
+@mixin ghost-button($size: 16px, $color: #fff, $hover_text: #000) {
+	font-family: $nav;
+	font-size: $size;
+	text-transform: uppercase;	
+	display: inline-block;
+	padding: 0.5em 1.3em;
+	color: $color;
+	border: 2px solid $color;	
+	@include transition(all 0.3s);
+	
+	&:visited {
+		color: $color;
+	}
+	&:hover, &:focus, &:active {
+		background: $color;
+		color: $hover_text;
+	}
+}
+
+
+
+@mixin shading-summary($max-height: 48px){
+	max-height: $max-height;
+	overflow: hidden;		
+	position: relative;
+	
+	&:after {
+		content: '';
+		display: block;
+		width: 45%;
+		height: 18px;
+		background: rgba(255,255,255, 0.5);
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0+0,1+82 */
+		background: -moz-linear-gradient(left,  rgba(255,255,255,0) 0%, rgba(255,255,255,1) 82%, rgba(255,255,255,1) 100%); 
+		background: -webkit-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 82%,rgba(255,255,255,1) 100%); 
+		background: linear-gradient(to right,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 82%,rgba(255,255,255,1) 100%); 
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+	}
+	
+}
+
+// Media
+@mixin caption-figure {	
+	width: 100%;
+	
+	a {
+		display: block;
+		width: 100%;	
+	}
+	
+	img {
+		width: 100%; //temp
+		height: auto;
+	}
+			
+	figcaption {
+		vertical-align: middle;
+		display: block;
+		margin-top: $gut/2;
+		@include nav-text();
+		position: relative;
+		padding-left: 28px;
+					
+		
+		
+		span {
+			display: inline-block;
+			@include nav-text();
+			line-height: 1.5;			
+		}
+		
+		p { margin: 0; }		
+	}
+}
+
+
+
+
+@mixin container-extended() {
+	margin: 0 -4.35%;
+	position: relative;
+	width: auto;
+	
+	& > div[id *="pl-"],
+	& > div[class *="so-widget"] {
+		max-width: $page_cont;
+		width: 92%;
+		margin: 0 auto;
+	}
+	
+	$ex_cont_width_mq: $page_cont / 0.92 + 1px;
+	@media screen and (min-width: $ex_cont_width_mq ) { 
+		margin: 0 -1 * ($full_cont - $page_cont) / 2;	
+	}
+	
+}
+
+@mixin vertical-image-header-fixed(){
+	//60vh;
+	height: 360px;
+	
+	@include for(small-screens) {
+		height: 400px;
+	}
+	
+	@include for(medium-screens) {
+		height: 460px;
+	}
+	
+	@include for(large-screens) {
+		height: 480px;
+	}
+}
+	

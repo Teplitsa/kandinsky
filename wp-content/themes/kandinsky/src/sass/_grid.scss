@@ -1,0 +1,152 @@
+/*---------------------------------------------------------
+ Grid (_grid.scss)
+-------------------------------------------------------- */
+*,
+*:after,
+*:before {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box; }
+
+// Rows and columns basics
+.bit {
+	float: left;
+	padding: 0 $gut/2;
+	width: 100%;
+	margin-bottom: $gut;
+}
+
+.bit:last-child, .bit-no-margin {
+	margin-bottom: 0;
+}
+
+.frame {
+	@include clearfix;
+	margin: 0 -1*$gut/2;
+	
+	&.frame-wide {
+		margin: 0 $gut/2;
+		@include for(xxlarge-screens){
+			margin: 0 -1*$gut/2;
+		}
+	}
+}
+
+
+//mobile first - as for beginning we have only one column
+.mf-8 {
+	width: percentage(8/12);
+	margin-bottom: 0;
+}
+
+.mf-6 {
+	width: percentage(6/12);
+	margin-bottom: 0;
+}
+
+.mf-4 {
+	width: percentage(4/12);
+	margin-bottom: 0;
+}
+
+
+// small screens 
+@include for(small-screens) {
+	@for $i from 1 through 12 {
+		.sm-#{$i} {
+			width: percentage($i/12);
+			margin-bottom: 0;
+		}
+	}
+	
+	@for $i from 0 through 11 {
+	  .sm-offeset-#{$i} { margin-left: percentage($i/12) !important; }
+	}
+	
+	.sm-col-5 {
+		width: 20%;
+	}
+}
+
+
+//larger screen
+@include for(medium-screens) {
+	@for $i from 1 through 12 {
+		.md-#{$i} {
+			width: percentage($i/12);
+			margin-bottom: 0;
+		}
+	}
+	
+	@for $i from 0 through 11 {
+	  .md-offset-#{$i} { margin-left: percentage($i/12) !important; }
+	}
+	
+	.md-col-5 {
+		width: 20%;
+		margin-bottom: 0;
+	}
+}
+
+
+//the largest screen
+@include for(large-screens) {
+	@for $i from 1 through 12 {
+		.lg-#{$i} {
+			width: percentage($i/12);
+			margin-bottom: 0;
+		}
+	}
+	
+	@for $i from 0 through 11 {
+		.lg-offset-#{$i} { margin-left: percentage($i/12) !important; }
+	}
+	
+	.lg-col-5 {
+		width: 20%;
+		margin-bottom: 0;
+	}
+}
+
+//the largest screen
+@include for(exlarge-screens) {
+	@for $i from 1 through 12 {
+		.exlg-#{$i} {
+			width: percentage($i/12);
+			margin-bottom: 0;
+		}
+	}
+	
+	@for $i from 0 through 11 {
+		.exlg-offset-#{$i} { margin-left: percentage($i/12) !important; }
+	}
+	
+	.exlg-col-5 {
+		width: 20%;
+		margin-bottom: 0;
+	}
+}
+
+
+//hide
+.hide-upto-small {
+	@include upto(small-screens) { display: none;}
+}
+.hide-upto-medium {
+	@include upto(medium-screens) { display: none;}
+}
+.hide-upto-large {
+	@include upto(large-screens) { display: none;}
+}
+
+.hide-on-small {
+	@include for(small-screens) { display: none;}
+}
+.hide-on-medium {
+	@include for(medium-screens) { display: none;}
+}
+.hide-on-large {
+	@include for(large-screens) { display: none;}
+}

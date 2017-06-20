@@ -1,0 +1,255 @@
+/** == Modules == **/
+
+/** Map **/
+.mymap-icon {
+	width: 36px;
+	height: 36px;
+	
+	.icon-marker{
+		display: inline-block;
+		width: 36px;
+		height: 36px;
+		fill: $color-link-three;
+	}
+}
+
+.leaflet-container .leaflet-control-attribution a {
+	color: $color-link-three;
+	text-decoration: none;
+	
+	&:hover, &:focus, &:active {
+		color: $color-link-two;
+	}
+}
+
+.no-js .pw_map-wrap {
+	background: $color-secondary;
+	position: relative;
+	
+	&:before {
+		content: 'Включите JavaScript для просмотра карты';		
+		display: inline-block;
+		@include nav-text();
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		@include transform(translate(-50%, -50%));
+	}
+}
+
+
+
+/** add to calnedar **/
+//commons
+.tst-add-calendar {
+	display: inline-block;
+	position: relative;
+	
+	.addtocalendar {
+		position: relative;
+		display: inline-block;
+		background: transparent!important;
+		margin: 0;
+		
+		var { display: none; }
+	}
+	
+	.atcb-link {
+		display: inline-block;
+		outline: none!important;
+		cursor: pointer;
+		
+		@include transition(background 0.2s);
+		
+		&:hover {
+			color: $color-link-two;
+		}
+		
+		&:active, &:focus {
+			background: transparent;
+		}
+	}
+	
+	.atcb-link:focus~ul,
+	.atcb-link:active~ul,
+	.atcb-list:hover {
+		visibility:visible;
+		.atcb-item { visibility:visible; }
+	}
+	
+	.atcb-list {
+		visibility: hidden;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		min-width: 100%;
+		z-index: 900;
+		//box-shadow: 1px 1px 2px rgba(150,150,150, 0.6);
+		box-shadow: -1px 0 2px 0 rgba(0, 0, 0, 0.12), 1px 0 2px 0 rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
+	}
+	
+	.atcb-list,
+	.atcb-item {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		background: #fff;
+	}
+	
+	.atcb-item {
+		visibility: hidden;
+		position: relative;
+		z-index: 900;
+		cursor: pointer;
+		text-decoration: none;
+		outline: none;
+		&:nth-of-type(1) { displya: none; }
+	}
+	
+	.atcb-item-link {
+		white-space: nowrap;
+		display: block;
+		@include nav-text(lowercase);
+		
+		outline: none;
+		border: none;
+		box-shadow: none;		
+		padding: 9px 16px 8px;
+		color: $color-text;
+		
+		@include transition(background 0.3s);
+		
+		&:hover, &:focus, &:active {
+			background: $color-border-link;		
+		}
+	}
+	
+	.tst-tooltip {
+		opacity: 0;
+		display: inline-block;
+		white-space: nowrap;
+		padding: 2px 6px;
+		background: $color-border-light;
+		color: $color-text;
+		font-size: 14px;
+		border-radius: 1px;
+		margin: 0;
+		position: absolute;
+		top: -7px;
+		right: 0;
+		z-index: -1;
+		text-shadow: 1px 1px 1px rgba(255,255,255, 0.99);
+		box-shadow: 1px 1px 2px rgba(100,100,100, 0.4);
+		@include transform(translateX(107%));
+		@include transition(opacity 0.3s);
+		
+		&:before {
+			content: '';
+			display: block;
+			width: 0px;
+			height: 0px;
+			border: 6px solid transparent;
+			border-right-color: $color-border-light;
+			position: absolute;
+			left: -11px;
+			top: 2px;
+			
+		}
+	}
+	
+	.addtocalendar:hover + .tst-tooltip {
+		opacity: 1;
+		z-index: 1000;
+	}
+	
+	//icon
+	.svg-icon {
+		width: 14px;
+		height: 14px;
+		fill: $color-text-light;
+		position: absolute;
+		left: 0;
+		top: 7px;
+	}
+	
+	.svg-icon + .addtocalendar {
+		margin-left: 24px;
+	}
+} //tst-add
+
+.entry-header-full .entry-meta .atcb-item-link {
+	color: $color-text;
+	box-shadow: none;
+	
+	&:hover, &:focus, &:active {
+		color: $color-text;
+		box-shadow: none;
+		background: $color-border-link;		
+	}
+}
+
+.no-js .tst-add-calendar  .tst-tooltip { display: none; }
+.no-js .full-event-metas .tst-add-calendar {
+	position: realtive;
+	* {	display: none; }
+	
+	&:before {
+		content: 'Включите JavaScript, чтобы добавить мероприятие в календарь';
+		display: inline-block;
+		@include nav-text();
+		white-space: nowrap;
+		padding: 4px 6px;
+		background: $color-border-light;
+		border-radius: 1px;
+		text-shadow: 1px 1px 1px rgba(255,255,255, 0.99);
+	}
+}
+
+/** WordPress gallery **/
+.entry-content .gallery {
+	margin-top: $gut;
+	margin-bottom: $gut;
+	
+	&:first-child { margin-top: 0;}
+	&:last-child { margin-bottom: 0;}
+}
+
+.gallery {
+	@include clearfix;
+	margin: 0 -4px;
+	
+	.gallery-caption { display: none; }
+	
+	.gallery-item {
+		display: block;
+		float: left;
+		margin: 0;
+	}
+	
+	.gallery-icon {
+		padding: 4px;
+		
+		a {
+			display: block;			
+			@include transition(all 0.35s);
+			
+			&:hover {
+				
+			}
+		}
+		
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+}
+
+$i: 1; //widths
+@while $i < 10 {
+  
+  .gallery-columns-#{$i} .gallery-item { width: 100% / $i; }
+   $i: $i + 1;
+}
+
+

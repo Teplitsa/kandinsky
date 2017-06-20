@@ -1,0 +1,252 @@
+/** Social buttons and subscribtions **/
+
+/** == Common settings == **/
+$social_color: (
+	vk:        #517397,
+	facebook:  #3B5998,
+	twitter:   #1DA1F2,
+	instagram: #B7308C,
+	pinterest: #DE2127,
+	youtube:   #E21D17,
+	telegram:  #2CA5E0,
+	whatsapp:  #69BD35,
+	viber:     #774C98,
+	ok:        #F58220
+);
+
+@function social_color($key) {
+	@if map-has-key($social_color, $key) {
+		@return map-get($social_color, $key);
+	}
+
+	@warn "Unknown '#{$key}' in $social_color.";
+	@return null;
+}
+
+
+@mixin social-button-link($button-size, $icon-size) {
+	display: inline-block;			
+	text-align: center;
+	vertical-align: middle;	
+	@include transition(all 0.2s);
+	text-decoration: none;
+				
+	background: #262832;
+	color: #fff;
+	width: $button-size;
+	height: $button-size;
+	padding: ($button-size - $icon-size)/2 0;			
+}
+
+
+/** == Menu == **/
+.social-menu {	
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	@include clearfix;
+	
+	li {
+		float: left;
+		margin-right: 8px;
+		margin-bottom: 8px; 
+		a {
+			@include social-button-link(46px, 20px);			
+			span { display: none; }
+		}
+		
+		.svg-icon {
+			display: inline-block;			
+			fill: #ffffff;					
+			vertical-align: top;
+			width: 20px;
+			height: 20px;
+		}
+	}
+	
+	@each $item in vk, facebook, youtube, twitter, instagram {
+		
+		.#{$item} a {
+			background: social_color($item);
+			&:hover, &:focus, &:active {
+				background: darken(social_color($item), 5%);
+			}
+		}
+	}	
+}
+
+.bottom-bar {
+	
+	@each $item in vk, facebook, youtube, twitter, instagram {		
+		.social-menu .#{$item} a {
+			background: $color-text-black;
+			&:hover, &:focus, &:active {
+				//background: social_color($item);
+				background: $color-white;
+				
+				.svg-icon { fill: social_color($item);}
+			}
+		}
+	}	
+}
+
+
+/** == Sharing == **/
+.social-likes {
+	@include clearfix;	
+}
+
+.social-likes__widget  {			
+	cursor: pointer;
+		
+	a {
+		@include social-button-link(44px, 22px);
+		padding: 9px 0;
+	}
+	
+	.sh-text { display: none; }
+	
+	.svg-icon {
+		display: inline-block;
+		vertical-align: moddle;
+		fill: #ffffff;					
+		vertical-align: middle;
+		width: 22px;
+		height: 22px;
+	}
+}
+
+@each $item in vk, facebook, twitter, telegram, whatsapp, viber, ok  {
+		
+	.social-likes__widget_#{$item} a {
+		background: social_color($item);
+		
+		&:hover, &:focus, &:active {
+			background: transparentize(call(social_color, $item), 0.2);
+		}
+		
+		&:last-of-type {
+			border: none;
+		}		
+	}
+}
+
+
+/** == Newsletter form == **/
+.newsletter-form {
+	max-width: 680px;
+		
+	.rdc-textfield  {
+		padding: 0;
+		label { display: none; }
+		
+		input {
+			@include nav-text(meta);
+			text-transform: none;
+			line-height: 18px;
+			border: 1px solid $color-text-light;
+			background: $color-white;
+			box-shadow: none;
+			padding: 14px;
+			width: 100%;
+			border-radius: 0;
+			
+			@include placeholder {
+				color: $color-text;
+			}
+			
+			&:focus {
+				box-shadow: inset 0px 1px 2px rgba(50,50,50, 0.1);		
+			}
+		}
+		
+		.rdc-textfield__error {
+			@include form-text(small);
+			display: inline-block;
+			padding: 2px 2px ;
+			font-size: 11px;
+			color: $color-link-two;
+			position: relative;
+			bottom: auto;
+			
+		}
+	}
+	
+	.frm_submit {
+		margin-top: 8px;
+		
+		input {
+			@include button();
+			border-radius: 0;			
+		}
+	}
+	
+	.frm_error_style {
+		@include response-block(error);		
+		margin: 15px 0;
+	}
+	
+	.frm_message {		
+		@include response-block(ok);
+		margin: 15px 0;
+	}
+	
+	@include for(medium-screens) {
+		fieldset {
+			width: 100%;
+			@include clearfix();
+		}
+		
+		.rdc-textfield {
+			float: left;
+			@include calc(width, '100% - 180px');
+		}
+		
+		.frm_submit {
+			width: 155px + 16px;
+			margin: 0 0 0 8px;
+			float: left;
+			input { width: 100%; }
+		}
+	}
+	
+	&.in-footer {
+		
+		.rdc-textfield {
+			input {
+				border: none;
+				&:focus {
+					box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.35);		
+				}
+			}
+			
+			.rdc-textfield__error {
+				color: rgba(255,255,255, 0.95);
+			}
+		}
+		
+		.frm_submit {			
+			input {
+				background: $color-text-black;
+				border-color: $color-text-black;
+							
+				&:hover, &:focus, &:active {
+					background: $color-white;
+					border-color: $color-white;
+					color: $color-text-black;
+				}
+			}
+		}
+		
+		.frm_message ,
+		.frm_error_style {
+			border-color: $color-white;
+			color: $color-white;
+			&:before {
+				background: $color-white;
+			}
+		}
+	}
+}
+
+

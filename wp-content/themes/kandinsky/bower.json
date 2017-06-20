@@ -1,0 +1,19 @@
+{
+  "name": "Teplitsa_minifier",
+  "version": "1.0.1",
+  "authors": [
+    "Teplitsa <support@te-st.ru>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {    
+    "leaflet": "~0.7.7",
+    "easyModal.js": "https://github.com/flaviusmatis/easyModal.js.git"
+  }
+}

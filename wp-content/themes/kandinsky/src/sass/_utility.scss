@@ -1,0 +1,411 @@
+/** == Mixins (_utility.scss) == */
+	
+@mixin hidden { //Hide for both screenreaders and browsers
+	display: none;
+	visibility: hidden; }
+
+@mixin visuallyhidden { //Hide only visually, but have it available for screenreaders
+	position : absolute;
+	clip : rect(0 0 0 0); 
+	overflow : hidden;
+	margin: -1px;
+	padding : 0;
+	height : 1px;      
+	width : 1px;
+	border : 0; }
+
+@mixin image-replace {
+	font: 0/0 a;
+	text-shadow: none;
+	color: transparent;
+	text-decoration: none;
+}
+
+@mixin no-select {
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	   	-ms-user-select: none;
+	   		user-select: none;
+}
+
+@function value_from_map($key, $map) {
+	@if map-has-key($map, $key) {
+		@return map-get($map, $key);
+	}
+
+	@warn "Unknown '#{$key}' in $map.";
+	@return null;
+}
+
+
+
+@mixin for($media) {
+	@if $media == small-screens {
+		@media screen and (min-width: $one) { @content; }
+	}
+	@else if $media == medium-screens {
+		@media screen and (min-width: $two) { @content; }
+	}
+	@else if $media == large-screens {
+		@media screen and (min-width: $three) { @content; }
+	}
+	@else if $media == exlarge-screens {
+		@media screen and (min-width: $four) { @content; }
+	}
+	@else if $media == xxlarge-screens {
+		@media screen and (min-width: $five) { @content; }
+	}
+}
+
+@mixin upto($media) {
+	@if $media == small-screens {
+		@media screen and (max-width: $one - 1) { @content; }
+	}
+	@else if $media == medium-screens {
+		@media screen and (max-width: $two - 1) { @content; }
+	}
+	@else if $media == large-screens {
+		@media screen and (max-width: $three - 1) { @content; }
+	}
+	@else if $media == exlarge-screens {
+		@media screen and (max-width: $four - 1) { @content; }
+	}
+}
+
+
+
+@mixin pseudo-shape($h : 1px) {
+	content:  '';
+	display: block;
+	width: 100%;
+	height: $h;
+	position: absolute;
+}
+
+@mixin grayscale($hover : true) {
+	-webkit-filter: grayscale(1);
+	-webkit-filter: grayscale(100%);
+	-moz-filter: grayscale(100%);
+	filter: gray;	
+	filter: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' height='0'><filter id='greyscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0' /></filter></svg>#greyscale");
+	filter: grayscale(100%);
+	
+	@if $hover {
+		&:hover {
+			-webkit-filter: grayscale(0);
+			-webkit-filter: grayscale(0%);
+			-moz-filter: grayscale(0%);
+			filter: none;
+		}
+	}
+}
+
+
+/** == Rem (_utility.scss) == */
+
+$em-base: 10px;
+$baseline-px: 10px;
+
+@mixin rem($property, $px-values) {
+	// Convert the baseline into rems
+	$baseline-rem: $baseline-px / 1rem;
+	// Print the first line in pixel values
+	#{$property}: $px-values;
+	// If there is only one (numeric) value, return the property/value line for it.
+	@if type-of($px-values) == "number" {
+		#{$property}: $px-values / $baseline-rem; }
+	@else {
+		// Create an empty list that we can dump values into
+		$rem-values: unquote("");
+		@each $value in $px-values {
+			// If the value is zero, return 0
+			@if $value == 0 {
+				$rem-values: append($rem-values, $value); }
+			@else {
+				$rem-values: append($rem-values, $value / $baseline-rem); } }
+		// Return the property and its list of converted values
+		#{$property}: $rem-values; }
+}
+
+
+
+/** ==  Helpers (_utility.scss) and WP Classes **/
+.screen-reader-text {	
+	position: absolute !important;
+	height: 1px;
+	width: 1px; 
+	overflow: hidden;	
+	clip: rect(1px, 1px, 1px, 1px);
+	border: 0 none;
+	padding: 0;
+}
+
+img.wp-smiley {
+	margin-bottom: 0; //reset
+	margin-top: 0; //teset
+	padding: 0; //reset
+	border: none;
+}
+
+/* text alignment */
+.text-left   {
+	text-align: left; }
+
+.text-right  {
+	text-align: right; }
+
+.text-center {
+	text-align: center; }
+
+
+/* utilities */
+.clear {
+	clear: both; }
+	
+.cf {
+	@include clearfix; }
+
+.ir {
+	@include image-replace; }
+
+.hidden {
+	@include hidden; } 
+
+.visuallyhidden {
+	@include visuallyhidden; }
+
+.invisible { //Hide visually and from screenreaders, but maintain layout
+	visibility: hidden; }
+
+.break {
+	word-break: break-word;
+	word-wrap: break-word; }
+
+	
+/* selections */
+a:link {
+	-webkit-tap-highlight-color: $color-link-two;
+	-webkit-tap-highlight-color : $color-link-two; } /*  highloght color for Safari iOS */
+
+::-webkit-selection { 
+	background : $color-link-two;
+	color : $color-white; 
+	text-shadow : none; }
+
+::-moz-selection { 
+	background : $color-link-two;
+	color : $color-white; 
+	text-shadow : none; }
+
+::selection { 
+	background : $color-link-two;
+	color : $color-white; 
+	text-shadow : none; }
+
+
+
+/** == Post content elements == **/
+$margin-base: 16px;
+
+@mixin content-elements {
+	
+	//titles
+	h2, h3 {
+		@include post-title(featured);
+		margin: 1.5em 0 $margin-base;		
+	}
+	
+	h4 { 
+		@include post-title(multiline);
+		margin: 1.5em 0 $margin-base;		
+	}
+	
+	h5 {
+		@include header-title();
+		margin: $margin-base 0 $margin-base/2;
+		font-weight: bold;
+	}
+	
+	h6 {		
+		margin: $margin-base 0 $margin-base/2;
+	}
+	
+	h2, h3, h4, h5, h6 {
+		&:first-child { margin-top: 0; }
+	}
+	
+	
+	p, li, h4, h3, h5, h6 {
+		@include hyphens(auto);
+		
+		a {
+			
+		}
+	}
+	
+	p, iframe, blockquote {
+		margin-bottom: $margin-base;			
+	}
+	
+	figure, .pw_map-wrap {
+		margin: $margin-base*2 0;
+		&:last-child { margin-bottom: 0; }
+		&:first-child { margin-top: 0; }
+	}
+	
+	figure + figure, 
+	h3 + figure,
+	h4 + figure,
+	h5 + figure,
+	h6 + figure {
+		margin-top: $margin-base; 
+	}
+	
+	// Lists 
+	ul {
+		margin: $margin-base 0 $margin-base 1.5em;
+		
+		li {
+			position: relative;
+			padding-left: 20px;
+			
+			&:before {
+				content: '–';
+				color: #000;
+				display: inline-block;
+				line-height: inherit;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			
+			li {
+				padding-left: 0;
+				break-inside: avoid;
+				&:before { display: none; }
+			}
+		}
+		
+		&:first-child {	margin-top: 0;	}		
+	}
+   
+	ul ul { list-style: circle; }
+	ul ul ul { list-style: square; }
+   
+	ol {
+	   list-style: decimal;
+	   margin: $margin-base 0 $margin-base 1.5em;
+	   &:first-child {	margin-top: 0;	}
+	}
+   
+	ol ol { list-style: lower-alpha; }
+	ol ol ol { list-style: lower-roman; }
+   
+	ul ul,
+	ul ol,
+	ol ul,
+	ol ol {
+	   margin-bottom: 0;
+	}
+   
+	li {
+		margin-bottom: $margin-base;		
+		&:last-child { margin-bottom: 0; }		
+	}
+	
+	ul + p,
+	ol + p { margin-top:  $margin-base }
+	
+	blockquote {		
+		border-left: 3px solid $color-text-black;
+		padding-left: $gut/2;
+		margin: $gut 0;
+		
+		&:first-child { margin-top: 0;}
+		&:lash-child { margin-bottom: 0;}
+		
+		&.center {
+			border-left: none;
+			text-align: center;
+			position: relative;
+			padding: $gut 0;
+			
+			h5 {
+				text-align: center;
+				margin-top: 0;
+			}
+			
+			h3 {
+				@include header-title(quote_title);
+				text-align: center;
+				&:last-child { margin-bottom: 0; }
+			}
+			
+			&:before {
+				content: '';
+				displya: block;
+				width: 150px;
+				height: 6px;
+				background: $color-text-black;
+				position: absolute;
+				top: -3px;
+				left: 50%;
+				margin-left: -75px;
+			}
+			
+			&:after {
+				content: '';
+				displya: block;
+				width: 150px;
+				height: 6px;
+				background: $color-text-black;
+				position: absolute;
+				bottom: -3px;
+				left: 50%;
+				margin-left: -75px;
+			}
+		}
+	}
+	
+	h5 + h3 { margin-top: 0; }
+	
+	hr {
+		border: none;
+		border-top: 1px solid $color-border-light;
+		width: 100%;
+		height: 0;
+		margin: $margin_base 0;
+	}
+	
+	.col2 {
+		@include for(medium-screens) {
+			@include columns(2);
+			@include column-gap(30px);
+			
+			li {
+				-webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
+				page-break-inside: avoid; /* Firefox */
+				break-inside: avoid; /* IE 10+ */
+			}
+		}
+	}
+		
+} //mixin
+
+.entry-content {	
+	@include content-elements();	
+}
+
+
+.wp-caption {
+	margin-bottom: $margin-base*2;
+	&:last-child { margin-bottom: 0; }
+}
+
+.wp-caption-text {
+	margin-top: $gut/4;
+	padding-left: 2px;
+	@include sub-title(small);
+}
+
+

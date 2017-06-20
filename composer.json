@@ -1,0 +1,28 @@
+{
+    "name"        : "knd/install-knd",
+    "description" : "Kandinsky NGO site theme",
+    "authors"     : [
+        {
+            "name"    : "Teplitsa",
+            "email"   : "support@te-st.ru",
+            "homepage": "http://te-st.ru/"
+        }
+    ],
+    "type"        : "project",
+    "repositories": [
+        {
+            "type": "artifact",
+            "url": "artifacts/"
+        }
+    ],
+    "config"      : {
+        "vendor-dir": "wp-content/vendor",
+        "secure-http" : false
+    },
+   "require"     : {
+    },
+    "require-dev" : {
+    },
+    "extra"       : {
+    }
+}

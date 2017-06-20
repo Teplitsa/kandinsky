@@ -1,0 +1,137 @@
+@charset "UTF-8";
+
+//inits
+@import "bourbon";
+
+/* columns */
+.admin-tmb {
+	width: 90%;
+	max-width: 54px;
+	
+	img {
+	max-width: 100%;
+	height: auto; }
+}
+
+.wp-list-table .column-author,
+.wp-list-table .column-id, 
+.wp-list-table .column-thumbnail,
+.wp-list-table .column-menu_order{
+	width: 6%;
+}
+
+.wp-list-table .column-attack_date,
+.wp-list-table .column-event_date {
+	width: 12.5%;
+}
+
+/*  dashboard */
+#itv-dashboard-card {
+	margin-bottom: 40px;
+	
+	.itv-logo {
+		width: 160px;		
+		height: 63px;
+		margin-left: 9px;
+		margin-bottom: 9px;
+		
+		img {
+			max-width: 100%;
+			height: auto; 
+		}
+	}
+}
+
+#rdc-support-card {		
+	.tree-logo {
+		width: 150px;
+		height: 80px;
+		margin-left: 9px;
+		margin-bottom: 9px;
+	}
+}
+
+.rdc-dashboard {
+	
+	.cols {
+		@include clearfix;
+	}
+	
+	.col-logo {
+		float: left;
+		width: 50%;
+		
+		a { display: block; }
+		
+		img {
+			max-width: 100%;
+			height: auto; 
+		}
+	}
+	
+	.col-btn {
+		float: right;
+		width: 50%;
+		text-align: right;
+		padding-top: 5px;
+		a {
+			margin-right: 5px;
+		}
+	}
+}
+
+
+#wpadminbar #wp-admin-bar-wp-logo .ab-icon::before {
+	color: #01E21A;
+}
+
+.tst-error {
+	border: 1px solid #DD3D36;
+	border-left-width: 5px;
+	padding: 8px;
+	color: #DD3D36;
+}
+
+.cmb-repeat-group-wrap .cmb2-wrap > .cmb-field-list > .cmb-row,
+.postbox-container .cmb2-wrap > .cmb-field-list > .cmb-row {
+	padding: 0.5em 0;
+	margin: 0;
+}
+
+
+input.regular-text {
+	width: 90%;
+}
+
+.cmb2-wrap select {
+	min-width: 50%;
+}
+
+.cmb2-wrap .cmb-td textarea {
+	width: 100%;
+}
+
+
+/* NF */
+#post-body-content .nf-field-settings {
+	span.description {
+		display: block;
+		font-size: 12px;
+		margin-bottom: 0;
+	}
+	.description-thin {
+		width: 100%;
+	}
+}
+
+#post-body-content .ninja-forms-field-list div[id *="show_desc"],
+#post-body-content .ninja-forms-field-list div[id *="label_pos"] {
+	display: none;
+}
+
+div [id *="ninja_forms_metabox"] .item-edit.metabox-item-edit {	
+	color: rgba(255,255,255, 0);
+	&:before {
+		color: #a0a5aa;
+	}
+}

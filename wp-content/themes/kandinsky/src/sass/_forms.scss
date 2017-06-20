@@ -1,0 +1,400 @@
+/** Forms **/
+
+@mixin material-animation-default($duration:0.2s) {
+	transition-duration: $duration;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.frm_ajax_loading { display: none; }
+
+//variables
+$input-top-gut: 24px;
+$input-color-active: $color-link-three;
+$input-color-error: $color-form-invalid;
+$input-border-color: lighten($color-border-normal, 3%);
+$label-text-color: $color-text;	
+
+@mixin input-text-label {
+	font-family: $title;	
+	line-height: 1;
+	color: $label-text-color;
+	white-space: nowrap;
+	text-align: left;
+	pointer-events: none;	
+}
+
+@mixin input-text {
+	font-family: $title;	
+	line-height: 1;
+	background: transparent;
+	text-align: left;
+}
+
+@mixin checkbox-text($size: 18px) {
+	font-family: $title;	
+	line-height: 1.2;
+	color: $label-text-color;	
+	text-align: left;
+	font-size: $size;
+}
+
+@mixin response-block($mod : default) {
+	@include form-text();	
+	padding: 8px 14px;
+	border: 1px solid $color-border-normal;
+	position: relative;
+	color: $color-text-black;
+	
+	&:before {
+		content: '';
+		width: 6px;
+		height: 100%;
+		background: $color-border-normal;
+		position: absolute;
+		top: 0;
+		left: -1px;
+		z-index: 10;
+	}
+	
+	@if $mod == error {
+		&:before { background: $color-link-two; }
+	}
+	@else if $mod == ok {		
+		&:before { background: $leyka_green; }
+		color: $leyka_green;
+	}
+}
+
+
+/* forms general */
+.frm_forms  {
+	margin: $gut 0;
+	
+	&:last-child { margin-bottom: 0;}
+	&:first-child { margin-top: 0;}
+	
+	form, fieldset  {
+		display: block;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}	
+}
+
+.screen-reader-response {
+	@extend .screen-reader-text;
+}
+
+.entry-content .frm_forms,
+.regular-form .frm_forms {	
+	padding: $gut $gut $gut;
+	border: 1px solid darken($color-border-normal, 7%);
+	border-top: 4px solid $color-link-three;
+	box-shadow: 1px 1px 3px rgba(150, 150, 150, 0.3);	
+	background: $color-white;
+}
+
+.frm_required {
+	margin-right: 4px;
+	vertical-align: super;
+	font-size: 0.8em;
+	color: $input-color-active;
+}
+
+.frm_hidden {
+	display: none;
+}
+	
+	
+/* messages */
+.frm_error_style {
+	@include response-block(error);		
+	margin-bottom: $gut;
+}
+
+.frm_message {		
+	@include response-block(ok);
+	margin: 15px 0;
+}
+
+.frm_error {
+	@include form-text(small);
+	display: inline-block;
+	padding: 0 2px ;
+	font-size: 11px;
+	color: $color-link-two;
+}
+
+
+/* text input */
+.rdc-textfield {
+	display: block;
+	width: 100%;
+	padding: $input-top-gut 0;
+	position: relative;
+	
+	.rdc-textfield__input {
+		@include input-text();
+		
+		display: block;
+		border: none;
+		border-bottom: 2px solid $input-border-color;
+		width: 100% !important;
+		padding: 4px 0;
+		
+		&[type="number"] {
+			-moz-appearance: textfield;
+		}
+	
+		&[type="number"]::-webkit-inner-spin-button,
+		&[type="number"]::-webkit-outer-spin-button {
+			-webkit-appearance: none;
+			margin: 0;
+		}
+	}
+	
+	textarea {
+		
+	}
+	
+	label {
+		@include input-text-label();		
+		font-size: 16px;
+		
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		width: 100%;
+		overflow: hidden;
+		top: 0;
+		
+		&:after {
+			background-color: $input-color-active;
+			bottom: $input-top-gut;
+			content: '';
+			height: 2px;
+			left: 45%;
+			position: absolute;
+			@include material-animation-default(0.45s);			
+			visibility: hidden;
+			width: 10px;
+		}
+	}
+	
+	.rdc-textfield__input:focus {
+		//border-color: $input-color-active;		
+		& ~ label { color: $input-color-active;	}
+		& ~ label:after {
+			visibility: visible;
+			width: 100%;
+			left: 0;
+		}
+	}
+	
+	.rdc-textfield__error {
+		position: absolute;
+		bottom: 6px;
+	}
+}
+
+
+
+/** chackbox **/
+.rdc-inputfix {
+	width: 100%;
+	padding: $input-top-gut 0;
+	position: relative;
+	
+	.rdc-inputfix__label {
+		display: inline-block;
+		@include checkbox-text();
+		color: $color-text;
+	}
+	
+	.frm_opt_container {
+		margin-top: $gut/2;
+	}
+}
+
+.rdc-checkbox {
+	display: block;
+	width: 100%;
+	position: relative;
+	padding-left: 26px;		
+	
+	.rdc-checkbox__input {
+		margin: 0;
+		padding: 0;
+		top: 4px;
+		left: 0;		
+		position: absolute;
+		border: none;
+		opacity: 0;
+	}
+	
+	.rdc-checkbox__label {
+		@include checkbox-text(14px);
+		display: inline-block;
+		position: relative;
+		line-height: 18px;
+		
+		&:before {
+			content: '';
+			display: block;
+			width: 16px;
+			height: 16px;
+			border-radius: 2px;
+			background: $color-white;
+			border: 2px solid $color-text;
+			position: absolute;
+			top: 1px;
+			left: -26px;
+			cursor: pointer;
+		}
+	}
+	
+	.rdc-checkbox__input:checked + .rdc-checkbox__label {
+		&:before {
+			background-color: $input-color-active;
+			border-color: $input-color-active;
+			background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2ZyB3aWR0aD0iMTdweCIgaGVpZ2h0PSIxM3B4IiB2aWV3Qm94PSIwIDAgMTcgMTMiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sbnM6c2tldGNoPSJodHRwOi8vd3d3LmJvaGVtaWFuY29kaW5nLmNvbS9za2V0Y2gvbnMiPiAgICAgICAgPHRpdGxlPlNoYXBlPC90aXRsZT4gICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+ICAgIDxkZWZzPjwvZGVmcz4gICAgPGcgaWQ9IlBhZ2UtMSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc2tldGNoOnR5cGU9Ik1TUGFnZSI+ICAgICAgICA8cGF0aCBkPSJNMTYuNSwxLjg3OTE0Mjg2IEw1LjUyODU3MTQzLDEyLjg1MDU3MTQgTDAuNSw3LjgyMiBMMS43ODkxNDI4Niw2LjUzMjg1NzE0IEw1LjUyODU3MTQzLDEwLjI2MzE0MjkgTDE1LjIxMDg1NzEsMC41OSBMMTYuNSwxLjg3OTE0Mjg2IEwxNi41LDEuODc5MTQyODYgWiIgaWQ9IlNoYXBlIiBmaWxsPSIjRkZGRkZGIiBza2V0Y2g6dHlwZT0iTVNTaGFwZUdyb3VwIj48L3BhdGg+ICAgIDwvZz48L3N2Zz4=);
+			background-repeat: no-repeat;
+			background-size: 16px 13px;
+			background-position: 0 -2px;
+		}
+	}
+}
+
+.rdc-radio {
+	display: block;
+	width: 100%;
+	position: relative;
+	padding-left: 26px;		
+	
+	
+	.rdc-radio__button {
+		margin: 0;
+		padding: 0;
+		top: 4px;
+		left: 0;		
+		position: absolute;
+		border: none;
+		opacity: 0;
+	}
+	
+	.rdc-radio__label {
+		@include checkbox-text(18px);
+		display: inline-block;
+		position: relative;
+		line-height: 18px;		
+		
+		&:before {
+			content: '';
+			display: block;
+			width: 16px;
+			height: 16px;
+			border-radius: 50%;
+			background: $color-white;
+			border: 2px solid $color-text;			
+			position: absolute;
+			top: 1px;
+			left: -26px;
+			cursor: pointer;
+		}
+	}
+		
+	.rdc-radio__button:checked + .rdc-radio__label {
+		&:before {
+			background-color: $input-color-active;
+			border-color: $input-color-active;			
+	background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2ZyB3aWR0aD0iMTJweCIgaGVpZ2h0PSIxMnB4IiB2aWV3Qm94PSIwIDAgMTIgMTIiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sbnM6c2tldGNoPSJodHRwOi8vd3d3LmJvaGVtaWFuY29kaW5nLmNvbS9za2V0Y2gvbnMiPiAgICAgICAgPHRpdGxlPk92YWwgMTwvdGl0bGU+ICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPiAgICA8ZGVmcz48L2RlZnM+ICAgIDxnIGlkPSJQYWdlLTEiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHNrZXRjaDp0eXBlPSJNU1BhZ2UiPiAgICAgICAgPHBhdGggZD0iTTYsMTIgQzkuMzEzNzA4NSwxMiAxMiw5LjMxMzcwODUgMTIsNiBDMTIsMi42ODYyOTE1IDkuMzEzNzA4NSwwIDYsMCBDMi42ODYyOTE1LDAgMCwyLjY4NjI5MTUgMCw2IEMwLDkuMzEzNzA4NSAyLjY4NjI5MTUsMTIgNiwxMiBaIE02LDEwIEM4LjIwOTEzOSwxMCAxMCw4LjIwOTEzOSAxMCw2IEMxMCwzLjc5MDg2MSA4LjIwOTEzOSwyIDYsMiBDMy43OTA4NjEsMiAyLDMuNzkwODYxIDIsNiBDMiw4LjIwOTEzOSAzLjc5MDg2MSwxMCA2LDEwIFoiIGlkPSJPdmFsLTEiIGZpbGw9IiNGRkZGRkYiIHNrZXRjaDp0eXBlPSJNU1NoYXBlR3JvdXAiPjwvcGF0aD4gICAgPC9nPjwvc3ZnPg==);
+			background-repeat: no-repeat;
+			background-size: 12px 12px;
+			background-position: center center;
+		}
+		
+	}
+}
+
+
+/** Select **/
+.rdc-select {
+	width: 100%;
+	padding: $input-top-gut 0;
+	position: relative;
+	
+	.rdc-inputfix__label {
+		display: block;
+		@include checkbox-text();
+		color: $color-text;
+	}
+	
+	.rdc-select-wrap {
+		display: block;
+		margin-top: $gut/2;
+		position: realtive;
+		overflow: hidden;
+		
+		border-bottom: 2px solid $input-border-color;
+		background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2ZyB3aWR0aD0iMTFweCIgaGVpZ2h0PSIxM3B4IiB2aWV3Qm94PSIwIDAgMTEgMTMiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+ICAgICAgICA8dGl0bGU+U2hhcGU8L3RpdGxlPiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4gICAgPGRlZnM+PC9kZWZzPiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4gICAgICAgIDxwYXRoIGQ9Ik05LjcwNzUsMC41OSBMMTEsMS44NTE3NDQ5NyBMNS41LDcuMjIwODcyNDggTDAsMS44NTE3NDQ5NyBMMS4yOTI1LDAuNTkgTDUuNSw0LjY4ODQzNCBMOS43MDc1LDAuNTkgTDkuNzA3NSwwLjU5IFogTTkuNzA3NSw1Ljk1OTEyNzUyIEwxMSw3LjIyMDg3MjQ4IEw1LjUsMTIuNTkgTDAsNy4yMjA4NzI0OCBMMS4yOTI1LDUuOTU5MTI3NTIgTDUuNSwxMC4wNTc1NjE1IEw5LjcwNzUsNS45NTkxMjc1MiBMOS43MDc1LDUuOTU5MTI3NTIgWiIgaWQ9IlNoYXBlIiBmaWxsPSIjMDAwMDAwIj48L3BhdGg+ICAgIDwvZz48L3N2Zz4=);
+		background-repeat: no-repeat;
+		background-size: 11px 12px;
+		background-position: 98% center;
+	}	
+	
+	select {
+		display: inline-block;
+		@include calc(width, '100% + 20px');	
+		background: transparent;
+		border: 0;
+		border-radius: 0;  
+		-webkit-appearance: none;
+		outline: none;
+		
+		font-family: $title;	
+		line-height: 1.5;		
+		text-align: left;
+		font-size: 14px;		
+		
+		//to remove outline in FF
+		color: $label-text-color;
+		color: rgba(0,0,0,0);
+		text-shadow: 0 0 0 $label-text-color;		
+	}
+	
+	option {
+		font-family: $title;	
+		line-height: 1.5;		
+		color: $label-text-color;
+		text-align: left;
+		font-size: 14px;
+		padding: 4px;
+		width: 100%;
+		cursor: pointer;
+		
+		&:hover, &:focus, &:active {
+			background: red;
+		}
+	}
+}
+
+/* submit **/
+.frm_submit {
+	display: block;
+	margin-top: $base/2;
+	
+	input, input:focus {				
+		border: none;		
+		outline: none;
+		@include nav-text();
+		line-height: 24px;
+		background: $input-color-active;
+		padding: 6px 20px;
+		color: $color-white;
+		@include transition(background 0.2s);
+		&:hover {
+			background: $color-link-two;		
+		}
+	}
+}

@@ -1,0 +1,878 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: TST Next Project Design\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-06-09 09:12+0300\n"
+"PO-Revision-Date: 2016-06-09 16:27+0300\n"
+"Last-Translator: Anna Ladoshkina <webdev@foralien.com>\n"
+"Language-Team: Anna Ladoshkina <webdev@foralien.com>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10 >= 2 && n"
+"%10<=4 &&(n%100<10||n%100 >= 20)? 1 : 2);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 1.8.7\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
+"__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
+"_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
+"esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
+"esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
+"X-Loco-Target-Locale: ru_RU\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: bower_components\n"
+"X-Poedit-SearchPathExcluded-1: node_modules\n"
+"X-Poedit-SearchPathExcluded-2: assets\n"
+
+#: archive-leyka_donation.php:20
+msgid "Campaign"
+msgstr "Кампания"
+
+#: archive-leyka_donation.php:38
+msgid "Anonymous"
+msgstr "Анонимно"
+
+#: footer.php:11
+msgid "Teplitsa of social technologies"
+msgstr "Теплица социальных технологий"
+
+#: footer.php:21
+msgid "Subscribe to our newsletter"
+msgstr "Подпишитесь на рассылку"
+
+#: footer.php:31
+msgid "Our social profiles"
+msgstr "Мы в социальных сетях"
+
+#: footer.php:47
+#, php-format
+msgid "All materials of the site are avaliabe under license %s"
+msgstr "Все материалы сайта доступны по лицензии %s"
+
+#: header.php:18
+msgid "Skip to content"
+msgstr "Перейти к содержанию"
+
+#: header.php:37
+msgid "Donate"
+msgstr "Помочь сейчас"
+
+#: inc/admin.php:139 inc/admin.php:148
+msgid "Website"
+msgstr "Вебсайт"
+
+#: inc/admin.php:139 inc/admin.php:153
+msgid "Excerpt"
+msgstr "Аннотация"
+
+#: inc/admin.php:155
+msgid ""
+"Annotation for items lists (will be printed at the beginning of the single "
+"page)"
+msgstr "Аннотация для списков (на странице записи добавляется в начало)"
+
+#: inc/admin.php:208
+msgid "Forms"
+msgstr "Формы"
+
+#: inc/admin.php:331
+#, php-format
+msgid ""
+"ATTENTION! You thumbnail image is too small. It should be at least %s px"
+msgstr ""
+"ВНИМАНИЕ! Изображение миниатюры слишком маленькое. Необходимый размер - не "
+"менее %s px."
+
+#: inc/admin.php:379 inc/admin.php:395
+msgid "Facebook Profile"
+msgstr "Профиль на Facebook"
+
+#: inc/admin.php:381 inc/admin.php:397
+msgid "Enter URL of author's Facebook profile"
+msgstr "Укажите ссылку на профиль автора"
+
+#: inc/admin.php:384 inc/admin.php:400
+msgid "Avatar"
+msgstr "Аватарка"
+
+#: inc/admin.php:432
+msgid "Taxonomy Term Image"
+msgstr "Заставка"
+
+#: inc/admin.php:433
+msgid "Select which image should represent this term."
+msgstr "Выберите изображение заставки"
+
+#: inc/admin.php:434
+msgid "Select Image"
+msgstr "Выбрать изображение"
+
+#: inc/admin.php:435
+msgid "Remove"
+msgstr "Удалить"
+
+#: inc/admin.php:436
+msgid "Select or upload an image for this term"
+msgstr "Выбрать или загрузить изображение"
+
+#: inc/admin.php:437
+msgid "Attach"
+msgstr "Присоединить"
+
+#: inc/author.php:29
+msgid "Author"
+msgstr "Автор"
+
+#: inc/cards.php:44
+msgid "View"
+msgstr "Просмотреть"
+
+#: inc/donations.php:62
+msgid "Please, set a text of comment to describe an additional ways to donate."
+msgstr "Пожалуйста, укажите текст комментария"
+
+#: inc/donations.php:70
+msgid "Please, set a text to describe an additional ways to donate."
+msgstr "Пожалуйста, укажите текст комментария"
+
+#: inc/donations.php:118
+msgid "Please, specify your donation amount"
+msgstr "Пожалуйста, укажите сумму пожертвования"
+
+#: inc/donations.php:123
+msgid "or"
+msgstr "или"
+
+#: inc/donations.php:124
+msgid "Specify the amount of your donation"
+msgstr "Пожалуйста, укажите сумму пожертвования"
+
+#: inc/donations.php:185
+msgid "Your name"
+msgstr "Ваше имя"
+
+#: inc/donations.php:212
+msgid "Monthly donation"
+msgstr "Перечислять ежемесячно"
+
+#: inc/extras.php:63
+msgid "More"
+msgstr "Ещё"
+
+#: inc/extras.php:259
+msgid "Default Avatar"
+msgstr "Аватарка по-умолчанию"
+
+#: inc/pb-widgets/featureblock/featureblock.php:13
+msgid "[TST] 3 Block of options"
+msgstr "[TST] 3 блока опций"
+
+#: inc/pb-widgets/featureblock/featureblock.php:15
+msgid "Row of 3 blocks with title, text and button"
+msgstr "3 стандартных блока, выровненных по высоте"
+
+#: inc/pb-widgets/featureblock/featureblock.php:41
+msgid "Title"
+msgstr "Заголовок"
+
+#: inc/pb-widgets/featureblock/featureblock.php:45
+msgid "Description"
+msgstr "Описание"
+
+#: inc/pb-widgets/featureblock/featureblock.php:50
+msgid "Link"
+msgstr "Ссылка"
+
+#: inc/pb-widgets/featureblock/featureblock.php:55
+msgid "Button label"
+msgstr "Текст кнопки"
+
+#: inc/pb-widgets/featureblock/featureblock.php:62
+msgid "Column 1"
+msgstr "Колонка 1"
+
+#: inc/pb-widgets/featureblock/featureblock.php:68
+msgid "Column 2"
+msgstr "Колонка 2"
+
+#: inc/pb-widgets/featureblock/featureblock.php:74
+msgid "Column 3"
+msgstr "Колонка 3"
+
+#: inc/pb-widgets/pageheader/pageheader.php:41
+msgid "Image file"
+msgstr "Изображение"
+
+#: inc/pb-widgets/pageheader/pageheader.php:48
+#: inc/pb-widgets/sectionheader/sectionheader.php:41
+msgid "Title text"
+msgstr "Заголовок"
+
+#: inc/pb-widgets/pageheader/pageheader.php:53
+#: inc/pb-widgets/sectionheader/sectionheader.php:46
+msgid "Sub title text"
+msgstr "Подзаголовок"
+
+#: inc/pb-widgets/pageheader/pageheader.php:60
+msgid "Extend Width"
+msgstr "Растянуть"
+
+#: inc/pb-widgets/sectionheader/sectionheader.php:51
+msgid "Align"
+msgstr "Выравнивание"
+
+#: inc/pb-widgets/sectionheader/sectionheader.php:54
+msgid "Center"
+msgstr "По центру"
+
+#: inc/pb-widgets/sectionheader/sectionheader.php:55
+msgid "Left"
+msgstr "По левому краю"
+
+#: inc/pb-widgets/sectionheader/sectionheader.php:56
+msgid "Right"
+msgstr "По правому краю"
+
+#: inc/pb-widgets/sectionheader/sectionheader.php:61
+msgid "Style as page title"
+msgstr "Применить стиль заголовка страницы"
+
+#: inc/template-tags.php:180
+msgid "Page"
+msgstr "Страница"
+
+#: inc/template-tags.php:267
+msgid "Donations history"
+msgstr "История пожертвований"
+
+#: inc/template-tags.php:271
+msgid "Search results"
+msgstr "Результаты поиска"
+
+#: inc/template-tags.php:275
+msgid "404: Page not found"
+msgstr "Ошибка 404: Страница не найдена"
+
+#: inc/template-tags.php:368
+msgid "Post navigation"
+msgstr "Навигация по записям"
+
+#: inc/template-tags.php:383 inc/template-tags.php:393
+msgid "Homepage"
+msgstr "Главная"
+
+#: inc/template-tags.php:430
+msgid "More projects"
+msgstr "Еще проекты"
+
+#: inc/template-tags.php:431
+msgid "Our projects"
+msgstr "Наши программы"
+
+#: inc/template-tags.php:435
+msgid "More volunteers"
+msgstr "Еще волонтеры"
+
+#: inc/template-tags.php:436 single.php:120
+msgid "Our volunteers"
+msgstr "Наши волонтеры"
+
+#: inc/template-tags.php:441
+msgid "More events"
+msgstr "Еще анонсы"
+
+#: inc/template-tags.php:446 inc/widgets.php:142
+msgid "More news"
+msgstr "Еще новости"
+
+#: inc/template-tags.php:447
+msgid "Latest news"
+msgstr "Последние новости"
+
+#: inc/template-tags.php:487
+msgid "Related project"
+msgstr "Программа по теме"
+
+#: inc/template-tags.php:506
+msgid "Help now"
+msgstr "Помочь сейчас"
+
+#: inc/widgets.php:86
+msgid "[TST] Social Buttons"
+msgstr "[TST] Социальные кнопки"
+
+#: inc/widgets.php:88
+msgid "Social links menu with optional text"
+msgstr "Меню социальных кнопок с сопроводительным текстом"
+
+#: inc/widgets.php:107
+msgid "Widget doesn't have any settings"
+msgstr "Виджет не имеет настроек"
+
+#: inc/widgets.php:125
+msgid "[TST] Home News"
+msgstr "[TST] Новости на главной"
+
+#: inc/widgets.php:127
+msgid "Section or recent news for homepage"
+msgstr "Раздел последних новостей на главной странице"
+
+#: page-events.php:72
+msgid "Future events"
+msgstr "Анонсы"
+
+#: page-events.php:87
+msgid "Past events"
+msgstr "Прошедшие мероприятия"
+
+#: search.php:47
+msgid "Enter terms for search in the form and hit Enter"
+msgstr "Укажите слова для поиска в форме и нажмите Enter"
+
+#: search.php:51
+msgid "Nothing found under your request"
+msgstr "По вашему запросу ничего не найдено."
+
+#: single-event.php:111
+msgid "Visit or events"
+msgstr "Приглашаем на мероприятия"
+
+#: single-leyka_campaign.php:29
+msgid "Our supporters"
+msgstr "Нас поддержали"
+
+#: single-leyka_campaign.php:32
+msgid "Full list"
+msgstr "Полный список"
+
+#: single.php:87
+msgid "Related news"
+msgstr "Новости по теме"
+
+#: single.php:99
+msgid "Related projects"
+msgstr "Познакомьтесь с другими проектами"
+
+#~ msgid "Social Buttons"
+#~ msgstr "Социальные кнопки"
+
+#~ msgid "Subscribe"
+#~ msgstr "Подпишись"
+
+#~ msgid "Events"
+#~ msgstr "Анонсы"
+
+#~ msgid "All materials of the site are avaliabe under license %s."
+#~ msgstr "Все материалы сайта доступны по лиценции %s."
+
+#~ msgid "Made by"
+#~ msgstr "Разработка сайта"
+
+#~ msgid "All programms"
+#~ msgstr "Все программы"
+
+#~ msgid "Our programms"
+#~ msgstr "Наши программы"
+
+#~ msgid "All news"
+#~ msgstr "Все новости"
+
+#~ msgid "Support us"
+#~ msgstr "Поддержите нас"
+
+#~ msgid "Our news"
+#~ msgstr "Наши новости"
+
+#~ msgid "Stay connected and be informed"
+#~ msgstr "Будьте в курсе наших новостей"
+
+#~ msgid "More about our programms"
+#~ msgstr "Подробнее о программах фонда"
+
+#~ msgid "Would you like to help? Support our work"
+#~ msgstr "Хотите помочь? Поддержите нашу работу"
+
+#~ msgid "Become mentor"
+#~ msgstr "Стать наставником"
+
+#~ msgid "Team"
+#~ msgstr "Команда"
+
+#~ msgid "Board of Trustees"
+#~ msgstr "Совет фонда"
+
+#~ msgid "Partners"
+#~ msgstr "Партнеры"
+
+#~ msgid "News of programms"
+#~ msgstr "Новости программ"
+
+#~ msgid "Reports"
+#~ msgstr "Отчеты"
+
+#~ msgid "Custom fields"
+#~ msgstr "Мета-поля"
+
+#~ msgid "Primary Menu"
+#~ msgstr "﻿Главное меню"
+
+#~ msgid "Sitemap"
+#~ msgstr "Карта сайта"
+
+#~ msgid "Landscape mini"
+#~ msgstr "Горизонтальная миниатюра"
+
+#~ msgid "Fixed"
+#~ msgstr "Фиксированный"
+
+#~ msgid "Thumbnail"
+#~ msgstr "Миниатюра"
+
+#~ msgid "Details"
+#~ msgstr "Подробнее"
+
+#~ msgid "Event date"
+#~ msgstr "Дата мероприятия"
+
+#~ msgid "Time"
+#~ msgstr "Время"
+
+#~ msgid "Location"
+#~ msgstr "Место проведения"
+
+#~ msgid "Address"
+#~ msgstr "Адрес"
+
+#~ msgid "Participate"
+#~ msgstr "Принять участие"
+
+#~ msgid "Footer text"
+#~ msgstr "Текст в футере"
+
+#~ msgid "Newsletter form ID"
+#~ msgstr "ID формы подписки"
+
+#~ msgid "Color schemes"
+#~ msgstr "Цветовая схема"
+
+#~ msgid "Default thumbnail"
+#~ msgstr "Миниатюра по умолчанию"
+
+#~ msgid "Default Header"
+#~ msgstr "Заставка по-умолчанию"
+
+#~ msgid "User Information"
+#~ msgstr "Пользователь"
+
+#~ msgid "Page Settings"
+#~ msgstr "Настройки страницы"
+
+#~ msgid "Header Image"
+#~ msgstr "Заставка"
+
+#~ msgid "Add Image"
+#~ msgstr "Добавить изображение"
+
+#~ msgid "Attached elements"
+#~ msgstr "Встроенные элементы"
+
+#~ msgid "Attached Elements Title"
+#~ msgstr "Заголовок секции"
+
+#~ msgid "Post types"
+#~ msgstr "Типы контента"
+
+#~ msgid "Post Settings"
+#~ msgstr "Настройки записи"
+
+#~ msgid "Project Settings"
+#~ msgstr "Настройки проекта"
+
+#~ msgid "Text for support block"
+#~ msgstr "Текст для блока «поддержать» "
+
+#~ msgid "This will overrride default text"
+#~ msgstr "Указанный текст заменит текст по умолчанию"
+
+#~ msgid "Event Settings"
+#~ msgstr "Настройки анонса"
+
+#~ msgid "Event Date"
+#~ msgstr "Дата события"
+
+#~ msgid "Event Time"
+#~ msgstr "Время"
+
+#~ msgid "Specify event time, ex. 16.30"
+#~ msgstr "Укажите время мероприятия, например, 16.30"
+
+#~ msgid "Event Location"
+#~ msgstr "Место"
+
+#~ msgid "Specify city and place of event"
+#~ msgstr "Укажите город и место мероприятия"
+
+#~ msgid "Event Addres"
+#~ msgstr "Адрес"
+
+#~ msgid "Specify addres (without city)"
+#~ msgstr "Укажите адрес (уже без города)"
+
+#~ msgid "Homepage Settings"
+#~ msgstr "Настройки главной страницы"
+
+#~ msgid "Profiles - Order"
+#~ msgstr "Профили - Порядок"
+
+#~ msgid "Don't show"
+#~ msgstr "Не показывать"
+
+#~ msgid "First section"
+#~ msgstr "Первая секция"
+
+#~ msgid "Second section"
+#~ msgstr "Вторая секция"
+
+#~ msgid "Third section"
+#~ msgstr "Третья секция"
+
+#~ msgid "Profiles - Filter"
+#~ msgstr "Профили - Фильтр"
+
+#~ msgid "News - Order"
+#~ msgstr "Новости - Порядок"
+
+#~ msgid "News - Filter"
+#~ msgstr "Новости - Фильтр"
+
+#~ msgid "Projects section - Order"
+#~ msgstr "Проекты - Порядок"
+
+#~ msgid "in the category"
+#~ msgstr "в рубрике"
+
+#~ msgid "More entries"
+#~ msgstr "Еще публикации"
+
+#~ msgid "More results"
+#~ msgstr "Еще результаты"
+
+#~ msgid "More orgs"
+#~ msgstr "Еще организации"
+
+#~ msgid "To the beginning"
+#~ msgstr "К началу"
+
+#~ msgid "Next item"
+#~ msgstr "След."
+
+#~ msgid "All"
+#~ msgstr "Все"
+
+#~ msgid "Published"
+#~ msgstr "Опубликовано"
+
+#~ msgid "All author's articles"
+#~ msgstr "Все статьи автора"
+
+#~ msgid "Logo"
+#~ msgstr "Логотип"
+
+#~ msgid "Next event"
+#~ msgstr "Следующий"
+
+#~ msgid "Next post"
+#~ msgstr "Следующий"
+
+#~ msgid "More posts"
+#~ msgstr "Еще публикации"
+
+#~ msgid "Thumbnail for - %s"
+#~ msgstr "Заставка для - %s"
+
+#~ msgid "Oops! That page can&rsquo;t be found."
+#~ msgstr ""
+#~ "К сожалению, запрошенная страница не найдена, возможно она была "
+#~ "перемещена."
+
+#~ msgid "It looks like nothing was found at this location."
+#~ msgstr "К сожалению, по вашему запросу ничего не найдено"
+
+#~ msgid "Website settings"
+#~ msgstr "Настройки сайта"
+
+#~ msgid "Article"
+#~ msgstr "Статья"
+
+#~ msgid "Price"
+#~ msgstr "Цена"
+
+#~ msgid "Primary menu"
+#~ msgstr "﻿Главное меню"
+
+#~ msgid "List of recent posts with some styling"
+#~ msgstr "Список последних записей с настройками оформления"
+
+#~ msgid "Recent Posts"
+#~ msgstr "Последние записи"
+
+#~ msgid "Permalink to %s"
+#~ msgstr "Постоянная ссылка %s"
+
+#~ msgid "Square thumbnail"
+#~ msgstr "Квадратная миниатюра"
+
+#~ msgid "Landscape thumnbail"
+#~ msgstr "Горизонтальная миниатюра"
+
+#~ msgid "Limit"
+#~ msgstr "Кол.-во"
+
+#~ msgid "Display Date?"
+#~ msgstr "Отображать дату?"
+
+#~ msgid "Display Excerpt?"
+#~ msgstr "Отображать аннотацию?"
+
+#~ msgid "Excerpt Length"
+#~ msgstr "Длина аннотации"
+
+#~ msgid "Choose the Post Type"
+#~ msgstr "Тип контента"
+
+#~ msgid "Select post type"
+#~ msgstr "Выбрать"
+
+#~ msgid "Choose the Taxonomy"
+#~ msgstr "Выбрать таксономию"
+
+#~ msgid "Select taxonomy"
+#~ msgstr "Выбрать"
+
+#~ msgid "Term slug"
+#~ msgstr "Ярлык термина"
+
+#~ msgid ""
+#~ "Copy paste a slug (or comma-separated list of several slugs) of the term"
+#~ msgstr "Укажите ярлык (разделенный запятыми список ярлыков) термина"
+
+#~ msgid "Related posts"
+#~ msgstr "Еще по теме"
+
+#~ msgid "Secondary Menu"
+#~ msgstr "Вспомогательное меню"
+
+#~ msgid "Left Menu in footer"
+#~ msgstr "Левое меню в футере"
+
+#~ msgid "Right Menu in footer"
+#~ msgstr "Правое меню в футере"
+
+#~ msgid "Languages"
+#~ msgstr "Языки"
+
+#~ msgid "Social menu"
+#~ msgstr "Социальные кнопки"
+
+#~ msgid "Menu"
+#~ msgstr "Меню"
+
+#~ msgid "On top"
+#~ msgstr "К началу"
+
+#~ msgid "Column-width"
+#~ msgstr "По ширине колонки"
+
+#~ msgid "Friendship stories"
+#~ msgstr "Истории дружбы"
+
+#~ msgid "Story"
+#~ msgstr "История"
+
+#~ msgid "Stories"
+#~ msgstr "Истории"
+
+#~ msgid "Add a story"
+#~ msgstr "Добавить историю"
+
+#~ msgid "Add new"
+#~ msgstr "Добавить новую"
+
+#~ msgid "Add new story"
+#~ msgstr "Добавить новую"
+
+#~ msgid "New story"
+#~ msgstr "Новая история"
+
+#~ msgid "Edit the story"
+#~ msgstr "Редактировать"
+
+#~ msgid "View the story page"
+#~ msgstr "Открыть страницу истории"
+
+#~ msgid "All stories"
+#~ msgstr "Все истории"
+
+#~ msgid "Search for stories"
+#~ msgstr "Поиск историй"
+
+#~ msgid "Parent story"
+#~ msgstr "Родительская"
+
+#~ msgid "No stories found"
+#~ msgstr "Историй не найдено"
+
+#~ msgid "No stories found in Trash"
+#~ msgstr "Историй в корзине не найдено"
+
+#~ msgid "Event"
+#~ msgstr "Анонс"
+
+#~ msgid "Add event"
+#~ msgstr "Добавить анонс"
+
+#~ msgid "Add new event"
+#~ msgstr "Добавить новый"
+
+#~ msgid "New event"
+#~ msgstr "Новый анонс"
+
+#~ msgid "Edit event"
+#~ msgstr "Редактировать"
+
+#~ msgid "View event"
+#~ msgstr "Просмотреть"
+
+#~ msgid "All events"
+#~ msgstr "Все анонсы"
+
+#~ msgid "Search events"
+#~ msgstr "Поиск"
+
+#~ msgid "Parent event"
+#~ msgstr "Родительский"
+
+#~ msgid "No events found"
+#~ msgstr "Анонсы не найдены"
+
+#~ msgid "No events found in Trash"
+#~ msgstr "В Корзине мероприятия не найдены"
+
+#~ msgid "Programmes"
+#~ msgstr "Программы"
+
+#~ msgid "Programm"
+#~ msgstr "Программа"
+
+#~ msgid "Add programm"
+#~ msgstr "Добавить программу"
+
+#~ msgid "Add new programm"
+#~ msgstr "Добавить новую"
+
+#~ msgid "New programm"
+#~ msgstr "Новая программа"
+
+#~ msgid "Edit programm"
+#~ msgstr "Редактировать"
+
+#~ msgid "View programm"
+#~ msgstr "Просмотреть"
+
+#~ msgid "All programmes"
+#~ msgstr "Все программы"
+
+#~ msgid "Search programmes"
+#~ msgstr "Поиск программ"
+
+#~ msgid "Parent programm"
+#~ msgstr "Родительская"
+
+#~ msgid "No programmes found"
+#~ msgstr "Программы не найдены"
+
+#~ msgid "No programmes found in Trash"
+#~ msgstr "В Корзине программы не найдены"
+
+#~ msgid "Close"
+#~ msgstr "Закрыть"
+
+#~ msgid "Unfortunately, we cann't find anything under your request."
+#~ msgstr "К сожалению, по вашему запросу ничего не найдено."
+
+#~ msgid "Let&rsquo;s find the inforamtion you need"
+#~ msgstr "Давайте попробуем найти информацию, которая вам нужна."
+
+#~ msgid "Fixed: Large"
+#~ msgstr "Фикс.: Большой"
+
+#~ msgid "Program"
+#~ msgstr "Программа"
+
+#~ msgid "Add program"
+#~ msgstr "Добавить программу"
+
+#~ msgid "Add new program"
+#~ msgstr "Добавить новую"
+
+#~ msgid "New program"
+#~ msgstr "Новая программа"
+
+#~ msgid "Edit program"
+#~ msgstr "Редактировать"
+
+#~ msgid "View program"
+#~ msgstr "Просмотр"
+
+#~ msgid "Parent program"
+#~ msgstr "Родительская программа"
+
+#~ msgid "Our events"
+#~ msgstr "Наши события"
+
+#~ msgid "Help"
+#~ msgstr "Помочь"
+
+#~ msgid "Our programmes"
+#~ msgstr "Наши программы"
+
+#~ msgid "Our friends"
+#~ msgstr "Наши друзья"
+
+#~ msgid "Announcements"
+#~ msgstr "Анонсы"
+
+#~ msgid "All entries"
+#~ msgstr "Все записи"
+
+#~ msgid "Next"
+#~ msgstr "След."
+
+#~ msgid "Previous"
+#~ msgstr "Пред."
+
+#~ msgid "Home"
+#~ msgstr "Главная"
+
+#~ msgid "Our partners"
+#~ msgstr "Наши партнеры"
+
+#~ msgid "Friendship story"
+#~ msgstr "История дружбы"
+
+#~ msgid "Add a friendship story"
+#~ msgstr "Добавить историю"
+
+#~ msgid "Add new friendship story"
+#~ msgstr "Добавить новую историю"
+
+#~ msgid "New friendship story"
+#~ msgstr "Новая история дружбы"
+
+#~ msgid "All friendship stories"
+#~ msgstr "Все истории о дружбе"
+
+#~ msgid "Search for friendship stories"
+#~ msgstr "Поиск историй"
