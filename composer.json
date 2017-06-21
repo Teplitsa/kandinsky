@@ -10,10 +10,6 @@
     ],
     "type"        : "project",
     "repositories": [
-        {
-            "type": "artifact",
-            "url": "artifacts/"
-        }
     ],
     "config"      : {
         "vendor-dir": "wp-content/vendor",
