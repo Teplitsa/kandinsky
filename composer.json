@@ -20,9 +20,11 @@
         "secure-http" : false
     },
    "require"     : {
+        "johnpbloch/wordpress" : ">=4.3"       
     },
     "require-dev" : {
     },
     "extra"       : {
+        "wordpress-install-dir": "core"
     }
 }
