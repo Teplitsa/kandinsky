@@ -7,7 +7,24 @@ function knd_add_settings_page() {
 
 function knd_admin_settings_page() {?>
 
+    <h2><?php _e('Test content', 'knd');?></h2>
+    <div class="install-test-content">
+        <a href="#"><?php _e('Install test content', 'knd');?></a>
+    </div>
 
+    <h2><?php _e('Manage features', 'knd');?></h2>
+    <div class="install-test-content">
+        <form id="knd-features-form">
+            <div>
+                <input type="checkbox" id="knd-feature-events" name="features[]" value="events">
+                <label for="knd-feature-events"><?php _e('Events', 'knd');?></label>
+            </div>
+            <div>
+                <input type="checkbox" id="knd-feature-donations" name="features[]" value="donations">
+                <label for="knd-feature-donations"><?php _e('Donations', 'knd');?></label>
+            </div>
+        </form>
+    </div>
 
 <?php }
 
