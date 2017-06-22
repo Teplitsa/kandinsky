@@ -33,3 +33,4 @@ wp-content/upgrade/
 /_temp
 /upd_root.sh
 /upd_theme.sh
+node_modules
