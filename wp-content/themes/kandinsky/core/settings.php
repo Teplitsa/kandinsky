@@ -66,7 +66,18 @@ function knd_register_required_plugins() {
             'is_callable' => 'leyka',
 //            'required'    => false,
         ),
-
+        array(
+            'name'        => __('Cyr to Lat enhanced', 'knd'),
+            'slug'        => 'cyr3lat',
+            'is_callable' => 'ctl_sanitize_title',
+            'required'    => true,
+        ),
+        array(
+            'name'        => __('Disable Comments', 'knd'),
+            'slug'        => 'disable-comments',
+            'is_callable' => array('Disable_Comments', 'get_instance'),
+            'required'    => true,
+        ),
     );
 
     /*

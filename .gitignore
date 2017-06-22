@@ -30,3 +30,6 @@ wp-signup.php
 wp-trackback.php
 xmlrpc.php
 wp-content/upgrade/
+/_temp
+/upd_root.sh
+/upd_theme.sh
