@@ -24,7 +24,7 @@ get_header();
 <div class="container-narrow">	
 	<div class="entry-content"><?php echo apply_filters('rdc_entry_the_content', $cpost->post_content); ?></div>
 	<?php if(is_page($leyka_succ) || is_page($leyka_fail) || is_page($leyka_quit)) { ?>
-		<div class="logo-inpage"><?php rdc_site_logo('regular');?></div>
+		<div class="logo-inpage"><?php #rdc_site_logo('regular');?></div>
 	<?php } ?>
 </div>
 </section>
