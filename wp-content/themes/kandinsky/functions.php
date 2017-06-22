@@ -34,9 +34,9 @@ function rdc_setup() {
 
 	// Menus
 	$menus = array(
-		'primary'   => 'Главное',		
-		'social'    => 'Социальные кнопки',
-		'sitemap'   => 'Карта сайта'
+		'primary'   => __('Primary menu', 'knd')		
+		//'social'    => 'Социальные кнопки',
+		//'sitemap'   => 'Карта сайта'
 	);
 		
 	register_nav_menus($menus);
@@ -74,10 +74,10 @@ function rdc_widgets_init() {
 						'name' => 'Правая колонка - Анонсы',
 						'description' => 'Боковая колонка справа на страницах анонсов'
 					),
-		'footer' => array(
-						'name' => 'Подвал - 4 виджета',
-						'description' => 'Динамическая область в подвале: 4 виджета'
-					),
+		// 'footer' => array(
+		// 				'name' => 'Подвал - 4 виджета',
+		// 				'description' => 'Динамическая область в подвале: 4 виджета'
+		// 			),
 	);
 		
 	foreach($config as $id => $sb) {
@@ -119,6 +119,7 @@ require get_template_directory().'/core/shortcodes.php';
 require get_template_directory().'/core/template-tags.php';
 require get_template_directory().'/core/widgets.php';
 require get_template_directory().'/core/settings.php';
+require get_template_directory().'/core/customizer.php';
 require get_template_directory().'/vendor/class-tgm-plugin-activation.php';
 
 // import data utils

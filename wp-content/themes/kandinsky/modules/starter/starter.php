@@ -1,5 +1,7 @@
 <?php
 
+require get_template_directory().'/modules/starter/class-demo.php';
+
 function knd_import_starter_data_from_csv() {
     //Read file
     $csv = array_map('str_getcsv', file(get_template_directory() . '/modules/starter/csv/posts.csv'));
@@ -63,7 +65,7 @@ function knd_setup_starter_data() {
     try {
         knd_import_starter_data_from_csv();
         
-        // set thumbnail for sample page
+        // set thumbnail for sample posts
         $thumb_id = false;
         $thumbnail_url = 'https://ngo2.ru/kandinsky-files/knd-img2.jpg';
         if( preg_match( '/^http[s]?:\/\//', $thumbnail_url ) ) {
@@ -77,6 +79,9 @@ function knd_setup_starter_data() {
                 update_post_meta( $hello_world_post->ID, '_thumbnail_id', $thumb_id );
             }
         }
+
+        do_action('knd_save_demo_content');
+        
     }
     catch(Exception $ex) {
         $res = array('status' => 'error');
@@ -86,3 +91,4 @@ function knd_setup_starter_data() {
 }
 add_action("wp_ajax_setup_starter_data", "knd_setup_starter_data");
 add_action("wp_ajax_nopriv_setup_starter_data", "knd_setup_starter_data");
+

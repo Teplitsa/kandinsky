@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-09 09:12+0300\n"
-"PO-Revision-Date: 2016-06-09 16:27+0300\n"
+"POT-Creation-Date: 2017-06-23 00:12+0300\n"
+"PO-Revision-Date: 2017-06-23 00:14+0300\n"
 "Last-Translator: Anna Ladoshkina <webdev@foralien.com>\n"
 "Language-Team: Anna Ladoshkina <webdev@foralien.com>\n"
 "Language: ru\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10 >= 2 && n"
 "%10<=4 &&(n%100<10||n%100 >= 20)? 1 : 2);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.8.7\n"
+"X-Generator: Poedit 1.8.11\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
 "__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
@@ -33,6 +33,177 @@ msgstr "Кампания"
 #: archive-leyka_donation.php:38
 msgid "Anonymous"
 msgstr "Анонимно"
+
+#: core/admin.php:139 core/admin.php:148
+msgid "Website"
+msgstr "Вебсайт"
+
+#: core/admin.php:139 core/admin.php:153
+msgid "Excerpt"
+msgstr "Аннотация"
+
+#: core/admin.php:155
+msgid ""
+"Annotation for items lists (will be printed at the beginning of the single "
+"page)"
+msgstr "Аннотация для списков (на странице записи добавляется в начало)"
+
+#: core/admin.php:208
+msgid "Forms"
+msgstr "Формы"
+
+#: core/admin.php:331
+#, php-format
+msgid ""
+"ATTENTION! You thumbnail image is too small. It should be at least %s px"
+msgstr ""
+"ВНИМАНИЕ! Изображение миниатюры слишком маленькое. Необходимый размер - не "
+"менее %s px."
+
+#: core/admin.php:379 core/admin.php:395
+msgid "Facebook Profile"
+msgstr "Профиль на Facebook"
+
+#: core/admin.php:381 core/admin.php:397
+msgid "Enter URL of author's Facebook profile"
+msgstr "Укажите ссылку на профиль автора"
+
+#: core/admin.php:384 core/admin.php:400
+msgid "Avatar"
+msgstr "Аватарка"
+
+#: core/admin.php:432
+msgid "Taxonomy Term Image"
+msgstr "Заставка"
+
+#: core/admin.php:433
+msgid "Select which image should represent this term."
+msgstr "Выберите изображение заставки"
+
+#: core/admin.php:434
+msgid "Select Image"
+msgstr "Выбрать изображение"
+
+#: core/admin.php:435
+msgid "Remove"
+msgstr "Удалить"
+
+#: core/admin.php:436
+msgid "Select or upload an image for this term"
+msgstr "Выбрать или загрузить изображение"
+
+#: core/admin.php:437
+msgid "Attach"
+msgstr "Присоединить"
+
+#: core/author.php:29
+msgid "Author"
+msgstr "Автор"
+
+#: core/cards.php:24 core/cards.php:52 core/extras.php:63
+#: taxonomy-person_cat.php:20
+msgid "More"
+msgstr "Ещё"
+
+#: core/customizer.php:46 functions.php:37
+msgid "Primary menu"
+msgstr "﻿Главное меню"
+
+#: core/customizer.php:74 core/template-tags.php:383 core/template-tags.php:393
+msgid "Homepage"
+msgstr "Главная"
+
+#: core/customizer.php:80
+msgid "About"
+msgstr "О нас"
+
+#: core/customizer.php:85
+msgid "Contacts"
+msgstr "Контакты"
+
+#: core/customizer.php:90
+msgid "News"
+msgstr "Новости"
+
+#: core/customizer.php:121
+msgid "Header text"
+msgstr ""
+
+#: core/settings.php:5
+msgid "Kandinsky settings"
+msgstr ""
+
+#: core/settings.php:41
+msgid "Yoast SEO"
+msgstr ""
+
+#: core/settings.php:47
+msgid "Leyka"
+msgstr ""
+
+#: core/settings.php:53
+msgid "Cyr to Lat enhanced"
+msgstr ""
+
+#: core/settings.php:59
+msgid "Disable Comments"
+msgstr ""
+
+#: core/template-tags.php:180
+msgid "Page"
+msgstr "Страница"
+
+#: core/template-tags.php:267
+msgid "Donations history"
+msgstr "История пожертвований"
+
+#: core/template-tags.php:271
+msgid "Search results"
+msgstr "Результаты поиска"
+
+#: core/template-tags.php:275
+msgid "404: Page not found"
+msgstr "Ошибка 404: Страница не найдена"
+
+#: core/template-tags.php:368
+msgid "Post navigation"
+msgstr "Навигация по записям"
+
+#: core/template-tags.php:430
+msgid "More projects"
+msgstr "Еще проекты"
+
+#: core/template-tags.php:431
+msgid "Our projects"
+msgstr "Наши программы"
+
+#: core/template-tags.php:435
+msgid "More volunteers"
+msgstr "Еще волонтеры"
+
+#: core/template-tags.php:436 single.php:116
+msgid "Our volunteers"
+msgstr "Наши волонтеры"
+
+#: core/template-tags.php:441
+msgid "More events"
+msgstr "Еще анонсы"
+
+#: core/template-tags.php:446
+msgid "More news"
+msgstr "Еще новости"
+
+#: core/template-tags.php:447
+msgid "Latest news"
+msgstr "Последние новости"
+
+#: core/template-tags.php:487
+msgid "Related project"
+msgstr "Программа по теме"
+
+#: core/template-tags.php:506
+msgid "Help now"
+msgstr "Помочь сейчас"
 
 #: footer.php:11
 msgid "Teplitsa of social technologies"
@@ -55,269 +226,37 @@ msgstr "Все материалы сайта доступны по лиценз�
 msgid "Skip to content"
 msgstr "Перейти к содержанию"
 
-#: header.php:37
+#: header.php:45
 msgid "Donate"
 msgstr "Помочь сейчас"
 
-#: inc/admin.php:139 inc/admin.php:148
-msgid "Website"
-msgstr "Вебсайт"
-
-#: inc/admin.php:139 inc/admin.php:153
-msgid "Excerpt"
-msgstr "Аннотация"
-
-#: inc/admin.php:155
-msgid ""
-"Annotation for items lists (will be printed at the beginning of the single "
-"page)"
-msgstr "Аннотация для списков (на странице записи добавляется в начало)"
-
-#: inc/admin.php:208
-msgid "Forms"
-msgstr "Формы"
-
-#: inc/admin.php:331
-#, php-format
-msgid ""
-"ATTENTION! You thumbnail image is too small. It should be at least %s px"
-msgstr ""
-"ВНИМАНИЕ! Изображение миниатюры слишком маленькое. Необходимый размер - не "
-"менее %s px."
-
-#: inc/admin.php:379 inc/admin.php:395
-msgid "Facebook Profile"
-msgstr "Профиль на Facebook"
-
-#: inc/admin.php:381 inc/admin.php:397
-msgid "Enter URL of author's Facebook profile"
-msgstr "Укажите ссылку на профиль автора"
-
-#: inc/admin.php:384 inc/admin.php:400
-msgid "Avatar"
-msgstr "Аватарка"
-
-#: inc/admin.php:432
-msgid "Taxonomy Term Image"
-msgstr "Заставка"
-
-#: inc/admin.php:433
-msgid "Select which image should represent this term."
-msgstr "Выберите изображение заставки"
-
-#: inc/admin.php:434
-msgid "Select Image"
-msgstr "Выбрать изображение"
-
-#: inc/admin.php:435
-msgid "Remove"
-msgstr "Удалить"
-
-#: inc/admin.php:436
-msgid "Select or upload an image for this term"
-msgstr "Выбрать или загрузить изображение"
-
-#: inc/admin.php:437
-msgid "Attach"
-msgstr "Присоединить"
-
-#: inc/author.php:29
-msgid "Author"
-msgstr "Автор"
-
-#: inc/cards.php:44
-msgid "View"
-msgstr "Просмотреть"
-
-#: inc/donations.php:62
+#: modules/donations.php:62
 msgid "Please, set a text of comment to describe an additional ways to donate."
 msgstr "Пожалуйста, укажите текст комментария"
 
-#: inc/donations.php:70
+#: modules/donations.php:70
 msgid "Please, set a text to describe an additional ways to donate."
 msgstr "Пожалуйста, укажите текст комментария"
 
-#: inc/donations.php:118
+#: modules/donations.php:121
 msgid "Please, specify your donation amount"
 msgstr "Пожалуйста, укажите сумму пожертвования"
 
-#: inc/donations.php:123
+#: modules/donations.php:128
 msgid "or"
 msgstr "или"
 
-#: inc/donations.php:124
+#: modules/donations.php:129
 msgid "Specify the amount of your donation"
 msgstr "Пожалуйста, укажите сумму пожертвования"
 
-#: inc/donations.php:185
+#: modules/donations.php:195
 msgid "Your name"
 msgstr "Ваше имя"
 
-#: inc/donations.php:212
+#: modules/donations.php:222
 msgid "Monthly donation"
 msgstr "Перечислять ежемесячно"
-
-#: inc/extras.php:63
-msgid "More"
-msgstr "Ещё"
-
-#: inc/extras.php:259
-msgid "Default Avatar"
-msgstr "Аватарка по-умолчанию"
-
-#: inc/pb-widgets/featureblock/featureblock.php:13
-msgid "[TST] 3 Block of options"
-msgstr "[TST] 3 блока опций"
-
-#: inc/pb-widgets/featureblock/featureblock.php:15
-msgid "Row of 3 blocks with title, text and button"
-msgstr "3 стандартных блока, выровненных по высоте"
-
-#: inc/pb-widgets/featureblock/featureblock.php:41
-msgid "Title"
-msgstr "Заголовок"
-
-#: inc/pb-widgets/featureblock/featureblock.php:45
-msgid "Description"
-msgstr "Описание"
-
-#: inc/pb-widgets/featureblock/featureblock.php:50
-msgid "Link"
-msgstr "Ссылка"
-
-#: inc/pb-widgets/featureblock/featureblock.php:55
-msgid "Button label"
-msgstr "Текст кнопки"
-
-#: inc/pb-widgets/featureblock/featureblock.php:62
-msgid "Column 1"
-msgstr "Колонка 1"
-
-#: inc/pb-widgets/featureblock/featureblock.php:68
-msgid "Column 2"
-msgstr "Колонка 2"
-
-#: inc/pb-widgets/featureblock/featureblock.php:74
-msgid "Column 3"
-msgstr "Колонка 3"
-
-#: inc/pb-widgets/pageheader/pageheader.php:41
-msgid "Image file"
-msgstr "Изображение"
-
-#: inc/pb-widgets/pageheader/pageheader.php:48
-#: inc/pb-widgets/sectionheader/sectionheader.php:41
-msgid "Title text"
-msgstr "Заголовок"
-
-#: inc/pb-widgets/pageheader/pageheader.php:53
-#: inc/pb-widgets/sectionheader/sectionheader.php:46
-msgid "Sub title text"
-msgstr "Подзаголовок"
-
-#: inc/pb-widgets/pageheader/pageheader.php:60
-msgid "Extend Width"
-msgstr "Растянуть"
-
-#: inc/pb-widgets/sectionheader/sectionheader.php:51
-msgid "Align"
-msgstr "Выравнивание"
-
-#: inc/pb-widgets/sectionheader/sectionheader.php:54
-msgid "Center"
-msgstr "По центру"
-
-#: inc/pb-widgets/sectionheader/sectionheader.php:55
-msgid "Left"
-msgstr "По левому краю"
-
-#: inc/pb-widgets/sectionheader/sectionheader.php:56
-msgid "Right"
-msgstr "По правому краю"
-
-#: inc/pb-widgets/sectionheader/sectionheader.php:61
-msgid "Style as page title"
-msgstr "Применить стиль заголовка страницы"
-
-#: inc/template-tags.php:180
-msgid "Page"
-msgstr "Страница"
-
-#: inc/template-tags.php:267
-msgid "Donations history"
-msgstr "История пожертвований"
-
-#: inc/template-tags.php:271
-msgid "Search results"
-msgstr "Результаты поиска"
-
-#: inc/template-tags.php:275
-msgid "404: Page not found"
-msgstr "Ошибка 404: Страница не найдена"
-
-#: inc/template-tags.php:368
-msgid "Post navigation"
-msgstr "Навигация по записям"
-
-#: inc/template-tags.php:383 inc/template-tags.php:393
-msgid "Homepage"
-msgstr "Главная"
-
-#: inc/template-tags.php:430
-msgid "More projects"
-msgstr "Еще проекты"
-
-#: inc/template-tags.php:431
-msgid "Our projects"
-msgstr "Наши программы"
-
-#: inc/template-tags.php:435
-msgid "More volunteers"
-msgstr "Еще волонтеры"
-
-#: inc/template-tags.php:436 single.php:120
-msgid "Our volunteers"
-msgstr "Наши волонтеры"
-
-#: inc/template-tags.php:441
-msgid "More events"
-msgstr "Еще анонсы"
-
-#: inc/template-tags.php:446 inc/widgets.php:142
-msgid "More news"
-msgstr "Еще новости"
-
-#: inc/template-tags.php:447
-msgid "Latest news"
-msgstr "Последние новости"
-
-#: inc/template-tags.php:487
-msgid "Related project"
-msgstr "Программа по теме"
-
-#: inc/template-tags.php:506
-msgid "Help now"
-msgstr "Помочь сейчас"
-
-#: inc/widgets.php:86
-msgid "[TST] Social Buttons"
-msgstr "[TST] Социальные кнопки"
-
-#: inc/widgets.php:88
-msgid "Social links menu with optional text"
-msgstr "Меню социальных кнопок с сопроводительным текстом"
-
-#: inc/widgets.php:107
-msgid "Widget doesn't have any settings"
-msgstr "Виджет не имеет настроек"
-
-#: inc/widgets.php:125
-msgid "[TST] Home News"
-msgstr "[TST] Новости на главной"
-
-#: inc/widgets.php:127
-msgid "Section or recent news for homepage"
-msgstr "Раздел последних новостей на главной странице"
 
 #: page-events.php:72
 msgid "Future events"
@@ -335,7 +274,7 @@ msgstr "Укажите слова для поиска в форме и нажм�
 msgid "Nothing found under your request"
 msgstr "По вашему запросу ничего не найдено."
 
-#: single-event.php:111
+#: single-event.php:113
 msgid "Visit or events"
 msgstr "Приглашаем на мероприятия"
 
@@ -347,13 +286,551 @@ msgstr "Нас поддержали"
 msgid "Full list"
 msgstr "Полный список"
 
-#: single.php:87
+#: single-project.php:48 single.php:95
+msgid "Related projects"
+msgstr "Познакомьтесь с другими проектами"
+
+#: single.php:83
 msgid "Related news"
 msgstr "Новости по теме"
 
-#: single.php:99
-msgid "Related projects"
-msgstr "Познакомьтесь с другими проектами"
+#: vendor/class-tgm-plugin-activation.php:327
+msgid "Install Required Plugins"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:328
+msgid "Install Plugins"
+msgstr ""
+
+#. translators: %s: plugin name.
+#: vendor/class-tgm-plugin-activation.php:330
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#. translators: %s: plugin name.
+#: vendor/class-tgm-plugin-activation.php:332
+#, php-format
+msgid "Updating Plugin: %s"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:333
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#. translators: 1: plugin name(s).
+#: vendor/class-tgm-plugin-activation.php:336
+#, php-format
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#. translators: 1: plugin name(s).
+#: vendor/class-tgm-plugin-activation.php:342
+#, php-format
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#. translators: 1: plugin name(s).
+#: vendor/class-tgm-plugin-activation.php:348
+#, php-format
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#. translators: 1: plugin name(s).
+#: vendor/class-tgm-plugin-activation.php:354
+#, php-format
+msgid "There is an update available for: %1$s."
+msgid_plural "There are updates available for the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#. translators: 1: plugin name(s).
+#: vendor/class-tgm-plugin-activation.php:360
+#, php-format
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#. translators: 1: plugin name(s).
+#: vendor/class-tgm-plugin-activation.php:366
+#, php-format
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: vendor/class-tgm-plugin-activation.php:371
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: vendor/class-tgm-plugin-activation.php:376
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: vendor/class-tgm-plugin-activation.php:381
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: vendor/class-tgm-plugin-activation.php:385
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:386
+#: vendor/class-tgm-plugin-activation.php:827
+#: vendor/class-tgm-plugin-activation.php:2533
+#: vendor/class-tgm-plugin-activation.php:3580
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:387
+#: vendor/class-tgm-plugin-activation.php:3159
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:388
+#: vendor/class-tgm-plugin-activation.php:2952
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#. translators: 1: plugin name.
+#: vendor/class-tgm-plugin-activation.php:390
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: vendor/class-tgm-plugin-activation.php:392
+#, php-format
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+
+#. translators: 1: dashboard link.
+#: vendor/class-tgm-plugin-activation.php:394
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:395
+msgid "Dismiss this notice"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:396
+msgid ""
+"There are one or more required or recommended plugins to install, update or "
+"activate."
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:397
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:522
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:523
+msgid "Update Required"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:934
+msgid ""
+"The remote plugin package does not contain a folder with the desired slug "
+"and renaming did not work."
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:934
+#: vendor/class-tgm-plugin-activation.php:937
+msgid ""
+"Please contact the plugin provider and ask them to package their plugin "
+"according to the WordPress guidelines."
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:937
+msgid ""
+"The remote plugin package consists of more than one file, but the files are "
+"not packaged in a folder."
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:1121
+#: vendor/class-tgm-plugin-activation.php:2948
+msgctxt "plugin A *and* plugin B"
+msgid "and"
+msgstr ""
+
+#. translators: %s: version number
+#: vendor/class-tgm-plugin-activation.php:1982
+#, php-format
+msgid "TGMPA v%s"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2273
+msgid "Required"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2276
+msgid "Recommended"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2292
+msgid "WordPress Repository"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2295
+msgid "External Source"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2298
+msgid "Pre-Packaged"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2315
+msgid "Not Installed"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2319
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2321
+msgid "Active"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2327
+msgid "Required Update not Available"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2330
+msgid "Requires Update"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2333
+msgid "Update recommended"
+msgstr ""
+
+#. translators: 1: install status, 2: update status
+#: vendor/class-tgm-plugin-activation.php:2342
+#, php-format
+msgctxt "Install/Update Status"
+msgid "%1$s, %2$s"
+msgstr ""
+
+#. translators: 1: number of plugins.
+#: vendor/class-tgm-plugin-activation.php:2388
+#, php-format
+msgctxt "plugins"
+msgid "All <span class=\"count\">(%s)</span>"
+msgid_plural "All <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#. translators: 1: number of plugins.
+#: vendor/class-tgm-plugin-activation.php:2392
+#, php-format
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#. translators: 1: number of plugins.
+#: vendor/class-tgm-plugin-activation.php:2396
+#, php-format
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#. translators: 1: number of plugins.
+#: vendor/class-tgm-plugin-activation.php:2400
+#, php-format
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: vendor/class-tgm-plugin-activation.php:2482
+msgctxt "as in: \"version nr unknown\""
+msgid "unknown"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2490
+msgid "Installed version:"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2498
+msgid "Minimum required version:"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2510
+msgid "Available version:"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2533
+msgid "No plugins to install, update or activate."
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2547
+msgid "Plugin"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2548
+msgid "Source"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2549
+msgid "Type"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2553
+msgid "Version"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2554
+msgid "Status"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: vendor/class-tgm-plugin-activation.php:2603
+#, php-format
+msgid "Install %2$s"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: vendor/class-tgm-plugin-activation.php:2608
+#, php-format
+msgid "Update %2$s"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: vendor/class-tgm-plugin-activation.php:2614
+#, php-format
+msgid "Activate %2$s"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2684
+msgid "Upgrade message from the plugin author:"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2717
+msgid "Install"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2723
+msgid "Update"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2726
+msgid "Activate"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2757
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2759
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2800
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2802
+msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2908
+msgid "No plugins were selected to be activated. No action taken."
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2934
+msgid "No plugins are available to be activated at this time."
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:3158
+msgid "Plugin activation failed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: vendor/class-tgm-plugin-activation.php:3498
+#, php-format
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#. translators: 1: plugin name, 2: error message.
+#: vendor/class-tgm-plugin-activation.php:3501
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: vendor/class-tgm-plugin-activation.php:3503
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:3507
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: vendor/class-tgm-plugin-activation.php:3509
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:3509
+#: vendor/class-tgm-plugin-activation.php:3517
+msgid "Show Details"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:3509
+#: vendor/class-tgm-plugin-activation.php:3517
+msgid "Hide Details"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:3510
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: vendor/class-tgm-plugin-activation.php:3512
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:3515
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: vendor/class-tgm-plugin-activation.php:3517
+#, php-format
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:3518
+msgid "All installations have been completed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: vendor/class-tgm-plugin-activation.php:3520
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#~ msgid "View"
+#~ msgstr "Просмотреть"
+
+#~ msgid "Default Avatar"
+#~ msgstr "Аватарка по-умолчанию"
+
+#~ msgid "[TST] 3 Block of options"
+#~ msgstr "[TST] 3 блока опций"
+
+#~ msgid "Row of 3 blocks with title, text and button"
+#~ msgstr "3 стандартных блока, выровненных по высоте"
+
+#~ msgid "Title"
+#~ msgstr "Заголовок"
+
+#~ msgid "Description"
+#~ msgstr "Описание"
+
+#~ msgid "Link"
+#~ msgstr "Ссылка"
+
+#~ msgid "Button label"
+#~ msgstr "Текст кнопки"
+
+#~ msgid "Column 1"
+#~ msgstr "Колонка 1"
+
+#~ msgid "Column 2"
+#~ msgstr "Колонка 2"
+
+#~ msgid "Column 3"
+#~ msgstr "Колонка 3"
+
+#~ msgid "Image file"
+#~ msgstr "Изображение"
+
+#~ msgid "Title text"
+#~ msgstr "Заголовок"
+
+#~ msgid "Sub title text"
+#~ msgstr "Подзаголовок"
+
+#~ msgid "Extend Width"
+#~ msgstr "Растянуть"
+
+#~ msgid "Align"
+#~ msgstr "Выравнивание"
+
+#~ msgid "Center"
+#~ msgstr "По центру"
+
+#~ msgid "Left"
+#~ msgstr "По левому краю"
+
+#~ msgid "Right"
+#~ msgstr "По правому краю"
+
+#~ msgid "Style as page title"
+#~ msgstr "Применить стиль заголовка страницы"
+
+#~ msgid "[TST] Social Buttons"
+#~ msgstr "[TST] Социальные кнопки"
+
+#~ msgid "Social links menu with optional text"
+#~ msgstr "Меню социальных кнопок с сопроводительным текстом"
+
+#~ msgid "Widget doesn't have any settings"
+#~ msgstr "Виджет не имеет настроек"
+
+#~ msgid "[TST] Home News"
+#~ msgstr "[TST] Новости на главной"
+
+#~ msgid "Section or recent news for homepage"
+#~ msgstr "Раздел последних новостей на главной странице"
 
 #~ msgid "Social Buttons"
 #~ msgstr "Социальные кнопки"
@@ -608,9 +1085,6 @@ msgstr "Познакомьтесь с другими проектами"
 
 #~ msgid "Price"
 #~ msgstr "Цена"
-
-#~ msgid "Primary menu"
-#~ msgstr "﻿Главное меню"
 
 #~ msgid "List of recent posts with some styling"
 #~ msgstr "Список последних записей с настройками оформления"
