@@ -14,8 +14,10 @@ if($about_post):
 ?>
 
 <article id="single-page" class="main-content tpl-page-fullwidth">
+
 <div class="container">
 <div class="entry-content">
+
 <div id="pl-72">
 <div id="pg-72-0" class="panel-grid">
 <div class="panel-row-style-homepage-intro homepage-intro panel-row-style">
@@ -62,6 +64,9 @@ if($about_post):
 </div>
 </div>
 
+</div></div></div></div></div></div></div>
+</article>
+
 <?php
 
 endif;
@@ -101,6 +106,7 @@ if(is_home() && $paged == 1) { //featured posts
 	?>
 </div>
 </div></section>
+
 
 <section class="paging"><?php rdc_paging_nav($wp_query); ?></section>
 
