@@ -118,8 +118,8 @@ require get_template_directory().'/core/request.php';
 require get_template_directory().'/core/shortcodes.php';
 require get_template_directory().'/core/template-tags.php';
 require get_template_directory().'/core/widgets.php';
-//require get_template_directory().'/core/settings.php';
-//require get_template_directory().'/vendor/class-tgm-plugin-activation.php';
+require get_template_directory().'/core/settings.php';
+require get_template_directory().'/vendor/class-tgm-plugin-activation.php';
 
 // import data utils
 require get_template_directory().'/core/class-mediamnt.php';
