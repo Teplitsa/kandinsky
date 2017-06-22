@@ -238,125 +238,119 @@ class TST_Media {
 			require_once(ABSPATH.'wp-admin/includes/image.php');
 		}
 
-		try {
+		//Incorrect image path cases - fix them on demand
+		if (false === $image_fullpath || strlen($image_fullpath) == 0){
+			throw new Exception('Empty image path for attachment ID'.$att_id);
+		}
 
-			//Incorrect image path cases - fix them on demand
-			if (false === $image_fullpath || strlen($image_fullpath) == 0){
-				throw new Exception('Empty image path for attachment ID'.$att_id);
-			}
+		if ((strrpos($image_fullpath, $upload_dir['basedir']) === false)) {
+			throw new Exception('Image path incomplete for attachment ID'.$att_id);
+		}
 
-			if ((strrpos($image_fullpath, $upload_dir['basedir']) === false)) {
-				throw new Exception('Image path incomplete for attachment ID'.$att_id);
-			}
+		if (!file_exists($image_fullpath) || realpath($image_fullpath) === false) {
+			throw new Exception('Image don\'t exists for attachment ID'.$att_id);
+		}
 
-			if (!file_exists($image_fullpath) || realpath($image_fullpath) === false) {
-				throw new Exception('Image don\'t exists for attachment ID'.$att_id);
-			}
-
-			// Results
-			$thumb_deleted = array();
-			$thumb_error = array();
-			$thumb_regenerate = array();
+		// Results
+		$thumb_deleted = array();
+		$thumb_error = array();
+		$thumb_regenerate = array();
 
 
-			// Hack to find thumbnail
-			$file_info = pathinfo($image_fullpath);
-			$file_info['filename'] .= '-';
+		// Hack to find thumbnail
+		$file_info = pathinfo($image_fullpath);
+		$file_info['filename'] .= '-';
 
 
-			/**
-			 * Try delete all thumbnails
-			 */
-			$files = array();
-			$path = opendir($file_info['dirname']);
+		/**
+		 * Try delete all thumbnails
+		 */
+		$files = array();
+		$path = opendir($file_info['dirname']);
 
-			if ( false !== $path ) {
-				while (false !== ($thumb = readdir($path))) {
-					if (!(strrpos($thumb, $file_info['filename']) === false)) {
-						$files[] = $thumb;
-					}
+		if ( false !== $path ) {
+			while (false !== ($thumb = readdir($path))) {
+				if (!(strrpos($thumb, $file_info['filename']) === false)) {
+					$files[] = $thumb;
 				}
-				closedir($path);
-				sort($files);
 			}
-			foreach ($files as $thumb) {
-				$thumb_fullpath = $file_info['dirname'] . DIRECTORY_SEPARATOR . $thumb;
-				$thumb_info = pathinfo($thumb_fullpath);
-				$valid_thumb = explode($file_info['filename'], $thumb_info['filename']);
-				if ($valid_thumb[0] == "") {
-					$dimension_thumb = explode('x', $valid_thumb[1]);
-					if (count($dimension_thumb) == 2) {
-						if (is_numeric($dimension_thumb[0]) && is_numeric($dimension_thumb[1])) {
-							unlink($thumb_fullpath);
-							if (!file_exists($thumb_fullpath)) {
-								$thumb_deleted[] = sprintf("%sx%s", $dimension_thumb[0], $dimension_thumb[1]);
-							} else {
-								$thumb_error[] = sprintf("%sx%s", $dimension_thumb[0], $dimension_thumb[1]);
-							}
+			closedir($path);
+			sort($files);
+		}
+		foreach ($files as $thumb) {
+			$thumb_fullpath = $file_info['dirname'] . DIRECTORY_SEPARATOR . $thumb;
+			$thumb_info = pathinfo($thumb_fullpath);
+			$valid_thumb = explode($file_info['filename'], $thumb_info['filename']);
+			if ($valid_thumb[0] == "") {
+				$dimension_thumb = explode('x', $valid_thumb[1]);
+				if (count($dimension_thumb) == 2) {
+					if (is_numeric($dimension_thumb[0]) && is_numeric($dimension_thumb[1])) {
+						unlink($thumb_fullpath);
+						if (!file_exists($thumb_fullpath)) {
+							$thumb_deleted[] = sprintf("%sx%s", $dimension_thumb[0], $dimension_thumb[1]);
+						} else {
+							$thumb_error[] = sprintf("%sx%s", $dimension_thumb[0], $dimension_thumb[1]);
 						}
 					}
 				}
 			}
+		}
 
 
-			/**
-			 * Regenerate all thumbnails
-			 */
-			$metadata = wp_generate_attachment_metadata($att_id, $image_fullpath);
-			if (is_wp_error($metadata)) {
-				throw new Exception($metadata->get_error_message());
-			}
-			if (empty($metadata)) {
-				throw new Exception('Unknown failure reason.');
-			}
-			wp_update_attachment_metadata($att_id, $metadata);
+		/**
+		 * Regenerate all thumbnails
+		 */
+		$metadata = wp_generate_attachment_metadata($att_id, $image_fullpath);
+		if (is_wp_error($metadata)) {
+			throw new Exception($metadata->get_error_message());
+		}
+		if (empty($metadata)) {
+			throw new Exception('Unknown failure reason.');
+		}
+		wp_update_attachment_metadata($att_id, $metadata);
 
 
-			/**
-			 * Verify results (deleted, errors, success)
-			 */
-			$files = array();
-			$path = opendir($file_info['dirname']);
-			if ( false !== $path ) {
-				while (false !== ($thumb = readdir($path))) {
-					if (!(strrpos($thumb, $file_info['filename']) === false)) {
-						$files[] = $thumb;
-					}
-				}
-				closedir($path);
-				sort($files);
-			}
-			foreach ($files as $thumb) {
-				$thumb_fullpath = $file_info['dirname'] . DIRECTORY_SEPARATOR . $thumb;
-				$thumb_info = pathinfo($thumb_fullpath);
-				$valid_thumb = explode($file_info['filename'], $thumb_info['filename']);
-				if ($valid_thumb[0] == "") {
-					$dimension_thumb = explode('x', $valid_thumb[1]);
-					if (count($dimension_thumb) == 2) {
-						if (is_numeric($dimension_thumb[0]) && is_numeric($dimension_thumb[1])) {
-							$thumb_regenerate[] = sprintf("%sx%s", $dimension_thumb[0], $dimension_thumb[1]);
-						}
-					}
+		/**
+		 * Verify results (deleted, errors, success)
+		 */
+		$files = array();
+		$path = opendir($file_info['dirname']);
+		if ( false !== $path ) {
+			while (false !== ($thumb = readdir($path))) {
+				if (!(strrpos($thumb, $file_info['filename']) === false)) {
+					$files[] = $thumb;
 				}
 			}
-
-
-			// Remove success if has in error list
-			foreach ($thumb_regenerate as $key => $regenerate) {
-				if (in_array($regenerate, $thumb_error))
-					unset($thumb_regenerate[$key]);
-			}
-
-			// Remove deleted if has in success list
-			foreach ($thumb_deleted as $key => $deleted) {
-				if (in_array($deleted, $thumb_regenerate))
-					unset($thumb_deleted[$key]);
-			}
-
+			closedir($path);
+			sort($files);
 		}
-		catch(Exception $e) {
-			echo 'Caught exception: ',  $e->getMessage(), "\n";
+		foreach ($files as $thumb) {
+			$thumb_fullpath = $file_info['dirname'] . DIRECTORY_SEPARATOR . $thumb;
+			$thumb_info = pathinfo($thumb_fullpath);
+			$valid_thumb = explode($file_info['filename'], $thumb_info['filename']);
+			if ($valid_thumb[0] == "") {
+				$dimension_thumb = explode('x', $valid_thumb[1]);
+				if (count($dimension_thumb) == 2) {
+					if (is_numeric($dimension_thumb[0]) && is_numeric($dimension_thumb[1])) {
+						$thumb_regenerate[] = sprintf("%sx%s", $dimension_thumb[0], $dimension_thumb[1]);
+					}
+				}
+			}
 		}
+
+
+		// Remove success if has in error list
+		foreach ($thumb_regenerate as $key => $regenerate) {
+			if (in_array($regenerate, $thumb_error))
+				unset($thumb_regenerate[$key]);
+		}
+
+		// Remove deleted if has in success list
+		foreach ($thumb_deleted as $key => $deleted) {
+			if (in_array($deleted, $thumb_regenerate))
+				unset($thumb_deleted[$key]);
+		}
+
 	}
 
 	function register_uploaded_file($path) {
@@ -498,7 +492,7 @@ class TST_Media {
 			}
 		}
 		else {
-		    print_r( $result ); echo "\n";
+// 		    print_r( $result ); echo "\n";
 		}
 
 		return $attachment_id;

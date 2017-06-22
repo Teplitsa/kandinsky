@@ -158,7 +158,7 @@
                 }
             }
             else {
-                printf( "Download file ERROR!\n" );
+//                 printf( "Download file ERROR!\n" );
             }
             unset($file);
 
@@ -190,13 +190,13 @@
             curl_close( $ch );
             fclose($fp);
             
-            printf( "file: %s\n", $tmp_file );
+//             printf( "file: %s\n", $tmp_file );
             
             $filename_no_ext = pathinfo( $url, PATHINFO_FILENAME );
             $extension = pathinfo( $url, PATHINFO_EXTENSION );
             $filedir = dirname( $tmp_file );
             $new_file = $filedir . "/" . $filename_no_ext . '.' . $extension;
-            echo $new_file . "\n";
+//             echo $new_file . "\n";
             
             rename( $tmp_file, $new_file );
             $tmp_file = $new_file;
@@ -270,7 +270,7 @@
                 }
             }
 
-            printf( "ext: %s\n", $ext );
+//             printf( "ext: %s\n", $ext );
             return $ext;
         }
 
@@ -320,18 +320,18 @@
             $new_file = $tmp_dir . $new_file_base_name;
             $new_file_no_prefix = $tmp_dir . $new_file_base_name_no_prefix;
 
-            printf( "original file: %s\n", $original_file );
-            printf( "new PDF file NO PREFIX: %s\n", $new_file_no_prefix );
-            printf( "new PDF file: %s\n", $new_file );
+//             printf( "original file: %s\n", $original_file );
+//             printf( "new PDF file NO PREFIX: %s\n", $new_file_no_prefix );
+//             printf( "new PDF file: %s\n", $new_file );
 
             if( $localpdf ) {
                 $localpdf_file = preg_replace( '/\/$/', '', $localpdf) . '/' . $new_file_base_name;
-                printf( "local PDF file: %s\n", $localpdf_file );
+//                 printf( "local PDF file: %s\n", $localpdf_file );
                 if( file_exists( $localpdf_file ) ) {
                     copy( $localpdf_file, $new_file_no_prefix );
                 }
                 else {
-                    printf( "local PDF not found\n" );
+//                     printf( "local PDF not found\n" );
                 }
             }
             else {
@@ -339,9 +339,9 @@
             }
 
             if( $localpdf && file_exists( $new_file_no_prefix ) ) {
-                printf( "new file OK\n" );
+//                 printf( "new file OK\n" );
                 $new_attachment_id = $this->import_file_from_path( $new_file_no_prefix );
-                printf( "converted attachment id: %s\n", $new_attachment_id );
+//                 printf( "converted attachment id: %s\n", $new_attachment_id );
 
                 if( $new_attachment_id ) {
                     $ret_attachment_id = $new_attachment_id;
@@ -367,12 +367,12 @@
                 unlink( $new_file_no_prefix );
             }
             elseif( file_exists( $new_file ) ) {
-                printf( "SAVE local PDF\n");
+//                 printf( "SAVE local PDF\n");
                 $this->copy_to_localpdf( $new_file, $new_file_base_name );
                 unlink( $new_file );
             }
             else {
-                printf( "NO local PDF: %d - %s\n", $attachment_id, $of_base_name );
+//                 printf( "NO local PDF: %d - %s\n", $attachment_id, $of_base_name );
             }
 
             return $ret_attachment_id;
@@ -387,11 +387,11 @@
 
             $localpdf_file = $pdf_dirname . '/' . $new_file_base_name;
             if( ! file_exists( $localpdf_file ) ) {
-                printf( "new local PDF: %s\n", $localpdf_file );
+//                 printf( "new local PDF: %s\n", $localpdf_file );
                 copy( $new_file, $localpdf_file );
             }
             else {
-                printf( "localpdf exists: %s\n", $localpdf_file );
+//                 printf( "localpdf exists: %s\n", $localpdf_file );
             }
         }
 
@@ -448,7 +448,7 @@
             }
 
             if( $file_date ) {
-                printf( "file_date: %s\n", $file_date );
+//                 printf( "file_date: %s\n", $file_date );
             }
 
             return $file_date;
@@ -474,7 +474,7 @@
             }
 
             if( $file_date ) {
-                printf( "file_date: %s\n", $file_date );
+//                 printf( "file_date: %s\n", $file_date );
             }
 
             return $file_date;
@@ -671,7 +671,7 @@
                 $file_url = wp_get_attachment_url($file_id);
                 $attachment_id = $exist_attachment->ID;
         
-                printf( "File exist %s\n", $file_url );
+//                 printf( "File exist %s\n", $file_url );
             }
             else {
                 $attachment_id = $this->import_big_file( $external_file_url );
@@ -679,10 +679,10 @@
                 if( $attachment_id ) {
                     $file_id = $attachment_id;
                     $file_url = wp_get_attachment_url( $attachment_id );
-                    printf( "File saved %s\n", $file_url );
+//                     printf( "File saved %s\n", $file_url );
                 }
                 else {
-                    printf( "IMPORT FILE ERROR!\n");
+//                     printf( "IMPORT FILE ERROR!\n");
                 }
             }
             unset( $exist_attachment );
