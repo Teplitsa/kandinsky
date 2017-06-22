@@ -30,3 +30,5 @@ wp-signup.php
 wp-trackback.php
 xmlrpc.php
 /_temp
+/upd_root.sh
+/upd_theme.sh
