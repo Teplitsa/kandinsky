@@ -34,9 +34,7 @@ function knd_import_starter_data_from_csv() {
         //imported old photo
         $thumbnail_url = trim($line[4]);
         if( preg_match( '/^http[s]?:\/\//', $thumbnail_url ) ) {
-            ob_start();
             $thumb_id = TST_Import::get_instance()->maybe_import( $thumbnail_url );
-            ob_end_clean();
         }
         
         if($thumb_id){
@@ -67,9 +65,7 @@ function knd_setup_starter_data() {
         $thumb_id = false;
         $thumbnail_url = 'https://ngo2.ru/kandinsky-files/knd-img2.jpg';
         if( preg_match( '/^http[s]?:\/\//', $thumbnail_url ) ) {
-            ob_start();
             $thumb_id = TST_Import::get_instance()->maybe_import( $thumbnail_url );
-            ob_end_clean();
         }
         if($thumb_id) {
             $hello_world_posts = $wpdb->get_results($wpdb->prepare("SELECT * FROM $wpdb->posts WHERE post_status = 'publish' AND post_type = 'post' AND post_name IN (%s, %s) LIMIT 1", 'hello-world', '%d0%bf%d1%80%d0%b8%d0%b2%d0%b5%d1%82-%d0%bc%d0%b8%d1%80'));
