@@ -74,7 +74,7 @@
 			wp_nav_menu(array('theme_location' => 'primary', 'container' => false, 'menu_class' => 'main-menu', 'after' => $after));
 		?>
 		<div class="search-holder"><?php get_search_form();?></div>
-		<?php wp_nav_menu(array('theme_location' => 'social', 'container' => false, 'menu_class' => 'social-menu')); ?>
+		<?php #wp_nav_menu(array('theme_location' => 'social', 'container' => false, 'menu_class' => 'social-menu')); ?>
 	</nav>		
 </header>
 

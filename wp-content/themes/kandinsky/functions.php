@@ -119,6 +119,10 @@ require get_template_directory().'/core/shortcodes.php';
 require get_template_directory().'/core/template-tags.php';
 require get_template_directory().'/core/widgets.php';
 
+// import data utils
+require get_template_directory().'/core/class-mediamnt.php';
+require get_template_directory().'/core/class-import.php';
+require get_template_directory().'/core/import.php';
 
 foreach (glob(get_template_directory() . "/modules/*") as $module_file) {
     
