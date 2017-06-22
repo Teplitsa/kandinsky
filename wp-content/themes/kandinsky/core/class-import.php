@@ -102,7 +102,7 @@
             $attachment_id = 0;
             //remote
             
-//            $tmp_file = tempnam( sys_get_temp_dir(), 'dront_' );
+//            $tmp_file = tempnam( knd_get_temp_dir(), 'dront_' );
 //            set_time_limit(0);
 //            $fp = fopen ( $tmp_file, 'w+' );
 //            $ch = curl_init( $url );
@@ -170,7 +170,7 @@
         
 //             printf( "file url: %s\n", $url );
             
-            $tmp_dir = sys_get_temp_dir() . '/kandinsky';
+            $tmp_dir = knd_get_temp_dir() . '/kandinsky';
             if( !is_dir( $tmp_dir ) ) {
                 mkdir( $tmp_dir );
             }

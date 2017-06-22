@@ -20,3 +20,7 @@ function knd_get_post( $post_id, $post_type = 'post' ) {
 function knd_clean_csv_slug( $slug ) {
     return preg_replace( '/\s+/', '', trim( $slug ) );
 }
+
+function knd_get_temp_dir() {
+    return ini_get('upload_tmp_dir') ? ini_get('upload_tmp_dir') : sys_get_temp_dir();
+}
