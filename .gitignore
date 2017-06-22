@@ -33,3 +33,4 @@ xmlrpc.php
 /upd_root.sh
 /upd_theme.sh
 /wp-content/themes/kandinsky/bower_components
+/wp-content/themes/kandinsky/node_modules
