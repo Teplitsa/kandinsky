@@ -72,8 +72,8 @@ function knd_setup_starter_data() {
             ob_end_clean();
         }
         if($thumb_id) {
-            $hello_world_post = $wpdb->get_row($wpdb->prepare("SELECT * FROM $wpdb->posts WHERE post_status = 'publish' AND post_type = 'post' AND post_name IN (%s) LIMIT 1", 'hello-world'));
-            if($hello_world_post) {
+            $hello_world_posts = $wpdb->get_results($wpdb->prepare("SELECT * FROM $wpdb->posts WHERE post_status = 'publish' AND post_type = 'post' AND post_name IN (%s, %s) LIMIT 1", 'hello-world', '%d0%bf%d1%80%d0%b8%d0%b2%d0%b5%d1%82-%d0%bc%d0%b8%d1%80'));
+            foreach($hello_world_posts as $hello_world_post) {
                 update_post_meta( $hello_world_post->ID, '_thumbnail_id', $thumb_id );
             }
         }
