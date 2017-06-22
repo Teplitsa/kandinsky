@@ -5,8 +5,7 @@ function knd_import_starter_data_from_csv() {
     $csv = array_map('str_getcsv', file(get_template_directory() . '/modules/starter/csv/posts.csv'));
     
     //     echo "Read lines ".count($csv).chr(10);
-    
-    $count = 0;
+
     foreach($csv as $i => $line) {
     
         if($i == 0) {
@@ -56,13 +55,14 @@ function knd_import_starter_data_from_csv() {
 }
 
 function knd_setup_starter_data() {
+
     global $wpdb;
-    
+
     $res = array('status' => 'ok');
-    
+
     try {
         knd_import_starter_data_from_csv();
-        
+
         // set thumbnail for sample page
         $thumb_id = false;
         $thumbnail_url = 'https://ngo2.ru/kandinsky-files/knd-img2.jpg';
@@ -85,4 +85,4 @@ function knd_setup_starter_data() {
     wp_send_json( $res );
 }
 add_action("wp_ajax_setup_starter_data", "knd_setup_starter_data");
-add_action("wp_ajax_nopriv_setup_starter_data", "knd_setup_starter_data");
+//add_action("wp_ajax_nopriv_setup_starter_data", "knd_setup_starter_data"); // It's only for admin
