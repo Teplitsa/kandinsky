@@ -113,7 +113,7 @@ require get_template_directory().'/core/author.php';
 require get_template_directory().'/core/cards.php';
 require get_template_directory().'/core/extras.php';
 require get_template_directory().'/core/forms.php';
-require get_template_directory().'/core/post-types.php';
+//require get_template_directory().'/core/post-types.php';
 require get_template_directory().'/core/request.php';
 require get_template_directory().'/core/shortcodes.php';
 require get_template_directory().'/core/template-tags.php';
