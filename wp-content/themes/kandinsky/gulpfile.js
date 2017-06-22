@@ -56,6 +56,22 @@ gulp.task('build-js', function() {
         .pipe(gulp.dest(basePaths.dest+'js')) //write results into file
 });
 
+//js
+gulp.task('build-admin-js', function() {
+    var vendorFiles = [
+            // basePaths.npm + 'imagesloaded/imagesloaded.pkgd.js'
+        ],
+        appFiles = [basePaths.src+'js/admin/*']; //our own JS files
+
+    return gulp.src(vendorFiles.concat(appFiles)) //join them
+        .pipe(plugins.filter('*.js'))//select only .js ones
+        .pipe(plugins.concat('admin.js'))//combine them into bundle.js
+        .pipe(isProduction ? plugins.uglify() : gutil.noop()) //minification
+        .pipe(plugins.size()) //print size for log
+        .on('error', console.log) //log
+        .pipe(gulp.dest(basePaths.dest+'js')) //write results into file
+});
+
 //sass
 gulp.task('build-css', function() {
 
@@ -148,6 +164,7 @@ gulp.task('full-build-css', function(callback) {
 
 gulp.task('full-build-js', function(callback) {
     runSequence('build-js',
+        'build-admin-js',
         'revision-clean',
         'revision',
         callback);
@@ -193,7 +210,7 @@ gulp.task('watch', function(){
     gulp.watch([basePaths.src+'sass/*.scss', basePaths.src+'sass/**/*.scss'], ['full-build-css']).on('change', function(evt) {
         changeEvent(evt);
     });
-    gulp.watch([basePaths.src+'js/*.js', basePaths.src+'js/front/*.js'], ['full-build-js']).on('change', function(evt) {
+    gulp.watch([basePaths.src+'js/*.js', basePaths.src+'js/front/*.js', basePaths.src+'js/admin/*.js'], ['full-build-js']).on('change', function(evt) {
         changeEvent(evt);
     });
 });

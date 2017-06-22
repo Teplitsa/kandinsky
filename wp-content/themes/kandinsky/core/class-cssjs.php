@@ -140,10 +140,12 @@ class FRL_CssJs {
 	
 	/* admin styles - moved to news system also */
 	public function load_admin_scripts() {
-		
+
 		$url = get_template_directory_uri();
 			
-		wp_enqueue_style('rdc-admin', $url.'/assets/rev/'.$this->get_rev_filename('admin.css'), array(), null);				
+		wp_enqueue_script('knd-admin', $url.'/assets/rev/'.$this->get_rev_filename('admin.js'), array('jquery'), null);
+		wp_enqueue_style('knd-admin', $url.'/assets/rev/'.$this->get_rev_filename('admin.css'), array(), null);
+
 	}
 	
 	/* login style - make it inline ? */

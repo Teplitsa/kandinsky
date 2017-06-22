@@ -29,8 +29,11 @@ wp-settings.php
 wp-signup.php
 wp-trackback.php
 xmlrpc.php
+wp-content/upgrade/
 /_temp
 /upd_root.sh
 /upd_theme.sh
 /wp-content/themes/kandinsky/bower_components
 /wp-content/themes/kandinsky/node_modules
+
+node_modules

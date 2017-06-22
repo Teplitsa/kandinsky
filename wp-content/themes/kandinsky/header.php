@@ -42,7 +42,7 @@
 			</div>									
 			
 			<div class="trigger-button donate site-panel-cell">
-				<a id="trigger_donate"  href="<?php echo home_url('campaign/help-us');?>"><?php rdc_svg_icon('icon-logo');?><?php _e( 'Donate', 'rdc' ); ?></a>
+				<a id="trigger_donate"  href="#help-us"><?php rdc_svg_icon('icon-logo');?><?php _e( 'Donate', 'rdc' ); ?></a>
 			</div>
 			
 			<div class="trigger-button menu site-panel-cell">
