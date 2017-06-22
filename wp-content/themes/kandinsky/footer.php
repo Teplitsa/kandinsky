@@ -18,9 +18,9 @@ $footer_text = get_theme_mod('footer_text');
 	<div class="frame frame-wide">
 		<div class="bit md-9 lg-8">
 			<?php if(!is_page('subscribe'))	{ ?>
-				<h5><?php _e('Subscribe to our newsletter', 'rdc');?></h5>
+				<h5><?php #_e('Subscribe to our newsletter', 'rdc');?></h5>
 				<div class="newsletter-form in-footer">
-					<?php echo rdc_get_newsletter_form('bottom');?>
+					<?php #echo rdc_get_newsletter_form('bottom');?>
 				</div>
 			<?php } else { ?>
 				&nbsp;
@@ -28,8 +28,8 @@ $footer_text = get_theme_mod('footer_text');
 		</div>
 
 		<div class="bit md-3 lg-3 lg-offset-1">
-			<h5><span class="icons-label"><?php _e('Our social profiles', 'rdc');?></span>&nbsp;</h5>
-			<?php echo rdc_get_social_menu(); ?>
+			<h5><span class="icons-label"><?php #_e('Our social profiles', 'rdc');?></span>&nbsp;</h5>
+			<?php #echo rdc_get_social_menu(); ?>
 		</div>
 	</div>
 </div></div>
