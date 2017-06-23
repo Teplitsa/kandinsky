@@ -44,6 +44,7 @@ function knd_install_test_content() {
         }
 
         update_option('knd_test_content_installed', 1);
+        update_option('knd_admin_notice_welcome', 1);
 
     }
 }
