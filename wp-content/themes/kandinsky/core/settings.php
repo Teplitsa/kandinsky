@@ -2,7 +2,7 @@
 add_action('admin_menu', 'knd_add_settings_page');
 
 function knd_add_settings_page() {
-    add_submenu_page('themes.php', __('Kandinsky settings', 'knd'), __('Kandinsky settings', 'knd'), 'manage_options', 'knd_admin_settings_page', 'knd_admin_settings_page');
+    add_submenu_page('themes.php', __('Kandinsky settings', 'knd'), __('Kandinsky', 'knd'), 'manage_options', 'knd_admin_settings_page', 'knd_admin_settings_page');
 }
 
 function knd_admin_settings_page() {?>
@@ -14,26 +14,30 @@ function knd_admin_settings_page() {?>
         </a>
         <img src="<?php echo admin_url().'/images/spinner.gif';?>" style="display: none;"  class="ajax-loader">
         <div class="success" style="display: none;"><?php _e('Test content successfully imported!', 'knd');?></div>
+        <div class="failure" style="display: none;"><?php _e('Test content import failed', 'knd');?></div>
     </div>
 
-<!--    <h2>--><?php //_e('Features', 'knd');?><!--</h2>-->
-<!--    <div class="install-test-content">-->
-<!--        <form id="knd-features-form">-->
-<!--            <div>-->
-<!--                <input type="checkbox" id="knd-feature-events" name="features[]" value="events">-->
-<!--                <label for="knd-feature-events">--><?php //_e('Events', 'knd');?><!--</label>-->
-<!--            </div>-->
-<!--            <div>-->
-<!--                <input type="checkbox" id="knd-feature-donations" name="features[]" value="donations">-->
-<!--                <label for="knd-feature-donations">--><?php //_e('Donations', 'knd');?><!--</label>-->
-<!--            </div>-->
-<!--            <div>-->
-<!--                <input type="submit" name="knd-features-submit" value="--><?php //_e('Save', 'knd');?><!--">-->
-<!--            </div>-->
-<!--        </form>-->
-<!--    </div>-->
+    <?php /*?>
+    <h2><?php _e('Features', 'knd');?></h2>
+    <div class="install-test-content">
+        <form id="knd-features-form">
+            <div>
+                <input type="checkbox" id="knd-feature-events" name="features[]" value="events">
+                <label for="knd-feature-events"><?php _e('Events', 'knd');?></label>
+            </div>
+            <div>
+                <input type="checkbox" id="knd-feature-donations" name="features[]" value="donations">
+                <label for="knd-feature-donations"><?php _e('Donations', 'knd');?></label>
+            </div>
+            <div>
+                <input type="submit" name="knd-features-submit" value="<?php _e('Save', 'knd');?>">
+            </div>
+        </form>
+    </div>
 
-<?php }
+<?php */
+
+}
 
 add_action('tgmpa_register', 'knd_register_required_plugins');
 
