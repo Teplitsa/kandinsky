@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-23 14:05+0000\n"
-"PO-Revision-Date: 2017-06-23 14:19+0000\n"
+"POT-Creation-Date: 2017-06-23 16:35+0000\n"
+"PO-Revision-Date: 2017-06-23 16:37+0000\n"
 "Last-Translator: ahaenor <ahaenor@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru-RU\n"
@@ -25,6 +25,301 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: bower_components\n"
 "X-Poedit-SearchPathExcluded-1: node_modules\n"
 "X-Poedit-SearchPathExcluded-2: assets"
+
+#: core/settings.php:13 core/settings.php:33
+msgid "Action failed. Please refresh the page and retry."
+msgstr "Операция завершилась с ошибкой. Пожалуйста, перезагрузите страницу."
+
+#: core/settings.php:17 core/settings.php:37
+msgid "Action failed."
+msgstr "Операция завершилась с ошибкой."
+
+#: core/settings.php:113
+msgid "Dismiss"
+msgstr "Скрыть"
+
+#: core/settings.php:115
+#, php-format
+msgid ""
+"Welcome! Thank you for choosing Kandinsky! To fully take advantage of the "
+"best our theme can offer please make sure you installed our %swebsite test "
+"content%s."
+msgstr ""
+"Добро пожаловать! Спасибо, что установили «Кандинский». Чтобы увидеть все "
+"возможности темы, пожалуйста, %sустановите демонстрационный контент сайта%s."
+
+#: archive-leyka_donation.php:20
+msgid "Campaign"
+msgstr "Кампания"
+
+#: footer.php:11
+msgid "Teplitsa of social technologies"
+msgstr "Теплица социальных технологий"
+
+#: footer.php:47
+#, php-format
+msgid "All materials of the site are avaliabe under license %s"
+msgstr "Все материалы сайта доступны по лицензии %s"
+
+#: functions.php:37 modules/starter/class-demo.php:85
+#: modules/starter/class-demo.php:216
+msgid "Primary menu"
+msgstr "﻿Главное меню"
+
+#: header.php:18
+msgid "Skip to content"
+msgstr "Перейти к содержанию"
+
+#: header.php:44
+msgid "Donate"
+msgstr "Помочь сейчас"
+
+#. Name of the template
+msgid "Events"
+msgstr "Мероприятия"
+
+#: page-events.php:72
+msgid "Future events"
+msgstr "Анонсы"
+
+#: page-events.php:87
+msgid "Past events"
+msgstr "Прошедшие мероприятия"
+
+#. Name of the template
+msgid "Fullwidth"
+msgstr "Во всю ширину"
+
+msgid "Homepage"
+msgstr "Главная"
+
+#: page-home.php:76
+msgid "News"
+msgstr "Новости"
+
+#: search.php:47
+msgid "Enter terms for search in the form and hit Enter"
+msgstr "Укажите слова для поиска в форме и нажмите Enter"
+
+#: search.php:51
+msgid "Nothing found under your request"
+msgstr "По вашему запросу ничего не найдено."
+
+#: single-event.php:113
+msgid "Visit or events"
+msgstr "Приглашаем на мероприятия"
+
+#: single-leyka_campaign.php:29
+msgid "Our supporters"
+msgstr "Нас поддержали"
+
+#: single-leyka_campaign.php:32
+msgid "Full list"
+msgstr "Полный список"
+
+#: single-project.php:48 single.php:95
+msgid "Related projects"
+msgstr "Познакомьтесь с другими проектами"
+
+#: single.php:83
+msgid "Related news"
+msgstr "Новости по теме"
+
+#: single.php:116 core/template-tags.php:436
+msgid "Our volunteers"
+msgstr "Наши волонтеры"
+
+#: taxonomy-person_cat.php:20 core/cards.php:24 core/cards.php:52
+msgid "More"
+msgstr "Ещё"
+
+#: core/customizer.php:18
+msgid "Header text"
+msgstr "Текст заголовка"
+
+#: core/settings.php:55
+msgid "Test content"
+msgstr "Тестовый контент"
+
+#: core/settings.php:58 core/settings.php:121
+msgid "Install test content"
+msgstr "Установить тестовый контент сайта"
+
+#: core/settings.php:61
+msgid "Test content successfully imported!"
+msgstr "Тестовый контент загружен"
+
+#: core/settings.php:62
+msgid "Test content import failed"
+msgstr "Загрузка тестового контента завершилась неудачно"
+
+#: core/settings.php:88
+msgid "Kandinsky settings"
+msgstr "Настройки «Кандинского»"
+
+#. Name of the theme
+#: core/settings.php:88
+msgid "Kandinsky"
+msgstr "Кандинский"
+
+#: core/settings.php:154
+msgid "Yoast SEO"
+msgstr "Yoast SEO"
+
+#: core/settings.php:160
+msgid "Leyka"
+msgstr "Лейка"
+
+#: core/settings.php:166
+msgid "Cyr to Lat enhanced"
+msgstr "Cyr to Lat enhanced"
+
+#: core/settings.php:172
+msgid "Disable Comments"
+msgstr "Disable Comments"
+
+#: core/settings.php:199 vendor/class-tgm-plugin-activation.php:327
+msgid "Install Required Plugins"
+msgstr "Установить требуемые плагины"
+
+#: core/settings.php:200 vendor/class-tgm-plugin-activation.php:328
+msgid "Install Plugins"
+msgstr "Установить плагины"
+
+#. %s: plugin name.
+#: core/settings.php:202 vendor/class-tgm-plugin-activation.php:330
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr "Установка плагина: %s"
+
+#. %s: plugin name.
+#: core/settings.php:204 vendor/class-tgm-plugin-activation.php:332
+#, php-format
+msgid "Updating Plugin: %s"
+msgstr "Обновление плагина: %s"
+
+#: core/settings.php:205 vendor/class-tgm-plugin-activation.php:333
+msgid "Something went wrong with the plugin API."
+msgstr "Ошибка при работе с API плагина"
+
+#: core/settings.php:242 vendor/class-tgm-plugin-activation.php:370
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] "Установить плагин"
+msgstr[1] "Установить плагины"
+msgstr[2] "Установить плагин"
+
+#: core/settings.php:247 vendor/class-tgm-plugin-activation.php:375
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] "Обновить плагин"
+msgstr[1] "Обновить плагины"
+msgstr[2] "Обновить плагин"
+
+#: core/settings.php:252 vendor/class-tgm-plugin-activation.php:380
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] "Активировать плагин"
+msgstr[1] "Активировать плагины"
+msgstr[2] "Активировать плагин"
+
+#: core/settings.php:257 vendor/class-tgm-plugin-activation.php:385
+msgid "Return to Required Plugins Installer"
+msgstr "На страницу установки требуемых плагинов"
+
+#: core/settings.php:258 vendor/class-tgm-plugin-activation.php:387
+#: vendor/class-tgm-plugin-activation.php:3159
+msgid "Plugin activated successfully."
+msgstr "Плагин активирован."
+
+#: core/settings.php:259 vendor/class-tgm-plugin-activation.php:388
+#: vendor/class-tgm-plugin-activation.php:2952
+msgid "The following plugin was activated successfully:"
+msgstr "Плагин успешно активирован:"
+
+#. 1: plugin name.
+#: core/settings.php:261 vendor/class-tgm-plugin-activation.php:390
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr "Плагин %1$s уже активирован."
+
+#. 1: plugin name.
+#: core/settings.php:263 vendor/class-tgm-plugin-activation.php:392
+#, php-format
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+"Плагин не активирован - тема требует более высокой версии %s. Пожалуйста, "
+"обновите плагин."
+
+#. 1: dashboard link.
+#: core/settings.php:265 vendor/class-tgm-plugin-activation.php:394
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr "Все плагины установлены и активированы. %1$s"
+
+#: core/settings.php:266 vendor/class-tgm-plugin-activation.php:395
+msgid "Dismiss this notice"
+msgstr "Закрыть уведомление"
+
+#: core/settings.php:267 vendor/class-tgm-plugin-activation.php:396
+msgid ""
+"There are one or more required or recommended plugins to install, update or "
+"activate."
+msgstr "Некоторые плагины необходимо установить, обновить или активировать."
+
+#: core/settings.php:268 vendor/class-tgm-plugin-activation.php:397
+msgid "Please contact the administrator of this site for help."
+msgstr "Пожалуйста, свяжитесь с администрацией сайта."
+
+#: core/template-tags.php:180
+msgid "Page"
+msgstr "Страница"
+
+#: core/template-tags.php:267
+msgid "Donations history"
+msgstr "История пожертвований"
+
+#: core/template-tags.php:271
+msgid "Search results"
+msgstr "Результаты поиска"
+
+#: core/template-tags.php:275
+msgid "404: Page not found"
+msgstr "Ошибка 404: Страница не найдена"
+
+#: core/template-tags.php:430
+msgid "More projects"
+msgstr "Еще проекты"
+
+#: core/template-tags.php:431
+msgid "Our projects"
+msgstr "Наши программы"
+
+#: core/template-tags.php:435
+msgid "More volunteers"
+msgstr "Еще волонтеры"
+
+#: core/template-tags.php:441
+msgid "More events"
+msgstr "Еще анонсы"
+
+#: core/template-tags.php:446
+msgid "More news"
+msgstr "Еще новости"
+
+#: core/template-tags.php:447
+msgid "Latest news"
+msgstr "Последние новости"
+
+#: modules/donations.php:128
+msgid "or"
+msgstr "или"
+
+#: modules/donations.php:222
+msgid "Monthly donation"
+msgstr "Перечислять ежемесячно"
 
 #: vendor/class-tgm-plugin-activation.php:386
 #: vendor/class-tgm-plugin-activation.php:827
@@ -339,279 +634,6 @@ msgstr "Установка плагинов завершена."
 #, php-format
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr "Установка плагина %1$s (%2$d/%3$d)"
-
-#: archive-leyka_donation.php:20
-msgid "Campaign"
-msgstr "Кампания"
-
-#: footer.php:11
-msgid "Teplitsa of social technologies"
-msgstr "Теплица социальных технологий"
-
-#: footer.php:47
-#, php-format
-msgid "All materials of the site are avaliabe under license %s"
-msgstr "Все материалы сайта доступны по лицензии %s"
-
-#: functions.php:37 modules/starter/class-demo.php:85
-#: modules/starter/class-demo.php:216
-msgid "Primary menu"
-msgstr "﻿Главное меню"
-
-#: header.php:18
-msgid "Skip to content"
-msgstr "Перейти к содержанию"
-
-#: header.php:44
-msgid "Donate"
-msgstr "Помочь сейчас"
-
-#. Name of the template
-msgid "Events"
-msgstr "Мероприятия"
-
-#: page-events.php:72
-msgid "Future events"
-msgstr "Анонсы"
-
-#: page-events.php:87
-msgid "Past events"
-msgstr "Прошедшие мероприятия"
-
-#. Name of the template
-msgid "Fullwidth"
-msgstr "Во всю ширину"
-
-msgid "Homepage"
-msgstr "Главная"
-
-#: page-home.php:76
-msgid "News"
-msgstr "Новости"
-
-#: search.php:47
-msgid "Enter terms for search in the form and hit Enter"
-msgstr "Укажите слова для поиска в форме и нажмите Enter"
-
-#: search.php:51
-msgid "Nothing found under your request"
-msgstr "По вашему запросу ничего не найдено."
-
-#: single-event.php:113
-msgid "Visit or events"
-msgstr "Приглашаем на мероприятия"
-
-#: single-leyka_campaign.php:29
-msgid "Our supporters"
-msgstr "Нас поддержали"
-
-#: single-leyka_campaign.php:32
-msgid "Full list"
-msgstr "Полный список"
-
-#: single-project.php:48 single.php:95
-msgid "Related projects"
-msgstr "Познакомьтесь с другими проектами"
-
-#: single.php:83
-msgid "Related news"
-msgstr "Новости по теме"
-
-#: single.php:116 core/template-tags.php:436
-msgid "Our volunteers"
-msgstr "Наши волонтеры"
-
-#: taxonomy-person_cat.php:20 core/cards.php:24 core/cards.php:52
-msgid "More"
-msgstr "Ещё"
-
-#: core/customizer.php:18
-msgid "Header text"
-msgstr "Текст заголовка"
-
-#: core/settings.php:5
-msgid "Kandinsky settings"
-msgstr "Настройки «Кандинского»"
-
-#. Name of the theme
-#: core/settings.php:5
-msgid "Kandinsky"
-msgstr "Кандинский"
-
-#: core/settings.php:10
-msgid "Test content"
-msgstr "Тестовый контент"
-
-#: core/settings.php:13
-msgid "Install test content"
-msgstr "Установить тестовый контент сайта"
-
-#: core/settings.php:16
-msgid "Test content successfully imported!"
-msgstr "Тестовый контент загружен"
-
-#: core/settings.php:17
-msgid "Test content import failed"
-msgstr "Загрузка тестового контента завершилась неудачно"
-
-#: core/settings.php:70
-msgid "Yoast SEO"
-msgstr "Yoast SEO"
-
-#: core/settings.php:76
-msgid "Leyka"
-msgstr "Лейка"
-
-#: core/settings.php:82
-msgid "Cyr to Lat enhanced"
-msgstr "Cyr to Lat enhanced"
-
-#: core/settings.php:88
-msgid "Disable Comments"
-msgstr "Disable Comments"
-
-#: core/settings.php:115 vendor/class-tgm-plugin-activation.php:327
-msgid "Install Required Plugins"
-msgstr "Установить требуемые плагины"
-
-#: core/settings.php:116 vendor/class-tgm-plugin-activation.php:328
-msgid "Install Plugins"
-msgstr "Установить плагины"
-
-#. %s: plugin name.
-#: core/settings.php:118 vendor/class-tgm-plugin-activation.php:330
-#, php-format
-msgid "Installing Plugin: %s"
-msgstr "Установка плагина: %s"
-
-#. %s: plugin name.
-#: core/settings.php:120 vendor/class-tgm-plugin-activation.php:332
-#, php-format
-msgid "Updating Plugin: %s"
-msgstr "Обновление плагина: %s"
-
-#: core/settings.php:121 vendor/class-tgm-plugin-activation.php:333
-msgid "Something went wrong with the plugin API."
-msgstr "Ошибка при работе с API плагина"
-
-#: core/settings.php:158 vendor/class-tgm-plugin-activation.php:370
-msgid "Begin installing plugin"
-msgid_plural "Begin installing plugins"
-msgstr[0] "Установить плагин"
-msgstr[1] "Установить плагины"
-msgstr[2] "Установить плагин"
-
-#: core/settings.php:163 vendor/class-tgm-plugin-activation.php:375
-msgid "Begin updating plugin"
-msgid_plural "Begin updating plugins"
-msgstr[0] "Обновить плагин"
-msgstr[1] "Обновить плагины"
-msgstr[2] "Обновить плагин"
-
-#: core/settings.php:168 vendor/class-tgm-plugin-activation.php:380
-msgid "Begin activating plugin"
-msgid_plural "Begin activating plugins"
-msgstr[0] "Активировать плагин"
-msgstr[1] "Активировать плагины"
-msgstr[2] "Активировать плагин"
-
-#: core/settings.php:173 vendor/class-tgm-plugin-activation.php:385
-msgid "Return to Required Plugins Installer"
-msgstr "На страницу установки требуемых плагинов"
-
-#: core/settings.php:174 vendor/class-tgm-plugin-activation.php:387
-#: vendor/class-tgm-plugin-activation.php:3159
-msgid "Plugin activated successfully."
-msgstr "Плагин активирован."
-
-#: core/settings.php:175 vendor/class-tgm-plugin-activation.php:388
-#: vendor/class-tgm-plugin-activation.php:2952
-msgid "The following plugin was activated successfully:"
-msgstr "Плагин успешно активирован:"
-
-#. 1: plugin name.
-#: core/settings.php:177 vendor/class-tgm-plugin-activation.php:390
-#, php-format
-msgid "No action taken. Plugin %1$s was already active."
-msgstr "Плагин %1$s уже активирован."
-
-#. 1: plugin name.
-#: core/settings.php:179 vendor/class-tgm-plugin-activation.php:392
-#, php-format
-msgid ""
-"Plugin not activated. A higher version of %s is needed for this theme. "
-"Please update the plugin."
-msgstr ""
-"Плагин не активирован - тема требует более высокой версии %s. Пожалуйста, "
-"обновите плагин."
-
-#. 1: dashboard link.
-#: core/settings.php:181 vendor/class-tgm-plugin-activation.php:394
-#, php-format
-msgid "All plugins installed and activated successfully. %1$s"
-msgstr "Все плагины установлены и активированы. %1$s"
-
-#: core/settings.php:182 vendor/class-tgm-plugin-activation.php:395
-msgid "Dismiss this notice"
-msgstr "Закрыть уведомление"
-
-#: core/settings.php:183 vendor/class-tgm-plugin-activation.php:396
-msgid ""
-"There are one or more required or recommended plugins to install, update or "
-"activate."
-msgstr "Некоторые плагины необходимо установить, обновить или активировать."
-
-#: core/settings.php:184 vendor/class-tgm-plugin-activation.php:397
-msgid "Please contact the administrator of this site for help."
-msgstr "Пожалуйста, свяжитесь с администрацией сайта."
-
-#: core/template-tags.php:180
-msgid "Page"
-msgstr "Страница"
-
-#: core/template-tags.php:267
-msgid "Donations history"
-msgstr "История пожертвований"
-
-#: core/template-tags.php:271
-msgid "Search results"
-msgstr "Результаты поиска"
-
-#: core/template-tags.php:275
-msgid "404: Page not found"
-msgstr "Ошибка 404: Страница не найдена"
-
-#: core/template-tags.php:430
-msgid "More projects"
-msgstr "Еще проекты"
-
-#: core/template-tags.php:431
-msgid "Our projects"
-msgstr "Наши программы"
-
-#: core/template-tags.php:435
-msgid "More volunteers"
-msgstr "Еще волонтеры"
-
-#: core/template-tags.php:441
-msgid "More events"
-msgstr "Еще анонсы"
-
-#: core/template-tags.php:446
-msgid "More news"
-msgstr "Еще новости"
-
-#: core/template-tags.php:447
-msgid "Latest news"
-msgstr "Последние новости"
-
-#: modules/donations.php:128
-msgid "or"
-msgstr "или"
-
-#: modules/donations.php:222
-msgid "Monthly donation"
-msgstr "Перечислять ежемесячно"
 
 #: modules/starter/starter.php:85
 msgid "Kandinsky main menu"
