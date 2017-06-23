@@ -1,0 +1,609 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-23 14:05+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco - https://localise.biz/"
+
+#: archive-leyka_donation.php:20
+msgid "Campaign"
+msgstr ""
+
+#: footer.php:11
+msgid "Teplitsa of social technologies"
+msgstr ""
+
+#: footer.php:47
+#, php-format
+msgid "All materials of the site are avaliabe under license %s"
+msgstr ""
+
+#: functions.php:37 modules/starter/class-demo.php:85
+#: modules/starter/class-demo.php:216
+msgid "Primary menu"
+msgstr ""
+
+#: header.php:18
+msgid "Skip to content"
+msgstr ""
+
+#: header.php:44
+msgid "Donate"
+msgstr ""
+
+#. Name of the template
+msgid "Events"
+msgstr ""
+
+#: page-events.php:72
+msgid "Future events"
+msgstr ""
+
+#: page-events.php:87
+msgid "Past events"
+msgstr ""
+
+#. Name of the template
+msgid "Fullwidth"
+msgstr ""
+
+#. Name of the template
+msgid "Homepage"
+msgstr ""
+
+#: page-home.php:76
+msgid "News"
+msgstr ""
+
+#: search.php:47
+msgid "Enter terms for search in the form and hit Enter"
+msgstr ""
+
+#: search.php:51
+msgid "Nothing found under your request"
+msgstr ""
+
+#: single-event.php:113
+msgid "Visit or events"
+msgstr ""
+
+#: single-leyka_campaign.php:29
+msgid "Our supporters"
+msgstr ""
+
+#: single-leyka_campaign.php:32
+msgid "Full list"
+msgstr ""
+
+#: single-project.php:48 single.php:95
+msgid "Related projects"
+msgstr ""
+
+#: single.php:83
+msgid "Related news"
+msgstr ""
+
+#: single.php:116 core/template-tags.php:436
+msgid "Our volunteers"
+msgstr ""
+
+#: taxonomy-person_cat.php:20 core/cards.php:24 core/cards.php:52
+msgid "More"
+msgstr ""
+
+#: core/customizer.php:18
+msgid "Header text"
+msgstr ""
+
+#: core/settings.php:5
+msgid "Kandinsky settings"
+msgstr ""
+
+#. Name of the theme
+#: core/settings.php:5
+msgid "Kandinsky"
+msgstr ""
+
+#: core/settings.php:10
+msgid "Test content"
+msgstr ""
+
+#: core/settings.php:13
+msgid "Install test content"
+msgstr ""
+
+#: core/settings.php:16
+msgid "Test content successfully imported!"
+msgstr ""
+
+#: core/settings.php:17
+msgid "Test content import failed"
+msgstr ""
+
+#: core/settings.php:70
+msgid "Yoast SEO"
+msgstr ""
+
+#: core/settings.php:76
+msgid "Leyka"
+msgstr ""
+
+#: core/settings.php:82
+msgid "Cyr to Lat enhanced"
+msgstr ""
+
+#: core/settings.php:88
+msgid "Disable Comments"
+msgstr ""
+
+#: core/settings.php:115 vendor/class-tgm-plugin-activation.php:327
+msgid "Install Required Plugins"
+msgstr ""
+
+#: core/settings.php:116 vendor/class-tgm-plugin-activation.php:328
+msgid "Install Plugins"
+msgstr ""
+
+#. %s: plugin name.
+#: core/settings.php:118 vendor/class-tgm-plugin-activation.php:330
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#. %s: plugin name.
+#: core/settings.php:120 vendor/class-tgm-plugin-activation.php:332
+#, php-format
+msgid "Updating Plugin: %s"
+msgstr ""
+
+#: core/settings.php:121 vendor/class-tgm-plugin-activation.php:333
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: core/settings.php:158 vendor/class-tgm-plugin-activation.php:370
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/settings.php:163 vendor/class-tgm-plugin-activation.php:375
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/settings.php:168 vendor/class-tgm-plugin-activation.php:380
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/settings.php:173 vendor/class-tgm-plugin-activation.php:385
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: core/settings.php:174 vendor/class-tgm-plugin-activation.php:387
+#: vendor/class-tgm-plugin-activation.php:3159
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: core/settings.php:175 vendor/class-tgm-plugin-activation.php:388
+#: vendor/class-tgm-plugin-activation.php:2952
+msgid "The following plugin was activated successfully:"
+msgstr ""
+
+#. 1: plugin name.
+#: core/settings.php:177 vendor/class-tgm-plugin-activation.php:390
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#. 1: plugin name.
+#: core/settings.php:179 vendor/class-tgm-plugin-activation.php:392
+#, php-format
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+
+#. 1: dashboard link.
+#: core/settings.php:181 vendor/class-tgm-plugin-activation.php:394
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: core/settings.php:182 vendor/class-tgm-plugin-activation.php:395
+msgid "Dismiss this notice"
+msgstr ""
+
+#: core/settings.php:183 vendor/class-tgm-plugin-activation.php:396
+msgid ""
+"There are one or more required or recommended plugins to install, update or "
+"activate."
+msgstr ""
+
+#: core/settings.php:184 vendor/class-tgm-plugin-activation.php:397
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#: core/template-tags.php:180
+msgid "Page"
+msgstr ""
+
+#: core/template-tags.php:267
+msgid "Donations history"
+msgstr ""
+
+#: core/template-tags.php:271
+msgid "Search results"
+msgstr ""
+
+#: core/template-tags.php:275
+msgid "404: Page not found"
+msgstr ""
+
+#: core/template-tags.php:430
+msgid "More projects"
+msgstr ""
+
+#: core/template-tags.php:431
+msgid "Our projects"
+msgstr ""
+
+#: core/template-tags.php:435
+msgid "More volunteers"
+msgstr ""
+
+#: core/template-tags.php:441
+msgid "More events"
+msgstr ""
+
+#: core/template-tags.php:446
+msgid "More news"
+msgstr ""
+
+#: core/template-tags.php:447
+msgid "Latest news"
+msgstr ""
+
+#: modules/donations.php:128
+msgid "or"
+msgstr ""
+
+#: modules/donations.php:222
+msgid "Monthly donation"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:386
+#: vendor/class-tgm-plugin-activation.php:827
+#: vendor/class-tgm-plugin-activation.php:2533
+#: vendor/class-tgm-plugin-activation.php:3580
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:522
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:523
+msgid "Update Required"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:934
+msgid ""
+"The remote plugin package does not contain a folder with the desired slug "
+"and renaming did not work."
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:934
+#: vendor/class-tgm-plugin-activation.php:937
+msgid ""
+"Please contact the plugin provider and ask them to package their plugin "
+"according to the WordPress guidelines."
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:937
+msgid ""
+"The remote plugin package consists of more than one file, but the files are "
+"not packaged in a folder."
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:1121
+#: vendor/class-tgm-plugin-activation.php:2948
+msgctxt "plugin A *and* plugin B"
+msgid "and"
+msgstr ""
+
+#. %s: version number
+#: vendor/class-tgm-plugin-activation.php:1982
+#, php-format
+msgid "TGMPA v%s"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2273
+msgid "Required"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2276
+msgid "Recommended"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2292
+msgid "WordPress Repository"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2295
+msgid "External Source"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2298
+msgid "Pre-Packaged"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2315
+msgid "Not Installed"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2319
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2321
+msgid "Active"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2327
+msgid "Required Update not Available"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2330
+msgid "Requires Update"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2333
+msgid "Update recommended"
+msgstr ""
+
+#. 1: install status, 2: update status
+#: vendor/class-tgm-plugin-activation.php:2342
+#, php-format
+msgctxt "Install/Update Status"
+msgid "%1$s, %2$s"
+msgstr ""
+
+#. 1: number of plugins.
+#: vendor/class-tgm-plugin-activation.php:2388
+#, php-format
+msgctxt "plugins"
+msgid "All <span class=\"count\">(%s)</span>"
+msgid_plural "All <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. 1: number of plugins.
+#: vendor/class-tgm-plugin-activation.php:2392
+#, php-format
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. 1: number of plugins.
+#: vendor/class-tgm-plugin-activation.php:2396
+#, php-format
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. 1: number of plugins.
+#: vendor/class-tgm-plugin-activation.php:2400
+#, php-format
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: vendor/class-tgm-plugin-activation.php:2482
+msgctxt "as in: \"version nr unknown\""
+msgid "unknown"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2490
+msgid "Installed version:"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2498
+msgid "Minimum required version:"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2510
+msgid "Available version:"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2533
+msgid "No plugins to install, update or activate."
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2547
+msgid "Plugin"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2548
+msgid "Source"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2549
+msgid "Type"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2553
+msgid "Version"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2554
+msgid "Status"
+msgstr ""
+
+#. %2$s: plugin name in screen reader markup
+#: vendor/class-tgm-plugin-activation.php:2603
+#, php-format
+msgid "Install %2$s"
+msgstr ""
+
+#. %2$s: plugin name in screen reader markup
+#: vendor/class-tgm-plugin-activation.php:2608
+#, php-format
+msgid "Update %2$s"
+msgstr ""
+
+#. %2$s: plugin name in screen reader markup
+#: vendor/class-tgm-plugin-activation.php:2614
+#, php-format
+msgid "Activate %2$s"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2684
+msgid "Upgrade message from the plugin author:"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2717
+msgid "Install"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2723
+msgid "Update"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2726
+msgid "Activate"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2757
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2759
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2800
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2802
+msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2908
+msgid "No plugins were selected to be activated. No action taken."
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2934
+msgid "No plugins are available to be activated at this time."
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:3158
+msgid "Plugin activation failed."
+msgstr ""
+
+#. 1: plugin name, 2: action number 3: total number of actions.
+#: vendor/class-tgm-plugin-activation.php:3498
+#, php-format
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#. 1: plugin name, 2: error message.
+#: vendor/class-tgm-plugin-activation.php:3501
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#. 1: plugin name.
+#: vendor/class-tgm-plugin-activation.php:3503
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:3507
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+
+#. 1: plugin name.
+#: vendor/class-tgm-plugin-activation.php:3509
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:3509
+#: vendor/class-tgm-plugin-activation.php:3517
+msgid "Show Details"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:3509
+#: vendor/class-tgm-plugin-activation.php:3517
+msgid "Hide Details"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:3510
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#. 1: plugin name, 2: action number 3: total number of actions.
+#: vendor/class-tgm-plugin-activation.php:3512
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:3515
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#. 1: plugin name.
+#: vendor/class-tgm-plugin-activation.php:3517
+#, php-format
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:3518
+msgid "All installations have been completed."
+msgstr ""
+
+#. 1: plugin name, 2: action number 3: total number of actions.
+#: vendor/class-tgm-plugin-activation.php:3520
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: modules/starter/starter.php:85
+msgid "Kandinsky main menu"
+msgstr ""
+
+#: modules/starter/starter.php:95
+msgid "Home page"
+msgstr ""
+
+#. Description of the theme
+msgid "The beautiful design and useful features for nonprofit website"
+msgstr ""
+
+#. Author of the theme
+msgid "Teplitsa"
+msgstr ""
+
+#. Author URI of the theme
+msgid "https://te-st.ru/"
+msgstr ""

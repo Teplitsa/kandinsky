@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-23 11:48+0000\n"
-"PO-Revision-Date: 2017-06-23 13:42+0000\n"
+"POT-Creation-Date: 2017-06-23 14:05+0000\n"
+"PO-Revision-Date: 2017-06-23 14:19+0000\n"
 "Last-Translator: ahaenor <ahaenor@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru-RU\n"
@@ -26,98 +26,319 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-1: node_modules\n"
 "X-Poedit-SearchPathExcluded-2: assets"
 
-#: core/settings.php:114
-msgid "Install Required Plugins"
-msgstr "Установить требуемые плагины"
+#: vendor/class-tgm-plugin-activation.php:386
+#: vendor/class-tgm-plugin-activation.php:827
+#: vendor/class-tgm-plugin-activation.php:2533
+#: vendor/class-tgm-plugin-activation.php:3580
+msgid "Return to the Dashboard"
+msgstr "На Консоль"
 
-#: core/settings.php:115
-msgid "Install Plugins"
-msgstr "Установить плагины"
-
-#. %s: plugin name.
-#: core/settings.php:117
-#, php-format
-msgid "Installing Plugin: %s"
-msgstr "Установка плагина: %s"
-
-#. %s: plugin name.
-#: core/settings.php:119
-#, php-format
-msgid "Updating Plugin: %s"
-msgstr "Обновление плагина: %s"
-
-#: core/settings.php:120
-msgid "Something went wrong with the plugin API."
-msgstr "Ошибка при работе с API плагина"
-
-#: core/settings.php:157
-msgid "Begin installing plugin"
-msgid_plural "Begin installing plugins"
-msgstr[0] "Начинаем установку плагина"
-msgstr[1] "Начинаем установку плагинов"
-msgstr[2] "Начинаем установку плагина"
-
-#: core/settings.php:162
-msgid "Begin updating plugin"
-msgid_plural "Begin updating plugins"
-msgstr[0] "Начинаем обновление плагина"
-msgstr[1] "Начинаем обновление плагинов"
-msgstr[2] "Начинаем обновление плагина"
-
-#: core/settings.php:167
-msgid "Begin activating plugin"
-msgid_plural "Begin activating plugins"
-msgstr[0] "Начинаем активацию плагина"
-msgstr[1] "Начинаем активацию плагинов"
-msgstr[2] "Начинаем активацию плагина"
-
-#: core/settings.php:172
-msgid "Return to Required Plugins Installer"
-msgstr "На страницу установки требуемых плагинов"
-
-#: core/settings.php:173
-msgid "Plugin activated successfully."
-msgstr "Плагин активирован."
-
-#: core/settings.php:174
-msgid "The following plugin was activated successfully:"
-msgstr "Плагин успешно активирован:"
-
-#. 1: plugin name.
-#: core/settings.php:176
-#, php-format
-msgid "No action taken. Plugin %1$s was already active."
-msgstr "Плагин %1$s уже активирован."
-
-#. 1: plugin name.
-#: core/settings.php:178
-#, php-format
-msgid ""
-"Plugin not activated. A higher version of %s is needed for this theme. "
-"Please update the plugin."
+#: vendor/class-tgm-plugin-activation.php:522
+msgid "This plugin needs to be updated to be compatible with your theme."
 msgstr ""
-"Плагин не активирован - тема требует более высокой версии %s. Пожалуйста, "
-"обновите плагин."
+"Текущая версия плагина несовместима с темой. Необходимо обновить плагин."
 
-#. 1: dashboard link.
-#: core/settings.php:180
-#, php-format
-msgid "All plugins installed and activated successfully. %1$s"
-msgstr "Все плагины установлены и активированы. %1$s"
+#: vendor/class-tgm-plugin-activation.php:523
+msgid "Update Required"
+msgstr "Необходимо обновление"
 
-#: core/settings.php:181
-msgid "Dismiss this notice"
-msgstr "Закрыть уведомление"
-
-#: core/settings.php:182
+#: vendor/class-tgm-plugin-activation.php:934
 msgid ""
-"There are one or more required or recommended plugins to install, update or "
-"activate."
-msgstr "Некоторые плагины необходимо установить, обновить или активировать."
+"The remote plugin package does not contain a folder with the desired slug "
+"and renaming did not work."
+msgstr "Дистрибутив плагина не включает папки с необходимым названием."
 
-#: core/settings.php:183
-msgid "Please contact the administrator of this site for help."
-msgstr "Пожалуйста, свяжитесь с администрацией сайта."
+#: vendor/class-tgm-plugin-activation.php:934
+#: vendor/class-tgm-plugin-activation.php:937
+msgid ""
+"Please contact the plugin provider and ask them to package their plugin "
+"according to the WordPress guidelines."
+msgstr ""
+"Пожалуйста, свяжитесь с автором плагина и попросите их привести его "
+"дистрибутив в соответствие требованиям WordPress."
+
+#: vendor/class-tgm-plugin-activation.php:937
+msgid ""
+"The remote plugin package consists of more than one file, but the files are "
+"not packaged in a folder."
+msgstr ""
+"Дистрибутив плагина включает более 1 файла, но они не находятся в одной "
+"папке."
+
+#: vendor/class-tgm-plugin-activation.php:1121
+#: vendor/class-tgm-plugin-activation.php:2948
+msgctxt "plugin A *and* plugin B"
+msgid "and"
+msgstr "и"
+
+#. %s: version number
+#: vendor/class-tgm-plugin-activation.php:1982
+#, php-format
+msgid "TGMPA v%s"
+msgstr "TGMPA версии %s"
+
+#: vendor/class-tgm-plugin-activation.php:2273
+msgid "Required"
+msgstr "Требуется"
+
+#: vendor/class-tgm-plugin-activation.php:2276
+msgid "Recommended"
+msgstr "Рекомендован"
+
+#: vendor/class-tgm-plugin-activation.php:2292
+msgid "WordPress Repository"
+msgstr "Репозиторий WordPress"
+
+#: vendor/class-tgm-plugin-activation.php:2295
+msgid "External Source"
+msgstr "Внешний источник"
+
+#: vendor/class-tgm-plugin-activation.php:2298
+msgid "Pre-Packaged"
+msgstr "Готовый дистрибутив"
+
+#: vendor/class-tgm-plugin-activation.php:2315
+msgid "Not Installed"
+msgstr "Не установлен"
+
+#: vendor/class-tgm-plugin-activation.php:2319
+msgid "Installed But Not Activated"
+msgstr "Установлен, но не активирован"
+
+#: vendor/class-tgm-plugin-activation.php:2321
+msgid "Active"
+msgstr "Активен"
+
+#: vendor/class-tgm-plugin-activation.php:2327
+msgid "Required Update not Available"
+msgstr "Требуется обновление"
+
+#: vendor/class-tgm-plugin-activation.php:2330
+msgid "Requires Update"
+msgstr "Требуется обновление"
+
+#: vendor/class-tgm-plugin-activation.php:2333
+msgid "Update recommended"
+msgstr "Рекомендуется обновление"
+
+#. 1: install status, 2: update status
+#: vendor/class-tgm-plugin-activation.php:2342
+#, php-format
+msgctxt "Install/Update Status"
+msgid "%1$s, %2$s"
+msgstr "%1$s, %2$s"
+
+#. 1: number of plugins.
+#: vendor/class-tgm-plugin-activation.php:2388
+#, php-format
+msgctxt "plugins"
+msgid "All <span class=\"count\">(%s)</span>"
+msgid_plural "All <span class=\"count\">(%s)</span>"
+msgstr[0] "Все <span class=\"count\">(%s)</span>"
+msgstr[1] "Все <span class=\"count\">(%s)</span>"
+msgstr[2] "Все <span class=\"count\">(%s)</span>"
+
+#. 1: number of plugins.
+#: vendor/class-tgm-plugin-activation.php:2392
+#, php-format
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgstr[0] "К установке <span class=\"count\">(%s)</span>"
+msgstr[1] "К установке <span class=\"count\">(%s)</span>"
+msgstr[2] "К установке <span class=\"count\">(%s)</span>"
+
+#. 1: number of plugins.
+#: vendor/class-tgm-plugin-activation.php:2396
+#, php-format
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+msgstr[0] "Доступно обновление <span class=\"count\">(%s)</span>"
+msgstr[1] "Доступно обновление <span class=\"count\">(%s)</span>"
+msgstr[2] "Доступно обновление <span class=\"count\">(%s)</span>"
+
+#. 1: number of plugins.
+#: vendor/class-tgm-plugin-activation.php:2400
+#, php-format
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+msgstr[0] "К активации <span class=\"count\">(%s)</span>"
+msgstr[1] "К активации <span class=\"count\">(%s)</span>"
+msgstr[2] "К активации <span class=\"count\">(%s)</span>"
+
+#: vendor/class-tgm-plugin-activation.php:2482
+msgctxt "as in: \"version nr unknown\""
+msgid "unknown"
+msgstr "неизвестно"
+
+#: vendor/class-tgm-plugin-activation.php:2490
+msgid "Installed version:"
+msgstr "Установленная версия:"
+
+#: vendor/class-tgm-plugin-activation.php:2498
+msgid "Minimum required version:"
+msgstr "Минимальная версия:"
+
+#: vendor/class-tgm-plugin-activation.php:2510
+msgid "Available version:"
+msgstr "Доступная версия:"
+
+#: vendor/class-tgm-plugin-activation.php:2533
+msgid "No plugins to install, update or activate."
+msgstr "Установка, обновление или активация плагинов не требуется."
+
+#: vendor/class-tgm-plugin-activation.php:2547
+msgid "Plugin"
+msgstr "Плагин"
+
+#: vendor/class-tgm-plugin-activation.php:2548
+msgid "Source"
+msgstr "Источник"
+
+#: vendor/class-tgm-plugin-activation.php:2549
+msgid "Type"
+msgstr "Тип"
+
+#: vendor/class-tgm-plugin-activation.php:2553
+msgid "Version"
+msgstr "Версия"
+
+#: vendor/class-tgm-plugin-activation.php:2554
+msgid "Status"
+msgstr "Статус"
+
+#. %2$s: plugin name in screen reader markup
+#: vendor/class-tgm-plugin-activation.php:2603
+#, php-format
+msgid "Install %2$s"
+msgstr "Установить %2$s"
+
+#. %2$s: plugin name in screen reader markup
+#: vendor/class-tgm-plugin-activation.php:2608
+#, php-format
+msgid "Update %2$s"
+msgstr "Обновить %2$s"
+
+#. %2$s: plugin name in screen reader markup
+#: vendor/class-tgm-plugin-activation.php:2614
+#, php-format
+msgid "Activate %2$s"
+msgstr "Активировать %2$s"
+
+#: vendor/class-tgm-plugin-activation.php:2684
+msgid "Upgrade message from the plugin author:"
+msgstr "Сообщение об обновлении:"
+
+#: vendor/class-tgm-plugin-activation.php:2717
+msgid "Install"
+msgstr "Установить"
+
+#: vendor/class-tgm-plugin-activation.php:2723
+msgid "Update"
+msgstr "Обновить"
+
+#: vendor/class-tgm-plugin-activation.php:2726
+msgid "Activate"
+msgstr "Активировать"
+
+#: vendor/class-tgm-plugin-activation.php:2757
+msgid "No plugins were selected to be installed. No action taken."
+msgstr "Ни один плагин не был выбран."
+
+#: vendor/class-tgm-plugin-activation.php:2759
+msgid "No plugins were selected to be updated. No action taken."
+msgstr "Ни один плагин не был выбран."
+
+#: vendor/class-tgm-plugin-activation.php:2800
+msgid "No plugins are available to be installed at this time."
+msgstr "Ни один плагин не нуждается в установке."
+
+#: vendor/class-tgm-plugin-activation.php:2802
+msgid "No plugins are available to be updated at this time."
+msgstr "Ни один плагин не нуждается в обновлении."
+
+#: vendor/class-tgm-plugin-activation.php:2908
+msgid "No plugins were selected to be activated. No action taken."
+msgstr "Ни один плагин не был выбран."
+
+#: vendor/class-tgm-plugin-activation.php:2934
+msgid "No plugins are available to be activated at this time."
+msgstr "Ни один плагин не нуждается в активации."
+
+#: vendor/class-tgm-plugin-activation.php:3158
+msgid "Plugin activation failed."
+msgstr "Плагин не активирован."
+
+#. 1: plugin name, 2: action number 3: total number of actions.
+#: vendor/class-tgm-plugin-activation.php:3498
+#, php-format
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr "Обновление плагина %1$s (%2$d/%3$d)"
+
+#. 1: plugin name, 2: error message.
+#: vendor/class-tgm-plugin-activation.php:3501
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr "Ошибка при установке %1$s: <strong>%2$s</strong>."
+
+#. 1: plugin name.
+#: vendor/class-tgm-plugin-activation.php:3503
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr "Плагин %1$s не установлен."
+
+#: vendor/class-tgm-plugin-activation.php:3507
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr "Установка и активация плагинов началась..."
+
+#. 1: plugin name.
+#: vendor/class-tgm-plugin-activation.php:3509
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr "%1$s - плагин установлен и активирован."
+
+#: vendor/class-tgm-plugin-activation.php:3509
+#: vendor/class-tgm-plugin-activation.php:3517
+msgid "Show Details"
+msgstr "Подробнее"
+
+#: vendor/class-tgm-plugin-activation.php:3509
+#: vendor/class-tgm-plugin-activation.php:3517
+msgid "Hide Details"
+msgstr "Закрыть"
+
+#: vendor/class-tgm-plugin-activation.php:3510
+msgid "All installations and activations have been completed."
+msgstr "Установка и активация плагинов завершена."
+
+#. 1: plugin name, 2: action number 3: total number of actions.
+#: vendor/class-tgm-plugin-activation.php:3512
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr "Установка и активация плагина %1$s (%2$d/%3$d)"
+
+#: vendor/class-tgm-plugin-activation.php:3515
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr "Установка плагинов началась..."
+
+#. 1: plugin name.
+#: vendor/class-tgm-plugin-activation.php:3517
+#, php-format
+msgid "%1$s installed successfully."
+msgstr "%1$s - плагин успешно установлен."
+
+#: vendor/class-tgm-plugin-activation.php:3518
+msgid "All installations have been completed."
+msgstr "Установка плагинов завершена."
+
+#. 1: plugin name, 2: action number 3: total number of actions.
+#: vendor/class-tgm-plugin-activation.php:3520
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr "Установка плагина %1$s (%2$d/%3$d)"
 
 #: archive-leyka_donation.php:20
 msgid "Campaign"
@@ -233,21 +454,116 @@ msgstr "Тестовый контент загружен"
 msgid "Test content import failed"
 msgstr "Загрузка тестового контента завершилась неудачно"
 
-#: core/settings.php:69
+#: core/settings.php:70
 msgid "Yoast SEO"
 msgstr "Yoast SEO"
 
-#: core/settings.php:75
+#: core/settings.php:76
 msgid "Leyka"
 msgstr "Лейка"
 
-#: core/settings.php:81
+#: core/settings.php:82
 msgid "Cyr to Lat enhanced"
 msgstr "Cyr to Lat enhanced"
 
-#: core/settings.php:87
+#: core/settings.php:88
 msgid "Disable Comments"
 msgstr "Disable Comments"
+
+#: core/settings.php:115 vendor/class-tgm-plugin-activation.php:327
+msgid "Install Required Plugins"
+msgstr "Установить требуемые плагины"
+
+#: core/settings.php:116 vendor/class-tgm-plugin-activation.php:328
+msgid "Install Plugins"
+msgstr "Установить плагины"
+
+#. %s: plugin name.
+#: core/settings.php:118 vendor/class-tgm-plugin-activation.php:330
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr "Установка плагина: %s"
+
+#. %s: plugin name.
+#: core/settings.php:120 vendor/class-tgm-plugin-activation.php:332
+#, php-format
+msgid "Updating Plugin: %s"
+msgstr "Обновление плагина: %s"
+
+#: core/settings.php:121 vendor/class-tgm-plugin-activation.php:333
+msgid "Something went wrong with the plugin API."
+msgstr "Ошибка при работе с API плагина"
+
+#: core/settings.php:158 vendor/class-tgm-plugin-activation.php:370
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] "Установить плагин"
+msgstr[1] "Установить плагины"
+msgstr[2] "Установить плагин"
+
+#: core/settings.php:163 vendor/class-tgm-plugin-activation.php:375
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] "Обновить плагин"
+msgstr[1] "Обновить плагины"
+msgstr[2] "Обновить плагин"
+
+#: core/settings.php:168 vendor/class-tgm-plugin-activation.php:380
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] "Активировать плагин"
+msgstr[1] "Активировать плагины"
+msgstr[2] "Активировать плагин"
+
+#: core/settings.php:173 vendor/class-tgm-plugin-activation.php:385
+msgid "Return to Required Plugins Installer"
+msgstr "На страницу установки требуемых плагинов"
+
+#: core/settings.php:174 vendor/class-tgm-plugin-activation.php:387
+#: vendor/class-tgm-plugin-activation.php:3159
+msgid "Plugin activated successfully."
+msgstr "Плагин активирован."
+
+#: core/settings.php:175 vendor/class-tgm-plugin-activation.php:388
+#: vendor/class-tgm-plugin-activation.php:2952
+msgid "The following plugin was activated successfully:"
+msgstr "Плагин успешно активирован:"
+
+#. 1: plugin name.
+#: core/settings.php:177 vendor/class-tgm-plugin-activation.php:390
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr "Плагин %1$s уже активирован."
+
+#. 1: plugin name.
+#: core/settings.php:179 vendor/class-tgm-plugin-activation.php:392
+#, php-format
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+"Плагин не активирован - тема требует более высокой версии %s. Пожалуйста, "
+"обновите плагин."
+
+#. 1: dashboard link.
+#: core/settings.php:181 vendor/class-tgm-plugin-activation.php:394
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr "Все плагины установлены и активированы. %1$s"
+
+#: core/settings.php:182 vendor/class-tgm-plugin-activation.php:395
+msgid "Dismiss this notice"
+msgstr "Закрыть уведомление"
+
+#: core/settings.php:183 vendor/class-tgm-plugin-activation.php:396
+msgid ""
+"There are one or more required or recommended plugins to install, update or "
+"activate."
+msgstr "Некоторые плагины необходимо установить, обновить или активировать."
+
+#: core/settings.php:184 vendor/class-tgm-plugin-activation.php:397
+msgid "Please contact the administrator of this site for help."
+msgstr "Пожалуйста, свяжитесь с администрацией сайта."
 
 #: core/template-tags.php:180
 msgid "Page"
