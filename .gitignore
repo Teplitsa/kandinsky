@@ -37,3 +37,5 @@ wp-content/upgrade/
 /wp-content/themes/kandinsky/node_modules
 
 node_modules
+/kandinsky.sublime-project
+/kandinsky.sublime-workspace

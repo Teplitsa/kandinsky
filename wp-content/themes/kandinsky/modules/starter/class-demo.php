@@ -209,6 +209,8 @@ class KND_Demo_Content {
             }
         }
 
+        flush_rewrite_rules();
+
 
         //menu
         $menu_name = __('Primary menu', 'knd');
