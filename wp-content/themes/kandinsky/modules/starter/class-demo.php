@@ -113,7 +113,7 @@ class KND_Demo_Content {
                         'post_title' => $pages['home']['post_title'], //@to_do add check for isset
                         'post_content' => $pages['home']['post_content'],   
                         'thumbnail_url' => $pages['home']['thumbnail_url'],                        
-                        'template' => ''
+                        'template' => 'page-home.php'
                     ),
                     'about' => array(
                         'post_type' => 'page',
@@ -171,7 +171,7 @@ class KND_Demo_Content {
             $page_data['post_name']    = $post_name;
             $page_data['post_content'] = $exist_page ? $exist_page->post_content : $obj['post_content'];
             $page_data['post_parent'] = $exist_page ? $exist_page->post_parent : 0;
-            //$page_data['meta_input']['_thumbnail_id'] = (int)$thumb_id; //template data
+            $page_data['meta_input']['_wp_page_template'] = ($obj['template']) ? $obj['template'] : 'default' ; //template data
 
             //thumbnail
             $thumb_id = false;
