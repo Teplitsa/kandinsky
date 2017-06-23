@@ -1,9 +1,51 @@
 <?php
-add_action('admin_menu', 'knd_add_settings_page');
-
-function knd_add_settings_page() {
-    add_submenu_page('themes.php', __('Kandinsky settings', 'knd'), __('Kandinsky', 'knd'), 'manage_options', 'knd_admin_settings_page', 'knd_admin_settings_page');
+if(isset($_GET['reset_msg'])) {
+    update_option('knd_admin_notice_welcome', 0);
 }
+
+function knd_hide_notices() {
+    if(isset($_GET['knd-hide-notice']) && isset($_GET['_knd_notice_nonce'])) {
+
+        if( !wp_verify_nonce($_GET['_knd_notice_nonce'], 'knd_hide_notices_nonce') ) {
+            wp_die(__('Action failed. Please refresh the page and retry.', 'knd'));
+        }
+
+        if( !current_user_can( 'manage_options') ) {
+            wp_die(__( 'Action failed.', 'knd'));
+        }
+
+        update_option('knd_admin_notice_'.sanitize_text_field($_GET['knd-hide-notice']), 1);
+
+    }
+}
+function knd_install_test_content() {
+
+    if(isset($_GET['knd-install-test-content']) && isset($_GET['_knd_install_test_content_nonce'])) {
+
+        if(get_option('knd_test_content_installed')) {
+            return;
+        }
+
+        if( !wp_verify_nonce($_GET['_knd_install_test_content_nonce'], 'knd_install_test_content_nonce') ) {
+            wp_die(__('Action failed. Please refresh the page and retry.', 'knd'));
+        }
+
+        if( !current_user_can('manage_options') ) {
+            wp_die(__( 'Action failed.', 'knd'));
+        }
+
+        try {
+            knd_setup_starter_data();
+        } catch(Exception $ex) {
+            error_log($ex);
+        }
+
+        update_option('knd_test_content_installed', 1);
+
+    }
+}
+add_action('wp_loaded', 'knd_install_test_content');
+add_action('wp_loaded', 'knd_hide_notices');
 
 function knd_admin_settings_page() {?>
 
@@ -39,7 +81,46 @@ function knd_admin_settings_page() {?>
 
 }
 
-add_action('tgmpa_register', 'knd_register_required_plugins');
+function knd_add_settings_page() {
+    add_submenu_page('themes.php', __('Kandinsky settings', 'knd'), __('Kandinsky', 'knd'), 'manage_options', 'knd_admin_settings_page', 'knd_admin_settings_page');
+}
+add_action('admin_menu', 'knd_add_settings_page');
+
+function knd_admin_notice() {
+
+    global $pagenow;
+
+    if('themes.php' == $pagenow && isset($_GET['activated'])) {
+
+        add_action('admin_notices', 'knd_welcome_notice');
+        update_option('knd_admin_notice_welcome', 1);
+        update_option('knd_test_content_installed', 0);
+
+    } elseif( !get_option('knd_admin_notice_welcome') ) {
+        add_action('admin_notices', 'knd_welcome_notice');
+    }
+
+}
+add_action('load-themes.php', 'knd_admin_notice');
+
+function knd_welcome_notice() {?>
+
+    <div id="message" class="updated knd-message">
+        <a class="knd-message-close notice-dismiss" href="<?php echo esc_url(wp_nonce_url(remove_query_arg(array('activated'), add_query_arg('knd-hide-notice', 'welcome')), 'knd_hide_notices_nonce', '_knd_notice_nonce'));?>">
+            <?php esc_html_e('Dismiss', 'knd');?>
+        </a>
+        <p><?php printf(esc_html__('Welcome! Thank you for choosing Kandinsky! To fully take advantage of the best our theme can offer please make sure you installed our %swebsite test content%s.', 'knd'), '<a href="'.esc_url(wp_nonce_url(remove_query_arg(array('activated'), add_query_arg('knd-install-test-content', 1)), 'knd_install_test_content_nonce', '_knd_install_test_content_nonce')).'">', '</a>');?></p>
+        <p class="submit">
+<!--            <a class="button-secondary" href="--><?php //echo esc_url(admin_url('themes.php?page=knd_admin_settings_page'));?><!--">-->
+<!--                --><?php //esc_html_e('Theme settings', 'knd');?>
+<!--            </a>-->
+            <a class="button-secondary" href="<?php echo esc_url(wp_nonce_url(remove_query_arg(array('activated'), add_query_arg('knd-install-test-content', 1)), 'knd_install_test_content_nonce', '_knd_install_test_content_nonce'));?>">
+                <?php esc_html_e('Install test content', 'knd');?>
+            </a>
+        </p>
+    </div>
+<?php
+}
 
 /**
  * Register the required plugins for this theme.
@@ -190,3 +271,4 @@ function knd_register_required_plugins() {
     tgmpa($plugins, $config);
 
 }
+add_action('tgmpa_register', 'knd_register_required_plugins');

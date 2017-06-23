@@ -135,3 +135,29 @@ div [id *="ninja_forms_metabox"] .item-edit.metabox-item-edit {
 		color: #a0a5aa;
 	}
 }
+
+.knd-message {
+  overflow: hidden;
+  position: relative;
+  border-left-color: #2ea2cc !important;
+}
+.knd-message a.button-primary,
+.knd-message a.button-secondary {
+  text-decoration: none !important;
+}
+.knd-message a.knd-message-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px 15px 10px 21px;
+  font-size: 13px;
+  line-height: 1.23076923;
+  text-decoration: none;
+}
+.knd-message a.knd-message-close:before {
+  position: absolute;
+  top: 8px;
+  left: 0;
+  -webkit-transition: all .1s ease-in-out;
+  transition: all .1s ease-in-out;
+}
