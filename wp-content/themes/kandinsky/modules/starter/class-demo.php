@@ -177,11 +177,9 @@ class KND_Demo_Content {
             $thumb_id = false;
 
             //imported old photo
-            $thumbnail_url = $obj['thumbnail_url'];
+            $thumbnail_url = !empty($obj['thumbnail_url']) ? $obj['thumbnail_url'] : '';
             if( preg_match( '/^http[s]?:\/\//', $thumbnail_url ) ) {
-                ob_start();
                 $thumb_id = TST_Import::get_instance()->maybe_import( $thumbnail_url );
-                ob_end_clean();
             }
             
             if($thumb_id){
