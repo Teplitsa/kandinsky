@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-23 00:12+0300\n"
-"PO-Revision-Date: 2017-06-23 00:14+0300\n"
+"POT-Creation-Date: 2017-06-23 03:33+0300\n"
+"PO-Revision-Date: 2017-06-23 03:33+0300\n"
 "Last-Translator: Anna Ladoshkina <webdev@foralien.com>\n"
 "Language-Team: Anna Ladoshkina <webdev@foralien.com>\n"
 "Language: ru\n"
@@ -105,27 +105,7 @@ msgstr "Автор"
 msgid "More"
 msgstr "Ещё"
 
-#: core/customizer.php:46 functions.php:37
-msgid "Primary menu"
-msgstr "﻿Главное меню"
-
-#: core/customizer.php:74 core/template-tags.php:383 core/template-tags.php:393
-msgid "Homepage"
-msgstr "Главная"
-
-#: core/customizer.php:80
-msgid "About"
-msgstr "О нас"
-
-#: core/customizer.php:85
-msgid "Contacts"
-msgstr "Контакты"
-
-#: core/customizer.php:90
-msgid "News"
-msgstr "Новости"
-
-#: core/customizer.php:121
+#: core/customizer.php:18
 msgid "Header text"
 msgstr ""
 
@@ -133,19 +113,31 @@ msgstr ""
 msgid "Kandinsky settings"
 msgstr ""
 
-#: core/settings.php:41
+#: core/settings.php:10
+msgid "Test content"
+msgstr ""
+
+#: core/settings.php:13
+msgid "Install test content"
+msgstr ""
+
+#: core/settings.php:16
+msgid "Test content successfully imported!"
+msgstr ""
+
+#: core/settings.php:65
 msgid "Yoast SEO"
 msgstr ""
 
-#: core/settings.php:47
+#: core/settings.php:71
 msgid "Leyka"
 msgstr ""
 
-#: core/settings.php:53
+#: core/settings.php:77
 msgid "Cyr to Lat enhanced"
 msgstr ""
 
-#: core/settings.php:59
+#: core/settings.php:83
 msgid "Disable Comments"
 msgstr ""
 
@@ -168,6 +160,10 @@ msgstr "Ошибка 404: Страница не найдена"
 #: core/template-tags.php:368
 msgid "Post navigation"
 msgstr "Навигация по записям"
+
+#: core/template-tags.php:383 core/template-tags.php:393
+msgid "Homepage"
+msgstr "Главная"
 
 #: core/template-tags.php:430
 msgid "More projects"
@@ -209,24 +205,21 @@ msgstr "Помочь сейчас"
 msgid "Teplitsa of social technologies"
 msgstr "Теплица социальных технологий"
 
-#: footer.php:21
-msgid "Subscribe to our newsletter"
-msgstr "Подпишитесь на рассылку"
-
-#: footer.php:31
-msgid "Our social profiles"
-msgstr "Мы в социальных сетях"
-
 #: footer.php:47
 #, php-format
 msgid "All materials of the site are avaliabe under license %s"
 msgstr "Все материалы сайта доступны по лицензии %s"
 
+#: functions.php:37 modules/starter/class-demo.php:85
+#: modules/starter/class-demo.php:214
+msgid "Primary menu"
+msgstr "﻿Главное меню"
+
 #: header.php:18
 msgid "Skip to content"
 msgstr "Перейти к содержанию"
 
-#: header.php:45
+#: header.php:43
 msgid "Donate"
 msgstr "Помочь сейчас"
 
@@ -258,6 +251,14 @@ msgstr "Ваше имя"
 msgid "Monthly donation"
 msgstr "Перечислять ежемесячно"
 
+#: modules/starter/starter.php:85
+msgid "Kandinsky main menu"
+msgstr ""
+
+#: modules/starter/starter.php:95
+msgid "Home page"
+msgstr ""
+
 #: page-events.php:72
 msgid "Future events"
 msgstr "Анонсы"
@@ -265,6 +266,10 @@ msgstr "Анонсы"
 #: page-events.php:87
 msgid "Past events"
 msgstr "Прошедшие мероприятия"
+
+#: page-home.php:76
+msgid "News"
+msgstr "Новости"
 
 #: search.php:47
 msgid "Enter terms for search in the form and hit Enter"
@@ -756,6 +761,18 @@ msgstr ""
 #, php-format
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
+
+#~ msgid "About"
+#~ msgstr "О нас"
+
+#~ msgid "Contacts"
+#~ msgstr "Контакты"
+
+#~ msgid "Subscribe to our newsletter"
+#~ msgstr "Подпишитесь на рассылку"
+
+#~ msgid "Our social profiles"
+#~ msgstr "Мы в социальных сетях"
 
 #~ msgid "View"
 #~ msgstr "Просмотреть"

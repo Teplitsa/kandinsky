@@ -1,4 +1,5 @@
 <?php
+require get_template_directory().'/modules/starter/class-demo.php';
 
 function knd_import_starter_data_from_csv($file, $post_type = 'post') {
     //Read file
@@ -145,11 +146,12 @@ function knd_setup_starter_data() {
     try {
         
         knd_import_starter_data_from_csv('posts.csv', 'post');
-        knd_import_starter_data_from_csv('pages.csv', 'page');
+        //knd_import_starter_data_from_csv('pages.csv', 'page');
         
         knd_update_posts();
         
-        knd_setup_menus();
+        //knd_setup_menus();
+        do_action('knd_save_demo_content');
         
     }
     catch(Exception $ex) {

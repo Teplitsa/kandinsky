@@ -5,12 +5,16 @@
 
 
 $cpost = get_queried_object();
+$css = '';
 
-$leyka_succ = get_option('leyka_success_page');
-$leyka_fail = get_option('leyka_failure_page');
-$leyka_quit = get_option('leyka_quittance_redirect_page');
+if(is_callable('leyka')) {
+    $leyka_succ = get_option('leyka_success_page');
+    $leyka_fail = get_option('leyka_failure_page');
+    $leyka_quit = get_option('leyka_quittance_redirect_page');
 
-$css = (is_page($leyka_succ) || is_page($leyka_fail) || is_page($leyka_quit)) ? ' thank-you-leyka' : '';
+    $css = (is_page($leyka_succ) || is_page($leyka_fail) || is_page($leyka_quit)) ? ' thank-you-leyka' : '';
+}
+
 get_header(); 
 ?>
 <section class="page-header-simple<?php echo $css;?>"><div class="container-narrow">
