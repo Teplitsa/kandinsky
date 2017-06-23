@@ -1,13 +1,13 @@
 /** Header **/
 
 //sizes 
-$height_gap : 14px;
+$height_gap : 28px;
 
 $logo_small_h : 42px;
 $logo_small_w : 42px;
 
-$logo_full_w : 86px;
-$logo_full_h : 80px;
+$logo_full_w : 66px;
+$logo_full_h : 66px;
 
 $mobile_height : $logo_small_h + $height_gap;
 $full_height   : $logo_full_h + $height_gap;
@@ -64,6 +64,7 @@ $full_height   : $logo_full_h + $height_gap;
 	
 	&.site-branding {		
 		flex: 0 0 auto;
+        margin-left: -0.5 * $height_gap;
 		
 		@include for(small-screens) {
 			width: auto;
@@ -170,9 +171,43 @@ h2.logo-name {
 	.site-logo {
 		display: block;
 		position: relative;
-		color: $color-link-three;		
+		color: $color-link-three;
+         @include for(medium-screens) { padding-left: 4px;	}	
 	}
 	
+    .logo-temp {
+        width: $logo_small_w + $height_gap;
+        height: $logo_small_h + $height_gap;
+        text-align: center;
+                
+        img {
+            width: $logo_small_w;
+            height: $logo_small_h;
+            margin-top: $height_gap/2;
+        }
+        
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        @include for(medium-screens) {
+            width: $logo_full_w + $height_gap;
+            height: $logo_full_h + $height_gap;
+            text-align: center;
+            
+            position: absolute;
+            left: 0;
+            top: 0;
+            //margin-left: 4px;
+            
+            img {
+                margin-top: $height_gap/2;
+                width: $logo_full_w;
+                height: $logo_full_h;
+            }
+        }
+    }
+
 	#logo-small {
 		width: $logo_small_w + $height_gap;
 		height: $logo_small_h + $height_gap;
