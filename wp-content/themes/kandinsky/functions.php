@@ -106,6 +106,11 @@ add_action( 'init', 'rdc_widgets_init', 25 );
  * Includes
  */
 
+require_once( ABSPATH . 'wp-admin/includes/file.php' );
+require_once( ABSPATH . 'wp-admin/includes/image.php' );
+require_once( ABSPATH . 'wp-admin/includes/media.php' );
+
+
 require get_template_directory().'/core/class-cssjs.php';
 
 require get_template_directory().'/core/aq_resizer.php';
