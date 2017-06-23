@@ -80,7 +80,7 @@ get_header(); ?>
 			));
 		}
 		
-		rdc_more_section($pquery->posts, __('Related news', 'rdc'), 'news', 'addon'); 
+		rdc_more_section($pquery->posts, __('Related news', 'knd'), 'news', 'addon');
 		
 	}
 	elseif($cpost->post_type == 'project') {
@@ -92,7 +92,7 @@ get_header(); ?>
 		));
 		
 		if($pquery->have_posts()){
-			rdc_more_section($pquery->posts, __('Related projects', 'rdc'), 'projects', 'addon'); 
+			rdc_more_section($pquery->posts, __('Related projects', 'knd'), 'projects', 'addon');
 		}
 	}
 	elseif($cpost->post_type == 'person') {
@@ -113,7 +113,7 @@ get_header(); ?>
 		));
 		
 		if($pquery->have_posts()){
-			rdc_more_section($pquery->posts, __('Our volunteers', 'rdc'), 'people', 'addon'); 
+			rdc_more_section($pquery->posts, __('Our volunteers', 'knd'), 'people', 'addon');
 		}
 	}
 	

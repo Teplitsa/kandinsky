@@ -177,7 +177,7 @@ function rdc_posted_on(WP_Post $cpost) {
 	}
 	elseif('page' == $cpost->post_type && is_search()) {
 		
-		$meta[] = "<span class='category'>".__('Page', 'rdc')."</span>";
+		$meta[] = "<span class='category'>".__('Page', 'knd')."</span>";
 		
 	}
 		
@@ -264,15 +264,15 @@ function rdc_section_title() {
 		$css = 'archive';
 	}
 	elseif(is_post_type_archive('leyka_donation')){		
-		$title = __('Donations history', 'rdc');
+		$title = __('Donations history', 'knd');
 		$css = 'archive';
 	}
 	elseif(is_search()){
-		$title = __('Search results', 'rdc');
+		$title = __('Search results', 'knd');
 		$css = 'archive search';
 	}
 	elseif(is_404()){
-		$title = __('404: Page not found', 'rdc');
+		$title = __('404: Page not found', 'knd');
 		$css = 'archive e404';
 	}
 	
@@ -427,24 +427,24 @@ function rdc_more_section($posts, $title = '', $type = 'news', $css= ''){
 	$all_link = '';
 	
 	if($type == 'projects'){
-		$all_link = "<a href='".home_url('activity')."'>".__('More projects', 'rdc')."&nbsp;&rarr;</a>";
-		$title = (empty($title)) ? __('Our projects', 'rdc') : $title;
+		$all_link = "<a href='".home_url('activity')."'>".__('More projects', 'knd')."&nbsp;&rarr;</a>";
+		$title = (empty($title)) ? __('Our projects', 'knd') : $title;
 	}
 	elseif($type == 'people') {
 		$cat = get_term_by('slug', 'volunteers', 'person_cat');
-		$all_link = "<a href='".get_term_link($cat)."'>".__('More volunteers', 'rdc')."&nbsp;&rarr;</a>";
-		$title = (empty($title)) ? __('Our volunteers', 'rdc') : $title;
+		$all_link = "<a href='".get_term_link($cat)."'>".__('More volunteers', 'knd')."&nbsp;&rarr;</a>";
+		$title = (empty($title)) ? __('Our volunteers', 'knd') : $title;
 	}
 	elseif($type == 'events') {
 		$p = get_page_by_path('events');
 		if($p) {
-			$all_link = "<a href='".get_permalink($p)."'>".__('More events', 'rdc')."&nbsp;&rarr;</a>";
+			$all_link = "<a href='".get_permalink($p)."'>".__('More events', 'knd')."&nbsp;&rarr;</a>";
 			$title = (empty($title)) ? get_the_title($p) : $title;
 		}
 	}
 	else {
-		$all_link = "<a href='".home_url('news')."'>".__('More news', 'rdc')."&nbsp;&rarr;</a>";
-		$title = (empty($title)) ? __('Latest news', 'rdc') : $title;
+		$all_link = "<a href='".home_url('news')."'>".__('More news', 'knd')."&nbsp;&rarr;</a>";
+		$title = (empty($title)) ? __('Latest news', 'knd') : $title;
 	}
 
 	$css .= ' related-card-holder';

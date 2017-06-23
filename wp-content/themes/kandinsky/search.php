@@ -44,11 +44,11 @@ get_header();
 <section class="main-content search-results"><div class="container">
 	<?php
 		if(empty($s_query)){
-			$l = __('Enter terms for search in the form and hit Enter', 'rdc');
+			$l = __('Enter terms for search in the form and hit Enter', 'knd');
 			echo "<article class='tpl-search'><div class='entry-summary'><p>{$l }</p></div></article>";							
 		}
 		elseif($num == 0){
-			$l = __('Nothing found under your request', 'rdc');
+			$l = __('Nothing found under your request', 'knd');
 			echo "<article class='tpl-search'><div class='entry-summary'><p>{$l}</p></div></article>";				
 		}
 		else {

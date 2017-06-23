@@ -45,7 +45,7 @@ $pquery = new WP_Query(array(
 	));
 	
 	if($pquery->have_posts()){
-		rdc_more_section($pquery->posts, __('Related projects', 'rdc'), 'projects', 'addon'); 
+		rdc_more_section($pquery->posts, __('Related projects', 'knd'), 'projects', 'addon');
 	}
 
 get_footer();

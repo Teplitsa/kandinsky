@@ -26,10 +26,10 @@ get_header();
 		<div id="rdc_sidebar" class="bit md-4 lg-offset-1">
 			<div class="widget donation_cta"><?php echo apply_filters('rdc_entry_the_content', $cpost->post_content); ?></div>
 			<div class="widget donation_history">
-				<h3><?php _e('Our supporters', 'rdc');?></h3>
+				<h3><?php _e('Our supporters', 'knd');?></h3>
 				<?php echo leyka_get_donors_list($cpost->ID, array('num' => 10, 'show_purpose' => 0));?>
 				
-				<div class="all-link"><a href="<?php echo get_permalink($cpost);?>donations"><?php _e('Full list', 'rdc');?>&nbsp;&rarr;</a></div>
+				<div class="all-link"><a href="<?php echo get_permalink($cpost);?>donations"><?php _e('Full list', 'knd');?>&nbsp;&rarr;</a></div>
 			</div>
 		</div>
 	</div>

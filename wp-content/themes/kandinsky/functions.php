@@ -14,10 +14,10 @@ if ( ! isset( $content_width ) ) {
 }
 
 
-function rdc_setup() {
+function knd_setup() {
 
 	// Inits
-	load_theme_textdomain( 'rdc', get_template_directory() . '/lang' );
+	load_theme_textdomain( 'knd', get_template_directory() . '/lang' );
 	//add_theme_support( 'automatic-feed-links' );	
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'html5', array(
@@ -44,7 +44,7 @@ function rdc_setup() {
 	// Editor style
 	//add_editor_style(array('css/editor-style.css'));
 }
-add_action( 'init', 'rdc_setup', 30 );
+add_action( 'init', 'knd_setup', 30 );
 
 
 /** Custom image size for medialib **/

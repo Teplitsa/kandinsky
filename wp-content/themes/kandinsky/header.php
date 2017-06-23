@@ -15,7 +15,7 @@
 
 <body id="top" <?php body_class(); ?>>
 <?php include_once(get_template_directory()."/assets/svg/svg.svg"); //all svgs ?>
-<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'rdc' ); ?></a>
+<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'knd' ); ?></a>
 
 <header id="site_header" class="site-header">
 	
@@ -41,7 +41,7 @@
 			</div>									
 			
 			<div class="trigger-button donate site-panel-cell">
-				<a id="trigger_donate"  href="#help-us"><?php rdc_svg_icon('icon-logo');?><?php _e( 'Donate', 'rdc' ); ?></a>
+				<a id="trigger_donate"  href="#help-us"><?php rdc_svg_icon('icon-logo');?><?php _e( 'Donate', 'knd' ); ?></a>
 			</div>
 			
 			<div class="trigger-button menu site-panel-cell">

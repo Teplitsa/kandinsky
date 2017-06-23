@@ -125,7 +125,7 @@ function rdc_amount_field($form){
 				<?php } ?>
 				
 				<label class="figure-flex">
-					<span class="figure-sep"><?php _e('or', 'rdc');?></span>
+					<span class="figure-sep"><?php _e('or', 'knd');?></span>
 					<input type="text" title="<?php echo __('Specify the amount of your donation', 'leyka');?>" name="leyka_donation_amount" class="donate_amount_flex" value="<?php echo esc_attr($supported_curr[$current_curr]['amount_settings']['flexible']);?>" <?php echo $currency == $current_curr ? '' : 'disabled="disabled"';?> maxlength="6" size="6">
 				</label>
 			</div>
@@ -219,7 +219,7 @@ function rdc_donation_form($campaign_id = null){
 		<div class="leyka-field recurring">
 			<label class="rdc-checkbox checkbox" for="leyka_cp-card_recurring">
 				<?php echo $f_html; ?>
-				<span class="rdc-checkbox__label"><?php _e('Monthly donation', 'rdc');?></span>           
+				<span class="rdc-checkbox__label"><?php _e('Monthly donation', 'knd');?></span>
 			</label>
 		</div>
 	<?php
