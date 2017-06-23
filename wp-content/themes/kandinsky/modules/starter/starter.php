@@ -4,11 +4,11 @@ require get_template_directory().'/modules/starter/class-demo.php';
 function knd_import_starter_data_from_csv($file, $post_type = 'post') {
     //Read file
     $input_file = get_template_directory() . '/modules/starter/csv/' . $file;
-    
+
     if (($handle = fopen( $input_file, "r" )) !== FALSE) {
-    
+
         $i = 0;
-        
+
         while(( $line = fgetcsv( $handle, 1000000, "," )) !== FALSE) {
     
             $i += 1;
@@ -22,18 +22,18 @@ function knd_import_starter_data_from_csv($file, $post_type = 'post') {
             $exist_page = knd_get_post( $post_name, 'post' );
         
             $page_data = array();
-        
+
             $page_data['ID'] = $exist_page ? $exist_page->ID : 0;
             $page_data['post_type'] = $post_type;
             $page_data['post_status'] = 'publish';
             $page_data['post_excerpt'] = '';
-        
+
             $page_data['post_title']	= $post_title;
             $page_data['post_name'] 	= $post_name;
             $page_data['menu_order']	= (int)$line[5];
             $page_data['post_content'] = trim($line[1]);
             $page_data['post_parent'] = 0;
-        
+
             //thumbnail
             $thumb_id = false;
             //imported old photo
@@ -45,9 +45,9 @@ function knd_import_starter_data_from_csv($file, $post_type = 'post') {
             if($thumb_id){
                 $page_data['meta_input']['_thumbnail_id'] = (int)$thumb_id;
             }
-        
+
             $uid = wp_insert_post($page_data);
-        
+
             //add tags
             if(!empty($line[6]) && $line[6] != 'none') {
                 wp_set_post_terms((int)$uid, $line[6], 'project_cat', false);

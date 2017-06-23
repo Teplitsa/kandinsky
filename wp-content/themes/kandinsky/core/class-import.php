@@ -180,6 +180,8 @@
             $tmp_file = tempnam( $tmp_dir, 'kandinsky_' );
             set_time_limit(0);
             $fp = fopen ( $tmp_file, 'w+' );
+
+
             
             $ch = curl_init();
             curl_setopt ($ch, CURLOPT_URL, $url );
@@ -199,6 +201,7 @@
 //             echo $new_file . "\n";
             
             rename( $tmp_file, $new_file );
+
             $tmp_file = $new_file;
             
             $attachment_id = knd_upload_file_from_path( $tmp_file );
@@ -662,7 +665,7 @@
         }
 
         public function maybe_import( $external_file_url ) {
-        
+
             $exist_attachment = $this->get_attachment_by_old_url( $external_file_url );
             $attachment_id = 0;
         
@@ -675,7 +678,7 @@
             }
             else {
                 $attachment_id = $this->import_big_file( $external_file_url );
-        
+
                 if( $attachment_id ) {
                     $file_id = $attachment_id;
                     $file_url = wp_get_attachment_url( $attachment_id );
