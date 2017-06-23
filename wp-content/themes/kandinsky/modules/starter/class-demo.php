@@ -171,7 +171,7 @@ class KND_Demo_Content {
             $page_data['post_name']    = $post_name;
             $page_data['post_content'] = $exist_page ? $exist_page->post_content : $obj['post_content'];
             $page_data['post_parent'] = $exist_page ? $exist_page->post_parent : 0;
-            $page_data['meta_input']['_wp_page_template'] = ($obj['template']) ? $obj['template'] : 'default' ; //template data
+            $page_data['meta_input']['_wp_page_template'] = !empty($obj['template']) ? $obj['template'] : 'default' ; //template data
 
             //thumbnail
             $thumb_id = false;
