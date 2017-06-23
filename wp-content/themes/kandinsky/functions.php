@@ -44,7 +44,7 @@ function knd_setup() {
 	// Editor style
 	//add_editor_style(array('css/editor-style.css'));
 }
-add_action( 'init', 'knd_setup', 30 );
+add_action( 'after_setup_theme', 'knd_setup', 30 );
 
 
 /** Custom image size for medialib **/
