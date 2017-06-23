@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-23 11:36+0000\n"
-"PO-Revision-Date: 2017-06-23 11:41+0000\n"
+"POT-Creation-Date: 2017-06-23 11:48+0000\n"
+"PO-Revision-Date: 2017-06-23 13:42+0000\n"
 "Last-Translator: ahaenor <ahaenor@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru-RU\n"
@@ -26,13 +26,183 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-1: node_modules\n"
 "X-Poedit-SearchPathExcluded-2: assets"
 
+#: core/settings.php:114
+msgid "Install Required Plugins"
+msgstr "Установить требуемые плагины"
+
+#: core/settings.php:115
+msgid "Install Plugins"
+msgstr "Установить плагины"
+
+#. %s: plugin name.
+#: core/settings.php:117
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr "Установка плагина: %s"
+
+#. %s: plugin name.
+#: core/settings.php:119
+#, php-format
+msgid "Updating Plugin: %s"
+msgstr "Обновление плагина: %s"
+
+#: core/settings.php:120
+msgid "Something went wrong with the plugin API."
+msgstr "Ошибка при работе с API плагина"
+
+#: core/settings.php:157
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] "Начинаем установку плагина"
+msgstr[1] "Начинаем установку плагинов"
+msgstr[2] "Начинаем установку плагина"
+
+#: core/settings.php:162
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] "Начинаем обновление плагина"
+msgstr[1] "Начинаем обновление плагинов"
+msgstr[2] "Начинаем обновление плагина"
+
+#: core/settings.php:167
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] "Начинаем активацию плагина"
+msgstr[1] "Начинаем активацию плагинов"
+msgstr[2] "Начинаем активацию плагина"
+
+#: core/settings.php:172
+msgid "Return to Required Plugins Installer"
+msgstr "На страницу установки требуемых плагинов"
+
+#: core/settings.php:173
+msgid "Plugin activated successfully."
+msgstr "Плагин активирован."
+
+#: core/settings.php:174
+msgid "The following plugin was activated successfully:"
+msgstr "Плагин успешно активирован:"
+
+#. 1: plugin name.
+#: core/settings.php:176
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr "Плагин %1$s уже активирован."
+
+#. 1: plugin name.
+#: core/settings.php:178
+#, php-format
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+"Плагин не активирован - тема требует более высокой версии %s. Пожалуйста, "
+"обновите плагин."
+
+#. 1: dashboard link.
+#: core/settings.php:180
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr "Все плагины установлены и активированы. %1$s"
+
+#: core/settings.php:181
+msgid "Dismiss this notice"
+msgstr "Закрыть уведомление"
+
+#: core/settings.php:182
+msgid ""
+"There are one or more required or recommended plugins to install, update or "
+"activate."
+msgstr "Некоторые плагины необходимо установить, обновить или активировать."
+
+#: core/settings.php:183
+msgid "Please contact the administrator of this site for help."
+msgstr "Пожалуйста, свяжитесь с администрацией сайта."
+
+#: archive-leyka_donation.php:20
+msgid "Campaign"
+msgstr "Кампания"
+
+#: footer.php:11
+msgid "Teplitsa of social technologies"
+msgstr "Теплица социальных технологий"
+
+#: footer.php:47
+#, php-format
+msgid "All materials of the site are avaliabe under license %s"
+msgstr "Все материалы сайта доступны по лицензии %s"
+
+#: functions.php:37 modules/starter/class-demo.php:85
+#: modules/starter/class-demo.php:216
+msgid "Primary menu"
+msgstr "﻿Главное меню"
+
+#: header.php:18
+msgid "Skip to content"
+msgstr "Перейти к содержанию"
+
+#: header.php:44
+msgid "Donate"
+msgstr "Помочь сейчас"
+
 #. Name of the template
 msgid "Events"
 msgstr "Мероприятия"
 
+#: page-events.php:72
+msgid "Future events"
+msgstr "Анонсы"
+
+#: page-events.php:87
+msgid "Past events"
+msgstr "Прошедшие мероприятия"
+
 #. Name of the template
 msgid "Fullwidth"
 msgstr "Во всю ширину"
+
+msgid "Homepage"
+msgstr "Главная"
+
+#: page-home.php:76
+msgid "News"
+msgstr "Новости"
+
+#: search.php:47
+msgid "Enter terms for search in the form and hit Enter"
+msgstr "Укажите слова для поиска в форме и нажмите Enter"
+
+#: search.php:51
+msgid "Nothing found under your request"
+msgstr "По вашему запросу ничего не найдено."
+
+#: single-event.php:113
+msgid "Visit or events"
+msgstr "Приглашаем на мероприятия"
+
+#: single-leyka_campaign.php:29
+msgid "Our supporters"
+msgstr "Нас поддержали"
+
+#: single-leyka_campaign.php:32
+msgid "Full list"
+msgstr "Полный список"
+
+#: single-project.php:48 single.php:95
+msgid "Related projects"
+msgstr "Познакомьтесь с другими проектами"
+
+#: single.php:83
+msgid "Related news"
+msgstr "Новости по теме"
+
+#: single.php:116 core/template-tags.php:436
+msgid "Our volunteers"
+msgstr "Наши волонтеры"
+
+#: taxonomy-person_cat.php:20 core/cards.php:24 core/cards.php:52
+msgid "More"
+msgstr "Ещё"
 
 #: core/customizer.php:18
 msgid "Header text"
@@ -78,103 +248,6 @@ msgstr "Cyr to Lat enhanced"
 #: core/settings.php:87
 msgid "Disable Comments"
 msgstr "Disable Comments"
-
-#: modules/starter/starter.php:85
-msgid "Kandinsky main menu"
-msgstr "Главное меню «Кандинского»"
-
-#: modules/starter/starter.php:95
-msgid "Home page"
-msgstr "Главная"
-
-#. Description of the theme
-msgid "The beautiful design and useful features for nonprofit website"
-msgstr "Красивый дизайн и полезные функции для сайта НКО"
-
-#. Author of the theme
-msgid "Teplitsa"
-msgstr "Теплица социальных технологий"
-
-#. Author URI of the theme
-msgid "https://te-st.ru/"
-msgstr "https://te-st.ru/"
-
-#: archive-leyka_donation.php:20
-msgid "Campaign"
-msgstr "Кампания"
-
-#: footer.php:11
-msgid "Teplitsa of social technologies"
-msgstr "Теплица социальных технологий"
-
-#: footer.php:47
-#, php-format
-msgid "All materials of the site are avaliabe under license %s"
-msgstr "Все материалы сайта доступны по лицензии %s"
-
-#: functions.php:37 modules/starter/class-demo.php:85
-#: modules/starter/class-demo.php:216
-msgid "Primary menu"
-msgstr "﻿Главное меню"
-
-#: header.php:18
-msgid "Skip to content"
-msgstr "Перейти к содержанию"
-
-#: header.php:44
-msgid "Donate"
-msgstr "Помочь сейчас"
-
-#: page-events.php:72
-msgid "Future events"
-msgstr "Анонсы"
-
-#: page-events.php:87
-msgid "Past events"
-msgstr "Прошедшие мероприятия"
-
-msgid "Homepage"
-msgstr "Главная"
-
-#: page-home.php:76
-msgid "News"
-msgstr "Новости"
-
-#: search.php:47
-msgid "Enter terms for search in the form and hit Enter"
-msgstr "Укажите слова для поиска в форме и нажмите Enter"
-
-#: search.php:51
-msgid "Nothing found under your request"
-msgstr "По вашему запросу ничего не найдено."
-
-#: single-event.php:113
-msgid "Visit or events"
-msgstr "Приглашаем на мероприятия"
-
-#: single-leyka_campaign.php:29
-msgid "Our supporters"
-msgstr "Нас поддержали"
-
-#: single-leyka_campaign.php:32
-msgid "Full list"
-msgstr "Полный список"
-
-#: single-project.php:48 single.php:95
-msgid "Related projects"
-msgstr "Познакомьтесь с другими проектами"
-
-#: single.php:83
-msgid "Related news"
-msgstr "Новости по теме"
-
-#: single.php:116 core/template-tags.php:436
-msgid "Our volunteers"
-msgstr "Наши волонтеры"
-
-#: taxonomy-person_cat.php:20 core/cards.php:24 core/cards.php:52
-msgid "More"
-msgstr "Ещё"
 
 #: core/template-tags.php:180
 msgid "Page"
@@ -223,3 +296,23 @@ msgstr "или"
 #: modules/donations.php:222
 msgid "Monthly donation"
 msgstr "Перечислять ежемесячно"
+
+#: modules/starter/starter.php:85
+msgid "Kandinsky main menu"
+msgstr "Главное меню «Кандинского»"
+
+#: modules/starter/starter.php:95
+msgid "Home page"
+msgstr "Главная"
+
+#. Description of the theme
+msgid "The beautiful design and useful features for nonprofit website"
+msgstr "Красивый дизайн и полезные функции для сайта НКО"
+
+#. Author of the theme
+msgid "Teplitsa"
+msgstr "Теплица социальных технологий"
+
+#. Author URI of the theme
+msgid "https://te-st.ru/"
+msgstr "https://te-st.ru/"
