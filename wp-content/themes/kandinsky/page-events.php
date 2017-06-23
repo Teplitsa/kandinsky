@@ -69,7 +69,7 @@ get_header();
 
 <?php if(!empty($future)) { ?>
 <section class="heading">
-	<div class="container"><h1 class="section-title archive"><?php _e('Future events', 'rdc'); ?></h1></div>
+	<div class="container"><h1 class="section-title archive"><?php _e('Future events', 'knd'); ?></h1></div>
 </section>
 
 <section class="main-content cards-holder"><div class="container-wide">
@@ -84,7 +84,7 @@ get_header();
 <?php } ?>
 
 <section class="heading">
-	<div class="container"><h1 class="section-title archive"><?php _e('Past events', 'rdc'); ?></h1></div>
+	<div class="container"><h1 class="section-title archive"><?php _e('Past events', 'knd'); ?></h1></div>
 </section>
 
 <section class="main-content cards-holder"><div class="container-wide">

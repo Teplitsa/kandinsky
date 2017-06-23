@@ -21,7 +21,7 @@ function rdc_post_card(WP_Post $cpost){
 
 function rdc_intro_card_markup_below($title, $subtitle, $img_id, $link = '', $button_text = '') {
 	
-	$button_text = (!empty($button_text)) ? $button_text : __('More', 'rdc');
+	$button_text = (!empty($button_text)) ? $button_text : __('More', 'knd');
 	$has_sharing = (!empty($link)) ? false : true;
 ?>
 	<section class="intro-head-image">
@@ -49,7 +49,7 @@ function rdc_intro_card_markup_below($title, $subtitle, $img_id, $link = '', $bu
 
 function rdc_intro_card_markup_over($title, $subtitle, $img_id, $link = '', $button_text = '', $style = 'below') {
 	
-	$button_text = (!empty($button_text)) ? $button_text : __('More', 'rdc');
+	$button_text = (!empty($button_text)) ? $button_text : __('More', 'knd');
 	$has_sharing = (!empty($link)) ? false : true;
 	
 ?>

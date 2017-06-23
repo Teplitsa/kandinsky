@@ -110,7 +110,7 @@ get_header(); ?>
 		'meta_key' => 'event_date_start'
 	));
 		
-	rdc_more_section($pquery->posts, __('Visit or events', 'rdc'), 'events', 'addon'); 
+	rdc_more_section($pquery->posts, __('Visit or events', 'knd'), 'events', 'addon');
 		
 	
 

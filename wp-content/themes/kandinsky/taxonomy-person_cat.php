@@ -17,7 +17,7 @@ if($paged == 1) { //featured post
 	$fa_link_text = get_term_meta($qo->term_id, 'featured_action_link_text', true);
 	
 	$sharing = (empty($fa_link)) ? true : false;
-	$fa_link_text = (empty($fa_link_text)) ? __('More', 'rdc') : $fa_link_text;
+	$fa_link_text = (empty($fa_link_text)) ? __('More', 'knd') : $fa_link_text;
 	
 	if($fa_image) { ?>
 	<div class="taxonomy-intro"><div class="container">
