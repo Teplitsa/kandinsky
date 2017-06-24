@@ -14,8 +14,8 @@ class KND_Demo_Content {
 
         add_action('after_setup_theme', array($this, 'demo_content'));
         
-
         add_action('knd_save_demo_content', array($this, 'save_demo_content'));
+        
     }
 
 
@@ -68,7 +68,6 @@ class KND_Demo_Content {
             
             $pages = $this->read_demo_data();
 
-
             $this->config = array(
                 // Starter content defined here
                 'options' => array(    
@@ -103,6 +102,11 @@ class KND_Demo_Content {
                                     'type'      => 'post_type',
                                     'object'    => 'page',
                                     'object_id' => '{{contact}}',
+                            ),
+                            'page_donate' => array(
+                                    'type'      => 'post_type',
+                                    'object'    => 'page',
+                                    'object_id' => '{{donate}}',
                             )
                         ),
                     )
@@ -131,6 +135,11 @@ class KND_Demo_Content {
                         'post_type' => 'page',
                         'post_title' => $pages['news']['post_title'],
                         'post_content' => '',    
+                    ),
+                    'donate' => array(
+                        'post_type' => 'page',
+                        'post_title' => $pages['donate']['post_title'],
+                        'post_content' => $pages['donate']['post_content'],
                     )
                 )
             );
