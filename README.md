@@ -21,7 +21,7 @@
 - Геймификация в настройке и заполнении контента
 - Open Source
 
-Над темой работает практически вся команда Теплицы социальных технологий. Присоединяйтесь к сообществу тестировщиков: [testing community e-mail]
+Над темой работает практически вся команда Теплицы социальных технологий. Присоединяйтесь к сообществу тестировщиков в Telegram - https://t.me/joinchat/AAAAAENN3prSrvAs7KwWrg
 
 # Kandinsky. Beautiful websites for NGOs.
  
@@ -43,4 +43,4 @@ Our solution is a website layout based on WordPress. We called it Kandinsky. Kan
 - Gamification in configuration and content filling
 - Open Source
  
-The whole team of Teplitsa is working on the topic. Join the community of testers: [testing community e-mail]
+The whole team of Teplitsa is working on the topic. Join the community of testers on Telegram – https://t.me/joinchat/AAAAAENN3prSrvAs7KwWrg
