@@ -21,4 +21,26 @@
 - Геймификация в настройке и заполнении контента
 - Open Source
 
-Над темой работает практически вся команда Теплицы социальных технологий. Присоединяйтесь к сообществу тестировщиков: [testing community e-mail]
+Над темой работает практически вся команда Теплицы социальных технологий. Присоединяйтесь к сообществу тестировщиков в Telegram - https://t.me/joinchat/AAAAAENN3prSrvAs7KwWrg
+
+# Kandinsky. Beautiful websites for NGOs.
+ 
+# Introduction
+Nearly half of frequently ask questions, Teplitsa receives every day, is about the need of decent website. Russian non profit organizations need modern websites. Simple, beautiful, customizable, and requiring a minimum of resources in the maintenance.
+ 
+# Methods
+Our solution is a website layout based on WordPress. We called it Kandinsky. Kandinsky gives extensive customization and already contains everything, an average NGOs needs. Kandinsky contains such features as structured menu, pug-in Leyka that enables donations, and incorporated social media buttons. And the best about it is that you don’t need programming skills to install the webiste. Try it! Everything that is beautiful is simple. And vice versa.
+ 
+# Our principles are:
+- Simplicity
+- Beauty
+- Customization
+- Edition, that is easier than writing
+- Product designed for users, and altogether with users
+- Speed
+- Security
+- Documentation
+- Gamification in configuration and content filling
+- Open Source
+ 
+The whole team of Teplitsa is working on the topic. Join the community of testers on Telegram – https://t.me/joinchat/AAAAAENN3prSrvAs7KwWrg

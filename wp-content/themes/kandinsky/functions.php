@@ -44,7 +44,7 @@ function knd_setup() {
 	// Editor style
 	//add_editor_style(array('css/editor-style.css'));
 }
-add_action( 'init', 'knd_setup', 30 );
+add_action( 'after_setup_theme', 'knd_setup', 30 );
 
 
 /** Custom image size for medialib **/
@@ -105,6 +105,11 @@ add_action( 'init', 'rdc_widgets_init', 25 );
 /**
  * Includes
  */
+
+require_once( ABSPATH . 'wp-admin/includes/file.php' );
+require_once( ABSPATH . 'wp-admin/includes/image.php' );
+require_once( ABSPATH . 'wp-admin/includes/media.php' );
+
 
 require get_template_directory().'/core/class-cssjs.php';
 

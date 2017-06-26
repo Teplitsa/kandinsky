@@ -23,6 +23,11 @@ jQuery(document).ready(function($){
 
             if(typeof response.status != 'undefined' && response.status == 'ok') {
                 $test_content_settings.find('.success').show();
+            } else {
+
+                $test_content_settings.find('.failure').show();
+                $this.show();
+
             }
 
         });

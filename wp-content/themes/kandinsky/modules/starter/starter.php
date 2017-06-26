@@ -136,25 +136,27 @@ function knd_setup_menus() {
     
 }
 
-
 function knd_setup_starter_data() {
+
+    knd_import_starter_data_from_csv('posts.csv', 'post');
+    //knd_import_starter_data_from_csv('pages.csv', 'page');
+
+    knd_update_posts();
+
+    //knd_setup_menus();
+    do_action('knd_save_demo_content');
+
+}
+
+function knd_ajax_setup_starter_data() {
 
     global $wpdb;
 
     $res = array('status' => 'ok');
 
     try {
-        
-        knd_import_starter_data_from_csv('posts.csv', 'post');
-        //knd_import_starter_data_from_csv('pages.csv', 'page');
-        
-        knd_update_posts();
-        
-        //knd_setup_menus();
-        do_action('knd_save_demo_content');
-        
-    }
-    catch(Exception $ex) {
+        knd_setup_starter_data();
+    } catch(Exception $ex) {
         error_log($ex);
         $res = array('status' => 'error');
     }
@@ -162,5 +164,5 @@ function knd_setup_starter_data() {
     wp_send_json( $res );
     
 }
-add_action("wp_ajax_setup_starter_data", "knd_setup_starter_data");
+add_action("wp_ajax_setup_starter_data", "knd_ajax_setup_starter_data");
 //add_action("wp_ajax_nopriv_setup_starter_data", "knd_setup_starter_data"); // It's only for admin

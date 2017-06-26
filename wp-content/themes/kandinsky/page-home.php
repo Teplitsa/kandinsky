@@ -32,7 +32,7 @@ if($about_post):
 </section>
 <section class="intro-head-content text-over-image has-button">
 <div class="ihc-content">
-<a href="#">
+<a href="<?php echo get_permalink( knd_get_post('donate', 'page') ) ?>">
 <h1 class="ihc-title">
 <span>Поддержать «Линию Цвета»</span>
 </h1>

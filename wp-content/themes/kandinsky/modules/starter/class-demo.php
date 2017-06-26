@@ -14,8 +14,8 @@ class KND_Demo_Content {
 
         add_action('after_setup_theme', array($this, 'demo_content'));
         
-
         add_action('knd_save_demo_content', array($this, 'save_demo_content'));
+        
     }
 
 
@@ -68,7 +68,6 @@ class KND_Demo_Content {
             
             $pages = $this->read_demo_data();
 
-
             $this->config = array(
                 // Starter content defined here
                 'options' => array(    
@@ -103,6 +102,11 @@ class KND_Demo_Content {
                                     'type'      => 'post_type',
                                     'object'    => 'page',
                                     'object_id' => '{{contact}}',
+                            ),
+                            'page_donate' => array(
+                                    'type'      => 'post_type',
+                                    'object'    => 'page',
+                                    'object_id' => '{{donate}}',
                             )
                         ),
                     )
@@ -131,6 +135,11 @@ class KND_Demo_Content {
                         'post_type' => 'page',
                         'post_title' => $pages['news']['post_title'],
                         'post_content' => '',    
+                    ),
+                    'donate' => array(
+                        'post_type' => 'page',
+                        'post_title' => $pages['donate']['post_title'],
+                        'post_content' => $pages['donate']['post_content'],
                     )
                 )
             );
@@ -171,17 +180,15 @@ class KND_Demo_Content {
             $page_data['post_name']    = $post_name;
             $page_data['post_content'] = $exist_page ? $exist_page->post_content : $obj['post_content'];
             $page_data['post_parent'] = $exist_page ? $exist_page->post_parent : 0;
-            $page_data['meta_input']['_wp_page_template'] = ($obj['template']) ? $obj['template'] : 'default' ; //template data
+            $page_data['meta_input']['_wp_page_template'] = !empty($obj['template']) ? $obj['template'] : 'default' ; //template data
 
             //thumbnail
             $thumb_id = false;
 
             //imported old photo
-            $thumbnail_url = $obj['thumbnail_url'];
+            $thumbnail_url = !empty($obj['thumbnail_url']) ? $obj['thumbnail_url'] : '';
             if( preg_match( '/^http[s]?:\/\//', $thumbnail_url ) ) {
-                ob_start();
                 $thumb_id = TST_Import::get_instance()->maybe_import( $thumbnail_url );
-                ob_end_clean();
             }
             
             if($thumb_id){
