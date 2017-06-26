@@ -102,7 +102,7 @@ $full_height   : $logo_full_h + $height_gap;
 	}
 	
 	@include for(medium-screens) {			
-		margin-left: $logo_full_w + $height_gap * 2;
+		margin-left: 110px; //$logo_full_w + $height_gap * 2;
 		height: $logo_full_h + $height_gap;
 	}	
 	
@@ -123,7 +123,7 @@ $full_height   : $logo_full_h + $height_gap;
 		flex-flow: column nowrap;
 		justify-content: center;
 		height: $logo_full_h + $height_gap;
-		margin-right: $height_gap;
+		margin-right: 5px; //$height_gap;
 		
 		p {
 			display: block;

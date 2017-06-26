@@ -70,7 +70,9 @@ h1, h2, h3, h4, h5, h6 {
 .heading {
 	background: $color-white;
 	padding: $base;
-	text-align: center;
+	text-align: center; 
+
+    &.no-posts { display: none; }
 }
 
 .section-title {
@@ -85,6 +87,8 @@ h1, h2, h3, h4, h5, h6 {
 		background: transparent;
 		padding-top: 0;
 	}
+
+    &.no-posts { padding-top: 0; }
 }
 
 
