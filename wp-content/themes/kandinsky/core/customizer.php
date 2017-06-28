@@ -5,8 +5,57 @@
 
 add_action('customize_register', 'knd_customize_register', 15);
 function knd_customize_register(WP_Customize_Manager $wp_customize) {
-    
-    
+
+    // Theme important links started
+    class Knd_Important_Links extends WP_Customize_Control {
+
+        public $type = "colormag-important-links";
+
+        public function render_content() {
+
+            $important_links = array(
+                'theme-info' => array(
+                    'link' => esc_url('https://te-st.ru/'),
+                    'text' => esc_html__('Theme Info', 'knd'),
+                ),
+                'support' => array(
+                    'link' => esc_url('mailto:support@te-st.ru'),
+                    'text' => esc_html__('Support', 'knd'),
+                ),
+                'documentation' => array(
+                    'link' => esc_url('https://te-st.ru/'),
+                    'text' => esc_html__('Documentation', 'knd'),
+                ),
+//                'rating' => array(
+//                    'link' => esc_url('https://wordpress.org/support/view/theme-reviews/colormag?filter=5'),
+//                    'text' => esc_html__('Rate this theme', 'colormag'),
+//                ),
+            );
+            foreach ($important_links as $important_link) {
+                echo '<p><a target="_blank" href="' . $important_link['link'] . '" >' . esc_attr($important_link['text']) . ' </a></p>';
+            }
+
+        }
+
+    }
+
+    $wp_customize->add_section('knd_important_links', array(
+        'priority' => 1,
+        'title' => __('Important Links', 'colormag'),
+    ));
+
+    $wp_customize->add_setting('knd_important_links', array(
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'knd_links_sanitize'
+    ));
+
+    $wp_customize->add_control(new Knd_Important_Links($wp_customize, 'important_links', array(
+        'label' => __('Important Links', 'knd'),
+        'section' => 'knd_important_links',
+        'settings' => 'knd_important_links'
+    )));
+    // Theme Important Links Ended
+
     $wp_customize->add_setting('text_in_header', array(
         'default'   => '',
         'transport' => 'postMessage',
