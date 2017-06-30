@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-06-30 11:36+0300\n"
-"PO-Revision-Date: 2017-06-30 11:38+0300\n"
+"PO-Revision-Date: 2017-06-30 11:46+0300\n"
 "Last-Translator: Anna Ladoshkina <webdev@foralien.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -125,7 +125,7 @@ msgstr "Текст заголовка"
 
 #: core/customizer.php:92
 msgid "Decoration Basics"
-msgstr "Основное оформление"
+msgstr "Визуальное оформление"
 
 #: core/customizer.php:105
 msgid "Main Color"
