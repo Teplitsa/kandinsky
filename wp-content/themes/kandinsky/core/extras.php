@@ -173,6 +173,10 @@ function rdc_body_classes( $classes ) {
 		$qo = get_queried_object();
 		$classes[] = 'slug-'.$qo->post_name;
 	}
+
+    $mod = get_theme_mod('knd_custom_logo_mod', 'image_only');
+    $classes[] = 'logomod-'.$mod;
+
 	return $classes;
 }
 

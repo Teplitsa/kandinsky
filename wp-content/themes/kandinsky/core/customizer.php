@@ -97,6 +97,15 @@ function knd_customize_register(WP_Customize_Manager $wp_customize) {
         'sanitize_callback' => 'sanitize_hex_color'        
     ));
 
+    $wp_customize->add_setting('knd_custom_logo', array(
+        'default'           => '', 
+        'sanitize_callback' => 'absint'        
+    ));
+
+    $wp_customize->add_setting('knd_custom_logo_mod', array(
+        'default'           => 'image_only'             
+    ));
+
     $wp_customize->add_control( 
         new WP_Customize_Color_Control( 
         $wp_customize, 
@@ -105,6 +114,39 @@ function knd_customize_register(WP_Customize_Manager $wp_customize) {
                 'label'      => __( 'Main Color', 'knd' ),
                 'section'    => 'knd_decoration',
                 'settings'   => 'knd_main_color',
+                'priority'   => 10
+        )) 
+    );
+
+
+    $wp_customize->add_control('knd_custom_logo_mod', array(
+        'type'     => 'radio',       
+        'label'    => __('Logo mode', 'knd'),
+        'section'  => 'knd_decoration',
+        'settings' => 'knd_custom_logo_mod',
+        'priority' => 20,
+        'choices'  => array(
+            'image_only'    => __('Image only', 'knd'),
+            'image_text'    => __('Image with site name', 'knd'),
+            'text_only'     => __('Site name only', 'knd'),
+            'nothing'       => __('Do not show', 'knd')
+        )
+    ));  
+
+    $wp_customize->add_control( 
+        new WP_Customize_Cropped_Image_Control( 
+        $wp_customize, 
+        'knd_custom_logo', 
+            array(
+                'label'         => __( 'Logo', 'knd' ),
+                'description'   => __( 'Recommended size 315x66px for Image only mode and 66x66px for Image with site name', 'knd' ),
+                'section'       => 'knd_decoration',
+                'settings'      => 'knd_custom_logo',
+                'flex_width'    => true, 
+                'flex_height'   => false, 
+                'width'         => 315,
+                'height'        => 66,
+                'priority'      => 30
         )) 
     );
 }

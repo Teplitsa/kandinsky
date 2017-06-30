@@ -23,17 +23,7 @@
 		<div class="container-wide">
 			
 		<div class="site-panel-row">
-			<div class="site-branding site-panel-cell">				
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="site-logo">
-					<div class="logo-temp" >
-                        <img src="<?php echo get_template_directory_uri();?>/assets/img/logo-temp.svg">
-                    </div>					
-					<div class="logo-name-cell">						
-						<h1 class="logo-name"><?php bloginfo('name'); ?></h1>						
-						<h2 class="logo-name"><?php bloginfo('description'); ?></h2>
-					</div>
-				</a>					
-			</div>
+			<div class="site-branding site-panel-cell"><?php knd_logo_markup();?></div>
 			
 			<?php $header_text = get_option('text_in_header'); ?>
 			<div class="site-details site-panel-cell">

@@ -53,20 +53,12 @@ $full_height   : $logo_full_h + $height_gap;
 .site-panel-row {
 	display: flex;
 	flex-flow: row nowrap;	
+
 }
 
 .site-panel-cell {
 	height: $logo_small_h + $height_gap;	
 	
-	&.site-branding {		
-		flex: 0 0 auto;
-        //margin-left: -0.5 * $height_gap;
-		
-		@include for(small-screens) {
-			width: auto;
-		}		
-	}
-
     @include for(medium-screens){
         height: $logo_full_h + $height_gap;
     }
@@ -76,7 +68,14 @@ $full_height   : $logo_full_h + $height_gap;
 	}
 	
 	&.donate {
-		flex: 0 0 auto;		
+		flex: 0 0 auto;	
+
+        .logomod-text_only &,
+        .logomod-image_only &{            
+            @include upto(medium-screens){
+                display: none;
+            }
+        }
 	}
 	
 	&.menu {
@@ -87,29 +86,76 @@ $full_height   : $logo_full_h + $height_gap;
 			//width: $full_height;
 		}
 	}
+
+    &.site-branding {
+        flex: 1 1 auto;
+        min-width: 1px;
+    }
 }
 
-//titles in vertical
-.logo-name-cell {
-	display: none;
-	
-	@include for(medium-screens) {
-		display: flex;
-		flex-flow: column nowrap;
-		justify-content: center;		
-		margin-left: $logo_small_w + $height_gap/2;
-		height: $logo_small_h + $height_gap;	
-	}
-	
-	@include for(medium-screens) {			
-		margin-left: $logo_full_w + $height_gap*1.5;
-		height: $logo_full_h + $height_gap;
-	}	
-	
-	.logo-name {
-		flex: 0 0 auto;
-	}
+//logo layout
+.site-logo {
+    display: block;
+    height: 100%;     
+
+    @media screen and (max-width: 1400px) { padding-left: $height_gap/2; }
+
 }
+
+.logo-image-only {
+    padding-top: $height_gap/2;
+    img {
+        height: $logo_small_h;
+        width: auto;
+
+        @include for(medium-screens){
+            height: $logo_full_h;
+        }
+    }
+}
+
+.logo-text-only {
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+
+    @include upto(medium-screens){
+        h2 { display: none; } 
+    }
+}
+
+.logo-complex {
+    height: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    @include upto(medium-screens){
+        .text { display: none; } 
+    }
+
+    .logo {
+        flex: 0 1 auto;
+        height: $logo_small_h; 
+        @include for(medium-screens){
+            height: $logo_full_h;
+        }
+    }
+
+    img {
+        height: 100%;
+        width: auto;
+    }
+
+    .text {
+        flex: 1 1 auto;
+        padding-left: $height_gap/2;
+    }
+}
+
 
 //address in vertical
 .site-details-cell {
@@ -162,95 +208,7 @@ h2.logo-name {
 	}
 }
 
-//logos
-.site-branding {
-	
-	@include for(xxlarge-screens){
-		margin-left: -0.5*$height_gap;	
-	}
 
-	.site-logo {
-		display: block;
-		position: relative;
-		color: $color-link-three;
-        
-	}
-	
-    .logo-temp {
-        width: $logo_small_w + $height_gap;
-        height: $logo_small_h + $height_gap;
-        text-align: center;
-                
-        img {
-            width: $logo_small_w;
-            height: $logo_small_h;
-            margin-top: $height_gap/2;
-        }
-        
-        position: absolute;
-        left: 0;
-        top: 0;
-
-        @include for(medium-screens) {
-            width: $logo_full_w + $height_gap;
-            height: $logo_full_h + $height_gap;
-            text-align: center;
-            
-            position: absolute;
-            left: 0;
-            top: 0;
-            //margin-left: 4px;
-            
-            img {
-                margin-top: $height_gap/2;
-                width: $logo_full_w;
-                height: $logo_full_h;
-            }
-        }
-    }
-
-	#logo-small {
-		width: $logo_small_w + $height_gap;
-		height: $logo_small_h + $height_gap;
-		text-align: center;
-				
-		.pic-logo-small {
-			width: $logo_small_w;
-			height: $logo_small_h;
-			margin-top: $height_gap/2;
-		}
-		
-		position: absolute;
-		left: 0;
-		top: 0;
-		
-		@include for(medium-screens) {
-			display: none;
-		}
-	}
-	
-	#logo-full {
-		display: none;
-		
-		@include for(medium-screens) {
-			display: block;
-			width: $logo_full_w + $height_gap;
-			height: $logo_full_h + $height_gap;
-			text-align: center;
-			
-			position: absolute;
-			left: 0;
-			top: 0;
-			
-			.pic-logo {
-				margin-top: $height_gap/2;
-				width: $logo_full_w;
-				height: $logo_full_h;
-			}
-		}		
-		
-	}
-}
 
 
 //contacts

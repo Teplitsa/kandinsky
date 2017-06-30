@@ -717,3 +717,44 @@ function rdc_add_to_calendar_link(TST_Event $event, $echo = true, $container_cla
 <?php	
 }
 
+
+function knd_logo_markup() {
+
+    //@to_do logo sizes may depends on test content
+    $mod = get_theme_mod('knd_custom_logo_mod', 'image_only');
+    if($mod == 'nothing')
+        return;
+
+
+    $logo = get_theme_mod('knd_custom_logo');
+
+    if($logo) {
+        $logo_img = wp_get_attachment_image((int)$logo, 'full', false, array('alt' => get_bloginfo('name')));
+    }
+    else {
+        $logo_img = '<img src="'.get_template_directory_uri().'/assets/img/logo.svg" width="311" height="66" alt="'.get_bloginfo('name').'">';
+    }
+
+
+?>
+<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="site-logo">
+    <?php if($mod == 'image_only'){ ?>
+        <div class="logo-image-only"><?php echo $logo_img;?></div>
+    <?php } elseif($mod == 'text_only') { ?>
+        <div class="logo-text-only">
+            <h1 class="logo-name"><?php bloginfo('name'); ?></h1>                       
+            <h2 class="logo-name"><?php bloginfo('description'); ?></h2>
+        </div>
+    <?php } else { ?>
+        <div class="logo-complex">
+            <div class="logo"><?php echo $logo_img;?></div>
+            <div class="text">
+                <h1 class="logo-name"><?php bloginfo('name'); ?></h1>                       
+                <h2 class="logo-name"><?php bloginfo('description'); ?></h2>
+            </div>
+        </div>
+    <?php } ?>
+</a>
+<?php
+}
+

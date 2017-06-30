@@ -24,6 +24,7 @@ function knd_setup() {
 		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
 	) );
 
+    
 	// Thumbnails
 	add_theme_support('post-thumbnails');
 	set_post_thumbnail_size(640, 395, true ); // regular thumbnails	
