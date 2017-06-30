@@ -88,7 +88,7 @@ function knd_customize_register(WP_Customize_Manager $wp_customize) {
 
     //Design section
     $wp_customize->add_section('knd_decoration', array(
-        'priority' => 5,
+        'priority' => 20,
         'title' => __('Decoration Basics', 'knd'),
     ));
 
