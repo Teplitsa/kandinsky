@@ -28,7 +28,7 @@ $social_color: (
 	display: inline-block;			
 	text-align: center;
 	vertical-align: middle;	
-	@include transition(all 0.2s);
+	transition: all 0.2s;
 	text-decoration: none;
 				
 	background: #262832;
@@ -150,10 +150,10 @@ $social_color: (
 			padding: 14px;
 			width: 100%;
 			border-radius: 0;
-			
-			@include placeholder {
-				color: $color-text;
-			}
+
+            &::placeholder {
+                color: $color-text;
+            }
 			
 			&:focus {
 				box-shadow: inset 0px 1px 2px rgba(50,50,50, 0.1);		
@@ -193,13 +193,18 @@ $social_color: (
 	
 	@include for(medium-screens) {
 		fieldset {
-			width: 100%;
-			@include clearfix();
+			width: 100%; 
+
+			&:after {
+                content:" ";
+                display:table;
+                clear:both;
+            }
 		}
 		
 		.rdc-textfield {
 			float: left;
-			@include calc(width, '100% - 180px');
+			width: calc(100% - 180px);
 		}
 		
 		.frm_submit {

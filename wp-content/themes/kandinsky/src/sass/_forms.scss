@@ -345,7 +345,7 @@ $label-text-color: $color-text;
 	
 	select {
 		display: inline-block;
-		@include calc(width, '100% + 20px');	
+		width: calc(100% + 20px);	
 		background: transparent;
 		border: 0;
 		border-radius: 0;  
@@ -392,7 +392,7 @@ $label-text-color: $color-text;
 		background: $input-color-active;
 		padding: 6px 20px;
 		color: $color-white;
-		@include transition(background 0.2s);
+		transition: background 0.2s;
 		&:hover {
 			background: $color-link-two;		
 		}

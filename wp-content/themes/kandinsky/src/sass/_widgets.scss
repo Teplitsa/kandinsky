@@ -299,7 +299,7 @@
 	&.has-button {
 		.ihc-title {
 			background: $color-link-three;
-			@include transition(background 0.35s);
+			transition: background 0.35s;
 			a {
 				color: $color-white;
 			}
@@ -324,7 +324,7 @@
 			z-undex: 500;
 			positon: absolute;
 			top: 0;
-			@include transform(translateY(-100%));
+			transform: translateY(-100%);
 			& > a { display: block; }
 		}
 		

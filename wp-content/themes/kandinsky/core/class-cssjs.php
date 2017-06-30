@@ -17,6 +17,8 @@ class FRL_CssJs {
 		
 		add_action('admin_enqueue_scripts',  array($this, 'load_admin_scripts'), 30);
 		add_action('login_enqueue_scripts',  array($this, 'load_login_scripts'), 30);
+
+        add_action('wp_enqueue_scripts', array($this, 'inline_styles'), 10);
 		
 	}
 	
@@ -82,6 +84,24 @@ class FRL_CssJs {
 
 		wp_dequeue_style('leyka-plugin-styles');		
 	}
+
+    /* inline styles */
+    function inline_styles() {
+
+        $main_color = knd_get_main_color();
+
+        $dark_color = knd_color_luminance($main_color, -0.1); //@to_do calculate it
+        ?>
+            <style>
+                :root {
+                  --color-main:         <?php echo $main_color; ?>;
+                  --color-main-dark:    <?php echo $dark_color; ?>;
+                }
+            </style>
+        <?php
+    }
+
+
 
 	/* front */
 	public function load_scripts() {		

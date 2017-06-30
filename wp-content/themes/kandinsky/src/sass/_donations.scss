@@ -132,7 +132,7 @@ $figure_line-height: 40px;
 				width: 20px;
 				height: 20px;
 				top: 50%;
-				@include transform(translateY(-50%));
+                transform: translateY(-50%);
 				left: -30px;
 			}
 		}
@@ -314,7 +314,8 @@ $figure_line-height: 40px;
 		width: 80%;
 	}
 	max-width: 760px;
-	@include calc(height, "100% - 220px");
+    height: calc(100% - 220px);
+	
 	max-height: 700px;	
 	
 	background-color: $color-white;

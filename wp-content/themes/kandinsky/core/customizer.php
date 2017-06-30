@@ -41,7 +41,7 @@ function knd_customize_register(WP_Customize_Manager $wp_customize) {
 
     $wp_customize->add_section('knd_important_links', array(
         'priority' => 1,
-        'title' => __('Important Links', 'colormag'),
+        'title' => __('Important Links', 'knd'),
     ));
 
     $wp_customize->add_setting('knd_important_links', array(
@@ -83,8 +83,30 @@ function knd_customize_register(WP_Customize_Manager $wp_customize) {
         'priority' => 60,
     )));*/
     
-    $wp_customize->remove_setting('site_icon'); //remove favicon
+    //$wp_customize->remove_setting('site_icon'); //remove favicon
     //$wp_customize->remove_control('blogdescription'); 
+
+    //Design section
+    $wp_customize->add_section('knd_decoration', array(
+        'priority' => 5,
+        'title' => __('Decoration Basics', 'knd'),
+    ));
+
+    $wp_customize->add_setting('knd_main_color', array(
+        'default'           => knd_get_deault_main_color(), 
+        'sanitize_callback' => 'sanitize_hex_color'        
+    ));
+
+    $wp_customize->add_control( 
+        new WP_Customize_Color_Control( 
+        $wp_customize, 
+        'knd_main_color', 
+            array(
+                'label'      => __( 'Main Color', 'knd' ),
+                'section'    => 'knd_decoration',
+                'settings'   => 'knd_main_color',
+        )) 
+    );
 }
 
 

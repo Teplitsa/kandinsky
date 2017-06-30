@@ -33,7 +33,7 @@
 		position: absolute;
 		top: 50%;
 		left: 50%;
-		@include transform(translate(-50%, -50%));
+		transform: translate(-50%, -50%);
 	}
 }
 
@@ -59,7 +59,7 @@
 		outline: none!important;
 		cursor: pointer;
 		
-		@include transition(background 0.2s);
+		transition: background 0.2s;
 		
 		&:hover {
 			color: $color-link-two;
@@ -117,7 +117,7 @@
 		padding: 9px 16px 8px;
 		color: $color-text;
 		
-		@include transition(background 0.3s);
+		transition: background 0.3s;
 		
 		&:hover, &:focus, &:active {
 			background: $color-border-link;		
@@ -140,8 +140,8 @@
 		z-index: -1;
 		text-shadow: 1px 1px 1px rgba(255,255,255, 0.99);
 		box-shadow: 1px 1px 2px rgba(100,100,100, 0.4);
-		@include transform(translateX(107%));
-		@include transition(opacity 0.3s);
+		transform: translateX(107%);
+		transition: opacity 0.3s;
 		
 		&:before {
 			content: '';
@@ -231,7 +231,7 @@
 		
 		a {
 			display: block;			
-			@include transition(all 0.35s);
+			transition: all 0.35s;
 			
 			&:hover {
 				

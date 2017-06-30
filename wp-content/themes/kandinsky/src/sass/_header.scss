@@ -20,7 +20,7 @@ $full_height   : $logo_full_h + $height_gap;
 	left: 0;
 	background: $color-white;
 	border-bottom: 1px solid $color-border-normal;
-	@include transition(opacity 0.3s);
+	transition: opacity 0.3s;
 	
 	&.fixed-header {
 		position: fixed;
@@ -288,7 +288,7 @@ h2.logo-name {
 			background: $color-link-three;
 			margin: $height_gap/2 0 0 $height_gap/2;			
 			padding: ($logo_small_h - 16px) / 2;
-			@include transition(background 0.35s);
+			transition: background 0.35;
 			
 			@include for(medium-screens) {
 				padding: 16px;
@@ -372,9 +372,9 @@ h2.logo-name {
 		width: 100%;
 		border-bottom: 1px solid $color-border-light;
 		
-		@include placeholder {
-			color: $color-text-semi;
-		}
+        &::placeholder {
+            color: $color-text-semi;
+        }
 		
 		&:focus {
 			box-shadow: inset 0px 1px 2px rgba(50,50,50, 0.08);			
@@ -394,7 +394,7 @@ h2.logo-name {
 	height: 100%;
 	background: $color-white;
 	overflow-y: scroll;
-	@include transition(all 0.4s);
+	transition: all 0.4s;
 	
 	@include for(medium-screens){
 		right: -310px;
@@ -490,7 +490,7 @@ h2.logo-name {
 			display: block;
 			@include nav-text(menu);
 			color: $color-text-black;
-			@include transition(all 0.3s);
+			transition: all 0.3s;
 			
 			padding: 19px $gut/2;
 			margin-right: $logo_small_h + $height_gap;

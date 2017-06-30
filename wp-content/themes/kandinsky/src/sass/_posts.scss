@@ -30,13 +30,13 @@
 	
 	.card {
 		margin: 0 $gut/2 $gut;
-		@include calc(width, '100% - 30px');	
+		width: calc(100% - 30px);  	
 	}
 	
 	@include for(small-screens) {
 		&.sm-cols-2 {			
 			.card {
-				@include calc(width, '50% - 30px');				
+				width: calc(50% - 30px);    		
 			}
 		}
 	}
@@ -44,13 +44,13 @@
 	@include for(medium-screens) {
 		&.md-cols-2 {			
 			.card {
-				@include calc(width, '50% - 30px');				
+				width: calc(50% - 30px);    		
 			}
 		}
 		
 		&.md-cols-3 {			
-			.card {
-				@include calc(width, '33.3% - 30px');				
+			.card {				
+                width: calc(33.3% - 30px);          	
 			}
 		}
 	}
@@ -58,19 +58,19 @@
 	@include for(large-screens) {
 		&.lg-cols-2 {			
 			.card {
-				@include calc(width, '50% - 30px');				
+				width: calc(50% - 30px);				
 			}
 		}
 		
 		&.lg-cols-3 {			
 			.card {
-				@include calc(width, '33.3% - 30px');				
+				width: calc(33.3% - 30px);    		
 			}
 		}
 		
 		&.lg-cols-4 {			
 			.card {
-				@include calc(width, '25% - 30px');				
+				width: calc(25% - 30px); 		
 			}
 		}
 	}
@@ -78,13 +78,13 @@
 	@include for(exlarge-screens) {
 		&.exlg-cols-5 {			
 			.card {
-				@include calc(width, '20% - 30px');				
+				width: calc(20% - 30px);				
 			}
 		}
 				
 		&.exlg-cols-4 {			
 			.card {
-				@include calc(width, '25% - 30px');				
+				width: calc(25% - 30px);				
 			}
 		}
 	}
@@ -130,14 +130,14 @@
 		height: 100%;
 		background: rgba(0,0,0, 0);
 		z-index: 10;
-		@include transition(all 0.35s);
+		transition: all 0.35s;
 	}	
 }
 
 
 .tpl-post {
 	background: $color-white;
-	@include transition(all 0.3s);
+	transition: all 0.3s;
 		
 	&:hover {
 		background: $color-secondary-alt;
@@ -162,7 +162,7 @@
 		@include post-meta();		
 		position: absolute;
 		top: 0;
-		@include transform(translateY(-100%));
+		transform: translateY(-100%);
 		z-index: 100;
 	}
 	
@@ -170,7 +170,7 @@
 		@include post-title();
 		margin-bottom: $base*0.75;				
 		padding-top: $base;
-		@include hyphens(auto);
+		hyphens: auto;
 	}
 	
 	.entry-summary {
@@ -197,7 +197,7 @@
 		display: inline-block;
 		color: $color-text-light;
 		padding: 8px 12px;
-		@include transition(all 0.3s);
+		transition: all 0.3;
 		
 		&:hover, &:focus, &:active {
 			color: $color-white;
@@ -260,10 +260,10 @@
 		
 		.card {
 			margin: 0 $gut/2 $gut;
-			@include calc(width, '50% - 30px');
+			width: calc(50% - 30px);
 		
 			&:first-of-type {
-				@include calc(width, '100% - 30px');
+				width: calc(100% - 30px);
 			}
 		}
 	}
@@ -271,11 +271,11 @@
 	@include for(large-screens) {
 		.card {
 			margin: 0 $gut/2 $gut;
-			@include calc(width, '33.3% - 30px');
+			width: calc(33.3% - 30px);
 		
 			&:nth-of-type(1),
 			&:nth-of-type(2) {
-				@include calc(width, '50% - 30px');
+				width: calc(50% - 30px);
 			}
 		}
 	}
@@ -317,7 +317,7 @@
 	
 	.entry-title {
 		@include header-title(single);
-		@include hyphens(auto);
+		hyphens: auto;
 	}
 	
 	.entry-meta {
@@ -363,7 +363,7 @@
 .regular-sharing {
 	position: absolute;
 	width: 45px;
-	@include calc(height, '100% - 280px');
+	height: calc(100% - 280px);
 	//height: 100%;
 	top: 280px;
 	left: 0;
@@ -409,13 +409,13 @@
 	
 	.entry-title {
 		@include post-title();
-		@include hyphens(none);
+		hyphens: none;
 		
 		position: absolute;
 		left: $gut/2;
 		bottom: $gut/2;
 		z-index: 100;
-		@include calc(width, '100% - 30px');
+		width: calc(100% - 30px);
 		
 		span {
 			margin-left: 4px;
@@ -424,7 +424,7 @@
 			display: inline;
 			box-shadow: 4px 0 0 $color-white, -4px 0 0 $color-white;
 			box-decoration-break: clone;
-			@include hyphens(none);
+			hyphens: none;
 		}
 	}
 	
@@ -442,7 +442,7 @@
 	margin-bottom: $gut;
 	background: $color-white;
 	
-	@include transition(background 0.3s);
+	transition: background 0.3s;
 		
 	&.linked:hover {
 		background: $color-secondary-alt;
@@ -586,7 +586,7 @@
 		background: $color-link-two;
 		position: absolute;
 		top: 0;
-		@include transform(translateY(-100%));
+		transform: translateY(-100%);
 		z-index: 100;
 	}
 	

@@ -56,10 +56,10 @@
 		
 		.col3 {
 			margin: 0 $gut/2 $gut;
-			@include calc(width, '50% - 30px');
+			width: calc(50% - 30px);
 			
 			&:last-of-type {
-				@include calc(width, '100% - 30px');
+				width: calc(100% - 30px);
 			}
 		}
 	}
@@ -69,7 +69,7 @@
 		
 		.col3, .col3:last-of-type {
 			flex: 0 0 auto;	
-			@include calc(width, '30% - 30px');
+			width: calc(30% - 30px);
 			text-align: center;
 		}
 	}	
@@ -182,7 +182,7 @@
 	margin-bottom: $base;
 	padding: $gut/2;
 	
-	@include transition(all 0.3s);
+	transitio: all 0.3s;
 		
 	&:hover {
 		background: $color-secondary-alt;
@@ -203,7 +203,7 @@
 	.entry-title {
 		@include post-title();
 		margin-bottom: $base*0.75;						
-		@include hyphens(auto);
+		hyphens: auto;
 	}
 	
 	.entry-summary {

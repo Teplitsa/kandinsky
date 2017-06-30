@@ -2,18 +2,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-26 11:38+0000\n"
-"PO-Revision-Date: 2017-06-26 11:43+0000\n"
-"Last-Translator: ahaenor <ahaenor@gmail.com>\n"
+"POT-Creation-Date: 2017-06-30 11:36+0300\n"
+"PO-Revision-Date: 2017-06-30 11:38+0300\n"
+"Last-Translator: Anna Ladoshkina <webdev@foralien.com>\n"
 "Language-Team: Russian\n"
-"Language: ru-RU\n"
+"Language: ru_RU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10 >= 2 && "
-"n%10<=4 &&(n%100<10||n%100 >= 20)? 1 : 2)\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10 >= 2 && n"
+"%10<=4 &&(n%100<10||n%100 >= 20)? 1 : 2);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Loco - https://localise.biz/\n"
+"X-Generator: Poedit 1.8.11\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
 "__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
@@ -24,148 +24,112 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: bower_components\n"
 "X-Poedit-SearchPathExcluded-1: node_modules\n"
-"X-Poedit-SearchPathExcluded-2: assets"
-
-#: core/settings.php:207 vendor/class-tgm-plugin-activation.php:334
-#, php-format
-msgid "This theme requires the following plugin: %1$s."
-msgid_plural "This theme requires the following plugins: %1$s."
-msgstr[0] "Необходимо установить плагин %1$s."
-msgstr[1] "Необходимо установить плагины: %1$s."
-msgstr[2] "Необходимо установить плагины: %1$s."
-
-#: core/settings.php:208 vendor/class-tgm-plugin-activation.php:335
-#, php-format
-msgid "This theme recommends the following plugin: %1$s."
-msgid_plural "This theme recommends the following plugins: %1$s."
-msgstr[0] "Рекомендуется установить плагин %1$s."
-msgstr[1] "Рекомендуется установить плагины: %1$s."
-msgstr[2] "Рекомендуется установить плагины: %1$s."
-
-#: core/settings.php:209 vendor/class-tgm-plugin-activation.php:336
-#, php-format
-msgid ""
-"The following plugin needs to be updated to its latest version to ensure "
-"maximum compatibility with this theme: %1$s."
-msgid_plural ""
-"The following plugins need to be updated to their latest version to ensure "
-"maximum compatibility with this theme: %1$s."
-msgstr[0] "Необходимо обновить плагин %1$s."
-msgstr[1] "Необходимо обновить плагины: %1$s."
-msgstr[2] "Необходимо обновить плагины: %1$s."
-
-#: core/settings.php:210
-#, php-format
-msgid "There is an update available for: %1$s."
-msgid_plural "There are updates available for the following plugins: %1$s."
-msgstr[0] "%1$s: доступно обновление."
-msgstr[1] "%1$s: доступно обновление."
-msgstr[2] "%1$s: доступно обновление."
-
-#: core/settings.php:211
-#, php-format
-msgid "The following required plugin is currently inactive: %1$s."
-msgid_plural "The following required plugins are currently inactive: %1$s."
-msgstr[0] "Необходимо активировать плагин %1$s."
-msgstr[1] "Необходимо активировать плагины: %1$s."
-msgstr[2] "Необходимо активировать плагины: %1$s."
-
-#: core/settings.php:212
-#, php-format
-msgid "The following recommended plugin is currently inactive: %1$s."
-msgid_plural "The following recommended plugins are currently inactive: %1$s."
-msgstr[0] "Рекомендуется активировать плагин %1$s."
-msgstr[1] "Рекомендуется активировать плагины: %1$s."
-msgstr[2] "Рекомендуется активировать плагины: %1$s."
+"X-Poedit-SearchPathExcluded-2: assets\n"
 
 #: archive-leyka_donation.php:20
 msgid "Campaign"
 msgstr "Кампания"
 
-#: footer.php:11
-msgid "Teplitsa of social technologies"
-msgstr "Теплица социальных технологий"
+#: archive-leyka_donation.php:38
+msgid "Anonymous"
+msgstr ""
 
-#: footer.php:47
+#: core/admin.php:139 core/admin.php:148
+msgid "Website"
+msgstr ""
+
+#: core/admin.php:139 core/admin.php:153
+msgid "Excerpt"
+msgstr ""
+
+#: core/admin.php:155
+msgid ""
+"Annotation for items lists (will be printed at the beginning of the single "
+"page)"
+msgstr ""
+
+#: core/admin.php:208
+msgid "Forms"
+msgstr ""
+
+#: core/admin.php:331
 #, php-format
-msgid "All materials of the site are avaliabe under license %s"
-msgstr "Все материалы сайта доступны по лицензии %s"
+msgid ""
+"ATTENTION! You thumbnail image is too small. It should be at least %s px"
+msgstr ""
 
-#: functions.php:37 modules/starter/class-demo.php:84
-#: modules/starter/class-demo.php:223
-msgid "Primary menu"
-msgstr "﻿Главное меню"
+#: core/admin.php:379 core/admin.php:395
+msgid "Facebook Profile"
+msgstr ""
 
-#: header.php:18
-msgid "Skip to content"
-msgstr "Перейти к содержанию"
+#: core/admin.php:381 core/admin.php:397
+msgid "Enter URL of author's Facebook profile"
+msgstr ""
 
-#: header.php:44
-msgid "Donate"
-msgstr "Помочь сейчас"
+#: core/admin.php:384 core/admin.php:400
+msgid "Avatar"
+msgstr ""
 
-#. Name of the template
-msgid "Events"
-msgstr "Мероприятия"
+#: core/admin.php:432
+msgid "Taxonomy Term Image"
+msgstr ""
 
-#: page-events.php:72
-msgid "Future events"
-msgstr "Анонсы"
+#: core/admin.php:433
+msgid "Select which image should represent this term."
+msgstr ""
 
-#: page-events.php:87
-msgid "Past events"
-msgstr "Прошедшие мероприятия"
+#: core/admin.php:434
+msgid "Select Image"
+msgstr ""
 
-#. Name of the template
-msgid "Fullwidth"
-msgstr "Во всю ширину"
+#: core/admin.php:435
+msgid "Remove"
+msgstr ""
 
-msgid "Homepage"
-msgstr "Главная"
+#: core/admin.php:436
+msgid "Select or upload an image for this term"
+msgstr ""
 
-#: page-home.php:76
-msgid "News"
-msgstr "Новости"
+#: core/admin.php:437
+msgid "Attach"
+msgstr ""
 
-#: search.php:47
-msgid "Enter terms for search in the form and hit Enter"
-msgstr "Укажите слова для поиска в форме и нажмите Enter"
+#: core/author.php:29
+msgid "Author"
+msgstr ""
 
-#: search.php:51
-msgid "Nothing found under your request"
-msgstr "По вашему запросу ничего не найдено."
-
-#: single-event.php:113
-msgid "Visit or events"
-msgstr "Приглашаем на мероприятия"
-
-#: single-leyka_campaign.php:29
-msgid "Our supporters"
-msgstr "Нас поддержали"
-
-#: single-leyka_campaign.php:32
-msgid "Full list"
-msgstr "Полный список"
-
-#: single-project.php:48 single.php:95
-msgid "Related projects"
-msgstr "Познакомьтесь с другими проектами"
-
-#: single.php:83
-msgid "Related news"
-msgstr "Новости по теме"
-
-#: single.php:116 core/template-tags.php:436
-msgid "Our volunteers"
-msgstr "Наши волонтеры"
-
-#: taxonomy-person_cat.php:20 core/cards.php:24 core/cards.php:52
+#: core/cards.php:24 core/cards.php:52 core/extras.php:63
+#: taxonomy-person_cat.php:20
 msgid "More"
 msgstr "Ещё"
 
-#: core/customizer.php:18
+#: core/customizer.php:19
+msgid "Theme Info"
+msgstr ""
+
+#: core/customizer.php:23
+msgid "Support"
+msgstr ""
+
+#: core/customizer.php:27
+msgid "Documentation"
+msgstr ""
+
+#: core/customizer.php:44 core/customizer.php:53
+msgid "Important Links"
+msgstr ""
+
+#: core/customizer.php:67
 msgid "Header text"
 msgstr "Текст заголовка"
+
+#: core/customizer.php:92
+msgid "Decoration Basics"
+msgstr "Основное оформление"
+
+#: core/customizer.php:105
+msgid "Main Color"
+msgstr "Основной цвет"
 
 #: core/settings.php:13 core/settings.php:33
 msgid "Action failed. Please refresh the page and retry."
@@ -195,7 +159,6 @@ msgstr "Загрузка тестового контента завершила�
 msgid "Kandinsky settings"
 msgstr "Настройки «Кандинского»"
 
-#. Name of the theme
 #: core/settings.php:89
 msgid "Kandinsky"
 msgstr "Кандинский"
@@ -238,13 +201,13 @@ msgstr "Установить требуемые плагины"
 msgid "Install Plugins"
 msgstr "Установить плагины"
 
-#. %s: plugin name.
+#. translators: %s: plugin name.
 #: core/settings.php:203 vendor/class-tgm-plugin-activation.php:330
 #, php-format
 msgid "Installing Plugin: %s"
 msgstr "Установка плагина: %s"
 
-#. %s: plugin name.
+#. translators: %s: plugin name.
 #: core/settings.php:205 vendor/class-tgm-plugin-activation.php:332
 #, php-format
 msgid "Updating Plugin: %s"
@@ -254,21 +217,76 @@ msgstr "Обновление плагина: %s"
 msgid "Something went wrong with the plugin API."
 msgstr "Ошибка при работе с API плагина"
 
-#: core/settings.php:213 vendor/class-tgm-plugin-activation.php:359
+#: core/settings.php:207 vendor/class-tgm-plugin-activation.php:334
+#, php-format
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] "Необходимо установить плагин %1$s."
+msgstr[1] "Необходимо установить плагины: %1$s."
+msgstr[2] "Необходимо установить плагины: %1$s."
+
+#: core/settings.php:208 vendor/class-tgm-plugin-activation.php:335
+#, php-format
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] "Рекомендуется установить плагин %1$s."
+msgstr[1] "Рекомендуется установить плагины: %1$s."
+msgstr[2] "Рекомендуется установить плагины: %1$s."
+
+#: core/settings.php:209 vendor/class-tgm-plugin-activation.php:337
+#, php-format
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr[0] "Необходимо обновить плагин %1$s."
+msgstr[1] "Необходимо обновить плагины: %1$s."
+msgstr[2] "Необходимо обновить плагины: %1$s."
+
+#. translators: 1: plugin name(s).
+#: core/settings.php:210 vendor/class-tgm-plugin-activation.php:343
+#, php-format
+msgid "There is an update available for: %1$s."
+msgid_plural "There are updates available for the following plugins: %1$s."
+msgstr[0] "%1$s: доступно обновление."
+msgstr[1] "%1$s: доступно обновление."
+msgstr[2] "%1$s: доступно обновление."
+
+#. translators: 1: plugin name(s).
+#: core/settings.php:211 vendor/class-tgm-plugin-activation.php:349
+#, php-format
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] "Необходимо активировать плагин %1$s."
+msgstr[1] "Необходимо активировать плагины: %1$s."
+msgstr[2] "Необходимо активировать плагины: %1$s."
+
+#. translators: 1: plugin name(s).
+#: core/settings.php:212 vendor/class-tgm-plugin-activation.php:355
+#, php-format
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] "Рекомендуется активировать плагин %1$s."
+msgstr[1] "Рекомендуется активировать плагины: %1$s."
+msgstr[2] "Рекомендуется активировать плагины: %1$s."
+
+#: core/settings.php:213 vendor/class-tgm-plugin-activation.php:360
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
 msgstr[0] "Установить плагин"
 msgstr[1] "Установить плагины"
 msgstr[2] "Установить плагин"
 
-#: core/settings.php:214 vendor/class-tgm-plugin-activation.php:364
+#: core/settings.php:214 vendor/class-tgm-plugin-activation.php:365
 msgid "Begin updating plugin"
 msgid_plural "Begin updating plugins"
 msgstr[0] "Обновить плагин"
 msgstr[1] "Обновить плагины"
 msgstr[2] "Обновить плагин"
 
-#: core/settings.php:215 vendor/class-tgm-plugin-activation.php:369
+#: core/settings.php:215 vendor/class-tgm-plugin-activation.php:370
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
 msgstr[0] "Активировать плагин"
@@ -289,13 +307,13 @@ msgstr "Плагин активирован."
 msgid "The following plugin was activated successfully:"
 msgstr "Плагин успешно активирован:"
 
-#. 1: plugin name.
+#. translators: 1: plugin name.
 #: core/settings.php:220 vendor/class-tgm-plugin-activation.php:379
 #, php-format
 msgid "No action taken. Plugin %1$s was already active."
 msgstr "Плагин %1$s уже активирован."
 
-#. 1: plugin name.
+#. translators: 1: plugin name.
 #: core/settings.php:222 vendor/class-tgm-plugin-activation.php:381
 #, php-format
 msgid ""
@@ -305,7 +323,7 @@ msgstr ""
 "Плагин не активирован - тема требует более высокой версии %s. Пожалуйста, "
 "обновите плагин."
 
-#. 1: dashboard link.
+#. translators: 1: dashboard link.
 #: core/settings.php:224 vendor/class-tgm-plugin-activation.php:383
 #, php-format
 msgid "All plugins installed and activated successfully. %1$s"
@@ -341,6 +359,14 @@ msgstr "Результаты поиска"
 msgid "404: Page not found"
 msgstr "Ошибка 404: Страница не найдена"
 
+#: core/template-tags.php:368
+msgid "Post navigation"
+msgstr ""
+
+#: core/template-tags.php:383 core/template-tags.php:393
+msgid "Homepage"
+msgstr "Главная"
+
 #: core/template-tags.php:430
 msgid "More projects"
 msgstr "Еще проекты"
@@ -352,6 +378,10 @@ msgstr "Наши программы"
 #: core/template-tags.php:435
 msgid "More volunteers"
 msgstr "Еще волонтеры"
+
+#: core/template-tags.php:436 single.php:116
+msgid "Our volunteers"
+msgstr "Наши волонтеры"
 
 #: core/template-tags.php:441
 msgid "More events"
@@ -365,13 +395,111 @@ msgstr "Еще новости"
 msgid "Latest news"
 msgstr "Последние новости"
 
+#: core/template-tags.php:487
+msgid "Related project"
+msgstr ""
+
+#: core/template-tags.php:506
+msgid "Help now"
+msgstr ""
+
+#: footer.php:11
+msgid "Teplitsa of social technologies"
+msgstr "Теплица социальных технологий"
+
+#: footer.php:47
+#, php-format
+msgid "All materials of the site are avaliabe under license %s"
+msgstr "Все материалы сайта доступны по лицензии %s"
+
+#: functions.php:37 modules/starter/class-demo.php:84
+#: modules/starter/class-demo.php:223
+msgid "Primary menu"
+msgstr "﻿Главное меню"
+
+#: header.php:18
+msgid "Skip to content"
+msgstr "Перейти к содержанию"
+
+#: header.php:44
+msgid "Donate"
+msgstr "Помочь сейчас"
+
+#: modules/donations.php:62
+msgid "Please, set a text of comment to describe an additional ways to donate."
+msgstr ""
+
+#: modules/donations.php:70
+msgid "Please, set a text to describe an additional ways to donate."
+msgstr ""
+
+#: modules/donations.php:121
+msgid "Please, specify your donation amount"
+msgstr ""
+
 #: modules/donations.php:128
 msgid "or"
 msgstr "или"
 
+#: modules/donations.php:129
+msgid "Specify the amount of your donation"
+msgstr ""
+
+#: modules/donations.php:195
+msgid "Your name"
+msgstr ""
+
 #: modules/donations.php:222
 msgid "Monthly donation"
 msgstr "Перечислять ежемесячно"
+
+#: modules/starter/starter.php:85
+msgid "Kandinsky main menu"
+msgstr "Главное меню «Кандинского»"
+
+#: modules/starter/starter.php:95
+msgid "Home page"
+msgstr "Главная"
+
+#: page-events.php:72
+msgid "Future events"
+msgstr "Анонсы"
+
+#: page-events.php:87
+msgid "Past events"
+msgstr "Прошедшие мероприятия"
+
+#: page-home.php:76
+msgid "News"
+msgstr "Новости"
+
+#: search.php:47
+msgid "Enter terms for search in the form and hit Enter"
+msgstr "Укажите слова для поиска в форме и нажмите Enter"
+
+#: search.php:51
+msgid "Nothing found under your request"
+msgstr "По вашему запросу ничего не найдено."
+
+#: single-event.php:113
+msgid "Visit or events"
+msgstr "Приглашаем на мероприятия"
+
+#: single-leyka_campaign.php:29
+msgid "Our supporters"
+msgstr "Нас поддержали"
+
+#: single-leyka_campaign.php:32
+msgid "Full list"
+msgstr "Полный список"
+
+#: single-project.php:48 single.php:95
+msgid "Related projects"
+msgstr "Познакомьтесь с другими проектами"
+
+#: single.php:83
+msgid "Related news"
+msgstr "Новости по теме"
 
 #: vendor/class-tgm-plugin-activation.php:375
 #: vendor/class-tgm-plugin-activation.php:816
@@ -418,7 +546,7 @@ msgctxt "plugin A *and* plugin B"
 msgid "and"
 msgstr "и"
 
-#. %s: version number
+#. translators: %s: version number
 #: vendor/class-tgm-plugin-activation.php:1971
 #, php-format
 msgid "TGMPA v%s"
@@ -468,14 +596,14 @@ msgstr "Требуется обновление"
 msgid "Update recommended"
 msgstr "Рекомендуется обновление"
 
-#. 1: install status, 2: update status
+#. translators: 1: install status, 2: update status
 #: vendor/class-tgm-plugin-activation.php:2331
 #, php-format
 msgctxt "Install/Update Status"
 msgid "%1$s, %2$s"
 msgstr "%1$s, %2$s"
 
-#. 1: number of plugins.
+#. translators: 1: number of plugins.
 #: vendor/class-tgm-plugin-activation.php:2377
 #, php-format
 msgctxt "plugins"
@@ -485,7 +613,7 @@ msgstr[0] "Все <span class=\"count\">(%s)</span>"
 msgstr[1] "Все <span class=\"count\">(%s)</span>"
 msgstr[2] "Все <span class=\"count\">(%s)</span>"
 
-#. 1: number of plugins.
+#. translators: 1: number of plugins.
 #: vendor/class-tgm-plugin-activation.php:2381
 #, php-format
 msgid "To Install <span class=\"count\">(%s)</span>"
@@ -494,7 +622,7 @@ msgstr[0] "К установке <span class=\"count\">(%s)</span>"
 msgstr[1] "К установке <span class=\"count\">(%s)</span>"
 msgstr[2] "К установке <span class=\"count\">(%s)</span>"
 
-#. 1: number of plugins.
+#. translators: 1: number of plugins.
 #: vendor/class-tgm-plugin-activation.php:2385
 #, php-format
 msgid "Update Available <span class=\"count\">(%s)</span>"
@@ -503,7 +631,7 @@ msgstr[0] "Доступно обновление <span class=\"count\">(%s)</spa
 msgstr[1] "Доступно обновление <span class=\"count\">(%s)</span>"
 msgstr[2] "Доступно обновление <span class=\"count\">(%s)</span>"
 
-#. 1: number of plugins.
+#. translators: 1: number of plugins.
 #: vendor/class-tgm-plugin-activation.php:2389
 #, php-format
 msgid "To Activate <span class=\"count\">(%s)</span>"
@@ -553,19 +681,19 @@ msgstr "Версия"
 msgid "Status"
 msgstr "Статус"
 
-#. %2$s: plugin name in screen reader markup
+#. translators: %2$s: plugin name in screen reader markup
 #: vendor/class-tgm-plugin-activation.php:2592
 #, php-format
 msgid "Install %2$s"
 msgstr "Установить %2$s"
 
-#. %2$s: plugin name in screen reader markup
+#. translators: %2$s: plugin name in screen reader markup
 #: vendor/class-tgm-plugin-activation.php:2597
 #, php-format
 msgid "Update %2$s"
 msgstr "Обновить %2$s"
 
-#. %2$s: plugin name in screen reader markup
+#. translators: %2$s: plugin name in screen reader markup
 #: vendor/class-tgm-plugin-activation.php:2603
 #, php-format
 msgid "Activate %2$s"
@@ -615,19 +743,19 @@ msgstr "Ни один плагин не нуждается в активации
 msgid "Plugin activation failed."
 msgstr "Плагин не активирован."
 
-#. 1: plugin name, 2: action number 3: total number of actions.
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
 #: vendor/class-tgm-plugin-activation.php:3487
 #, php-format
 msgid "Updating Plugin %1$s (%2$d/%3$d)"
 msgstr "Обновление плагина %1$s (%2$d/%3$d)"
 
-#. 1: plugin name, 2: error message.
+#. translators: 1: plugin name, 2: error message.
 #: vendor/class-tgm-plugin-activation.php:3490
 #, php-format
 msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
 msgstr "Ошибка при установке %1$s: <strong>%2$s</strong>."
 
-#. 1: plugin name.
+#. translators: 1: plugin name.
 #: vendor/class-tgm-plugin-activation.php:3492
 #, php-format
 msgid "The installation of %1$s failed."
@@ -639,7 +767,7 @@ msgid ""
 "while on some hosts, so please be patient."
 msgstr "Установка и активация плагинов началась..."
 
-#. 1: plugin name.
+#. translators: 1: plugin name.
 #: vendor/class-tgm-plugin-activation.php:3498
 #, php-format
 msgid "%1$s installed and activated successfully."
@@ -659,7 +787,7 @@ msgstr "Закрыть"
 msgid "All installations and activations have been completed."
 msgstr "Установка и активация плагинов завершена."
 
-#. 1: plugin name, 2: action number 3: total number of actions.
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
 #: vendor/class-tgm-plugin-activation.php:3501
 #, php-format
 msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
@@ -671,7 +799,7 @@ msgid ""
 "hosts, so please be patient."
 msgstr "Установка плагинов началась..."
 
-#. 1: plugin name.
+#. translators: 1: plugin name.
 #: vendor/class-tgm-plugin-activation.php:3506
 #, php-format
 msgid "%1$s installed successfully."
@@ -681,28 +809,23 @@ msgstr "%1$s - плагин успешно установлен."
 msgid "All installations have been completed."
 msgstr "Установка плагинов завершена."
 
-#. 1: plugin name, 2: action number 3: total number of actions.
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
 #: vendor/class-tgm-plugin-activation.php:3509
 #, php-format
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr "Установка плагина %1$s (%2$d/%3$d)"
 
-#: modules/starter/starter.php:85
-msgid "Kandinsky main menu"
-msgstr "Главное меню «Кандинского»"
+#~ msgid "Events"
+#~ msgstr "Мероприятия"
 
-#: modules/starter/starter.php:95
-msgid "Home page"
-msgstr "Главная"
+#~ msgid "Fullwidth"
+#~ msgstr "Во всю ширину"
 
-#. Description of the theme
-msgid "The beautiful design and useful features for nonprofit website"
-msgstr "Красивый дизайн и полезные функции для сайта НКО"
+#~ msgid "The beautiful design and useful features for nonprofit website"
+#~ msgstr "Красивый дизайн и полезные функции для сайта НКО"
 
-#. Author of the theme
-msgid "Teplitsa"
-msgstr "Теплица социальных технологий"
+#~ msgid "Teplitsa"
+#~ msgstr "Теплица социальных технологий"
 
-#. Author URI of the theme
-msgid "https://te-st.ru/"
-msgstr "https://te-st.ru/"
+#~ msgid "https://te-st.ru/"
+#~ msgstr "https://te-st.ru/"

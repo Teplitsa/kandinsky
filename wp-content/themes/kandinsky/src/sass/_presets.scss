@@ -32,13 +32,20 @@ $base: 24px;
 
 
 //Colors
-$color-text:   rgba(0,0,0, 0.9);
-$color-white:  #ffffff;
+/*:root {
+  --color-main:         #4494BB;
+  --color-main-dark:    darken(#4494BB, 10%);
+}*/
 
-$color-link-one:   lighten(#4494BB, 10%);  //#33a3ce;
-$color-link-two:   lighten(#4494BB, 10%); //#ff1744; // #EF2737;
-$color-link-three: #4494BB; 
+//Variables of color scheme
+$color-link-three: var(--color-main); //this is the main scheme color
+$color-link-one:   var(--color-main-dark); //hover state
+$color-link-two:   var(--color-main-dark); //hover state 
 
+
+//others color variables
+$color-text:                rgba(0,0,0, 0.9);
+$color-white:               #ffffff;
 $color-text-black:			#000000;
 $color-text-semi:			rgba(0,0,0, 0.6);
 $color-text-light:			rgba(0,0,0, 0.45);
@@ -48,11 +55,10 @@ $color-secondary-alt:		#f2f2f2;
 $color-secondary-black:		#191411;
 
 
-$color-border-normal: #dfdfdf;
-$color-border-light:  #eeeeee;
-$color-border-link:   #eeeeee;
-
-$color-form-invalid: #ED1C24;
+$color-border-normal:   #dfdfdf;
+$color-border-light:    #eeeeee;
+$color-border-link:     #eeeeee;
+$color-form-invalid:    #ED1C24;
 
 $leyka_green : #1DB318;
 
@@ -159,8 +165,9 @@ $fixed_side: 222px;
 	
 	font-size: 21px;
 	line-height: 24px;
-	@include hyphens(none);
-			
+    hyphens: none;
+
+				
 	@if $mod == small_title {
 		font-size: 18px;
 		line-height: 24px;
@@ -257,7 +264,7 @@ $fixed_side: 222px;
 	color: $color-white;
 	background: $color-link-three;
 	border: 1px solid $color-link-three;	
-	@include transition(all 0.3s);
+	transition: all 0.3;
 	
 	padding: 14px 24px;
 	font-size: 16px;
@@ -306,7 +313,7 @@ $fixed_side: 222px;
 	padding: 0.5em 1.3em;
 	color: $color;
 	border: 2px solid $color;	
-	@include transition(all 0.3s);
+	transition: all 0.3s;
 	
 	&:visited {
 		color: $color;

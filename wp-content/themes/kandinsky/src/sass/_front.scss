@@ -16,7 +16,7 @@ body {
 a {
 	text-decoration: none;
 	color: $color-link-three;
-	@include transition(all 0.3s);
+	transition: all 0.3s;
 	
 	&:visited { color: $color-link-three; }
 	&:hover, &:focus, &:active {
@@ -182,24 +182,24 @@ h1, h2, h3, h4, h5, h6 {
 		width: 100%;
 		margin: 0 $gut/2 $gut;
 		
-		@include calc(width, '100% - 30px');
+        width: calc(100% - 30px);
 		
-		@include for(small-screens){
-			@include calc(width, '50% - 30px');
+		@include for(small-screens){			
+            width: calc(50% - 30px);
 		}
 		
 		@include for(medium-screens){
 			&:nth-of-type(2),
-			&:nth-of-type(3) {
-				@include calc(width, '25% - 30px');
+			&:nth-of-type(3) {				
+                width: calc(25% - 30px);
 			}			
 		}
 		
-		@include for(large-screens){
-			@include calc(width, '25% - 30px');
+		@include for(large-screens){			
+            width: calc(25% - 30px);
 			
-			&.widget_nav_menu {
-				@include calc(width, '17% - 30px');				
+			&.widget_nav_menu {				
+                width: calc(17% - 30px);			
 			}
 		}
 		
@@ -261,25 +261,25 @@ h1, h2, h3, h4, h5, h6 {
 	.sf-cols-8 {
 		flex: 1 0 auto;
 		margin: 0 $gut/2;		
-		@include calc(width, '100% - 30px');
+		width: calc(100% - 30px);
 		
 		@include for(small-screens) {
-			flex: 1 1 auto;
-			@include calc(width, '100% - 250px');
+			flex: 1 1 auto;			
+            width: calc(100% - 250px);
 		}
 		@include for(large-screens) {
-			@include calc(width, '75% - 30px');
+			width: calc(75% - 30px);
 		}
 		
 	}
 	.sf-cols-4 {
 		flex: 0 0 auto;
 		margin: 0 $gut/2;
-		@include calc(width, '100% - 30px');
+		width: calc(100% - 30px);
 		
 		@include for(small-screens) { width: 200px;	}
 		
-		@include for(large-screens) { @include calc(width, '25% - 30px'); }
+		@include for(large-screens) { width: calc(25% - 30px); }
 	}
 }
 
@@ -308,7 +308,7 @@ h1, h2, h3, h4, h5, h6 {
 		box-sizing: border-box;		
 		border-radius: 5px;
 		border: 1px solid rgba(0,0,0, 0.3);
-		@include transition(all 0.35s);
+		transition: all 0.35s;
 		
 		&:hover, &:focus, &:active {
 			background: rgba(255,255,255, 0.9);
