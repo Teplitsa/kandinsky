@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-30 11:36+0300\n"
-"PO-Revision-Date: 2017-06-30 11:47+0300\n"
+"POT-Creation-Date: 2017-06-30 18:54+0300\n"
+"PO-Revision-Date: 2017-06-30 18:57+0300\n"
 "Last-Translator: Anna Ladoshkina <webdev@foralien.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -119,7 +119,7 @@ msgstr ""
 msgid "Important Links"
 msgstr ""
 
-#: core/customizer.php:67
+#: core/customizer.php:69
 msgid "Header text"
 msgstr "Текст заголовка"
 
@@ -127,9 +127,41 @@ msgstr "Текст заголовка"
 msgid "Decoration Basics"
 msgstr "Оформление"
 
-#: core/customizer.php:105
+#: core/customizer.php:114
 msgid "Main Color"
 msgstr "Основной цвет"
+
+#: core/customizer.php:124
+msgid "Logo mode"
+msgstr "Режим отображения логотипа"
+
+#: core/customizer.php:129
+msgid "Image only"
+msgstr "Только изображение"
+
+#: core/customizer.php:130
+msgid "Image with site name"
+msgstr "Изображение и название сайта"
+
+#: core/customizer.php:131
+msgid "Site name only"
+msgstr "Только название сайта"
+
+#: core/customizer.php:132
+msgid "Do not show"
+msgstr "Не показывать"
+
+#: core/customizer.php:141
+msgid "Logo"
+msgstr "Логотип"
+
+#: core/customizer.php:142
+msgid ""
+"Recommended size 315x66px for Image only mode and 66x66px for Image with "
+"site name"
+msgstr ""
+"Рекомендуемые размеры 315x66px для режима «Только изображение» и 66x66px для "
+"режима «Изображение и название сайта»"
 
 #: core/settings.php:13 core/settings.php:33
 msgid "Action failed. Please refresh the page and retry."
@@ -412,7 +444,7 @@ msgstr "Теплица социальных технологий"
 msgid "All materials of the site are avaliabe under license %s"
 msgstr "Все материалы сайта доступны по лицензии %s"
 
-#: functions.php:37 modules/starter/class-demo.php:84
+#: functions.php:38 modules/starter/class-demo.php:84
 #: modules/starter/class-demo.php:223
 msgid "Primary menu"
 msgstr "﻿Главное меню"
@@ -421,7 +453,7 @@ msgstr "﻿Главное меню"
 msgid "Skip to content"
 msgstr "Перейти к содержанию"
 
-#: header.php:44
+#: header.php:34
 msgid "Donate"
 msgstr "Помочь сейчас"
 
