@@ -143,18 +143,18 @@ function rdc_get_term_id_from_terms($terms){
 
 
 /** Favicon **/
-function rdc_favicon(){
+function knd_favicon(){
 	
-	$favicon_test = WP_CONTENT_DIR. '/favicon.ico'; //in the root not working don't know why
-    if(!file_exists($favicon_test))
-        return;
-        
-    $favicon = content_url('favicon.ico');
-	echo "<link href='{$favicon}' rel='shortcut icon' type='image/x-icon' >";
+    if(has_site_icon()){
+        wp_site_icon();
+    }
+    
 }
-add_action('wp_head', 'rdc_favicon', 1);
-add_action('admin_head', 'rdc_favicon', 1);
-add_action('login_head', 'rdc_favicon', 1);
+add_action('wp_head', 'knd_favicon', 1);
+add_action('admin_head', 'knd_favicon', 1);
+add_action('login_head', 'knd_favicon', 1);
+
+
 
 /** Add feed link **/
 add_action('wp_head', 'rdc_feed_link');

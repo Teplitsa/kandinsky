@@ -56,6 +56,8 @@ function knd_customize_register(WP_Customize_Manager $wp_customize) {
     )));
     // Theme Important Links Ended
 
+
+    //Common settings
     $wp_customize->add_setting('text_in_header', array(
         'default'   => '',
         'transport' => 'postMessage',
@@ -83,8 +85,6 @@ function knd_customize_register(WP_Customize_Manager $wp_customize) {
         'priority' => 60,
     )));*/
     
-    //$wp_customize->remove_setting('site_icon'); //remove favicon
-    //$wp_customize->remove_control('blogdescription'); 
 
     //Design section
     $wp_customize->add_section('knd_decoration', array(
