@@ -66,7 +66,7 @@ function knd_customize_register(WP_Customize_Manager $wp_customize) {
         'section'  => 'title_tagline',
         'settings' => 'text_in_header',
         'priority' => 30
-    ));  
+    ));
     
     //Images
     /*$wp_customize->add_setting('default_thumbnail', array(
@@ -146,7 +146,6 @@ function knd_customize_register(WP_Customize_Manager $wp_customize) {
         )) 
     );
     
-    
     // hero image
     $wp_customize->add_setting('knd_hero_image', array(
         'default'           => '',
@@ -205,6 +204,40 @@ function knd_customize_register(WP_Customize_Manager $wp_customize) {
         'settings' => 'knd_hero_image_support_button_caption',
         'priority' => 55
     ));
+
+    // Social media links
+    $wp_customize->add_section('knd_social_links', array(
+        'priority' => 20,
+        'title' => __('Social networks links', 'knd'),
+    ));
+
+    $social_media = array(
+        'vk' => esc_html__('VKontakte', 'knd'),
+        'ok' => esc_html__('Odnoklassniki', 'knd'),
+        'fb' => esc_html__('Facebook', 'knd'),
+        'ig' => esc_html__('Instagram', 'knd'),
+        'tw' => esc_html__('Twitter', 'knd'),
+        'tg' => esc_html__('Telegram', 'knd'),
+        'lj' => esc_html__('LiveJournal', 'knd'),
+    );
+    foreach($social_media as $id => $label) {
+
+        $wp_customize->add_setting('knd_social_links_'.$id, array(
+            'capability' => 'edit_theme_options',
+//            'type' => 'option',
+//            'sanitize_callback' => 'knd_sanitize_link_'.$id
+        ));
+
+        $wp_customize->add_control('knd_social_links_'.$id, array(
+            'label' => $label,
+            'type' => 'url',
+            'section' => 'knd_social_links',
+        ));
+
+    }
+
+
+    // Theme Important Links Ended
     
 }
 
