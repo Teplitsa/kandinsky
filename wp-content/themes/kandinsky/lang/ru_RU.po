@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-30 18:54+0300\n"
-"PO-Revision-Date: 2017-06-30 18:57+0300\n"
+"POT-Creation-Date: 2017-07-03 09:43+0200\n"
+"PO-Revision-Date: 2017-07-03 09:46+0200\n"
 "Last-Translator: Anna Ladoshkina <webdev@foralien.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10 >= 2 && n"
 "%10<=4 &&(n%100<10||n%100 >= 20)? 1 : 2);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 1.8.4\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
 "__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
@@ -163,6 +163,26 @@ msgstr ""
 "Рекомендуемые размеры 315x66px для режима «Только изображение» и 66x66px для "
 "режима «Изображение и название сайта»"
 
+#: core/customizer.php:177
+msgid "Hero Image"
+msgstr "Заглавное изображение"
+
+#: core/customizer.php:178
+msgid "Recommended size 1400x656px"
+msgstr ""
+
+#: core/customizer.php:191
+msgid "Support us hero title"
+msgstr "Заголовок"
+
+#: core/customizer.php:199
+msgid "Support us hero text"
+msgstr "Информация на заглавном изображении"
+
+#: core/customizer.php:207
+msgid "Support us hero button caption"
+msgstr "Надпись на кнопке поддержки"
+
 #: core/settings.php:13 core/settings.php:33
 msgid "Action failed. Please refresh the page and retry."
 msgstr "Операция завершилась с ошибкой. Пожалуйста, перезагрузите страницу."
@@ -233,13 +253,11 @@ msgstr "Установить требуемые плагины"
 msgid "Install Plugins"
 msgstr "Установить плагины"
 
-#. translators: %s: plugin name.
 #: core/settings.php:203 vendor/class-tgm-plugin-activation.php:330
 #, php-format
 msgid "Installing Plugin: %s"
 msgstr "Установка плагина: %s"
 
-#. translators: %s: plugin name.
 #: core/settings.php:205 vendor/class-tgm-plugin-activation.php:332
 #, php-format
 msgid "Updating Plugin: %s"
@@ -277,7 +295,6 @@ msgstr[0] "Необходимо обновить плагин %1$s."
 msgstr[1] "Необходимо обновить плагины: %1$s."
 msgstr[2] "Необходимо обновить плагины: %1$s."
 
-#. translators: 1: plugin name(s).
 #: core/settings.php:210 vendor/class-tgm-plugin-activation.php:343
 #, php-format
 msgid "There is an update available for: %1$s."
@@ -286,7 +303,6 @@ msgstr[0] "%1$s: доступно обновление."
 msgstr[1] "%1$s: доступно обновление."
 msgstr[2] "%1$s: доступно обновление."
 
-#. translators: 1: plugin name(s).
 #: core/settings.php:211 vendor/class-tgm-plugin-activation.php:349
 #, php-format
 msgid "The following required plugin is currently inactive: %1$s."
@@ -295,7 +311,6 @@ msgstr[0] "Необходимо активировать плагин %1$s."
 msgstr[1] "Необходимо активировать плагины: %1$s."
 msgstr[2] "Необходимо активировать плагины: %1$s."
 
-#. translators: 1: plugin name(s).
 #: core/settings.php:212 vendor/class-tgm-plugin-activation.php:355
 #, php-format
 msgid "The following recommended plugin is currently inactive: %1$s."
@@ -339,13 +354,11 @@ msgstr "Плагин активирован."
 msgid "The following plugin was activated successfully:"
 msgstr "Плагин успешно активирован:"
 
-#. translators: 1: plugin name.
 #: core/settings.php:220 vendor/class-tgm-plugin-activation.php:379
 #, php-format
 msgid "No action taken. Plugin %1$s was already active."
 msgstr "Плагин %1$s уже активирован."
 
-#. translators: 1: plugin name.
 #: core/settings.php:222 vendor/class-tgm-plugin-activation.php:381
 #, php-format
 msgid ""
@@ -355,7 +368,6 @@ msgstr ""
 "Плагин не активирован - тема требует более высокой версии %s. Пожалуйста, "
 "обновите плагин."
 
-#. translators: 1: dashboard link.
 #: core/settings.php:224 vendor/class-tgm-plugin-activation.php:383
 #, php-format
 msgid "All plugins installed and activated successfully. %1$s"
@@ -485,11 +497,11 @@ msgstr ""
 msgid "Monthly donation"
 msgstr "Перечислять ежемесячно"
 
-#: modules/starter/starter.php:85
+#: modules/starter/starter.php:84
 msgid "Kandinsky main menu"
 msgstr "Главное меню «Кандинского»"
 
-#: modules/starter/starter.php:95
+#: modules/starter/starter.php:94
 msgid "Home page"
 msgstr "Главная"
 
@@ -501,7 +513,7 @@ msgstr "Анонсы"
 msgid "Past events"
 msgstr "Прошедшие мероприятия"
 
-#: page-home.php:76
+#: page-home.php:53
 msgid "News"
 msgstr "Новости"
 
@@ -578,7 +590,6 @@ msgctxt "plugin A *and* plugin B"
 msgid "and"
 msgstr "и"
 
-#. translators: %s: version number
 #: vendor/class-tgm-plugin-activation.php:1971
 #, php-format
 msgid "TGMPA v%s"
@@ -628,14 +639,12 @@ msgstr "Требуется обновление"
 msgid "Update recommended"
 msgstr "Рекомендуется обновление"
 
-#. translators: 1: install status, 2: update status
 #: vendor/class-tgm-plugin-activation.php:2331
 #, php-format
 msgctxt "Install/Update Status"
 msgid "%1$s, %2$s"
 msgstr "%1$s, %2$s"
 
-#. translators: 1: number of plugins.
 #: vendor/class-tgm-plugin-activation.php:2377
 #, php-format
 msgctxt "plugins"
@@ -645,7 +654,6 @@ msgstr[0] "Все <span class=\"count\">(%s)</span>"
 msgstr[1] "Все <span class=\"count\">(%s)</span>"
 msgstr[2] "Все <span class=\"count\">(%s)</span>"
 
-#. translators: 1: number of plugins.
 #: vendor/class-tgm-plugin-activation.php:2381
 #, php-format
 msgid "To Install <span class=\"count\">(%s)</span>"
@@ -654,7 +662,6 @@ msgstr[0] "К установке <span class=\"count\">(%s)</span>"
 msgstr[1] "К установке <span class=\"count\">(%s)</span>"
 msgstr[2] "К установке <span class=\"count\">(%s)</span>"
 
-#. translators: 1: number of plugins.
 #: vendor/class-tgm-plugin-activation.php:2385
 #, php-format
 msgid "Update Available <span class=\"count\">(%s)</span>"
@@ -663,7 +670,6 @@ msgstr[0] "Доступно обновление <span class=\"count\">(%s)</spa
 msgstr[1] "Доступно обновление <span class=\"count\">(%s)</span>"
 msgstr[2] "Доступно обновление <span class=\"count\">(%s)</span>"
 
-#. translators: 1: number of plugins.
 #: vendor/class-tgm-plugin-activation.php:2389
 #, php-format
 msgid "To Activate <span class=\"count\">(%s)</span>"
@@ -713,19 +719,16 @@ msgstr "Версия"
 msgid "Status"
 msgstr "Статус"
 
-#. translators: %2$s: plugin name in screen reader markup
 #: vendor/class-tgm-plugin-activation.php:2592
 #, php-format
 msgid "Install %2$s"
 msgstr "Установить %2$s"
 
-#. translators: %2$s: plugin name in screen reader markup
 #: vendor/class-tgm-plugin-activation.php:2597
 #, php-format
 msgid "Update %2$s"
 msgstr "Обновить %2$s"
 
-#. translators: %2$s: plugin name in screen reader markup
 #: vendor/class-tgm-plugin-activation.php:2603
 #, php-format
 msgid "Activate %2$s"
@@ -775,19 +778,16 @@ msgstr "Ни один плагин не нуждается в активации
 msgid "Plugin activation failed."
 msgstr "Плагин не активирован."
 
-#. translators: 1: plugin name, 2: action number 3: total number of actions.
 #: vendor/class-tgm-plugin-activation.php:3487
 #, php-format
 msgid "Updating Plugin %1$s (%2$d/%3$d)"
 msgstr "Обновление плагина %1$s (%2$d/%3$d)"
 
-#. translators: 1: plugin name, 2: error message.
 #: vendor/class-tgm-plugin-activation.php:3490
 #, php-format
 msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
 msgstr "Ошибка при установке %1$s: <strong>%2$s</strong>."
 
-#. translators: 1: plugin name.
 #: vendor/class-tgm-plugin-activation.php:3492
 #, php-format
 msgid "The installation of %1$s failed."
@@ -799,7 +799,6 @@ msgid ""
 "while on some hosts, so please be patient."
 msgstr "Установка и активация плагинов началась..."
 
-#. translators: 1: plugin name.
 #: vendor/class-tgm-plugin-activation.php:3498
 #, php-format
 msgid "%1$s installed and activated successfully."
@@ -819,7 +818,6 @@ msgstr "Закрыть"
 msgid "All installations and activations have been completed."
 msgstr "Установка и активация плагинов завершена."
 
-#. translators: 1: plugin name, 2: action number 3: total number of actions.
 #: vendor/class-tgm-plugin-activation.php:3501
 #, php-format
 msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
@@ -831,7 +829,6 @@ msgid ""
 "hosts, so please be patient."
 msgstr "Установка плагинов началась..."
 
-#. translators: 1: plugin name.
 #: vendor/class-tgm-plugin-activation.php:3506
 #, php-format
 msgid "%1$s installed successfully."
@@ -841,7 +838,6 @@ msgstr "%1$s - плагин успешно установлен."
 msgid "All installations have been completed."
 msgstr "Установка плагинов завершена."
 
-#. translators: 1: plugin name, 2: action number 3: total number of actions.
 #: vendor/class-tgm-plugin-activation.php:3509
 #, php-format
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
