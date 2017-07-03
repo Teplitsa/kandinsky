@@ -24,30 +24,7 @@ if($about_post):
 <div id="pgc-72-0-0" class="panel-grid-cell">
 <div class="no-bottom-margin panel-cell-style">
 
-
-<div id="panel-72-0-0-0" class="so-panel widget widget_tst-featureditem panel-first-child" data-index="0">
-<div class="so-widget-tst-featureditem so-widget-tst-featureditem-base">
-<section class="intro-head-image text-over-image">
-<div class="tpl-pictured-bg" style="background-image: url(https://ngo2.ru/kandinsky-files/knd-img1.jpg)"></div>
-</section>
-<section class="intro-head-content text-over-image has-button">
-<div class="ihc-content">
-<a href="<?php echo get_permalink( knd_get_post('donate', 'page') ) ?>">
-<h1 class="ihc-title">
-<span>Поддержать «Линию Цвета»</span>
-</h1>
-<div class="ihc-desc">
-<p>
-<b>Помоги людям бороться с алкогольной зависимостью.</b>
-В Нашей области 777 человек, которые страдают от алкогольной зависимости. Ваши пожертвования помогут организовать для них реабилитационную программу.
-</p>
-</div>
-<div class="cta">Сделать пожертвование</div>
-</a>
-</div>
-</section>
-</div>
-</div>
+<?php echo knd_hero_image_markup(); ?>
 
 <div id="panel-72-0-0-1" class="so-panel widget widget_sow-editor panel-last-child" data-index="1">
 <div class="content-center container-extended-colored panel-widget-style">

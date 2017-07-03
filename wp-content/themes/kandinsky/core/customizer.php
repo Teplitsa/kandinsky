@@ -149,6 +149,67 @@ function knd_customize_register(WP_Customize_Manager $wp_customize) {
                 'priority'      => 30
         )) 
     );
+    
+    
+    // hero image
+    $wp_customize->add_setting('knd_hero_image', array(
+        'default'           => '',
+        'sanitize_callback' => 'absint'
+    ));
+    
+    $wp_customize->add_setting('knd_hero_image_support_text', array(
+        'default'   => '',
+    ));
+    
+    $wp_customize->add_setting('knd_hero_image_support_title', array(
+        'default'   => '',
+    ));
+    
+    $wp_customize->add_setting('knd_hero_image_support_button_caption', array(
+        'default'   => '',
+    ));
+    
+    $wp_customize->add_control(
+            new WP_Customize_Cropped_Image_Control(
+            $wp_customize,
+            'knd_hero_image',
+            array(
+                'label'         => __( 'Hero Image', 'knd' ),
+                'description'   => __( 'Recommended size 1400x656px', 'knd' ),
+                'section'       => 'static_front_page',
+                'settings'      => 'knd_hero_image',
+                'flex_width'    => true,
+                'flex_height'   => false,
+                'width'         => 1400,
+                'height'        => 656,
+                'priority'      => 40
+            ))
+    );
+    
+    $wp_customize->add_control('knd_hero_image_support_title', array(
+        'type'     => 'textarea',
+        'label'    => __('Support us hero title', 'knd'),
+        'section'  => 'static_front_page',
+        'settings' => 'knd_hero_image_support_title',
+        'priority' => 45
+    ));
+    
+    $wp_customize->add_control('knd_hero_image_support_text', array(
+        'type'     => 'textarea',
+        'label'    => __('Support us hero text', 'knd'),
+        'section'  => 'static_front_page',
+        'settings' => 'knd_hero_image_support_text',
+        'priority' => 50
+    ));
+    
+    $wp_customize->add_control('knd_hero_image_support_button_caption', array(
+        'type'     => 'textarea',
+        'label'    => __('Support us hero button caption', 'knd'),
+        'section'  => 'static_front_page',
+        'settings' => 'knd_hero_image_support_button_caption',
+        'priority' => 55
+    ));
+    
 }
 
 

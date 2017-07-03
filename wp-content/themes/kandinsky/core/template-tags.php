@@ -758,3 +758,54 @@ function knd_logo_markup() {
 <?php
 }
 
+function knd_hero_image_markup() {
+
+    $hero = get_theme_mod('knd_hero_image');
+    $hero_img = '';
+
+    if($hero) {
+        $hero_img = wp_get_attachment_image_src( (int)$hero, 'full' );
+        if(!empty($hero_img)) {
+            $hero_img = $hero_img[0];
+        }
+    }
+    
+    if($hero_img) {
+        $knd_hero_image_support_title = get_theme_mod('knd_hero_image_support_title');
+        $knd_hero_image_support_text = get_theme_mod( 'knd_hero_image_support_text');
+        $knd_hero_image_support_button_caption = get_theme_mod( 'knd_hero_image_support_button_caption');
+    ?>
+<div id="panel-72-0-0-0" class="so-panel widget widget_tst-featureditem panel-first-child" data-index="0">
+<div class="so-widget-tst-featureditem so-widget-tst-featureditem-base">
+<section class="intro-head-image text-over-image">
+<div class="tpl-pictured-bg" style="background-image: url(<?php echo $hero_img;?>)"></div>
+</section>
+<section class="intro-head-content text-over-image has-button">
+<div class="ihc-content">
+<a href="<?php echo get_permalink( knd_get_post('donate', 'page') ) ?>">
+<?php if($knd_hero_image_support_title):?>
+<h1 class="ihc-title">
+<span><?php echo $knd_hero_image_support_title ?></span>
+</h1>
+<?php endif; ?>
+
+<?php if($knd_hero_image_support_text):?>
+<div class="ihc-desc">
+<p>
+<?php echo $knd_hero_image_support_text ?>
+</p>
+</div>
+<?php endif; ?>
+
+<?php if($knd_hero_image_support_button_caption):?>
+<div class="cta"><?php echo $knd_hero_image_support_button_caption ?></div>
+<?php endif;?>
+</a>
+</div>
+</section>
+</div>
+</div>
+<?php
+    }
+}
+

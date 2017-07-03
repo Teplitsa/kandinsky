@@ -79,7 +79,6 @@ function knd_update_posts() {
     
 }
 
-
 function knd_setup_menus() {
     
     $main_menu_name = __( 'Kandinsky main menu', 'knd' );
@@ -136,6 +135,18 @@ function knd_setup_menus() {
     
 }
 
+function knd_set_theme_options() {
+    $thumb_id = TST_Import::get_instance()->maybe_import( 'https://ngo2.ru/kandinsky-files/knd-img1.jpg' );
+    
+    if($thumb_id) {
+        set_theme_mod( 'knd_hero_image', $thumb_id );
+    }
+    
+    set_theme_mod( 'knd_hero_image_support_title', "Поддержать «Линию Цвета»" );
+    set_theme_mod( 'knd_hero_image_support_text', "<b>Помоги людям бороться с алкогольной зависимостью.</b> В Нашей области 777 человек, которые страдают от алкогольной зависимости. Ваши пожертвования помогут организовать для них реабилитационную программу." );
+    set_theme_mod( 'knd_hero_image_support_button_caption', "Сделать пожертвование" );
+}
+
 function knd_setup_starter_data() {
 
     knd_import_starter_data_from_csv('posts.csv', 'post');
@@ -143,6 +154,8 @@ function knd_setup_starter_data() {
 
     knd_update_posts();
 
+    knd_set_theme_options();
+    
     //knd_setup_menus();
     do_action('knd_save_demo_content');
 
@@ -165,4 +178,3 @@ function knd_ajax_setup_starter_data() {
     
 }
 add_action("wp_ajax_setup_starter_data", "knd_ajax_setup_starter_data");
-//add_action("wp_ajax_nopriv_setup_starter_data", "knd_setup_starter_data"); // It's only for admin
