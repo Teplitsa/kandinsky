@@ -9,7 +9,7 @@ function knd_customize_register(WP_Customize_Manager $wp_customize) {
     // Theme important links started
     class Knd_Important_Links extends WP_Customize_Control {
 
-        public $type = "colormag-important-links";
+        public $type = "knd-important-links";
 
         public function render_content() {
 
@@ -23,13 +23,9 @@ function knd_customize_register(WP_Customize_Manager $wp_customize) {
                     'text' => esc_html__('Support', 'knd'),
                 ),
                 'documentation' => array(
-                    'link' => esc_url('https://te-st.ru/'),
+                    'link' => esc_url('https://drive.google.com/drive/folders/0B5-GQ-OMsbzrRzVmQnNzUm9RVGc?usp=sharing'),
                     'text' => esc_html__('Documentation', 'knd'),
                 ),
-//                'rating' => array(
-//                    'link' => esc_url('https://wordpress.org/support/view/theme-reviews/colormag?filter=5'),
-//                    'text' => esc_html__('Rate this theme', 'colormag'),
-//                ),
             );
             foreach ($important_links as $important_link) {
                 echo '<p><a target="_blank" href="' . $important_link['link'] . '" >' . esc_attr($important_link['text']) . ' </a></p>';

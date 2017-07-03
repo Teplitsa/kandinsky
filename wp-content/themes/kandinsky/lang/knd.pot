@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-26 11:38+0000\n"
+"POT-Creation-Date: 2017-07-03 12:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -27,7 +27,7 @@ msgstr ""
 msgid "All materials of the site are avaliabe under license %s"
 msgstr ""
 
-#: functions.php:37 modules/starter/class-demo.php:84
+#: functions.php:38 modules/starter/class-demo.php:84
 #: modules/starter/class-demo.php:223
 msgid "Primary menu"
 msgstr ""
@@ -36,7 +36,7 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:44
+#: header.php:34
 msgid "Donate"
 msgstr ""
 
@@ -60,7 +60,7 @@ msgstr ""
 msgid "Homepage"
 msgstr ""
 
-#: page-home.php:76
+#: page-home.php:53
 msgid "News"
 msgstr ""
 
@@ -100,8 +100,82 @@ msgstr ""
 msgid "More"
 msgstr ""
 
-#: core/customizer.php:18
+#: core/customizer.php:19
+msgid "Theme Info"
+msgstr ""
+
+#: core/customizer.php:23
+msgid "Support"
+msgstr ""
+
+#: core/customizer.php:27
+msgid "Documentation"
+msgstr ""
+
+#: core/customizer.php:40 core/customizer.php:49
+msgid "Important Links"
+msgstr ""
+
+#: core/customizer.php:65
 msgid "Header text"
+msgstr ""
+
+#: core/customizer.php:88
+msgid "Decoration Basics"
+msgstr ""
+
+#: core/customizer.php:110
+msgid "Main Color"
+msgstr ""
+
+#: core/customizer.php:120
+msgid "Logo mode"
+msgstr ""
+
+#: core/customizer.php:125
+msgid "Image only"
+msgstr ""
+
+#: core/customizer.php:126
+msgid "Image with site name"
+msgstr ""
+
+#: core/customizer.php:127
+msgid "Site name only"
+msgstr ""
+
+#: core/customizer.php:128
+msgid "Do not show"
+msgstr ""
+
+#: core/customizer.php:137
+msgid "Logo"
+msgstr ""
+
+#: core/customizer.php:138
+msgid ""
+"Recommended size 315x66px for Image only mode and 66x66px for Image with "
+"site name"
+msgstr ""
+
+#: core/customizer.php:173
+msgid "Hero Image"
+msgstr ""
+
+#: core/customizer.php:174
+msgid "Recommended size 1400x656px"
+msgstr ""
+
+#: core/customizer.php:187
+msgid "Support us hero title"
+msgstr ""
+
+#: core/customizer.php:195
+msgid "Support us hero text"
+msgstr ""
+
+#: core/customizer.php:203
+msgid "Support us hero button caption"
 msgstr ""
 
 #: core/settings.php:13 core/settings.php:33
@@ -654,11 +728,11 @@ msgstr ""
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: modules/starter/starter.php:85
+#: modules/starter/starter.php:84
 msgid "Kandinsky main menu"
 msgstr ""
 
-#: modules/starter/starter.php:95
+#: modules/starter/starter.php:94
 msgid "Home page"
 msgstr ""
 

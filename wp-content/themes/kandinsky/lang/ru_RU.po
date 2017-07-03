@@ -2,18 +2,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-03 09:43+0200\n"
-"PO-Revision-Date: 2017-07-03 09:46+0200\n"
-"Last-Translator: Anna Ladoshkina <webdev@foralien.com>\n"
+"POT-Creation-Date: 2017-07-03 12:38+0000\n"
+"PO-Revision-Date: 2017-07-03 12:40+0000\n"
+"Last-Translator: ahaenor <ahaenor@gmail.com>\n"
 "Language-Team: Russian\n"
-"Language: ru_RU\n"
+"Language: ru-RU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10 >= 2 && n"
-"%10<=4 &&(n%100<10||n%100 >= 20)? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10 >= 2 && "
+"n%10<=4 &&(n%100<10||n%100 >= 20)? 1 : 2)\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.8.4\n"
+"X-Generator: Loco - https://localise.biz/\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
 "__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
@@ -24,138 +24,162 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: bower_components\n"
 "X-Poedit-SearchPathExcluded-1: node_modules\n"
-"X-Poedit-SearchPathExcluded-2: assets\n"
+"X-Poedit-SearchPathExcluded-2: assets"
+
+#. Name of the template
+msgid "Events"
+msgstr "Мероприятия"
+
+#. Name of the template
+msgid "Fullwidth"
+msgstr "Полная ширина"
+
+#: core/customizer.php:19
+msgid "Theme Info"
+msgstr "О теме"
+
+#: core/customizer.php:23
+msgid "Support"
+msgstr "Служба поддержки"
+
+#: core/customizer.php:27
+msgid "Documentation"
+msgstr "Документация"
+
+#: core/customizer.php:40 core/customizer.php:49
+msgid "Important Links"
+msgstr "Важные ссылки"
+
+#: core/customizer.php:174
+msgid "Recommended size 1400x656px"
+msgstr "Рекомендуемый размер: 1400х656 пикс."
+
+#. Description of the theme
+msgid "The beautiful design and useful features for nonprofit website"
+msgstr "Красивый адаптивный дизайн и полезные функции для сайта НКО."
+
+#. Author of the theme
+msgid "Teplitsa"
+msgstr "Теплица социальных технологий"
+
+#. Author URI of the theme
+msgid "https://te-st.ru/"
+msgstr "https://te-st.ru/"
 
 #: archive-leyka_donation.php:20
 msgid "Campaign"
 msgstr "Кампания"
 
-#: archive-leyka_donation.php:38
-msgid "Anonymous"
-msgstr ""
+#: footer.php:11
+msgid "Teplitsa of social technologies"
+msgstr "Теплица социальных технологий"
 
-#: core/admin.php:139 core/admin.php:148
-msgid "Website"
-msgstr ""
-
-#: core/admin.php:139 core/admin.php:153
-msgid "Excerpt"
-msgstr ""
-
-#: core/admin.php:155
-msgid ""
-"Annotation for items lists (will be printed at the beginning of the single "
-"page)"
-msgstr ""
-
-#: core/admin.php:208
-msgid "Forms"
-msgstr ""
-
-#: core/admin.php:331
+#: footer.php:47
 #, php-format
-msgid ""
-"ATTENTION! You thumbnail image is too small. It should be at least %s px"
-msgstr ""
+msgid "All materials of the site are avaliabe under license %s"
+msgstr "Все материалы сайта доступны по лицензии %s"
 
-#: core/admin.php:379 core/admin.php:395
-msgid "Facebook Profile"
-msgstr ""
+#: functions.php:38 modules/starter/class-demo.php:84
+#: modules/starter/class-demo.php:223
+msgid "Primary menu"
+msgstr "﻿Главное меню"
 
-#: core/admin.php:381 core/admin.php:397
-msgid "Enter URL of author's Facebook profile"
-msgstr ""
+#: header.php:18
+msgid "Skip to content"
+msgstr "Перейти к содержанию"
 
-#: core/admin.php:384 core/admin.php:400
-msgid "Avatar"
-msgstr ""
+#: header.php:34
+msgid "Donate"
+msgstr "Помочь сейчас"
 
-#: core/admin.php:432
-msgid "Taxonomy Term Image"
-msgstr ""
+#: page-events.php:72
+msgid "Future events"
+msgstr "Анонсы"
 
-#: core/admin.php:433
-msgid "Select which image should represent this term."
-msgstr ""
+#: page-events.php:87
+msgid "Past events"
+msgstr "Прошедшие мероприятия"
 
-#: core/admin.php:434
-msgid "Select Image"
-msgstr ""
+msgid "Homepage"
+msgstr "Главная"
 
-#: core/admin.php:435
-msgid "Remove"
-msgstr ""
+#: page-home.php:53
+msgid "News"
+msgstr "Новости"
 
-#: core/admin.php:436
-msgid "Select or upload an image for this term"
-msgstr ""
+#: search.php:47
+msgid "Enter terms for search in the form and hit Enter"
+msgstr "Укажите слова для поиска в форме и нажмите Enter"
 
-#: core/admin.php:437
-msgid "Attach"
-msgstr ""
+#: search.php:51
+msgid "Nothing found under your request"
+msgstr "По вашему запросу ничего не найдено."
 
-#: core/author.php:29
-msgid "Author"
-msgstr ""
+#: single-event.php:113
+msgid "Visit or events"
+msgstr "Приглашаем на мероприятия"
 
-#: core/cards.php:24 core/cards.php:52 core/extras.php:63
-#: taxonomy-person_cat.php:20
+#: single-leyka_campaign.php:29
+msgid "Our supporters"
+msgstr "Нас поддержали"
+
+#: single-leyka_campaign.php:32
+msgid "Full list"
+msgstr "Полный список"
+
+#: single-project.php:48 single.php:95
+msgid "Related projects"
+msgstr "Познакомьтесь с другими проектами"
+
+#: single.php:83
+msgid "Related news"
+msgstr "Новости по теме"
+
+#: single.php:116 core/template-tags.php:436
+msgid "Our volunteers"
+msgstr "Наши волонтеры"
+
+#: taxonomy-person_cat.php:20 core/cards.php:24 core/cards.php:52
 msgid "More"
 msgstr "Ещё"
 
-#: core/customizer.php:19
-msgid "Theme Info"
-msgstr ""
-
-#: core/customizer.php:23
-msgid "Support"
-msgstr ""
-
-#: core/customizer.php:27
-msgid "Documentation"
-msgstr ""
-
-#: core/customizer.php:44 core/customizer.php:53
-msgid "Important Links"
-msgstr ""
-
-#: core/customizer.php:69
+#: core/customizer.php:65
 msgid "Header text"
 msgstr "Текст заголовка"
 
-#: core/customizer.php:92
+#: core/customizer.php:88
 msgid "Decoration Basics"
 msgstr "Оформление"
 
-#: core/customizer.php:114
+#: core/customizer.php:110
 msgid "Main Color"
 msgstr "Основной цвет"
 
-#: core/customizer.php:124
+#: core/customizer.php:120
 msgid "Logo mode"
 msgstr "Режим отображения логотипа"
 
-#: core/customizer.php:129
+#: core/customizer.php:125
 msgid "Image only"
 msgstr "Только изображение"
 
-#: core/customizer.php:130
+#: core/customizer.php:126
 msgid "Image with site name"
 msgstr "Изображение и название сайта"
 
-#: core/customizer.php:131
+#: core/customizer.php:127
 msgid "Site name only"
 msgstr "Только название сайта"
 
-#: core/customizer.php:132
+#: core/customizer.php:128
 msgid "Do not show"
 msgstr "Не показывать"
 
-#: core/customizer.php:141
+#: core/customizer.php:137
 msgid "Logo"
 msgstr "Логотип"
 
-#: core/customizer.php:142
+#: core/customizer.php:138
 msgid ""
 "Recommended size 315x66px for Image only mode and 66x66px for Image with "
 "site name"
@@ -163,23 +187,19 @@ msgstr ""
 "Рекомендуемые размеры 315x66px для режима «Только изображение» и 66x66px для "
 "режима «Изображение и название сайта»"
 
-#: core/customizer.php:177
+#: core/customizer.php:173
 msgid "Hero Image"
 msgstr "Заглавное изображение"
 
-#: core/customizer.php:178
-msgid "Recommended size 1400x656px"
-msgstr ""
-
-#: core/customizer.php:191
+#: core/customizer.php:187
 msgid "Support us hero title"
 msgstr "Заголовок"
 
-#: core/customizer.php:199
+#: core/customizer.php:195
 msgid "Support us hero text"
 msgstr "Информация на заглавном изображении"
 
-#: core/customizer.php:207
+#: core/customizer.php:203
 msgid "Support us hero button caption"
 msgstr "Надпись на кнопке поддержки"
 
@@ -283,7 +303,7 @@ msgstr[0] "Рекомендуется установить плагин %1$s."
 msgstr[1] "Рекомендуется установить плагины: %1$s."
 msgstr[2] "Рекомендуется установить плагины: %1$s."
 
-#: core/settings.php:209 vendor/class-tgm-plugin-activation.php:337
+#: core/settings.php:209 vendor/class-tgm-plugin-activation.php:336
 #, php-format
 msgid ""
 "The following plugin needs to be updated to its latest version to ensure "
@@ -295,7 +315,7 @@ msgstr[0] "Необходимо обновить плагин %1$s."
 msgstr[1] "Необходимо обновить плагины: %1$s."
 msgstr[2] "Необходимо обновить плагины: %1$s."
 
-#: core/settings.php:210 vendor/class-tgm-plugin-activation.php:343
+#: core/settings.php:210
 #, php-format
 msgid "There is an update available for: %1$s."
 msgid_plural "There are updates available for the following plugins: %1$s."
@@ -303,7 +323,7 @@ msgstr[0] "%1$s: доступно обновление."
 msgstr[1] "%1$s: доступно обновление."
 msgstr[2] "%1$s: доступно обновление."
 
-#: core/settings.php:211 vendor/class-tgm-plugin-activation.php:349
+#: core/settings.php:211
 #, php-format
 msgid "The following required plugin is currently inactive: %1$s."
 msgid_plural "The following required plugins are currently inactive: %1$s."
@@ -311,7 +331,7 @@ msgstr[0] "Необходимо активировать плагин %1$s."
 msgstr[1] "Необходимо активировать плагины: %1$s."
 msgstr[2] "Необходимо активировать плагины: %1$s."
 
-#: core/settings.php:212 vendor/class-tgm-plugin-activation.php:355
+#: core/settings.php:212
 #, php-format
 msgid "The following recommended plugin is currently inactive: %1$s."
 msgid_plural "The following recommended plugins are currently inactive: %1$s."
@@ -319,21 +339,21 @@ msgstr[0] "Рекомендуется активировать плагин %1$s
 msgstr[1] "Рекомендуется активировать плагины: %1$s."
 msgstr[2] "Рекомендуется активировать плагины: %1$s."
 
-#: core/settings.php:213 vendor/class-tgm-plugin-activation.php:360
+#: core/settings.php:213 vendor/class-tgm-plugin-activation.php:359
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
 msgstr[0] "Установить плагин"
 msgstr[1] "Установить плагины"
 msgstr[2] "Установить плагин"
 
-#: core/settings.php:214 vendor/class-tgm-plugin-activation.php:365
+#: core/settings.php:214 vendor/class-tgm-plugin-activation.php:364
 msgid "Begin updating plugin"
 msgid_plural "Begin updating plugins"
 msgstr[0] "Обновить плагин"
 msgstr[1] "Обновить плагины"
 msgstr[2] "Обновить плагин"
 
-#: core/settings.php:215 vendor/class-tgm-plugin-activation.php:370
+#: core/settings.php:215 vendor/class-tgm-plugin-activation.php:369
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
 msgstr[0] "Активировать плагин"
@@ -403,14 +423,6 @@ msgstr "Результаты поиска"
 msgid "404: Page not found"
 msgstr "Ошибка 404: Страница не найдена"
 
-#: core/template-tags.php:368
-msgid "Post navigation"
-msgstr ""
-
-#: core/template-tags.php:383 core/template-tags.php:393
-msgid "Homepage"
-msgstr "Главная"
-
 #: core/template-tags.php:430
 msgid "More projects"
 msgstr "Еще проекты"
@@ -422,10 +434,6 @@ msgstr "Наши программы"
 #: core/template-tags.php:435
 msgid "More volunteers"
 msgstr "Еще волонтеры"
-
-#: core/template-tags.php:436 single.php:116
-msgid "Our volunteers"
-msgstr "Наши волонтеры"
 
 #: core/template-tags.php:441
 msgid "More events"
@@ -439,111 +447,13 @@ msgstr "Еще новости"
 msgid "Latest news"
 msgstr "Последние новости"
 
-#: core/template-tags.php:487
-msgid "Related project"
-msgstr ""
-
-#: core/template-tags.php:506
-msgid "Help now"
-msgstr ""
-
-#: footer.php:11
-msgid "Teplitsa of social technologies"
-msgstr "Теплица социальных технологий"
-
-#: footer.php:47
-#, php-format
-msgid "All materials of the site are avaliabe under license %s"
-msgstr "Все материалы сайта доступны по лицензии %s"
-
-#: functions.php:38 modules/starter/class-demo.php:84
-#: modules/starter/class-demo.php:223
-msgid "Primary menu"
-msgstr "﻿Главное меню"
-
-#: header.php:18
-msgid "Skip to content"
-msgstr "Перейти к содержанию"
-
-#: header.php:34
-msgid "Donate"
-msgstr "Помочь сейчас"
-
-#: modules/donations.php:62
-msgid "Please, set a text of comment to describe an additional ways to donate."
-msgstr ""
-
-#: modules/donations.php:70
-msgid "Please, set a text to describe an additional ways to donate."
-msgstr ""
-
-#: modules/donations.php:121
-msgid "Please, specify your donation amount"
-msgstr ""
-
 #: modules/donations.php:128
 msgid "or"
 msgstr "или"
 
-#: modules/donations.php:129
-msgid "Specify the amount of your donation"
-msgstr ""
-
-#: modules/donations.php:195
-msgid "Your name"
-msgstr ""
-
 #: modules/donations.php:222
 msgid "Monthly donation"
 msgstr "Перечислять ежемесячно"
-
-#: modules/starter/starter.php:84
-msgid "Kandinsky main menu"
-msgstr "Главное меню «Кандинского»"
-
-#: modules/starter/starter.php:94
-msgid "Home page"
-msgstr "Главная"
-
-#: page-events.php:72
-msgid "Future events"
-msgstr "Анонсы"
-
-#: page-events.php:87
-msgid "Past events"
-msgstr "Прошедшие мероприятия"
-
-#: page-home.php:53
-msgid "News"
-msgstr "Новости"
-
-#: search.php:47
-msgid "Enter terms for search in the form and hit Enter"
-msgstr "Укажите слова для поиска в форме и нажмите Enter"
-
-#: search.php:51
-msgid "Nothing found under your request"
-msgstr "По вашему запросу ничего не найдено."
-
-#: single-event.php:113
-msgid "Visit or events"
-msgstr "Приглашаем на мероприятия"
-
-#: single-leyka_campaign.php:29
-msgid "Our supporters"
-msgstr "Нас поддержали"
-
-#: single-leyka_campaign.php:32
-msgid "Full list"
-msgstr "Полный список"
-
-#: single-project.php:48 single.php:95
-msgid "Related projects"
-msgstr "Познакомьтесь с другими проектами"
-
-#: single.php:83
-msgid "Related news"
-msgstr "Новости по теме"
 
 #: vendor/class-tgm-plugin-activation.php:375
 #: vendor/class-tgm-plugin-activation.php:816
@@ -843,17 +753,10 @@ msgstr "Установка плагинов завершена."
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr "Установка плагина %1$s (%2$d/%3$d)"
 
-#~ msgid "Events"
-#~ msgstr "Мероприятия"
+#: modules/starter/starter.php:84
+msgid "Kandinsky main menu"
+msgstr "Главное меню «Кандинского»"
 
-#~ msgid "Fullwidth"
-#~ msgstr "Во всю ширину"
-
-#~ msgid "The beautiful design and useful features for nonprofit website"
-#~ msgstr "Красивый дизайн и полезные функции для сайта НКО"
-
-#~ msgid "Teplitsa"
-#~ msgstr "Теплица социальных технологий"
-
-#~ msgid "https://te-st.ru/"
-#~ msgstr "https://te-st.ru/"
+#: modules/starter/starter.php:94
+msgid "Home page"
+msgstr "Главная"
