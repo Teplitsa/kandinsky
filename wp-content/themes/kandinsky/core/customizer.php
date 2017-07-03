@@ -23,7 +23,7 @@ function knd_customize_register(WP_Customize_Manager $wp_customize) {
                     'text' => esc_html__('Support', 'knd'),
                 ),
                 'documentation' => array(
-                    'link' => esc_url('https://drive.google.com/drive/folders/0B5-GQ-OMsbzrRzVmQnNzUm9RVGc?usp=sharing'),
+                    'link' => esc_url('https://drive.google.com/drive/folders/0B5-GQ-OMsbzrRzVmQnNzUm9RVGc'),
                     'text' => esc_html__('Documentation', 'knd'),
                 ),
             );
@@ -134,8 +134,8 @@ function knd_customize_register(WP_Customize_Manager $wp_customize) {
         $wp_customize, 
         'knd_custom_logo', 
             array(
-                'label'         => __( 'Logo', 'knd' ),
-                'description'   => __( 'Recommended size 315x66px for Image only mode and 66x66px for Image with site name', 'knd' ),
+                'label'         => __('Logo', 'knd'),
+                'description'   => __('Recommended size 315x66px for Image only mode and 66x66px for Image with site name', 'knd'),
                 'section'       => 'knd_decoration',
                 'settings'      => 'knd_custom_logo',
                 'flex_width'    => true, 
@@ -169,8 +169,8 @@ function knd_customize_register(WP_Customize_Manager $wp_customize) {
             $wp_customize,
             'knd_hero_image',
             array(
-                'label'         => __( 'Hero Image', 'knd' ),
-                'description'   => __( 'Recommended size 1400x656px', 'knd' ),
+                'label'         => __('Hero Image', 'knd'),
+                'description'   => __('Recommended size 1400x656px', 'knd'),
                 'section'       => 'static_front_page',
                 'settings'      => 'knd_hero_image',
                 'flex_width'    => true,
