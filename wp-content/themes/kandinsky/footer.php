@@ -14,25 +14,31 @@ $footer_text = get_theme_mod('footer_text');
 ?>
 </div><!--  #site_content -->
 
-<div id="bottom_bar" class="bottom-bar"><div class="container-wide">	
-	<div class="frame frame-wide">
-		<div class="bit md-9 lg-8">
-			<?php if(!is_page('subscribe'))	{ ?>
-				<h5><?php #_e('Subscribe to our newsletter', 'knd');?></h5>
-				<div class="newsletter-form in-footer">
-					<?php #echo rdc_get_newsletter_form('bottom');?>
-				</div>
-			<?php } else { ?>
-				&nbsp;
-			<?php  }?>
-		</div>
+<div id="bottom_bar" class="bottom-bar">
+    <div class="container-wide">
+        <div class="frame frame-wide">
+            <div class="bit md-9 lg-8">
+            <?php if( !is_page('subscribe') ) {?>
+                <h5><?php #_e('Subscribe to our newsletter', 'knd');?></h5>
+                <div class="newsletter-form in-footer">
+                    <?php #echo rdc_get_newsletter_form('bottom');?>
+                </div>
+            <?php }?>
+            </div>
 
-		<div class="bit md-3 lg-3 lg-offset-1">
-			<h5><span class="icons-label"><?php #_e('Our social profiles', 'knd');?></span>&nbsp;</h5>
-			<?php #echo rdc_get_social_menu(); ?>
-		</div>
-	</div>
-</div></div>
+            <div class="bit md-3 lg-3 lg-offset-1">
+            <?php $social_icons = knd_social_links(array(), false);
+
+            if($social_icons) {?>
+
+                <h5><span class="icons-label"><?php _e('Our social profiles', 'knd');?></span>&nbsp;</h5>
+                <?php echo $social_icons;?>
+
+            <?php }?>
+            </div>
+        </div>
+    </div>
+</div>
 
 <footer class="site-footer"><div class="container-wide">		
 	

@@ -40,7 +40,7 @@ $social_color: (
 
 
 /** == Menu == **/
-.social-menu {	
+.knd-social-links {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
@@ -54,7 +54,7 @@ $social_color: (
 			@include social-button-link(46px, 20px);			
 			span { display: none; }
 		}
-		
+
 		.svg-icon {
 			display: inline-block;			
 			fill: #ffffff;					
@@ -78,7 +78,7 @@ $social_color: (
 .bottom-bar {
 	
 	@each $item in vk, facebook, youtube, twitter, instagram {		
-		.social-menu .#{$item} a {
+		.knd-social-links .#{$item} a {
 			background: $color-text-black;
 			&:hover, &:focus, &:active {
 				//background: social_color($item);

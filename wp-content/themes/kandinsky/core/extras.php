@@ -280,3 +280,15 @@ function rdc_filter_search_query($s){
 	
 	return $s;
 }
+
+function knd_get_social_media_supported() {
+    return array(
+        'vk' => esc_html__('VKontakte', 'knd'),
+        'ok' => esc_html__('Odnoklassniki', 'knd'),
+        'facebook' => esc_html__('Facebook', 'knd'),
+        'instagram' => esc_html__('Instagram', 'knd'),
+        'twitter' => esc_html__('Twitter', 'knd'),
+        'telegram' => esc_html__('Telegram', 'knd'),
+        'youtube' => esc_html__('YouTube', 'knd'),
+    );
+}

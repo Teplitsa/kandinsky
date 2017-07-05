@@ -367,22 +367,22 @@ h2.logo-name {
 	.menu-open & {
 		right: 0;
 	}
-	
+
 	.search-holder {
 		.svg-icon { display: none; }
 		//border-bottom: 1px solid $color-border-light;
 	}
 	
-	.social-menu {
+	.knd-social-links {
 		padding: $gut/2;
 	}
 }
 
 .site-nav-title {
 	border-bottom: 1px solid $color-border-light;
-	position: realtive;
+	position: relative;
 	height: $logo_small_h + $height_gap;
-	
+
 	@include for(medium-screens) { height: $logo_full_h + $height_gap;}
 	
 	.site-logo {

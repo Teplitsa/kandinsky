@@ -111,3 +111,49 @@ function rdc_quote_screen($atts, $content = null) {
 	
 	return $out;
 }
+
+/** Social links **/
+add_shortcode('knd_social_links', 'knd_social_links');
+function knd_social_links($atts = array(), $echo = true) {
+
+    $atts['class'] = empty($atts['class']) ? '' : esc_attr($atts['class']);
+
+    ob_start();
+
+    $social_links = array();
+    foreach(knd_get_social_media_supported() as $id => $label) {
+
+        $link = esc_url(get_theme_mod('knd_social_links_'.$id));
+        if($link) {
+            $social_links[$id] = array('label' => $label, 'link' => $link);
+        }
+
+    }
+
+    if($social_links) {?>
+
+    <ul class="knd-social-links <?php echo $atts['class'];?>">
+    <?php foreach($social_links as $id => $data) {?>
+
+        <li class="<?php echo esc_attr($id);?>">
+            <a href="<?php echo esc_url($data['link']);?>">
+                <svg class="svg-icon"><use xlink:href="#<?php echo 'icon-'.$id;?>" /></svg>
+                <span><?php echo esc_html($data['label']);?></span>
+            </a>
+        </li>
+
+    <?php }?>
+    </ul>
+
+    <?php }
+
+    $out = ob_get_contents();
+    ob_end_clean();
+
+    if( !!$echo ) {
+        echo $out;
+    } else {
+        return $out;
+    }
+
+}

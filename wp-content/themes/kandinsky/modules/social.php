@@ -4,7 +4,7 @@ function rdc_get_social_menu(){
 	return wp_nav_menu(array(
 			'theme_location' => 'social',
 			'container' => false,
-			'menu_class' => 'social-menu',
+			'menu_class' => 'knd-social-links',
 			'fallback_cb' => '',
 			'echo' => false
 		)); 
