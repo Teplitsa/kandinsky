@@ -183,7 +183,7 @@ function knd_customize_register(WP_Customize_Manager $wp_customize) {
     
     $wp_customize->add_control('knd_hero_image_support_title', array(
         'type'     => 'textarea',
-        'label'    => __('Support us hero title', 'knd'),
+        'label'    => __('Call to action title', 'knd'),
         'section'  => 'static_front_page',
         'settings' => 'knd_hero_image_support_title',
         'priority' => 45
@@ -191,7 +191,7 @@ function knd_customize_register(WP_Customize_Manager $wp_customize) {
     
     $wp_customize->add_control('knd_hero_image_support_text', array(
         'type'     => 'textarea',
-        'label'    => __('Support us hero text', 'knd'),
+        'label'    => __('Call to action text', 'knd'),
         'section'  => 'static_front_page',
         'settings' => 'knd_hero_image_support_text',
         'priority' => 50
@@ -199,7 +199,7 @@ function knd_customize_register(WP_Customize_Manager $wp_customize) {
     
     $wp_customize->add_control('knd_hero_image_support_button_caption', array(
         'type'     => 'textarea',
-        'label'    => __('Support us hero button caption', 'knd'),
+        'label'    => __('Action button caption', 'knd'),
         'section'  => 'static_front_page',
         'settings' => 'knd_hero_image_support_button_caption',
         'priority' => 55,

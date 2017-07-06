@@ -100,7 +100,7 @@ function rdc_widgets_init() {
 		));
 	}
 }
-add_action( 'init', 'rdc_widgets_init', 25 );
+add_action( 'init', 'rdc_widgets_init', 27 );
 
 
 /**

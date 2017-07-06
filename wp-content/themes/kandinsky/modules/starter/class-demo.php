@@ -140,6 +140,21 @@ class KND_Demo_Content {
                         'post_type' => 'page',
                         'post_title' => $pages['donate']['post_title'],
                         'post_content' => $pages['donate']['post_content'],
+                    ),
+                    'reports' => array(
+                        'post_type' => 'page',
+                        'post_title' => $pages['reports']['post_title'],
+                        'post_content' => $pages['reports']['post_content'],
+                    ),
+                    'projects' => array(
+                        'post_type' => 'page',
+                        'post_title' => $pages['projects']['post_title'],
+                        'post_content' => $pages['projects']['post_content'],
+                    ),
+                    'volunteers' => array(
+                        'post_type' => 'page',
+                        'post_title' => $pages['volunteers']['post_title'],
+                        'post_content' => $pages['volunteers']['post_content'],
                     )
                 )
             );

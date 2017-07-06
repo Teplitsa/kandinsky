@@ -53,7 +53,7 @@
 	
 }
 
-.widget_nav_menu {
+.widget_nav_menu, .widget-bottom ul.menu {
 	@include nav-text();	
 	li { margin-bottom: $base/2; }
 	
