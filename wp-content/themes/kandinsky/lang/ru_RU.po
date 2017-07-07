@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-07 13:42+0000\n"
-"PO-Revision-Date: 2017-07-07 13:49+0000\n"
+"POT-Creation-Date: 2017-07-07 14:01+0000\n"
+"PO-Revision-Date: 2017-07-07 14:04+0000\n"
 "Last-Translator: ahaenor <ahaenor@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru-RU\n"
@@ -26,81 +26,65 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-1: node_modules\n"
 "X-Poedit-SearchPathExcluded-2: assets"
 
-#: footer.php:34
-msgid "Our social profiles"
-msgstr "Наши профили в социальных сетях"
+#: page-about.php:36 modules/person/tax.php:7
+msgid "Team"
+msgstr "Команда"
 
-#. Name of the template
-msgid "Events"
-msgstr "Мероприятия"
-
-#. Name of the template
-msgid "Fullwidth"
-msgstr "Полная ширина"
+#: single-person.php:116 core/template-tags.php:441
+msgid "Our team"
+msgstr "Наша команда"
 
 #: core/customizer.php:186
-msgid "Support us hero title"
-msgstr "Заголовок для заставки страницы \"Поддержите нас\""
+msgid "Call to action title"
+msgstr "Заголовок \"призыва к действию\""
 
 #: core/customizer.php:194
-msgid "Support us hero text"
-msgstr "Текст для заставки страницы \"Поддержите нас\""
+msgid "Call to action text"
+msgstr "Текст \"призыва к действию\""
 
 #: core/customizer.php:202
-msgid "Support us hero button caption"
-msgstr "Текст кнопки для заставки страницы \"Поддержите нас\""
+msgid "Action button caption"
+msgstr "Текст на кнопке действия"
 
-#: core/customizer.php:211
-msgid "Social networks links"
-msgstr "Ссылки на социальные сети"
+#: core/template-tags.php:440
+msgid "More team members"
+msgstr "Вся команда"
 
-#: core/extras.php:286
-msgid "VKontakte"
-msgstr "ВКонтакте"
+#: core/widgets.php:10
+msgid "Homepage widgets"
+msgstr "Виджеты главной"
 
-#: core/extras.php:287
-msgid "Odnoklassniki"
-msgstr "Одноклассники"
+#: core/widgets.php:12
+msgid "Homepage custom content area"
+msgstr "Область контента на главной"
 
-#: core/extras.php:288
-msgid "Facebook"
-msgstr "Facebook"
+#: core/widgets.php:20
+msgid "Footer custom columns"
+msgstr "Столбцы \"подвала\""
 
-#: core/extras.php:289
-msgid "Instagram"
-msgstr "Instagram"
+#: core/widgets.php:22
+msgid "Footer custom columns area"
+msgstr "Область столбцов \"подвала\""
 
-#: core/extras.php:290
-msgid "Twitter"
-msgstr "Twitter"
+#: modules/person/tax.php:6
+msgid "Volonteers"
+msgstr "Волонтеры"
 
-#: core/extras.php:291
-msgid "Telegram"
-msgstr "Telegram"
+#: modules/starter/menus.php:28 modules/starter/sidebars.php:14
+msgid "Kandinsky our work footer menu"
+msgstr "Меню \"наша работа\" в \"подвале\""
 
-#: core/extras.php:292
-msgid "YouTube"
-msgstr "YouTube"
+#: modules/starter/menus.php:47 modules/starter/sidebars.php:17
+msgid "Kandinsky news footer menu"
+msgstr "Меню \"новости\" в \"подвале\""
 
-#: modules/starter/starter.php:84
-msgid "Kandinsky main menu"
-msgstr "Кандинский - главное меню"
+#: modules/starter/sidebars.php:40
+msgid "About Us"
+msgstr "О нас"
 
-#: modules/starter/starter.php:94
-msgid "Home page"
-msgstr "Главная"
-
-#. Description of the theme
-msgid "The beautiful design and useful features for nonprofit website"
-msgstr "Красивый дизайн и полезные функции дя сайта НКО"
-
-#. Author of the theme
-msgid "Teplitsa"
-msgstr "Теплица социальных технологий"
-
-#. Author URI of the theme
-msgid "https://te-st.ru/"
-msgstr "https://te-st.ru/"
+#: modules/starter/sidebars.php:48
+msgid "Our Work"
+msgstr "Наша работа"
 
 #: archive-leyka_donation.php:20
 msgid "Campaign"
@@ -110,13 +94,17 @@ msgstr "Кампания"
 msgid "Teplitsa of social technologies"
 msgstr "Теплица социальных технологий"
 
+#: footer.php:34
+msgid "Our social profiles"
+msgstr "Наши профили в социальных сетях"
+
 #: footer.php:53
 #, php-format
 msgid "All materials of the site are avaliabe under license %s"
 msgstr "Все материалы сайта доступны по лицензии %s"
 
 #: functions.php:38 modules/starter/class-demo.php:84
-#: modules/starter/class-demo.php:223
+#: modules/starter/class-demo.php:238
 msgid "Primary menu"
 msgstr "﻿Главное меню"
 
@@ -128,6 +116,10 @@ msgstr "Перейти к содержанию"
 msgid "Donate"
 msgstr "Помочь сейчас"
 
+#. Name of the template
+msgid "Events"
+msgstr "Мероприятия"
+
 #: page-events.php:72
 msgid "Future events"
 msgstr "Анонсы"
@@ -136,12 +128,12 @@ msgstr "Анонсы"
 msgid "Past events"
 msgstr "Прошедшие мероприятия"
 
+#. Name of the template
+msgid "Fullwidth"
+msgstr "Полная ширина"
+
 msgid "Homepage"
 msgstr "Главная"
-
-#: page-home.php:53
-msgid "News"
-msgstr "Новости"
 
 #: search.php:47
 msgid "Enter terms for search in the form and hit Enter"
@@ -163,13 +155,13 @@ msgstr "Нас поддержали"
 msgid "Full list"
 msgstr "Полный список"
 
-#: single-project.php:48 single.php:95
-msgid "Related projects"
-msgstr "Познакомьтесь с другими проектами"
-
-#: single.php:83
+#: single-person.php:83 single.php:83
 msgid "Related news"
 msgstr "Новости по теме"
+
+#: single-person.php:95 single-project.php:48 single.php:95
+msgid "Related projects"
+msgstr "Познакомьтесь с другими проектами"
 
 #: single.php:116 core/template-tags.php:436
 msgid "Our volunteers"
@@ -246,6 +238,38 @@ msgstr "Заглавное изображение"
 #: core/customizer.php:173
 msgid "Recommended size 1400x656px"
 msgstr "Рекомендуемый размер: 1400х656 пикс."
+
+#: core/customizer.php:211
+msgid "Social networks links"
+msgstr "Ссылки на социальные сети"
+
+#: core/extras.php:286
+msgid "VKontakte"
+msgstr "ВКонтакте"
+
+#: core/extras.php:287
+msgid "Odnoklassniki"
+msgstr "Одноклассники"
+
+#: core/extras.php:288
+msgid "Facebook"
+msgstr "Facebook"
+
+#: core/extras.php:289
+msgid "Instagram"
+msgstr "Instagram"
+
+#: core/extras.php:290
+msgid "Twitter"
+msgstr "Twitter"
+
+#: core/extras.php:291
+msgid "Telegram"
+msgstr "Telegram"
+
+#: core/extras.php:292
+msgid "YouTube"
+msgstr "YouTube"
 
 #: core/settings.php:13 core/settings.php:33
 msgid "Action failed. Please refresh the page and retry."
@@ -479,15 +503,15 @@ msgstr "Наши программы"
 msgid "More volunteers"
 msgstr "Еще волонтеры"
 
-#: core/template-tags.php:441
+#: core/template-tags.php:446
 msgid "More events"
 msgstr "Еще анонсы"
 
-#: core/template-tags.php:446
+#: core/template-tags.php:451
 msgid "More news"
 msgstr "Еще новости"
 
-#: core/template-tags.php:447
+#: core/template-tags.php:452
 msgid "Latest news"
 msgstr "Последние новости"
 
@@ -796,3 +820,19 @@ msgstr "Установка плагинов завершена."
 #, php-format
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr "Установка плагина %1$s (%2$d/%3$d)"
+
+#: modules/starter/sidebars.php:54 modules/starter/sidebars.php:80
+msgid "News"
+msgstr "Новости"
+
+#. Description of the theme
+msgid "The beautiful design and useful features for nonprofit website"
+msgstr "Красивый дизайн и полезные функции дя сайта НКО"
+
+#. Author of the theme
+msgid "Teplitsa"
+msgstr "Теплица социальных технологий"
+
+#. Author URI of the theme
+msgid "https://te-st.ru/"
+msgstr "https://te-st.ru/"

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-07 13:37+0000\n"
+"POT-Creation-Date: 2017-07-07 14:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -32,7 +32,7 @@ msgid "All materials of the site are avaliabe under license %s"
 msgstr ""
 
 #: functions.php:38 modules/starter/class-demo.php:84
-#: modules/starter/class-demo.php:223
+#: modules/starter/class-demo.php:238
 msgid "Primary menu"
 msgstr ""
 
@@ -42,6 +42,10 @@ msgstr ""
 
 #: header.php:34
 msgid "Donate"
+msgstr ""
+
+#: page-about.php:36 modules/person/tax.php:7
+msgid "Team"
 msgstr ""
 
 #. Name of the template
@@ -64,10 +68,6 @@ msgstr ""
 msgid "Homepage"
 msgstr ""
 
-#: page-home.php:53
-msgid "News"
-msgstr ""
-
 #: search.php:47
 msgid "Enter terms for search in the form and hit Enter"
 msgstr ""
@@ -88,12 +88,16 @@ msgstr ""
 msgid "Full list"
 msgstr ""
 
-#: single-project.php:48 single.php:95
+#: single-person.php:83 single.php:83
+msgid "Related news"
+msgstr ""
+
+#: single-person.php:95 single-project.php:48 single.php:95
 msgid "Related projects"
 msgstr ""
 
-#: single.php:83
-msgid "Related news"
+#: single-person.php:116 core/template-tags.php:441
+msgid "Our team"
 msgstr ""
 
 #: single.php:116 core/template-tags.php:436
@@ -171,15 +175,15 @@ msgid "Recommended size 1400x656px"
 msgstr ""
 
 #: core/customizer.php:186
-msgid "Support us hero title"
+msgid "Call to action title"
 msgstr ""
 
 #: core/customizer.php:194
-msgid "Support us hero text"
+msgid "Call to action text"
 msgstr ""
 
 #: core/customizer.php:202
-msgid "Support us hero button caption"
+msgid "Action button caption"
 msgstr ""
 
 #: core/customizer.php:211
@@ -439,16 +443,36 @@ msgstr ""
 msgid "More volunteers"
 msgstr ""
 
-#: core/template-tags.php:441
-msgid "More events"
+#: core/template-tags.php:440
+msgid "More team members"
 msgstr ""
 
 #: core/template-tags.php:446
+msgid "More events"
+msgstr ""
+
+#: core/template-tags.php:451
 msgid "More news"
 msgstr ""
 
-#: core/template-tags.php:447
+#: core/template-tags.php:452
 msgid "Latest news"
+msgstr ""
+
+#: core/widgets.php:10
+msgid "Homepage widgets"
+msgstr ""
+
+#: core/widgets.php:12
+msgid "Homepage custom content area"
+msgstr ""
+
+#: core/widgets.php:20
+msgid "Footer custom columns"
+msgstr ""
+
+#: core/widgets.php:22
+msgid "Footer custom columns area"
 msgstr ""
 
 #: modules/donations.php:128
@@ -764,12 +788,28 @@ msgstr ""
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: modules/starter/starter.php:84
-msgid "Kandinsky main menu"
+#: modules/person/tax.php:6
+msgid "Volonteers"
 msgstr ""
 
-#: modules/starter/starter.php:94
-msgid "Home page"
+#: modules/starter/menus.php:28 modules/starter/sidebars.php:14
+msgid "Kandinsky our work footer menu"
+msgstr ""
+
+#: modules/starter/menus.php:47 modules/starter/sidebars.php:17
+msgid "Kandinsky news footer menu"
+msgstr ""
+
+#: modules/starter/sidebars.php:40
+msgid "About Us"
+msgstr ""
+
+#: modules/starter/sidebars.php:48
+msgid "Our Work"
+msgstr ""
+
+#: modules/starter/sidebars.php:54 modules/starter/sidebars.php:80
+msgid "News"
 msgstr ""
 
 #. Description of the theme
