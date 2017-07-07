@@ -4,7 +4,6 @@
  **/
 
 $qo = get_queried_object(); 
-$posts = get_posts(array('post_type' => 'post', 'posts_per_page' => 4));
 
 get_header();
 
@@ -45,26 +44,11 @@ if($about_post):
 </article>
 
 <?php
-
 endif;
 ?>
 
-<section class="heading">
-    <div class="container"><h1 class="section-title archive"><?php _e('News', 'knd');?></h1></div>
-</section>
-
-
-<section class="main-content cards-holder"><div class="container-wide">
-<div class="cards-loop sm-cols-1 md-cols-2 lg-cols-2">
-    <?php
-        if(!empty($posts)){
-            foreach($posts as $p){
-                rdc_post_card($p);
-            }
-        }
-    ?>
+<div class="knd-homepage-widgets">
+    <?php dynamic_sidebar( 'knd-homepage-sidebar' );?>
 </div>
-</div></section>
-
 
 <?php get_footer();

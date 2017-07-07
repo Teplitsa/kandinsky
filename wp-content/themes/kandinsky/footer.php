@@ -42,8 +42,8 @@ $footer_text = get_theme_mod('footer_text');
 
 <footer class="site-footer"><div class="container-wide">		
 	
-	<!--<div class="widget-area"><?php dynamic_sidebar( 'footer-sidebar' );?></div>-->
-	<!--<div class="hr"></div>-->
+	<div class="widget-area"><?php dynamic_sidebar( 'knd-footer-sidebar' );?></div>
+	<div class="hr"></div>
 	<div class="sf-cols">
 		
 		<div class="sf-cols-8">		
