@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-03 12:38+0000\n"
-"PO-Revision-Date: 2017-07-03 12:40+0000\n"
+"POT-Creation-Date: 2017-07-07 13:37+0000\n"
+"PO-Revision-Date: 2017-07-07 13:38+0000\n"
 "Last-Translator: ahaenor <ahaenor@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru-RU\n"
@@ -26,45 +26,41 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-1: node_modules\n"
 "X-Poedit-SearchPathExcluded-2: assets"
 
-#. Name of the template
-msgid "Events"
-msgstr "Мероприятия"
+#: footer.php:34
+msgid "Our social profiles"
+msgstr "Наши социальные сети"
 
-#. Name of the template
-msgid "Fullwidth"
-msgstr "Полная ширина"
+#: core/customizer.php:211
+msgid "Social networks links"
+msgstr "Ссылки на социальные сети"
 
-#: core/customizer.php:19
-msgid "Theme Info"
-msgstr "О теме"
+#: core/extras.php:286
+msgid "VKontakte"
+msgstr "ВКонтакте"
 
-#: core/customizer.php:23
-msgid "Support"
-msgstr "Служба поддержки"
+#: core/extras.php:287
+msgid "Odnoklassniki"
+msgstr "Одноклассники"
 
-#: core/customizer.php:27
-msgid "Documentation"
-msgstr "Документация"
+#: core/extras.php:288
+msgid "Facebook"
+msgstr "Facebook"
 
-#: core/customizer.php:40 core/customizer.php:49
-msgid "Important Links"
-msgstr "Важные ссылки"
+#: core/extras.php:289
+msgid "Instagram"
+msgstr "Instagram"
 
-#: core/customizer.php:174
-msgid "Recommended size 1400x656px"
-msgstr "Рекомендуемый размер: 1400х656 пикс."
+#: core/extras.php:290
+msgid "Twitter"
+msgstr "Twitter"
 
-#. Description of the theme
-msgid "The beautiful design and useful features for nonprofit website"
-msgstr "Красивый адаптивный дизайн и полезные функции для сайта НКО."
+#: core/extras.php:291
+msgid "Telegram"
+msgstr "Telegram"
 
-#. Author of the theme
-msgid "Teplitsa"
-msgstr "Теплица социальных технологий"
-
-#. Author URI of the theme
-msgid "https://te-st.ru/"
-msgstr "https://te-st.ru/"
+#: core/extras.php:292
+msgid "YouTube"
+msgstr "YouTube"
 
 #: archive-leyka_donation.php:20
 msgid "Campaign"
@@ -74,7 +70,7 @@ msgstr "Кампания"
 msgid "Teplitsa of social technologies"
 msgstr "Теплица социальных технологий"
 
-#: footer.php:47
+#: footer.php:53
 #, php-format
 msgid "All materials of the site are avaliabe under license %s"
 msgstr "Все материалы сайта доступны по лицензии %s"
@@ -92,6 +88,10 @@ msgstr "Перейти к содержанию"
 msgid "Donate"
 msgstr "Помочь сейчас"
 
+#. Name of the template
+msgid "Events"
+msgstr "Мероприятия"
+
 #: page-events.php:72
 msgid "Future events"
 msgstr "Анонсы"
@@ -99,6 +99,10 @@ msgstr "Анонсы"
 #: page-events.php:87
 msgid "Past events"
 msgstr "Прошедшие мероприятия"
+
+#. Name of the template
+msgid "Fullwidth"
+msgstr "Полная ширина"
 
 msgid "Homepage"
 msgstr "Главная"
@@ -142,6 +146,22 @@ msgstr "Наши волонтеры"
 #: taxonomy-person_cat.php:20 core/cards.php:24 core/cards.php:52
 msgid "More"
 msgstr "Ещё"
+
+#: core/customizer.php:19
+msgid "Theme Info"
+msgstr "О теме"
+
+#: core/customizer.php:23
+msgid "Support"
+msgstr "Служба поддержки"
+
+#: core/customizer.php:27
+msgid "Documentation"
+msgstr "Документация"
+
+#: core/customizer.php:40 core/customizer.php:49
+msgid "Important Links"
+msgstr "Важные ссылки"
 
 #: core/customizer.php:65
 msgid "Header text"
@@ -187,19 +207,23 @@ msgstr ""
 "Рекомендуемые размеры 315x66px для режима «Только изображение» и 66x66px для "
 "режима «Изображение и название сайта»"
 
-#: core/customizer.php:173
+#: core/customizer.php:172
 msgid "Hero Image"
 msgstr "Заглавное изображение"
 
-#: core/customizer.php:187
+#: core/customizer.php:173
+msgid "Recommended size 1400x656px"
+msgstr "Рекомендуемый размер: 1400х656 пикс."
+
+#: core/customizer.php:186
 msgid "Support us hero title"
 msgstr "Заголовок"
 
-#: core/customizer.php:195
+#: core/customizer.php:194
 msgid "Support us hero text"
 msgstr "Информация на заглавном изображении"
 
-#: core/customizer.php:203
+#: core/customizer.php:202
 msgid "Support us hero button caption"
 msgstr "Надпись на кнопке поддержки"
 
@@ -760,3 +784,15 @@ msgstr "Главное меню «Кандинского»"
 #: modules/starter/starter.php:94
 msgid "Home page"
 msgstr "Главная"
+
+#. Description of the theme
+msgid "The beautiful design and useful features for nonprofit website"
+msgstr "Красивый адаптивный дизайн и полезные функции для сайта НКО."
+
+#. Author of the theme
+msgid "Teplitsa"
+msgstr "Теплица социальных технологий"
+
+#. Author URI of the theme
+msgid "https://te-st.ru/"
+msgstr "https://te-st.ru/"

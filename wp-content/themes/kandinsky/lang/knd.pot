@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-03 12:37+0000\n"
+"POT-Creation-Date: 2017-07-07 13:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -22,7 +22,11 @@ msgstr ""
 msgid "Teplitsa of social technologies"
 msgstr ""
 
-#: footer.php:47
+#: footer.php:34
+msgid "Our social profiles"
+msgstr ""
+
+#: footer.php:53
 #, php-format
 msgid "All materials of the site are avaliabe under license %s"
 msgstr ""
@@ -158,24 +162,56 @@ msgid ""
 "site name"
 msgstr ""
 
-#: core/customizer.php:173
+#: core/customizer.php:172
 msgid "Hero Image"
 msgstr ""
 
-#: core/customizer.php:174
+#: core/customizer.php:173
 msgid "Recommended size 1400x656px"
 msgstr ""
 
-#: core/customizer.php:187
+#: core/customizer.php:186
 msgid "Support us hero title"
 msgstr ""
 
-#: core/customizer.php:195
+#: core/customizer.php:194
 msgid "Support us hero text"
 msgstr ""
 
-#: core/customizer.php:203
+#: core/customizer.php:202
 msgid "Support us hero button caption"
+msgstr ""
+
+#: core/customizer.php:211
+msgid "Social networks links"
+msgstr ""
+
+#: core/extras.php:286
+msgid "VKontakte"
+msgstr ""
+
+#: core/extras.php:287
+msgid "Odnoklassniki"
+msgstr ""
+
+#: core/extras.php:288
+msgid "Facebook"
+msgstr ""
+
+#: core/extras.php:289
+msgid "Instagram"
+msgstr ""
+
+#: core/extras.php:290
+msgid "Twitter"
+msgstr ""
+
+#: core/extras.php:291
+msgid "Telegram"
+msgstr ""
+
+#: core/extras.php:292
+msgid "YouTube"
 msgstr ""
 
 #: core/settings.php:13 core/settings.php:33

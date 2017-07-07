@@ -49,21 +49,21 @@ $social_color: (
 	li {
 		float: left;
 		margin-right: 8px;
-		margin-bottom: 8px; 
+		margin-bottom: 8px;
 		a {
 			@include social-button-link(46px, 20px);			
 			span { display: none; }
 		}
 
 		.svg-icon {
-			display: inline-block;			
-			fill: #ffffff;					
+			display: inline-block;
+			fill: #ffffff;
 			vertical-align: top;
 			width: 20px;
 			height: 20px;
 		}
 	}
-	
+
 	@each $item in vk, facebook, youtube, twitter, instagram {
 		
 		.#{$item} a {
