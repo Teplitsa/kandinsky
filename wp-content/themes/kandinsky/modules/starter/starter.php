@@ -57,10 +57,10 @@ function knd_setup_starter_data() {
 
     knd_set_theme_options();
     
+    do_action('knd_save_demo_content');
+    
     knd_setup_menus();  // all menus except main nav menu
     
-    do_action('knd_save_demo_content');
-
 }
 
 function knd_ajax_setup_starter_data() {
