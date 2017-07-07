@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-06 15:04+0200\n"
-"PO-Revision-Date: 2017-07-06 15:04+0200\n"
+"POT-Creation-Date: 2017-07-07 06:35+0200\n"
+"PO-Revision-Date: 2017-07-07 06:36+0200\n"
 "Last-Translator: ahaenor <ahaenor@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -459,23 +459,31 @@ msgstr "Еще волонтеры"
 msgid "Our volunteers"
 msgstr "Наши волонтеры"
 
-#: core/template-tags.php:441
+#: core/template-tags.php:440
+msgid "More team members"
+msgstr "Все члены команды"
+
+#: core/template-tags.php:441 single-person.php:116
+msgid "Our team"
+msgstr "Наша команда"
+
+#: core/template-tags.php:446
 msgid "More events"
 msgstr "Еще анонсы"
 
-#: core/template-tags.php:446
+#: core/template-tags.php:451
 msgid "More news"
 msgstr "Еще новости"
 
-#: core/template-tags.php:447
+#: core/template-tags.php:452
 msgid "Latest news"
 msgstr "Последние новости"
 
-#: core/template-tags.php:487
+#: core/template-tags.php:492
 msgid "Related project"
 msgstr ""
 
-#: core/template-tags.php:506
+#: core/template-tags.php:511
 msgid "Help now"
 msgstr ""
 
@@ -549,23 +557,31 @@ msgstr ""
 msgid "Monthly donation"
 msgstr "Перечислять ежемесячно"
 
-#: modules/starter/menus.php:28 modules/starter/sidebars.php:13
+#: modules/person/tax.php:6
+msgid "Volonteers"
+msgstr "Волонтеры"
+
+#: modules/person/tax.php:7 page-about.php:35
+msgid "Team"
+msgstr "Команда"
+
+#: modules/starter/menus.php:28 modules/starter/sidebars.php:14
 msgid "Kandinsky our work footer menu"
 msgstr "Меню \"Наша работа\" в подвале"
 
-#: modules/starter/menus.php:47 modules/starter/sidebars.php:16
+#: modules/starter/menus.php:47 modules/starter/sidebars.php:17
 msgid "Kandinsky news footer menu"
 msgstr "Меню \"Новости\" в подвале"
 
-#: modules/starter/sidebars.php:38
+#: modules/starter/sidebars.php:40
 msgid "About Us"
 msgstr "О нас"
 
-#: modules/starter/sidebars.php:46
+#: modules/starter/sidebars.php:48
 msgid "Our Work"
 msgstr "Наша работа"
 
-#: modules/starter/sidebars.php:52
+#: modules/starter/sidebars.php:54 modules/starter/sidebars.php:80
 msgid "News"
 msgstr "Новости"
 
@@ -597,13 +613,13 @@ msgstr "Нас поддержали"
 msgid "Full list"
 msgstr "Полный список"
 
-#: single-project.php:48 single.php:95
-msgid "Related projects"
-msgstr "Познакомьтесь с другими проектами"
-
-#: single.php:83
+#: single-person.php:83 single.php:83
 msgid "Related news"
 msgstr "Новости по теме"
+
+#: single-person.php:95 single-project.php:48 single.php:95
+msgid "Related projects"
+msgstr "Познакомьтесь с другими проектами"
 
 #: vendor/class-tgm-plugin-activation.php:375
 #: vendor/class-tgm-plugin-activation.php:816
