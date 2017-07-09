@@ -1,4 +1,5 @@
-<?php
+<?php if( !defined('WPINC') ) die;
+
 require get_template_directory().'/modules/starter/class-demo.php';
 require get_template_directory().'/modules/starter/menus.php';
 require get_template_directory().'/modules/starter/sidebars.php';

@@ -25,9 +25,9 @@ function knd_get_temp_dir() {
     return ini_get('upload_tmp_dir') ? ini_get('upload_tmp_dir') : sys_get_temp_dir();
 }
 
-function knd_import_posts_from_csv($input_file, $post_type, $taxonomy = '') {
+function knd_import_posts_from_csv($input_file, $post_type, $taxonomy = '', $post_meta = array()) {
 
-    if (($handle = fopen( $input_file, "r" )) !== FALSE) {
+    if(($handle = fopen( $input_file, "r" )) !== FALSE) {
         $i = 0;
     
         while(( $line = fgetcsv( $handle, 1000000, "," )) !== FALSE) {
@@ -46,17 +46,21 @@ function knd_import_posts_from_csv($input_file, $post_type, $taxonomy = '') {
             $exist_page = knd_get_post( $post_name, $post_type );
     
             $page_data = array();
-    
+
             $page_data['ID'] = $exist_page ? $exist_page->ID : 0;
             $page_data['post_type'] = $post_type;
             $page_data['post_status'] = 'publish';
-            $page_data['post_excerpt'] = '';
+            $page_data['post_excerpt'] = empty($line[7]) ? '' : trim($line[7]);
     
             $page_data['post_title'] = $post_title;
             $page_data['post_name'] = $post_name;
             $page_data['menu_order'] = (int)$line[5];
             $page_data['post_content'] = trim($line[1]);
             $page_data['post_parent'] = 0;
+
+            foreach($post_meta as $meta_name => $value_index) {
+                $page_data['meta_input'][$meta_name] = empty($line[$value_index]) ? '' : trim($line[$value_index]);
+            }
     
             //thumbnail
             $thumb_id = false;

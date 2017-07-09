@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-07 14:01+0000\n"
-"PO-Revision-Date: 2017-07-07 14:04+0000\n"
+"POT-Creation-Date: 2017-07-09 20:58+0000\n"
+"PO-Revision-Date: 2017-07-09 20:59+0000\n"
 "Last-Translator: ahaenor <ahaenor@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru-RU\n"
@@ -26,65 +26,33 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-1: node_modules\n"
 "X-Poedit-SearchPathExcluded-2: assets"
 
-#: page-about.php:36 modules/person/tax.php:7
-msgid "Team"
-msgstr "Команда"
+#: modules/org/tax.php:6
+msgid "Partners"
+msgstr "Партнеры"
 
-#: single-person.php:116 core/template-tags.php:441
-msgid "Our team"
-msgstr "Наша команда"
+#: modules/org/tax.php:7
+msgid "Homepage Partners"
+msgstr "Партнеры для главной страницы"
 
-#: core/customizer.php:186
-msgid "Call to action title"
-msgstr "Заголовок \"призыва к действию\""
+#: modules/org/widgets.php:7
+msgid "Organizations"
+msgstr "Организации"
 
-#: core/customizer.php:194
-msgid "Call to action text"
-msgstr "Текст \"призыва к действию\""
+#: modules/org/widgets.php:8
+msgid "Partner organization banners list"
+msgstr "Список баннеров партнерских организаций"
 
-#: core/customizer.php:202
-msgid "Action button caption"
-msgstr "Текст на кнопке действия"
+#: modules/org/widgets.php:41
+msgid "Title:"
+msgstr "Заголовок:"
 
-#: core/template-tags.php:440
-msgid "More team members"
-msgstr "Вся команда"
+#: modules/org/widgets.php:46
+msgid "Number:"
+msgstr "Количество:"
 
-#: core/widgets.php:10
-msgid "Homepage widgets"
-msgstr "Виджеты главной"
-
-#: core/widgets.php:12
-msgid "Homepage custom content area"
-msgstr "Область контента на главной"
-
-#: core/widgets.php:20
-msgid "Footer custom columns"
-msgstr "Столбцы \"подвала\""
-
-#: core/widgets.php:22
-msgid "Footer custom columns area"
-msgstr "Область столбцов \"подвала\""
-
-#: modules/person/tax.php:6
-msgid "Volonteers"
-msgstr "Волонтеры"
-
-#: modules/starter/menus.php:28 modules/starter/sidebars.php:14
-msgid "Kandinsky our work footer menu"
-msgstr "Меню \"наша работа\" в \"подвале\""
-
-#: modules/starter/menus.php:47 modules/starter/sidebars.php:17
-msgid "Kandinsky news footer menu"
-msgstr "Меню \"новости\" в \"подвале\""
-
-#: modules/starter/sidebars.php:40
-msgid "About Us"
-msgstr "О нас"
-
-#: modules/starter/sidebars.php:48
-msgid "Our Work"
-msgstr "Наша работа"
+#: modules/org/widgets.php:51
+msgid "Category:"
+msgstr "Категория:"
 
 #: archive-leyka_donation.php:20
 msgid "Campaign"
@@ -115,6 +83,10 @@ msgstr "Перейти к содержанию"
 #: header.php:34
 msgid "Donate"
 msgstr "Помочь сейчас"
+
+#: page-about.php:36 modules/person/tax.php:7
+msgid "Team"
+msgstr "Команда"
 
 #. Name of the template
 msgid "Events"
@@ -162,6 +134,10 @@ msgstr "Новости по теме"
 #: single-person.php:95 single-project.php:48 single.php:95
 msgid "Related projects"
 msgstr "Познакомьтесь с другими проектами"
+
+#: single-person.php:116 core/template-tags.php:441
+msgid "Our team"
+msgstr "Наша команда"
 
 #: single.php:116 core/template-tags.php:436
 msgid "Our volunteers"
@@ -238,6 +214,18 @@ msgstr "Заглавное изображение"
 #: core/customizer.php:173
 msgid "Recommended size 1400x656px"
 msgstr "Рекомендуемый размер: 1400х656 пикс."
+
+#: core/customizer.php:186
+msgid "Call to action title"
+msgstr "Заголовок \"призыва к действию\""
+
+#: core/customizer.php:194
+msgid "Call to action text"
+msgstr "Текст \"призыва к действию\""
+
+#: core/customizer.php:202
+msgid "Action button caption"
+msgstr "Текст на кнопке действия"
 
 #: core/customizer.php:211
 msgid "Social networks links"
@@ -503,6 +491,10 @@ msgstr "Наши программы"
 msgid "More volunteers"
 msgstr "Еще волонтеры"
 
+#: core/template-tags.php:440
+msgid "More team members"
+msgstr "Вся команда"
+
 #: core/template-tags.php:446
 msgid "More events"
 msgstr "Еще анонсы"
@@ -514,6 +506,22 @@ msgstr "Еще новости"
 #: core/template-tags.php:452
 msgid "Latest news"
 msgstr "Последние новости"
+
+#: core/widgets.php:10
+msgid "Homepage widgets"
+msgstr "Виджеты главной"
+
+#: core/widgets.php:12
+msgid "Homepage custom content area"
+msgstr "Область контента на главной"
+
+#: core/widgets.php:20
+msgid "Footer custom columns"
+msgstr "Столбцы \"подвала\""
+
+#: core/widgets.php:22
+msgid "Footer custom columns area"
+msgstr "Область столбцов \"подвала\""
 
 #: modules/donations.php:128
 msgid "or"
@@ -820,6 +828,26 @@ msgstr "Установка плагинов завершена."
 #, php-format
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr "Установка плагина %1$s (%2$d/%3$d)"
+
+#: modules/person/tax.php:6
+msgid "Volonteers"
+msgstr "Волонтеры"
+
+#: modules/starter/menus.php:28 modules/starter/sidebars.php:14
+msgid "Kandinsky our work footer menu"
+msgstr "Меню \"наша работа\" в \"подвале\""
+
+#: modules/starter/menus.php:47 modules/starter/sidebars.php:17
+msgid "Kandinsky news footer menu"
+msgstr "Меню \"новости\" в \"подвале\""
+
+#: modules/starter/sidebars.php:40
+msgid "About Us"
+msgstr "О нас"
+
+#: modules/starter/sidebars.php:48
+msgid "Our Work"
+msgstr "Наша работа"
 
 #: modules/starter/sidebars.php:54 modules/starter/sidebars.php:80
 msgid "News"

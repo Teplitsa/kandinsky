@@ -166,35 +166,26 @@ function tst_person_card_group(WP_Post $cpost){
 }
 
 function tst_person_card_single(WP_Post $cpost){
-	
-	$linked = ($cpost->widget_class == 'linked-card') ? true : false;
-	
-	rdc_person_card($cpost, $linked);	
+	rdc_person_card($cpost, $cpost->widget_class == 'linked-card');
 }
 
 
-function rdc_org_card(WP_Post $cpost){
-	
-	$pl = esc_url($cpost->post_excerpt);
-?>
+function knd_org_card(WP_Post $cpost){?>
 <article class="tpl-org logo">
-	<a href="<?php echo $pl;?>" class="logo-link logo-frame" target="_blank" title="<?php echo esc_attr($cpost->post_title);?>">
-		<span><?php echo get_the_post_thumbnail($cpost->ID, 'full'); ?></span>
+	<a href="<?php echo esc_url($cpost->post_excerpt);?>" class="logo-link logo-frame" target="_blank" title="<?php echo esc_attr($cpost->post_title);?>">
+		<span><?php echo get_the_post_thumbnail($cpost, 'post-thumbnail');?></span>
 	</a>
 </article>
 <?php
 }
 
-function tst_org_card_group(WP_Post $cpost){
-
-?>
-<div class="bit bit-no-margin sm-6 md-3 lg-col-5"><?php rdc_org_card($cpost); ?></div>
+function tst_org_card_group(WP_Post $cpost){?>
+<div class="bit bit-no-margin sm-6 md-3 lg-col-5"><?php knd_org_card($cpost); ?></div>
 <?php
 }
 
 function tst_org_card_single(WP_Post $cpost){
-		
-	rdc_org_card($cpost);	
+	knd_org_card($cpost);
 }
 
 

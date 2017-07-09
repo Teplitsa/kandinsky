@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-07 14:00+0000\n"
+"POT-Creation-Date: 2017-07-09 20:58+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -786,6 +786,34 @@ msgstr ""
 #: vendor/class-tgm-plugin-activation.php:3509
 #, php-format
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: modules/org/tax.php:6
+msgid "Partners"
+msgstr ""
+
+#: modules/org/tax.php:7
+msgid "Homepage Partners"
+msgstr ""
+
+#: modules/org/widgets.php:7
+msgid "Organizations"
+msgstr ""
+
+#: modules/org/widgets.php:8
+msgid "Partner organization banners list"
+msgstr ""
+
+#: modules/org/widgets.php:41
+msgid "Title:"
+msgstr ""
+
+#: modules/org/widgets.php:46
+msgid "Number:"
+msgstr ""
+
+#: modules/org/widgets.php:51
+msgid "Category:"
 msgstr ""
 
 #: modules/person/tax.php:6

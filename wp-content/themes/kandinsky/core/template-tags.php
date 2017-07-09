@@ -1,4 +1,4 @@
-<?php
+<?php if( !defined('WPINC') ) die;
 /**
  * Custom template tags for this theme.
  *
