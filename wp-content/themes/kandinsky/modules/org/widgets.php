@@ -2,14 +2,14 @@
 
 class KND_Org_Widget extends WP_Widget {
 
-    function __construct() {
+    public function __construct() {
 
         parent::__construct('knd_orgs', __('Organizations', 'knd'), array(
             'description' => __('Partner organization banners list', 'knd'),
         ));
     }
 
-    function widget($args, $instance) {
+    public function widget($args, $instance) {
 
         $title = apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base );
         $num = intval($instance['num']);
@@ -19,7 +19,7 @@ class KND_Org_Widget extends WP_Widget {
 
     }
 
-    function print_widget($orgs, $args, $title){
+    public function print_widget($orgs, $args, $title){
 
         extract($args);
 
@@ -31,8 +31,7 @@ class KND_Org_Widget extends WP_Widget {
 
 	}
 	
-	
-	function form($instance) {
+	public function form($instance) {
 
 		/* Set up some default widget settings */
 		$instance = wp_parse_args((array)$instance, array('title' => '', 'num' => 5, 'category' => '',));?>
@@ -47,15 +46,23 @@ class KND_Org_Widget extends WP_Widget {
 			<input id="<?php echo $this->get_field_id('num');?>" name="<?php echo $this->get_field_name('num');?>" type="text" value="<?php echo intval($instance['num']);?>">
 		</p>
 
+        <?php $org_cats = get_terms(array('taxonomy' => 'org_cat', 'hide_empty' => false,));?>
         <p>
             <label for="<?php echo $this->get_field_id('category');?>"><?php _e('Category:', 'knd');?></label>
-            <input id="<?php echo $this->get_field_id('category');?>" name="<?php echo $this->get_field_name('category');?>" type="text" value="<?php echo trim($instance['category']);?>">
+            <select id="<?php echo $this->get_field_id('category');?>" name="<?php echo $this->get_field_name('category');?>" <?php echo !count($org_cats) ? 'disabled="disabled"' : '';?>>
+                <option value=""><?php _e('All categories', 'knd');?></option>
+            <?php foreach($org_cats as $cat) {?>
+                <option value="<?php echo $cat->slug;?>" <?php echo $cat->slug == $instance['category'] ? 'selected="selected"' : '';?>>
+                    <?php echo $cat->name;?>
+                </option>
+            <?php }?>
+            </select>
         </p>
 
 	<?php
 	}
 
-	function get_orgs($num, $category = '') {
+    public function get_orgs($num, $category = '') {
 
 	    if($num <= 0) {
 	        $num = 5;
@@ -84,7 +91,7 @@ class KND_Org_Widget extends WP_Widget {
 	    $this->print_widget_content($title, $this->get_orgs($num, trim($category)));
 	}
 
-	function print_widget_content($title, $orgs) {?>
+    public function print_widget_content($title, $orgs) {?>
 
     <div class="container">
         <div class="entry-content">
@@ -124,10 +131,10 @@ class KND_Org_Widget extends WP_Widget {
 <?php 
 	}
 
-	function update($new_instance, $old_instance) {
+    public function update($new_instance, $old_instance) {
 
 		$instance = $old_instance;
-		
+
 		$instance['title'] = sanitize_text_field($new_instance['title']);		
 		$instance['num'] = intval($new_instance['num']);
 		$instance['category'] = trim($new_instance['category']);

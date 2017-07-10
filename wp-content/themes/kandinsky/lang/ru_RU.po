@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-09 20:58+0000\n"
-"PO-Revision-Date: 2017-07-09 20:59+0000\n"
+"POT-Creation-Date: 2017-07-10 08:37+0000\n"
+"PO-Revision-Date: 2017-07-10 08:38+0000\n"
 "Last-Translator: ahaenor <ahaenor@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru-RU\n"
@@ -26,33 +26,37 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-1: node_modules\n"
 "X-Poedit-SearchPathExcluded-2: assets"
 
-#: modules/org/tax.php:6
-msgid "Partners"
-msgstr "Партнеры"
+#: core/extras.php:288
+msgid "I. e., https://vk.com/club0123456789"
+msgstr "Напр., https://vk.com/club0123456789"
 
-#: modules/org/tax.php:7
-msgid "Homepage Partners"
-msgstr "Партнеры для главной страницы"
+#: core/extras.php:292
+msgid "I. e., https://ok.ru/profile/0123456789"
+msgstr "Напр., https://ok.ru/profile/0123456789"
 
-#: modules/org/widgets.php:7
-msgid "Organizations"
-msgstr "Организации"
+#: core/extras.php:296
+msgid "I. e., https://www.facebook.com/your-organization-page"
+msgstr "Напр., https://www.facebook.com/your-organization-page"
 
-#: modules/org/widgets.php:8
-msgid "Partner organization banners list"
-msgstr "Список баннеров партнерских организаций"
+#: core/extras.php:300
+msgid "I. e., https://www.instagram.com/your-organization-page"
+msgstr "Напр., https://www.instagram.com/your-organization-page"
 
-#: modules/org/widgets.php:41
-msgid "Title:"
-msgstr "Заголовок:"
+#: core/extras.php:304
+msgid "I. e., https://twitter.com/your-organization-page"
+msgstr "Напр., https://twitter.com/your-organization-page"
 
-#: modules/org/widgets.php:46
-msgid "Number:"
-msgstr "Количество:"
+#: core/extras.php:308
+msgid "I. e., https://tlgrm.ru/channels/@your-organization-page"
+msgstr "Напр., https://tlgrm.ru/channels/@your-organization-page"
 
-#: modules/org/widgets.php:51
-msgid "Category:"
-msgstr "Категория:"
+#: core/extras.php:312
+msgid "I. e., https://youtube.com/channel/your-organization-channel"
+msgstr "Напр., https://youtube.com/channel/your-organization-channel"
+
+#: modules/org/widgets.php:53
+msgid "All categories"
+msgstr "Все категории"
 
 #: archive-leyka_donation.php:20
 msgid "Campaign"
@@ -231,31 +235,31 @@ msgstr "Текст на кнопке действия"
 msgid "Social networks links"
 msgstr "Ссылки на социальные сети"
 
-#: core/extras.php:286
+#: core/extras.php:287
 msgid "VKontakte"
 msgstr "ВКонтакте"
 
-#: core/extras.php:287
+#: core/extras.php:291
 msgid "Odnoklassniki"
 msgstr "Одноклассники"
 
-#: core/extras.php:288
+#: core/extras.php:295
 msgid "Facebook"
 msgstr "Facebook"
 
-#: core/extras.php:289
+#: core/extras.php:299
 msgid "Instagram"
 msgstr "Instagram"
 
-#: core/extras.php:290
+#: core/extras.php:303
 msgid "Twitter"
 msgstr "Twitter"
 
-#: core/extras.php:291
+#: core/extras.php:307
 msgid "Telegram"
 msgstr "Telegram"
 
-#: core/extras.php:292
+#: core/extras.php:311
 msgid "YouTube"
 msgstr "YouTube"
 
@@ -828,6 +832,34 @@ msgstr "Установка плагинов завершена."
 #, php-format
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr "Установка плагина %1$s (%2$d/%3$d)"
+
+#: modules/org/tax.php:6
+msgid "Partners"
+msgstr "Партнеры"
+
+#: modules/org/tax.php:7
+msgid "Homepage Partners"
+msgstr "Партнеры для главной страницы"
+
+#: modules/org/widgets.php:7
+msgid "Organizations"
+msgstr "Организации"
+
+#: modules/org/widgets.php:8
+msgid "Partner organization banners list"
+msgstr "Список баннеров партнерских организаций"
+
+#: modules/org/widgets.php:40
+msgid "Title:"
+msgstr "Заголовок:"
+
+#: modules/org/widgets.php:45
+msgid "Number:"
+msgstr "Количество:"
+
+#: modules/org/widgets.php:51
+msgid "Category:"
+msgstr "Категория:"
 
 #: modules/person/tax.php:6
 msgid "Volonteers"

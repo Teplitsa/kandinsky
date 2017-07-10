@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-09 20:58+0000\n"
+"POT-Creation-Date: 2017-07-10 08:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -190,32 +190,60 @@ msgstr ""
 msgid "Social networks links"
 msgstr ""
 
-#: core/extras.php:286
+#: core/extras.php:287
 msgid "VKontakte"
 msgstr ""
 
-#: core/extras.php:287
-msgid "Odnoklassniki"
-msgstr ""
-
 #: core/extras.php:288
-msgid "Facebook"
-msgstr ""
-
-#: core/extras.php:289
-msgid "Instagram"
-msgstr ""
-
-#: core/extras.php:290
-msgid "Twitter"
+msgid "I. e., https://vk.com/club0123456789"
 msgstr ""
 
 #: core/extras.php:291
-msgid "Telegram"
+msgid "Odnoklassniki"
 msgstr ""
 
 #: core/extras.php:292
+msgid "I. e., https://ok.ru/profile/0123456789"
+msgstr ""
+
+#: core/extras.php:295
+msgid "Facebook"
+msgstr ""
+
+#: core/extras.php:296
+msgid "I. e., https://www.facebook.com/your-organization-page"
+msgstr ""
+
+#: core/extras.php:299
+msgid "Instagram"
+msgstr ""
+
+#: core/extras.php:300
+msgid "I. e., https://www.instagram.com/your-organization-page"
+msgstr ""
+
+#: core/extras.php:303
+msgid "Twitter"
+msgstr ""
+
+#: core/extras.php:304
+msgid "I. e., https://twitter.com/your-organization-page"
+msgstr ""
+
+#: core/extras.php:307
+msgid "Telegram"
+msgstr ""
+
+#: core/extras.php:308
+msgid "I. e., https://tlgrm.ru/channels/@your-organization-page"
+msgstr ""
+
+#: core/extras.php:311
 msgid "YouTube"
+msgstr ""
+
+#: core/extras.php:312
+msgid "I. e., https://youtube.com/channel/your-organization-channel"
 msgstr ""
 
 #: core/settings.php:13 core/settings.php:33
@@ -804,16 +832,20 @@ msgstr ""
 msgid "Partner organization banners list"
 msgstr ""
 
-#: modules/org/widgets.php:41
+#: modules/org/widgets.php:40
 msgid "Title:"
 msgstr ""
 
-#: modules/org/widgets.php:46
+#: modules/org/widgets.php:45
 msgid "Number:"
 msgstr ""
 
 #: modules/org/widgets.php:51
 msgid "Category:"
+msgstr ""
+
+#: modules/org/widgets.php:53
+msgid "All categories"
 msgstr ""
 
 #: modules/person/tax.php:6

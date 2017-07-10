@@ -211,7 +211,7 @@ function knd_customize_register(WP_Customize_Manager $wp_customize) {
         'title' => __('Social networks links', 'knd'),
     ));
 
-    foreach(knd_get_social_media_supported() as $id => $label) {
+    foreach(knd_get_social_media_supported() as $id => $data) {
 
         $wp_customize->add_setting('knd_social_links_'.$id, array(
             'capability' => 'edit_theme_options',
@@ -220,7 +220,8 @@ function knd_customize_register(WP_Customize_Manager $wp_customize) {
         ));
 
         $wp_customize->add_control('knd_social_links_'.$id, array(
-            'label' => $label,
+            'label' => $data['label'],
+            'description' => $data['description'],
             'type' => 'url',
             'section' => 'knd_social_links',
         ));
