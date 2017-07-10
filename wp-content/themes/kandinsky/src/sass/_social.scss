@@ -63,7 +63,7 @@ $social_color: (
 		}
 	}
 
-	@each $item in vk, facebook, youtube, twitter, instagram {
+	@each $item in vk, ok, facebook, youtube, twitter, instagram, telegram {
 		
 		.#{$item} a {
 			background: social_color($item);
