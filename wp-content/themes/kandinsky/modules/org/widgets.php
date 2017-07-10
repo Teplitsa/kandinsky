@@ -11,9 +11,9 @@ class KND_Org_Widget extends WP_Widget {
 
     public function widget($args, $instance) {
 
-        $title = apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base );
-        $num = intval($instance['num']);
-        $category = trim($instance['category']);
+        $title = apply_filters('widget_title', empty($instance['title']) ? '' : $instance['title'], $instance, $this->id_base);
+        $num = empty($instance['num']) ? 5 : (int)$instance['num'];
+        $category = empty($instance['category']) ? '' : $instance['category'];
 
         $this->print_widget($this->get_orgs($num, $category), $args, $title);
 

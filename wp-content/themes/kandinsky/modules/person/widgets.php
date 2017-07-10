@@ -10,8 +10,9 @@ class KND_Team_Widget extends WP_Widget {
     }
 
     function widget($args, $instance) {
-        $title = apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base );
-        $num = intval($instance['num']);
+
+        $title = apply_filters('widget_title', empty($instance['title']) ? '' : trim($instance['title']), $instance, $this->id_base);
+        $num = empty($instance['num']) ? 5 : (int)$instance['num'];
 
         $this->print_widget($this->get_persons($num), $args, $title);
     }
