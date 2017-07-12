@@ -38,7 +38,8 @@ class KND_StarterSidebars {
 </p>
 EOT;
             $text_widgets[] = array('title' => __('About Us', 'knd'), 'text' => trim(preg_replace('/\r\n|\r|\n/', '', $text_widget_text)), 'filter' => 'content' );
-            $widget_index = end(array_keys($text_widgets));
+            $text_widgets_keys = array_keys($text_widgets);
+            $widget_index = end($text_widgets_keys);
             $sidebars['knd-footer-sidebar'][] = 'text-' . $widget_index;
             
             $nav_menu_widgets = get_option('widget_nav_menu');
@@ -46,13 +47,15 @@ EOT;
             
             if( $our_work_menu ) {
                 $nav_menu_widgets[] = array('title' => __('Our Work', 'knd'), 'nav_menu' => $our_work_menu->term_id);
-                $widget_index = end(array_keys($nav_menu_widgets));
+                $nav_menu_widgets_keys = array_keys($nav_menu_widgets);
+                $widget_index = end($nav_menu_widgets_keys);
                 $sidebars['knd-footer-sidebar'][] = 'nav_menu-' . $widget_index;
             }
             
             if( $news_menu ) {
                 $nav_menu_widgets[] = array('title' => __('News', 'knd'), 'nav_menu' => $news_menu->term_id);
-                $widget_index = end(array_keys($nav_menu_widgets));
+                $nav_menu_widgets_keys = array_keys($nav_menu_widgets);
+                $widget_index = end($nav_menu_widgets_keys);
                 $sidebars['knd-footer-sidebar'][] = 'nav_menu-' . $widget_index;
             }
             
@@ -78,7 +81,8 @@ EOT;
 //         print_r($news_widgets);
         
         $news_widgets[] = Array('title' => __('News', 'knd'), 'num' => 4 ); 
-        $widget_index = end(array_keys($news_widgets));
+        $news_widgets_keys = array_keys($news_widgets);
+        $widget_index = end($news_widgets_keys);
         $sidebars['knd-homepage-sidebar'][] = 'knd_news-' . $widget_index;
         
         update_option( 'widget_knd_news', $news_widgets );
