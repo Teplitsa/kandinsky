@@ -85,10 +85,11 @@ function knd_admin_settings_page() {?>
 
 }
 
-function knd_add_settings_page() {
+function knd_add_admin_pages() {
     add_submenu_page('themes.php', __('Kandinsky settings', 'knd'), __('Kandinsky', 'knd'), 'manage_options', 'knd_admin_settings_page', 'knd_admin_settings_page');
+    add_submenu_page('themes.php', __('Kandinsky setup wizard', 'knd'), __('Kandinsky setup wizard', 'knd'), 'manage_options', 'knd_setup_wizard', 'envato_theme_setup_wizard');
 }
-add_action('admin_menu', 'knd_add_settings_page');
+add_action('admin_menu', 'knd_add_admin_pages');
 
 function knd_admin_notice() {
 
