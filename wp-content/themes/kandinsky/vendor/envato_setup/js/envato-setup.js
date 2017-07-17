@@ -65,7 +65,7 @@ var EnvatoWizard = (function($){
         var $current_node;
         var current_item_hash = '';
 
-        function ajax_callback(response){
+        function ajax_callback(response) {
             if(typeof response == 'object' && typeof response.message != 'undefined'){
                 $current_node.find('span').text(response.message);
                 if(typeof response.url != 'undefined'){
@@ -108,14 +108,14 @@ var EnvatoWizard = (function($){
         }
         function find_next(){
             var do_next = false;
-            if($current_node){
-                if(!$current_node.data('done_item')){
+            if($current_node) {
+                if( !$current_node.data('done_item') ) {
                     items_completed++;
-                    $current_node.data('done_item',1);
+                    $current_node.data('done_item', 1);
                 }
                 $current_node.find('.spinner').css('visibility','hidden');
             }
-            var $li = $('.envato-wizard-plugins li');
+            var $li = $('.envato-wizard-plugins li,.envato-wizard-plugins-recommended li:has(.plugin-accepted:checked)');
             $li.each(function(){
                 if(current_item == '' || do_next){
                     current_item = $(this).data('slug');
@@ -137,7 +137,7 @@ var EnvatoWizard = (function($){
                 $('.envato-wizard-plugins').addClass('installing');
                 complete = function(){
                     loading_content();
-                    window.location.href=btn.href;
+                    window.location.href = btn.href;
                 };
                 find_next();
             }
@@ -153,25 +153,25 @@ var EnvatoWizard = (function($){
         var current_item_hash = '';
 
         function ajax_callback(response) {
-            if(typeof response == 'object' && typeof response.message != 'undefined'){
+            if(typeof response == 'object' && typeof response.message != 'undefined') {
                 $current_node.find('span').text(response.message);
-                if(typeof response.url != 'undefined'){
+                if(typeof response.url != 'undefined') {
                     // we have an ajax url action to perform.
-                    if(response.hash == current_item_hash){
+                    if(response.hash == current_item_hash) {
                         $current_node.find('span').text("failed");
                         find_next();
-                    }else {
+                    } else {
                         current_item_hash = response.hash;
                         jQuery.post(response.url, response, ajax_callback).fail(ajax_callback); // recuurrssionnnnn
                     }
-                }else if(typeof response.done != 'undefined'){
+                } else if(typeof response.done != 'undefined') {
                     // finished processing this plugin, move onto next
                     find_next();
-                }else{
+                } else {
                     // error processing this plugin
                     find_next();
                 }
-            }else{
+            } else{
                 // error - try again with next plugin
                 $current_node.find('span').text("ajax error");
                 find_next();

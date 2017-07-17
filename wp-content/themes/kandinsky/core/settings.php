@@ -1,4 +1,5 @@
-<?php
+<?php if ( ! defined( 'ABSPATH' ) ) { exit; }
+
 if(isset($_GET['reset_msg'])) {
     update_option('knd_admin_notice_welcome', 0);
 }
@@ -23,45 +24,46 @@ function knd_hide_notices() {
 }
 function knd_install_test_content() {
 
-    if(isset($_GET['knd-install-test-content']) && isset($_GET['_knd_install_test_content_nonce'])) {
+//    if(isset($_GET['knd-install-test-content']) && isset($_GET['_knd_install_test_content_nonce'])) {
+//
+//        if(get_option('knd_test_content_installed')) {
+//            return;
+//        }
+//
+//        if( !wp_verify_nonce($_GET['_knd_install_test_content_nonce'], 'knd_install_test_content_nonce') ) {
+//            wp_die(__('Action failed. Please refresh the page and retry.', 'knd'));
+//        }
+//
+//        if( !current_user_can('manage_options') ) {
+//            wp_die(__( 'Action failed.', 'knd'));
+//        }
+//
+//        try {
+//            knd_setup_starter_data();
+//        } catch(Exception $ex) {
+//            error_log($ex);
+//        }
+//
+//        update_option('knd_test_content_installed', 1);
+//        update_option('knd_admin_notice_welcome', 1);
+//
+//    }
 
-        if(get_option('knd_test_content_installed')) {
-            return;
-        }
-
-        if( !wp_verify_nonce($_GET['_knd_install_test_content_nonce'], 'knd_install_test_content_nonce') ) {
-            wp_die(__('Action failed. Please refresh the page and retry.', 'knd'));
-        }
-
-        if( !current_user_can('manage_options') ) {
-            wp_die(__( 'Action failed.', 'knd'));
-        }
-
-        try {
-            knd_setup_starter_data();
-        } catch(Exception $ex) {
-            error_log($ex);
-        }
-
-        update_option('knd_test_content_installed', 1);
-        update_option('knd_admin_notice_welcome', 1);
-
-    }
 }
 add_action('wp_loaded', 'knd_install_test_content');
 add_action('wp_loaded', 'knd_hide_notices');
 
 function knd_admin_settings_page() {?>
 
-    <h2><?php _e('Test content', 'knd');?></h2>
-    <div class="install-test-content" data-nonce="<?php echo wp_create_nonce('install-test-content');?>" data-action="setup_starter_data">
-        <a href="#">
-            <?php _e('Install test content', 'knd');?>
-        </a>
-        <img src="<?php echo admin_url().'/images/spinner.gif';?>" style="display: none;"  class="ajax-loader">
-        <div class="success" style="display: none;"><?php _e('Test content successfully imported!', 'knd');?></div>
-        <div class="failure" style="display: none;"><?php _e('Test content import failed', 'knd');?></div>
-    </div>
+<!--    <h2>--><?php //_e('Test content', 'knd');?><!--</h2>-->
+<!--    <div class="install-test-content" data-nonce="--><?php //echo wp_create_nonce('install-test-content');?><!--" data-action="setup_starter_data">-->
+<!--        <a href="#">-->
+<!--            --><?php //_e('Install test content', 'knd');?>
+<!--        </a>-->
+<!--        <img src="--><?php //echo admin_url().'/images/spinner.gif';?><!--" style="display: none;"  class="ajax-loader">-->
+<!--        <div class="success" style="display: none;">--><?php //_e('Test content successfully imported!', 'knd');?><!--</div>-->
+<!--        <div class="failure" style="display: none;">--><?php //_e('Test content import failed', 'knd');?><!--</div>-->
+<!--    </div>-->
 
     <?php /*?>
     <h2><?php _e('Features', 'knd');?></h2>
@@ -86,8 +88,8 @@ function knd_admin_settings_page() {?>
 }
 
 function knd_add_admin_pages() {
-    add_submenu_page('themes.php', __('Kandinsky settings', 'knd'), __('Kandinsky', 'knd'), 'manage_options', 'knd_admin_settings_page', 'knd_admin_settings_page');
-    add_submenu_page('themes.php', __('Kandinsky setup wizard', 'knd'), __('Kandinsky setup wizard', 'knd'), 'manage_options', 'knd_setup_wizard', 'envato_theme_setup_wizard');
+//    add_submenu_page('themes.php', __('Kandinsky settings', 'knd'), __('Kandinsky', 'knd'), 'manage_options', 'knd_admin_settings_page', 'knd_admin_settings_page');
+    add_submenu_page('themes.php', __('Kandinsky setup wizard', 'knd'), __('Kandinsky setup wizard', 'knd'), 'manage_options', 'knd-setup-wizard', 'envato_theme_setup_wizard');
 }
 add_action('admin_menu', 'knd_add_admin_pages');
 
@@ -99,7 +101,7 @@ function knd_admin_notice() {
 
         add_action('admin_notices', 'knd_welcome_notice');
         update_option('knd_admin_notice_welcome', 1);
-        update_option('knd_test_content_installed', 0);
+//        update_option('knd_test_content_installed', 0);
 
     } elseif( !get_option('knd_admin_notice_welcome') ) {
         add_action('admin_notices', 'knd_welcome_notice');
@@ -114,13 +116,16 @@ function knd_welcome_notice() {?>
         <a class="knd-message-close notice-dismiss" href="<?php echo esc_url(wp_nonce_url(remove_query_arg(array('activated'), add_query_arg('knd-hide-notice', 'welcome')), 'knd_hide_notices_nonce', '_knd_notice_nonce'));?>">
             <?php esc_html_e('Dismiss', 'knd');?>
         </a>
-        <p><?php printf(esc_html__('Welcome! Thank you for choosing Kandinsky! To fully take advantage of the best our theme can offer please make sure you installed our %swebsite test content%s.', 'knd'), '<a href="'.esc_url(wp_nonce_url(remove_query_arg(array('activated'), add_query_arg('knd-install-test-content', 1)), 'knd_install_test_content_nonce', '_knd_install_test_content_nonce')).'">', '</a>');?></p>
+        <p><?php printf(esc_html__('Welcome! Thank you for choosing Kandinsky! To fully take advantage of the best our theme can offer please make sure you configured %snecessary theme settings%s.', 'knd'), '<a href="'.esc_url(remove_query_arg(array('activated'), add_query_arg('page', 'knd-settings'))).'">', '</a>');?></p>
         <p class="submit">
 <!--            <a class="button-secondary" href="--><?php //echo esc_url(admin_url('themes.php?page=knd_admin_settings_page'));?><!--">-->
 <!--                --><?php //esc_html_e('Theme settings', 'knd');?>
 <!--            </a>-->
-            <a class="button-secondary" href="<?php echo esc_url(wp_nonce_url(remove_query_arg(array('activated'), add_query_arg('knd-install-test-content', 1)), 'knd_install_test_content_nonce', '_knd_install_test_content_nonce'));?>">
-                <?php esc_html_e('Install test content', 'knd');?>
+            <a class="button-secondary" href="<?php echo esc_url(remove_query_arg(array('activated'), add_query_arg('page', 'knd-setup-wizard')));?>">
+                <?php esc_html_e('Open the theme setup wizard', 'knd');?>
+            </a>
+            <a class="button-secondary" href="<?php echo esc_url(remove_query_arg(array('activated'), add_query_arg('page', 'knd-settings')));?>">
+                <?php esc_html_e('Open theme settings', 'knd');?>
             </a>
         </p>
     </div>
@@ -151,30 +156,33 @@ function knd_register_required_plugins() {
      * If the source is NOT from the .org repo, then source is also required.
      */
     $plugins = array(
-
         array(
             'name'        => __('Yoast SEO', 'knd'),
             'slug'        => 'wordpress-seo',
             'is_callable' => 'wpseo_init',
-//            'required'    => false,
-        ),
-        array(
-            'name'        => __('Leyka', 'knd'),
-            'slug'        => 'leyka',
-            'is_callable' => 'leyka',
-//            'required'    => false,
+            'required'    => true,
+            'description' => __('A great tool to boost your website SEO positions.', 'knd'),
         ),
         array(
             'name'        => __('Cyr to Lat enhanced', 'knd'),
             'slug'        => 'cyr3lat',
             'is_callable' => 'ctl_sanitize_title',
             'required'    => true,
+            'description' => __('Small helper to seamlessly convert cyrillic pages slugs into latin ones.', 'knd'),
         ),
         array(
             'name'        => __('Disable Comments', 'knd'),
             'slug'        => 'disable-comments',
             'is_callable' => array('Disable_Comments', 'get_instance'),
             'required'    => true,
+            'description' => __('Comments on the website may be harmful, so this small plugin turns them off.', 'knd'),
+        ),
+        array(
+            'name'        => __('Leyka', 'knd'),
+            'slug'        => 'leyka',
+            'is_callable' => 'leyka',
+            'required'    => false,
+            'description' => __('This plugin will add means for donations collection to your website.', 'knd'),
         ),
     );
 
@@ -190,9 +198,9 @@ function knd_register_required_plugins() {
     $config = array(
         'id'           => 'knd',                 // Unique ID for hashing notices for multiple instances of TGMPA.
         'default_path' => '',                      // Default absolute path to bundled plugins.
-        'menu'         => 'knd-install-plugins', // Menu slug.
-        'has_notices'  => true,                    // Show admin notices or not.
-        'dismissable'  => true,                    // If false, a user cannot dismiss the nag message.
+        'menu'         => '', //'knd-install-plugins',  // Menu slug.
+        'has_notices'  => false,                    // Show admin notices or not.
+        'dismissable'  => false,                    // If false, a user cannot dismiss the nag message.
         'dismiss_msg'  => '',                      // If 'dismissable' is false, this message will be output at top of nag.
         'is_automatic' => true,                   // Automatically activate plugins after installation or not.
         'message'      => '',                     // Message to output right before the plugins table.
@@ -235,3 +243,13 @@ function knd_register_required_plugins() {
 
 }
 add_action('tgmpa_register', 'knd_register_required_plugins');
+
+//add_action('init', 'knd_tgmpa_load_filter', 1);
+//function knd_tgmpa_load_filter() {
+//
+//    if( !is_admin() ) {
+//        return;
+//    }
+//    add_filter('tgmpa_load', function($do_load){ return is_admin() || current_user_can('install_themes'); });
+//
+//}
