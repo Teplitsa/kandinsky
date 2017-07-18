@@ -228,10 +228,8 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 			$this->page_slug       = 'knd-setup-wizard';//apply_filters( $this->theme_name . '_theme_setup_wizard_page_slug', $this->theme_name . '-setup' );
 			$this->parent_slug     = apply_filters( $this->theme_name . '_theme_setup_wizard_parent_slug', '' );
 
-			// create an images/styleX/ folder for each style here.
 			$this->site_styles = array(
-                'style1' => 'Style 1',
-                'style2' => 'Style 2',
+                'color-line' => __('Social problem oriented charity organization', 'knd'),
             );
 
 			//If we have parent slug - set correct url
@@ -304,19 +302,17 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 //		}
 
 		/**
-		 * We determine if the user already has theme content installed. This can happen if swapping from a previous theme or updated the current theme. We change the UI a bit when updating / swapping to a new theme.
-		 *
-		 * @since 1.1.8
-		 * @access public
+		 * Check if the theme default content already installed.
+         * This can happen if swapping from a previous theme or updated the current theme.
 		 */
-		public function is_possible_upgrade() {
-			return false;
+		public function is_default_content_installed() {
+			return !!get_option('knd_default_content_installed');
 		}
 
 		public function enqueue_scripts() {
 		}
 
-		public function tgmpa_load( $status ) {
+		public function tgmpa_load($status) {
 			return is_admin() || current_user_can('install_themes');
 		}
 
@@ -675,7 +671,7 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 				<?php } else {*/?>
 
 				<h1><?php printf(esc_html__('Welcome to the %s setup wizard', 'knd'), wp_get_theme());?></h1>
-				<p><?php printf(esc_html__("Hello! Let's set up your organization website together. With few simple steps we will configure minimal necessary settings, like installing of required plugins, setting up default website content and the logo. It should only take 5 minutes. You can always change any of these settings later on.", 'knd')); ?></p>
+				<p><?php printf(esc_html__("Hello! Let's set up your organization website together. With few simple steps we will configure minimal necessary settings, like installing of required plugins, setting up default website content and the logo. It should only take 5 minutes. You can always change any of these settings later on, in the Plugins admin folder.", 'knd')); ?></p>
 
 				<p class="envato-setup-actions step">
 					<a href="<?php echo esc_url($this->get_next_step_link());?>" class="button-primary button button-large button-next"><?php esc_html_e("Let's go!", 'knd'); ?></a>
@@ -810,9 +806,13 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
                         } else {
 				            $plugins_required[$slug] = $plugin;
                         }
-                    }?>
+                    }
+
+                    if($plugins_required) {?>
 
 					<p><?php esc_html_e('Your website needs a few essential plugins. The following plugins will be installed or updated:', 'knd');?></p>
+                    <p><?php esc_html_e('You can add and remove plugins later on, in the Plugins admin folder.', 'knd');?></p>
+
 					<ul class="envato-wizard-plugins">
 						<?php foreach($plugins_required as $slug => $plugin) {?>
                         <li data-slug="<?php echo esc_attr($slug);?>"><?php echo esc_html($plugin['name']);?><span>
@@ -833,6 +833,9 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
                         </span><div class="spinner"></div></li>
 						<?php }?>
 					</ul>
+                    <?php }
+
+                    if($plugins_recommended) {?>
 
                     <p><?php esc_html_e('We also recommend to add several more:', 'knd');?></p>
                     <ul class="envato-wizard-plugins-recommended">
@@ -859,11 +862,11 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
                     <?php }?>
                     </ul>
 
-                <?php } else {
+                <?php }
+
+                } else {
 					echo '<p><strong>'.esc_html_e("Good news! All plugins are already installed and up to date. Let's proceed further.", 'knd').'</strong></p>';
 				}?>
-
-				<p><?php esc_html_e('You can add and remove plugins later on.', 'knd');?></p>
 
 				<p class="envato-setup-actions step">
 					<a href="<?php echo esc_url($this->get_next_step_link());?>" class="button-primary button button-large button-next" data-callback="install_plugins">
@@ -961,111 +964,98 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 
 			$content = array();
 
-			// find out what content is in our default json file.
-			$available_content = $this->_get_json( 'default.json' );
-			foreach ( $available_content as $post_type => $post_data ) {
-				if ( count( $post_data ) ) {
-					$first           = current( $post_data );
-					$post_type_title = ! empty( $first['type_title'] ) ? $first['type_title'] : ucwords( $post_type ) . 's';
-					if ( $post_type_title == 'Navigation Menu Items' ) {
-						$post_type_title = 'Navigation';
-					}
-					$content[ $post_type ] = array(
-						'title'            => $post_type_title,
-						'description'      => sprintf( esc_html__( 'This will create default %s as seen in the demo.' ), $post_type_title ),
-						'pending'          => esc_html__( 'Pending.' ),
-						'installing'       => esc_html__( 'Installing.' ),
-						'success'          => esc_html__( 'Success.' ),
-						'install_callback' => array( $this, '_content_install_type' ),
-						'checked'          => $this->is_possible_upgrade() ? 0 : 1,
-						// dont check if already have content installed.
-					);
-				}
-			}
-
-			$content['widgets'] = array(
-				'title'            => esc_html__( 'Widgets' ),
-				'description'      => esc_html__( 'Insert default sidebar widgets as seen in the demo.' ),
-				'pending'          => esc_html__( 'Pending.' ),
-				'installing'       => esc_html__( 'Installing Default Widgets.' ),
-				'success'          => esc_html__( 'Success.' ),
-				'install_callback' => array( $this, '_content_install_widgets' ),
-				'checked'          => $this->is_possible_upgrade() ? 0 : 1,
-				// dont check if already have content installed.
-			);
+            $content['pages'] = array(
+                'title'            => esc_html__('Pages', 'knd'),
+                'description'      => esc_html__('Insert default website pages as seen in the demo.', 'knd'),
+                'pending'          => esc_html__('Pending', 'knd'),
+                'installing'       => esc_html__('Installing...', 'knd'),
+                'success'          => esc_html__('Success!', 'knd'),
+                'install_callback' => array($this, '_content_install_pages'),
+                'checked'          => $this->is_default_content_installed(),
+            );
+            $content['posts'] = array(
+                'title'            => esc_html__('Posts', 'knd'),
+                'description'      => esc_html__('Insert default website posts as seen in the demo.', 'knd'),
+                'pending'          => esc_html__('Pending', 'knd'),
+                'installing'       => esc_html__('Installing...', 'knd'),
+                'success'          => esc_html__('Success!', 'knd'),
+                'install_callback' => array($this, '_content_install_posts'),
+                'checked'          => $this->is_default_content_installed(),
+            );
 			$content['settings'] = array(
-				'title'            => esc_html__( 'Settings' ),
-				'description'      => esc_html__( 'Configure default settings.' ),
-				'pending'          => esc_html__( 'Pending.' ),
-				'installing'       => esc_html__( 'Installing Default Settings.' ),
-				'success'          => esc_html__( 'Success.' ),
-				'install_callback' => array( $this, '_content_install_settings' ),
-				'checked'          => $this->is_possible_upgrade() ? 0 : 1,
-				// dont check if already have content installed.
+                'title'            => esc_html__('Settings', 'knd'),
+                'description'      => esc_html__('Insert default website settings as seen in the demo.', 'knd'),
+                'pending'          => esc_html__('Pending', 'knd'),
+                'installing'       => esc_html__('Installing...', 'knd'),
+                'success'          => esc_html__('Success!', 'knd'),
+                'install_callback' => array($this, '_content_install_settings'),
+                'checked'          => $this->is_default_content_installed(),
 			);
+            $content['menu'] = array(
+                'title'            => esc_html__('Menu', 'knd'),
+                'description'      => esc_html__('Insert default website menu as seen in the demo.', 'knd'),
+                'pending'          => esc_html__('Pending', 'knd'),
+                'installing'       => esc_html__('Installing...', 'knd'),
+                'success'          => esc_html__('Success!', 'knd'),
+                'install_callback' => array($this, '_content_install_menu'),
+                'checked'          => $this->is_default_content_installed(),
+            );
 
-			$content = apply_filters( $this->theme_name . '_theme_setup_wizard_content', $content );
-
-			return $content;
+			return apply_filters($this->theme_name.'_theme_setup_wizard_content', $content);
 
 		}
 
 		/**
 		 * Page setup
 		 */
-		public function envato_setup_default_content() {
-			?>
-			<h1><?php esc_html_e( 'Default Content' ); ?></h1>
+		public function envato_setup_default_content() {?>
+
+			<h1><?php esc_html_e('Theme default content', 'knd');?></h1>
 			<form method="post">
-				<?php if ( $this->is_possible_upgrade() ) { ?>
-					<p><?php esc_html_e( 'It looks like you already have content installed on this website. If you would like to install the default demo content as well you can select it below. Otherwise just choose the upgrade option to ensure everything is up to date.' ); ?></p>
-				<?php } else { ?>
-					<p><?php printf( esc_html__( 'It\'s time to insert some default content for your new WordPress website. Choose what you would like inserted below and click Continue. It is recommended to leave everything selected. Once inserted, this content can be managed from the WordPress admin dashboard. ' ), '<a href="' . esc_url( admin_url( 'edit.php?post_type=page' ) ) . '" target="_blank">', '</a>' ); ?></p>
-				<?php } ?>
+				<?php if($this->is_default_content_installed()) {?>
+					<p><?php esc_html_e('It looks like you already have content installed on this website. If you would like to install the default demo content as well you can select it below. Otherwise just choose the upgrade option to ensure everything is up to date.', 'knd');?></p>
+				<?php } else {?>
+					<p><?php esc_html_e("It's time to insert some default content for your new WordPress website. Choose what you would like inserted below and click Continue. It is recommended to leave everything selected. Once inserted, this content can be managed from the WordPress admin dashboard.", 'knd');?></p>
+				<?php }?>
 				<table class="envato-setup-pages" cellspacing="0">
 					<thead>
-					<tr>
-						<td class="check"></td>
-						<th class="item"><?php esc_html_e( 'Item' ); ?></th>
-						<th class="description"><?php esc_html_e( 'Description' ); ?></th>
-						<th class="status"><?php esc_html_e( 'Status' ); ?></th>
-					</tr>
+                        <tr>
+                            <td class="check"></td>
+                            <th class="item"><?php esc_html_e('Item', 'knd');?></th>
+                            <th class="description"><?php esc_html_e('Description', 'knd');?></th>
+                            <th class="status"><?php esc_html_e('Status', 'knd'); ?></th>
+                        </tr>
 					</thead>
 					<tbody>
-					<?php foreach ( $this->_content_default_get() as $slug => $default ) { ?>
-						<tr class="envato_default_content" data-content="<?php echo esc_attr( $slug ); ?>">
+					<?php foreach($this->_content_default_get() as $slug => $default) {?>
+						<tr class="envato_default_content" data-content="<?php echo esc_attr($slug);?>">
 							<td>
-								<input type="checkbox" name="default_content[<?php echo esc_attr( $slug ); ?>]"
-								       class="envato_default_content"
-								       id="default_content_<?php echo esc_attr( $slug ); ?>"
-								       value="1" <?php echo ( ! isset( $default['checked'] ) || $default['checked'] ) ? ' checked' : ''; ?>>
+								<input type="checkbox" name="default_content[<?php echo esc_attr($slug);?>]" class="envato_default_content" id="default_content_<?php echo esc_attr($slug);?>" value="1" <?php echo !isset($default['checked']) || $default['checked'] ? 'checked="checked"' : '';?>>
 							</td>
-							<td><label
-									for="default_content_<?php echo esc_attr( $slug ); ?>"><?php echo esc_html( $default['title'] ); ?></label>
+							<td>
+                                <label for="default_content_<?php echo esc_attr($slug);?>">
+                                    <?php echo esc_html($default['title']);?>
+                                </label>
 							</td>
-							<td class="description"><?php echo esc_html( $default['description'] ); ?></td>
-							<td class="status"><span><?php echo esc_html( $default['pending'] ); ?></span>
+							<td class="description"><?php echo esc_html($default['description']);?></td>
+							<td class="status"><span><?php echo esc_html($default['pending']);?></span>
 								<div class="spinner"></div>
 							</td>
 						</tr>
-					<?php } ?>
+					<?php }?>
 					</tbody>
 				</table>
 
 				<p class="envato-setup-actions step">
-					<a href="<?php echo esc_url( $this->get_next_step_link() ); ?>"
-					   class="button-primary button button-large button-next"
-					   data-callback="install_content"><?php esc_html_e( 'Continue' ); ?></a>
-					<a href="<?php echo esc_url( $this->get_next_step_link() ); ?>"
-					   class="button button-large button-next"><?php esc_html_e( 'Skip this step' ); ?></a>
-					<?php wp_nonce_field( 'envato-setup' ); ?>
+					<a href="<?php echo esc_url($this->get_next_step_link());?>" class="button-primary button button-large button-next" data-callback="install_content"><?php esc_html_e( 'Continue' ); ?></a>
+					<a href="<?php echo esc_url($this->get_next_step_link());?>" class="button button-large button-next"><?php esc_html_e('Skip this step', 'knd');?></a>
+					<?php wp_nonce_field('envato-setup');?>
 				</p>
 			</form>
-			<?php
-		}
-
+        <?php }
 
 		public function ajax_content() {
+
 			$content = $this->_content_default_get();
 			if ( ! check_ajax_referer( 'envato_setup_nonce', 'wpnonce' ) || empty( $_POST['content'] ) && isset( $content[ $_POST['content'] ] ) ) {
 				wp_send_json_error( array( 'error' => 1, 'message' => esc_html__( 'No content Found' ) ) );
@@ -2233,7 +2223,7 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 
 		public function _get_json( $file ) {
 
-			$theme_style = __DIR__ . '/content/' . basename(get_theme_mod('dtbwp_site_style',$this->get_default_theme_style())) .'/';
+			$theme_style = __DIR__.'/content/'.basename(get_theme_mod('dtbwp_site_style', $this->get_default_theme_style())).'/';
 			if ( is_file( $theme_style . basename( $file ) ) ) {
 				WP_Filesystem();
 				global $wp_filesystem;
@@ -3018,7 +3008,7 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 		}
 
 		public function is_submenu_page() {
-			return ( $this->parent_slug == '' ) ? false : true;
+			return !!$this->parent_slug;
 		}
 	}
 
@@ -3046,6 +3036,11 @@ if( !function_exists('envato_theme_setup_wizard') ) {
 add_action('init', 'envato_theme_setup_wizard', 1); // No admin_init here!
 
 // To remove the notice from Disable Comments plugin:
-//add_action('wp_loaded', function(){
-//    remove_action('admin_print_footer_scripts', array(Disable_Comments::get_instance(), 'discussion_notice'));
-//}, 10);
+add_action('wp_loaded', function(){
+    if(
+        class_exists('Disable_Comments') &&
+        has_action('admin_print_footer_scripts', array(Disable_Comments::get_instance(), 'discussion_notice'))
+    ) {
+        remove_action('admin_print_footer_scripts', array(Disable_Comments::get_instance(), 'discussion_notice'));
+    }
+}, 100);

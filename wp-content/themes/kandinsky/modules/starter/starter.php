@@ -5,12 +5,14 @@ require get_template_directory().'/modules/starter/menus.php';
 require get_template_directory().'/modules/starter/sidebars.php';
 
 function knd_import_starter_data_from_csv($file, $post_type = 'post') {
-    //Read file
+
     $input_file = get_template_directory() . '/modules/starter/csv/' . $file;
     knd_import_posts_from_csv($input_file, $post_type);
+
 }
 
 function knd_update_posts() {
+
     global $wpdb;
     
     // set thumbnail for sample page
@@ -41,13 +43,13 @@ function knd_set_theme_options() {
 }
 
 function knd_setup_menus() {
-    
+
     KND_StarterMenus::knd_setup_our_work_menu();
     KND_StarterMenus::knd_setup_news_menu();
-    
+
     KND_StarterSidebars::setup_footer_sidebar();
     KND_StarterSidebars::setup_homepage_sidebar();
-    
+
 }
 
 function knd_setup_starter_data() {
@@ -57,16 +59,14 @@ function knd_setup_starter_data() {
     knd_update_posts();
 
     knd_set_theme_options();
-    
+
     do_action('knd_save_demo_content');
-    
+
     knd_setup_menus();  // all menus except main nav menu
-    
+
 }
 
 function knd_ajax_setup_starter_data() {
-
-    global $wpdb;
 
     $res = array('status' => 'ok');
 
@@ -76,8 +76,8 @@ function knd_ajax_setup_starter_data() {
         error_log($ex);
         $res = array('status' => 'error');
     }
-    
-    wp_send_json( $res );
-    
+
+    wp_send_json($res);
+
 }
-add_action("wp_ajax_setup_starter_data", "knd_ajax_setup_starter_data");
+add_action('wp_ajax_setup_starter_data', 'knd_ajax_setup_starter_data');

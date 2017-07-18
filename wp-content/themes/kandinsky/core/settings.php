@@ -26,7 +26,7 @@ function knd_install_test_content() {
 
 //    if(isset($_GET['knd-install-test-content']) && isset($_GET['_knd_install_test_content_nonce'])) {
 //
-//        if(get_option('knd_test_content_installed')) {
+//        if(get_option('knd_default_content_installed')) {
 //            return;
 //        }
 //
@@ -243,13 +243,3 @@ function knd_register_required_plugins() {
 
 }
 add_action('tgmpa_register', 'knd_register_required_plugins');
-
-//add_action('init', 'knd_tgmpa_load_filter', 1);
-//function knd_tgmpa_load_filter() {
-//
-//    if( !is_admin() ) {
-//        return;
-//    }
-//    add_filter('tgmpa_load', function($do_load){ return is_admin() || current_user_can('install_themes'); });
-//
-//}

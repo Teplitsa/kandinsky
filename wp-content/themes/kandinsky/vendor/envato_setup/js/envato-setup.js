@@ -219,7 +219,7 @@ var EnvatoWizard = (function($){
             });
             if(items_completed >= $items.length){
                 // finished all items!
-                complete();
+                // complete();
             }
         }
 

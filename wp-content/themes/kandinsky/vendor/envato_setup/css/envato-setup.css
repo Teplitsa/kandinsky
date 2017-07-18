@@ -430,10 +430,10 @@ body {
     text-align: center;
 
 }
-.envato-wizard-plugins li{
+.envato-wizard-plugins li, .envato-wizard-plugins-recommended li {
     position: relative;
 }
-.envato-wizard-plugins li span{
+.envato-wizard-plugins li span, .envato-wizard-plugins-recommended li span {
     padding: 0 0 0 10px;
     font-size: 0.9em;
     color: #0091cd;
@@ -441,10 +441,10 @@ body {
     position: relative;
 
 }
-.envato-wizard-plugins.installing li .spinner{
+.envato-wizard-plugins.installing li .spinner, .envato-wizard-plugins-recommended.installing li .spinner {
     visibility: visible;
 }
-.envato-wizard-plugins li .spinner{
+.envato-wizard-plugins li .spinner, .envato-wizard-plugins-recommended li .spinner {
     display: inline-block;
     position: absolute;
 

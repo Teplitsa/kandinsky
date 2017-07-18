@@ -5,27 +5,22 @@
  * @package bb
  */
 
-define('FRL_VERSION', '1.0');
+define('KND_VERSION', '0.2');
 define('TST_DOC_URL', 'https://kms.te-st.ru/site-help/');
- 
- 
-if ( ! isset( $content_width ) ) {
+
+if( !isset($content_width) ) {
 	$content_width = 800; /* pixels */
 }
-
 
 function knd_setup() {
 
 	// Inits
-	load_theme_textdomain( 'knd', get_template_directory() . '/lang' );
+	load_theme_textdomain('knd', get_template_directory().'/lang');
 	//add_theme_support( 'automatic-feed-links' );	
-	add_theme_support( 'title-tag' );
-	add_theme_support( 'html5', array(
-		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
-	) );
+	add_theme_support('title-tag');
+	add_theme_support('html5', array('search-form', 'comment-form', 'comment-list', 'gallery', 'caption',));
 
-    
-	// Thumbnails
+	// Thumbnails:
 	add_theme_support('post-thumbnails');
 	set_post_thumbnail_size(640, 395, true ); // regular thumbnails	
 	add_image_size('square', 450, 450, true ); // square thumbnail 
@@ -35,13 +30,13 @@ function knd_setup() {
 
 	// Menus
 	$menus = array(
-		'primary'   => __('Primary menu', 'knd')		
+		'primary'   => __('Primary menu', 'knd'),
 		//'social'    => 'Социальные кнопки',
 		//'sitemap'   => 'Карта сайта'
 	);
-		
+
 	register_nav_menus($menus);
-	
+
 	// Editor style
 	//add_editor_style(array('css/editor-style.css'));
 }
@@ -53,9 +48,9 @@ add_filter('image_size_names_choose', 'rdc_medialib_custom_image_sizes');
 function rdc_medialib_custom_image_sizes($sizes) {
 	
 	$addsizes = apply_filters('rdc_medialib_custom_image_sizes', array(
-		"landscape-mini" 	=> 'Горизонтальная миниатюра', 
-		"post-thumbnail" 	=> 'Стандартный', 
-		"medium-thumbnail" 	=> 'Фиксированный'
+		'landscape-mini' 	=> 'Горизонтальная миниатюра',
+		'post-thumbnail' 	=> 'Стандартный',
+		'medium-thumbnail' 	=> 'Фиксированный'
 	));
 		
 	return array_merge($sizes, $addsizes);
@@ -64,17 +59,17 @@ function rdc_medialib_custom_image_sizes($sizes) {
 /**
  * Register widget area.
  */
-function rdc_widgets_init() {
-		
+function knd_widgets_init() {
+
 	$config = array(		
 		'right_single' => array(
-						'name' => 'Правая колонка - Записи',
-						'description' => 'Боковая колонка справа на страницах новостей'
-					),
+            'name' => 'Правая колонка - Записи',
+            'description' => 'Боковая колонка справа на страницах новостей'
+        ),
 		'right_event' => array(
-						'name' => 'Правая колонка - Анонсы',
-						'description' => 'Боковая колонка справа на страницах анонсов'
-					),
+            'name' => 'Правая колонка - Анонсы',
+            'description' => 'Боковая колонка справа на страницах анонсов'
+        ),
 		// 'footer' => array(
 		// 				'name' => 'Подвал - 4 виджета',
 		// 				'description' => 'Динамическая область в подвале: 4 виджета'
@@ -98,9 +93,11 @@ function rdc_widgets_init() {
 			'before_title' => '<h3 class="widget-title">',
 			'after_title' => '</h3>',
 		));
+
 	}
+
 }
-add_action( 'init', 'rdc_widgets_init', 27 );
+add_action('init', 'knd_widgets_init', 27);
 
 
 /**
