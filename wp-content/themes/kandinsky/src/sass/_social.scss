@@ -74,21 +74,6 @@ $social_color: (
 	}	
 }
 
-.bottom-bar {
-	
-	@each $item in vk, facebook, youtube, twitter, instagram {		
-		.knd-social-links .#{$item} a {
-			background: $color-text-black;
-			&:hover, &:focus, &:active {
-				//background: social_color($item);
-				background: $color-white;
-				
-				.svg-icon { fill: social_color($item);}
-			}
-		}
-	}	
-}
-
 
 /** == Sharing == **/
 .social-likes {
