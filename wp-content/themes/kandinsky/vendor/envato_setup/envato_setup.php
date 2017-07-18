@@ -960,6 +960,33 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 
 		}
 
+		public function _content_install_posts() {
+
+            knd_import_starter_data_from_csv('posts.csv', 'post');
+            knd_update_posts();
+
+            return true;
+
+        }
+        public function _content_install_pages() {
+
+            do_action('knd_save_demo_content');
+            return true;
+
+        }
+        public function _content_install_settings() {
+
+            knd_set_theme_options();
+            return true;
+
+        }
+        public function _content_install_menu() {
+
+            knd_setup_menus();  // all menus except main nav menu
+            return true;
+
+        }
+
 		private function _content_default_get() {
 
 			$content = array();
@@ -1052,84 +1079,87 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 					<?php wp_nonce_field('envato-setup');?>
 				</p>
 			</form>
-        <?php }
+        <?php
+		}
 
 		public function ajax_content() {
 
 			$content = $this->_content_default_get();
-			if ( ! check_ajax_referer( 'envato_setup_nonce', 'wpnonce' ) || empty( $_POST['content'] ) && isset( $content[ $_POST['content'] ] ) ) {
-				wp_send_json_error( array( 'error' => 1, 'message' => esc_html__( 'No content Found' ) ) );
+			if(
+                !check_ajax_referer('envato_setup_nonce', 'wpnonce') ||
+                empty($_POST['content']) &&
+                isset($content[$_POST['content']])
+            ) {
+				wp_send_json_error(array('error' => 1, 'message' => esc_html__('No content Found', 'knd')));
 			}
 
-			$json         = false;
-			$this_content = $content[ $_POST['content'] ];
+			$json = false;
+			$this_content = $content[$_POST['content']];
 
-			if ( isset( $_POST['proceed'] ) ) {
-				// install the content!
-
-				$this->log( ' -!! STARTING SECTION for ' . $_POST['content'] );
-
-				// init delayed posts from transient.
-				$this->delay_posts = get_transient( 'delayed_posts' );
-				if ( ! is_array( $this->delay_posts ) ) {
-					$this->delay_posts = array();
-				}
-
-				if ( ! empty( $this_content['install_callback'] ) ) {
-					if ( $result = call_user_func( $this_content['install_callback'] ) ) {
-
-						$this->log( ' -- FINISH. Writing ' . count( $this->delay_posts, COUNT_RECURSIVE ) . ' delayed posts to transient ' );
-						set_transient( 'delayed_posts', $this->delay_posts, 60 * 60 * 24 );
-
-						if ( is_array( $result ) && isset( $result['retry'] ) ) {
-							// we split the stuff up again.
-							$json = array(
-								'url'         => admin_url( 'admin-ajax.php' ),
-								'action'      => 'envato_setup_content',
-								'proceed'     => 'true',
-								'retry'       => time(),
-								'retry_count' => $result['retry_count'],
-								'content'     => $_POST['content'],
-								'_wpnonce'    => wp_create_nonce( 'envato_setup_nonce' ),
-								'message'     => $this_content['installing'],
-								'logs'        => $this->logs,
-								'errors'      => $this->errors,
-							);
-						} else {
-							$json = array(
-								'done'    => 1,
-								'message' => $this_content['success'],
-								'debug'   => $result,
-								'logs'    => $this->logs,
-								'errors'  => $this->errors,
-							);
-						}
-					}
-				}
+			if(empty($_POST['proceed'])) {
+                $json = array(
+                    'url'      => admin_url( 'admin-ajax.php' ),
+                    'action'   => 'envato_setup_content',
+                    'proceed'  => 'true',
+                    'content'  => $_POST['content'],
+                    '_wpnonce' => wp_create_nonce('envato_setup_nonce'),
+                    'message'  => $this_content['installing'],
+                    'logs'     => $this->logs,
+                    'errors'   => $this->errors,
+                );
 			} else {
 
-				$json = array(
-					'url'      => admin_url( 'admin-ajax.php' ),
-					'action'   => 'envato_setup_content',
-					'proceed'  => 'true',
-					'content'  => $_POST['content'],
-					'_wpnonce' => wp_create_nonce( 'envato_setup_nonce' ),
-					'message'  => $this_content['installing'],
-					'logs'     => $this->logs,
-					'errors'   => $this->errors,
-				);
+                $this->log(' -!! STARTING SECTION for '.$_POST['content']);
+
+                // init delayed posts from transient.
+                $this->delay_posts = get_transient( 'delayed_posts' );
+                if ( ! is_array( $this->delay_posts ) ) {
+                    $this->delay_posts = array();
+                }
+
+                if( !empty($this_content['install_callback']) ) {
+                    if($result = call_user_func($this_content['install_callback'])) {
+
+                        $this->log(' -- FINISH. Writing '.count($this->delay_posts, COUNT_RECURSIVE).' delayed posts to transient ');
+                        set_transient( 'delayed_posts', $this->delay_posts, 60 * 60 * 24 );
+
+                        if(is_array($result) && isset($result['retry'])) {
+                            $json = array(
+                                'url'         => admin_url( 'admin-ajax.php' ),
+                                'action'      => 'envato_setup_content',
+                                'proceed'     => 'true',
+                                'retry'       => time(),
+                                'retry_count' => $result['retry_count'],
+                                'content'     => $_POST['content'],
+                                '_wpnonce'    => wp_create_nonce( 'envato_setup_nonce' ),
+                                'message'     => $this_content['installing'],
+                                'logs'        => $this->logs,
+                                'errors'      => $this->errors,
+                            );
+                        } else {
+                            $json = array(
+                                'done'    => 1,
+                                'message' => $this_content['success'],
+                                'debug'   => $result,
+                                'logs'    => $this->logs,
+                                'errors'  => $this->errors,
+                            );
+                        }
+                    }
+                }
+
 			}
 
-			if ( $json ) {
-				$json['hash'] = md5( serialize( $json ) ); // used for checking if duplicates happen, move to next plugin
-				wp_send_json( $json );
+			if($json) {
+				$json['hash'] = md5(serialize($json)); // used for checking if duplicates happen, move to next plugin
+				wp_send_json($json);
 			} else {
-				wp_send_json( array(
+				wp_send_json(array(
 					'error'   => 1,
-					'message' => esc_html__( 'Error' ),
+					'message' => esc_html__('Error', 'knd'),
 					'logs'    => $this->logs,
 					'errors'  => $this->errors,
-				) );
+				));
 			}
 
 			exit;
@@ -2130,97 +2160,6 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 
 		}
 
-		public function _content_install_settings() {
-
-			$this->_handle_delayed_posts( true ); // final wrap up of delayed posts.
-			$this->vc_post(); // final wrap of vc posts.
-
-			$custom_options = $this->_get_json( 'options.json' );
-
-			// we also want to update the widget area manager options.
-			foreach ( $custom_options as $option => $value ) {
-				// we have to update widget page numbers with imported page numbers.
-				if (
-					preg_match( '#(wam__position_)(\d+)_#', $option, $matches ) ||
-					preg_match( '#(wam__area_)(\d+)_#', $option, $matches )
-				) {
-					$new_page_id = $this->_imported_post_id( $matches[2] );
-					if ( $new_page_id ) {
-						// we have a new page id for this one. import the new setting value.
-						$option = str_replace( $matches[1] . $matches[2] . '_', $matches[1] . $new_page_id . '_', $option );
-					}
-				}
-				if ( $value && ! empty( $value['custom_logo'] ) ) {
-					$new_logo_id = $this->_imported_post_id( $value['custom_logo'] );
-					if ( $new_logo_id ) {
-						$value['custom_logo'] = $new_logo_id;
-					}
-				}
-				if ( $option == 'dtbaker_featured_images' ) {
-					$value      = maybe_unserialize( $value );
-					$new_values = array();
-					if ( is_array( $value ) ) {
-						foreach ( $value as $cat_id => $image_id ) {
-							$new_cat_id   = $this->_imported_term_id( $cat_id );
-							$new_image_id = $this->_imported_post_id( $image_id );
-							if ( $new_cat_id && $new_image_id ) {
-								$new_values[ $new_cat_id ] = $new_image_id;
-							}
-						}
-					}
-					$value = $new_values;
-				}
-				update_option( $option, $value );
-			}
-
-			$menu_ids = $this->_get_json( 'menu.json' );
-			$save     = array();
-			foreach ( $menu_ids as $menu_id => $term_id ) {
-				$new_term_id = $this->_imported_term_id( $term_id );
-				if ( $new_term_id ) {
-					$save[ $menu_id ] = $new_term_id;
-				}
-			}
-			if ( $save ) {
-				set_theme_mod( 'nav_menu_locations', array_map( 'absint', $save ) );
-			}
-
-			// set the blog page and the home page.
-			$shoppage = get_page_by_title( 'Shop' );
-			if ( $shoppage ) {
-				update_option( 'woocommerce_shop_page_id', $shoppage->ID );
-			}
-			$shoppage = get_page_by_title( 'Cart' );
-			if ( $shoppage ) {
-				update_option( 'woocommerce_cart_page_id', $shoppage->ID );
-			}
-			$shoppage = get_page_by_title( 'Checkout' );
-			if ( $shoppage ) {
-				update_option( 'woocommerce_checkout_page_id', $shoppage->ID );
-			}
-			$shoppage = get_page_by_title( 'My Account' );
-			if ( $shoppage ) {
-				update_option( 'woocommerce_myaccount_page_id', $shoppage->ID );
-			}
-			$homepage = get_page_by_title( 'Home' );
-			if ( $homepage ) {
-				update_option( 'page_on_front', $homepage->ID );
-				update_option( 'show_on_front', 'page' );
-			}
-			$blogpage = get_page_by_title( 'Blog' );
-			if ( $blogpage ) {
-				update_option( 'page_for_posts', $blogpage->ID );
-				update_option( 'show_on_front', 'page' );
-			}
-
-			global $wp_rewrite;
-			$wp_rewrite->set_permalink_structure( '/%year%/%monthnum%/%day%/%postname%/' );
-			update_option( 'rewrite_rules', false );
-			$wp_rewrite->flush_rules( true );
-
-			return true;
-		}
-
 		public function _get_json( $file ) {
 
 			$theme_style = __DIR__.'/content/'.basename(get_theme_mod('dtbwp_site_style', $this->get_default_theme_style())).'/';
@@ -3021,7 +2960,7 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
  * @since 1.1.1
  * @return object Envato_Theme_Setup_Wizard
  */
-//add_action( 'after_setup_theme', 'envato_theme_setup_wizard', 10 );
+add_action('after_setup_theme', 'envato_theme_setup_wizard');
 if( !function_exists('envato_theme_setup_wizard') ) {
     function envato_theme_setup_wizard() {
 
@@ -3033,7 +2972,7 @@ if( !function_exists('envato_theme_setup_wizard') ) {
 
     }
 }
-add_action('init', 'envato_theme_setup_wizard', 1); // No admin_init here!
+//add_action('init', 'envato_theme_setup_wizard', 1); // No admin_init here!
 
 // To remove the notice from Disable Comments plugin:
 add_action('wp_loaded', function(){
