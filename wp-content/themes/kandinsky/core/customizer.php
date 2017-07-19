@@ -94,12 +94,12 @@ function knd_customize_register(WP_Customize_Manager $wp_customize) {
     ));
 
     $wp_customize->add_setting('knd_custom_logo', array(
-        'default'           => '', 
-        'sanitize_callback' => 'absint'        
+        'default'           => '',
+        'sanitize_callback' => 'absint'
     ));
 
     $wp_customize->add_setting('knd_custom_logo_mod', array(
-        'default'           => 'image_only'             
+        'default'           => 'image_only',
     ));
 
     $wp_customize->add_control( 

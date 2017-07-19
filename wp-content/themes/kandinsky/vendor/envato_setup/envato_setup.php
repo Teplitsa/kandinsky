@@ -148,13 +148,14 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 		 * @return Envato_Theme_Setup_Wizard
 		 */
 		public static function get_instance() {
-			if ( ! self::$instance ) {
+
+			if( !self::$instance ) {
 				self::$instance = new self;
 			}
 
 			return self::$instance;
-		}
 
+		}
 
 		/**
 		 * A dummy constructor to prevent this class from being loaded more than once.
@@ -165,8 +166,10 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 		 * @access private
 		 */
 		public function __construct() {
+
 			$this->init_globals();
 			$this->init_actions();
+
 		}
 
 		/**
@@ -190,9 +193,8 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 		 * @access public
 		 */
 		public function get_header_logo_width() {
-			return '200px';
+			return '100%'; //'200px';
 		}
-
 
 		/**
 		 * Get the default style. Can be overriden by theme init scripts.
@@ -203,15 +205,7 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 		 * @access public
 		 */
 		public function get_logo_image() {
-			$logo_image_id = get_theme_mod( 'custom_logo' );
-			if ( $logo_image_id ) {
-				$logo_image_object = wp_get_attachment_image_src( $logo_image_id, 'full' );
-				$image_url         = $logo_image_object[0];
-			} else {
-				$image_url = get_theme_mod( 'logo_header_image', get_template_directory_uri() . '/images/' . get_theme_mod( 'dtbwp_site_color', $this->get_default_theme_style() ) . '/logo.png' );
-			}
-
-			return apply_filters( 'envato_setup_logo_image', $image_url );
+			return apply_filters('envato_setup_logo_image', knd_get_logo_img());
 		}
 
 		/**
@@ -512,37 +506,25 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 		/**
 		 * Setup Wizard Header
 		 */
-	public function setup_wizard_header() {
-		?>
+	public function setup_wizard_header() {?>
+
 		<!DOCTYPE html>
-		<html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
+		<html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes();?>>
 		<head>
 			<meta name="viewport" content="width=device-width"/>
 			<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-			<?php
-			// avoid theme check issues.
-			echo '<t';
-			echo 'itle>' . esc_html__( 'Theme &rsaquo; Setup Wizard' ) . '</ti' . 'tle>'; ?>
-			<?php wp_print_scripts( 'envato-setup' ); ?>
-			<?php do_action( 'admin_print_styles' ); ?>
-			<?php do_action( 'admin_print_scripts' ); ?>
-			<?php do_action( 'admin_head' ); ?>
+			<?php // avoid theme check issues.
+			echo '<t'; echo 'itle>'.esc_html__('Theme &rsaquo; Setup Wizard').'</ti'.'tle>';?>
+			<?php wp_print_scripts('envato-setup');?>
+			<?php do_action('admin_print_styles');?>
+			<?php do_action('admin_print_scripts');?>
+			<?php do_action('admin_head');?>
 		</head>
 		<body class="envato-setup wp-core-ui">
 		<h1 id="wc-logo">
-			<a href="http://themeforest.net/user/dtbaker/portfolio" target="_blank"><?php
-				$image_url = $this->get_logo_image();
-				if ( $image_url ) {
-					$image = '<img class="site-logo" src="%s" alt="%s" style="width:%s; height:auto" />';
-					printf(
-						$image,
-						$image_url,
-						get_bloginfo( 'name' ),
-						$this->get_header_logo_width()
-					);
-				} else { ?>
-						<img src="<?php echo esc_url( $this->plugin_url . 'images/logo.png' ); ?>" alt="Envato install wizard" /><?php
-				} ?></a>
+			<a href="<?php echo KND_OFFICIAL_WEBSITE_URL;?>" target="_blank">
+                <?php echo '<img class="site-logo" src="'.get_template_directory_uri().'/knd-logo.png" alt="'.__('Kandinsky theme setup wizard', 'knd').'" style="width:100%; height:auto;">';?>
+            </a>
 		</h1>
 		<?php
 		}
@@ -761,6 +743,7 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 			}
 
 			return $plugins;
+
 		}
 
 		/**
@@ -769,23 +752,20 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 		public function envato_setup_default_plugins() {
 
 			tgmpa_load_bulk_installer();
-			// install plugins with TGM.
-			if ( ! class_exists( 'TGM_Plugin_Activation' ) || ! isset( $GLOBALS['tgmpa'] ) ) {
+			if( !class_exists('TGM_Plugin_Activation') || !isset($GLOBALS['tgmpa']) ) {
 				die(__('Failed to find TGM plugin', 'knd'));
 			}
-			$url     = wp_nonce_url( add_query_arg( array( 'plugins' => 'go' ) ), 'envato-setup' );
-
-			// copied from TGM
+			$url = wp_nonce_url(add_query_arg(array('plugins' => 'go')), 'envato-setup');
 
 			$method = ''; // Leave blank so WP_Filesystem can populate it as necessary.
-			$fields = array_keys( $_POST ); // Extra fields to pass to WP_Filesystem.
+			$fields = array_keys($_POST); // Extra fields to pass to WP_Filesystem.
 
-			if( false === ($creds = request_filesystem_credentials(esc_url_raw($url), $method, false, false, $fields)) ) {
+			if(false === ($creds = request_filesystem_credentials(esc_url_raw($url), $method, false, false, $fields))) {
 				return true; // Stop the normal page form from displaying, credential request form will be shown.
 			}
 
 			// Now we have some credentials, setup WP_Filesystem
-			if ( ! WP_Filesystem( $creds ) ) { // Our credentials were no good, ask the user for them again
+			if ( !WP_Filesystem($creds) ) { // Our credentials were no good, ask the user for them again
 
 				request_filesystem_credentials( esc_url_raw( $url ), $method, true, false, $fields );
 				return true;
@@ -815,9 +795,8 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 
 					<ul class="envato-wizard-plugins">
 						<?php foreach($plugins_required as $slug => $plugin) {?>
-                        <li data-slug="<?php echo esc_attr($slug);?>"><?php echo esc_html($plugin['name']);?><span>
-
-                            <?php $plugin_status = '';
+                        <li data-slug="<?php echo esc_attr($slug);?>"><?php echo esc_html($plugin['name']);?>
+                            <span><?php $plugin_status = '';
 
                             if(isset($plugins['install'][$slug])) {
                                 $plugin_status = __('Installation required', 'knd');
@@ -828,9 +807,9 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
                                 $plugin_status = __('Activation required', 'knd');
                             }
 
-                            echo $plugin_status;?>
-
-                        </span><div class="spinner"></div></li>
+                            echo $plugin_status;?></span>
+                            <div class="spinner"></div>
+                        </li>
 						<?php }?>
 					</ul>
                     <?php }
@@ -883,23 +862,12 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 
 		public function ajax_plugins() {
 
-			if ( ! check_ajax_referer( 'envato_setup_nonce', 'wpnonce' ) || empty( $_POST['slug'] ) ) {
-				wp_send_json_error( array( 'error' => 1, 'message' => esc_html__( 'No Slug Found' ) ) );
+			if( !check_ajax_referer('envato_setup_nonce', 'wpnonce') || empty($_POST['slug']) ) {
+				wp_send_json_error(array('error' => 1, 'message' => esc_html__('No slug found', 'knd')));
 			}
 			$json = array(); // Send back some json we use to hit up TGM
 
-//            tgmpa_load_bulk_installer();
 			$plugins = $this->_get_plugins();
-
-//            $plugins_required = $plugins_recommended = array();
-//
-//            foreach($plugins['all'] as $slug => $plugin) {
-//                if(empty($plugin['required'])) {
-//                    $plugins_recommended[$slug] = $plugin;
-//                } else {
-//                    $plugins_required[$slug] = $plugin;
-//                }
-//            }
 
 			// what are we doing with this plugin?
 			foreach($plugins['all'] as $slug => $plugin) {
@@ -907,14 +875,14 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
                 if( !empty($plugins['activate'][$slug]) && $_POST['slug'] == $slug) {
 
 					$json = array(
-						'url'           => admin_url( $this->tgmpa_url ),
-						'plugin'        => array( $slug ),
+						'url'           => admin_url($this->tgmpa_url),
+						'plugin'        => array($slug),
 						'tgmpa-page'    => $this->tgmpa_menu_slug,
 						'plugin_status' => 'all',
-						'_wpnonce'      => wp_create_nonce( 'bulk-plugins' ),
+						'_wpnonce'      => wp_create_nonce('bulk-plugins'),
 						'action'        => 'tgmpa-bulk-activate',
 						'action2'       => -1,
-						'message'       => esc_html__( 'Activating Plugin' ),
+						'message'       => esc_html__('Activating Plugin', 'knd'),
 					);
 					break;
 
@@ -1074,8 +1042,12 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 				</table>
 
 				<p class="envato-setup-actions step">
-					<a href="<?php echo esc_url($this->get_next_step_link());?>" class="button-primary button button-large button-next" data-callback="install_content"><?php esc_html_e( 'Continue' ); ?></a>
-					<a href="<?php echo esc_url($this->get_next_step_link());?>" class="button button-large button-next"><?php esc_html_e('Skip this step', 'knd');?></a>
+					<a href="<?php echo esc_url($this->get_next_step_link());?>" class="button-primary button button-large button-next" data-callback="install_content">
+                        <?php esc_html_e('Continue', 'knd');?>
+                    </a>
+					<a href="<?php echo esc_url($this->get_next_step_link());?>" class="button button-large button-next">
+                        <?php esc_html_e('Skip this step', 'knd');?>
+                    </a>
 					<?php wp_nonce_field('envato-setup');?>
 				</p>
 			</form>
@@ -1168,21 +1140,21 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 
 
 		private function _imported_term_id( $original_term_id, $new_term_id = false ) {
-			$terms = get_transient( 'importtermids' );
-			if ( ! is_array( $terms ) ) {
-				$terms = array();
-			}
-			if ( $new_term_id ) {
-				if ( ! isset( $terms[ $original_term_id ] ) ) {
-					$this->log( 'Insert old TERM ID ' . $original_term_id . ' as new TERM ID: ' . $new_term_id );
-				} else if ( $terms[ $original_term_id ] != $new_term_id ) {
-					$this->error( 'Replacement OLD TERM ID ' . $original_term_id . ' overwritten by new TERM ID: ' . $new_term_id );
-				}
-				$terms[ $original_term_id ] = $new_term_id;
-				set_transient( 'importtermids', $terms, 60 * 60 * 24 );
-			} else if ( $original_term_id && isset( $terms[ $original_term_id ] ) ) {
-				return $terms[ $original_term_id ];
-			}
+//			$terms = get_transient( 'importtermids' );
+//			if ( ! is_array( $terms ) ) {
+//				$terms = array();
+//			}
+//			if ( $new_term_id ) {
+//				if ( ! isset( $terms[ $original_term_id ] ) ) {
+//					$this->log( 'Insert old TERM ID ' . $original_term_id . ' as new TERM ID: ' . $new_term_id );
+//				} else if ( $terms[ $original_term_id ] != $new_term_id ) {
+//					$this->error( 'Replacement OLD TERM ID ' . $original_term_id . ' overwritten by new TERM ID: ' . $new_term_id );
+//				}
+//				$terms[ $original_term_id ] = $new_term_id;
+//				set_transient( 'importtermids', $terms, 60 * 60 * 24 );
+//			} else if ( $original_term_id && isset( $terms[ $original_term_id ] ) ) {
+//				return $terms[ $original_term_id ];
+//			}
 
 			return false;
 		}
@@ -1298,558 +1270,6 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 			return strlen( $b ) - strlen( $a );
 		}
 
-		private function _process_post_data( $post_type, $post_data, $delayed = 0, $debug = false ) {
-
-			$this->log( " Processing $post_type " . $post_data['post_id'] );
-			$original_post_data = $post_data;
-
-			if ( $debug ) {
-				echo "HERE\n";
-			}
-			if ( ! post_type_exists( $post_type ) ) {
-				return false;
-			}
-			if ( ! $debug && $this->_imported_post_id( $post_data['post_id'] ) ) {
-				return true; // already done :)
-			}
-			/*if ( 'nav_menu_item' == $post_type ) {
-				$this->process_menu_item( $post );
-				continue;
-			}*/
-
-			if ( empty( $post_data['post_title'] ) && empty( $post_data['post_name'] ) ) {
-				// this is menu items
-				$post_data['post_name'] = $post_data['post_id'];
-			}
-
-			$post_data['post_type'] = $post_type;
-
-			$post_parent = (int) $post_data['post_parent'];
-			if ( $post_parent ) {
-				// if we already know the parent, map it to the new local ID
-				if ( $this->_imported_post_id( $post_parent ) ) {
-					$post_data['post_parent'] = $this->_imported_post_id( $post_parent );
-					// otherwise record the parent for later
-				} else {
-					$this->_post_orphans( intval( $post_data['post_id'] ), $post_parent );
-					$post_data['post_parent'] = 0;
-				}
-			}
-
-			// check if already exists
-			if ( ! $debug ) {
-				if ( empty( $post_data['post_title'] ) && ! empty( $post_data['post_name'] ) ) {
-					global $wpdb;
-					$sql     = "
-					SELECT ID, post_name, post_parent, post_type
-					FROM $wpdb->posts
-					WHERE post_name = %s
-					AND post_type = %s
-				";
-					$pages   = $wpdb->get_results( $wpdb->prepare( $sql, array(
-						$post_data['post_name'],
-						$post_type,
-					) ), OBJECT_K );
-					$foundid = 0;
-					foreach ( (array) $pages as $page ) {
-						if ( $page->post_name == $post_data['post_name'] && empty( $page->post_title ) ) {
-							$foundid = $page->ID;
-						}
-					}
-					if ( $foundid ) {
-						$this->_imported_post_id( $post_data['post_id'], $foundid );
-
-						return true;
-					}
-				}
-				// dont use post_exists because it will dupe up on media with same name but different slug
-				if ( ! empty( $post_data['post_title'] ) && ! empty( $post_data['post_name'] ) ) {
-					global $wpdb;
-					$sql     = "
-					SELECT ID, post_name, post_parent, post_type
-					FROM $wpdb->posts
-					WHERE post_name = %s
-					AND post_title = %s
-					AND post_type = %s
-					";
-					$pages   = $wpdb->get_results( $wpdb->prepare( $sql, array(
-						$post_data['post_name'],
-						$post_data['post_title'],
-						$post_type,
-					) ), OBJECT_K );
-					$foundid = 0;
-					foreach ( (array) $pages as $page ) {
-						if ( $page->post_name == $post_data['post_name'] ) {
-							$foundid = $page->ID;
-						}
-					}
-					if ( $foundid ) {
-						$this->_imported_post_id( $post_data['post_id'], $foundid );
-
-						return true;
-					}
-				}
-			}
-
-			// backwards compat with old import format.
-			if ( isset( $post_data['meta'] ) ) {
-				foreach ( $post_data['meta'] as $key => $meta ) {
-					if(is_array($meta) && count($meta) == 1){
-						$single_meta = current($meta);
-						if(!is_array($single_meta)){
-							$post_data['meta'][$key] = $single_meta;
-						}
-					}
-				}
-			}
-
-			switch ( $post_type ) {
-				case 'attachment':
-					// import media via url
-					if ( ! empty( $post_data['guid'] ) ) {
-
-						// check if this has already been imported.
-						$old_guid = $post_data['guid'];
-						if ( $this->_imported_post_id( $old_guid ) ) {
-							return true; // alrady done;
-						}
-						// ignore post parent, we haven't imported those yet.
-						//                          $file_data = wp_remote_get($post_data['guid']);
-						$remote_url = $post_data['guid'];
-
-						$post_data['upload_date'] = date( 'Y/m', strtotime( $post_data['post_date_gmt'] ) );
-						if ( isset( $post_data['meta'] ) ) {
-							foreach ( $post_data['meta'] as $key => $meta ) {
-								if ( $key == '_wp_attached_file' ) {
-									foreach ( (array) $meta as $meta_val ) {
-										if ( preg_match( '%^[0-9]{4}/[0-9]{2}%', $meta_val, $matches ) ) {
-											$post_data['upload_date'] = $matches[0];
-										}
-									}
-								}
-							}
-						}
-
-						$upload = $this->_fetch_remote_file( $remote_url, $post_data );
-
-						if ( ! is_array( $upload ) || is_wp_error( $upload ) ) {
-							// todo: error
-							return false;
-						}
-
-						if ( $info = wp_check_filetype( $upload['file'] ) ) {
-							$post['post_mime_type'] = $info['type'];
-						} else {
-							return false;
-						}
-
-						$post_data['guid'] = $upload['url'];
-
-						// as per wp-admin/includes/upload.php
-						$post_id = wp_insert_attachment( $post_data, $upload['file'] );
-						if($post_id) {
-
-							if ( ! empty( $post_data['meta'] ) ) {
-								foreach ( $post_data['meta'] as $meta_key => $meta_val ) {
-									if($meta_key != '_wp_attached_file' && !empty($meta_val)) {
-										update_post_meta( $post_id, $meta_key, $meta_val );
-									}
-								}
-							}
-
-							wp_update_attachment_metadata( $post_id, wp_generate_attachment_metadata( $post_id, $upload['file'] ) );
-
-							// remap resized image URLs, works by stripping the extension and remapping the URL stub.
-							if ( preg_match( '!^image/!', $info['type'] ) ) {
-								$parts = pathinfo( $remote_url );
-								$name  = basename( $parts['basename'], ".{$parts['extension']}" ); // PATHINFO_FILENAME in PHP 5.2
-
-								$parts_new = pathinfo( $upload['url'] );
-								$name_new  = basename( $parts_new['basename'], ".{$parts_new['extension']}" );
-
-								$this->_imported_post_id( $parts['dirname'] . '/' . $name, $parts_new['dirname'] . '/' . $name_new );
-							}
-							$this->_imported_post_id( $post_data['post_id'], $post_id );
-							//$this->_imported_post_id( $old_guid, $post_id );
-						}
-
-					}
-					break;
-				default:
-					// work out if we have to delay this post insertion
-
-					$replace_meta_vals = array(
-						/*'_vc_post_settings'                                => array(
-							'posts'      => array( 'item' ),
-							'taxonomies' => array( 'taxonomies' ),
-						),
-						'_menu_item_object_id|_menu_item_menu_item_parent' => array(
-							'post' => true,
-						),*/
-					);
-
-					if ( ! empty( $post_data['meta'] ) && is_array( $post_data['meta'] ) ) {
-
-						// replace any elementor post data:
-
-						// fix for double json encoded stuff:
-						foreach ( $post_data['meta'] as $meta_key => $meta_val ) {
-							if ( is_string( $meta_val ) && strlen( $meta_val ) && $meta_val[0] == '[' ) {
-								$test_json = @json_decode( $meta_val, true );
-								if ( is_array( $test_json ) ) {
-									$post_data['meta'][ $meta_key ] = $test_json;
-								}
-							}
-						}
-
-						array_walk_recursive( $post_data['meta'], array( $this, '_elementor_id_import' ) );
-
-						// replace menu data:
-						// work out what we're replacing. a tax, page, term etc..
-
-						if(!empty($post_data['meta']['_menu_item_menu_item_parent'])) {
-							$new_parent_id = $this->_imported_post_id( $post_data['meta']['_menu_item_menu_item_parent'] );
-							if(!$new_parent_id) {
-								if ( $delayed ) {
-									// already delayed, unable to find this meta value, skip inserting it
-									$this->error( 'Unable to find replacement. Continue anyway.... content will most likely break..' );
-								} else {
-									$this->error( 'Unable to find replacement. Delaying.... ' );
-									$this->_delay_post_process( $post_type, $original_post_data );
-									return false;
-								}
-							}
-							$post_data['meta']['_menu_item_menu_item_parent'] = $new_parent_id;
-						}
-						switch($post_data['meta'][ '_menu_item_type' ]){
-							case 'post_type':
-								if(!empty($post_data['meta']['_menu_item_object_id'])) {
-									$new_parent_id = $this->_imported_post_id( $post_data['meta']['_menu_item_object_id'] );
-									if(!$new_parent_id) {
-										if ( $delayed ) {
-											// already delayed, unable to find this meta value, skip inserting it
-											$this->error( 'Unable to find replacement. Continue anyway.... content will most likely break..' );
-										} else {
-											$this->error( 'Unable to find replacement. Delaying.... ' );
-											$this->_delay_post_process( $post_type, $original_post_data );
-											return false;
-										}
-									}
-									$post_data['meta']['_menu_item_object_id'] = $new_parent_id;
-								}
-								break;
-							case 'taxonomy':
-								if(!empty($post_data['meta']['_menu_item_object_id'])) {
-									$new_parent_id = $this->_imported_term_id( $post_data['meta']['_menu_item_object_id'] );
-									if(!$new_parent_id) {
-										if ( $delayed ) {
-											// already delayed, unable to find this meta value, skip inserting it
-											$this->error( 'Unable to find replacement. Continue anyway.... content will most likely break..' );
-										} else {
-											$this->error( 'Unable to find replacement. Delaying.... ' );
-											$this->_delay_post_process( $post_type, $original_post_data );
-											return false;
-										}
-									}
-									$post_data['meta']['_menu_item_object_id'] = $new_parent_id;
-								}
-								break;
-						}
-
-						// please ignore this horrible loop below:
-						// it was an attempt to automate different visual composer meta key replacements
-						// but I'm not using visual composer any more, so ignoring it.
-						foreach ( $replace_meta_vals as $meta_key_to_replace => $meta_values_to_replace ) {
-
-							$meta_keys_to_replace   = explode( '|', $meta_key_to_replace );
-							$success                = false;
-							$trying_to_find_replace = false;
-							foreach ( $meta_keys_to_replace as $meta_key ) {
-
-								if ( ! empty( $post_data['meta'][ $meta_key ] ) ) {
-
-									$meta_val = $post_data['meta'][ $meta_key ];
-
-									// export gets meta straight from the DB so could have a serialized string
-									/*$meta_val = maybe_unserialize( $post_data['meta'][$meta_key] );
-									if ( is_array( $meta_val ) && count( $meta_val ) == 1 ) { // not sure this isset will fix the bug.
-										reset($meta_val);
-										$test = maybe_unserialize(current( $meta_val ));
-										if(is_array($test)) {
-											$meta_val = array($test);
-										}else{
-											$meta_val = current( $meta_val );
-										}
-									}
-									$meta_val_unserialized = maybe_unserialize($meta_val);
-									$serialized_meta = false;
-									if(is_array($meta_val_unserialized)){
-										$serialized_meta = true; // so we can re-serialize it later
-										$meta_val = $meta_val_unserialized;
-									}*/
-									if ( $debug ) {
-										echo "Meta key: $meta_key \n";
-										print_r( $meta_val );
-									}
-
-									// if we're replacing a single post/tax value.
-									if ( isset( $meta_values_to_replace['post'] ) && $meta_values_to_replace['post'] && (int) $meta_val > 0 ) {
-										$trying_to_find_replace = true;
-										$new_meta_val           = $this->_imported_post_id( $meta_val );
-										if ( $new_meta_val ) {
-											$post_data['meta'][ $meta_key ] = $new_meta_val;
-											$success                        = true;
-										} else {
-											$success = false;
-											break;
-										}
-									}
-									if ( isset( $meta_values_to_replace['taxonomy'] ) && $meta_values_to_replace['taxonomy'] && (int) $meta_val > 0 ) {
-										$trying_to_find_replace = true;
-										$new_meta_val           = $this->_imported_term_id( $meta_val );
-										if ( $new_meta_val ) {
-											$post_data['meta'][ $meta_key ] = $new_meta_val;
-											$success                        = true;
-										} else {
-											$success = false;
-											break;
-										}
-									}
-									if ( is_array( $meta_val ) && isset( $meta_values_to_replace['posts'] ) ) {
-
-										foreach ( $meta_values_to_replace['posts'] as $post_array_key ) {
-
-											$this->log( 'Trying to find/replace "' . $post_array_key . '"" in the ' . $meta_key . ' sub array:' );
-											//$this->log(var_export($meta_val,true));
-
-											$this_success = false;
-											array_walk_recursive( $meta_val, function ( &$item, $key ) use ( &$trying_to_find_replace, $post_array_key, &$success, &$this_success, $post_type, $original_post_data, $meta_key, $delayed ) {
-												if ( $key == $post_array_key && (int) $item > 0 ) {
-													$trying_to_find_replace = true;
-													$new_insert_id          = $this->_imported_post_id( $item );
-													if ( $new_insert_id ) {
-														$success      = true;
-														$this_success = true;
-														$this->log( 'Found' . $meta_key . ' -> ' . $post_array_key . ' replacement POST ID insert for ' . $item . ' ( as ' . $new_insert_id . ' ) ' );
-														$item = $new_insert_id;
-													} else {
-														$this->error( 'Unable to find ' . $meta_key . ' -> ' . $post_array_key . ' POST ID insert for ' . $item . ' ' );
-													}
-												}
-											} );
-											if ( $this_success ) {
-												$post_data['meta'][ $meta_key ] = $meta_val;
-											}
-										}
-										foreach ( $meta_values_to_replace['taxonomies'] as $post_array_key ) {
-
-											$this->log( 'Trying to find/replace "' . $post_array_key . '"" TAXONOMY in the ' . $meta_key . ' sub array:' );
-											//$this->log(var_export($meta_val,true));
-
-											$this_success = false;
-											array_walk_recursive( $meta_val, function ( &$item, $key ) use ( &$trying_to_find_replace, $post_array_key, &$success, &$this_success, $post_type, $original_post_data, $meta_key, $delayed ) {
-												if ( $key == $post_array_key && (int) $item > 0 ) {
-													$trying_to_find_replace = true;
-													$new_insert_id          = $this->_imported_term_id( $item );
-													if ( $new_insert_id ) {
-														$success      = true;
-														$this_success = true;
-														$this->log( 'Found' . $meta_key . ' -> ' . $post_array_key . ' replacement TAX ID insert for ' . $item . ' ( as ' . $new_insert_id . ' ) ' );
-														$item = $new_insert_id;
-													} else {
-														$this->error( 'Unable to find ' . $meta_key . ' -> ' . $post_array_key . ' TAX ID insert for ' . $item . ' ' );
-													}
-												}
-											} );
-
-											if ( $this_success ) {
-												$post_data['meta'][ $meta_key ] = $meta_val;
-											}
-										}
-									}
-
-									if ( $success ) {
-										if ( $debug ) {
-											echo "Meta key AFTER REPLACE: $meta_key \n";
-											print_r( $post_data['meta'] );
-										}
-									}
-								}
-							}
-							if ( $trying_to_find_replace ) {
-								$this->log( 'Trying to find/replace postmeta "' . $meta_key_to_replace . '" ' );
-								if ( ! $success ) {
-									// failed to find a replacement.
-									if ( $delayed ) {
-										// already delayed, unable to find this meta value, skip inserting it
-										$this->error( 'Unable to find replacement. Continue anyway.... content will most likely break..' );
-									} else {
-										$this->error( 'Unable to find replacement. Delaying.... ' );
-										$this->_delay_post_process( $post_type, $original_post_data );
-
-										return false;
-									}
-								} else {
-									$this->log( 'SUCCESSSS ' );
-								}
-							}
-						}
-					}
-
-					$post_data['post_content'] = $this->_parse_gallery_shortcode_content($post_data['post_content']);
-
-					// we have to fix up all the visual composer inserted image ids
-					$replace_post_id_keys = array(
-						'parallax_image',
-						'dtbwp_row_image_top',
-						'dtbwp_row_image_bottom',
-						'image',
-						'item', // vc grid
-						'post_id',
-					);
-					foreach ( $replace_post_id_keys as $replace_key ) {
-						if ( preg_match_all( '# ' . $replace_key . '="(\d+)"#', $post_data['post_content'], $matches ) ) {
-							foreach ( $matches[0] as $match_id => $string ) {
-								$new_id = $this->_imported_post_id( $matches[1][ $match_id ] );
-								if ( $new_id ) {
-									$post_data['post_content'] = str_replace( $string, ' ' . $replace_key . '="' . $new_id . '"', $post_data['post_content'] );
-								} else {
-									$this->error( 'Unable to find POST replacement for ' . $replace_key . '="' . $matches[1][ $match_id ] . '" in content.' );
-									if ( $delayed ) {
-										// already delayed, unable to find this meta value, insert it anyway.
-
-									} else {
-
-										$this->error( 'Adding ' . $post_data['post_id'] . ' to delay listing.' );
-										//                                      echo "Delaying post id ".$post_data['post_id']."... \n\n";
-										$this->_delay_post_process( $post_type, $original_post_data );
-
-										return false;
-									}
-								}
-							}
-						}
-					}
-					$replace_tax_id_keys = array(
-						'taxonomies',
-					);
-					foreach ( $replace_tax_id_keys as $replace_key ) {
-						if ( preg_match_all( '# ' . $replace_key . '="(\d+)"#', $post_data['post_content'], $matches ) ) {
-							foreach ( $matches[0] as $match_id => $string ) {
-								$new_id = $this->_imported_term_id( $matches[1][ $match_id ] );
-								if ( $new_id ) {
-									$post_data['post_content'] = str_replace( $string, ' ' . $replace_key . '="' . $new_id . '"', $post_data['post_content'] );
-								} else {
-									$this->error( 'Unable to find TAXONOMY replacement for ' . $replace_key . '="' . $matches[1][ $match_id ] . '" in content.' );
-									if ( $delayed ) {
-										// already delayed, unable to find this meta value, insert it anyway.
-									} else {
-										//                                      echo "Delaying post id ".$post_data['post_id']."... \n\n";
-										$this->_delay_post_process( $post_type, $original_post_data );
-
-										return false;
-									}
-								}
-							}
-						}
-					}
-
-
-
-
-					$post_id = wp_insert_post( $post_data, true );
-					if ( ! is_wp_error( $post_id ) ) {
-						$this->_imported_post_id( $post_data['post_id'], $post_id );
-						// add/update post meta
-						if ( ! empty( $post_data['meta'] ) ) {
-							foreach ( $post_data['meta'] as $meta_key => $meta_val ) {
-
-								// if the post has a featured image, take note of this in case of remap
-								if ( '_thumbnail_id' == $meta_key ) {
-									/// find this inserted id and use that instead.
-									$inserted_id = $this->_imported_post_id( intval( $meta_val ) );
-									if ( $inserted_id ) {
-										$meta_val = $inserted_id;
-									}
-								}
-								//                                  echo "Post meta $meta_key was $meta_val \n\n";
-
-								update_post_meta( $post_id, $meta_key, $meta_val );
-
-							}
-						}
-						if ( ! empty( $post_data['terms'] ) ) {
-							$terms_to_set = array();
-							foreach ( $post_data['terms'] as $term_slug => $terms ) {
-								foreach ( $terms as $term ) {
-									/*"term_id": 21,
-									"name": "Tea",
-									"slug": "tea",
-									"term_group": 0,
-									"term_taxonomy_id": 21,
-									"taxonomy": "category",
-									"description": "",
-									"parent": 0,
-									"count": 1,
-									"filter": "raw"*/
-									$taxonomy = $term['taxonomy'];
-									if ( taxonomy_exists( $taxonomy ) ) {
-										$term_exists = term_exists( $term['slug'], $taxonomy );
-										$term_id     = is_array( $term_exists ) ? $term_exists['term_id'] : $term_exists;
-										if ( ! $term_id ) {
-											if ( ! empty( $term['parent'] ) ) {
-												// see if we have imported this yet?
-												$term['parent'] = $this->_imported_term_id( $term['parent'] );
-											}
-											$t = wp_insert_term( $term['name'], $taxonomy, $term );
-											if ( ! is_wp_error( $t ) ) {
-												$term_id = $t['term_id'];
-											} else {
-												// todo - error
-												continue;
-											}
-										}
-										$this->_imported_term_id( $term['term_id'], $term_id );
-										// add the term meta.
-										if($term_id && !empty($term['meta']) && is_array($term['meta'])){
-											foreach($term['meta'] as $meta_key => $meta_val){
-											    // we have to replace certain meta_key/meta_val
-                                                // e.g. thumbnail id from woocommerce product categories.
-                                                switch($meta_key){
-                                                    case 'thumbnail_id':
-                                                        if( $new_meta_val = $this->_imported_post_id($meta_val) ){
-                                                            // use this new id.
-                                                            $meta_val = $new_meta_val;
-                                                        }
-                                                        break;
-                                                }
-												update_term_meta( $term_id, $meta_key, $meta_val );
-											}
-										}
-										$terms_to_set[ $taxonomy ][] = intval( $term_id );
-									}
-								}
-							}
-							foreach ( $terms_to_set as $tax => $ids ) {
-								wp_set_post_terms( $post_id, $ids, $tax );
-							}
-						}
-
-						// procses visual composer just to be sure.
-						if ( strpos( $post_data['post_content'], '[vc_' ) !== false ) {
-							$this->vc_post( $post_id );
-						}
-						if ( !empty($post_data['meta']['_elementor_data']) || !!empty($post_data['meta']['_elementor_css']) ) {
-							$this->elementor_post( $post_id );
-						}
-					}
-
-					break;
-			}
-
-			return true;
-		}
-
 		private function _parse_gallery_shortcode_content($content){
 			// we have to format the post content. rewriting images and gallery stuff
 			$replace      = $this->_imported_post_id();
@@ -1897,116 +1317,6 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 				}
 			}
 			return $content;
-		}
-
-		private function _elementor_id_import( &$item, $key ) {
-			if ( $key == 'id' && ! empty( $item ) && is_numeric( $item ) ) {
-				// check if this has been imported before
-				$new_meta_val = $this->_imported_post_id( $item );
-				if ( $new_meta_val ) {
-					$item = $new_meta_val;
-				}
-			}
-			if ( $key == 'page' && ! empty( $item ) ) {
-
-				if ( false !== strpos( $item, 'p.' ) ) {
-					$new_id = str_replace('p.', '', $item);
-					// check if this has been imported before
-					$new_meta_val = $this->_imported_post_id( $new_id );
-					if ( $new_meta_val ) {
-						$item = 'p.' . $new_meta_val;
-					}
-				}else if(is_numeric($item)){
-					// check if this has been imported before
-					$new_meta_val = $this->_imported_post_id( $item );
-					if ( $new_meta_val ) {
-						$item = $new_meta_val;
-					}
-				}
-			}
-			if ( $key == 'post_id' && ! empty( $item ) && is_numeric( $item ) ) {
-				// check if this has been imported before
-				$new_meta_val = $this->_imported_post_id( $item );
-				if ( $new_meta_val ) {
-					$item = $new_meta_val;
-				}
-			}
-			if ( $key == 'url' && ! empty( $item ) && strstr( $item, 'ocalhost' ) ) {
-				// check if this has been imported before
-				$new_meta_val = $this->_imported_post_id( $item );
-				if ( $new_meta_val ) {
-					$item = $new_meta_val;
-				}
-			}
-			if ( ($key == 'shortcode' || $key == 'editor') && ! empty( $item ) ) {
-				// we have to fix the [contact-form-7 id=133] shortcode issue.
-				$item = $this->_parse_gallery_shortcode_content($item);
-
-			}
-		}
-
-		private function _content_install_type() {
-			$post_type = ! empty( $_POST['content'] ) ? $_POST['content'] : false;
-			$all_data  = $this->_get_json( 'default.json' );
-			if ( ! $post_type || ! isset( $all_data[ $post_type ] ) ) {
-				return false;
-			}
-			$limit = 10 + ( isset( $_REQUEST['retry_count'] ) ? (int) $_REQUEST['retry_count'] : 0 );
-			$x     = 0;
-			foreach ( $all_data[ $post_type ] as $post_data ) {
-
-				$this->_process_post_data( $post_type, $post_data );
-
-				if ( $x ++ > $limit ) {
-					return array( 'retry' => 1, 'retry_count' => $limit );
-				}
-			}
-
-			$this->_handle_delayed_posts();
-
-			$this->_handle_post_orphans();
-
-			// now we have to handle any custom SQL queries. This is needed for the events manager to store location and event details.
-			$sql = $this->_get_sql( basename( $post_type ) . '.sql' );
-			if ( $sql ) {
-				global $wpdb;
-				// do a find-replace with certain keys.
-				if ( preg_match_all( '#__POSTID_(\d+)__#', $sql, $matches ) ) {
-					foreach ( $matches[0] as $match_id => $match ) {
-						$new_id = $this->_imported_post_id( $matches[1][ $match_id ] );
-						if ( ! $new_id ) {
-							$new_id = 0;
-						}
-						$sql = str_replace( $match, $new_id, $sql );
-					}
-				}
-				$sql  = str_replace( '__DBPREFIX__', $wpdb->prefix, $sql );
-				$bits = preg_split( "/;(\s*\n|$)/", $sql );
-				foreach ( $bits as $bit ) {
-					$bit = trim( $bit );
-					if ( $bit ) {
-						$wpdb->query( $bit );
-					}
-				}
-			}
-
-			return true;
-
-		}
-
-		private function _handle_post_orphans() {
-			$orphans = $this->_post_orphans();
-			foreach ( $orphans as $original_post_id => $original_post_parent_id ) {
-				if ( $original_post_parent_id ) {
-					if ( $this->_imported_post_id( $original_post_id ) && $this->_imported_post_id( $original_post_parent_id ) ) {
-						$post_data                = array();
-						$post_data['ID']          = $this->_imported_post_id( $original_post_id );
-						$post_data['post_parent'] = $this->_imported_post_id( $original_post_parent_id );
-						wp_update_post( $post_data );
-						$this->_post_orphans( $original_post_id, 0 ); // ignore future
-					}
-				}
-			}
 		}
 
 		private function _handle_delayed_posts( $last_delay = false ) {
@@ -2109,52 +1419,52 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 
 		private function _content_install_widgets() {
 			// todo: pump these out into the 'content/' folder along with the XML so it's a little nicer to play with
-			$import_widget_positions = $this->_get_json( 'widget_positions.json' );
-			$import_widget_options   = $this->_get_json( 'widget_options.json' );
-
-			// importing.
-			$widget_positions = get_option( 'sidebars_widgets' );
-			if ( ! is_array( $widget_positions ) ) {
-				$widget_positions = array();
-			}
-
-			foreach ( $import_widget_options as $widget_name => $widget_options ) {
-				// replace certain elements with updated imported entries.
-				foreach ( $widget_options as $widget_option_id => $widget_option ) {
-
-					// replace TERM ids in widget settings.
-					foreach ( array( 'nav_menu' ) as $key_to_replace ) {
-						if ( ! empty( $widget_option[ $key_to_replace ] ) ) {
-							// check if this one has been imported yet.
-							$new_id = $this->_imported_term_id( $widget_option[ $key_to_replace ] );
-							if ( ! $new_id ) {
-								// do we really clear this out? nah. well. maybe.. hmm.
-							} else {
-								$widget_options[ $widget_option_id ][ $key_to_replace ] = $new_id;
-							}
-						}
-					}
-					// replace POST ids in widget settings.
-					foreach ( array( 'image_id', 'post_id' ) as $key_to_replace ) {
-						if ( ! empty( $widget_option[ $key_to_replace ] ) ) {
-							// check if this one has been imported yet.
-							$new_id = $this->_imported_post_id( $widget_option[ $key_to_replace ] );
-							if ( ! $new_id ) {
-								// do we really clear this out? nah. well. maybe.. hmm.
-							} else {
-								$widget_options[ $widget_option_id ][ $key_to_replace ] = $new_id;
-							}
-						}
-					}
-				}
-				$existing_options = get_option( 'widget_' . $widget_name, array() );
-				if ( ! is_array( $existing_options ) ) {
-					$existing_options = array();
-				}
-				$new_options = $existing_options + $widget_options;
-				update_option( 'widget_' . $widget_name, $new_options );
-			}
-			update_option( 'sidebars_widgets', array_merge( $widget_positions, $import_widget_positions ) );
+//			$import_widget_positions = $this->_get_json( 'widget_positions.json' );
+//			$import_widget_options   = $this->_get_json( 'widget_options.json' );
+//
+//			// importing.
+//			$widget_positions = get_option( 'sidebars_widgets' );
+//			if ( ! is_array( $widget_positions ) ) {
+//				$widget_positions = array();
+//			}
+//
+//			foreach ( $import_widget_options as $widget_name => $widget_options ) {
+//				// replace certain elements with updated imported entries.
+//				foreach ( $widget_options as $widget_option_id => $widget_option ) {
+//
+//					// replace TERM ids in widget settings.
+//					foreach ( array( 'nav_menu' ) as $key_to_replace ) {
+//						if ( ! empty( $widget_option[ $key_to_replace ] ) ) {
+//							// check if this one has been imported yet.
+//							$new_id = $this->_imported_term_id( $widget_option[ $key_to_replace ] );
+//							if ( ! $new_id ) {
+//								// do we really clear this out? nah. well. maybe.. hmm.
+//							} else {
+//								$widget_options[ $widget_option_id ][ $key_to_replace ] = $new_id;
+//							}
+//						}
+//					}
+//					// replace POST ids in widget settings.
+//					foreach ( array( 'image_id', 'post_id' ) as $key_to_replace ) {
+//						if ( ! empty( $widget_option[ $key_to_replace ] ) ) {
+//							// check if this one has been imported yet.
+//							$new_id = $this->_imported_post_id( $widget_option[ $key_to_replace ] );
+//							if ( ! $new_id ) {
+//								// do we really clear this out? nah. well. maybe.. hmm.
+//							} else {
+//								$widget_options[ $widget_option_id ][ $key_to_replace ] = $new_id;
+//							}
+//						}
+//					}
+//				}
+//				$existing_options = get_option( 'widget_' . $widget_name, array() );
+//				if ( ! is_array( $existing_options ) ) {
+//					$existing_options = array();
+//				}
+//				$new_options = $existing_options + $widget_options;
+//				update_option( 'widget_' . $widget_name, $new_options );
+//			}
+//			update_option( 'sidebars_widgets', array_merge( $widget_positions, $import_widget_positions ) );
 
 			return true;
 
@@ -2268,32 +1578,22 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 			exit;
 		}
 
-
 		/**
 		 * Logo & Design
 		 */
-		public function envato_setup_logo_design() {
+		public function envato_setup_logo_design() {?>
 
-			?>
-			<h1><?php esc_html_e( 'Logo' ); ?></h1>
+			<h1><?php esc_html_e('Logo', 'knd');?></h1>
 			<form method="post">
-				<p><?php printf( esc_html__( 'Please add your logo below. For best results, the logo should be a transparent PNG ( 466 by 277 pixels). The logo can be changed at any time from the Appearance > Customize area in your dashboard. Try %sEnvato Studio%s if you need a new logo designed.' ), '<a href="http://studiotracking.envato.com/aff_c?offer_id=4&aff_id=1564&source=DemoInstall" target="_blank">', '</a>' ); ?></p>
-
+				<p><?php printf(esc_html__('Please add your organization main logo below. The recommended size is 315x66px for Image only mode and 66x66px for Image with site name. The logo can be changed at any time from the Appearance > Customize area in your dashboard. Try our %sPaseka program%s if you need a new logo designed.', 'knd'), '<a href="https://paseka.te-st.ru/" target="_blank">', '</a>');?></p>
 				<table>
 					<tr>
 						<td>
 							<div id="current-logo">
-								<?php
-								$image_url = $this->get_logo_image();
-								if ( $image_url ) {
-									$image = '<img class="site-logo" src="%s" alt="%s" style="width:%s; height:auto" />';
-									printf(
-										$image,
-										$image_url,
-										get_bloginfo( 'name' ),
-										$this->get_header_logo_width()
-									);
-								} ?>
+                            <?php $image_url = knd_get_logo_img_url();
+                            if($image_url) {
+                                printf('<img class="site-logo" src="%s" alt="%s" style="width: %s; height: auto;">', $image_url, get_bloginfo('name'), $this->get_header_logo_width());
+                            }?>
 							</div>
 						</td>
 						<td>
@@ -2302,23 +1602,14 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 					</tr>
 				</table>
 
-				<p><em>Please Note: Advanced changes to website graphics/colors may require extensive PhotoShop and Web
-						Development knowledge. We recommend hiring an expert from <a
-							href="http://studiotracking.envato.com/aff_c?offer_id=4&aff_id=1564&source=DemoInstall"
-							target="_blank">Envato Studio</a> to assist with any advanced website changes.</em></p>
-				<div style="display: none;">
-					<img src="http://studiotracking.envato.com/aff_i?offer_id=4&aff_id=1564&source=DemoInstall"
-					     width="1" height="1"/>
-				</div>
-
 				<input type="hidden" name="new_logo_id" id="new_logo_id" value="">
 
 				<p class="envato-setup-actions step">
-					<input type="submit" class="button-primary button button-large button-next"
-					       value="<?php esc_attr_e( 'Continue' ); ?>" name="save_step"/>
-					<a href="<?php echo esc_url( $this->get_next_step_link() ); ?>"
-					   class="button button-large button-next"><?php esc_html_e( 'Skip this step' ); ?></a>
-					<?php wp_nonce_field( 'envato-setup' ); ?>
+					<input type="submit" class="button-primary button button-large button-next" value="<?php esc_attr_e('Continue', 'knd');?>" name="save_step">
+					<a href="<?php echo esc_url($this->get_next_step_link());?>" class="button button-large button-next">
+                        <?php esc_html_e('Skip this step', 'knd');?>
+                    </a>
+					<?php wp_nonce_field('knd-setup-design');?>
 				</p>
 			</form>
 			<?php
@@ -2328,42 +1619,30 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 		 * Save logo & design options
 		 */
 		public function envato_setup_logo_design_save() {
-			check_admin_referer( 'envato-setup' );
 
-			$new_logo_id = (int) $_POST['new_logo_id'];
-			// save this new logo url into the database and calculate the desired height based off the logo width.
-			// copied from dtbaker.theme_options.php
-			if ( $new_logo_id ) {
-				$attr = wp_get_attachment_image_src( $new_logo_id, 'full' );
+			check_admin_referer('knd-setup-design');
+
+			$new_logo_id = (int)$_POST['new_logo_id'];
+
+			if($new_logo_id) {
+				$attr = wp_get_attachment_image_src($new_logo_id, 'full');
 				if ( $attr && ! empty( $attr[1] ) && ! empty( $attr[2] ) ) {
 
 					set_theme_mod( 'custom_logo', $new_logo_id );
-					set_theme_mod( 'header_textcolor', 'blank' );
-					set_theme_mod( 'logo_header_image', $attr[0] );
-					// we have a width and height for this image. awesome.
-					$logo_width  = (int) get_theme_mod( 'logo_header_image_width', '467' );
-					$scale       = $logo_width / $attr[1];
-					$logo_height = intval( $attr[2] * $scale );
-					if ( $logo_height > 0 ) {
-						set_theme_mod( 'logo_header_image_height', $logo_height );
-					}
-				}
-			}
 
-			$new_style = isset( $_POST['new_site_color'] ) ? $_POST['new_site_color'] : false;
-			if ( $new_style ) {
-				$demo_styles = apply_filters( 'dtbwp_default_styles', array() );
-				if ( isset( $demo_styles[ $new_style ] ) ) {
-					set_theme_mod( 'dtbwp_site_color', $new_style );
-					if ( class_exists( 'dtbwp_customize_save_hook' ) ) {
-						$site_color_defaults = new dtbwp_customize_save_hook();
-						$site_color_defaults->save_color_options( $new_style );
-					}
+					// we have a width and height for this image. awesome.
+//					$logo_width  = (int) get_theme_mod( 'logo_header_image_width', '467' );
+//					$scale       = $logo_width / $attr[1];
+//					$logo_height = intval( $attr[2] * $scale );
+//					if ( $logo_height > 0 ) {
+//						set_theme_mod( 'logo_header_image_height', $logo_height );
+//					}
 				}
 			}
 
 			wp_redirect( esc_url_raw( $this->get_next_step_link() ) );
 			exit;
+
 		}
 
 		/**

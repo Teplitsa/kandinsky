@@ -154,49 +154,55 @@ var EnvatoWizard = (function($){
 
         function ajax_callback(response) {
             if(typeof response == 'object' && typeof response.message != 'undefined') {
+
                 $current_node.find('span').text(response.message);
                 if(typeof response.url != 'undefined') {
-                    // we have an ajax url action to perform.
                     if(response.hash == current_item_hash) {
+
                         $current_node.find('span').text("failed");
                         find_next();
+
                     } else {
+
                         current_item_hash = response.hash;
-                        jQuery.post(response.url, response, ajax_callback).fail(ajax_callback); // recuurrssionnnnn
+                        jQuery.post(response.url, response, ajax_callback).fail(ajax_callback);
+
                     }
                 } else if(typeof response.done != 'undefined') {
-                    // finished processing this plugin, move onto next
                     find_next();
-                } else {
-                    // error processing this plugin
+                } else { // error processing this plugin
                     find_next();
                 }
-            } else{
-                // error - try again with next plugin
+
+            } else {
+
                 $current_node.find('span').text("ajax error");
                 find_next();
+
             }
         }
 
-        function process_current(){
-            if(current_item){
+        function process_current() {
+            if(current_item) {
 
                 var $check = $current_node.find('input:checkbox');
                 if($check.is(':checked')) {
-                    console.log("Doing 2 "+current_item);
-                    // process htis one!
                     jQuery.post(envato_setup_params.ajaxurl, {
                         action: 'envato_setup_content',
                         wpnonce: envato_setup_params.wpnonce,
                         content: current_item
                     }, ajax_callback).fail(ajax_callback);
-                }else{
+                } else {
+
                     $current_node.find('span').text("Skipping");
                     setTimeout(find_next,300);
+
                 }
+
             }
         }
-        function find_next(){
+
+        function find_next() {
             var do_next = false;
             if($current_node){
                 if(!$current_node.data('done_item')){
@@ -206,9 +212,9 @@ var EnvatoWizard = (function($){
                 $current_node.find('.spinner').css('visibility','hidden');
             }
             var $items = $('tr.envato_default_content');
-            var $enabled_items = $('tr.envato_default_content input:checked');
+            // var $enabled_items = $('tr.envato_default_content input:checked');
             $items.each(function(){
-                if (current_item == '' || do_next) {
+                if(current_item == '' || do_next) {
                     current_item = $(this).data('content');
                     $current_node = $(this);
                     process_current();
@@ -225,8 +231,7 @@ var EnvatoWizard = (function($){
 
         return {
             init: function(btn){
-                $('.envato-setup-pages').addClass('installing');
-                $('.envato-setup-pages').find('input').prop("disabled", true);
+                $('.envato-setup-pages').addClass('installing').find('input').prop('disabled', true);
                 complete = function(){
                     loading_content();
                     window.location.href=btn.href;
@@ -279,14 +284,17 @@ var EnvatoWizard = (function($){
     function dtbaker_loading_button(btn){
 
         var $button = jQuery(btn);
-        if($button.data('done-loading') == 'yes')return false;
-        var existing_text = $button.text();
-        var existing_width = $button.outerWidth();
-        var loading_text = '⡀⡀⡀⡀⡀⡀⡀⡀⡀⡀⠄⠂⠁⠁⠂⠄';
-        var completed = false;
+        if($button.data('done-loading') == 'yes') {
+            return false;
+        }
 
-        $button.css('width',existing_width);
-        $button.addClass('dtbaker_loading_button_current');
+        var existing_text = $button.text(),
+            existing_width = $button.outerWidth(),
+            loading_text = '⡀⡀⡀⡀⡀⡀⡀⡀⡀⡀⠄⠂⠁⠁⠂⠄',
+            completed = false;
+
+        $button.css('width', existing_width).addClass('dtbaker_loading_button_current');
+
         var _modifier = $button.is('input') || $button.is('button') ? 'val' : 'text';
         $button[_modifier](loading_text);
         //$button.attr('disabled',true);
@@ -333,6 +341,5 @@ var EnvatoWizard = (function($){
     }
 
 })(jQuery);
-
 
 EnvatoWizard.init();
