@@ -127,10 +127,10 @@ function knd_customize_register(WP_Customize_Manager $wp_customize) {
             'text_only'     => __('Site name only', 'knd'),
             'nothing'       => __('Do not show', 'knd')
         )
-    ));  
+    ));
 
     $wp_customize->add_control( 
-        new WP_Customize_Cropped_Image_Control( 
+        new WP_Customize_Cropped_Image_Control(
         $wp_customize, 
         'knd_custom_logo', 
             array(

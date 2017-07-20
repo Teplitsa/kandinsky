@@ -1,53 +1,59 @@
 
 var EnvatoWizard = (function($){
 
-    var t;
-
-    // callbacks from form button clicks.
-    var callbacks = {
-        install_plugins: function(btn){
-            var plugins = new PluginManager();
-            plugins.init(btn);
-        },
-        install_content: function(btn){
-            var content = new ContentManager();
-            content.init(btn);
-        }
-    };
+    var t,
+        callbacks = {
+            install_plugins: function(btn){
+                var plugins = new PluginManager();
+                plugins.init(btn);
+            },
+            install_content: function(btn){
+                var content = new ContentManager();
+                content.init(btn);
+            }
+        };
 
     function window_loaded(){
         // init button clicks:
         $('.button-next').on( 'click', function(e) {
+
             var loading_button = dtbaker_loading_button(this);
-            if(!loading_button){
+            if( !loading_button ) {
                 return false;
             }
-            if($(this).data('callback') && typeof callbacks[$(this).data('callback')] != 'undefined'){
-                // we have to process a callback before continue with form submission
+            if($(this).data('callback') && typeof callbacks[$(this).data('callback')] != 'undefined') {
+
                 callbacks[$(this).data('callback')](this);
                 return false;
-            }else{
+
+            } else {
+
                 loading_content();
                 return true;
+
             }
         });
-        $('.button-upload').on( 'click', function(e) {
+        $('.button-upload').on('click', function(e){
+
             e.preventDefault();
             renderMediaUploader();
+
         });
-        $('.theme-presets a').on( 'click', function(e) {
+        $('.theme-presets a').on('click', function(e){
+
             e.preventDefault();
-            var $ul = $(this).parents('ul').first();
-            $ul.find('.current').removeClass('current');
-            var $li = $(this).parents('li').first();
-            $li.addClass('current');
-            var newcolor = $(this).data('style');
-            $('#new_style').val(newcolor);
+
+            $(this).parents('ul').first().find('.current').removeClass('current');
+            $(this).parents('li').first().addClass('current');
+
+            $('#new_scenario').val($(this).data('scenario'));
+
             return false;
+
         });
     }
 
-    function loading_content(){
+    function loading_content() {
         $('.envato-setup-content').block({
             message: null,
             overlayCSS: {
@@ -57,7 +63,7 @@ var EnvatoWizard = (function($){
         });
     }
 
-    function PluginManager(){
+    function PluginManager() {
 
         var complete;
         var items_completed = 0;
@@ -67,6 +73,7 @@ var EnvatoWizard = (function($){
 
         function ajax_callback(response) {
             if(typeof response == 'object' && typeof response.message != 'undefined'){
+
                 $current_node.find('span').text(response.message);
                 if(typeof response.url != 'undefined'){
                     // we have an ajax url action to perform.
@@ -74,7 +81,7 @@ var EnvatoWizard = (function($){
                     if(response.hash == current_item_hash){
                         $current_node.find('span').text("failed");
                         find_next();
-                    }else {
+                    } else {
                         current_item_hash = response.hash;
                         jQuery.post(response.url, response, function(response2) {
                             process_current();
@@ -82,16 +89,14 @@ var EnvatoWizard = (function($){
                         }).fail(ajax_callback);
                     }
 
-                }else if(typeof response.done != 'undefined'){
-                    // finished processing this plugin, move onto next
+                } else if(typeof response.done != 'undefined') { // finished processing this plugin, move onto next
                     find_next();
-                }else{
-                    // error processing this plugin
+                } else { // error processing this plugin
                     find_next();
                 }
-            }else{
-                // error - try again with next plugin
-                $current_node.find('span').text("ajax error");
+
+            } else { // error - try again with next plugin
+                $current_node.find('span').text('ajax error');
                 find_next();
             }
         }
@@ -127,7 +132,6 @@ var EnvatoWizard = (function($){
                 }
             });
             if(items_completed >= $li.length){
-                // finished all plugins!
                 complete();
             }
         }
@@ -224,7 +228,6 @@ var EnvatoWizard = (function($){
                 }
             });
             if(items_completed >= $items.length){
-                // finished all items!
                 complete();
             }
         }

@@ -8,6 +8,7 @@
 define('KND_VERSION', '0.2');
 define('TST_DOC_URL', 'https://kms.te-st.ru/site-help/');
 define('KND_OFFICIAL_WEBSITE_URL', 'https://te-st.ru/');
+define('TST_OFFICIAL_WEBSITE_URL', 'https://te-st.ru/');
 
 if( !isset($content_width) ) {
 	$content_width = 800; /* pixels */
