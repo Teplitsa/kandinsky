@@ -3,17 +3,17 @@ msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-21 12:56+0000\n"
-"PO-Revision-Date: 2017-07-21 12:57+0000\n"
+"PO-Revision-Date: 2017-07-21 16:07+0200\n"
 "Last-Translator: ahaenor <ahaenor@gmail.com>\n"
 "Language-Team: Russian\n"
-"Language: ru-RU\n"
+"Language: ru_RU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10 >= 2 && "
-"n%10<=4 &&(n%100<10||n%100 >= 20)? 1 : 2)\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10 >= 2 && n"
+"%10<=4 &&(n%100<10||n%100 >= 20)? 1 : 2);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Loco - https://localise.biz/\n"
+"X-Generator: Poedit 2.0.2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
 "__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
@@ -24,11 +24,11 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: bower_components\n"
 "X-Poedit-SearchPathExcluded-1: node_modules\n"
-"X-Poedit-SearchPathExcluded-2: assets"
+"X-Poedit-SearchPathExcluded-2: assets\n"
 
 #: vendor/envato_setup/envato_setup.php:514
 msgid "Kandinsky - setup wizard"
-msgstr "«Кандинский» - мастер настройки"
+msgstr "«Кандинский» – мастер настройки"
 
 #: vendor/envato_setup/envato_setup.php:787
 msgid "Updating Plugin"
@@ -225,7 +225,7 @@ msgstr "ВКонтакте"
 
 #: core/extras.php:288
 msgid "I. e., https://vk.com/club0123456789"
-msgstr "Напр., https://vk.com/club0123456789"
+msgstr "Напр., https://vk.com/teplitsast"
 
 #: core/extras.php:291
 msgid "Odnoklassniki"
@@ -241,7 +241,7 @@ msgstr "Facebook"
 
 #: core/extras.php:296
 msgid "I. e., https://www.facebook.com/your-organization-page"
-msgstr "Напр., https://www.facebook.com/your-organization-page"
+msgstr "Напр., https://www.facebook.com/TeplitsaST/"
 
 #: core/extras.php:299
 msgid "Instagram"
@@ -257,7 +257,7 @@ msgstr "Twitter"
 
 #: core/extras.php:304
 msgid "I. e., https://twitter.com/your-organization-page"
-msgstr "Напр., https://twitter.com/your-organization-page"
+msgstr "Напр., https://twitter.com/TeplitsaST"
 
 #: core/extras.php:307
 msgid "Telegram"
@@ -265,7 +265,7 @@ msgstr "Telegram"
 
 #: core/extras.php:308
 msgid "I. e., https://tlgrm.ru/channels/@your-organization-page"
-msgstr "Напр., https://tlgrm.ru/channels/@your-organization-page"
+msgstr "Напр., https://telegram.me/TeplitsaPRO"
 
 #: core/extras.php:311
 msgid "YouTube"
@@ -273,7 +273,7 @@ msgstr "YouTube"
 
 #: core/extras.php:312
 msgid "I. e., https://youtube.com/channel/your-organization-channel"
-msgstr "Напр., https://youtube.com/channel/your-organization-channel"
+msgstr "Напр., https://www.youtube.com/user/teplitsast"
 
 #: core/settings.php:14
 msgid "Action failed. Please refresh the page and retry."
@@ -291,7 +291,7 @@ msgstr "Настройки «Кандинского»"
 msgid "Kandinsky"
 msgstr "Кандинский"
 
-#: core/settings.php:93 core/settings.php:93
+#: core/settings.php:93
 msgid "Kandinsky setup wizard"
 msgstr "Мастер настройки темы"
 
@@ -307,7 +307,7 @@ msgid ""
 "settings%s."
 msgstr ""
 "Здравствуйте! Благодарим вас за выбор темы «Кандинский»! Чтобы использовать "
-"все её возможности, пожалуйста, выполните все необходимые настройки."
+"все её возможности, пожалуйста, выполните %sвсе необходимые настройки%s."
 
 #: core/settings.php:139
 msgid "Open the theme setup wizard"
@@ -345,7 +345,8 @@ msgstr "Disable Comments"
 msgid ""
 "Comments on the website may be harmful, so this small plugin turns them off."
 msgstr ""
-"Комментарии на сайте могут принести вам вред. Этот плагин отключает их."
+"Плагин отключает комментарии, встроенные в WordPress по умолчанию. "
+"Комментарии можно включить в любой момент."
 
 #: core/settings.php:195
 msgid "Leyka"
@@ -476,7 +477,7 @@ msgid ""
 "Plugin not activated. A higher version of %s is needed for this theme. "
 "Please update the plugin."
 msgstr ""
-"Плагин не активирован - тема требует более высокой версии %s. Пожалуйста, "
+"Плагин не активирован – тема требует более высокой версии %s. Пожалуйста, "
 "обновите плагин."
 
 #: core/settings.php:247 vendor/class-tgm-plugin-activation.php:383
@@ -857,7 +858,7 @@ msgstr "Установка плагинов началась..."
 #: vendor/class-tgm-plugin-activation.php:3506
 #, php-format
 msgid "%1$s installed successfully."
-msgstr "%1$s - плагин успешно установлен."
+msgstr "%1$s – плагин успешно установлен."
 
 #: vendor/class-tgm-plugin-activation.php:3507
 msgid "All installations have been completed."
@@ -1009,7 +1010,7 @@ msgstr ""
 #: vendor/envato_setup/envato_setup.php:674
 msgid "You can add and remove plugins later on, in the Plugins admin folder."
 msgstr ""
-"Вы можете добавить или удалить плагины и дальше, в разделе «плагины» "
+"Вы можете добавить или удалить плагины и дальше, в разделе «Плагины» "
 "административной панели сайта."
 
 #: vendor/envato_setup/envato_setup.php:683
@@ -1183,8 +1184,8 @@ msgid ""
 "any time from the Appearance > Customize area in your website dashboard."
 msgstr ""
 "Добавьте главный логотип вашей организации. Рекомедуемые размеры логотипа - "
-"<strong>315 x 66 пикс.</strong> (для режима «только изображение») и <strong>"
-"66 x 66 пикс.</strong> (для режима «изображение и название сайта»)."
+"<strong>315 x 66 пикс.</strong> (для режима «только изображение») и "
+"<strong>66 x 66 пикс.</strong> (для режима «изображение и название сайта»)."
 
 #: vendor/envato_setup/envato_setup.php:1464
 #, php-format
@@ -1211,11 +1212,11 @@ msgstr "Описание сайта"
 
 #: vendor/envato_setup/envato_setup.php:1528
 msgid ""
-"Please add your site icon below. The recommended size is <strong>32 x 32 "
-"px</strong>. The site icon can be changed at any time from the Appearance > "
+"Please add your site icon below. The recommended size is <strong>32 x 32 px</"
+"strong>. The site icon can be changed at any time from the Appearance > "
 "Customize area in your website dashboard."
 msgstr ""
-"Добавьте favicon вашего сайта. Рекомендуемые размеры - <strong>32 x 32 пикс."
+"Добавьте favicon вашего сайта. Рекомендуемые размеры – <strong>32 x 32 пикс."
 "</strong>."
 
 #: vendor/envato_setup/envato_setup.php:1530
@@ -1237,8 +1238,8 @@ msgstr "Помощь и поддержка"
 #, php-format
 msgid ""
 "Thank you for using “Kandinsky” theme on your website.<br>“Kandinsky” — is a "
-"free and open-source project supported by <a href=\"%s\" target=\"_blank\">"
-"Teplitsa. Technologies for Social Good</a> together with the community of "
+"free and open-source project supported by <a href=\"%s\" target=\"_blank"
+"\">Teplitsa. Technologies for Social Good</a> together with the community of "
 "independent developers."
 msgstr ""
 "Спасибо за использование темы «Кандинский» на вашем сайте!<br>Тема "
@@ -1256,24 +1257,24 @@ msgstr ""
 
 #: vendor/envato_setup/envato_setup.php:1601
 msgid ""
-"Documentation and FAQ — <a href=\"https://github."
-"com/Teplitsa/kandinsky/wiki/\" target=\"_blank\">GitHub Wiki</a>"
+"Documentation and FAQ — <a href=\"https://github.com/Teplitsa/kandinsky/wiki/"
+"\" target=\"_blank\">GitHub Wiki</a>"
 msgstr ""
-"Документация и FAQ темы — <a href=\"https://github."
-"com/Teplitsa/kandinsky/wiki/\" target=\"_blank\">GitHub Wiki</a>"
+"Документация и FAQ темы — <a href=\"https://github.com/Teplitsa/kandinsky/"
+"wiki/\" target=\"_blank\">GitHub Wiki</a>"
 
 #: vendor/envato_setup/envato_setup.php:1602
 msgid ""
-"Source code — <a href=\"https://github.com/Teplitsa/kandinsky/\" "
-"target=\"_blank\">GitHub</a>"
+"Source code — <a href=\"https://github.com/Teplitsa/kandinsky/\" target="
+"\"_blank\">GitHub</a>"
 msgstr ""
 "Исходный код темы — <a href=\"https://github.com/Teplitsa/kandinsky/\" "
 "target=\"_blank\">GitHub</a>"
 
 #: vendor/envato_setup/envato_setup.php:1603
 msgid ""
-"Developers’ <a href=\"https://t.me/joinchat/AAAAAENN3prSrvAs7KwWrg\">"
-"Telegram-channel</a> (in Russian)"
+"Developers’ <a href=\"https://t.me/joinchat/AAAAAENN3prSrvAs7KwWrg"
+"\">Telegram-channel</a> (in Russian)"
 msgstr ""
 "<a href=\"https://t.me/joinchat/AAAAAENN3prSrvAs7KwWrg\">Telegram-канал</a> "
 "разработчиков темы"
@@ -1292,7 +1293,7 @@ msgid ""
 "installed and set up your Kandinsky theme. You need, however, to do a little "
 "bit more."
 msgstr ""
-"Поздравляем! Вам все удалось #успех!  Вы установили и частично настроили ваш "
+"Поздравляем! Вам все удалось #успех! Вы установили и частично настроили ваш "
 "новый сайт! На этом работа не заканчивается."
 
 #: vendor/envato_setup/envato_setup.php:1621
@@ -1327,7 +1328,7 @@ msgstr "#успех"
 
 #. Description of the theme
 msgid "The beautiful design and useful features for nonprofit website"
-msgstr "Красивый дизайн и полезные функции дя сайта НКО"
+msgstr "Красивый дизайн и полезные функции для сайта НКО"
 
 #. Author of the theme
 msgid "Teplitsa"
