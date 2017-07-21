@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-21 12:39+0000\n"
-"PO-Revision-Date: 2017-07-21 12:39+0000\n"
+"POT-Creation-Date: 2017-07-21 12:56+0000\n"
+"PO-Revision-Date: 2017-07-21 12:57+0000\n"
 "Last-Translator: ahaenor <ahaenor@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru-RU\n"
@@ -26,9 +26,17 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-1: node_modules\n"
 "X-Poedit-SearchPathExcluded-2: assets"
 
-#: vendor/envato_setup/envato_setup.php:813
-msgid "Success"
-msgstr "Успех"
+#: vendor/envato_setup/envato_setup.php:514
+msgid "Kandinsky - setup wizard"
+msgstr "«Кандинский» - мастер настройки"
+
+#: vendor/envato_setup/envato_setup.php:787
+msgid "Updating Plugin"
+msgstr "Обновление плагина"
+
+#: vendor/envato_setup/envato_setup.php:801
+msgid "Installing Plugin"
+msgstr "Установка плагина"
 
 #: archive-leyka_donation.php:20
 msgid "Campaign"
@@ -949,11 +957,6 @@ msgstr "Верификация..."
 msgid "Processing..."
 msgstr "Обработка..."
 
-#: vendor/envato_setup/envato_setup.php:514
-#, php-format
-msgid "%s setup wizard"
-msgstr "%s мастер настройки"
-
 #: vendor/envato_setup/envato_setup.php:523
 msgid "Kandinsky theme setup wizard"
 msgstr "Мастер настройки темы"
@@ -1064,6 +1067,10 @@ msgstr "Плагин не найден"
 #: vendor/envato_setup/envato_setup.php:773
 msgid "Activating Plugin"
 msgstr "Активация..."
+
+#: vendor/envato_setup/envato_setup.php:813
+msgid "Success"
+msgstr "Успех"
 
 #: vendor/envato_setup/envato_setup.php:851
 msgid "Pages"

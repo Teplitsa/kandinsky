@@ -511,7 +511,7 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 			<meta name="viewport" content="width=device-width"/>
 			<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 			<?php // To avoid theme check issues...
-			echo '<t'; echo 'itle>'.sprintf(__('%s setup wizard', 'knd'), wp_get_theme()->get('Name')).'</ti'.'tle>';?>
+			echo '<t'; echo 'itle>'.__('Kandinsky - setup wizard', 'knd').'</ti'.'tle>';?>
 			<?php wp_print_scripts('envato-setup');?>
 			<?php do_action('admin_print_styles');?>
 			<?php do_action('admin_print_scripts');?>

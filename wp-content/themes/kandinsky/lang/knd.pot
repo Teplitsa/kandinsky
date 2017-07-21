@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-21 12:39+0000\n"
+"POT-Creation-Date: 2017-07-21 12:56+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -928,8 +928,7 @@ msgid "Processing..."
 msgstr ""
 
 #: vendor/envato_setup/envato_setup.php:514
-#, php-format
-msgid "%s setup wizard"
+msgid "Kandinsky - setup wizard"
 msgstr ""
 
 #: vendor/envato_setup/envato_setup.php:523
@@ -1032,6 +1031,14 @@ msgstr ""
 
 #: vendor/envato_setup/envato_setup.php:773
 msgid "Activating Plugin"
+msgstr ""
+
+#: vendor/envato_setup/envato_setup.php:787
+msgid "Updating Plugin"
+msgstr ""
+
+#: vendor/envato_setup/envato_setup.php:801
+msgid "Installing Plugin"
 msgstr ""
 
 #: vendor/envato_setup/envato_setup.php:813
