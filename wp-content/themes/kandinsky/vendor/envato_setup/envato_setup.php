@@ -405,7 +405,7 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 //			}
 			$this->steps['default_content'] = array(
 				'name'    => esc_html__('Content', 'knd'),
-				'view'    => array($this, 'envato_setup_default_content'),
+				'view'    => array($this, 'step_content_view'),
 				'handler' => '',
 			);
 			$this->steps['design'] = array(
@@ -442,21 +442,22 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 
 			$this->step = isset( $_GET['step'] ) ? sanitize_key( $_GET['step'] ) : current( array_keys( $this->steps ) );
 
-			wp_register_script( 'jquery-blockui', $this->plugin_url . 'js/jquery.blockUI.js', array( 'jquery' ), '2.70', true );
-			wp_register_script( 'envato-setup', $this->plugin_url . 'js/envato-setup.js', array(
+			wp_register_script('jquery-blockui', $this->plugin_url . 'js/jquery.blockUI.js', array( 'jquery' ), '2.70', true );
+			wp_register_script('envato-setup', $this->plugin_url . 'js/envato-setup.js', array(
 				'jquery',
 				'jquery-blockui',
-			), $this->version );
-			wp_localize_script( 'envato-setup', 'envato_setup_params', array(
+			), $this->version);
+			wp_localize_script('envato-setup', 'envato_setup_params', array(
 				'tgm_plugin_nonce' => array(
-					'update'  => wp_create_nonce( 'tgmpa-update' ),
-					'install' => wp_create_nonce( 'tgmpa-install' ),
+					'update'  => wp_create_nonce('tgmpa-update'),
+					'install' => wp_create_nonce('tgmpa-install'),
 				),
-				'tgm_bulk_url'     => admin_url( $this->tgmpa_url ),
-				'ajaxurl'          => admin_url( 'admin-ajax.php' ),
-				'wpnonce'          => wp_create_nonce( 'envato_setup_nonce' ),
-				'verify_text'      => esc_html__( '...verifying' ),
-			) );
+				'tgm_bulk_url'     => admin_url($this->tgmpa_url),
+				'ajaxurl'          => admin_url('admin-ajax.php'),
+				'wpnonce'          => wp_create_nonce('knd-setup-nonce'),
+				'verify_text'      => __('...verifying', 'knd'),
+                'processing_text'  => __('Processing...', 'knd'),
+			));
 
 			//wp_enqueue_style( 'envato_wizard_admin_styles', $this->plugin_url . '/css/admin.css', array(), $this->version );
 			wp_enqueue_style( 'envato-setup', $this->plugin_url . 'css/envato-setup.css', array(
@@ -466,10 +467,10 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 			), $this->version );
 
 			//enqueue style for admin notices
-			wp_enqueue_style( 'wp-admin' );
+			wp_enqueue_style('wp-admin');
 
 			wp_enqueue_media();
-			wp_enqueue_script( 'media' );
+			wp_enqueue_script('media');
 
 			ob_start();
 			$this->display_wizard_header();
@@ -510,7 +511,7 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 			<meta name="viewport" content="width=device-width"/>
 			<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 			<?php // To avoid theme check issues...
-			echo '<t'; echo 'itle>'.esc_html__('Theme &rsaquo; Setup Wizard').'</ti'.'tle>';?>
+			echo '<t'; echo 'itle>'.sprintf(__('%s setup wizard', 'knd'), wp_get_theme()->get('Name')).'</ti'.'tle>';?>
 			<?php wp_print_scripts('envato-setup');?>
 			<?php do_action('admin_print_styles');?>
 			<?php do_action('admin_print_scripts');?>
@@ -887,10 +888,7 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 
 		}
 
-		/**
-		 * Page setup
-		 */
-		public function envato_setup_default_content() {?>
+		public function step_content_view() {?>
 
 			<h1><?php esc_html_e('Theme default content', 'knd');?></h1>
 			<form method="post">
@@ -935,7 +933,7 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 					<a href="<?php echo esc_url($this->get_next_step_link());?>" class="button button-large button-next">
                         <?php esc_html_e('Skip this step', 'knd');?>
                     </a>
-					<?php wp_nonce_field('envato-setup');?>
+					<?php wp_nonce_field('knd-setup-content');?>
 				</p>
 			</form>
         <?php
@@ -945,7 +943,7 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 
 			$content = $this->_content_default_get();
 			if(
-                !check_ajax_referer('envato_setup_nonce', 'wpnonce') ||
+                !check_ajax_referer('knd-setup-nonce', 'wpnonce') ||
                 empty($_POST['content']) &&
                 isset($content[$_POST['content']])
             ) {
@@ -957,11 +955,11 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 
 			if(empty($_POST['proceed'])) {
                 $json = array(
-                    'url'      => admin_url( 'admin-ajax.php' ),
-                    'action'   => 'knd_setup_content',
+                    'url'      => admin_url('admin-ajax.php'),
+                    'action'   => 'knd_wizard_setup_content',
                     'proceed'  => 'true',
                     'content'  => $_POST['content'],
-                    '_wpnonce' => wp_create_nonce('envato_setup_nonce'),
+                    'wpnonce' => wp_create_nonce('knd-setup-nonce'),
                     'message'  => $this_content['installing'],
                     'logs'     => $this->logs,
                     'errors'   => $this->errors,
@@ -970,9 +968,8 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 
                 $this->log(' -!! STARTING SECTION for '.$_POST['content']);
 
-                // init delayed posts from transient.
-                $this->delay_posts = get_transient( 'delayed_posts' );
-                if ( ! is_array( $this->delay_posts ) ) {
+                $this->delay_posts = get_transient('delayed_posts');
+                if ( !is_array($this->delay_posts) ) {
                     $this->delay_posts = array();
                 }
 
@@ -980,17 +977,17 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
                     if($result = call_user_func($this_content['install_callback'])) {
 
                         $this->log(' -- FINISH. Writing '.count($this->delay_posts, COUNT_RECURSIVE).' delayed posts to transient ');
-                        set_transient( 'delayed_posts', $this->delay_posts, 60 * 60 * 24 );
+                        set_transient('delayed_posts', $this->delay_posts, 60 * 60 * 24);
 
                         if(is_array($result) && isset($result['retry'])) {
                             $json = array(
-                                'url'         => admin_url( 'admin-ajax.php' ),
-                                'action'      => 'knd_setup_content',
+                                'url'         => admin_url('admin-ajax.php'),
+                                'action'      => 'knd_wizard_setup_content',
                                 'proceed'     => 'true',
                                 'retry'       => time(),
                                 'retry_count' => $result['retry_count'],
                                 'content'     => $_POST['content'],
-                                '_wpnonce'    => wp_create_nonce( 'envato_setup_nonce' ),
+                                'wpnonce'    => wp_create_nonce('knd-setup-nonce'),
                                 'message'     => $this_content['installing'],
                                 'logs'        => $this->logs,
                                 'errors'      => $this->errors,
@@ -1432,7 +1429,7 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
                 <p class="envato-setup-actions step">
                     <input type="submit" class="button-primary button button-large button-next" value="<?php esc_attr_e('Continue', 'knd');?>" name="save_step">
                     <a href="<?php echo esc_url($this->get_next_step_link());?>" class="button button-large button-next">
-                        <?php esc_html_e('Skip this step');?>
+                        <?php esc_html_e('Skip this step', 'knd');?>
                     </a>
 					<?php wp_nonce_field('knd-setup');?>
                 </p>

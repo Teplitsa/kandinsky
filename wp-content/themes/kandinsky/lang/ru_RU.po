@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-21 08:07+0000\n"
-"PO-Revision-Date: 2017-07-21 08:51+0000\n"
+"POT-Creation-Date: 2017-07-21 12:20+0000\n"
+"PO-Revision-Date: 2017-07-21 12:20+0000\n"
 "Last-Translator: ahaenor <ahaenor@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru-RU\n"
@@ -26,442 +26,10 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-1: node_modules\n"
 "X-Poedit-SearchPathExcluded-2: assets"
 
-#: core/customizer.php:242
-msgid "Recommended plugins to install"
-msgstr "Рекомендуем установить плагины"
-
-#: core/settings.php:93 core/settings.php:93
-msgid "Kandinsky setup wizard"
-msgstr "Мастер настройки темы"
-
-#: core/settings.php:133
+#: vendor/envato_setup/envato_setup.php:514
 #, php-format
-msgid ""
-"Welcome! Thank you for choosing Kandinsky! To fully take advantage of the "
-"best our theme can offer please make sure you configured %snecessary theme "
-"settings%s."
-msgstr ""
-"Здравствуйте! Благодарим вас за выбор темы «Кандинский»! Чтобы использовать "
-"все её возможности, пожалуйста, выполните все необходимые настройки."
-
-#: core/settings.php:139
-msgid "Open the theme setup wizard"
-msgstr "Мастер настройки темы"
-
-#: core/settings.php:142
-msgid "Open theme settings"
-msgstr "Настройки темы"
-
-#: core/settings.php:178
-msgid "A great tool to boost your website SEO positions."
-msgstr ""
-"Прекрасный плагин, помогающий улучшить позиции сайта в поисковых системах."
-
-#: core/settings.php:185
-msgid ""
-"Small helper to seamlessly convert cyrillic pages slugs into latin ones."
-msgstr ""
-"Небольшой плагин для автоматического перевода символов в адресах страниц из "
-"кириллицы в латиницу."
-
-#: core/settings.php:192
-msgid ""
-"Comments on the website may be harmful, so this small plugin turns them off."
-msgstr ""
-"Комментарии на сайте могут принести вам вред. Этот плагин отключает их."
-
-#: core/settings.php:199
-msgid "This plugin will add means for donations collection to your website."
-msgstr ""
-"Этот плагин добавит на сайт возможности сбора и управления пожертвованиями."
-
-#: vendor/envato_setup/envato_setup.php:228
-msgid "Social problem oriented charity organization"
-msgstr "Социально-ориентированная благотворительная организация"
-
-#: vendor/envato_setup/envato_setup.php:387
-msgid "Introduction"
-msgstr "Начало"
-
-#: vendor/envato_setup/envato_setup.php:401
-msgid "Scenario"
-msgstr "Сценарий"
-
-#: vendor/envato_setup/envato_setup.php:407
-msgid "Content"
-msgstr "Контент"
-
-#: vendor/envato_setup/envato_setup.php:422
-msgctxt "One word \"support service\" variant"
-msgid "Support"
-msgstr "Поддержка"
-
-#: vendor/envato_setup/envato_setup.php:427
-msgid "Ready!"
-msgstr "Все готово!"
-
-#: vendor/envato_setup/envato_setup.php:522
-msgid "Kandinsky theme setup wizard"
-msgstr "Мастер настройки темы"
-
-#: vendor/envato_setup/envato_setup.php:534
-msgid "Return to the WordPress Dashboard"
-msgstr "Вернуться в административную панель"
-
-#: vendor/envato_setup/envato_setup.php:582
-#, php-format
-msgid "Welcome to the %s setup wizard"
-msgstr "Добро пожаловать в мастер настройки темы «%s»"
-
-#: vendor/envato_setup/envato_setup.php:583
-msgid ""
-"Hello! Let's set up your organization website together. With few simple "
-"steps we will configure minimal necessary settings, like installing of "
-"required plugins, setting up default website content and the logo. It should "
-"only take 5 minutes. You can always change any of these settings later on, "
-"in the Plugins admin folder."
-msgstr ""
-"Здравствуйте! Давайте настроим сайт вашей организации вместе. За несколько "
-"простых шагов вы сможете выполнить необходимые минимальные настройки. В "
-"дальнейшем вы сможете их отредактировать в административной панели сайта."
-
-#: vendor/envato_setup/envato_setup.php:586
-msgid "Let's go!"
-msgstr "Поехали!"
-
-#: vendor/envato_setup/envato_setup.php:587
-msgid "Not right now"
-msgstr "Не сейчас"
-
-#: vendor/envato_setup/envato_setup.php:635
-msgid "Failed to find TGM plugin"
-msgstr "Плагин TGMPA не найден :("
-
-#: vendor/envato_setup/envato_setup.php:654
-msgid "Default Plugins"
-msgstr "Плагины"
-
-#: vendor/envato_setup/envato_setup.php:672
-msgid ""
-"Your website needs a few essential plugins. The following plugins will be "
-"installed or updated:"
-msgstr ""
-"Вашему сайту понадобится несколько плагинов. Мы установим или обновим "
-"следующие плагины:"
-
-#: vendor/envato_setup/envato_setup.php:673
-msgid "You can add and remove plugins later on, in the Plugins admin folder."
-msgstr ""
-"Вы можете добавить или удалить плагины и дальше, в разделе «плагины» "
-"административной панели сайта."
-
-#: vendor/envato_setup/envato_setup.php:682
-msgid "Installation required"
-msgstr "Необходима установка"
-
-#: vendor/envato_setup/envato_setup.php:685
-msgid "Update and activation required"
-msgstr "Необходимо обновление и активация"
-
-#: vendor/envato_setup/envato_setup.php:685
-msgid "Update required"
-msgstr "Необходимо обновление"
-
-#: vendor/envato_setup/envato_setup.php:687
-msgid "Activation required"
-msgstr "Необходима активация"
-
-#: vendor/envato_setup/envato_setup.php:702
-msgid "We also recommend to add several more:"
-msgstr "Мы также рекомендуем добавить на сайт следующие плагины:"
-
-#: vendor/envato_setup/envato_setup.php:713
-msgid "Update and activate"
-msgstr "Обновить и активировать"
-
-#: vendor/envato_setup/envato_setup.php:734
-msgid ""
-"Good news! All plugins are already installed and up to date. Let's proceed "
-"further."
-msgstr ""
-"Хорошие новости! Все нужные плагины уже установлены и обновлены. Давайте "
-"пойдем дальше."
-
-#: vendor/envato_setup/envato_setup.php:739
-#: vendor/envato_setup/envato_setup.php:933
-#: vendor/envato_setup/envato_setup.php:1433
-#: vendor/envato_setup/envato_setup.php:1487
-#: vendor/envato_setup/envato_setup.php:1554
-msgid "Continue"
-msgstr "Продолжить"
-
-#: vendor/envato_setup/envato_setup.php:742
-#: vendor/envato_setup/envato_setup.php:936
-#: vendor/envato_setup/envato_setup.php:1489
-#: vendor/envato_setup/envato_setup.php:1556
-msgid "Skip this step"
-msgstr "Пропустить шаг"
-
-#: vendor/envato_setup/envato_setup.php:753
-msgid "No slug found"
-msgstr "Плагин не найден"
-
-#: vendor/envato_setup/envato_setup.php:772
-msgid "Activating Plugin"
-msgstr "Активация..."
-
-#: vendor/envato_setup/envato_setup.php:850
-msgid "Pages"
-msgstr "Страницы"
-
-#: vendor/envato_setup/envato_setup.php:851
-msgid "Insert default website pages as seen in the demo."
-msgstr "Набор демонстрационных страниц"
-
-#: vendor/envato_setup/envato_setup.php:852
-#: vendor/envato_setup/envato_setup.php:861
-#: vendor/envato_setup/envato_setup.php:870
-#: vendor/envato_setup/envato_setup.php:879
-msgid "Pending"
-msgstr "Отложено"
-
-#: vendor/envato_setup/envato_setup.php:853
-#: vendor/envato_setup/envato_setup.php:862
-#: vendor/envato_setup/envato_setup.php:871
-#: vendor/envato_setup/envato_setup.php:880
-msgid "Installing..."
-msgstr "Установка..."
-
-#: vendor/envato_setup/envato_setup.php:854
-#: vendor/envato_setup/envato_setup.php:863
-#: vendor/envato_setup/envato_setup.php:872
-#: vendor/envato_setup/envato_setup.php:881
-msgid "Success!"
-msgstr "Успех!"
-
-#: vendor/envato_setup/envato_setup.php:859
-msgid "Posts"
-msgstr "Записи"
-
-#: vendor/envato_setup/envato_setup.php:860
-msgid "Insert default website posts as seen in the demo."
-msgstr "Набор демонстрационных записей"
-
-#: vendor/envato_setup/envato_setup.php:868
-msgid "Settings"
-msgstr "Параметры сайта"
-
-#: vendor/envato_setup/envato_setup.php:869
-msgid "Insert default website settings as seen in the demo."
-msgstr "Набор демонстрационных значений параметров сайта"
-
-#: vendor/envato_setup/envato_setup.php:877
-msgid "Menu"
-msgstr "Меню"
-
-#: vendor/envato_setup/envato_setup.php:878
-msgid "Insert default website menu as seen in the demo."
-msgstr "Набор демонстрационных меню"
-
-#: vendor/envato_setup/envato_setup.php:895
-msgid "Theme default content"
-msgstr "Демонстрационный контент сайта"
-
-#: vendor/envato_setup/envato_setup.php:898
-msgid ""
-"It looks like you already have content installed on this website. If you "
-"would like to install the default demo content as well you can select it "
-"below. Otherwise just choose the upgrade option to ensure everything is up "
-"to date."
-msgstr ""
-"Кажется, на сайте уже есть контент. Если вы хотите также добавить и "
-"демонстрационный контент, выберите нужные вам фрагменты ниже."
-
-#: vendor/envato_setup/envato_setup.php:900
-msgid ""
-"It's time to insert some default content for your new WordPress website. "
-"Choose what you would like inserted below and click Continue. It is "
-"recommended to leave everything selected. Once inserted, this content can be "
-"managed from the WordPress admin dashboard."
-msgstr ""
-"На этом шаге вы можете добавить на сайт демонстрационный контент (страницы, "
-"фото, новости и т.д.). Выберите нужные пункты ниже и нажмите «Продолжить». "
-"Позже вы сможете изменить или удалить добавленный контент в административной "
-"панели сайта."
-
-#: vendor/envato_setup/envato_setup.php:906
-msgid "Item"
-msgstr "Тип"
-
-#: vendor/envato_setup/envato_setup.php:907
-msgid "Description"
-msgstr "Описание"
-
-#: vendor/envato_setup/envato_setup.php:952
-msgid "No content Found"
-msgstr "Контент не найден :("
-
-#: vendor/envato_setup/envato_setup.php:1018
-msgid "Error"
-msgstr "Ошибка"
-
-#: vendor/envato_setup/envato_setup.php:1412
-msgid "Website scenario"
-msgstr "Сценарий сайта"
-
-#: vendor/envato_setup/envato_setup.php:1414
-msgid "Please choose your website scenario."
-msgstr "Пожалуйста, выберите, о чём будет этот сайт."
-
-#: vendor/envato_setup/envato_setup.php:1465
-msgid ""
-"Please add your organization main logo below. The recommended size is "
-"<strong>315 x 66 px</strong> (for \"Image only\" mode) and <strong>66 x 66 "
-"px</strong> (for \"Image with site name\" mode). The logo can be changed at "
-"any time from the Appearance > Customize area in your website dashboard."
-msgstr ""
-"Добавьте главный логотип вашей организации. Рекомедуемые размеры логотипа - "
-"<strong>315 x 66 пикс.</strong> (для режима «только изображение») и <strong>"
-"66 x 66 пикс.</strong> (для режима «изображение и название сайта»)."
-
-#: vendor/envato_setup/envato_setup.php:1467
-#, php-format
-msgid "Try our %sPaseka program%s if you need a new logo designed."
-msgstr ""
-"Если вам нужен новый дизайн логотипа и фирменного стиля, вы можете найти "
-"исполнителя с помощью нашей %sпрограммы «Пасека»%s."
-
-#: vendor/envato_setup/envato_setup.php:1479
-msgid "Upload new logo"
-msgstr "Загрузить логотип"
-
-#: vendor/envato_setup/envato_setup.php:1518
-msgid "NGO settings"
-msgstr "Настройки организации"
-
-#: vendor/envato_setup/envato_setup.php:1523
-msgid "The website title"
-msgstr "Название сайта"
-
-#: vendor/envato_setup/envato_setup.php:1528
-msgid "The website description"
-msgstr "Описание сайта"
-
-#: vendor/envato_setup/envato_setup.php:1531
-msgid ""
-"Please add your site icon below. The recommended size is <strong>32 x 32 "
-"px</strong>. The site icon can be changed at any time from the Appearance > "
-"Customize area in your website dashboard."
-msgstr ""
-"Добавьте favicon вашего сайта. Рекомендуемые размеры - <strong>32 x 32 пикс."
-"</strong>."
-
-#: vendor/envato_setup/envato_setup.php:1533
-#, php-format
-msgid "Try our %sPaseka program%s if you need a new site icon designed."
-msgstr ""
-"Если вам нужен новый дизайн favicon, вы можете найти исполнителя с помощью "
-"нашей %sпрограммы «Пасека»%s."
-
-#: vendor/envato_setup/envato_setup.php:1545
-msgid "Upload new site icon"
-msgstr "Загрузить favicon"
-
-#: vendor/envato_setup/envato_setup.php:1597
-msgid "Help and support"
-msgstr "Помощь и поддержка"
-
-#: vendor/envato_setup/envato_setup.php:1600
-#, php-format
-msgid ""
-"Thank you for using “Kandinsky” theme on your website.<br>“Kandinsky” — is a "
-"free and open-source project supported by <a href=\"%s\" target=\"_blank\">"
-"Teplitsa. Technologies for Social Good</a> together with the community of "
-"independent developers."
-msgstr ""
-"Спасибо за использование темы «Кандинский» на вашем сайте!<br>Тема "
-"«Кандинский» — бесплатный и открытый програмный продукт, который "
-"поддерживается <a href=\"%s\" target=\"_blank\">Теплицей социальных "
-"технологий</a> и сообществом независимых разработчиков."
-
-#: vendor/envato_setup/envato_setup.php:1602
-msgid ""
-"In case you encounter any questions or issues, we recommend you the "
-"following links:"
-msgstr ""
-"Если вы столкнулись с какими-либо проблемами или вопросами, мы рекомендуем "
-"следующие ссылки:"
-
-#: vendor/envato_setup/envato_setup.php:1604
-msgid ""
-"Documentation and FAQ — <a href=\"https://github."
-"com/Teplitsa/kandinsky/wiki/\" target=\"_blank\">GitHub Wiki</a>"
-msgstr ""
-"Документация и FAQ темы — <a href=\"https://github."
-"com/Teplitsa/kandinsky/wiki/\" target=\"_blank\">GitHub Wiki</a>"
-
-#: vendor/envato_setup/envato_setup.php:1605
-msgid ""
-"Source code — <a href=\"https://github.com/Teplitsa/kandinsky/\" "
-"target=\"_blank\">GitHub</a>"
-msgstr ""
-"Исходный код темы — <a href=\"https://github.com/Teplitsa/kandinsky/\" "
-"target=\"_blank\">GitHub</a>"
-
-#: vendor/envato_setup/envato_setup.php:1606
-msgid ""
-"Developers’ <a href=\"https://t.me/joinchat/AAAAAENN3prSrvAs7KwWrg\">"
-"Telegram-channel</a> (in Russian)"
-msgstr ""
-"<a href=\"https://t.me/joinchat/AAAAAENN3prSrvAs7KwWrg\">Telegram-канал</a> "
-"разработчиков темы"
-
-#: vendor/envato_setup/envato_setup.php:1611
-msgid "OK, I've got it!"
-msgstr "Понятно!"
-
-#: vendor/envato_setup/envato_setup.php:1621
-msgid "Yay! Your website is ready!"
-msgstr "Ура! Ваш сайт готов!"
-
-#: vendor/envato_setup/envato_setup.php:1623
-msgid ""
-"Congratulations! You’re doing really good #success! You’ve successfully "
-"installed and set up your Kandinsky theme. You need, however, to do a little "
-"bit more."
-msgstr ""
-"Поздравляем! Вам все удалось #успех!  Вы установили и частично настроили ваш "
-"новый сайт! На этом работа не заканчивается."
-
-#: vendor/envato_setup/envato_setup.php:1624
-msgid ""
-"As a part of the installation process, we’ve added some test content of an "
-"imaginary organization that you will need to edit (we’ve provided the "
-"recommendations on how to make great content)."
-msgstr ""
-"В рамках установки мы установили демонстрационный контент — фото и тексты о "
-"вымышленной организации, которые теперь нужно отредактировать (в тексте даны "
-"наши рекомендации)."
-
-#: vendor/envato_setup/envato_setup.php:1625
-msgid ""
-"Moreover, you need to set up few additional plug-ins for the optimal work of "
-"your site (don’t worry, our recommendations will help you)."
-msgstr ""
-"Кроме того, необходимо настроить ряд плагинов для оптимальной работы (не "
-"волнуйтесь, мы вам поможем)."
-
-#: vendor/envato_setup/envato_setup.php:1632
-msgid "Continue the set-up"
-msgstr "Перейти к подробной настройке"
-
-#: vendor/envato_setup/envato_setup.php:1637
-msgid "View your new website!"
-msgstr "Посмотреть на новый сайт"
-
-#: vendor/envato_setup/envato_setup.php:1643
-msgid "#success"
-msgstr "#успех"
+msgid "%s setup wizard"
+msgstr "%s мастер настройки"
 
 #: archive-leyka_donation.php:20
 msgid "Campaign"
@@ -480,8 +48,8 @@ msgstr "Наши профили в социальных сетях"
 msgid "All materials of the site are avaliabe under license %s"
 msgstr "Все материалы сайта доступны по лицензии %s"
 
-#: functions.php:35 modules/starter/class-demo.php:84
-#: modules/starter/class-demo.php:238
+#: functions.php:35 modules/starter/class-demo.php:96
+#: modules/starter/class-demo.php:250
 msgid "Primary menu"
 msgstr "﻿Главное меню"
 
@@ -604,7 +172,7 @@ msgstr "Только название сайта"
 msgid "Do not show"
 msgstr "Не показывать"
 
-#: core/customizer.php:137 vendor/envato_setup/envato_setup.php:1462
+#: core/customizer.php:137 vendor/envato_setup/envato_setup.php:1459
 msgid "Logo"
 msgstr "Логотип"
 
@@ -639,6 +207,10 @@ msgstr "Текст на кнопке действия"
 #: core/customizer.php:211
 msgid "Social networks links"
 msgstr "Ссылки на социальные сети"
+
+#: core/customizer.php:242
+msgid "Recommended plugins to install"
+msgstr "Рекомендуем установить плагины"
 
 #: core/extras.php:287
 msgid "VKontakte"
@@ -712,25 +284,70 @@ msgstr "Настройки «Кандинского»"
 msgid "Kandinsky"
 msgstr "Кандинский"
 
+#: core/settings.php:93 core/settings.php:93
+msgid "Kandinsky setup wizard"
+msgstr "Мастер настройки темы"
+
 #: core/settings.php:131
 msgid "Dismiss"
 msgstr "Скрыть"
+
+#: core/settings.php:133
+#, php-format
+msgid ""
+"Welcome! Thank you for choosing Kandinsky! To fully take advantage of the "
+"best our theme can offer please make sure you configured %snecessary theme "
+"settings%s."
+msgstr ""
+"Здравствуйте! Благодарим вас за выбор темы «Кандинский»! Чтобы использовать "
+"все её возможности, пожалуйста, выполните все необходимые настройки."
+
+#: core/settings.php:139
+msgid "Open the theme setup wizard"
+msgstr "Мастер настройки темы"
+
+#: core/settings.php:142
+msgid "Open theme settings"
+msgstr "Настройки темы"
 
 #: core/settings.php:174
 msgid "Yoast SEO"
 msgstr "Yoast SEO"
 
+#: core/settings.php:178
+msgid "A great tool to boost your website SEO positions."
+msgstr ""
+"Прекрасный плагин, помогающий улучшить позиции сайта в поисковых системах."
+
 #: core/settings.php:181
 msgid "Cyr to Lat enhanced"
 msgstr "Cyr to Lat enhanced"
+
+#: core/settings.php:185
+msgid ""
+"Small helper to seamlessly convert cyrillic pages slugs into latin ones."
+msgstr ""
+"Небольшой плагин для автоматического перевода символов в адресах страниц из "
+"кириллицы в латиницу."
 
 #: core/settings.php:188
 msgid "Disable Comments"
 msgstr "Disable Comments"
 
+#: core/settings.php:192
+msgid ""
+"Comments on the website may be harmful, so this small plugin turns them off."
+msgstr ""
+"Комментарии на сайте могут принести вам вред. Этот плагин отключает их."
+
 #: core/settings.php:195
 msgid "Leyka"
 msgstr "Лейка"
+
+#: core/settings.php:199
+msgid "This plugin will add means for donations collection to your website."
+msgstr ""
+"Этот плагин добавит на сайт возможности сбора и управления пожертвованиями."
 
 #: core/settings.php:223 vendor/class-tgm-plugin-activation.php:327
 msgid "Install Required Plugins"
@@ -1113,7 +730,7 @@ msgid "Version"
 msgstr "Версия"
 
 #: vendor/class-tgm-plugin-activation.php:2543
-#: vendor/envato_setup/envato_setup.php:908
+#: vendor/envato_setup/envato_setup.php:906
 msgid "Status"
 msgstr "Статус"
 
@@ -1137,17 +754,17 @@ msgid "Upgrade message from the plugin author:"
 msgstr "Сообщение об обновлении:"
 
 #: vendor/class-tgm-plugin-activation.php:2706
-#: vendor/envato_setup/envato_setup.php:710
+#: vendor/envato_setup/envato_setup.php:711
 msgid "Install"
 msgstr "Установить"
 
 #: vendor/class-tgm-plugin-activation.php:2712
-#: vendor/envato_setup/envato_setup.php:713
+#: vendor/envato_setup/envato_setup.php:714
 msgid "Update"
 msgstr "Обновить"
 
 #: vendor/class-tgm-plugin-activation.php:2715
-#: vendor/envato_setup/envato_setup.php:715
+#: vendor/envato_setup/envato_setup.php:716
 msgid "Activate"
 msgstr "Активировать"
 
@@ -1299,6 +916,403 @@ msgstr "Наша работа"
 #: modules/starter/sidebars.php:56 modules/starter/sidebars.php:83
 msgid "News"
 msgstr "Новости"
+
+#: vendor/envato_setup/envato_setup.php:228
+msgid "Social problem oriented charity organization"
+msgstr "Социально-ориентированная благотворительная организация"
+
+#: vendor/envato_setup/envato_setup.php:387
+msgid "Introduction"
+msgstr "Начало"
+
+#: vendor/envato_setup/envato_setup.php:401
+msgid "Scenario"
+msgstr "Сценарий"
+
+#: vendor/envato_setup/envato_setup.php:407
+msgid "Content"
+msgstr "Контент"
+
+#: vendor/envato_setup/envato_setup.php:422
+msgctxt "One word \"support service\" variant"
+msgid "Support"
+msgstr "Поддержка"
+
+#: vendor/envato_setup/envato_setup.php:427
+msgid "Ready!"
+msgstr "Все готово!"
+
+#: vendor/envato_setup/envato_setup.php:458
+msgid "...verifying"
+msgstr "Верификация..."
+
+#: vendor/envato_setup/envato_setup.php:459
+msgid "Processing..."
+msgstr "Обработка..."
+
+#: vendor/envato_setup/envato_setup.php:523
+msgid "Kandinsky theme setup wizard"
+msgstr "Мастер настройки темы"
+
+#: vendor/envato_setup/envato_setup.php:535
+msgid "Return to the WordPress Dashboard"
+msgstr "Вернуться в административную панель"
+
+#: vendor/envato_setup/envato_setup.php:583
+#, php-format
+msgid "Welcome to the %s setup wizard"
+msgstr "Добро пожаловать в мастер настройки темы «%s»"
+
+#: vendor/envato_setup/envato_setup.php:584
+msgid ""
+"Hello! Let's set up your organization website together. With few simple "
+"steps we will configure minimal necessary settings, like installing of "
+"required plugins, setting up default website content and the logo. It should "
+"only take 5 minutes. You can always change any of these settings later on, "
+"in the Plugins admin folder."
+msgstr ""
+"Здравствуйте! Давайте настроим сайт вашей организации вместе. За несколько "
+"простых шагов вы сможете выполнить необходимые минимальные настройки. В "
+"дальнейшем вы сможете их отредактировать в административной панели сайта."
+
+#: vendor/envato_setup/envato_setup.php:587
+msgid "Let's go!"
+msgstr "Поехали!"
+
+#: vendor/envato_setup/envato_setup.php:588
+msgid "Not right now"
+msgstr "Не сейчас"
+
+#: vendor/envato_setup/envato_setup.php:636
+msgid "Failed to find TGM plugin"
+msgstr "Плагин TGMPA не найден :("
+
+#: vendor/envato_setup/envato_setup.php:655
+msgid "Default Plugins"
+msgstr "Плагины"
+
+#: vendor/envato_setup/envato_setup.php:673
+msgid ""
+"Your website needs a few essential plugins. The following plugins will be "
+"installed or updated:"
+msgstr ""
+"Вашему сайту понадобится несколько плагинов. Мы установим или обновим "
+"следующие плагины:"
+
+#: vendor/envato_setup/envato_setup.php:674
+msgid "You can add and remove plugins later on, in the Plugins admin folder."
+msgstr ""
+"Вы можете добавить или удалить плагины и дальше, в разделе «плагины» "
+"административной панели сайта."
+
+#: vendor/envato_setup/envato_setup.php:683
+msgid "Installation required"
+msgstr "Необходима установка"
+
+#: vendor/envato_setup/envato_setup.php:686
+msgid "Update and activation required"
+msgstr "Необходимо обновление и активация"
+
+#: vendor/envato_setup/envato_setup.php:686
+msgid "Update required"
+msgstr "Необходимо обновление"
+
+#: vendor/envato_setup/envato_setup.php:688
+msgid "Activation required"
+msgstr "Необходима активация"
+
+#: vendor/envato_setup/envato_setup.php:703
+msgid "We also recommend to add several more:"
+msgstr "Мы также рекомендуем добавить на сайт следующие плагины:"
+
+#: vendor/envato_setup/envato_setup.php:714
+msgid "Update and activate"
+msgstr "Обновить и активировать"
+
+#: vendor/envato_setup/envato_setup.php:735
+msgid ""
+"Good news! All plugins are already installed and up to date. Let's proceed "
+"further."
+msgstr ""
+"Хорошие новости! Все нужные плагины уже установлены и обновлены. Давайте "
+"пойдем дальше."
+
+#: vendor/envato_setup/envato_setup.php:740
+#: vendor/envato_setup/envato_setup.php:931
+#: vendor/envato_setup/envato_setup.php:1430
+#: vendor/envato_setup/envato_setup.php:1484
+#: vendor/envato_setup/envato_setup.php:1551
+msgid "Continue"
+msgstr "Продолжить"
+
+#: vendor/envato_setup/envato_setup.php:743
+#: vendor/envato_setup/envato_setup.php:934
+#: vendor/envato_setup/envato_setup.php:1432
+#: vendor/envato_setup/envato_setup.php:1486
+#: vendor/envato_setup/envato_setup.php:1553
+msgid "Skip this step"
+msgstr "Пропустить шаг"
+
+#: vendor/envato_setup/envato_setup.php:754
+msgid "No slug found"
+msgstr "Плагин не найден"
+
+#: vendor/envato_setup/envato_setup.php:773
+msgid "Activating Plugin"
+msgstr "Активация..."
+
+#: vendor/envato_setup/envato_setup.php:851
+msgid "Pages"
+msgstr "Страницы"
+
+#: vendor/envato_setup/envato_setup.php:852
+msgid "Insert default website pages as seen in the demo."
+msgstr "Набор демонстрационных страниц"
+
+#: vendor/envato_setup/envato_setup.php:853
+#: vendor/envato_setup/envato_setup.php:862
+#: vendor/envato_setup/envato_setup.php:871
+#: vendor/envato_setup/envato_setup.php:880
+msgid "Pending"
+msgstr "Отложено"
+
+#: vendor/envato_setup/envato_setup.php:854
+#: vendor/envato_setup/envato_setup.php:863
+#: vendor/envato_setup/envato_setup.php:872
+#: vendor/envato_setup/envato_setup.php:881
+msgid "Installing..."
+msgstr "Установка..."
+
+#: vendor/envato_setup/envato_setup.php:855
+#: vendor/envato_setup/envato_setup.php:864
+#: vendor/envato_setup/envato_setup.php:873
+#: vendor/envato_setup/envato_setup.php:882
+msgid "Success!"
+msgstr "Успех!"
+
+#: vendor/envato_setup/envato_setup.php:860
+msgid "Posts"
+msgstr "Записи"
+
+#: vendor/envato_setup/envato_setup.php:861
+msgid "Insert default website posts as seen in the demo."
+msgstr "Набор демонстрационных записей"
+
+#: vendor/envato_setup/envato_setup.php:869
+msgid "Settings"
+msgstr "Параметры"
+
+#: vendor/envato_setup/envato_setup.php:870
+msgid "Insert default website settings as seen in the demo."
+msgstr "Набор демонстрационных значений параметров сайта"
+
+#: vendor/envato_setup/envato_setup.php:878
+msgid "Menu"
+msgstr "Меню"
+
+#: vendor/envato_setup/envato_setup.php:879
+msgid "Insert default website menu as seen in the demo."
+msgstr "Набор демонстрационных меню"
+
+#: vendor/envato_setup/envato_setup.php:893
+msgid "Theme default content"
+msgstr "Демонстрационный контент сайта"
+
+#: vendor/envato_setup/envato_setup.php:896
+msgid ""
+"It looks like you already have content installed on this website. If you "
+"would like to install the default demo content as well you can select it "
+"below. Otherwise just choose the upgrade option to ensure everything is up "
+"to date."
+msgstr ""
+"Кажется, на сайте уже есть контент. Если вы хотите также добавить и "
+"демонстрационный контент, выберите нужные вам фрагменты ниже."
+
+#: vendor/envato_setup/envato_setup.php:898
+msgid ""
+"It's time to insert some default content for your new WordPress website. "
+"Choose what you would like inserted below and click Continue. It is "
+"recommended to leave everything selected. Once inserted, this content can be "
+"managed from the WordPress admin dashboard."
+msgstr ""
+"На этом шаге вы можете добавить на сайт демонстрационный контент (страницы, "
+"фото, новости и т.д.). Выберите нужные пункты ниже и нажмите «Продолжить». "
+"Позже вы сможете изменить или удалить добавленный контент в административной "
+"панели сайта."
+
+#: vendor/envato_setup/envato_setup.php:904
+msgid "Item"
+msgstr "Тип"
+
+#: vendor/envato_setup/envato_setup.php:905
+msgid "Description"
+msgstr "Описание"
+
+#: vendor/envato_setup/envato_setup.php:950
+msgid "No content Found"
+msgstr "Контент не найден :("
+
+#: vendor/envato_setup/envato_setup.php:1015
+msgid "Error"
+msgstr "Ошибка"
+
+#: vendor/envato_setup/envato_setup.php:1409
+msgid "Website scenario"
+msgstr "Сценарий сайта"
+
+#: vendor/envato_setup/envato_setup.php:1411
+msgid "Please choose your website scenario."
+msgstr "Пожалуйста, выберите, о чём будет этот сайт."
+
+#: vendor/envato_setup/envato_setup.php:1462
+msgid ""
+"Please add your organization main logo below. The recommended size is "
+"<strong>315 x 66 px</strong> (for \"Image only\" mode) and <strong>66 x 66 "
+"px</strong> (for \"Image with site name\" mode). The logo can be changed at "
+"any time from the Appearance > Customize area in your website dashboard."
+msgstr ""
+"Добавьте главный логотип вашей организации. Рекомедуемые размеры логотипа - "
+"<strong>315 x 66 пикс.</strong> (для режима «только изображение») и <strong>"
+"66 x 66 пикс.</strong> (для режима «изображение и название сайта»)."
+
+#: vendor/envato_setup/envato_setup.php:1464
+#, php-format
+msgid "Try our %sPaseka program%s if you need a new logo designed."
+msgstr ""
+"Если вам нужен новый дизайн логотипа и фирменного стиля, вы можете найти "
+"исполнителя с помощью нашей %sпрограммы «Пасека»%s."
+
+#: vendor/envato_setup/envato_setup.php:1476
+msgid "Upload new logo"
+msgstr "Загрузить логотип"
+
+#: vendor/envato_setup/envato_setup.php:1515
+msgid "NGO settings"
+msgstr "Настройки организации"
+
+#: vendor/envato_setup/envato_setup.php:1520
+msgid "The website title"
+msgstr "Название сайта"
+
+#: vendor/envato_setup/envato_setup.php:1525
+msgid "The website description"
+msgstr "Описание сайта"
+
+#: vendor/envato_setup/envato_setup.php:1528
+msgid ""
+"Please add your site icon below. The recommended size is <strong>32 x 32 "
+"px</strong>. The site icon can be changed at any time from the Appearance > "
+"Customize area in your website dashboard."
+msgstr ""
+"Добавьте favicon вашего сайта. Рекомендуемые размеры - <strong>32 x 32 пикс."
+"</strong>."
+
+#: vendor/envato_setup/envato_setup.php:1530
+#, php-format
+msgid "Try our %sPaseka program%s if you need a new site icon designed."
+msgstr ""
+"Если вам нужен новый дизайн favicon, вы можете найти исполнителя с помощью "
+"нашей %sпрограммы «Пасека»%s."
+
+#: vendor/envato_setup/envato_setup.php:1542
+msgid "Upload new site icon"
+msgstr "Загрузить favicon"
+
+#: vendor/envato_setup/envato_setup.php:1594
+msgid "Help and support"
+msgstr "Помощь и поддержка"
+
+#: vendor/envato_setup/envato_setup.php:1597
+#, php-format
+msgid ""
+"Thank you for using “Kandinsky” theme on your website.<br>“Kandinsky” — is a "
+"free and open-source project supported by <a href=\"%s\" target=\"_blank\">"
+"Teplitsa. Technologies for Social Good</a> together with the community of "
+"independent developers."
+msgstr ""
+"Спасибо за использование темы «Кандинский» на вашем сайте!<br>Тема "
+"«Кандинский» — бесплатный и открытый програмный продукт, который "
+"поддерживается <a href=\"%s\" target=\"_blank\">Теплицей социальных "
+"технологий</a> и сообществом независимых разработчиков."
+
+#: vendor/envato_setup/envato_setup.php:1599
+msgid ""
+"In case you encounter any questions or issues, we recommend you the "
+"following links:"
+msgstr ""
+"Если вы столкнулись с какими-либо проблемами или вопросами, мы рекомендуем "
+"следующие ссылки:"
+
+#: vendor/envato_setup/envato_setup.php:1601
+msgid ""
+"Documentation and FAQ — <a href=\"https://github."
+"com/Teplitsa/kandinsky/wiki/\" target=\"_blank\">GitHub Wiki</a>"
+msgstr ""
+"Документация и FAQ темы — <a href=\"https://github."
+"com/Teplitsa/kandinsky/wiki/\" target=\"_blank\">GitHub Wiki</a>"
+
+#: vendor/envato_setup/envato_setup.php:1602
+msgid ""
+"Source code — <a href=\"https://github.com/Teplitsa/kandinsky/\" "
+"target=\"_blank\">GitHub</a>"
+msgstr ""
+"Исходный код темы — <a href=\"https://github.com/Teplitsa/kandinsky/\" "
+"target=\"_blank\">GitHub</a>"
+
+#: vendor/envato_setup/envato_setup.php:1603
+msgid ""
+"Developers’ <a href=\"https://t.me/joinchat/AAAAAENN3prSrvAs7KwWrg\">"
+"Telegram-channel</a> (in Russian)"
+msgstr ""
+"<a href=\"https://t.me/joinchat/AAAAAENN3prSrvAs7KwWrg\">Telegram-канал</a> "
+"разработчиков темы"
+
+#: vendor/envato_setup/envato_setup.php:1608
+msgid "OK, I've got it!"
+msgstr "Понятно!"
+
+#: vendor/envato_setup/envato_setup.php:1618
+msgid "Yay! Your website is ready!"
+msgstr "Ура! Ваш сайт готов!"
+
+#: vendor/envato_setup/envato_setup.php:1620
+msgid ""
+"Congratulations! You’re doing really good #success! You’ve successfully "
+"installed and set up your Kandinsky theme. You need, however, to do a little "
+"bit more."
+msgstr ""
+"Поздравляем! Вам все удалось #успех!  Вы установили и частично настроили ваш "
+"новый сайт! На этом работа не заканчивается."
+
+#: vendor/envato_setup/envato_setup.php:1621
+msgid ""
+"As a part of the installation process, we’ve added some test content of an "
+"imaginary organization that you will need to edit (we’ve provided the "
+"recommendations on how to make great content)."
+msgstr ""
+"В рамках установки мы установили демонстрационный контент — фото и тексты о "
+"вымышленной организации, которые теперь нужно отредактировать (в тексте даны "
+"наши рекомендации)."
+
+#: vendor/envato_setup/envato_setup.php:1622
+msgid ""
+"Moreover, you need to set up few additional plug-ins for the optimal work of "
+"your site (don’t worry, our recommendations will help you)."
+msgstr ""
+"Кроме того, необходимо настроить ряд плагинов для оптимальной работы (не "
+"волнуйтесь, мы вам поможем)."
+
+#: vendor/envato_setup/envato_setup.php:1629
+msgid "Continue the set-up"
+msgstr "Перейти к подробной настройке"
+
+#: vendor/envato_setup/envato_setup.php:1634
+msgid "View your new website!"
+msgstr "Посмотреть на новый сайт"
+
+#: vendor/envato_setup/envato_setup.php:1640
+msgid "#success"
+msgstr "#успех"
 
 #. Description of the theme
 msgid "The beautiful design and useful features for nonprofit website"

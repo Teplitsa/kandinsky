@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-21 08:07+0000\n"
+"POT-Creation-Date: 2017-07-21 12:19+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -31,8 +31,8 @@ msgstr ""
 msgid "All materials of the site are avaliabe under license %s"
 msgstr ""
 
-#: functions.php:35 modules/starter/class-demo.php:84
-#: modules/starter/class-demo.php:238
+#: functions.php:35 modules/starter/class-demo.php:96
+#: modules/starter/class-demo.php:250
 msgid "Primary menu"
 msgstr ""
 
@@ -156,7 +156,7 @@ msgstr ""
 msgid "Do not show"
 msgstr ""
 
-#: core/customizer.php:137 vendor/envato_setup/envato_setup.php:1462
+#: core/customizer.php:137 vendor/envato_setup/envato_setup.php:1459
 msgid "Logo"
 msgstr ""
 
@@ -697,7 +697,7 @@ msgid "Version"
 msgstr ""
 
 #: vendor/class-tgm-plugin-activation.php:2543
-#: vendor/envato_setup/envato_setup.php:908
+#: vendor/envato_setup/envato_setup.php:906
 msgid "Status"
 msgstr ""
 
@@ -724,17 +724,17 @@ msgid "Upgrade message from the plugin author:"
 msgstr ""
 
 #: vendor/class-tgm-plugin-activation.php:2706
-#: vendor/envato_setup/envato_setup.php:710
+#: vendor/envato_setup/envato_setup.php:711
 msgid "Install"
 msgstr ""
 
 #: vendor/class-tgm-plugin-activation.php:2712
-#: vendor/envato_setup/envato_setup.php:713
+#: vendor/envato_setup/envato_setup.php:714
 msgid "Update"
 msgstr ""
 
 #: vendor/class-tgm-plugin-activation.php:2715
-#: vendor/envato_setup/envato_setup.php:715
+#: vendor/envato_setup/envato_setup.php:716
 msgid "Activate"
 msgstr ""
 
@@ -919,20 +919,33 @@ msgstr ""
 msgid "Ready!"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:522
+#: vendor/envato_setup/envato_setup.php:458
+msgid "...verifying"
+msgstr ""
+
+#: vendor/envato_setup/envato_setup.php:459
+msgid "Processing..."
+msgstr ""
+
+#: vendor/envato_setup/envato_setup.php:514
+#, php-format
+msgid "%s setup wizard"
+msgstr ""
+
+#: vendor/envato_setup/envato_setup.php:523
 msgid "Kandinsky theme setup wizard"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:534
+#: vendor/envato_setup/envato_setup.php:535
 msgid "Return to the WordPress Dashboard"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:582
+#: vendor/envato_setup/envato_setup.php:583
 #, php-format
 msgid "Welcome to the %s setup wizard"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:583
+#: vendor/envato_setup/envato_setup.php:584
 msgid ""
 "Hello! Let's set up your organization website together. With few simple "
 "steps we will configure minimal necessary settings, like installing of "
@@ -941,143 +954,144 @@ msgid ""
 "in the Plugins admin folder."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:586
+#: vendor/envato_setup/envato_setup.php:587
 msgid "Let's go!"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:587
+#: vendor/envato_setup/envato_setup.php:588
 msgid "Not right now"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:635
+#: vendor/envato_setup/envato_setup.php:636
 msgid "Failed to find TGM plugin"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:654
+#: vendor/envato_setup/envato_setup.php:655
 msgid "Default Plugins"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:672
+#: vendor/envato_setup/envato_setup.php:673
 msgid ""
 "Your website needs a few essential plugins. The following plugins will be "
 "installed or updated:"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:673
+#: vendor/envato_setup/envato_setup.php:674
 msgid "You can add and remove plugins later on, in the Plugins admin folder."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:682
+#: vendor/envato_setup/envato_setup.php:683
 msgid "Installation required"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:685
+#: vendor/envato_setup/envato_setup.php:686
 msgid "Update and activation required"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:685
+#: vendor/envato_setup/envato_setup.php:686
 msgid "Update required"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:687
+#: vendor/envato_setup/envato_setup.php:688
 msgid "Activation required"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:702
+#: vendor/envato_setup/envato_setup.php:703
 msgid "We also recommend to add several more:"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:713
+#: vendor/envato_setup/envato_setup.php:714
 msgid "Update and activate"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:734
+#: vendor/envato_setup/envato_setup.php:735
 msgid ""
 "Good news! All plugins are already installed and up to date. Let's proceed "
 "further."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:739
-#: vendor/envato_setup/envato_setup.php:933
-#: vendor/envato_setup/envato_setup.php:1433
-#: vendor/envato_setup/envato_setup.php:1487
-#: vendor/envato_setup/envato_setup.php:1554
+#: vendor/envato_setup/envato_setup.php:740
+#: vendor/envato_setup/envato_setup.php:931
+#: vendor/envato_setup/envato_setup.php:1430
+#: vendor/envato_setup/envato_setup.php:1484
+#: vendor/envato_setup/envato_setup.php:1551
 msgid "Continue"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:742
-#: vendor/envato_setup/envato_setup.php:936
-#: vendor/envato_setup/envato_setup.php:1489
-#: vendor/envato_setup/envato_setup.php:1556
+#: vendor/envato_setup/envato_setup.php:743
+#: vendor/envato_setup/envato_setup.php:934
+#: vendor/envato_setup/envato_setup.php:1432
+#: vendor/envato_setup/envato_setup.php:1486
+#: vendor/envato_setup/envato_setup.php:1553
 msgid "Skip this step"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:753
+#: vendor/envato_setup/envato_setup.php:754
 msgid "No slug found"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:772
+#: vendor/envato_setup/envato_setup.php:773
 msgid "Activating Plugin"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:850
+#: vendor/envato_setup/envato_setup.php:851
 msgid "Pages"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:851
-msgid "Insert default website pages as seen in the demo."
-msgstr ""
-
 #: vendor/envato_setup/envato_setup.php:852
-#: vendor/envato_setup/envato_setup.php:861
-#: vendor/envato_setup/envato_setup.php:870
-#: vendor/envato_setup/envato_setup.php:879
-msgid "Pending"
+msgid "Insert default website pages as seen in the demo."
 msgstr ""
 
 #: vendor/envato_setup/envato_setup.php:853
 #: vendor/envato_setup/envato_setup.php:862
 #: vendor/envato_setup/envato_setup.php:871
 #: vendor/envato_setup/envato_setup.php:880
-msgid "Installing..."
+msgid "Pending"
 msgstr ""
 
 #: vendor/envato_setup/envato_setup.php:854
 #: vendor/envato_setup/envato_setup.php:863
 #: vendor/envato_setup/envato_setup.php:872
 #: vendor/envato_setup/envato_setup.php:881
+msgid "Installing..."
+msgstr ""
+
+#: vendor/envato_setup/envato_setup.php:855
+#: vendor/envato_setup/envato_setup.php:864
+#: vendor/envato_setup/envato_setup.php:873
+#: vendor/envato_setup/envato_setup.php:882
 msgid "Success!"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:859
+#: vendor/envato_setup/envato_setup.php:860
 msgid "Posts"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:860
+#: vendor/envato_setup/envato_setup.php:861
 msgid "Insert default website posts as seen in the demo."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:868
+#: vendor/envato_setup/envato_setup.php:869
 msgid "Settings"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:869
+#: vendor/envato_setup/envato_setup.php:870
 msgid "Insert default website settings as seen in the demo."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:877
+#: vendor/envato_setup/envato_setup.php:878
 msgid "Menu"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:878
+#: vendor/envato_setup/envato_setup.php:879
 msgid "Insert default website menu as seen in the demo."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:895
+#: vendor/envato_setup/envato_setup.php:893
 msgid "Theme default content"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:898
+#: vendor/envato_setup/envato_setup.php:896
 msgid ""
 "It looks like you already have content installed on this website. If you "
 "would like to install the default demo content as well you can select it "
@@ -1085,7 +1099,7 @@ msgid ""
 "to date."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:900
+#: vendor/envato_setup/envato_setup.php:898
 msgid ""
 "It's time to insert some default content for your new WordPress website. "
 "Choose what you would like inserted below and click Continue. It is "
@@ -1093,31 +1107,31 @@ msgid ""
 "managed from the WordPress admin dashboard."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:906
+#: vendor/envato_setup/envato_setup.php:904
 msgid "Item"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:907
+#: vendor/envato_setup/envato_setup.php:905
 msgid "Description"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:952
+#: vendor/envato_setup/envato_setup.php:950
 msgid "No content Found"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1018
+#: vendor/envato_setup/envato_setup.php:1015
 msgid "Error"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1412
+#: vendor/envato_setup/envato_setup.php:1409
 msgid "Website scenario"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1414
+#: vendor/envato_setup/envato_setup.php:1411
 msgid "Please choose your website scenario."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1465
+#: vendor/envato_setup/envato_setup.php:1462
 msgid ""
 "Please add your organization main logo below. The recommended size is "
 "<strong>315 x 66 px</strong> (for \"Image only\" mode) and <strong>66 x 66 "
@@ -1125,48 +1139,48 @@ msgid ""
 "any time from the Appearance > Customize area in your website dashboard."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1467
+#: vendor/envato_setup/envato_setup.php:1464
 #, php-format
 msgid "Try our %sPaseka program%s if you need a new logo designed."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1479
+#: vendor/envato_setup/envato_setup.php:1476
 msgid "Upload new logo"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1518
+#: vendor/envato_setup/envato_setup.php:1515
 msgid "NGO settings"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1523
+#: vendor/envato_setup/envato_setup.php:1520
 msgid "The website title"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1528
+#: vendor/envato_setup/envato_setup.php:1525
 msgid "The website description"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1531
+#: vendor/envato_setup/envato_setup.php:1528
 msgid ""
 "Please add your site icon below. The recommended size is <strong>32 x 32 "
 "px</strong>. The site icon can be changed at any time from the Appearance > "
 "Customize area in your website dashboard."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1533
+#: vendor/envato_setup/envato_setup.php:1530
 #, php-format
 msgid "Try our %sPaseka program%s if you need a new site icon designed."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1545
+#: vendor/envato_setup/envato_setup.php:1542
 msgid "Upload new site icon"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1597
+#: vendor/envato_setup/envato_setup.php:1594
 msgid "Help and support"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1600
+#: vendor/envato_setup/envato_setup.php:1597
 #, php-format
 msgid ""
 "Thank you for using “Kandinsky” theme on your website.<br>“Kandinsky” — is a "
@@ -1175,67 +1189,67 @@ msgid ""
 "independent developers."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1602
+#: vendor/envato_setup/envato_setup.php:1599
 msgid ""
 "In case you encounter any questions or issues, we recommend you the "
 "following links:"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1604
+#: vendor/envato_setup/envato_setup.php:1601
 msgid ""
 "Documentation and FAQ — <a href=\"https://github."
 "com/Teplitsa/kandinsky/wiki/\" target=\"_blank\">GitHub Wiki</a>"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1605
+#: vendor/envato_setup/envato_setup.php:1602
 msgid ""
 "Source code — <a href=\"https://github.com/Teplitsa/kandinsky/\" "
 "target=\"_blank\">GitHub</a>"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1606
+#: vendor/envato_setup/envato_setup.php:1603
 msgid ""
 "Developers’ <a href=\"https://t.me/joinchat/AAAAAENN3prSrvAs7KwWrg\">"
 "Telegram-channel</a> (in Russian)"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1611
+#: vendor/envato_setup/envato_setup.php:1608
 msgid "OK, I've got it!"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1621
+#: vendor/envato_setup/envato_setup.php:1618
 msgid "Yay! Your website is ready!"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1623
+#: vendor/envato_setup/envato_setup.php:1620
 msgid ""
 "Congratulations! You’re doing really good #success! You’ve successfully "
 "installed and set up your Kandinsky theme. You need, however, to do a little "
 "bit more."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1624
+#: vendor/envato_setup/envato_setup.php:1621
 msgid ""
 "As a part of the installation process, we’ve added some test content of an "
 "imaginary organization that you will need to edit (we’ve provided the "
 "recommendations on how to make great content)."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1625
+#: vendor/envato_setup/envato_setup.php:1622
 msgid ""
 "Moreover, you need to set up few additional plug-ins for the optimal work of "
 "your site (don’t worry, our recommendations will help you)."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1632
+#: vendor/envato_setup/envato_setup.php:1629
 msgid "Continue the set-up"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1637
+#: vendor/envato_setup/envato_setup.php:1634
 msgid "View your new website!"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1643
+#: vendor/envato_setup/envato_setup.php:1640
 msgid "#success"
 msgstr ""
 

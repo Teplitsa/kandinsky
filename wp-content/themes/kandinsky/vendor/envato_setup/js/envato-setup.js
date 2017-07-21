@@ -192,13 +192,13 @@ var EnvatoWizard = (function($){
                 var $check = $current_node.find('input:checkbox');
                 if($check.is(':checked')) {
                     jQuery.post(envato_setup_params.ajaxurl, {
-                        action: 'envato_setup_content',
+                        action: 'knd_wizard_setup_content',
                         wpnonce: envato_setup_params.wpnonce,
                         content: current_item
                     }, ajax_callback).fail(ajax_callback);
                 } else {
 
-                    $current_node.find('span').text("Skipping");
+                    $current_node.find('span').text(envato_setup_params.text_processing);
                     setTimeout(find_next,300);
 
                 }
