@@ -739,6 +739,20 @@ function knd_get_logo_img_url() {
 
 }
 
+function knd_get_site_icon_img_url() {
+    
+    $site_icon_url = '';
+    
+    if(has_site_icon()) {
+
+        $logo_id = get_option('site_icon');
+        $site_icon_url = $logo_id ? wp_get_attachment_image_url($logo_id, 'full', false) : '';
+        
+    }
+    
+    return $site_icon_url;
+}
+
 function knd_get_logo_img() {
 
     $logo_id = knd_get_logo_img_id();

@@ -1461,7 +1461,9 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 
 			<h1><?php esc_html_e('Logo', 'knd');?></h1>
 			<form method="post">
+            
 				<p><?php _e('Please add your organization main logo below. The recommended size is <strong>315 x 66 px</strong> (for "Image only" mode) and <strong>66 x 66 px</strong> (for "Image with site name" mode). The logo can be changed at any time from the Appearance > Customize area in your website dashboard.', 'knd');?></p>
+                
                 <p><?php printf(esc_html__('Try our %sPaseka program%s if you need a new logo designed.', 'knd'), '<a href="https://paseka.te-st.ru/" target="_blank">', '</a>');?></p>
 				<table>
 					<tr>
@@ -1525,6 +1527,28 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
                     <input type="text" name="knd_org_description" id="knd-org-description" value="<?php echo get_option('blogdescription');?>" class="knd-setup-wizard-control">
                     <label for="knd-org-description"><?php _e('The website description', 'knd');?></label>
                 </p>
+                
+                <p><?php _e('Please add your site icon below. The recommended size is <strong>32 x 32 px</strong>. The site icon can be changed at any time from the Appearance > Customize area in your website dashboard.', 'knd');?></p>
+                
+                <p><?php printf(esc_html__('Try our %sPaseka program%s if you need a new site icon designed.', 'knd'), '<a href="https://paseka.te-st.ru/" target="_blank">', '</a>');?></p>
+                <table>
+                    <tr>
+                        <td>
+                            <div id="current-site-icon">
+                            <?php $image_url = knd_get_site_icon_img_url();
+                            if($image_url) {
+                                printf('<img class="site-logo" src="%s" style="width: 32px; height: auto;">', $image_url);
+                            }?>
+                            </div>
+                        </td>
+                        <td>
+                            <a href="#" class="button button-upload"><?php esc_html_e('Upload new site icon', 'knd');?></a>
+                        </td>
+                    </tr>
+                </table>
+
+                <input type="hidden" name="new_logo_id" id="new_logo_id" value="">
+                
 
                 <p class="envato-setup-actions step">
                     <input type="submit" class="button-primary button button-large button-next" value="<?php esc_attr_e('Continue', 'knd');?>" name="save_step"> <!-- data-callback="update_settings" -->
@@ -1552,6 +1576,17 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
                 update_option('blogdescription', $_POST['knd_org_description']);
             }
 
+            
+            $new_favicon_id = (int)$_POST['new_logo_id'];
+            if($new_favicon_id) {
+                
+                $attr = wp_get_attachment_image_src($new_favicon_id, 'full');
+                if($attr && !empty($attr[1]) && !empty($attr[2])) {
+                    update_option( 'site_icon', $new_favicon_id );
+                }
+            
+            }
+            
             wp_redirect(esc_url_raw($this->get_next_step_link()));
             exit;
 
