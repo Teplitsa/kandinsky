@@ -56,6 +56,7 @@ function knd_set_theme_options() {
     }
     
     set_theme_mod( 'knd_hero_image_support_title', "Поддержать «Линию Цвета»" );
+    set_theme_mod( 'knd_hero_image_support_url', get_permalink( get_page_by_path( 'donate' ) ) );
     set_theme_mod( 'knd_hero_image_support_text', "<b>Помоги людям бороться с алкогольной зависимостью.</b> В Нашей области 777 человек, которые страдают от алкогольной зависимости. Ваши пожертвования помогут организовать для них реабилитационную программу." );
     set_theme_mod( 'knd_hero_image_support_button_caption', "Сделать пожертвование" );
 }

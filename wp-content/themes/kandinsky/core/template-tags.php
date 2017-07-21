@@ -806,6 +806,7 @@ function knd_hero_image_markup() {
     
     if($hero_img) {
         $knd_hero_image_support_title = get_theme_mod('knd_hero_image_support_title');
+        $knd_hero_image_support_url = get_theme_mod('knd_hero_image_support_url');
         $knd_hero_image_support_text = get_theme_mod( 'knd_hero_image_support_text');
         $knd_hero_image_support_button_caption = get_theme_mod( 'knd_hero_image_support_button_caption');
     ?>
@@ -816,7 +817,7 @@ function knd_hero_image_markup() {
 </section>
 <section class="intro-head-content text-over-image has-button">
 <div class="ihc-content">
-<a href="<?php echo get_permalink( knd_get_post('donate', 'page') ) ?>">
+<a href="<?php echo $knd_hero_image_support_url ?>">
 <?php if($knd_hero_image_support_title):?>
 <h1 class="ihc-title">
 <span><?php echo $knd_hero_image_support_title ?></span>

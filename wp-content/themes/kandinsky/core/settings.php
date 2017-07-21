@@ -95,14 +95,19 @@ function knd_add_admin_pages() {
 add_action('admin_menu', 'knd_add_admin_pages');
 
 function knd_add_menu_item($admin_bar)  {
+    
+    $knd_get_admin_notif_count = knd_get_admin_notif_count();
+    $notif_html = $knd_get_admin_notif_count ? '<div class="wp-core-ui wp-ui-notification knd-adminbar-notif"><span aria-hidden="true">'.$knd_get_admin_notif_count.'</span></div>' : '';
+    
     $args = array(
         'id' => 'kandinsky-main',
         'title' => __('Kandinsky', 'knd'),
         'href' => admin_url('themes.php?page=knd-setup-wizard'),
         'meta' => array(
-            'html' => '<div class="wp-core-ui wp-ui-notification knd-adminbar-notif"><span aria-hidden="true">'.knd_get_admin_notif_count().'</span></div>',
+            'html' => $notif_html,
         ),
     );
+    
     $admin_bar->add_menu( $args );
 }
 add_action('admin_bar_menu', 'knd_add_menu_item', 111);

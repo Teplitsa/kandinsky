@@ -39,8 +39,7 @@ class KND_News_Widget extends WP_Widget {
     <div class="container"><h1 class="section-title archive"><?php echo $title;?></h1></div>
 </section>
 
-
-<section class="main-content cards-holder"><div class="container-wide">
+<section class="main-content cards-holder knd-news-widget-body"><div class="container-wide">
 <div class="cards-loop sm-cols-1 md-cols-2 lg-cols-2">
     <?php
         if(!empty($posts)){

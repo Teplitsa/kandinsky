@@ -160,6 +160,10 @@ function knd_customize_register(WP_Customize_Manager $wp_customize) {
         'default'   => '',
     ));
     
+    $wp_customize->add_setting('knd_hero_image_support_url', array(
+        'default'   => '',
+    ));
+    
     $wp_customize->add_setting('knd_hero_image_support_button_caption', array(
         'default'   => '',
     ));
@@ -182,10 +186,18 @@ function knd_customize_register(WP_Customize_Manager $wp_customize) {
     );
     
     $wp_customize->add_control('knd_hero_image_support_title', array(
-        'type'     => 'textarea',
+        'type'     => 'text',
         'label'    => __('Call to action title', 'knd'),
         'section'  => 'static_front_page',
         'settings' => 'knd_hero_image_support_title',
+        'priority' => 45
+    ));
+    
+    $wp_customize->add_control('knd_hero_image_support_url', array(
+        'type'     => 'text',
+        'label'    => __('Call to action URL', 'knd'),
+        'section'  => 'static_front_page',
+        'settings' => 'knd_hero_image_support_url',
         'priority' => 45
     ));
     

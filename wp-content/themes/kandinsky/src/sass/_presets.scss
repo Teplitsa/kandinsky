@@ -33,14 +33,14 @@ $base: 24px;
 
 //Colors
 /*:root {
-  --color-main:         #4494BB;
-  --color-main-dark:    darken(#4494BB, 10%);
+  --knd-color-main:         #4494BB;
+  --knd-color-main-dark:    darken(#4494BB, 10%);
 }*/
 
 //Variables of color scheme
-$color-link-three: var(--color-main); //this is the main scheme color
-$color-link-one:   var(--color-main-dark); //hover state
-$color-link-two:   var(--color-main-dark); //hover state 
+$color-link-three: var(--knd-color-main); //this is the main scheme color
+$color-link-one:   var(--knd-color-main-dark); //hover state
+$color-link-two:   var(--knd-color-main-dark); //hover state 
 
 
 //others color variables
@@ -422,3 +422,6 @@ $fixed_side: 222px;
 	}
 }
 	
+@mixin widget-content-style() {
+    margin-bottom: $base * 2;
+}

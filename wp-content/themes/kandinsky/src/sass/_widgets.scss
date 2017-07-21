@@ -407,3 +407,13 @@
 		}		
 	}
 }
+
+/* news widget */
+section.knd-news-widget-body {
+    @include widget-content-style();
+}
+
+/* .text widget */
+.textwidget {
+    @include widget-content-style();
+}

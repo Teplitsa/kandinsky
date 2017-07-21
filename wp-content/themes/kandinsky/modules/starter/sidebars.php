@@ -77,6 +77,20 @@ EOT;
         $sidebars['knd-homepage-sidebar'] = array();
         update_option( 'sidebars_widgets', $sidebars );
         
+        
+        // add text on home
+        $widgets = get_option('widget_text');
+        //         print_r($widgets);
+        
+        $widgets[] = Array('title' => __('Our organization «Color Line»', 'knd'), 'text' => __('We have been helping people with alcoholism in our city over 10 years<br />by organizing rehabilitation programs.', 'knd') );
+        $widgets_keys = array_keys($widgets);
+        $widget_index = end($widgets_keys);
+        $sidebars['knd-homepage-sidebar'][] = 'text-' . $widget_index;
+        
+        update_option( 'widget_text', $widgets );
+                
+        
+        // add news on home
         $news_widgets = get_option('widget_knd_news');
 //         print_r($news_widgets);
         
@@ -86,6 +100,8 @@ EOT;
         $sidebars['knd-homepage-sidebar'][] = 'knd_news-' . $widget_index;
         
         update_option( 'widget_knd_news', $news_widgets );
+        
+        
         update_option( 'sidebars_widgets', $sidebars );
     }
 }

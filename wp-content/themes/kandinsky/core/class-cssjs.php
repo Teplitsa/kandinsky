@@ -94,8 +94,8 @@ class FRL_CssJs {
         ?>
             <style>
                 :root {
-                  --color-main:         <?php echo $main_color; ?>;
-                  --color-main-dark:    <?php echo $dark_color; ?>;
+                  --knd-color-main:         <?php echo $main_color; ?>;
+                  --knd-color-main-dark:    <?php echo $dark_color; ?>;
                 }
             </style>
         <?php

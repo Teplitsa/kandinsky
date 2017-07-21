@@ -336,6 +336,12 @@ h1, h2, h3, h4, h5, h6 {
 } 
 
 .knd-homepage-widgets {
+    
+    text-align:center;
+    img {
+        @include widget-content-style();
+    }
+    
     .textwidget {
         @extend .container;
         text-align:center;
