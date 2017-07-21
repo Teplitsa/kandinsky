@@ -132,7 +132,7 @@ var EnvatoWizard = (function($){
                 }
             });
             if(items_completed >= $li.length){
-                complete();
+                // complete();
             }
         }
         

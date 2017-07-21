@@ -784,7 +784,7 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
                         '_wpnonce'      => wp_create_nonce( 'bulk-plugins' ),
                         'action'        => 'tgmpa-bulk-update',
                         'action2'       => -1,
-                        'message'       => esc_html__( 'Updating Plugin' ),
+                        'message'       => esc_html__('Updating Plugin', 'knd'),
                     );
                     break;
 
@@ -798,7 +798,7 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
                         '_wpnonce'      => wp_create_nonce( 'bulk-plugins' ),
                         'action'        => 'tgmpa-bulk-install',
                         'action2'       => -1,
-                        'message'       => esc_html__( 'Installing Plugin' ),
+                        'message'       => esc_html__('Installing Plugin', 'knd'),
                     );
                     break;
 
