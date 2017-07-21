@@ -30,6 +30,24 @@ function knd_update_posts() {
     
 }
 
+function knd_setup_site_icon() {
+    
+    if(has_site_icon()) {
+        return;
+    }
+    
+    $site_icon_id = false;
+    $thumbnail_url = 'https://ngo2.ru/kandinsky-files/favicon-small.png';
+    
+    if( preg_match( '/^http[s]?:\/\//', $thumbnail_url ) ) {
+        $site_icon_id = TST_Import::get_instance()->maybe_import( $thumbnail_url );
+    }
+    
+    if($site_icon_id) {
+        update_option( 'site_icon', $site_icon_id );
+    }
+}
+
 function knd_set_theme_options() {
     $thumb_id = TST_Import::get_instance()->maybe_import( 'https://ngo2.ru/kandinsky-files/knd-img1.jpg' );
     
@@ -64,6 +82,7 @@ function knd_setup_starter_data() {
 
     knd_setup_menus();  // all menus except main nav menu
 
+    knd_setup_site_icon();
 }
 
 function knd_ajax_setup_starter_data() {
