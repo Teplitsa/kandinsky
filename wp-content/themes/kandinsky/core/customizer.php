@@ -230,3 +230,34 @@ function knd_customize_register(WP_Customize_Manager $wp_customize) {
     // Social links ended
     
 }
+
+add_filter( 'add_menu_classes', 'knd_show_notification_bubble');
+function knd_show_notification_bubble( $menu ) {
+    
+    $not_installed_plugins = 0;
+    if( !is_plugin_active('leyka') ) {
+        $not_installed_plugins += 1;
+    }
+    
+    if( !is_plugin_active('wordpress-seo') ) {
+        $not_installed_plugins += 1;
+    }
+    
+    if( !is_plugin_active('cyr3lat') ) {
+        $not_installed_plugins += 1;
+    }
+    
+    if( !is_plugin_active('disable-comments') ) {
+        $not_installed_plugins += 1;
+    }
+    
+    if( $not_installed_plugins > 0 ) {
+        foreach( $menu as $menu_key => $menu_data ) {
+            if( $menu_data[2] == 'knd-setup-wizard' ) {
+                $menu[$menu_key][0] .= " <span class='update-plugins'><span class='plugin-count'>" . $not_installed_plugins . '</span></span>';
+            }
+        }
+    }
+    
+    return $menu;
+}

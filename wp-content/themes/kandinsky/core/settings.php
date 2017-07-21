@@ -89,9 +89,20 @@ function knd_admin_settings_page() {?>
 
 function knd_add_admin_pages() {
 //    add_submenu_page('themes.php', __('Kandinsky settings', 'knd'), __('Kandinsky', 'knd'), 'manage_options', 'knd_admin_settings_page', 'knd_admin_settings_page');
+    add_menu_page( __('Kandinsky settings', 'knd'), __('Kandinsky', 'knd'), 'manage_options', 'knd-setup-wizard', 'envato_theme_setup_wizard', '', 100);
     add_submenu_page('themes.php', __('Kandinsky setup wizard', 'knd'), __('Kandinsky setup wizard', 'knd'), 'manage_options', 'knd-setup-wizard', 'envato_theme_setup_wizard');
 }
 add_action('admin_menu', 'knd_add_admin_pages');
+
+function knd_add_menu_item($admin_bar)  {
+    $args = array(
+        'id' => 'kandinsky-main',
+        'title' => __('Kandinsky', 'knd'),
+        'href' => admin_url('themes.php?page=knd-setup-wizard')
+    );
+    $admin_bar->add_menu( $args );
+}
+add_action('admin_bar_menu', 'knd_add_menu_item', 111);
 
 function knd_admin_notice() {
 

@@ -72,7 +72,7 @@ class KND_Demo_Content {
                 // Starter content defined here
                 'options' => array(    
                     'blogname'          => 'Линия цвета',
-                    'blogdescription'   => 'Помощь людям с алкогольной зависимостью',
+                    'blogdescription'   => 'Мы помогаем людям с алкогольной зависимостью',
                     'text_in_header'    => 'г. Псков, ул. Советская, д. 85'.chr(10).'+7 (111) 172-20-88',
                     'show_on_front'     => 'page',
                     'page_on_front'     => '{{home}}',
