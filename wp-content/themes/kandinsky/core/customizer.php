@@ -250,20 +250,24 @@ function knd_show_notification_bubble( $menu ) {
 function knd_get_admin_notif_count() {
     
     $not_installed_plugins = 0;
-    if( !is_plugin_active('leyka/leyka.php') ) {
-        $not_installed_plugins += 1;
-    }
     
-    if( !is_plugin_active('wordpress-seo/wp-seo.php') ) {
-        $not_installed_plugins += 1;
-    }
+    if(is_admin()) {
     
-    if( !is_plugin_active('cyr3lat/cyr-to-lat.php') ) {
-        $not_installed_plugins += 1;
-    }
-    
-    if( !is_plugin_active('disable-comments/disable-comments.php') ) {
-        $not_installed_plugins += 1;
+        if( !is_plugin_active('leyka/leyka.php') ) {
+            $not_installed_plugins += 1;
+        }
+        
+        if( !is_plugin_active('wordpress-seo/wp-seo.php') ) {
+            $not_installed_plugins += 1;
+        }
+        
+        if( !is_plugin_active('cyr3lat/cyr-to-lat.php') ) {
+            $not_installed_plugins += 1;
+        }
+        
+        if( !is_plugin_active('disable-comments/disable-comments.php') ) {
+            $not_installed_plugins += 1;
+        }
     }
     
     return $not_installed_plugins;
