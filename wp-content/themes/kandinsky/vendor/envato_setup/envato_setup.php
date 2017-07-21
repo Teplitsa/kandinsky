@@ -825,7 +825,7 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
         }
         public function _content_install_pages() {
 
-            do_action('knd_save_demo_content');
+            #do_action('knd_save_demo_content');
             return true;
 
         }
