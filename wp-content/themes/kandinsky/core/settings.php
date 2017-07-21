@@ -212,7 +212,7 @@ function knd_register_required_plugins() {
     $config = array(
         'id'           => 'knd',                 // Unique ID for hashing notices for multiple instances of TGMPA.
         'default_path' => '',                      // Default absolute path to bundled plugins.
-        'menu'         => '', //'knd-install-plugins',  // Menu slug.
+        'menu'         => 'knd-install-plugins',  // Menu slug.
         'has_notices'  => false,                    // Show admin notices or not.
         'dismissable'  => false,                    // If false, a user cannot dismiss the nag message.
         'dismiss_msg'  => '',                      // If 'dismissable' is false, this message will be output at top of nag.
