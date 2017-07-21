@@ -750,7 +750,7 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 
 		public function ajax_plugins() {
 
-			if( !check_ajax_referer('envato_setup_nonce', 'wpnonce') || empty($_POST['slug']) ) {
+			if( !check_ajax_referer('knd-setup-nonce', 'wpnonce') || empty($_POST['slug']) ) {
 				wp_send_json_error(array('error' => 1, 'message' => esc_html__('No slug found', 'knd')));
 			}
 			$json = array(); // Send back some json we use to hit up TGM
@@ -810,7 +810,7 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 				$json['hash'] = md5(serialize($json)); // used for checking if duplicates happen, move to next plugin
 				wp_send_json($json);
 			} else {
-				wp_send_json(array('done' => 1, 'message' => esc_html__('Success')));
+				wp_send_json(array('done' => 1, 'message' => esc_html__('Success', 'knd')));
 			}
 			exit;
 

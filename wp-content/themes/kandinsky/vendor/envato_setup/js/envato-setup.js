@@ -105,7 +105,7 @@ var EnvatoWizard = (function($){
                 // query our ajax handler to get the ajax to send to TGM
                 // if we don't get a reply we can assume everything worked and continue onto the next one.
                 jQuery.post(envato_setup_params.ajaxurl, {
-                    action: 'envato_setup_plugins',
+                    action: 'knd_wizard_setup_plugins',
                     wpnonce: envato_setup_params.wpnonce,
                     slug: current_item
                 }, ajax_callback).fail(ajax_callback);
@@ -132,7 +132,7 @@ var EnvatoWizard = (function($){
                 }
             });
             if(items_completed >= $li.length){
-                complete();
+                // complete();
             }
         }
         
