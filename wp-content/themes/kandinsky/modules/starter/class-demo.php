@@ -31,12 +31,18 @@ class KND_Demo_Content {
 
 
     public function read_demo_data(){
+        
         //Read file
-        $csv = array_map('str_getcsv', file(get_template_directory() . '/modules/starter/csv/pages.csv'));
+        #$csv = array_map('str_getcsv', file(get_template_directory() . '/modules/starter/csv/pages.csv'));
         $pages = array();
-
-        foreach($csv as $i => $line) {
-    
+        
+        if(($handle = fopen( get_template_directory() . '/modules/starter/csv/pages.csv', "r" )) !== FALSE) {
+        
+        #foreach($csv as $i => $line) {
+        $i = -1;
+        while(( $line = fgetcsv( $handle, 1000000, "," )) !== FALSE) {
+            $i += 1;
+            
             if($i == 0) {
                 continue;
             }
@@ -57,6 +63,12 @@ class KND_Demo_Content {
             
 
             $pages[$post_name] = $page_data;
+        }
+        
+        }
+        
+        if($handle) {
+            fclose($handle);
         }
 
         return $pages;
