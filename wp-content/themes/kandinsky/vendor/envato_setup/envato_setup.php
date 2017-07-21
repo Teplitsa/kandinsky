@@ -690,6 +690,8 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
                             echo $plugin_status;?>
                             </span>
                             <div class="spinner"></div>
+                            
+                            <div class="knd-plugin-description"><?php echo $plugin['description']?></div>
                         </li>
 						<?php }?>
 					</ul>
@@ -718,7 +720,11 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
                             <?php echo $plugin_status;?>
                         </label>
 
-                    </span><div class="spinner"></div></li>
+                    </span><div class="spinner"></div>
+                    
+                    <div class="knd-plugin-description"><?php echo $plugin['description']?></div>
+                    
+                    </li>
                     <?php }?>
                     </ul>
 
