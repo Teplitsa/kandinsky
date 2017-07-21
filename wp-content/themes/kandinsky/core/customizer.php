@@ -234,6 +234,21 @@ function knd_customize_register(WP_Customize_Manager $wp_customize) {
 add_filter( 'add_menu_classes', 'knd_show_notification_bubble');
 function knd_show_notification_bubble( $menu ) {
     
+    $notif_count = knd_get_admin_notif_count();
+    
+    if( $notif_count > 0 ) {
+        foreach( $menu as $menu_key => $menu_data ) {
+            if( $menu_data[2] == 'knd-setup-wizard' ) {
+                $menu[$menu_key][0] .= " <span class='update-plugins' title='".__('Recommended plugins to install', 'knd')."'><span class='plugin-count'>" . $notif_count . '</span></span>';
+            }
+        }
+    }
+    
+    return $menu;
+}
+
+function knd_get_admin_notif_count() {
+    
     $not_installed_plugins = 0;
     if( !is_plugin_active('leyka') ) {
         $not_installed_plugins += 1;
@@ -251,13 +266,5 @@ function knd_show_notification_bubble( $menu ) {
         $not_installed_plugins += 1;
     }
     
-    if( $not_installed_plugins > 0 ) {
-        foreach( $menu as $menu_key => $menu_data ) {
-            if( $menu_data[2] == 'knd-setup-wizard' ) {
-                $menu[$menu_key][0] .= " <span class='update-plugins'><span class='plugin-count'>" . $not_installed_plugins . '</span></span>';
-            }
-        }
-    }
-    
-    return $menu;
+    return $not_installed_plugins;
 }

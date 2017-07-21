@@ -98,7 +98,10 @@ function knd_add_menu_item($admin_bar)  {
     $args = array(
         'id' => 'kandinsky-main',
         'title' => __('Kandinsky', 'knd'),
-        'href' => admin_url('themes.php?page=knd-setup-wizard')
+        'href' => admin_url('themes.php?page=knd-setup-wizard'),
+        'meta' => array(
+            'html' => '<div class="wp-core-ui wp-ui-notification knd-adminbar-notif"><span aria-hidden="true">'.knd_get_admin_notif_count().'</span></div>',
+        ),
     );
     $admin_bar->add_menu( $args );
 }

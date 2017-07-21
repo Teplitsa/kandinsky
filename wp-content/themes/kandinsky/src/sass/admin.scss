@@ -161,3 +161,18 @@ div [id *="ninja_forms_metabox"] .item-edit.metabox-item-edit {
   -webkit-transition: all .1s ease-in-out;
   transition: all .1s ease-in-out;
 }
+
+#wpadminbar #wp-admin-bar-kandinsky-main {
+    
+    a {
+        display:inline;
+    }
+    
+    .knd-adminbar-notif {
+        border-radius: 50%;
+        color: #fff;
+        display: inline;
+        padding: 1px 7px 1px 6px !important;
+    }
+    
+} 
