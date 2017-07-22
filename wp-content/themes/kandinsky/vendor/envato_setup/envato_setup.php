@@ -1602,7 +1602,7 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
                 <li><?php _e('Source code — <a href="https://github.com/Teplitsa/kandinsky/" target="_blank">GitHub</a>', 'knd');?></li>
                 <li><?php _e('Developers’ <a href="https://t.me/joinchat/AAAAAENN3prSrvAs7KwWrg">Telegram-channel</a> (in Russian)', 'knd');?></li>
             </ul>
-            <p><?php _e('If you need personalized (free during the testing period) consultations from the theme developers, please feel free to write at <a href="mailto:support@te-st.ru" target="_blank">support@te-st.ru</a> or <a href="https://github.com/Teplitsa/kandinsky/issues/" target="_blank">leave a ticket at GitHub</a>.')?></p>
+            <p><?php _e('If you need personalized (free during the testing period) consultations from the theme developers, please feel free to write at <a href="mailto:support@te-st.ru" target="_blank">support@te-st.ru</a> or <a href="https://github.com/Teplitsa/kandinsky/issues/" target="_blank">leave a ticket at GitHub</a>.', 'knd');?></p>
 
             <p class="envato-setup-actions step">
                 <a href="<?php echo esc_url($this->get_next_step_link());?>" class="button-primary button button-large button-next"><?php esc_html_e("OK, I've got it!", 'knd'); ?></a>

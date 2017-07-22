@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-21 12:56+0000\n"
+"POT-Creation-Date: 2017-07-22 14:33+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -166,31 +166,35 @@ msgid ""
 "site name"
 msgstr ""
 
-#: core/customizer.php:172
+#: core/customizer.php:176
 msgid "Hero Image"
 msgstr ""
 
-#: core/customizer.php:173
+#: core/customizer.php:177
 msgid "Recommended size 1400x656px"
 msgstr ""
 
-#: core/customizer.php:186
+#: core/customizer.php:190
 msgid "Call to action title"
 msgstr ""
 
-#: core/customizer.php:194
+#: core/customizer.php:198
+msgid "Call to action URL"
+msgstr ""
+
+#: core/customizer.php:206
 msgid "Call to action text"
 msgstr ""
 
-#: core/customizer.php:202
+#: core/customizer.php:214
 msgid "Action button caption"
 msgstr ""
 
-#: core/customizer.php:211
+#: core/customizer.php:223
 msgid "Social networks links"
 msgstr ""
 
-#: core/customizer.php:242
+#: core/customizer.php:254
 msgid "Recommended plugins to install"
 msgstr ""
 
@@ -263,7 +267,7 @@ msgid "Kandinsky settings"
 msgstr ""
 
 #. Name of the theme
-#: core/settings.php:92 core/settings.php:100
+#: core/settings.php:92 core/settings.php:104
 msgid "Kandinsky"
 msgstr ""
 
@@ -271,11 +275,11 @@ msgstr ""
 msgid "Kandinsky setup wizard"
 msgstr ""
 
-#: core/settings.php:131
+#: core/settings.php:136
 msgid "Dismiss"
 msgstr ""
 
-#: core/settings.php:133
+#: core/settings.php:138
 #, php-format
 msgid ""
 "Welcome! Thank you for choosing Kandinsky! To fully take advantage of the "
@@ -283,87 +287,87 @@ msgid ""
 "settings%s."
 msgstr ""
 
-#: core/settings.php:139
+#: core/settings.php:144
 msgid "Open the theme setup wizard"
 msgstr ""
 
-#: core/settings.php:142
+#: core/settings.php:147
 msgid "Open theme settings"
 msgstr ""
 
-#: core/settings.php:174
+#: core/settings.php:179
 msgid "Yoast SEO"
 msgstr ""
 
-#: core/settings.php:178
+#: core/settings.php:183
 msgid "A great tool to boost your website SEO positions."
 msgstr ""
 
-#: core/settings.php:181
+#: core/settings.php:186
 msgid "Cyr to Lat enhanced"
 msgstr ""
 
-#: core/settings.php:185
+#: core/settings.php:190
 msgid ""
 "Small helper to seamlessly convert cyrillic pages slugs into latin ones."
 msgstr ""
 
-#: core/settings.php:188
+#: core/settings.php:193
 msgid "Disable Comments"
 msgstr ""
 
-#: core/settings.php:192
+#: core/settings.php:197
 msgid ""
 "Comments on the website may be harmful, so this small plugin turns them off."
 msgstr ""
 
-#: core/settings.php:195
+#: core/settings.php:200
 msgid "Leyka"
 msgstr ""
 
-#: core/settings.php:199
+#: core/settings.php:204
 msgid "This plugin will add means for donations collection to your website."
 msgstr ""
 
-#: core/settings.php:223 vendor/class-tgm-plugin-activation.php:327
+#: core/settings.php:228 vendor/class-tgm-plugin-activation.php:327
 msgid "Install Required Plugins"
 msgstr ""
 
-#: core/settings.php:224 vendor/class-tgm-plugin-activation.php:328
+#: core/settings.php:229 vendor/class-tgm-plugin-activation.php:328
 msgid "Install Plugins"
 msgstr ""
 
 #. %s: plugin name.
-#: core/settings.php:226 vendor/class-tgm-plugin-activation.php:330
+#: core/settings.php:231 vendor/class-tgm-plugin-activation.php:330
 #, php-format
 msgid "Installing Plugin: %s"
 msgstr ""
 
 #. %s: plugin name.
-#: core/settings.php:228 vendor/class-tgm-plugin-activation.php:332
+#: core/settings.php:233 vendor/class-tgm-plugin-activation.php:332
 #, php-format
 msgid "Updating Plugin: %s"
 msgstr ""
 
-#: core/settings.php:229 vendor/class-tgm-plugin-activation.php:333
+#: core/settings.php:234 vendor/class-tgm-plugin-activation.php:333
 msgid "Something went wrong with the plugin API."
 msgstr ""
 
-#: core/settings.php:230 vendor/class-tgm-plugin-activation.php:334
+#: core/settings.php:235 vendor/class-tgm-plugin-activation.php:334
 #, php-format
 msgid "This theme requires the following plugin: %1$s."
 msgid_plural "This theme requires the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/settings.php:231 vendor/class-tgm-plugin-activation.php:335
+#: core/settings.php:236 vendor/class-tgm-plugin-activation.php:335
 #, php-format
 msgid "This theme recommends the following plugin: %1$s."
 msgid_plural "This theme recommends the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/settings.php:232 vendor/class-tgm-plugin-activation.php:336
+#: core/settings.php:237 vendor/class-tgm-plugin-activation.php:336
 #, php-format
 msgid ""
 "The following plugin needs to be updated to its latest version to ensure "
@@ -374,67 +378,67 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/settings.php:233
+#: core/settings.php:238
 #, php-format
 msgid "There is an update available for: %1$s."
 msgid_plural "There are updates available for the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/settings.php:234
+#: core/settings.php:239
 #, php-format
 msgid "The following required plugin is currently inactive: %1$s."
 msgid_plural "The following required plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/settings.php:235
+#: core/settings.php:240
 #, php-format
 msgid "The following recommended plugin is currently inactive: %1$s."
 msgid_plural "The following recommended plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/settings.php:236 vendor/class-tgm-plugin-activation.php:359
+#: core/settings.php:241 vendor/class-tgm-plugin-activation.php:359
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/settings.php:237 vendor/class-tgm-plugin-activation.php:364
+#: core/settings.php:242 vendor/class-tgm-plugin-activation.php:364
 msgid "Begin updating plugin"
 msgid_plural "Begin updating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/settings.php:238 vendor/class-tgm-plugin-activation.php:369
+#: core/settings.php:243 vendor/class-tgm-plugin-activation.php:369
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/settings.php:239 vendor/class-tgm-plugin-activation.php:374
+#: core/settings.php:244 vendor/class-tgm-plugin-activation.php:374
 msgid "Return to Required Plugins Installer"
 msgstr ""
 
-#: core/settings.php:240 vendor/class-tgm-plugin-activation.php:376
+#: core/settings.php:245 vendor/class-tgm-plugin-activation.php:376
 #: vendor/class-tgm-plugin-activation.php:3148
 msgid "Plugin activated successfully."
 msgstr ""
 
-#: core/settings.php:241 vendor/class-tgm-plugin-activation.php:377
+#: core/settings.php:246 vendor/class-tgm-plugin-activation.php:377
 #: vendor/class-tgm-plugin-activation.php:2941
 msgid "The following plugin was activated successfully:"
 msgstr ""
 
 #. 1: plugin name.
-#: core/settings.php:243 vendor/class-tgm-plugin-activation.php:379
+#: core/settings.php:248 vendor/class-tgm-plugin-activation.php:379
 #, php-format
 msgid "No action taken. Plugin %1$s was already active."
 msgstr ""
 
 #. 1: plugin name.
-#: core/settings.php:245 vendor/class-tgm-plugin-activation.php:381
+#: core/settings.php:250 vendor/class-tgm-plugin-activation.php:381
 #, php-format
 msgid ""
 "Plugin not activated. A higher version of %s is needed for this theme. "
@@ -442,22 +446,22 @@ msgid ""
 msgstr ""
 
 #. 1: dashboard link.
-#: core/settings.php:247 vendor/class-tgm-plugin-activation.php:383
+#: core/settings.php:252 vendor/class-tgm-plugin-activation.php:383
 #, php-format
 msgid "All plugins installed and activated successfully. %1$s"
 msgstr ""
 
-#: core/settings.php:248 vendor/class-tgm-plugin-activation.php:384
+#: core/settings.php:253 vendor/class-tgm-plugin-activation.php:384
 msgid "Dismiss this notice"
 msgstr ""
 
-#: core/settings.php:249 vendor/class-tgm-plugin-activation.php:385
+#: core/settings.php:254 vendor/class-tgm-plugin-activation.php:385
 msgid ""
 "There are one or more required or recommended plugins to install, update or "
 "activate."
 msgstr ""
 
-#: core/settings.php:250 vendor/class-tgm-plugin-activation.php:386
+#: core/settings.php:255 vendor/class-tgm-plugin-activation.php:386
 msgid "Please contact the administrator of this site for help."
 msgstr ""
 
@@ -890,8 +894,18 @@ msgstr ""
 msgid "Our Work"
 msgstr ""
 
-#: modules/starter/sidebars.php:56 modules/starter/sidebars.php:83
+#: modules/starter/sidebars.php:56 modules/starter/sidebars.php:97
 msgid "News"
+msgstr ""
+
+#: modules/starter/sidebars.php:85
+msgid "Our organization «Color Line»"
+msgstr ""
+
+#: modules/starter/sidebars.php:85
+msgid ""
+"We have been helping people with alcoholism in our city over 10 years<br />"
+"by organizing rehabilitation programs."
 msgstr ""
 
 #: vendor/envato_setup/envato_setup.php:228
@@ -1222,6 +1236,15 @@ msgstr ""
 msgid ""
 "Developers’ <a href=\"https://t.me/joinchat/AAAAAENN3prSrvAs7KwWrg\">"
 "Telegram-channel</a> (in Russian)"
+msgstr ""
+
+#: vendor/envato_setup/envato_setup.php:1605
+msgid ""
+"If you need personalized (free during the testing period) consultations from "
+"the theme developers, please feel free to write at <a href=\"mailto:"
+"support@te-st.ru\" target=\"_blank\">support@te-st.ru</a> or <a href=\"https:"
+"//github.com/Teplitsa/kandinsky/issues/\" target=\"_blank\">leave a ticket "
+"at GitHub</a>."
 msgstr ""
 
 #: vendor/envato_setup/envato_setup.php:1608

@@ -1,6 +1,6 @@
 .envato-setup-content p, .envato-setup-content table {
     font-size: 1em;
-    line-height: 1.75em;
+    line-height: 1.5em;
     color: #666
 }
 
@@ -42,7 +42,7 @@ body {
 }
 
 .envato-setup-content p {
-    margin: 0 0 24px
+    margin: 0 0 12px
 }
 
 .envato-setup-content a {
