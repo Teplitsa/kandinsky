@@ -5,7 +5,7 @@ function knd_org_custom_content() {
 
     register_taxonomy('org_cat', array('org',), array(
         'labels' => array(
-            'name'                       => 'Категории организаций',
+            'name'                       => 'Категории партнеров',
             'singular_name'              => 'Категория',
             'menu_name'                  => 'Категории',
             'all_items'                  => 'Все категории',
@@ -35,20 +35,20 @@ function knd_org_custom_content() {
 
     register_post_type('org', array(
         'labels' => array(
-            'name'               => 'Организации',
-            'singular_name'      => 'Организация',
+            'name'               => 'Партнеры',
+            'singular_name'      => 'Партнер',
             'menu_name'          => 'Партнеры',
-            'name_admin_bar'     => 'Добавить организацию',
-            'add_new'            => 'Добавить новую',
-            'add_new_item'       => 'Добавить организацию',
-            'new_item'           => 'Новая организация',
-            'edit_item'          => 'Редактировать организацию',
-            'view_item'          => 'Просмотр организации',
-            'all_items'          => 'Все организации',
-            'search_items'       => 'Искать организации',
-            'parent_item_colon'  => 'Родительская организация:',
-            'not_found'          => 'Организации не найдены',
-            'not_found_in_trash' => 'В Корзине организации не найдены'
+            'name_admin_bar'     => 'Добавить партнера',
+            'add_new'            => 'Добавить нового',
+            'add_new_item'       => 'Добавить партнера',
+            'new_item'           => 'Новый партнер',
+            'edit_item'          => 'Редактировать партнера',
+            'view_item'          => 'Просмотр партнера',
+            'all_items'          => 'Все партнеры',
+            'search_items'       => 'Искать партнеров',
+            'parent_item_colon'  => 'Родительский партнер:',
+            'not_found'          => 'Партнеры не найдены',
+            'not_found_in_trash' => 'В Корзине партнеры не найдены'
         ),
         'public'              => true,
         'exclude_from_search' => true,
