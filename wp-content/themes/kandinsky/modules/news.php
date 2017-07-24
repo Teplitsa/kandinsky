@@ -4,8 +4,8 @@ class KND_News_Widget extends WP_Widget {
 
     function __construct() {
 
-        parent::__construct('knd_news', 'Новости', array(
-            'description' => 'Список последних новостей',
+        parent::__construct('knd_news', __('News', 'knd'), array(
+            'description' => __('Latest news list', 'knd'),
         ));
     }
 

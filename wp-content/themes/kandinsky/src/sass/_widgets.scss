@@ -86,7 +86,6 @@
 
 
 .tpl-page-fullwidth {
-	margin-bottom: $gut*1.5;
 	overflow-x: hidden;
 	position: relative;
 }
@@ -415,5 +414,10 @@ section.knd-news-widget-body {
 
 /* .text widget */
 .textwidget {
+    @include widget-content-style();
+}
+
+/* ouroeg widget */
+.knd-ourorg-widget {
     @include widget-content-style();
 }
