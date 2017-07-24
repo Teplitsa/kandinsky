@@ -4,7 +4,7 @@ class KND_Org_Widget extends WP_Widget {
 
     public function __construct() {
 
-        parent::__construct('knd_orgs', __('Organizations', 'knd'), array(
+        parent::__construct('knd_orgs', __('Partners', 'knd'), array(
             'description' => __('Partner organization banners list', 'knd'),
         ));
     }

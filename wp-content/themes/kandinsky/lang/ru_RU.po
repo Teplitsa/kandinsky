@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-24 06:55+0200\n"
-"PO-Revision-Date: 2017-07-24 07:40+0200\n"
+"POT-Creation-Date: 2017-07-24 12:05+0200\n"
+"PO-Revision-Date: 2017-07-24 12:06+0200\n"
 "Last-Translator: ahaenor <ahaenor@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -623,7 +623,7 @@ msgstr "Новости"
 msgid "Latest news list"
 msgstr "Список последних новостей"
 
-#: modules/org/tax.php:6
+#: modules/org/tax.php:6 modules/org/widgets.php:7
 msgid "Partners"
 msgstr "Партнеры"
 
@@ -631,15 +631,11 @@ msgstr "Партнеры"
 msgid "Homepage Partners"
 msgstr "Партнеры для главной страницы"
 
-#: modules/org/widgets.php:7
-msgid "Organizations"
-msgstr "Организации"
-
 #: modules/org/widgets.php:8
 msgid "Partner organization banners list"
 msgstr "Список баннеров партнерских организаций"
 
-#: modules/org/widgets.php:40
+#: modules/org/widgets.php:40 modules/ourorg.php:53
 msgid "Title:"
 msgstr "Заголовок:"
 
@@ -655,13 +651,17 @@ msgstr "Категория:"
 msgid "All categories"
 msgstr "Все категории"
 
-#: modules/ourorg.php:7
-msgid "Our organization"
-msgstr "Наша организация"
-
 #: modules/ourorg.php:8
 msgid "Our organization description on main page"
 msgstr "Краткое описание организации на главной"
+
+#: modules/ourorg.php:17
+msgid "Our organization"
+msgstr "Наша организация"
+
+#: modules/ourorg.php:57
+msgid "Content:"
+msgstr ""
 
 #: modules/person/tax.php:6
 msgid "Volonteers"
@@ -1505,6 +1505,9 @@ msgstr ""
 #: vendor/envato_setup/envato_setup_init.php:68
 msgid "Success."
 msgstr ""
+
+#~ msgid "Organizations"
+#~ msgstr "Организации"
 
 #~ msgid "Events"
 #~ msgstr "Мероприятия"
