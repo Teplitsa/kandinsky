@@ -197,6 +197,13 @@ function knd_register_required_plugins() {
             'description' => __('Comments on the website may be harmful, so this small plugin turns them off.', 'knd'),
         ),
         array(
+            'name'        => __('Shortcake (Shortcodes UI)', 'knd'),
+            'slug'        => 'shortcode-ui',
+            'is_callable' => 'shortcode_ui_init',
+            'required'    => true,
+            'description' => __('A visual editing for shortcodes to enrich your content management experience.', 'knd'),
+        ),
+        array(
             'name'        => __('Leyka', 'knd'),
             'slug'        => 'leyka',
             'is_callable' => 'leyka',

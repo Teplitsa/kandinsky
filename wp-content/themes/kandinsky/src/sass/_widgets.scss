@@ -239,7 +239,7 @@
 /* intro section */
 
 //page with cards
-.intro-head-image {
+.intro-head-image, .knd-background-text.background {
 	@include vertical-image-header-fixed();
 	@include container-extended();
 	
@@ -270,7 +270,7 @@
 }
 
 
-.intro-head-content {
+.intro-head-content, .knd-background-text.text {
 			
 	.ihc-title {
 		display: inline-block;
