@@ -355,6 +355,19 @@
 	}
 }
 
+// Button shortcode
+.knd-button-section {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .knd-btn .knd-button {
+        @include button();
+        margin-top: $base;
+    }
+}
+
 .homepage-intro .intro-head-content .ihc-content {
 	border-bottom: none;	
 }

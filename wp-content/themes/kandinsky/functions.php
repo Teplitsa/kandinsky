@@ -121,6 +121,7 @@ require get_template_directory().'/core/forms.php';
 //require get_template_directory().'/core/post-types.php';
 require get_template_directory().'/core/request.php';
 require get_template_directory().'/core/shortcodes.php';
+require get_template_directory().'/core/shortcodes-ui.php';
 require get_template_directory().'/core/template-tags.php';
 require get_template_directory().'/core/widgets.php';
 require get_template_directory().'/core/settings.php';

@@ -1,4 +1,4 @@
-<?php
+<?php if( !defined('WPINC') ) die;
 /**
  * Custom functions that act independently of the theme templates
  *
@@ -312,10 +312,4 @@ function knd_get_social_media_supported() {
             'description' => __('E.g., https://youtube.com/channel/your-organization-channel', 'knd'),
         ),
     );
-}
-
-if(defined('SHORTCODE_UI_VERSION')) {
-    add_action('init', function() {
-        load_textdomain('shortcode-ui', get_template_directory()."/vendor/shortcode-ui-ru_RU.mo");
-    }, 100);
 }
