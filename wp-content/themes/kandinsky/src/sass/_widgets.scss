@@ -213,7 +213,7 @@
 		text-align: center;
 	}
 	
-	h3 {
+	h2, h3 {
 		@include header-title(head_title);
 		margin: 0 0 $base 0;
 	}
@@ -222,7 +222,7 @@
 		@include post-title();
 		margin: 0;
 	}
-	
+
 	h3 + h4 { margin-top: 1em; }
 	
 	&.page-header {
@@ -237,6 +237,17 @@
 
 .page-section {
     margin-bottom: 2*$base;
+}
+
+.knd-columns .markup-columns {
+    display: flex;
+    flex: 0 1 auto;
+    justify-content: space-between;
+    //flex-wrap: wrap;
+
+    .markup-column:not(:last-of-type) {
+        margin-right: $base;
+    }
 }
 
 

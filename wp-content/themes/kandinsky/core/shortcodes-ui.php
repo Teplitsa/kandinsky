@@ -124,7 +124,7 @@ function knd_add_shortcodes_ui() {
 
     shortcode_ui_register_for_shortcode('knd_quote', array(
         'label' => __('A quote', 'knd'), // Shortcode label in the UI. Required
-        'listItemImage' => 'dashicons-editor-quote', // Dashicon class or full HTML (e.g. <img src="/path/to/your/icon">)
+        'listItemImage' => 'dashicons-editor-quote', // Dashicon class or full <img> HTML
 //        'post_type' => array('post'), // Limit this shortcode UI to specific posts. Optional
 
         'inner_content' => array( // A UI for the "inner content" of the shortcode. Optional
@@ -145,7 +145,7 @@ function knd_add_shortcodes_ui() {
 
     shortcode_ui_register_for_shortcode('knd_button', array(
         'label' => __('A "call to action" button', 'knd'), // Shortcode label in the UI. Required
-        'listItemImage' => 'dashicons-external', // Dashicon class or full HTML (e.g. <img src="/path/to/your/icon">)
+        'listItemImage' => 'dashicons-external', // Dashicon class or full <img> HTML
 
 //        'inner_content' => array( // A UI for the "inner content" of the shortcode. Optional
 //            'label'        => __('A quote text', 'knd'),
@@ -179,7 +179,7 @@ function knd_add_shortcodes_ui() {
 
     shortcode_ui_register_for_shortcode('knd_background_text', array(
         'label' => __('A text with image or colored background', 'knd'), // Shortcode label in the UI. Required
-        'listItemImage' => 'dashicons-format-image', // Dashicon class or full HTML (e.g. <img src="/path/to/your/icon">)
+        'listItemImage' => 'dashicons-format-image', // Dashicon class or full <img> HTML
 //        'post_type' => array('post'), // Limit this shortcode UI to specific posts. Optional
 
 //        'inner_content' => array( // A UI for the "inner content" of the shortcode. Optional
@@ -192,7 +192,9 @@ function knd_add_shortcodes_ui() {
                 'label'  => __('Background image', 'knd'),
                 'attr'   => 'bg-image',
                 'type'   => 'attachment',
-                'encode' => false,
+                'libraryType' => array('image'),
+                'addButton'   => __('Select image', 'knd'),
+                'frameTitle'  => __('Select section background image', 'knd'),
             ),
             array(
                 'label'  => __('Title', 'knd'),
@@ -234,7 +236,7 @@ function knd_add_shortcodes_ui() {
 
     shortcode_ui_register_for_shortcode('knd_persons_list', array(
         'label' => __('A list of persons', 'knd'), // Shortcode label in the UI. Required
-        'listItemImage' => 'dashicons-groups', // Dashicon class or full HTML (e.g. <img src="/path/to/your/icon">)
+        'listItemImage' => 'dashicons-groups', // Dashicon class or full <img> HTML
 
 //        'inner_content' => array( // A UI for the "inner content" of the shortcode. Optional
 //            'label'        => __('A quote text', 'knd'),
@@ -275,7 +277,7 @@ function knd_add_shortcodes_ui() {
 
     shortcode_ui_register_for_shortcode('knd_orgs_list', array(
         'label' => __('A list of organizations', 'knd'), // Shortcode label in the UI. Required
-        'listItemImage' => 'dashicons-networking', // Dashicon class or full HTML (e.g. <img src="/path/to/your/icon">)
+        'listItemImage' => 'dashicons-networking', // Dashicon class or full <img> HTML
 
 //        'inner_content' => array( // A UI for the "inner content" of the shortcode. Optional
 //            'label'        => __('A quote text', 'knd'),
@@ -303,6 +305,56 @@ function knd_add_shortcodes_ui() {
                 'type'     => 'post_select',
                 'query'    => array('post_type' => 'person'),
                 'multiple' => true,
+            ),
+            array(
+                'label'  => __('Section CSS class', 'knd'),
+                'attr'   => 'class',
+                'type'   => 'text',
+                'encode' => false,
+                'meta'   => array('placeholder' => __('An additional CSS class (or several) for the section', 'knd'),),
+            ),
+        ),
+    ));
+
+    shortcode_ui_register_for_shortcode('knd_columns', array(
+        'label' => __('A columns text markup', 'knd'), // Shortcode label in the UI. Required
+        'listItemImage' => 'dashicons-welcome-widgets-menus', // Dashicon class or full <img> HTML
+
+//        'inner_content' => array( // A UI for the "inner content" of the shortcode. Optional
+//            'label'        => __('A quote text', 'knd'),
+//            'description'  => __('A text of the quote.', 'knd'),
+//        ),
+
+        'attrs' => array( // Define & bind the UI for shortcode attributes. Optional
+            array(
+                'label'  => __('Section title', 'knd'),
+                'attr'   => 'title',
+                'type'   => 'text',
+                'encode' => false,
+            ),
+            array(
+                'label'  => __('First column title', 'knd'),
+                'attr'   => '1-title',
+                'type'   => 'text',
+                'encode' => false,
+            ),
+            array(
+                'label'  => __('First column content', 'knd'),
+                'attr'   => '1-text',
+                'type'   => 'textarea',
+                'encode' => false,
+            ),
+            array(
+                'label'  => __('Second column title', 'knd'),
+                'attr'   => '2-title',
+                'type'   => 'text',
+                'encode' => false,
+            ),
+            array(
+                'label'  => __('Second column content', 'knd'),
+                'attr'   => '2-text',
+                'type'   => 'textarea',
+                'encode' => false,
             ),
             array(
                 'label'  => __('Section CSS class', 'knd'),

@@ -5,28 +5,23 @@
 
 add_filter('widget_text', 'do_shortcode');
 
-/** sitemap **/
-add_shortcode('rdc_sitemap', 'rdc_sitemap_screen');
-function rdc_sitemap_screen($atts){
-	
-	$out =  wp_nav_menu(array('theme_location' => 'sitemap', 'container' => false, 'menu_class' => 'sitemap', 'echo'=> false));
-	
-	return $out;
+/** Sitemap (UI-) **/
+add_shortcode('knd_sitemap', 'knd_sitemap_shortcode');
+function knd_sitemap_shortcode($atts) {
+	return wp_nav_menu(array('theme_location' => 'sitemap', 'container' => false, 'menu_class' => 'sitemap', 'echo'=> false));
 }
 
-
-/** Youtube video caption **/
-add_shortcode('yt_caption', 'rdc_yt_caption_screen');
-function rdc_yt_caption_screen($atts, $content = null){
-	return '<div class="yt-caption">'.apply_filters('rdc_the_content', $content).'</div>';
+/** Youtube video caption (UI-) **/
+add_shortcode('knd_youtube_caption', 'knd_youtube_caption_shortcode');
+function knd_youtube_caption_shortcode($atts, $content = null){
+	return '<div class="yt-caption">'.apply_filters('knd_the_content', $content).'</div>';
 }
-
 
 /** A button (UI+) **/
 add_shortcode('knd_button', 'knd_button_shortcode');
 function knd_button_shortcode($atts){
 
-	$atts = shortcode_atts(array('url'  => '', 'txt'  => '', 'in_new_window' => false,), $atts);
+	$atts = shortcode_atts(array('url'  => '', 'label'  => '', 'in_new_window' => false,), $atts);
 
 	if(empty($atts['url'])) {
 		return '';
@@ -37,7 +32,7 @@ function knd_button_shortcode($atts){
 <section class="knd-button-section page-section">
     <span class="knd-btn">
         <a href="<?php echo esc_url($atts['url']);?>" class="knd-button" <?php echo !!$atts['in_new_window'] ? 'target="_blank"' : '';?>>
-            <?php echo apply_filters('knd_the_title', $atts['txt']);?>
+            <?php echo apply_filters('knd_the_title', $atts['label']);?>
         </a>
     </span>
 </section>
@@ -76,7 +71,7 @@ function knd_quote_screen($atts, $content = null) {
 	return $out;
 }
 
-/** Social links **/
+/** Social links (UI-) **/
 add_shortcode('knd_social_links', 'knd_social_links');
 function knd_social_links($atts = array(), $echo = true) {
 
@@ -122,7 +117,7 @@ function knd_social_links($atts = array(), $echo = true) {
 
 }
 
-/** A text with background (image or color) (UI+). */
+/** A text with background (image or color) (UI+) */
 add_shortcode('knd_background_text', 'knd_background_text_shortcode');
 function knd_background_text_shortcode($atts = array(), $echo = true) {
 
@@ -184,6 +179,7 @@ function knd_background_text_shortcode($atts = array(), $echo = true) {
 
 }
 
+/** A list of persons (UI+) */
 add_shortcode('knd_persons_list', 'knd_persons_list_shortcode');
 function knd_persons_list_shortcode($atts = array(), $echo = true) {
 
@@ -194,14 +190,12 @@ function knd_persons_list_shortcode($atts = array(), $echo = true) {
         'class' => '',
     ), $atts);
 
-//    array_map(function($value){ return esc_attr($value); }, $atts);
-
     ob_start();?>
 
     <section class="knd-persons-list page-section <?php echo $atts['class'] ? esc_attr($atts['class']) : '';?>">
 
         <?php if($atts['title']) {?>
-        <div class="pb-section-title align-center"><h3><?php echo esc_attr($atts['title']);?></h3></div>
+        <div class="pb-section-title align-center"><h2><?php echo esc_attr($atts['title']);?></h2></div>
         <?php }
 
         knd_people_gallery($atts['person-categories'], $atts['persons']);?>
@@ -219,6 +213,7 @@ function knd_persons_list_shortcode($atts = array(), $echo = true) {
 
 }
 
+/** A list of organizations (UI+) */
 add_shortcode('knd_orgs_list', 'knd_orgs_list_shortcode');
 function knd_orgs_list_shortcode($atts = array(), $echo = true) {
 
@@ -229,14 +224,12 @@ function knd_orgs_list_shortcode($atts = array(), $echo = true) {
         'class' => '',
     ), $atts);
 
-//    array_map(function($value){ return esc_attr($value); }, $atts);
-
     ob_start();?>
 
     <section class="knd-orgs-list page-section <?php echo $atts['class'] ? esc_attr($atts['class']) : '';?>">
 
     <?php if($atts['title']) {?>
-        <div class="pb-section-title align-center"><h3><?php echo esc_attr($atts['title']);?></h3></div>
+        <div class="pb-section-title align-center"><h2><?php echo esc_attr($atts['title']);?></h2></div>
     <?php }
 
     knd_orgs_gallery($atts['org-categories'], $atts['orgs']);?>
@@ -251,5 +244,59 @@ function knd_orgs_list_shortcode($atts = array(), $echo = true) {
     } else {
         return $out;
     }
+
+}
+
+/** A 3-column markup (UI+) **/
+add_shortcode('knd_columns', 'knd_columns_shortcode');
+function knd_columns_shortcode($atts){
+
+    $atts = shortcode_atts(array(
+        'title' => '',
+        '1-title' => '', '1-text' => '',
+        '2-title' => '', '2-text' => '',
+        '3-title' => '', '3-text' => '',
+    ), $atts);
+
+    if(empty($atts)) {
+        return '';
+    }
+
+    ob_start();?>
+
+    <section class="knd-columns page-section">
+
+        <?php if($atts['title']) {?>
+        <div class="pb-section-title align-center"><h2><?php echo esc_attr($atts['title']);?></h2></div>
+        <?php }?>
+
+        <div class="markup-columns">
+        <?php for($i=1; $i<=3; $i++) {
+
+        if($atts["$i-title"] || $atts["$i-text"]) { ?>
+
+            <div class="markup-column">
+
+            <?php if($atts["$i-title"]) {?>
+                <h3><?php echo esc_attr($atts["$i-title"]); ?></h3>
+            <?php }
+
+            if($atts["$i-text"]) {?>
+                <div class="markup-column text"><?php echo esc_attr($atts["$i-text"]);?></div>
+            <?php }?>
+
+            </div>
+
+        <?php }
+
+        }?>
+        </div>
+
+    </section>
+
+    <?php $out = ob_get_contents();
+    ob_end_clean();
+
+    return $out;
 
 }
