@@ -461,7 +461,7 @@ function rdc_more_section($posts, $title = '', $type = 'news', $css= ''){
 <div class="cards-loop sm-cols-2 md-cols-2 lg-cols-4 related-people-loop">
 	<?php
 		foreach($posts as $p){
-			rdc_person_card($p, true);
+			knd_person_card($p, true);
 		}
 	?>
 </div>
@@ -538,67 +538,71 @@ function rdc_get_help_now_cta($cpost = null, $label = ''){
 
 
 /** == People fuctions == **/
-function rdc_people_gallery($type = 'all'){
+function knd_people_gallery($category_ids = '', $person_ids = ''){
 	
 	$args = array(
 		'post_type'=> 'person',
 		'posts_per_page' => -1
 	);
 	
-	if($type != 'all'){
+	if($category_ids) {
 		$args['tax_query'] = array(
 			array(
 				'taxonomy'=> 'person_cat',
-				'field'   => 'slug',
-				'terms'   => $type  
+				'field'   => 'id',
+				'terms'   => $category_ids
 			)
 		);
 	}
-	
+    if($person_ids) {
+        $args['post__in'] = explode(',', $person_ids);
+    }
+
 	$query = new WP_Query($args);
-	if(!$query->have_posts())
+	if( !$query->have_posts() ) {
 		return '';
-	
-?>
+    }?>
+
 	<div class="people-gallery eqh-container frame">
-	<?php foreach($query->posts as $p){ ?>
-		<div class="bit md-6 eqh-el"><?php rdc_person_card($p);?></div>
-	<?php }	?>
+	<?php foreach($query->posts as $person) {?>
+		<div class="bit md-6 eqh-el"><?php knd_person_card($person);?></div>
+	<?php }?>
 	</div>
 <?php
 }
 
-
-
 /** == Orgs functions == **/
-function rdc_orgs_gallery($type = 'all') {
+function knd_orgs_gallery($category_ids = '', $org_ids = '') {
 	
 $args = array(
 		'post_type'=> 'org',
 		'posts_per_page' => -1
 	);
-	
-	if($type != 'all'){
-		$args['tax_query'] = array(
-			array(
-				'taxonomy'=> 'org_cat',
-				'field'   => 'slug',
-				'terms'   => $type  
-			)
-		);
-	}
-	
+
+    if($category_ids) {
+        $args['tax_query'] = array(
+            array(
+                'taxonomy'=> 'org_cat',
+                'field'   => 'id',
+                'terms'   => $category_ids
+            )
+        );
+    }
+    if($org_ids) {
+        $args['post__in'] = explode(',', $org_ids);
+    }
+
 	$query = new WP_Query($args);
-	if(!$query->have_posts())
+	if( !$query->have_posts() ) {
 		return '';
-	
-?>
+    }?>
+
 	<div class="orgs-gallery  frame">
-	<?php foreach($query->posts as $p){ ?>
-		<div class="bit mf-6 sm-4 md-3 "><?php rdc_org_card($p);?></div>
-	<?php }	?>
+	<?php foreach($query->posts as $org) {?>
+		<div class="bit mf-6 sm-4 md-3 "><?php knd_org_card($org);?></div>
+	<?php }?>
 	</div>
-<?php	
+<?php
 }
 
 

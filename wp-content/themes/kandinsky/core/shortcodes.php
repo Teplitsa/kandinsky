@@ -34,7 +34,7 @@ function knd_button_shortcode($atts){
 
 	ob_start();?>
 
-<section class="knd-button-section">
+<section class="knd-button-section page-section">
     <span class="knd-btn">
         <a href="<?php echo esc_url($atts['url']);?>" class="knd-button" <?php echo !!$atts['in_new_window'] ? 'target="_blank"' : '';?>>
             <?php echo apply_filters('knd_the_title', $atts['txt']);?>
@@ -64,7 +64,7 @@ function knd_quote_screen($atts, $content = null) {
 
 	ob_start();?>
 
-<div class="knd-quote <?php echo empty($class) ? '' : esc_attr($class);?>">
+<div class="knd-quote page-section <?php echo empty($class) ? '' : esc_attr($class);?>">
 	<div class="knd-quote-content"><?php echo apply_filters('knd_the_content', $content);?></div>
 	<?php if($name) {?>
 		<div class="knd-quote-cite"><?php echo $name;?></div>
@@ -122,20 +122,18 @@ function knd_social_links($atts = array(), $echo = true) {
 
 }
 
-/** A text with dackground (image or color).
- * @todo Make it UI+
- */
+/** A text with background (image or color) (UI+). */
 add_shortcode('knd_background_text', 'knd_background_text_shortcode');
 function knd_background_text_shortcode($atts = array(), $echo = true) {
 
     $atts = shortcode_atts(array(
         'bg-image' => '',
-        'bg-color' => '',
+//        'bg-color' => '',
         'title' => '',
         'subtitle' => '',
         'cta-label' => '',
-        'cta-color' => '',
-        'cta-link' => '',
+//        'cta-color' => '',
+        'cta-url' => '',
         'class' => '',
     ), $atts);
 
@@ -143,15 +141,15 @@ function knd_background_text_shortcode($atts = array(), $echo = true) {
 
     ob_start();?>
 
-    <section class="knd-background-text background text-over-image">
+    <section class="knd-background-text background text-over-image <?php echo $atts['class'] ? $atts['class'] : '';?>">
         <?php if($atts['bg-image'] && (int)$atts['bg-image'] > 0) {?>
         <div class="tpl-pictured-bg" style="background-image: url(<?php echo wp_get_attachment_url((int)$atts['bg-image']);?>)"></div>
         <?php }?>
     </section>
-    <section class="knd-background-text text text-over-image <?php echo $atts['cta-link'] && $atts['cta-label'] ? 'has-button' : '';?>">
+    <section class="knd-background-text page-section text text-over-image <?php echo $atts['cta-url'] && $atts['cta-label'] ? 'has-button' : '';?> <?php echo $atts['class'] ? $atts['class'] : '';?>">
         <div class="ihc-content">
-            <?php if($atts['cta-link']) {?>
-            <a href="<?php echo $atts['cta-link'];?>">
+            <?php if($atts['cta-url']) {?>
+            <a href="<?php echo $atts['cta-url'];?>">
             <?php }?>
 
             <?php if($atts['title']) {?>
@@ -164,15 +162,85 @@ function knd_background_text_shortcode($atts = array(), $echo = true) {
             </div>
             <?php }
 
-            if($atts['cta-link'] && $atts['cta-label']) {?>
+            if($atts['cta-url'] && $atts['cta-label']) {?>
             <div class="cta"><?php echo $atts['cta-label'];?></div>
             <?php }?>
 
-            <?php if($atts['cta-link']) {?>
+            <?php if($atts['cta-url']) {?>
             </a>
             <?php }?>
 
         </div>
+    </section>
+
+    <?php $out = ob_get_contents();
+    ob_end_clean();
+
+    if( !!$echo ) {
+        echo $out;
+    } else {
+        return $out;
+    }
+
+}
+
+add_shortcode('knd_persons_list', 'knd_persons_list_shortcode');
+function knd_persons_list_shortcode($atts = array(), $echo = true) {
+
+    $atts = shortcode_atts(array(
+        'title' => '',
+        'person-categories' => '',
+        'persons' => '',
+        'class' => '',
+    ), $atts);
+
+//    array_map(function($value){ return esc_attr($value); }, $atts);
+
+    ob_start();?>
+
+    <section class="knd-persons-list page-section <?php echo $atts['class'] ? esc_attr($atts['class']) : '';?>">
+
+        <?php if($atts['title']) {?>
+        <div class="pb-section-title align-center"><h3><?php echo esc_attr($atts['title']);?></h3></div>
+        <?php }
+
+        knd_people_gallery($atts['person-categories'], $atts['persons']);?>
+
+    </section>
+
+    <?php $out = ob_get_contents();
+    ob_end_clean();
+
+    if( !!$echo ) {
+        echo $out;
+    } else {
+        return $out;
+    }
+
+}
+
+add_shortcode('knd_orgs_list', 'knd_orgs_list_shortcode');
+function knd_orgs_list_shortcode($atts = array(), $echo = true) {
+
+    $atts = shortcode_atts(array(
+        'title' => '',
+        'org-categories' => '',
+        'orgs' => '',
+        'class' => '',
+    ), $atts);
+
+//    array_map(function($value){ return esc_attr($value); }, $atts);
+
+    ob_start();?>
+
+    <section class="knd-orgs-list page-section <?php echo $atts['class'] ? esc_attr($atts['class']) : '';?>">
+
+    <?php if($atts['title']) {?>
+        <div class="pb-section-title align-center"><h3><?php echo esc_attr($atts['title']);?></h3></div>
+    <?php }
+
+    knd_orgs_gallery($atts['org-categories'], $atts['orgs']);?>
+
     </section>
 
     <?php $out = ob_get_contents();

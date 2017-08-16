@@ -98,7 +98,7 @@ class KND_Team_Widget extends WP_Widget {
 
 <?php
     foreach($persons as $person) {
-        rdc_person_card($person);
+        knd_person_card($person);
     }
 ?>
 

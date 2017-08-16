@@ -215,7 +215,7 @@
 	
 	h3 {
 		@include header-title(head_title);
-		margin: 0;		
+		margin: 0 0 $base 0;
 	}
 	
 	h4 {
@@ -233,6 +233,10 @@
 		}
 	}
 	
+}
+
+.page-section {
+    margin-bottom: 2*$base;
 }
 
 

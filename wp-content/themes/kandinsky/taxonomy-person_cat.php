@@ -34,7 +34,7 @@ if($paged == 1) { //featured post
 	<?php
 		if(have_posts()){
 			foreach($posts as $p){
-				rdc_person_card($p);
+				knd_person_card($p);
 			}
 		}
 		else {

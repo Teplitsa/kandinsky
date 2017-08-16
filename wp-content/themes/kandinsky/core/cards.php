@@ -141,7 +141,7 @@ function tst_project_card_single(WP_Post $cpost){
 
 
 /* People and orgs */
-function rdc_person_card(WP_Post $cpost, $linked = true){
+function knd_person_card(WP_Post $cpost, $linked = true){
 	$pl = get_permalink($cpost);	
 ?>
 <article class="tpl-person card <?php if($linked) { echo 'linked'; }?>">
@@ -162,11 +162,11 @@ function tst_person_card_group(WP_Post $cpost){
 	
 	$linked = ($cpost->widget_class == 'linked-card') ? true : false;
 	
-	rdc_person_card($cpost, $linked);	
+	knd_person_card($cpost, $linked);	
 }
 
 function tst_person_card_single(WP_Post $cpost){
-	rdc_person_card($cpost, $cpost->widget_class == 'linked-card');
+	knd_person_card($cpost, $cpost->widget_class == 'linked-card');
 }
 
 
