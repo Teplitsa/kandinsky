@@ -20,13 +20,13 @@ elseif($format == 'introimg') {
 
 get_header(); ?>
 <section class="main-content single-post-section container-wide format-<?php echo $format;?>">
-<div id="rdc_sharing" class="regular-sharing hide-upto-medium"><?php echo rdc_social_share_no_js();?></div>
+<div id="rdc_sharing" class="regular-sharing hide-upto-medium"><?php echo knd_social_share_no_js();?></div>
 
 <div class="container " <?php echo $event->get_event_schema_prop();?>>
 	<header class="entry-header-full">
 		<div class="entry-meta"><?php echo $event->posted_on_single(); //for event ?></div>
 		<h1 class="entry-title" <?php echo $event->get_event_name_prop();?>><?php echo get_the_title($event->post_object);?></h1>				
-		<div class="mobile-sharing hide-on-medium"><?php echo rdc_social_share_no_js();?></div>
+		<div class="mobile-sharing hide-on-medium"><?php echo knd_social_share_no_js();?></div>
 		
 		<div class="full-event-metas">
 		<?php

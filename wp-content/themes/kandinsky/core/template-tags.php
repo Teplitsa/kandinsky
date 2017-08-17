@@ -563,9 +563,9 @@ function knd_people_gallery($category_ids = '', $person_ids = ''){
 		return '';
     }?>
 
-	<div class="people-gallery eqh-container frame">
+	<div class="people-gallery eqh-container frame cards-loop">
 	<?php foreach($query->posts as $person) {?>
-		<div class="bit md-6 eqh-el"><?php knd_person_card($person);?></div>
+		<div class="bit md-3 eqh-el"><?php knd_person_card($person);?></div>
 	<?php }?>
 	</div>
 <?php

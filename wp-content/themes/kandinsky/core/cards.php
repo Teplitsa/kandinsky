@@ -42,7 +42,7 @@ function rdc_intro_card_markup_below($title, $subtitle, $img_id, $link = '', $bu
 		<?php } ?>	
 	</div></section>
 	<?php if($has_sharing) { ?>	
-		<div class="mobile-sharing hide-on-medium"><?php echo rdc_social_share_no_js();?></div>
+		<div class="mobile-sharing hide-on-medium"><?php echo knd_social_share_no_js();?></div>
 	<?php }?>
 <?php
 }
@@ -70,7 +70,7 @@ function rdc_intro_card_markup_over($title, $subtitle, $img_id, $link = '', $but
 	<?php if(!empty($link)) { ?></a><?php } ?>
 	</div></section>
 	<?php if($has_sharing) { ?>	
-		<div class="mobile-sharing hide-on-medium"><?php echo rdc_social_share_no_js();?></div>
+		<div class="mobile-sharing hide-on-medium"><?php echo knd_social_share_no_js();?></div>
 	<?php }
 
 }
