@@ -312,7 +312,7 @@
 	.ihc-content:not(.text-over-color) {
 		position: relative;
 		margin-top: -40px;
-		border-bottom: 1px solid $color-border-normal;
+		//border-bottom: 1px solid $color-border-normal;
 		padding-bottom: $base;
 	}
 		
@@ -346,7 +346,7 @@
 		height: 1px;
 		.ihc-content {
             position: relative;
-			padding-bottom: $gut*1.5;
+			padding-bottom: $gut*2;
 			max-width: 800px;
 			margin: 0;
 			top: 0;
