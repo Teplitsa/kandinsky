@@ -318,15 +318,3 @@ add_action('after_switch_theme', 'knd_flush_permalinks');
 function knd_flush_permalinks() {
     flush_rewrite_rules(false);
 }
-
-//if( !get_option('knd_permalinks_flushed') ) {
-//
-//    function knd_rewrite_rules() {
-//
-//        flush_rewrite_rules(false);
-//        update_option('knd_permalinks_flushed', 1);
-//
-//    }
-//    add_action('init', 'knd_rewrite_rules');
-//
-//}
