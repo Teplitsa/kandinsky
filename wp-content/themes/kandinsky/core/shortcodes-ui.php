@@ -342,7 +342,8 @@ function knd_add_shortcodes_ui() {
                 'label'  => __('First column content', 'knd'),
                 'attr'   => '1-text',
                 'type'   => 'textarea',
-                'encode' => false,
+                'encode' => true,
+                'meta' => array('class' => 'shortcake-richtext',),
             ),
             array(
                 'label'  => __('Second column title', 'knd'),
@@ -354,7 +355,21 @@ function knd_add_shortcodes_ui() {
                 'label'  => __('Second column content', 'knd'),
                 'attr'   => '2-text',
                 'type'   => 'textarea',
+                'encode' => true,
+                'meta' => array('class' => 'shortcake-richtext',),
+            ),
+            array(
+                'label'  => __('Third column title', 'knd'),
+                'attr'   => '3-title',
+                'type'   => 'text',
                 'encode' => false,
+            ),
+            array(
+                'label'  => __('Third column content', 'knd'),
+                'attr'   => '3-text',
+                'type'   => 'textarea',
+                'encode' => true,
+                'meta' => array('class' => 'shortcake-richtext',),
             ),
             array(
                 'label'  => __('Section CSS class', 'knd'),

@@ -282,7 +282,7 @@ function knd_columns_shortcode($atts){
             <?php }
 
             if($atts["$i-text"]) {?>
-                <div class="markup-column text"><?php echo esc_attr($atts["$i-text"]);?></div>
+                <div class="markup-column text"><?php echo do_shortcode(urldecode($atts["$i-text"]));?></div>
             <?php }?>
 
             </div>

@@ -175,4 +175,14 @@ div [id *="ninja_forms_metabox"] .item-edit.metabox-item-edit {
         padding: 1px 7px 1px 6px !important;
     }
     
-} 
+}
+
+.wplink-autocomplete {
+    z-index: 500510 !important; /* originally 100110, but z-index of .wp-full-overlay is 500000 */
+}
+#wp-link-backdrop {
+    z-index: 500550 !important; /* originally 100100, but z-index of .wp-full-overlay is 500000 */
+}
+#wp-link-wrap {
+    z-index: 500555 !important; /* originally 100105, but z-index of .wp-full-overlay is 500000 */
+}
