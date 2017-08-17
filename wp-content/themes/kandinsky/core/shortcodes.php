@@ -125,7 +125,7 @@ function knd_background_text_shortcode($atts = array(), $echo = true) {
 
     $atts = shortcode_atts(array(
         'bg-image' => '',
-//        'bg-color' => '',
+        'bg-color' => '',
         'title' => '',
         'subtitle' => '',
         'cta-label' => '',
@@ -138,13 +138,13 @@ function knd_background_text_shortcode($atts = array(), $echo = true) {
 
     ob_start();?>
 
+    <?php if($atts['bg-image'] && (int)$atts['bg-image'] > 0) {?>
     <section class="knd-background-text background text-over-image <?php echo $atts['class'] ? $atts['class'] : '';?>">
-        <?php if($atts['bg-image'] && (int)$atts['bg-image'] > 0) {?>
         <div class="tpl-pictured-bg" style="background-image: url(<?php echo wp_get_attachment_url((int)$atts['bg-image']);?>)"></div>
-        <?php }?>
     </section>
-    <section class="knd-background-text page-section text text-over-image <?php echo $atts['cta-url'] && $atts['cta-label'] ? 'has-button' : '';?> <?php echo $atts['class'] ? $atts['class'] : '';?>">
-        <div class="ihc-content">
+    <?php }?>
+    <section class="knd-background-text page-section text <?php echo $atts['bg-image'] && (int)$atts['bg-image'] > 0 ? 'text-over-image' : 'text-over-color';?> <?php echo $atts['cta-url'] && $atts['cta-label'] ? 'has-button' : '';?> <?php echo $atts['class'] ? $atts['class'] : '';?>">
+        <div class="ihc-content" <?php echo $atts['bg-color'] ? 'style="background-color: '.$atts['bg-color'].';"' : '';?>>
             <?php if($atts['cta-url']) {?>
             <a href="<?php echo $atts['cta-url'];?>">
             <?php }?>
@@ -155,7 +155,7 @@ function knd_background_text_shortcode($atts = array(), $echo = true) {
 
             if($atts['subtitle']) {?>
             <div class="ihc-desc">
-                <p><?php echo $atts['subtitle'];?></p>
+                <p><?php echo urldecode($atts['subtitle']);?></p>
             </div>
             <?php }
 

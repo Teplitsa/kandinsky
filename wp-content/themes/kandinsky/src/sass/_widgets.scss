@@ -312,7 +312,7 @@
 		margin-bottom: $base;		
 	}
 	
-	.ihc-content {
+	.ihc-content:not(.text-over-color) {
 		position: relative;
 		margin-top: -40px;
 		border-bottom: 1px solid $color-border-normal;
@@ -340,7 +340,7 @@
 		}
 		.ihc-desc {
 			color: $color-text-black;
-			font-size: 1.12em; 
+			font-size: 1.12em;
 			font-weight: 300;			
 		}
 	}
@@ -348,11 +348,10 @@
 	&.text-over-image {
 		height: 1px;
 		.ihc-content {
+            position: relative;
 			padding-bottom: $gut*1.5;
 			max-width: 800px;
-			margin: 0;			
-			z-undex: 500;
-			positon: absolute;
+			margin: 0;
 			top: 0;
 			transform: translateY(-100%);
 			& > a { display: block; }
@@ -384,6 +383,40 @@
 			margin-top: $base;
 		}
 	}
+
+    &.text-over-color {
+
+        .ihc-content {
+            padding: $base;
+            margin: 0;
+
+            & > a {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        .ihc-title {
+            background: transparent;
+            padding: 0;
+
+            span {
+                color: $color-text;
+                background: $color-white;
+                display: inline-block;
+                padding: 8px 0;
+                box-shadow: 8px 0 0 $color-white, -8px 0 0 $color-white;
+                margin-left: 8px;
+            }
+        }
+
+        .cta {
+            @include button();
+            margin: $base 0;
+        }
+
+    }
 }
 
 // Button shortcode

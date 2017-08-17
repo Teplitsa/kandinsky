@@ -90,6 +90,12 @@ function knd_add_shortcodes_ui() {
                 'frameTitle'  => __('Select section background image', 'knd'),
             ),
             array(
+                'label'  => __('Background color', 'knd'),
+                'attr'   => 'bg-color',
+                'type'   => 'color',
+                'meta'   => array('placeholder' => __('E.g., #123abc', 'knd'),),
+            ),
+            array(
                 'label'  => __('Title', 'knd'),
                 'attr'   => 'title',
                 'type'   => 'text',
@@ -99,9 +105,9 @@ function knd_add_shortcodes_ui() {
             array(
                 'label'  => __('Subtitle', 'knd'),
                 'attr'   => 'subtitle',
-                'type'   => 'text',
-                'encode' => false,
-                'meta'   => array('placeholder' => __('A subtitle text', 'knd'),),
+                'type'   => 'textarea',
+                'encode' => true,
+                'meta'   => array('class' => 'shortcake-richtext',),
             ),
             array(
                 'label'  => __('Button label', 'knd'),
