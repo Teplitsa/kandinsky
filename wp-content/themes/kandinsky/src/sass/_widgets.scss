@@ -236,11 +236,12 @@
 }
 
 .page-section {
-    margin: 2*$base 0;
-}
 
-.page-section.knd-background-text.text {
-    margin-bottom: $base/2;
+    margin: 2*$base 0;
+
+    &.knd-background-text.text {
+        margin-bottom: 2*$base/3;
+    }
 }
 
 .knd-quote {
