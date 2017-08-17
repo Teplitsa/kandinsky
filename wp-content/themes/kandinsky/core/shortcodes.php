@@ -47,7 +47,6 @@ function knd_button_shortcode($atts){
 /** A quote (UI+)
  * @todo Quote markup need CSS styles
  **/
-/*
 add_shortcode('knd_quote', 'knd_quote_screen');
 function knd_quote_screen($atts, $content = null) {
 
@@ -73,7 +72,6 @@ function knd_quote_screen($atts, $content = null) {
 	return $out;
 
 }
-*/
 
 /** Social links (UI-) **/
 add_shortcode('knd_social_links', 'knd_social_links');

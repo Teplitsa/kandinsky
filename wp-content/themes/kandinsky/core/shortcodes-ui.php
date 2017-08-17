@@ -15,26 +15,26 @@ add_action('register_shortcode_ui', 'knd_add_shortcodes_ui');
 function knd_add_shortcodes_ui() {
 
     /** @todo Quote markup need CSS styles */
-//    shortcode_ui_register_for_shortcode('knd_quote', array(
-//        'label' => __('A quote', 'knd'), // Shortcode label in the UI. Required
-//        'listItemImage' => 'dashicons-editor-quote', // Dashicon class or full <img> HTML
-////        'post_type' => array('post'), // Limit this shortcode UI to specific posts. Optional
-//
-//        'inner_content' => array( // A UI for the "inner content" of the shortcode. Optional
-//            'label'        => __('A quote text', 'knd'),
-////            'description'  => __('A text of the quote.', 'knd'),
-//        ),
-//
-//        'attrs' => array( // Define & bind the UI for shortcode attributes. Optional
-//            array(
-//                'label'  => __('Quote origin', 'knd'),
-//                'attr'   => 'name',
-//                'type'   => 'text',
-//                'encode' => false,
-//                'meta'   => array('placeholder' => __('A quote origin (or author)', 'knd'),),
-//            ),
-//        ),
-//    ));
+    shortcode_ui_register_for_shortcode('knd_quote', array(
+        'label' => __('A quote', 'knd'), // Shortcode label in the UI. Required
+        'listItemImage' => 'dashicons-editor-quote', // Dashicon class or full <img> HTML
+//        'post_type' => array('post'), // Limit this shortcode UI to specific posts. Optional
+
+        'inner_content' => array( // A UI for the "inner content" of the shortcode. Optional
+            'label'        => __('A quote text', 'knd'),
+//            'description'  => __('A text of the quote.', 'knd'),
+        ),
+
+        'attrs' => array( // Define & bind the UI for shortcode attributes. Optional
+            array(
+                'label'  => __('Quote origin', 'knd'),
+                'attr'   => 'name',
+                'type'   => 'text',
+                'encode' => false,
+                'meta'   => array('placeholder' => __('A quote origin (or author)', 'knd'),),
+            ),
+        ),
+    ));
 
     shortcode_ui_register_for_shortcode('knd_button', array(
         'label' => __('A "call to action" button', 'knd'), // Shortcode label in the UI. Required
