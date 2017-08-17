@@ -302,3 +302,10 @@ function knd_columns_shortcode($atts){
     return $out;
 
 }
+
+/** Content manager recommendation (UI-) **/
+add_shortcode('knd_r', 'knd_recommendation_shortcode');
+function knd_recommendation_shortcode($atts, $content = null){
+    return current_user_can('edit_posts') ?
+        '<div class="knd-recommend">'.apply_filters('knd_the_content', $content).'</div>' : '';
+}
