@@ -3,6 +3,8 @@
 require get_template_directory().'/modules/starter/class-demo.php';
 require get_template_directory().'/modules/starter/menus.php';
 require get_template_directory().'/modules/starter/sidebars.php';
+require get_template_directory().'/vendor/parsedown/Parsedown.php';
+require get_template_directory().'/modules/starter/import_remote_content.php';
 
 function knd_import_starter_data_from_csv($file, $post_type = 'post') {
 
@@ -72,7 +74,10 @@ function knd_setup_menus() {
 }
 
 function knd_setup_starter_data() {
-
+    
+    $content_importer = new KND_Import_Remote_Content();
+    $content = $content_importer->import_content('color-line');
+    
     knd_import_starter_data_from_csv('posts.csv', 'post');
 
     knd_update_posts();
