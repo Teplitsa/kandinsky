@@ -44,32 +44,34 @@ function knd_button_shortcode($atts){
 
 }
 
-/** A quote (UI+) **/
-add_shortcode('knd_quote', 'knd_quote_screen');
-function knd_quote_screen($atts, $content = null) {
-
-	extract(shortcode_atts(array('name' => '', 'class' => '',), $atts));
-
-	if(empty($content)) {
-		return '';
-    }
-
-    /** @var string $name */
-	$name = apply_filters('knd_the_title', $name);
-
-	ob_start();?>
-
-<div class="knd-quote page-section <?php echo empty($class) ? '' : esc_attr($class);?>">
-	<div class="knd-quote-content"><?php echo apply_filters('knd_the_content', $content);?></div>
-	<?php if($name) {?>
-		<div class="knd-quote-cite"><?php echo $name;?></div>
-	<?php }?>
-</div>
-<?php $out = ob_get_contents();
-	ob_end_clean();
-	
-	return $out;
-}
+/** A quote (UI+)
+ * @todo Quote markup need CSS styles
+ **/
+//add_shortcode('knd_quote', 'knd_quote_screen');
+//function knd_quote_screen($atts, $content = null) {
+//
+//	extract(shortcode_atts(array('name' => '', 'class' => '',), $atts));
+//
+//	if(empty($content)) {
+//		return '';
+//    }
+//
+//    /** @var string $name */
+//	$name = apply_filters('knd_the_title', $name);
+//
+//	ob_start();?>
+<!---->
+<!--<div class="knd-quote page-section --><?php //echo empty($class) ? '' : esc_attr($class);?><!--">-->
+<!--	<div class="knd-quote-content">--><?php //echo apply_filters('knd_the_content', $content);?><!--</div>-->
+<!--	--><?php //if($name) {?>
+<!--		<div class="knd-quote-cite">--><?php //echo $name;?><!--</div>-->
+<!--	--><?php //}?>
+<!--</div>-->
+<?php //$out = ob_get_contents();
+//	ob_end_clean();
+//
+//	return $out;
+//}
 
 /** Social links (UI-) **/
 add_shortcode('knd_social_links', 'knd_social_links');

@@ -895,7 +895,7 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 				<?php if($this->is_default_content_installed()) {?>
 					<p><?php esc_html_e('It looks like you already have content installed on this website. If you would like to install the default demo content as well you can select it below. Otherwise just choose the upgrade option to ensure everything is up to date.', 'knd');?></p>
 				<?php } else {?>
-					<p><?php esc_html_e("It's time to insert some default content for your new WordPress website. Choose what you would like inserted below and click Continue. It is recommended to leave everything selected. Once inserted, this content can be managed from the WordPress admin dashboard.", 'knd');?></p>
+					<p><?php esc_html_e("It's time to insert some default content for your new WordPress website. Choose what you would like inserted below and click Install. We recommend to select everything. Once inserted, this content can be managed from the WordPress admin dashboard.", 'knd');?></p>
 				<?php }?>
 				<table class="envato-setup-pages" cellspacing="0">
 					<thead>
@@ -928,7 +928,7 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 
 				<p class="envato-setup-actions step">
 					<a href="<?php echo esc_url($this->get_next_step_link());?>" class="button-primary button button-large button-next" data-callback="install_content">
-                        <?php esc_html_e('Continue', 'knd');?>
+                        <?php esc_html_e('Set up', 'knd');?>
                     </a>
 					<a href="<?php echo esc_url($this->get_next_step_link());?>" class="button button-large button-next">
                         <?php esc_html_e('Skip this step', 'knd');?>
