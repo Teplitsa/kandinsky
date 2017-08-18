@@ -90,3 +90,22 @@ function knd_import_posts_from_csv($input_file, $post_type, $taxonomy = '', $pos
     
     }
 }
+
+function knd_rmdir($dirPath) {
+    if (! is_dir($dirPath)) {
+        return;
+    }
+    
+    if (substr($dirPath, strlen($dirPath) - 1, 1) != '/') {
+        $dirPath .= '/';
+    }
+    $files = glob($dirPath . '*', GLOB_MARK);
+    foreach ($files as $file) {
+        if (is_dir($file)) {
+            knd_rmdir($file);
+        } else {
+            unlink($file);
+        }
+    }
+    rmdir($dirPath);
+}

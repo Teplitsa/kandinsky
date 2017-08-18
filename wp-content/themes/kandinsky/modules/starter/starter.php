@@ -4,6 +4,7 @@ require get_template_directory().'/modules/starter/class-demo.php';
 require get_template_directory().'/modules/starter/menus.php';
 require get_template_directory().'/modules/starter/sidebars.php';
 require get_template_directory().'/vendor/parsedown/Parsedown.php';
+require get_template_directory().'/modules/starter/plot_data_builder.php';
 require get_template_directory().'/modules/starter/import_remote_content.php';
 
 function knd_import_starter_data_from_csv($file, $post_type = 'post') {
@@ -73,13 +74,23 @@ function knd_setup_menus() {
 
 }
 
-function knd_setup_starter_data() {
+function knd_setup_starter_data($plot_name) {
     
-    $content_importer = new KND_Import_Remote_Content();
-    $content = $content_importer->import_content('color-line');
+    $imp = new KND_Import_Remote_Content($plot_name);
+    $data = $imp->import_content();
     
-    knd_import_starter_data_from_csv('posts.csv', 'post');
-
+//     print_r($data);
+//     exit();
+    
+//     $piece = $imp->get_piece('footer');
+//     var_dump($piece); echo "\n<br />\n";
+//     $title = $imp->get_val('article1', 'title', 'articles');
+//     var_dump($title); echo "\n<br />\n";
+//     exit();
+    
+    $pdb = KND_Plot_Data_Builder::produce_builder($imp);
+    $pdb->build_all();
+    
     knd_update_posts();
 
     knd_set_theme_options();
@@ -94,9 +105,11 @@ function knd_setup_starter_data() {
 function knd_ajax_setup_starter_data() {
 
     $res = array('status' => 'ok');
+    
+    $plot_name = 'color-line';
 
     try {
-        knd_setup_starter_data();
+        knd_setup_starter_data($plot_name);
     } catch(Exception $ex) {
         error_log($ex);
         $res = array('status' => 'error');
@@ -106,3 +119,14 @@ function knd_ajax_setup_starter_data() {
 
 }
 add_action('wp_ajax_setup_starter_data', 'knd_ajax_setup_starter_data');
+
+function svgs_upload_mimes( $mimes = array() ) {
+
+    // allow SVG file upload
+    $mimes['svg'] = 'image/svg+xml';
+    $mimes['svgz'] = 'image/svg+xml';
+
+    return $mimes;
+
+}
+add_filter( 'upload_mimes', 'svgs_upload_mimes' );

@@ -220,7 +220,7 @@
         
         public function import_local_file( $path ) {
             
-            $attachment_id = tst_upload_file_from_path( $path );
+            $attachment_id = knd_upload_file_from_path( $path );
             
             if( $attachment_id ) {
                 update_post_meta( $attachment_id, 'old_url', $path );

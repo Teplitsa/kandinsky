@@ -39,7 +39,7 @@ function knd_install_test_content() {
 //        }
 //
 //        try {
-//            knd_setup_starter_data();
+//            knd_setup_starter_data('color-line');
 //        } catch(Exception $ex) {
 //            error_log($ex);
 //        }
