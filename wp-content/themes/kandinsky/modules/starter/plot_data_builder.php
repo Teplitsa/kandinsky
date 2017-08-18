@@ -24,31 +24,68 @@ class KND_Plot_Data_Builder {
     }
     
     public function build_all() {
-        $this->build_all_posts();
+        
+        $this->build_posts();
+        $this->build_shortcodes();
         $this->build_logo();
-        $this->build_about();
+        
     }
     
-    public function build_posts($post_type, $section, $posts_name_mask) {
+    public function build_posts() {
         
-        $i = 1;
-        while(True) {
-            
-            $piece_name = $posts_name_mask . $i;
-            
-            if(!$this->imp->is_piece($piece_name, $section)) {
-                break;
-            }
-            
-            $piece = $this->imp->get_piece($piece_name, $section);
-            $this->save_post($piece, $post_type);
-            
-            $i += 1;
+        foreach(array_keys($this->data_routes['posts']) as $section) {
+            $this->build_section_posts($section);
         }
         
     }
     
-    public function build_about() {
+    public function build_shortcodes() {
+        
+        foreach(array_keys($this->data_routes['shortcodes']) as $section) {
+            $this->build_section_shortcodes($section);
+        }
+        
+    }
+    
+    public function build_section_posts($section) {
+        
+        $post_type = $this->data_routes['posts'][$section]['post_type'];
+        $pieces = $this->data_routes['posts'][$section]['pieces'];
+        
+        if(preg_match('/^root_.*/', $section)) {
+            $section = '';
+        }
+        
+        foreach($pieces as $piece_name) {
+            $piece = $this->imp->get_piece($piece_name, $section);
+            if($piece) {
+                $this->save_post($piece, $post_type);
+            }
+        }
+    }
+    
+    public function build_section_shortcodes($section) {
+    
+        $post_type = $this->data_routes['shortcodes'][$section]['post_type'];
+        $post_slug = $this->data_routes['shortcodes'][$section]['post_slug'];
+        $pieces = $this->data_routes['shortcodes'][$section]['pieces'];
+    
+        if(preg_match('/^root_.*/', $section)) {
+            $section = '';
+        }
+        
+        $post = knd_get_post( $post_slug, $post_type );
+    
+        foreach($pieces as $piece_name) {
+            $piece = $this->imp->get_piece($piece_name, $section);
+            if($piece) {
+                $this->save_shortcode($piece, $post); 
+            }
+        }
+    }
+    
+    public function save_shortcode($piece, $post) { // remove $post param, if useless
+        
     }
     
     public function save_post($piece, $post_type) {
@@ -78,7 +115,7 @@ class KND_Plot_Data_Builder {
 //         }
         
         //thumbnail
-        $thumb_id = $this->imp->get_thumb_att_id($piece);
+        $thumb_id = $this->imp->get_thumb_attachment_id($piece);
         
         if($thumb_id){
             $page_data['meta_input']['_thumbnail_id'] = (int)$thumb_id;
@@ -107,10 +144,26 @@ class KND_Plot_Data_Builder {
 
 class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
     
-    public function build_all_posts() {
-        $this->build_posts('post', 'articles', 'article');
-        $this->build_posts('project', 'projects', 'project');
-    }
+    protected $data_routes = array(
+        
+        'shortcodes' => array(
+            'about' => array(
+                'page' => 'about',
+                'pieces' => array('about', 'activity', 'history', 'introduction', 'legal', 'reports', 'staff', 'whoweare'),
+            ),
+        ),
+        
+        'posts' => array(
+            'articles' => array(
+                'post_type' => 'post',
+                'pieces' => array('article1', 'article2', 'article3', 'article4', 'article5', ),
+            ),
+            'projects' => array(
+                'post_type' => 'project',
+                'pieces' => array('project1', 'project2', 'project3', 'project4', 'project5', ),
+            ),
+        ),
+    );
     
 }
 
@@ -120,12 +173,18 @@ class KND_Right2city_Data_Builder extends KND_Plot_Data_Builder {
     
     }
     
+    public function build_about() {
+    }
+    
 }
 
 class KND_Withyou_Data_Builder extends KND_Plot_Data_Builder {
 
     public function build_all_posts() {
     
+    }
+    
+    public function build_about() {
     }
     
 }

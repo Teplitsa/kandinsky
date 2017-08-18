@@ -106,7 +106,7 @@ function knd_ajax_setup_starter_data() {
 
     $res = array('status' => 'ok');
     
-    $plot_name = 'color-line';
+    $plot_name = 'color-line'; // color-line, right2city, withyou 
 
     try {
         knd_setup_starter_data($plot_name);
@@ -119,14 +119,3 @@ function knd_ajax_setup_starter_data() {
 
 }
 add_action('wp_ajax_setup_starter_data', 'knd_ajax_setup_starter_data');
-
-function svgs_upload_mimes( $mimes = array() ) {
-
-    // allow SVG file upload
-    $mimes['svg'] = 'image/svg+xml';
-    $mimes['svgz'] = 'image/svg+xml';
-
-    return $mimes;
-
-}
-add_filter( 'upload_mimes', 'svgs_upload_mimes' );

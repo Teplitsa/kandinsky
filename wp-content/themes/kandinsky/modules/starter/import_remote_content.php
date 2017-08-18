@@ -99,7 +99,7 @@ class KND_Import_Remote_Content {
         return $val;
     }
     
-    function get_thumb_att_id($piece) {
+    function get_thumb_attachment_id($piece) {
         
         $file_data = NULL;
         
@@ -110,7 +110,7 @@ class KND_Import_Remote_Content {
             $file_data = $this->plot_data['img'][$piece->thumb];
         }
         
-        return isset($file_data['att_id']) ? $file_data['att_id'] : NULL;
+        return isset($file_data['attachment_id']) ? $file_data['attachment_id'] : NULL;
     }
     
 }
@@ -146,9 +146,9 @@ class KND_Import_Git_Content {
     
     private function download_git_zip() {
         
-//         $att_id = TST_Import::get_instance()->import_big_file( $this->content_archive_url );
-        $att_id = TST_Import::get_instance()->maybe_import( $this->content_archive_url );
-        $this->zip_fpath = get_attached_file( $att_id );
+//         $attachment_id = TST_Import::get_instance()->import_big_file( $this->content_archive_url );
+        $attachment_id = TST_Import::get_instance()->maybe_import( $this->content_archive_url );
+        $this->zip_fpath = get_attached_file( $attachment_id );
     }
     
     private function unzip_git_zip() {
@@ -233,8 +233,8 @@ class KND_Import_Git_Content {
                     }
                     elseif(preg_match("/.*\.(svg|jpg|jpeg|png)$/", $value)) {
                         
-                        $att_id = TST_Import::get_instance()->maybe_import_local_file( $fpath );
-                        $file_data['att_id'] = $att_id;
+                        $attachment_id = TST_Import::get_instance()->maybe_import_local_file( $fpath );
+                        $file_data['attachment_id'] = $attachment_id;
                         
                     }
                     

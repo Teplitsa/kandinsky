@@ -109,3 +109,14 @@ function knd_rmdir($dirPath) {
     }
     rmdir($dirPath);
 }
+
+function svgs_upload_mimes( $mimes = array() ) {
+
+    // allow SVG file upload
+    $mimes['svg'] = 'image/svg+xml';
+    $mimes['svgz'] = 'image/svg+xml';
+
+    return $mimes;
+
+}
+add_filter( 'upload_mimes', 'svgs_upload_mimes' );
