@@ -11,6 +11,7 @@ class KND_Import_Remote_Content {
     function __construct($plot_name) {
         $this->content_importer = new KND_Import_Git_Content();
         $this->plot_name = $plot_name;
+        $this->parsedown = new Parsedown();
     }
     
     public function __get($name) {
@@ -103,16 +104,26 @@ class KND_Import_Remote_Content {
         
         $file_data = NULL;
         
-        if(isset($this->plot_data[$piece->section_name][$piece->thumb])) {
-            $file_data = $this->plot_data[$piece->section_name][$piece->thumb];
+        if(isset($this->plot_data[$this->plot_name][$piece->section_name][$piece->thumb])) {
+            $file_data = $this->plot_data[$this->plot_name][$piece->section_name][$piece->thumb];
         }
-        elseif(isset($this->plot_data['img'][$piece->thumb])) {
-            $file_data = $this->plot_data['img'][$piece->thumb];
+        elseif(isset($this->plot_data[$this->plot_name]['img'][$piece->thumb])) {
+            $file_data = $this->plot_data[$this->plot_name]['img'][$piece->thumb];
         }
         
         return isset($file_data['attachment_id']) ? $file_data['attachment_id'] : NULL;
     }
     
+    function parse_text($text) {
+        
+        $new_text = $text;
+        
+        $new_text = preg_replace("/\/\/(.*?)(\n|$)/", '[knd_r]\1[/knd_r]', $new_text);
+        
+        $new_text = $this->parsedown->text($new_text);
+        
+        return $new_text;
+    }
 }
 
 
@@ -164,10 +175,10 @@ class KND_Import_Git_Content {
         WP_Filesystem();
         $destination = wp_upload_dir();
         $destination_path = $destination['path'];
-        $uzipped_dir = $destination_path . '/kandinsky-text-master';
+        $unzipped_dir = $destination_path . '/kandinsky-text-master';
         
-        if(is_dir($uzipped_dir)) {
-            system("rm -rf {$uzipped_dir}");
+        if(is_dir($unzipped_dir)) {
+            knd_rmdir($unzipped_dir);
         }
         
 //         echo $destination_path . "\n<br />\n";
@@ -266,15 +277,8 @@ class KND_Git_Piece_Parser {
             $parsed_data = $this->parse_post_header($header);
         }
         
-        $Parsedown = new Parsedown();
-        $html_text = $Parsedown->text($text);
-//         echo $html_text . "<br />================================================================<br />";
-        $parsed_data['content'] = $html_text;
+        $parsed_data['content'] = $text;
         
-//         if(count($parsed_data) > 1) {
-//             print_r($parsed_data);
-//         }
-
         return $parsed_data;
     }
     

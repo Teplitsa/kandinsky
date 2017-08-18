@@ -3,10 +3,13 @@
 class KND_Plot_Data_Builder {
     
     protected $imp = NULL;
+    protected $parsedown = NULL;
     protected $data_routes = array();
+    protected $cta_list = array();
     
     function __construct($imp) {
         $this->imp = $imp;
+        $this->shortcode_builder = new KND_Shortcode_Builder($this, $this->imp);
     }
     
     public static function produce_builder($imp) {
@@ -25,9 +28,9 @@ class KND_Plot_Data_Builder {
     
     public function build_all() {
         
-        $this->build_posts();
-        $this->build_shortcodes();
-        $this->build_logo();
+//         $this->build_posts();
+        $this->build_pages();
+//         $this->build_logo();
         
     }
     
@@ -39,10 +42,10 @@ class KND_Plot_Data_Builder {
         
     }
     
-    public function build_shortcodes() {
+    public function build_pages() {
         
-        foreach(array_keys($this->data_routes['shortcodes']) as $section) {
-            $this->build_section_shortcodes($section);
+        foreach(array_keys($this->data_routes['pages']) as $section) {
+            $this->build_section_page($section);
         }
         
     }
@@ -59,33 +62,137 @@ class KND_Plot_Data_Builder {
         foreach($pieces as $piece_name) {
             $piece = $this->imp->get_piece($piece_name, $section);
             if($piece) {
+                $piece->content = $this->imp->parse_text($piece->content);
                 $this->save_post($piece, $post_type);
             }
         }
     }
     
-    public function build_section_shortcodes($section) {
+    public function build_section_page($section) {
     
-        $post_type = $this->data_routes['shortcodes'][$section]['post_type'];
-        $post_slug = $this->data_routes['shortcodes'][$section]['post_slug'];
-        $pieces = $this->data_routes['shortcodes'][$section]['pieces'];
+        $post_type = isset($this->data_routes['pages'][$section]['post_type']) ? $this->data_routes['pages'][$section]['post_type'] : 'page';
+        $post_slug = isset($this->data_routes['pages'][$section]['post_slug']) ? $this->data_routes['pages'][$section]['post_slug'] : '';
+        $template = isset($this->data_routes['pages'][$section]['template']) ? $this->data_routes['pages'][$section]['template'] : '';;
     
+        if(!$template) {
+            return;
+        }
+        
         if(preg_match('/^root_.*/', $section)) {
             $section = '';
         }
         
-        $post = knd_get_post( $post_slug, $post_type );
-    
-        foreach($pieces as $piece_name) {
-            $piece = $this->imp->get_piece($piece_name, $section);
-            if($piece) {
-                $this->save_shortcode($piece, $post); 
-            }
-        }
+        $template_piece = $this->imp->get_piece($template, $section);
+        
+        $template_piece->content = $this->fill_template_with_pieces( $template_piece->content, $section );
+        // parsedown here escape quotes and breakes shorcodes, so disable it for now
+//         $template_piece->content = $this->imp->parse_text($template_piece->content);
+        $template_piece->slug = $post_slug;
+        
+        $this->save_post($template_piece, $post_type);
     }
     
-    public function save_shortcode($piece, $post) { // remove $post param, if useless
+    public function fill_template_with_pieces($template_content, $section) { // remove $post param, if useless
         
+        $template_content = $this->fill_content_tags($template_content, $section);
+        $template_content = $this->fill_shortcode_tags($template_content, $section);
+        
+        return $template_content;
+    }
+    
+    public function fill_content_tags($template_content, $section) {
+        
+        preg_match_all("/\[\s*?content\s*(.*?)\]/", $template_content, $matches);
+        
+        foreach($matches[0] as $i => $tag) {
+        
+            $attributes_str = $matches[1][$i];
+            $attributes = $this->parse_attributes($attributes_str);
+        
+            if(isset($attributes['name'])) {
+                $piece_name = $attributes['name'];
+                $piece = $this->imp->get_piece($piece_name, $section);
+        
+                if($piece) {
+                    $piece->content = $this->imp->parse_text($piece->content);
+                    $template_content = str_replace($tag, $piece->content, $template_content);
+                }
+            }
+        
+        }
+        
+        return $template_content;
+    }
+    
+    public function fill_shortcode_tags($template_content, $section) {
+        
+        preg_match_all("/\[\s*?shortcode\s*(.*?)\]/", $template_content, $matches);
+        
+        foreach($matches[0] as $i => $tag) {
+        
+            $attributes_str = $matches[1][$i];
+            $attributes = $this->parse_attributes($attributes_str);
+        
+            $shortcode_name = isset($attributes['name']) ? $attributes['name'] : '';
+            
+            if($shortcode_name) {
+             
+                if(isset($attributes['content'])) {
+                    
+                    if(is_array($attributes['content'])) {
+                        $pieces = array();
+                        foreach($attributes['content'] as $piece_name) {
+                            $pieces[] = $this->imp->get_piece($piece_name, $section);
+                        }
+                    }
+                    else {
+                        $piece_name = $attributes['content'];
+                        $pieces = array($this->imp->get_piece($piece_name, $section));
+                    }
+                    
+                    unset($attributes['content']);
+                    
+                }
+                else {
+                    $piece = NULL;
+                }
+                
+                $build_method_name = "build_{$attributes['name']}";
+                
+                if($build_method_name && method_exists($this->shortcode_builder, $build_method_name)) {
+                    unset($attributes['name']);
+                    $result_shorcode = $this->shortcode_builder->$build_method_name($shortcode_name, $pieces, $attributes);
+                    $template_content = str_replace($tag, $result_shorcode, $template_content);
+                }
+            }
+        
+        }
+        
+        return $template_content;
+    }
+    
+    public static function parse_attributes($attributes_str) {
+        preg_match_all( "/(\S+)=[\"']?((?:.(?![\"']?\s+(?:\S+)=|[\"']))+.)[\"']?/", $attributes_str, $matches);
+        
+        $attrs = array();
+        foreach($matches[1] as $i => $attr_name) {
+            $attr_val = $matches[2][$i];
+            
+            if(isset($attrs[$attr_name])) {
+                
+                if(!is_array($attrs[$attr_name])) {
+                    $attrs[$attr_name] = array($attrs[$attr_name]);
+                }
+                
+                $attrs[$attr_name][] = $attr_val;
+                
+            }
+            else {
+                $attrs[$attr_name] = $attr_val;
+            }
+        }
+        
+        return $attrs;
     }
     
     public function save_post($piece, $post_type) {
@@ -172,16 +279,93 @@ class KND_Plot_Data_Builder {
             set_theme_mod('knd_custom_logo', $logo_fdata['att_id']);
         }
     }
+    
+    public function get_cta_url($cta_key) {
+        return isset($this->cta_list[$cta_key]) ? $this->cta_list[$cta_key] : '';
+    }
+}
+
+class KND_Shortcode_Builder {
+    
+    private $imp = NULL;
+    
+    function __construct($data_builder, $imp) {
+        $this->imp = $imp;
+        $this->data_builder = $data_builder;
+    }
+    
+    public function build_knd_columns($shortcode_name, $pieces, $attributes) {
+        
+        foreach($pieces as $i => $piece) {
+            $attr_i = $i + 1;
+            
+            if($piece->title) {
+                $attributes[$attr_i . "-title"] = $piece->title;
+            }
+            
+            if($piece->content) {
+                $piece->content = $this->imp->parse_text($piece->content);
+                $attributes[$attr_i . "-text"] = $piece->content;
+            }
+        }
+        
+        return $this->pack_shortcode_with_attributes($shortcode_name, $attributes);
+    }
+
+    public function build_knd_background_text($shortcode_name, $pieces, $attributes) {
+        
+        $piece = $pieces[0];
+        
+        if($piece->content) {
+            $piece->content = $this->imp->parse_text($piece->content);
+            $attributes['subtitle'] = $piece->content;
+        }
+        
+        if($piece->title) {
+            $attributes['title'] = $piece->title;
+        }
+        
+        if($piece->thumb) {
+            $attributes['bg-image'] = $this->imp->get_thumb_attachment_id($piece);
+        }
+        
+        return $this->pack_shortcode_with_attributes($shortcode_name, $attributes);
+    }
+    
+    public function pack_shortcode_with_attributes($shortcode_name, $attributes) {
+        
+        $attr_str_list = array();
+        foreach($attributes as $name => $value) {
+        
+            if($name == 'subtitle' || preg_match('/^\d+-text$/', $name)) {
+                $encoded_value = urlencode($value);
+            }
+            elseif($name == 'cta-url') {
+                $encoded_value = $this->data_builder->get_cta_url($value);
+            }
+            else {
+                $encoded_value = str_replace("\"", "", $value);
+            }
+            
+            $attr_str_list[] = implode("=", array($name, "\"{$encoded_value}\""));
+        }
+        $attr_str = implode(" ", $attr_str_list);
+        
+        return "[{$shortcode_name} {$attr_str}/]";
+    }
+
 }
 
 class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
     
     protected $data_routes = array(
         
-        'shortcodes' => array(
+        'pages' => array(
             'about' => array(
-                'page' => 'about',
-                'pieces' => array('about', 'activity', 'history', 'introduction', 'legal', 'reports', 'staff', 'whoweare'),
+                'template' => 'page-about',
+                'post_type' => 'page',
+                'post_slug' => 'about',
+                
             ),
         ),
         
@@ -197,27 +381,18 @@ class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
         ),
     );
     
+    public function __construct($imp) {
+        parent::__construct($imp);
+        
+        $this->cta_list = array(
+            'CTA_DONATE' => site_url('/donate/'),
+        );
+    }
+    
 }
 
 class KND_Right2city_Data_Builder extends KND_Plot_Data_Builder {
-
-    public function build_all_posts() {
-    
-    }
-    
-    public function build_about() {
-    }
-    
 }
 
 class KND_Withyou_Data_Builder extends KND_Plot_Data_Builder {
-
-    public function build_all_posts() {
-    
-    }
-    
-    public function build_about() {
-    }
-    
 }
-
