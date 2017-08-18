@@ -124,14 +124,46 @@ class KND_Plot_Data_Builder {
         $uid = wp_insert_post($page_data);
         
         // add to tax
-//         if($taxonomy) {
-//             $term_slug = knd_clean_csv_slug( trim( $line[6] ) );
-//             if(!empty($line[6]) && $line[6] != 'none') {
-//                 wp_set_object_terms((int)$uid, $term_slug, $taxonomy, false);
-//                 wp_cache_flush();
-//             }
+        if(count($piece->tags)) {
+            $taxonomy = 'post_tag';
+            $terms_list = $this->get_terms_list($piece->tags, $taxonomy);
+            
+            if($terms_list) {
+                wp_set_object_terms((int)$uid, $terms_list, $taxonomy, false);
+                wp_cache_flush();
+            }
+        }
         
-//         }
+        if(count($piece->cat)) {
+            $taxonomy = 'category';
+            $terms_list = $this->get_terms_list($piece->cat, $taxonomy);
+        
+            if($terms_list) {
+                wp_set_object_terms((int)$uid, $terms_list, $taxonomy, false);
+                wp_cache_flush();
+            }
+        }
+    }
+    
+    public function get_terms_list($terms_names, $taxonomy) {
+        $terms_list = [];
+        
+        foreach($terms_names as $term_name) {
+        
+            $term = get_term_by( 'name', $term_name, $taxonomy );
+            if($term) {
+                $terms_list[] = $term->term_id;
+            }
+            else {
+                $res = wp_insert_term( $term_name, $taxonomy );
+                if(!is_wp_error($res)) {
+                    $terms_list[] = $res['term_id'];
+                }
+            }
+        
+        }
+        
+        return $terms_list;
     }
     
     public function build_logo() {

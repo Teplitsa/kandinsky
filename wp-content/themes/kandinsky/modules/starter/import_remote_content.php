@@ -315,18 +315,37 @@ class KND_Piece {
     public $content = "";
     public $slug = "";
     
+    public $tags = array();
+    public $cat = array();
+    
     public $piece_section = NULL;
     public $piece_name = NULL;
 
     function __construct($post_params) {
 
         $this->title = isset($post_params['title']) ? $post_params['title'] : "";
-        $this->tags_str = isset($post_params['tags']) ? $post_params['tags'] : "";
-        $this->cat_str = isset($post_params['cat']) ? $post_params['cat'] : "";
         $this->thumb = isset($post_params['thumb']) ? $post_params['thumb'] : "";
         $this->lead = isset($post_params['lead']) ? $post_params['lead'] : "";
         $this->content = isset($post_params['content']) ? $post_params['content'] : "";
         $this->slug = isset($post_params['slug']) ? $post_params['slug'] : "";
+        
+        $this->tags_str = isset($post_params['tags']) ? $post_params['tags'] : "";
+        $terms = explode(",", $this->tags_str);
+        foreach($terms as $term) {
+            $term = trim($term);
+            if($term) {
+                $this->tags[] = $term;
+            }
+        }
+        
+        $this->cat_str = isset($post_params['cat']) ? $post_params['cat'] : "";
+        $terms = explode(",", $this->cat_str);
+        foreach($terms as $term) {
+            $term = trim($term);
+            if($term && strtolower($term) != 'uncategorized') {
+                $this->cat[] = $term;
+            }
+        }
         
         $this->piece_name = isset($post_params['piece_name']) ? $post_params['piece_name'] : "";
         $this->piece_section = isset($post_params['piece_section']) ? $post_params['piece_section'] : "";
