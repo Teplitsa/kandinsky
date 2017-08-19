@@ -28,9 +28,9 @@ class KND_Plot_Data_Builder {
     
     public function build_all() {
         
-//         $this->build_posts();
+        $this->build_posts();
         $this->build_pages();
-//         $this->build_logo();
+        $this->build_logo();
         
     }
     
