@@ -2,11 +2,15 @@
 
 error_reporting(E_ALL);
 
+/**
+ * Class to download, extract, put extracted data into PHP array and KND_Piece and to access extracted data.
+ *
+*/
 class KND_Import_Remote_Content {
     
-    private $content_importer = NULL;
-    private $plot_data = NULL;
-    private $plot_name = NULL;
+    private $content_importer = NULL;   // remote content imported (depends on content source), KND_Import_Git_Content for now
+    private $plot_data = NULL;          // array with data, represented as array and KND_Piece
+    private $plot_name = NULL;          // plot name
     
     function __construct($plot_name) {
         $this->content_importer = new KND_Import_Git_Content();
@@ -20,6 +24,11 @@ class KND_Import_Remote_Content {
         }
     }
     
+    /**
+     * Imports remote content and extracts it into $this->plot_data array.
+     * It uses $this->content_importer to do all source dependent things.
+     *
+     */
     function import_content() {
         $this->download_content();
         $this->extract_content();
@@ -40,6 +49,13 @@ class KND_Import_Remote_Content {
         return $this->content_importer->parse($plot_name);
     }
 
+    /**
+     * Checks if piece with name exists in section or not.
+     *
+     * @param string    $piece_name    The name of the piece.
+     * @param string    $section       The name of the section.
+     * @return bool
+    */
     function is_piece($piece_name, $section = '') {
         
         if($section) {
@@ -51,6 +67,13 @@ class KND_Import_Remote_Content {
         
     }
     
+    /**
+     * Returns raw $this->plot_data element by name and section.
+     *
+     * @param string    $piece_name    The name of the piece.
+     * @param string    $section       The name of the section.
+     * @return array
+    */
     function get_fdata($piece_name, $section = '') {
     
         try {
@@ -68,6 +91,13 @@ class KND_Import_Remote_Content {
         return $val;
     }
     
+    /**
+     * Returns piece by name and section.
+     *
+     * @param string    $piece_name    The name of the piece.
+     * @param string    $section       The name of the section.
+     * @return KND_Piece|NULL
+    */
     function get_piece($piece_name, $section = '') {
         
         try {
@@ -85,7 +115,14 @@ class KND_Import_Remote_Content {
         return $val;
     }
     
-    // possible keys: title, tags, cat, lead, content, thumb
+    /**
+     * Returns piece property by name and section.
+     *
+     * @param string    $piece_name    The name of the piece.
+     * @param string    $key           Piece property name. Possible keys: title, tags, cat, lead, content, thumb, slug.
+     * @param string    $section       The name of the section.
+     * @return string|int|NULL
+    */
     function get_val($piece_name, $key, $section = '') {
         
         $piece = $this->get_fdata($piece_name, $section);
@@ -100,6 +137,12 @@ class KND_Import_Remote_Content {
         return $val;
     }
     
+    /**
+     * Returns WP attachment ID of piece thumb.
+     *
+     * @param KND_Piece    $piece
+     * @return int|NULL
+    */
     function get_thumb_attachment_id($piece) {
         
         $file_data = NULL;
@@ -114,6 +157,12 @@ class KND_Import_Remote_Content {
         return isset($file_data['attachment_id']) ? $file_data['attachment_id'] : NULL;
     }
     
+    /**
+     * Parse text with parsedown parser, regexp etc.
+     *
+     * @param string    $text
+     * @return string
+    */
     function parse_text($text) {
         
         $new_text = $text;
