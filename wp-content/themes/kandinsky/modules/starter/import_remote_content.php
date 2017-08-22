@@ -3,14 +3,19 @@
 error_reporting(E_ALL);
 
 /**
- * Class to download, extract, put extracted data into PHP array and KND_Piece and to access extracted data.
+ * Class to download test content from specified source, extract, put extracted data into PHP array and KND_Piece and to access extracted data.
+ * Usage:
+ * $plot_name = 'color-line';
+ * $imp = new KND_Import_Remote_Content($plot_name);
+ * $imported_data = $imp->import_content();
  *
-*/
+ *
+ */
 class KND_Import_Remote_Content {
     
-    private $content_importer = NULL;   // remote content imported (depends on content source), KND_Import_Git_Content for now
+    private $content_importer = NULL;   // remote content imported (depends on content source), now only KND_Import_Git_Content supported
     private $plot_data = NULL;          // array with data, represented as array and KND_Piece
-    private $plot_name = NULL;          // plot name
+    private $plot_name = NULL;          // plot name, supported values: color-line, right2city, withyou
     
     function __construct($plot_name) {
         $this->content_importer = new KND_Import_Git_Content();
@@ -25,8 +30,8 @@ class KND_Import_Remote_Content {
     }
     
     /**
-     * Imports remote content and extracts it into $this->plot_data array.
-     * It uses $this->content_importer to do all source dependent things.
+     * Import remote content and extract it into $this->plot_data array, 
+     * using $this->content_importer to do all source dependent things.
      *
      */
     function import_content() {
@@ -37,20 +42,32 @@ class KND_Import_Remote_Content {
         return $this->plot_data;
     }
     
+    /**
+     * Download content using specified importer.
+     *
+     */
     function download_content() {
         return $this->content_importer->download();
     }
     
+    /**
+     * Extract content using specified importer.
+     *
+     */
     function extract_content() {
         return $this->content_importer->extract();
     }
     
+    /**
+     * Parse extracted content using specified importer.
+     *
+     */
     function parse_content($plot_name) {
         return $this->content_importer->parse($plot_name);
     }
 
     /**
-     * Checks if piece with name exists in section or not.
+     * Check if piece with name exists in section or not.
      *
      * @param string    $piece_name    The name of the piece.
      * @param string    $section       The name of the section.
@@ -68,7 +85,7 @@ class KND_Import_Remote_Content {
     }
     
     /**
-     * Returns raw $this->plot_data element by name and section.
+     * Return raw $this->plot_data element by name and section.
      *
      * @param string    $piece_name    The name of the piece.
      * @param string    $section       The name of the section.
@@ -92,7 +109,7 @@ class KND_Import_Remote_Content {
     }
     
     /**
-     * Returns piece by name and section.
+     * Return piece by name and section.
      *
      * @param string    $piece_name    The name of the piece.
      * @param string    $section       The name of the section.
@@ -116,7 +133,7 @@ class KND_Import_Remote_Content {
     }
     
     /**
-     * Returns piece property by name and section.
+     * Return piece property by name and section.
      *
      * @param string    $piece_name    The name of the piece.
      * @param string    $key           Piece property name. Possible keys: title, tags, cat, lead, content, thumb, slug.
@@ -138,7 +155,7 @@ class KND_Import_Remote_Content {
     }
     
     /**
-     * Returns WP attachment ID of piece thumb.
+     * Return WP attachment ID of piece thumb.
      *
      * @param KND_Piece    $piece
      * @return int|NULL
@@ -175,7 +192,10 @@ class KND_Import_Remote_Content {
     }
 }
 
-
+/**
+ * Class to download test data from github, extract, put extracted data into PHP array and KND_Piece and to access extracted data.
+ *
+ */
 class KND_Import_Git_Content {
     
     private $content_archive_url = 'https://github.com/Teplitsa/kandinsky-text/archive/master.zip';
@@ -192,18 +212,34 @@ class KND_Import_Git_Content {
         $this->piece_parser = new KND_Git_Piece_Parser();
     }
     
+    /**
+     * Download content from github.
+     *
+     */
     public function download() {
         return $this->download_git_zip();
     }
     
+    /**
+     * Extract files from archive.
+     *
+     */
     public function extract() {
         return $this->unzip_git_zip();
     }
     
+    /**
+     * Extract files from archive.
+     *
+     */
     public function parse($plot_name) {
         return $this->parse_git_files($plot_name);
     }
     
+    /**
+     * Download zip file from github and put it into WP files gallery.
+     *
+     */
     private function download_git_zip() {
         
         $attachment_id = TST_Import::get_instance()->import_big_file( $this->content_archive_url );
@@ -211,6 +247,10 @@ class KND_Import_Git_Content {
         $this->zip_fpath = get_attached_file( $attachment_id );
     }
     
+    /**
+     * Unzip archive into uploads dir.
+     *
+     */
     private function unzip_git_zip() {
         
         if(!$this->zip_fpath) {
@@ -241,6 +281,12 @@ class KND_Import_Git_Content {
         }
     }
     
+    /**
+     * Parse extracted files and put into $this->content_files.
+     *
+     * @param string    $plot_name    Plot name
+     * @return array
+     */
     private function parse_git_files($plot_name) {
         
         if(!$this->import_content_files_dir) {
@@ -262,6 +308,13 @@ class KND_Import_Git_Content {
         return $this->content_files;
     }
     
+    /**
+     * Recursively scan dir with extracted files and put parsed content into arrays or KND_Piece.
+     *
+     * @param string    $plot_dir   Dir path
+     * @param section   $section    Section name
+     * @return array
+     */
     private function scan_content_dir($plot_dir, $section = '') {
         
         $plot_dir_listing = scandir($plot_dir);
@@ -308,12 +361,21 @@ class KND_Import_Git_Content {
     }
 }
 
-
+/**
+ * Parse local file and put parsed data into array.
+ *
+ */
 class KND_Git_Piece_Parser {
     
     function __construct() {
     }
     
+    /**
+     * Parse local file.
+     *
+     * @param string    $fpath   File path
+     * @return array
+     */
     function parse_post( $fpath ) {
         
         $content = file_get_contents($fpath);
@@ -331,7 +393,13 @@ class KND_Git_Piece_Parser {
         return $parsed_data;
     }
     
-    function parse_post_header($header_text) {
+    /**
+     * Parse file header, that located before firs +++ string.
+     *
+     * @param string    $header_text   Header text
+     * @return array
+     */
+    private function parse_post_header($header_text) {
         
         $header_text = trim($header_text);
         $header_lines = explode("\n", $header_text);
@@ -358,6 +426,10 @@ class KND_Git_Piece_Parser {
     }
 }
 
+/**
+ * Parsed content item.
+ *
+ */
 class KND_Piece {
 
     public $title = "";
@@ -405,6 +477,11 @@ class KND_Piece {
         
     }
     
+    /**
+     * Get parsed item slug to use as WP Post name.
+     *
+     * @return string
+     */
     function get_post_slug() {
         
         $slug = "";

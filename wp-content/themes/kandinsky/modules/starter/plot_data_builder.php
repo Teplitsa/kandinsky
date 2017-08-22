@@ -1,5 +1,13 @@
 <?php
 
+/**
+ * Build WP content structures using imported data.
+ * Usage:
+ * $pdb = KND_Plot_Data_Builder::produce_builder($importer);
+ * $pdb->build_all();
+ *
+ *
+ */
 class KND_Plot_Data_Builder {
     
     protected $imp = NULL;
@@ -12,6 +20,13 @@ class KND_Plot_Data_Builder {
         $this->shortcode_builder = new KND_Shortcode_Builder($this, $this->imp);
     }
     
+    /**
+     * Produce specific builder depends on importer.
+     *
+     * @param string    $imp    KND_Import_Remote_Content
+     * 
+     * @return extended KND_Plot_Data_Builder
+     */
     public static function produce_builder($imp) {
         $plot_name = $imp->plot_name;
         $plot_name_cap = preg_replace("/[-_]*/", "", ucfirst($plot_name));
@@ -26,6 +41,10 @@ class KND_Plot_Data_Builder {
         return $builder;
     }
     
+    /**
+     * Create WP content structures using imported data.
+     *
+     */
     public function build_all() {
         
         $this->build_posts();
@@ -34,6 +53,10 @@ class KND_Plot_Data_Builder {
         
     }
     
+    /**
+     * Create WP posts, according to builder config, using imported files as content.
+     *
+     */
     public function build_posts() {
         
         foreach(array_keys($this->data_routes['posts']) as $section) {
@@ -42,6 +65,10 @@ class KND_Plot_Data_Builder {
         
     }
     
+    /**
+     * Create WP posts, according to builder config, using imported files as templates.
+     *
+     */
     public function build_pages() {
         
         foreach(array_keys($this->data_routes['pages']) as $section) {
@@ -50,6 +77,10 @@ class KND_Plot_Data_Builder {
         
     }
     
+    /**
+     * Create WP posts, according to section config, using imported files as content.
+     *
+     */
     public function build_section_posts($section) {
         
         $post_type = $this->data_routes['posts'][$section]['post_type'];
@@ -68,6 +99,10 @@ class KND_Plot_Data_Builder {
         }
     }
     
+    /**
+     * Create WP posts, according to section config, using imported files as templates.
+     *
+     */
     public function build_section_page($section) {
     
         $post_type = isset($this->data_routes['pages'][$section]['post_type']) ? $this->data_routes['pages'][$section]['post_type'] : 'page';
@@ -92,6 +127,14 @@ class KND_Plot_Data_Builder {
         $this->save_post($template_piece, $post_type);
     }
     
+    /**
+     * Fill template with data from importer.
+     *
+     * @param string    $template_content    template file name
+     * @param string    $section             section, to search content in
+     * 
+     * @return string   template, where all tags replaces with proper content
+     */
     public function fill_template_with_pieces($template_content, $section) { // remove $post param, if useless
         
         $template_content = $this->fill_content_tags($template_content, $section);
@@ -100,6 +143,14 @@ class KND_Plot_Data_Builder {
         return $template_content;
     }
     
+    /**
+     * Replace content tags with proper content.
+     *
+     * @param string    $template_content    template file name
+     * @param string    $section             section, to search content in
+     * 
+     * @return string   template, where content tags replaces with proper content
+     */
     public function fill_content_tags($template_content, $section) {
         
         preg_match_all("/\[\s*?content\s*(.*?)\]/", $template_content, $matches);
@@ -124,6 +175,14 @@ class KND_Plot_Data_Builder {
         return $template_content;
     }
     
+    /**
+     * Replace shortcodes tags with proper content.
+     *
+     * @param string    $template_content    template file name
+     * @param string    $section             section, to search content in
+     * 
+     * @return string   template, where shortcodes tags replaces with proper shortcodes
+     */
     public function fill_shortcode_tags($template_content, $section) {
         
         preg_match_all("/\[\s*?shortcode\s*(.*?)\]/", $template_content, $matches);
@@ -171,6 +230,13 @@ class KND_Plot_Data_Builder {
         return $template_content;
     }
     
+    /**
+     * Parse template tag attributes.
+     *
+     * @param string    $attributes_str    attributes string
+     * 
+     * @return string   array with key - value attributes
+     */
     public static function parse_attributes($attributes_str) {
         preg_match_all( "/(\S+)=[\"']?((?:.(?![\"']?\s+(?:\S+)=|[\"']))+.)[\"']?/", $attributes_str, $matches);
         
@@ -195,6 +261,14 @@ class KND_Plot_Data_Builder {
         return $attrs;
     }
     
+    /**
+     * Save WP post using imported piece as data source.
+     *
+     * @param KND_Piece       $piece      imported piece
+     * @param string          $post_type  WP post type
+     * 
+     * @return int|WP_Error   WP post ID or error
+     */
     public function save_post($piece, $post_type) {
         
         $post_title = trim( $piece->title );
@@ -250,8 +324,18 @@ class KND_Plot_Data_Builder {
                 wp_cache_flush();
             }
         }
+        
+        return $uid;
     }
     
+    /**
+     * Get taxonomy terms by names list.
+     *
+     * @param array      $terms_names  terms names
+     * @param string     $taxonomy     taxonomy name
+     *
+     * @return array     WP terms_id list
+     */
     public function get_terms_list($terms_names, $taxonomy) {
         $terms_list = [];
         
@@ -273,6 +357,10 @@ class KND_Plot_Data_Builder {
         return $terms_list;
     }
     
+    /**
+     * Set site log depends on imported data.
+     *
+     */
     public function build_logo() {
         $logo_fdata = $this->imp->get_fdata('logo.svg');
         if($logo_fdata && isset($logo_fdata['att_id']) && $logo_fdata['att_id']) {
@@ -280,11 +368,23 @@ class KND_Plot_Data_Builder {
         }
     }
     
+    /**
+     * Get call to action URL depends on builder config.
+     *
+     * @param string     $cta_key     CTA key, extracted from tempalate
+     *
+     * @return string    CTA URL
+     */
     public function get_cta_url($cta_key) {
         return isset($this->cta_list[$cta_key]) ? $this->cta_list[$cta_key] : '';
     }
 }
 
+/**
+ * Build shortcodes based on imported names, attributes and text content.
+ * Fro use in KND_Plot_Data_Builder only.
+ *
+ */
 class KND_Shortcode_Builder {
     
     private $imp = NULL;
@@ -294,6 +394,15 @@ class KND_Shortcode_Builder {
         $this->data_builder = $data_builder;
     }
     
+    /**
+     * Build knd_columns shorcode by name, pieces and attributes.
+     *
+     * @param string     $shortcode_name     name of shortcode
+     * @param array      $pieces             pieces list that are specified in template shortcode tag
+     * @param array      $attributes         array of attributes as key - value pairs
+     *
+     * @return string    shortcode
+     */
     public function build_knd_columns($shortcode_name, $pieces, $attributes) {
         
         foreach($pieces as $i => $piece) {
@@ -311,7 +420,16 @@ class KND_Shortcode_Builder {
         
         return $this->pack_shortcode_with_attributes($shortcode_name, $attributes);
     }
-
+    
+    /**
+     * Build build_knd_background_text shorcode by name, pieces and attributes.
+     *
+     * @param string     $shortcode_name     name of shortcode
+     * @param array      $pieces             pieces list that are specified in template shortcode tag
+     * @param array      $attributes         array of attributes as key - value pairs
+     *
+     * @return string    shortcode
+     */
     public function build_knd_background_text($shortcode_name, $pieces, $attributes) {
         
         $piece = $pieces[0];
@@ -332,6 +450,14 @@ class KND_Shortcode_Builder {
         return $this->pack_shortcode_with_attributes($shortcode_name, $attributes);
     }
     
+    /**
+     * Compose shortcode from name and attributes key-value array.
+     *
+     * @param string     $shortcode_name     name of shortcode
+     * @param array      $attributes         array of attributes as key - value pairs
+     *
+     * @return string    shortcode
+     */
     public function pack_shortcode_with_attributes($shortcode_name, $attributes) {
         
         $attr_str_list = array();
@@ -356,8 +482,20 @@ class KND_Shortcode_Builder {
 
 }
 
+/**
+ * WP content srtuctures builder for color-line plot.
+ * The major part of the class is a config, named $this->data_routes.
+ *
+ */
 class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
     
+    
+    /**
+     * Configuration of building process.
+     * pages: list of pages, that are built using imported templates
+     * posts: list of pages, that are built using content from imported files
+     *
+     */
     protected $data_routes = array(
         
         'pages' => array(
@@ -381,6 +519,10 @@ class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
         ),
     );
     
+    /**
+     * Set CTA config.
+     *
+     */
     public function __construct($imp) {
         parent::__construct($imp);
         
@@ -391,6 +533,11 @@ class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
     
 }
 
+/**
+ * WP content srtuctures builder for right2city plot.
+ * The major part of the class is a config, named $this->data_routes.
+ *
+ */
 class KND_Right2city_Data_Builder extends KND_Plot_Data_Builder {
 }
 
