@@ -438,7 +438,7 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 			if(empty($_GET['page']) || $this->page_slug !== $_GET['page']) {
 				return;
 			}
-			ob_end_clean();
+//			ob_end_clean();
 
 			$this->step = isset( $_GET['step'] ) ? sanitize_key( $_GET['step'] ) : current( array_keys( $this->steps ) );
 
