@@ -20,7 +20,6 @@
 <header id="site_header" class="site-header">
 	
 	<div class="site-header-panel">
-		<div class="container-wide">
 			
 		<div class="site-panel-row">
 			<div class="site-branding site-panel-cell"><?php knd_logo_markup();?></div>
@@ -40,8 +39,8 @@
 				</a>				
 			</div>
 			
-		</div>	
 		</div>
+        	
 	</div>
 	
 	<!--<div id="newsletter_panel" class="newsletter-panel">

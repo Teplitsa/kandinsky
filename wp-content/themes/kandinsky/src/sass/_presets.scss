@@ -20,8 +20,8 @@ $four:         1200px; //exlarge
 $five:         1400px; //xxlarge
 
 //Page layout
-$full_cont:    1400px;
-$page_cont:    1200px;
+$full_cont:    1106px;
+$page_cont:    716px;
 $col:		   54px;
 $gut:	       30px;
 
@@ -54,13 +54,24 @@ $color-secondary-dark:		#e5e5e5;
 $color-secondary-alt:		#f2f2f2;
 $color-secondary-black:		#191411;
 
-
 $color-border-normal:   #dfdfdf;
 $color-border-light:    #eeeeee;
 $color-border-link:     #eeeeee;
 $color-form-invalid:    #ED1C24;
 
 $leyka_green : #1DB318;
+
+// color-line
+$color-blue:                #00bcd4; 
+$color-blue-underline:      #00bbd2;
+$color-blue-links-on-dark:  #0798a3;
+$color-blue-links-on-blue:  #c8f0f5;
+
+$color-yellow:              #ffc915;
+$color-yellow-underline:    #fdc302;
+
+$color-dark-bg:             #ff7501;
+
 
 //Layout Settings
 $adminbar_large_screen: 32px;
@@ -73,8 +84,6 @@ $fixed_side: 222px;
 
 
 /** Mixins **/
-
-
 // Typo
 @mixin body-text($mod: default) {
 	font-family: $body;
@@ -347,6 +356,63 @@ $fixed_side: 222px;
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
 	}
 	
+}
+
+@mixin logo-head-text() {
+}
+
+@mixin logo-sub-text() {
+}
+
+@mixin button-caption-text() {
+}
+
+@mixin button-caption-text() {
+}
+
+@mixin hero-head-text() {
+}
+
+@mixin hero-sub-text() {
+}
+
+@mixin about-head-text() {
+}
+
+@mixin about-name-text() {
+}
+
+@mixin col-head-text() {
+}
+
+@mixin col-body-text() {
+}
+
+@mixin col-link-text() {
+}
+
+@mixin section-head-text() {
+}
+
+@mixin card-head-text() {
+}
+
+@mixin card-date-text() {
+}
+
+@mixin footer-about-head-text() {
+}
+
+@mixin footer-about-sub-text() {
+}
+
+@mixin footer-link-text() {
+}
+
+@mixin footer-body-text() {
+}
+
+@mixin credits-body-text() {
 }
 
 // Media
