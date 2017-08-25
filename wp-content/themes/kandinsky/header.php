@@ -30,7 +30,7 @@
 			</div>									
 			
 			<div class="trigger-button donate site-panel-cell">
-				<a id="trigger_donate"  href="<?php echo get_permalink( knd_get_post('donate', 'page') ) ?>"><?php rdc_svg_icon('icon-logo');?><?php _e( 'Donate', 'knd' ); ?></a>
+				<a id="trigger_donate"  href="<?php echo get_permalink( knd_get_post('donate', 'page') ) ?>"><?php _e( 'Donate', 'knd' ); ?></a>
 			</div>
 			
 			<div class="trigger-button menu site-panel-cell">

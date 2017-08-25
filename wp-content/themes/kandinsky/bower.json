@@ -12,8 +12,11 @@
     "test",
     "tests"
   ],
-  "dependencies": {    
+  "dependencies": {
     "leaflet": "~0.7.7",
     "easyModal.js": "https://github.com/flaviusmatis/easyModal.js.git"
+  },
+  "devDependencies": {
+    "modular-scale": "^3.0.2"
   }
 }

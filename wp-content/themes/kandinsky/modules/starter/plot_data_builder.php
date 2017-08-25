@@ -363,8 +363,8 @@ class KND_Plot_Data_Builder {
      */
     public function build_logo() {
         $logo_fdata = $this->imp->get_fdata('logo.svg');
-        if($logo_fdata && isset($logo_fdata['att_id']) && $logo_fdata['att_id']) {
-            set_theme_mod('knd_custom_logo', $logo_fdata['att_id']);
+        if($logo_fdata && isset($logo_fdata['attachment_id']) && $logo_fdata['attachment_id']) {
+            set_theme_mod('knd_custom_logo', $logo_fdata['attachment_id']);
         }
     }
     

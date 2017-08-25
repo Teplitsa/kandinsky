@@ -276,6 +276,10 @@
 	@include vertical-image-header-fixed();
 	@include container-extended();
 	
+	.tpl-pictured-bg {
+	   background-position: 150px 25%;
+	}
+	
 	&.text-over-image {
 		height: 400px;
 	
@@ -288,7 +292,7 @@
 		}
 		
 		@include for(large-screens) {
-			height: 520px;
+			height: 580px;
 		}
 	}
 }
@@ -304,20 +308,15 @@
 
 
 .intro-head-content, .knd-background-text.text {
-			
+    
 	.ihc-title {
-		display: inline-block;
-		background: #111;
-		@include header-title(section);		
-		color: $color-white;
-		padding: 10px 20px;
-		margin-bottom: $base;		
+        @include hero-head-text();
+        color: $color-white;
 	}
 	
 	.ihc-content:not(.text-over-color) {
 		position: relative;
 		margin-top: -40px;
-		//border-bottom: 1px solid $color-border-normal;
 		padding-bottom: $base;
 	}
 		
@@ -330,59 +329,48 @@
 	
 	&.has-button {
 		.ihc-title {
-			background: $color-link-three;
-			transition: background 0.35s;
-			a {
-				color: $color-white;
-			}
-			
-			&:hover {
-				background: $color-link-two;
-			}
 		}
 		.ihc-desc {
-			color: $color-text-black;
-			font-size: 1.12em;
-			font-weight: 300;			
 		}
 	}
 	
 	&.text-over-image {
 		height: 1px;
+		
 		.ihc-content {
+	        color: $color-white;
             position: relative;
 			padding-bottom: $gut*2;
-			max-width: 800px;
-			margin: 0;
+			margin-top: -15px;
 			top: 0;
 			transform: translateY(-100%);
 			& > a { display: block; }
 		}
 		
 		.ihc-title {
-			background: transparent;			
-			padding: 0;
+		    @include hero-head-text();
 			
 			span {
-				color: $color-text;
-				background: $color-white;
 				display: inline-block;
-				padding: 8px 0;
-				box-shadow: 8px 0 0 $color-white, -8px 0 0 $color-white;
-				margin-left: 8px;
 			}
 		}
 		
 		.ihc-desc {
-			@include body-text(summary);
-			padding: 8px;
-			background: rgba(0,0,0, 0.5);
-			color: rgba(255,255,255, 0.95);
+			@include body-text();
+			
+			line-height: 1.33;
+			color: $color-white;
+			
+			margin-top:$height_gap + 2px;
+			
+            @include for(medium-screens) {
+                line-height: 1.33;
+            }
 		}
 		
 		.cta {
-			@include button();
-			margin-top: $base;
+            @include button();
+            margin-top: $height_gap + 8px;
 		}
 	}
 
@@ -400,15 +388,11 @@
         }
 
         .ihc-title {
-            background: transparent;
             padding: 0;
-
             span {
                 color: $color-text;
-                background: $color-white;
                 display: inline-block;
                 padding: 8px 0;
-                box-shadow: 8px 0 0 $color-white, -8px 0 0 $color-white;
                 margin-left: 8px;
             }
         }

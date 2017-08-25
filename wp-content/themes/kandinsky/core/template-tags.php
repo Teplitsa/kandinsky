@@ -814,13 +814,12 @@ function knd_hero_image_markup() {
         $knd_hero_image_support_text = get_theme_mod( 'knd_hero_image_support_text');
         $knd_hero_image_support_button_caption = get_theme_mod( 'knd_hero_image_support_button_caption');
     ?>
-<div id="panel-72-0-0-0" class="so-panel widget widget_tst-featureditem panel-first-child" data-index="0">
-<div class="so-widget-tst-featureditem so-widget-tst-featureditem-base">
 <section class="intro-head-image text-over-image">
 <div class="tpl-pictured-bg" style="background-image: url(<?php echo $hero_img;?>)"></div>
 </section>
-<section class="intro-head-content text-over-image has-button">
-<div class="ihc-content">
+
+<section class="container-wide intro-head-content text-over-image has-button flex-row">
+<div class="ihc-content flex-mf-6">
 <a href="<?php echo $knd_hero_image_support_url ?>">
 <?php if($knd_hero_image_support_title):?>
 <h1 class="ihc-title">
@@ -842,8 +841,7 @@ function knd_hero_image_markup() {
 </a>
 </div>
 </section>
-</div>
-</div>
+
 <?php
     }
 }

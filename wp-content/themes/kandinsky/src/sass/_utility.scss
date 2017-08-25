@@ -47,13 +47,7 @@
 		@media screen and (min-width: $two) { @content; }
 	}
 	@else if $media == large-screens {
-		@media screen and (min-width: $three) { @content; }
-	}
-	@else if $media == exlarge-screens {
 		@media screen and (min-width: $four) { @content; }
-	}
-	@else if $media == xxlarge-screens {
-		@media screen and (min-width: $five) { @content; }
 	}
 }
 
@@ -65,9 +59,6 @@
 		@media screen and (max-width: $two - 1) { @content; }
 	}
 	@else if $media == large-screens {
-		@media screen and (max-width: $three - 1) { @content; }
-	}
-	@else if $media == exlarge-screens {
 		@media screen and (max-width: $four - 1) { @content; }
 	}
 }

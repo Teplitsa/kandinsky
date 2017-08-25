@@ -3,10 +3,10 @@
 -------------------------------------------------------- */
 
 //Fonts
-$body:	     'Open Sans',Arial, sans-serif; 
-$heading:    'Roboto Condensed', "HelveticaNeue-CondensedBold", "Helvetica Neue", Helvetica Neue, Helvetica,sans-serif;
-$title:      'Roboto Condensed', "HelveticaNeue-CondensedBold", "Helvetica Neue", Helvetica Neue, Helvetica,sans-serif;
-$nav:        'Roboto Condensed', "HelveticaNeue-CondensedBold", "Helvetica Neue", Helvetica Neue, Helvetica,sans-serif;
+$body:	     'SourceSansPro', Arial, sans-serif; 
+$heading:    'Exo2', Arial, sans-serif;
+$title:      $heading;
+$nav:        $body;
 
 $sans:       'Open Sans',Arial, sans-serif;
 $mono: 	     "Lucida Sans Typewriter", "Lucida Console", Monaco, monospace;
@@ -14,45 +14,57 @@ $mono: 	     "Lucida Sans Typewriter", "Lucida Console", Monaco, monospace;
 
 //Break points
 $one: 	       480px; //small
-$two:          767px; //medium
-$three:	       984px; //large
-$four:         1200px; //exlarge
-$five:         1400px; //xxlarge
+$two:          800px; //medium
+$four:         1104px; //large
 
 //Page layout
-$full_cont:    1106px;
-$page_cont:    716px;
-$col:		   54px;
-$gut:	       30px;
+$full_cont:    1104px;
+$page_cont:    720px;
+$col:		   48px;
+$gut:	       48px;
+$flex-gut:     $gut;
+$inner_cont:   $page_cont;
+$text_cont:    $page_cont;
 
 
 
 //Baseline
 $base: 24px;
 
-
 //Colors
-/*:root {
-  --knd-color-main:         #4494BB;
-  --knd-color-main-dark:    darken(#4494BB, 10%);
-}*/
+
+// color-line
+$color-blue:                #00bcd4;
+$color-yellow:              #ffc914;
+$color-dark-bg:             #ff7501;
+
+:root {
+  --knd-color-main:         $color-blue;
+  --knd-color-main-dark:    darken($color-blue, 10%);
+  
+  --knd-color-second:       $color-yellow;
+  --knd-color-second-dark:  darken($color-yellow, 10%);
+  
+  --knd-color-third:        $color-dark-bg;
+}
 
 //Variables of color scheme
 $color-link-three: var(--knd-color-main); //this is the main scheme color
 $color-link-one:   var(--knd-color-main-dark); //hover state
 $color-link-two:   var(--knd-color-main-dark); //hover state 
 
-
 //others color variables
-$color-text:                rgba(0,0,0, 0.9);
+$color-text:                #000000;
 $color-white:               #ffffff;
 $color-text-black:			#000000;
 $color-text-semi:			rgba(0,0,0, 0.6);
-$color-text-light:			rgba(0,0,0, 0.45);
+$color-text-light:			rgba(0,0,0, 0.75);
 $color-secondary:			#f5f5f5;
 $color-secondary-dark:		#e5e5e5;
 $color-secondary-alt:		#f2f2f2;
 $color-secondary-black:		#191411;
+
+$color-bg-light:        #eeeeee;
 
 $color-border-normal:   #dfdfdf;
 $color-border-light:    #eeeeee;
@@ -60,18 +72,6 @@ $color-border-link:     #eeeeee;
 $color-form-invalid:    #ED1C24;
 
 $leyka_green : #1DB318;
-
-// color-line
-$color-blue:                #00bcd4; 
-$color-blue-underline:      #00bbd2;
-$color-blue-links-on-dark:  #0798a3;
-$color-blue-links-on-blue:  #c8f0f5;
-
-$color-yellow:              #ffc915;
-$color-yellow-underline:    #fdc302;
-
-$color-dark-bg:             #ff7501;
-
 
 //Layout Settings
 $adminbar_large_screen: 32px;
@@ -87,23 +87,21 @@ $fixed_side: 222px;
 // Typo
 @mixin body-text($mod: default) {
 	font-family: $body;
-	color: $color-text;
-	font-weight: normal;
-	
-	font-size: 14px;	
-	line-height: 1.5;
+	font-weight: 400;
+    @include ms-respond(font-size, 0);
+    line-height: 1.5;
 	
 	@include for(medium-screens) {
-		font-size: 18px;	
+		@include ms-respond(font-size, 1);
 		line-height: 1.45;
 	}
 		
 	@if $mod == summary {		
-		font-size: 12px;	
+		@include ms-respond(font-size, -1);
 		line-height: 1.5;
 		
 		@include for(medium-screens) {
-			font-size: 14px;	
+            @include ms-respond(font-size, 0);
 			line-height: 1.5;
 		}		
 	}
@@ -126,12 +124,12 @@ $fixed_side: 222px;
 		}	
 	}
 	@if $mod == small {		
-		font-size: 11px;	
+		font-size: 12px;	
 		line-height: 1.45;
 		
 		@include for(medium-screens) {
-			font-size: 12px;	
-			line-height: 1.5;
+			@include ms-respond(font-size, 0);	
+			line-height: 1.45;
 		}		
 	}
 }
@@ -268,16 +266,13 @@ $fixed_side: 222px;
 
 @mixin button($mod: default){
 	display: inline-block;
-	font-family: $nav;	
-	text-transform: uppercase;
 	color: $color-white;
 	background: $color-link-three;
 	border: 1px solid $color-link-three;	
 	transition: all 0.3;
 	
-	padding: 14px 24px;
-	font-size: 16px;
-	line-height: 18px;
+	@include button-caption-text();
+    padding: 12px 35px;
 	
 	&:visited {
 		color: $color-white;
@@ -358,63 +353,6 @@ $fixed_side: 222px;
 	
 }
 
-@mixin logo-head-text() {
-}
-
-@mixin logo-sub-text() {
-}
-
-@mixin button-caption-text() {
-}
-
-@mixin button-caption-text() {
-}
-
-@mixin hero-head-text() {
-}
-
-@mixin hero-sub-text() {
-}
-
-@mixin about-head-text() {
-}
-
-@mixin about-name-text() {
-}
-
-@mixin col-head-text() {
-}
-
-@mixin col-body-text() {
-}
-
-@mixin col-link-text() {
-}
-
-@mixin section-head-text() {
-}
-
-@mixin card-head-text() {
-}
-
-@mixin card-date-text() {
-}
-
-@mixin footer-about-head-text() {
-}
-
-@mixin footer-about-sub-text() {
-}
-
-@mixin footer-link-text() {
-}
-
-@mixin footer-body-text() {
-}
-
-@mixin credits-body-text() {
-}
-
 // Media
 @mixin caption-figure {	
 	width: 100%;
@@ -489,5 +427,5 @@ $fixed_side: 222px;
 }
 	
 @mixin widget-content-style() {
-    margin-bottom: $gut * 1.5;
+    margin-bottom: $gut * 0.95;
 }

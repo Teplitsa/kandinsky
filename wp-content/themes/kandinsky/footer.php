@@ -16,22 +16,27 @@ $footer_text = get_theme_mod('footer_text');
 
 <div id="bottom_bar" class="bottom-bar">
     <div class="container-wide">
-        <div class="frame frame-wide">
-            <div class="bit md-9 lg-8">
-            <?php if( !is_page('subscribe') ) {?>
+        <div class="flex-row">
+            <div class="flex-mf-5">
+            
+            <h1 class="logo-name"><?php bloginfo('name');?></h1>
+            <h2 class="logo-name"><?php bloginfo('description');?></h2>
+            
+            <?php if( False && !is_page('subscribe') ) {?>
                 <h5><?php #_e('Subscribe to our newsletter', 'knd');?></h5>
                 <div class="newsletter-form in-footer">
                     <?php #echo rdc_get_newsletter_form('bottom');?>
                 </div>
             <?php }?>
+            
+            
             </div>
 
-            <div class="bit md-3 lg-3 lg-offset-1">
+            <div class="flex-mf-4">
             <?php $social_icons = knd_social_links(array(), false);
 
             if($social_icons) {?>
 
-                <h5><span class="icons-label"><?php _e('Our social profiles', 'knd');?></span>&nbsp;</h5>
                 <?php echo $social_icons;?>
 
             <?php }?>
@@ -43,10 +48,12 @@ $footer_text = get_theme_mod('footer_text');
 <footer class="site-footer"><div class="container-wide">		
 	
 	<div class="widget-area"><?php dynamic_sidebar( 'knd-footer-sidebar' );?></div>
+    
 	<div class="hr"></div>
-	<div class="sf-cols">
+    
+	<div class="flex-row">
 		
-		<div class="sf-cols-8">		
+		<div class="flex-mf-6">		
 				
 			<div class="copy">
 				<?php echo apply_filters('rdc_the_content', $footer_text); ?>	
@@ -55,9 +62,9 @@ $footer_text = get_theme_mod('footer_text');
 			
 		</div>
 		
-		<div class="sf-cols-4">
+		<div class="flex-mf-6">
 			<div class="te-st-bn">
-				<p class="support">Сайт сделан <br>при поддержке</p>
+				<p class="support">Сайт работает <br>на «Кандинском»</p>
 				<a title="<?php echo $tst;?>" href="http://te-st.ru/" class="rdc-banner">					
 					<svg class="rdc-icon"><use xlink:href="#icon-te-st" /></svg>
 				</a>

@@ -30,7 +30,6 @@ $social_color: (
 	vertical-align: middle;	
 	transition: all 0.2s;
 	text-decoration: none;
-	background: #262832;
 	color: #fff;
 	width: $button-size;
 	height: $button-size;
@@ -62,16 +61,6 @@ $social_color: (
 			height: 20px;
 		}
 	}
-
-	@each $item in vk, ok, facebook, youtube, twitter, instagram, telegram {
-		
-		.#{$item} a {
-			background: social_color($item);
-			&:hover, &:focus, &:active {
-				background: darken(social_color($item), 5%);
-			}
-		}
-	}	
 }
 
 

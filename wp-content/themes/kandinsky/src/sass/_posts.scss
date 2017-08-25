@@ -75,20 +75,6 @@
 		}
 	}
 	
-	@include for(exlarge-screens) {
-		&.exlg-cols-5 {			
-			.card {
-				width: calc(20% - 30px);				
-			}
-		}
-				
-		&.exlg-cols-4 {			
-			.card {
-				width: calc(25% - 30px);				
-			}
-		}
-	}
-	
 	.squared & {
 		margin: 0 -1*$gut/2;
 	}
