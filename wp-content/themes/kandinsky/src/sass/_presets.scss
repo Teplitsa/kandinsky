@@ -36,7 +36,7 @@ $base: 24px;
 // color-line
 $color-blue:                #00bcd4;
 $color-yellow:              #ffc914;
-$color-dark-bg:             #ff7501;
+$color-dark-bg:             #0e0a2b;
 
 :root {
   --knd-color-main:         $color-blue;
@@ -69,6 +69,7 @@ $color-bg-light:        #eeeeee;
 $color-border-normal:   #dfdfdf;
 $color-border-light:    #eeeeee;
 $color-border-link:     #eeeeee;
+$color-border-dark:     #5d5d5d;
 $color-form-invalid:    #ED1C24;
 
 $leyka_green : #1DB318;
@@ -136,12 +137,10 @@ $fixed_side: 222px;
 
 @mixin nav-text($mod: default) {
 	
-	font-family: $nav;
+	@include knd-nav-text();
+	
 	text-transform: uppercase;
 	font-weight: normal;
-	
-	font-size: 16px;	
-	line-height: 1;	
 	
 	@if $mod == multiline {
 		line-height: 20px;
@@ -162,34 +161,6 @@ $fixed_side: 222px;
 	@else if $mod == lowercase {		
 		text-transform: none;
 	}
-}
-
-@mixin post-title($mod: default) {
-	font-family: $title;
-	color: $color-text-black;
-	font-weight: normal;
-	text-transform: none;
-	
-	font-size: 21px;
-	line-height: 24px;
-    hyphens: none;
-
-				
-	@if $mod == small_title {
-		font-size: 18px;
-		line-height: 24px;
-		font-weight: 700;
-		letter-spacing: 0.5px;
-	}
-	@else if $mod == featured {
-		font-size: 26px;
-		line-height: 1.1;	
-			
-		@include for(medium-screens){
-			font-size: 28px;
-			line-height: 1.1;	
-		}
-	}	
 }
 
 @mixin sub-title($mod: default) {		
@@ -265,13 +236,13 @@ $fixed_side: 222px;
 }
 
 @mixin button($mod: default){
+    @include knd-button-caption-text();
+    
 	display: inline-block;
 	color: $color-white;
 	background: $color-link-three;
 	border: 1px solid $color-link-three;	
 	transition: all 0.3;
-	
-	@include button-caption-text();
     padding: 12px 35px;
 	
 	&:visited {
@@ -427,5 +398,4 @@ $fixed_side: 222px;
 }
 	
 @mixin widget-content-style() {
-    margin-bottom: $gut * 0.95;
 }

@@ -263,3 +263,16 @@
     @include container-base();
     max-width: $text_cont;
 }
+
+.container-wide {
+    @extend .container;
+    max-width: none;
+    width: 100%;
+}
+
+.container-narrow {
+    @extend .container;
+    max-width: 900px;
+}
+
+.search .site-content .container { max-width: 900px;}

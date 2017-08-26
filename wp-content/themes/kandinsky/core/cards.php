@@ -1,19 +1,19 @@
 <?php
 
 /** == Posts elements == **/
-function rdc_post_card(WP_Post $cpost){
+function knd_post_card(WP_Post $cpost){
 	
 	$pl = get_permalink($cpost);
 	$ex = apply_filters('rdc_the_title', rdc_get_post_excerpt($cpost, 25, true));
 ?>
 <article class="tpl-post card">
 	<a href="<?php echo $pl; ?>" class="thumbnail-link">
-	<div class="entry-preview"><?php echo rdc_post_thumbnail($cpost->ID, 'post-thumbnail');?></div>
+	<div class="entry-preview"><?php echo knd_post_thumbnail($cpost->ID, 'post-thumbnail');?></div>
 	<div class="entry-data">
-		<div class="entry-meta"><?php echo strip_tags(rdc_posted_on($cpost), '<span>');?></div>
 		<h4 class="entry-title"><?php echo get_the_title($cpost);?></h4>
-		<div class="entry-summary"><?php echo $ex;?></div>
 	</div>
+    
+    <div class="entry-meta"><?php echo strip_tags(knd_posted_on($cpost), '<span>');?></div>
 	</a>
 </article>
 <?php
@@ -82,10 +82,10 @@ function rdc_related_post_card(WP_Post $cpost) {
 	$ex = apply_filters('rdc_the_title', rdc_get_post_excerpt($cpost, 40, true));
 ?>
 <article class="tpl-related-post card"><a href="<?php echo $pl; ?>" class="entry-link">	
-	<div class="entry-preview"><?php echo rdc_post_thumbnail($cpost->ID, 'post-thumbnail');?></div>
+	<div class="entry-preview"><?php echo knd_post_thumbnail($cpost->ID, 'post-thumbnail');?></div>
 	<div class="entry-data">
 		<?php if('project' != $cpost->post_type) { ?>
-		<div class="entry-meta"><?php echo strip_tags(rdc_posted_on($cpost), '<span>');?></div>
+		<div class="entry-meta"><?php echo strip_tags(knd_posted_on($cpost), '<span>');?></div>
 		<?php } ?>
 		<h4 class="entry-title"><?php echo get_the_title($cpost);?></h4>
 		<div class="entry-summary"><?php echo $ex;?></div>		
@@ -104,7 +104,7 @@ function rdc_event_card(WP_Post $cpost){
 ?>
 <article class="tpl-event card" <?php echo $event->get_event_schema_prop();?>">
 	<a href="<?php echo $pl; ?>" class="thumbnail-link" <?php echo $event->get_event_url_prop();?>>
-	<div class="entry-preview"><?php echo rdc_post_thumbnail($cpost->ID, 'post-thumbnail');?></div>
+	<div class="entry-preview"><?php echo knd_post_thumbnail($cpost->ID, 'post-thumbnail');?></div>
 	<div class="entry-data">
 		<div class="entry-meta"><?php echo $event->posted_on_card();?></div>
 		<h4 class="entry-title" <?php echo $event->get_event_name_prop();?>><?php echo get_the_title($cpost);?></h4>
@@ -120,23 +120,23 @@ function rdc_event_card(WP_Post $cpost){
 }
 
 /** Projects */
-function rdc_project_card(WP_Post $cpost){
+function knd_project_card(WP_Post $cpost){
 	
 	$pl = get_permalink($cpost);
 ?>
-<article class="tpl-programm card"><a href="<?php echo $pl; ?>" class="entry-link">	
-	<div class="entry-preview"><?php echo rdc_post_thumbnail($cpost->ID, 'square');?></div>
+<article class="tpl-project card"><a href="<?php echo $pl; ?>" class="entry-link">	
+	<div class="entry-preview"><?php echo knd_post_thumbnail($cpost->ID, 'post-thumbnail');?></div>
 	<h4 class="entry-title"><span><?php echo get_the_title($cpost);?></span></h4>
 </a></article>
 <?php
 }
 
 function tst_project_card_group(WP_Post $cpost){
-	rdc_project_card($cpost);	
+    knd_project_card($cpost);	
 }
 
 function tst_project_card_single(WP_Post $cpost){
-	rdc_project_card($cpost);	
+    knd_project_card($cpost);	
 }
 
 
@@ -147,7 +147,7 @@ function knd_person_card(WP_Post $cpost, $linked = true){
 <article class="tpl-person card <?php if($linked) { echo 'linked'; }?>">
 <?php if($linked) {?> <a href="<?php echo $pl; ?>" class="entry-link"><?php } ?>
 	
-	<div class="entry-preview"><?php echo rdc_post_thumbnail($cpost->ID, 'square');?></div>
+	<div class="entry-preview"><?php echo knd_post_thumbnail($cpost->ID, 'square');?></div>
 	<div class="entry-data">
 		<h4 class="entry-title"><?php echo get_the_title($cpost);?></h4>
 		<div class="entry-meta"><?php echo apply_filters('rdc_the_content', $cpost->post_excerpt);?></div>
@@ -198,7 +198,7 @@ function rdc_search_card(WP_Post $cpost) {
 	
 ?>
 <article class="tpl-search"><a href="<?php echo $pl; ?>" class="entry-link">
-	<div class="entry-meta"><?php echo strip_tags(rdc_posted_on($cpost), '<span>');?></div>
+	<div class="entry-meta"><?php echo strip_tags(knd_posted_on($cpost), '<span>');?></div>
 	<h4 class="entry-title"><?php echo get_the_title($cpost);?></h4>
 	<div class="entry-summary"><?php echo $ex;?></div>
 </a></article>
@@ -237,7 +237,7 @@ function rdc_get_default_post_thumbnail($type = 'default_thumbnail', $size){
 	return $img;
 }
 
-function rdc_post_thumbnail($post_id, $size = 'post-thumbnail', $default = true){
+function knd_post_thumbnail($post_id, $size = 'post-thumbnail', $default = true){
 	
 	$thumb = get_the_post_thumbnail($post_id, $size);
 	
@@ -248,7 +248,7 @@ function rdc_post_thumbnail($post_id, $size = 'post-thumbnail', $default = true)
 	return $thumb;
 }
 
-function rdc_post_thumbnail_src($post_id, $size = 'post-thumbnail'){
+function knd_post_thumbnail_src($post_id, $size = 'post-thumbnail'){
 	
 	$src = get_the_post_thumbnail_url($post_id, $size);
 	if(!$src){

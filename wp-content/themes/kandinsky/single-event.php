@@ -15,7 +15,7 @@ if($format == 'introvid'){
 		$format = 'standard';
 }
 elseif($format == 'introimg') {
-	$thumbnail = rdc_post_thumbnail_src($event->ID, 'full');
+	$thumbnail = knd_post_thumbnail_src($event->ID, 'full');
 }
 
 get_header(); ?>
@@ -63,7 +63,7 @@ get_header(); ?>
 		<main class="bit md-8">		
 			
 		<?php if($format == 'standard') {
-			$thumb = rdc_post_thumbnail($event->ID, 'medium-thumbnail', false);
+			$thumb = knd_post_thumbnail($event->ID, 'medium-thumbnail', false);
 			if($thumb) {
 		?>
 			<div class="entry-preview"><?php echo $thumb;?></div>

@@ -242,8 +242,8 @@ class KND_Import_Git_Content {
      */
     private function download_git_zip() {
         
-        $attachment_id = TST_Import::get_instance()->import_big_file( $this->content_archive_url );
-//         $attachment_id = TST_Import::get_instance()->maybe_import( $this->content_archive_url );
+//         $attachment_id = TST_Import::get_instance()->import_big_file( $this->content_archive_url );
+        $attachment_id = TST_Import::get_instance()->maybe_import( $this->content_archive_url );
         $this->zip_fpath = get_attached_file( $attachment_id );
     }
     

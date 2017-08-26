@@ -16,7 +16,7 @@ if($format == 'introvid'){
 		$format = 'standard';
 }
 elseif($format == 'introimg') {
-	$thumbnail = rdc_post_thumbnail_src($cpost->ID, 'full');
+	$thumbnail = knd_post_thumbnail_src($cpost->ID, 'full');
 }
 
 get_header(); ?>
@@ -25,7 +25,7 @@ get_header(); ?>
 
 <div class="container">
 	<header class="entry-header-full">
-		<div class="entry-meta"><?php echo rdc_posted_on($cpost); //for event ?></div>
+		<div class="entry-meta"><?php echo knd_posted_on($cpost); //for event ?></div>
 		<h1 class="entry-title"><?php echo get_the_title($cpost);?></h1>				
 		<div class="mobile-sharing hide-on-medium"><?php echo knd_social_share_no_js();?></div>
 		

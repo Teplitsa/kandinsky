@@ -93,38 +93,23 @@ class KND_Org_Widget extends WP_Widget {
 
     public function print_widget_content($title, $orgs) {?>
 
-    <div class="container">
-        <div class="entry-content">
-            <div>
 
-                <div class="panel-grid">
-                    <div class="panel-grid-cell">
-                        <div class="so-panel widget widget_ist-sectionheader panel-first-child" data-index="4">
-                            <div class="so-widget-ist-sectionheader so-widget-ist-sectionheader-base">
-                                <div class="pb-section-title align-center">
-                                    <h3><?php echo $title;?></h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="so-panel widget widget_tst-blocksgroup panel-last-child" data-index="5">
-                            <div class="so-widget-tst-blocksgroup so-widget-tst-blocksgroup-base">
-                                <div class="frl-pb-blocks">
-                                    <div class="frame logo-gallery">
+    <section class="container-wide knd-partners-widget">
+    
+        <div class="container">
+        
+            <h2 class="section-title"><?php echo $title;?></h2>
+            
+            <div class="knd-news-widget-body flex-row">
 
-                                    <?php foreach($orgs as $org) {?>
-                                        <div class="bit bit-no-margin sm-6 md-3 lg-col-5">
-                                            <?php knd_org_card($org);?>
-                                        </div>
-                                    <?php }?>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <?php foreach($orgs as $org) {?>
+                <div class="flex-mf-3">
+                    <?php knd_org_card($org);?>
                 </div>
+            <?php }?>
 
             </div>
+            
         </div>
     </div>
 

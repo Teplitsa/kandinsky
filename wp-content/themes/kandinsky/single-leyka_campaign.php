@@ -11,7 +11,7 @@ get_header();
 <article class="main-content leyka-campaign">
 <div class="container">
 	<header class="entry-header-full">
-		<div class="entry-meta"><?php echo rdc_posted_on($cpost); //for event ?></div>
+		<div class="entry-meta"><?php echo knd_posted_on($cpost); //for event ?></div>
 		<h1 class="entry-title"><?php echo get_the_title($cpost);?></h1>						
 	</header>
 	

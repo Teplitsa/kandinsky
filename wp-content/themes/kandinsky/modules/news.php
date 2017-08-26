@@ -35,21 +35,28 @@ class KND_News_Widget extends WP_Widget {
         echo $before_widget;
         ?>
 
-<section class="heading">
-    <div class="container"><h1 class="section-title archive"><?php echo $title;?></h1></div>
-</section>
+<section class="container-wide knd-news-widget">
 
-<section class="main-content cards-holder knd-news-widget-body"><div class="container-wide">
-<div class="cards-loop sm-cols-1 md-cols-2 lg-cols-2">
-    <?php
-        if(!empty($posts)){
-            foreach($posts as $p){
-                rdc_post_card($p);
+    <div class="container">
+    
+    <h2 class="section-title"><?php echo $title;?></h2>
+    
+    <div class="main-content cards-holder knd-news-widget-body">
+    <div class="cards-loop">
+        <?php
+            if(!empty($posts)){
+                foreach($posts as $p){
+                    knd_post_card($p);
+                }
             }
-        }
-    ?>
-</div>
-</div></section>
+        ?>
+    </div>
+    
+    </div>
+    
+    </div>
+
+</section>
 
 <?php 
 		echo $after_widget;

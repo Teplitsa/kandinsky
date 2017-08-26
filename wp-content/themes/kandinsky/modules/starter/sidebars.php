@@ -25,16 +25,12 @@ class KND_StarterSidebars {
             $home_url = home_url('/');
             $text_widget_text = <<<EOT
 <p>
-<a href="{$home_url}">
-«Линия Цвета» - сообщество помощи людям,
-<br/>
-которые борются с алкогольной зависимостью
-</a>
+Наш офис, учебные залы и помещения групп поддержки открыты ежедневно с 9:00 до 22:00 часов.
 </p>
 <p>
-г. Псков, ул. Советская, д. 85
-<br/>
-<a href="tel:+7-111-172-20-88">+7 (111) 172-20-88</a>
+Москва, 7-я улица Строителей, 17, оф.: 211-217. 
++7 (495) 787-87-23 
+<a href="mailto:">info@colorline.ru</a>
 </p>
 EOT;
             $text_widgets[] = array('title' => __('About Us', 'knd'), 'text' => trim(preg_replace('/\r\n|\r|\n/', '', $text_widget_text)), 'filter' => 'content' );
@@ -58,6 +54,22 @@ EOT;
                 $widget_index = end($nav_menu_widgets_keys);
                 $sidebars['knd-footer-sidebar'][] = 'nav_menu-' . $widget_index;
             }
+            
+            
+            $home_url = home_url('/');
+            $text_widget_text = <<<EOT
+<p>
+Дисклеймер о политике безопасности, конфиденциальности, персональных данных и подобном
+</p>
+<p>
+<a href="#">Политика обработки персональных данных</a>
+<a href="#">Политика конфиденциальности</a>
+</p>                    
+EOT;
+            $text_widgets[] = array('title' => __('Security policy', 'knd'), 'text' => trim(preg_replace('/\r\n|\r|\n/', '', $text_widget_text)), 'filter' => 'content' );
+            $text_widgets_keys = array_keys($text_widgets);
+            $widget_index = end($text_widgets_keys);
+            $sidebars['knd-footer-sidebar'][] = 'text-' . $widget_index;
             
             // save options permanently
             update_option( 'widget_nav_menu', $nav_menu_widgets );

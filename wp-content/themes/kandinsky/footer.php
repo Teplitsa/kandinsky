@@ -15,7 +15,7 @@ $footer_text = get_theme_mod('footer_text');
 </div><!--  #site_content -->
 
 <div id="bottom_bar" class="bottom-bar">
-    <div class="container-wide">
+    <div class="container">
         <div class="flex-row">
             <div class="flex-mf-5">
             
@@ -45,7 +45,7 @@ $footer_text = get_theme_mod('footer_text');
     </div>
 </div>
 
-<footer class="site-footer"><div class="container-wide">		
+<footer class="site-footer"><div class="container">		
 	
 	<div class="widget-area"><?php dynamic_sidebar( 'knd-footer-sidebar' );?></div>
     

@@ -24,19 +24,46 @@ class KND_Ourorg_Widget extends WP_Widget {
         
 ?>
 <div class="container knd-ourorg-widget">
-<div class="entry-content">
 
-<div id="panel-72-0-0-1" class="so-panel widget widget_sow-editor panel-last-child" data-index="1">
-<div class="content-center container-extended-colored panel-widget-style">
+<div class="widget">
 
 <h2><?php echo $title?></h2>
-<p><?php echo $text?></p>
+
+<div class="flex-row knd-whoweare-headlike-text-wrapper">
+    <p class="knd-whoweare-headlike-text flex-mf-12"><?php echo $text?></p>
+</div>
 
 </div>
-</div>
 
 </div>
+
+<div class="container knd-whoweare-section flex-row">
+    <div class="whoweare-item flex-mf-4">
+        <h3>Кто мы?</h3>
+        <p>
+        Благотворительная организация «Линия Цвета» помогает преодолеть алкогольную зависимость и вернуться к полноценной жизни.
+        </p>
+        <a href="#">Узнайте о нашей работе</a>
+    </div>
+    
+    <div class="whoweare-item flex-mf-4">
+        <h3>Что мы делаем?</h3>
+        <p>
+        Мы организуем реабилитационные программы, информируем, помогаем тем, кто готов отказаться от этой пагубной привычки и вернуть свою жизнь.
+        </p>
+        <a href="#">Посмотреть проекты</a>
+    </div>
+
+    <div class="whoweare-item flex-mf-4">
+        <h3>Бросить пить?</h3>
+        <p>
+        Заполните анонимную форму на сайте, выберите удобное вам время для индивидуальной консультации или запишитесь в группу  поддержки.
+        </p>
+        <a href="#">Получить помощь</a>
+    </div>
+    
 </div>
+
 <?php 
     }
     

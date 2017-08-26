@@ -19,18 +19,15 @@
 
 
 .cards-loop {
+    
 	display: flex;
-	flex-flow: row wrap;	
+	flex-flow: row wrap;
+	justify-content: space-between;
 	align-items: stretch;
-	margin: 0 $gut/2;
-	
-	@include for(xxlarge-screens) {
-		margin: 0 -1*$gut/2;
-	}
 	
 	.card {
-		margin: 0 $gut/2 $gut;
-		width: calc(100% - 30px);  	
+		width: 30.5%;
+		margin-bottom: $gut;
 	}
 	
 	@include for(small-screens) {
@@ -85,8 +82,7 @@
 @mixin post-meta() {
 	@include nav-text(meta_small);
 	display: inline-block;
-	background: $color-text-black;
-	color: $color-white;
+	color: var(--knd-color-main-dark);
 	padding: 4px 8px;
 	
 	a {
@@ -124,7 +120,7 @@
 .tpl-post {
 	background: $color-white;
 	transition: all 0.3s;
-		
+	
 	&:hover {
 		background: $color-secondary-alt;
 		.entry-preview:after { background: rgba(0,0,0, 0.3); }
@@ -132,30 +128,53 @@
 	
 	a {
 		display: block;
+		color: $color-text-black;
+		position:relative;
 		height: 100%;
 	}
 	
 	.entry-data {
-		padding: 0 $base $base;
+		padding: 11px $base 0px 23px;
 		position: relative;
+		margin-bottom:$gut * 2;
 	}
 	
 	.entry-preview {
 		@include shadowed-preview();
+		
+		img {
+		  margin-bottom:0px;
+		}
 	}
 	
 	.entry-meta {
 		@include post-meta();		
 		position: absolute;
-		top: 0;
-		transform: translateY(-100%);
+		bottom: 13px;
+		left: 16px;
 		z-index: 100;
+		
+		.date {
+		  color: $color-border-dark;
+		}
+		
+        .sep {
+            display:inline-block;
+            width: 4px;
+            height: 4px;
+            border: solid 1px $color-border-dark;
+            border-radius: 4px;
+            padding:0px;
+            vertical-align:baseline;
+            margin:0px 7px 3px 7px;
+        }
+  		
 	}
 	
 	.entry-title {
 		@include post-title();
 		margin-bottom: $base*0.75;				
-		padding-top: $base;
+		padding-top: 0px;
 		hyphens: auto;
 	}
 	
@@ -385,40 +404,34 @@
 
 
 /** Programms **/
-.tpl-programm {
-	margin-bottom: $gut;
-	
-	.entry-link {
-		display: block;
-		position: relative;
-	}
-	
-	.entry-title {
-		@include post-title();
-		hyphens: none;
-		
-		position: absolute;
-		left: $gut/2;
-		bottom: $gut/2;
-		z-index: 100;
-		width: calc(100% - 30px);
-		
-		span {
-			margin-left: 4px;
-			background: $color-white;
-			color: $color-text-black;
-			display: inline;
-			box-shadow: 4px 0 0 $color-white, -4px 0 0 $color-white;
-			box-decoration-break: clone;
-			hyphens: none;
-		}
-	}
-	
-	.entry-preview {
-		@include shadowed-preview();
-	}
-	
-	&:hover .entry-preview:after { background: rgba(0,0,0, 0.3); }
+.tpl-project {
+    transition: all 0.3s;
+    
+    &:hover {
+        .entry-preview:after { background: rgba(0,0,0, 0.3); }
+    }   
+    
+    a {
+        display: block;
+        color: $color-white;
+        position:relative;
+        height: 100%;
+    }
+    
+    .entry-preview {
+        @include shadowed-preview();
+        
+        img {
+          margin-bottom:0px;
+        }
+    }
+    
+    .entry-title {
+        @include post-title();
+        margin-bottom: $base*0.75;
+        padding: 24px 0px 0px 0px;
+        hyphens: auto;
+    }
 }
 
 

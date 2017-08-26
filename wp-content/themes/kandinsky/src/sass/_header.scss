@@ -189,12 +189,12 @@ $full_height   : $logo_full_h + $height_gap;
 
 h1.logo-name {
 	font-family: $heading;
-	@include logo-head-text();
+	@include knd-head-main-text();
 }
 
 h2.logo-name {
 	padding-top: 7px;
-	@include logo-sub-text();
+	@include knd-subhead-text();
 }
 
 
@@ -222,23 +222,16 @@ h2.logo-name {
 	cursor: pointer;
 	
 	&.donate {
-		@include button-caption-text();
-		color: $color-white;
+	
 		position: relative;
 		margin-right: 1px;		
 		z-index: 10;
 					
 		a {
-			display: block;
-			color: inherit;			
-			line-height: 16px;
-			background: $color-link-three;
+            @include button();
 			margin: $height_gap/2 0 0 $height_gap/2;			
-			padding: ($logo_small_h - 18px) / 2;
-			transition: background 0.35;
 			
 			@include for(medium-screens) {
-				padding: 17px 35px;
 				margin-top: ($logo_full_h + $height_gap - 16*3px)/2;
 			}
 			
@@ -246,17 +239,8 @@ h2.logo-name {
 				//margin-right: $height_gap/2;
 			}
 			
-			&:hover {
-				background: $color-link-two;
-			}
 		}
-				
-		.svg-icon {
-			width: 15px;
-			height: 15px;
-			fill: $color-white;
-			margin-right: 8px;
-		}		
+		
 	}
 		
 	&.menu {

@@ -46,26 +46,6 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /** Layout structure **/
-.container {
-	width: 92%;
-	max-width: $page_cont;
-	margin: 0 auto;
-	position: relative;	
-}
-
-.container-wide {
-	@extend .container;
-	max-width: $full_cont;
-	width: 100%;
-}
-
-.container-narrow {
-	@extend .container;
-	max-width: 900px;
-}
-
-.search .site-content .container { max-width: 900px;}
-
 // index
 .heading {
 	background: $color-white;
@@ -80,7 +60,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .cards-holder {
-	background: $color-secondary-dark;
 	padding-top: $gut;
 	
 	&.squared {
@@ -173,9 +152,9 @@ h1, h2, h3, h4, h5, h6 {
 	}
 	
 	.copy {
-	   padding-top: 25px;
+	   padding-top: 27px;
 	   color: $color-text-light;
-	   @include credits-body-text();
+	   @include knd-supersmall-text();
 		a { 
 		  white-space: nowrap;
 		  color: $color-text-light; 
@@ -196,6 +175,7 @@ h1, h2, h3, h4, h5, h6 {
 	.widget-bottom {
 		flex: 0 0 auto;
         width: calc(100% - 30px);
+        padding-bottom: $gut;
 		
 		@include for(small-screens){			
             width: calc(50% - 30px);
@@ -344,7 +324,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .knd-homepage-widgets {
     
-    text-align:center;
+    border-top: 5px solid $color-border-dark;
+    
     img {
         @include widget-content-style();
     }

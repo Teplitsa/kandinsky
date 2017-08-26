@@ -141,7 +141,7 @@ function rdc_custom_menu_items($items, $args){
 }
  
 /** HTML with meta information for the current post-date/time and author **/
-function rdc_posted_on(WP_Post $cpost) {
+function knd_posted_on(WP_Post $cpost) {
 	
 	$meta = array();
 	$sep = '';
@@ -154,7 +154,7 @@ function rdc_posted_on(WP_Post $cpost) {
 		$meta[] = $cat;
 		$meta = array_filter($meta);
 		
-		$sep = rdc_get_sep('&middot;');		
+		$sep = '<span class="sep"></span>';
 	}
 	elseif('event' == $cpost->post_type ) {
 		
@@ -225,7 +225,7 @@ function rdc_svg_icon($id, $echo = true) {
 
 
 /** Separator **/
-function rdc_get_sep($mark = '//') {
+function knd_get_sep($mark = '//') {
 	
 	return "<span class='sep'>".$mark."</span>";
 }
@@ -250,7 +250,7 @@ function rdc_section_title() {
 		
 		$p = get_post(get_option('page_for_posts'));
 		$title = get_the_title($p);
-		$title .= rdc_get_sep('&mdash;');
+		$title .= knd_get_sep('&mdash;');
 		$title .= single_term_title('', false);
 		$css = 'archive';
 	}
@@ -400,7 +400,7 @@ function rdc_breadcrumbs(WP_Post $cpost){
 	}
 	
 	
-	$sep = rdc_get_sep('&gt;');
+	$sep = knd_get_sep('&gt;');
 	
 	return "<div class='crumbs'>".implode($sep, $links)."</div>";	
 }
@@ -492,7 +492,7 @@ function rdc_related_project(WP_Post $cpost){
 	<h3 class="widget-title"><?php _e('Related project', 'kds');?></h3>
 	<a href="<?php echo $pl;?>" class="entry-link">
 		<div class="rw-preview">
-			<?php echo rdc_post_thumbnail($cpost->ID, 'post-thumbnail');?>
+			<?php echo knd_post_thumbnail($cpost->ID, 'post-thumbnail');?>
 		</div>
 		<div class="rw-content">
 			<h4 class="entry-title"><?php echo get_the_title($cpost);?></h4>
@@ -818,8 +818,9 @@ function knd_hero_image_markup() {
 <div class="tpl-pictured-bg" style="background-image: url(<?php echo $hero_img;?>)"></div>
 </section>
 
-<section class="container-wide intro-head-content text-over-image has-button flex-row">
-<div class="ihc-content flex-mf-6">
+<section class="container intro-head-content text-over-image has-button">
+
+<div class="ihc-content">
 <a href="<?php echo $knd_hero_image_support_url ?>">
 <?php if($knd_hero_image_support_title):?>
 <h1 class="ihc-title">
@@ -840,6 +841,7 @@ function knd_hero_image_markup() {
 <?php endif;?>
 </a>
 </div>
+
 </section>
 
 <?php
