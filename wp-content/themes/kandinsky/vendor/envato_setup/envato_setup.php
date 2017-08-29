@@ -225,7 +225,16 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 
 			$this->site_scenarios = array(
                 'color-line' => array(
-                    'name' => __('Social problem oriented charity organization', 'knd'),
+                    'name' => __('Color Line', 'knd'),
+                    'description' => __('An example of a social problem oriented charity organization.', 'knd'),
+                ),
+                'withyou' => array(
+                    'name' => __('We Are With You', 'knd'),
+                    'description' => __('An example of a crowdfunding oriented charity organization.', 'knd'),
+                ),
+                'dubrovino' => array(
+                    'name' => __('Protect Dubrovino!', 'knd'),
+                    'description' => __('An example of a public campaign to protect a park from deconstruction.', 'knd'),
                 ),
             );
 
@@ -1401,7 +1410,7 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 		public $errors = array();
 
 		public function error($message) {
-			$this->logs[] = 'ERROR!!!!11 '.$message;
+			$this->logs[] = 'ERROR: '.$message;
 		}
 
 		public function step_scenario_view() {?>
@@ -1417,7 +1426,12 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
                         <li <?php echo $scenario_id == $current_scenario_id ? 'class="current" ' : '';?>>
                             <a href="#" data-scenario="<?php echo esc_attr($scenario_id);?>">
                                 <img src="<?php echo esc_url(get_template_directory_uri().'/vendor/envato_setup/images/'.$scenario_id.'/style.png');?>">
-                                <?php //echo $data['name'];?>
+                                <span class="plot-data">
+                                    <span class="plot-title"><?php echo $data['name'];?></span>
+                                    <div class="plot-info">
+                                        <?php echo empty($data['description']) ? '' : $data['description'];?>
+                                    </div>
+                                </span>
                             </a>
                         </li>
                     <?php }?>
@@ -1458,7 +1472,7 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 
 			<h1><?php esc_html_e('Logo', 'knd');?></h1>
 			<form method="post">
-            
+
 				<p><?php _e('Please add your organization main logo below. The recommended size is <strong>315 x 66 px</strong> (for "Image only" mode) and <strong>66 x 66 px</strong> (for "Image with site name" mode). The logo can be changed at any time from the Appearance > Customize area in your website dashboard.', 'knd');?></p>
                 
                 <p><?php printf(esc_html__('Try our %sPaseka program%s if you need a new logo designed.', 'knd'), '<a href="https://paseka.te-st.ru/" target="_blank">', '</a>');?></p>

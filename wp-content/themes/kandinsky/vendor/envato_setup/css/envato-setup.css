@@ -507,13 +507,22 @@ body {
     background: #0091CD;
     border-radius: 2px;
 }
-.theme-presets ul li a{
-    float:left;
-    line-height:0;
+.theme-presets ul li a {
+    display: flex;
+    /*float:left;*/
+    /*line-height:0;*/
 }
 .theme-presets ul li a img{
-    width: 300px;
+    flex-basis: 300px;
+    flex-grow: 0;
+    flex-shrink: 0;
     height:auto;
+}
+.theme-presets ul li a .plot-data {
+    width: 100%;
+    flex-grow: 1;
+    flex-shrink: 1;
+    /*height:auto;*/
 }
 
 .knd-plugin-description {
