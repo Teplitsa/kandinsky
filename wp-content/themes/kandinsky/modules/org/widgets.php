@@ -103,7 +103,7 @@ class KND_Org_Widget extends WP_Widget {
             <div class="knd-news-widget-body flex-row">
 
             <?php foreach($orgs as $org) {?>
-                <div class="flex-mf-3">
+                <div class="flex-mf-12 flex-sm-6 flex-md-3">
                     <?php knd_org_card($org);?>
                 </div>
             <?php }?>

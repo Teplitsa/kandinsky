@@ -32,6 +32,7 @@ $full_height   : $logo_full_h + $height_gap;
 	}
 	
 	.admin-bar & {
+	    @media screen { top: $adminbar_small_screen;  }
 		@media screen and (min-width: 600px) { top: $adminbar_small_screen; }
 		@media screen and (min-width: 783px) { top: $adminbar_large_screen; }		
 	}
@@ -39,6 +40,22 @@ $full_height   : $logo_full_h + $height_gap;
 	&.invisible {
 		opacity: 0;
 	}
+}
+
+.site-header.hard-top-margin-for-small-screen { 
+    top: $adminbar_small_screen; 
+}
+
+#wp-admin-bar-kandinsky-main {
+    @include upto(large-screens) { display: none;}
+}
+
+#wp-admin-bar-leyka-toolbar-menu {
+    @include upto(large-screens) { display: none;}
+}
+
+#wpadminbar #wp-admin-bar-wpseo-menu.menupop {
+    @include upto(large-screens) { display: none;}
 }
 
 .site-content {

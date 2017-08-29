@@ -33,11 +33,11 @@ endif;
             <h2>112 волонтеров помогают «Линии цвета» в настоящий момент</h2>
             
             <div class="flex-row knd-whoweare-headlike-text-wrapper">
-                <p class="flex-mf-1"></p>
-                <p class="knd-whoweare-headlike-text flex-mf-10">
+            
+                <p class="knd-whoweare-headlike-text flex-mf-12 flex-sm-10">
                 Присоединяйтесь к команде волонтеров <br />и консультантов в наших проектах
                 </p>
-                <p class="flex-mf-1"></p>
+                
             </div>
             
             <div class="knd-cta-wrapper-wide">

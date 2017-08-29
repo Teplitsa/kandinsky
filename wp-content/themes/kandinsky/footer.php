@@ -53,7 +53,7 @@ $footer_text = get_theme_mod('footer_text');
     
 	<div class="flex-row">
 		
-		<div class="flex-mf-6">		
+		<div class="flex-mf-6 flex-sm-4 flex-md-6">		
 				
 			<div class="copy">
 				<?php echo apply_filters('rdc_the_content', $footer_text); ?>	
@@ -62,7 +62,7 @@ $footer_text = get_theme_mod('footer_text');
 			
 		</div>
 		
-		<div class="flex-mf-6">
+		<div class="flex-mf-6 flex-sm-8 flex-md-6">
 			<div class="te-st-bn">
 				<p class="support">Сайт работает <br>на «Кандинском»</p>
 				<a title="<?php echo $tst;?>" href="http://te-st.ru/" class="rdc-banner">					

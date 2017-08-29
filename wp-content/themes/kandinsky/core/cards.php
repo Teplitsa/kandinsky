@@ -6,7 +6,7 @@ function knd_post_card(WP_Post $cpost){
 	$pl = get_permalink($cpost);
 	$ex = apply_filters('rdc_the_title', rdc_get_post_excerpt($cpost, 25, true));
 ?>
-<article class="tpl-post card">
+<article class="flex-md-6 flex-lg-4 tpl-post card">
 	<a href="<?php echo $pl; ?>" class="thumbnail-link">
 	<div class="entry-preview"><?php echo knd_post_thumbnail($cpost->ID, 'post-thumbnail');?></div>
 	<div class="entry-data">
@@ -124,7 +124,7 @@ function knd_project_card(WP_Post $cpost){
 	
 	$pl = get_permalink($cpost);
 ?>
-<article class="tpl-project card"><a href="<?php echo $pl; ?>" class="entry-link">	
+<article class="flex-md-4 tpl-project card"><a href="<?php echo $pl; ?>" class="entry-link">	
 	<div class="entry-preview"><?php echo knd_post_thumbnail($cpost->ID, 'post-thumbnail');?></div>
 	<h4 class="entry-title"><span><?php echo get_the_title($cpost);?></span></h4>
 </a></article>

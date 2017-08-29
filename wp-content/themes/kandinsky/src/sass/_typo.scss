@@ -192,7 +192,10 @@ $modularscale: (
 }
 
 @mixin knd-head-exlarge-text() {
-    font-size: 36px;
+    @include ms-respond(font-size, 3);
+    @include for(small-screens) {
+        font-size: 36px;
+    }
     font-family: $heading;
     line-height: 1;
     letter-spacing: .03em;
@@ -280,6 +283,12 @@ $modularscale: (
     font-family: $body;
     line-height: 1.33;
     letter-spacing: .07em;
+}
+
+@mixin knd-link-footerblack-text() {
+    @include ms-respond(font-size, 0);
+    font-family: $body;
+    font-weight:600;
 }
 
 @mixin about-name-text() {

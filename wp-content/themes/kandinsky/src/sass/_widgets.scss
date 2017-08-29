@@ -279,7 +279,11 @@
 	@include container-extended();
 	
 	.tpl-pictured-bg {
-	   background-position: 150px 25%;
+	   background-position:none;
+	   
+	   @include for(medium-screens) {
+	       background-position: 150px 25%;
+       }
 	}
 	
 	&.text-over-image {
@@ -340,13 +344,20 @@
 		height: 1px;
 		
 		.ihc-content {
-	        color: $color-white;
+
+            transform: translateY(-100%);
+            width: 47%;
+            
+            @include for(medium-screens) {
+                padding-bottom: $gut*2;
+                margin-top: -15px;
+                transform: translateY(-100%);
+                width: 47%;
+            }
+    		
+            color: $color-white;
             position: relative;
-			padding-bottom: $gut*2;
-			margin-top: -15px;
-			transform: translateY(-100%);
-			width: 47%;
-			
+            
 			& > a { 
 			   display: block;
 		    }
@@ -483,6 +494,15 @@
 	}
 }
 
+/* homepage widgets */
+.knd-homepage-widgets {
+    padding-top: $gut;
+    
+    @include for(medium-screens) {
+        padding-top: $gut * 1.8;
+    }
+}
+
 /* news widget */
 .knd-news-widget {
     
@@ -507,9 +527,13 @@
 
 /* ourorg widget */
 .knd-ourorg-widget {
+    display:none;
+    @include for(medium-screens) {
+        display:block;
+    }
+    
     @include widget-content-style();
     text-align:center;
-    padding-top: $gut * 1.8;
     padding-bottom: $gut * 1.55;
     
     h2 {
@@ -530,16 +554,36 @@
 
 /* who we are */
 .knd-whoweare-section {
-    padding-bottom: 100px;
+    
+    padding-bottom: 0px;
+    @include for(medium-screens) {
+        padding-bottom: 100px;
+    }
     
     .whoweare-item {
+    
+        margin-bottom: $gut;
+    
+        @include for(medium-screens) {
+            text-align:left;
+            min-height:none;
+        }
+        
         h3 {
             @include knd-head-main-text();
         }
         
         p {
             padding-top: 15px;
-            min-height: 146px;
+            min-height: 76px;
+            
+            @include for(medium-screens) {
+                min-height: 200px;
+            }
+            
+            @include for(large-screens) {
+                min-height: 146px;
+            }
         }
         
         a {
@@ -569,6 +613,9 @@
 
 /* join us bar */
 .knd-joinus-widget {
+    
+    display:block;
+    
     @extend .knd-ourorg-widget;
     background: var(--knd-color-second);
     padding-top: $gut * 1.22;
@@ -579,8 +626,11 @@
     }
     
     .knd-whoweare-headlike-text-wrapper {
+        justify-content: center;
+        
         .knd-whoweare-headlike-text {
             line-height: 1.33;
+            hyphens: none;
         }
     }
     
@@ -606,15 +656,26 @@
     
     .section-links {
         display: flex;
-        justify-content: flex-end;
+        justify-content: flex-start;
         border-bottom: 1px solid $color-border-dark;
         padding-bottom: 15px;
-        transform: translateY(-55%);
+        
+        padding-top: 10px;
+        @include for(medium-screens) {
+            justify-content: flex-end;
+            transform: translateY(-55%);
+            padding-top: 0px;
+        }
         
         a {
             @include knd-link-section-text();
             color: var(--knd-color-main-dark);
-            margin-left: 44px;
+            
+            margin-right: 20px;
+            @include for(medium-screens) {
+                margin-left: 44px;
+                margin-right: 0px;
+            }
             
             &:hover, &:focus, &:active {
                 color: var(--knd-color-main);
@@ -636,4 +697,13 @@
     .knd-news-widget-body {
         padding-top: 33px;
     }
+
+    .tpl-org img {
+        max-width: 180px;
+        
+        @include for(medium-screens) {
+            max-width: 100%;
+        }
+    }
+    
 }

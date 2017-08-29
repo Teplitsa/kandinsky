@@ -147,6 +147,7 @@ h1, h2, h3, h4, h5, h6 {
 	}
 	
 	p {
+	    hyphens: none;
 		margin-bottom: $base/2;
 		&:last-child { margin-bottom: 0; }
 	}
@@ -174,30 +175,44 @@ h1, h2, h3, h4, h5, h6 {
 	
 	.widget-bottom {
 		flex: 0 0 auto;
-        width: calc(100% - 30px);
+        width: calc(100% - 24px);
         padding-bottom: $gut;
 		
 		@include for(small-screens){			
-            width: calc(50% - 30px);
+            width: calc(50% - 24px);
 		}
 		
 		@include for(medium-screens){
 			&:nth-of-type(2),
 			&:nth-of-type(3) {				
-                width: calc(25% - 30px);
+                width: calc(25% - 24px);
 			}			
 		}
 		
 		@include for(large-screens){			
-            width: calc(25% - 30px);
+            width: calc(33.3% - 24px);
 			
 			&.widget_nav_menu {				
-                width: calc(17% - 30px);			
+                width: calc(17% - 24px);			
 			}
+			
+            &:nth-of-type(2),
+            &:nth-of-type(3) {
+                width: calc(15% - 24px);
+            }
+            
+            &:nth-of-type(2) {
+                padding-left:$gut;
+            }
 		}
 		
-		&.help .textwidget {
-			max-width: 245px;
+		&:nth-of-type(1){
+		    .textwidget {
+			     a {
+                     @include knd-link-footerblack-text();
+			         color: $color-text-black;
+			     }
+            }
 		}
 	}
 	
@@ -309,12 +324,17 @@ h1, h2, h3, h4, h5, h6 {
 	}
 		
 	.support {
-		display: inline-block;
+		
 		font-size: 11px;
 		line-height: 14px;
 		margin-right: 110px;
 		padding-top: 8px;
 		color: rgba(0,0,0, 0.75);
+		
+		display:none;
+        @include for(small-screens) {
+            display: inline-block;
+        }
 	}
 }
 

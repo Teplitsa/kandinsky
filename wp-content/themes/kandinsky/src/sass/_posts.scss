@@ -20,61 +20,10 @@
 
 .cards-loop {
     
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: space-between;
-	align-items: stretch;
-	
 	.card {
-		width: 30.5%;
 		margin-bottom: $gut;
 	}
 	
-	@include for(small-screens) {
-		&.sm-cols-2 {			
-			.card {
-				width: calc(50% - 30px);    		
-			}
-		}
-	}
-	
-	@include for(medium-screens) {
-		&.md-cols-2 {			
-			.card {
-				width: calc(50% - 30px);    		
-			}
-		}
-		
-		&.md-cols-3 {			
-			.card {				
-                width: calc(33.3% - 30px);          	
-			}
-		}
-	}
-	
-	@include for(large-screens) {
-		&.lg-cols-2 {			
-			.card {
-				width: calc(50% - 30px);				
-			}
-		}
-		
-		&.lg-cols-3 {			
-			.card {
-				width: calc(33.3% - 30px);    		
-			}
-		}
-		
-		&.lg-cols-4 {			
-			.card {
-				width: calc(25% - 30px); 		
-			}
-		}
-	}
-	
-	.squared & {
-		margin: 0 -1*$gut/2;
-	}
 }
 
 

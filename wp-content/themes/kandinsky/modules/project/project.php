@@ -30,7 +30,7 @@ class KND_Project {
             
         <div class="main-content cards-holder knd-news-widget-body">
         
-        <div class="cards-loop">
+        <div class="flex-row cards-loop">
             <?php
                 if(!empty($posts)){
                     foreach($posts as $p){

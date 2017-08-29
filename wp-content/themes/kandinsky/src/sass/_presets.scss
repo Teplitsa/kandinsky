@@ -243,7 +243,12 @@ $fixed_side: 222px;
 	background: $color-link-three;
 	border: 1px solid $color-link-three;	
 	transition: all 0.3;
-    padding: 12px 35px;
+    text-align:center;
+	
+	padding: 6px 16px;
+	@include for(small-screens) {
+        padding: 12px 35px;
+    }
 	
 	&:visited {
 		color: $color-white;

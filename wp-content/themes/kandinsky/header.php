@@ -22,6 +22,7 @@
 	<div class="site-header-panel">
 			
 		<div class="site-panel-row">
+        
 			<div class="site-branding site-panel-cell"><?php knd_logo_markup();?></div>
 			
 			<?php $header_text = get_option('text_in_header'); ?>
@@ -29,7 +30,7 @@
 				<div class="site-details-cell"><?php echo apply_filters('rdc_the_content', $header_text); ?></div>
 			</div>									
 			
-			<div class="trigger-button donate site-panel-cell">
+			<div class="trigger-button donate site-panel-cell hide-upto-medium">
 				<a id="trigger_donate"  href="<?php echo get_permalink( knd_get_post('donate', 'page') ) ?>"><?php _e( 'Donate', 'knd' ); ?></a>
 			</div>
 			
