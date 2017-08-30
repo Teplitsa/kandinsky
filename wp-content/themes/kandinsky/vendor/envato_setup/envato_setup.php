@@ -228,7 +228,7 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
                     'name' => __('Color Line', 'knd'),
                     'description' => __('An example of a social problem oriented charity organization.', 'knd'),
                 ),
-                'crowdfunding-oriented-org' => array(
+                'fundraising-oriented-org' => array(
                     'name' => __('We Are With You', 'knd'),
                     'description' => __('An example of a crowdfunding oriented charity organization.', 'knd'),
                 ),

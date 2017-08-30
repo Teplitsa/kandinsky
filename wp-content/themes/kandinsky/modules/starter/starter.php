@@ -59,7 +59,7 @@ function knd_set_sitename_settings($scenario_data) {
             update_option('blogname', $scenario_data['name']);
             update_option('blogdescription', $scenario_data['description']);
             break;
-        case 'crowdfunding-oriented-org':
+        case 'fundraising-oriented-org':
             update_option('blogname', $scenario_data['name']);
             update_option('blogdescription', $scenario_data['description']);
             break;
