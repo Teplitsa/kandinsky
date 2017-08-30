@@ -55,11 +55,11 @@ function knd_setup_site_icon() {
 function knd_set_sitename_settings($scenario_data) {
     switch(get_theme_mod('knd_site_scenario')) {
 
-        case 'problem-oriented-org':
+        case 'problem-org':
             update_option('blogname', $scenario_data['name']);
             update_option('blogdescription', $scenario_data['description']);
             break;
-        case 'fundraising-oriented-org':
+        case 'fundraising-org':
             update_option('blogname', $scenario_data['name']);
             update_option('blogdescription', $scenario_data['description']);
             break;
