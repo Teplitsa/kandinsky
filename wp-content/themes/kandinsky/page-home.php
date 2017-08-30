@@ -23,36 +23,20 @@ endif;
 ?>
 
 <div class="knd-homepage-widgets">
+
     <?php dynamic_sidebar( 'knd-homepage-sidebar' );?>
     
     <!-- yellow bar -->
-    <div class="container-wide knd-joinus-widget">
-    
-        <div class="container widget">
-        
-            <h2>112 волонтеров помогают «Линии цвета» в настоящий момент</h2>
-            
-            <div class="flex-row knd-whoweare-headlike-text-wrapper">
-            
-                <p class="knd-whoweare-headlike-text flex-mf-12 flex-sm-10">
-                Присоединяйтесь к команде волонтеров <br />и консультантов в наших проектах
-                </p>
-                
-            </div>
-            
-            <div class="knd-cta-wrapper-wide">
-                <a class="cta" href="#">Стать волонтером</a>
-            </div>
-        
-        </div>
-    
-    </div>
+    <?php knd_show_cta_block() ?>
 
-<!-- purple bar -->
-
+    <!-- purple bar -->
 <?php
-$projects = KND_Project::get_short_list(3);
-KND_Project::print_short_list($projects);
+    $projects = KND_Project::get_short_list(3);
+    knd_show_posts_shortlist($projects, "ПРОЕКТЫ «ЛИНИИ ЦВЕТА»", array(
+        array('title' => 'Все проекты', 'url' => '#'),
+        array('title' => 'Пресса о нас', 'url' => '#'),
+        array('title' => 'Отчеты', 'url' => '#'),
+    ));
 ?>
 
 <!-- partners -->

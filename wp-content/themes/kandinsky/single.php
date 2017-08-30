@@ -49,14 +49,18 @@ if($src && isset($src[1]) && $src[1] > 1104) {
 	  <section class="entry-preview"><?php knd_single_post_thumbnail($cpost->ID, 'full', 'introimg'); ?></section>
     </div>
 <?php } else { ?>
-    <div class="container">
-      <section class="entry-preview"><?php knd_single_post_thumbnail($cpost->ID, 'full', 'introimg'); ?></section>
+    <div class="container flex-row">
+      <div class="flex-md-1"></div>
+      <div class="flex-md-10">
+        <section class="entry-preview"><?php knd_single_post_thumbnail($cpost->ID, 'full', 'introimg'); ?></section>
+      </div>
+      <div class="flex-md-1"></div>
     </div>
 <?php }?>
     
 <div class="container">
 
-	<div class="frame flex-row">
+	<div class="flex-row">
     
         <div class="flex-md-1"></div>
         
@@ -64,7 +68,7 @@ if($src && isset($src[1]) && $src[1] > 1104) {
             <div id="knd_sharing" class="regular-sharing hide-upto-medium"><?php echo knd_social_share_no_js();?></div>
         </div>
     
-		<main class="bit flex-md-8">		
+		<main class="flex-md-8">		
 			
 		<?php if($format == 'standard') { ?>
         
@@ -84,6 +88,15 @@ if($src && isset($src[1]) && $src[1] > 1104) {
 </div>
 </section>
 
+<div class="container flex-row">
+    <div class="flex-md-1"></div>
+    <div class="flex-md-1"></div>
+    <div class="flex-md-8">
+    
+        <div class="single-post-terms">
+            <?php knd_show_post_terms($cpost->ID) ?>
+        </div>
+    
 <?php
 	if($cpost->post_type == 'post') {
 		$cat = get_the_terms($post->ID, 'category');
@@ -108,7 +121,7 @@ if($src && isset($src[1]) && $src[1] > 1104) {
 			));
 		}
 		
-		knd_more_section($pquery->posts, __('Related news', 'knd'), 'news', 'addon');
+		knd_more_section($pquery->posts, __('Related items', 'knd'), 'news', 'addon');
 		
 	}
 	elseif($cpost->post_type == 'project') {
@@ -144,6 +157,27 @@ if($src && isset($src[1]) && $src[1] > 1104) {
 			knd_more_section($pquery->posts, __('Our volunteers', 'knd'), 'people', 'addon');
 		}
 	}
-	
+?>
+    </div>
+    <div class="flex-md-2"></div>
+</div>
+
+<div class="knd-signle-after-content">
+<?php
+
+// yellow block
+knd_show_cta_block();
+
+// purple block
+$news = KND_News_Widget::get_short_list(3);
+knd_show_posts_shortlist($news, "Последние новости", array(
+    array('title' => 'Все новости', 'url' => '#'),
+));
+
+?>
+
+</div>
+
+<?php
 
 get_footer();

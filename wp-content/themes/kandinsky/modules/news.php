@@ -90,7 +90,12 @@ class KND_News_Widget extends WP_Widget {
 
 		return $instance;
 	}
-
+	
+	static function get_short_list($num = 3) {
+        $posts = get_posts(array('post_type' => 'post', 'posts_per_page' => $num));
+        return $posts;
+	}
+	
 } //class end
 
 add_action('widgets_init', 'knd_news_widgets', 25);

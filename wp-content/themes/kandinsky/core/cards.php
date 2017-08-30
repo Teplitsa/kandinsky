@@ -94,6 +94,13 @@ function knd_related_post_card(WP_Post $cpost) {
 <?php
 }
 
+function knd_related_post_link(WP_Post $cpost) {
+    $pl = get_permalink($cpost);
+?>
+    <a href="<?php echo $pl; ?>" class="entry-link"><?php echo get_the_title($cpost);?></h4></a>	
+<?php
+}
+
 function rdc_event_card(WP_Post $cpost){
 		
 	//162	
