@@ -46,7 +46,7 @@ var EnvatoWizard = (function($){
             $(this).parents('ul').first().find('.current').removeClass('current');
             $(this).parents('li').first().addClass('current');
 
-            $('#new_scenario').val($(this).data('scenario'));
+            $('#new_scenario_id').val($(this).data('scenario-id'));
 
             return false;
 
@@ -275,7 +275,7 @@ var EnvatoWizard = (function($){
             // We set multiple to false so only get one image from the uploader
             attachment = file_frame.state().get('selection').first().toJSON();
 
-            jQuery('.site-logo').attr('src',attachment.url);
+            jQuery('.site-logo-img').attr('src',attachment.url);
             jQuery('#new_logo_id').val(attachment.id);
             // Do something with attachment.id and/or attachment.url here
         });

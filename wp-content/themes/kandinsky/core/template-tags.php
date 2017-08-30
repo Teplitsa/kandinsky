@@ -419,7 +419,7 @@ function rdc_get_post_format($cpost){
 
 
 /** More section **/
-function rdc_more_section($posts, $title = '', $type = 'news', $css= ''){
+function knd_more_section($posts, $title = '', $type = 'news', $css= ''){
 	
 	if(empty($posts))
 		return;
@@ -454,11 +454,12 @@ function rdc_more_section($posts, $title = '', $type = 'news', $css= ''){
 
 	$css .= ' related-card-holder';
 ?>
-<section class="<?php echo esc_attr($css);?>"><div class="container-wide">
+<section class="<?php echo esc_attr($css);?>">
+
 <h3 class="related-title"><?php echo $title; ?></h3>
 
 <?php if(is_singular('person')) { ?>
-<div class="cards-loop sm-cols-2 md-cols-2 lg-cols-4 related-people-loop">
+<div class="cards-loop related-people-loop flex-row">
 	<?php
 		foreach($posts as $p){
 			knd_person_card($p, true);
@@ -469,14 +470,15 @@ function rdc_more_section($posts, $title = '', $type = 'news', $css= ''){
 <div class="related-cards-loop">
 	<?php
 		foreach($posts as $p){			
-			rdc_related_post_card($p);
+		    knd_related_post_link($p);
 		}		
 	?>
 </div>
 <?php } ?>
 
-<div class="related-all-link"><?php echo $all_link;?></div>
-</div></section>
+<!-- <div class="related-all-link"><?php echo $all_link;?></div> -->
+
+</section>
 <?php
 }
 
@@ -726,6 +728,20 @@ function rdc_add_to_calendar_link(TST_Event $event, $echo = true, $container_cla
 <?php	
 }
 
+function knd_get_site_icon_img_url() {
+
+    $logo_id = get_option('site_icon');
+    if($logo_id) {
+        return wp_get_attachment_image_url($logo_id, 'full', false);
+    } else {
+
+        $site_scenario = get_theme_mod('knd_site_scenario');
+        return $site_scenario ? get_template_directory_uri()."/vendor/envato_setup/images/$site_scenario/favicon.png" : '';
+
+    }
+
+}
+
 function knd_get_logo_img_id() {
 
     $logo_id = get_theme_mod('knd_custom_logo');
@@ -737,24 +753,15 @@ function knd_get_logo_img_id() {
 function knd_get_logo_img_url() {
 
     $logo_id = knd_get_logo_img_id();
-    return $logo_id ?
-        wp_get_attachment_image_url($logo_id, 'full', false) :
-        get_template_directory_uri().'/assets/img/logo.svg';
+    if($logo_id) {
+        return wp_get_attachment_image_url($logo_id, 'full', false);
+    } else {
 
-}
+        $site_scenario = get_theme_mod('knd_site_scenario');
+        return $site_scenario ? get_template_directory_uri()."/vendor/envato_setup/images/$site_scenario/logo.svg" : '';
 
-function knd_get_site_icon_img_url() {
-    
-    $site_icon_url = '';
-    
-    if(has_site_icon()) {
-
-        $logo_id = get_option('site_icon');
-        $site_icon_url = $logo_id ? wp_get_attachment_image_url($logo_id, 'full', false) : '';
-        
     }
-    
-    return $site_icon_url;
+
 }
 
 function knd_get_logo_img() {
@@ -762,7 +769,7 @@ function knd_get_logo_img() {
     $logo_id = knd_get_logo_img_id();
     return $logo_id ?
         wp_get_attachment_image($logo_id, 'full', false, array('alt' => get_bloginfo('name'))) :
-        '<img src="'.get_template_directory_uri().'/assets/img/logo.svg" width="311" height="66" alt="'.get_bloginfo('name').'">';
+        '<img class="site-logo-img" src="'.get_template_directory_uri().'/vendor/envato_setup/images/'.get_theme_mod('knd_site_scenario').'/logo.svg" width="315" height="66" alt="'.get_bloginfo('name').'">';
 
 }
 
@@ -848,3 +855,74 @@ function knd_hero_image_markup() {
     }
 }
 
+function knd_show_post_terms($post_id) {
+?>
+    <div class="tags-line">
+    <?php $terms_list = wp_get_object_terms( $post_id, 'post_tag'); ?>
+        <?php foreach($terms_list as $term):?>
+        <a href="<?php get_term_link( $term->term_id, 'post_tag' ) ?>">#<?php echo $term->name?></a>
+    <?php endforeach;?>
+    </div>
+    
+<?php
+}
+
+function knd_show_cta_block() {
+?>
+    <div class="container-wide knd-joinus-widget">
+    
+        <div class="container widget">
+        
+            <h2>112 волонтеров помогают «Линии цвета» в настоящий момент</h2>
+            
+            <div class="flex-row knd-whoweare-headlike-text-wrapper">
+            
+                <p class="knd-whoweare-headlike-text flex-mf-12 flex-sm-10">
+                Присоединяйтесь к команде волонтеров <br />и консультантов в наших проектах
+                </p>
+                
+            </div>
+            
+            <div class="knd-cta-wrapper-wide">
+                <a class="cta" href="#">Стать волонтером</a>
+            </div>
+        
+        </div>
+    
+    </div>
+<?php
+}
+
+function knd_show_posts_shortlist($posts, $title, $links) {
+?>
+        <section class="container-wide knd-projects-widget">
+        
+        <div class="container">
+        
+        <h2 class="section-title"><?php echo $title; ?></h2>
+        
+        <div class="section-links">
+            <?php foreach($links as $link):?>
+            <a href="<?php echo $link['url']?>"><?php echo $link['title']?></a>
+            <?php endforeach?>
+        </div>
+            
+        <div class="main-content cards-holder knd-news-widget-body">
+        
+        <div class="flex-row cards-loop">
+            <?php
+                if(!empty($posts)){
+                    foreach($posts as $p){
+                        knd_project_card($p);
+                    }
+                }
+            ?>
+        </div>
+        
+        </div>
+        
+        </div>
+        
+        </section>
+<?php
+}

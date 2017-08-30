@@ -254,11 +254,11 @@ class KND_Import_Git_Content {
     private function unzip_git_zip() {
         
         if(!$this->zip_fpath) {
-            throw Exception("No zip file!");
+            throw new Exception("No zip file!");
         }
         
         if(!is_file($this->zip_fpath)) {
-            throw Exception("Zip file not found: {$this->zip_fpath}");
+            throw new Exception("Zip file not found: {$this->zip_fpath}");
         }
         
         WP_Filesystem();
@@ -277,7 +277,7 @@ class KND_Import_Git_Content {
             $this->import_content_files_dir = $destination_path . '/kandinsky-text-master';
         } else {
             $this->import_content_files_dir = NULL;
-            throw Exception("Unzip FAILED: {$this->zip_fpath} to {$destination_path} Error: " . var_export($unzipfile, True) );
+            throw new Exception("Unzip FAILED: {$this->zip_fpath} to {$destination_path} Error: " . var_export($unzipfile, True) );
         }
     }
     
@@ -290,17 +290,17 @@ class KND_Import_Git_Content {
     private function parse_git_files($plot_name) {
         
         if(!$this->import_content_files_dir) {
-            throw Exception("No git content dir!");
+            throw new Exception("No git content dir!");
         }
         
         if(!is_dir($this->import_content_files_dir)) {
-            throw Exception("Unzipped dir not found: {$this->import_content_files_dir}");
+            throw new Exception("Unzipped dir not found: {$this->import_content_files_dir}");
         }
         
         $plot_dir = $this->import_content_files_dir . '/' . $plot_name;
         
         if(!is_dir($plot_dir)) {
-            throw Exception("Plot dir not found: {$plot_dir}");
+            throw new Exception("Plot dir not found: {$plot_dir}");
         }
         
         $this->content_files[$plot_name] = $this->scan_content_dir($plot_dir);

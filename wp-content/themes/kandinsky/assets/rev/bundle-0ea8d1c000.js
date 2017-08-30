@@ -1361,8 +1361,8 @@ jQuery(document).ready(function($){
 		}
 		
 		//sticky sharing
-		if (winW >= breakPointMedium && $('#rdc_sharing').length > 0) {
-			stickInParent('#rdc_sharing .social-likes-wrapper', '#rdc_sharing', position, fixedTopPosition);
+		if (winW >= breakPointMedium && $('#knd_sharing').length > 0) {
+			stickInParent('#knd_sharing .social-likes-wrapper', '#knd_sharing', position, fixedTopPosition);
 		}
 		
 		//sticky sidebar

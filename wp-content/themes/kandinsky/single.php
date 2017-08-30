@@ -7,6 +7,8 @@
 
 $cpost = get_queried_object(); 
 $format = rdc_get_post_format($cpost);
+$thumbnail_id = get_post_thumbnail_id($cpost->ID);
+
 $video = '';
 
 
@@ -21,41 +23,80 @@ elseif($format == 'introimg') {
 
 get_header(); ?>
 <section class="main-content single-post-section container-wide format-<?php echo $format;?>">
-<div id="rdc_sharing" class="regular-sharing hide-upto-medium"><?php echo knd_social_share_no_js();?></div>
 
 <div class="container">
-	<header class="entry-header-full">
-		<div class="entry-meta"><?php echo knd_posted_on($cpost); //for event ?></div>
-		<h1 class="entry-title"><?php echo get_the_title($cpost);?></h1>				
-		<div class="mobile-sharing hide-on-medium"><?php echo knd_social_share_no_js();?></div>
-		
-		<div class="lead"><?php echo apply_filters('knd_the_content', $cpost->post_excerpt); ?></div>
-	</header>
-	
-	<?php if($format == 'introimg'){ ?>
-		<section class="entry-preview"><?php rdc_single_post_thumbnail($cpost->ID, 'full', 'introimg'); ?></section>
-	<?php } ?>
-		
-	<div class="frame">
-		<main class="bit md-8">		
+
+    <header class="flex-row entry-header-full">
+    
+        <div class="flex-md-2"></div>
+        
+        <div class="flex-md-8">
+            <div class="entry-meta"><?php echo knd_posted_on($cpost); //for event ?></div>
+            <h1 class="entry-title"><?php echo get_the_title($cpost);?></h1>
+            <div class="mobile-sharing hide-on-medium"><?php echo knd_social_share_no_js();?></div>
+        </div>
+        
+        <div class="flex-md-2"></div>
+        
+    </header>
+</div>
+
+<?php
+$src = $thumbnail_id ? wp_get_attachment_image_src( $thumbnail_id, 'full' ) : null;
+if($src && isset($src[1]) && $src[1] > 1104) {
+?>
+    <div class="container-wide">
+	  <section class="entry-preview"><?php knd_single_post_thumbnail($cpost->ID, 'full', 'introimg'); ?></section>
+    </div>
+<?php } else { ?>
+    <div class="container flex-row">
+      <div class="flex-md-1"></div>
+      <div class="flex-md-10">
+        <section class="entry-preview"><?php knd_single_post_thumbnail($cpost->ID, 'full', 'introimg'); ?></section>
+      </div>
+      <div class="flex-md-1"></div>
+    </div>
+<?php }?>
+    
+<div class="container">
+
+	<div class="flex-row">
+    
+        <div class="flex-md-1"></div>
+        
+        <div class="flex-md-1 single-sharing-col">
+            <div id="knd_sharing" class="regular-sharing hide-upto-medium"><?php echo knd_social_share_no_js();?></div>
+        </div>
+    
+		<main class="flex-md-8">		
 			
 		<?php if($format == 'standard') { ?>
-			<div class="entry-preview"><?php rdc_single_post_thumbnail($cpost->ID, 'medium-thumbnail'); ?></div>
-			
+        
 		<?php } elseif($format == 'introvid') { ?>
 			<div class="entry-preview introvid player"><?php echo apply_filters('the_content', $video);?></div>
 			
 		<?php } ?>				
 			
+            <div class="entry-lead"><?php echo apply_filters('rdc_the_content', $cpost->post_excerpt); ?></div>
 			<div class="entry-content"><?php echo apply_filters('the_content', $cpost->post_content); ?></div>
+            
 		</main>
 		
-		<div id="rdc_sidebar" class="bit md-4"><?php dynamic_sidebar( 'right_single-sidebar' ); ?> </div>
-	
+        <div class="flex-md-2"></div>
+        
 	</div>
 </div>
 </section>
 
+<div class="container flex-row">
+    <div class="flex-md-1"></div>
+    <div class="flex-md-1"></div>
+    <div class="flex-md-8">
+    
+        <div class="single-post-terms">
+            <?php knd_show_post_terms($cpost->ID) ?>
+        </div>
+    
 <?php
 	if($cpost->post_type == 'post') {
 		$cat = get_the_terms($post->ID, 'category');
@@ -80,7 +121,7 @@ get_header(); ?>
 			));
 		}
 		
-		rdc_more_section($pquery->posts, __('Related news', 'knd'), 'news', 'addon');
+		knd_more_section($pquery->posts, __('Related items', 'knd'), 'news', 'addon');
 		
 	}
 	elseif($cpost->post_type == 'project') {
@@ -92,7 +133,7 @@ get_header(); ?>
 		));
 		
 		if($pquery->have_posts()){
-			rdc_more_section($pquery->posts, __('Related projects', 'knd'), 'projects', 'addon');
+			knd_more_section($pquery->posts, __('Related projects', 'knd'), 'projects', 'addon');
 		}
 	}
 	elseif($cpost->post_type == 'person') {
@@ -113,9 +154,30 @@ get_header(); ?>
 		));
 		
 		if($pquery->have_posts()){
-			rdc_more_section($pquery->posts, __('Our volunteers', 'knd'), 'people', 'addon');
+			knd_more_section($pquery->posts, __('Our volunteers', 'knd'), 'people', 'addon');
 		}
 	}
-	
+?>
+    </div>
+    <div class="flex-md-2"></div>
+</div>
+
+<div class="knd-signle-after-content">
+<?php
+
+// yellow block
+knd_show_cta_block();
+
+// purple block
+$news = KND_News_Widget::get_short_list(3);
+knd_show_posts_shortlist($news, "Последние новости", array(
+    array('title' => 'Все новости', 'url' => '#'),
+));
+
+?>
+
+</div>
+
+<?php
 
 get_footer();

@@ -21,7 +21,7 @@ get_header();
 </div></section>
 
 <section class="main-content page-content-simple<?php echo $css;?>">
-<div id="rdc_sharing" class="regular-sharing hide-upto-medium"><?php echo knd_social_share_no_js();?></div>
+<div id="knd_sharing" class="regular-sharing hide-upto-medium"><?php echo knd_social_share_no_js();?></div>
 
 <div class="container-narrow">	
 	<div class="entry-content"><?php echo apply_filters('knd_entry_the_content', $cpost->post_content); ?></div>

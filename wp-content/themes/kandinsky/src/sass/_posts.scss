@@ -38,6 +38,22 @@
 		color: inherit;
 		&:hover { text-decoration: underline; }
 	}
+	
+    .date {
+      color: $color-border-dark;
+    }
+    
+    .sep {
+        display:inline-block;
+        width: 4px;
+        height: 4px;
+        border: solid 1px $color-border-dark;
+        border-radius: 4px;
+        padding:0px;
+        vertical-align:baseline;
+        margin:0px 7px 3px 7px;
+    }
+	
 }
 
 @mixin shadowed-preview {
@@ -64,7 +80,6 @@
 		transition: all 0.35s;
 	}	
 }
-
 
 .tpl-post {
 	background: $color-white;
@@ -102,22 +117,6 @@
 		bottom: 13px;
 		left: 16px;
 		z-index: 100;
-		
-		.date {
-		  color: $color-border-dark;
-		}
-		
-        .sep {
-            display:inline-block;
-            width: 4px;
-            height: 4px;
-            border: solid 1px $color-border-dark;
-            border-radius: 4px;
-            padding:0px;
-            vertical-align:baseline;
-            margin:0px 7px 3px 7px;
-        }
-  		
 	}
 	
 	.entry-title {
@@ -169,10 +168,16 @@
 
 /* Related section */
 .related-card-holder {
+    margin-top: $gut;
+    
 	.related-title {
-		@include header-title(head_title);
-		margin-bottom: $base;
-		text-align: center;		
+		@include knd-head-section-text();
+	}
+	
+	a {
+	   @include knd-link-related-text();
+	   color: var(--knd-color-main-dark);
+	   margin-bottom: 16px;
 	}	
 }
 
@@ -202,41 +207,10 @@
 }
 
 .related-cards-loop {
-	.card {
-		margin: 0;
-	}
-	
-	@include for(medium-screens) {
-		margin: 0 $gut/2;
-		display: flex;
-		flex-flow: row wrap;
-		justify-content: space-between;
-		
-		.card {
-			margin: 0 $gut/2 $gut;
-			width: calc(50% - 30px);
-		
-			&:first-of-type {
-				width: calc(100% - 30px);
-			}
-		}
-	}
-	
-	@include for(large-screens) {
-		.card {
-			margin: 0 $gut/2 $gut;
-			width: calc(33.3% - 30px);
-		
-			&:nth-of-type(1),
-			&:nth-of-type(2) {
-				width: calc(50% - 30px);
-			}
-		}
-	}
-	
-	@include for(xxlarge-screens) {
-		margin: 0 -1*$gut/2;
-	}
+    margin-top: $gut / 2;
+    a {
+        display:block;
+    }
 }
 
 .tpl-related-post {
@@ -267,29 +241,19 @@
 
 /** Single **/
 .entry-header-full {
-	padding: $gut 0 $gut;
+	padding: $gut/1.5 0px $gut/1.33 0px;
 	
 	.entry-title {
-		@include header-title(single);
+		@include knd-head-exlarge-single-text();
 		hyphens: auto;
 	}
 	
 	.entry-meta {
-		@include nav-text(multiline);
-		color: $color-link-three;
-		a {
-			color: inherit;
-			&:hover, &:focus, &:active {
-				background: $color-link-two;
-				color: $color-white;
-				box-shadow: 3px 0 0 $color-link-two, -3px 0 0 $color-link-two;
-			}
-		}
+		@include post-meta();
+		padding: 4px 0px 13px 0px;
 	}
-	
 		
-	.full-event-metas,
-	.lead {
+	.full-event-metas {
 		margin-top: $gut/4;
 		
 		@include for(medium-screens) {
@@ -306,19 +270,31 @@
 		
 	.entry-preview {
 		position: relative;
-		margin-bottom: $gut;
+		margin-bottom: $gut / 1.15;
 	}
 	
 	.introimg  {
 		@include vertical-image-header-fixed();
 	}
+	
+    .entry-lead {
+        @include knd-lead-text();
+        margin-bottom: $gut / 1.33;
+        
+        @include for(medium-screens) {
+        }
+    }
+}
+
+/* sharing */
+.single-sharing-col {
+    position:relative;
 }
 
 .regular-sharing {
 	position: absolute;
 	width: 45px;
 	height: calc(100% - 280px);
-	//height: 100%;
 	top: 280px;
 	left: 0;
 	z-index: 100;
@@ -338,19 +314,18 @@
 	}
 }
 
-.addon {
-	margin-top: $gut*1.5;
-	
-	.related-title {
-		border-top: 1px solid $color-border-normal;
-		padding-top: $gut;
-		@include for(medium-screens) {
-			margin: 0 $gut $base;
-		}
-	}
+/* single post terms */
+.single-post-terms {
 }
 
-
+.tags-line {
+    padding-top: $gut / 2.2;
+    a {
+        color: var(--knd-color-main-dark);
+        @include knd-link-terms-text();
+        margin-right: 4px;
+    }
+}
 
 /** Programms **/
 .tpl-project {
@@ -662,3 +637,7 @@
 	}
 }
 	
+/* single */
+.knd-signle-after-content {
+    margin-top:$gut * 1.5;
+}
