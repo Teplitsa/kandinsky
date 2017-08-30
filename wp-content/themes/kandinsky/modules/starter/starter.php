@@ -113,14 +113,16 @@ function knd_setup_starter_data($plot_name) {
 function knd_ajax_setup_starter_data() {
 
     $res = array('status' => 'ok');
-    
-    $plot_name = 'color-line'; // color-line, right2city, withyou 
 
-    try {
-        knd_setup_starter_data($plot_name);
-    } catch(Exception $ex) {
-        error_log($ex);
-        $res = array('status' => 'error');
+    $plot_name = get_theme_mod('knd_site_scenario'); // color-line, withyou, dubrovino
+
+    if($plot_name) {
+        try {
+            knd_setup_starter_data($plot_name);
+        } catch(Exception $ex) {
+            error_log($ex);
+            $res = array('status' => 'error');
+        }
     }
 
     wp_send_json($res);
