@@ -202,6 +202,14 @@ $modularscale: (
     font-weight: 800;
 }
 
+@mixin knd-head-exlarge-single-text() {
+    @include ms-respond(font-size, 4);
+    font-family: $heading;
+    line-height: 1;
+    letter-spacing: .03em;
+    font-weight: 800;
+}
+
 @mixin knd-head-tiny-text() {
     font-size:16px;
     font-family: $body;

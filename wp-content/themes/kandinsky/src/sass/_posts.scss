@@ -38,6 +38,22 @@
 		color: inherit;
 		&:hover { text-decoration: underline; }
 	}
+	
+    .date {
+      color: $color-border-dark;
+    }
+    
+    .sep {
+        display:inline-block;
+        width: 4px;
+        height: 4px;
+        border: solid 1px $color-border-dark;
+        border-radius: 4px;
+        padding:0px;
+        vertical-align:baseline;
+        margin:0px 7px 3px 7px;
+    }
+	
 }
 
 @mixin shadowed-preview {
@@ -64,7 +80,6 @@
 		transition: all 0.35s;
 	}	
 }
-
 
 .tpl-post {
 	background: $color-white;
@@ -102,22 +117,6 @@
 		bottom: 13px;
 		left: 16px;
 		z-index: 100;
-		
-		.date {
-		  color: $color-border-dark;
-		}
-		
-        .sep {
-            display:inline-block;
-            width: 4px;
-            height: 4px;
-            border: solid 1px $color-border-dark;
-            border-radius: 4px;
-            padding:0px;
-            vertical-align:baseline;
-            margin:0px 7px 3px 7px;
-        }
-  		
 	}
 	
 	.entry-title {
@@ -232,29 +231,19 @@
 
 /** Single **/
 .entry-header-full {
-	padding: $gut 0 $gut;
+	padding: $gut/1.5 0px $gut/1.33 0px;
 	
 	.entry-title {
-		@include header-title(single);
+		@include knd-head-exlarge-single-text();
 		hyphens: auto;
 	}
 	
 	.entry-meta {
-		@include nav-text(multiline);
-		color: $color-link-three;
-		a {
-			color: inherit;
-			&:hover, &:focus, &:active {
-				background: $color-link-two;
-				color: $color-white;
-				box-shadow: 3px 0 0 $color-link-two, -3px 0 0 $color-link-two;
-			}
-		}
+		@include post-meta();
+		padding: 4px 0px 13px 0px;
 	}
-	
 		
-	.full-event-metas,
-	.lead {
+	.full-event-metas {
 		margin-top: $gut/4;
 		
 		@include for(medium-screens) {
@@ -277,6 +266,17 @@
 	.introimg  {
 		@include vertical-image-header-fixed();
 	}
+	
+    .entry-lead {
+        margin-top: $gut/4;
+        
+        @include for(medium-screens) {
+            margin-top: $gut/2;
+            //@include calc(width, '66.66% - 16px');
+            font-size: 1.2em;
+            font-weight: 300;
+        }
+    }
 }
 
 /* sharing */
