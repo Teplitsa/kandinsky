@@ -7,6 +7,8 @@
 
 $cpost = get_queried_object(); 
 $format = rdc_get_post_format($cpost);
+$thumbnail_id = get_post_thumbnail_id($cpost->ID);
+
 $video = '';
 
 
@@ -23,18 +25,37 @@ get_header(); ?>
 <section class="main-content single-post-section container-wide format-<?php echo $format;?>">
 
 <div class="container">
-	<header class="entry-header-full">
-		<div class="entry-meta"><?php echo knd_posted_on($cpost); //for event ?></div>
-		<h1 class="entry-title"><?php echo get_the_title($cpost);?></h1>				
-		<div class="mobile-sharing hide-on-medium"><?php echo knd_social_share_no_js();?></div>
-		
-		<div class="lead"><?php echo apply_filters('rdc_the_content', $cpost->post_excerpt); ?></div>
-	</header>
-	
-	<?php if($format == 'introimg'){ ?>
-		<section class="entry-preview"><?php knd_single_post_thumbnail($cpost->ID, 'full', 'introimg'); ?></section>
-	<?php } ?>
-		
+
+    <header class="flex-row entry-header-full">
+    
+        <div class="flex-md-2"></div>
+        
+        <div class="flex-md-8">
+            <div class="entry-meta"><?php echo knd_posted_on($cpost); //for event ?></div>
+            <h1 class="entry-title"><?php echo get_the_title($cpost);?></h1>
+            <div class="mobile-sharing hide-on-medium"><?php echo knd_social_share_no_js();?></div>
+        </div>
+        
+        <div class="flex-md-2"></div>
+        
+    </header>
+</div>
+
+<?php
+$src = $thumbnail_id ? wp_get_attachment_image_src( $thumbnail_id, 'full' ) : null;
+if($src && isset($src[1]) && $src[1] > 1104) {
+?>
+    <div class="container-wide">
+	  <section class="entry-preview"><?php knd_single_post_thumbnail($cpost->ID, 'full', 'introimg'); ?></section>
+    </div>
+<?php } else { ?>
+    <div class="container">
+      <section class="entry-preview"><?php knd_single_post_thumbnail($cpost->ID, 'full', 'introimg'); ?></section>
+    </div>
+<?php }?>
+    
+<div class="container">
+
 	<div class="frame flex-row">
     
         <div class="flex-md-1"></div>
@@ -46,14 +67,15 @@ get_header(); ?>
 		<main class="bit flex-md-8">		
 			
 		<?php if($format == 'standard') { ?>
-			<div class="entry-preview"><?php knd_single_post_thumbnail($cpost->ID, 'medium-thumbnail'); ?></div>
-			
+        
 		<?php } elseif($format == 'introvid') { ?>
 			<div class="entry-preview introvid player"><?php echo apply_filters('the_content', $video);?></div>
 			
 		<?php } ?>				
 			
+            <div class="entry-lead"><?php echo apply_filters('rdc_the_content', $cpost->post_excerpt); ?></div>
 			<div class="entry-content"><?php echo apply_filters('the_content', $cpost->post_content); ?></div>
+            
 		</main>
 		
         <div class="flex-md-2"></div>
