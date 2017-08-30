@@ -133,7 +133,6 @@ require get_template_directory().'/core/widgets.php';
 require get_template_directory().'/core/settings.php';
 require get_template_directory().'/core/customizer.php';
 require get_template_directory().'/vendor/class-tgm-plugin-activation.php';
-require get_template_directory().'/vendor/envato_setup/envato_setup.php';
 
 // import data utils
 require get_template_directory().'/core/class-mediamnt.php';
@@ -159,3 +158,6 @@ if(is_admin()){
 	require get_template_directory() . '/core/admin.php';
 	
 }
+
+// run wizard after all modules included 
+require get_template_directory().'/vendor/envato_setup/envato_setup.php';

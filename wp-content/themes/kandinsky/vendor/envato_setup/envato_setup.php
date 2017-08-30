@@ -840,8 +840,14 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 
         }
         public function _content_install_settings() {
-
-            knd_set_theme_options();
+            
+            $plot_name = get_theme_mod('knd_site_scenario');
+            $imp = new KND_Import_Remote_Content($plot_name);
+            $imp->import_downloaded_content();
+            
+            $pdb = KND_Plot_Data_Builder::produce_builder($imp);
+            $pdb->build_theme_options();
+            
             return true;
 
         }
@@ -1468,7 +1474,13 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 			check_admin_referer('knd-setup');
 
 			if($_POST['new_scenario_id']) {
-				set_theme_mod('knd_site_scenario', trim($_POST['new_scenario_id']));
+			    $plot_name = trim($_POST['new_scenario_id']);
+			    
+				set_theme_mod('knd_site_scenario', $plot_name);
+				
+				if($plot_name) {
+				    knd_setup_starter_data($plot_name);
+				}
 			}
 
 			wp_redirect(esc_url_raw($this->get_next_step_link()));
