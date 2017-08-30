@@ -223,17 +223,17 @@
 	}
 	
 	.entry-meta {
-		font-size: 0.9em;
+		position:relative;
+		background:none;
+		left:0px;
+		bottom:0px;
+		padding:0px;
 	}
 	
 	.entry-title {
 		font-size: 1.5em;
 		line-height: 1.1;
 		margin-top: 0 !important;
-	}
-	
-	.featured-post & {
-		.entry-meta { background: $color-link-three;}
 	}
 }
 
