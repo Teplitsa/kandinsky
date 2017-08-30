@@ -453,17 +453,18 @@ body {
 
 }
 .envato-setup-pages{
-    width:100%;
+    width: 100%;
 }
 .envato-setup-pages .check{
-    width:35px;
+    width: 35px;
 }
 .envato-setup-pages .item{
-    width:90px;
+    width: 160px;
+    padding-right: 10px;
 }
 .envato-setup-pages td,
 .envato-setup-pages th{
-    padding:5px;
+    padding: 5px 0;
 }
 .envato-setup-pages .status{
     display: none;

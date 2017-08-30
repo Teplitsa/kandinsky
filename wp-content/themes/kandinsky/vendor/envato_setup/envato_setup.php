@@ -828,6 +828,17 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 
 		}
 
+        public function _content_install_site_title_desc() {
+
+            $scenario_id = get_theme_mod('knd_site_scenario');
+            $scenario_data = empty($this->site_scenarios[$scenario_id]) ? false : $this->site_scenarios[$scenario_id];
+
+            if($scenario_data) {
+                knd_set_sitename_settings($scenario_data);
+            }
+            return true;
+
+        }
 		public function _content_install_posts() {
 
             knd_import_starter_data_from_csv('posts.csv', 'post');
@@ -1436,7 +1447,7 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
                     <?php $current_scenario_id = get_theme_mod('knd_site_scenario', $this->get_default_site_scenario_id());
                     foreach($this->site_scenarios as $scenario_id => $data) {?>
                         <li <?php echo $scenario_id == $current_scenario_id ? 'class="current" ' : '';?>>
-                            <a href="#" data-scenario-id="<?php echo esc_attr($scenario_id);?>" data-scenario-name="<?php echo esc_attr($data['name']);?>" data-scenario-description="<?php echo empty($data['description']) ? '' : esc_attr($data['description']);?>">
+                            <a href="#" data-scenario-id="<?php echo esc_attr($scenario_id);?>">
                                 <img src="<?php echo esc_url(get_template_directory_uri().'/vendor/envato_setup/images/'.$scenario_id.'/style.png');?>">
                                 <span class="plot-data">
                                     <h3 class="plot-title"><?php echo $data['name'];?></h3>
@@ -1481,7 +1492,7 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 
 		public function step_logo_design_view() {?>
 
-			<h1><?php esc_html_e('Logo', 'knd');?></h1>
+			<h1><?php esc_html_e('Logo and favicon', 'knd');?></h1>
 			<form method="post">
 
 				<p><?php _e('Please add your organization main logo below. The recommended size is <strong>315 x 66 px</strong> (for "Image only" mode) and <strong>66 x 66 px</strong> (for "Image with site name" mode). The logo can be changed at any time from the Appearance > Customize area in your website dashboard.', 'knd');?></p>
