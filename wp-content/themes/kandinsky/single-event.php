@@ -20,7 +20,7 @@ elseif($format == 'introimg') {
 
 get_header(); ?>
 <section class="main-content single-post-section container-wide format-<?php echo $format;?>">
-<div id="rdc_sharing" class="regular-sharing hide-upto-medium"><?php echo knd_social_share_no_js();?></div>
+<div id="knd_sharing" class="regular-sharing hide-upto-medium"><?php echo knd_social_share_no_js();?></div>
 
 <div class="container " <?php echo $event->get_event_schema_prop();?>>
 	<header class="entry-header-full">
@@ -110,7 +110,7 @@ get_header(); ?>
 		'meta_key' => 'event_date_start'
 	));
 		
-	rdc_more_section($pquery->posts, __('Visit or events', 'knd'), 'events', 'addon');
+	knd_more_section($pquery->posts, __('Visit or events', 'knd'), 'events', 'addon');
 		
 	
 

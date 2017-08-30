@@ -21,7 +21,7 @@ elseif($format == 'introimg') {
 
 get_header(); ?>
 <section class="main-content single-post-section container-wide format-<?php echo $format;?>">
-<div id="rdc_sharing" class="regular-sharing hide-upto-medium"><?php echo knd_social_share_no_js();?></div>
+<div id="knd_sharing" class="regular-sharing hide-upto-medium"><?php echo knd_social_share_no_js();?></div>
 
 <div class="container">
 	<header class="entry-header-full">
@@ -33,14 +33,14 @@ get_header(); ?>
 	</header>
 	
 	<?php if($format == 'introimg'){ ?>
-		<section class="entry-preview"><?php rdc_single_post_thumbnail($cpost->ID, 'full', 'introimg'); ?></section>
+		<section class="entry-preview"><?php knd_single_post_thumbnail($cpost->ID, 'full', 'introimg'); ?></section>
 	<?php } ?>
 		
 	<div class="frame">
 		<main class="bit md-8">		
 			
 		<?php if($format == 'standard') { ?>
-			<div class="entry-preview"><?php rdc_single_post_thumbnail($cpost->ID, 'medium-thumbnail'); ?></div>
+			<div class="entry-preview"><?php knd_single_post_thumbnail($cpost->ID, 'medium-thumbnail'); ?></div>
 			
 		<?php } elseif($format == 'introvid') { ?>
 			<div class="entry-preview introvid player"><?php echo apply_filters('the_content', $video);?></div>
@@ -80,7 +80,7 @@ get_header(); ?>
 			));
 		}
 		
-		rdc_more_section($pquery->posts, __('Related news', 'knd'), 'news', 'addon');
+		knd_more_section($pquery->posts, __('Related news', 'knd'), 'news', 'addon');
 		
 	}
 	elseif($cpost->post_type == 'project') {
@@ -92,7 +92,7 @@ get_header(); ?>
 		));
 		
 		if($pquery->have_posts()){
-			rdc_more_section($pquery->posts, __('Related projects', 'knd'), 'projects', 'addon');
+		    knd_more_section($pquery->posts, __('Related projects', 'knd'), 'projects', 'addon');
 		}
 	}
 	elseif($cpost->post_type == 'person') {
@@ -113,7 +113,7 @@ get_header(); ?>
 		));
 		
 		if($pquery->have_posts()){
-			rdc_more_section($pquery->posts, __('Our team', 'knd'), 'team', 'addon');
+		    knd_more_section($pquery->posts, __('Our team', 'knd'), 'team', 'addon');
 		}
 	}
 	

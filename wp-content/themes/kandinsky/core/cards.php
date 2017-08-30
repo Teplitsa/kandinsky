@@ -76,12 +76,12 @@ function rdc_intro_card_markup_over($title, $subtitle, $img_id, $link = '', $but
 }
 
 
-function rdc_related_post_card(WP_Post $cpost) {
+function knd_related_post_card(WP_Post $cpost) {
 
 	$pl = get_permalink($cpost);
 	$ex = apply_filters('rdc_the_title', rdc_get_post_excerpt($cpost, 40, true));
 ?>
-<article class="tpl-related-post card"><a href="<?php echo $pl; ?>" class="entry-link">	
+<article class="flex-md-6 flex-lg-4 tpl-related-post card"><a href="<?php echo $pl; ?>" class="entry-link">	
 	<div class="entry-preview"><?php echo knd_post_thumbnail($cpost->ID, 'post-thumbnail');?></div>
 	<div class="entry-data">
 		<?php if('project' != $cpost->post_type) { ?>
@@ -262,7 +262,7 @@ function knd_post_thumbnail_src($post_id, $size = 'post-thumbnail'){
 	return $src;
 }
 
-function rdc_single_post_thumbnail($post_id, $size = 'post-thumbnail', $post_format = 'standard'){
+function knd_single_post_thumbnail($post_id, $size = 'post-thumbnail', $post_format = 'standard'){
 	
 	$thumb_id = get_post_thumbnail_id($post_id);
 	if(!$thumb_id)
