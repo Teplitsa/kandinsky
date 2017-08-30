@@ -63,7 +63,7 @@ body {
 }
 
 .envato-setup-content .form-table td {
-    vertical-align: top
+    vertical-align: top;
 }
 
 .envato-setup-content .form-table td input, .envato-setup-content .form-table td select {

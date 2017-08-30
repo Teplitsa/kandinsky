@@ -185,30 +185,6 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 		}
 
 		/**
-		 * Get the default style. Can be overriden by theme init scripts.
-		 *
-		 * @see Envato_Theme_Setup_Wizard::instance()
-		 *
-		 * @since 1.1.9
-		 * @access public
-		 */
-		public function get_header_logo_width() {
-			return '200px';
-		}
-
-		/**
-		 * Get the default style. Can be overriden by theme init scripts.
-		 *
-		 * @see Envato_Theme_Setup_Wizard::instance()
-		 *
-		 * @since 1.1.9
-		 * @access public
-		 */
-//		public function get_logo_image() {
-//			return apply_filters('knd_setup_logo_image', knd_get_logo_img());
-//		}
-
-		/**
 		 * Setup the class globals.
 		 *
 		 * @since 1.1.1
@@ -247,9 +223,9 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 			$this->page_url = 'themes.php?page=knd-setup-wizard'; //apply_filters( $this->theme_name . '_theme_setup_wizard_page_url', $this->page_url );
 
 			// Set relative plugin path url:
-			$this->plugin_path = trailingslashit( $this->cleanFilePath( dirname( __FILE__ ) ) );
-			$relative_url      = str_replace( $this->cleanFilePath( get_template_directory() ), '', $this->plugin_path );
-			$this->plugin_url  = trailingslashit( get_template_directory_uri() . $relative_url );
+			$this->plugin_path = trailingslashit($this->cleanFilePath(dirname(__FILE__)));
+			$relative_url      = str_replace($this->cleanFilePath(get_template_directory()), '', $this->plugin_path);
+			$this->plugin_url  = trailingslashit(get_template_directory_uri().$relative_url);
 
 		}
 
@@ -403,21 +379,21 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
                 'view'    => array($this, 'step_scenario_view'),
                 'handler' => array($this, 'step_scenario_handler'),
             );
-//            $this->steps['settings'] = array(
-//                'name'    => esc_html__('Settings'),
-//                'view'    => array($this, 'step_settings_view'),
-//                'handler' => array($this, 'step_settings_handler'),
-//            );
 			$this->steps['default_content'] = array(
 				'name'    => esc_html__('Content', 'knd'),
 				'view'    => array($this, 'step_content_view'),
 				'handler' => '',
 			);
-			$this->steps['design'] = array(
-				'name'    => esc_html__('Logo and favicon', 'knd'),
-				'view'    => array($this, 'step_logo_design_view'),
-				'handler' => array($this, 'step_logo_design_handler'),
-			);
+            $this->steps['design'] = array(
+                'name'    => esc_html__('Logo'),
+                'view'    => array($this, 'step_logo_design_view'),
+                'handler' => array($this, 'step_logo_design_handler'),
+            );
+            $this->steps['settings'] = array(
+                'name'    => esc_html__('Settings'),
+                'view'    => array($this, 'step_settings_view'),
+                'handler' => array($this, 'step_settings_handler'),
+            );
             if(class_exists('TGM_Plugin_Activation') && isset($GLOBALS['tgmpa'])) {
                 $this->steps['default_plugins'] = array(
                     'name'    => esc_html__('Plugins'),
@@ -836,6 +812,16 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
             if($scenario_data) {
                 knd_set_sitename_settings($scenario_data);
             }
+            return true;
+
+        }
+        public function _content_install_logo_favicon() {
+
+            $scenario_id = get_theme_mod('knd_site_scenario');
+
+//            if($scenario_data) {
+//                knd_set_sitename_settings($scenario_data);
+//            }
             return true;
 
         }
@@ -1492,7 +1478,7 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 
 		public function step_logo_design_view() {?>
 
-			<h1><?php esc_html_e('Logo and favicon', 'knd');?></h1>
+			<h1><?php esc_html_e('Logo');?></h1>
 			<form method="post">
 
 				<p><?php _e('Please add your organization main logo below. The recommended size is <strong>315 x 66 px</strong> (for "Image only" mode) and <strong>66 x 66 px</strong> (for "Image with site name" mode). The logo can be changed at any time from the Appearance > Customize area in your website dashboard.', 'knd');?></p>
@@ -1501,24 +1487,7 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 				<table>
 					<tr>
 						<td>
-							<div id="current-logo">
-                            <?php if(knd_get_logo_img_id()) {
-                                $image_url = knd_get_logo_img_url();
-                            } else { // No custom logo set, use current scenario default one
-
-                                $site_scenario_id = get_theme_mod('knd_site_scenario');
-                                $image_url = $site_scenario_id ?
-                                    get_template_directory_uri()."vendor/images/$site_scenario_id/logo.svg" : '';
-
-                            }
-
-                            if($image_url) {
-                                printf('<img class="site-logo" src="%s" alt="%s" style="width: %s; height: auto;">', $image_url, get_bloginfo('name'), $this->get_header_logo_width());
-
-                            } else {
-
-                            }?>
-							</div>
+							<div id="current-logo"><?php echo knd_get_logo_img();?></div>
 						</td>
 						<td>
 							<a href="#" class="button button-upload"><?php esc_html_e('Upload new logo', 'knd');?></a>
@@ -1572,8 +1541,8 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
                     <input type="text" name="knd_org_description" id="knd-org-description" value="<?php echo get_option('blogdescription');?>" class="knd-setup-wizard-control">
                     <label for="knd-org-description"><?php _e('The website description', 'knd');?></label>
                 </p>
-                
-                <p><?php _e('Please add your site icon below. The recommended size is <strong>32 x 32 px</strong>. The site icon can be changed at any time from the Appearance > Customize area in your website dashboard.', 'knd');?></p>
+
+                <p><?php _e('Please add your site icon below. The recommended size is <strong>64 x 64 px</strong>. The site icon can be changed at any time from the Appearance > Customize area in your website dashboard.', 'knd');?></p>
                 
                 <p><?php printf(esc_html__('Try our %sPaseka program%s if you need a new site icon designed.', 'knd'), '<a href="https://paseka.te-st.ru/" target="_blank">', '</a>');?></p>
                 <table>
@@ -1593,7 +1562,7 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
                 </table>
 
                 <input type="hidden" name="new_logo_id" id="new_logo_id" value="">
-                
+
 
                 <p class="envato-setup-actions step">
                     <input type="submit" class="button-primary button button-large button-next" value="<?php esc_attr_e('Continue', 'knd');?>" name="save_step"> <!-- data-callback="update_settings" -->
@@ -1621,7 +1590,7 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
                 update_option('blogdescription', $_POST['knd_org_description']);
             }
 
-            
+
             $new_favicon_id = (int)$_POST['new_logo_id'];
             if($new_favicon_id) {
                 

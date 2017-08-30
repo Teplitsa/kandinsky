@@ -726,6 +726,20 @@ function rdc_add_to_calendar_link(TST_Event $event, $echo = true, $container_cla
 <?php	
 }
 
+function knd_get_site_icon_img_url() {
+
+    $logo_id = get_option('site_icon');
+    if($logo_id) {
+        return wp_get_attachment_image_url($logo_id, 'full', false);
+    } else {
+
+        $site_scenario = get_theme_mod('knd_site_scenario');
+        return $site_scenario ? get_template_directory_uri()."/vendor/envato_setup/images/$site_scenario/favicon.png" : '';
+
+    }
+
+}
+
 function knd_get_logo_img_id() {
 
     $logo_id = get_theme_mod('knd_custom_logo');
@@ -737,24 +751,15 @@ function knd_get_logo_img_id() {
 function knd_get_logo_img_url() {
 
     $logo_id = knd_get_logo_img_id();
-    return $logo_id ?
-        wp_get_attachment_image_url($logo_id, 'full', false) :
-        get_template_directory_uri().'/assets/img/logo.svg';
+    if($logo_id) {
+        return wp_get_attachment_image_url($logo_id, 'full', false);
+    } else {
 
-}
+        $site_scenario = get_theme_mod('knd_site_scenario');
+        return $site_scenario ? get_template_directory_uri()."/vendor/envato_setup/images/$site_scenario/logo.svg" : '';
 
-function knd_get_site_icon_img_url() {
-    
-    $site_icon_url = '';
-    
-    if(has_site_icon()) {
-
-        $logo_id = get_option('site_icon');
-        $site_icon_url = $logo_id ? wp_get_attachment_image_url($logo_id, 'full', false) : '';
-        
     }
-    
-    return $site_icon_url;
+
 }
 
 function knd_get_logo_img() {
@@ -762,7 +767,7 @@ function knd_get_logo_img() {
     $logo_id = knd_get_logo_img_id();
     return $logo_id ?
         wp_get_attachment_image($logo_id, 'full', false, array('alt' => get_bloginfo('name'))) :
-        '<img src="'.get_template_directory_uri().'/assets/img/logo.svg" width="311" height="66" alt="'.get_bloginfo('name').'">';
+        '<img class="site-logo-img" src="'.get_template_directory_uri().'/vendor/envato_setup/images/'.get_theme_mod('knd_site_scenario').'/logo.svg" width="315" height="66" alt="'.get_bloginfo('name').'">';
 
 }
 
