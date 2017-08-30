@@ -136,29 +136,23 @@
 
 /** paging **/
 .paging {
-	padding: $base/2 0;
-	background: $color-white;
+    @include knd-link-paging-text();
+	padding: $base/1.5 0 $base * 3.2 0;
 	text-align: center;
 	
-	nav {
-		border-top: 1px solid $color-border-normal;
-		border-bottom: 1px solid $color-border-normal;
-		padding: $base/2;
-	}
 	.page-numbers {
-		@include nav-text();
 		display: inline-block;
-		color: $color-text-light;
-		padding: 8px 12px;
+		color: $color-text-black;
+		padding: 0px 10px;
 		transition: all 0.3;
 		
 		&:hover, &:focus, &:active {
 			color: $color-white;
-			background: $color-link-two;
+			background: var(--knd-color-main);
 		}
 		&.current {
 			color: $color-white;
-			background: $color-text;
+			background: var(--knd-color-main);
 		}
 	}
 	
@@ -648,6 +642,10 @@
 /* archive */
 .cards-holder.archive-post-list {
     padding-top:0px;
+    
+    &.next-page {
+        padding-top: $gut;
+    }
 }
 
 .listing-bg {

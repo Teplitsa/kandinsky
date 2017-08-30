@@ -45,7 +45,7 @@ if($paged == 1) { //featured post
 </div></section>
 
 <section class="paging">
-<?php rdc_paging_nav($wp_query); ?>
+<?php knd_paging_nav($wp_query); ?>
 </section>
 
 <?php get_footer();

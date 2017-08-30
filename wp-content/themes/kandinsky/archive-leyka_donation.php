@@ -51,6 +51,6 @@ get_header();
 	?>
 	</div>
 </div></section>
-<section class="paging"><?php rdc_paging_nav($wp_query); ?></section>
+<section class="paging"><?php knd_paging_nav($wp_query); ?></section>
 
 <?php get_footer();
