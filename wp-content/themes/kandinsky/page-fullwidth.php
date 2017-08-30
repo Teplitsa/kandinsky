@@ -9,7 +9,7 @@ get_header();?>
 
 <article id="single-page" class="main-content tpl-page-fullwidth">
 	<?php if(!is_front_page()) { ?>
-	<div id="rdc_sharing" class="regular-sharing hide-upto-medium"><?php echo knd_social_share_no_js();?></div>
+	<div id="knd_sharing" class="regular-sharing hide-upto-medium"><?php echo knd_social_share_no_js();?></div>
 	<?php } ?>
 	
 	<div class="container">

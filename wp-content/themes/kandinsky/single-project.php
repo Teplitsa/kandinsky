@@ -9,7 +9,7 @@ if(!$template)
 
 get_header(); ?>
 <section class="main-content single-post-section container-wide format-<?php echo $format;?>">
-<div id="rdc_sharing" class="regular-sharing hide-upto-medium"><?php echo knd_social_share_no_js();?></div>
+<div id="knd_sharing" class="regular-sharing hide-upto-medium"><?php echo knd_social_share_no_js();?></div>
 
 <div class="container">
 	<header class="entry-header-full">
@@ -45,7 +45,7 @@ $pquery = new WP_Query(array(
 	));
 	
 	if($pquery->have_posts()){
-		rdc_more_section($pquery->posts, __('Related projects', 'knd'), 'projects', 'addon');
+	    knd_more_section($pquery->posts, __('Related projects', 'knd'), 'projects', 'addon');
 	}
 
 get_footer();

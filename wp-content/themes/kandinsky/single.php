@@ -21,7 +21,6 @@ elseif($format == 'introimg') {
 
 get_header(); ?>
 <section class="main-content single-post-section container-wide format-<?php echo $format;?>">
-<div id="rdc_sharing" class="regular-sharing hide-upto-medium"><?php echo knd_social_share_no_js();?></div>
 
 <div class="container">
 	<header class="entry-header-full">
@@ -33,14 +32,21 @@ get_header(); ?>
 	</header>
 	
 	<?php if($format == 'introimg'){ ?>
-		<section class="entry-preview"><?php rdc_single_post_thumbnail($cpost->ID, 'full', 'introimg'); ?></section>
+		<section class="entry-preview"><?php knd_single_post_thumbnail($cpost->ID, 'full', 'introimg'); ?></section>
 	<?php } ?>
 		
-	<div class="frame">
-		<main class="bit md-8">		
+	<div class="frame flex-row">
+    
+        <div class="flex-md-1"></div>
+        
+        <div class="flex-md-1 single-sharing-col">
+            <div id="knd_sharing" class="regular-sharing hide-upto-medium"><?php echo knd_social_share_no_js();?></div>
+        </div>
+    
+		<main class="bit flex-md-8">		
 			
 		<?php if($format == 'standard') { ?>
-			<div class="entry-preview"><?php rdc_single_post_thumbnail($cpost->ID, 'medium-thumbnail'); ?></div>
+			<div class="entry-preview"><?php knd_single_post_thumbnail($cpost->ID, 'medium-thumbnail'); ?></div>
 			
 		<?php } elseif($format == 'introvid') { ?>
 			<div class="entry-preview introvid player"><?php echo apply_filters('the_content', $video);?></div>
@@ -50,8 +56,8 @@ get_header(); ?>
 			<div class="entry-content"><?php echo apply_filters('the_content', $cpost->post_content); ?></div>
 		</main>
 		
-		<div id="rdc_sidebar" class="bit md-4"><?php dynamic_sidebar( 'right_single-sidebar' ); ?> </div>
-	
+        <div class="flex-md-2"></div>
+        
 	</div>
 </div>
 </section>
@@ -80,7 +86,7 @@ get_header(); ?>
 			));
 		}
 		
-		rdc_more_section($pquery->posts, __('Related news', 'knd'), 'news', 'addon');
+		knd_more_section($pquery->posts, __('Related news', 'knd'), 'news', 'addon');
 		
 	}
 	elseif($cpost->post_type == 'project') {
@@ -92,7 +98,7 @@ get_header(); ?>
 		));
 		
 		if($pquery->have_posts()){
-			rdc_more_section($pquery->posts, __('Related projects', 'knd'), 'projects', 'addon');
+			knd_more_section($pquery->posts, __('Related projects', 'knd'), 'projects', 'addon');
 		}
 	}
 	elseif($cpost->post_type == 'person') {
@@ -113,7 +119,7 @@ get_header(); ?>
 		));
 		
 		if($pquery->have_posts()){
-			rdc_more_section($pquery->posts, __('Our volunteers', 'knd'), 'people', 'addon');
+			knd_more_section($pquery->posts, __('Our volunteers', 'knd'), 'people', 'addon');
 		}
 	}
 	

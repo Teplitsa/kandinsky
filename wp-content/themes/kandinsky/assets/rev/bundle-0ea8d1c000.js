@@ -1177,6 +1177,7 @@ jQuery(document).ready(function($){
 	
     /** Window width **/
 	var windowWidth = $('#top').width(),
+	    $adminbar = $('#wpadminbar'),
 		$site_header = $('#site_header'),
 		breakPointSmall = 480, //small screens break point
 		breakPointMedium = 767; //medium screen break point
@@ -1189,6 +1190,8 @@ jQuery(document).ready(function($){
 		if (winW < breakPointMedium && $site_header.hasClass('newsletter-open')) {
 			$site_header.removeClass('newsletter-open');
 		}
+		
+		knd_setup_header_for_small_screens();		
 	});	
 	
 	/** == Header states == **/
@@ -1358,8 +1361,8 @@ jQuery(document).ready(function($){
 		}
 		
 		//sticky sharing
-		if (winW >= breakPointMedium && $('#rdc_sharing').length > 0) {
-			stickInParent('#rdc_sharing .social-likes-wrapper', '#rdc_sharing', position, fixedTopPosition);
+		if (winW >= breakPointMedium && $('#knd_sharing').length > 0) {
+			stickInParent('#knd_sharing .social-likes-wrapper', '#knd_sharing', position, fixedTopPosition);
 		}
 		
 		//sticky sidebar
@@ -1367,9 +1370,27 @@ jQuery(document).ready(function($){
 			stickInParent('#rdc_sidebar .related-widget', '#rdc_sidebar', position, fixedTopPosition);
 		}
 		
+		knd_setup_header_for_small_screens();
+		
 		position = scroll; //upd scroll position
 		return true;
 	});
+	
+	function knd_setup_header_for_small_screens() {
+	    var scroll = $(window).scrollTop();
+        var adminbar_height = $adminbar.height();
+        if($adminbar.css('position') == 'absolute') {
+            if(scroll > adminbar_height) {
+                $site_header.css('top', '0px');
+            }
+            else {
+                $site_header.css('top', '' + (adminbar_height - scroll) + 'px');
+            }
+        }
+        else {
+            $site_header.css('top', '');
+        }
+	}
 	
 	//stick element on scroll
 	function stickInParent(el, el_parent, el_position, el_fixedTopPosition) {
@@ -1472,7 +1493,6 @@ jQuery(document).ready(function($){
 		$('.logo-gallery').each(function(){
 			
 			var logoH = $(this).find('.logo').eq(0).parents('.bit').height() - 3;
-			console.log(logoH);
 			
 			$(this).find('.logo-frame').find('span').css({'line-height' : logoH + 'px'})
 		});		

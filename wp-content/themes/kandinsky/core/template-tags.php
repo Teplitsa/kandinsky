@@ -419,7 +419,7 @@ function rdc_get_post_format($cpost){
 
 
 /** More section **/
-function rdc_more_section($posts, $title = '', $type = 'news', $css= ''){
+function knd_more_section($posts, $title = '', $type = 'news', $css= ''){
 	
 	if(empty($posts))
 		return;
@@ -454,11 +454,11 @@ function rdc_more_section($posts, $title = '', $type = 'news', $css= ''){
 
 	$css .= ' related-card-holder';
 ?>
-<section class="<?php echo esc_attr($css);?>"><div class="container-wide">
+<section class="<?php echo esc_attr($css);?>"><div class="container">
 <h3 class="related-title"><?php echo $title; ?></h3>
 
 <?php if(is_singular('person')) { ?>
-<div class="cards-loop sm-cols-2 md-cols-2 lg-cols-4 related-people-loop">
+<div class="cards-loop related-people-loop flex-row">
 	<?php
 		foreach($posts as $p){
 			knd_person_card($p, true);
@@ -466,10 +466,10 @@ function rdc_more_section($posts, $title = '', $type = 'news', $css= ''){
 	?>
 </div>
 <?php } else { ?>
-<div class="related-cards-loop">
+<div class="related-cards-loop flex-row">
 	<?php
 		foreach($posts as $p){			
-			rdc_related_post_card($p);
+		    knd_related_post_card($p);
 		}		
 	?>
 </div>
