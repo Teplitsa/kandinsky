@@ -496,23 +496,26 @@ body {
     display: block;
     /*white-space: wrap;*/
 }
-.theme-presets ul li{
+.theme-presets ul li {
     list-style:none;
     display: inline-block;
     padding: 3px;
-    margin:0;
+    margin-bottom: 8px;
     vertical-align: bottom;
 }
-.theme-presets ul li.current{
+.theme-presets ul li.current {
     background: #0091CD;
     border-radius: 2px;
 }
 .theme-presets ul li a {
     display: flex;
-    /*float:left;*/
-    /*line-height:0;*/
+    text-decoration: none;
+    color: #666;
 }
-.theme-presets ul li a img{
+.theme-presets ul li a:hover {
+    color: #666;
+}
+.theme-presets ul li a img {
     flex-basis: 300px;
     flex-grow: 0;
     flex-shrink: 0;
@@ -522,11 +525,15 @@ body {
     width: 100%;
     flex-grow: 1;
     flex-shrink: 1;
-    /*height:auto;*/
+    margin-left: 16px;
+}
+
+.theme-presets ul li.current a, .theme-presets ul li.current a h3.plot-title {
+    color: white;
 }
 
 .knd-plugin-description {
     font-size: 0.9em;
     font-style: italic;
-    margin-top: 5px 0px 10px 0px;
+    margin: 5px 0 10px 0;
 }

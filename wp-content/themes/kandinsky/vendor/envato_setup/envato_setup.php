@@ -398,35 +398,33 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 					'handler' => '',
 				),
 			);
-			if(class_exists('TGM_Plugin_Activation') && isset($GLOBALS['tgmpa'])) {
-				$this->steps['default_plugins'] = array(
-					'name'    => esc_html__('Plugins'),
-					'view'    => array($this, 'step_default_plugins_view'),
-					'handler' => '',
-				);
-			}
-//			if(count($this->site_scenarios) > 1) {
             $this->steps['scenario'] = array(
                 'name'    => esc_html__('Scenario', 'knd'),
                 'view'    => array($this, 'step_scenario_view'),
                 'handler' => array($this, 'step_scenario_handler'),
             );
-//			}
+//            $this->steps['settings'] = array(
+//                'name'    => esc_html__('Settings'),
+//                'view'    => array($this, 'step_settings_view'),
+//                'handler' => array($this, 'step_settings_handler'),
+//            );
 			$this->steps['default_content'] = array(
 				'name'    => esc_html__('Content', 'knd'),
 				'view'    => array($this, 'step_content_view'),
 				'handler' => '',
 			);
 			$this->steps['design'] = array(
-				'name'    => esc_html__('Logo'),
+				'name'    => esc_html__('Logo and favicon', 'knd'),
 				'view'    => array($this, 'step_logo_design_view'),
 				'handler' => array($this, 'step_logo_design_handler'),
 			);
-			$this->steps['settings'] = array(
-				'name'    => esc_html__('Settings'),
-				'view'    => array($this, 'step_settings_view'),
-				'handler' => array($this, 'step_settings_handler'),
-			);
+            if(class_exists('TGM_Plugin_Activation') && isset($GLOBALS['tgmpa'])) {
+                $this->steps['default_plugins'] = array(
+                    'name'    => esc_html__('Plugins'),
+                    'view'    => array($this, 'step_default_plugins_view'),
+                    'handler' => '',
+                );
+            }
 			$this->steps['support'] = array(
 				'name'    => _x('Support', 'One word "support service" variant', 'knd'),
 				'view'    => array($this, 'step_support_view'),
@@ -589,14 +587,14 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 
 		public function step_intro_view() {?>
 
-				<h1><?php printf(esc_html__('Welcome to the %s setup wizard', 'knd'), wp_get_theme());?></h1>
-				<p><?php printf(esc_html__("Hello! Let's set up your organization website together. With few simple steps we will configure minimal necessary settings, like installing of required plugins, setting up default website content and the logo. It should only take 5 minutes. You can always change any of these settings later on, in the Plugins admin folder.", 'knd')); ?></p>
+            <h1><?php printf(esc_html__('Welcome to the %s setup wizard', 'knd'), wp_get_theme());?></h1>
+            <p><?php printf(esc_html__("Hello! Let's set up your organization website together. With few simple steps we will configure minimal necessary settings, like installing of required plugins, setting up default website content and the logo. It should only take 5 minutes. You can always change any of these settings later on, in the Plugins admin folder.", 'knd')); ?></p>
 
-				<p class="envato-setup-actions step">
-					<a href="<?php echo esc_url($this->get_next_step_link());?>" class="button-primary button button-large button-next"><?php esc_html_e("Let's go!", 'knd'); ?></a>
-					<a href="<?php echo esc_url(wp_get_referer() && !strpos(wp_get_referer(), 'update.php') ? wp_get_referer() : admin_url(''));?>" class="button button-large"><?php esc_html_e('Not right now', 'knd');?></a>
-				</p>
-            <?php
+            <p class="envato-setup-actions step">
+                <a href="<?php echo esc_url($this->get_next_step_link());?>" class="button-primary button button-large button-next"><?php esc_html_e("Let's go!", 'knd'); ?></a>
+                <a href="<?php echo esc_url(wp_get_referer() && !strpos(wp_get_referer(), 'update.php') ? wp_get_referer() : admin_url(''));?>" class="button button-large"><?php esc_html_e('Not right now', 'knd');?></a>
+            </p>
+        <?php
 		}
 
 		public function filter_options( $options ) {
@@ -707,9 +705,14 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 					</ul>
                     <?php }
 
-                    if($plugins_recommended) {?>
+                    if($plugins_recommended) {
 
+                        if($plugins_required) {?>
                     <p><?php esc_html_e('We also recommend to add several more:', 'knd');?></p>
+                        <?php } else {?>
+                    <p><?php esc_html_e('We recommend to add or update the following plugins:', 'knd');?></p>
+                        <?php }?>
+
                     <ul class="envato-wizard-plugins-recommended">
                     <?php foreach($plugins_recommended as $slug => $plugin) {?>
                         <li data-slug="<?php echo esc_attr($slug);?>"><?php echo esc_html($plugin['name']);?><span>
@@ -856,6 +859,15 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 
 			$content = array();
 
+            $content['site_title_desc'] = array(
+                'title'            => esc_html__('Site title and description', 'knd'),
+                'description'      => esc_html__('Insert default website title and description as seen in the demo.', 'knd'),
+                'pending'          => esc_html__('Pending', 'knd'),
+                'installing'       => esc_html__('Installing...', 'knd'),
+                'success'          => esc_html__('Success!', 'knd'),
+                'install_callback' => array($this, '_content_install_site_title_desc'),
+                'checked'          => $this->is_default_content_installed(),
+            );
             $content['pages'] = array(
                 'title'            => esc_html__('Pages', 'knd'),
                 'description'      => esc_html__('Insert default website pages as seen in the demo.', 'knd'),
@@ -1424,10 +1436,10 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
                     <?php $current_scenario_id = get_theme_mod('knd_site_scenario', $this->get_default_site_scenario_id());
                     foreach($this->site_scenarios as $scenario_id => $data) {?>
                         <li <?php echo $scenario_id == $current_scenario_id ? 'class="current" ' : '';?>>
-                            <a href="#" data-scenario="<?php echo esc_attr($scenario_id);?>">
+                            <a href="#" data-scenario-id="<?php echo esc_attr($scenario_id);?>" data-scenario-name="<?php echo esc_attr($data['name']);?>" data-scenario-description="<?php echo empty($data['description']) ? '' : esc_attr($data['description']);?>">
                                 <img src="<?php echo esc_url(get_template_directory_uri().'/vendor/envato_setup/images/'.$scenario_id.'/style.png');?>">
                                 <span class="plot-data">
-                                    <span class="plot-title"><?php echo $data['name'];?></span>
+                                    <h3 class="plot-title"><?php echo $data['name'];?></h3>
                                     <div class="plot-info">
                                         <?php echo empty($data['description']) ? '' : $data['description'];?>
                                     </div>
@@ -1438,7 +1450,7 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
                     </ul>
                 </div>
 
-                <input type="hidden" name="new_scenario" id="new_scenario" value="">
+                <input type="hidden" name="new_scenario_id" id="new_scenario_id" value="<?php echo $current_scenario_id ? $current_scenario_id : '';?>">
 
                 <p class="envato-setup-actions step">
                     <input type="submit" class="button-primary button button-large button-next" value="<?php esc_attr_e('Continue', 'knd');?>" name="save_step">
@@ -1458,9 +1470,8 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 
 			check_admin_referer('knd-setup');
 
-			$new_scenario = empty($_POST['new_scenario']) ? false : $_POST['new_scenario'];
-			if($new_scenario) {
-				set_theme_mod('knd_site_scenario', $new_scenario);
+			if($_POST['new_scenario_id']) {
+				set_theme_mod('knd_site_scenario', trim($_POST['new_scenario_id']));
 			}
 
 			wp_redirect(esc_url_raw($this->get_next_step_link()));
@@ -1474,15 +1485,27 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 			<form method="post">
 
 				<p><?php _e('Please add your organization main logo below. The recommended size is <strong>315 x 66 px</strong> (for "Image only" mode) and <strong>66 x 66 px</strong> (for "Image with site name" mode). The logo can be changed at any time from the Appearance > Customize area in your website dashboard.', 'knd');?></p>
-                
+
                 <p><?php printf(esc_html__('Try our %sPaseka program%s if you need a new logo designed.', 'knd'), '<a href="https://paseka.te-st.ru/" target="_blank">', '</a>');?></p>
 				<table>
 					<tr>
 						<td>
 							<div id="current-logo">
-                            <?php $image_url = knd_get_logo_img_url();
+                            <?php if(knd_get_logo_img_id()) {
+                                $image_url = knd_get_logo_img_url();
+                            } else { // No custom logo set, use current scenario default one
+
+                                $site_scenario_id = get_theme_mod('knd_site_scenario');
+                                $image_url = $site_scenario_id ?
+                                    get_template_directory_uri()."vendor/images/$site_scenario_id/logo.svg" : '';
+
+                            }
+
                             if($image_url) {
                                 printf('<img class="site-logo" src="%s" alt="%s" style="width: %s; height: auto;">', $image_url, get_bloginfo('name'), $this->get_header_logo_width());
+
+                            } else {
+
                             }?>
 							</div>
 						</td>

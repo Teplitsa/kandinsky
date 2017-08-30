@@ -46,7 +46,7 @@ var EnvatoWizard = (function($){
             $(this).parents('ul').first().find('.current').removeClass('current');
             $(this).parents('li').first().addClass('current');
 
-            $('#new_scenario').val($(this).data('scenario'));
+            $('#new_scenario_id').val($(this).data('scenario-id'));
 
             return false;
 
