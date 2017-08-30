@@ -168,10 +168,16 @@
 
 /* Related section */
 .related-card-holder {
+    margin-top: $gut;
+    
 	.related-title {
-		@include header-title(head_title);
-		margin-bottom: $base;
-		text-align: center;		
+		@include knd-head-section-text();
+	}
+	
+	a {
+	   @include knd-link-related-text();
+	   color: var(--knd-color-main-dark);
+	   margin-bottom: 16px;
 	}	
 }
 
@@ -201,6 +207,10 @@
 }
 
 .related-cards-loop {
+    margin-top: $gut / 2;
+    a {
+        display:block;
+    }
 }
 
 .tpl-related-post {
@@ -260,7 +270,7 @@
 		
 	.entry-preview {
 		position: relative;
-		margin-bottom: $gut;
+		margin-bottom: $gut / 1.15;
 	}
 	
 	.introimg  {
@@ -268,13 +278,10 @@
 	}
 	
     .entry-lead {
-        margin-top: $gut/4;
+        @include knd-lead-text();
+        margin-bottom: $gut / 1.33;
         
         @include for(medium-screens) {
-            margin-top: $gut/2;
-            //@include calc(width, '66.66% - 16px');
-            font-size: 1.2em;
-            font-weight: 300;
         }
     }
 }
@@ -307,19 +314,18 @@
 	}
 }
 
-.addon {
-	margin-top: $gut*1.5;
-	
-	.related-title {
-		border-top: 1px solid $color-border-normal;
-		padding-top: $gut;
-		@include for(medium-screens) {
-			margin: 0 $gut $base;
-		}
-	}
+/* single post terms */
+.single-post-terms {
 }
 
-
+.tags-line {
+    padding-top: $gut / 2.2;
+    a {
+        color: var(--knd-color-main-dark);
+        @include knd-link-terms-text();
+        margin-right: 4px;
+    }
+}
 
 /** Programms **/
 .tpl-project {
@@ -631,3 +637,7 @@
 	}
 }
 	
+/* single */
+.knd-signle-after-content {
+    margin-top:$gut * 1.5;
+}
