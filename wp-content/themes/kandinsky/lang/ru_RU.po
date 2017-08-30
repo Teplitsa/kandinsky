@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-08-30 15:57+0000\n"
-"PO-Revision-Date: 2017-08-30 16:15+0000\n"
+"PO-Revision-Date: 2017-08-30 16:32+0000\n"
 "Last-Translator: ahaenor <ahaenor@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru-RU\n"
@@ -85,7 +85,7 @@ msgstr "Теплица социальных технологий"
 msgid "All materials of the site are avaliabe under license %s"
 msgstr "Все материалы сайта доступны по лицензии %s"
 
-#: functions.php:35 modules/starter/class-demo.php:96
+#: functions.php:35 modules/starter/class-demo.php:96 
 #: modules/starter/class-demo.php:250
 msgid "Primary menu"
 msgstr "﻿Главное меню"
@@ -626,12 +626,12 @@ msgstr "Текст для кнопки призыва к действию"
 msgid "An URL for a \"call to action\" button"
 msgstr "Ссылка для кнопки призыва к действию"
 
-#: core/shortcodes-ui.php:127 core/shortcodes-ui.php:168
+#: core/shortcodes-ui.php:127 core/shortcodes-ui.php:168 
 #: core/shortcodes-ui.php:209 core/shortcodes-ui.php:274
 msgid "Section CSS class"
 msgstr "CSS-класс для секции"
 
-#: core/shortcodes-ui.php:131 core/shortcodes-ui.php:172
+#: core/shortcodes-ui.php:131 core/shortcodes-ui.php:172 
 #: core/shortcodes-ui.php:213 core/shortcodes-ui.php:278
 msgid "An additional CSS class (or several) for the section"
 msgstr "Дополнительный класс (или несколько) для секции"
@@ -776,7 +776,7 @@ msgstr "или"
 msgid "Monthly donation"
 msgstr "Перечислять ежемесячно"
 
-#: modules/news.php:7 modules/starter/sidebars.php:54
+#: modules/news.php:7 modules/starter/sidebars.php:54 
 #: modules/starter/sidebars.php:112
 msgid "News"
 msgstr "Новости"
@@ -1026,17 +1026,17 @@ msgstr ""
 "Хорошие новости! Все нужные плагины уже установлены и обновлены. Давайте "
 "пойдем дальше."
 
-#: vendor/envato_setup/envato_setup.php:728
-#: vendor/envato_setup/envato_setup.php:1453
-#: vendor/envato_setup/envato_setup.php:1501
+#: vendor/envato_setup/envato_setup.php:728 
+#: vendor/envato_setup/envato_setup.php:1453 
+#: vendor/envato_setup/envato_setup.php:1501 
 #: vendor/envato_setup/envato_setup.php:1568
 msgid "Continue"
 msgstr "Продолжить"
 
-#: vendor/envato_setup/envato_setup.php:731
-#: vendor/envato_setup/envato_setup.php:952
-#: vendor/envato_setup/envato_setup.php:1455
-#: vendor/envato_setup/envato_setup.php:1503
+#: vendor/envato_setup/envato_setup.php:731 
+#: vendor/envato_setup/envato_setup.php:952 
+#: vendor/envato_setup/envato_setup.php:1455 
+#: vendor/envato_setup/envato_setup.php:1503 
 #: vendor/envato_setup/envato_setup.php:1570
 msgid "Skip this step"
 msgstr "Пропустить шаг"
@@ -1065,26 +1065,26 @@ msgstr "Успех"
 msgid "Insert default website title and description as seen in the demo."
 msgstr "Укажите название и краткое описание сайта."
 
-#: vendor/envato_setup/envato_setup.php:862
-#: vendor/envato_setup/envato_setup.php:871
-#: vendor/envato_setup/envato_setup.php:880
-#: vendor/envato_setup/envato_setup.php:889
+#: vendor/envato_setup/envato_setup.php:862 
+#: vendor/envato_setup/envato_setup.php:871 
+#: vendor/envato_setup/envato_setup.php:880 
+#: vendor/envato_setup/envato_setup.php:889 
 #: vendor/envato_setup/envato_setup.php:898
 msgid "Pending"
 msgstr "Отложено"
 
-#: vendor/envato_setup/envato_setup.php:863
-#: vendor/envato_setup/envato_setup.php:872
-#: vendor/envato_setup/envato_setup.php:881
-#: vendor/envato_setup/envato_setup.php:890
+#: vendor/envato_setup/envato_setup.php:863 
+#: vendor/envato_setup/envato_setup.php:872 
+#: vendor/envato_setup/envato_setup.php:881 
+#: vendor/envato_setup/envato_setup.php:890 
 #: vendor/envato_setup/envato_setup.php:899
 msgid "Installing..."
 msgstr "Установка..."
 
-#: vendor/envato_setup/envato_setup.php:864
-#: vendor/envato_setup/envato_setup.php:873
-#: vendor/envato_setup/envato_setup.php:882
-#: vendor/envato_setup/envato_setup.php:891
+#: vendor/envato_setup/envato_setup.php:864 
+#: vendor/envato_setup/envato_setup.php:873 
+#: vendor/envato_setup/envato_setup.php:882 
+#: vendor/envato_setup/envato_setup.php:891 
 #: vendor/envato_setup/envato_setup.php:900
 msgid "Success!"
 msgstr "Успех!"
