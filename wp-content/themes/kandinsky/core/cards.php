@@ -84,11 +84,12 @@ function knd_related_post_card(WP_Post $cpost) {
 <article class="flex-md-6 tpl-related-post card"><a href="<?php echo $pl; ?>" class="entry-link">	
 	<div class="entry-preview"><?php echo knd_post_thumbnail($cpost->ID, 'post-thumbnail');?></div>
 	<div class="entry-data">
-		<h4 class="entry-title"><?php echo get_the_title($cpost);?></h4>
-        <?php if('project' != $cpost->post_type) { ?>
-        <div class="entry-meta"><?php echo strip_tags(knd_posted_on($cpost), '<span>');?></div>
-        <?php } ?>
+        <h4 class="entry-title"><?php echo get_the_title($cpost);?></h4>
 	</div>
+    <?php if('project' != $cpost->post_type) { ?>
+    <div class="entry-meta"><?php echo strip_tags(knd_posted_on($cpost), '<span>');?></div>
+    <?php } ?>
+    
 </a></article>	
 <?php
 }

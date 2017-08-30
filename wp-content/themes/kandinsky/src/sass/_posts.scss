@@ -216,18 +216,21 @@
 .tpl-related-post {
 	@extend .tpl-post;
 	
-	background: $color-secondary;
-	
 	&:hover {
 		background: $color-secondary-alt;		
 	}
 	
+	.entry-data {
+        padding: 21px 33px 0px 33px;
+        position: relative;
+        margin-bottom: $gut * 1.6;
+	}
+	
 	.entry-meta {
-		position:relative;
-		background:none;
-		left:0px;
-		bottom:0px;
-		padding:0px;
+        background:none;
+        bottom: 13px;
+        left: 26px;
+        z-index: 100;
 	}
 	
 	.entry-title {
@@ -640,4 +643,23 @@
 /* single */
 .knd-signle-after-content {
     margin-top:$gut * 1.5;
+}
+
+/* archive */
+.cards-holder.archive-post-list {
+    padding-top:0px;
+}
+
+.listing-bg {
+   background: $color-bg-light;
+}
+
+.featured-post {
+    
+   margin-top: 70px;
+   margin-bottom: -70px;
+   
+   .cards-loop {
+       transform: translateY(-70px);
+   } 
 }

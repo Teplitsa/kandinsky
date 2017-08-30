@@ -15,7 +15,7 @@ get_header();
 ?>
 <section class="heading">
 	<div class="container">
-		<?php rdc_section_title(); ?>
+		<?php knd_section_title(); ?>
 		<?php if($campaign){ ?>
 		<h4><?php _e('Campaign', 'knd');?>: <a href="<?php echo get_permalink($campaign);?>"><?php echo get_the_title($campaign);?></a></h4>
 		<?php } ?>

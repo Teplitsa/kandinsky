@@ -26,7 +26,7 @@ if($paged == 1) { //featured post
  <?php }} ?>
 
 <section class="heading">
-	<div class="container"><?php rdc_section_title(); ?></div>
+	<div class="container"><?php knd_section_title(); ?></div>
 </section>
 
 <section class="main-content cards-holder"><div class="container">

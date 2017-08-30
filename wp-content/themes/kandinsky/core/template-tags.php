@@ -241,7 +241,7 @@ function rdc_get_post_type_archive_title($post_type) {
 	return $name;
 }
 
-function rdc_section_title() {
+function knd_section_title() {
 	
 	$title = '';
 	$css = '';

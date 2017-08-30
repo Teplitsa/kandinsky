@@ -212,6 +212,11 @@ $modularscale: (
     font-weight: 800;
 }
 
+@mixin knd-head-exlarge-arhive-text() {
+    @include knd-head-exlarge-single-text();
+    font-weight: 600;
+}
+
 @mixin knd-head-tiny-text() {
     font-size:16px;
     font-family: $body;

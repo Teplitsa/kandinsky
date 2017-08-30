@@ -49,15 +49,16 @@ h1, h2, h3, h4, h5, h6 {
 /** Layout structure **/
 // index
 .heading {
-	background: $color-white;
-	padding: $base;
-	text-align: center; 
-
+    
+    h1 {
+        padding: $gut / 1.2 0px $gut / 1.7 0px;
+    }
+    
     &.no-posts { display: none; }
 }
 
 .section-title {
-	@include header-title(head_title);		
+	@include knd-head-exlarge-single-text();		
 }
 
 .cards-holder {
