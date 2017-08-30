@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-30 15:08+0000\n"
+"POT-Creation-Date: 2017-08-30 15:57+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -638,7 +638,7 @@ msgstr ""
 msgid "Third column content"
 msgstr ""
 
-#: core/shortcodes.php:310
+#: core/shortcodes.php:363
 msgid "Recommendations:"
 msgstr ""
 
@@ -980,7 +980,7 @@ msgid "Success"
 msgstr ""
 
 #: vendor/envato_setup/envato_setup.php:860
-msgid "Site title and description"
+msgid "Website title and description"
 msgstr ""
 
 #: vendor/envato_setup/envato_setup.php:861

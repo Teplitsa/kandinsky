@@ -857,7 +857,7 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 			$content = array();
 
             $content['site_title_desc'] = array(
-                'title'            => esc_html__('Site title and description', 'knd'),
+                'title'            => esc_html__('Website title and description', 'knd'),
                 'description'      => esc_html__('Insert default website title and description as seen in the demo.', 'knd'),
                 'pending'          => esc_html__('Pending', 'knd'),
                 'installing'       => esc_html__('Installing...', 'knd'),
