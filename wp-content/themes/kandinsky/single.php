@@ -8,6 +8,14 @@
 $cpost = get_queried_object(); 
 $format = rdc_get_post_format($cpost);
 $thumbnail_id = get_post_thumbnail_id($cpost->ID);
+$src = $thumbnail_id ? wp_get_attachment_image_src( $thumbnail_id, 'full' ) : null;
+
+if($src && isset($src[1])) {
+    $thumb_width = (int)$src[1];
+}
+else {
+    $thumb_width = 0;
+}
 
 $video = '';
 
@@ -24,38 +32,60 @@ elseif($format == 'introimg') {
 get_header(); ?>
 <section class="main-content single-post-section container-wide format-<?php echo $format;?>">
 
-<div class="container">
+<?php
 
-    <header class="flex-row entry-header-full">
-    
-        <div class="flex-md-2"></div>
+if($thumb_width > 1104) {
+?>
+    <div class="container-wide full-width-image">
+        <section class="entry-preview"><?php knd_single_post_thumbnail($cpost->ID, 'full', 'introimg'); ?></section>
+      
+        <header class="entry-header-full"><div class="container">
         
-        <div class="flex-md-8">
-            <div class="entry-meta"><?php echo knd_posted_on($cpost); //for event ?></div>
-            <h1 class="entry-title"><?php echo get_the_title($cpost);?></h1>
-            <div class="mobile-sharing hide-on-medium"><?php echo knd_social_share_no_js();?></div>
+            <div class="flex-row">
+        
+                <div class="flex-md-1"></div>
+                
+                <div class="flex-md-10">
+                    <div class="entry-meta"><?php echo knd_posted_on($cpost); //for event ?></div>
+                    <h1 class="entry-title"><?php echo get_the_title($cpost);?></h1>
+                    <div class="mobile-sharing hide-on-medium"><?php echo knd_social_share_no_js();?></div>
+                </div>
+                
+                <div class="flex-md-1"></div>
+            
+            </div>
+            
+        </div></header>
+      
+    </div>
+    
+<?php } else { ?>
+
+    <div class="container">
+        <header class="flex-row entry-header-full">
+        
+            <div class="flex-md-2"></div>
+            
+            <div class="flex-md-8">
+                <div class="entry-meta"><?php echo knd_posted_on($cpost); //for event ?></div>
+                <h1 class="entry-title"><?php echo get_the_title($cpost);?></h1>
+                <div class="mobile-sharing hide-on-medium"><?php echo knd_social_share_no_js();?></div>
+            </div>
+            
+            <div class="flex-md-2"></div>
+            
+        </header>
+        
+        <div class="flex-row">
+          <div class="flex-md-1"></div>
+          <div class="flex-md-10">
+            <section class="entry-preview"><?php knd_single_post_thumbnail($cpost->ID, 'full', 'introimg'); ?></section>
+          </div>
+          <div class="flex-md-1"></div>
         </div>
         
-        <div class="flex-md-2"></div>
-        
-    </header>
-</div>
+    </div>
 
-<?php
-$src = $thumbnail_id ? wp_get_attachment_image_src( $thumbnail_id, 'full' ) : null;
-if($src && isset($src[1]) && $src[1] > 1104) {
-?>
-    <div class="container-wide">
-	  <section class="entry-preview"><?php knd_single_post_thumbnail($cpost->ID, 'full', 'introimg'); ?></section>
-    </div>
-<?php } else { ?>
-    <div class="container flex-row">
-      <div class="flex-md-1"></div>
-      <div class="flex-md-10">
-        <section class="entry-preview"><?php knd_single_post_thumbnail($cpost->ID, 'full', 'introimg'); ?></section>
-      </div>
-      <div class="flex-md-1"></div>
-    </div>
 <?php }?>
     
 <div class="container">
