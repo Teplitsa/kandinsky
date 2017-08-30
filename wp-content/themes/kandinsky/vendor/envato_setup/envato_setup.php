@@ -224,15 +224,15 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 			$this->parent_slug     = apply_filters( $this->theme_name . '_theme_setup_wizard_parent_slug', '' );
 
 			$this->site_scenarios = array(
-                'color-line' => array(
+                'problem-oriented-org' => array(
                     'name' => __('Color Line', 'knd'),
                     'description' => __('An example of a social problem oriented charity organization.', 'knd'),
                 ),
-                'withyou' => array(
+                'crowdfunding-oriented-org' => array(
                     'name' => __('We Are With You', 'knd'),
                     'description' => __('An example of a crowdfunding oriented charity organization.', 'knd'),
                 ),
-                'dubrovino' => array(
+                'public-campaign' => array(
                     'name' => __('Protect Dubrovino!', 'knd'),
                     'description' => __('An example of a public campaign to protect a park from deconstruction.', 'knd'),
                 ),
