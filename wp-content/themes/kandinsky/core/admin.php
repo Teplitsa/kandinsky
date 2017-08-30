@@ -130,7 +130,7 @@ add_filter('wpseo_use_page_analysis', '__return_false');
 
 
 /* Excerpt metabox */
-add_action('add_meta_boxes', 'rdc_correct_metaboxes', 2, 2);
+//add_action('add_meta_boxes', 'rdc_correct_metaboxes', 2, 2);
 function rdc_correct_metaboxes($post_type, $post ){
 	
 	if(post_type_supports($post_type, 'excerpt')){

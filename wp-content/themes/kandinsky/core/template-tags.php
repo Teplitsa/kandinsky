@@ -488,7 +488,7 @@ function knd_more_section($posts, $title = '', $type = 'news', $css= ''){
 function rdc_related_project(WP_Post $cpost){
 	
 	$pl = get_permalink($cpost);
-	$ex = apply_filters('rdc_the_title', rdc_get_post_excerpt($cpost, 25, true));
+	$ex = apply_filters('knd_the_title', rdc_get_post_excerpt($cpost, 25, true));
 ?>
 <div class="related-widget widget">
 	<h3 class="widget-title"><?php _e('Related project', 'kds');?></h3>
@@ -716,7 +716,7 @@ function rdc_add_to_calendar_link(TST_Event $event, $echo = true, $container_cla
 				<var class="atc_date_end"><?php echo $end_mark;?></var>
 				<var class="atc_timezone">Europe/Moscow</var>
 				<var class="atc_title"><?php echo esc_attr($event->post_title);?></var>
-				<var class="atc_description"><?php echo apply_filters('rdc_the_title', $e);?></var>
+				<var class="atc_description"><?php echo apply_filters('knd_the_title', $e);?></var>
 				<var class="atc_location"><?php echo esc_attr($location);?></var>          
 			</var>		
 		</span>

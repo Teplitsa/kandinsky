@@ -1,7 +1,7 @@
 <?php
 
-add_action('init', 'rdc_custom_content', 20);
-function rdc_custom_content(){
+add_action('init', 'knd_custom_content', 20);
+function knd_custom_content(){
 	
 	if(defined('TST_HAS_AUTHORS') && TST_HAS_AUTHORS) {
 		register_taxonomy('auctor', array('post',), array(
@@ -244,6 +244,9 @@ function rdc_custom_content(){
 	//remove post tags
 	unregister_taxonomy_for_object_type('post_tag', 'post');
 }
+
+
+
 
 /** Metaboxes **/
 add_action( 'cmb2_admin_init', 'rdc_custom_metaboxes' );

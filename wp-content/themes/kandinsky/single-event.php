@@ -77,7 +77,7 @@ get_header(); ?>
 			<div class="entry-content">
 				
 				<?php if(!empty($event->post_object->post_excerpt)) { ?>
-				<div class="lead"><?php echo apply_filters('rdc_the_content', $event->post_object->post_excerpt); ?></div>
+				<div class="lead"><?php echo apply_filters('knd_the_content', $event->post_object->post_excerpt); ?></div>
 				<?php } ?>
 				
 				<?php echo apply_filters('the_content', $event->post_object->post_content); ?>

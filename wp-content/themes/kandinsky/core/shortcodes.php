@@ -3,10 +3,63 @@
  * Shortcodes
  **/
 
-add_filter('widget_text', 'do_shortcode');
+add_shortcode('knd_key_phrase', 'knd_key_phrase_shortcode');
+function knd_key_phrase_shortcode($atts, $content = null){
 
+    $atts = shortcode_atts(array('subtitle' => ''), $atts);
+
+    if(empty($content)) {
+        return '';
+    }
+
+    $out = "<div class='knd-key-phrase'>";
+    $out .= "<h5>".apply_filters('knd_the_title', $atts['subtitle'])."</h5>";
+    $out .= "<h3>".apply_filters('knd_the_title', $content)."</h3>";
+    $out .= "</div>";
+
+    return $out;
+}
+
+add_shortcode('knd_image_section', 'knd_image_section_shortcode');
+function knd_image_section_shortcode($atts, $content = null){
+
+    $atts = shortcode_atts(
+        array(
+            'title' => '', 
+            'text_on_top' => 0, 
+            'image' => 0
+        ),
+        $atts
+    );
+
+    if(empty($content) || $image == 0) {
+        return '';
+    }
+
+    $src = wp_get_attachment_url(); //make it responsive
+    $oust = '';
+
+    ob_start();
+?>
+    <div class="knd-image-section">
+        <
+        <div id="" class="knd-img-bg"></div>
+        <div class="kng-img-mark">
+            <h4 class="mark-title"><?php echo apply_filters('knd_the_title', $atts['subtitle']);?></h4>
+            <div class="mark-text"><?php apply_filters('knd_the_content', $content);?></div>
+        </div>
+    </div>
+<?php
+    $out = ob_get_contents();
+    ob_end_clean();
+    
+    return $out;
+}
+
+
+/*** IN Dev ***/
 /** Sitemap (UI-) **/
-add_shortcode('knd_sitemap', 'knd_sitemap_shortcode');
+//add_shortcode('knd_sitemap', 'knd_sitemap_shortcode');
 function knd_sitemap_shortcode($atts) {
 	return wp_nav_menu(array('theme_location' => 'sitemap', 'container' => false, 'menu_class' => 'sitemap', 'echo'=> false));
 }

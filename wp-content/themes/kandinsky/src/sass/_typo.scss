@@ -2,11 +2,11 @@
 //Typography settings and mixins
 
 $modularscale: (
-    base: 18px,
+    base: 11.5px,
     ratio: 1.333,
 
     440px: (
-        base: 11px,
+        base: 11.5px,
     ),
     768px: (
         base: 12px,
@@ -173,6 +173,8 @@ $modularscale: (
  * Kandinsky common typo
  *
  */
+
+
  
 // headers
 @mixin knd-head-main-text() {
@@ -186,7 +188,7 @@ $modularscale: (
 @mixin knd-head-large-text() {
     @include ms-respond(font-size, 3);
     font-family: $heading;
-    line-height: 1;
+    line-height: 1.11;
     letter-spacing: .03em;
     font-weight: 800;
 }
@@ -197,7 +199,7 @@ $modularscale: (
         font-size: 36px;
     }
     font-family: $heading;
-    line-height: 1;
+    line-height: 1.11;
     letter-spacing: .03em;
     font-weight: 800;
 }
@@ -240,7 +242,24 @@ $modularscale: (
     @include ms-respond(font-size, 2);
 }
 
+//pages
+@mixin knd-page-head(){
+    @include ms-respond(font-size, 6);
+    font-family: $body;
+    line-height: 1.05;
+    font-weight: 600;
+    letter-spacing: .001em;
+    text-transform: uppercase;
+}
+
 // body texts
+@mixin knd-body-text() {
+    @include ms-respond(font-size, 1);
+    font-family: $body;
+    line-height: 1.44;
+    font-weight: 400;
+ }
+
 @mixin knd-subhead-text() {
     @include ms-respond(font-size, 0);
     font-family: $body;

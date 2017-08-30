@@ -44,6 +44,12 @@ function knd_setup() {
 }
 add_action( 'after_setup_theme', 'knd_setup', 30 );
 
+/* Function for init setting that should be runned at init hook */
+function knd_content_init() {
+    add_post_type_support('page', 'excerpt');
+}
+add_action( 'init', 'knd_content_init', 30 );
+
 
 /** Custom image size for medialib **/
 add_filter('image_size_names_choose', 'rdc_medialib_custom_image_sizes');
