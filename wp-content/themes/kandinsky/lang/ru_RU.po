@@ -3,17 +3,17 @@ msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-08-30 15:52+0200\n"
-"PO-Revision-Date: 2017-08-30 15:52+0200\n"
+"PO-Revision-Date: 2017-08-30 15:25+0000\n"
 "Last-Translator: ahaenor <ahaenor@gmail.com>\n"
 "Language-Team: Russian\n"
-"Language: ru_RU\n"
+"Language: ru-RU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10 >= 2 && n"
-"%10<=4 &&(n%100<10||n%100 >= 20)? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10 >= 2 && "
+"n%10<=4 &&(n%100<10||n%100 >= 20)? 1 : 2)\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.8.4\n"
+"X-Generator: Loco - https://localise.biz/\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
 "__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
@@ -24,79 +24,419 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: bower_components\n"
 "X-Poedit-SearchPathExcluded-1: node_modules\n"
-"X-Poedit-SearchPathExcluded-2: assets\n"
-
-#: archive-leyka_donation.php:20
-msgid "Campaign"
-msgstr "Кампания"
+"X-Poedit-SearchPathExcluded-2: assets"
 
 #: archive-leyka_donation.php:38
 msgid "Anonymous"
-msgstr ""
+msgstr "Аноним"
 
 #: core/admin.php:139 core/admin.php:148
 msgid "Website"
-msgstr ""
+msgstr "Сайт"
 
 #: core/admin.php:139 core/admin.php:153
 msgid "Excerpt"
-msgstr ""
+msgstr "Аннотация"
 
 #: core/admin.php:155
 msgid ""
 "Annotation for items lists (will be printed at the beginning of the single "
 "page)"
-msgstr ""
+msgstr "Аннотация для элементов списков"
 
 #: core/admin.php:208
 msgid "Forms"
-msgstr ""
+msgstr "Формы"
 
 #: core/admin.php:331
 #, php-format
 msgid ""
 "ATTENTION! You thumbnail image is too small. It should be at least %s px"
 msgstr ""
+"ВНИМАНИЕ! Указанная миниатюра слишком мала. Её измерения должна быть как "
+"минимум %s пикс."
 
 #: core/admin.php:379 core/admin.php:395
 msgid "Facebook Profile"
-msgstr ""
+msgstr "Профиль Facebook"
 
 #: core/admin.php:381 core/admin.php:397
 msgid "Enter URL of author's Facebook profile"
-msgstr ""
+msgstr "Укажите адрес профиля автора в Facebook"
 
 #: core/admin.php:384 core/admin.php:400
 msgid "Avatar"
-msgstr ""
+msgstr "Аватар"
 
 #: core/admin.php:432
 msgid "Taxonomy Term Image"
-msgstr ""
+msgstr "Изображение термина таксономии"
 
 #: core/admin.php:433
 msgid "Select which image should represent this term."
-msgstr ""
+msgstr "Выберите изображение для данного термина."
 
 #: core/admin.php:434
 msgid "Select Image"
-msgstr ""
+msgstr "Выбрать изображение"
 
 #: core/admin.php:435
 msgid "Remove"
-msgstr ""
+msgstr "Удалить"
 
 #: core/admin.php:436
 msgid "Select or upload an image for this term"
-msgstr ""
+msgstr "Выбрать или загрузить изображение для термина"
 
 #: core/admin.php:437
 msgid "Attach"
-msgstr ""
+msgstr "Приложить"
 
 #: core/author.php:29
 msgid "Author"
+msgstr "Автор"
+
+#: core/extras.php:288
+msgid "E.g., https://vk.com/club0123456789"
+msgstr "Например, https://vk.com/club0123456789"
+
+#: core/extras.php:292
+msgid "E.g., https://ok.ru/profile/0123456789"
+msgstr "Например, https://ok.ru/profile/0123456789"
+
+#: core/extras.php:296
+msgid "E.g., https://www.facebook.com/your-organization-page"
+msgstr "Например, https://www.facebook.com/your-organization-page"
+
+#: core/extras.php:300
+msgid "E.g., https://www.instagram.com/your-organization-page"
+msgstr "Например, https://www.instagram.com/your-organization-page"
+
+#: core/extras.php:304
+msgid "E.g., https://twitter.com/your-organization-page"
+msgstr "Например, https://twitter.com/your-organization-page"
+
+#: core/extras.php:308
+msgid "E.g., https://tlgrm.ru/channels/@your-organization-page"
+msgstr "Например, https://tlgrm.ru/channels/@your-organization-page"
+
+#: core/extras.php:312
+msgid "E.g., https://youtube.com/channel/your-organization-channel"
+msgstr "Например, https://youtube.com/channel/your-organization-channel"
+
+#: core/settings.php:200
+msgid "Shortcake (Shortcodes UI)"
+msgstr "Shortcake (Shortcodes UI)"
+
+#: core/settings.php:204
+msgid ""
+"A visual editing for shortcodes to enrich your content management experience."
 msgstr ""
+"Возможности визуального редактирования шорткодов, чтобы сделать процесс "
+"редактирования страниц более современным."
+
+#: core/settings.php:207
+msgid "Shortcake Richtext"
+msgstr "Shortcake Richtext"
+
+#: core/settings.php:211
+msgid "Rich text fields for shortcodes UI."
+msgstr "Возможности форматирования текстовых элементов для плагина Shortcake."
+
+#: core/shortcodes-ui.php:19
+msgid "A quote"
+msgstr "Цитата"
+
+#: core/shortcodes-ui.php:24
+msgid "A quote text"
+msgstr "Текст цитаты"
+
+#: core/shortcodes-ui.php:30
+msgid "Quote origin"
+msgstr "Автор цитаты"
+
+#: core/shortcodes-ui.php:34
+msgid "A quote origin (or author)"
+msgstr "Источник или автор цитаты"
+
+#: core/shortcodes-ui.php:40
+msgid "A \"call to action\" button"
+msgstr "Кнопка призыва к действию"
+
+#: core/shortcodes-ui.php:50 core/shortcodes-ui.php:113
+msgid "Button label"
+msgstr "Надпись на кнопке"
+
+#: core/shortcodes-ui.php:54
+msgid "A text for button"
+msgstr "Текст для кнопки"
+
+#: core/shortcodes-ui.php:57 core/shortcodes-ui.php:120
+msgid "Button URL"
+msgstr "Ссылка кнопки"
+
+#: core/shortcodes-ui.php:61
+msgid "An URL for button"
+msgstr "Ссылка, по которой произойдёт переход при клике на кнопку"
+
+#: core/shortcodes-ui.php:64
+msgid "Open link in a new window"
+msgstr "Открывать ссылку в новом окне"
+
+#: core/shortcodes-ui.php:74
+msgid "A text with image or colored background"
+msgstr "Текст с фоном в виде цвета или изображения"
+
+#: core/shortcodes-ui.php:85
+msgid "Background image"
+msgstr "Фоновое изображение"
+
+#: core/shortcodes-ui.php:89
+msgid "Select image"
+msgstr "Выбрать изображение"
+
+#: core/shortcodes-ui.php:90
+msgid "Select section background image"
+msgstr ""
+
+#: core/shortcodes-ui.php:93
+msgid "Background color"
+msgstr ""
+
+#: core/shortcodes-ui.php:96
+msgid "E.g., #123abc"
+msgstr ""
+
+#: core/shortcodes-ui.php:99
+msgid "Title"
+msgstr ""
+
+#: core/shortcodes-ui.php:103
+msgid "A title text"
+msgstr ""
+
+#: core/shortcodes-ui.php:106
+msgid "Subtitle"
+msgstr ""
+
+#: core/shortcodes-ui.php:117
+msgid "A label for a \"call to action\" button"
+msgstr ""
+
+#: core/shortcodes-ui.php:124
+msgid "An URL for a \"call to action\" button"
+msgstr ""
+
+#: core/shortcodes-ui.php:127 core/shortcodes-ui.php:168
+#: core/shortcodes-ui.php:209 core/shortcodes-ui.php:274
+msgid "Section CSS class"
+msgstr ""
+
+#: core/shortcodes-ui.php:131 core/shortcodes-ui.php:172
+#: core/shortcodes-ui.php:213 core/shortcodes-ui.php:278
+msgid "An additional CSS class (or several) for the section"
+msgstr ""
+
+#: core/shortcodes-ui.php:137
+msgid "A list of persons"
+msgstr ""
+
+#: core/shortcodes-ui.php:147 core/shortcodes-ui.php:188
+msgid "List title"
+msgstr ""
+
+#: core/shortcodes-ui.php:151
+msgid "E.g., \"Our team\""
+msgstr ""
+
+#: core/shortcodes-ui.php:154
+msgid "Person categories"
+msgstr ""
+
+#: core/shortcodes-ui.php:161
+msgid "Only particular persons in the list"
+msgstr ""
+
+#: core/shortcodes-ui.php:178
+msgid "A list of organizations"
+msgstr ""
+
+#: core/shortcodes-ui.php:192
+msgid "E.g., \"Our partners\""
+msgstr ""
+
+#: core/shortcodes-ui.php:195
+msgid "Organization categories"
+msgstr ""
+
+#: core/shortcodes-ui.php:202
+msgid "Only particular organizations in the list"
+msgstr ""
+
+#: core/shortcodes-ui.php:219
+msgid "A columns text markup"
+msgstr ""
+
+#: core/shortcodes-ui.php:229
+msgid "Section title"
+msgstr ""
+
+#: core/shortcodes-ui.php:235
+msgid "First column title"
+msgstr ""
+
+#: core/shortcodes-ui.php:241
+msgid "First column content"
+msgstr ""
+
+#: core/shortcodes-ui.php:248
+msgid "Second column title"
+msgstr ""
+
+#: core/shortcodes-ui.php:254
+msgid "Second column content"
+msgstr ""
+
+#: core/shortcodes-ui.php:261
+msgid "Third column title"
+msgstr ""
+
+#: core/shortcodes-ui.php:267
+msgid "Third column content"
+msgstr ""
+
+#: core/shortcodes.php:310
+msgid "Recommendations:"
+msgstr ""
+
+#: core/template-tags.php:368
+msgid "Post navigation"
+msgstr ""
+
+#: core/template-tags.php:494
+msgid "Related project"
+msgstr ""
+
+#: core/template-tags.php:513
+msgid "Help now"
+msgstr ""
+
+#: modules/donations.php:62
+msgid "Please, set a text of comment to describe an additional ways to donate."
+msgstr ""
+
+#: modules/donations.php:70
+msgid "Please, set a text to describe an additional ways to donate."
+msgstr ""
+
+#: modules/donations.php:121
+msgid "Please, specify your donation amount"
+msgstr ""
+
+#: modules/donations.php:129
+msgid "Specify the amount of your donation"
+msgstr ""
+
+#: modules/donations.php:195
+msgid "Your name"
+msgstr ""
+
+#: modules/news.php:8
+msgid "Latest news list"
+msgstr ""
+
+#: modules/ourorg.php:8
+msgid "Our organization description on main page"
+msgstr ""
+
+#: modules/ourorg.php:17
+msgid "Our organization"
+msgstr ""
+
+#: modules/ourorg.php:85
+msgid "Content:"
+msgstr ""
+
+#: modules/starter/sidebars.php:72
+msgid "Security policy"
+msgstr ""
+
+#: vendor/envato_setup/envato_setup.php:228
+msgid "Color Line"
+msgstr ""
+
+#: vendor/envato_setup/envato_setup.php:229
+msgid "An example of a social problem oriented charity organization."
+msgstr ""
+
+#: vendor/envato_setup/envato_setup.php:232
+msgid "We Are With You"
+msgstr ""
+
+#: vendor/envato_setup/envato_setup.php:233
+msgid "An example of a crowdfunding oriented charity organization."
+msgstr ""
+
+#: vendor/envato_setup/envato_setup.php:236
+msgid "Protect Dubrovino!"
+msgstr ""
+
+#: vendor/envato_setup/envato_setup.php:237
+msgid "An example of a public campaign to protect a park from deconstruction."
+msgstr ""
+
+#: vendor/envato_setup/envato_setup.php:417
+msgid "Logo and favicon"
+msgstr ""
+
+#: vendor/envato_setup/envato_setup.php:423
+msgid "Plugins"
+msgstr ""
+
+#: vendor/envato_setup/envato_setup.php:713
+msgid "We recommend to add or update the following plugins:"
+msgstr ""
+
+#: vendor/envato_setup/envato_setup.php:863
+msgid "Site title and description"
+msgstr ""
+
+#: vendor/envato_setup/envato_setup.php:864
+msgid "Insert default website title and description as seen in the demo."
+msgstr ""
+
+#: vendor/envato_setup/envato_setup.php:919
+msgid ""
+"It's time to insert some default content for your new WordPress website. "
+"Choose what you would like inserted below and click Install. We recommend to "
+"select everything. Once inserted, this content can be managed from the "
+"WordPress admin dashboard."
+msgstr ""
+
+#: vendor/envato_setup/envato_setup.php:952
+msgid "Set up"
+msgstr ""
+
+#: vendor/envato_setup/envato_setup.php:1289
+msgid "Remote server did not respond"
+msgstr ""
+
+#: vendor/envato_setup/envato_setup.php:1297
+msgid "Remote file is incorrect size"
+msgstr ""
+
+#: vendor/envato_setup/envato_setup.php:1303
+msgid "Zero size file downloaded"
+msgstr ""
+
+#: vendor/envato_setup/envato_setup.php:1309
+#, php-format
+msgid "Remote file is too large, limit is %s"
+msgstr ""
+
+#: archive-leyka_donation.php:20
+msgid "Campaign"
+msgstr "Кампания"
 
 #: core/cards.php:24 core/cards.php:52 core/extras.php:63
 #: taxonomy-person_cat.php:20
@@ -199,57 +539,29 @@ msgstr "Рекомендуем установить плагины"
 msgid "VKontakte"
 msgstr "ВКонтакте"
 
-#: core/extras.php:288
-msgid "E.g., https://vk.com/club0123456789"
-msgstr ""
-
 #: core/extras.php:291
 msgid "Odnoklassniki"
 msgstr "Одноклассники"
-
-#: core/extras.php:292
-msgid "E.g., https://ok.ru/profile/0123456789"
-msgstr ""
 
 #: core/extras.php:295
 msgid "Facebook"
 msgstr "Facebook"
 
-#: core/extras.php:296
-msgid "E.g., https://www.facebook.com/your-organization-page"
-msgstr ""
-
 #: core/extras.php:299
 msgid "Instagram"
 msgstr "Instagram"
-
-#: core/extras.php:300
-msgid "E.g., https://www.instagram.com/your-organization-page"
-msgstr ""
 
 #: core/extras.php:303
 msgid "Twitter"
 msgstr "Twitter"
 
-#: core/extras.php:304
-msgid "E.g., https://twitter.com/your-organization-page"
-msgstr ""
-
 #: core/extras.php:307
 msgid "Telegram"
 msgstr "Telegram"
 
-#: core/extras.php:308
-msgid "E.g., https://tlgrm.ru/channels/@your-organization-page"
-msgstr ""
-
 #: core/extras.php:311
 msgid "YouTube"
 msgstr "YouTube"
-
-#: core/extras.php:312
-msgid "E.g., https://youtube.com/channel/your-organization-channel"
-msgstr ""
 
 #: core/settings.php:14
 msgid "Action failed. Please refresh the page and retry."
@@ -323,23 +635,6 @@ msgid ""
 msgstr ""
 "Плагин отключает комментарии, встроенные в WordPress по умолчанию. "
 "Комментарии можно включить в любой момент."
-
-#: core/settings.php:200
-msgid "Shortcake (Shortcodes UI)"
-msgstr ""
-
-#: core/settings.php:204
-msgid ""
-"A visual editing for shortcodes to enrich your content management experience."
-msgstr ""
-
-#: core/settings.php:207
-msgid "Shortcake Richtext"
-msgstr ""
-
-#: core/settings.php:211
-msgid "Rich text fields for shortcodes UI."
-msgstr ""
 
 #: core/settings.php:214
 msgid "Leyka"
@@ -492,172 +787,6 @@ msgstr "Некоторые плагины необходимо установи�
 msgid "Please contact the administrator of this site for help."
 msgstr "Пожалуйста, свяжитесь с администрацией сайта."
 
-#: core/shortcodes-ui.php:19
-msgid "A quote"
-msgstr ""
-
-#: core/shortcodes-ui.php:24
-msgid "A quote text"
-msgstr ""
-
-#: core/shortcodes-ui.php:30
-msgid "Quote origin"
-msgstr ""
-
-#: core/shortcodes-ui.php:34
-msgid "A quote origin (or author)"
-msgstr ""
-
-#: core/shortcodes-ui.php:40
-msgid "A \"call to action\" button"
-msgstr ""
-
-#: core/shortcodes-ui.php:50 core/shortcodes-ui.php:113
-msgid "Button label"
-msgstr ""
-
-#: core/shortcodes-ui.php:54
-msgid "A text for button"
-msgstr ""
-
-#: core/shortcodes-ui.php:57 core/shortcodes-ui.php:120
-msgid "Button URL"
-msgstr ""
-
-#: core/shortcodes-ui.php:61
-msgid "An URL for button"
-msgstr ""
-
-#: core/shortcodes-ui.php:64
-msgid "Open link in a new window"
-msgstr ""
-
-#: core/shortcodes-ui.php:74
-msgid "A text with image or colored background"
-msgstr ""
-
-#: core/shortcodes-ui.php:85
-msgid "Background image"
-msgstr ""
-
-#: core/shortcodes-ui.php:89
-msgid "Select image"
-msgstr ""
-
-#: core/shortcodes-ui.php:90
-msgid "Select section background image"
-msgstr ""
-
-#: core/shortcodes-ui.php:93
-msgid "Background color"
-msgstr ""
-
-#: core/shortcodes-ui.php:96
-msgid "E.g., #123abc"
-msgstr ""
-
-#: core/shortcodes-ui.php:99
-msgid "Title"
-msgstr ""
-
-#: core/shortcodes-ui.php:103
-msgid "A title text"
-msgstr ""
-
-#: core/shortcodes-ui.php:106
-msgid "Subtitle"
-msgstr ""
-
-#: core/shortcodes-ui.php:117
-msgid "A label for a \"call to action\" button"
-msgstr ""
-
-#: core/shortcodes-ui.php:124
-msgid "An URL for a \"call to action\" button"
-msgstr ""
-
-#: core/shortcodes-ui.php:127 core/shortcodes-ui.php:168
-#: core/shortcodes-ui.php:209 core/shortcodes-ui.php:274
-msgid "Section CSS class"
-msgstr ""
-
-#: core/shortcodes-ui.php:131 core/shortcodes-ui.php:172
-#: core/shortcodes-ui.php:213 core/shortcodes-ui.php:278
-msgid "An additional CSS class (or several) for the section"
-msgstr ""
-
-#: core/shortcodes-ui.php:137
-msgid "A list of persons"
-msgstr ""
-
-#: core/shortcodes-ui.php:147 core/shortcodes-ui.php:188
-msgid "List title"
-msgstr ""
-
-#: core/shortcodes-ui.php:151
-msgid "E.g., \"Our team\""
-msgstr ""
-
-#: core/shortcodes-ui.php:154
-msgid "Person categories"
-msgstr ""
-
-#: core/shortcodes-ui.php:161
-msgid "Only particular persons in the list"
-msgstr ""
-
-#: core/shortcodes-ui.php:178
-msgid "A list of organizations"
-msgstr ""
-
-#: core/shortcodes-ui.php:192
-msgid "E.g., \"Our partners\""
-msgstr ""
-
-#: core/shortcodes-ui.php:195
-msgid "Organization categories"
-msgstr ""
-
-#: core/shortcodes-ui.php:202
-msgid "Only particular organizations in the list"
-msgstr ""
-
-#: core/shortcodes-ui.php:219
-msgid "A columns text markup"
-msgstr ""
-
-#: core/shortcodes-ui.php:229
-msgid "Section title"
-msgstr ""
-
-#: core/shortcodes-ui.php:235
-msgid "First column title"
-msgstr ""
-
-#: core/shortcodes-ui.php:241
-msgid "First column content"
-msgstr ""
-
-#: core/shortcodes-ui.php:248
-msgid "Second column title"
-msgstr ""
-
-#: core/shortcodes-ui.php:254
-msgid "Second column content"
-msgstr ""
-
-#: core/shortcodes-ui.php:261
-msgid "Third column title"
-msgstr ""
-
-#: core/shortcodes-ui.php:267
-msgid "Third column content"
-msgstr ""
-
-#: core/shortcodes.php:310
-msgid "Recommendations:"
-msgstr ""
-
 #: core/template-tags.php:180
 msgid "Page"
 msgstr "Страница"
@@ -673,10 +802,6 @@ msgstr "Результаты поиска"
 #: core/template-tags.php:275
 msgid "404: Page not found"
 msgstr "Ошибка 404: Страница не найдена"
-
-#: core/template-tags.php:368
-msgid "Post navigation"
-msgstr ""
 
 #: core/template-tags.php:383 core/template-tags.php:393
 msgid "Homepage"
@@ -718,14 +843,6 @@ msgstr "Еще новости"
 msgid "Latest news"
 msgstr "Последние новости"
 
-#: core/template-tags.php:494
-msgid "Related project"
-msgstr ""
-
-#: core/template-tags.php:513
-msgid "Help now"
-msgstr ""
-
 #: core/widgets.php:10
 msgid "Homepage widgets"
 msgstr "Виджеты главной"
@@ -764,29 +881,9 @@ msgstr "Перейти к содержанию"
 msgid "Donate"
 msgstr "Помочь сейчас"
 
-#: modules/donations.php:62
-msgid "Please, set a text of comment to describe an additional ways to donate."
-msgstr ""
-
-#: modules/donations.php:70
-msgid "Please, set a text to describe an additional ways to donate."
-msgstr ""
-
-#: modules/donations.php:121
-msgid "Please, specify your donation amount"
-msgstr ""
-
 #: modules/donations.php:128
 msgid "or"
 msgstr "или"
-
-#: modules/donations.php:129
-msgid "Specify the amount of your donation"
-msgstr ""
-
-#: modules/donations.php:195
-msgid "Your name"
-msgstr ""
 
 #: modules/donations.php:222
 msgid "Monthly donation"
@@ -796,10 +893,6 @@ msgstr "Перечислять ежемесячно"
 #: modules/starter/sidebars.php:112
 msgid "News"
 msgstr "Новости"
-
-#: modules/news.php:8
-msgid "Latest news list"
-msgstr ""
 
 #: modules/org/tax.php:6 modules/org/widgets.php:7
 msgid "Partners"
@@ -829,18 +922,6 @@ msgstr "Категория:"
 msgid "All categories"
 msgstr "Все категории"
 
-#: modules/ourorg.php:8
-msgid "Our organization description on main page"
-msgstr ""
-
-#: modules/ourorg.php:17
-msgid "Our organization"
-msgstr ""
-
-#: modules/ourorg.php:85
-msgid "Content:"
-msgstr ""
-
 #: modules/person/tax.php:6
 msgid "Volonteers"
 msgstr "Волонтеры"
@@ -865,18 +946,14 @@ msgstr "О нас"
 msgid "Our Work"
 msgstr "Наша работа"
 
-#: modules/starter/sidebars.php:72
-msgid "Security policy"
-msgstr ""
-
 #: modules/starter/sidebars.php:100
 msgid "Our organization «Color Line»"
 msgstr "Наша организация «Линия Цвета»"
 
 #: modules/starter/sidebars.php:100
 msgid ""
-"We have been helping people with alcoholism in our city over 10 years<br /"
-">by organizing rehabilitation programs."
+"We have been helping people with alcoholism in our city over 10 years<br />"
+"by organizing rehabilitation programs."
 msgstr ""
 "Более 10 лет мы помогаем людям, страдающим алкоголизмом в нашем городе\n"
 "<br/>\n"
@@ -1224,30 +1301,6 @@ msgstr "Установка плагинов завершена."
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr "Установка плагина %1$s (%2$d/%3$d)"
 
-#: vendor/envato_setup/envato_setup.php:228
-msgid "Color Line"
-msgstr ""
-
-#: vendor/envato_setup/envato_setup.php:229
-msgid "An example of a social problem oriented charity organization."
-msgstr ""
-
-#: vendor/envato_setup/envato_setup.php:232
-msgid "We Are With You"
-msgstr ""
-
-#: vendor/envato_setup/envato_setup.php:233
-msgid "An example of a crowdfunding oriented charity organization."
-msgstr ""
-
-#: vendor/envato_setup/envato_setup.php:236
-msgid "Protect Dubrovino!"
-msgstr ""
-
-#: vendor/envato_setup/envato_setup.php:237
-msgid "An example of a public campaign to protect a park from deconstruction."
-msgstr ""
-
 #: vendor/envato_setup/envato_setup.php:396
 msgid "Introduction"
 msgstr "Начало"
@@ -1259,14 +1312,6 @@ msgstr "Сценарий"
 #: vendor/envato_setup/envato_setup.php:412
 msgid "Content"
 msgstr "Контент"
-
-#: vendor/envato_setup/envato_setup.php:417
-msgid "Logo and favicon"
-msgstr ""
-
-#: vendor/envato_setup/envato_setup.php:423
-msgid "Plugins"
-msgstr ""
 
 #: vendor/envato_setup/envato_setup.php:429
 msgctxt "One word \"support service\" variant"
@@ -1364,10 +1409,6 @@ msgstr "Необходима активация"
 msgid "We also recommend to add several more:"
 msgstr "Мы также рекомендуем добавить на сайт следующие плагины:"
 
-#: vendor/envato_setup/envato_setup.php:713
-msgid "We recommend to add or update the following plugins:"
-msgstr ""
-
 #: vendor/envato_setup/envato_setup.php:726
 msgid "Update and activate"
 msgstr "Обновить и активировать"
@@ -1414,14 +1455,6 @@ msgstr "Установка плагина"
 #: vendor/envato_setup/envato_setup.php:825
 msgid "Success"
 msgstr "Успех"
-
-#: vendor/envato_setup/envato_setup.php:863
-msgid "Site title and description"
-msgstr ""
-
-#: vendor/envato_setup/envato_setup.php:864
-msgid "Insert default website title and description as seen in the demo."
-msgstr ""
 
 #: vendor/envato_setup/envato_setup.php:865
 #: vendor/envato_setup/envato_setup.php:874
@@ -1493,14 +1526,6 @@ msgstr ""
 "Кажется, на сайте уже есть контент. Если вы хотите также добавить и "
 "демонстрационный контент, выберите нужные вам фрагменты ниже."
 
-#: vendor/envato_setup/envato_setup.php:919
-msgid ""
-"It's time to insert some default content for your new WordPress website. "
-"Choose what you would like inserted below and click Install. We recommend to "
-"select everything. Once inserted, this content can be managed from the "
-"WordPress admin dashboard."
-msgstr ""
-
 #: vendor/envato_setup/envato_setup.php:925
 msgid "Item"
 msgstr "Тип"
@@ -1509,10 +1534,6 @@ msgstr "Тип"
 msgid "Description"
 msgstr "Описание"
 
-#: vendor/envato_setup/envato_setup.php:952
-msgid "Set up"
-msgstr ""
-
 #: vendor/envato_setup/envato_setup.php:971
 msgid "No content Found"
 msgstr "Контент не найден :("
@@ -1520,23 +1541,6 @@ msgstr "Контент не найден :("
 #: vendor/envato_setup/envato_setup.php:1036
 msgid "Error"
 msgstr "Ошибка"
-
-#: vendor/envato_setup/envato_setup.php:1289
-msgid "Remote server did not respond"
-msgstr ""
-
-#: vendor/envato_setup/envato_setup.php:1297
-msgid "Remote file is incorrect size"
-msgstr ""
-
-#: vendor/envato_setup/envato_setup.php:1303
-msgid "Zero size file downloaded"
-msgstr ""
-
-#: vendor/envato_setup/envato_setup.php:1309
-#, php-format
-msgid "Remote file is too large, limit is %s"
-msgstr ""
 
 #: vendor/envato_setup/envato_setup.php:1430
 msgid "Website scenario"
@@ -1554,8 +1558,8 @@ msgid ""
 "any time from the Appearance > Customize area in your website dashboard."
 msgstr ""
 "Добавьте главный логотип вашей организации. Рекомедуемые размеры логотипа - "
-"<strong>315 x 66 пикс.</strong> (для режима «только изображение») и "
-"<strong>66 x 66 пикс.</strong> (для режима «изображение и название сайта»)."
+"<strong>315 x 66 пикс.</strong> (для режима «только изображение») и <strong>"
+"66 x 66 пикс.</strong> (для режима «изображение и название сайта»)."
 
 #: vendor/envato_setup/envato_setup.php:1489
 #, php-format
@@ -1582,8 +1586,8 @@ msgstr "Описание сайта"
 
 #: vendor/envato_setup/envato_setup.php:1565
 msgid ""
-"Please add your site icon below. The recommended size is <strong>32 x 32 px</"
-"strong>. The site icon can be changed at any time from the Appearance > "
+"Please add your site icon below. The recommended size is <strong>32 x 32 "
+"px</strong>. The site icon can be changed at any time from the Appearance > "
 "Customize area in your website dashboard."
 msgstr ""
 "Добавьте favicon вашего сайта. Рекомендуемые размеры – <strong>32 x 32 пикс."
@@ -1608,8 +1612,8 @@ msgstr "Помощь и поддержка"
 #, php-format
 msgid ""
 "Thank you for using “Kandinsky” theme on your website.<br>“Kandinsky” — is a "
-"free and open-source project supported by <a href=\"%s\" target=\"_blank"
-"\">Teplitsa. Technologies for Social Good</a> together with the community of "
+"free and open-source project supported by <a href=\"%s\" target=\"_blank\">"
+"Teplitsa. Technologies for Social Good</a> together with the community of "
 "independent developers."
 msgstr ""
 "Спасибо за использование темы «Кандинский» на вашем сайте!<br>Тема "
@@ -1627,24 +1631,24 @@ msgstr ""
 
 #: vendor/envato_setup/envato_setup.php:1638
 msgid ""
-"Documentation and FAQ — <a href=\"https://github.com/Teplitsa/kandinsky/wiki/"
-"\" target=\"_blank\">GitHub Wiki</a>"
+"Documentation and FAQ — <a href=\"https://github."
+"com/Teplitsa/kandinsky/wiki/\" target=\"_blank\">GitHub Wiki</a>"
 msgstr ""
-"Документация и FAQ темы — <a href=\"https://github.com/Teplitsa/kandinsky/"
-"wiki/\" target=\"_blank\">GitHub Wiki</a>"
+"Документация и FAQ темы — <a href=\"https://github."
+"com/Teplitsa/kandinsky/wiki/\" target=\"_blank\">GitHub Wiki</a>"
 
 #: vendor/envato_setup/envato_setup.php:1639
 msgid ""
-"Source code — <a href=\"https://github.com/Teplitsa/kandinsky/\" target="
-"\"_blank\">GitHub</a>"
+"Source code — <a href=\"https://github.com/Teplitsa/kandinsky/\" "
+"target=\"_blank\">GitHub</a>"
 msgstr ""
 "Исходный код темы — <a href=\"https://github.com/Teplitsa/kandinsky/\" "
 "target=\"_blank\">GitHub</a>"
 
 #: vendor/envato_setup/envato_setup.php:1640
 msgid ""
-"Developers’ <a href=\"https://t.me/joinchat/AAAAAENN3prSrvAs7KwWrg"
-"\">Telegram-channel</a> (in Russian)"
+"Developers’ <a href=\"https://t.me/joinchat/AAAAAENN3prSrvAs7KwWrg\">"
+"Telegram-channel</a> (in Russian)"
 msgstr ""
 "<a href=\"https://t.me/joinchat/AAAAAENN3prSrvAs7KwWrg\">Telegram-канал</a> "
 "разработчиков темы"
@@ -1653,14 +1657,15 @@ msgstr ""
 msgid ""
 "If you need personalized (free during the testing period) consultations from "
 "the theme developers, please feel free to write at <a href=\"mailto:"
-"support@te-st.ru\" target=\"_blank\">support@te-st.ru</a> or <a href="
-"\"https://github.com/Teplitsa/kandinsky/issues/\" target=\"_blank\">leave a "
-"ticket at GitHub</a>."
+"support@te-st.ru\" target=\"_blank\">support@te-st.ru</a> or <a href=\"https:"
+"//github.com/Teplitsa/kandinsky/issues/\" target=\"_blank\">leave a ticket "
+"at GitHub</a>."
 msgstr ""
 "Если вам нужна персонализованные (бесплатные) консультации от разработчиков "
-"темы, пожалуйста, напишите нам на <a href=\"mailto:support@te-st.ru\" target="
-"\"_blank\">support@te-st.ru</a> или <a href=\"https://github.com/Teplitsa/"
-"kandinsky/issues/\" target=\"_blank\">добавьте тикет на GitHub</a>."
+"темы, пожалуйста, напишите нам на <a href=\"mailto:support@te-st.ru\" "
+"target=\"_blank\">support@te-st.ru</a> или <a href=\"https://github."
+"com/Teplitsa/kandinsky/issues/\" target=\"_blank\">добавьте тикет на "
+"GitHub</a>."
 
 #: vendor/envato_setup/envato_setup.php:1645
 msgid "OK, I've got it!"
@@ -1708,59 +1713,3 @@ msgstr "Посмотреть на новый сайт"
 #: vendor/envato_setup/envato_setup.php:1677
 msgid "#success"
 msgstr "#успех"
-
-#~ msgid "Events"
-#~ msgstr "Мероприятия"
-
-#~ msgid "Fullwidth"
-#~ msgstr "Полная ширина"
-
-#~ msgid "Organizations"
-#~ msgstr "Организации"
-
-#~ msgid "The beautiful design and useful features for nonprofit website"
-#~ msgstr "Современный адаптивный дизайн и полезные функции для сайта НКО"
-
-#~ msgid "Teplitsa"
-#~ msgstr "Теплица социальных технологий"
-
-#~ msgid "https://te-st.ru/"
-#~ msgstr "https://te-st.ru/"
-
-#~ msgid "Our social profiles"
-#~ msgstr "Наши профили в социальных сетях"
-
-#~ msgid "I. e., https://vk.com/club0123456789"
-#~ msgstr "Напр., https://vk.com/teplitsast"
-
-#~ msgid "I. e., https://ok.ru/profile/0123456789"
-#~ msgstr "Напр., https://ok.ru/profile/0123456789"
-
-#~ msgid "I. e., https://www.facebook.com/your-organization-page"
-#~ msgstr "Напр., https://www.facebook.com/TeplitsaST/"
-
-#~ msgid "I. e., https://www.instagram.com/your-organization-page"
-#~ msgstr "Напр., https://www.instagram.com/your-organization-page"
-
-#~ msgid "I. e., https://twitter.com/your-organization-page"
-#~ msgstr "Напр., https://twitter.com/TeplitsaST"
-
-#~ msgid "I. e., https://tlgrm.ru/channels/@your-organization-page"
-#~ msgstr "Напр., https://telegram.me/TeplitsaPRO"
-
-#~ msgid "I. e., https://youtube.com/channel/your-organization-channel"
-#~ msgstr "Напр., https://www.youtube.com/user/teplitsast"
-
-#~ msgid "Social problem oriented charity organization"
-#~ msgstr "Социально-ориентированная благотворительная организация"
-
-#~ msgid ""
-#~ "It's time to insert some default content for your new WordPress website. "
-#~ "Choose what you would like inserted below and click Continue. It is "
-#~ "recommended to leave everything selected. Once inserted, this content can "
-#~ "be managed from the WordPress admin dashboard."
-#~ msgstr ""
-#~ "На этом шаге вы можете добавить на сайт демонстрационный контент "
-#~ "(страницы, фото, новости и т.д.). Выберите нужные пункты ниже и нажмите "
-#~ "«Продолжить». Позже вы сможете изменить или удалить добавленный контент в "
-#~ "административной панели сайта."
