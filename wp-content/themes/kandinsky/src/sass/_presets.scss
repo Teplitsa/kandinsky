@@ -53,7 +53,8 @@ $color-link-three: var(--knd-color-main); //this is the main scheme color
 $color-link-one:   var(--knd-color-main-dark); //hover state
 $color-link-two:   var(--knd-color-main-dark); //hover state 
 
-//others color variables
+//others color variables - clear unused colors!!!
+
 $color-text:                #000000;
 $color-white:               #ffffff;
 $color-text-black:			#000000;
@@ -85,7 +86,8 @@ $fixed_side: 222px;
 
 
 /** Mixins **/
-// Typo
+
+// Typo - Find and replace with actual one then remove
 @mixin body-text($mod: default) {
 	font-family: $body;
 	font-weight: 400;

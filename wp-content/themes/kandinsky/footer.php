@@ -56,7 +56,7 @@ $footer_text = get_theme_mod('footer_text');
 		<div class="flex-mf-6 flex-sm-4 flex-md-6">		
 				
 			<div class="copy">
-				<?php echo apply_filters('rdc_the_content', $footer_text); ?>	
+				<?php echo apply_filters('knd_the_content', $footer_text); ?>	
 				<p><?php printf(__('All materials of the site are avaliabe under license %s', 'knd'), $cc_link);?></p>
 			</div>
 			

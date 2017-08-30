@@ -251,17 +251,19 @@
 
 .container {
     @include container-base();
-    max-width: $full_cont;
-}
-
-.container-inner {
-    @include container-base();
-    max-width: $inner_cont;
+    max-width: $full_cont; //1104
 }
 
 .container-text {
     @include container-base();
-    max-width: $text_cont;
+    max-width: $page_cont; //720
+}
+
+
+//not used ???
+.container-inner {
+    @include container-base();
+    max-width: $inner_cont;
 }
 
 .container-wide {

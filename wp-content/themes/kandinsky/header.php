@@ -27,7 +27,7 @@
 			
 			<?php $header_text = get_option('text_in_header'); ?>
 			<div class="site-details site-panel-cell">
-				<div class="site-details-cell"><?php echo apply_filters('rdc_the_content', $header_text); ?></div>
+				<div class="site-details-cell"><?php echo apply_filters('knd_the_content', $header_text); ?></div>
 			</div>									
 			
 			<div class="trigger-button donate site-panel-cell hide-upto-medium">
@@ -44,9 +44,7 @@
         	
 	</div>
 	
-	<!--<div id="newsletter_panel" class="newsletter-panel">
-		<div class="newsletter-form"><?php echo rdc_get_newsletter_form(); ?></div>
-	</div>-->
+
 	<div class="nav-overlay"></div>
 	<nav id="site_nav" class="site-nav">
 		<div class="site-nav-title">

@@ -4,7 +4,7 @@
 function knd_post_card(WP_Post $cpost){
 	
 	$pl = get_permalink($cpost);
-	$ex = apply_filters('rdc_the_title', rdc_get_post_excerpt($cpost, 25, true));
+	$ex = apply_filters('knd_the_title', rdc_get_post_excerpt($cpost, 25, true));
 ?>
 <article class="flex-md-6 flex-lg-4 tpl-post card">
 	<a href="<?php echo $pl; ?>" class="thumbnail-link">
@@ -29,12 +29,12 @@ function rdc_intro_card_markup_below($title, $subtitle, $img_id, $link = '', $bu
 	</section>
 	<section class="intro-head-content<?php if(!empty($link)) { echo '  has-button'; }?>"><div class="ihc-content">
 		<h1 class="ihc-title"><?php if(!empty($link)) { ?><a href="<?php echo esc_url($link);?>"><?php } ?>
-			<?php echo apply_filters('rdc_the_title', $title);?>
+			<?php echo apply_filters('knd_the_title', $title);?>
 			<?php if(!empty($link)) { ?></a><?php } ?>
 		</h1>
 		<?php if($subtitle){ ?>
 			<div class="frame">
-				<div class="bit <?php if(!empty($link)){ echo 'md-8 exlg-9'; }?> ihc-desc"><?php echo apply_filters('rdc_the_content', $subtitle); ?></div>
+				<div class="bit <?php if(!empty($link)){ echo 'md-8 exlg-9'; }?> ihc-desc"><?php echo apply_filters('knd_the_content', $subtitle); ?></div>
 				<?php if(!empty($link)) { ?>
 				<div class="bit md-4 exlg-3"><a href="<?php echo esc_url($link);?>"><?php echo $button_text;?></a></div>
 				<?php } ?>
@@ -59,9 +59,9 @@ function rdc_intro_card_markup_over($title, $subtitle, $img_id, $link = '', $but
 	<section class="intro-head-content text-over-image<?php if(!empty($link)) { echo '  has-button'; }?>"><div class="ihc-content">
 	<?php if(!empty($link)) { ?><a href="<?php echo esc_url($link);?>"><?php } ?>
 	
-		<h1 class="ihc-title"><span><?php echo apply_filters('rdc_the_title', $title);?></span></h1>
+		<h1 class="ihc-title"><span><?php echo apply_filters('knd_the_title', $title);?></span></h1>
 		<?php if($subtitle){ ?>
-			<div class="ihc-desc"><?php echo apply_filters('rdc_the_content', $subtitle); ?></div>
+			<div class="ihc-desc"><?php echo apply_filters('knd_the_content', $subtitle); ?></div>
 		<?php } ?>
 		<?php if(!empty($link)) { ?>
 			<div class="cta"><?php echo $button_text;?></div>
@@ -79,7 +79,7 @@ function rdc_intro_card_markup_over($title, $subtitle, $img_id, $link = '', $but
 function rdc_related_post_card(WP_Post $cpost) {
 
 	$pl = get_permalink($cpost);
-	$ex = apply_filters('rdc_the_title', rdc_get_post_excerpt($cpost, 40, true));
+	$ex = apply_filters('knd_the_title', rdc_get_post_excerpt($cpost, 40, true));
 ?>
 <article class="tpl-related-post card"><a href="<?php echo $pl; ?>" class="entry-link">	
 	<div class="entry-preview"><?php echo knd_post_thumbnail($cpost->ID, 'post-thumbnail');?></div>
@@ -150,7 +150,7 @@ function knd_person_card(WP_Post $cpost, $linked = true){
 	<div class="entry-preview"><?php echo knd_post_thumbnail($cpost->ID, 'square');?></div>
 	<div class="entry-data">
 		<h4 class="entry-title"><?php echo get_the_title($cpost);?></h4>
-		<div class="entry-meta"><?php echo apply_filters('rdc_the_content', $cpost->post_excerpt);?></div>
+		<div class="entry-meta"><?php echo apply_filters('knd_the_content', $cpost->post_excerpt);?></div>
 	</div>
 	
 <?php if($linked) {?></a><?php } ?>
@@ -193,7 +193,7 @@ function tst_org_card_single(WP_Post $cpost){
 function rdc_search_card(WP_Post $cpost) {
 	
 	$pl = get_permalink($cpost);
-	$ex = apply_filters('rdc_the_title', rdc_get_post_excerpt($cpost, 40, true));
+	$ex = apply_filters('knd_the_title', rdc_get_post_excerpt($cpost, 40, true));
 	
 	
 ?>
@@ -277,7 +277,7 @@ function rdc_single_post_thumbnail($post_id, $size = 'post-thumbnail', $post_for
 	<figure class="wp-caption alignnone">
 		<?php echo wp_get_attachment_image($thumb_id, $size);?>
 		<?php if(!empty($cap)) { ?>
-			<figcaption class="wp-caption-text"><?php echo apply_filters('rdc_the_title', $cap);?></figcaption>
+			<figcaption class="wp-caption-text"><?php echo apply_filters('knd_the_title', $cap);?></figcaption>
 		<?php } ?>
 	</figure>	
 <?php
@@ -290,7 +290,7 @@ function rdc_single_post_thumbnail($post_id, $size = 'post-thumbnail', $post_for
 			<div class="tpl-pictured-bg" style="background-image: url(<?php echo get_the_post_thumbnail_url($post_id, $size);?>);" ></div>
 		</div>
 		<?php if(!empty($cap)) { ?>
-			<figcaption class="wp-caption-text"><?php echo apply_filters('rdc_the_title', $cap);?></figcaption>
+			<figcaption class="wp-caption-text"><?php echo apply_filters('knd_the_title', $cap);?></figcaption>
 		<?php } ?>
 	</figure>
 <?php

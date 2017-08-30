@@ -29,7 +29,7 @@ get_header(); ?>
 		<h1 class="entry-title"><?php echo get_the_title($cpost);?></h1>				
 		<div class="mobile-sharing hide-on-medium"><?php echo knd_social_share_no_js();?></div>
 		
-		<div class="lead"><?php echo apply_filters('rdc_the_content', $cpost->post_excerpt); ?></div>
+		<div class="lead"><?php echo apply_filters('knd_the_content', $cpost->post_excerpt); ?></div>
 	</header>
 	
 	<?php if($format == 'introimg'){ ?>
