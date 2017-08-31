@@ -37,6 +37,7 @@ $base: 26px;
 $color-blue:                #00bcd4;
 $color-yellow:              #ffc914;
 $color-dark-bg:             #0e0a2b;
+$color-bg-light:        	#eeeeee;
 
 :root {
 /*
@@ -56,18 +57,16 @@ $color-link-one:   var(--knd-color-main-dark); //hover state
 $color-link-two:   var(--knd-color-main-dark); //hover state 
 
 //others color variables - clear unused colors!!!
-
 $color-text:                #000000;
 $color-white:               #ffffff;
 $color-text-black:			#000000;
-$color-text-semi:			rgba(0,0,0, 0.6);
-$color-text-light:			rgba(0,0,0, 0.75);
-$color-secondary:			#f5f5f5;
-$color-secondary-dark:		#e5e5e5;
-$color-secondary-alt:		#f2f2f2;
-$color-secondary-black:		#191411;
+$color-text-semi:			#666666;
+$color-text-light:			#999999;
 
-$color-bg-light:        #eeeeee;
+$color-secondary:			$color-bg-light;
+$color-secondary-alt:		$color-bg-light;
+$color-secondary-dark:		$color-dark-bg;
+
 
 $color-border-normal:   #dfdfdf;
 $color-border-light:    #eeeeee;

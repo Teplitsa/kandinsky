@@ -27,7 +27,8 @@ function knd_image_section_shortcode($atts, $content = null){
         array(
             'title' => '', 
             'text_on_top' => 0, 
-            'img' => 0
+            'img' => 0,
+            'color' => 'no'
         ),
         $atts
     );
@@ -38,6 +39,7 @@ function knd_image_section_shortcode($atts, $content = null){
 
     $src = wp_get_attachment_url($atts['img']); //make it responsive
     $css = ($atts['text_on_top']) ? 'mark-over' : 'mark-under';
+    $css .= ($atts['color'] == 'no') ? ' no-color' : ' colored';
     $oust = '';
 
     $id = uniqid('knd-img-');
@@ -57,6 +59,55 @@ function knd_image_section_shortcode($atts, $content = null){
     
     return $out;
 }
+
+
+//knd_cta_section
+add_shortcode('knd_cta_section', 'knd_cta_section_shortcode');
+function knd_cta_section_shortcode($atts, $content = null){
+
+    $atts = shortcode_atts(
+        array(
+            'subtitle' => '', 
+            'link' =>'', 
+            'button' => ''
+        ),
+        $atts
+    );
+
+    if(empty($content) || empty($atts['subtitle'])) {
+        return '';
+    }
+
+    $target = (false !== strpos($atts['link'], home_url())) ? 'target="_blank"' : '';
+
+    ob_start();
+?>
+    <div class="knd-intext-cta"><div class="knd-section-extend">
+        <h5><?php echo apply_filters('knd_the_title', $atts['subtitle']);?></h5>
+        <h3><?php echo apply_filters('knd_the_title', $content); ?></h3>
+        <div class="cta-button"><a href="<?php echo esc_url($atts['link']); ?>" <?php echo $target;?>><?php echo apply_filters('knd_the_title', $atts['button']);?></a></div>
+    </div></div>
+<?php
+    $out = ob_get_contents();
+    ob_end_clean();
+    
+    return $out;
+}
+
+add_shortcode('knd_links', 'knd_links_shortcode');
+function knd_links_shortcode($atts, $content = null){
+
+    if(empty($content)) {
+        return '';
+    }
+
+    $out = '<div class="knd-links">';
+    $out .= strip_tags(rapply_filters('knd_the_content', $content), "<a>");
+    $out .= "</div>";
+
+    return $out;
+}
+
 
 
 /*** IN Dev ***/

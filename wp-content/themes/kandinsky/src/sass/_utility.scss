@@ -81,7 +81,7 @@ $inpage-margin-base: 26px;
 	}
 
 	h2, h3 {
-		
+		@include knd-head-exlarge-text();
 		color: $color-text-black;
 	}
 
@@ -91,7 +91,7 @@ $inpage-margin-base: 26px;
 	}
 
 	h5 {
-		@include block-title(smaller);
+		@include knd-head-tiny-text();
 	}
 
 	h6 {

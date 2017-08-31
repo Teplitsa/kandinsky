@@ -1,1 +1,7 @@
 excerpt = about/introduction.md
+text1 = about/about.md
+key_phrase = about/about-ourmission.md
+image_section = about/about-webelieve.md
+text2 = about/activity.md
+image_section = about/activity-results.md
+cta_secton = about/activity-keepgoing.md
