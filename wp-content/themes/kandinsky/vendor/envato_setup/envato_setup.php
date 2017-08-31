@@ -827,15 +827,30 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
         }
 		public function _content_install_posts() {
 
-            knd_import_starter_data_from_csv('posts.csv', 'post');
-            knd_update_posts();
+// 		    knd_import_starter_data_from_csv('posts.csv', 'post');
+// 		    knd_update_posts();
+		    
+		    $plot_name = get_theme_mod('knd_site_scenario');
+		    $imp = new KND_Import_Remote_Content($plot_name);
+		    $imp->import_downloaded_content();
+		    
+		    $pdb = KND_Plot_Data_Builder::produce_builder($imp);
+		    $pdb->build_posts();
 
             return true;
 
         }
         public function _content_install_pages() {
-
-            do_action('knd_save_demo_content');
+            
+//             do_action('knd_save_demo_content');
+            
+            $plot_name = get_theme_mod('knd_site_scenario');
+            $imp = new KND_Import_Remote_Content($plot_name);
+            $imp->import_downloaded_content();
+            
+            $pdb = KND_Plot_Data_Builder::produce_builder($imp);
+            $pdb->build_pages();
+            
             return true;
 
         }

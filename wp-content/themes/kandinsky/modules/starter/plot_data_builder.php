@@ -560,6 +560,7 @@ class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
         ),
         
         'theme_options' => array(
+            'knd_main_color' => '#00bcd4',
             'knd_hero_image_support_title' => 'Помоги бороться с алкогольной зависимостью!',
             'knd_hero_image_support_text' => 'В Нашей области 777 человек, которые страдают от алкогольной зависимости. Ваша поддержка поможет организовать для них реабилитационную программу.',
             'knd_hero_image_support_button_caption' => 'Помочь сейчас',
@@ -599,8 +600,14 @@ class KND_Right2city_Data_Builder extends KND_Plot_Data_Builder {
     protected $data_routes = array(
     
         'pages' => array(
+            'aboutus' => array(
+                'template' => 'page-about',
+                'post_type' => 'page',
+                'post_slug' => 'about',
+        
+            ),
         ),
-    
+        
         'posts' => array(
             'chronics' => array(
                 'post_type' => 'post',
@@ -614,6 +621,7 @@ class KND_Right2city_Data_Builder extends KND_Plot_Data_Builder {
         ),
         
         'theme_options' => array(
+            'knd_main_color' => '#F02C80',
             'knd_hero_image_support_title' => array('section' => 'homepage', 'piece' => 'hero_heading'),
             'knd_hero_image_support_text' => array('section' => 'homepage', 'piece' => 'hero_description'),
             'knd_hero_image_support_button_caption' => 'Помочь сейчас',
@@ -646,8 +654,14 @@ class KND_Withyou_Data_Builder extends KND_Plot_Data_Builder {
     protected $data_routes = array(
     
         'pages' => array(
+            'about' => array(
+                'template' => 'page-about',
+                'post_type' => 'page',
+                'post_slug' => 'about',
+        
+            ),
         ),
-    
+        
         'posts' => array(
             'newsfeed' => array(
                 'post_type' => 'post',
@@ -661,6 +675,7 @@ class KND_Withyou_Data_Builder extends KND_Plot_Data_Builder {
         ),
         
         'theme_options' => array(
+            'knd_main_color' => '#DE0055',
             'knd_hero_image_support_title' => array('section' => 'homepage', 'piece' => 'hero_heading'),
             'knd_hero_image_support_text' => array('section' => 'homepage', 'piece' => 'hero_description'),
             'knd_hero_image_support_button_caption' => 'Помочь сейчас',
