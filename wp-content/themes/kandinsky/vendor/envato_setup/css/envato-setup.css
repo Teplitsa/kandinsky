@@ -517,7 +517,7 @@ body {
     color: #666;
 }
 .theme-presets ul li a img {
-    flex-basis: 300px;
+    flex-basis: 275px;
     flex-grow: 0;
     flex-shrink: 0;
     height:auto;
