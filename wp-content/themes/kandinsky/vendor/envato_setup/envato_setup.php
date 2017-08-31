@@ -201,16 +201,16 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 
 			$this->site_scenarios = array(
                 'problem-org' => array(
-                    'name' => __('Color Line', 'knd'),
-                    'description' => __('An example of a social problem oriented charity organization.', 'knd'),
+                    'name' => __('Template – NGO "Color Line"', 'knd'),
+                    'description' => __('Landing page for a typical non-profit. The template has legal information, projects, news, organization’s staff, partners.', 'knd'),
                 ),
                 'fundraising-org' => array(
-                    'name' => __('We Are With You', 'knd'),
-                    'description' => __('An example of a crowdfunding oriented charity organization.', 'knd'),
+                    'name' => __('Template – We Are With You', 'knd'),
+                    'description' => __('Charity foundation website that is mostly focused on fundraising. Aside from basic information it includes integration with payment systems (Leyka plugin).', 'knd'),
                 ),
                 'public-campaign' => array(
-                    'name' => __('Protect Dubrovino!', 'knd'),
-                    'description' => __('An example of a public campaign to protect a park from deconstruction.', 'knd'),
+                    'name' => __('Template – Protect Dubrovino! Campaign', 'knd'),
+                    'description' => __('Urban activism campaign – it includes information on campaign (e.g. a campaign in defence of a local park), documents, call to sign a petition.', 'knd'),
                 ),
             );
 
@@ -375,7 +375,7 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 				),
 			);
             $this->steps['scenario'] = array(
-                'name'    => esc_html__('Scenario', 'knd'),
+                'name'    => esc_html__('Template', 'knd'),
                 'view'    => array($this, 'step_scenario_view'),
                 'handler' => array($this, 'step_scenario_handler'),
             );
@@ -1445,9 +1445,9 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 
 		public function step_scenario_view() {?>
 
-            <h1><?php esc_html_e('Website scenario', 'knd');?></h1>
+            <h1><?php esc_html_e('Choose website template', 'knd');?></h1>
             <form method="post">
-                <p><?php esc_html_e('Please choose your website scenario.', 'knd');?></p>
+                <p><?php esc_html_e('For your convenience, we’ve created several templates for NGOs. Select the one that you fits you best. You will be able to change colours, content (text and images).', 'knd');?></p>
 
                 <div class="theme-presets">
                     <ul>

@@ -203,13 +203,13 @@ function knd_register_required_plugins() {
             'required'    => true,
             'description' => __('A visual editing for shortcodes to enrich your content management experience.', 'knd'),
         ),
-        array(
-            'name'        => __('Shortcake Richtext', 'knd'),
-            'slug'        => 'shortcode-ui-richtext',
-            'is_callable' => array('ShortcodeUiRichtext\Plugin', '__construct'),
-            'required'    => true,
-            'description' => __('Rich text fields for shortcodes UI.', 'knd'),
-        ),
+//        array(
+//            'name'        => __('Shortcake Richtext', 'knd'),
+//            'slug'        => 'shortcode-ui-richtext',
+//            'is_callable' => array('ShortcodeUiRichtext\Plugin', '__construct'),
+//            'required'    => true,
+//            'description' => __('Rich text fields for shortcodes UI.', 'knd'),
+//        ),
         array(
             'name'        => __('Leyka', 'knd'),
             'slug'        => 'leyka',
