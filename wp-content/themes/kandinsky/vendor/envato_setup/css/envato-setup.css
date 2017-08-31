@@ -501,7 +501,7 @@ body {
     list-style:none;
     display: inline-block;
     padding: 3px;
-    margin-bottom: 8px;
+    margin-bottom: 15px;
     vertical-align: bottom;
 }
 .theme-presets ul li.current {
@@ -517,7 +517,7 @@ body {
     color: #666;
 }
 .theme-presets ul li a img {
-    flex-basis: 275px;
+    flex-basis: 200px;
     flex-grow: 0;
     flex-shrink: 0;
     height:auto;
