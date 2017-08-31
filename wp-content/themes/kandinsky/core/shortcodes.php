@@ -102,7 +102,7 @@ function knd_links_shortcode($atts, $content = null){
     }
 
     $out = '<div class="knd-links">';
-    $out .= strip_tags(rapply_filters('knd_the_content', $content), "<a>");
+    $out .= strip_tags(apply_filters('knd_the_content', $content), "<a>");
     $out .= "</div>";
 
     return $out;
