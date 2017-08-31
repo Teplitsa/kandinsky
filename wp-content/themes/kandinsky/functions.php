@@ -42,7 +42,7 @@ function knd_setup() {
 	// Editor style
 	//add_editor_style(array('css/editor-style.css'));
 }
-add_action( 'after_setup_theme', 'knd_setup', 30 );
+add_action( 'after_setup_theme', 'knd_setup', 9 ); // Theme wizard initialize at 10, this init should occur befure it
 
 /* Function for init setting that should be runned at init hook */
 function knd_content_init() {
