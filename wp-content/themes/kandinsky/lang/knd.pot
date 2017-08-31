@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-22 14:33+0000\n"
+"POT-Creation-Date: 2017-08-30 15:57+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -22,11 +22,7 @@ msgstr ""
 msgid "Teplitsa of social technologies"
 msgstr ""
 
-#: footer.php:34
-msgid "Our social profiles"
-msgstr ""
-
-#: footer.php:53
+#: footer.php:60
 #, php-format
 msgid "All materials of the site are avaliabe under license %s"
 msgstr ""
@@ -42,10 +38,6 @@ msgstr ""
 
 #: header.php:34
 msgid "Donate"
-msgstr ""
-
-#: page-about.php:36 modules/person/tax.php:7
-msgid "Team"
 msgstr ""
 
 #. Name of the template
@@ -88,11 +80,11 @@ msgstr ""
 msgid "Full list"
 msgstr ""
 
-#: single-person.php:83 single.php:83
+#: single-person.php:83
 msgid "Related news"
 msgstr ""
 
-#: single-person.php:95 single-project.php:48 single.php:95
+#: single-person.php:95 single-project.php:48 single.php:136
 msgid "Related projects"
 msgstr ""
 
@@ -100,7 +92,11 @@ msgstr ""
 msgid "Our team"
 msgstr ""
 
-#: single.php:116 core/template-tags.php:436
+#: single.php:124
+msgid "Related items"
+msgstr ""
+
+#: single.php:157 core/template-tags.php:436
 msgid "Our volunteers"
 msgstr ""
 
@@ -156,7 +152,7 @@ msgstr ""
 msgid "Do not show"
 msgstr ""
 
-#: core/customizer.php:137 vendor/envato_setup/envato_setup.php:1459
+#: core/customizer.php:137
 msgid "Logo"
 msgstr ""
 
@@ -203,7 +199,7 @@ msgid "VKontakte"
 msgstr ""
 
 #: core/extras.php:288
-msgid "I. e., https://vk.com/club0123456789"
+msgid "E.g., https://vk.com/club0123456789"
 msgstr ""
 
 #: core/extras.php:291
@@ -211,7 +207,7 @@ msgid "Odnoklassniki"
 msgstr ""
 
 #: core/extras.php:292
-msgid "I. e., https://ok.ru/profile/0123456789"
+msgid "E.g., https://ok.ru/profile/0123456789"
 msgstr ""
 
 #: core/extras.php:295
@@ -219,7 +215,7 @@ msgid "Facebook"
 msgstr ""
 
 #: core/extras.php:296
-msgid "I. e., https://www.facebook.com/your-organization-page"
+msgid "E.g., https://www.facebook.com/your-organization-page"
 msgstr ""
 
 #: core/extras.php:299
@@ -227,7 +223,7 @@ msgid "Instagram"
 msgstr ""
 
 #: core/extras.php:300
-msgid "I. e., https://www.instagram.com/your-organization-page"
+msgid "E.g., https://www.instagram.com/your-organization-page"
 msgstr ""
 
 #: core/extras.php:303
@@ -235,7 +231,7 @@ msgid "Twitter"
 msgstr ""
 
 #: core/extras.php:304
-msgid "I. e., https://twitter.com/your-organization-page"
+msgid "E.g., https://twitter.com/your-organization-page"
 msgstr ""
 
 #: core/extras.php:307
@@ -243,7 +239,7 @@ msgid "Telegram"
 msgstr ""
 
 #: core/extras.php:308
-msgid "I. e., https://tlgrm.ru/channels/@your-organization-page"
+msgid "E.g., https://tlgrm.ru/channels/@your-organization-page"
 msgstr ""
 
 #: core/extras.php:311
@@ -251,7 +247,7 @@ msgid "YouTube"
 msgstr ""
 
 #: core/extras.php:312
-msgid "I. e., https://youtube.com/channel/your-organization-channel"
+msgid "E.g., https://youtube.com/channel/your-organization-channel"
 msgstr ""
 
 #: core/settings.php:14
@@ -322,52 +318,69 @@ msgid ""
 msgstr ""
 
 #: core/settings.php:200
-msgid "Leyka"
+msgid "Shortcake (Shortcodes UI)"
 msgstr ""
 
 #: core/settings.php:204
+msgid ""
+"A visual editing for shortcodes to enrich your content management experience."
+msgstr ""
+
+#: core/settings.php:207
+msgid "Shortcake Richtext"
+msgstr ""
+
+#: core/settings.php:211
+msgid "Rich text fields for shortcodes UI."
+msgstr ""
+
+#: core/settings.php:214
+msgid "Leyka"
+msgstr ""
+
+#: core/settings.php:218
 msgid "This plugin will add means for donations collection to your website."
 msgstr ""
 
-#: core/settings.php:228 vendor/class-tgm-plugin-activation.php:327
+#: core/settings.php:242
 msgid "Install Required Plugins"
 msgstr ""
 
-#: core/settings.php:229 vendor/class-tgm-plugin-activation.php:328
+#: core/settings.php:243
 msgid "Install Plugins"
 msgstr ""
 
 #. %s: plugin name.
-#: core/settings.php:231 vendor/class-tgm-plugin-activation.php:330
+#: core/settings.php:245
 #, php-format
 msgid "Installing Plugin: %s"
 msgstr ""
 
 #. %s: plugin name.
-#: core/settings.php:233 vendor/class-tgm-plugin-activation.php:332
+#: core/settings.php:247
 #, php-format
 msgid "Updating Plugin: %s"
 msgstr ""
 
-#: core/settings.php:234 vendor/class-tgm-plugin-activation.php:333
+#: core/settings.php:248
 msgid "Something went wrong with the plugin API."
 msgstr ""
 
-#: core/settings.php:235 vendor/class-tgm-plugin-activation.php:334
+#: core/settings.php:249
 #, php-format
 msgid "This theme requires the following plugin: %1$s."
 msgid_plural "This theme requires the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/settings.php:236 vendor/class-tgm-plugin-activation.php:335
+#: core/settings.php:250
 #, php-format
 msgid "This theme recommends the following plugin: %1$s."
 msgid_plural "This theme recommends the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/settings.php:237 vendor/class-tgm-plugin-activation.php:336
+#: core/settings.php:251
 #, php-format
 msgid ""
 "The following plugin needs to be updated to its latest version to ensure "
@@ -378,67 +391,65 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/settings.php:238
+#: core/settings.php:252
 #, php-format
 msgid "There is an update available for: %1$s."
 msgid_plural "There are updates available for the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/settings.php:239
+#: core/settings.php:253
 #, php-format
 msgid "The following required plugin is currently inactive: %1$s."
 msgid_plural "The following required plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/settings.php:240
+#: core/settings.php:254
 #, php-format
 msgid "The following recommended plugin is currently inactive: %1$s."
 msgid_plural "The following recommended plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/settings.php:241 vendor/class-tgm-plugin-activation.php:359
+#: core/settings.php:255
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/settings.php:242 vendor/class-tgm-plugin-activation.php:364
+#: core/settings.php:256
 msgid "Begin updating plugin"
 msgid_plural "Begin updating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/settings.php:243 vendor/class-tgm-plugin-activation.php:369
+#: core/settings.php:257
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/settings.php:244 vendor/class-tgm-plugin-activation.php:374
+#: core/settings.php:258
 msgid "Return to Required Plugins Installer"
 msgstr ""
 
-#: core/settings.php:245 vendor/class-tgm-plugin-activation.php:376
-#: vendor/class-tgm-plugin-activation.php:3148
+#: core/settings.php:259
 msgid "Plugin activated successfully."
 msgstr ""
 
-#: core/settings.php:246 vendor/class-tgm-plugin-activation.php:377
-#: vendor/class-tgm-plugin-activation.php:2941
+#: core/settings.php:260
 msgid "The following plugin was activated successfully:"
 msgstr ""
 
 #. 1: plugin name.
-#: core/settings.php:248 vendor/class-tgm-plugin-activation.php:379
+#: core/settings.php:262
 #, php-format
 msgid "No action taken. Plugin %1$s was already active."
 msgstr ""
 
 #. 1: plugin name.
-#: core/settings.php:250 vendor/class-tgm-plugin-activation.php:381
+#: core/settings.php:264
 #, php-format
 msgid ""
 "Plugin not activated. A higher version of %s is needed for this theme. "
@@ -446,23 +457,189 @@ msgid ""
 msgstr ""
 
 #. 1: dashboard link.
-#: core/settings.php:252 vendor/class-tgm-plugin-activation.php:383
+#: core/settings.php:266
 #, php-format
 msgid "All plugins installed and activated successfully. %1$s"
 msgstr ""
 
-#: core/settings.php:253 vendor/class-tgm-plugin-activation.php:384
+#: core/settings.php:267
 msgid "Dismiss this notice"
 msgstr ""
 
-#: core/settings.php:254 vendor/class-tgm-plugin-activation.php:385
+#: core/settings.php:268
 msgid ""
 "There are one or more required or recommended plugins to install, update or "
 "activate."
 msgstr ""
 
-#: core/settings.php:255 vendor/class-tgm-plugin-activation.php:386
+#: core/settings.php:269
 msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#: core/shortcodes-ui.php:19
+msgid "A quote"
+msgstr ""
+
+#: core/shortcodes-ui.php:24
+msgid "A quote text"
+msgstr ""
+
+#: core/shortcodes-ui.php:30
+msgid "Quote origin"
+msgstr ""
+
+#: core/shortcodes-ui.php:34
+msgid "A quote origin (or author)"
+msgstr ""
+
+#: core/shortcodes-ui.php:40
+msgid "A \"call to action\" button"
+msgstr ""
+
+#: core/shortcodes-ui.php:50 core/shortcodes-ui.php:113
+msgid "Button label"
+msgstr ""
+
+#: core/shortcodes-ui.php:54
+msgid "A text for button"
+msgstr ""
+
+#: core/shortcodes-ui.php:57 core/shortcodes-ui.php:120
+msgid "Button URL"
+msgstr ""
+
+#: core/shortcodes-ui.php:61
+msgid "An URL for button"
+msgstr ""
+
+#: core/shortcodes-ui.php:64
+msgid "Open link in a new window"
+msgstr ""
+
+#: core/shortcodes-ui.php:74
+msgid "A text with image or colored background"
+msgstr ""
+
+#: core/shortcodes-ui.php:85
+msgid "Background image"
+msgstr ""
+
+#: core/shortcodes-ui.php:89
+msgid "Select image"
+msgstr ""
+
+#: core/shortcodes-ui.php:90
+msgid "Select section background image"
+msgstr ""
+
+#: core/shortcodes-ui.php:93
+msgid "Background color"
+msgstr ""
+
+#: core/shortcodes-ui.php:96
+msgid "E.g., #123abc"
+msgstr ""
+
+#: core/shortcodes-ui.php:99
+msgid "Title"
+msgstr ""
+
+#: core/shortcodes-ui.php:103
+msgid "A title text"
+msgstr ""
+
+#: core/shortcodes-ui.php:106
+msgid "Subtitle"
+msgstr ""
+
+#: core/shortcodes-ui.php:117
+msgid "A label for a \"call to action\" button"
+msgstr ""
+
+#: core/shortcodes-ui.php:124
+msgid "An URL for a \"call to action\" button"
+msgstr ""
+
+#: core/shortcodes-ui.php:127 core/shortcodes-ui.php:168
+#: core/shortcodes-ui.php:209 core/shortcodes-ui.php:274
+msgid "Section CSS class"
+msgstr ""
+
+#: core/shortcodes-ui.php:131 core/shortcodes-ui.php:172
+#: core/shortcodes-ui.php:213 core/shortcodes-ui.php:278
+msgid "An additional CSS class (or several) for the section"
+msgstr ""
+
+#: core/shortcodes-ui.php:137
+msgid "A list of persons"
+msgstr ""
+
+#: core/shortcodes-ui.php:147 core/shortcodes-ui.php:188
+msgid "List title"
+msgstr ""
+
+#: core/shortcodes-ui.php:151
+msgid "E.g., \"Our team\""
+msgstr ""
+
+#: core/shortcodes-ui.php:154
+msgid "Person categories"
+msgstr ""
+
+#: core/shortcodes-ui.php:161
+msgid "Only particular persons in the list"
+msgstr ""
+
+#: core/shortcodes-ui.php:178
+msgid "A list of organizations"
+msgstr ""
+
+#: core/shortcodes-ui.php:192
+msgid "E.g., \"Our partners\""
+msgstr ""
+
+#: core/shortcodes-ui.php:195
+msgid "Organization categories"
+msgstr ""
+
+#: core/shortcodes-ui.php:202
+msgid "Only particular organizations in the list"
+msgstr ""
+
+#: core/shortcodes-ui.php:219
+msgid "A columns text markup"
+msgstr ""
+
+#: core/shortcodes-ui.php:229
+msgid "Section title"
+msgstr ""
+
+#: core/shortcodes-ui.php:235
+msgid "First column title"
+msgstr ""
+
+#: core/shortcodes-ui.php:241
+msgid "First column content"
+msgstr ""
+
+#: core/shortcodes-ui.php:248
+msgid "Second column title"
+msgstr ""
+
+#: core/shortcodes-ui.php:254
+msgid "Second column content"
+msgstr ""
+
+#: core/shortcodes-ui.php:261
+msgid "Third column title"
+msgstr ""
+
+#: core/shortcodes-ui.php:267
+msgid "Third column content"
+msgstr ""
+
+#: core/shortcodes.php:363
+msgid "Recommendations:"
 msgstr ""
 
 #: core/template-tags.php:180
@@ -533,325 +710,29 @@ msgstr ""
 msgid "Monthly donation"
 msgstr ""
 
-#: vendor/class-tgm-plugin-activation.php:375
-#: vendor/class-tgm-plugin-activation.php:816
-#: vendor/class-tgm-plugin-activation.php:2522
-#: vendor/class-tgm-plugin-activation.php:3569
-msgid "Return to the Dashboard"
+#: modules/news.php:7 modules/starter/sidebars.php:54
+#: modules/starter/sidebars.php:112
+msgid "News"
 msgstr ""
 
-#: vendor/class-tgm-plugin-activation.php:511
-msgid "This plugin needs to be updated to be compatible with your theme."
+#: modules/news.php:8
+msgid "Latest news list"
 msgstr ""
 
-#: vendor/class-tgm-plugin-activation.php:512
-msgid "Update Required"
+#: modules/ourorg.php:8
+msgid "Our organization description on main page"
 msgstr ""
 
-#: vendor/class-tgm-plugin-activation.php:923
-msgid ""
-"The remote plugin package does not contain a folder with the desired slug "
-"and renaming did not work."
+#: modules/ourorg.php:17
+msgid "Our organization"
 msgstr ""
 
-#: vendor/class-tgm-plugin-activation.php:923
-#: vendor/class-tgm-plugin-activation.php:926
-msgid ""
-"Please contact the plugin provider and ask them to package their plugin "
-"according to the WordPress guidelines."
-msgstr ""
-
-#: vendor/class-tgm-plugin-activation.php:926
-msgid ""
-"The remote plugin package consists of more than one file, but the files are "
-"not packaged in a folder."
-msgstr ""
-
-#: vendor/class-tgm-plugin-activation.php:1110
-#: vendor/class-tgm-plugin-activation.php:2937
-msgctxt "plugin A *and* plugin B"
-msgid "and"
-msgstr ""
-
-#. %s: version number
-#: vendor/class-tgm-plugin-activation.php:1971
-#, php-format
-msgid "TGMPA v%s"
-msgstr ""
-
-#: vendor/class-tgm-plugin-activation.php:2262
-msgid "Required"
-msgstr ""
-
-#: vendor/class-tgm-plugin-activation.php:2265
-msgid "Recommended"
-msgstr ""
-
-#: vendor/class-tgm-plugin-activation.php:2281
-msgid "WordPress Repository"
-msgstr ""
-
-#: vendor/class-tgm-plugin-activation.php:2284
-msgid "External Source"
-msgstr ""
-
-#: vendor/class-tgm-plugin-activation.php:2287
-msgid "Pre-Packaged"
-msgstr ""
-
-#: vendor/class-tgm-plugin-activation.php:2304
-msgid "Not Installed"
-msgstr ""
-
-#: vendor/class-tgm-plugin-activation.php:2308
-msgid "Installed But Not Activated"
-msgstr ""
-
-#: vendor/class-tgm-plugin-activation.php:2310
-msgid "Active"
-msgstr ""
-
-#: vendor/class-tgm-plugin-activation.php:2316
-msgid "Required Update not Available"
-msgstr ""
-
-#: vendor/class-tgm-plugin-activation.php:2319
-msgid "Requires Update"
-msgstr ""
-
-#: vendor/class-tgm-plugin-activation.php:2322
-msgid "Update recommended"
-msgstr ""
-
-#. 1: install status, 2: update status
-#: vendor/class-tgm-plugin-activation.php:2331
-#, php-format
-msgctxt "Install/Update Status"
-msgid "%1$s, %2$s"
-msgstr ""
-
-#. 1: number of plugins.
-#: vendor/class-tgm-plugin-activation.php:2377
-#, php-format
-msgctxt "plugins"
-msgid "All <span class=\"count\">(%s)</span>"
-msgid_plural "All <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
-
-#. 1: number of plugins.
-#: vendor/class-tgm-plugin-activation.php:2381
-#, php-format
-msgid "To Install <span class=\"count\">(%s)</span>"
-msgid_plural "To Install <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
-
-#. 1: number of plugins.
-#: vendor/class-tgm-plugin-activation.php:2385
-#, php-format
-msgid "Update Available <span class=\"count\">(%s)</span>"
-msgid_plural "Update Available <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
-
-#. 1: number of plugins.
-#: vendor/class-tgm-plugin-activation.php:2389
-#, php-format
-msgid "To Activate <span class=\"count\">(%s)</span>"
-msgid_plural "To Activate <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
-
-#: vendor/class-tgm-plugin-activation.php:2471
-msgctxt "as in: \"version nr unknown\""
-msgid "unknown"
-msgstr ""
-
-#: vendor/class-tgm-plugin-activation.php:2479
-msgid "Installed version:"
-msgstr ""
-
-#: vendor/class-tgm-plugin-activation.php:2487
-msgid "Minimum required version:"
-msgstr ""
-
-#: vendor/class-tgm-plugin-activation.php:2499
-msgid "Available version:"
-msgstr ""
-
-#: vendor/class-tgm-plugin-activation.php:2522
-msgid "No plugins to install, update or activate."
-msgstr ""
-
-#: vendor/class-tgm-plugin-activation.php:2536
-msgid "Plugin"
-msgstr ""
-
-#: vendor/class-tgm-plugin-activation.php:2537
-msgid "Source"
-msgstr ""
-
-#: vendor/class-tgm-plugin-activation.php:2538
-msgid "Type"
-msgstr ""
-
-#: vendor/class-tgm-plugin-activation.php:2542
-msgid "Version"
-msgstr ""
-
-#: vendor/class-tgm-plugin-activation.php:2543
-#: vendor/envato_setup/envato_setup.php:906
-msgid "Status"
-msgstr ""
-
-#. %2$s: plugin name in screen reader markup
-#: vendor/class-tgm-plugin-activation.php:2592
-#, php-format
-msgid "Install %2$s"
-msgstr ""
-
-#. %2$s: plugin name in screen reader markup
-#: vendor/class-tgm-plugin-activation.php:2597
-#, php-format
-msgid "Update %2$s"
-msgstr ""
-
-#. %2$s: plugin name in screen reader markup
-#: vendor/class-tgm-plugin-activation.php:2603
-#, php-format
-msgid "Activate %2$s"
-msgstr ""
-
-#: vendor/class-tgm-plugin-activation.php:2673
-msgid "Upgrade message from the plugin author:"
-msgstr ""
-
-#: vendor/class-tgm-plugin-activation.php:2706
-#: vendor/envato_setup/envato_setup.php:711
-msgid "Install"
-msgstr ""
-
-#: vendor/class-tgm-plugin-activation.php:2712
-#: vendor/envato_setup/envato_setup.php:714
-msgid "Update"
-msgstr ""
-
-#: vendor/class-tgm-plugin-activation.php:2715
-#: vendor/envato_setup/envato_setup.php:716
-msgid "Activate"
-msgstr ""
-
-#: vendor/class-tgm-plugin-activation.php:2746
-msgid "No plugins were selected to be installed. No action taken."
-msgstr ""
-
-#: vendor/class-tgm-plugin-activation.php:2748
-msgid "No plugins were selected to be updated. No action taken."
-msgstr ""
-
-#: vendor/class-tgm-plugin-activation.php:2789
-msgid "No plugins are available to be installed at this time."
-msgstr ""
-
-#: vendor/class-tgm-plugin-activation.php:2791
-msgid "No plugins are available to be updated at this time."
-msgstr ""
-
-#: vendor/class-tgm-plugin-activation.php:2897
-msgid "No plugins were selected to be activated. No action taken."
-msgstr ""
-
-#: vendor/class-tgm-plugin-activation.php:2923
-msgid "No plugins are available to be activated at this time."
-msgstr ""
-
-#: vendor/class-tgm-plugin-activation.php:3147
-msgid "Plugin activation failed."
-msgstr ""
-
-#. 1: plugin name, 2: action number 3: total number of actions.
-#: vendor/class-tgm-plugin-activation.php:3487
-#, php-format
-msgid "Updating Plugin %1$s (%2$d/%3$d)"
-msgstr ""
-
-#. 1: plugin name, 2: error message.
-#: vendor/class-tgm-plugin-activation.php:3490
-#, php-format
-msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
-msgstr ""
-
-#. 1: plugin name.
-#: vendor/class-tgm-plugin-activation.php:3492
-#, php-format
-msgid "The installation of %1$s failed."
-msgstr ""
-
-#: vendor/class-tgm-plugin-activation.php:3496
-msgid ""
-"The installation and activation process is starting. This process may take a "
-"while on some hosts, so please be patient."
-msgstr ""
-
-#. 1: plugin name.
-#: vendor/class-tgm-plugin-activation.php:3498
-#, php-format
-msgid "%1$s installed and activated successfully."
-msgstr ""
-
-#: vendor/class-tgm-plugin-activation.php:3498
-#: vendor/class-tgm-plugin-activation.php:3506
-msgid "Show Details"
-msgstr ""
-
-#: vendor/class-tgm-plugin-activation.php:3498
-#: vendor/class-tgm-plugin-activation.php:3506
-msgid "Hide Details"
-msgstr ""
-
-#: vendor/class-tgm-plugin-activation.php:3499
-msgid "All installations and activations have been completed."
-msgstr ""
-
-#. 1: plugin name, 2: action number 3: total number of actions.
-#: vendor/class-tgm-plugin-activation.php:3501
-#, php-format
-msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
-msgstr ""
-
-#: vendor/class-tgm-plugin-activation.php:3504
-msgid ""
-"The installation process is starting. This process may take a while on some "
-"hosts, so please be patient."
-msgstr ""
-
-#. 1: plugin name.
-#: vendor/class-tgm-plugin-activation.php:3506
-#, php-format
-msgid "%1$s installed successfully."
-msgstr ""
-
-#: vendor/class-tgm-plugin-activation.php:3507
-msgid "All installations have been completed."
-msgstr ""
-
-#. 1: plugin name, 2: action number 3: total number of actions.
-#: vendor/class-tgm-plugin-activation.php:3509
-#, php-format
-msgid "Installing Plugin %1$s (%2$d/%3$d)"
-msgstr ""
-
-#: modules/org/tax.php:6
+#: modules/org/tax.php:6 modules/org/widgets.php:7
 msgid "Partners"
 msgstr ""
 
 #: modules/org/tax.php:7
 msgid "Homepage Partners"
-msgstr ""
-
-#: modules/org/widgets.php:7
-msgid "Organizations"
 msgstr ""
 
 #: modules/org/widgets.php:8
@@ -878,6 +759,10 @@ msgstr ""
 msgid "Volonteers"
 msgstr ""
 
+#: modules/person/tax.php:7
+msgid "Team"
+msgstr ""
+
 #: modules/starter/menus.php:28 modules/starter/sidebars.php:14
 msgid "Kandinsky our work footer menu"
 msgstr ""
@@ -886,79 +771,99 @@ msgstr ""
 msgid "Kandinsky news footer menu"
 msgstr ""
 
-#: modules/starter/sidebars.php:40
+#: modules/starter/sidebars.php:38
 msgid "About Us"
 msgstr ""
 
-#: modules/starter/sidebars.php:49
+#: modules/starter/sidebars.php:47
 msgid "Our Work"
 msgstr ""
 
-#: modules/starter/sidebars.php:56 modules/starter/sidebars.php:97
-msgid "News"
+#: modules/starter/sidebars.php:72
+msgid "Security policy"
 msgstr ""
 
-#: modules/starter/sidebars.php:85
+#: modules/starter/sidebars.php:100
 msgid "Our organization «Color Line»"
 msgstr ""
 
-#: modules/starter/sidebars.php:85
+#: modules/starter/sidebars.php:100
 msgid ""
 "We have been helping people with alcoholism in our city over 10 years<br />"
 "by organizing rehabilitation programs."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:228
-msgid "Social problem oriented charity organization"
+#: vendor/envato_setup/envato_setup.php:204
+msgid "Color Line"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:387
+#: vendor/envato_setup/envato_setup.php:205
+msgid "An example of a social problem oriented charity organization."
+msgstr ""
+
+#: vendor/envato_setup/envato_setup.php:208
+msgid "We Are With You"
+msgstr ""
+
+#: vendor/envato_setup/envato_setup.php:209
+msgid "An example of a crowdfunding oriented charity organization."
+msgstr ""
+
+#: vendor/envato_setup/envato_setup.php:212
+msgid "Protect Dubrovino!"
+msgstr ""
+
+#: vendor/envato_setup/envato_setup.php:213
+msgid "An example of a public campaign to protect a park from deconstruction."
+msgstr ""
+
+#: vendor/envato_setup/envato_setup.php:372
 msgid "Introduction"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:401
+#: vendor/envato_setup/envato_setup.php:378
 msgid "Scenario"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:407
+#: vendor/envato_setup/envato_setup.php:383
 msgid "Content"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:422
+#: vendor/envato_setup/envato_setup.php:405
 msgctxt "One word \"support service\" variant"
 msgid "Support"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:427
+#: vendor/envato_setup/envato_setup.php:410
 msgid "Ready!"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:458
+#: vendor/envato_setup/envato_setup.php:441
 msgid "...verifying"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:459
+#: vendor/envato_setup/envato_setup.php:442
 msgid "Processing..."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:514
+#: vendor/envato_setup/envato_setup.php:497
 msgid "Kandinsky - setup wizard"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:523
+#: vendor/envato_setup/envato_setup.php:506
 msgid "Kandinsky theme setup wizard"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:535
+#: vendor/envato_setup/envato_setup.php:518
 msgid "Return to the WordPress Dashboard"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:583
+#: vendor/envato_setup/envato_setup.php:566
 #, php-format
 msgid "Welcome to the %s setup wizard"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:584
+#: vendor/envato_setup/envato_setup.php:567
 msgid ""
 "Hello! Let's set up your organization website together. With few simple "
 "steps we will configure minimal necessary settings, like installing of "
@@ -967,156 +872,182 @@ msgid ""
 "in the Plugins admin folder."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:587
+#: vendor/envato_setup/envato_setup.php:570
 msgid "Let's go!"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:588
+#: vendor/envato_setup/envato_setup.php:571
 msgid "Not right now"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:636
+#: vendor/envato_setup/envato_setup.php:619
 msgid "Failed to find TGM plugin"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:655
+#: vendor/envato_setup/envato_setup.php:638
 msgid "Default Plugins"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:673
+#: vendor/envato_setup/envato_setup.php:656
 msgid ""
 "Your website needs a few essential plugins. The following plugins will be "
 "installed or updated:"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:674
+#: vendor/envato_setup/envato_setup.php:657
 msgid "You can add and remove plugins later on, in the Plugins admin folder."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:683
+#: vendor/envato_setup/envato_setup.php:666
 msgid "Installation required"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:686
+#: vendor/envato_setup/envato_setup.php:669
 msgid "Update and activation required"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:686
+#: vendor/envato_setup/envato_setup.php:669
 msgid "Update required"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:688
+#: vendor/envato_setup/envato_setup.php:671
 msgid "Activation required"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:703
+#: vendor/envato_setup/envato_setup.php:687
 msgid "We also recommend to add several more:"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:714
+#: vendor/envato_setup/envato_setup.php:689
+msgid "We recommend to add or update the following plugins:"
+msgstr ""
+
+#: vendor/envato_setup/envato_setup.php:699
+msgid "Install"
+msgstr ""
+
+#: vendor/envato_setup/envato_setup.php:702
 msgid "Update and activate"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:735
+#: vendor/envato_setup/envato_setup.php:702
+msgid "Update"
+msgstr ""
+
+#: vendor/envato_setup/envato_setup.php:704
+msgid "Activate"
+msgstr ""
+
+#: vendor/envato_setup/envato_setup.php:723
 msgid ""
 "Good news! All plugins are already installed and up to date. Let's proceed "
 "further."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:740
-#: vendor/envato_setup/envato_setup.php:931
-#: vendor/envato_setup/envato_setup.php:1430
-#: vendor/envato_setup/envato_setup.php:1484
-#: vendor/envato_setup/envato_setup.php:1551
+#: vendor/envato_setup/envato_setup.php:728
+#: vendor/envato_setup/envato_setup.php:1453
+#: vendor/envato_setup/envato_setup.php:1501
+#: vendor/envato_setup/envato_setup.php:1568
 msgid "Continue"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:743
-#: vendor/envato_setup/envato_setup.php:934
-#: vendor/envato_setup/envato_setup.php:1432
-#: vendor/envato_setup/envato_setup.php:1486
-#: vendor/envato_setup/envato_setup.php:1553
+#: vendor/envato_setup/envato_setup.php:731
+#: vendor/envato_setup/envato_setup.php:952
+#: vendor/envato_setup/envato_setup.php:1455
+#: vendor/envato_setup/envato_setup.php:1503
+#: vendor/envato_setup/envato_setup.php:1570
 msgid "Skip this step"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:754
+#: vendor/envato_setup/envato_setup.php:742
 msgid "No slug found"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:773
+#: vendor/envato_setup/envato_setup.php:761
 msgid "Activating Plugin"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:787
+#: vendor/envato_setup/envato_setup.php:775
 msgid "Updating Plugin"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:801
+#: vendor/envato_setup/envato_setup.php:789
 msgid "Installing Plugin"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:813
+#: vendor/envato_setup/envato_setup.php:801
 msgid "Success"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:851
-msgid "Pages"
-msgstr ""
-
-#: vendor/envato_setup/envato_setup.php:852
-msgid "Insert default website pages as seen in the demo."
-msgstr ""
-
-#: vendor/envato_setup/envato_setup.php:853
-#: vendor/envato_setup/envato_setup.php:862
-#: vendor/envato_setup/envato_setup.php:871
-#: vendor/envato_setup/envato_setup.php:880
-msgid "Pending"
-msgstr ""
-
-#: vendor/envato_setup/envato_setup.php:854
-#: vendor/envato_setup/envato_setup.php:863
-#: vendor/envato_setup/envato_setup.php:872
-#: vendor/envato_setup/envato_setup.php:881
-msgid "Installing..."
-msgstr ""
-
-#: vendor/envato_setup/envato_setup.php:855
-#: vendor/envato_setup/envato_setup.php:864
-#: vendor/envato_setup/envato_setup.php:873
-#: vendor/envato_setup/envato_setup.php:882
-msgid "Success!"
-msgstr ""
-
 #: vendor/envato_setup/envato_setup.php:860
-msgid "Posts"
+msgid "Website title and description"
 msgstr ""
 
 #: vendor/envato_setup/envato_setup.php:861
-msgid "Insert default website posts as seen in the demo."
+msgid "Insert default website title and description as seen in the demo."
+msgstr ""
+
+#: vendor/envato_setup/envato_setup.php:862
+#: vendor/envato_setup/envato_setup.php:871
+#: vendor/envato_setup/envato_setup.php:880
+#: vendor/envato_setup/envato_setup.php:889
+#: vendor/envato_setup/envato_setup.php:898
+msgid "Pending"
+msgstr ""
+
+#: vendor/envato_setup/envato_setup.php:863
+#: vendor/envato_setup/envato_setup.php:872
+#: vendor/envato_setup/envato_setup.php:881
+#: vendor/envato_setup/envato_setup.php:890
+#: vendor/envato_setup/envato_setup.php:899
+msgid "Installing..."
+msgstr ""
+
+#: vendor/envato_setup/envato_setup.php:864
+#: vendor/envato_setup/envato_setup.php:873
+#: vendor/envato_setup/envato_setup.php:882
+#: vendor/envato_setup/envato_setup.php:891
+#: vendor/envato_setup/envato_setup.php:900
+msgid "Success!"
 msgstr ""
 
 #: vendor/envato_setup/envato_setup.php:869
-msgid "Settings"
+msgid "Pages"
 msgstr ""
 
 #: vendor/envato_setup/envato_setup.php:870
-msgid "Insert default website settings as seen in the demo."
+msgid "Insert default website pages as seen in the demo."
 msgstr ""
 
 #: vendor/envato_setup/envato_setup.php:878
-msgid "Menu"
+msgid "Posts"
 msgstr ""
 
 #: vendor/envato_setup/envato_setup.php:879
-msgid "Insert default website menu as seen in the demo."
+msgid "Insert default website posts as seen in the demo."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:893
-msgid "Theme default content"
+#: vendor/envato_setup/envato_setup.php:887
+msgid "Settings"
+msgstr ""
+
+#: vendor/envato_setup/envato_setup.php:888
+msgid "Insert default website settings as seen in the demo."
 msgstr ""
 
 #: vendor/envato_setup/envato_setup.php:896
+msgid "Menu"
+msgstr ""
+
+#: vendor/envato_setup/envato_setup.php:897
+msgid "Insert default website menu as seen in the demo."
+msgstr ""
+
+#: vendor/envato_setup/envato_setup.php:911
+msgid "Theme default content"
+msgstr ""
+
+#: vendor/envato_setup/envato_setup.php:914
 msgid ""
 "It looks like you already have content installed on this website. If you "
 "would like to install the default demo content as well you can select it "
@@ -1124,39 +1055,47 @@ msgid ""
 "to date."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:898
+#: vendor/envato_setup/envato_setup.php:916
 msgid ""
 "It's time to insert some default content for your new WordPress website. "
-"Choose what you would like inserted below and click Continue. It is "
-"recommended to leave everything selected. Once inserted, this content can be "
-"managed from the WordPress admin dashboard."
+"Choose what you would like inserted below and click Install. We recommend to "
+"select everything. Once inserted, this content can be managed from the "
+"WordPress admin dashboard."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:904
+#: vendor/envato_setup/envato_setup.php:922
 msgid "Item"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:905
+#: vendor/envato_setup/envato_setup.php:923
 msgid "Description"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:950
+#: vendor/envato_setup/envato_setup.php:924
+msgid "Status"
+msgstr ""
+
+#: vendor/envato_setup/envato_setup.php:949
+msgid "Set up"
+msgstr ""
+
+#: vendor/envato_setup/envato_setup.php:968
 msgid "No content Found"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1015
+#: vendor/envato_setup/envato_setup.php:1033
 msgid "Error"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1409
+#: vendor/envato_setup/envato_setup.php:1427
 msgid "Website scenario"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1411
+#: vendor/envato_setup/envato_setup.php:1429
 msgid "Please choose your website scenario."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1462
+#: vendor/envato_setup/envato_setup.php:1484
 msgid ""
 "Please add your organization main logo below. The recommended size is "
 "<strong>315 x 66 px</strong> (for \"Image only\" mode) and <strong>66 x 66 "
@@ -1164,48 +1103,48 @@ msgid ""
 "any time from the Appearance > Customize area in your website dashboard."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1464
+#: vendor/envato_setup/envato_setup.php:1486
 #, php-format
 msgid "Try our %sPaseka program%s if you need a new logo designed."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1476
+#: vendor/envato_setup/envato_setup.php:1493
 msgid "Upload new logo"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1515
+#: vendor/envato_setup/envato_setup.php:1532
 msgid "NGO settings"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1520
+#: vendor/envato_setup/envato_setup.php:1537
 msgid "The website title"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1525
+#: vendor/envato_setup/envato_setup.php:1542
 msgid "The website description"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1528
+#: vendor/envato_setup/envato_setup.php:1545
 msgid ""
-"Please add your site icon below. The recommended size is <strong>32 x 32 "
+"Please add your site icon below. The recommended size is <strong>64 x 64 "
 "px</strong>. The site icon can be changed at any time from the Appearance > "
 "Customize area in your website dashboard."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1530
+#: vendor/envato_setup/envato_setup.php:1547
 #, php-format
 msgid "Try our %sPaseka program%s if you need a new site icon designed."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1542
+#: vendor/envato_setup/envato_setup.php:1559
 msgid "Upload new site icon"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1594
+#: vendor/envato_setup/envato_setup.php:1611
 msgid "Help and support"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1597
+#: vendor/envato_setup/envato_setup.php:1614
 #, php-format
 msgid ""
 "Thank you for using “Kandinsky” theme on your website.<br>“Kandinsky” — is a "
@@ -1214,31 +1153,31 @@ msgid ""
 "independent developers."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1599
+#: vendor/envato_setup/envato_setup.php:1616
 msgid ""
 "In case you encounter any questions or issues, we recommend you the "
 "following links:"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1601
+#: vendor/envato_setup/envato_setup.php:1618
 msgid ""
 "Documentation and FAQ — <a href=\"https://github."
 "com/Teplitsa/kandinsky/wiki/\" target=\"_blank\">GitHub Wiki</a>"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1602
+#: vendor/envato_setup/envato_setup.php:1619
 msgid ""
 "Source code — <a href=\"https://github.com/Teplitsa/kandinsky/\" "
 "target=\"_blank\">GitHub</a>"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1603
+#: vendor/envato_setup/envato_setup.php:1620
 msgid ""
 "Developers’ <a href=\"https://t.me/joinchat/AAAAAENN3prSrvAs7KwWrg\">"
 "Telegram-channel</a> (in Russian)"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1605
+#: vendor/envato_setup/envato_setup.php:1622
 msgid ""
 "If you need personalized (free during the testing period) consultations from "
 "the theme developers, please feel free to write at <a href=\"mailto:"
@@ -1247,43 +1186,43 @@ msgid ""
 "at GitHub</a>."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1608
+#: vendor/envato_setup/envato_setup.php:1625
 msgid "OK, I've got it!"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1618
+#: vendor/envato_setup/envato_setup.php:1635
 msgid "Yay! Your website is ready!"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1620
+#: vendor/envato_setup/envato_setup.php:1637
 msgid ""
 "Congratulations! You’re doing really good #success! You’ve successfully "
 "installed and set up your Kandinsky theme. You need, however, to do a little "
 "bit more."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1621
+#: vendor/envato_setup/envato_setup.php:1638
 msgid ""
 "As a part of the installation process, we’ve added some test content of an "
 "imaginary organization that you will need to edit (we’ve provided the "
 "recommendations on how to make great content)."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1622
+#: vendor/envato_setup/envato_setup.php:1639
 msgid ""
 "Moreover, you need to set up few additional plug-ins for the optimal work of "
 "your site (don’t worry, our recommendations will help you)."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1629
+#: vendor/envato_setup/envato_setup.php:1646
 msgid "Continue the set-up"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1634
+#: vendor/envato_setup/envato_setup.php:1651
 msgid "View your new website!"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1640
+#: vendor/envato_setup/envato_setup.php:1657
 msgid "#success"
 msgstr ""
 

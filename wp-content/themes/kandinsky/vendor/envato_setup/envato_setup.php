@@ -200,11 +200,11 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 			$this->parent_slug     = apply_filters( $this->theme_name . '_theme_setup_wizard_parent_slug', '' );
 
 			$this->site_scenarios = array(
-                'problem-oriented-org' => array(
+                'problem-org' => array(
                     'name' => __('Color Line', 'knd'),
                     'description' => __('An example of a social problem oriented charity organization.', 'knd'),
                 ),
-                'fundraising-oriented-org' => array(
+                'fundraising-org' => array(
                     'name' => __('We Are With You', 'knd'),
                     'description' => __('An example of a crowdfunding oriented charity organization.', 'knd'),
                 ),
@@ -827,21 +827,42 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
         }
 		public function _content_install_posts() {
 
-            knd_import_starter_data_from_csv('posts.csv', 'post');
-            knd_update_posts();
+// 		    knd_import_starter_data_from_csv('posts.csv', 'post');
+// 		    knd_update_posts();
+		    
+		    $plot_name = get_theme_mod('knd_site_scenario');
+		    $imp = new KND_Import_Remote_Content($plot_name);
+		    $imp->import_downloaded_content();
+		    
+		    $pdb = KND_Plot_Data_Builder::produce_builder($imp);
+		    $pdb->build_posts();
 
             return true;
 
         }
         public function _content_install_pages() {
-
-            do_action('knd_save_demo_content');
+            
+//             do_action('knd_save_demo_content');
+            
+            $plot_name = get_theme_mod('knd_site_scenario');
+            $imp = new KND_Import_Remote_Content($plot_name);
+            $imp->import_downloaded_content();
+            
+            $pdb = KND_Plot_Data_Builder::produce_builder($imp);
+            $pdb->build_pages();
+            
             return true;
 
         }
         public function _content_install_settings() {
-
-            knd_set_theme_options();
+            
+            $plot_name = get_theme_mod('knd_site_scenario');
+            $imp = new KND_Import_Remote_Content($plot_name);
+            $imp->import_downloaded_content();
+            
+            $pdb = KND_Plot_Data_Builder::produce_builder($imp);
+            $pdb->build_theme_options();
+            
             return true;
 
         }
@@ -857,7 +878,7 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 			$content = array();
 
             $content['site_title_desc'] = array(
-                'title'            => esc_html__('Site title and description', 'knd'),
+                'title'            => esc_html__('Website title and description', 'knd'),
                 'description'      => esc_html__('Insert default website title and description as seen in the demo.', 'knd'),
                 'pending'          => esc_html__('Pending', 'knd'),
                 'installing'       => esc_html__('Installing...', 'knd'),
@@ -1468,7 +1489,13 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 			check_admin_referer('knd-setup');
 
 			if($_POST['new_scenario_id']) {
-				set_theme_mod('knd_site_scenario', trim($_POST['new_scenario_id']));
+			    $plot_name = trim($_POST['new_scenario_id']);
+			    
+				set_theme_mod('knd_site_scenario', $plot_name);
+				
+				if($plot_name) {
+				    knd_setup_starter_data($plot_name);
+				}
 			}
 
 			wp_redirect(esc_url_raw($this->get_next_step_link()));

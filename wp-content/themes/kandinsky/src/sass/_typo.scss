@@ -213,6 +213,19 @@ $modularscale: (
     font-weight: 800;
 }
 
+@mixin knd-head-exlarge-arhive-text() {
+    @include knd-head-exlarge-single-text();
+    font-weight: 600;
+}
+
+@mixin knd-head-exlarge-intro-text() {
+    @include ms-respond(font-size, 5);
+    font-family: $heading;
+    line-height: 1;
+    letter-spacing: .03em;
+    font-weight: 800;
+}
+
 @mixin knd-head-tiny-text() {
     font-size: 16px;
     font-family: $body;
@@ -340,6 +353,14 @@ $modularscale: (
     font-weight:600;
 }
 
+@mixin knd-link-paging-text() {
+    @include ms-respond(font-size, 2);
+    font-family: $nav;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: -0.10em;
+    line-height: 1.33;
+}
 
 @mixin about-name-text() {
 }

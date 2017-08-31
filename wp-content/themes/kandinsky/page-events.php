@@ -102,6 +102,6 @@ get_header();
 </div>
 </div></section>
 
-<section class="paging"><?php rdc_paging_nav($past_events); ?></section>
+<section class="paging"><?php knd_paging_nav($past_events); ?></section>
 
 <?php get_footer();

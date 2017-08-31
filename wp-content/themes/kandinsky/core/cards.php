@@ -81,15 +81,15 @@ function knd_related_post_card(WP_Post $cpost) {
 	$pl = get_permalink($cpost);
 	$ex = apply_filters('knd_the_title', rdc_get_post_excerpt($cpost, 40, true));
 ?>
-<article class="flex-md-6 flex-lg-4 tpl-related-post card"><a href="<?php echo $pl; ?>" class="entry-link">	
+<article class="flex-md-6 tpl-related-post card"><a href="<?php echo $pl; ?>" class="entry-link">	
 	<div class="entry-preview"><?php echo knd_post_thumbnail($cpost->ID, 'post-thumbnail');?></div>
 	<div class="entry-data">
-		<?php if('project' != $cpost->post_type) { ?>
-		<div class="entry-meta"><?php echo strip_tags(knd_posted_on($cpost), '<span>');?></div>
-		<?php } ?>
-		<h4 class="entry-title"><?php echo get_the_title($cpost);?></h4>
-		<div class="entry-summary"><?php echo $ex;?></div>		
+        <h4 class="entry-title"><?php echo get_the_title($cpost);?></h4>
 	</div>
+    <?php if('project' != $cpost->post_type) { ?>
+    <div class="entry-meta"><?php echo strip_tags(knd_posted_on($cpost), '<span>');?></div>
+    <?php } ?>
+    
 </a></article>	
 <?php
 }

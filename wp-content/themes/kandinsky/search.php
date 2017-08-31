@@ -35,7 +35,7 @@ get_header();
 ?>
 <section class="heading">
 	<div class="container">
-		<?php rdc_section_title(); ?>
+		<?php knd_section_title(); ?>
 		<div id="sr_form" class="sr-form"><?php get_search_form();?></div>
 		<div class="sr-num"><?php echo rdc_build_results_label($num);?></div>
 	</div>
@@ -58,6 +58,6 @@ get_header();
 		}
 	?>
 </section>
-<section class="paging"><?php rdc_paging_nav($wp_query); ?></section>
+<section class="paging"><?php knd_paging_nav($wp_query); ?></section>
 
 <?php get_footer();

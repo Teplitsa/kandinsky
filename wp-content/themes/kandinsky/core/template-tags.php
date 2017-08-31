@@ -241,7 +241,7 @@ function rdc_get_post_type_archive_title($post_type) {
 	return $name;
 }
 
-function rdc_section_title() {
+function knd_section_title() {
 	
 	$title = '';
 	$css = '';
@@ -281,7 +281,7 @@ function rdc_section_title() {
 
 
 /** == NAVs == **/
-function rdc_paging_nav(WP_Query $query = null) {
+function knd_paging_nav(WP_Query $query = null) {
 
 	if( !$query ) {
 
@@ -293,7 +293,7 @@ function rdc_paging_nav(WP_Query $query = null) {
 		return;
 	}
 
-	$p = rdc_paginate_links($query, false);
+	$p = knd_paginate_links($query, false);
 	if($p) {
 ?>
 	<nav class="paging-navigation" role="navigation"><div class="container"><?php echo $p; ?></div></nav>
@@ -302,7 +302,7 @@ function rdc_paging_nav(WP_Query $query = null) {
 }
 
 
-function rdc_paginate_links(WP_Query $query = null, $echo = true) {
+function knd_paginate_links(WP_Query $query = null, $echo = true) {
 
 	if( !$query ) {
 

@@ -49,8 +49,8 @@ class KND_Plot_Data_Builder {
         
         $this->build_posts();
         $this->build_pages();
-        $this->build_logo();
-        
+        $this->build_theme_files();
+        $this->build_theme_options();
     }
     
     /**
@@ -358,14 +358,24 @@ class KND_Plot_Data_Builder {
     }
     
     /**
-     * Set site log depends on imported data.
+     * Import files from imported data.
      *
      */
-    public function build_logo() {
-        $logo_fdata = $this->imp->get_fdata('logo.svg');
-        if($logo_fdata && isset($logo_fdata['attachment_id']) && $logo_fdata['attachment_id']) {
-            set_theme_mod('knd_custom_logo', $logo_fdata['attachment_id']);
+    public function build_theme_files() {
+        
+        foreach(array_keys($this->data_routes['files']) as $theme_option_name) {
+            
+            $file = $this->data_routes['files'][$theme_option_name]['file'];
+            $section = isset($this->data_routes['files'][$theme_option_name]['section']) ? $this->data_routes['files'][$theme_option_name]['section'] : '';
+            
+            $logo_fdata = $this->imp->get_fdata($file, $section);
+            
+            if($logo_fdata && isset($logo_fdata['attachment_id']) && $logo_fdata['attachment_id']) {
+                set_theme_mod($theme_option_name, $logo_fdata['attachment_id']);
+            }
+            
         }
+        
     }
     
     /**
@@ -377,6 +387,32 @@ class KND_Plot_Data_Builder {
      */
     public function get_cta_url($cta_key) {
         return isset($this->cta_list[$cta_key]) ? $this->cta_list[$cta_key] : '';
+    }
+
+    public function build_theme_options() {
+        
+//         print_r($this->data_routes['theme_options']);
+
+        foreach($this->data_routes['theme_options'] as $theme_option_name => $theme_option_piece_data) {
+        
+            if(is_array($theme_option_piece_data)) {
+                
+                $piece = $theme_option_piece_data['piece'];
+                $field = isset($theme_option_piece_data['field']) ? $theme_option_piece_data['field'] : 'content';
+                $section = isset($theme_option_piece_data['section']) ? $theme_option_piece_data['section'] : '';
+                
+//                 echo "<br />" . $section . " - " . $piece . ' - ' . $this->imp->get_val($piece, $field, $section) . "<br />";
+                
+                set_theme_mod($theme_option_name, $this->imp->get_val($piece, $field, $section));
+                
+            }
+            else {
+                
+                set_theme_mod($theme_option_name, $theme_option_piece_data);
+                
+            }
+        }
+        
     }
 }
 
@@ -517,6 +553,19 @@ class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
                 'pieces' => array('project1', 'project2', 'project3', 'project4', 'project5', ),
             ),
         ),
+        
+        'files' => array(
+            'knd_custom_logo' => array('file' => 'logo.svg'),
+            'knd_hero_image' => array('section' => 'img', 'file' => '5.jpg'),
+        ),
+        
+        'theme_options' => array(
+            'knd_main_color' => '#00bcd4',
+            'knd_hero_image_support_title' => 'Помоги бороться с алкогольной зависимостью!',
+            'knd_hero_image_support_text' => 'В Нашей области 777 человек, которые страдают от алкогольной зависимости. Ваша поддержка поможет организовать для них реабилитационную программу.',
+            'knd_hero_image_support_button_caption' => 'Помочь сейчас',
+            
+        ),
     );
     
     /**
@@ -529,6 +578,8 @@ class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
         $this->cta_list = array(
             'CTA_DONATE' => site_url('/donate/'),
         );
+        
+        $this->data_routes['theme_options']['knd_hero_image_support_url'] = get_permalink(get_page_by_path('donate'));
     }
     
 }
@@ -539,7 +590,109 @@ class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
  *
  */
 class KND_Right2city_Data_Builder extends KND_Plot_Data_Builder {
+    
+    /**
+     * Configuration of building process.
+     * pages: list of pages, that are built using imported templates
+     * posts: list of pages, that are built using content from imported files
+     *
+     */
+    protected $data_routes = array(
+    
+        'pages' => array(
+            'aboutus' => array(
+                'template' => 'page-about',
+                'post_type' => 'page',
+                'post_slug' => 'about',
+        
+            ),
+        ),
+        
+        'posts' => array(
+            'chronics' => array(
+                'post_type' => 'post',
+                'pieces' => array('news1', 'news2', 'news3', ),
+            ),
+        ),
+        
+        'files' => array(
+            'knd_custom_logo' => array('file' => 'logo.svg'),
+            'knd_hero_image' => array('section' => 'img', 'file' => 'hero_img.jpg'),
+        ),
+        
+        'theme_options' => array(
+            'knd_main_color' => '#F02C80',
+            'knd_hero_image_support_title' => array('section' => 'homepage', 'piece' => 'hero_heading'),
+            'knd_hero_image_support_text' => array('section' => 'homepage', 'piece' => 'hero_description'),
+            'knd_hero_image_support_button_caption' => 'Помочь сейчас',
+        ),
+        
+    );
+    
+    /**
+     * Set CTA config.
+     *
+     */
+    public function __construct($imp) {
+        parent::__construct($imp);
+    
+        $this->cta_list = array(
+            'CTA_DONATE' => site_url('/donate/'),
+        );
+        $this->data_routes['theme_options']['knd_hero_image_support_url'] = get_permalink(get_page_by_path('donate'));
+    }
 }
 
 class KND_Withyou_Data_Builder extends KND_Plot_Data_Builder {
+    
+    /**
+     * Configuration of building process.
+     * pages: list of pages, that are built using imported templates
+     * posts: list of pages, that are built using content from imported files
+     *
+     */
+    protected $data_routes = array(
+    
+        'pages' => array(
+            'about' => array(
+                'template' => 'page-about',
+                'post_type' => 'page',
+                'post_slug' => 'about',
+        
+            ),
+        ),
+        
+        'posts' => array(
+            'newsfeed' => array(
+                'post_type' => 'post',
+                'pieces' => array('news1', 'news2', 'news3', ),
+            ),
+        ),
+    
+        'files' => array(
+            'knd_custom_logo' => array('file' => 'logo.svg'),
+            'knd_hero_image' => array('section' => 'img', 'file' => 'twokidsmain.jpg'),
+        ),
+        
+        'theme_options' => array(
+            'knd_main_color' => '#DE0055',
+            'knd_hero_image_support_title' => array('section' => 'homepage', 'piece' => 'hero_heading'),
+            'knd_hero_image_support_text' => array('section' => 'homepage', 'piece' => 'hero_description'),
+            'knd_hero_image_support_button_caption' => 'Помочь сейчас',
+        ),
+        
+    );
+    
+    /**
+     * Set CTA config.
+     *
+     */
+    public function __construct($imp) {
+        parent::__construct($imp);
+    
+        $this->cta_list = array(
+            'CTA_DONATE' => site_url('/donate/'),
+        );
+        $this->data_routes['theme_options']['knd_hero_image_support_url'] = get_permalink(get_page_by_path('donate'));
+    }
 }

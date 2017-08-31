@@ -55,11 +55,11 @@ function knd_setup_site_icon() {
 function knd_set_sitename_settings($scenario_data) {
     switch(get_theme_mod('knd_site_scenario')) {
 
-        case 'problem-oriented-org':
+        case 'problem-org':
             update_option('blogname', $scenario_data['name']);
             update_option('blogdescription', $scenario_data['description']);
             break;
-        case 'fundraising-oriented-org':
+        case 'fundraising-org':
             update_option('blogname', $scenario_data['name']);
             update_option('blogdescription', $scenario_data['description']);
             break;
@@ -69,26 +69,6 @@ function knd_set_sitename_settings($scenario_data) {
             break;
 
         default:
-    }
-}
-
-function knd_set_theme_options() {
-    $thumb_id = TST_Import::get_instance()->maybe_import( 'https://ngo2.ru/kandinsky-files/knd-img1.jpg' );
-    
-    if($thumb_id) {
-        set_theme_mod('knd_hero_image', $thumb_id);
-    }
-
-    set_theme_mod('knd_hero_image_support_title', 'Помоги бороться с алкогольной зависимостью!');
-    set_theme_mod('knd_hero_image_support_url', get_permalink(get_page_by_path('donate')));
-    set_theme_mod('knd_hero_image_support_text', 'В Нашей области 777 человек, которые страдают от алкогольной зависимости. Ваша поддержка поможет организовать для них реабилитационную программу.');
-    set_theme_mod('knd_hero_image_support_button_caption', 'Помочь сейчас');
-}
-
-function knd_set_theme_options_from_import($imp) {
-    $hero_img_data = $imp->get_fdata('5.jpg', 'img');
-    if($hero_img_data && isset($hero_img_data['attachment_id']) && $hero_img_data['attachment_id']) {
-        set_theme_mod('knd_hero_image', $hero_img_data['attachment_id']);
     }
 }
 
@@ -107,7 +87,7 @@ function knd_setup_starter_data($plot_name) {
     $imp = new KND_Import_Remote_Content($plot_name);
     $data = $imp->import_content();
     
-//     print_r($data);
+//     print_r($data['withyou']['newsfeed']);
 //     exit();
     
 //     $piece = $imp->get_piece('footer');
@@ -121,9 +101,6 @@ function knd_setup_starter_data($plot_name) {
     
     knd_update_posts();
 
-    knd_set_theme_options();
-    knd_set_theme_options_from_import($imp);
-
     do_action('knd_save_demo_content');
 
     knd_setup_menus();  // all menus except main nav menu
@@ -136,6 +113,7 @@ function knd_ajax_setup_starter_data() {
     $res = array('status' => 'ok');
 
     $plot_name = get_theme_mod('knd_site_scenario'); // color-line, withyou, dubrovino
+    $plot_name = 'fundraising-org';
 
     if($plot_name) {
         try {

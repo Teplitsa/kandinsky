@@ -39,8 +39,10 @@ $color-yellow:              #ffc914;
 $color-dark-bg:             #0e0a2b;
 
 :root {
+/*
   --knd-color-main:         $color-blue;
   --knd-color-main-dark:    darken($color-blue, 10%);
+*/
   
   --knd-color-second:       $color-yellow;
   --knd-color-second-dark:  darken($color-yellow, 10%);

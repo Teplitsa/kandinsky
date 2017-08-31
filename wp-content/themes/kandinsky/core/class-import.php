@@ -88,6 +88,8 @@
                     )
                 ),
                 'fields'         => 'ids',
+                'orderby' => 'ID',
+                'order' => 'DESC',
             );
             $posts = get_posts( $args );
             $post_id = count( $posts ) ? $posts[0] : null;
