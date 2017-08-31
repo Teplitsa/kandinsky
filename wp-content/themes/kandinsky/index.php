@@ -7,36 +7,39 @@ $posts = $wp_query->posts;
 $paged = (get_query_var('paged', 0)) ? get_query_var('paged', 0) : 1;
 
 get_header();
+?>
 
-$no_posts = (is_home() && $paged == 1 && count($posts) < 3) ? ' no-posts' : '';
+<section class="container heading">
+    <?php knd_section_title(); ?>
+</section>
 
-
+<?php 
 if(is_home() && $paged == 1) { //featured posts
 	//2 for featured 
 	$featured = array_slice($posts, 0, 2); 
 	array_splice($posts, 0, 2);
 ?>
-<section class="featured-post"><div class="container-wide">
-<div class="cards-loop sm-cols-1 md-cols-2">
-	<?php
-		foreach($featured as $f){
-			rdc_related_post_card($f);
-		}
-	?>
-</div>
-</div></section>
+<section class="container-wide">
+    <div class="featured-post listing-bg">
+        <div class="container">
+            <div class="flex-row cards-loop">
+            <?php
+                foreach($featured as $f){
+                    knd_related_post_card($f);
+                }
+            ?>
+            </div>
+        </div>
+    </div>
+</section>
 <?php } ?>
 
-<section class="heading <?php echo $no_posts;?>">
-	<div class="container"><?php rdc_section_title(); ?></div>
-</section>
-
-<section class="main-content cards-holder <?php echo $no_posts;?>"><div class="container-wide">
-<div class="cards-loop sm-cols-1 md-cols-2 lg-cols-4">
+<section class="main-content cards-holder listing-bg archive-post-list <?php if($paged > 1):?>next-page<?php endif?>"><div class="container">
+<div class="flex-row cards-loop">
 	<?php
 		if(!empty($posts)){
 			foreach($posts as $p){
-				rdc_post_card($p);
+				knd_post_card($p);
 			}
 		}
 		else {
@@ -46,7 +49,19 @@ if(is_home() && $paged == 1) { //featured posts
 </div>
 </div></section>
 
+<section class="paging listing-bg"><?php knd_paging_nav($wp_query); ?></section>
 
-<section class="paging"><?php rdc_paging_nav($wp_query); ?></section>
+<!-- yellow bar -->
+<?php knd_show_cta_block() ?>
 
-<?php get_footer();
+<!-- purple bar -->
+<?php
+
+$projects = KND_Project::get_short_list(3);
+knd_show_posts_shortlist($projects, "ПРОЕКТЫ «ЛИНИИ ЦВЕТА»", array(
+    array('title' => 'Все проекты', 'url' => '#'),
+    array('title' => 'Пресса о нас', 'url' => '#'),
+    array('title' => 'Отчеты', 'url' => '#'),
+));
+
+get_footer();
