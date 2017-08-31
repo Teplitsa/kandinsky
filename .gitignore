@@ -42,3 +42,4 @@ node_modules
 /kandinsky.sublime-project
 /kandinsky.sublime-workspace
 .DS_Store
+/wp-content/themes/kandinsky/_temp
