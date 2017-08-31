@@ -794,27 +794,27 @@ msgid ""
 msgstr ""
 
 #: vendor/envato_setup/envato_setup.php:204
-msgid "Color Line"
+msgid "Template – NGO "Color Line""
 msgstr ""
 
 #: vendor/envato_setup/envato_setup.php:205
-msgid "An example of a social problem oriented charity organization."
+msgid "Landing page for a typical non-profit. The template has legal information, projects, news, organization’s staff, partners."
 msgstr ""
 
 #: vendor/envato_setup/envato_setup.php:208
-msgid "We Are With You"
+msgid "Template – We Are With You"
 msgstr ""
 
 #: vendor/envato_setup/envato_setup.php:209
-msgid "An example of a crowdfunding oriented charity organization."
+msgid "Charity foundation website that is mostly focused on fundraising. Aside from basic information it includes integration with payment systems (Leyka plugin)."
 msgstr ""
 
 #: vendor/envato_setup/envato_setup.php:212
-msgid "Protect Dubrovino!"
+msgid "Template – Protect Dubrovino! Campaign"
 msgstr ""
 
 #: vendor/envato_setup/envato_setup.php:213
-msgid "An example of a public campaign to protect a park from deconstruction."
+msgid "Urban activism campaign – it includes information on campaign (e.g. a campaign in defence of a local park), documents, call to sign a petition."
 msgstr ""
 
 #: vendor/envato_setup/envato_setup.php:372
@@ -822,7 +822,7 @@ msgid "Introduction"
 msgstr ""
 
 #: vendor/envato_setup/envato_setup.php:378
-msgid "Scenario"
+msgid "Template"
 msgstr ""
 
 #: vendor/envato_setup/envato_setup.php:383
@@ -1088,11 +1088,11 @@ msgid "Error"
 msgstr ""
 
 #: vendor/envato_setup/envato_setup.php:1427
-msgid "Website scenario"
+msgid "Choose website template"
 msgstr ""
 
 #: vendor/envato_setup/envato_setup.php:1429
-msgid "Please choose your website scenario."
+msgid "For your convenience, we’ve created several templates for NGOs. Select the one that you fits you best. You will be able to change colours, content (text and images)."
 msgstr ""
 
 #: vendor/envato_setup/envato_setup.php:1484
