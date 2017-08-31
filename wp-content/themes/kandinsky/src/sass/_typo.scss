@@ -177,6 +177,7 @@ $modularscale: (
 
  
 // headers
+
 @mixin knd-head-main-text() {
     @include ms-respond(font-size, 2);
     font-family: $heading;
@@ -226,7 +227,7 @@ $modularscale: (
 }
 
 @mixin knd-head-tiny-text() {
-    font-size:16px;
+    font-size: 16px;
     font-family: $body;
     line-height: 1;
     letter-spacing: 0.15em;
@@ -257,7 +258,7 @@ $modularscale: (
 
 //pages
 @mixin knd-page-head(){
-    @include ms-respond(font-size, 6);
+    @include ms-respond(font-size, 5);
     font-family: $body;
     line-height: 1.05;
     font-weight: 600;

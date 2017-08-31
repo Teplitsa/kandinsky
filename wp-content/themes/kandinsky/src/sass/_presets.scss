@@ -15,7 +15,7 @@ $mono: 	     "Lucida Sans Typewriter", "Lucida Console", Monaco, monospace;
 //Break points
 $one: 	       480px; //small
 $two:          800px; //medium
-$four:         1104px; //large
+$three:        1104px; //large
 
 //Page layout
 $full_cont:    1104px;
@@ -29,7 +29,7 @@ $text_cont:    $page_cont;
 
 
 //Baseline
-$base: 24px;
+$base: 26px;
 
 //Colors
 
@@ -85,10 +85,88 @@ $adminbar_small_screen: 46px;
 $indent: 1.55em;
 $rule: 	 1px solid $color-border-normal;
 $fixed_side: 222px;
+$margin_base: 26px;
 
 
-/** Mixins **/
+/** Helpers **/
+	
+@mixin hidden { //Hide for both screenreaders and browsers
+	display: none;
+	visibility: hidden; }
 
+@mixin visuallyhidden { //Hide only visually, but have it available for screenreaders
+	position : absolute;
+	clip : rect(0 0 0 0); 
+	overflow : hidden;
+	margin: -1px;
+	padding : 0;
+	height : 1px;      
+	width : 1px;
+	border : 0; }
+
+@mixin image-replace {
+	font: 0/0 a;
+	text-shadow: none;
+	color: transparent;
+	text-decoration: none;
+}
+
+@mixin screen-reader {
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
+}
+
+.screen-reader-text {
+	@include screen-reader();
+}
+
+@mixin no-select {
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	   	-ms-user-select: none;
+	   		user-select: none;
+}
+
+@function value_from_map($key, $map) {
+	@if map-has-key($map, $key) {
+		@return map-get($map, $key);
+	}
+
+	@warn "Unknown '#{$key}' in $map.";
+	@return null;
+}
+
+
+/* MQ */
+@mixin for($media) {
+	@if $media == small-screens {
+		@media screen and (min-width: $one) { @content; }
+	}
+	@else if $media == medium-screens {
+		@media screen and (min-width: $two) { @content; }
+	}
+	@else if $media == large-screens {
+		@media screen and (min-width: $three) { @content; }
+	}
+}
+
+@mixin upto($media) {
+	@if $media == small-screens {
+		@media screen and (max-width: $one - 1) { @content; }
+	}
+	@else if $media == medium-screens {
+		@media screen and (max-width: $two - 1) { @content; }
+	}
+	@else if $media == large-screens {
+		@media screen and (max-width: $three - 1) { @content; }
+	}
+}
+
+
+/** Type - remove them should be in _typo.scss */
 // Typo - Find and replace with actual one then remove
 @mixin body-text($mod: default) {
 	font-family: $body;
@@ -239,6 +317,9 @@ $fixed_side: 222px;
 	}
 }
 
+
+
+/* Elements */
 @mixin button($mod: default){
     @include knd-button-caption-text();
     
@@ -307,67 +388,6 @@ $fixed_side: 222px;
 		color: $hover_text;
 	}
 }
-
-
-
-@mixin shading-summary($max-height: 48px){
-	max-height: $max-height;
-	overflow: hidden;		
-	position: relative;
-	
-	&:after {
-		content: '';
-		display: block;
-		width: 45%;
-		height: 18px;
-		background: rgba(255,255,255, 0.5);
-		position: absolute;
-		bottom: 0;
-		right: 0;
-		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0+0,1+82 */
-		background: -moz-linear-gradient(left,  rgba(255,255,255,0) 0%, rgba(255,255,255,1) 82%, rgba(255,255,255,1) 100%); 
-		background: -webkit-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 82%,rgba(255,255,255,1) 100%); 
-		background: linear-gradient(to right,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 82%,rgba(255,255,255,1) 100%); 
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
-	}
-	
-}
-
-// Media
-@mixin caption-figure {	
-	width: 100%;
-	
-	a {
-		display: block;
-		width: 100%;	
-	}
-	
-	img {
-		width: 100%; //temp
-		height: auto;
-	}
-			
-	figcaption {
-		vertical-align: middle;
-		display: block;
-		margin-top: $gut/2;
-		@include nav-text();
-		position: relative;
-		padding-left: 28px;
-					
-		
-		
-		span {
-			display: inline-block;
-			@include nav-text();
-			line-height: 1.5;			
-		}
-		
-		p { margin: 0; }		
-	}
-}
-
-
 
 
 @mixin container-extended() {

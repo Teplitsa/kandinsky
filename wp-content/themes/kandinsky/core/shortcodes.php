@@ -27,26 +27,28 @@ function knd_image_section_shortcode($atts, $content = null){
         array(
             'title' => '', 
             'text_on_top' => 0, 
-            'image' => 0
+            'img' => 0
         ),
         $atts
     );
 
-    if(empty($content) || $image == 0) {
+    if(empty($content) || $atts['img'] == 0) {
         return '';
     }
 
-    $src = wp_get_attachment_url(); //make it responsive
+    $src = wp_get_attachment_url($atts['img']); //make it responsive
+    $css = ($atts['text_on_top']) ? 'mark-over' : 'mark-under';
     $oust = '';
 
+    $id = uniqid('knd-img-');
     ob_start();
 ?>
-    <div class="knd-image-section">
-        <
-        <div id="" class="knd-img-bg"></div>
+    <div class="knd-image-section <?php echo $css;?>">
+        <style>#<?php echo esc_attr($id);?>{ background-image: url(<?php echo $src;?>);}</style>
+        <div class="knd-section-extend"><div id="<?php echo esc_attr($id);?>" class="knd-img-bg"></div></div>
         <div class="kng-img-mark">
-            <h4 class="mark-title"><?php echo apply_filters('knd_the_title', $atts['subtitle']);?></h4>
-            <div class="mark-text"><?php apply_filters('knd_the_content', $content);?></div>
+            <h4 class="mark-title"><?php echo apply_filters('knd_the_title', $atts['title']);?></h4>
+            <div class="mark-text"><?php echo apply_filters('knd_the_content', $content);?></div>
         </div>
     </div>
 <?php

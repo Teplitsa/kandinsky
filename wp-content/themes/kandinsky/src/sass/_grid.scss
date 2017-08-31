@@ -259,6 +259,13 @@
     max-width: $page_cont; //720
 }
 
+.text-column {
+    @include for(medium-screens) {
+        max-width: 720px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
 
 //not used ???
 .container-inner {

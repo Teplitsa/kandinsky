@@ -16,38 +16,17 @@ body {
 
 a {
 	text-decoration: none;
-	color: $color-link-three;
-	transition: all 0.3s;
-	
-	&:visited { color: $color-link-three; }
-	&:hover, &:focus, &:active {
-		color: $color-link-two;
-	}
-}
-
-p {
-	-webkit-hyphens: auto;
-    -moz-hyphens: auto;
-    hyphens: auto;
-	&:last-child { margin-bottom: 0; }	
-}
-
-p,ul,ol,dl,blockquote {
-	@extend .break;
+	outline: none;
 }
 
 .svg-icon, .svg-pic {
 	display: inline-block;
 }
 
-//title with normal weights
-h1, h2, h3, h4, h5, h6 {
-	font-weight: normal;
-}
 
 
 /** Layout structure **/
-// index
+// inde
 .heading {
     
     h1 {
