@@ -202,14 +202,17 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 			$this->site_scenarios = array(
                 'problem-org' => array(
                     'name' => __('Template – NGO "Color Line"', 'knd'),
+                    'tagline' => __('We help people with alcoholic addiction', 'knd'),
                     'description' => __('Landing page for a typical non-profit. The template has legal information, projects, news, organization’s staff, partners.', 'knd'),
                 ),
                 'fundraising-org' => array(
                     'name' => __('Template – We Are With You', 'knd'),
+                    'tagline' => __('Charity foundation helping children from low-income families', 'knd'),
                     'description' => __('Charity foundation website that is mostly focused on fundraising. Aside from basic information it includes integration with payment systems (Leyka plugin).', 'knd'),
                 ),
                 'public-campaign' => array(
                     'name' => __('Template – Protect Dubrovino! Campaign', 'knd'),
+                    'tagline' => __('City protection initiative', 'knd'),
                     'description' => __('Urban activism campaign – it includes information on campaign (e.g. a campaign in defence of a local park), documents, call to sign a petition.', 'knd'),
                 ),
             );

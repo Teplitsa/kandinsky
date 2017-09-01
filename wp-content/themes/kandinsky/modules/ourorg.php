@@ -38,7 +38,7 @@ class KND_Ourorg_Widget extends WP_Widget {
 </div>
 
 <div class="container knd-whoweare-section">
-    <div class="flex-row">
+    <div class="flex-row justify-between">
         <div class="whoweare-item flex-mf-12 flex-sm-6 flex-md-4">
             <h3>Кто мы?</h3>
             <p>
