@@ -112,8 +112,8 @@ function knd_ajax_setup_starter_data() {
 
     $res = array('status' => 'ok');
 
-    $plot_name = get_theme_mod('knd_site_scenario'); // color-line, withyou, dubrovino
-    $plot_name = 'fundraising-org';
+    $plot_name = get_theme_mod('knd_site_scenario'); // problem-org, fundraising-org, public-campaign
+    $plot_name = 'problem-org';
 
     if($plot_name) {
         try {

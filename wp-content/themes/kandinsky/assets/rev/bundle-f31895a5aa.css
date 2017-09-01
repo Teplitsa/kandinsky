@@ -1620,9 +1620,8 @@ a:link {
   flex-flow: row wrap;
   -ms-flex-align: stretch;
   align-items: stretch;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  margin-left: -46.8px;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .flex-row.centered {
@@ -1755,9 +1754,6 @@ a:link {
   }
   .flex-sm-col-5 {
     width: calc(20% - 48px);
-  }
-  .single-post-section .flex-md-10 {
-    width: 100%;
   }
 }
 
@@ -4454,7 +4450,6 @@ h2.logo-name {
 /**  Cards Structure **/
 .cards-loop .card {
   margin-bottom: 48px;
-  margin-left: 46.8px;
 }
 
 /** News **/
