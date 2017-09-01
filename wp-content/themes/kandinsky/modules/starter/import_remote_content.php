@@ -277,8 +277,13 @@ class KND_Import_Git_Content {
      */
     private function download_git_zip() {
         
-        $this->distr_attachment_id = TST_Import::get_instance()->import_big_file( $this->content_archive_url );
+//         $this->distr_attachment_id = TST_Import::get_instance()->import_big_file( $this->content_archive_url );
 //         $this->distr_attachment_id = TST_Import::get_instance()->maybe_import( $this->content_archive_url );
+
+        // for debug
+        $this->distr_attachment_id = TST_Import::get_instance()->maybe_import_local_file( '/home/sobranie/php/kandinsky_master.zip' );
+//         $this->distr_attachment_id = TST_Import::get_instance()->import_local_file( '/home/sobranie/php/kandinsky_master.zip' );
+        
         $this->zip_fpath = get_attached_file( $this->distr_attachment_id );
     }
     
