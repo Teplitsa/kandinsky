@@ -36,16 +36,11 @@ if(is_home() && $paged == 1) { //featured posts
 
 <section class="main-content cards-holder listing-bg archive-post-list <?php if($paged > 1):?>next-page<?php endif?>"><div class="container">
 <div class="flex-row cards-loop">
-	<?php
-		if(!empty($posts)){
-			foreach($posts as $p){
-				knd_post_card($p);
-			}
-		}
-		else {
-			#echo '<p>Ничего не найдено</p>';
-		}
-	?>
+<?php if(!empty($posts)){
+    foreach($posts as $p){
+        knd_post_card($p);
+    }
+}?>
 </div>
 </div></section>
 

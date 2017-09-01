@@ -22,7 +22,12 @@
     
 	.card {
 		margin-bottom: $gut;
+        margin-left: 1.8*$base;
 	}
+
+    //.card:not(:last-of-type) {
+    //    margin-right: $base;
+    //}
 	
 }
 

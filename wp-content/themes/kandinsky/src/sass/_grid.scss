@@ -158,7 +158,8 @@
     display: flex;
     flex-flow: row wrap;
     align-items: stretch;
-    justify-content: space-between;
+    justify-content: flex-start;// space-evenly;//space-between;
+    margin-left: -1.8*$base;
 
     &.centered     { justify-content: center; }
     &.start        { justify-content: flex-start; }

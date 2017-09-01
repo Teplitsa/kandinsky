@@ -268,16 +268,16 @@ function rdc_force_https($content){
 
 
 /** filter search request **/
-function rdc_filter_search_query($s){
-	
+function knd_filter_search_query($s){
+
 	$s = preg_replace("/&#?[a-z0-9]{2,8};/i","",$s);
 	$s = preg_replace('/[^a-zA-ZА-Яа-я0-9-\s]/u','',$s);
 	$s = mb_strcut($s, 0, 140, 'utf-8');
-	
-	if(4 > mb_strlen($s, 'utf-8')){
+
+	if(4 > mb_strlen($s, 'utf-8')) {
 		$s = '';
 	}
-	
+
 	return $s;
 }
 
@@ -317,4 +317,13 @@ function knd_get_social_media_supported() {
 add_action('after_switch_theme', 'knd_flush_permalinks');
 function knd_flush_permalinks() {
     flush_rewrite_rules(false);
+}
+
+add_action('pre_get_posts', 'knd_posts_archive_entries_number');
+function knd_posts_archive_entries_number(WP_Query $query) {
+
+    if($query->is_main_query() && $query->is_posts_page) {
+        $query->set('posts_per_page', 9);
+    }
+
 }
