@@ -281,7 +281,7 @@ class KND_Import_Git_Content {
 //         $this->distr_attachment_id = TST_Import::get_instance()->maybe_import( $this->content_archive_url );
 
         // for debug
-        $this->distr_attachment_id = TST_Import::get_instance()->maybe_import_local_file( '/home/sobranie/php/kandinsky_master.zip' );
+        $this->distr_attachment_id = TST_Import::get_instance()->maybe_import_local_file( '/app/public/wp-content/uploads/kandinsky_master.zip' );
 //         $this->distr_attachment_id = TST_Import::get_instance()->import_local_file( '/home/sobranie/php/kandinsky_master.zip' );
         
         $this->zip_fpath = get_attached_file( $this->distr_attachment_id );
