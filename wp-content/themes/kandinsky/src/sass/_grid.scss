@@ -189,13 +189,6 @@
     width: calc(20% - #{$flex-gut});
 }
 
-// extra-small screens
-@include upto(small-screens) {
-    .single-post-section .flex-md-10 { // Post thumblails on single pages
-        display:none;
-    }
-}
-
 // small screens
 @include for(small-screens) {
     @for $i from 1 through 12 {
@@ -207,10 +200,6 @@
 
     .flex-sm-col-5 {
         width: calc(20% - #{$flex-gut});
-    }
-
-    .single-post-section .flex-md-10 { // Post thumblails on single pages
-        width: 100%;
     }
 }
 

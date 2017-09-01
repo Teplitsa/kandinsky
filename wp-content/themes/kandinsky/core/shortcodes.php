@@ -26,8 +26,9 @@ function knd_image_section_shortcode($atts, $content = null){
     $atts = shortcode_atts(
         array(
             'title' => '', 
-            'text_place' => 'ontop', 
-            'img' => 0
+            'text_on_top' => 0, 
+            'img' => 0,
+            'color' => 'no'
         ),
         $atts
     );
@@ -37,24 +38,9 @@ function knd_image_section_shortcode($atts, $content = null){
     }
 
     $src = wp_get_attachment_url($atts['img']); //make it responsive
-    $css = '';
-
-    switch ($atts['text_place']) {
-        case 'ontop':
-            $css = 'mark-over';
-            break;
-        
-        case 'under':
-            $css = 'mark-under';
-            break;
-
-        case 'color':
-            $css = 'mark-over colored';
-            break;
-    }
-
-
-    $out = '';
+    $css = ($atts['text_on_top']) ? 'mark-over' : 'mark-under';
+    $css .= ($atts['color'] == 'no') ? ' no-color' : ' colored';
+    $oust = '';
 
     $id = uniqid('knd-img-');
     ob_start();
@@ -139,11 +125,10 @@ function knd_sitemap_shortcode($atts) {
 }
 
 /** Youtube video caption (UI-) **/
-//add_shortcode('knd_youtube_caption', 'knd_youtube_caption_shortcode');
+add_shortcode('knd_youtube_caption', 'knd_youtube_caption_shortcode');
 function knd_youtube_caption_shortcode($atts, $content = null){
 	return '<div class="yt-caption">'.apply_filters('knd_the_content', $content).'</div>';
 }
-
 
 /** A button (UI+) **/
 add_shortcode('knd_button', 'knd_button_shortcode');
@@ -175,7 +160,7 @@ function knd_button_shortcode($atts){
 /** A quote (UI+)
  * @todo Quote markup need CSS styles
  **/
-//add_shortcode('knd_quote', 'knd_quote_screen');
+add_shortcode('knd_quote', 'knd_quote_screen');
 function knd_quote_screen($atts, $content = null) {
 
 	$atts = shortcode_atts(array('name' => '', 'class' => '',), $atts);
@@ -248,7 +233,7 @@ function knd_social_links($atts = array(), $echo = true) {
 }
 
 /** A text with background (image or color) (UI+) */
-//add_shortcode('knd_background_text', 'knd_background_text_shortcode');
+add_shortcode('knd_background_text', 'knd_background_text_shortcode');
 function knd_background_text_shortcode($atts = array(), $echo = true) {
 
     $atts = shortcode_atts(array(
@@ -309,7 +294,7 @@ function knd_background_text_shortcode($atts = array(), $echo = true) {
 
 }
 
-/** A list of people (UI+) */
+/** A list of persons (UI+) */
 add_shortcode('knd_persons_list', 'knd_persons_list_shortcode');
 function knd_persons_list_shortcode($atts = array(), $echo = true) {
 
@@ -378,7 +363,7 @@ function knd_orgs_list_shortcode($atts = array(), $echo = true) {
 }
 
 /** A 3-column markup (UI+) **/
-//add_shortcode('knd_columns', 'knd_columns_shortcode');
+add_shortcode('knd_columns', 'knd_columns_shortcode');
 function knd_columns_shortcode($atts){
 
     $atts = shortcode_atts(array(

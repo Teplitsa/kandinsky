@@ -263,7 +263,6 @@ class KND_Import_Git_Content {
         if( $exist_attachment ) {
             
             $this->distr_attachment_id = $exist_attachment->ID;
-            //$this->distr_attachment_id = 314;
             $this->zip_fpath = get_post_meta( $this->distr_attachment_id, 'kandinsky_zip_fpath', true );
             $this->import_content_files_dir = get_post_meta( $this->distr_attachment_id, 'kandinsky_import_content_files_dir', true );
             
@@ -279,10 +278,8 @@ class KND_Import_Git_Content {
     private function download_git_zip() {
         
         $this->distr_attachment_id = TST_Import::get_instance()->import_big_file( $this->content_archive_url );
-//      $this->distr_attachment_id = TST_Import::get_instance()->maybe_import( $this->content_archive_url );
+//         $this->distr_attachment_id = TST_Import::get_instance()->maybe_import( $this->content_archive_url );
         $this->zip_fpath = get_attached_file( $this->distr_attachment_id );
-//      $this->distr_attachment_id = 314;       
-//      $this->zip_fpath = get_post_meta( $this->distr_attachment_id, 'kandinsky_zip_fpath', true );
     }
     
     /**
@@ -453,8 +450,8 @@ class KND_Git_Piece_Parser {
             
             if(count($line_parts) > 0) {
                 
-                $param_name = (isset($line_parts[0])) ? trim($line_parts[0]) : '';
-                $param_val = (isset($line_parts[1])) ? trim($line_parts[1]) : '';
+                $param_name = trim($line_parts[0]);
+                $param_val = trim($line_parts[1]);
                 
                 if($param_name) {
                     $param_val = trim(trim($param_val, "'\"“”"));
