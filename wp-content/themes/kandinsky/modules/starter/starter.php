@@ -53,23 +53,14 @@ function knd_setup_site_icon() {
 }
 
 function knd_set_sitename_settings($scenario_data) {
-    switch(get_theme_mod('knd_site_scenario')) {
 
-        case 'problem-org':
-            update_option('blogname', $scenario_data['name']);
-            update_option('blogdescription', $scenario_data['description']);
-            break;
-        case 'fundraising-org':
-            update_option('blogname', $scenario_data['name']);
-            update_option('blogdescription', $scenario_data['description']);
-            break;
-        case 'public-campaign':
-            update_option('blogname', $scenario_data['name']);
-            update_option('blogdescription', $scenario_data['description']);
-            break;
-
-        default:
+    if($scenario_data['name']) {
+        update_option('blogname', $scenario_data['name']);
     }
+    if($scenario_data['tagline']) {
+        update_option('blogdescription', $scenario_data['tagline']);
+    }
+
 }
 
 function knd_setup_menus() {
