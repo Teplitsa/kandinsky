@@ -158,15 +158,15 @@
     display: flex;
     flex-flow: row wrap;
     align-items: stretch;
-    justify-content: flex-start;// space-evenly;//space-between;
-    margin-left: -1.8*$base;
+    justify-content: space-between;
 
-    &.centered     { justify-content: center; }
-    &.start        { justify-content: flex-start; }
-    &.align-top    { align-items: flex-start; }
-    &.align-bottom { align-items: flex-end; }
-    &.align-center { align-items: center; }
-    &.row-reverse  { flex-direction: row-reverse; }
+    &.centered      { justify-content: center; }
+    &.start         { justify-content: flex-start; }
+    &.space-between { justify-content: space-between; }
+    &.align-top     { align-items: flex-start; }
+    &.align-bottom  { align-items: flex-end; }
+    &.align-center  { align-items: center; }
+    &.row-reverse   { flex-direction: row-reverse; }
 }
 
 
