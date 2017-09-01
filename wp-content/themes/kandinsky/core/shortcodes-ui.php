@@ -11,8 +11,72 @@ add_action('init', function() { // Plugin custom localization
     load_textdomain('shortcode-ui', get_template_directory()."/vendor/shortcode-ui-ru_RU.mo");
 }, 100);
 
+
 add_action('register_shortcode_ui', 'knd_add_shortcodes_ui');
 function knd_add_shortcodes_ui() {
+
+
+    shortcode_ui_register_for_shortcode('knd_key_phrase', array(
+        'label' => __('Key phrase', 'knd'), // Shortcode label in the UI. Required
+        'listItemImage' => 'dashicons-editor-quote', // Dashicon class or full <img> HTML
+//        'post_type' => array('post'), // Limit this shortcode UI to specific posts. Optional
+
+        'inner_content' => array( // A UI for the "inner content" of the shortcode. Optional
+            'label'        => __('Phrase text', 'knd'),
+//            'description'  => __('A text of the quote.', 'knd'),
+        ),
+
+        'attrs' => array( // Define & bind the UI for shortcode attributes. Optional
+            array(
+                'label'  => __('Subtitle', 'knd'),
+                'attr'   => 'subtitle',
+                'type'   => 'text',
+                'encode' => false,
+                'meta'   => array(),
+            ),
+        ),
+    ));
+
+    shortcode_ui_register_for_shortcode('knd_image_section', array(
+        'label' => __('Image section', 'knd'), // Shortcode label in the UI. Required
+        'listItemImage' => 'dashicons-editor-quote', // Dashicon class or full <img> HTML
+//        'post_type' => array('post'), // Limit this shortcode UI to specific posts. Optional
+
+        'inner_content' => array( // A UI for the "inner content" of the shortcode. Optional
+            'label'        => __('Description', 'knd'),
+//            'description'  => __('A text of the quote.', 'knd'),
+        ),
+
+        'attrs' => array( // Define & bind the UI for shortcode attributes. Optional
+            array(
+                'label'  => __('Title', 'knd'),
+                'attr'   => 'title',
+                'type'   => 'text',
+                'encode' => false,
+                'meta'   => array(),
+            ),
+            array(
+                'label'  => __('Image', 'knd'),
+                'attr'   => 'img',
+                'type'   => 'attachment',
+                'libraryType' => array('image'),
+                'addButton'   => __('Select image', 'knd'),
+                'frameTitle'  => __('Select section image', 'knd'),
+            ),
+            array(
+                'label'  => __('Text placement', 'knd'),
+                'attr'   => 'text_place',
+                'type'   => 'select',
+                'options'   => array(
+                    array( 'value' => 'ontop', 'label' => 'Поверх изображения'),
+                    array( 'value' => 'under', 'label' => 'Под изображением'),
+                    array( 'value' => 'color', 'label' => 'Плашка поверх изображения')
+                ) 
+            ),
+        ),
+    ));
+
+
 
     /** @todo Quote markup need CSS styles */
     shortcode_ui_register_for_shortcode('knd_quote', array(
