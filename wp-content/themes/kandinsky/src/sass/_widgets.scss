@@ -509,6 +509,10 @@
     padding: 54px 0px 0px 0px;
     background: $color-bg-light;
     
+    body.plot-public-campaign & {
+        background: var(--knd-color-third);
+    }
+    
     h2.section-title {
         @include knd-head-section-text();
     }
@@ -538,6 +542,10 @@
     
     h2 {
         @include knd-head-tiny-text();
+        
+        body.plot-public-campaign & {
+            color: var(--knd-text2-color);
+        }
     }
     
     
@@ -592,20 +600,49 @@
             color: $color-text-black;
             border-bottom: 4px solid var(--knd-color-main);
             padding: 0px 0px 4px 0px;
-            
             text-decoration:none;
+            
             &:hover {
                 text-decoration:none;
                 border-color: var(--knd-color-main-dark);
+            }
+            
+            body.plot-public-campaign & {
+            
+                color: var(--knd-text2-color);
+                border-color: var(--knd-text2-color);
+                
+                &:hover {
+                    border-color: $color-text;
+                }
             }
         }
     }
     
     .whoweare-item:last-of-type {
+    
+        body.plot-public-campaign & {
+        
+            h3 {
+                color: var(--knd-text3-color);
+            }
+            
+        }
+    
         a {
             border-color: var(--knd-color-second);
             &:hover {
                 border-color: var(--knd-color-second-dark);
+            }
+            
+            body.plot-public-campaign & {
+            
+                color: var(--knd-text3-color);
+                border-color: var(--knd-text3-color);
+                
+                &:hover {
+                    border-color: $color-text;
+                }
             }
         }
     }
@@ -623,6 +660,10 @@
  
     h2 {
         letter-spacing: 0.1em;
+        
+        body.plot-public-campaign & {
+            color: $color_text;
+        }
     }
     
     .knd-whoweare-headlike-text-wrapper {
@@ -649,6 +690,10 @@
 .knd-projects-widget {
     @extend .knd-news-widget;
     background: var(--knd-color-third);
+    
+    body.plot-public-campaign & {
+        background: var(--knd-color-third);
+    }
     
     h2.section-title {
         color: $color-white;
@@ -693,6 +738,14 @@
     @extend .knd-news-widget;
     padding-top: 56px;
     background: $color-white;
+    
+    body.plot-public-campaign & {
+        background: $color-white;
+        
+        h2.section-title {
+            color: var(--knd-color-third);
+        }
+    }
     
     .knd-news-widget-body {
         padding-top: 33px;

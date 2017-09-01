@@ -36,7 +36,13 @@
 	display: inline-block;
 	color: var(--knd-color-main-dark);
 	padding: 4px 8px;
-	
+
+    span.category {
+        body.plot-public-campaign & {
+            @include knd-link-lonely-text();
+        }
+    }
+
 	a {
 		color: inherit;
 		&:hover { text-decoration: underline; }
@@ -44,6 +50,10 @@
 	
     .date {
       color: $color-border-dark;
+      
+        body.plot-public-campaign & {
+            color: $color-text;
+        }
     }
     
     .sep {
@@ -51,6 +61,11 @@
         width: 5px;
         height: 5px;
         border: solid 1px $color-border-dark;
+        
+        body.plot-public-campaign & {
+            border-color: $color-text;
+        }
+        
         border-radius: 5px;
         padding:0px;
         vertical-align:baseline;
@@ -91,11 +106,15 @@
 	&:hover {
 		background: $color-secondary-alt;
 		.entry-preview:after { background: rgba(0,0,0, 0.3); }
-	}	
+	}
+	
+    body.plot-public-campaign & {
+        background: $color-bg-dark-gray;
+    }
 	
 	a {
 		display: block;
-		color: $color-text-black;
+		color: $color-text;
 		position:relative;
 		height: 100%;
 	}
@@ -133,7 +152,6 @@
 		@include body-text(summary);
 		color: $color-text;
 	}
-	
 }
 
 

@@ -166,13 +166,15 @@ function rdc_feed_link(){
 
 
 /** Adds custom classes to the array of body classes **/
-add_filter( 'body_class', 'rdc_body_classes' );
-function rdc_body_classes( $classes ) {
+add_filter( 'body_class', 'knd_body_classes' );
+function knd_body_classes( $classes ) {
 	
 	if(is_page()){
 		$qo = get_queried_object();
 		$classes[] = 'slug-'.$qo->post_name;
 	}
+	
+	$classes[] = 'plot-' . get_theme_mod('knd_site_scenario');
 
     $mod = get_theme_mod('knd_custom_logo_mod', 'image_only');
     $classes[] = 'logomod-'.$mod;

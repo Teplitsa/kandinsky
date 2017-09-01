@@ -7,8 +7,12 @@ function knd_get_deault_main_color() {
 }
 
 function knd_get_main_color() {
+    return knd_get_theme_color('knd_main_color');
+}
 
-    $main_color = get_theme_mod('knd_main_color');
+function knd_get_theme_color($color_name) {
+
+    $main_color = get_theme_mod($color_name);
 
     if(empty($main_color)){
         $main_color = knd_get_deault_main_color();

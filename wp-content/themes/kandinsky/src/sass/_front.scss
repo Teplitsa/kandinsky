@@ -75,6 +75,11 @@ a {
 	background: $color-bg-light;
 	padding: $base*2.2 0 $base*1.8;
 	color: $color-text-black;
+	
+    body.plot-public-campaign & {
+       color: $color-text;
+       background: var(--knd-color-third);
+    }
 		
 	h5 {
 		@include header-title();
@@ -119,6 +124,10 @@ a {
 	background: $color-bg-light;
 	color: $color-text;
 	
+    body.plot-public-campaign & {
+       background: var(--knd-color-third);
+    }
+	
 	a {
 		color: $color-link-one;
 		&:hover, &:focus, &:active {
@@ -136,10 +145,20 @@ a {
 	.copy {
 	   padding-top: 27px;
 	   color: $color-text-light;
+	   
+        body.plot-public-campaign & {
+            color: $color-text;
+        }
+	   
 	   @include knd-supersmall-text();
 		a { 
 		  white-space: nowrap;
-		  color: $color-text-light; 
+		  color: $color-text-light;
+		  
+            body.plot-public-campaign & {
+                color: $color-text;
+            }
+		  
 	    }
 	}
 	
@@ -191,7 +210,7 @@ a {
 		    .textwidget {
 			     a {
                      @include knd-link-footerblack-text();
-			         color: $color-text-black;
+			         color: $color-text;
 			     }
             }
 		}
@@ -202,6 +221,11 @@ a {
 		color: transparent;
 		display: block;
 		border-bottom: 1px solid rgba(0,0,0, 0.2);
+		
+        body.plot-public-campaign & {
+           border-bottom: 1px solid $color-border-dark;
+        }
+		
 		@include for(xxlarge-screens) {
 			margin-left: 0;
 			margin-right: 0;
@@ -279,11 +303,16 @@ a {
 	@include for(small-screens) {
 	}
 	
-	.rdc-icon {
+	.knd-icon {
 		display: inline-block;
 		width: 103px;
 		height: 42px;
 		fill: rgba(0,0,0, 0.75);
+		
+        body.plot-public-campaign & {
+           fill: $color-text;
+        }
+        
 	}
 	
 	a {
@@ -296,7 +325,13 @@ a {
 		transition: all 0.35s;
 		
 		&:hover, &:focus, &:active {
-			.rdc-icon { fill:rgba(0,0,0, 1); }
+			.knd-icon { 
+			     fill:rgba(0,0,0, 1);
+			     
+			    body.plot-public-campaign & {
+                    fill: $color-text;
+                }
+			 }
 		}
 		
 		position: absolute;
@@ -311,6 +346,10 @@ a {
 		margin-right: 110px;
 		padding-top: 8px;
 		color: rgba(0,0,0, 0.75);
+
+        body.plot-public-campaign & {
+            color: $color-text;
+        }
 		
 		display:none;
         @include for(small-screens) {
@@ -326,6 +365,11 @@ a {
 .knd-homepage-widgets {
     
     //border-top: 5px solid $color-border-dark;
+    
+    body.plot-public-campaign & {
+        background: var(--knd-color-main);
+        color: $color-text;
+    }
     
     img {
         @include widget-content-style();

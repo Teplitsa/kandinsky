@@ -560,10 +560,21 @@ class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
         ),
         
         'theme_options' => array(
+            
             'knd_main_color' => '#00bcd4',
+            'knd_color_second' => '#ffc914',
+            'knd_color_third' => '#0e0a2b',
+            
+            'knd_text1_color' => '#000000',
+            'knd_text2_color' => '#000000',
+            'knd_text3_color' => '#000000',
+            
             'knd_hero_image_support_title' => 'Помоги бороться с алкогольной зависимостью!',
             'knd_hero_image_support_text' => 'В Нашей области 777 человек, которые страдают от алкогольной зависимости. Ваша поддержка поможет организовать для них реабилитационную программу.',
             'knd_hero_image_support_button_caption' => 'Помочь сейчас',
+            
+            'subtitle_org' => "Благотворительная организация  «Линия Цвета»",
+            'subtitle_slogan' => "Более 10 лет мы помогаем людям, страдающим алкоголизмом в нашем городе,  организуя реабилитационные программы и группы",
             
         ),
     );
@@ -622,9 +633,19 @@ class KND_Right2city_Data_Builder extends KND_Plot_Data_Builder {
         
         'theme_options' => array(
             'knd_main_color' => '#F02C80',
+            'knd_color_second' => '#4a4a4a',
+            'knd_color_third' => '#000000',
+            
+            'knd_text1_color' => '#ffffff',
+            'knd_text2_color' => '#740635',
+            'knd_text3_color' => '#362cf0',
+            
             'knd_hero_image_support_title' => array('section' => 'homepage', 'piece' => 'hero_heading'),
             'knd_hero_image_support_text' => array('section' => 'homepage', 'piece' => 'hero_description'),
             'knd_hero_image_support_button_caption' => 'Помочь сейчас',
+            
+            'subtitle_slogan' => array('section' => 'homepage', 'piece' => 'subtitle_slogan'),
+            'subtitle_org' => array('section' => 'homepage', 'piece' => 'subtitle_org'),
         ),
         
     );
@@ -676,6 +697,10 @@ class KND_Withyou_Data_Builder extends KND_Plot_Data_Builder {
         
         'theme_options' => array(
             'knd_main_color' => '#DE0055',
+            'knd_color_second' => '#ffc914',
+            'knd_color_third' => '#0e0a2b',
+            'knd_main_bg_color' => '#ffffff',
+            'knd_second_bg_color' => '#ffffff',
             'knd_hero_image_support_title' => array('section' => 'homepage', 'piece' => 'hero_heading'),
             'knd_hero_image_support_text' => array('section' => 'homepage', 'piece' => 'hero_description'),
             'knd_hero_image_support_button_caption' => 'Помочь сейчас',
