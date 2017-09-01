@@ -272,7 +272,14 @@ $modularscale: (
     font-family: $body;
     line-height: 1.44;
     font-weight: 400;
- }
+}
+
+@mixin knd-body-title-text() {
+    font-size: 1.2em;
+    font-family: $body;
+    line-height: 1.44;
+    font-weight: 600;
+}
 
 @mixin knd-subhead-text() {
     @include ms-respond(font-size, 0);

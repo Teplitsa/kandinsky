@@ -97,11 +97,18 @@ function knd_cta_section_shortcode($atts, $content = null){
 add_shortcode('knd_links', 'knd_links_shortcode');
 function knd_links_shortcode($atts, $content = null){
 
+    $atts = shortcode_atts(
+        array(
+            'align' => 'left'
+        ),
+        $atts
+    );
+
     if(empty($content)) {
         return '';
     }
 
-    $out = '<div class="knd-links">';
+    $out = '<div class="knd-links '.esc_attr($atts['align']).'">';
     $out .= strip_tags(apply_filters('knd_the_content', $content), "<a>");
     $out .= "</div>";
 

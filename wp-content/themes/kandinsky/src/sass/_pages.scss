@@ -18,6 +18,16 @@
 	padding-bottom: $gut;
 }
 
+.page-crumb {
+	text-align: center;
+	@include knd-head-tiny-text();
+	margin-bottom: $gut/4;
+	a {
+		color: $color-link-three;
+		&:hover, &:focus, &:active { color: $color-link-one; }
+	}
+}
+
 @mixin page-section-margin() {
 	margin: $gut 0;
 	@include for(small-screens) {
@@ -207,12 +217,15 @@ background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.1) 27%,rgba
 }
  
 .knd-links {
-	margin: $inpage-margin-base;
+	margin: $inpage-margin-base 0 $inpage-margin-base*1.5;
+
+	&.center { text-align: center; }
+	&.right { text-align: right; }
 
 	a {
 		display: inline-block;
-		margin-right: 1em; 
-		font-weight: bold;
+		margin-right: 1em;
+		font-weight: bold; 
 	}
 }
 

@@ -71,7 +71,7 @@ $inpage-margin-base: 26px;
 
 	//headings
 	h2, h3, h4, h5, h6 {
-		margin: $inpage-margin-base*1.5 0 $inpage-margin-base*.75;
+		margin: $inpage-margin-base*1.2 0 $inpage-margin-base*.65;
 
 		&:first-child { margin-top: 0; }
 		&:last-child { margin-bottom: 0; }
@@ -86,7 +86,7 @@ $inpage-margin-base: 26px;
 	}
 
 	h4 {
-		
+		@include knd-body-title-text();
 		color: $color-text-black;
 	}
 
@@ -193,25 +193,24 @@ $inpage-margin-base: 26px;
 	ol + p { margin-top:  $inpage-margin-base }
 
 	blockquote {
-	   font-family: Georgia, serif;
 	    font-style: italic;
-	    font-size: 14px;
-	    line-height: 1.6;
-	    color: $color-text-black;
 	    position: relative;
-	    padding-left: 25px;
+	    padding-left: 34px;
 	    margin-top: $inpage-margin-base*2;
 
 	    &:before {
 	        content: '“';
 	        display: inline-block;
-	        font-size: 60px;
+	        font-size: 70px;
 	        line-height: 1;
 	        position: absolute;
-	        left: -8px;
+	        left: -12px;
 	        top: -12px;
+	        color: $color-link-three;
 	    }
 
+	    &:first-child { margin-top: 0; }
+	    &:last-child { margin-bottom: 0; }
 	}
 
 	pre {
