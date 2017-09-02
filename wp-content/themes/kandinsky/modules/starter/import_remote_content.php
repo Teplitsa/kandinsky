@@ -277,11 +277,12 @@ class KND_Import_Git_Content {
      */
     private function download_git_zip() {
         
-//         $this->distr_attachment_id = TST_Import::get_instance()->import_big_file( $this->content_archive_url );
-//         $this->distr_attachment_id = TST_Import::get_instance()->maybe_import( $this->content_archive_url );
+        $this->distr_attachment_id = TST_Import::get_instance()->import_big_file( $this->content_archive_url );
 
         // for debug
-        $this->distr_attachment_id = TST_Import::get_instance()->maybe_import_local_file( '/app/public/wp-content/uploads/kandinsky_master.zip' );
+//         $this->parse_exist_content();
+//         $this->distr_attachment_id = TST_Import::get_instance()->maybe_import( $this->content_archive_url );
+//         $this->distr_attachment_id = TST_Import::get_instance()->maybe_import_local_file( '/home/sobranie/php/kandinsky_master.zip' );
 //         $this->distr_attachment_id = TST_Import::get_instance()->import_local_file( '/home/sobranie/php/kandinsky_master.zip' );
         
         $this->zip_fpath = get_attached_file( $this->distr_attachment_id );
@@ -483,6 +484,7 @@ class KND_Piece {
     public $lead = "";
     public $content = "";
     public $slug = "";
+    public $url = "";
     
     public $tags = array();
     public $cat = array();
@@ -497,6 +499,7 @@ class KND_Piece {
         $this->lead = isset($post_params['lead']) ? $post_params['lead'] : "";
         $this->content = isset($post_params['content']) ? $post_params['content'] : "";
         $this->slug = isset($post_params['slug']) ? $post_params['slug'] : "";
+        $this->url = isset($post_params['url']) ? $post_params['url'] : "";
         
         $this->tags_str = isset($post_params['tags']) ? $post_params['tags'] : "";
         $terms = explode(",", $this->tags_str);

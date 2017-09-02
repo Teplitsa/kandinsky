@@ -41,6 +41,12 @@
         body.plot-public-campaign & {
             @include knd-link-lonely-text();
         }
+        
+        body.plot-fundraising-org & {
+            @include knd-link-lonely-text();
+            color: var(--knd-color-third);
+        }
+        
     }
 
 	a {

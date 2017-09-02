@@ -576,6 +576,20 @@ class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
             'subtitle_org' => "Благотворительная организация  «Линия Цвета»",
             'subtitle_slogan' => "Более 10 лет мы помогаем людям, страдающим алкоголизмом в нашем городе,  организуя реабилитационные программы и группы",
             
+            'home-subtitle-col1-title' => array('section' => 'homepage', 'piece' => 'whoweare-who', 'field' => 'title'),
+            'home-subtitle-col1-content' => array('section' => 'homepage', 'piece' => 'whoweare-who'),
+            'home-subtitle-col1-link-text' => array('section' => 'homepage', 'piece' => 'whoweare-who', 'field' => 'lead'),
+            'home-subtitle-col1-link-url' => array('section' => 'homepage', 'piece' => 'whoweare-who', 'field' => 'url'),
+            
+            'home-subtitle-col2-title' => array('section' => 'homepage', 'piece' => 'whoweare-whatwedo', 'field' => 'title'),
+            'home-subtitle-col2-content' => array('section' => 'homepage', 'piece' => 'whoweare-whatwedo'),
+            'home-subtitle-col2-link-text' => array('section' => 'homepage', 'piece' => 'whoweare-whatwedo', 'field' => 'lead'),
+            'home-subtitle-col2-link-url' => array('section' => 'homepage', 'piece' => 'whoweare-whatwedo', 'field' => 'url'),
+            
+            'home-subtitle-col3-title' => array('section' => 'homepage', 'piece' => 'whoweare-breakfree', 'field' => 'title'),
+            'home-subtitle-col3-content' => array('section' => 'homepage', 'piece' => 'whoweare-breakfree'),
+            'home-subtitle-col3-link-text' => array('section' => 'homepage', 'piece' => 'whoweare-breakfree', 'field' => 'lead'),
+            'home-subtitle-col3-link-url' => array('section' => 'homepage', 'piece' => 'whoweare-breakfree', 'field' => 'url'),
         ),
     );
     
@@ -646,6 +660,22 @@ class KND_Right2city_Data_Builder extends KND_Plot_Data_Builder {
             
             'subtitle_slogan' => array('section' => 'homepage', 'piece' => 'subtitle_slogan'),
             'subtitle_org' => array('section' => 'homepage', 'piece' => 'subtitle_org'),
+            
+            'home-subtitle-col1-title' => array('section' => 'homepage', 'piece' => 'subtitle_who', 'field' => 'title'),
+            'home-subtitle-col1-content' => array('section' => 'homepage', 'piece' => 'subtitle_who'),
+            'home-subtitle-col1-link-text' => array('section' => 'homepage', 'piece' => 'subtitle_who', 'field' => 'lead'),
+            'home-subtitle-col1-link-url' => array('section' => 'homepage', 'piece' => 'subtitle_who', 'field' => 'url'),
+            
+            'home-subtitle-col2-title' => array('section' => 'homepage', 'piece' => 'subtitle_what', 'field' => 'title'),
+            'home-subtitle-col2-content' => array('section' => 'homepage', 'piece' => 'subtitle_what'),
+            'home-subtitle-col2-link-text' => array('section' => 'homepage', 'piece' => 'subtitle_what', 'field' => 'lead'),
+            'home-subtitle-col2-link-url' => array('section' => 'homepage', 'piece' => 'subtitle_what', 'field' => 'url'),
+            
+            'home-subtitle-col3-title' => array('section' => 'homepage', 'piece' => 'subtitle_act', 'field' => 'title'),
+            'home-subtitle-col3-content' => array('section' => 'homepage', 'piece' => 'subtitle_act'),
+            'home-subtitle-col3-link-text' => array('section' => 'homepage', 'piece' => 'subtitle_act', 'field' => 'lead'),
+            'home-subtitle-col3-link-url' => array('section' => 'homepage', 'piece' => 'subtitle_act', 'field' => 'url'),
+            
         ),
         
     );
@@ -696,14 +726,36 @@ class KND_Withyou_Data_Builder extends KND_Plot_Data_Builder {
         ),
         
         'theme_options' => array(
+            
             'knd_main_color' => '#DE0055',
-            'knd_color_second' => '#ffc914',
-            'knd_color_third' => '#0e0a2b',
-            'knd_main_bg_color' => '#ffffff',
-            'knd_second_bg_color' => '#ffffff',
+            'knd_color_second' => '#ffbe2c',
+            'knd_color_third' => '#008ceb',
+            
+            'knd_text1_color' => '#000000',
+            'knd_text2_color' => '#000000',
+            'knd_text3_color' => '#000000',
+            
             'knd_hero_image_support_title' => array('section' => 'homepage', 'piece' => 'hero_heading'),
             'knd_hero_image_support_text' => array('section' => 'homepage', 'piece' => 'hero_description'),
             'knd_hero_image_support_button_caption' => 'Помочь сейчас',
+            
+            'subtitle_slogan' => array('section' => 'homepage', 'piece' => 'subtitle_slogan'),
+            'subtitle_org' => array('section' => 'homepage', 'piece' => 'subtitle_org'),
+            
+            'home-subtitle-col1-title' => array('section' => 'homepage', 'piece' => 'subtitle_who', 'field' => 'title'),
+            'home-subtitle-col1-content' => array('section' => 'homepage', 'piece' => 'subtitle_who'),
+            'home-subtitle-col1-link-text' => array('section' => 'homepage', 'piece' => 'subtitle_who', 'field' => 'lead'),
+            'home-subtitle-col1-link-url' => array('section' => 'homepage', 'piece' => 'subtitle_who', 'field' => 'url'),
+            
+            'home-subtitle-col2-title' => array('section' => 'homepage', 'piece' => 'subtitle_what', 'field' => 'title'),
+            'home-subtitle-col2-content' => array('section' => 'homepage', 'piece' => 'subtitle_what'),
+            'home-subtitle-col2-link-text' => array('section' => 'homepage', 'piece' => 'subtitle_what', 'field' => 'lead'),
+            'home-subtitle-col2-link-url' => array('section' => 'homepage', 'piece' => 'subtitle_what', 'field' => 'url'),
+            
+            'home-subtitle-col3-title' => array('section' => 'homepage', 'piece' => 'subtitle_act', 'field' => 'title'),
+            'home-subtitle-col3-content' => array('section' => 'homepage', 'piece' => 'subtitle_act'),
+            'home-subtitle-col3-link-text' => array('section' => 'homepage', 'piece' => 'subtitle_act', 'field' => 'lead'),
+            'home-subtitle-col3-link-url' => array('section' => 'homepage', 'piece' => 'subtitle_act', 'field' => 'url'),
         ),
         
     );

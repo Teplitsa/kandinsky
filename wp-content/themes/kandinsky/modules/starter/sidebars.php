@@ -97,7 +97,12 @@ EOT;
         $widgets = get_option('widget_knd_ourorg');
         //         print_r($widgets);
         
-        $widgets[] = Array('title' => __('Our organization «Color Line»', 'knd'), 'text' => __('We have been helping people with alcoholism in our city over 10 years<br />by organizing rehabilitation programs.', 'knd') );
+        
+        
+        $widgets[] = Array(
+            'title' => get_theme_mod('subtitle_org'), 
+            'text' => get_theme_mod('subtitle_slogan'), 
+        );
         $widgets_keys = array_keys($widgets);
         $widget_index = end($widgets_keys);
         $sidebars['knd-homepage-sidebar'][] = 'knd_ourorg-' . $widget_index;

@@ -292,10 +292,19 @@ h2.logo-name {
 			height: 18px;
 			fill: $color-text-black;
 			pointer-events: none;
+			
+            body.plot-public-campaign & {
+                fill: var(--knd-color-main);
+            }
 		}
 		
 		&:hover .svg-icon {
 			fill: $color-link-two;
+			
+            body.plot-public-campaign & {
+                fill: var(--knd-color-main-dark);
+            }
+			
 		}
 		
 		@include for(medium-screens) {
@@ -358,6 +367,11 @@ h2.logo-name {
 	overflow-y: scroll;
 	transition: all 0.4s;
 	
+	body.plot-public-campaign & {
+        background: var(--knd-color-third);
+        color: $color-text;
+    }
+	
 	@include for(medium-screens){
 		right: -310px;
 		width: 310px;
@@ -386,6 +400,10 @@ h2.logo-name {
 	border-bottom: 1px solid $color-border-light;
 	position: relative;
 	height: $logo_small_h + $height_gap;
+	
+    body.plot-public-campaign & {
+        border-color: $color-border-dark;
+    }
 
 	@include for(medium-screens) { height: $logo_full_h + $height_gap;}
 	
@@ -448,17 +466,33 @@ h2.logo-name {
 		border-bottom: 1px solid $color-border-light;
 		position: relative;
 		
+        body.plot-public-campaign & {
+            border-color: $color-border-dark;
+        }
+		
 		& > a {
 			display: block;
 			@include nav-text(menu);
 			color: $color-text-black;
 			transition: all 0.3s;
 			
+            body.plot-public-campaign & {
+                background: var(--knd-color-third);
+                color: $color-text;
+            }
+			
+			
 			padding: 19px $gut/2;
 			margin-right: $logo_small_h + $height_gap;
 						
 			&:hover, &:focus, &:active {
-				background: $color-border-light;		
+				background: $color-border-light;
+				
+    			body.plot-public-campaign & {
+                    background: var(--knd-color-third);
+                    color: $color-text;
+                }
+						
 			}
 		}
 				

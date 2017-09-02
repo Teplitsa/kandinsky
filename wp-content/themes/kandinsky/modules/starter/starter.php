@@ -104,7 +104,13 @@ function knd_ajax_setup_starter_data() {
     $res = array('status' => 'ok');
 
     $plot_name = get_theme_mod('knd_site_scenario'); // problem-org, fundraising-org, public-campaign
-    $plot_name = 'problem-org';
+    
+    // debug
+//     $plot_name = 'problem-org';
+//     $plot_name = 'fundraising-org';
+//     $plot_name = 'public-campaign';
+    
+    set_theme_mod('knd_site_scenario', $plot_name);
 
     if($plot_name) {
         try {

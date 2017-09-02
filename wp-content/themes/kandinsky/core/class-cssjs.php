@@ -92,13 +92,18 @@ class FRL_CssJs {
         $dark_color = knd_color_luminance($main_color, -0.1); //@to_do calculate it
         
         $second_color = knd_get_theme_color('knd_color_second');
-        $dark_second_color = knd_get_theme_color($second_color, -0.1);
+        $dark_second_color = knd_color_luminance($second_color, -0.1);
         
         $third_color = knd_get_theme_color('knd_color_third');
+        $dark_third_color = knd_color_luminance($third_color, -0.1);
         
         $knd_text1_color = knd_get_theme_color('knd_text1_color');
+        
         $knd_text2_color = knd_get_theme_color('knd_text2_color');
+        $knd_text2_color_dark = knd_color_luminance($knd_text2_color, -0.3);
+        
         $knd_text3_color = knd_get_theme_color('knd_text3_color');
+        $knd_text3_color_dark = knd_color_luminance($knd_text3_color, -0.3);
         
         ?>
             <style>
@@ -110,10 +115,14 @@ class FRL_CssJs {
                     --knd-color-second-dark:  <?php echo $dark_second_color; ?>;
                     
                     --knd-color-third:        <?php echo $third_color; ?>;
+                    --knd-color-third-dark:   <?php echo $dark_third_color; ?>;
                     
-                    --knd-text1-color:    <?php echo $knd_text1_color; ?>;
-                    --knd-text2-color:    <?php echo $knd_text2_color; ?>;
-                    --knd-text3-color:    <?php echo $knd_text3_color; ?>;
+                    --knd-text1-color:        <?php echo $knd_text1_color; ?>;
+                    --knd-text2-color:        <?php echo $knd_text2_color; ?>;
+                    --knd-text2-color-dark:   <?php echo $knd_text2_color_dark; ?>;
+                    
+                    --knd-text3-color:        <?php echo $knd_text3_color; ?>;
+                    --knd-text3-color-dark:   <?php echo $knd_text3_color_dark; ?>;
                 }
             </style>
         <?php
