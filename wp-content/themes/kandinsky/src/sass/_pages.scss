@@ -31,7 +31,7 @@
 @mixin page-section-margin() {
 	margin: $gut 0;
 	@include for(small-screens) {
-		margin: $gut*1.5 0;
+		margin: $gut*1.2 0;
 	}
 }
 
