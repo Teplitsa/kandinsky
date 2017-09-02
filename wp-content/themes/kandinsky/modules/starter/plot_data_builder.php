@@ -546,7 +546,7 @@ class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
         'posts' => array(
             'articles' => array(
                 'post_type' => 'post',
-                'pieces' => array('article1', 'article2', 'article3', 'article4', 'article5', ),
+                'pieces' => array('article1', 'article2', 'article3', 'article4', 'article5', 'article6' ),
             ),
             'projects' => array(
                 'post_type' => 'project',

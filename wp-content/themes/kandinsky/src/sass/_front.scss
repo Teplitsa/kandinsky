@@ -108,6 +108,10 @@ a {
 	           fill: $color-text-black;
 	           width:24px;
 	           height: 24px;
+	           
+	           body.plot-public-campaign & {
+	               fill: $color-text;
+	           }
 	       } 
 	   }
 	}

@@ -114,7 +114,7 @@ EOT;
         $news_widgets = get_option('widget_knd_news');
 //         print_r($news_widgets);
         
-        $news_widgets[] = Array('title' => __('News', 'knd'), 'num' => 4 ); 
+        $news_widgets[] = Array('title' => __('News', 'knd'), 'num' => 6 ); 
         $news_widgets_keys = array_keys($news_widgets);
         $widget_index = end($news_widgets_keys);
         $sidebars['knd-homepage-sidebar'][] = 'knd_news-' . $widget_index;
