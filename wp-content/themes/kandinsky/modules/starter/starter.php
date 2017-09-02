@@ -5,6 +5,7 @@ require get_template_directory().'/modules/starter/menus.php';
 require get_template_directory().'/modules/starter/sidebars.php';
 require get_template_directory().'/vendor/parsedown/Parsedown.php';
 require get_template_directory().'/modules/starter/plot_data_builder.php';
+require get_template_directory().'/modules/starter/plot_config.php';
 require get_template_directory().'/modules/starter/import_remote_content.php';
 
 function knd_import_starter_data_from_csv($file, $post_type = 'post') {
@@ -52,17 +53,6 @@ function knd_setup_site_icon() {
 
 }
 
-function knd_set_sitename_settings($scenario_data) {
-
-    if($scenario_data['name']) {
-        update_option('blogname', $scenario_data['name']);
-    }
-    if($scenario_data['tagline']) {
-        update_option('blogdescription', $scenario_data['tagline']);
-    }
-
-}
-
 function knd_setup_menus() {
 
     KND_StarterMenus::knd_setup_our_work_menu();
@@ -106,7 +96,7 @@ function knd_ajax_setup_starter_data() {
     $plot_name = get_theme_mod('knd_site_scenario'); // problem-org, fundraising-org, public-campaign
     
     // debug
-//     $plot_name = 'problem-org';
+    $plot_name = 'problem-org';
 //     $plot_name = 'fundraising-org';
 //     $plot_name = 'public-campaign';
     
