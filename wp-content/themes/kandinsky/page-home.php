@@ -35,11 +35,13 @@ endif;
     
     $menu_items = wp_get_nav_menu_items(__( 'Kandinsky projects block menu', 'knd' ));
     $project_menu_items = [];
-    foreach($menu_items as $k => $v) {
-        $project_menu_items[] = array(
-            'title' => $v->title,
-            'url' => $v->url,
-        );
+    if($menu_items && is_array($menu_items)) {
+        foreach($menu_items as $k => $v) {
+            $project_menu_items[] = array(
+                'title' => $v->title,
+                'url' => $v->url,
+            );
+        }
     }
     
     knd_show_posts_shortlist($projects, "ПРОЕКТЫ «ЛИНИИ ЦВЕТА»", $project_menu_items);
