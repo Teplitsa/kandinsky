@@ -877,7 +877,8 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
             $imp->import_downloaded_content();
             
             $pdb = KND_Plot_Data_Builder::produce_builder($imp);
-            $pdb->build_menus_and_sidebars();
+            $pdb->build_menus();
+            $pdb->build_sidebars();
             
             knd_setup_menus();  // all menus except main nav menu
             return true;

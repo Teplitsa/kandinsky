@@ -32,11 +32,17 @@ endif;
     <!-- purple bar -->
 <?php
     $projects = KND_Project::get_short_list(3);
-    knd_show_posts_shortlist($projects, "ПРОЕКТЫ «ЛИНИИ ЦВЕТА»", array(
-        array('title' => 'Все проекты', 'url' => '#'),
-        array('title' => 'Пресса о нас', 'url' => '#'),
-        array('title' => 'Отчеты', 'url' => '#'),
-    ));
+    
+    $menu_items = wp_get_nav_menu_items(__( 'Kandinsky projects block menu', 'knd' ));
+    $project_menu_items = [];
+    foreach($menu_items as $k => $v) {
+        $project_menu_items[] = array(
+            'title' => $v->title,
+            'url' => $v->url,
+        );
+    }
+    
+    knd_show_posts_shortlist($projects, "ПРОЕКТЫ «ЛИНИИ ЦВЕТА»", $project_menu_items);
 ?>
 
 <!-- partners -->

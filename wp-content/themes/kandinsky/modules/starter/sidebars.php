@@ -46,7 +46,6 @@ class KND_StarterSidebars {
                 $sidebars['knd-footer-sidebar'][] = 'nav_menu-' . $widget_index;
             }
             
-            
             $home_url = home_url('/');
             $text_widget_text = get_option('knd_footer_security_pd');
             $text_widgets[] = array('title' => __('Security policy', 'knd'), 'text' => trim(preg_replace('/\r\n|\r|\n/', '', $text_widget_text)), 'filter' => 'content' );

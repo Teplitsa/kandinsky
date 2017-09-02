@@ -5,6 +5,7 @@ require get_template_directory().'/modules/starter/menus.php';
 require get_template_directory().'/modules/starter/sidebars.php';
 require get_template_directory().'/vendor/parsedown/Parsedown.php';
 require get_template_directory().'/modules/starter/plot_data_builder.php';
+require get_template_directory().'/modules/starter/plot_shortcode_builder.php';
 require get_template_directory().'/modules/starter/plot_config.php';
 require get_template_directory().'/modules/starter/import_remote_content.php';
 
@@ -54,9 +55,6 @@ function knd_setup_site_icon() {
 }
 
 function knd_setup_menus() {
-
-    KND_StarterMenus::knd_setup_our_work_menu();
-    KND_StarterMenus::knd_setup_news_menu();
 
     KND_StarterSidebars::setup_footer_sidebar();
     KND_StarterSidebars::setup_homepage_sidebar();

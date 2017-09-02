@@ -23,6 +23,12 @@ class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
                 'post_slug' => 'about',
                 
             ),
+            array(
+                'section' => 'about',
+                'piece' => 'reports',
+                'post_type' => 'page',
+                'post_slug' => 'reports',
+            ),
         ),
         
         'posts' => array(
@@ -83,9 +89,6 @@ class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
             'cta-description' => array('section' => 'homepage', 'piece' => 'cta_block', 'field' => 'content'),
             'cta-button-caption' => array('section' => 'homepage', 'piece' => 'cta_block', 'field' => 'lead'),
             'cta-url' => array('section' => 'homepage', 'piece' => 'cta_block', 'field' => 'url'),
-            
-            'knd_url_pd_policy' => '/about/',
-            'knd_url_privacy_policy' => '/about/',
         ),
         
         'general_options' => array(
@@ -107,7 +110,7 @@ class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
 +7 (495) 787-87-23',
             
             'knd_footer_security_pd' => "<p>
-Дисклеймер о политике безопасности, конфиденциальности, персональных данных и подобном
+Совершая пожертвование, пользователь заключает договор пожертвования путем акцента публичной оферты, который находится <a href=\"{knd_url_public_oferta}\">здесь</a>
 </p>
 <p>
 <a href=\"{knd_url_pd_policy}\">Политика обработки персональных данных</a>
@@ -130,6 +133,26 @@ class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
         );
         
         $this->data_routes['theme_options']['knd_hero_image_support_url'] = get_permalink(get_page_by_path('donate'));
+        $this->data_routes['theme_options']['knd_url_pd_policy'] = get_permalink(knd_get_post('about', 'page'));
+        $this->data_routes['theme_options']['knd_url_privacy_policy'] = get_permalink(knd_get_post('about', 'page'));
+        $this->data_routes['theme_options']['knd_url_public_oferta'] = get_permalink(knd_get_post('about', 'page'));
+        
+        $this->data_routes['menus'] = array(
+            __( 'Kandinsky our work footer menu', 'knd' ) => array(
+                array('post_type' => 'page', 'slug' => 'volunteers' ),
+                array('post_type' => 'page', 'slug' => 'projects' ),
+            ),
+            __( 'Kandinsky news footer menu', 'knd' ) => array(
+                array('post_type' => 'page', 'slug' => 'news' ),
+                array('post_type' => 'page', 'slug' => 'reports' ),
+            ),
+            __( 'Kandinsky projects block menu', 'knd' ) => array(
+                array('title' => 'Все новости', 'url' => home_url('/news/') ),
+                array('post_type' => 'page', 'slug' => 'about' ),
+                array('post_type' => 'page', 'slug' => 'reports' ),
+            ),
+        );
+        
     }
     
 }
@@ -214,6 +237,7 @@ class KND_Right2city_Data_Builder extends KND_Plot_Data_Builder {
             
             'knd_url_pd_policy' => '/about/',
             'knd_url_privacy_policy' => '/about/',
+            'knd_url_public_oferta' => '/about/',
         ),
         
         'general_options' => array(
@@ -222,12 +246,12 @@ class KND_Right2city_Data_Builder extends KND_Plot_Data_Builder {
             
             'knd_footer_contacts' => "
 <p>
-Наш офис, учебные залы и помещения групп поддержки открыты ежедневно с 9:00 до 22:00 часов.
+Вместе остановим уничтожение леса!
 </p>
 <p>
 {knd_address_phone}
 <br />
-<a href=\"mailto:\">info@colorline.ru</a>
+<a href=\"mailto:\">info@savedubrovino.ru</a>
 </p>
 ",
             
@@ -235,7 +259,7 @@ class KND_Right2city_Data_Builder extends KND_Plot_Data_Builder {
 +7 (495) 787-87-23',
             
             'knd_footer_security_pd' => "<p>
-Дисклеймер о политике безопасности, конфиденциальности, персональных данных и подобном
+Совершая пожертвование, пользователь заключает договор пожертвования путем акцента публичной оферты, который находится <a href=\"{knd_url_public_oferta}\">здесь</a>
 </p>
 <p>
 <a href=\"{knd_url_pd_policy}\">Политика обработки персональных данных</a>
@@ -336,6 +360,7 @@ class KND_Withyou_Data_Builder extends KND_Plot_Data_Builder {
             
             'knd_url_pd_policy' => '/about/',
             'knd_url_privacy_policy' => '/about/',
+            'knd_url_public_oferta' => '/about/',
         ),
         
         'general_options' => array(
@@ -344,12 +369,9 @@ class KND_Withyou_Data_Builder extends KND_Plot_Data_Builder {
             
             'knd_footer_contacts' => "
 <p>
-Наш офис, учебные залы и помещения групп поддержки открыты ежедневно с 9:00 до 22:00 часов.
-</p>
-<p>
 {knd_address_phone}
 <br />
-<a href=\"mailto:\">info@colorline.ru</a>
+<a href=\"mailto:\">info@withyoufund.ru</a>
 </p>
 ",
             
@@ -358,7 +380,7 @@ class KND_Withyou_Data_Builder extends KND_Plot_Data_Builder {
 ',
             
             'knd_footer_security_pd' => "<p>
-Дисклеймер о политике безопасности, конфиденциальности, персональных данных и подобном
+Совершая пожертвование, пользователь заключает договор пожертвования путем акцента публичной оферты, который находится <a href=\"{knd_url_public_oferta}\">здесь</a>
 </p>
 <p>
 <a href=\"{knd_url_pd_policy}\">Политика обработки персональных данных</a>

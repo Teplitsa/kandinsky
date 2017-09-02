@@ -54,7 +54,8 @@ class KND_Plot_Data_Builder {
         $this->build_option_files();
         $this->build_theme_options();
         $this->build_general_options();
-        $this->build_menus_and_sidebars();
+        $this->build_menus();
+        $this->build_sidebars();
     }
     
     /**
@@ -67,6 +68,8 @@ class KND_Plot_Data_Builder {
             $this->build_section_posts($section);
         }
         
+        global $wp_rewrite;
+        $wp_rewrite->flush_rules( false );
     }
     
     /**
@@ -75,10 +78,19 @@ class KND_Plot_Data_Builder {
      */
     public function build_pages() {
         
-        foreach(array_keys($this->data_routes['pages']) as $section) {
-            $this->build_section_page($section);
+        foreach($this->data_routes['pages'] as $section => $page_options) {
+            
+            if(isset($page_options['template'])) {
+                $this->build_section_template_page($section);
+            }
+            else {
+                $this->build_section_simple_page($page_options);
+            }
+            
         }
         
+        global $wp_rewrite;
+        $wp_rewrite->flush_rules( false );
     }
     
     /**
@@ -103,15 +115,40 @@ class KND_Plot_Data_Builder {
         }
     }
     
+    public function build_section_simple_page($page_options) {
+    
+        $post_type = isset($page_options['post_type']) ? $page_options['post_type'] : 'page';
+        $post_slug = isset($page_options['post_slug']) ? $page_options['post_slug'] : '';
+        $piece_name = isset($page_options['piece']) ? $page_options['piece'] : '';
+        $section = isset($page_options['section']) ? $page_options['section'] : '';
+    
+        if(!$piece_name) {
+            return;
+        }
+        
+        if(preg_match('/^root_.*/', $section)) {
+            $section = '';
+        }
+    
+        $piece = $this->imp->get_piece($piece_name, $section);
+        
+        if($piece) {
+            $piece->content = $this->imp->parse_text($piece->content);
+            $piece->slug = $post_slug;
+            $this->save_post($piece, $post_type);
+        }
+        
+    }
+    
     /**
      * Create WP posts, according to section config, using imported files as templates.
      *
      */
-    public function build_section_page($section) {
+    public function build_section_template_page($section) {
     
         $post_type = isset($this->data_routes['pages'][$section]['post_type']) ? $this->data_routes['pages'][$section]['post_type'] : 'page';
         $post_slug = isset($this->data_routes['pages'][$section]['post_slug']) ? $this->data_routes['pages'][$section]['post_slug'] : '';
-        $template = isset($this->data_routes['pages'][$section]['template']) ? $this->data_routes['pages'][$section]['template'] : '';;
+        $template = isset($this->data_routes['pages'][$section]['template']) ? $this->data_routes['pages'][$section]['template'] : '';
     
         if(!$template) {
             return;
@@ -440,7 +477,7 @@ class KND_Plot_Data_Builder {
         update_option('text_in_header', nl2br(trim($knd_address_phone)));
     }
     
-    public function build_menus_and_sidebars() {
+    public function build_sidebars() {
         
         // footer contacts
         $knd_footer_contacts = $this->data_routes['general_options']['knd_footer_contacts'];
@@ -455,11 +492,49 @@ class KND_Plot_Data_Builder {
         $knd_footer_security_pd = $this->data_routes['general_options']['knd_footer_security_pd'];
         $knd_url_pd_policy = $this->data_routes['theme_options']['knd_url_pd_policy'];
         $knd_url_privacy_policy = $this->data_routes['theme_options']['knd_url_privacy_policy'];
+        $knd_url_public_oferta = $this->data_routes['theme_options']['knd_url_public_oferta'];
         
         $knd_footer_security_pd = str_replace("{knd_url_pd_policy}", $knd_url_pd_policy, $knd_footer_security_pd);
         $knd_footer_security_pd = str_replace("{knd_url_privacy_policy}", $knd_url_privacy_policy, $knd_footer_security_pd);
+        $knd_footer_security_pd = str_replace("{knd_url_public_oferta}", $knd_url_public_oferta, $knd_footer_security_pd);
         
         update_option('knd_footer_security_pd', $knd_footer_security_pd);
+        
+        global $wp_rewrite;
+        $wp_rewrite->flush_rules( false );
+    }
+    
+    public function build_menus() {
+        
+        if(!isset($this->data_routes['menus']) || !is_array($this->data_routes['menus'])) {
+            return;
+        }
+        
+        foreach($this->data_routes['menus'] as $menu_name => $menu_items) {
+            
+            if(is_nav_menu($menu_name)){
+                wp_delete_nav_menu($menu_name);
+            }
+            $menu_id = wp_create_nav_menu( $menu_name );
+            
+            foreach($menu_items as $k => $v) {
+                if(is_array($v)) {
+                    if(isset($v['post_type']) && isset($v['slug'])) {
+                        $page = knd_get_post( $v['slug'], $v['post_type'] );
+                        if($page) {
+                            KND_StarterMenus::add_post2menu($page, $menu_id);
+                        }
+                    }
+                    elseif(isset($v['url']) && isset($v['title'])) {
+                        KND_StarterMenus::add_link2menu($v['title'], $v['url'], $menu_id);
+                    }
+                }
+            }
+            
+        }
+        
+        global $wp_rewrite;
+        $wp_rewrite->flush_rules( false );
     }
     
     public function build_title_and_description() {
@@ -467,106 +542,4 @@ class KND_Plot_Data_Builder {
         update_option('blogdescription', $this->data_routes['general_options']['site_description']);
     }
     
-}
-
-/**
- * Build shortcodes based on imported names, attributes and text content.
- * Fro use in KND_Plot_Data_Builder only.
- *
- */
-class KND_Shortcode_Builder {
-    
-    private $imp = NULL;
-    
-    function __construct($data_builder, $imp) {
-        $this->imp = $imp;
-        $this->data_builder = $data_builder;
-    }
-    
-    /**
-     * Build knd_columns shorcode by name, pieces and attributes.
-     *
-     * @param string     $shortcode_name     name of shortcode
-     * @param array      $pieces             pieces list that are specified in template shortcode tag
-     * @param array      $attributes         array of attributes as key - value pairs
-     *
-     * @return string    shortcode
-     */
-    public function build_knd_columns($shortcode_name, $pieces, $attributes) {
-        
-        foreach($pieces as $i => $piece) {
-            $attr_i = $i + 1;
-            
-            if($piece->title) {
-                $attributes[$attr_i . "-title"] = $piece->title;
-            }
-            
-            if($piece->content) {
-                $piece->content = $this->imp->parse_text($piece->content);
-                $attributes[$attr_i . "-text"] = $piece->content;
-            }
-        }
-        
-        return $this->pack_shortcode_with_attributes($shortcode_name, $attributes);
-    }
-    
-    /**
-     * Build build_knd_background_text shorcode by name, pieces and attributes.
-     *
-     * @param string     $shortcode_name     name of shortcode
-     * @param array      $pieces             pieces list that are specified in template shortcode tag
-     * @param array      $attributes         array of attributes as key - value pairs
-     *
-     * @return string    shortcode
-     */
-    public function build_knd_background_text($shortcode_name, $pieces, $attributes) {
-        
-        $piece = $pieces[0];
-        
-        if($piece->content) {
-            $piece->content = $this->imp->parse_text($piece->content);
-            $attributes['subtitle'] = $piece->content;
-        }
-        
-        if($piece->title) {
-            $attributes['title'] = $piece->title;
-        }
-        
-        if($piece->thumb) {
-            $attributes['bg-image'] = $this->imp->get_thumb_attachment_id($piece);
-        }
-        
-        return $this->pack_shortcode_with_attributes($shortcode_name, $attributes);
-    }
-    
-    /**
-     * Compose shortcode from name and attributes key-value array.
-     *
-     * @param string     $shortcode_name     name of shortcode
-     * @param array      $attributes         array of attributes as key - value pairs
-     *
-     * @return string    shortcode
-     */
-    public function pack_shortcode_with_attributes($shortcode_name, $attributes) {
-        
-        $attr_str_list = array();
-        foreach($attributes as $name => $value) {
-        
-            if($name == 'subtitle' || preg_match('/^\d+-text$/', $name)) {
-                $encoded_value = urlencode($value);
-            }
-            elseif($name == 'cta-url') {
-                $encoded_value = $this->data_builder->get_cta_url($value);
-            }
-            else {
-                $encoded_value = str_replace("\"", "", $value);
-            }
-            
-            $attr_str_list[] = implode("=", array($name, "\"{$encoded_value}\""));
-        }
-        $attr_str = implode(" ", $attr_str_list);
-        
-        return "[{$shortcode_name} {$attr_str}/]";
-    }
-
 }
