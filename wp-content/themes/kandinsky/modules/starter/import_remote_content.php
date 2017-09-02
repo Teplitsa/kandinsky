@@ -499,7 +499,7 @@ class KND_Piece {
         $this->lead = isset($post_params['lead']) ? $post_params['lead'] : "";
         $this->content = isset($post_params['content']) ? $post_params['content'] : "";
         $this->slug = isset($post_params['slug']) ? $post_params['slug'] : "";
-        $this->url = isset($post_params['url']) ? $post_params['url'] : "";
+        $this->url = $this->build_url(isset($post_params['url']) ? $post_params['url'] : "");
         
         $this->tags_str = isset($post_params['tags']) ? $post_params['tags'] : "";
         $terms = explode(",", $this->tags_str);
@@ -522,6 +522,28 @@ class KND_Piece {
         $this->piece_name = isset($post_params['piece_name']) ? $post_params['piece_name'] : "";
         $this->piece_section = isset($post_params['piece_section']) ? $post_params['piece_section'] : "";
         
+    }
+    
+    function build_url($url) {
+        
+        $res_url = home_url();
+        
+        if($url) {
+            if(preg_match("/^\/.*/", $url)) {
+                $res_url = home_url($url);
+            }
+            elseif(preg_match("/([-0-9a-z_]+)\/(.+)$/", $matches)) {
+                $post_type = $matches[1];
+                $post_slug = $matches[2];
+                
+                $post = knd_get_post($post_slug, $post_type);
+                if($post) {
+                    $res_url = get_permalink($post);
+                }
+            }
+        }
+        
+        return $res_url;
     }
     
     /**

@@ -54,6 +54,7 @@ class KND_Plot_Data_Builder {
         $this->build_option_files();
         $this->build_theme_options();
         $this->build_general_options();
+        $this->build_menus_and_sidebars();
     }
     
     /**
@@ -434,6 +435,31 @@ class KND_Plot_Data_Builder {
     }
 
     public function build_general_options() {
+        // header contacts
+        $knd_address_phone = $this->data_routes['general_options']['knd_address_phone'];
+        update_option('text_in_header', nl2br(trim($knd_address_phone)));
+    }
+    
+    public function build_menus_and_sidebars() {
+        
+        // footer contacts
+        $knd_footer_contacts = $this->data_routes['general_options']['knd_footer_contacts'];
+        $knd_address_phone = nl2br(trim($this->data_routes['general_options']['knd_address_phone']));
+        $knd_footer_contacts = str_replace("{knd_address_phone}", $knd_address_phone, $knd_footer_contacts);
+        
+        update_option('knd_footer_contacts', $knd_footer_contacts);
+        update_option('knd_address_phone', $knd_address_phone);
+        update_option('text_in_header', $knd_address_phone);
+        
+        // security and pd
+        $knd_footer_security_pd = $this->data_routes['general_options']['knd_footer_security_pd'];
+        $knd_url_pd_policy = $this->data_routes['theme_options']['knd_url_pd_policy'];
+        $knd_url_privacy_policy = $this->data_routes['theme_options']['knd_url_privacy_policy'];
+        
+        $knd_footer_security_pd = str_replace("{knd_url_pd_policy}", $knd_url_pd_policy, $knd_footer_security_pd);
+        $knd_footer_security_pd = str_replace("{knd_url_privacy_policy}", $knd_url_privacy_policy, $knd_footer_security_pd);
+        
+        update_option('knd_footer_security_pd', $knd_footer_security_pd);
     }
     
     public function build_title_and_description() {

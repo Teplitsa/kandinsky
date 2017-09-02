@@ -843,8 +843,6 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
         }
         public function _content_install_pages() {
             
-//             do_action('knd_save_demo_content');
-            
             $plot_name = get_theme_mod('knd_site_scenario');
             $imp = new KND_Import_Remote_Content($plot_name);
             $imp->import_downloaded_content();
@@ -874,6 +872,13 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
         }
         public function _content_install_menu() {
 
+            $plot_name = get_theme_mod('knd_site_scenario');
+            $imp = new KND_Import_Remote_Content($plot_name);
+            $imp->import_downloaded_content();
+            
+            $pdb = KND_Plot_Data_Builder::produce_builder($imp);
+            $pdb->build_menus_and_sidebars();
+            
             knd_setup_menus();  // all menus except main nav menu
             return true;
 

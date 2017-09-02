@@ -873,18 +873,18 @@ function knd_show_cta_block() {
     
         <div class="container widget">
         
-            <h2>112 волонтеров помогают «Линии цвета» в настоящий момент</h2>
+            <h2><?php echo get_theme_mod('cta-title') ?></h2>
             
             <div class="flex-row knd-whoweare-headlike-text-wrapper">
             
                 <p class="knd-whoweare-headlike-text flex-mf-12 flex-sm-10">
-                Присоединяйтесь к команде волонтеров <br />и консультантов в наших проектах
+                <?php echo get_theme_mod('cta-description') ?>
                 </p>
                 
             </div>
             
             <div class="knd-cta-wrapper-wide">
-                <a class="cta" href="#">Стать волонтером</a>
+                <a class="cta" href="<?php echo get_theme_mod('cta-url') ?>"><?php echo get_theme_mod('cta-button-caption') ?></a>
             </div>
         
         </div>

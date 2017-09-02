@@ -78,11 +78,43 @@ class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
             'home-subtitle-col3-content' => array('section' => 'homepage', 'piece' => 'whoweare-breakfree'),
             'home-subtitle-col3-link-text' => array('section' => 'homepage', 'piece' => 'whoweare-breakfree', 'field' => 'lead'),
             'home-subtitle-col3-link-url' => array('section' => 'homepage', 'piece' => 'whoweare-breakfree', 'field' => 'url'),
+            
+            'cta-title' => array('section' => 'homepage', 'piece' => 'cta_block', 'field' => 'title'),
+            'cta-description' => array('section' => 'homepage', 'piece' => 'cta_block', 'field' => 'content'),
+            'cta-button-caption' => array('section' => 'homepage', 'piece' => 'cta_block', 'field' => 'lead'),
+            'cta-url' => array('section' => 'homepage', 'piece' => 'cta_block', 'field' => 'url'),
+            
+            'knd_url_pd_policy' => '/about/',
+            'knd_url_privacy_policy' => '/about/',
         ),
         
         'general_options' => array(
             'site_name' => 'Линия Цвета',
             'site_description' => 'Помощь людям с алькогольной зависимостью',
+            
+            'knd_footer_contacts' => "
+<p>
+Наш офис, учебные залы и помещения групп поддержки открыты ежедневно с 9:00 до 22:00 часов.
+</p>
+<p>
+{knd_address_phone}
+<br />
+<a href=\"mailto:\">info@colorline.ru</a>
+</p>
+",
+            
+            'knd_address_phone' => 'Москва, 7-я улица Строителей, 17, оф.: 211-217
++7 (495) 787-87-23',
+            
+            'knd_footer_security_pd' => "<p>
+Дисклеймер о политике безопасности, конфиденциальности, персональных данных и подобном
+</p>
+<p>
+<a href=\"{knd_url_pd_policy}\">Политика обработки персональных данных</a>
+<br />
+<a href=\"{knd_url_privacy_policy}\">Политика конфиденциальности</a>
+</p>",
+            
         ),
     );
     
@@ -175,11 +207,41 @@ class KND_Right2city_Data_Builder extends KND_Plot_Data_Builder {
             'home-subtitle-col3-link-text' => array('section' => 'homepage', 'piece' => 'subtitle_act', 'field' => 'lead'),
             'home-subtitle-col3-link-url' => array('section' => 'homepage', 'piece' => 'subtitle_act', 'field' => 'url'),
             
+            'cta-title' => array('section' => 'homepage', 'piece' => 'cta_block', 'field' => 'title'),
+            'cta-description' => array('section' => 'homepage', 'piece' => 'cta_block', 'field' => 'content'),
+            'cta-button-caption' => array('section' => 'homepage', 'piece' => 'cta_block', 'field' => 'lead'),
+            'cta-url' => array('section' => 'homepage', 'piece' => 'cta_block', 'field' => 'url'),
+            
+            'knd_url_pd_policy' => '/about/',
+            'knd_url_privacy_policy' => '/about/',
         ),
         
         'general_options' => array(
             'site_name' => 'Защитим Дубровино!',
             'site_description' => 'Градозащитная инициатива',
+            
+            'knd_footer_contacts' => "
+<p>
+Наш офис, учебные залы и помещения групп поддержки открыты ежедневно с 9:00 до 22:00 часов.
+</p>
+<p>
+{knd_address_phone}
+<br />
+<a href=\"mailto:\">info@colorline.ru</a>
+</p>
+",
+            
+            'knd_address_phone' => 'Москва, 7-я улица Строителей, 17, оф.: 211-217
++7 (495) 787-87-23',
+            
+            'knd_footer_security_pd' => "<p>
+Дисклеймер о политике безопасности, конфиденциальности, персональных данных и подобном
+</p>
+<p>
+<a href=\"{knd_url_pd_policy}\">Политика обработки персональных данных</a>
+<br />
+<a href=\"{knd_url_privacy_policy}\">Политика конфиденциальности</a>
+</p>",
         ),
         
     );
@@ -266,13 +328,44 @@ class KND_Withyou_Data_Builder extends KND_Plot_Data_Builder {
             'home-subtitle-col3-content' => array('section' => 'homepage', 'piece' => 'subtitle_act'),
             'home-subtitle-col3-link-text' => array('section' => 'homepage', 'piece' => 'subtitle_act', 'field' => 'lead'),
             'home-subtitle-col3-link-url' => array('section' => 'homepage', 'piece' => 'subtitle_act', 'field' => 'url'),
+            
+            'cta-title' => array('section' => 'homepage', 'piece' => 'cta_block', 'field' => 'title'),
+            'cta-description' => array('section' => 'homepage', 'piece' => 'cta_block', 'field' => 'content'),
+            'cta-button-caption' => array('section' => 'homepage', 'piece' => 'cta_block', 'field' => 'lead'),
+            'cta-url' => array('section' => 'homepage', 'piece' => 'cta_block', 'field' => 'url'),
+            
+            'knd_url_pd_policy' => '/about/',
+            'knd_url_privacy_policy' => '/about/',
         ),
         
         'general_options' => array(
             'site_name' => 'Мы с тобой',
             'site_description' => 'Благотворительный фонд помощи детям из малоимущих семей',
+            
+            'knd_footer_contacts' => "
+<p>
+Наш офис, учебные залы и помещения групп поддержки открыты ежедневно с 9:00 до 22:00 часов.
+</p>
+<p>
+{knd_address_phone}
+<br />
+<a href=\"mailto:\">info@colorline.ru</a>
+</p>
+",
+            
+            'knd_address_phone' => 'Москва, 7-я улица Строителей, 17, оф.: 211-217
++7 (495) 787-87-23
+',
+            
+            'knd_footer_security_pd' => "<p>
+Дисклеймер о политике безопасности, конфиденциальности, персональных данных и подобном
+</p>
+<p>
+<a href=\"{knd_url_pd_policy}\">Политика обработки персональных данных</a>
+<br />
+<a href=\"{knd_url_privacy_policy}\">Политика конфиденциальности</a>
+</p>",
         ),
-        
     );
     
     /**

@@ -17,24 +17,13 @@ class KND_StarterSidebars {
         $menu_name = __( 'Kandinsky news footer menu', 'knd' );
         $news_menu = wp_get_nav_menu_object( $menu_name );
         
-        if(empty($footer_sidebar)) {
+        if(true || empty($footer_sidebar)) { // always change
             
             $text_widgets = get_option('widget_text');
 //             print_r($text_widgets);
 
             $home_url = home_url('/');
-            $text_widget_text = <<<EOT
-<p>
-Наш офис, учебные залы и помещения групп поддержки открыты ежедневно с 9:00 до 22:00 часов.
-</p>
-<p>
-Москва, 7-я улица Строителей, 17, оф.: 211-217.
-<br />
-+7 (495) 787-87-23
-<br />
-<a href="mailto:">info@colorline.ru</a>
-</p>
-EOT;
+            $text_widget_text = get_option('knd_footer_contacts');
             $text_widgets[] = array('title' => __('About Us', 'knd'), 'text' => trim(preg_replace('/\r\n|\r|\n/', '', $text_widget_text)), 'filter' => 'content' );
             $text_widgets_keys = array_keys($text_widgets);
             $widget_index = end($text_widgets_keys);
@@ -59,16 +48,7 @@ EOT;
             
             
             $home_url = home_url('/');
-            $text_widget_text = <<<EOT
-<p>
-Дисклеймер о политике безопасности, конфиденциальности, персональных данных и подобном
-</p>
-<p>
-<a href="#">Политика обработки персональных данных</a>
-<br />
-<a href="#">Политика конфиденциальности</a>
-</p>                    
-EOT;
+            $text_widget_text = get_option('knd_footer_security_pd');
             $text_widgets[] = array('title' => __('Security policy', 'knd'), 'text' => trim(preg_replace('/\r\n|\r|\n/', '', $text_widget_text)), 'filter' => 'content' );
             $text_widgets_keys = array_keys($text_widgets);
             $widget_index = end($text_widgets_keys);
