@@ -37,6 +37,9 @@ class KND_Import_Remote_Content {
         if($name == 'plot_name') {
             return $this->plot_name;
         }
+        elseif($name == 'possible_plots') {
+            return array_values($this->wizard_plot_name_to_remote_sorce_name);
+        }
     }
     
     /**

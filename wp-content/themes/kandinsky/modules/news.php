@@ -62,7 +62,6 @@ class KND_News_Widget extends WP_Widget {
 		echo $after_widget;
 	}
 	
-	
 	function form($instance) {
 
 		/* Set up some default widget settings */

@@ -153,6 +153,16 @@ class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
             ),
         );
         
+        $this->data_routes['sidebar_widgets'] = array(
+            'knd-homepage-sidebar' => array(
+                array('slug' => 'knd_ourorg', 'options' => array('title' => get_theme_mod('subtitle_org'), 'text' => get_theme_mod('subtitle_slogan'),) ),
+                array('slug' => 'knd_news', 'options' => array('title' => __('News', 'knd'), 'num' => 6,) ),
+                array('slug' => 'knd_cta', 'options' => array() ),
+                array('slug' => 'knd_projects', 'options' => array('title' => "Проекты «Линии цвета»", 'num' => 3,) ),
+                array('slug' => 'knd_orgs', 'options' => array('title' => 'Наши партнеры', 'num' => 4), ),
+            ),
+        );
+        
     }
     
 }
@@ -280,7 +290,34 @@ class KND_Right2city_Data_Builder extends KND_Plot_Data_Builder {
         $this->cta_list = array(
             'CTA_DONATE' => site_url('/donate/'),
         );
+        
         $this->data_routes['theme_options']['knd_hero_image_support_url'] = get_permalink(get_page_by_path('donate'));
+        $this->data_routes['theme_options']['knd_url_pd_policy'] = get_permalink(knd_get_post('about', 'page'));
+        $this->data_routes['theme_options']['knd_url_privacy_policy'] = get_permalink(knd_get_post('about', 'page'));
+        $this->data_routes['theme_options']['knd_url_public_oferta'] = get_permalink(knd_get_post('about', 'page'));
+        
+        $this->data_routes['menus'] = array(
+            __( 'Kandinsky our work footer menu', 'knd' ) => array(
+                array('post_type' => 'page', 'slug' => 'volunteers' ),
+            ),
+            __( 'Kandinsky news footer menu', 'knd' ) => array(
+                array('post_type' => 'page', 'slug' => 'news' ),
+            ),
+            __( 'Kandinsky projects block menu', 'knd' ) => array(
+                array('title' => 'Все новости', 'url' => home_url('/news/') ),
+                array('post_type' => 'page', 'slug' => 'about' ),
+                array('post_type' => 'page', 'slug' => 'reports' ),
+            ),
+        );
+        
+        $this->data_routes['sidebar_widgets'] = array(
+            'knd-homepage-sidebar' => array(
+                array('slug' => 'knd_ourorg', 'options' => array('title' => get_theme_mod('subtitle_org'), 'text' => get_theme_mod('subtitle_slogan'),) ),
+                array('slug' => 'knd_news', 'options' => array('title' => "Хроника кампании", 'num' => 6,) ),
+                array('slug' => 'knd_cta', 'options' => array() ),
+                array('slug' => 'knd_orgs', 'options' => array('title' => 'О нас пишут', 'num' => 4), ),
+            ),
+        );
     }
 }
 
@@ -400,6 +437,37 @@ class KND_Withyou_Data_Builder extends KND_Plot_Data_Builder {
         $this->cta_list = array(
             'CTA_DONATE' => site_url('/donate/'),
         );
+        
         $this->data_routes['theme_options']['knd_hero_image_support_url'] = get_permalink(get_page_by_path('donate'));
+        $this->data_routes['theme_options']['knd_url_pd_policy'] = get_permalink(knd_get_post('about', 'page'));
+        $this->data_routes['theme_options']['knd_url_privacy_policy'] = get_permalink(knd_get_post('about', 'page'));
+        $this->data_routes['theme_options']['knd_url_public_oferta'] = get_permalink(knd_get_post('about', 'page'));
+        
+        $this->data_routes['menus'] = array(
+            __( 'Kandinsky our work footer menu', 'knd' ) => array(
+                array('post_type' => 'page', 'slug' => 'volunteers' ),
+                array('post_type' => 'page', 'slug' => 'projects' ),
+            ),
+            __( 'Kandinsky news footer menu', 'knd' ) => array(
+                array('post_type' => 'page', 'slug' => 'news' ),
+                array('post_type' => 'page', 'slug' => 'reports' ),
+            ),
+            __( 'Kandinsky projects block menu', 'knd' ) => array(
+                array('title' => 'Все новости', 'url' => home_url('/news/') ),
+                array('post_type' => 'page', 'slug' => 'about' ),
+                array('post_type' => 'page', 'slug' => 'reports' ),
+            ),
+        );
+        
+        $this->data_routes['sidebar_widgets'] = array(
+            'knd-homepage-sidebar' => array(
+                array('slug' => 'knd_ourorg', 'options' => array('title' => get_theme_mod('subtitle_org'), 'text' => get_theme_mod('subtitle_slogan'),) ),
+                array('slug' => 'knd_news', 'options' => array('title' => "Последние новости", 'num' => 6,) ),
+                array('slug' => 'knd_cta', 'options' => array() ),
+                array('slug' => 'knd_projects', 'options' => array('title' => "Наши проекты", 'num' => 3,) ),
+                array('slug' => 'knd_orgs', 'options' => array('title' => 'Наши партнеры', 'num' => 4), ),
+            ),
+        );
+        
     }
 }

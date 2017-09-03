@@ -1,5 +1,6 @@
 <?php
 require get_template_directory().'/modules/project/hooks.php';
+require get_template_directory().'/modules/project/widgets.php';
 
 class KND_Project {
     

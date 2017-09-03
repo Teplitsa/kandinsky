@@ -57,7 +57,6 @@ function knd_setup_site_icon() {
 function knd_setup_menus() {
 
     KND_StarterSidebars::setup_footer_sidebar();
-    KND_StarterSidebars::setup_homepage_sidebar();
 
 }
 
@@ -94,8 +93,8 @@ function knd_ajax_setup_starter_data() {
     $plot_name = get_theme_mod('knd_site_scenario'); // problem-org, fundraising-org, public-campaign
     
     // debug
-    $plot_name = 'problem-org';
-//     $plot_name = 'fundraising-org';
+//     $plot_name = 'problem-org';
+    $plot_name = 'fundraising-org';
 //     $plot_name = 'public-campaign';
     
     set_theme_mod('knd_site_scenario', $plot_name);

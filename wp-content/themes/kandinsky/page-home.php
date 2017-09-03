@@ -26,34 +26,6 @@ endif;
 
     <?php dynamic_sidebar( 'knd-homepage-sidebar' );?>
     
-    <!-- yellow bar -->
-    <?php knd_show_cta_block() ?>
-
-    <!-- purple bar -->
-<?php
-    $projects = KND_Project::get_short_list(3);
-    
-    $menu_items = wp_get_nav_menu_items(__( 'Kandinsky projects block menu', 'knd' ));
-    $project_menu_items = [];
-    if($menu_items && is_array($menu_items)) {
-        foreach($menu_items as $k => $v) {
-            $project_menu_items[] = array(
-                'title' => $v->title,
-                'url' => $v->url,
-            );
-        }
-    }
-    
-    knd_show_posts_shortlist($projects, "ПРОЕКТЫ «ЛИНИИ ЦВЕТА»", $project_menu_items);
-?>
-
-<!-- partners -->
-<?php
-$partners_widget = new KND_Org_Widget();
-$partners_widget->widget(array('before_widget' => '', 'after_widget' => ''), array('title' => 'Наши партнеры', 'num' => 4));
-?>
-
-    
 </div>
 
 <?php get_footer();

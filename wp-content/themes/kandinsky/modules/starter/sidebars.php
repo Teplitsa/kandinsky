@@ -62,45 +62,4 @@ class KND_StarterSidebars {
 //         print_r($sidebars['knd-footer-sidebar']);
     }
     
-    public static function setup_homepage_sidebar() {
-        
-        $sidebars = get_option( 'sidebars_widgets' );
-//         print_r($sidebars['knd-homepage-sidebar']);
-        
-        // empty sidebar
-        $sidebars['knd-homepage-sidebar'] = array();
-        update_option( 'sidebars_widgets', $sidebars );
-        
-        
-        // add text on home
-        $widgets = get_option('widget_knd_ourorg');
-        //         print_r($widgets);
-        
-        
-        
-        $widgets[] = Array(
-            'title' => get_theme_mod('subtitle_org'), 
-            'text' => get_theme_mod('subtitle_slogan'), 
-        );
-        $widgets_keys = array_keys($widgets);
-        $widget_index = end($widgets_keys);
-        $sidebars['knd-homepage-sidebar'][] = 'knd_ourorg-' . $widget_index;
-        
-        update_option( 'widget_knd_ourorg', $widgets );
-                
-        
-        // add news on home
-        $news_widgets = get_option('widget_knd_news');
-//         print_r($news_widgets);
-        
-        $news_widgets[] = Array('title' => __('News', 'knd'), 'num' => 6 ); 
-        $news_widgets_keys = array_keys($news_widgets);
-        $widget_index = end($news_widgets_keys);
-        $sidebars['knd-homepage-sidebar'][] = 'knd_news-' . $widget_index;
-        
-        update_option( 'widget_knd_news', $news_widgets );
-        
-        
-        update_option( 'sidebars_widgets', $sidebars );
-    }
 }

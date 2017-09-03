@@ -28,7 +28,11 @@ class KND_Plot_Data_Builder {
      * @return extended KND_Plot_Data_Builder
      */
     public static function produce_builder($imp) {
-        $plot_name = $imp->plot_name;
+        return self::produce_plot_builder($imp->plot_name, $imp);
+    }
+    
+    public static function produce_plot_builder($plot_name, $imp) {
+        
         $plot_name_cap = preg_replace("/[-_]*/", "", ucfirst($plot_name));
         $class_name = "KND_{$plot_name_cap}_Data_Builder";
         if(class_exists($class_name)) {
@@ -64,12 +68,56 @@ class KND_Plot_Data_Builder {
      */
     public function build_posts() {
         
+        $this->remove_all_other_plots_posts();
+        
         foreach(array_keys($this->data_routes['posts']) as $section) {
             $this->build_section_posts($section);
         }
         
         global $wp_rewrite;
         $wp_rewrite->flush_rules( false );
+    }
+    
+    public function remove_all_other_plots_posts() {
+//         var_dump($this->imp->possible_plots);
+
+        foreach($this->imp->possible_plots as $plot_name) {
+            
+//             var_dump($plot_name);
+            
+            if($plot_name != $this->imp->plot_name) {
+                
+//                 echo "deleting all posts...\n";
+                
+                $builder = self::produce_plot_builder($plot_name, $this->imp);
+                $plot_config = $builder->data_routes;
+                
+//                 var_dump($plot_config['posts']);
+                
+                foreach($plot_config['posts'] as $section => $section_data) {
+                    
+                    $post_type = isset($section_data['post_type']) ? $section_data['post_type'] : 'post';
+                    $post_pieces_name = $section_data['pieces'];
+                    
+//                     echo "deleting pt: {$post_type}...\n";
+//                     var_dump($post_pieces_name);
+                    
+                    foreach($post_pieces_name as $piece_name) {
+                        
+                        $piece = new KND_Piece(array('piece_name' => $piece_name, 'piece_section' => $section));
+                        $slug = $piece->get_post_slug();
+                        
+//                         echo "slug: {$slug} \n";
+                        
+                        $post = knd_get_post($slug, $post_type);
+                        if($post) {
+//                             echo "delete {$slug} \n";
+                            wp_delete_post( $post->ID, true );
+                        }
+                    }
+                }
+            }
+        }
     }
     
     /**
@@ -479,6 +527,49 @@ class KND_Plot_Data_Builder {
     
     public function build_sidebars() {
         
+        $this->build_footer_sidebar();
+        $this->build_configured_sidebar();
+        
+        global $wp_rewrite;
+        $wp_rewrite->flush_rules( false );
+    }
+    
+    public function build_configured_sidebar() {
+        
+        if(!isset($this->data_routes['sidebar_widgets'])) {
+            return;
+        }
+        
+        foreach($this->data_routes['sidebar_widgets'] as $sidebar_name => $widgets_list) {
+            
+            $sidebars = get_option( 'sidebars_widgets' );
+            $sidebars[$sidebar_name] = array();
+            update_option( 'sidebars_widgets', $sidebars );
+            
+//             echo $sidebar_name . "\n";
+            foreach($widgets_list as $widget) {
+                
+                $widget_options = $widget['options'];
+                $widget_name = $widget['slug'];
+//                 echo $widget_name . "\n";
+//                 echo print_r($widget_options, true) . "\n";
+                
+                // add text on home
+                $widgets = get_option('widget_' . $widget_name);
+                
+                $widgets[] = $widget_options;
+                $widgets_keys = array_keys($widgets);
+                $widget_index = end($widgets_keys);
+                $sidebars[$sidebar_name][] = $widget_name . '-' . $widget_index;
+                
+                update_option( 'widget_' . $widget_name, $widgets );
+            }
+            
+            update_option( 'sidebars_widgets', $sidebars );
+        }
+    }
+    
+    public function build_footer_sidebar() {
         // footer contacts
         $knd_footer_contacts = $this->data_routes['general_options']['knd_footer_contacts'];
         $knd_address_phone = nl2br(trim($this->data_routes['general_options']['knd_address_phone']));
@@ -499,9 +590,6 @@ class KND_Plot_Data_Builder {
         $knd_footer_security_pd = str_replace("{knd_url_public_oferta}", $knd_url_public_oferta, $knd_footer_security_pd);
         
         update_option('knd_footer_security_pd', $knd_footer_security_pd);
-        
-        global $wp_rewrite;
-        $wp_rewrite->flush_rules( false );
     }
     
     public function build_menus() {
