@@ -372,6 +372,15 @@ class KND_Right2city_Data_Builder extends KND_Plot_Data_Builder {
                 array('slug' => 'knd_cta', 'options' => array() ),
                 array('slug' => 'knd_orgs', 'options' => array('title' => 'О нас пишут', 'num' => 4), ),
             ),
+            'knd-news-archive-sidebar' => array(
+                array('slug' => 'knd_cta', 'options' => array() ),
+                array('slug' => 'knd_orgs', 'options' => array('title' => 'О нас пишут', 'num' => 4), ),
+            ),
+            'knd-projects-archive-sidebar' => array(
+                array('slug' => 'knd_cta', 'options' => array() ),
+                array('slug' => 'knd_news', 'options' => array('title' => 'Последние новости', 'num' => 3,) ),
+                array('slug' => 'knd_orgs', 'options' => array('title' => 'О нас пишут', 'num' => 4), ),
+            ),
         );
     }
 }
@@ -527,6 +536,16 @@ class KND_Withyou_Data_Builder extends KND_Plot_Data_Builder {
                 array('slug' => 'knd_news', 'options' => array('title' => "Последние новости", 'num' => 6,) ),
                 array('slug' => 'knd_cta', 'options' => array() ),
                 array('slug' => 'knd_projects', 'options' => array('title' => "Наши проекты", 'num' => 3,) ),
+                array('slug' => 'knd_orgs', 'options' => array('title' => 'Наши партнеры', 'num' => 4), ),
+            ),
+            'knd-news-archive-sidebar' => array(
+                array('slug' => 'knd_cta', 'options' => array() ),
+                array('slug' => 'knd_projects', 'options' => array('title' => "Наши проекты", 'num' => 3,) ),
+                array('slug' => 'knd_orgs', 'options' => array('title' => 'Наши партнеры', 'num' => 4), ),
+            ),
+            'knd-projects-archive-sidebar' => array(
+                array('slug' => 'knd_cta', 'options' => array() ),
+                array('slug' => 'knd_news', 'options' => array('title' => 'Последние новости', 'num' => 3,) ),
                 array('slug' => 'knd_orgs', 'options' => array('title' => 'Наши партнеры', 'num' => 4), ),
             ),
         );
