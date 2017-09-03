@@ -151,9 +151,9 @@ class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
         );
         
         $this->data_routes['theme_options']['knd_hero_image_support_url'] = get_permalink(get_page_by_path('donate'));
-        $this->data_routes['theme_options']['knd_url_pd_policy'] = get_permalink(knd_get_post('about', 'page'));
-        $this->data_routes['theme_options']['knd_url_privacy_policy'] = get_permalink(knd_get_post('about', 'page'));
-        $this->data_routes['theme_options']['knd_url_public_oferta'] = get_permalink(knd_get_post('about', 'page'));
+        $this->data_routes['theme_options']['knd_url_pd_policy'] = '#';
+        $this->data_routes['theme_options']['knd_url_privacy_policy'] = '#';
+        $this->data_routes['theme_options']['knd_url_public_oferta'] = '#';
         
         $this->data_routes['menus'] = array(
             __('Main menu', 'knd') => array(
@@ -290,9 +290,6 @@ class KND_Right2city_Data_Builder extends KND_Plot_Data_Builder {
             'cta-button-caption' => array('section' => 'homepage', 'piece' => 'cta_block', 'field' => 'lead'),
             'cta-url' => array('section' => 'homepage', 'piece' => 'cta_block', 'field' => 'url'),
             
-            'knd_url_pd_policy' => '/about/',
-            'knd_url_privacy_policy' => '/about/',
-            'knd_url_public_oferta' => '/about/',
         ),
         
         'general_options' => array(
@@ -337,9 +334,9 @@ class KND_Right2city_Data_Builder extends KND_Plot_Data_Builder {
         );
         
         $this->data_routes['theme_options']['knd_hero_image_support_url'] = get_permalink(get_page_by_path('donate'));
-        $this->data_routes['theme_options']['knd_url_pd_policy'] = get_permalink(knd_get_post('about', 'page'));
-        $this->data_routes['theme_options']['knd_url_privacy_policy'] = get_permalink(knd_get_post('about', 'page'));
-        $this->data_routes['theme_options']['knd_url_public_oferta'] = get_permalink(knd_get_post('about', 'page'));
+        $this->data_routes['theme_options']['knd_url_pd_policy'] = '#';
+        $this->data_routes['theme_options']['knd_url_privacy_policy'] = '#';
+        $this->data_routes['theme_options']['knd_url_public_oferta'] = '#';
         
         $this->data_routes['menus'] = array(
             __('Main menu', 'knd') => array(
@@ -448,10 +445,6 @@ class KND_Withyou_Data_Builder extends KND_Plot_Data_Builder {
             'cta-description' => array('section' => 'homepage', 'piece' => 'cta_block', 'field' => 'content'),
             'cta-button-caption' => array('section' => 'homepage', 'piece' => 'cta_block', 'field' => 'lead'),
             'cta-url' => array('section' => 'homepage', 'piece' => 'cta_block', 'field' => 'url'),
-            
-            'knd_url_pd_policy' => '/about/',
-            'knd_url_privacy_policy' => '/about/',
-            'knd_url_public_oferta' => '/about/',
         ),
         
         'general_options' => array(
@@ -493,9 +486,9 @@ class KND_Withyou_Data_Builder extends KND_Plot_Data_Builder {
         );
         
         $this->data_routes['theme_options']['knd_hero_image_support_url'] = get_permalink(get_page_by_path('donate'));
-        $this->data_routes['theme_options']['knd_url_pd_policy'] = get_permalink(knd_get_post('about', 'page'));
-        $this->data_routes['theme_options']['knd_url_privacy_policy'] = get_permalink(knd_get_post('about', 'page'));
-        $this->data_routes['theme_options']['knd_url_public_oferta'] = get_permalink(knd_get_post('about', 'page'));
+        $this->data_routes['theme_options']['knd_url_pd_policy'] = '#';
+        $this->data_routes['theme_options']['knd_url_privacy_policy'] = '#';
+        $this->data_routes['theme_options']['knd_url_public_oferta'] = '#';
         
         $this->data_routes['menus'] = array(
             __('Main menu', 'knd') => array(
