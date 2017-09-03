@@ -225,6 +225,12 @@ class KND_Right2city_Data_Builder extends KND_Plot_Data_Builder {
     protected $data_routes = array(
         
         'pages' => array(
+            array(
+                'section' => 'contacts',
+                'piece' => 'contacts',
+                'post_type' => 'page',
+                'post_slug' => 'contacts',
+            ),
         ),
         
         'pages_templates' => array(
@@ -342,10 +348,12 @@ class KND_Right2city_Data_Builder extends KND_Plot_Data_Builder {
             __('Main menu', 'knd') => array(
                 array('title' => "Главная", 'url' => home_url('/') ),
                 array('post_type' => 'page', 'slug' => 'about' ),
+                array('post_type' => 'page', 'slug' => 'contacts' ),
                 array('title' => __('News', 'knd'), 'url' => home_url('/news/') ),
             ),
             __( 'Kandinsky our work footer menu', 'knd' ) => array(
                 array('post_type' => 'page', 'slug' => 'volunteers' ),
+                array('post_type' => 'page', 'slug' => 'contacts' ),
             ),
             __( 'Kandinsky news footer menu', 'knd' ) => array(
                 array('post_type' => 'page', 'slug' => 'news' ),
@@ -494,11 +502,13 @@ class KND_Withyou_Data_Builder extends KND_Plot_Data_Builder {
             __('Main menu', 'knd') => array(
                 array('title' => "Главная", 'url' => home_url('/') ),
                 array('post_type' => 'page', 'slug' => 'about' ),
+                array('post_type' => 'page', 'slug' => 'contacts' ),
                 array('title' => __('News', 'knd'), 'url' => home_url('/news/') ),
             ),
             __( 'Kandinsky our work footer menu', 'knd' ) => array(
                 array('post_type' => 'page', 'slug' => 'volunteers' ),
                 array('post_type' => 'page', 'slug' => 'projects' ),
+                array('post_type' => 'page', 'slug' => 'contacts' ),
             ),
             __( 'Kandinsky news footer menu', 'knd' ) => array(
                 array('post_type' => 'page', 'slug' => 'news' ),

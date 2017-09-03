@@ -776,6 +776,10 @@ function knd_get_logo_img() {
 
 }
 
+function knd_get_content_image_markup($attachment_id) {
+    return wp_get_attachment_image($attachment_id, 'medium', false, array('alt' => ""));
+}
+
 
 function knd_logo_markup() {
 

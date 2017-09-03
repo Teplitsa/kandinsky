@@ -230,6 +230,22 @@ class KND_Import_Remote_Content {
             }
         }
         
+        if(preg_match_all("/img\s*=\s*[\"'](.*?)[\"']/", $new_text, $matches)) {
+            foreach($matches[0] as $i => $match) {
+                
+                $attachment_id = $this->get_image_attachment_id(trim($matches[1][$i]));
+                
+                if($attachment_id) {
+                    $image_src = knd_get_content_image_markup($attachment_id);
+                }
+                else {
+                    $image_src = '';
+                }
+                
+                $new_text = str_replace($match, $image_src, $new_text);
+            }
+        }
+        
         $new_text = $this->parsedown->text($new_text);
         
         return $new_text;
