@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-03 23:26+0200\n"
-"PO-Revision-Date: 2017-09-03 23:38+0200\n"
+"PO-Revision-Date: 2017-09-04 00:08+0200\n"
 "Last-Translator: ahaenor <ahaenor@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -530,7 +530,7 @@ msgstr ""
 
 #: core/shortcodes-ui.php:85
 msgid "CTA text"
-msgstr ""
+msgstr "Текст призыва к действию"
 
 #: core/shortcodes-ui.php:98
 msgid "Link"
@@ -762,7 +762,7 @@ msgstr ""
 
 #: core/template-tags.php:516
 msgid "Help now"
-msgstr ""
+msgstr "Помочь сейчас"
 
 #: core/widgets.php:10
 msgid "Homepage sidebar"
@@ -820,7 +820,7 @@ msgstr "Помочь сейчас"
 
 #: modules/cta.php:8 modules/cta.php:17
 msgid "CTA block"
-msgstr ""
+msgstr "Блок призыва к действию"
 
 #: modules/donations.php:62
 msgid "Please, set a text of comment to describe an additional ways to donate."
@@ -912,7 +912,7 @@ msgstr "Команда"
 
 #: modules/project/widgets.php:7
 msgid "Projects"
-msgstr ""
+msgstr "Проекты"
 
 #: modules/project/widgets.php:8
 msgid "Projects short list"
