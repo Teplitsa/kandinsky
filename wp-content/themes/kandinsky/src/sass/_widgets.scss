@@ -522,6 +522,7 @@
         background: var(--knd-color-main);
         color: $color-text;
     }
+    
 }
 
 .knd-archive-sidebar {
@@ -744,6 +745,10 @@
         .knd-whoweare-headlike-text {
             line-height: 1.33;
             hyphens: none;
+            
+            body.plot-public-campaign & {
+                color: $color_text;
+            }
             
             body.plot-fundraising-org & {
                 color: $color_text_white;
