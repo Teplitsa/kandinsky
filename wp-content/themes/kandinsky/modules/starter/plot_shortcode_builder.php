@@ -70,6 +70,47 @@ class KND_Shortcode_Builder {
         return $this->pack_shortcode_with_attributes($shortcode_name, $attributes);
     }
     
+    public function build_knd_key_phrase($shortcode_name, $pieces, $attributes) {
+        $piece = $pieces[0];
+        
+        if($piece->content) {
+            $piece->content = $this->imp->parse_text($piece->content);
+        }
+        
+        if($piece->title) {
+            $attributes['subtitle'] = $piece->title;
+        }
+        
+        return $this->pack_shortcode_with_content($shortcode_name, $piece->content, $attributes);
+    }
+    
+    public function build_knd_image_section($shortcode_name, $pieces, $attributes) {
+        $piece = $pieces[0];
+        
+        if($piece->content) {
+            $piece->content = $this->imp->parse_text($piece->content);
+        }
+        
+        if(isset($attributes['img'])) {
+            $attributes['img'] = $this->imp->get_image_attachment_id($attributes['img']);
+        }
+        elseif($piece->thumb) {
+            $attributes['img'] = $this->imp->get_thumb_attachment_id($piece);
+        }
+        
+        return $this->pack_shortcode_with_content($shortcode_name, $piece->content, $attributes);
+    }
+    
+    public function build_knd_cta_section($shortcode_name, $pieces, $attributes) {
+        $piece = $pieces[0];
+        
+        if($piece->content) {
+            $piece->content = $this->imp->parse_text($piece->content);
+        }
+        
+        return $this->pack_shortcode_with_content($shortcode_name, $piece->content, $attributes);
+    }
+    
     /**
      * Compose shortcode from name and attributes key-value array.
      *
@@ -80,24 +121,36 @@ class KND_Shortcode_Builder {
      */
     public function pack_shortcode_with_attributes($shortcode_name, $attributes) {
         
+        $attr_str = $this->__pack_shortcode_attrs($attributes);
+        
+        return "[{$shortcode_name} {$attr_str}/]";
+    }
+    
+    public function pack_shortcode_with_content($shortcode_name, $content, $attributes) {
+    
+        $attr_str = $this->__pack_shortcode_attrs($attributes);
+        
+        return "[{$shortcode_name} {$attr_str}]{$content}[/{$shortcode_name}]";
+    }
+    
+    private function __pack_shortcode_attrs($attributes) {
         $attr_str_list = array();
         foreach($attributes as $name => $value) {
         
-            if($name == 'subtitle' || preg_match('/^\d+-text$/', $name)) {
-                $encoded_value = urlencode($value);
-            }
-            elseif($name == 'cta-url') {
+//             if($name == 'subtitle' || preg_match('/^\d+-text$/', $name)) {
+//                 $encoded_value = urlencode($value);
+//             }
+//             elseif($name == 'cta-url') {
+            if($name == 'cta-url') {
                 $encoded_value = $this->data_builder->get_cta_url($value);
             }
             else {
                 $encoded_value = str_replace("\"", "", $value);
             }
-            
+        
             $attr_str_list[] = implode("=", array($name, "\"{$encoded_value}\""));
         }
-        $attr_str = implode(" ", $attr_str_list);
-        
-        return "[{$shortcode_name} {$attr_str}/]";
+        return implode(" ", $attr_str_list);
     }
 
 }

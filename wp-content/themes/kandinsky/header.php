@@ -58,7 +58,7 @@
 		</div>
 		<?php
 			$after = '<span class="submenu-trigger">'.rdc_svg_icon('icon-up', false).rdc_svg_icon('icon-down', false).'</span>';
-			wp_nav_menu(array('theme_location' => 'primary', 'container' => false, 'menu_class' => 'main-menu', 'after' => $after));
+			wp_nav_menu(array('menu' => __('Main menu', 'knd'), 'theme_location' => 'primary', 'container' => false, 'menu_class' => 'main-menu', 'after' => $after));
 		?>
 		<div class="search-holder"><?php get_search_form();?></div>
 		<?php knd_social_links();?>

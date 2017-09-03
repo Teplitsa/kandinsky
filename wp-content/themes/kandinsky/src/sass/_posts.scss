@@ -60,6 +60,11 @@
         body.plot-public-campaign & {
             color: $color-text;
         }
+        
+        body.plot-public-campaign.single & {
+            color: $color-text-black;
+        }
+        
     }
     
     .sep {
@@ -70,6 +75,10 @@
         
         body.plot-public-campaign & {
             border-color: $color-text;
+        }
+        
+        body.plot-public-campaign.single & {
+            border-color: $color-text-black;
         }
         
         border-radius: 5px;
@@ -735,4 +744,11 @@
    .cards-loop {
        transform: translateY(-70px);
    } 
+}
+
+/* single post */
+.single {
+    .entry-content {
+        @include the-content();
+    }
 }

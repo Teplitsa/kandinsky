@@ -374,23 +374,3 @@ a {
 .main-content {
     overflow:hidden;
 } 
-
-.knd-homepage-widgets {
-    
-    //border-top: 5px solid $color-border-dark;
-    
-    body.plot-public-campaign & {
-        background: var(--knd-color-main);
-        color: $color-text;
-    }
-    
-    img {
-        @include widget-content-style();
-    }
-    
-    .textwidget {
-        @extend .container;
-        text-align:center;
-        margin-bottom: $gut;
-    }
-}

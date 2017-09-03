@@ -22,7 +22,7 @@ if($about_post):
 endif;
 ?>
 
-<div class="knd-homepage-widgets">
+<div class="knd-homepage-sidebar">
 
     <?php dynamic_sidebar( 'knd-homepage-sidebar' );?>
     

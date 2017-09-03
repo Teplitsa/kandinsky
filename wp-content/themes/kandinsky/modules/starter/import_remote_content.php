@@ -40,6 +40,9 @@ class KND_Import_Remote_Content {
         elseif($name == 'possible_plots') {
             return array_values($this->wizard_plot_name_to_remote_sorce_name);
         }
+        elseif($name == 'possible_wizard_plots') {
+            return array_keys($this->wizard_plot_name_to_remote_sorce_name);
+        }
     }
     
     /**
@@ -196,6 +199,17 @@ class KND_Import_Remote_Content {
         
         return isset($file_data['attachment_id']) ? $file_data['attachment_id'] : NULL;
     }
+
+    function get_image_attachment_id($image_name) {
+    
+        $file_data = NULL;
+    
+        if(isset($this->plot_data[$this->plot_name]['img'][$image_name])) {
+            $file_data = $this->plot_data[$this->plot_name]['img'][$image_name];
+        }
+    
+        return isset($file_data['attachment_id']) ? $file_data['attachment_id'] : NULL;
+    }
     
     /**
      * Parse text with parsedown parser, regexp etc.
@@ -208,6 +222,13 @@ class KND_Import_Remote_Content {
         $new_text = $text;
         
         $new_text = preg_replace("/\/\/(.*?)(\n|$)/", '[knd_r]\1[/knd_r]', $new_text);
+        
+        if(preg_match_all("/mdlink\s*=\s*\"(.*?)\"/", $new_text, $matches)) {
+            foreach($matches[0] as $i => $match) {
+                $url = knd_build_imported_url($matches[1][$i]);
+                $new_text = str_replace($match, $url, $new_text);
+            }
+        }
         
         $new_text = $this->parsedown->text($new_text);
         
@@ -280,15 +301,18 @@ class KND_Import_Git_Content {
      */
     private function download_git_zip() {
         
-        $this->distr_attachment_id = TST_Import::get_instance()->import_big_file( $this->content_archive_url );
-
-        // for debug
-//         $this->parse_exist_content();
+//         if(isset($_GET['fetch'])) {
+            $this->distr_attachment_id = TST_Import::get_instance()->import_big_file( $this->content_archive_url );
+            $this->zip_fpath = get_attached_file( $this->distr_attachment_id );
+//         }
+//         else {
+            // for debug
+//             $this->parse_exist_content();
 //         $this->distr_attachment_id = TST_Import::get_instance()->maybe_import( $this->content_archive_url );
 //         $this->distr_attachment_id = TST_Import::get_instance()->maybe_import_local_file( '/home/sobranie/php/kandinsky_master.zip' );
 //         $this->distr_attachment_id = TST_Import::get_instance()->import_local_file( '/home/sobranie/php/kandinsky_master.zip' );
+//         }
         
-        $this->zip_fpath = get_attached_file( $this->distr_attachment_id );
     }
     
     /**
@@ -502,7 +526,14 @@ class KND_Piece {
         $this->lead = isset($post_params['lead']) ? $post_params['lead'] : "";
         $this->content = isset($post_params['content']) ? $post_params['content'] : "";
         $this->slug = isset($post_params['slug']) ? $post_params['slug'] : "";
-        $this->url = $this->build_url(isset($post_params['url']) ? $post_params['url'] : "");
+        
+        if(isset($post_params['url'])) {
+            $this->url = knd_build_imported_url(isset($post_params['url']) ? $post_params['url'] : "");
+        }
+        elseif(isset($post_params['link'])) {
+            $this->url = knd_build_imported_url(isset($post_params['link']) ? $post_params['link'] : "");
+        }
+        
         
         $this->tags_str = isset($post_params['tags']) ? $post_params['tags'] : "";
         $terms = explode(",", $this->tags_str);
@@ -525,28 +556,6 @@ class KND_Piece {
         $this->piece_name = isset($post_params['piece_name']) ? $post_params['piece_name'] : "";
         $this->piece_section = isset($post_params['piece_section']) ? $post_params['piece_section'] : "";
         
-    }
-    
-    function build_url($url) {
-        
-        $res_url = home_url();
-        
-        if($url) {
-            if(preg_match("/^\/.*/", $url)) {
-                $res_url = home_url($url);
-            }
-            elseif(preg_match("/([-0-9a-z_]+)\/(.+)$/", $matches)) {
-                $post_type = $matches[1];
-                $post_slug = $matches[2];
-                
-                $post = knd_get_post($post_slug, $post_type);
-                if($post) {
-                    $res_url = get_permalink($post);
-                }
-            }
-        }
-        
-        return $res_url;
     }
     
     /**

@@ -17,17 +17,35 @@ class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
     protected $data_routes = array(
         
         'pages' => array(
-            'about' => array(
-                'template' => 'page-about',
+            '' => array(
                 'post_type' => 'page',
-                'post_slug' => 'about',
-                
+                'pieces' => array('needhelp', 'contacts', 'volunteers', ),
             ),
             array(
                 'section' => 'about',
                 'piece' => 'reports',
                 'post_type' => 'page',
                 'post_slug' => 'reports',
+            ),
+            array(
+                'section' => 'about',
+                'piece' => 'history',
+                'post_type' => 'page',
+                'post_slug' => 'about-history',
+            ),
+        ),
+        
+        'pages_templates' => array(
+            'about' => array(
+                'template' => 'page-about',
+                'post_type' => 'page',
+                'post_slug' => 'about',
+        
+            ),
+            'howtohelp' => array(
+                'template' => 'page-howtohelp',
+                'post_type' => 'page',
+                'post_slug' => 'howtohelp',
             ),
         ),
         
@@ -138,16 +156,30 @@ class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
         $this->data_routes['theme_options']['knd_url_public_oferta'] = get_permalink(knd_get_post('about', 'page'));
         
         $this->data_routes['menus'] = array(
-            __( 'Kandinsky our work footer menu', 'knd' ) => array(
+            __('Main menu', 'knd') => array(
+                array('title' => "Главная", 'url' => home_url('/') ),
+                array('post_type' => 'page', 'slug' => 'about' ),
+                array('post_type' => 'page', 'slug' => 'contacts' ),
+                array('title' => __('News', 'knd'), 'url' => home_url('/news/') ),
+                array('post_type' => 'page', 'slug' => 'howtohelp' ),
+                array('post_type' => 'page', 'slug' => 'reports' ),
+                array('title' => 'Проекты', 'url' => home_url('/projects/') ),
                 array('post_type' => 'page', 'slug' => 'volunteers' ),
-                array('post_type' => 'page', 'slug' => 'projects' ),
+            ),
+            __( 'Kandinsky our work footer menu', 'knd' ) => array(
+                array('post_type' => 'page', 'slug' => 'about' ),
+                array('title' => "История", 'url' => home_url('/about-history/') ),
+                array('post_type' => 'page', 'slug' => 'reports' ),
+                array('post_type' => 'page', 'slug' => 'contacts' ),
             ),
             __( 'Kandinsky news footer menu', 'knd' ) => array(
-                array('post_type' => 'page', 'slug' => 'news' ),
-                array('post_type' => 'page', 'slug' => 'reports' ),
+                array('title' => __('News', 'knd'), 'url' => home_url('/news/') ),
+                array('title' => 'Проекты', 'url' => home_url('/projects/') ),
+                array('post_type' => 'page', 'slug' => 'volunteers' ),
+                array('post_type' => 'page', 'slug' => 'howtohelp' ),
             ),
             __( 'Kandinsky projects block menu', 'knd' ) => array(
-                array('title' => 'Все новости', 'url' => home_url('/news/') ),
+                array('title' => 'Все проекты', 'url' => home_url('/projects/') ),
                 array('post_type' => 'page', 'slug' => 'about' ),
                 array('post_type' => 'page', 'slug' => 'reports' ),
             ),
@@ -159,6 +191,16 @@ class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
                 array('slug' => 'knd_news', 'options' => array('title' => __('News', 'knd'), 'num' => 6,) ),
                 array('slug' => 'knd_cta', 'options' => array() ),
                 array('slug' => 'knd_projects', 'options' => array('title' => "Проекты «Линии цвета»", 'num' => 3,) ),
+                array('slug' => 'knd_orgs', 'options' => array('title' => 'Наши партнеры', 'num' => 4), ),
+            ),
+            'knd-news-archive-sidebar' => array(
+                array('slug' => 'knd_cta', 'options' => array() ),
+                array('slug' => 'knd_projects', 'options' => array('title' => "Проекты «Линии цвета»", 'num' => 3,) ),
+                array('slug' => 'knd_orgs', 'options' => array('title' => 'Наши партнеры', 'num' => 4), ),
+            ),
+            'knd-projects-archive-sidebar' => array(
+                array('slug' => 'knd_cta', 'options' => array() ),
+                array('slug' => 'knd_news', 'options' => array('title' => 'Последние новости', 'num' => 3,) ),
                 array('slug' => 'knd_orgs', 'options' => array('title' => 'Наши партнеры', 'num' => 4), ),
             ),
         );
@@ -181,8 +223,11 @@ class KND_Right2city_Data_Builder extends KND_Plot_Data_Builder {
      *
      */
     protected $data_routes = array(
-    
+        
         'pages' => array(
+        ),
+        
+        'pages_templates' => array(
             'aboutus' => array(
                 'template' => 'page-about',
                 'post_type' => 'page',
@@ -297,6 +342,11 @@ class KND_Right2city_Data_Builder extends KND_Plot_Data_Builder {
         $this->data_routes['theme_options']['knd_url_public_oferta'] = get_permalink(knd_get_post('about', 'page'));
         
         $this->data_routes['menus'] = array(
+            __('Main menu', 'knd') => array(
+                array('title' => "Главная", 'url' => home_url('/') ),
+                array('post_type' => 'page', 'slug' => 'about' ),
+                array('title' => __('News', 'knd'), 'url' => home_url('/news/') ),
+            ),
             __( 'Kandinsky our work footer menu', 'knd' ) => array(
                 array('post_type' => 'page', 'slug' => 'volunteers' ),
             ),
@@ -304,7 +354,7 @@ class KND_Right2city_Data_Builder extends KND_Plot_Data_Builder {
                 array('post_type' => 'page', 'slug' => 'news' ),
             ),
             __( 'Kandinsky projects block menu', 'knd' ) => array(
-                array('title' => 'Все новости', 'url' => home_url('/news/') ),
+                array('title' => 'Все проекты', 'url' => home_url('/projects/') ),
                 array('post_type' => 'page', 'slug' => 'about' ),
                 array('post_type' => 'page', 'slug' => 'reports' ),
             ),
@@ -331,6 +381,10 @@ class KND_Withyou_Data_Builder extends KND_Plot_Data_Builder {
      */
     protected $data_routes = array(
     
+        'pages' => array(
+        
+        ),
+        
         'pages' => array(
             'about' => array(
                 'template' => 'page-about',
@@ -444,6 +498,11 @@ class KND_Withyou_Data_Builder extends KND_Plot_Data_Builder {
         $this->data_routes['theme_options']['knd_url_public_oferta'] = get_permalink(knd_get_post('about', 'page'));
         
         $this->data_routes['menus'] = array(
+            __('Main menu', 'knd') => array(
+                array('title' => "Главная", 'url' => home_url('/') ),
+                array('post_type' => 'page', 'slug' => 'about' ),
+                array('title' => __('News', 'knd'), 'url' => home_url('/news/') ),
+            ),
             __( 'Kandinsky our work footer menu', 'knd' ) => array(
                 array('post_type' => 'page', 'slug' => 'volunteers' ),
                 array('post_type' => 'page', 'slug' => 'projects' ),
@@ -453,7 +512,7 @@ class KND_Withyou_Data_Builder extends KND_Plot_Data_Builder {
                 array('post_type' => 'page', 'slug' => 'reports' ),
             ),
             __( 'Kandinsky projects block menu', 'knd' ) => array(
-                array('title' => 'Все новости', 'url' => home_url('/news/') ),
+                array('title' => 'Все проекты', 'url' => home_url('/projects/') ),
                 array('post_type' => 'page', 'slug' => 'about' ),
                 array('post_type' => 'page', 'slug' => 'reports' ),
             ),

@@ -268,6 +268,10 @@
     padding: $base/3;
     background-color: #f7f7af;
     margin: $base 0;
+    
+    .kng-img-mark & {
+        color: $color-text;
+    }
 }
 
 
@@ -495,12 +499,36 @@
 }
 
 /* homepage widgets */
-.knd-homepage-widgets {
+.knd-homepage-sidebar {
     padding-top: $gut;
     
     @include for(medium-screens) {
         padding-top: $gut * 1.8;
     }
+    
+    //border-top: 5px solid $color-border-dark;
+    
+    img {
+        @include widget-content-style();
+    }
+    
+    .textwidget {
+        @extend .container;
+        text-align:center;
+        margin-bottom: $gut;
+    }
+    
+    body.plot-public-campaign & {
+        background: var(--knd-color-main);
+        color: $color-text;
+    }
+}
+
+.knd-archive-sidebar {
+    @extend .knd-homepage-sidebar;
+    background: $color-bg-light;
+    
+    padding-top: $gut * 1.2;
 }
 
 /* news widget */

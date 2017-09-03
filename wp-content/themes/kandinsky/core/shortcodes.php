@@ -14,7 +14,7 @@ function knd_key_phrase_shortcode($atts, $content = null){
 
     $out = "<div class='knd-key-phrase'>";
     $out .= "<h5>".apply_filters('knd_the_title', $atts['subtitle'])."</h5>";
-    $out .= "<h3>".apply_filters('knd_the_title', $content)."</h3>";
+    $out .= "<h3>".apply_filters('knd_the_content', $content)."</h3>";
     $out .= "</div>";
 
     return $out;
@@ -32,7 +32,7 @@ function knd_image_section_shortcode($atts, $content = null){
         $atts
     );
 
-    if(empty($content) || $atts['img'] == 0) {
+    if($atts['img'] == 0) {
         return '';
     }
 
@@ -92,7 +92,10 @@ function knd_cta_section_shortcode($atts, $content = null){
         return '';
     }
 
-    $target = (false !== strpos($atts['link'], home_url())) ? 'target="_blank"' : '';
+    if(isset($atts['link'])) {
+        $atts['link'] = knd_build_imported_url($atts['link']);
+    }
+    $target = (false === strpos($atts['link'], home_url())) ? 'target="_blank"' : '';
 
     ob_start();
 ?>
@@ -135,7 +138,7 @@ function knd_links_shortcode($atts, $content = null){
 /** Sitemap (UI-) **/
 //add_shortcode('knd_sitemap', 'knd_sitemap_shortcode');
 function knd_sitemap_shortcode($atts) {
-	return wp_nav_menu(array('theme_location' => 'sitemap', 'container' => false, 'menu_class' => 'sitemap', 'echo'=> false));
+	return wp_nav_menu(array('menu' => __('Main menu', 'knd'), 'theme_location' => 'sitemap', 'container' => false, 'menu_class' => 'sitemap', 'echo'=> false));
 }
 
 /** Youtube video caption (UI-) **/

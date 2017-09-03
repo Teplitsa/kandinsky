@@ -128,14 +128,31 @@ class KND_Plot_Data_Builder {
         
         foreach($this->data_routes['pages'] as $section => $page_options) {
             
-            if(isset($page_options['template'])) {
-                $this->build_section_template_page($section);
+            if(isset($page_options['pieces'])) {
+                $this->build_section_pages($section);
             }
             else {
                 $this->build_section_simple_page($page_options);
             }
             
         }
+        
+        foreach($this->data_routes['pages_templates'] as $section => $page_options) {
+            if(isset($page_options['template'])) {
+                $this->build_section_template_page($section, $page_options);
+            }
+        }
+        
+        // set home page
+        $piece = new KND_Piece(array('slug' => 'home', 'title' => __('Home page', 'knd')));
+        $homepage_id = $this->save_post($piece, 'page');
+        update_option( 'page_on_front', $homepage_id );
+        update_option( 'show_on_front', 'page' );
+        
+        // set news page
+        $piece = new KND_Piece(array('slug' => 'news', 'title' => __('News', 'knd')));
+        $homepage_id = $this->save_post($piece, 'page');
+        update_option( 'page_for_posts', $homepage_id );
         
         global $wp_rewrite;
         $wp_rewrite->flush_rules( false );
@@ -154,6 +171,24 @@ class KND_Plot_Data_Builder {
             $section = '';
         }
         
+        foreach($pieces as $piece_name) {
+            $piece = $this->imp->get_piece($piece_name, $section);
+            if($piece) {
+                $piece->content = $this->imp->parse_text($piece->content);
+                $this->save_post($piece, $post_type);
+            }
+        }
+    }
+    
+    public function build_section_pages($section) {
+    
+        $post_type = $this->data_routes['pages'][$section]['post_type'];
+        $pieces = $this->data_routes['pages'][$section]['pieces'];
+        
+        if(preg_match('/^root_.*/', $section)) {
+            $section = '';
+        }
+    
         foreach($pieces as $piece_name) {
             $piece = $this->imp->get_piece($piece_name, $section);
             if($piece) {
@@ -192,11 +227,11 @@ class KND_Plot_Data_Builder {
      * Create WP posts, according to section config, using imported files as templates.
      *
      */
-    public function build_section_template_page($section) {
+    public function build_section_template_page($section, $page_options) {
     
-        $post_type = isset($this->data_routes['pages'][$section]['post_type']) ? $this->data_routes['pages'][$section]['post_type'] : 'page';
-        $post_slug = isset($this->data_routes['pages'][$section]['post_slug']) ? $this->data_routes['pages'][$section]['post_slug'] : '';
-        $template = isset($this->data_routes['pages'][$section]['template']) ? $this->data_routes['pages'][$section]['template'] : '';
+        $post_type = isset($page_options['post_type']) ? $page_options['post_type'] : 'page';
+        $post_slug = isset($page_options['post_slug']) ? $page_options['post_slug'] : '';
+        $template = isset($page_options['template']) ? $page_options['template'] : '';
     
         if(!$template) {
             return;
@@ -225,7 +260,6 @@ class KND_Plot_Data_Builder {
      * @return string   template, where all tags replaces with proper content
      */
     public function fill_template_with_pieces($template_content, $section) { // remove $post param, if useless
-        
         $template_content = $this->fill_content_tags($template_content, $section);
         $template_content = $this->fill_shortcode_tags($template_content, $section);
         
@@ -252,10 +286,11 @@ class KND_Plot_Data_Builder {
             if(isset($attributes['name'])) {
                 $piece_name = $attributes['name'];
                 $piece = $this->imp->get_piece($piece_name, $section);
-        
+                
                 if($piece) {
                     $piece->content = $this->imp->parse_text($piece->content);
-                    $template_content = str_replace($tag, $piece->content, $template_content);
+                    $content = $piece->content;
+                    $template_content = str_replace($tag, $content, $template_content);
                 }
             }
         
@@ -610,11 +645,11 @@ class KND_Plot_Data_Builder {
                     if(isset($v['post_type']) && isset($v['slug'])) {
                         $page = knd_get_post( $v['slug'], $v['post_type'] );
                         if($page) {
-                            KND_StarterMenus::add_post2menu($page, $menu_id);
+                            KND_StarterMenus::add_post2menu($page, $menu_id, $k);
                         }
                     }
                     elseif(isset($v['url']) && isset($v['title'])) {
-                        KND_StarterMenus::add_link2menu($v['title'], $v['url'], $menu_id);
+                        KND_StarterMenus::add_link2menu($v['title'], $v['url'], $menu_id, $k);
                     }
                 }
             }

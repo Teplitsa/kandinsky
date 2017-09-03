@@ -14,7 +14,7 @@ get_header();
 </section>
 
 <?php 
-if(is_home() && $paged == 1) { //featured posts
+if($paged == 1) { //featured posts
 	//2 for featured 
 	$featured = array_slice($posts, 0, 2); 
 	array_splice($posts, 0, 2);
@@ -35,7 +35,7 @@ if(is_home() && $paged == 1) { //featured posts
 <?php } ?>
 
 <section class="main-content cards-holder listing-bg archive-post-list <?php if($paged > 1):?>next-page<?php endif?>"><div class="container">
-<div class="flex-row cards-loop">
+<div class="flex-row start cards-loop">
 <?php if(!empty($posts)){
     foreach($posts as $p){
         knd_post_card($p);
@@ -46,25 +46,14 @@ if(is_home() && $paged == 1) { //featured posts
 
 <section class="paging listing-bg"><?php knd_paging_nav($wp_query); ?></section>
 
-<!-- yellow bar -->
-<?php knd_show_cta_block() ?>
+<div class="knd-archive-sidebar">
 
-<!-- purple bar -->
-<?php
+    <?php if(is_post_type_archive('post')):?>
+        <?php dynamic_sidebar( 'knd-news-archive-sidebar' );?>
+    <?php else: ?>
+        <?php dynamic_sidebar( 'knd-projects-archive-sidebar' );?>    
+    <?php endif ?>
+    
+</div>
 
-$projects = KND_Project::get_short_list(3);
-
-$menu_items = wp_get_nav_menu_items(__( 'Kandinsky projects block menu', 'knd' ));
-$project_menu_items = [];
-if($menu_items && is_array($menu_items)) {
-    foreach($menu_items as $k => $v) {
-        $project_menu_items[] = array(
-            'title' => $v->title,
-            'url' => $v->url,
-        );
-    }
-}
-
-knd_show_posts_shortlist($projects, "ПРОЕКТЫ «ЛИНИИ ЦВЕТА»", $project_menu_items);
-
-get_footer();
+<?php get_footer();

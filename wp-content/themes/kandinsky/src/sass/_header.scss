@@ -320,6 +320,10 @@ h2.logo-name {
 	display: none;
 	background: rgba(0,0,0, 0.4);
 	
+    body.plot-public-campaign & {
+        background: rgba(255,255,255, 0.4);
+    }	
+	
 	.menu-open & {
 		display: block;
 		z-index: 1000;
@@ -409,7 +413,7 @@ h2.logo-name {
 	
 	.site-logo {
 		display: block;		
-		padding: 0 ($logo_small_h + $height_gap) 0 $gut/2;			
+		padding: $gut/2 ($logo_small_h + $height_gap) 0 $gut/2;			
 	}
 	
 	.snt-cell {

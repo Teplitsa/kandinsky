@@ -65,7 +65,7 @@ function knd_setup_starter_data($plot_name) {
     $imp = new KND_Import_Remote_Content($plot_name);
     $data = $imp->import_content();
     
-//     print_r($data['withyou']['newsfeed']);
+//     print_r($data['color-line']['howtohelp']);
 //     exit();
     
 //     $piece = $imp->get_piece('footer');
@@ -94,8 +94,14 @@ function knd_ajax_setup_starter_data() {
     
     // debug
 //     $plot_name = 'problem-org';
-    $plot_name = 'fundraising-org';
+//     $plot_name = 'fundraising-org';
 //     $plot_name = 'public-campaign';
+    $plot_name = isset($_GET['plot']) ? $_GET['plot'] : 'problem-org';
+    
+    $imp = new KND_Import_Remote_Content($plot_name);
+    if(!in_array($plot_name, $imp->possible_wizard_plots)) {
+        $plot_name = "";
+    }
     
     set_theme_mod('knd_site_scenario', $plot_name);
 
@@ -106,6 +112,9 @@ function knd_ajax_setup_starter_data() {
             error_log($ex);
             $res = array('status' => 'error');
         }
+    }
+    else {
+        $res = array('status' => 'error', 'message' => "unknown plot");
     }
 
     wp_send_json($res);

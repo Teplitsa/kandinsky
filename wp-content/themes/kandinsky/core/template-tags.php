@@ -247,7 +247,6 @@ function knd_section_title() {
 	$css = '';
 	
 	if(is_category()){
-		
 		$p = get_post(get_option('page_for_posts'));
 		$title = get_the_title($p);
 		$title .= knd_get_sep('&mdash;');
@@ -255,7 +254,7 @@ function knd_section_title() {
 		$css = 'archive';
 	}
 	elseif(is_tag() || is_tax()){
-		$title = single_term_title('', false);
+	    $title = single_term_title('', false);
 		$css = 'archive';
 	}
 	elseif(is_home()){
@@ -266,6 +265,10 @@ function knd_section_title() {
 	elseif(is_post_type_archive('leyka_donation')){		
 		$title = __('Donations history', 'knd');
 		$css = 'archive';
+	}
+	elseif(is_post_type_archive('project')){
+	    $title = __('Our projects', 'knd');
+	    $css = 'archive';
 	}
 	elseif(is_search()){
 		$title = __('Search results', 'knd');

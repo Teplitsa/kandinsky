@@ -110,6 +110,32 @@ function knd_rmdir($dirPath) {
     rmdir($dirPath);
 }
 
+function knd_build_imported_url($url) {
+    
+    $res_url = home_url();
+
+    if($url) {
+        //             echo "{$url}\n";
+        if(preg_match("/^\/.*/", $url) || preg_match("/^http[s]?:\/\/.*/", $url)) {
+            //                 echo "root URL\n";
+            $res_url = home_url($url);
+        }
+        elseif(preg_match("/^([-0-9a-z_]+)\/(.+)$/", $url, $matches)) {
+            //                 print_r($matches);
+            $post_type = $matches[1];
+            $post_slug = $matches[2];
+
+            $post = knd_get_post($post_slug, $post_type);
+            if($post) {
+                $res_url = get_permalink($post);
+            }
+        }
+    }
+
+    return $res_url;
+}
+
+
 function svgs_upload_mimes( $mimes = array() ) {
 
     // allow SVG file upload
