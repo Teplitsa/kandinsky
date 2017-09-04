@@ -59,7 +59,7 @@ function knd_setup_starter_data($plot_name) {
     $imp = new KND_Import_Remote_Content($plot_name);
     $data = $imp->import_content();
     
-//     print_r($data['color-line']['howtohelp']);
+//     print_r($data['color-line']['partners']);
 //     exit();
     
 //     $piece = $imp->get_piece('footer');

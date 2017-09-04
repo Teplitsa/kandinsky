@@ -317,17 +317,14 @@ class KND_Import_Git_Content {
      */
     private function download_git_zip() {
         
-//         if(isset($_GET['fetch'])) {
-            $this->distr_attachment_id = TST_Import::get_instance()->import_big_file( $this->content_archive_url );
-            $this->zip_fpath = get_attached_file( $this->distr_attachment_id );
-//         }
-//         else {
-            // for debug
-//             $this->parse_exist_content();
+        $this->distr_attachment_id = TST_Import::get_instance()->import_big_file( $this->content_archive_url );
+        $this->zip_fpath = get_attached_file( $this->distr_attachment_id );
+//         $this->parse_exist_content();
+        
+//         for debug
 //         $this->distr_attachment_id = TST_Import::get_instance()->maybe_import( $this->content_archive_url );
 //         $this->distr_attachment_id = TST_Import::get_instance()->maybe_import_local_file( '/home/sobranie/php/kandinsky_master.zip' );
 //         $this->distr_attachment_id = TST_Import::get_instance()->import_local_file( '/home/sobranie/php/kandinsky_master.zip' );
-//         }
         
     }
     

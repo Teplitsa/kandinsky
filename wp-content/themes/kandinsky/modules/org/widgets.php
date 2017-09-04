@@ -49,7 +49,11 @@ class KND_Org_Widget extends WP_Widget {
 			<input id="<?php echo $this->get_field_id('num');?>" name="<?php echo $this->get_field_name('num');?>" type="text" value="<?php echo intval($instance['num']);?>">
 		</p>
 
-        <?php $org_cats = get_terms(array('taxonomy' => 'org_cat', 'hide_empty' => false,));?>
+        <?php 
+        
+        return;
+        
+        $org_cats = get_terms(array('taxonomy' => 'org_cat', 'hide_empty' => false,));?>
         <p>
             <label for="<?php echo $this->get_field_id('category');?>"><?php _e('Category:', 'knd');?></label>
             <select id="<?php echo $this->get_field_id('category');?>" name="<?php echo $this->get_field_name('category');?>" <?php echo !count($org_cats) ? 'disabled="disabled"' : '';?>>
