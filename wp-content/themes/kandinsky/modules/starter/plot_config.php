@@ -556,6 +556,7 @@ class KND_Withyou_Data_Builder extends KND_Plot_Data_Builder {
                 array('post_type' => 'page', 'slug' => 'contacts' ),
                 array('title' => __('News', 'knd'), 'url' => home_url('/news/') ),
                 array('post_type' => 'page', 'slug' => 'reports' ),
+                array('title' => 'Проекты', 'url' => home_url('/projects/') ),
             ),
             __( 'Kandinsky our work footer menu', 'knd' ) => array(
                 array('post_type' => 'page', 'slug' => 'about' ),
