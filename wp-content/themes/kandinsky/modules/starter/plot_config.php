@@ -32,7 +32,7 @@ class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
                 'piece' => 'history',
                 'post_type' => 'page',
                 'post_slug' => 'about-history',
-            )
+            ),
         ),
         
         'pages_templates' => array(
@@ -370,6 +370,7 @@ class KND_Right2city_Data_Builder extends KND_Plot_Data_Builder {
                 array('title' => __('News', 'knd'), 'url' => home_url('/news/') ),
             ),
             __( 'Kandinsky our work footer menu', 'knd' ) => array(
+                array('post_type' => 'page', 'slug' => 'about' ),
                 array('post_type' => 'page', 'slug' => 'contacts' ),
             ),
             __( 'Kandinsky news footer menu', 'knd' ) => array(
@@ -550,13 +551,16 @@ class KND_Withyou_Data_Builder extends KND_Plot_Data_Builder {
                 array('post_type' => 'page', 'slug' => 'about' ),
                 array('post_type' => 'page', 'slug' => 'contacts' ),
                 array('title' => __('News', 'knd'), 'url' => home_url('/news/') ),
+                array('post_type' => 'page', 'slug' => 'reports' ),
             ),
             __( 'Kandinsky our work footer menu', 'knd' ) => array(
-                array('post_type' => 'page', 'slug' => 'projects' ),
+                array('post_type' => 'page', 'slug' => 'about' ),
+                array('post_type' => 'page', 'slug' => 'reports' ),
                 array('post_type' => 'page', 'slug' => 'contacts' ),
             ),
             __( 'Kandinsky news footer menu', 'knd' ) => array(
                 array('post_type' => 'page', 'slug' => 'news' ),
+                array('post_type' => 'page', 'slug' => 'projects' ),
             ),
             __( 'Kandinsky projects block menu', 'knd' ) => array(
                 array('title' => 'Все проекты', 'url' => home_url('/projects/') ),
