@@ -189,8 +189,14 @@
             curl_setopt ($ch, CURLOPT_URL, $url );
             curl_setopt( $ch, CURLOPT_TIMEOUT, 300 );
             curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, true );
+
+            // Fix for the old local SSL certs issue:
+            curl_setopt($ch, CURLOPT_CAINFO, get_template_directory().'/vendor/cacert.pem');
+
             curl_setopt( $ch, CURLOPT_FILE, $fp );
-            curl_exec( $ch );
+            if(curl_exec($ch) === false) {
+                echo 'Ошибка curl: ' . curl_error($ch);
+            }
             curl_close( $ch );
             fclose($fp);
             
