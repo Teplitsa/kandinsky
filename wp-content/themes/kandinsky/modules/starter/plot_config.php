@@ -69,7 +69,7 @@ class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
             'site_icon' => array('file' => 'favicon.png'),
         ),
         
-        'theme_options' => array(
+        'theme_colors' => array(
             
             'knd_main_color' => '#00bcd4',
             'knd_color_second' => '#ffc914',
@@ -80,6 +80,10 @@ class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
             'knd_text3_color' => '#000000',
             
             'knd_custom_logo_mod' => 'image_and_text',
+            
+        ),
+        
+        'theme_options' => array(
             
             'knd_hero_image_support_title' => 'Помоги бороться с алкогольной зависимостью!',
             'knd_hero_image_support_text' => 'В Нашей области 777 человек, которые страдают от алкогольной зависимости. Ваша поддержка поможет организовать для них реабилитационную программу.',
@@ -264,7 +268,7 @@ class KND_Right2city_Data_Builder extends KND_Plot_Data_Builder {
             'site_icon' => array('file' => 'favicon.png'),
         ),
         
-        'theme_options' => array(
+        'theme_colors' => array(
             'knd_main_color' => '#F02C80',
             'knd_color_second' => '#4a4a4a',
             'knd_color_third' => '#000000',
@@ -274,10 +278,13 @@ class KND_Right2city_Data_Builder extends KND_Plot_Data_Builder {
             'knd_text3_color' => '#362cf0',
             
             'knd_custom_logo_mod' => 'image_only',
+        ),
+        
+        'theme_options' => array(
             
             'knd_hero_image_support_title' => array('section' => 'homepage', 'piece' => 'hero_heading'),
             'knd_hero_image_support_text' => array('section' => 'homepage', 'piece' => 'hero_description'),
-            'knd_hero_image_support_button_caption' => 'Помочь сейчас',
+            'knd_hero_image_support_button_caption' => 'Начать защищать',
             
             'subtitle_slogan' => array('section' => 'homepage', 'piece' => 'subtitle_slogan'),
             'subtitle_org' => array('section' => 'homepage', 'piece' => 'subtitle_org'),
@@ -319,8 +326,8 @@ class KND_Right2city_Data_Builder extends KND_Plot_Data_Builder {
 </p>
 ",
             
-            'knd_address_phone' => 'Москва, 7-я улица Строителей, 17, оф.: 211-217
-+7 (495) 787-87-23',
+            'knd_address_phone' => 'Новосибирск, улица Клары Цеткин, 8
++7 (495) 688-81-23',
             
             'knd_footer_security_pd' => "<p>
 Совершая пожертвование, пользователь заключает договор пожертвования путем акцента публичной оферты, который находится <a href=\"{knd_url_public_oferta}\">здесь</a>
@@ -447,8 +454,7 @@ class KND_Withyou_Data_Builder extends KND_Plot_Data_Builder {
             'site_icon' => array('file' => 'favicon.png'),
         ),
         
-        'theme_options' => array(
-            
+        'theme_colors' => array(
             'knd_main_color' => '#DE0055',
             'knd_color_second' => '#ffbe2c',
             'knd_color_third' => '#008ceb',
@@ -458,6 +464,9 @@ class KND_Withyou_Data_Builder extends KND_Plot_Data_Builder {
             'knd_text3_color' => '#000000',
             
             'knd_custom_logo_mod' => 'image_only',
+        ),
+        
+        'theme_options' => array(
             
             'knd_hero_image_support_title' => array('section' => 'homepage', 'piece' => 'hero_heading'),
             'knd_hero_image_support_text' => array('section' => 'homepage', 'piece' => 'hero_description'),
@@ -499,8 +508,8 @@ class KND_Withyou_Data_Builder extends KND_Plot_Data_Builder {
 </p>
 ",
             
-            'knd_address_phone' => 'Москва, 7-я улица Строителей, 17, оф.: 211-217
-+7 (495) 787-87-23
+            'knd_address_phone' => 'Архангельская область, Вельский район, г. Вельск, ул. Рогозина, д. 48, каб. 12
++7 (495) 878-53-42
 ',
             
             'knd_footer_security_pd' => "<p>

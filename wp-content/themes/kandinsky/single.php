@@ -33,7 +33,7 @@ get_header(); ?>
 <section class="main-content single-post-section container-wide format-<?php echo $format;?>">
 
 <?php
-
+/*
 if($thumb_width > 1104) {
 ?>
     <div class="container-wide full-width-image">
@@ -59,7 +59,7 @@ if($thumb_width > 1104) {
       
     </div>
     
-<?php } else { ?>
+<?php } else { */?>
 
     <div class="container">
         <header class="flex-row entry-header-full">
@@ -86,7 +86,7 @@ if($thumb_width > 1104) {
         
     </div>
 
-<?php }?>
+<?php //}?>
     
 <div class="container">
 
