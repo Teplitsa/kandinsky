@@ -147,10 +147,10 @@ class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
         parent::__construct($imp);
         
         $this->cta_list = array(
-            'CTA_DONATE' => site_url('/donate/'),
+            'CTA_DONATE' => site_url('/howtohelp/'),
         );
         
-        $this->data_routes['theme_options']['knd_hero_image_support_url'] = get_permalink(get_page_by_path('donate'));
+        $this->data_routes['theme_options']['knd_hero_image_support_url'] = get_permalink(get_page_by_path('howtohelp'));
         $this->data_routes['theme_options']['knd_url_pd_policy'] = '#';
         $this->data_routes['theme_options']['knd_url_privacy_policy'] = '#';
         $this->data_routes['theme_options']['knd_url_public_oferta'] = '#';
@@ -230,6 +230,12 @@ class KND_Right2city_Data_Builder extends KND_Plot_Data_Builder {
                 'piece' => 'contacts',
                 'post_type' => 'page',
                 'post_slug' => 'contacts',
+            ),
+            array(
+                'section' => '',
+                'piece' => 'petition',
+                'post_type' => 'page',
+                'post_slug' => 'petition',
             ),
         ),
         
@@ -336,10 +342,10 @@ class KND_Right2city_Data_Builder extends KND_Plot_Data_Builder {
         parent::__construct($imp);
     
         $this->cta_list = array(
-            'CTA_DONATE' => site_url('/donate/'),
+            'CTA_DONATE' => site_url('/petition/'),
         );
         
-        $this->data_routes['theme_options']['knd_hero_image_support_url'] = get_permalink(get_page_by_path('donate'));
+        $this->data_routes['theme_options']['knd_hero_image_support_url'] = get_permalink(get_page_by_path('petition'));
         $this->data_routes['theme_options']['knd_url_pd_policy'] = '#';
         $this->data_routes['theme_options']['knd_url_privacy_policy'] = '#';
         $this->data_routes['theme_options']['knd_url_public_oferta'] = '#';
@@ -403,6 +409,12 @@ class KND_Withyou_Data_Builder extends KND_Plot_Data_Builder {
                 'piece' => 'reports',
                 'post_type' => 'page',
                 'post_slug' => 'reports',
+            ),
+            array(
+                'section' => '',
+                'piece' => 'donate',
+                'post_type' => 'page',
+                'post_slug' => 'donate',
             ),
         ),
         
