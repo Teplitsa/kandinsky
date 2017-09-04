@@ -2,70 +2,22 @@
 //Typography settings and mixins
 
 $modularscale: (
-    base: 11.5px,
+    base: 12px,
     ratio: 1.333,
 
     440px: (
-        base: 11.5px,
-    ),
-    768px: (
         base: 12px,
     ),
+    768px: (
+        base: 13px,
+    ),
     1024px: (
-        base: 13.5px,
+        base: 14px,
     ),
 );
 
-@mixin body-text-not-used($mod: default) {
-}
 
-@mixin body-text-double($mod: default) {
-    font-family: $body;
-    font-weight: 400;
-    letter-spacing: 0.02em;
 
-    @if $mod == three {
-        @include ms-respond(font-size, 3);
-        line-height: 1.2;
-    }
-    @else {
-        @include ms-respond(font-size, 2);
-        line-height: 1.333;
-    }
-    
-}
-
-@mixin top-link($mod: default) {
-    font-family: $body;
-    line-height: 20px;
-    text-transform: uppercase;
-
-    @if $mod == top {
-        font-size: 17px;
-        font-weight: 600;
-        letter-spacing: .03em;
-    }
-    @else if $mod == small {
-        font-size: 12px;
-        font-weight: 600;
-        letter-spacing: .03em;
-    }
-    @else {
-        font-size: 14px;
-        font-weight: 400;
-        letter-spacing: .02em;
-    }
-    
-}
-
-@mixin menu-link() {
-    font-family: $body;
-    @include ms-respond(font-size, 2);
-    font-weight: 400;
-    line-height: 1.33;
-    text-transform: uppercase;
-    letter-spacing: .02em;
-}
 
 @mixin post-title($mod: default) {
     @include knd-head-card-text();
@@ -97,38 +49,6 @@ $modularscale: (
     }
 }
 
-@mixin block-title($mod: default) {
-    font-family: $body;
-    line-height: 1.2;
-    text-transform: uppercase;
-    letter-spacing: .03em;
-
-    @if $mod == smaller {
-        @include ms-respond(font-size, 2);
-        font-weight: 600;
-    }
-    @else {
-        @include ms-respond(font-size, 3);
-        font-weight: 600;
-    }
-
-}
-
-@mixin label-text($mod: default) {
-    font-family: $body;
-    text-transform: uppercase;
-    line-height: 1.33;
-    letter-spacing: .03em;
-    @include ms-respond(font-size, 0);
-
-    @if $mod == bold {
-        font-weight: 600;
-    }
-    @else {
-        font-weight: 400;
-    }
-}
-
 @mixin small-text() {
     font-family: $body;
     font-size: 15px;
@@ -136,45 +56,11 @@ $modularscale: (
     line-height: 1.33;
 }
 
-@mixin term-title($mod: default) {
-    font-family: $body;
-    font-weight: 600;
-    line-height: 1.01;
-
-    @if $mod == secondary {
-        @include ms-respond(font-size, 5);
-    }
-    @else {
-        @include upto(small-screens) {
-            font-size: 2.5em;
-        }
-        
-        font-size: 3.2em;
-        text-transform: uppercase;
-        letter-spacing: .013em;
-        line-height: 1.05;
-    }
-}
-
-@mixin single-title() {
-    font-family: $body;
-    @include ms-respond(font-size, 4);
-    font-weight: 600;
-    line-height: 1.2;
-}
-
-@mixin form-text($mod : default) {
-    font-family: $body;
-    font-size: 1.45em;
-    line-height: 1.2;
-}
 
 /* 
  * Kandinsky common typo
  *
  */
-
-
  
 // headers
 
@@ -270,7 +156,7 @@ $modularscale: (
 @mixin knd-body-text() {
     @include ms-respond(font-size, 1);
     font-family: $body;
-    line-height: 1.44;
+    line-height: 1.55;
     font-weight: 400;
 }
 

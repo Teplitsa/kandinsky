@@ -261,17 +261,20 @@
     }
 }
 
-.knd-recommend {
 
+.the-content .knd-recommend,
+.knd-recommend {
+    font-family: Arial, serif !important;
     font-style: italic;
-    font-size: smaller;
-    padding: $base/3;
+    font-weight: normal !important;
+    letter-spacing: normal !important;
+    font-size: 14px;
+    line-height: 1.45;
+    color: #000;
+    padding: $base*.5 $base*.75;
     background-color: #f7f7af;
     margin: $base 0;
-    
-    .kng-img-mark & {
-        color: $color-text;
-    }
+    text-align: left !important;
 }
 
 
@@ -279,6 +282,8 @@
 
 //page with cards
 .intro-head-image {
+    position: relative;
+    z-index: 1;
 	@include vertical-image-header-fixed();
 	@include container-extended();
 	
@@ -305,6 +310,26 @@
 		@include for(large-screens) {
 			height: 580px;
 		}
+
+        .tpl-pictured-bg {
+            position: relative;
+            z-index: 1;
+
+            &:after {
+                content: '';
+                display: block;
+                width: 100%;
+                height: 100%;
+                z-index: 3;
+                position: absolute;
+                top: 0;
+                left: 0;
+                /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.32+0,1+100 */
+background: -moz-linear-gradient(top, rgba(0,0,0,0) 10%, rgba(0,0,0,.8) 100%); 
+background: -webkit-linear-gradient(top, rgba(0,0,0,0) 10%,rgba(0,0,0,.8) 100%); 
+background: linear-gradient(to bottom, rgba(0,0,0,0) 10%,rgba(0,0,0,.8) 100%); 
+            }
+        }
 	}
 }
 
@@ -318,7 +343,7 @@
 }
 
 .intro-head-content {
-    
+    z-index: 10;
 	.ihc-title {
         @include knd-head-large-text();
         color: $color-white;

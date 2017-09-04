@@ -330,6 +330,11 @@ $inpage-margin-base: 26px;
 		}
 	}
 
+	//pre
+	pre, code {
+		@include knd-body-text();
+		color: $color-text-black;
+	}
 }
 
 
