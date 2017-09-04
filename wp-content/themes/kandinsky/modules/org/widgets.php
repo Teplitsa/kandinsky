@@ -12,10 +12,13 @@ class KND_Org_Widget extends WP_Widget {
     public function widget($args, $instance) {
 
         $title = apply_filters('widget_title', empty($instance['title']) ? '' : $instance['title'], $instance, $this->id_base);
-        $num = empty($instance['num']) ? 5 : (int)$instance['num'];
+        $num = empty($instance['num']) ? 4 : (int)$instance['num'];
         $category = empty($instance['category']) ? '' : $instance['category'];
 
-        $this->print_widget($this->get_orgs($num, $category), $args, $title);
+        $orgs = $this->get_orgs($num, $category);
+        if(count($orgs)) {
+            $this->print_widget($orgs, $args, $title);
+        }
 
     }
 
@@ -34,7 +37,7 @@ class KND_Org_Widget extends WP_Widget {
 	public function form($instance) {
 
 		/* Set up some default widget settings */
-		$instance = wp_parse_args((array)$instance, array('title' => '', 'num' => 5, 'category' => '',));?>
+		$instance = wp_parse_args((array)$instance, array('title' => '', 'num' => 4, 'category' => '',));?>
 
 		<p>
 			<label for="<?php echo $this->get_field_id('title');?>"><?php _e('Title:', 'knd');?></label>
@@ -65,7 +68,7 @@ class KND_Org_Widget extends WP_Widget {
     public function get_orgs($num, $category = '') {
 
 	    if($num <= 0) {
-	        $num = 5;
+	        $num = 4;
 	    } elseif($num > 10) {
 	        $num = 10;
 	    }
