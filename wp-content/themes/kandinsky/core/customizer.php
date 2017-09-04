@@ -294,13 +294,67 @@ function knd_customize_register(WP_Customize_Manager $wp_customize) {
     ));
     
     $wp_customize->add_control('knd_hero_image_support_button_caption', array(
-        'type'     => 'textarea',
+        'type'     => 'text',
         'label'    => __('Action button caption', 'knd'),
         'section'  => 'static_front_page',
         'settings' => 'knd_hero_image_support_button_caption',
         'priority' => 55,
     ));
 
+    // cta options
+    $wp_customize->add_section('knd_cta_block_settings', array(
+        'priority' => 50,
+        'title' => __('CTA block settings', 'knd'),
+    ));
+    
+    $wp_customize->add_setting('cta-title', array(
+        'default'           => '',
+    ));
+    
+    $wp_customize->add_setting('cta-description', array(
+        'default'   => '',
+    ));
+    
+    $wp_customize->add_setting('cta-button-caption', array(
+        'default'   => '',
+    ));
+    
+    $wp_customize->add_setting('cta-url', array(
+        'default'   => '',
+    ));
+    
+    $wp_customize->add_control('cta-title', array(
+        'type'     => 'text',
+        'label'    => __('Call to action title', 'knd'),
+        'section'  => 'knd_cta_block_settings',
+        'settings' => 'cta-title',
+        'priority' => 40
+    ));
+    
+    $wp_customize->add_control('cta-url', array(
+        'type'     => 'text',
+        'label'    => __('Call to action URL', 'knd'),
+        'section'  => 'knd_cta_block_settings',
+        'settings' => 'cta-url',
+        'priority' => 45
+    ));
+    
+    $wp_customize->add_control('cta-description', array(
+        'type'     => 'textarea',
+        'label'    => __('Call to action text', 'knd'),
+        'section'  => 'knd_cta_block_settings',
+        'settings' => 'cta-description',
+        'priority' => 50
+    ));
+    
+    $wp_customize->add_control('cta-button-caption', array(
+        'type'     => 'text',
+        'label'    => __('Action button caption', 'knd'),
+        'section'  => 'knd_cta_block_settings',
+        'settings' => 'cta-button-caption',
+        'priority' => 55,
+    ));
+    
     // Social media links
     $wp_customize->add_section('knd_social_links', array(
         'priority' => 20,
