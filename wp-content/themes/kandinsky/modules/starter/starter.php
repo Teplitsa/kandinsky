@@ -54,12 +54,6 @@ function knd_setup_site_icon() {
 
 }
 
-function knd_setup_menus() {
-
-    KND_StarterSidebars::setup_footer_sidebar();
-
-}
-
 function knd_setup_starter_data($plot_name) {
     
     $imp = new KND_Import_Remote_Content($plot_name);
@@ -80,8 +74,6 @@ function knd_setup_starter_data($plot_name) {
     knd_update_posts();
 
     do_action('knd_save_demo_content');
-
-    knd_setup_menus();  // all menus except main nav menu
 
     knd_setup_site_icon();
 }

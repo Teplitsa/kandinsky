@@ -56,6 +56,7 @@ class KND_Plot_Data_Builder {
         $this->build_title_and_description();
         $this->build_theme_files();
         $this->build_option_files();
+        $this->build_theme_colors();
         $this->build_theme_options();
         $this->build_general_options();
         $this->build_menus();
@@ -531,17 +532,31 @@ class KND_Plot_Data_Builder {
     public function build_theme_options() {
         
 //         print_r($this->data_routes['theme_options']);
-
-        foreach($this->data_routes['theme_options'] as $theme_option_name => $theme_option_piece_data) {
+        $this->save_theme_options($this->data_routes['theme_options']);
         
+    }
+    
+    
+    public function build_theme_colors() {
+    
+        //         print_r($this->data_routes['theme_options']);
+        $this->save_theme_options($this->data_routes['theme_colors']);
+    
+    }
+    
+    public function save_theme_options($theme_options_list) {
+        
+//         print_r($theme_options_list);
+        foreach($theme_options_list as $theme_option_name => $theme_option_piece_data) {
+    
             if(is_array($theme_option_piece_data)) {
-                
+    
                 $piece = $theme_option_piece_data['piece'];
                 $field = isset($theme_option_piece_data['field']) ? $theme_option_piece_data['field'] : 'content';
                 $section = isset($theme_option_piece_data['section']) ? $theme_option_piece_data['section'] : '';
-                
+    
 //                 echo "<br />" . $section . " - " . $piece . ' - ' . $this->imp->get_val($piece, $field, $section) . "<br />";
-                
+    
                 set_theme_mod($theme_option_name, $this->imp->get_val($piece, $field, $section));
                 
             }
@@ -551,19 +566,21 @@ class KND_Plot_Data_Builder {
                 
             }
         }
-        
+    
     }
 
     public function build_general_options() {
         // header contacts
         $knd_address_phone = $this->data_routes['general_options']['knd_address_phone'];
-        update_option('text_in_header', nl2br(trim($knd_address_phone)));
+        set_theme_mod('text_in_header', trim($knd_address_phone));
     }
     
     public function build_sidebars() {
         
         $this->build_footer_sidebar();
         $this->build_configured_sidebar();
+        
+        KND_StarterSidebars::setup_footer_sidebar();
         
         global $wp_rewrite;
         $wp_rewrite->flush_rules( false );

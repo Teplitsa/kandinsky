@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-03 23:26+0200\n"
-"PO-Revision-Date: 2017-09-04 00:08+0200\n"
-"Last-Translator: ahaenor <ahaenor@gmail.com>\n"
+"POT-Creation-Date: 2017-09-04 21:58+0200\n"
+"PO-Revision-Date: 2017-09-04 22:02+0200\n"
+"Last-Translator: sidorenko.a <sidorenko.a@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
 "MIME-Version: 1.0\n"
@@ -152,7 +152,7 @@ msgid "Do not show"
 msgstr "Не показывать"
 
 #: core/customizer.php:137 vendor/envato_setup/envato_setup.php:391
-#: vendor/envato_setup/envato_setup.php:1527
+#: vendor/envato_setup/envato_setup.php:1528
 msgid "Logo"
 msgstr "Логотип"
 
@@ -530,7 +530,7 @@ msgstr ""
 
 #: core/shortcodes-ui.php:85
 msgid "CTA text"
-msgstr "Текст призыва к действию"
+msgstr "Призыв к действию"
 
 #: core/shortcodes-ui.php:98
 msgid "Link"
@@ -687,8 +687,8 @@ msgstr "Заголовок третьего столбца"
 msgid "Third column content"
 msgstr "Текст третьего столбца"
 
-#: core/shortcodes.php:141 header.php:61 modules/starter/plot_config.php:159
-#: modules/starter/plot_config.php:345 modules/starter/plot_config.php:501
+#: core/shortcodes.php:141 header.php:61 modules/starter/plot_config.php:163
+#: modules/starter/plot_config.php:361 modules/starter/plot_config.php:543
 msgid "Main menu"
 msgstr "Главное меню"
 
@@ -758,11 +758,11 @@ msgstr "Последние новости"
 
 #: core/template-tags.php:497
 msgid "Related project"
-msgstr ""
+msgstr "Проекты по теме"
 
 #: core/template-tags.php:516
 msgid "Help now"
-msgstr "Помочь сейчас"
+msgstr ""
 
 #: core/widgets.php:10
 msgid "Homepage sidebar"
@@ -782,11 +782,11 @@ msgstr "Блоки на странице архива новостей"
 
 #: core/widgets.php:30
 msgid "Projects archive sidebar"
-msgstr "Блоки на странице архива"
+msgstr "Блоки на странице архивов"
 
 #: core/widgets.php:32
 msgid "Projects archive custom content area"
-msgstr "Блоки на странице архива"
+msgstr "Блоки на странице архивов"
 
 #: core/widgets.php:40
 msgid "Footer custom columns"
@@ -820,7 +820,7 @@ msgstr "Помочь сейчас"
 
 #: modules/cta.php:8 modules/cta.php:17
 msgid "CTA block"
-msgstr "Блок призыва к действию"
+msgstr "Призыв к действию"
 
 #: modules/donations.php:62
 msgid "Please, set a text of comment to describe an additional ways to donate."
@@ -850,10 +850,10 @@ msgstr ""
 msgid "Monthly donation"
 msgstr "Перечислять ежемесячно"
 
-#: modules/news.php:7 modules/starter/plot_config.php:163
-#: modules/starter/plot_config.php:176 modules/starter/plot_config.php:191
-#: modules/starter/plot_config.php:348 modules/starter/plot_config.php:504
-#: modules/starter/plot_data_builder.php:153 modules/starter/sidebars.php:43
+#: modules/news.php:7 modules/starter/plot_config.php:167
+#: modules/starter/plot_config.php:180 modules/starter/plot_config.php:195
+#: modules/starter/plot_config.php:365 modules/starter/plot_config.php:547
+#: modules/starter/plot_data_builder.php:154 modules/starter/sidebars.php:43
 msgid "News"
 msgstr "Новости"
 
@@ -916,24 +916,24 @@ msgstr "Проекты"
 
 #: modules/project/widgets.php:8
 msgid "Projects short list"
-msgstr "Проекты"
+msgstr "Блоки проектов"
 
-#: modules/project/widgets.php:58 modules/starter/plot_config.php:181
-#: modules/starter/plot_config.php:356 modules/starter/plot_config.php:514
+#: modules/project/widgets.php:58 modules/starter/plot_config.php:185
+#: modules/starter/plot_config.php:373 modules/starter/plot_config.php:556
 msgid "Kandinsky projects block menu"
-msgstr "Ссылки блока \"Проекты\""
+msgstr "Ссылки в блоке проектов"
 
-#: modules/starter/plot_config.php:169 modules/starter/plot_config.php:350
-#: modules/starter/plot_config.php:506 modules/starter/sidebars.php:14
+#: modules/starter/plot_config.php:173 modules/starter/plot_config.php:367
+#: modules/starter/plot_config.php:549 modules/starter/sidebars.php:14
 msgid "Kandinsky our work footer menu"
 msgstr "Меню \"наша работа\" в \"подвале\""
 
-#: modules/starter/plot_config.php:175 modules/starter/plot_config.php:353
-#: modules/starter/plot_config.php:510 modules/starter/sidebars.php:17
+#: modules/starter/plot_config.php:179 modules/starter/plot_config.php:370
+#: modules/starter/plot_config.php:553 modules/starter/sidebars.php:17
 msgid "Kandinsky news footer menu"
 msgstr "Меню \"новости\" в \"подвале\""
 
-#: modules/starter/plot_data_builder.php:147
+#: modules/starter/plot_data_builder.php:148
 msgid "Home page"
 msgstr "Главная"
 
@@ -1299,6 +1299,9 @@ msgid ""
 "Landing page for a typical non-profit. The template has legal information, "
 "projects, news, organization’s staff, partners."
 msgstr ""
+"Сайт-визитка типичной некоммерческой организации. Дана информация об "
+"организации, проектах, новостях, сотрудниках. Есть возможность связаться и "
+"записаться в волонтеры. "
 
 #: vendor/envato_setup/envato_setup.php:209
 msgid "Template – We Are With You"
@@ -1314,6 +1317,9 @@ msgid ""
 "basic information it includes integration with payment systems (Leyka "
 "plugin)."
 msgstr ""
+"Сайт благотворительного фонда, собирающего пожертвования от организаций и "
+"частных лиц. Помимо информации об организации, содержит интеграцию с "
+"платежными системами (плагин «Лейка»). "
 
 #: vendor/envato_setup/envato_setup.php:214
 msgid "Template – Protect Dubrovino! Campaign"
@@ -1328,6 +1334,8 @@ msgid ""
 "Urban activism campaign – it includes information on campaign (e.g. a "
 "campaign in defence of a local park), documents, call to sign a petition."
 msgstr ""
+"Сайт градозащитной кампании – содержит информацию о кампании (например, в "
+"защиту парка), экспертизу, призыв к подписанию петиции.  "
 
 #: vendor/envato_setup/envato_setup.php:375
 msgid "Introduction"
@@ -1335,7 +1343,7 @@ msgstr "Начало"
 
 #: vendor/envato_setup/envato_setup.php:381
 msgid "Template"
-msgstr ""
+msgstr "Шаблон"
 
 #: vendor/envato_setup/envato_setup.php:386
 msgid "Content"
@@ -1464,16 +1472,16 @@ msgstr ""
 
 #: vendor/envato_setup/envato_setup.php:731
 #: vendor/envato_setup/envato_setup.php:1486
-#: vendor/envato_setup/envato_setup.php:1547
-#: vendor/envato_setup/envato_setup.php:1614
+#: vendor/envato_setup/envato_setup.php:1548
+#: vendor/envato_setup/envato_setup.php:1615
 msgid "Continue"
 msgstr "Продолжить"
 
 #: vendor/envato_setup/envato_setup.php:734
 #: vendor/envato_setup/envato_setup.php:985
 #: vendor/envato_setup/envato_setup.php:1488
-#: vendor/envato_setup/envato_setup.php:1549
-#: vendor/envato_setup/envato_setup.php:1616
+#: vendor/envato_setup/envato_setup.php:1550
+#: vendor/envato_setup/envato_setup.php:1617
 msgid "Skip this step"
 msgstr "Пропустить шаг"
 
@@ -1618,7 +1626,7 @@ msgstr ""
 
 #: vendor/envato_setup/envato_setup.php:1460
 msgid "Choose website template"
-msgstr ""
+msgstr "Выберите шаблон сайта"
 
 #: vendor/envato_setup/envato_setup.php:1462
 msgid ""
@@ -1626,8 +1634,11 @@ msgid ""
 "one that you fits you best. You will be able to change colours, content "
 "(text and images)."
 msgstr ""
+"Для вашего удобства мы сделали несколько шаблонов сайтов НКО. Выберите тот, "
+"который лучше всего вам подходит. Цвета, содержание (текст и фотографии) "
+"можно менять. "
 
-#: vendor/envato_setup/envato_setup.php:1530
+#: vendor/envato_setup/envato_setup.php:1531
 msgid ""
 "Please add your organization main logo below. The recommended size is "
 "<strong>315 x 66 px</strong> (for \"Image only\" mode) and <strong>66 x 66 "
@@ -1638,30 +1649,30 @@ msgstr ""
 "<strong>315 x 66 пикс.</strong> (для режима «только изображение») и "
 "<strong>66 x 66 пикс.</strong> (для режима «изображение и название сайта»)."
 
-#: vendor/envato_setup/envato_setup.php:1532
+#: vendor/envato_setup/envato_setup.php:1533
 #, php-format
 msgid "Try our %sPaseka program%s if you need a new logo designed."
 msgstr ""
 "Если вам нужен новый дизайн логотипа и фирменного стиля, вы можете найти "
 "исполнителя с помощью нашей %sпрограммы «Пасека»%s."
 
-#: vendor/envato_setup/envato_setup.php:1539
+#: vendor/envato_setup/envato_setup.php:1540
 msgid "Upload new logo"
 msgstr "Загрузить логотип"
 
-#: vendor/envato_setup/envato_setup.php:1578
+#: vendor/envato_setup/envato_setup.php:1579
 msgid "NGO settings"
 msgstr "Настройки организации"
 
-#: vendor/envato_setup/envato_setup.php:1583
+#: vendor/envato_setup/envato_setup.php:1584
 msgid "The website title"
 msgstr "Название сайта"
 
-#: vendor/envato_setup/envato_setup.php:1588
+#: vendor/envato_setup/envato_setup.php:1589
 msgid "The website description"
 msgstr "Описание сайта"
 
-#: vendor/envato_setup/envato_setup.php:1591
+#: vendor/envato_setup/envato_setup.php:1592
 msgid ""
 "Please add your site icon below. The recommended size is <strong>64 x 64 px</"
 "strong>. The site icon can be changed at any time from the Appearance > "
@@ -1671,22 +1682,22 @@ msgstr ""
 "<strong>64 x 64 пикс</strong>. В будущем вы сможете изменить фавикон в "
 "административном разделе сайта, на странице «Внешний вид - Настроить»."
 
-#: vendor/envato_setup/envato_setup.php:1593
+#: vendor/envato_setup/envato_setup.php:1594
 #, php-format
 msgid "Try our %sPaseka program%s if you need a new site icon designed."
 msgstr ""
 "Если вам нужен новый дизайн favicon, вы можете найти исполнителя с помощью "
 "нашей %sпрограммы «Пасека»%s."
 
-#: vendor/envato_setup/envato_setup.php:1605
+#: vendor/envato_setup/envato_setup.php:1606
 msgid "Upload new site icon"
 msgstr "Загрузить favicon"
 
-#: vendor/envato_setup/envato_setup.php:1657
+#: vendor/envato_setup/envato_setup.php:1658
 msgid "Help and support"
 msgstr "Помощь и поддержка"
 
-#: vendor/envato_setup/envato_setup.php:1660
+#: vendor/envato_setup/envato_setup.php:1661
 #, php-format
 msgid ""
 "Thank you for using “Kandinsky” theme on your website.<br>“Kandinsky” — is a "
@@ -1699,7 +1710,7 @@ msgstr ""
 "поддерживается <a href=\"%s\" target=\"_blank\">Теплицей социальных "
 "технологий</a> и сообществом независимых разработчиков."
 
-#: vendor/envato_setup/envato_setup.php:1662
+#: vendor/envato_setup/envato_setup.php:1663
 msgid ""
 "In case you encounter any questions or issues, we recommend you the "
 "following links:"
@@ -1707,7 +1718,7 @@ msgstr ""
 "Если вы столкнулись с какими-либо проблемами или вопросами, мы рекомендуем "
 "следующие ссылки:"
 
-#: vendor/envato_setup/envato_setup.php:1664
+#: vendor/envato_setup/envato_setup.php:1665
 msgid ""
 "Documentation and FAQ — <a href=\"https://github.com/Teplitsa/kandinsky/wiki/"
 "\" target=\"_blank\">GitHub Wiki</a>"
@@ -1715,7 +1726,7 @@ msgstr ""
 "Документация и FAQ темы — <a href=\"https://github.com/Teplitsa/kandinsky/"
 "wiki/\" target=\"_blank\">GitHub Wiki</a>"
 
-#: vendor/envato_setup/envato_setup.php:1665
+#: vendor/envato_setup/envato_setup.php:1666
 msgid ""
 "Source code — <a href=\"https://github.com/Teplitsa/kandinsky/\" target="
 "\"_blank\">GitHub</a>"
@@ -1723,7 +1734,7 @@ msgstr ""
 "Исходный код темы — <a href=\"https://github.com/Teplitsa/kandinsky/\" "
 "target=\"_blank\">GitHub</a>"
 
-#: vendor/envato_setup/envato_setup.php:1666
+#: vendor/envato_setup/envato_setup.php:1667
 msgid ""
 "Developers’ <a href=\"https://t.me/joinchat/AAAAAENN3prSrvAs7KwWrg"
 "\">Telegram-channel</a> (in Russian)"
@@ -1731,7 +1742,7 @@ msgstr ""
 "<a href=\"https://t.me/joinchat/AAAAAENN3prSrvAs7KwWrg\">Telegram-канал</a> "
 "разработчиков темы"
 
-#: vendor/envato_setup/envato_setup.php:1668
+#: vendor/envato_setup/envato_setup.php:1669
 msgid ""
 "If you need personalized (free during the testing period) consultations from "
 "the theme developers, please feel free to write at <a href=\"mailto:"
@@ -1744,15 +1755,15 @@ msgstr ""
 "\"_blank\">support@te-st.ru</a> или <a href=\"https://github.com/Teplitsa/"
 "kandinsky/issues/\" target=\"_blank\">добавьте тикет на GitHub</a>."
 
-#: vendor/envato_setup/envato_setup.php:1671
+#: vendor/envato_setup/envato_setup.php:1672
 msgid "OK, I've got it!"
 msgstr "Понятно!"
 
-#: vendor/envato_setup/envato_setup.php:1681
+#: vendor/envato_setup/envato_setup.php:1682
 msgid "Yay! Your website is ready!"
 msgstr "Ура! Ваш сайт готов!"
 
-#: vendor/envato_setup/envato_setup.php:1683
+#: vendor/envato_setup/envato_setup.php:1684
 msgid ""
 "Congratulations! You’re doing really good #success! You’ve successfully "
 "installed and set up your Kandinsky theme. You need, however, to do a little "
@@ -1761,7 +1772,7 @@ msgstr ""
 "Поздравляем! Вам все удалось #успех! Вы установили и частично настроили ваш "
 "новый сайт! На этом работа не заканчивается."
 
-#: vendor/envato_setup/envato_setup.php:1684
+#: vendor/envato_setup/envato_setup.php:1685
 msgid ""
 "As a part of the installation process, we’ve added some test content of an "
 "imaginary organization that you will need to edit (we’ve provided the "
@@ -1771,7 +1782,7 @@ msgstr ""
 "вымышленной организации, которые теперь нужно отредактировать (в тексте даны "
 "наши рекомендации)."
 
-#: vendor/envato_setup/envato_setup.php:1685
+#: vendor/envato_setup/envato_setup.php:1686
 msgid ""
 "Moreover, you need to set up few additional plug-ins for the optimal work of "
 "your site (don’t worry, our recommendations will help you)."
@@ -1779,82 +1790,30 @@ msgstr ""
 "Кроме того, необходимо настроить ряд плагинов для оптимальной работы (не "
 "волнуйтесь, мы вам поможем)."
 
-#: vendor/envato_setup/envato_setup.php:1692
+#: vendor/envato_setup/envato_setup.php:1693
 msgid "Continue the set-up"
 msgstr "Перейти к подробной настройке"
 
-#: vendor/envato_setup/envato_setup.php:1697
+#: vendor/envato_setup/envato_setup.php:1698
 msgid "View your new website!"
 msgstr "Посмотреть на новый сайт"
 
-#: vendor/envato_setup/envato_setup.php:1703
+#: vendor/envato_setup/envato_setup.php:1704
 msgid "#success"
 msgstr "#успех"
 
-#~ msgid "Events"
-#~ msgstr "Мероприятия"
-
-#~ msgid "Fullwidth"
-#~ msgstr "Полная ширина"
-
-#~ msgid "The beautiful design and useful features for nonprofit website"
-#~ msgstr "Стильный дизайн и полезные функции для сайта НКО"
-
-#~ msgid "Teplitsa"
-#~ msgstr "Теплица"
-
-#~ msgid "https://te-st.ru/"
-#~ msgstr "https://te-st.ru/"
-
-#~ msgid "Shortcake Richtext"
-#~ msgstr "Shortcake Richtext"
-
-#~ msgid "Rich text fields for shortcodes UI."
-#~ msgstr ""
-#~ "Возможности форматирования текстовых элементов для плагина Shortcake."
-
-#~ msgid "Homepage widgets"
-#~ msgstr "Виджеты главной"
-
 #~ msgid "Our organization «Color Line»"
-#~ msgstr "Наша организация «Линия Цвета»"
+#~ msgstr "Благотворительная организация «Линия цвета»"
 
 #~ msgid ""
 #~ "We have been helping people with alcoholism in our city over 10 years<br /"
 #~ ">by organizing rehabilitation programs."
 #~ msgstr ""
-#~ "Более 10 лет мы помогаем людям, страдающим алкоголизмом в нашем городе\n"
-#~ "<br/>\n"
-#~ "организуя реабилитационные программы."
+#~ "Более 10 лет мы помогаем людям, страдающим алкоголизмом в нашем городе, "
+#~ "<br />организуя реабилитационные программы и группы"
 
-#~ msgid "Color Line"
-#~ msgstr "Линия цвета"
+#~ msgid "Teplitsa"
+#~ msgstr "Теплица социальных технологий"
 
-#~ msgid "An example of a social problem oriented charity organization."
-#~ msgstr ""
-#~ "Сайт для организации, ориентированной на решение конкретной проблемы "
-#~ "(например, борьбу с алкоголизмом)."
-
-#~ msgid "We Are With You"
-#~ msgstr "Мы с тобой"
-
-#~ msgid "An example of a crowdfunding oriented charity organization."
-#~ msgstr ""
-#~ "Сайт для организации, ориентированной на сбор средств (например, на "
-#~ "оплату лечения бенефициаров)."
-
-#~ msgid "Protect Dubrovino!"
-#~ msgstr "Защитим Дубровино!"
-
-#~ msgid ""
-#~ "An example of a public campaign to protect a park from deconstruction."
-#~ msgstr "Сайт, посвящённый кампании по гражданскому активизму."
-
-#~ msgid "Scenario"
-#~ msgstr "Сценарий"
-
-#~ msgid "Website scenario"
-#~ msgstr "Выберите шаблон сайта"
-
-#~ msgid "Please choose your website scenario."
-#~ msgstr "Пожалуйста, выберите, о чём будет этот сайт."
+#~ msgid "https://te-st.ru/"
+#~ msgstr "https://te-st.ru/"
