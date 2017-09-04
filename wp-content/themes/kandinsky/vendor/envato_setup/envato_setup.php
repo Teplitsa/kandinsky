@@ -861,12 +861,8 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
             
             $pdb = KND_Plot_Data_Builder::produce_builder($imp);
             
-//             $pdb->build_theme_files();
-//             $pdb->build_option_files();
-            
             $pdb->build_theme_options();
             $pdb->build_general_options();
-            $pdb->build_sidebars();
             
             return true;
 
@@ -879,6 +875,7 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
             
             $pdb = KND_Plot_Data_Builder::produce_builder($imp);
             $pdb->build_menus();
+            $pdb->build_sidebars();
             
             return true;
 

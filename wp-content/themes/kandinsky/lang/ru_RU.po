@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-04 21:58+0200\n"
-"PO-Revision-Date: 2017-09-04 22:02+0200\n"
+"POT-Creation-Date: 2017-09-04 22:22+0200\n"
+"PO-Revision-Date: 2017-09-04 22:23+0200\n"
 "Last-Translator: sidorenko.a <sidorenko.a@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -127,36 +127,56 @@ msgstr "Текст заголовка"
 msgid "Decoration Basics"
 msgstr "Оформление"
 
-#: core/customizer.php:110
+#: core/customizer.php:135
 msgid "Main Color"
 msgstr "Основной цвет"
 
-#: core/customizer.php:120
+#: core/customizer.php:147
+msgid "Second Color"
+msgstr "Второй цвет"
+
+#: core/customizer.php:159
+msgid "Third Color"
+msgstr "Третий цвет"
+
+#: core/customizer.php:171
+msgid "First Text Color"
+msgstr "Первый цвет текста"
+
+#: core/customizer.php:183
+msgid "Second Text Color"
+msgstr "Второй цвет текста"
+
+#: core/customizer.php:195
+msgid "Third Text Color"
+msgstr "Третий цвет текста"
+
+#: core/customizer.php:204
 msgid "Logo mode"
 msgstr "Режим отображения логотипа"
 
-#: core/customizer.php:125
+#: core/customizer.php:209
 msgid "Image only"
 msgstr "Только изображение"
 
-#: core/customizer.php:126
+#: core/customizer.php:210
 msgid "Image with site name"
 msgstr "Изображение и название сайта"
 
-#: core/customizer.php:127
+#: core/customizer.php:211
 msgid "Site name only"
 msgstr "Только название сайта"
 
-#: core/customizer.php:128
+#: core/customizer.php:212
 msgid "Do not show"
 msgstr "Не показывать"
 
-#: core/customizer.php:137 vendor/envato_setup/envato_setup.php:391
-#: vendor/envato_setup/envato_setup.php:1528
+#: core/customizer.php:221 vendor/envato_setup/envato_setup.php:391
+#: vendor/envato_setup/envato_setup.php:1527
 msgid "Logo"
 msgstr "Логотип"
 
-#: core/customizer.php:138
+#: core/customizer.php:222
 msgid ""
 "Recommended size 315x66px for Image only mode and 66x66px for Image with "
 "site name"
@@ -164,35 +184,35 @@ msgstr ""
 "Рекомендуемые размеры 315x66px для режима «Только изображение» и 66x66px для "
 "режима «Изображение и название сайта»"
 
-#: core/customizer.php:176
+#: core/customizer.php:260
 msgid "Hero Image"
 msgstr "Заглавное изображение"
 
-#: core/customizer.php:177
+#: core/customizer.php:261
 msgid "Recommended size 1400x656px"
 msgstr "Рекомендуемый размер: 1400х656 пикс."
 
-#: core/customizer.php:190
+#: core/customizer.php:274
 msgid "Call to action title"
 msgstr "Заголовок \"призыва к действию\""
 
-#: core/customizer.php:198
+#: core/customizer.php:282
 msgid "Call to action URL"
 msgstr "Ссылка на действие"
 
-#: core/customizer.php:206
+#: core/customizer.php:290
 msgid "Call to action text"
 msgstr "Текст \"призыва к действию\""
 
-#: core/customizer.php:214
+#: core/customizer.php:298
 msgid "Action button caption"
 msgstr "Текст на кнопке действия"
 
-#: core/customizer.php:223
+#: core/customizer.php:307
 msgid "Social networks links"
 msgstr "Ссылки на социальные сети"
 
-#: core/customizer.php:254
+#: core/customizer.php:338
 msgid "Recommended plugins to install"
 msgstr "Рекомендуем установить плагины"
 
@@ -504,7 +524,7 @@ msgstr "Подзаголовок"
 msgid "Image section"
 msgstr ""
 
-#: core/shortcodes-ui.php:46 vendor/envato_setup/envato_setup.php:956
+#: core/shortcodes-ui.php:46 vendor/envato_setup/envato_setup.php:955
 msgid "Description"
 msgstr "Описание"
 
@@ -1155,7 +1175,7 @@ msgid "Version"
 msgstr ""
 
 #: vendor/class-tgm-plugin-activation.php:2543
-#: vendor/envato_setup/envato_setup.php:957
+#: vendor/envato_setup/envato_setup.php:956
 msgid "Status"
 msgstr "Статус"
 
@@ -1350,7 +1370,7 @@ msgid "Content"
 msgstr "Контент"
 
 #: vendor/envato_setup/envato_setup.php:396
-#: vendor/envato_setup/envato_setup.php:920
+#: vendor/envato_setup/envato_setup.php:919
 msgid "Settings"
 msgstr "Параметры"
 
@@ -1471,17 +1491,17 @@ msgstr ""
 "пойдем дальше."
 
 #: vendor/envato_setup/envato_setup.php:731
-#: vendor/envato_setup/envato_setup.php:1486
-#: vendor/envato_setup/envato_setup.php:1548
-#: vendor/envato_setup/envato_setup.php:1615
+#: vendor/envato_setup/envato_setup.php:1485
+#: vendor/envato_setup/envato_setup.php:1547
+#: vendor/envato_setup/envato_setup.php:1614
 msgid "Continue"
 msgstr "Продолжить"
 
 #: vendor/envato_setup/envato_setup.php:734
-#: vendor/envato_setup/envato_setup.php:985
-#: vendor/envato_setup/envato_setup.php:1488
-#: vendor/envato_setup/envato_setup.php:1550
-#: vendor/envato_setup/envato_setup.php:1617
+#: vendor/envato_setup/envato_setup.php:984
+#: vendor/envato_setup/envato_setup.php:1487
+#: vendor/envato_setup/envato_setup.php:1549
+#: vendor/envato_setup/envato_setup.php:1616
 msgid "Skip this step"
 msgstr "Пропустить шаг"
 
@@ -1505,71 +1525,71 @@ msgstr "Установка плагина"
 msgid "Success"
 msgstr "Успех"
 
-#: vendor/envato_setup/envato_setup.php:893
+#: vendor/envato_setup/envato_setup.php:892
 msgid "Website title and description"
 msgstr "Название и описание сайта"
 
-#: vendor/envato_setup/envato_setup.php:894
+#: vendor/envato_setup/envato_setup.php:893
 msgid "Insert default website title and description as seen in the demo."
 msgstr "Укажите название и краткое описание сайта."
+
+#: vendor/envato_setup/envato_setup.php:894
+#: vendor/envato_setup/envato_setup.php:903
+#: vendor/envato_setup/envato_setup.php:912
+#: vendor/envato_setup/envato_setup.php:921
+#: vendor/envato_setup/envato_setup.php:930
+msgid "Pending"
+msgstr "Отложено"
 
 #: vendor/envato_setup/envato_setup.php:895
 #: vendor/envato_setup/envato_setup.php:904
 #: vendor/envato_setup/envato_setup.php:913
 #: vendor/envato_setup/envato_setup.php:922
 #: vendor/envato_setup/envato_setup.php:931
-msgid "Pending"
-msgstr "Отложено"
+msgid "Installing..."
+msgstr "Установка..."
 
 #: vendor/envato_setup/envato_setup.php:896
 #: vendor/envato_setup/envato_setup.php:905
 #: vendor/envato_setup/envato_setup.php:914
 #: vendor/envato_setup/envato_setup.php:923
 #: vendor/envato_setup/envato_setup.php:932
-msgid "Installing..."
-msgstr "Установка..."
-
-#: vendor/envato_setup/envato_setup.php:897
-#: vendor/envato_setup/envato_setup.php:906
-#: vendor/envato_setup/envato_setup.php:915
-#: vendor/envato_setup/envato_setup.php:924
-#: vendor/envato_setup/envato_setup.php:933
 msgid "Success!"
 msgstr "Успех!"
 
-#: vendor/envato_setup/envato_setup.php:902
+#: vendor/envato_setup/envato_setup.php:901
 msgid "Pages"
 msgstr "Страницы"
 
-#: vendor/envato_setup/envato_setup.php:903
+#: vendor/envato_setup/envato_setup.php:902
 msgid "Insert default website pages as seen in the demo."
 msgstr "Набор демонстрационных страниц"
 
-#: vendor/envato_setup/envato_setup.php:911
+#: vendor/envato_setup/envato_setup.php:910
 msgid "Posts"
 msgstr "Записи"
 
-#: vendor/envato_setup/envato_setup.php:912
+#: vendor/envato_setup/envato_setup.php:911
 msgid "Insert default website posts as seen in the demo."
 msgstr "Набор демонстрационных записей"
 
-#: vendor/envato_setup/envato_setup.php:921
+#: vendor/envato_setup/envato_setup.php:920
 msgid "Insert default website settings as seen in the demo."
 msgstr "Набор демонстрационных значений параметров сайта"
 
-#: vendor/envato_setup/envato_setup.php:929
+#: vendor/envato_setup/envato_setup.php:928
 msgid "Menu"
 msgstr "Меню"
 
-#: vendor/envato_setup/envato_setup.php:930
+#: vendor/envato_setup/envato_setup.php:929
 msgid "Insert default website menu as seen in the demo."
 msgstr "Набор демонстрационных меню"
 
-#: vendor/envato_setup/envato_setup.php:944
+#: vendor/envato_setup/envato_setup.php:943
 msgid "Theme default content"
 msgstr "Демонстрационный контент сайта"
 
-#: vendor/envato_setup/envato_setup.php:947
+#: vendor/envato_setup/envato_setup.php:946
 msgid ""
 "It looks like you already have content installed on this website. If you "
 "would like to install the default demo content as well you can select it "
@@ -1579,7 +1599,7 @@ msgstr ""
 "Кажется, на сайте уже есть контент. Если вы хотите также добавить и "
 "демонстрационный контент, выберите нужные вам фрагменты ниже."
 
-#: vendor/envato_setup/envato_setup.php:949
+#: vendor/envato_setup/envato_setup.php:948
 msgid ""
 "It's time to insert some default content for your new WordPress website. "
 "Choose what you would like inserted below and click Install. We recommend to "
@@ -1591,44 +1611,44 @@ msgstr ""
 "Позже вы сможете изменить или удалить добавленный контент в административном "
 "разделе сайта."
 
-#: vendor/envato_setup/envato_setup.php:955
+#: vendor/envato_setup/envato_setup.php:954
 msgid "Item"
 msgstr "Тип"
 
-#: vendor/envato_setup/envato_setup.php:982
+#: vendor/envato_setup/envato_setup.php:981
 msgid "Set up"
 msgstr "Настроить"
 
-#: vendor/envato_setup/envato_setup.php:1001
+#: vendor/envato_setup/envato_setup.php:1000
 msgid "No content Found"
 msgstr "Контент не найден :("
 
-#: vendor/envato_setup/envato_setup.php:1066
+#: vendor/envato_setup/envato_setup.php:1065
 msgid "Error"
 msgstr "Ошибка"
 
-#: vendor/envato_setup/envato_setup.php:1319
+#: vendor/envato_setup/envato_setup.php:1318
 msgid "Remote server did not respond"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1327
+#: vendor/envato_setup/envato_setup.php:1326
 msgid "Remote file is incorrect size"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1333
+#: vendor/envato_setup/envato_setup.php:1332
 msgid "Zero size file downloaded"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1339
+#: vendor/envato_setup/envato_setup.php:1338
 #, php-format
 msgid "Remote file is too large, limit is %s"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1460
+#: vendor/envato_setup/envato_setup.php:1459
 msgid "Choose website template"
 msgstr "Выберите шаблон сайта"
 
-#: vendor/envato_setup/envato_setup.php:1462
+#: vendor/envato_setup/envato_setup.php:1461
 msgid ""
 "For your convenience, we’ve created several templates for NGOs. Select the "
 "one that you fits you best. You will be able to change colours, content "
@@ -1638,7 +1658,7 @@ msgstr ""
 "который лучше всего вам подходит. Цвета, содержание (текст и фотографии) "
 "можно менять. "
 
-#: vendor/envato_setup/envato_setup.php:1531
+#: vendor/envato_setup/envato_setup.php:1530
 msgid ""
 "Please add your organization main logo below. The recommended size is "
 "<strong>315 x 66 px</strong> (for \"Image only\" mode) and <strong>66 x 66 "
@@ -1649,30 +1669,30 @@ msgstr ""
 "<strong>315 x 66 пикс.</strong> (для режима «только изображение») и "
 "<strong>66 x 66 пикс.</strong> (для режима «изображение и название сайта»)."
 
-#: vendor/envato_setup/envato_setup.php:1533
+#: vendor/envato_setup/envato_setup.php:1532
 #, php-format
 msgid "Try our %sPaseka program%s if you need a new logo designed."
 msgstr ""
 "Если вам нужен новый дизайн логотипа и фирменного стиля, вы можете найти "
 "исполнителя с помощью нашей %sпрограммы «Пасека»%s."
 
-#: vendor/envato_setup/envato_setup.php:1540
+#: vendor/envato_setup/envato_setup.php:1539
 msgid "Upload new logo"
 msgstr "Загрузить логотип"
 
-#: vendor/envato_setup/envato_setup.php:1579
+#: vendor/envato_setup/envato_setup.php:1578
 msgid "NGO settings"
 msgstr "Настройки организации"
 
-#: vendor/envato_setup/envato_setup.php:1584
+#: vendor/envato_setup/envato_setup.php:1583
 msgid "The website title"
 msgstr "Название сайта"
 
-#: vendor/envato_setup/envato_setup.php:1589
+#: vendor/envato_setup/envato_setup.php:1588
 msgid "The website description"
 msgstr "Описание сайта"
 
-#: vendor/envato_setup/envato_setup.php:1592
+#: vendor/envato_setup/envato_setup.php:1591
 msgid ""
 "Please add your site icon below. The recommended size is <strong>64 x 64 px</"
 "strong>. The site icon can be changed at any time from the Appearance > "
@@ -1682,22 +1702,22 @@ msgstr ""
 "<strong>64 x 64 пикс</strong>. В будущем вы сможете изменить фавикон в "
 "административном разделе сайта, на странице «Внешний вид - Настроить»."
 
-#: vendor/envato_setup/envato_setup.php:1594
+#: vendor/envato_setup/envato_setup.php:1593
 #, php-format
 msgid "Try our %sPaseka program%s if you need a new site icon designed."
 msgstr ""
 "Если вам нужен новый дизайн favicon, вы можете найти исполнителя с помощью "
 "нашей %sпрограммы «Пасека»%s."
 
-#: vendor/envato_setup/envato_setup.php:1606
+#: vendor/envato_setup/envato_setup.php:1605
 msgid "Upload new site icon"
 msgstr "Загрузить favicon"
 
-#: vendor/envato_setup/envato_setup.php:1658
+#: vendor/envato_setup/envato_setup.php:1657
 msgid "Help and support"
 msgstr "Помощь и поддержка"
 
-#: vendor/envato_setup/envato_setup.php:1661
+#: vendor/envato_setup/envato_setup.php:1660
 #, php-format
 msgid ""
 "Thank you for using “Kandinsky” theme on your website.<br>“Kandinsky” — is a "
@@ -1710,7 +1730,7 @@ msgstr ""
 "поддерживается <a href=\"%s\" target=\"_blank\">Теплицей социальных "
 "технологий</a> и сообществом независимых разработчиков."
 
-#: vendor/envato_setup/envato_setup.php:1663
+#: vendor/envato_setup/envato_setup.php:1662
 msgid ""
 "In case you encounter any questions or issues, we recommend you the "
 "following links:"
@@ -1718,7 +1738,7 @@ msgstr ""
 "Если вы столкнулись с какими-либо проблемами или вопросами, мы рекомендуем "
 "следующие ссылки:"
 
-#: vendor/envato_setup/envato_setup.php:1665
+#: vendor/envato_setup/envato_setup.php:1664
 msgid ""
 "Documentation and FAQ — <a href=\"https://github.com/Teplitsa/kandinsky/wiki/"
 "\" target=\"_blank\">GitHub Wiki</a>"
@@ -1726,7 +1746,7 @@ msgstr ""
 "Документация и FAQ темы — <a href=\"https://github.com/Teplitsa/kandinsky/"
 "wiki/\" target=\"_blank\">GitHub Wiki</a>"
 
-#: vendor/envato_setup/envato_setup.php:1666
+#: vendor/envato_setup/envato_setup.php:1665
 msgid ""
 "Source code — <a href=\"https://github.com/Teplitsa/kandinsky/\" target="
 "\"_blank\">GitHub</a>"
@@ -1734,7 +1754,7 @@ msgstr ""
 "Исходный код темы — <a href=\"https://github.com/Teplitsa/kandinsky/\" "
 "target=\"_blank\">GitHub</a>"
 
-#: vendor/envato_setup/envato_setup.php:1667
+#: vendor/envato_setup/envato_setup.php:1666
 msgid ""
 "Developers’ <a href=\"https://t.me/joinchat/AAAAAENN3prSrvAs7KwWrg"
 "\">Telegram-channel</a> (in Russian)"
@@ -1742,7 +1762,7 @@ msgstr ""
 "<a href=\"https://t.me/joinchat/AAAAAENN3prSrvAs7KwWrg\">Telegram-канал</a> "
 "разработчиков темы"
 
-#: vendor/envato_setup/envato_setup.php:1669
+#: vendor/envato_setup/envato_setup.php:1668
 msgid ""
 "If you need personalized (free during the testing period) consultations from "
 "the theme developers, please feel free to write at <a href=\"mailto:"
@@ -1755,15 +1775,15 @@ msgstr ""
 "\"_blank\">support@te-st.ru</a> или <a href=\"https://github.com/Teplitsa/"
 "kandinsky/issues/\" target=\"_blank\">добавьте тикет на GitHub</a>."
 
-#: vendor/envato_setup/envato_setup.php:1672
+#: vendor/envato_setup/envato_setup.php:1671
 msgid "OK, I've got it!"
 msgstr "Понятно!"
 
-#: vendor/envato_setup/envato_setup.php:1682
+#: vendor/envato_setup/envato_setup.php:1681
 msgid "Yay! Your website is ready!"
 msgstr "Ура! Ваш сайт готов!"
 
-#: vendor/envato_setup/envato_setup.php:1684
+#: vendor/envato_setup/envato_setup.php:1683
 msgid ""
 "Congratulations! You’re doing really good #success! You’ve successfully "
 "installed and set up your Kandinsky theme. You need, however, to do a little "
@@ -1772,7 +1792,7 @@ msgstr ""
 "Поздравляем! Вам все удалось #успех! Вы установили и частично настроили ваш "
 "новый сайт! На этом работа не заканчивается."
 
-#: vendor/envato_setup/envato_setup.php:1685
+#: vendor/envato_setup/envato_setup.php:1684
 msgid ""
 "As a part of the installation process, we’ve added some test content of an "
 "imaginary organization that you will need to edit (we’ve provided the "
@@ -1782,7 +1802,7 @@ msgstr ""
 "вымышленной организации, которые теперь нужно отредактировать (в тексте даны "
 "наши рекомендации)."
 
-#: vendor/envato_setup/envato_setup.php:1686
+#: vendor/envato_setup/envato_setup.php:1685
 msgid ""
 "Moreover, you need to set up few additional plug-ins for the optimal work of "
 "your site (don’t worry, our recommendations will help you)."
@@ -1790,15 +1810,15 @@ msgstr ""
 "Кроме того, необходимо настроить ряд плагинов для оптимальной работы (не "
 "волнуйтесь, мы вам поможем)."
 
-#: vendor/envato_setup/envato_setup.php:1693
+#: vendor/envato_setup/envato_setup.php:1692
 msgid "Continue the set-up"
 msgstr "Перейти к подробной настройке"
 
-#: vendor/envato_setup/envato_setup.php:1698
+#: vendor/envato_setup/envato_setup.php:1697
 msgid "View your new website!"
 msgstr "Посмотреть на новый сайт"
 
-#: vendor/envato_setup/envato_setup.php:1704
+#: vendor/envato_setup/envato_setup.php:1703
 msgid "#success"
 msgstr "#успех"
 

@@ -90,9 +90,34 @@ function knd_customize_register(WP_Customize_Manager $wp_customize) {
 
     $wp_customize->add_setting('knd_main_color', array(
         'default'           => knd_get_deault_main_color(), 
-        'sanitize_callback' => 'sanitize_hex_color'        
+        'sanitize_callback' => 'sanitize_hex_color'
     ));
 
+    $wp_customize->add_setting('knd_color_second', array(
+        'default'           => knd_get_deault_main_color(),
+        'sanitize_callback' => 'sanitize_hex_color'
+    ));
+
+    $wp_customize->add_setting('knd_color_third', array(
+        'default'           => knd_get_deault_main_color(),
+        'sanitize_callback' => 'sanitize_hex_color'
+    ));
+    
+    $wp_customize->add_setting('knd_text1_color', array(
+        'default'           => '#000000',
+        'sanitize_callback' => 'sanitize_hex_color'
+    ));
+    
+    $wp_customize->add_setting('knd_text2_color', array(
+        'default'           => '#000000',
+        'sanitize_callback' => 'sanitize_hex_color'
+    ));
+    
+    $wp_customize->add_setting('knd_text3_color', array(
+        'default'           => '#000000',
+        'sanitize_callback' => 'sanitize_hex_color'
+    ));
+    
     $wp_customize->add_setting('knd_custom_logo', array(
         'default'           => '',
         'sanitize_callback' => 'absint'
@@ -103,18 +128,77 @@ function knd_customize_register(WP_Customize_Manager $wp_customize) {
     ));
 
     $wp_customize->add_control( 
-        new WP_Customize_Color_Control( 
-        $wp_customize, 
-        'knd_main_color', 
-            array(
-                'label'      => __( 'Main Color', 'knd' ),
-                'section'    => 'knd_decoration',
-                'settings'   => 'knd_main_color',
-                'priority'   => 10
-        )) 
-    );
+            new WP_Customize_Color_Control( 
+                    $wp_customize, 
+                    'knd_main_color', 
+                    array(
+                        'label'      => __( 'Main Color', 'knd' ),
+                        'section'    => 'knd_decoration',
+                        'settings'   => 'knd_main_color',
+                        'priority'   => 10
+                    )) 
+            );
 
-
+    $wp_customize->add_control(
+            new WP_Customize_Color_Control(
+                    $wp_customize,
+                    'knd_color_second',
+                    array(
+                        'label'      => __( 'Second Color', 'knd' ),
+                        'section'    => 'knd_decoration',
+                        'settings'   => 'knd_color_second',
+                        'priority'   => 11
+                    ))
+            );
+    
+    $wp_customize->add_control(
+            new WP_Customize_Color_Control(
+                    $wp_customize,
+                    'knd_color_third',
+                    array(
+                        'label'      => __( 'Third Color', 'knd' ),
+                        'section'    => 'knd_decoration',
+                        'settings'   => 'knd_color_third',
+                        'priority'   => 12
+                    ))
+            );
+    
+    $wp_customize->add_control(
+            new WP_Customize_Color_Control(
+                    $wp_customize,
+                    'knd_text1_color',
+                    array(
+                        'label'      => __( 'First Text Color', 'knd' ),
+                        'section'    => 'knd_decoration',
+                        'settings'   => 'knd_text1_color',
+                        'priority'   => 13
+                    ))
+            );
+    
+    $wp_customize->add_control(
+            new WP_Customize_Color_Control(
+                    $wp_customize,
+                    'knd_text2_color',
+                    array(
+                        'label'      => __( 'Second Text Color', 'knd' ),
+                        'section'    => 'knd_decoration',
+                        'settings'   => 'knd_text2_color',
+                        'priority'   => 14
+                    ))
+            );
+    
+    $wp_customize->add_control(
+            new WP_Customize_Color_Control(
+                    $wp_customize,
+                    'knd_text3_color',
+                    array(
+                        'label'      => __( 'Third Text Color', 'knd' ),
+                        'section'    => 'knd_decoration',
+                        'settings'   => 'knd_text3_color',
+                        'priority'   => 15
+                    ))
+            );
+    
     $wp_customize->add_control('knd_custom_logo_mod', array(
         'type'     => 'radio',       
         'label'    => __('Logo mode', 'knd'),
