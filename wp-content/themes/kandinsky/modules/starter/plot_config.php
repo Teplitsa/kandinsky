@@ -352,16 +352,12 @@ class KND_Right2city_Data_Builder extends KND_Plot_Data_Builder {
                 array('title' => __('News', 'knd'), 'url' => home_url('/news/') ),
             ),
             __( 'Kandinsky our work footer menu', 'knd' ) => array(
-                array('post_type' => 'page', 'slug' => 'volunteers' ),
                 array('post_type' => 'page', 'slug' => 'contacts' ),
             ),
             __( 'Kandinsky news footer menu', 'knd' ) => array(
                 array('post_type' => 'page', 'slug' => 'news' ),
             ),
             __( 'Kandinsky projects block menu', 'knd' ) => array(
-                array('title' => 'Все проекты', 'url' => home_url('/projects/') ),
-                array('post_type' => 'page', 'slug' => 'about' ),
-                array('post_type' => 'page', 'slug' => 'reports' ),
             ),
         );
         
@@ -396,10 +392,21 @@ class KND_Withyou_Data_Builder extends KND_Plot_Data_Builder {
     protected $data_routes = array(
     
         'pages' => array(
-        
+            array(
+                'section' => '',
+                'piece' => 'contacts',
+                'post_type' => 'page',
+                'post_slug' => 'contacts',
+            ),
+            array(
+                'section' => '',
+                'piece' => 'reports',
+                'post_type' => 'page',
+                'post_slug' => 'reports',
+            ),
         ),
         
-        'pages' => array(
+        'pages_templates' => array(
             'about' => array(
                 'template' => 'page-about',
                 'post_type' => 'page',
@@ -412,6 +419,10 @@ class KND_Withyou_Data_Builder extends KND_Plot_Data_Builder {
             'newsfeed' => array(
                 'post_type' => 'post',
                 'pieces' => array('news1', 'news2', 'news3', ),
+            ),
+            'programs' => array(
+                'post_type' => 'project',
+                'pieces' => array('program1', 'program2', 'program3', 'program4', ),
             ),
         ),
     
@@ -515,13 +526,11 @@ class KND_Withyou_Data_Builder extends KND_Plot_Data_Builder {
                 array('title' => __('News', 'knd'), 'url' => home_url('/news/') ),
             ),
             __( 'Kandinsky our work footer menu', 'knd' ) => array(
-                array('post_type' => 'page', 'slug' => 'volunteers' ),
                 array('post_type' => 'page', 'slug' => 'projects' ),
                 array('post_type' => 'page', 'slug' => 'contacts' ),
             ),
             __( 'Kandinsky news footer menu', 'knd' ) => array(
                 array('post_type' => 'page', 'slug' => 'news' ),
-                array('post_type' => 'page', 'slug' => 'reports' ),
             ),
             __( 'Kandinsky projects block menu', 'knd' ) => array(
                 array('title' => 'Все проекты', 'url' => home_url('/projects/') ),
