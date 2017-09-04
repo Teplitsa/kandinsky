@@ -31,7 +31,7 @@
 			</div>									
 			
 			<div class="trigger-button donate site-panel-cell hide-upto-medium">
-				<a id="trigger_donate"  href="<?php echo get_permalink( knd_get_post('donate', 'page') ) ?>"><?php _e( 'Donate', 'knd' ); ?></a>
+				<a id="trigger_donate"  href="<?php echo get_theme_mod('knd_hero_image_support_url') ?>"><?php _e( 'Donate', 'knd' ); ?></a>
 			</div>
 			
 			<div class="trigger-button menu site-panel-cell">
@@ -58,7 +58,7 @@
 		</div>
 		<?php
 			$after = '<span class="submenu-trigger">'.rdc_svg_icon('icon-up', false).rdc_svg_icon('icon-down', false).'</span>';
-			wp_nav_menu(array('theme_location' => 'primary', 'container' => false, 'menu_class' => 'main-menu', 'after' => $after));
+			wp_nav_menu(array('menu' => __('Main menu', 'knd'), 'theme_location' => 'primary', 'container' => false, 'menu_class' => 'main-menu', 'after' => $after));
 		?>
 		<div class="search-holder"><?php get_search_form();?></div>
 		<?php knd_social_links();?>

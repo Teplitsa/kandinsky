@@ -41,14 +41,22 @@ $color-bg-light:        	#eeeeee;
 
 :root {
 /*
-  --knd-color-main:         $color-blue;
-  --knd-color-main-dark:    darken($color-blue, 10%);
+    --knd-color-main:         $color-blue;
+    --knd-color-main-dark:    darken($color-blue, 10%);
+    
+    --knd-color-second:       $color-yellow;
+    --knd-color-second-dark:  darken($color-yellow, 10%);
+    
+    --knd-color-third:        $color-dark-bg;
+    --knd-color-third-dark:   darken($color-dark-bg, 10%);;
+    
+    --knd-text1-color:        #000000;
+    --knd-text2-color:        #000000;
+    --knd-text2-color-dark:   #000000;
+
+    --knd-text3-color:        #000000;
+    --knd-text3-color-dark:   #000000;
 */
-  
-  --knd-color-second:       $color-yellow;
-  --knd-color-second-dark:  darken($color-yellow, 10%);
-  
-  --knd-color-third:        $color-dark-bg;
 }
 
 //Variables of color scheme
@@ -57,9 +65,10 @@ $color-link-one:   var(--knd-color-main-dark); //hover state
 $color-link-two:   var(--knd-color-main-dark); //hover state 
 
 //others color variables - clear unused colors!!!
-$color-text:                #000000;
+$color-text:                var(--knd-text1-color);
 $color-white:               #ffffff;
-$color-text-black:			#000000;
+$color-text-white:			$color-white;
+$color-text-black:          #000000;
 $color-text-semi:			#666666;
 $color-text-light:			#999999;
 
@@ -73,6 +82,7 @@ $color-border-light:    #eeeeee;
 $color-border-link:     #eeeeee;
 $color-border-dark:     #5d5d5d;
 $color-form-invalid:    #ED1C24;
+$color-bg-dark-gray:    #353535;
 
 $leyka_green : #1DB318;
 

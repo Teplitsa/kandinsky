@@ -247,7 +247,6 @@ function knd_section_title() {
 	$css = '';
 	
 	if(is_category()){
-		
 		$p = get_post(get_option('page_for_posts'));
 		$title = get_the_title($p);
 		$title .= knd_get_sep('&mdash;');
@@ -255,7 +254,7 @@ function knd_section_title() {
 		$css = 'archive';
 	}
 	elseif(is_tag() || is_tax()){
-		$title = single_term_title('', false);
+	    $title = single_term_title('', false);
 		$css = 'archive';
 	}
 	elseif(is_home()){
@@ -266,6 +265,10 @@ function knd_section_title() {
 	elseif(is_post_type_archive('leyka_donation')){		
 		$title = __('Donations history', 'knd');
 		$css = 'archive';
+	}
+	elseif(is_post_type_archive('project')){
+	    $title = __('Our projects', 'knd');
+	    $css = 'archive';
 	}
 	elseif(is_search()){
 		$title = __('Search results', 'knd');
@@ -773,6 +776,10 @@ function knd_get_logo_img() {
 
 }
 
+function knd_get_content_image_markup($attachment_id) {
+    return wp_get_attachment_image($attachment_id, 'medium', false, array('alt' => ""));
+}
+
 
 function knd_logo_markup() {
 
@@ -873,18 +880,18 @@ function knd_show_cta_block() {
     
         <div class="container widget">
         
-            <h2>112 волонтеров помогают «Линии цвета» в настоящий момент</h2>
+            <h2><?php echo get_theme_mod('cta-title') ?></h2>
             
             <div class="flex-row knd-whoweare-headlike-text-wrapper">
             
                 <p class="knd-whoweare-headlike-text flex-mf-12 flex-sm-10">
-                Присоединяйтесь к команде волонтеров <br />и консультантов в наших проектах
+                <?php echo get_theme_mod('cta-description') ?>
                 </p>
                 
             </div>
             
             <div class="knd-cta-wrapper-wide">
-                <a class="cta" href="#">Стать волонтером</a>
+                <a class="cta" href="<?php echo get_theme_mod('cta-url') ?>"><?php echo get_theme_mod('cta-button-caption') ?></a>
             </div>
         
         </div>

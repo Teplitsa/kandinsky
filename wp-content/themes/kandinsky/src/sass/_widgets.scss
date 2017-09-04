@@ -268,6 +268,10 @@
     padding: $base/3;
     background-color: #f7f7af;
     margin: $base 0;
+    
+    .kng-img-mark & {
+        color: $color-text;
+    }
 }
 
 
@@ -495,12 +499,37 @@
 }
 
 /* homepage widgets */
-.knd-homepage-widgets {
+.knd-homepage-sidebar {
     padding-top: $gut;
     
     @include for(medium-screens) {
         padding-top: $gut * 1.8;
     }
+    
+    //border-top: 5px solid $color-border-dark;
+    
+    img {
+        @include widget-content-style();
+    }
+    
+    .textwidget {
+        @extend .container;
+        text-align:center;
+        margin-bottom: $gut;
+    }
+    
+    body.home.plot-public-campaign & {
+        background: var(--knd-color-main);
+        color: $color-text;
+    }
+    
+}
+
+.knd-archive-sidebar {
+    @extend .knd-homepage-sidebar;
+    background: $color-bg-light;
+    
+    padding-top: $gut * 1.2;
 }
 
 /* news widget */
@@ -508,6 +537,10 @@
     
     padding: 54px 0px 0px 0px;
     background: $color-bg-light;
+    
+    body.plot-public-campaign & {
+        background: var(--knd-color-third);
+    }
     
     h2.section-title {
         @include knd-head-section-text();
@@ -538,8 +571,15 @@
     
     h2 {
         @include knd-head-tiny-text();
+        
+        body.plot-public-campaign & {
+            color: var(--knd-text2-color);
+        }
+        
+        body.plot-fundraising-org & {
+            color: var(--knd-color-third);
+        }
     }
-    
     
     .knd-whoweare-headlike-text-wrapper {
         padding-top: $gut / (1.33 * 2);
@@ -562,7 +602,9 @@
     
     .whoweare-item {
     
-        margin-bottom: $gut;
+        position:relative;
+        margin-bottom: 0px;
+        padding-bottom: $gut * 1.2;
     
         @include for(medium-screens) {
             text-align:left;
@@ -571,6 +613,10 @@
         
         h3 {
             @include knd-head-main-text();
+            
+            body.plot-fundraising-org & {
+                color: var(--knd-color-third);
+            }
         }
         
         p {
@@ -592,20 +638,80 @@
             color: $color-text-black;
             border-bottom: 4px solid var(--knd-color-main);
             padding: 0px 0px 4px 0px;
-            
             text-decoration:none;
+            position:absolute;
+            bottom:0px;
+            left: 1px;
+            
             &:hover {
                 text-decoration:none;
                 border-color: var(--knd-color-main-dark);
             }
+            
+            body.plot-public-campaign & {
+            
+                color: var(--knd-text2-color);
+                border-color: var(--knd-text2-color);
+                
+                &:hover {
+                    color: var(--knd-text2-color-dark);
+                    border-color: var(--knd-text2-color-dark);
+                }
+            }
+            
+            body.plot-fundraising-org & {
+            
+                color: var(--knd-color-third);
+                border-color: var(--knd-color-third);
+                
+                &:hover {
+                    color: var(--knd-color-third-dark);
+                    border-color: var(--knd-color-third-dark);
+                }
+            }
+            
         }
     }
     
     .whoweare-item:last-of-type {
+    
+        h3 {
+        
+            body.plot-public-campaign & {
+                color: var(--knd-text3-color);
+            }
+            
+            body.plot-fundraising-org & {
+                color: var(--knd-color-main);
+            }
+        }
+    
         a {
             border-color: var(--knd-color-second);
             &:hover {
                 border-color: var(--knd-color-second-dark);
+            }
+            
+            body.plot-public-campaign & {
+            
+                color: var(--knd-text3-color);
+                border-color: var(--knd-text3-color);
+                
+                &:hover {
+                    color: var(--knd-text3-color-dark);
+                    border-color: var(--knd-text3-color-dark);
+                }
+            }
+            
+            body.plot-fundraising-org & {
+            
+                color: var(--knd-color-main);
+                border-color: var(--knd-color-main);
+                
+                &:hover {
+                    color: var(--knd-color-main-dark);
+                    border-color: var(--knd-color-main-dark);
+                }
             }
         }
     }
@@ -623,6 +729,14 @@
  
     h2 {
         letter-spacing: 0.1em;
+        
+        body.plot-public-campaign & {
+            color: $color_text;
+        }
+        
+        body.plot-fundraising-org & {
+            color: $color_text_white;
+        }
     }
     
     .knd-whoweare-headlike-text-wrapper {
@@ -631,6 +745,15 @@
         .knd-whoweare-headlike-text {
             line-height: 1.33;
             hyphens: none;
+            
+            body.plot-public-campaign & {
+                color: $color_text;
+            }
+            
+            body.plot-fundraising-org & {
+                color: $color_text_white;
+            }
+            
         }
     }
     
@@ -649,6 +772,10 @@
 .knd-projects-widget {
     @extend .knd-news-widget;
     background: var(--knd-color-third);
+    
+    body.plot-public-campaign & {
+        background: var(--knd-color-third);
+    }
     
     h2.section-title {
         color: $color-white;
@@ -680,7 +807,17 @@
             &:hover, &:focus, &:active {
                 color: var(--knd-color-main);
             }
+            
+            body.plot-fundraising-org & {
+                color: $color_text_white;
+            }
+            
         }
+        
+        body.plot-fundraising-org & {
+            border-color: $color-border-light;
+        }
+        
     }
     
     .knd-news-widget-body {
@@ -693,6 +830,14 @@
     @extend .knd-news-widget;
     padding-top: 56px;
     background: $color-white;
+    
+    body.plot-public-campaign & {
+        background: $color-white;
+        
+        h2.section-title {
+            color: var(--knd-color-third);
+        }
+    }
     
     .knd-news-widget-body {
         padding-top: 33px;

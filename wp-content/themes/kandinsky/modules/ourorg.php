@@ -39,29 +39,17 @@ class KND_Ourorg_Widget extends WP_Widget {
 
 <div class="container knd-whoweare-section">
     <div class="flex-row justify-between">
-        <div class="whoweare-item flex-mf-12 flex-sm-6 flex-md-4">
-            <h3>Кто мы?</h3>
-            <p>
-            Благотворительная организация «Линия Цвета» помогает преодолеть алкогольную зависимость и вернуться к полноценной жизни.
-            </p>
-            <a href="#">Узнайте о нашей работе</a>
-        </div>
-        
-        <div class="whoweare-item flex-mf-12 flex-sm-6 flex-md-4">
-            <h3>Что мы делаем?</h3>
-            <p>
-            Мы организуем реабилитационные программы, информируем, помогаем тем, кто готов отказаться от этой пагубной привычки и вернуть свою жизнь.
-            </p>
-            <a href="#">Посмотреть проекты</a>
-        </div>
     
+        <?php for($i = 1; $i <= 3; $i++):?>
         <div class="whoweare-item flex-mf-12 flex-sm-6 flex-md-4">
-            <h3>Бросить пить?</h3>
+            <h3><?php echo get_theme_mod("home-subtitle-col{$i}-title") ?></h3>
             <p>
-            Заполните анонимную форму на сайте, выберите удобное вам время для индивидуальной консультации или запишитесь в группу  поддержки.
+            <?php echo get_theme_mod("home-subtitle-col{$i}-content") ?>
             </p>
-            <a href="#">Получить помощь</a>
+            <a href="<?php echo get_theme_mod("home-subtitle-col{$i}-link-url") ?>"><?php echo get_theme_mod("home-subtitle-col{$i}-link-text") ?></a>
         </div>
+        <?php endfor;?>
+        
     </div>
 </div>
 

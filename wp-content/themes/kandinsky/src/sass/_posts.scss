@@ -36,7 +36,19 @@
 	display: inline-block;
 	color: var(--knd-color-main-dark);
 	padding: 4px 8px;
-	
+
+    span.category {
+        body.plot-public-campaign & {
+            @include knd-link-lonely-text();
+        }
+        
+        body.plot-fundraising-org & {
+            @include knd-link-lonely-text();
+            color: var(--knd-color-third);
+        }
+        
+    }
+
 	a {
 		color: inherit;
 		&:hover { text-decoration: underline; }
@@ -44,6 +56,15 @@
 	
     .date {
       color: $color-border-dark;
+      
+        body.plot-public-campaign & {
+            color: $color-text;
+        }
+        
+        body.plot-public-campaign.single & {
+            color: $color-text-black;
+        }
+        
     }
     
     .sep {
@@ -51,6 +72,15 @@
         width: 5px;
         height: 5px;
         border: solid 1px $color-border-dark;
+        
+        body.plot-public-campaign & {
+            border-color: $color-text;
+        }
+        
+        body.plot-public-campaign.single & {
+            border-color: $color-text-black;
+        }
+        
         border-radius: 5px;
         padding:0px;
         vertical-align:baseline;
@@ -91,11 +121,15 @@
 	&:hover {
 		background: $color-secondary-alt;
 		.entry-preview:after { background: rgba(0,0,0, 0.3); }
-	}	
+	}
+	
+    body.plot-public-campaign & {
+        background: $color-bg-dark-gray;
+    }
 	
 	a {
 		display: block;
-		color: $color-text-black;
+		color: $color-text;
 		position:relative;
 		height: 100%;
 	}
@@ -133,7 +167,6 @@
 		@include body-text(summary);
 		color: $color-text;
 	}
-	
 }
 
 
@@ -711,4 +744,11 @@
    .cards-loop {
        transform: translateY(-70px);
    } 
+}
+
+/* single post */
+.single {
+    .entry-content {
+        @include the-content();
+    }
 }

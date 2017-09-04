@@ -66,7 +66,7 @@ $footer_text = get_theme_mod('footer_text');
 			<div class="te-st-bn">
 				<p class="support">Сайт работает <br>на «Кандинском»</p>
 				<a title="<?php echo $tst;?>" href="http://te-st.ru/" class="rdc-banner">					
-					<svg class="rdc-icon"><use xlink:href="#icon-te-st" /></svg>
+					<svg class="knd-icon"><use xlink:href="#icon-te-st" /></svg>
 				</a>
 			</div>			
 		</div>

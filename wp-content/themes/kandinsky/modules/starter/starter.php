@@ -5,6 +5,8 @@ require get_template_directory().'/modules/starter/menus.php';
 require get_template_directory().'/modules/starter/sidebars.php';
 require get_template_directory().'/vendor/parsedown/Parsedown.php';
 require get_template_directory().'/modules/starter/plot_data_builder.php';
+require get_template_directory().'/modules/starter/plot_shortcode_builder.php';
+require get_template_directory().'/modules/starter/plot_config.php';
 require get_template_directory().'/modules/starter/import_remote_content.php';
 
 function knd_import_starter_data_from_csv($file, $post_type = 'post') {
@@ -52,24 +54,9 @@ function knd_setup_site_icon() {
 
 }
 
-function knd_set_sitename_settings($scenario_data) {
-
-    if($scenario_data['name']) {
-        update_option('blogname', $scenario_data['name']);
-    }
-    if($scenario_data['tagline']) {
-        update_option('blogdescription', $scenario_data['tagline']);
-    }
-
-}
-
 function knd_setup_menus() {
 
-    KND_StarterMenus::knd_setup_our_work_menu();
-    KND_StarterMenus::knd_setup_news_menu();
-
     KND_StarterSidebars::setup_footer_sidebar();
-    KND_StarterSidebars::setup_homepage_sidebar();
 
 }
 
@@ -78,7 +65,7 @@ function knd_setup_starter_data($plot_name) {
     $imp = new KND_Import_Remote_Content($plot_name);
     $data = $imp->import_content();
     
-//     print_r($data['withyou']['newsfeed']);
+//     print_r($data['color-line']['howtohelp']);
 //     exit();
     
 //     $piece = $imp->get_piece('footer');
@@ -104,7 +91,19 @@ function knd_ajax_setup_starter_data() {
     $res = array('status' => 'ok');
 
     $plot_name = get_theme_mod('knd_site_scenario'); // problem-org, fundraising-org, public-campaign
-    $plot_name = 'problem-org';
+    
+    // debug
+//     $plot_name = 'problem-org';
+//     $plot_name = 'fundraising-org';
+//     $plot_name = 'public-campaign';
+    $plot_name = isset($_GET['plot']) ? $_GET['plot'] : 'problem-org';
+    
+    $imp = new KND_Import_Remote_Content($plot_name);
+    if(!in_array($plot_name, $imp->possible_wizard_plots)) {
+        $plot_name = "";
+    }
+    
+    set_theme_mod('knd_site_scenario', $plot_name);
 
     if($plot_name) {
         try {
@@ -113,6 +112,9 @@ function knd_ajax_setup_starter_data() {
             error_log($ex);
             $res = array('status' => 'error');
         }
+    }
+    else {
+        $res = array('status' => 'error', 'message' => "unknown plot");
     }
 
     wp_send_json($res);

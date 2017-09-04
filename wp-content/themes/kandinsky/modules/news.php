@@ -42,7 +42,7 @@ class KND_News_Widget extends WP_Widget {
     <h2 class="section-title"><?php echo $title;?></h2>
     
     <div class="main-content cards-holder knd-news-widget-body">
-    <div class="flex-row cards-loop start">
+    <div class="flex-row start cards-loop">
         <?php
             if(!empty($posts)){
                 foreach($posts as $p){
@@ -61,7 +61,6 @@ class KND_News_Widget extends WP_Widget {
 <?php 
 		echo $after_widget;
 	}
-	
 	
 	function form($instance) {
 

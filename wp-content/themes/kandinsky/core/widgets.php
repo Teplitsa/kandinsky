@@ -7,9 +7,29 @@ add_action( 'init', 'knd_sidebars_init', 25 );
 function knd_sidebars_init() {
     
     register_sidebar(array(
-        'name' => __('Homepage widgets', 'knd'),
+        'name' => __('Homepage sidebar', 'knd'),
         'id' => 'knd-homepage-sidebar',
         'description' => __('Homepage custom content area', 'knd'),
+        'before_widget' => '',
+        'after_widget' => '',
+        'before_title' => '<section class="heading"><div class="container"><h1 class="section-title archive">',
+        'after_title' => '</h1></div></section>',
+    ));
+    
+    register_sidebar(array(
+        'name' => __('News archive sidebar', 'knd'),
+        'id' => 'knd-news-archive-sidebar',
+        'description' => __('News archive custom content area', 'knd'),
+        'before_widget' => '',
+        'after_widget' => '',
+        'before_title' => '<section class="heading"><div class="container"><h1 class="section-title archive">',
+        'after_title' => '</h1></div></section>',
+    ));
+    
+    register_sidebar(array(
+        'name' => __('Projects archive sidebar', 'knd'),
+        'id' => 'knd-projects-archive-sidebar',
+        'description' => __('Projects archive custom content area', 'knd'),
         'before_widget' => '',
         'after_widget' => '',
         'before_title' => '<section class="heading"><div class="container"><h1 class="section-title archive">',

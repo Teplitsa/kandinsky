@@ -45,7 +45,7 @@ if($thumb_width > 1104) {
         
                 <div class="flex-md-1"></div>
                 
-                <div class="flex-md-10">
+                <div class="flex-mf-12 flex-md-10">
                     <div class="entry-meta"><?php echo knd_posted_on($cpost); //for event ?></div>
                     <h1 class="entry-title"><?php echo get_the_title($cpost);?></h1>
                     <div class="mobile-sharing hide-on-medium"><?php echo knd_social_share_no_js();?></div>
@@ -78,7 +78,7 @@ if($thumb_width > 1104) {
         
         <div class="flex-row">
           <div class="flex-md-1"></div>
-          <div class="flex-md-10">
+          <div class="flex-mf-12 flex-md-10">
             <section class="entry-preview"><?php knd_single_post_thumbnail($cpost->ID, 'full', 'introimg'); ?></section>
           </div>
           <div class="flex-md-1"></div>
@@ -193,18 +193,12 @@ if($thumb_width > 1104) {
 </div>
 
 <div class="knd-signle-after-content">
-<?php
 
-// yellow block
-knd_show_cta_block();
-
-// purple block
-$news = KND_News_Widget::get_short_list(3);
-knd_show_posts_shortlist($news, "Последние новости", array(
-    array('title' => 'Все новости', 'url' => '#'),
-));
-
-?>
+    <?php if($cpost->post_type == 'post'):?>
+        <?php dynamic_sidebar( 'knd-news-archive-sidebar' );?>
+    <?php else: ?>
+        <?php dynamic_sidebar( 'knd-projects-archive-sidebar' );?>    
+    <?php endif ?>
 
 </div>
 

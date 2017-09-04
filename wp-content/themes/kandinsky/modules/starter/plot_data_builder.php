@@ -28,7 +28,11 @@ class KND_Plot_Data_Builder {
      * @return extended KND_Plot_Data_Builder
      */
     public static function produce_builder($imp) {
-        $plot_name = $imp->plot_name;
+        return self::produce_plot_builder($imp->plot_name, $imp);
+    }
+    
+    public static function produce_plot_builder($plot_name, $imp) {
+        
         $plot_name_cap = preg_replace("/[-_]*/", "", ucfirst($plot_name));
         $class_name = "KND_{$plot_name_cap}_Data_Builder";
         if(class_exists($class_name)) {
@@ -49,8 +53,13 @@ class KND_Plot_Data_Builder {
         
         $this->build_posts();
         $this->build_pages();
+        $this->build_title_and_description();
         $this->build_theme_files();
+        $this->build_option_files();
         $this->build_theme_options();
+        $this->build_general_options();
+        $this->build_menus();
+        $this->build_sidebars();
     }
     
     /**
@@ -59,10 +68,56 @@ class KND_Plot_Data_Builder {
      */
     public function build_posts() {
         
+        $this->remove_all_other_plots_posts();
+        
         foreach(array_keys($this->data_routes['posts']) as $section) {
             $this->build_section_posts($section);
         }
         
+        global $wp_rewrite;
+        $wp_rewrite->flush_rules( false );
+    }
+    
+    public function remove_all_other_plots_posts() {
+//         var_dump($this->imp->possible_plots);
+
+        foreach($this->imp->possible_plots as $plot_name) {
+            
+//             var_dump($plot_name);
+            
+            if($plot_name != $this->imp->plot_name) {
+                
+//                 echo "deleting all posts...\n";
+                
+                $builder = self::produce_plot_builder($plot_name, $this->imp);
+                $plot_config = $builder->data_routes;
+                
+//                 var_dump($plot_config['posts']);
+                
+                foreach($plot_config['posts'] as $section => $section_data) {
+                    
+                    $post_type = isset($section_data['post_type']) ? $section_data['post_type'] : 'post';
+                    $post_pieces_name = $section_data['pieces'];
+                    
+//                     echo "deleting pt: {$post_type}...\n";
+//                     var_dump($post_pieces_name);
+                    
+                    foreach($post_pieces_name as $piece_name) {
+                        
+                        $piece = new KND_Piece(array('piece_name' => $piece_name, 'piece_section' => $section));
+                        $slug = $piece->get_post_slug();
+                        
+//                         echo "slug: {$slug} \n";
+                        
+                        $post = knd_get_post($slug, $post_type);
+                        if($post) {
+//                             echo "delete {$slug} \n";
+                            wp_delete_post( $post->ID, true );
+                        }
+                    }
+                }
+            }
+        }
     }
     
     /**
@@ -71,10 +126,36 @@ class KND_Plot_Data_Builder {
      */
     public function build_pages() {
         
-        foreach(array_keys($this->data_routes['pages']) as $section) {
-            $this->build_section_page($section);
+        foreach($this->data_routes['pages'] as $section => $page_options) {
+            
+            if(isset($page_options['pieces'])) {
+                $this->build_section_pages($section);
+            }
+            else {
+                $this->build_section_simple_page($page_options);
+            }
+            
         }
         
+        foreach($this->data_routes['pages_templates'] as $section => $page_options) {
+            if(isset($page_options['template'])) {
+                $this->build_section_template_page($section, $page_options);
+            }
+        }
+        
+        // set home page
+        $piece = new KND_Piece(array('slug' => 'home', 'title' => __('Home page', 'knd')));
+        $homepage_id = $this->save_post($piece, 'page');
+        update_option( 'page_on_front', $homepage_id );
+        update_option( 'show_on_front', 'page' );
+        
+        // set news page
+        $piece = new KND_Piece(array('slug' => 'news', 'title' => __('News', 'knd')));
+        $homepage_id = $this->save_post($piece, 'page');
+        update_option( 'page_for_posts', $homepage_id );
+        
+        global $wp_rewrite;
+        $wp_rewrite->flush_rules( false );
     }
     
     /**
@@ -99,15 +180,58 @@ class KND_Plot_Data_Builder {
         }
     }
     
+    public function build_section_pages($section) {
+    
+        $post_type = $this->data_routes['pages'][$section]['post_type'];
+        $pieces = $this->data_routes['pages'][$section]['pieces'];
+        
+        if(preg_match('/^root_.*/', $section)) {
+            $section = '';
+        }
+    
+        foreach($pieces as $piece_name) {
+            $piece = $this->imp->get_piece($piece_name, $section);
+            if($piece) {
+                $piece->content = $this->imp->parse_text($piece->content);
+                $this->save_post($piece, $post_type);
+            }
+        }
+    }
+    
+    public function build_section_simple_page($page_options) {
+    
+        $post_type = isset($page_options['post_type']) ? $page_options['post_type'] : 'page';
+        $post_slug = isset($page_options['post_slug']) ? $page_options['post_slug'] : '';
+        $piece_name = isset($page_options['piece']) ? $page_options['piece'] : '';
+        $section = isset($page_options['section']) ? $page_options['section'] : '';
+    
+        if(!$piece_name) {
+            return;
+        }
+        
+        if(preg_match('/^root_.*/', $section)) {
+            $section = '';
+        }
+    
+        $piece = $this->imp->get_piece($piece_name, $section);
+        
+        if($piece) {
+            $piece->content = $this->imp->parse_text($piece->content);
+            $piece->slug = $post_slug;
+            $this->save_post($piece, $post_type);
+        }
+        
+    }
+    
     /**
      * Create WP posts, according to section config, using imported files as templates.
      *
      */
-    public function build_section_page($section) {
+    public function build_section_template_page($section, $page_options) {
     
-        $post_type = isset($this->data_routes['pages'][$section]['post_type']) ? $this->data_routes['pages'][$section]['post_type'] : 'page';
-        $post_slug = isset($this->data_routes['pages'][$section]['post_slug']) ? $this->data_routes['pages'][$section]['post_slug'] : '';
-        $template = isset($this->data_routes['pages'][$section]['template']) ? $this->data_routes['pages'][$section]['template'] : '';;
+        $post_type = isset($page_options['post_type']) ? $page_options['post_type'] : 'page';
+        $post_slug = isset($page_options['post_slug']) ? $page_options['post_slug'] : '';
+        $template = isset($page_options['template']) ? $page_options['template'] : '';
     
         if(!$template) {
             return;
@@ -136,7 +260,6 @@ class KND_Plot_Data_Builder {
      * @return string   template, where all tags replaces with proper content
      */
     public function fill_template_with_pieces($template_content, $section) { // remove $post param, if useless
-        
         $template_content = $this->fill_content_tags($template_content, $section);
         $template_content = $this->fill_shortcode_tags($template_content, $section);
         
@@ -163,10 +286,11 @@ class KND_Plot_Data_Builder {
             if(isset($attributes['name'])) {
                 $piece_name = $attributes['name'];
                 $piece = $this->imp->get_piece($piece_name, $section);
-        
+                
                 if($piece) {
                     $piece->content = $this->imp->parse_text($piece->content);
-                    $template_content = str_replace($tag, $piece->content, $template_content);
+                    $content = $piece->content;
+                    $template_content = str_replace($tag, $content, $template_content);
                 }
             }
         
@@ -363,17 +487,32 @@ class KND_Plot_Data_Builder {
      */
     public function build_theme_files() {
         
-        foreach(array_keys($this->data_routes['files']) as $theme_option_name) {
+        foreach($this->data_routes['theme_files'] as $option_name => $option) {
             
-            $file = $this->data_routes['files'][$theme_option_name]['file'];
-            $section = isset($this->data_routes['files'][$theme_option_name]['section']) ? $this->data_routes['files'][$theme_option_name]['section'] : '';
-            
+            $file = $option['file'];
+            $section = isset($option['section']) ? $option['section'] : '';
             $logo_fdata = $this->imp->get_fdata($file, $section);
             
             if($logo_fdata && isset($logo_fdata['attachment_id']) && $logo_fdata['attachment_id']) {
-                set_theme_mod($theme_option_name, $logo_fdata['attachment_id']);
+                set_theme_mod($option_name, $logo_fdata['attachment_id']);
             }
             
+        }
+        
+    }
+    
+    public function build_option_files() {
+        
+        foreach($this->data_routes['option_files'] as $option_name => $option) {
+        
+            $file = $option['file'];
+            $section = isset($option['section']) ? $option['section'] : '';
+            $logo_fdata = $this->imp->get_fdata($file, $section);
+        
+            if($logo_fdata && isset($logo_fdata['attachment_id']) && $logo_fdata['attachment_id']) {
+                update_option($option_name, $logo_fdata['attachment_id']);
+            }
+        
         }
         
     }
@@ -414,285 +553,116 @@ class KND_Plot_Data_Builder {
         }
         
     }
-}
 
-/**
- * Build shortcodes based on imported names, attributes and text content.
- * Fro use in KND_Plot_Data_Builder only.
- *
- */
-class KND_Shortcode_Builder {
-    
-    private $imp = NULL;
-    
-    function __construct($data_builder, $imp) {
-        $this->imp = $imp;
-        $this->data_builder = $data_builder;
+    public function build_general_options() {
+        // header contacts
+        $knd_address_phone = $this->data_routes['general_options']['knd_address_phone'];
+        update_option('text_in_header', nl2br(trim($knd_address_phone)));
     }
     
-    /**
-     * Build knd_columns shorcode by name, pieces and attributes.
-     *
-     * @param string     $shortcode_name     name of shortcode
-     * @param array      $pieces             pieces list that are specified in template shortcode tag
-     * @param array      $attributes         array of attributes as key - value pairs
-     *
-     * @return string    shortcode
-     */
-    public function build_knd_columns($shortcode_name, $pieces, $attributes) {
+    public function build_sidebars() {
         
-        foreach($pieces as $i => $piece) {
-            $attr_i = $i + 1;
+        $this->build_footer_sidebar();
+        $this->build_configured_sidebar();
+        
+        global $wp_rewrite;
+        $wp_rewrite->flush_rules( false );
+    }
+    
+    public function build_configured_sidebar() {
+        
+        if(!isset($this->data_routes['sidebar_widgets'])) {
+            return;
+        }
+        
+        foreach($this->data_routes['sidebar_widgets'] as $sidebar_name => $widgets_list) {
             
-            if($piece->title) {
-                $attributes[$attr_i . "-title"] = $piece->title;
-            }
+            $sidebars = get_option( 'sidebars_widgets' );
+            $sidebars[$sidebar_name] = array();
+            update_option( 'sidebars_widgets', $sidebars );
             
-            if($piece->content) {
-                $piece->content = $this->imp->parse_text($piece->content);
-                $attributes[$attr_i . "-text"] = $piece->content;
-            }
-        }
-        
-        return $this->pack_shortcode_with_attributes($shortcode_name, $attributes);
-    }
-    
-    /**
-     * Build build_knd_background_text shorcode by name, pieces and attributes.
-     *
-     * @param string     $shortcode_name     name of shortcode
-     * @param array      $pieces             pieces list that are specified in template shortcode tag
-     * @param array      $attributes         array of attributes as key - value pairs
-     *
-     * @return string    shortcode
-     */
-    public function build_knd_background_text($shortcode_name, $pieces, $attributes) {
-        
-        $piece = $pieces[0];
-        
-        if($piece->content) {
-            $piece->content = $this->imp->parse_text($piece->content);
-            $attributes['subtitle'] = $piece->content;
-        }
-        
-        if($piece->title) {
-            $attributes['title'] = $piece->title;
-        }
-        
-        if($piece->thumb) {
-            $attributes['bg-image'] = $this->imp->get_thumb_attachment_id($piece);
-        }
-        
-        return $this->pack_shortcode_with_attributes($shortcode_name, $attributes);
-    }
-    
-    /**
-     * Compose shortcode from name and attributes key-value array.
-     *
-     * @param string     $shortcode_name     name of shortcode
-     * @param array      $attributes         array of attributes as key - value pairs
-     *
-     * @return string    shortcode
-     */
-    public function pack_shortcode_with_attributes($shortcode_name, $attributes) {
-        
-        $attr_str_list = array();
-        foreach($attributes as $name => $value) {
-        
-            if($name == 'subtitle' || preg_match('/^\d+-text$/', $name)) {
-                $encoded_value = urlencode($value);
-            }
-            elseif($name == 'cta-url') {
-                $encoded_value = $this->data_builder->get_cta_url($value);
-            }
-            else {
-                $encoded_value = str_replace("\"", "", $value);
-            }
-            
-            $attr_str_list[] = implode("=", array($name, "\"{$encoded_value}\""));
-        }
-        $attr_str = implode(" ", $attr_str_list);
-        
-        return "[{$shortcode_name} {$attr_str}/]";
-    }
-
-}
-
-/**
- * WP content srtuctures builder for color-line plot.
- * The major part of the class is a config, named $this->data_routes.
- *
- */
-class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
-    
-    
-    /**
-     * Configuration of building process.
-     * pages: list of pages, that are built using imported templates
-     * posts: list of pages, that are built using content from imported files
-     *
-     */
-    protected $data_routes = array(
-        
-        'pages' => array(
-            'about' => array(
-                'template' => 'page-about',
-                'post_type' => 'page',
-                'post_slug' => 'about',
+//             echo $sidebar_name . "\n";
+            foreach($widgets_list as $widget) {
                 
-            ),
-        ),
-        
-        'posts' => array(
-            'articles' => array(
-                'post_type' => 'post',
-                'pieces' => array('article1', 'article2', 'article3', 'article4', 'article5', ),
-            ),
-            'projects' => array(
-                'post_type' => 'project',
-                'pieces' => array('project1', 'project2', 'project3', 'project4', 'project5', ),
-            ),
-        ),
-        
-        'files' => array(
-            'knd_custom_logo' => array('file' => 'logo.svg'),
-            'knd_hero_image' => array('section' => 'img', 'file' => '5.jpg'),
-        ),
-        
-        'theme_options' => array(
-            'knd_main_color' => '#00bcd4',
-            'knd_hero_image_support_title' => 'Помоги бороться с алкогольной зависимостью!',
-            'knd_hero_image_support_text' => 'В Нашей области 777 человек, которые страдают от алкогольной зависимости. Ваша поддержка поможет организовать для них реабилитационную программу.',
-            'knd_hero_image_support_button_caption' => 'Помочь сейчас',
+                $widget_options = $widget['options'];
+                $widget_name = $widget['slug'];
+//                 echo $widget_name . "\n";
+//                 echo print_r($widget_options, true) . "\n";
+                
+                // add text on home
+                $widgets = get_option('widget_' . $widget_name);
+                
+                $widgets[] = $widget_options;
+                $widgets_keys = array_keys($widgets);
+                $widget_index = end($widgets_keys);
+                $sidebars[$sidebar_name][] = $widget_name . '-' . $widget_index;
+                
+                update_option( 'widget_' . $widget_name, $widgets );
+            }
             
-        ),
-    );
-    
-    /**
-     * Set CTA config.
-     *
-     */
-    public function __construct($imp) {
-        parent::__construct($imp);
-        
-        $this->cta_list = array(
-            'CTA_DONATE' => site_url('/donate/'),
-        );
-        
-        $this->data_routes['theme_options']['knd_hero_image_support_url'] = get_permalink(get_page_by_path('donate'));
+            update_option( 'sidebars_widgets', $sidebars );
+        }
     }
     
-}
-
-/**
- * WP content srtuctures builder for right2city plot.
- * The major part of the class is a config, named $this->data_routes.
- *
- */
-class KND_Right2city_Data_Builder extends KND_Plot_Data_Builder {
-    
-    /**
-     * Configuration of building process.
-     * pages: list of pages, that are built using imported templates
-     * posts: list of pages, that are built using content from imported files
-     *
-     */
-    protected $data_routes = array(
-    
-        'pages' => array(
-            'aboutus' => array(
-                'template' => 'page-about',
-                'post_type' => 'page',
-                'post_slug' => 'about',
+    public function build_footer_sidebar() {
+        // footer contacts
+        $knd_footer_contacts = $this->data_routes['general_options']['knd_footer_contacts'];
+        $knd_address_phone = nl2br(trim($this->data_routes['general_options']['knd_address_phone']));
+        $knd_footer_contacts = str_replace("{knd_address_phone}", $knd_address_phone, $knd_footer_contacts);
         
-            ),
-        ),
+        update_option('knd_footer_contacts', $knd_footer_contacts);
+        update_option('knd_address_phone', $knd_address_phone);
+        update_option('text_in_header', $knd_address_phone);
         
-        'posts' => array(
-            'chronics' => array(
-                'post_type' => 'post',
-                'pieces' => array('news1', 'news2', 'news3', ),
-            ),
-        ),
+        // security and pd
+        $knd_footer_security_pd = $this->data_routes['general_options']['knd_footer_security_pd'];
+        $knd_url_pd_policy = $this->data_routes['theme_options']['knd_url_pd_policy'];
+        $knd_url_privacy_policy = $this->data_routes['theme_options']['knd_url_privacy_policy'];
+        $knd_url_public_oferta = $this->data_routes['theme_options']['knd_url_public_oferta'];
         
-        'files' => array(
-            'knd_custom_logo' => array('file' => 'logo.svg'),
-            'knd_hero_image' => array('section' => 'img', 'file' => 'hero_img.jpg'),
-        ),
+        $knd_footer_security_pd = str_replace("{knd_url_pd_policy}", $knd_url_pd_policy, $knd_footer_security_pd);
+        $knd_footer_security_pd = str_replace("{knd_url_privacy_policy}", $knd_url_privacy_policy, $knd_footer_security_pd);
+        $knd_footer_security_pd = str_replace("{knd_url_public_oferta}", $knd_url_public_oferta, $knd_footer_security_pd);
         
-        'theme_options' => array(
-            'knd_main_color' => '#F02C80',
-            'knd_hero_image_support_title' => array('section' => 'homepage', 'piece' => 'hero_heading'),
-            'knd_hero_image_support_text' => array('section' => 'homepage', 'piece' => 'hero_description'),
-            'knd_hero_image_support_button_caption' => 'Помочь сейчас',
-        ),
-        
-    );
-    
-    /**
-     * Set CTA config.
-     *
-     */
-    public function __construct($imp) {
-        parent::__construct($imp);
-    
-        $this->cta_list = array(
-            'CTA_DONATE' => site_url('/donate/'),
-        );
-        $this->data_routes['theme_options']['knd_hero_image_support_url'] = get_permalink(get_page_by_path('donate'));
+        update_option('knd_footer_security_pd', $knd_footer_security_pd);
     }
-}
-
-class KND_Withyou_Data_Builder extends KND_Plot_Data_Builder {
     
-    /**
-     * Configuration of building process.
-     * pages: list of pages, that are built using imported templates
-     * posts: list of pages, that are built using content from imported files
-     *
-     */
-    protected $data_routes = array(
-    
-        'pages' => array(
-            'about' => array(
-                'template' => 'page-about',
-                'post_type' => 'page',
-                'post_slug' => 'about',
+    public function build_menus() {
         
-            ),
-        ),
+        if(!isset($this->data_routes['menus']) || !is_array($this->data_routes['menus'])) {
+            return;
+        }
         
-        'posts' => array(
-            'newsfeed' => array(
-                'post_type' => 'post',
-                'pieces' => array('news1', 'news2', 'news3', ),
-            ),
-        ),
-    
-        'files' => array(
-            'knd_custom_logo' => array('file' => 'logo.svg'),
-            'knd_hero_image' => array('section' => 'img', 'file' => 'twokidsmain.jpg'),
-        ),
+        foreach($this->data_routes['menus'] as $menu_name => $menu_items) {
+            
+            if(is_nav_menu($menu_name)){
+                wp_delete_nav_menu($menu_name);
+            }
+            $menu_id = wp_create_nav_menu( $menu_name );
+            
+            foreach($menu_items as $k => $v) {
+                if(is_array($v)) {
+                    if(isset($v['post_type']) && isset($v['slug'])) {
+                        $page = knd_get_post( $v['slug'], $v['post_type'] );
+                        if($page) {
+                            KND_StarterMenus::add_post2menu($page, $menu_id, $k);
+                        }
+                    }
+                    elseif(isset($v['url']) && isset($v['title'])) {
+                        KND_StarterMenus::add_link2menu($v['title'], $v['url'], $menu_id, $k);
+                    }
+                }
+            }
+            
+        }
         
-        'theme_options' => array(
-            'knd_main_color' => '#DE0055',
-            'knd_hero_image_support_title' => array('section' => 'homepage', 'piece' => 'hero_heading'),
-            'knd_hero_image_support_text' => array('section' => 'homepage', 'piece' => 'hero_description'),
-            'knd_hero_image_support_button_caption' => 'Помочь сейчас',
-        ),
-        
-    );
-    
-    /**
-     * Set CTA config.
-     *
-     */
-    public function __construct($imp) {
-        parent::__construct($imp);
-    
-        $this->cta_list = array(
-            'CTA_DONATE' => site_url('/donate/'),
-        );
-        $this->data_routes['theme_options']['knd_hero_image_support_url'] = get_permalink(get_page_by_path('donate'));
+        global $wp_rewrite;
+        $wp_rewrite->flush_rules( false );
     }
+    
+    public function build_title_and_description() {
+        update_option('blogname', $this->data_routes['general_options']['site_name']);
+        update_option('blogdescription', $this->data_routes['general_options']['site_description']);
+    }
+    
 }

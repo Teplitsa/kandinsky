@@ -22,29 +22,9 @@ if($about_post):
 endif;
 ?>
 
-<div class="knd-homepage-widgets">
+<div class="knd-homepage-sidebar">
 
     <?php dynamic_sidebar( 'knd-homepage-sidebar' );?>
-    
-    <!-- yellow bar -->
-    <?php knd_show_cta_block() ?>
-
-    <!-- purple bar -->
-<?php
-    $projects = KND_Project::get_short_list(3);
-    knd_show_posts_shortlist($projects, "ПРОЕКТЫ «ЛИНИИ ЦВЕТА»", array(
-        array('title' => 'Все проекты', 'url' => '#'),
-        array('title' => 'Пресса о нас', 'url' => '#'),
-        array('title' => 'Отчеты', 'url' => '#'),
-    ));
-?>
-
-<!-- partners -->
-<?php
-$partners_widget = new KND_Org_Widget();
-$partners_widget->widget(array('before_widget' => '', 'after_widget' => ''), array('title' => 'Наши партнеры', 'num' => 4));
-?>
-
     
 </div>
 
