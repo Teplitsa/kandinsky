@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-05 00:31+0200\n"
-"PO-Revision-Date: 2017-09-05 00:31+0200\n"
+"POT-Creation-Date: 2017-09-05 08:10+0300\n"
+"PO-Revision-Date: 2017-09-05 08:12+0300\n"
 "Last-Translator: sidorenko.a <sidorenko.a@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10 >= 2 && n"
 "%10<=4 &&(n%100<10||n%100 >= 20)? 1 : 2);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.8.4\n"
+"X-Generator: Poedit 1.8.11\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
 "__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
@@ -123,60 +123,65 @@ msgstr "Важные ссылки"
 msgid "Header text"
 msgstr "Текст заголовка"
 
-#: core/customizer.php:88
-msgid "Decoration Basics"
+#: core/customizer.php:90
+msgid "Decoration"
 msgstr "Оформление"
 
-#: core/customizer.php:135
-msgid "Main Color"
-msgstr "Основной цвет"
+#: core/customizer.php:94
+msgid "Color scheme"
+msgstr "Цветовая схема"
 
-#: core/customizer.php:147
-msgid "Second Color"
-msgstr "Второй цвет"
-
-#: core/customizer.php:159
-msgid "Third Color"
-msgstr "Третий цвет"
-
-#: core/customizer.php:171
-msgid "First Text Color"
-msgstr "Первый цвет текста"
-
-#: core/customizer.php:183
-msgid "Second Text Color"
-msgstr "Второй цвет текста"
-
-#: core/customizer.php:195
-msgid "Third Text Color"
-msgstr "Третий цвет текста"
-
-#: core/customizer.php:204
-msgid "Logo mode"
-msgstr "Режим отображения логотипа"
-
-#: core/customizer.php:209
-msgid "Image only"
-msgstr "Только изображение"
-
-#: core/customizer.php:210
-msgid "Image with site name"
-msgstr "Изображение и название сайта"
-
-#: core/customizer.php:211
-msgid "Site name only"
-msgstr "Только название сайта"
-
-#: core/customizer.php:212
-msgid "Do not show"
-msgstr "Не показывать"
-
-#: core/customizer.php:221 vendor/envato_setup/envato_setup.php:391
+#: core/customizer.php:101 core/customizer.php:238
+#: vendor/envato_setup/envato_setup.php:391
 #: vendor/envato_setup/envato_setup.php:1524
 msgid "Logo"
 msgstr "Логотип"
 
-#: core/customizer.php:222
+#: core/customizer.php:152
+msgid "Main Color"
+msgstr "Основной цвет"
+
+#: core/customizer.php:164
+msgid "Second Color"
+msgstr "Второй цвет"
+
+#: core/customizer.php:176
+msgid "Third Color"
+msgstr "Третий цвет"
+
+#: core/customizer.php:188
+msgid "First Text Color"
+msgstr "Первый цвет текста"
+
+#: core/customizer.php:200
+msgid "Second Text Color"
+msgstr "Второй цвет текста"
+
+#: core/customizer.php:212
+msgid "Third Text Color"
+msgstr "Третий цвет текста"
+
+#: core/customizer.php:221
+msgid "Logo mode"
+msgstr "Режим отображения логотипа"
+
+#: core/customizer.php:226
+msgid "Image only"
+msgstr "Только изображение"
+
+#: core/customizer.php:227
+msgid "Image with site name"
+msgstr "Изображение и название сайта"
+
+#: core/customizer.php:228
+msgid "Site name only"
+msgstr "Только название сайта"
+
+#: core/customizer.php:229
+msgid "Do not show"
+msgstr "Не показывать"
+
+#: core/customizer.php:239
 msgid ""
 "Recommended size 315x66px for Image only mode and 66x66px for Image with "
 "site name"
@@ -184,39 +189,51 @@ msgstr ""
 "Рекомендуемые размеры 315x66px для режима «Только изображение» и 66x66px для "
 "режима «Изображение и название сайта»"
 
-#: core/customizer.php:260
+#: core/customizer.php:258
+msgid "Homepage settings"
+msgstr "Главная страница"
+
+#: core/customizer.php:259
+msgid "Homepage settings and blocks"
+msgstr "Настройки блоков и содержания главной страницы"
+
+#: core/customizer.php:263 core/customizer.php:304
 msgid "Hero Image"
 msgstr "Заглавное изображение"
 
-#: core/customizer.php:261
+#: core/customizer.php:271
+msgid "Static page settings"
+msgstr "Статичная страница"
+
+#: core/customizer.php:305
 msgid "Recommended size 1400x656px"
 msgstr "Рекомендуемый размер: 1400х656 пикс."
 
-#: core/customizer.php:274 core/customizer.php:328
+#: core/customizer.php:318 core/customizer.php:373
 msgid "Call to action title"
 msgstr "Заголовок \"призыва к действию\""
 
-#: core/customizer.php:282 core/customizer.php:336
+#: core/customizer.php:326 core/customizer.php:381
 msgid "Call to action URL"
 msgstr "Ссылка на действие"
 
-#: core/customizer.php:290 core/customizer.php:344
+#: core/customizer.php:334 core/customizer.php:389
 msgid "Call to action text"
 msgstr "Текст \"призыва к действию\""
 
-#: core/customizer.php:298 core/customizer.php:352
+#: core/customizer.php:342 core/customizer.php:397
 msgid "Action button caption"
 msgstr "Текст на кнопке действия"
 
-#: core/customizer.php:307
+#: core/customizer.php:352
 msgid "CTA block settings"
 msgstr "Блок призыва к действию"
 
-#: core/customizer.php:361
+#: core/customizer.php:406
 msgid "Social networks links"
 msgstr "Ссылки на социальные сети"
 
-#: core/customizer.php:392
+#: core/customizer.php:437
 msgid "Recommended plugins to install"
 msgstr "Рекомендуем установить плагины"
 
@@ -1821,6 +1838,9 @@ msgstr "Посмотреть на новый сайт"
 #: vendor/envato_setup/envato_setup.php:1700
 msgid "#success"
 msgstr "#успех"
+
+#~ msgid "Decoration Basics"
+#~ msgstr "Оформление"
 
 #~ msgid "Donate"
 #~ msgstr "Помочь сейчас"

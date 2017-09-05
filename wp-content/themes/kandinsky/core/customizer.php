@@ -83,11 +83,28 @@ function knd_customize_register(WP_Customize_Manager $wp_customize) {
     
 
     //Design section
-    $wp_customize->add_section('knd_decoration', array(
-        'priority' => 20,
-        'title' => __('Decoration Basics', 'knd'),
+    $wp_customize->add_panel('knd_decoration', array(
+        'priority'       => 25,
+        'capability'     => 'edit_theme_options',
+        'theme_supports' => '',
+        'title'          => __('Decoration', 'knd'),
     ));
 
+    $wp_customize->add_section( 'knd_decoration_colors', array(
+        'title'         => __('Color scheme', 'knd'),
+        'priority'      => 20,
+        'capability'    => 'edit_theme_options',
+        'panel'         => 'knd_decoration',
+    ));
+
+    $wp_customize->add_section( 'knd_decoration_logo', array(
+        'title'         => __('Logo', 'knd'),
+        'priority'      => 30,
+        'capability'    => 'edit_theme_options',
+        'panel'         => 'knd_decoration',
+    ));
+
+   
     $wp_customize->add_setting('knd_main_color', array(
         'default'           => knd_get_deault_main_color(), 
         'sanitize_callback' => 'sanitize_hex_color'
@@ -133,7 +150,7 @@ function knd_customize_register(WP_Customize_Manager $wp_customize) {
                     'knd_main_color', 
                     array(
                         'label'      => __( 'Main Color', 'knd' ),
-                        'section'    => 'knd_decoration',
+                        'section'    => 'knd_decoration_colors',
                         'settings'   => 'knd_main_color',
                         'priority'   => 10
                     )) 
@@ -145,7 +162,7 @@ function knd_customize_register(WP_Customize_Manager $wp_customize) {
                     'knd_color_second',
                     array(
                         'label'      => __( 'Second Color', 'knd' ),
-                        'section'    => 'knd_decoration',
+                        'section'    => 'knd_decoration_colors',
                         'settings'   => 'knd_color_second',
                         'priority'   => 11
                     ))
@@ -157,7 +174,7 @@ function knd_customize_register(WP_Customize_Manager $wp_customize) {
                     'knd_color_third',
                     array(
                         'label'      => __( 'Third Color', 'knd' ),
-                        'section'    => 'knd_decoration',
+                        'section'    => 'knd_decoration_colors',
                         'settings'   => 'knd_color_third',
                         'priority'   => 12
                     ))
@@ -169,7 +186,7 @@ function knd_customize_register(WP_Customize_Manager $wp_customize) {
                     'knd_text1_color',
                     array(
                         'label'      => __( 'First Text Color', 'knd' ),
-                        'section'    => 'knd_decoration',
+                        'section'    => 'knd_decoration_colors',
                         'settings'   => 'knd_text1_color',
                         'priority'   => 13
                     ))
@@ -181,7 +198,7 @@ function knd_customize_register(WP_Customize_Manager $wp_customize) {
                     'knd_text2_color',
                     array(
                         'label'      => __( 'Second Text Color', 'knd' ),
-                        'section'    => 'knd_decoration',
+                        'section'    => 'knd_decoration_colors',
                         'settings'   => 'knd_text2_color',
                         'priority'   => 14
                     ))
@@ -193,7 +210,7 @@ function knd_customize_register(WP_Customize_Manager $wp_customize) {
                     'knd_text3_color',
                     array(
                         'label'      => __( 'Third Text Color', 'knd' ),
-                        'section'    => 'knd_decoration',
+                        'section'    => 'knd_decoration_colors',
                         'settings'   => 'knd_text3_color',
                         'priority'   => 15
                     ))
@@ -202,7 +219,7 @@ function knd_customize_register(WP_Customize_Manager $wp_customize) {
     $wp_customize->add_control('knd_custom_logo_mod', array(
         'type'     => 'radio',       
         'label'    => __('Logo mode', 'knd'),
-        'section'  => 'knd_decoration',
+        'section'  => 'knd_decoration_logo',
         'settings' => 'knd_custom_logo_mod',
         'priority' => 20,
         'choices'  => array(
@@ -220,7 +237,7 @@ function knd_customize_register(WP_Customize_Manager $wp_customize) {
             array(
                 'label'         => __('Logo', 'knd'),
                 'description'   => __('Recommended size 315x66px for Image only mode and 66x66px for Image with site name', 'knd'),
-                'section'       => 'knd_decoration',
+                'section'       => 'knd_decoration_logo',
                 'settings'      => 'knd_custom_logo',
                 'flex_width'    => true, 
                 'flex_height'   => false, 
@@ -229,6 +246,33 @@ function knd_customize_register(WP_Customize_Manager $wp_customize) {
                 'priority'      => 30
         )) 
     );
+
+
+    /* homepage */
+    //$wp_customize->remove_section('static_front_page');
+
+    $wp_customize->add_panel('knd_homepage', array(
+        'priority'       => 25,
+        'capability'     => 'edit_theme_options',
+        'theme_supports' => '',
+        'title'          => __('Homepage settings', 'knd'),
+        'description'    => __('Homepage settings and blocks'),
+    ));
+
+    $wp_customize->add_section( 'knd_homepage_hero', array(
+        'title'         => __('Hero Image', 'knd'),
+        'priority'      => 20,
+        'capability'    => 'edit_theme_options',
+        'panel'         => 'knd_homepage',
+    ));
+
+    
+    $wp_customize->get_section ('static_front_page')->panel = 'knd_homepage';
+    $wp_customize->get_section ('static_front_page')->title = __('Static page settings', 'knd');
+
+    //move widgets in home
+    $wp_customize->get_section( 'sidebar-widgets-knd-homepage-sidebar' )->panel = 'knd_homepage';
+
     
     // hero image
     $wp_customize->add_setting('knd_hero_image', array(
@@ -259,7 +303,7 @@ function knd_customize_register(WP_Customize_Manager $wp_customize) {
             array(
                 'label'         => __('Hero Image', 'knd'),
                 'description'   => __('Recommended size 1400x656px', 'knd'),
-                'section'       => 'static_front_page',
+                'section'       => 'knd_homepage_hero',
                 'settings'      => 'knd_hero_image',
                 'flex_width'    => true,
                 'flex_height'   => false,
@@ -272,7 +316,7 @@ function knd_customize_register(WP_Customize_Manager $wp_customize) {
     $wp_customize->add_control('knd_hero_image_support_title', array(
         'type'     => 'text',
         'label'    => __('Call to action title', 'knd'),
-        'section'  => 'static_front_page',
+        'section'  => 'knd_homepage_hero',
         'settings' => 'knd_hero_image_support_title',
         'priority' => 45
     ));
@@ -280,7 +324,7 @@ function knd_customize_register(WP_Customize_Manager $wp_customize) {
     $wp_customize->add_control('knd_hero_image_support_url', array(
         'type'     => 'text',
         'label'    => __('Call to action URL', 'knd'),
-        'section'  => 'static_front_page',
+        'section'  => 'knd_homepage_hero',
         'settings' => 'knd_hero_image_support_url',
         'priority' => 45
     ));
@@ -288,7 +332,7 @@ function knd_customize_register(WP_Customize_Manager $wp_customize) {
     $wp_customize->add_control('knd_hero_image_support_text', array(
         'type'     => 'textarea',
         'label'    => __('Call to action text', 'knd'),
-        'section'  => 'static_front_page',
+        'section'  => 'knd_homepage_hero',
         'settings' => 'knd_hero_image_support_text',
         'priority' => 50
     ));
@@ -296,14 +340,15 @@ function knd_customize_register(WP_Customize_Manager $wp_customize) {
     $wp_customize->add_control('knd_hero_image_support_button_caption', array(
         'type'     => 'text',
         'label'    => __('Action button caption', 'knd'),
-        'section'  => 'static_front_page',
+        'section'  => 'knd_homepage_hero',
         'settings' => 'knd_hero_image_support_button_caption',
         'priority' => 55,
     ));
 
+
     // cta options
     $wp_customize->add_section('knd_cta_block_settings', array(
-        'priority' => 50,
+        'priority' => 60,
         'title' => __('CTA block settings', 'knd'),
     ));
     
@@ -357,7 +402,7 @@ function knd_customize_register(WP_Customize_Manager $wp_customize) {
     
     // Social media links
     $wp_customize->add_section('knd_social_links', array(
-        'priority' => 20,
+        'priority' => 40,
         'title' => __('Social networks links', 'knd'),
     ));
 
