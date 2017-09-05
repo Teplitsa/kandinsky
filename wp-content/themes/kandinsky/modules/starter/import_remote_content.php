@@ -16,20 +16,21 @@ class KND_Import_Remote_Content {
     private $content_importer = NULL;   // remote content imported (depends on content source), now only KND_Import_Git_Content supported
     private $plot_data = NULL;          // array with data, represented as array and KND_Piece
     private $plot_name = NULL;          // plot name, supported values: color-line, right2city, withyou
-    private $wizard_plot_name_to_remote_sorce_name = array(
+    private $wizard_plot_name_to_remote_source_name = array(
         'problem-org' => 'color-line',
         'fundraising-org' => 'withyou',
         'public-campaign' => 'right2city',
     );
     
     function __construct($plot_name) {
-        
-        $this->content_importer = new KND_Import_Git_Content();
-        
-        if(isset($this->wizard_plot_name_to_remote_sorce_name[$plot_name])) {
-            $this->plot_name = $this->wizard_plot_name_to_remote_sorce_name[$plot_name];
+
+        if(isset($this->wizard_plot_name_to_remote_source_name[$plot_name])) {
+
+            $this->plot_name = $this->wizard_plot_name_to_remote_source_name[$plot_name];
+            $this->content_importer = new KND_Import_Git_Content($this->plot_name);
+
         }
-        
+
         $this->parsedown = new Parsedown();
     }
     
@@ -38,10 +39,10 @@ class KND_Import_Remote_Content {
             return $this->plot_name;
         }
         elseif($name == 'possible_plots') {
-            return array_values($this->wizard_plot_name_to_remote_sorce_name);
+            return array_values($this->wizard_plot_name_to_remote_source_name);
         }
         elseif($name == 'possible_wizard_plots') {
-            return array_keys($this->wizard_plot_name_to_remote_sorce_name);
+            return array_keys($this->wizard_plot_name_to_remote_source_name);
         }
     }
     
@@ -258,19 +259,39 @@ class KND_Import_Remote_Content {
  */
 class KND_Import_Git_Content {
     
-    private $content_archive_url = 'https://github.com/Teplitsa/kandinsky-text/archive/master.zip';
+    private $content_archive_url = false;
+    private $plot_name = '';
     private $import_content_files_dir = NULL;
     private $zip_fpath = NULL;
     private $content_files = array();
     private $piece_parser = NULL;
     private $distr_attachment_id = NULL;
-    
-    function __construct() {
-        if(!defined('FS_METHOD')) {
+
+    function __construct($plot_name) {
+
+        if( !defined('FS_METHOD') ) {
             define('FS_METHOD', 'direct');
         }
-        
+
+        switch($plot_name) {
+            case 'color-line':
+                $this->content_archive_url = 'https://github.com/Teplitsa/kandinsky-text-color-line/archive/master.zip';
+                $this->plot_name = $plot_name;
+                break;
+            case 'withyou':
+                $this->content_archive_url = 'https://github.com/Ahaenor/kandinsky-text-withyou/archive/master.zip';
+                $this->plot_name = $plot_name;
+                break;
+            case 'dubrovino':
+                $this->content_archive_url = 'https://github.com/Teplitsa/kandinsky-text-dubrovino/archive/master.zip';
+                $this->plot_name = $plot_name;
+                break;
+            default:
+                throw new Exception('Plot name is unknown or not given: '.$plot_name);
+        }
+
         $this->piece_parser = new KND_Git_Piece_Parser();
+
     }
     
     /**
@@ -345,7 +366,7 @@ class KND_Import_Git_Content {
         WP_Filesystem();
         $destination = wp_upload_dir();
         $destination_path = $destination['path'];
-        $unzipped_dir = $destination_path . '/kandinsky-text-master';
+        $unzipped_dir = $destination_path."/kandinsky-text-{$this->plot_name}-master";
         
         if(is_dir($unzipped_dir)) {
             knd_rmdir($unzipped_dir);
@@ -355,7 +376,7 @@ class KND_Import_Git_Content {
         $unzipfile = unzip_file( $this->zip_fpath, $destination_path );
         
         if( !is_wp_error($unzipfile) ) {
-            $this->import_content_files_dir = $destination_path . '/kandinsky-text-master';
+            $this->import_content_files_dir = $destination_path."/kandinsky-text-{$this->plot_name}-master";
             
             update_post_meta( $this->distr_attachment_id, 'kandinsky_zip_fpath', $this->zip_fpath );
             update_post_meta( $this->distr_attachment_id, 'kandinsky_import_content_files_dir', $this->import_content_files_dir );
@@ -365,7 +386,7 @@ class KND_Import_Git_Content {
             throw new Exception("Unzip FAILED: {$this->zip_fpath} to {$destination_path} Error: " . var_export($unzipfile, True) );
         }
     }
-    
+
     /**
      * Parse extracted files and put into $this->content_files.
      *
@@ -373,24 +394,25 @@ class KND_Import_Git_Content {
      * @return array
      */
     private function parse_git_files($plot_name) {
-        
+
         if(!$this->import_content_files_dir) {
             throw new Exception("No git content dir!");
         }
-        
+
         if(!is_dir($this->import_content_files_dir)) {
             throw new Exception("Unzipped dir not found: {$this->import_content_files_dir}");
         }
-        
-        $plot_dir = $this->import_content_files_dir . '/' . $plot_name;
-        
+
+        $plot_dir = $this->import_content_files_dir.'/';
+
         if(!is_dir($plot_dir)) {
             throw new Exception("Plot dir not found: {$plot_dir}");
         }
-        
+
         $this->content_files[$plot_name] = $this->scan_content_dir($plot_dir);
         
         return $this->content_files;
+
     }
     
     /**
