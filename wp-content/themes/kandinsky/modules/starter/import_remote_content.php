@@ -279,7 +279,7 @@ class KND_Import_Git_Content {
                 $this->plot_name = $plot_name;
                 break;
             case 'withyou':
-                $this->content_archive_url = 'https://github.com/Ahaenor/kandinsky-text-withyou/archive/master.zip';
+                $this->content_archive_url = 'https://github.com/Teplitsa/kandinsky-text-withyou/archive/master.zip';
                 $this->plot_name = $plot_name;
                 break;
             case 'dubrovino':
