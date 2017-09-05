@@ -84,7 +84,7 @@ class KND_Import_Remote_Content {
     }
     
     function import_downloaded_content() {
-        $this->plot_data = $this->parse_exist_content($this->plot_name);
+        $this->plot_data = $this->parse_exist_content();
         return $this->plot_data;
     }
     
@@ -365,15 +365,15 @@ class KND_Import_Git_Content {
         if(is_dir($unzipped_dir)) {
             knd_rmdir($unzipped_dir);
         }
-        
-//         echo $destination_path . "\n<br />\n";
+
         $unzipfile = unzip_file( $this->zip_fpath, $destination_path );
         
         if( !is_wp_error($unzipfile) ) {
+
             $this->import_content_files_dir = $destination_path."/kandinsky-text-{$this->plot_name}-master";
-            
-            update_post_meta( $this->distr_attachment_id, 'kandinsky_zip_fpath', $this->zip_fpath );
-            update_post_meta( $this->distr_attachment_id, 'kandinsky_import_content_files_dir', $this->import_content_files_dir );
+
+            update_post_meta( $this->distr_attachment_id, 'kandinsky_zip_fpath', wp_slash($this->zip_fpath) );
+            update_post_meta( $this->distr_attachment_id, 'kandinsky_import_content_files_dir', wp_slash($this->import_content_files_dir) );
             
         } else {
             $this->import_content_files_dir = NULL;
@@ -389,11 +389,11 @@ class KND_Import_Git_Content {
      */
     private function parse_git_files($plot_name) {
 
-        if(!$this->import_content_files_dir) {
+        if( !$this->import_content_files_dir ) {
             throw new Exception("No git content dir!");
         }
 
-        if(!is_dir($this->import_content_files_dir)) {
+        if( !is_dir($this->import_content_files_dir) ) {
             throw new Exception("Unzipped dir not found: {$this->import_content_files_dir}");
         }
 

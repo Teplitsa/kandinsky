@@ -812,8 +812,10 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
             $plot_name = get_theme_mod('knd_site_scenario');
             $imp = new KND_Import_Remote_Content($plot_name);
             $imp->import_downloaded_content();
-            
+
             $pdb = KND_Plot_Data_Builder::produce_builder($imp);
+
+//            echo '<pre>Builder: '.print_r($pdb, 1).'</pre>';
             $pdb->build_title_and_description();
             
             return true;
