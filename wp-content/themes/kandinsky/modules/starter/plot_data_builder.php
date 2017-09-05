@@ -39,6 +39,7 @@ class KND_Plot_Data_Builder {
             $builder = new $class_name($imp);
         }
         else {
+            echo '<pre>'.print_r($plot_name_cap, 1).'</pre>';
             $builder = NULL;
         }
         

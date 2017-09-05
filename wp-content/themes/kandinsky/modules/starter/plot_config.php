@@ -223,11 +223,11 @@ class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
 }
 
 /**
- * WP content srtuctures builder for right2city plot.
+ * WP content srtuctures builder for dubrovino plot.
  * The major part of the class is a config, named $this->data_routes.
  *
  */
-class KND_Right2city_Data_Builder extends KND_Plot_Data_Builder {
+class KND_Dubrovino_Data_Builder extends KND_Plot_Data_Builder {
     
     /**
      * Configuration of building process.

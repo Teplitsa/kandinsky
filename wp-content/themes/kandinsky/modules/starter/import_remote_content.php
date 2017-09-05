@@ -19,7 +19,7 @@ class KND_Import_Remote_Content {
     private $wizard_plot_name_to_remote_source_name = array(
         'problem-org' => 'color-line',
         'fundraising-org' => 'withyou',
-        'public-campaign' => 'right2city',
+        'public-campaign' => 'dubrovino',
     );
     
     function __construct($plot_name) {
@@ -275,15 +275,9 @@ class KND_Import_Git_Content {
 
         switch($plot_name) {
             case 'color-line':
-                $this->content_archive_url = 'https://github.com/Teplitsa/kandinsky-text-color-line/archive/master.zip';
-                $this->plot_name = $plot_name;
-                break;
             case 'withyou':
-                $this->content_archive_url = 'https://github.com/Teplitsa/kandinsky-text-withyou/archive/master.zip';
-                $this->plot_name = $plot_name;
-                break;
             case 'dubrovino':
-                $this->content_archive_url = 'https://github.com/Teplitsa/kandinsky-text-dubrovino/archive/master.zip';
+                $this->content_archive_url = "https://github.com/Teplitsa/kandinsky-text-$plot_name/archive/master.zip";
                 $this->plot_name = $plot_name;
                 break;
             default:
@@ -403,7 +397,7 @@ class KND_Import_Git_Content {
             throw new Exception("Unzipped dir not found: {$this->import_content_files_dir}");
         }
 
-        $plot_dir = $this->import_content_files_dir.'/';
+        $plot_dir = $this->import_content_files_dir;
 
         if(!is_dir($plot_dir)) {
             throw new Exception("Plot dir not found: {$plot_dir}");
@@ -476,7 +470,7 @@ class KND_Git_Piece_Parser {
     
     function __construct() {
     }
-    
+
     /**
      * Parse local file.
      *
@@ -499,9 +493,9 @@ class KND_Git_Piece_Parser {
         
         return $parsed_data;
     }
-    
+
     /**
-     * Parse file header, that located before firs +++ string.
+     * Parse file header, that located before first +++ string.
      *
      * @param string    $header_text   Header text
      * @return array
@@ -515,18 +509,20 @@ class KND_Git_Piece_Parser {
         foreach($header_lines as $k => $line) {
             
             $line_parts = explode("=", $line);
-            
-            if(count($line_parts) > 0) {
-                
-                $param_name = trim($line_parts[0]);
-                $param_val = trim($line_parts[1]);
-                
-                if($param_name) {
-                    $param_val = trim(trim($param_val, "'\"“”"));
-                    $parsed_data[$param_name] = $param_val;
-                }
-                
+
+            if(count($line_parts) <= 0) {
+                continue;
             }
+
+            $param_name = empty($line_parts[0]) ? '' : trim($line_parts[0]);
+            $param_val = empty($line_parts[1]) ? '' : trim(trim(trim($line_parts[1]), "'\"“”"));
+
+            if( !$param_name || !$param_val ) {
+                continue;
+            }
+            
+            $parsed_data[$param_name] = $param_val;
+
         }
         
         return $parsed_data;

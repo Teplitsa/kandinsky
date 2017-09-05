@@ -1505,8 +1505,11 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 				    
 				    $imp = new KND_Import_Remote_Content($plot_name);
 				    $data = $imp->import_content();
-				    
+
 				    $pdb = KND_Plot_Data_Builder::produce_builder($imp);
+				    if( !$pdb ) { // Show some user-friendly error
+				        throw new Exception('Plot data builder was not produced for plot: '.$plot_name);
+                    }
 				    $pdb->build_theme_files();
 				    $pdb->build_option_files();
 				    $pdb->build_theme_colors();
