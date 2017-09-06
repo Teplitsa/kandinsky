@@ -564,7 +564,10 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 			isset($this->steps[$this->step]) ? call_user_func($this->steps[$this->step]['view']) : false;
 		}
 
-		public function step_intro_view() {?>
+		public function step_intro_view() {
+
+//		    $path = 'D:\dev\htdocs\kandinsky/wp-content/uploads/2017/09/kandinsky-text-color-line-master';
+//		    knd_rmdir($path);?>
 
             <h1><?php printf(esc_html__('Welcome to the %s setup wizard', 'knd'), wp_get_theme());?></h1>
             <p><?php printf(esc_html__("Hello! Let's set up your organization website together. With few simple steps we will configure minimal necessary settings, like installing of required plugins, setting up default website content and the logo. It should only take 5 minutes. You can always change any of these settings later on, in the Plugins admin folder.", 'knd')); ?></p>
@@ -814,20 +817,12 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
             $imp->import_downloaded_content();
 
             $pdb = KND_Plot_Data_Builder::produce_builder($imp);
-
-//            echo '<pre>Builder: '.print_r($pdb, 1).'</pre>';
             $pdb->build_title_and_description();
-            
-            return true;
-
-        }
-        public function _content_install_logo_favicon() {
-
-            $scenario_id = get_theme_mod('knd_site_scenario');
 
             return true;
 
         }
+
 		public function _content_install_posts() {
 
 // 		    knd_import_starter_data_from_csv('posts.csv', 'post');

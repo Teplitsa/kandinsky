@@ -13,15 +13,15 @@ error_reporting(E_ALL);
  */
 class KND_Import_Remote_Content {
     
-    private $content_importer = NULL;   // remote content imported (depends on content source), now only KND_Import_Git_Content supported
-    private $plot_data = NULL;          // array with data, represented as array and KND_Piece
-    private $plot_name = NULL;          // plot name, supported values: color-line, right2city, withyou
+    private $content_importer = NULL; // remote content imported (depends on content source), only KND_Import_Git_Content supported
+    private $plot_data = NULL; // array with data, represented as array and KND_Piece
+    private $plot_name = NULL; // color-line, withyou, dubrovino
     private $wizard_plot_name_to_remote_source_name = array(
         'problem-org' => 'color-line',
         'fundraising-org' => 'withyou',
         'public-campaign' => 'dubrovino',
     );
-    
+
     function __construct($plot_name) {
 
         if(isset($this->wizard_plot_name_to_remote_source_name[$plot_name])) {
@@ -32,17 +32,18 @@ class KND_Import_Remote_Content {
         }
 
         $this->parsedown = new Parsedown();
+
     }
     
     public function __get($name) {
         if($name == 'plot_name') {
             return $this->plot_name;
-        }
-        elseif($name == 'possible_plots') {
+        } elseif($name == 'possible_plots') {
             return array_values($this->wizard_plot_name_to_remote_source_name);
-        }
-        elseif($name == 'possible_wizard_plots') {
+        } elseif($name == 'possible_wizard_plots') {
             return array_keys($this->wizard_plot_name_to_remote_source_name);
+        } else {
+            return null;
         }
     }
     
@@ -52,27 +53,29 @@ class KND_Import_Remote_Content {
      *
      */
     function import_content() {
+
         $this->download_content();
         $this->extract_content();
-        
+
         $this->plot_data = $this->parse_content($this->plot_name);
         return $this->plot_data;
+
     }
-    
+
     /**
      * Download content using specified importer.
      *
      */
     function download_content() {
-        return $this->content_importer->download();
+        $this->content_importer->download();
     }
-    
+
     /**
      * Extract content using specified importer.
      *
      */
     function extract_content() {
-        return $this->content_importer->extract();
+        $this->content_importer->extract();
     }
     
     /**
@@ -84,10 +87,12 @@ class KND_Import_Remote_Content {
     }
     
     function import_downloaded_content() {
+
         $this->plot_data = $this->parse_exist_content();
         return $this->plot_data;
+
     }
-    
+
     function parse_exist_content() {
         return $this->content_importer->parse_exist_content($this->plot_name);
     }
@@ -100,16 +105,11 @@ class KND_Import_Remote_Content {
      * @return bool
     */
     function is_piece($piece_name, $section = '') {
-        
-        if($section) {
-            return isset($this->plot_data[$this->plot_name][$section][$piece_name]);
-        }
-        else {
-            return isset($this->plot_data[$this->plot_name][$piece_name]);
-        }
-        
+        return $section ?
+            isset($this->plot_data[$this->plot_name][$section][$piece_name]) :
+            isset($this->plot_data[$this->plot_name][$piece_name]);
     }
-    
+
     /**
      * Return raw $this->plot_data element by name and section.
      *
@@ -118,16 +118,12 @@ class KND_Import_Remote_Content {
      * @return array
     */
     function get_fdata($piece_name, $section = '') {
-    
+
         try {
-            if($section) {
-                $val = $this->plot_data[$this->plot_name][$section][$piece_name];
-            }
-            else {
-                $val = $this->plot_data[$this->plot_name][$piece_name];
-            }
-        }
-        catch (Exception $ex) {
+            $val = $section ?
+                $this->plot_data[$this->plot_name][$section][$piece_name] :
+                $this->plot_data[$this->plot_name][$piece_name];
+        } catch (Exception $ex) {
             $val = NULL;
         }
     
@@ -144,17 +140,13 @@ class KND_Import_Remote_Content {
     function get_piece($piece_name, $section = '') {
         
         try {
-            if($section) {
-                $val = $this->plot_data[$this->plot_name][$section][$piece_name]['piece'];
-            }
-            else {
-                $val = $this->plot_data[$this->plot_name][$piece_name]['piece'];
-            }
-        }
-        catch (Exception $ex) {
+            $val = $section ?
+                $this->plot_data[$this->plot_name][$section][$piece_name]['piece'] :
+                $this->plot_data[$this->plot_name][$piece_name]['piece'];
+        } catch (Exception $ex) {
             $val = NULL;
         }
-        
+
         return $val;
     }
     
@@ -167,20 +159,19 @@ class KND_Import_Remote_Content {
      * @return string|int|NULL
     */
     function get_val($piece_name, $key, $section = '') {
-        
+
         $piece = $this->get_fdata($piece_name, $section);
-//         print_r($this->plot_data);
         
         try {
             $val = $piece['piece']->$key;
-        }
-        catch(Exception $ex) {
+        } catch(Exception $ex) {
             $val = NULL;
         }
-        
+
         return $val;
+
     }
-    
+
     /**
      * Return WP attachment ID of piece thumb.
      *
@@ -190,11 +181,10 @@ class KND_Import_Remote_Content {
     function get_thumb_attachment_id($piece) {
         
         $file_data = NULL;
-        
+
         if(isset($this->plot_data[$this->plot_name][$piece->piece_section][$piece->thumb])) {
-            $file_data = $this->plot_data[$this->plot_name][$piece->section_name][$piece->thumb];
-        }
-        elseif(isset($this->plot_data[$this->plot_name]['img'][$piece->thumb])) {
+            $file_data = $this->plot_data[$this->plot_name][$piece->piece_section][$piece->thumb];
+        } elseif(isset($this->plot_data[$this->plot_name]['img'][$piece->thumb])) {
             $file_data = $this->plot_data[$this->plot_name]['img'][$piece->thumb];
         }
         
@@ -210,6 +200,7 @@ class KND_Import_Remote_Content {
         }
     
         return isset($file_data['attachment_id']) ? $file_data['attachment_id'] : NULL;
+
     }
     
     /**
@@ -293,7 +284,7 @@ class KND_Import_Git_Content {
      *
      */
     public function download() {
-        return $this->download_git_zip();
+        $this->download_git_zip();
     }
     
     /**
@@ -301,7 +292,7 @@ class KND_Import_Git_Content {
      *
      */
     public function extract() {
-        return $this->unzip_git_zip();
+        $this->unzip_git_zip();
     }
     
     /**
@@ -313,17 +304,18 @@ class KND_Import_Git_Content {
     }
     
     public function parse_exist_content($plot_name) {
-        
+
         $exist_attachment = TST_Import::get_instance()->get_attachment_by_old_url( $this->content_archive_url );
         if( $exist_attachment ) {
-            
+
             $this->distr_attachment_id = $exist_attachment->ID;
             $this->zip_fpath = get_post_meta( $this->distr_attachment_id, 'kandinsky_zip_fpath', true );
-            $this->import_content_files_dir = get_post_meta( $this->distr_attachment_id, 'kandinsky_import_content_files_dir', true );
+            $this->import_content_files_dir = get_post_meta($this->distr_attachment_id, 'kandinsky_import_content_files_dir', true);
             
         }
-        
+
         return $this->parse_git_files($plot_name);
+
     }
     
     /**
@@ -331,16 +323,10 @@ class KND_Import_Git_Content {
      *
      */
     private function download_git_zip() {
-        
-        $this->distr_attachment_id = TST_Import::get_instance()->import_big_file( $this->content_archive_url );
-        $this->zip_fpath = get_attached_file( $this->distr_attachment_id );
-//         $this->parse_exist_content();
-        
-//         for debug
-//         $this->distr_attachment_id = TST_Import::get_instance()->maybe_import( $this->content_archive_url );
-//         $this->distr_attachment_id = TST_Import::get_instance()->maybe_import_local_file( '/home/sobranie/php/kandinsky_master.zip' );
-//         $this->distr_attachment_id = TST_Import::get_instance()->import_local_file( '/home/sobranie/php/kandinsky_master.zip' );
-        
+
+        $this->distr_attachment_id = TST_Import::get_instance()->import_big_file($this->content_archive_url);
+        $this->zip_fpath = get_attached_file($this->distr_attachment_id);
+
     }
     
     /**
@@ -348,33 +334,36 @@ class KND_Import_Git_Content {
      *
      */
     private function unzip_git_zip() {
-        
+
         if(!$this->zip_fpath) {
             throw new Exception("No zip file!");
         }
-        
+
         if(!is_file($this->zip_fpath)) {
             throw new Exception("Zip file not found: {$this->zip_fpath}");
         }
-        
+
         WP_Filesystem();
         $destination = wp_upload_dir();
         $destination_path = $destination['path'];
         $unzipped_dir = $destination_path."/kandinsky-text-{$this->plot_name}-master";
-        
+
         if(is_dir($unzipped_dir)) {
             knd_rmdir($unzipped_dir);
         }
 
         $unzipfile = unzip_file( $this->zip_fpath, $destination_path );
-        
+
         if( !is_wp_error($unzipfile) ) {
 
             $this->import_content_files_dir = $destination_path."/kandinsky-text-{$this->plot_name}-master";
 
             update_post_meta( $this->distr_attachment_id, 'kandinsky_zip_fpath', wp_slash($this->zip_fpath) );
             update_post_meta( $this->distr_attachment_id, 'kandinsky_import_content_files_dir', wp_slash($this->import_content_files_dir) );
-            
+
+            unlink($this->zip_fpath);
+            $this->zip_fpath = false;
+
         } else {
             $this->import_content_files_dir = NULL;
             throw new Exception("Unzip FAILED: {$this->zip_fpath} to {$destination_path} Error: " . var_export($unzipfile, True) );
@@ -505,9 +494,9 @@ class KND_Git_Piece_Parser {
         $header_text = trim($header_text);
         $header_lines = explode("\n", $header_text);
         $parsed_data = array();
-        
+
         foreach($header_lines as $k => $line) {
-            
+
             $line_parts = explode("=", $line);
 
             if(count($line_parts) <= 0) {
@@ -520,7 +509,7 @@ class KND_Git_Piece_Parser {
             if( !$param_name || !$param_val ) {
                 continue;
             }
-            
+
             $parsed_data[$param_name] = $param_val;
 
         }

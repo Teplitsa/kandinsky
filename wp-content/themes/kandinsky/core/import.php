@@ -92,11 +92,11 @@ function knd_import_posts_from_csv($input_file, $post_type, $taxonomy = '', $pos
 }
 
 function knd_rmdir($dirPath) {
-    if (! is_dir($dirPath)) {
+    if( !is_dir($dirPath) ) {
         return;
     }
-    
-    if (substr($dirPath, strlen($dirPath) - 1, 1) != '/') {
+
+    if(substr($dirPath, strlen($dirPath) - 1, 1) != '/') {
         $dirPath .= '/';
     }
     $files = glob($dirPath . '*', GLOB_MARK);
@@ -107,7 +107,9 @@ function knd_rmdir($dirPath) {
             unlink($file);
         }
     }
-    rmdir($dirPath);
+    if( @rmdir($dirPath) == false ) {
+        knd_rmdir($dirPath);
+    }
 }
 
 function knd_build_imported_url($url) {

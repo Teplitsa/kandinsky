@@ -25,24 +25,22 @@ class KND_Plot_Data_Builder {
      *
      * @param string    $imp    KND_Import_Remote_Content
      * 
-     * @return extended KND_Plot_Data_Builder
+     * @return KND_Plot_Data_Builder Extended class instance
      */
     public static function produce_builder($imp) {
         return self::produce_plot_builder($imp->plot_name, $imp);
     }
     
     public static function produce_plot_builder($plot_name, $imp) {
-        
+
         $plot_name_cap = preg_replace("/[-_]*/", "", ucfirst($plot_name));
         $class_name = "KND_{$plot_name_cap}_Data_Builder";
         if(class_exists($class_name)) {
             $builder = new $class_name($imp);
-        }
-        else {
-            echo '<pre>'.print_r($plot_name_cap, 1).'</pre>';
+        } else {
             $builder = NULL;
         }
-        
+
         return $builder;
     }
     
