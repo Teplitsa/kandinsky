@@ -270,10 +270,12 @@ function knd_customize_register(WP_Customize_Manager $wp_customize) {
     $wp_customize->get_section ('static_front_page')->panel = 'knd_homepage';
     $wp_customize->get_section ('static_front_page')->title = __('Static page settings', 'knd');
 
-    //move widgets in home
-    $wp_customize->get_section( 'sidebar-widgets-knd-homepage-sidebar' )->panel = 'knd_homepage';
+    // move widgets in home
+    $homepage_sidebar = $wp_customize->get_section('sidebar-widgets-knd-homepage-sidebar');
+    if($homepage_sidebar) {
+        $homepage_sidebar->panel = 'knd_homepage';
+    }
 
-    
     // hero image
     $wp_customize->add_setting('knd_hero_image', array(
         'default'           => '',
