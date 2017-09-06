@@ -336,7 +336,12 @@ add_action('init', 'knd_remove_scenario_unzipped_dir');
 function knd_remove_scenario_unzipped_dir(){
 
     // Attempt to remove a scenario unzipped folder only if user is going from wizard to some other page:
-    if(stripos(knd_current_url(), 'knd-setup-wizard') !== false || stripos(wp_get_referer(), 'knd-setup-wizard') === false) {
+    if(
+        !is_main_query() || wp_doing_ajax() ||
+        stripos(knd_current_url(), 'themes.php') !== false ||
+        stripos(knd_current_url(), 'knd-setup-wizard') !== false ||
+        stripos(wp_get_referer(), 'knd-setup-wizard') === false
+    ) {
         return;
     }
 
