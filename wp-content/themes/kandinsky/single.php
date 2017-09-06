@@ -178,7 +178,7 @@ if($thumb_width > 1104) {
 				array(
 					'taxonomy' => 'person_cat',
 					'field' => 'id',
-					'terms' => (!empty($cat)) ? rdc_get_term_id_from_terms($cat): array()
+					'terms' => (!empty($cat)) ? knd_get_term_id_from_terms($cat): array()
 				)
 			)
 		));

@@ -1,6 +1,19 @@
-<?php
+<?php if( !defined('WPINC') ) die;
 
 error_reporting(E_ALL);
+
+function knd_get_wizard_plot_names($plot_name = '') {
+
+    $plot_names = array(
+        'problem-org' => 'color-line',
+        'fundraising-org' => 'withyou',
+        'public-campaign' => 'dubrovino',
+    );
+
+    return empty($plot_name) ?
+        $plot_names : (isset($plot_names[$plot_name]) ? $plot_names[$plot_name] : false);
+
+}
 
 /**
  * Class to download test content from specified source, extract, put extracted data into PHP array and KND_Piece and to access extracted data.
@@ -16,17 +29,12 @@ class KND_Import_Remote_Content {
     private $content_importer = NULL; // remote content imported (depends on content source), only KND_Import_Git_Content supported
     private $plot_data = NULL; // array with data, represented as array and KND_Piece
     private $plot_name = NULL; // color-line, withyou, dubrovino
-    private $wizard_plot_name_to_remote_source_name = array(
-        'problem-org' => 'color-line',
-        'fundraising-org' => 'withyou',
-        'public-campaign' => 'dubrovino',
-    );
 
     function __construct($plot_name) {
 
-        if(isset($this->wizard_plot_name_to_remote_source_name[$plot_name])) {
+        if(knd_get_wizard_plot_names($plot_name)) {
 
-            $this->plot_name = $this->wizard_plot_name_to_remote_source_name[$plot_name];
+            $this->plot_name = knd_get_wizard_plot_names($plot_name);
             $this->content_importer = new KND_Import_Git_Content($this->plot_name);
 
         }
@@ -39,9 +47,9 @@ class KND_Import_Remote_Content {
         if($name == 'plot_name') {
             return $this->plot_name;
         } elseif($name == 'possible_plots') {
-            return array_values($this->wizard_plot_name_to_remote_source_name);
+            return array_values(knd_get_wizard_plot_names());
         } elseif($name == 'possible_wizard_plots') {
-            return array_keys($this->wizard_plot_name_to_remote_source_name);
+            return array_keys(knd_get_wizard_plot_names());
         } else {
             return null;
         }
@@ -345,18 +353,17 @@ class KND_Import_Git_Content {
 
         WP_Filesystem();
         $destination = wp_upload_dir();
-        $destination_path = $destination['path'];
-        $unzipped_dir = $destination_path."/kandinsky-text-{$this->plot_name}-master";
+        $unzipped_dir = "{$destination['path']}/kandinsky-text-{$this->plot_name}-master";
 
         if(is_dir($unzipped_dir)) {
             knd_rmdir($unzipped_dir);
         }
 
-        $unzipfile = unzip_file( $this->zip_fpath, $destination_path );
+        $unzipfile = unzip_file( $this->zip_fpath, $destination['path'] );
 
         if( !is_wp_error($unzipfile) ) {
 
-            $this->import_content_files_dir = $destination_path."/kandinsky-text-{$this->plot_name}-master";
+            $this->import_content_files_dir = "{$destination['path']}/kandinsky-text-{$this->plot_name}-master";
 
             update_post_meta( $this->distr_attachment_id, 'kandinsky_zip_fpath', wp_slash($this->zip_fpath) );
             update_post_meta( $this->distr_attachment_id, 'kandinsky_import_content_files_dir', wp_slash($this->import_content_files_dir) );
@@ -366,7 +373,7 @@ class KND_Import_Git_Content {
 
         } else {
             $this->import_content_files_dir = NULL;
-            throw new Exception("Unzip FAILED: {$this->zip_fpath} to {$destination_path} Error: " . var_export($unzipfile, True) );
+            throw new Exception("Unzip FAILED: {$this->zip_fpath} to {$destination['path']} Error: " . var_export($unzipfile, True) );
         }
     }
 

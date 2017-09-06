@@ -92,24 +92,23 @@ function knd_import_posts_from_csv($input_file, $post_type, $taxonomy = '', $pos
 }
 
 function knd_rmdir($dirPath) {
+
     if( !is_dir($dirPath) ) {
         return;
     }
 
-    if(substr($dirPath, strlen($dirPath) - 1, 1) != '/') {
-        $dirPath .= '/';
-    }
+    $dirPath = rtrim($dirPath, '\/').'/';
     $files = glob($dirPath . '*', GLOB_MARK);
-    foreach ($files as $file) {
-        if (is_dir($file)) {
+    foreach($files as $file) {
+        if(is_dir($file)) {
             knd_rmdir($file);
         } else {
             unlink($file);
         }
     }
-    if( @rmdir($dirPath) == false ) {
-        knd_rmdir($dirPath);
-    }
+
+    @rmdir($dirPath); // Sometimes hidden system files doesn't allow to remove a directory
+
 }
 
 function knd_build_imported_url($url) {

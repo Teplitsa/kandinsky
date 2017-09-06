@@ -88,27 +88,27 @@ function rdc_custom_excerpt_more( $output ) {
 
 
 /** Current URL  **/
-if(!function_exists('rdc_current_url')){
-function rdc_current_url() {
-   
-    $pageURL = 'http';
-   
-    if (isset($_SERVER["HTTPS"]) && ($_SERVER["HTTPS"] == "on")) {$pageURL .= "s";}
-    $pageURL .= "://";
-   
-    if ($_SERVER["SERVER_PORT"] != "80") {
-        $pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
-    } else {
-        $pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+if(!function_exists('knd_current_url')) {
+    function knd_current_url() {
+
+        $pageURL = 'http';
+
+        if (isset($_SERVER["HTTPS"]) && ($_SERVER["HTTPS"] == "on")) {$pageURL .= "s";}
+        $pageURL .= "://";
+
+        if ($_SERVER["SERVER_PORT"] != "80") {
+            $pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
+        } else {
+            $pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+        }
+
+        return $pageURL;
     }
-   
-    return $pageURL;
-}
 }
 
 
 /** Extract posts IDs from query **/
-function rdc_get_posts_ids_from_query($query){
+function knd_get_posts_ids_from_query(WP_Query $query) {
 	
 	$ids = array();
 	if(!$query->have_posts())
@@ -121,22 +121,26 @@ function rdc_get_posts_ids_from_query($query){
 	return $ids;
 }
 
-function rdc_get_post_id_from_posts($posts){
+function knd_get_post_id_from_posts(array $posts) {
 		
 	$ids = array();
-	if(!empty($posts)){ foreach($posts as $p) {
-		$ids[] = $p->ID;
-	}}
-	
+	foreach($posts as $p) {
+	    if( !empty($p) && !empty($p->ID) ) {
+		    $ids[] = $p->ID;
+	    }
+	}
+
 	return $ids;
 }
 
-function rdc_get_term_id_from_terms($terms){
-		
+function knd_get_term_id_from_terms(array $terms){
+
 	$ids = array();
-	if(!empty($terms)){ foreach($terms as $t) {
-		$ids[] = $t->term_id;
-	}}
+	foreach($terms as $t) {
+	    if( !empty($t) && !empty($t->term_id) ) {
+            $ids[] = $t->term_id;
+        }
+	}
 	
 	return $ids;
 }
@@ -323,9 +327,36 @@ function knd_flush_permalinks() {
 
 add_action('pre_get_posts', 'knd_posts_archive_entries_number');
 function knd_posts_archive_entries_number(WP_Query $query) {
-
     if($query->is_main_query() && $query->is_posts_page) {
         $query->set('posts_per_page', 11);
+    }
+}
+
+add_action('init', 'knd_remove_scenario_unzipped_dir');
+function knd_remove_scenario_unzipped_dir(){
+
+    // Attempt to remove a scenario unzipped folder only if user is going from wizard to some other page:
+    if(stripos(knd_current_url(), 'knd-setup-wizard') !== false || stripos(wp_get_referer(), 'knd-setup-wizard') === false) {
+        return;
+    }
+
+    $scenario_name = get_theme_mod('knd_site_scenario');
+
+    if( !$scenario_name ) {
+        return;
+    }
+
+    $scenario_name = knd_get_wizard_plot_names($scenario_name);
+
+    if(is_string($scenario_name)) {
+
+        $destination = wp_upload_dir();
+        $unzipped_dir = "{$destination['path']}/kandinsky-text-".$scenario_name."-master";
+
+        if(is_dir($unzipped_dir)) {
+            knd_rmdir($unzipped_dir);
+        }
+
     }
 
 }
