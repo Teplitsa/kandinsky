@@ -124,7 +124,7 @@ class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
         
         'general_options' => array(
             'site_name' => 'Линия Цвета',
-            'site_description' => 'Помощь людям с алькогольной зависимостью',
+            'site_description' => 'Помощь людям с алкогольной зависимостью',
             
             'knd_footer_contacts' => "
 <p>
