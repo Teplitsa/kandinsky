@@ -16,7 +16,7 @@ class KND_Team_Widget extends WP_Widget {
         $title = empty($instance['title']) ? '' : trim($instance['title']);
         $title = apply_filters('widget_title', $title, $instance, $this->id_base);
 
-        $num = empty($instance['num']) ? 4 : (int)$instance['num'];
+        $num = empty($instance['num']) ? 5 : (int)$instance['num'];
         $slug = empty($instance['slug']) ? 'team' :  trim($instance['slug']);
 
         $people = $this->get_persons($num, $slug);
@@ -68,10 +68,10 @@ class KND_Team_Widget extends WP_Widget {
 	    
 	    //num
 	    if($num <= 0) {
-	        $num = 4;
+	        $num = 5;
 	    }
-	    elseif($num > 12){
-	        $num = 12;
+	    elseif($num > 10){
+	        $num = 10;
 	    }
 
 	    //query
@@ -93,11 +93,11 @@ class KND_Team_Widget extends WP_Widget {
 	
 	
 	function print_widget_content($people) {
-        
+
     ?>
-    <div class="knd-people-gallery flex-row">
+    <div class="knd-people-gallery flex-row centered">
         <?php foreach($people as $person) {?>
-            <div class="person flex-cell flex-sm-6 flex-md-3"><?php knd_person_card($person);?></div>
+            <div class="person flex-cell flex-sm-6 flex-md-col-5"><?php knd_person_card($person);?></div>
         <?php }?>
     </div>
     <?php

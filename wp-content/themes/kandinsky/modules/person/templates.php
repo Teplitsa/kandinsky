@@ -48,9 +48,9 @@ function knd_people_gallery($category_ids = '', $person_ids = ''){
         return;
     }
 ?>
-    <div class="knd-people-gallery flex-row">
+    <div class="knd-people-gallery flex-row centered">
     <?php foreach($people as $person) {?>
-        <div class="person flex-cell flex-sm-6 flex-md-3"><?php knd_person_card($person);?></div>
+        <div class="person flex-cell flex-sm-6 flex-md-col-5"><?php knd_person_card($person);?></div>
     <?php }?>
     </div>
 <?php
