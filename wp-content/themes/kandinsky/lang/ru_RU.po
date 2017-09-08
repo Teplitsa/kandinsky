@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-08 11:12+0300\n"
-"PO-Revision-Date: 2017-09-08 11:13+0300\n"
+"POT-Creation-Date: 2017-09-08 16:36+0300\n"
+"PO-Revision-Date: 2017-09-08 16:36+0300\n"
 "Last-Translator: sidorenko.a <sidorenko.a@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -993,6 +993,14 @@ msgstr "Укажите слова для поиска в форме и нажм�
 #: search.php:51
 msgid "Nothing found under your request"
 msgstr "По вашему запросу ничего не найдено."
+
+#: searchform.php:8
+msgid "Find"
+msgstr "Найти"
+
+#: searchform.php:9
+msgid "Press Enter"
+msgstr "Нажмите Enter"
 
 #: single-leyka_campaign.php:29
 msgid "Our supporters"

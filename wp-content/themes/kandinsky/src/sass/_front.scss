@@ -123,7 +123,7 @@ a {
 /** Footer **/
 .site-footer {
     
-	@include body-text(small);
+	@include knd-footer-text();
 	padding: 10px 0px 30px 0px;
 	background: $color-bg-light;
 	color: $color-text;
@@ -176,7 +176,8 @@ a {
 	}
 	
 	.widget-title {
-	   display:none;
+	   font-weight: bold;
+	   margin-bottom: 1.5em;
 	}
 	
 	//layout

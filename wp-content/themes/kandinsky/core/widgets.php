@@ -40,7 +40,7 @@ function knd_sidebars_init() {
         'name' => __('Footer - Columns', 'knd'),
         'id' => 'knd-footer-sidebar',
         'description' => __('Footer columns area accepts 4 widgets', 'knd'),
-        'before_widget' => '<div class="widget-bottom">',
+        'before_widget' => '<div id="%1$s" class="widget-bottom %2$s">',
         'after_widget' => '</div>',
         'before_title' => '<h3 class="widget-title">',
         'after_title' => '</h3>',
@@ -62,8 +62,8 @@ function knd_custom_widgets() {
 	//unregister_widget('WP_Widget_Search');
 	
 	//Most of widgets do not perform well with MDL as for now
-	unregister_widget('Leyka_Donations_List_Widget');
-	unregister_widget('Leyka_Campaign_Card_Widget');
+	//unregister_widget('Leyka_Donations_List_Widget');
+	//unregister_widget('Leyka_Campaign_Card_Widget');
 	unregister_widget('Leyka_Campaigns_List_Widget');
 	
 }

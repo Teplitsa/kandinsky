@@ -12,7 +12,7 @@ class KND_Demo_Content {
 
     private function __construct() {
 
-        add_action('after_setup_theme', array($this, 'demo_content'));
+        //add_action('after_setup_theme', array($this, 'demo_content'));
         
 //         add_action('knd_save_demo_content', array($this, 'save_demo_content'));
         
@@ -282,4 +282,4 @@ class KND_Demo_Content {
 
 } //class
 
-KND_Demo_Content::get_instance();
+//KND_Demo_Content::get_instance();

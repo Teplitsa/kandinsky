@@ -201,42 +201,6 @@
 }	
 
 //section title
-.pb-section-title {
-	
-	&.align-left {
-		text-align: left;
-	}
-	
-	&.align-right {
-		text-align: right;
-	}
-	
-	&.align-center {
-		text-align: center;
-	}
-	
-	h2, h3 {
-		@include header-title(head_title);
-		margin: 0 0 $base 0;
-	}
-	
-	h4 {
-		@include post-title();
-		margin: 0;
-	}
-
-	h3 + h4 { margin-top: 1em; }
-	
-	&.page-header {
-		padding-top: $gut;
-		
-		h3 {
-			@include header-title(section);
-		}
-	}
-	
-}
-
 .page-section {
 
     margin: 2*$base 0;
@@ -479,49 +443,6 @@ background: linear-gradient(to bottom, rgba(0,0,0,0) 10%,rgba(0,0,0,.8) 100%);
 	margin-top: $base - 8px;
 }
 
-.so-panel.widget_nav_menu {
-	
-	ul {
-		margin: 0;
-	}
-	
-	li {
-		list-style-type: none;
-		&:before { display: none; }
-	}
-	
-	a {
-		display: inline-block;
-		font-size: 1.2em;
-		padding: 5px 12px;
-		white-space: nowrap; 
-	}
-	
-	.current-menu-item {
-		a {
-			background: $color-link-three;
-			color: $color-white;
-		}
-	}
-	
-	.inpage-h-menu { 
-		ul { margin-left: -12px; }
-		
-		li {
-			display: inline-block;
-			margin: 0;
-			padding: 0;
-			
-			&.current-menu-item:first-child {
-				margin-left: 12px;
-			}
-			
-			a {
-				padding: 5px 12px;
-			}
-		}		
-	}
-}
 
 /* homepage widgets */
 .knd-homepage-sidebar {
@@ -529,18 +450,6 @@ background: linear-gradient(to bottom, rgba(0,0,0,0) 10%,rgba(0,0,0,.8) 100%);
     
     @include for(medium-screens) {
         padding-top: $gut * 1.8;
-    }
-    
-    //border-top: 5px solid $color-border-dark;
-    
-    img {
-        @include widget-content-style();
-    }
-    
-    .textwidget {
-        @extend .container;
-        text-align:center;
-        margin-bottom: $gut;
     }
     
     body.home.plot-public-campaign & {
@@ -572,16 +481,12 @@ background: linear-gradient(to bottom, rgba(0,0,0,0) 10%,rgba(0,0,0,.8) 100%);
     }
     
     .knd-news-widget-body {
-        @include widget-content-style();
+        
         padding-bottom: $gut * 1.17;
     }
     
 }
 
-/* .text widget */
-.textwidget {
-    @include widget-content-style();
-}
 
 /* ourorg widget */
 .knd-ourorg-widget {
@@ -590,7 +495,6 @@ background: linear-gradient(to bottom, rgba(0,0,0,0) 10%,rgba(0,0,0,.8) 100%);
         display:block;
     }
     
-    @include widget-content-style();
     text-align:center;
     padding-bottom: $gut * 1.55;
     
@@ -621,8 +525,9 @@ background: linear-gradient(to bottom, rgba(0,0,0,0) 10%,rgba(0,0,0,.8) 100%);
 .knd-whoweare-section {
     
     padding-bottom: 0px;
+
     @include for(medium-screens) {
-        padding-bottom: 100px;
+        padding-bottom: $gut*2;
     }
     
     .whoweare-item {

@@ -2,43 +2,75 @@
 
 .widget-full {
     
-
     .widget-full-title  {
         @include knd-head-exlarge-text();
         padding-bottom: $gut*.7;
     }
+
+    &.widget_nav_menu,
+    &.widget_search,
+    &.widget_media_image,
+    &.widget_media_audio,
+    &.widget_media_video,
+    &.widget_text {
+        text-align: center; 
+        padding: $gut/2 0 $gut;
+        @include container-base();
+    }
 }
 
-.widget_search,
-.widget_media_image,
-.widget_media_audio,
-.widget_media_video,
-.widget_text {
-    text-align: center; 
-    padding: $gut/2 0 $gut;
-    @include container-base();
-}
+.widget-full.widget_nav_menu {
 
-.widget_media_image {
-    text-align: center;
-    
-
-    .container {
-        width: 100%;
+    li {
+        display: inline-block;
+        padding: 8px;
     }
 
+    a {
+        @include knd-link-section-text();
+        text-transform: uppercase;
+        color: $color-link-three;
+        border-bottom: 1px solid;
+
+        &:hover {
+            color: $color-link-one;
+        }
+    }
+}
+
+
+.widget-full.widget_text {
+    max-width: $full_cont;
+
+    .textwidget {
+        max-width: $page_cont;
+        text-align: left;
+        @include the-content();
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &.widget_custom_html {
+        .textwidget { max-width: none; }
+    }
+}
+
+.widget-full.widget_media_image {
+    text-align: center;
+    
     .heading + img {
         max-width: $full_cont;
         height: auto;
     }
 }
 
-.widget_media_video,
-.widget_media_audio {
+
+.widget-full.widget_media_video,
+.widget-full.widget_media_audio {
     max-width: $page_cont;
 }
 
-.widget_search {
+.widget-full.widget_search {
     max-width: $page_cont;
 
     .searchform {
@@ -86,4 +118,40 @@
             top: 20px;
         }
     }
+}
+
+.widget-bottom.widget_search {
+    .searchform {
+        position: relative;
+    }
+
+    .icon-search {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 14px;
+        left: 10px;
+        fill: $color-text-black;
+    }
+
+    .search-field {
+        border: 1px solid $color-text-black;
+        background: transparent;
+        padding: 12px 12px 12px 44px;
+
+        &:focus, &:active {
+            background: $color-white;
+        }
+    }
+
+    
+    .action {
+        display: none;
+    }
+
+}
+
+//in footer 
+.site-footer {
+
 }

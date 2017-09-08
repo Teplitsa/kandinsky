@@ -1,1 +1,2 @@
 [08-Sep-2017 07:44:58 UTC] PHP Fatal error:  Call to undefined function rdc_current_url() in /app/public/wp-content/themes/kandinsky/modules/social.php on line 102
+[08-Sep-2017 11:58:04 UTC] PHP Notice:  Undefined index: article6 in /app/public/wp-content/themes/kandinsky/modules/starter/import_remote_content.php on line 152
