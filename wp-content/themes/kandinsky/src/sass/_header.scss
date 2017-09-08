@@ -337,9 +337,13 @@ h2.logo-name {
 
 .searchform {
 	width: 100%;
-		
+	.action {
+        display: none;
+    }
+    
 	input {
-		@include nav-text(meta);
+		@include knd-head-tiny-text();
+        letter-spacing: normal;
 		text-transform: none;
 		padding: 18px $gut/2;
 		color: $color-text-black;

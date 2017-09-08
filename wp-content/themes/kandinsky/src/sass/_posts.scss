@@ -750,5 +750,7 @@
 .single {
     .entry-content {
         @include the-content();
+        min-height: 50vh;
     }
 }
+

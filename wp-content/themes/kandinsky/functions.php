@@ -64,48 +64,6 @@ function rdc_medialib_custom_image_sizes($sizes) {
 	return array_merge($sizes, $addsizes);
 }
 
-/**
- * Register widget area.
- */
-function knd_widgets_init() {
-
-	$config = array(		
-		'right_single' => array(
-            'name' => 'Правая колонка - Записи',
-            'description' => 'Боковая колонка справа на страницах новостей'
-        ),
-		'right_event' => array(
-            'name' => 'Правая колонка - Анонсы',
-            'description' => 'Боковая колонка справа на страницах анонсов'
-        ),
-		// 'footer' => array(
-		// 				'name' => 'Подвал - 4 виджета',
-		// 				'description' => 'Динамическая область в подвале: 4 виджета'
-		// 			),
-	);
-		
-	foreach($config as $id => $sb) {
-		
-		$before = '<div id="%1$s" class="widget %2$s">';
-		
-		if(false !== strpos($id, 'footer')){
-			$before = '<div id="%1$s" class="widget-bottom %2$s">';
-		}		
-		
-		register_sidebar(array(
-			'name' => $sb['name'],
-			'id' => $id.'-sidebar',
-			'description' => $sb['description'],
-			'before_widget' => $before,
-			'after_widget' => '</div>',
-			'before_title' => '<h3 class="widget-title">',
-			'after_title' => '</h3>',
-		));
-
-	}
-
-}
-add_action('init', 'knd_widgets_init', 27);
 
 
 /**

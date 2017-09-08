@@ -184,7 +184,7 @@ if($thumb_width > 1104) {
 		));
 		
 		if($pquery->have_posts()){
-			knd_more_section($pquery->posts, __('Our volunteers', 'knd'), 'people', 'addon');
+			//knd_more_section($pquery->posts, __('Our volunteers', 'knd'), 'people', 'addon');
 		}
 	}
 ?>
