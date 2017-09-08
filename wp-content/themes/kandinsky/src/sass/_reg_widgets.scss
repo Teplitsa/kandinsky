@@ -7,6 +7,7 @@
         padding-bottom: $gut*.7;
     }
 
+    &.widget_knd_team,
     &.widget_nav_menu,
     &.widget_search,
     &.widget_media_image,
@@ -151,7 +152,35 @@
 
 }
 
-//in footer 
-.site-footer {
 
+/* tean widget and shortcode */
+.widget-full.widget_knd_team {
+    max-width: $full_cont;
+    padding-bottom: 0;
+}
+
+.knd-people-title {
+    @include knd-head-exlarge-text();
+    color: $color-text-black;
+    margin-bottom: $inpage-margin-base;
+    text-align: center;
+}
+
+.knd-people-gallery {
+    margin-left: -24px;
+    margin-right: -24px;
+
+    .tpl-person {
+        a {
+            display: block;
+            color: $color-text-black;
+        }
+
+        margin-bottom: 0;
+
+        .entry-data {
+            text-align: left;
+            padding: 24px 0 0;
+        }
+    }
 }

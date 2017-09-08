@@ -491,7 +491,7 @@ function knd_more_section($posts, $title = '', $type = 'news', $css= ''){
 function rdc_related_project(WP_Post $cpost){
 	
 	$pl = get_permalink($cpost);
-	$ex = apply_filters('knd_the_title', rdc_get_post_excerpt($cpost, 25, true));
+	$ex = apply_filters('knd_the_title', knd_get_post_excerpt($cpost, 25, true));
 ?>
 <div class="related-widget widget">
 	<h3 class="widget-title"><?php _e('Related project', 'kds');?></h3>
@@ -541,40 +541,6 @@ function rdc_get_help_now_cta($cpost = null, $label = ''){
 	return $cta;
 }
 
-
-/** == People fuctions == **/
-function knd_people_gallery($category_ids = '', $person_ids = ''){
-	
-	$args = array(
-		'post_type'=> 'person',
-		'posts_per_page' => -1
-	);
-	
-	if($category_ids) {
-		$args['tax_query'] = array(
-			array(
-				'taxonomy'=> 'person_cat',
-				'field'   => 'id',
-				'terms'   => $category_ids
-			)
-		);
-	}
-    if($person_ids) {
-        $args['post__in'] = explode(',', $person_ids);
-    }
-
-	$query = new WP_Query($args);
-	if( !$query->have_posts() ) {
-		return '';
-    }?>
-
-	<div class="people-gallery eqh-container frame cards-loop">
-	<?php foreach($query->posts as $person) {?>
-		<div class="bit md-3 eqh-el"><?php knd_person_card($person);?></div>
-	<?php }?>
-	</div>
-<?php
-}
 
 /** == Orgs functions == **/
 function knd_orgs_gallery($category_ids = '', $org_ids = '') {

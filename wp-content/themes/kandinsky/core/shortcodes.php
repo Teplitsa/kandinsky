@@ -313,38 +313,39 @@ function knd_background_text_shortcode($atts = array(), $echo = true) {
 }
 
 /** A list of people (UI+) */
-add_shortcode('knd_persons_list', 'knd_persons_list_shortcode');
-function knd_persons_list_shortcode($atts = array(), $echo = true) {
+add_shortcode('knd_people_list', 'knd_people_list_shortcode');
+function knd_people_list_shortcode($atts = array()) {
 
     $atts = shortcode_atts(array(
-        'title' => '',
-        'person-categories' => '',
-        'persons' => '',
-        'class' => '',
+        'title'     => '',
+        'category'  => '',
+        'ids'       => '',
+        'class'     => '',
     ), $atts);
+
+    if(!function_exists('knd_people_gallery'))
+        return '';
 
     ob_start();?>
 
-    <section class="knd-persons-list page-section <?php echo $atts['class'] ? esc_attr($atts['class']) : '';?>">
+    <div class="knd-people-shortcode <?php echo $atts['class'] ? esc_attr($atts['class']) : '';?>">
 
         <?php if($atts['title']) {?>
-        <div class="pb-section-title align-center"><h2><?php echo esc_attr($atts['title']);?></h2></div>
-        <?php }
+        <div class="knd-people-title"><?php echo apply_filters('knd_the_title', $atts['title']);?></div>
+        <?php }?>
 
-        knd_people_gallery($atts['person-categories'], $atts['persons']);?>
+        <div class="knd-section-extend">
+        <?php knd_people_gallery($atts['category'], $atts['ids']); ?>
+        </div>
 
-    </section>
+    </div>
 
     <?php $out = ob_get_contents();
     ob_end_clean();
 
-    if( !!$echo ) {
-        echo $out;
-    } else {
-        return $out;
-    }
-
+    return $out;
 }
+
 
 /** A list of organizations (UI+) */
 add_shortcode('knd_orgs_list', 'knd_orgs_list_shortcode');

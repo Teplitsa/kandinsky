@@ -4,7 +4,7 @@
 function knd_post_card(WP_Post $cpost){
 	
 	$pl = get_permalink($cpost);
-	$ex = apply_filters('knd_the_title', rdc_get_post_excerpt($cpost, 25, true));
+	$ex = apply_filters('knd_the_title', knd_get_post_excerpt($cpost, 25, true));
 ?>
 <article class="flex-md-6 flex-lg-4 tpl-post card">
 	<a href="<?php echo $pl; ?>" class="thumbnail-link">
@@ -79,7 +79,7 @@ function rdc_intro_card_markup_over($title, $subtitle, $img_id, $link = '', $but
 function knd_related_post_card(WP_Post $cpost) {
 
 	$pl = get_permalink($cpost);
-	$ex = apply_filters('knd_the_title', rdc_get_post_excerpt($cpost, 40, true));
+	$ex = apply_filters('knd_the_title', knd_get_post_excerpt($cpost, 40, true));
 ?>
 <article class="flex-md-6 tpl-related-post card"><a href="<?php echo $pl; ?>" class="entry-link">	
 	<div class="entry-preview"><?php echo knd_post_thumbnail($cpost->ID, 'post-thumbnail');?></div>
@@ -147,36 +147,7 @@ function tst_project_card_single(WP_Post $cpost){
 }
 
 
-/* People and orgs */
-function knd_person_card(WP_Post $cpost, $linked = true){
-	$pl = get_permalink($cpost);	
-?>
-<article class="tpl-person card <?php if($linked) { echo 'linked'; }?>">
-<?php if($linked) {?> <a href="<?php echo $pl; ?>" class="entry-link"><?php } ?>
-	
-	<div class="entry-preview"><?php echo knd_post_thumbnail($cpost->ID, 'square');?></div>
-	<div class="entry-data">
-		<h4 class="entry-title"><?php echo get_the_title($cpost);?></h4>
-		<div class="entry-meta"><?php echo apply_filters('knd_the_content', $cpost->post_excerpt);?></div>
-	</div>
-	
-<?php if($linked) {?></a><?php } ?>
-</article>
-<?php
-}
-
-function tst_person_card_group(WP_Post $cpost){
-	
-	$linked = ($cpost->widget_class == 'linked-card') ? true : false;
-	
-	knd_person_card($cpost, $linked);	
-}
-
-function tst_person_card_single(WP_Post $cpost){
-	knd_person_card($cpost, $cpost->widget_class == 'linked-card');
-}
-
-
+/* Orgs */
 function knd_org_card(WP_Post $cpost){?>
 <article class="tpl-org logo">
 	<a href="<?php echo esc_url($cpost->post_excerpt);?>" class="logo-link logo-frame" target="_blank" title="<?php echo esc_attr($cpost->post_title);?>">
@@ -186,21 +157,13 @@ function knd_org_card(WP_Post $cpost){?>
 <?php
 }
 
-function tst_org_card_group(WP_Post $cpost){?>
-<div class="bit bit-no-margin sm-6 md-3 lg-col-5"><?php knd_org_card($cpost); ?></div>
-<?php
-}
-
-function tst_org_card_single(WP_Post $cpost){
-	knd_org_card($cpost);
-}
 
 
 /** search **/
 function rdc_search_card(WP_Post $cpost) {
 	
 	$pl = get_permalink($cpost);
-	$ex = apply_filters('knd_the_title', rdc_get_post_excerpt($cpost, 40, true));
+	$ex = apply_filters('knd_the_title', knd_get_post_excerpt($cpost, 40, true));
 	
 	
 ?>
@@ -219,7 +182,7 @@ function rdc_search_card(WP_Post $cpost) {
 /** == Helpers == **/
 
 /** Excerpt **/
-function rdc_get_post_excerpt($cpost, $l = 30, $force_l = false){
+function knd_get_post_excerpt($cpost, $l = 30, $force_l = false){
 	
 	if(is_int($cpost))
 		$cpost = get_post($cpost);

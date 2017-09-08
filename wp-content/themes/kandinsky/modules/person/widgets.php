@@ -4,37 +4,42 @@ class KND_Team_Widget extends WP_Widget {
 
     function __construct() {
 
-        parent::__construct('knd_team', 'Команда', array(
-            'description' => 'Список членов команды',
+        parent::__construct('knd_team', __('People list', 'knd'), array(
+            'description' => __('Gallery of people - eg. team', 'knd'),
         ));
     }
 
     function widget($args, $instance) {
 
-        $title = apply_filters('widget_title', empty($instance['title']) ? '' : trim($instance['title']), $instance, $this->id_base);
-        $num = empty($instance['num']) ? 5 : (int)$instance['num'];
-
-        $people = $this->get_persons($num);
-        if(count($people)) {
-            $this->print_widget($people, $args, $title);
-        }
-    }
-
-    function print_widget($persons, $args, $title){
-
         extract($args);
 
-        echo $before_widget;
-        echo $this->print_widget_content($title, $persons);
-		echo $after_widget;
-	}
+        $title = empty($instance['title']) ? '' : trim($instance['title']);
+        $title = apply_filters('widget_title', $title, $instance, $this->id_base);
+
+        $num = empty($instance['num']) ? 4 : (int)$instance['num'];
+        $slug = empty($instance['slug']) ? 'team' :  trim($instance['slug']);
+
+        $people = $this->get_persons($num, $slug);
+
+        if(count($people)) {
+            echo $before_widget;
+            echo $before_title.$title.$after_title;
+
+            echo $this->print_widget_content($people);
+
+            echo $after_widget;
+        }
+    }
 	
 	
 	function form($instance) {
 
 		/* Set up some default widget settings */
-		$defaults = array('title' => '', 'num' => 5);
-		$instance = wp_parse_args((array)$instance, $defaults);		
+		$defaults = array('title' => '', 'num' => 4, 'slug' => 'team');
+		$instance = wp_parse_args((array)$instance, $defaults);	
+        $cats = get_terms(array('taxonomy' => 'person_cat', 'hide_empty' => 0));
+
+
 	?>
 		<p>
 			<label for="<?php echo $this->get_field_id('title');?>">Заголовок:</label>
@@ -45,81 +50,59 @@ class KND_Team_Widget extends WP_Widget {
 			<label for="<?php echo $this->get_field_id('num');?>">Кол.-во:</label>
 			<input id="<?php echo $this->get_field_id('num'); ?>" name="<?php echo $this->get_field_name('num');?>" type="text" value="<?php echo intval($instance['num']);?>">
 		</p>
+        <?php if(!is_wp_error($cats) && !empty($cats)) { ?>
+        <p>
+            <label for="<?php echo $this->get_field_id('slug');?>">Категория:</label>
+            <select id="<?php echo $this->get_field_id('slug');?>" name="<?php echo $this->get_field_name('slug');?>">
+                <option value="0">Выберите категорию</option>
+                <?php foreach ($cats as $cat) { ?>
+                <option value="<?php echo esc_attr($cat->slug);?>"<?php selected(trim($cat->slug), trim($instance['slug']));?>><?php echo esc_attr($cat->name);?></option>
+                <?php } ?>
+            </select>
+        </p>
+        <?php } ?>
 	<?php
 	}
 	
-	function get_persons($num) {
+	function get_persons($num, $slug) {
 	    
 	    //num
 	    if($num <= 0) {
-	        $num = 5;
+	        $num = 4;
 	    }
-	    elseif($num > 10){
-	        $num = 10;
+	    elseif($num > 12){
+	        $num = 12;
 	    }
-	     
+
 	    //query
-	    return get_posts(array(
-	        'post_type' => 'person',
-	        'posts_per_page' => $num,
-	        'tax_query' => array(array(
-	            'taxonomy' => 'person_cat',
-	            'field' => 'slug',
-	            'terms' => 'team',
-	        ))
-	    ));
+        $args = array(
+            'post_type'=> 'person',
+            'posts_per_page' => $num,
+            'tax_query' => array(
+                array(
+                    'taxonomy'=> 'person_cat',
+                    'field'   => 'slug',
+                    'terms'   => $slug
+                )
+            )
+        );
+
+        return get_posts($args);
 	    
 	}
 	
-	public function show_widget($title, $num) {
-	    $this->print_widget_content($title, $this->get_persons($num));
-	}
 	
-	function print_widget_content($title, $persons) {
-?>
-
-<div class="container">
-<div class="entry-content">
-<div id="pl-486">
-
-<div id="pg-486-3" class="panel-grid">
-<div class="panel-row-style-no-bottom-margin no-bottom-margin panel-row-style">
-<div id="pgc-486-3-0" class="panel-grid-cell">
-
-<div id="panel-486-3-0-0" class="so-panel widget widget_ist-sectionheader panel-first-child" data-index="5">
-<div class="so-widget-ist-sectionheader so-widget-ist-sectionheader-base">
-<div class="pb-section-title align-center">
-<h3><?php echo $title?></h3>
-</div>
-</div>
-</div>
-
-<div id="panel-486-3-0-1" class="so-panel widget widget_tst-blocksgroup panel-last-child" data-index="6">
-<div class="so-widget-tst-blocksgroup so-widget-tst-blocksgroup-base">
-<div class="frl-pb-blocks">
-<div class="cards-loop sm-cols-2 md-cols-3 lg-cols-4 exlg-cols-5">
-
-<?php
-    foreach($persons as $person) {
-        knd_person_card($person);
-    }
-?>
-
-</div>
-</div>
-</div>
-</div>
-
-</div>
-</div>
-</div>
-
-</div>
-</div>
-</div>
-
-<?php 
+	function print_widget_content($people) {
+        
+    ?>
+    <div class="knd-people-gallery flex-row">
+        <?php foreach($people as $person) {?>
+            <div class="person flex-cell flex-sm-6 flex-md-3"><?php knd_person_card($person);?></div>
+        <?php }?>
+    </div>
+    <?php
 	}
+
 
 	function update($new_instance, $old_instance) {
 
@@ -127,6 +110,7 @@ class KND_Team_Widget extends WP_Widget {
 		
 		$instance['title'] = sanitize_text_field($new_instance['title']);		
 		$instance['num'] = intval($new_instance['num']);
+        $instance['slug'] = sanitize_text_field($new_instance['slug']);       
 
 		return $instance;
 	}

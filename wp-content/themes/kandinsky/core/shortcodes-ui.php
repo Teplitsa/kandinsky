@@ -231,8 +231,8 @@ function knd_add_shortcodes_ui() {
         ),
     ));
 
-    shortcode_ui_register_for_shortcode('knd_persons_list', array(
-        'label' => __('A list of persons', 'knd'), // Shortcode label in the UI. Required
+    shortcode_ui_register_for_shortcode('knd_people_list', array(
+        'label' => __('A list of people', 'knd'), // Shortcode label in the UI. Required
         'listItemImage' => 'dashicons-groups', // Dashicon class or full <img> HTML
 
 //        'inner_content' => array( // A UI for the "inner content" of the shortcode. Optional
@@ -250,20 +250,20 @@ function knd_add_shortcodes_ui() {
             ),
             array(
                 'label'    => __('Person categories', 'knd'),
-                'attr'     => 'person-categories',
+                'attr'     => 'category',
                 'type'     => 'term_select',
                 'taxonomy' => 'person_cat',
                 'multiple' => true,
             ),
             array(
-                'label'    => __('Only particular persons in the list', 'knd'),
-                'attr'     => 'persons',
+                'label'    => __('Only particular people in the list', 'knd'),
+                'attr'     => 'ids',
                 'type'     => 'post_select',
                 'query'    => array('post_type' => 'person'),
                 'multiple' => true,
             ),
             array(
-                'label'  => __('Section CSS class', 'knd'),
+                'label'  => __('Custom CSS class', 'knd'),
                 'attr'   => 'class',
                 'type'   => 'text',
                 'encode' => false,

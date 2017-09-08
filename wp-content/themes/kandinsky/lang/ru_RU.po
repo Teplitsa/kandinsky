@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-08 16:36+0300\n"
-"PO-Revision-Date: 2017-09-08 16:36+0300\n"
+"POT-Creation-Date: 2017-09-08 16:49+0300\n"
+"PO-Revision-Date: 2017-09-08 16:51+0300\n"
 "Last-Translator: sidorenko.a <sidorenko.a@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -650,8 +650,8 @@ msgstr "Текст для кнопки призыва к действию"
 msgid "An URL for a \"call to action\" button"
 msgstr "Ссылка для кнопки призыва к действию"
 
-#: core/shortcodes-ui.php:225 core/shortcodes-ui.php:266
-#: core/shortcodes-ui.php:307 core/shortcodes-ui.php:372
+#: core/shortcodes-ui.php:225 core/shortcodes-ui.php:307
+#: core/shortcodes-ui.php:372
 msgid "Section CSS class"
 msgstr "CSS-класс для секции"
 
@@ -661,7 +661,7 @@ msgid "An additional CSS class (or several) for the section"
 msgstr "Дополнительный класс (или несколько) для секции"
 
 #: core/shortcodes-ui.php:235
-msgid "A list of persons"
+msgid "A list of people"
 msgstr "Список людей"
 
 #: core/shortcodes-ui.php:245 core/shortcodes-ui.php:286
@@ -677,8 +677,12 @@ msgid "Person categories"
 msgstr "Категории людей"
 
 #: core/shortcodes-ui.php:259
-msgid "Only particular persons in the list"
-msgstr "Выводить в списке только указанных людей"
+msgid "Only particular people in the list"
+msgstr "Конкретные люди в списке"
+
+#: core/shortcodes-ui.php:266
+msgid "Custom CSS class"
+msgstr "CSS класс"
 
 #: core/shortcodes-ui.php:276
 msgid "A list of organizations"
@@ -1830,6 +1834,12 @@ msgstr "Посмотреть на новый сайт"
 #: vendor/envato_setup/envato_setup.php:1674
 msgid "#success"
 msgstr "#успех"
+
+#~ msgid "A list of persons"
+#~ msgstr "Список людей"
+
+#~ msgid "Only particular persons in the list"
+#~ msgstr "Выводить в списке только указанных людей"
 
 #~ msgid "Homepage sidebar"
 #~ msgstr "Блоки на главной"
