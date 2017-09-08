@@ -99,7 +99,7 @@ function rdc_pre_wp_nav_menu_social( $output, $args ) {
 function knd_social_share_no_js() {
 	
 	$title = (class_exists('WPSEO_Frontend')) ? WPSEO_Frontend::get_instance()->title( '' ) : '';
-	$link = rdc_current_url();
+	$link = knd_current_url();
 	$text = $title.' '.$link;
 
 	$data = array(
