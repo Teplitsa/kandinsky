@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-11 10:58+0200\n"
-"PO-Revision-Date: 2017-09-11 10:58+0200\n"
+"POT-Creation-Date: 2017-09-11 19:30+0300\n"
+"PO-Revision-Date: 2017-09-11 19:30+0300\n"
 "Last-Translator: sidorenko.a <sidorenko.a@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10 >= 2 && n"
 "%10<=4 &&(n%100<10||n%100 >= 20)? 1 : 2);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.8.4\n"
+"X-Generator: Poedit 1.8.11\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
 "__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
@@ -163,11 +163,11 @@ msgstr "Третий цвет текста"
 
 #: core/customizer.php:234
 msgid "Pages Background Color"
-msgstr "Цвет фона"
+msgstr ""
 
 #: core/customizer.php:246
 msgid "Pages Text Color"
-msgstr "Цвет текста внутренних страниц"
+msgstr ""
 
 #: core/customizer.php:255
 msgid "Logo mode"
@@ -536,36 +536,35 @@ msgstr "Некоторые плагины необходимо установи�
 msgid "Please contact the administrator of this site for help."
 msgstr "Пожалуйста, свяжитесь с администрацией сайта."
 
-#: core/shortcodes-ui.php:20 core/shortcodes-ui.php:80
+#: core/shortcodes-ui.php:20
 msgid "Key phrase"
-msgstr ""
+msgstr "Ключевая фраза"
 
 #: core/shortcodes-ui.php:25
 msgid "Phrase text"
 msgstr "Текст фразы"
 
 #: core/shortcodes-ui.php:31 core/shortcodes-ui.php:91
-#: core/shortcodes-ui.php:204
 msgid "Subtitle"
 msgstr "Подзаголовок"
 
 #: core/shortcodes-ui.php:41
 msgid "Image section"
-msgstr ""
+msgstr "Секция с изображением"
 
 #: core/shortcodes-ui.php:46 vendor/envato_setup/envato_setup.php:956
 msgid "Description"
 msgstr "Описание"
 
-#: core/shortcodes-ui.php:52 core/shortcodes-ui.php:197
+#: core/shortcodes-ui.php:52
 msgid "Title"
 msgstr "Заголовок"
 
 #: core/shortcodes-ui.php:59
 msgid "Image"
-msgstr ""
+msgstr "Изображение"
 
-#: core/shortcodes-ui.php:63 core/shortcodes-ui.php:187
+#: core/shortcodes-ui.php:63
 msgid "Select image"
 msgstr "Выбрать изображение"
 
@@ -575,7 +574,11 @@ msgstr ""
 
 #: core/shortcodes-ui.php:67
 msgid "Text placement"
-msgstr ""
+msgstr "Расположение текста"
+
+#: core/shortcodes-ui.php:80 modules/cta.php:8 modules/cta.php:17
+msgid "CTA block"
+msgstr "Призыв к действию"
 
 #: core/shortcodes-ui.php:85
 msgid "CTA text"
@@ -583,169 +586,69 @@ msgstr "Призыв к действию"
 
 #: core/shortcodes-ui.php:98
 msgid "Link"
-msgstr ""
+msgstr "Ссылка"
 
-#: core/shortcodes-ui.php:105 core/shortcodes-ui.php:148
-#: core/shortcodes-ui.php:211
+#: core/shortcodes-ui.php:105
 msgid "Button label"
 msgstr "Надпись на кнопке"
 
-#: core/shortcodes-ui.php:117
-msgid "A quote"
-msgstr "Цитата"
+#: core/shortcodes-ui.php:115
+msgid "Video caption"
+msgstr "Подпись к видео"
 
-#: core/shortcodes-ui.php:122
-msgid "A quote text"
-msgstr "Текст цитаты"
+#: core/shortcodes-ui.php:118
+msgid "A caption text"
+msgstr "Текст подписи"
 
-#: core/shortcodes-ui.php:128
-msgid "Quote origin"
-msgstr "Автор цитаты"
-
-#: core/shortcodes-ui.php:132
-msgid "A quote origin (or author)"
-msgstr "Источник или автор цитаты"
-
-#: core/shortcodes-ui.php:138
-msgid "A \"call to action\" button"
-msgstr "Кнопка призыва к действию"
-
-#: core/shortcodes-ui.php:152
-msgid "A text for button"
-msgstr "Текст для кнопки"
-
-#: core/shortcodes-ui.php:155 core/shortcodes-ui.php:218
-msgid "Button URL"
-msgstr "Ссылка кнопки"
-
-#: core/shortcodes-ui.php:159
-msgid "An URL for button"
-msgstr "Ссылка, по которой произойдёт переход при клике на кнопку"
-
-#: core/shortcodes-ui.php:162
-msgid "Open link in a new window"
-msgstr "Открывать ссылку в новом окне"
-
-#: core/shortcodes-ui.php:172
-msgid "A text with image or colored background"
-msgstr "Текст с фоном в виде цвета или изображения"
-
-#: core/shortcodes-ui.php:183
-msgid "Background image"
-msgstr "Фоновое изображение"
-
-#: core/shortcodes-ui.php:188
-msgid "Select section background image"
-msgstr "Укажите фоновое изображение для секции"
-
-#: core/shortcodes-ui.php:191
-msgid "Background color"
-msgstr "Фоновый цвет"
-
-#: core/shortcodes-ui.php:194
-msgid "E.g., #123abc"
-msgstr "Например, #123abc"
-
-#: core/shortcodes-ui.php:201
-msgid "A title text"
-msgstr "Текст заголовка"
-
-#: core/shortcodes-ui.php:215
-msgid "A label for a \"call to action\" button"
-msgstr "Текст для кнопки призыва к действию"
-
-#: core/shortcodes-ui.php:222
-msgid "An URL for a \"call to action\" button"
-msgstr "Ссылка для кнопки призыва к действию"
-
-#: core/shortcodes-ui.php:225 core/shortcodes-ui.php:307
-#: core/shortcodes-ui.php:372
-msgid "Section CSS class"
-msgstr "CSS-класс для секции"
-
-#: core/shortcodes-ui.php:229 core/shortcodes-ui.php:270
-#: core/shortcodes-ui.php:311 core/shortcodes-ui.php:376
-msgid "An additional CSS class (or several) for the section"
-msgstr "Дополнительный класс (или несколько) для секции"
-
-#: core/shortcodes-ui.php:235
+#: core/shortcodes-ui.php:161
 msgid "A list of people"
 msgstr "Список людей"
 
-#: core/shortcodes-ui.php:245 core/shortcodes-ui.php:286
+#: core/shortcodes-ui.php:171 core/shortcodes-ui.php:212
 msgid "List title"
 msgstr "Заголовок списка"
 
-#: core/shortcodes-ui.php:249
+#: core/shortcodes-ui.php:175
 msgid "E.g., \"Our team\""
 msgstr "Например, «Наша команда»"
 
-#: core/shortcodes-ui.php:252
+#: core/shortcodes-ui.php:178
 msgid "Person categories"
 msgstr "Категории людей"
 
-#: core/shortcodes-ui.php:259
+#: core/shortcodes-ui.php:185
 msgid "Only particular people in the list"
 msgstr "Конкретные люди в списке"
 
-#: core/shortcodes-ui.php:266
+#: core/shortcodes-ui.php:192
 msgid "Custom CSS class"
 msgstr "CSS класс"
 
-#: core/shortcodes-ui.php:276
+#: core/shortcodes-ui.php:196 core/shortcodes-ui.php:237
+msgid "An additional CSS class (or several) for the section"
+msgstr "Дополнительный класс (или несколько) для секции"
+
+#: core/shortcodes-ui.php:202
 msgid "A list of organizations"
 msgstr "Список организаций"
 
-#: core/shortcodes-ui.php:290
+#: core/shortcodes-ui.php:216
 msgid "E.g., \"Our partners\""
 msgstr "Например, «Наши партнеры»"
 
-#: core/shortcodes-ui.php:293
+#: core/shortcodes-ui.php:219
 msgid "Organization categories"
 msgstr "Категории организаций"
 
-#: core/shortcodes-ui.php:300
+#: core/shortcodes-ui.php:226
 msgid "Only particular organizations in the list"
 msgstr "Выводить в списке только указанные организации"
 
-#: core/shortcodes-ui.php:317
-msgid "A columns text markup"
-msgstr "Вывод текста по столбцам"
+#: core/shortcodes-ui.php:233
+msgid "Section CSS class"
+msgstr "CSS-класс для секции"
 
-#: core/shortcodes-ui.php:327
-msgid "Section title"
-msgstr "Заголовок секции"
-
-#: core/shortcodes-ui.php:333
-msgid "First column title"
-msgstr "Загловок первого столбца"
-
-#: core/shortcodes-ui.php:339
-msgid "First column content"
-msgstr "Текст первого столбца"
-
-#: core/shortcodes-ui.php:346
-msgid "Second column title"
-msgstr "Заголовок второго столбца"
-
-#: core/shortcodes-ui.php:352
-msgid "Second column content"
-msgstr "Текст второго столбца"
-
-#: core/shortcodes-ui.php:359
-msgid "Third column title"
-msgstr "Заголовок третьего столбца"
-
-#: core/shortcodes-ui.php:365
-msgid "Third column content"
-msgstr "Текст третьего столбца"
-
-#: core/shortcodes.php:141 header.php:61 modules/starter/plot_config.php:178
-#: modules/starter/plot_config.php:382 modules/starter/plot_config.php:572
-msgid "Main menu"
-msgstr "Главное меню"
-
-#: core/shortcodes.php:442
+#: core/shortcodes.php:376
 msgid "Recommendations:"
 msgstr "Рекомендации:"
 
@@ -863,13 +766,26 @@ msgstr "Все материалы сайта доступны по лиценз�
 msgid "Primary menu"
 msgstr "﻿Главное меню"
 
+#: functions.php:59
+msgid "Landscape thumbnail"
+msgstr "Горизонтальная миниатюра"
+
+#: functions.php:60
+msgid "Post thumbnail"
+msgstr "Стандартная миниатюра"
+
+#: functions.php:61
+msgid "Fixed for embed"
+msgstr "Фиксированный"
+
 #: header.php:18
 msgid "Skip to content"
 msgstr "Перейти к содержанию"
 
-#: modules/cta.php:8 modules/cta.php:17
-msgid "CTA block"
-msgstr "Призыв к действию"
+#: header.php:61 modules/starter/plot_config.php:178
+#: modules/starter/plot_config.php:382 modules/starter/plot_config.php:572
+msgid "Main menu"
+msgstr "Главное меню"
 
 #: modules/donations.php:62
 msgid "Please, set a text of comment to describe an additional ways to donate."
@@ -1862,6 +1778,81 @@ msgstr "#успех"
 
 #~ msgid "Insert default website menu as seen in the demo."
 #~ msgstr "Набор демонстрационных меню"
+
+#~ msgid "A quote"
+#~ msgstr "Цитата"
+
+#~ msgid "A quote text"
+#~ msgstr "Текст цитаты"
+
+#~ msgid "Quote origin"
+#~ msgstr "Автор цитаты"
+
+#~ msgid "A quote origin (or author)"
+#~ msgstr "Источник или автор цитаты"
+
+#~ msgid "A \"call to action\" button"
+#~ msgstr "Кнопка призыва к действию"
+
+#~ msgid "A text for button"
+#~ msgstr "Текст для кнопки"
+
+#~ msgid "Button URL"
+#~ msgstr "Ссылка кнопки"
+
+#~ msgid "An URL for button"
+#~ msgstr "Ссылка, по которой произойдёт переход при клике на кнопку"
+
+#~ msgid "Open link in a new window"
+#~ msgstr "Открывать ссылку в новом окне"
+
+#~ msgid "A columns text markup"
+#~ msgstr "Вывод текста по столбцам"
+
+#~ msgid "Section title"
+#~ msgstr "Заголовок секции"
+
+#~ msgid "First column title"
+#~ msgstr "Загловок первого столбца"
+
+#~ msgid "First column content"
+#~ msgstr "Текст первого столбца"
+
+#~ msgid "Second column title"
+#~ msgstr "Заголовок второго столбца"
+
+#~ msgid "Second column content"
+#~ msgstr "Текст второго столбца"
+
+#~ msgid "Third column title"
+#~ msgstr "Заголовок третьего столбца"
+
+#~ msgid "Third column content"
+#~ msgstr "Текст третьего столбца"
+
+#~ msgid "A text with image or colored background"
+#~ msgstr "Текст с фоном в виде цвета или изображения"
+
+#~ msgid "Background image"
+#~ msgstr "Фоновое изображение"
+
+#~ msgid "Select section background image"
+#~ msgstr "Укажите фоновое изображение для секции"
+
+#~ msgid "Background color"
+#~ msgstr "Фоновый цвет"
+
+#~ msgid "E.g., #123abc"
+#~ msgstr "Например, #123abc"
+
+#~ msgid "A title text"
+#~ msgstr "Текст заголовка"
+
+#~ msgid "A label for a \"call to action\" button"
+#~ msgstr "Текст для кнопки призыва к действию"
+
+#~ msgid "An URL for a \"call to action\" button"
+#~ msgstr "Ссылка для кнопки призыва к действию"
 
 #~ msgid "A list of persons"
 #~ msgstr "Список людей"
