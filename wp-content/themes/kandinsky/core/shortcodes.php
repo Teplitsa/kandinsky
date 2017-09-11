@@ -132,24 +132,19 @@ function knd_links_shortcode($atts, $content = null){
     return $out;
 }
 
+/** Youtube video caption (UI-) **/
+add_shortcode('knd_video_caption', 'knd_video_caption_shortcode');
+function knd_video_caption_shortcode($atts, $content = null){
+    return '<div class="video-caption">'.$content.'</div>';
+}
+
+
 
 
 /*** IN Dev ***/
-/** Sitemap (UI-) **/
-//add_shortcode('knd_sitemap', 'knd_sitemap_shortcode');
-function knd_sitemap_shortcode($atts) {
-	return wp_nav_menu(array('menu' => __('Main menu', 'knd'), 'theme_location' => 'sitemap', 'container' => false, 'menu_class' => 'sitemap', 'echo'=> false));
-}
-
-/** Youtube video caption (UI-) **/
-//add_shortcode('knd_youtube_caption', 'knd_youtube_caption_shortcode');
-function knd_youtube_caption_shortcode($atts, $content = null){
-	return '<div class="yt-caption">'.apply_filters('knd_the_content', $content).'</div>';
-}
-
 
 /** A button (UI+) **/
-add_shortcode('knd_button', 'knd_button_shortcode');
+//add_shortcode('knd_button', 'knd_button_shortcode');
 function knd_button_shortcode($atts){
 
 	$atts = shortcode_atts(array('url'  => '', 'label'  => '', 'in_new_window' => false,), $atts);
@@ -205,7 +200,7 @@ function knd_quote_screen($atts, $content = null) {
 }
 
 /** Social links (UI-) **/
-add_shortcode('knd_social_links', 'knd_social_links');
+//add_shortcode('knd_social_links', 'knd_social_links');
 function knd_social_links($atts = array(), $echo = true) {
 
     $atts['class'] = empty($atts['class']) ? '' : esc_attr($atts['class']);
@@ -250,67 +245,6 @@ function knd_social_links($atts = array(), $echo = true) {
 
 }
 
-/** A text with background (image or color) (UI+) */
-//add_shortcode('knd_background_text', 'knd_background_text_shortcode');
-function knd_background_text_shortcode($atts = array(), $echo = true) {
-
-    $atts = shortcode_atts(array(
-        'bg-image' => '',
-        'bg-color' => '',
-        'title' => '',
-        'subtitle' => '',
-        'cta-label' => '',
-//        'cta-color' => '',
-        'cta-url' => '',
-        'class' => '',
-    ), $atts);
-
-    array_map(function($value){ return esc_attr($value); }, $atts);
-
-    ob_start();?>
-
-    <?php if($atts['bg-image'] && (int)$atts['bg-image'] > 0) {?>
-    <section class="knd-background-text background text-over-image <?php echo $atts['class'] ? $atts['class'] : '';?>">
-        <div class="tpl-pictured-bg" style="background-image: url(<?php echo wp_get_attachment_url((int)$atts['bg-image']);?>)"></div>
-    </section>
-    <?php }?>
-    <section class="knd-background-text page-section text <?php echo $atts['bg-image'] && (int)$atts['bg-image'] > 0 ? 'text-over-image' : 'text-over-color';?> <?php echo $atts['cta-url'] && $atts['cta-label'] ? 'has-button' : '';?> <?php echo $atts['class'] ? $atts['class'] : '';?>">
-        <div class="ihc-content" <?php echo $atts['bg-color'] ? 'style="background-color: '.$atts['bg-color'].';"' : '';?>>
-            <?php if($atts['cta-url']) {?>
-            <a href="<?php echo $atts['cta-url'];?>">
-            <?php }?>
-
-            <?php if($atts['title']) {?>
-            <h2 class="ihc-title"><span><?php echo $atts['title'];?></span></h2>
-            <?php }
-
-            if($atts['subtitle']) {?>
-            <div class="ihc-desc">
-                <p><?php echo urldecode($atts['subtitle']);?></p>
-            </div>
-            <?php }
-
-            if($atts['cta-url'] && $atts['cta-label']) {?>
-            <div class="cta"><?php echo $atts['cta-label'];?></div>
-            <?php }?>
-
-            <?php if($atts['cta-url']) {?>
-            </a>
-            <?php }?>
-
-        </div>
-    </section>
-
-    <?php $out = ob_get_contents();
-    ob_end_clean();
-
-    if( !!$echo ) {
-        echo $out;
-    } else {
-        return $out;
-    }
-
-}
 
 /** A list of people (UI+) */
 add_shortcode('knd_people_list', 'knd_people_list_shortcode');

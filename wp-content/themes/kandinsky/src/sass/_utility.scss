@@ -52,7 +52,7 @@ a:link {
 
 @mixin caption-text {
 	color: $color-text-semi;
-	@include small-text();
+	@include knd-footer-text();
 
 	.svg-icon {
         fill: $color-text-semi;
@@ -262,7 +262,7 @@ $inpage-margin-base: 26px;
 
 	.wp-caption-text {
 		@include caption-text();
-		margin-top: $gut/2;
+		margin-top: $gut/4;
 	}
 
 	p+video-caption {
@@ -342,3 +342,42 @@ $inpage-margin-base: 26px;
 	@include the-content();
 }
 
+//Gallery
+.the-content .gallery,
+.gallery {
+	margin-top: $inpage-margin-base;
+	margin-bottom: $inpage-margin-base;
+	margin-right: -6px;
+	margin-left: -6px; 
+
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+
+	.gallery-item {
+		padding: 6px;
+		margin: 0;
+		flex: 1 1 auto;
+
+		.wp-caption-text { display: none; }
+
+		a {
+			display: block;
+			border: none;
+			outline: none;
+			text-decoration: none;
+		}
+
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+}
+
+
+
+@for $i from 1 through 9 {
+  .gallery-columns-#{$i} .gallery-item { width: 100% / $i; }
+}

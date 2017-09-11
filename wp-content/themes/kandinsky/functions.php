@@ -56,9 +56,9 @@ add_filter('image_size_names_choose', 'rdc_medialib_custom_image_sizes');
 function rdc_medialib_custom_image_sizes($sizes) {
 	
 	$addsizes = apply_filters('rdc_medialib_custom_image_sizes', array(
-		'landscape-mini' 	=> 'Горизонтальная миниатюра',
-		'post-thumbnail' 	=> 'Стандартный',
-		'medium-thumbnail' 	=> 'Фиксированный'
+		'landscape-mini' 	=> __('Landscape thumbnail', 'knd'),
+		'post-thumbnail' 	=> __('Post thumbnail', 'knd'),
+		'medium-thumbnail' 	=> __('Fixed for embed', 'knd')
 	));
 		
 	return array_merge($sizes, $addsizes);

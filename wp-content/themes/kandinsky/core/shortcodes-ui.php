@@ -77,7 +77,7 @@ function knd_add_shortcodes_ui() {
     ));
 
     shortcode_ui_register_for_shortcode('knd_cta_section', array(
-        'label' => __('Key phrase', 'knd'), // Shortcode label in the UI. Required
+        'label' => __('CTA block', 'knd'), // Shortcode label in the UI. Required
         'listItemImage' => 'dashicons-controls-volumeoff', // Dashicon class or full <img> HTML
 //        'post_type' => array('post'), // Limit this shortcode UI to specific posts. Optional
 
@@ -111,30 +111,17 @@ function knd_add_shortcodes_ui() {
         ),
     ));
 
-
-    /** @todo Quote markup need CSS styles */
-    shortcode_ui_register_for_shortcode('knd_quote', array(
-        'label' => __('A quote', 'knd'), // Shortcode label in the UI. Required
-        'listItemImage' => 'dashicons-editor-quote', // Dashicon class or full <img> HTML
-//        'post_type' => array('post'), // Limit this shortcode UI to specific posts. Optional
-
-        'inner_content' => array( // A UI for the "inner content" of the shortcode. Optional
-            'label'        => __('A quote text', 'knd'),
-//            'description'  => __('A text of the quote.', 'knd'),
-        ),
-
-        'attrs' => array( // Define & bind the UI for shortcode attributes. Optional
-            array(
-                'label'  => __('Quote origin', 'knd'),
-                'attr'   => 'name',
-                'type'   => 'text',
-                'encode' => false,
-                'meta'   => array('placeholder' => __('A quote origin (or author)', 'knd'),),
-            ),
-        ),
+    shortcode_ui_register_for_shortcode('knd_video_caption', array(
+        'label' => __('Video caption', 'knd'), 
+        'listItemImage' => 'dashicons-format-video', 
+        'inner_content' => array( 
+            'label'        => __('A caption text', 'knd'),
+        )
     ));
 
-    shortcode_ui_register_for_shortcode('knd_button', array(
+
+
+   /*  shortcode_ui_register_for_shortcode('knd_button', array(
         'label' => __('A "call to action" button', 'knd'), // Shortcode label in the UI. Required
         'listItemImage' => 'dashicons-external', // Dashicon class or full <img> HTML
 
@@ -166,70 +153,9 @@ function knd_add_shortcodes_ui() {
                 'encode' => false,
             ),
         ),
-    ));
+    ));*/
 
-    shortcode_ui_register_for_shortcode('knd_background_text', array(
-        'label' => __('A text with image or colored background', 'knd'), // Shortcode label in the UI. Required
-        'listItemImage' => 'dashicons-format-image', // Dashicon class or full <img> HTML
-//        'post_type' => array('post'), // Limit this shortcode UI to specific posts. Optional
-
-//        'inner_content' => array( // A UI for the "inner content" of the shortcode. Optional
-//            'label'        => __('A quote text', 'knd'),
-//            'description'  => __('A text of the quote.', 'knd'),
-//        ),
-
-        'attrs' => array( // Define & bind the UI for shortcode attributes. Optional
-            array(
-                'label'  => __('Background image', 'knd'),
-                'attr'   => 'bg-image',
-                'type'   => 'attachment',
-                'libraryType' => array('image'),
-                'addButton'   => __('Select image', 'knd'),
-                'frameTitle'  => __('Select section background image', 'knd'),
-            ),
-            array(
-                'label'  => __('Background color', 'knd'),
-                'attr'   => 'bg-color',
-                'type'   => 'color',
-                'meta'   => array('placeholder' => __('E.g., #123abc', 'knd'),),
-            ),
-            array(
-                'label'  => __('Title', 'knd'),
-                'attr'   => 'title',
-                'type'   => 'text',
-                'encode' => false,
-                'meta'   => array('placeholder' => __('A title text', 'knd'),),
-            ),
-            array(
-                'label'  => __('Subtitle', 'knd'),
-                'attr'   => 'subtitle',
-                'type'   => 'textarea',
-                'encode' => true,
-                'meta'   => array('class' => 'shortcake-richtext',),
-            ),
-            array(
-                'label'  => __('Button label', 'knd'),
-                'attr'   => 'cta-label',
-                'type'   => 'text',
-                'encode' => false,
-                'meta'   => array('placeholder' => __('A label for a "call to action" button', 'knd'),),
-            ),
-            array(
-                'label'  => __('Button URL', 'knd'),
-                'attr'   => 'cta-url',
-                'type'   => 'url',
-                'encode' => false,
-                'meta'   => array('placeholder' => __('An URL for a "call to action" button', 'knd'),),
-            ),
-            array(
-                'label'  => __('Section CSS class', 'knd'),
-                'attr'   => 'class',
-                'type'   => 'text',
-                'encode' => false,
-                'meta'   => array('placeholder' => __('An additional CSS class (or several) for the section', 'knd'),),
-            ),
-        ),
-    ));
+    
 
     shortcode_ui_register_for_shortcode('knd_people_list', array(
         'label' => __('A list of people', 'knd'), // Shortcode label in the UI. Required
@@ -313,7 +239,7 @@ function knd_add_shortcodes_ui() {
         ),
     ));
 
-    shortcode_ui_register_for_shortcode('knd_columns', array(
+    /* shortcode_ui_register_for_shortcode('knd_columns', array(
         'label' => __('A columns text markup', 'knd'), // Shortcode label in the UI. Required
         'listItemImage' => 'dashicons-welcome-widgets-menus', // Dashicon class or full <img> HTML
 
@@ -376,6 +302,6 @@ function knd_add_shortcodes_ui() {
                 'meta'   => array('placeholder' => __('An additional CSS class (or several) for the section', 'knd'),),
             ),
         ),
-    ));
+    ));*/
 
 }

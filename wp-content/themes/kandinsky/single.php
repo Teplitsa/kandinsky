@@ -108,7 +108,7 @@ if($thumb_width > 1104) {
 		<?php } ?>				
 			
             <div class="entry-lead"><?php echo apply_filters('rdc_the_content', $cpost->post_excerpt); ?></div>
-			<div class="entry-content"><?php echo apply_filters('the_content', $cpost->post_content); ?></div>
+			<div class="entry-content the-content"><?php echo apply_filters('the_content', $cpost->post_content); ?></div>
             
 		</main>
 		
