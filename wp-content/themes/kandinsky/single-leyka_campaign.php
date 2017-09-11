@@ -19,7 +19,7 @@ get_header();
 		<main class="bit md-8 lg-7">
 		<div class="campaign-form">
 				<?php //echo apply_filters('the_content', ''); ?>
-				<?php rdc_donation_form(); ?>
+				<?php knd_donation_form(); ?>
 			</div>
 		</main>
 	

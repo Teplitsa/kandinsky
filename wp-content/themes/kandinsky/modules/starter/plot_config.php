@@ -69,6 +69,9 @@ class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
             ),
         ),
         
+        'leyka_campaigns' => array(
+        ),
+        
         'theme_files' => array(
             'knd_custom_logo' => array('file' => 'master-logo.svg'),
             'knd_hero_image' => array('section' => 'img', 'file' => '5.jpg'),
@@ -87,6 +90,9 @@ class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
             'knd_text1_color' => '#000000',
             'knd_text2_color' => '#000000',
             'knd_text3_color' => '#000000',
+            
+            'knd_page_bg_color' => '#ffffff',
+            'knd_page_text_color' => '#000000',
             
             'knd_custom_logo_mod' => 'image_and_text',
             
@@ -268,6 +274,9 @@ class KND_Dubrovino_Data_Builder extends KND_Plot_Data_Builder {
             ),
         ),
         
+        'leyka_campaigns' => array(
+        ),
+        
         'theme_files' => array(
             'knd_custom_logo' => array('file' => 'logo.svg'),
             'knd_hero_image' => array('section' => 'img', 'file' => 'hero_img.jpg'),
@@ -285,6 +294,9 @@ class KND_Dubrovino_Data_Builder extends KND_Plot_Data_Builder {
             'knd_text1_color' => '#ffffff',
             'knd_text2_color' => '#740635',
             'knd_text3_color' => '#362cf0',
+            
+            'knd_page_bg_color' => '#ffffff',
+            'knd_page_text_color' => '#000000',
             
             'knd_custom_logo_mod' => 'image_only',
         ),
@@ -464,6 +476,10 @@ class KND_Withyou_Data_Builder extends KND_Plot_Data_Builder {
             'site_icon' => array('file' => 'favicon.png'),
         ),
         
+        'leyka_campaigns' => array(
+            'kids' => array('kid1', 'kid2', 'kid3'),
+        ),
+        
         'theme_colors' => array(
             'knd_main_color' => '#DE0055',
             'knd_color_second' => '#ffbe2c',
@@ -472,6 +488,9 @@ class KND_Withyou_Data_Builder extends KND_Plot_Data_Builder {
             'knd_text1_color' => '#000000',
             'knd_text2_color' => '#000000',
             'knd_text3_color' => '#000000',
+            
+            'knd_page_bg_color' => '#ffffff',
+            'knd_page_text_color' => '#000000',
             
             'knd_custom_logo_mod' => 'image_only',
         ),

@@ -52,6 +52,7 @@ class KND_Plot_Data_Builder {
         
         $this->build_posts();
         $this->build_pages();
+//         $this->build_leyka_capmaigns();
         $this->build_title_and_description();
         $this->build_theme_files();
         $this->build_option_files();
@@ -60,6 +61,190 @@ class KND_Plot_Data_Builder {
         $this->build_general_options();
         $this->build_menus();
         $this->build_sidebars();
+    }
+    
+    public function build_leyka_capmaigns() {
+        $this->_install_leyka_settings();
+        $this->_install_payment_methods();
+        $this->_install_campaigns_with_donations();
+        $this->_reset_default_pages();
+    }
+
+    public function _install_leyka_settings() {
+        # NGO data
+        update_option('leyka_org_full_name', 'Фонд помощи бездомным животным "Общий Барсик"');
+        update_option('leyka_org_face_fio_ip', 'Котов Аристарх Евграфович');
+        update_option('leyka_org_face_fio_rp', 'Собакин Евлампий Мстиславович');
+        update_option('leyka_org_face_position', 'Директор');
+        update_option('leyka_org_address', '127001, Россия, Москва, ул. Ленина, д.1, оф.5');
+        
+        # reg and bank account
+        update_option('leyka_org_state_reg_number', '1134567890123');
+        update_option('leyka_org_kpp', '223456789');
+        update_option('leyka_org_inn', '333456789012');
+        update_option('leyka_org_bank_account', '44445678901234567890');
+        update_option('leyka_org_bank_name', 'МЯО Звербанк');
+        update_option('leyka_org_bank_bic', '555556789');
+        update_option('leyka_org_bank_corr_account', '66666678901234567890');
+        
+        // View settings:
+        update_option('leyka_donation_form_template', 'revo');
+        update_option('leyka_donation_sum_field_type', 'mixed');
+        update_option('leyka_scale_widget_place', '-');
+        update_option('leyka_donations_history_under_forms', 0);
+        update_option('leyka_show_campaign_sharing', 0);
+        
+        // Misc settings:
+        update_option('leyka_agree_to_terms_needed', 1);
+        update_option('leyka_terms_agreed_by_default', 1);
+        update_option('leyka_agree_to_terms_text_text_part', __('I accept', 'leyka'));
+        update_option('leyka_agree_to_terms_text_link_part', __('Terms of Service', 'leyka'));
+    }
+    
+    public function _install_payment_methods() {
+        $available_pms = array(
+            'yandex-yandex_money', 'mixplat-sms', 'quittance-bank_order', 'text-text_box'
+        );
+        update_option('leyka_pm_available', $available_pms);
+    }
+    
+    public function _install_campaigns_with_donations() {
+//         $this->remove_all_other_plots_posts();
+        
+        foreach(array_keys($this->data_routes['leyka_campaigns']) as $section) {
+            $this->_install_section_campaigns_with_donations($section);
+        }
+        
+        global $wp_rewrite;
+        $wp_rewrite->flush_rules( false );
+        
+    }
+    
+    
+    public function _install_section_campaigns_with_donations($section) {
+        global $wpdb;
+        
+        $campaign_targets = array('kids-kid1' => 27000.0, 'kids-kid2' => 15000.0, 'kids-kid3' => 6500.0);
+        $pieces = $this->data_routes['leyka_campaigns'][$section];
+        
+        foreach($pieces as $piece_name) {
+            
+            var_dump($section);
+            var_dump($piece_name);
+            
+            $piece = $this->imp->get_piece($piece_name, $section);
+            
+            if($piece) {
+                $piece->content = $this->imp->parse_text($piece->content);
+                
+                $campaign_data['name'] = $piece->get_post_slug();
+                $campaign_data['title'] = $piece->title;
+                $campaign_data['content'] = $piece->content;
+                $campaign_data['target'] = isset($campaign_targets[$piece->get_post_slug()]) ? $campaign_targets[$piece->get_post_slug()] : 100;
+                
+                var_dump($campaign_data['name']);
+                var_dump($campaign_data['target']);
+                
+                $campaign_post = $wpdb->get_row($wpdb->prepare("SELECT * FROM {$wpdb->posts} WHERE post_type = %s AND post_name = %s", Leyka_Campaign_Management::$post_type, $campaign_data['name']));
+                if($campaign_post) {
+                    $campaign_post = new WP_Post( $campaign_post );
+                    $campaign = new Leyka_Campaign($campaign_post);
+                
+                    self::delete_campaign_donations($campaign);
+                    $campaign->delete(True);
+                }
+                
+                $campaign_id = wp_insert_post(array(
+                    'post_type' => Leyka_Campaign_Management::$post_type,
+                    'post_status' => 'publish',
+                    'post_title' => $campaign_data['title'],
+                    'post_name' => $campaign_data['name'],
+                    'post_content' => $campaign_data['content'],
+                    'post_parent' => 0,
+                ));
+                
+                update_post_meta($campaign_id, 'campaign_target', $campaign_data['target']);
+                update_post_meta($campaign_id, 'campaign_template', 'revo');
+                $campaign = new Leyka_Campaign($campaign_id);
+                
+                self::install_campaign_donations($campaign);
+                $campaign->refresh_target_state();
+                
+                //finished campaign
+                if($campaign->post_name == 'treat-pets-fin') {
+                    update_post_meta($campaign_id, 'is_finished', 1);
+                }
+                
+                # add thumbnail
+                $thumb_id = $this->imp->get_thumb_attachment_id($piece);
+                if($thumb_id) {
+                    update_post_meta($campaign->ID, '_thumbnail_id', (int)$thumb_id);
+                }
+            }
+        }
+        
+    }
+    
+    public function _install_campaign_donations($campaign) {
+        $donations_data = array(
+            array('gateway_id' => 'yandex', 'payment_method_id' => 'yandex_money', 'donor_name' => 'Мартынов Семен Семенович', 'donor_email' => 'test@ngo2.ru', 'amount' => 150.0),
+            array('gateway_id' => 'mixplat', 'payment_method_id' => 'sms', 'donor_name' => 'Коровин Остап Рудольфович', 'donor_email' => 'test@ngo2.ru', 'amount' => 30.0),
+            array('gateway_id' => 'quittance', 'payment_method_id' => 'bank_order', 'donor_name' => 'Быков Иван Иванович', 'donor_email' => 'test@ngo2.ru', 'amount' => 420.0),
+            array('gateway_id' => 'text', 'payment_method_id' => 'text_box', 'donor_name' => 'Лось Вениамин Робертович', 'donor_email' => 'test@ngo2.ru', 'amount' => 210.0),
+        );
+        
+        if($campaign->post_name == 'heal-kid') {
+            $add_donations_data = array(
+                array('gateway_id' => 'yandex', 'payment_method_id' => 'yandex_money', 'donor_name' => 'Мартынов Семен Семенович', 'donor_email' => 'test@ngo2.ru', 'amount' => 150.0),
+                array('gateway_id' => 'mixplat', 'payment_method_id' => 'sms', 'donor_name' => 'Коровин Остап Рудольфович', 'donor_email' => 'test@ngo2.ru', 'amount' => 30.0),
+                array('gateway_id' => 'quittance', 'payment_method_id' => 'bank_order', 'donor_name' => 'Быков Иван Иванович', 'donor_email' => 'test@ngo2.ru', 'amount' => 420.0),
+                array('gateway_id' => 'text', 'payment_method_id' => 'text_box', 'donor_name' => 'Лось Вениамин Робертович', 'donor_email' => 'test@ngo2.ru', 'amount' => 210.0),
+                array('gateway_id' => 'yandex', 'payment_method_id' => 'yandex_money', 'donor_name' => 'Мартынов Семен Семенович', 'donor_email' => 'test@ngo2.ru', 'amount' => 150.0),
+                array('gateway_id' => 'mixplat', 'payment_method_id' => 'sms', 'donor_name' => 'Коровин Остап Рудольфович', 'donor_email' => 'test@ngo2.ru', 'amount' => 30.0),
+                array('gateway_id' => 'quittance', 'payment_method_id' => 'bank_order', 'donor_name' => 'Быков Иван Иванович', 'donor_email' => 'test@ngo2.ru', 'amount' => 420.0),
+                array('gateway_id' => 'text', 'payment_method_id' => 'text_box', 'donor_name' => 'Лось Вениамин Робертович', 'donor_email' => 'test@ngo2.ru', 'amount' => 210.0),
+                array('gateway_id' => 'yandex', 'payment_method_id' => 'yandex_money', 'donor_name' => 'Мартынов Семен Семенович', 'donor_email' => 'test@ngo2.ru', 'amount' => 150.0),
+                array('gateway_id' => 'mixplat', 'payment_method_id' => 'sms', 'donor_name' => 'Коровин Остап Рудольфович', 'donor_email' => 'test@ngo2.ru', 'amount' => 30.0),
+                array('gateway_id' => 'quittance', 'payment_method_id' => 'bank_order', 'donor_name' => 'Быков Иван Иванович', 'donor_email' => 'test@ngo2.ru', 'amount' => 420.0),
+                array('gateway_id' => 'text', 'payment_method_id' => 'text_box', 'donor_name' => 'Лось Вениамин Робертович', 'donor_email' => 'test@ngo2.ru', 'amount' => 210.0),
+                array('gateway_id' => 'yandex', 'payment_method_id' => 'yandex_money', 'donor_name' => 'Мартынов Семен Семенович', 'donor_email' => 'test@ngo2.ru', 'amount' => 150.0),
+                array('gateway_id' => 'mixplat', 'payment_method_id' => 'sms', 'donor_name' => 'Коровин Остап Рудольфович', 'donor_email' => 'test@ngo2.ru', 'amount' => 30.0),
+                array('gateway_id' => 'quittance', 'payment_method_id' => 'bank_order', 'donor_name' => 'Быков Иван Иванович', 'donor_email' => 'test@ngo2.ru', 'amount' => 420.0),
+                array('gateway_id' => 'text', 'payment_method_id' => 'text_box', 'donor_name' => 'Лось Вениамин Робертович', 'donor_email' => 'test@ngo2.ru', 'amount' => 210.0),
+                array('gateway_id' => 'yandex', 'payment_method_id' => 'yandex_money', 'donor_name' => 'Мартынов Семен Семенович', 'donor_email' => 'test@ngo2.ru', 'amount' => 150.0),
+            );
+            $donations_data = array_merge($donations_data, $add_donations_data);
+        }
+        
+        foreach($donations_data as $donation_data) {
+            $donation_id = Leyka_Donation::add(array(
+                'gateway_id' => $donation_data['gateway_id'],
+                'payment_method_id' => $donation_data['payment_method_id'],
+                'campaign_id' => $campaign->ID,
+                'purpose_text' => $campaign->title,
+                'status' => 'funded',
+                'payment_type' => 'single',
+                'amount' => $donation_data['amount'],
+                'currency' => 'rur',
+                'donor_name' => $donation_data['donor_name'],
+                'donor_email' => $donation_data['donor_email'],
+            ));
+        
+            $donation = new Leyka_Donation($donation_id);
+            $campaign->update_total_funded_amount($donation);
+        }
+    }
+    
+    public function _delete_campaign_donations($campaign) {
+        $donations = $campaign->get_donations();
+        foreach($donations as $donation) {
+            $donation->delete(True);
+        }
+    }
+    
+    public function _reset_default_pages() {
+        leyka_get_default_success_page();
+        leyka_get_default_failure_page();
     }
     
     /**

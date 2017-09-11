@@ -18,8 +18,12 @@ $full_height   : $logo_full_h + $height_gap;
 	width: 100%;
 	top: 0;
 	left: 0;
-	background: $color-white;
-	border-bottom: 1px solid $color-border-normal;
+	
+	//background: $color-white;
+	background: $color-page-bg;
+	
+	//border-bottom: 1px solid $color-border-normal;
+	border-bottom: 1px solid $color-page-bg-dark;
 	transition: opacity 0.3s;
 	
     body.plot-public-campaign & {
@@ -206,7 +210,8 @@ $full_height   : $logo_full_h + $height_gap;
 .logo-name {
 	text-transform: uppercase;		
 	line-height: 1;
-	color: $color-text-black;
+	//color: $color-text-black;
+	color: $color-text;
 	
 	body.plot-public-campaign & {
 	   color: $color-text;
@@ -290,7 +295,7 @@ h2.logo-name {
 		.svg-icon {
 			width: 18px;
 			height: 18px;
-			fill: $color-text-black;
+			fill: $color-text;
 			pointer-events: none;
 			
             body.plot-public-campaign & {
@@ -346,7 +351,8 @@ h2.logo-name {
         letter-spacing: normal;
 		text-transform: none;
 		padding: 18px $gut/2;
-		color: $color-text-black;
+		color: $color-text;
+		background: transparent;
 		border: none;
 		width: 100%;
 		border-bottom: 1px solid $color-border-light;
@@ -371,7 +377,7 @@ h2.logo-name {
 	right: -290px;
 	width: 290px;
 	height: 100%;
-	background: $color-white;
+	background: $color-page-bg;
 	overflow-y: scroll;
 	transition: all 0.4s;
 	
@@ -481,7 +487,7 @@ h2.logo-name {
 		& > a {
 			display: block;
 			@include nav-text(menu);
-			color: $color-text-black;
+			color: $color-text;
 			transition: all 0.3s;
 			
             body.plot-public-campaign & {

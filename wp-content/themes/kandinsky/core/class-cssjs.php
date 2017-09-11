@@ -105,6 +105,10 @@ class FRL_CssJs {
         $knd_text3_color = knd_get_theme_color('knd_text3_color');
         $knd_text3_color_dark = knd_color_luminance($knd_text3_color, -0.3);
         
+        $knd_page_bg_color = knd_get_theme_color('knd_page_bg_color');
+        $knd_page_bg_color_dark = knd_color_luminance($knd_page_bg_color, -0.2);
+        $knd_page_text_color = knd_get_theme_color('knd_page_text_color');
+        
         ?>
             <style>
                 :root {
@@ -123,6 +127,12 @@ class FRL_CssJs {
                     
                     --knd-text3-color:        <?php echo $knd_text3_color; ?>;
                     --knd-text3-color-dark:   <?php echo $knd_text3_color_dark; ?>;
+                    
+                    --knd-page-bg-color:        <?php echo $knd_page_bg_color; ?>;
+                    --knd-page-bg-color-dark:   <?php echo $knd_page_bg_color_dark; ?>;
+                    
+                    --knd-page-text-color:        <?php echo $knd_page_text_color; ?>;
+                    
                 }
             </style>
         <?php

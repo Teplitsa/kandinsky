@@ -8,8 +8,8 @@ if(!class_exists('Leyka_Payment_Method'))
 
 /** Custom donation functions */
 
-add_filter('leyka_icons_text_text_box', 'rdc_text_pm_icon');
-function rdc_text_pm_icon($icons){
+add_filter('leyka_icons_text_text_box', 'knd_text_pm_icon');
+function knd_text_pm_icon($icons){
 	//size 155x80 px
 	
 	$icons = array(get_template_directory_uri().'/assets/images/text-box.png');
@@ -77,8 +77,8 @@ class Leyka_Sms_Box extends Leyka_Text_Box {
 
 
 
-add_action('leyka_init_pm_list', 'rdc_add_sms_pm');
-function rdc_add_sms_pm(Leyka_Gateway $gateway){
+add_action('leyka_init_pm_list', 'knd_add_sms_pm');
+function knd_add_sms_pm(Leyka_Gateway $gateway){
 
 	if($gateway->id == 'text'){		
 		$gateway->add_payment_method(Leyka_Sms_Box::get_instance());
@@ -86,15 +86,24 @@ function rdc_add_sms_pm(Leyka_Gateway $gateway){
 }
 
 //no icon for text gateway
-add_filter('leyka_icons_text_text_box', 'rdc_empty_icons');	
-function rdc_empty_icons($icons){
+add_filter('leyka_icons_text_text_box', 'knd_empty_icons');	
+function knd_empty_icons($icons){
 	return array();
 }
+
+function knd_activate_leyka() {
+    $imp = new KND_Import_Remote_Content(get_theme_mod('knd_site_scenario'));
+    $imp->import_downloaded_content();
+    
+    $pdb = KND_Plot_Data_Builder::produce_builder($imp);
+    $pdb->build_leyka_capmaigns();
+}
+register_activation_hook( 'leyka/leyka.php', 'knd_activate_leyka' );
 
 
 /** Form template **/
 //custom amount field
-function rdc_amount_field($form){
+function knd_amount_field($form){
 	
 	if(!defined('LEYKA_VERSION'))
 		return;
@@ -141,7 +150,7 @@ function rdc_amount_field($form){
 <?php
 }
 
-function rdc_donation_form($campaign_id = null){
+function knd_donation_form($campaign_id = null){
 	global $leyka_current_pm;	
 		
 	if(!defined('LEYKA_VERSION'))
@@ -180,7 +189,7 @@ function rdc_donation_form($campaign_id = null){
 		if($leyka_current_pm->is_field_supported('amount') ) {
 			
 			//echo leyka_pf_get_amount_field();
-			rdc_amount_field($leyka_current_pm);
+			knd_amount_field($leyka_current_pm);
 		} //if amount
 		
 		echo leyka_pf_get_hidden_fields();	

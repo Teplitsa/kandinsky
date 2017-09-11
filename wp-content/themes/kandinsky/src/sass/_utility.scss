@@ -76,18 +76,18 @@ $inpage-margin-base: 26px;
 		&:first-child { margin-top: 0; }
 		&:last-child { margin-bottom: 0; }
 
-		color: $color-text-black;
+		color: $color-page-text;
 		strong, b { font-weight: normal; }
 	}
 
 	h2, h3 {
 		@include knd-head-exlarge-text();
-		color: $color-text-black;
+		color: $color-page-text;
 	}
 
 	h4 {
 		@include knd-body-title-text();
-		color: $color-text-black;
+		color: $color-page-text;
 	}
 
 	h5 {
@@ -101,7 +101,7 @@ $inpage-margin-base: 26px;
 
 
 	strong, b {
-		color: $color-text-black;
+		color: $color-page-text;
 	}
 
 	em {
@@ -146,7 +146,6 @@ $inpage-margin-base: 26px;
 
 			&:before {
 				content: '–';
-				color: #000;
 				display: inline-block;
 				line-height: inherit;
 				position: absolute;
@@ -332,7 +331,7 @@ $inpage-margin-base: 26px;
 	//pre
 	pre, code {
 		@include knd-body-text();
-		color: $color-text-black;
+		color: $color-page-text;
 	}
 }
 
