@@ -477,7 +477,7 @@ class KND_Withyou_Data_Builder extends KND_Plot_Data_Builder {
         ),
         
         'leyka_campaigns' => array(
-            'kids' => array('kid1', 'kid2', 'kid3'),
+            'kids' => array('openkid1', 'openkid2', 'openkid3', 'openkid4', 'closedkid1', 'closedkid2', 'closedkid3', 'closedkid4'),
         ),
         
         'theme_colors' => array(

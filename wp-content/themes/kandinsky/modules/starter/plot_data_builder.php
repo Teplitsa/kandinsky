@@ -52,7 +52,7 @@ class KND_Plot_Data_Builder {
         
         $this->build_posts();
         $this->build_pages();
-//         $this->build_leyka_capmaigns();
+        $this->build_leyka_capmaigns();
         $this->build_title_and_description();
         $this->build_theme_files();
         $this->build_option_files();
@@ -71,12 +71,16 @@ class KND_Plot_Data_Builder {
     }
 
     public function _install_leyka_settings() {
+        $org_name = get_option('blogname');
+        $org_description = get_option('blogdescription');
+        $org_address = "165150, Архангельская область, Вельский район, г. Вельск, ул. Рогозина, д. 48, каб. 12";
+        
         # NGO data
-        update_option('leyka_org_full_name', 'Фонд помощи бездомным животным "Общий Барсик"');
+        update_option('leyka_org_full_name', "{$org_name} \"{$org_description}\"");
         update_option('leyka_org_face_fio_ip', 'Котов Аристарх Евграфович');
         update_option('leyka_org_face_fio_rp', 'Собакин Евлампий Мстиславович');
         update_option('leyka_org_face_position', 'Директор');
-        update_option('leyka_org_address', '127001, Россия, Москва, ул. Ленина, д.1, оф.5');
+        update_option('leyka_org_address', $org_address); //'127001, Россия, Москва, ул. Ленина, д.1, оф.5'
         
         # reg and bank account
         update_option('leyka_org_state_reg_number', '1134567890123');
@@ -124,13 +128,9 @@ class KND_Plot_Data_Builder {
     public function _install_section_campaigns_with_donations($section) {
         global $wpdb;
         
-        $campaign_targets = array('kids-kid1' => 27000.0, 'kids-kid2' => 15000.0, 'kids-kid3' => 6500.0);
         $pieces = $this->data_routes['leyka_campaigns'][$section];
         
         foreach($pieces as $piece_name) {
-            
-            var_dump($section);
-            var_dump($piece_name);
             
             $piece = $this->imp->get_piece($piece_name, $section);
             
@@ -140,17 +140,15 @@ class KND_Plot_Data_Builder {
                 $campaign_data['name'] = $piece->get_post_slug();
                 $campaign_data['title'] = $piece->title;
                 $campaign_data['content'] = $piece->content;
-                $campaign_data['target'] = isset($campaign_targets[$piece->get_post_slug()]) ? $campaign_targets[$piece->get_post_slug()] : 100;
-                
-                var_dump($campaign_data['name']);
-                var_dump($campaign_data['target']);
+                $campaign_data['target'] = $piece->target;
+                $campaign_data['age'] = $piece->age;
                 
                 $campaign_post = $wpdb->get_row($wpdb->prepare("SELECT * FROM {$wpdb->posts} WHERE post_type = %s AND post_name = %s", Leyka_Campaign_Management::$post_type, $campaign_data['name']));
                 if($campaign_post) {
                     $campaign_post = new WP_Post( $campaign_post );
                     $campaign = new Leyka_Campaign($campaign_post);
                 
-                    self::delete_campaign_donations($campaign);
+                    $this->_delete_campaign_donations($campaign);
                     $campaign->delete(True);
                 }
                 
@@ -164,14 +162,15 @@ class KND_Plot_Data_Builder {
                 ));
                 
                 update_post_meta($campaign_id, 'campaign_target', $campaign_data['target']);
+                update_post_meta($campaign_id, 'campaign_age', $campaign_data['age']);
                 update_post_meta($campaign_id, 'campaign_template', 'revo');
                 $campaign = new Leyka_Campaign($campaign_id);
                 
-                self::install_campaign_donations($campaign);
+                $this->_install_campaign_donations($campaign);
                 $campaign->refresh_target_state();
                 
                 //finished campaign
-                if($campaign->post_name == 'treat-pets-fin') {
+                if(preg_match("/^closed.*/", $piece_name)) {
                     update_post_meta($campaign_id, 'is_finished', 1);
                 }
                 

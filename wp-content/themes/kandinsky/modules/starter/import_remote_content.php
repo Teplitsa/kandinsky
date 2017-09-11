@@ -548,11 +548,9 @@ class KND_Piece {
 
     function __construct($post_params) {
 
-        $this->title = isset($post_params['title']) ? $post_params['title'] : "";
-        $this->thumb = isset($post_params['thumb']) ? $post_params['thumb'] : "";
-        $this->lead = isset($post_params['lead']) ? $post_params['lead'] : "";
-        $this->content = isset($post_params['content']) ? $post_params['content'] : "";
-        $this->slug = isset($post_params['slug']) ? $post_params['slug'] : "";
+        foreach($post_params as $k => $v) {
+            $this->$k = $v;
+        }
         
         if(isset($post_params['url'])) {
             $this->url = knd_build_imported_url(isset($post_params['url']) ? $post_params['url'] : "");
@@ -561,8 +559,6 @@ class KND_Piece {
             $this->url = knd_build_imported_url(isset($post_params['link']) ? $post_params['link'] : "");
         }
         
-        
-        $this->tags_str = isset($post_params['tags']) ? $post_params['tags'] : "";
         $terms = explode(",", $this->tags_str);
         foreach($terms as $term) {
             $term = trim($term);
@@ -571,7 +567,6 @@ class KND_Piece {
             }
         }
         
-        $this->cat_str = isset($post_params['cat']) ? $post_params['cat'] : "";
         $terms = explode(",", $this->cat_str);
         foreach($terms as $term) {
             $term = trim($term);
@@ -580,9 +575,10 @@ class KND_Piece {
             }
         }
         
-        $this->piece_name = isset($post_params['piece_name']) ? $post_params['piece_name'] : "";
-        $this->piece_section = isset($post_params['piece_section']) ? $post_params['piece_section'] : "";
-        
+    }
+    
+    public function __get($name) {
+        return NULL;
     }
     
     /**
