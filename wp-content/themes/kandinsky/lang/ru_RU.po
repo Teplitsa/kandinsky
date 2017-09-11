@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-11 19:30+0300\n"
-"PO-Revision-Date: 2017-09-11 19:30+0300\n"
+"PO-Revision-Date: 2017-09-12 01:09+0200\n"
 "Last-Translator: sidorenko.a <sidorenko.a@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10 >= 2 && n"
 "%10<=4 &&(n%100<10||n%100 >= 20)? 1 : 2);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 1.8.4\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
 "__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
@@ -1514,15 +1514,15 @@ msgstr "Набор демонстрационных значений парам�
 
 #: vendor/envato_setup/envato_setup.php:921
 msgid "Install default website posts, pages and menus."
-msgstr ""
+msgstr "Установить записи, страницы и меню."
 
 #: vendor/envato_setup/envato_setup.php:929
 msgid "Donations"
-msgstr ""
+msgstr "Пожертвования"
 
 #: vendor/envato_setup/envato_setup.php:930
 msgid "Install donations components."
-msgstr ""
+msgstr "Установить модуль для сбора пожертвований."
 
 #: vendor/envato_setup/envato_setup.php:944
 msgid "Theme default content"
