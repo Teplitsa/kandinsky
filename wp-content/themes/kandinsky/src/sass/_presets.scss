@@ -66,8 +66,13 @@ $color-link-two:   var(--knd-color-main-dark); //hover state
 
 //others color variables - clear unused colors!!!
 $color-text:                var(--knd-text1-color);
+
+$color-page-bg:            var(--knd-page-bg-color);
+$color-page-bg-dark:       var(--knd-page-bg-color-dark);
+$color-page-text:          var(--knd-page-text-color);
+
 $color-white:               #ffffff;
-$color-text-white:			$color-white;
+$color-text-white:          $color-white;
 $color-text-black:          #000000;
 $color-text-semi:			#666666;
 $color-text-light:			#999999;
@@ -293,7 +298,7 @@ $margin_base: 26px;
 
 @mixin header-title($mod: default){
 	font-family: $heading;
-	color: $color-text-black;
+	color: $color-page-text;
 	font-weight: normal;
 	text-transform: uppercase;
 	

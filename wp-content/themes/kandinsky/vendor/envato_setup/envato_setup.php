@@ -846,6 +846,26 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
             return true;
 
         }
+        
+        public function _content_install_content() {
+        
+            $imp = new KND_Import_Remote_Content(get_theme_mod('knd_site_scenario'));
+            $imp->import_downloaded_content();
+        
+            $pdb = KND_Plot_Data_Builder::produce_builder($imp);
+            $pdb->build_posts();
+            $pdb->build_pages();
+            $pdb->build_menus();
+            $pdb->build_sidebars();
+        
+            return true;
+        
+        }
+        
+        public function _content_install_donations() {
+            update_option('knd_setup_install_leyka', true);
+            return true;
+        }
 
         private function _content_default_get() {
 
@@ -860,24 +880,24 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
                 'install_callback' => array($this, '_content_install_site_title_desc'),
                 'checked' => $this->is_default_content_installed(),
             );
-            $content['pages'] = array(
-                'title' => esc_html__('Pages', 'knd'),
-                'description' => esc_html__('Insert default website pages as seen in the demo.', 'knd'),
-                'pending' => esc_html__('Pending', 'knd'),
-                'installing' => esc_html__('Installing...', 'knd'),
-                'success' => esc_html__('Success!', 'knd'),
-                'install_callback' => array($this, '_content_install_pages'),
-                'checked' => $this->is_default_content_installed(),
-            );
-            $content['posts'] = array(
-                'title' => esc_html__('Posts', 'knd'),
-                'description' => esc_html__('Insert default website posts as seen in the demo.', 'knd'),
-                'pending' => esc_html__('Pending', 'knd'),
-                'installing' => esc_html__('Installing...', 'knd'),
-                'success' => esc_html__('Success!', 'knd'),
-                'install_callback' => array($this, '_content_install_posts'),
-                'checked' => $this->is_default_content_installed(),
-            );
+//             $content['pages'] = array(
+//                 'title' => esc_html__('Pages', 'knd'),
+//                 'description' => esc_html__('Insert default website pages as seen in the demo.', 'knd'),
+//                 'pending' => esc_html__('Pending', 'knd'),
+//                 'installing' => esc_html__('Installing...', 'knd'),
+//                 'success' => esc_html__('Success!', 'knd'),
+//                 'install_callback' => array($this, '_content_install_pages'),
+//                 'checked' => $this->is_default_content_installed(),
+//             );
+//             $content['posts'] = array(
+//                 'title' => esc_html__('Posts', 'knd'),
+//                 'description' => esc_html__('Insert default website posts as seen in the demo.', 'knd'),
+//                 'pending' => esc_html__('Pending', 'knd'),
+//                 'installing' => esc_html__('Installing...', 'knd'),
+//                 'success' => esc_html__('Success!', 'knd'),
+//                 'install_callback' => array($this, '_content_install_posts'),
+//                 'checked' => $this->is_default_content_installed(),
+//             );
             $content['settings'] = array(
                 'title' => esc_html__('Settings', 'knd'),
                 'description' => esc_html__('Insert default website settings as seen in the demo.', 'knd'),
@@ -887,22 +907,40 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
                 'install_callback' => array($this, '_content_install_settings'),
                 'checked' => $this->is_default_content_installed(),
             );
-            $content['menu'] = array(
-                'title' => esc_html__('Menu', 'knd'),
-                'description' => esc_html__('Insert default website menu as seen in the demo.', 'knd'),
+//             $content['menu'] = array(
+//                 'title' => esc_html__('Menu', 'knd'),
+//                 'description' => esc_html__('Insert default website menu as seen in the demo.', 'knd'),
+//                 'pending' => esc_html__('Pending', 'knd'),
+//                 'installing' => esc_html__('Installing...', 'knd'),
+//                 'success' => esc_html__('Success!', 'knd'),
+//                 'install_callback' => array($this, '_content_install_menu'),
+//                 'checked' => $this->is_default_content_installed(),
+//             );
+            $content['content'] = array(
+                'title' => esc_html__('Content', 'knd'),
+                'description' => esc_html__('Install default website posts, pages and menus.', 'knd'),
                 'pending' => esc_html__('Pending', 'knd'),
                 'installing' => esc_html__('Installing...', 'knd'),
                 'success' => esc_html__('Success!', 'knd'),
-                'install_callback' => array($this, '_content_install_menu'),
+                'install_callback' => array($this, '_content_install_content'),
                 'checked' => $this->is_default_content_installed(),
             );
-
+            $content['donations'] = array(
+                'title' => esc_html__('Donations', 'knd'),
+                'description' => esc_html__('Install donations components.', 'knd'),
+                'pending' => esc_html__('Pending', 'knd'),
+                'installing' => esc_html__('Installing...', 'knd'),
+                'success' => esc_html__('Success!', 'knd'),
+                'install_callback' => array($this, '_content_install_donations'),
+                'checked' => $this->is_default_content_installed(),
+            );
+            
             return apply_filters($this->theme_name.'_theme_setup_wizard_content', $content);
 
         }
 
         public function step_content_view() { ?>
-
+            
             <h1><?php esc_html_e('Theme default content', 'knd'); ?></h1>
             <form method="post">
                 <?php if($this->is_default_content_installed()) { ?>
@@ -1484,7 +1522,8 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
                     $pdb->build_theme_files();
                     $pdb->build_option_files();
                     $pdb->build_theme_colors();
-
+                    
+                    update_option('knd_setup_install_leyka', false);
                 }
             }
 

@@ -147,7 +147,7 @@
 	padding-bottom: $gut*1.5;
 		
 	a {
-		color: $color-text-black;
+		color: $color-page-text;
 		text-decoration: underline;
 		&:hover, &:focus, &:active {
 			color: $color-link-three;				
@@ -478,6 +478,7 @@ background: linear-gradient(to bottom, rgba(0,0,0,0) 10%,rgba(0,0,0,.8) 100%);
     
     h2.section-title {
         @include knd-head-section-text();
+        color: $color-text;
     }
     
     .knd-news-widget-body {
@@ -565,7 +566,7 @@ background: linear-gradient(to bottom, rgba(0,0,0,0) 10%,rgba(0,0,0,.8) 100%);
         a {
             @include knd-link-lonely-text();
             display:inline-block;
-            color: $color-text-black;
+            color: $color-page-text;
             border-bottom: 4px solid var(--knd-color-main);
             padding: 0px 0px 4px 0px;
             text-decoration:none;
@@ -656,7 +657,9 @@ background: linear-gradient(to bottom, rgba(0,0,0,0) 10%,rgba(0,0,0,.8) 100%);
     background: var(--knd-color-second);
     padding-top: $gut * 1.22;
     padding-bottom: $gut * 1.35;
- 
+    
+    color: $color-text;
+     
     h2 {
         letter-spacing: 0.1em;
         
@@ -759,7 +762,9 @@ background: linear-gradient(to bottom, rgba(0,0,0,0) 10%,rgba(0,0,0,.8) 100%);
 .knd-partners-widget {
     @extend .knd-news-widget;
     padding-top: 56px;
-    background: $color-white;
+    
+    //background: $color-white;
+    background: $color-page-bg;
     
     body.plot-public-campaign & {
         background: $color-white;
@@ -767,6 +772,10 @@ background: linear-gradient(to bottom, rgba(0,0,0,0) 10%,rgba(0,0,0,.8) 100%);
         h2.section-title {
             color: var(--knd-color-third);
         }
+    }
+    
+    h2.section-title {
+        color: $color-page-text;
     }
     
     .knd-news-widget-body {
