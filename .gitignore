@@ -43,3 +43,4 @@ node_modules
 /kandinsky.sublime-workspace
 .DS_Store
 /wp-content/themes/kandinsky/_temp
+/wp-content/debug.log
