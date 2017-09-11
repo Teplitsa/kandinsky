@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-08 16:49+0300\n"
-"PO-Revision-Date: 2017-09-08 16:51+0300\n"
+"POT-Creation-Date: 2017-09-11 11:41+0300\n"
+"PO-Revision-Date: 2017-09-11 11:42+0300\n"
 "Last-Translator: sidorenko.a <sidorenko.a@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -50,7 +50,7 @@ msgstr ""
 
 #: core/admin.php:208
 msgid "Forms"
-msgstr ""
+msgstr "Формы"
 
 #: core/admin.php:331
 #, php-format
@@ -534,7 +534,7 @@ msgstr ""
 
 #: core/shortcodes-ui.php:25
 msgid "Phrase text"
-msgstr ""
+msgstr "Текст фразы"
 
 #: core/shortcodes-ui.php:31 core/shortcodes-ui.php:91
 #: core/shortcodes-ui.php:204
@@ -737,7 +737,7 @@ msgstr "Текст третьего столбца"
 msgid "Main menu"
 msgstr "Главное меню"
 
-#: core/shortcodes.php:441
+#: core/shortcodes.php:442
 msgid "Recommendations:"
 msgstr "Рекомендации:"
 
@@ -807,7 +807,7 @@ msgstr "Проекты по теме"
 
 #: core/template-tags.php:516
 msgid "Help now"
-msgstr ""
+msgstr "Помочь сейчас"
 
 #: core/widgets.php:10
 msgid "Homepage - Content"
@@ -950,6 +950,14 @@ msgstr "Волонтеры"
 #: modules/person/tax.php:7
 msgid "Team"
 msgstr "Команда"
+
+#: modules/person/widgets.php:7
+msgid "People list"
+msgstr "Галерея людей"
+
+#: modules/person/widgets.php:8
+msgid "Gallery of people - eg. team"
+msgstr "Галерея карточек людей - например, команда"
 
 #: modules/project/widgets.php:7
 msgid "Projects"
