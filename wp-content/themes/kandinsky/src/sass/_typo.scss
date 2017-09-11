@@ -242,7 +242,7 @@ $modularscale: (
 @mixin knd-link-related-text() {
     @include ms-respond(font-size, 1);
     font-family: $body;
-    line-height: 1;
+    line-height: 1.33; 
     font-weight:400;
 }
 
