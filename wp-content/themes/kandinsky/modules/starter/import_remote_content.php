@@ -511,7 +511,7 @@ class KND_Git_Piece_Parser {
             }
 
             $param_name = empty($line_parts[0]) ? '' : trim($line_parts[0]);
-            $param_val = empty($line_parts[1]) ? '' : trim(trim(trim($line_parts[1]), "'\"“”"));
+            $param_val = empty($line_parts[1]) ? '' : trim(trim(trim($line_parts[1]), "'\""));
 
             if( !$param_name || !$param_val ) {
                 continue;
