@@ -475,6 +475,7 @@ body {
 .envato-setup-pages.installing .status span{
     display: inline-block;
     position: relative;
+    color: #0091cd;
 }
 .envato-setup-pages.installing .description{
     display: none;
@@ -517,10 +518,10 @@ body {
     color: #666;
 }
 .theme-presets ul li a img {
-    flex-basis: 200px;
+    width: 275px;
     flex-grow: 0;
     flex-shrink: 0;
-    height:auto;
+    height:133px;
 }
 .theme-presets ul li a .plot-data {
     width: 100%;

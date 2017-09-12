@@ -846,12 +846,12 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
             return true;
 
         }
-        
+
         public function _content_install_content() {
-        
+
             $imp = new KND_Import_Remote_Content(get_theme_mod('knd_site_scenario'));
             $imp->import_downloaded_content();
-        
+
             $pdb = KND_Plot_Data_Builder::produce_builder($imp);
             $pdb->build_posts();
             $pdb->build_pages();
