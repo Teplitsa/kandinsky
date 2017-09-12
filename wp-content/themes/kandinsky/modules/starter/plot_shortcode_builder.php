@@ -71,6 +71,7 @@ class KND_Shortcode_Builder {
     }
     
     public function build_knd_key_phrase($shortcode_name, $pieces, $attributes) {
+
         $piece = $pieces[0];
         
         if($piece->content) {
@@ -81,6 +82,17 @@ class KND_Shortcode_Builder {
             $attributes['subtitle'] = $piece->title;
         }
         
+        return $this->pack_shortcode_with_content($shortcode_name, $piece->content, $attributes);
+    }
+
+    public function build_knd_people_list($shortcode_name, $pieces, $attributes) {
+
+        $piece = $pieces[0];
+
+        if($piece->title) {
+            $attributes['title'] = $piece->title;
+        }
+
         return $this->pack_shortcode_with_content($shortcode_name, $piece->content, $attributes);
     }
     
