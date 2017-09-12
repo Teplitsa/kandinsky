@@ -53,7 +53,7 @@ class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
                 'post_slug' => 'volunteers',
             ),
         ),
-        
+
         'posts' => array(
             'articles' => array(
                 'post_type' => 'post',
@@ -67,33 +67,37 @@ class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
                 'post_type' => 'org',
                 'pieces' => array('partner3', 'partner2', 'partner4', 'partner1', ),
             ),
+            'team' => array(
+                'post_type' => 'person',
+                'pieces' => array('fellow1', 'fellow2', 'fellow3', 'fellow4', 'fellow5',),
+            ),
         ),
-        
+
         'leyka_campaigns' => array(
         ),
-        
+
         'theme_files' => array(
             'knd_custom_logo' => array('file' => 'master-logo.svg'),
             'knd_hero_image' => array('section' => 'img', 'file' => '5.jpg'),
         ),
-        
+
         'option_files' => array(
             'site_icon' => array('file' => 'favicon.png'),
         ),
-        
+
         'theme_colors' => array(
-            
+
             'knd_main_color' => '#00bcd4',
             'knd_color_second' => '#ffc914',
             'knd_color_third' => '#0e0a2b',
-            
+
             'knd_text1_color' => '#000000',
             'knd_text2_color' => '#000000',
             'knd_text3_color' => '#000000',
-            
+
             'knd_page_bg_color' => '#ffffff',
             'knd_page_text_color' => '#000000',
-            
+
             'knd_custom_logo_mod' => 'image_and_text',
             
         ),
@@ -271,6 +275,10 @@ class KND_Dubrovino_Data_Builder extends KND_Plot_Data_Builder {
             'chronics' => array(
                 'post_type' => 'post',
                 'pieces' => array('news1', 'news2', 'news3', ),
+            ),
+            'team' => array(
+                'post_type' => 'person',
+                'pieces' => array('fellow1', 'fellow2', 'fellow3', 'fellow4', 'fellow5',),
             ),
         ),
         
@@ -464,6 +472,10 @@ class KND_Withyou_Data_Builder extends KND_Plot_Data_Builder {
             'programs' => array(
                 'post_type' => 'project',
                 'pieces' => array('program1', 'program2', 'program3', 'program4', ),
+            ),
+            'team' => array(
+                'post_type' => 'person',
+                'pieces' => array('fellow1', 'fellow2', 'fellow3', 'fellow4', 'fellow5', 'fellow6', 'fellow7', 'fellow8', 'fellow9', 'fellow10',),
             ),
         ),
     
