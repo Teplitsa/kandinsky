@@ -107,7 +107,9 @@ class FRL_CssJs {
         
         $knd_page_bg_color = knd_get_theme_color('knd_page_bg_color');
         $knd_page_bg_color_dark = knd_color_luminance($knd_page_bg_color, -0.2);
+        
         $knd_page_text_color = knd_get_theme_color('knd_page_text_color');
+        $knd_page_text_color_light = knd_color_luminance($knd_page_text_color, 2);
         
         ?>
             <style>
@@ -131,7 +133,8 @@ class FRL_CssJs {
                     --knd-page-bg-color:        <?php echo $knd_page_bg_color; ?>;
                     --knd-page-bg-color-dark:   <?php echo $knd_page_bg_color_dark; ?>;
                     
-                    --knd-page-text-color:        <?php echo $knd_page_text_color; ?>;
+                    --knd-page-text-color:       <?php echo $knd_page_text_color; ?>;
+                    --knd-page-text-color-light:  <?php echo $knd_page_text_color_light; ?>;
                     
                 }
             </style>

@@ -40,6 +40,14 @@ function knd_color_luminance( $hex, $percent ) {
         $hex = $hex[0] + $hex[0] + $hex[1] + $hex[1] + $hex[2] + $hex[2];
     }
     
+    if($percent > 0) {
+        for($i = 0; $i <=5; $i++) {
+            if(!$hex[$i]) {
+                $hex[$i] = 1;
+            }
+        }
+    }
+    
     // convert to decimal and change luminosity
     for ($i = 0; $i < 3; $i++) {
         $dec = hexdec( substr( $hex, $i*2, 2 ) );

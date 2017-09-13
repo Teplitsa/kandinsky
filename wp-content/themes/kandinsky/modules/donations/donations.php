@@ -1,10 +1,9 @@
 <?php
-/**
- * Text PM Customisation Example
- **/
 
 if(!class_exists('Leyka_Payment_Method'))
-	return;
+    return;
+
+require get_template_directory().'/modules/donations/widgets.php';
 
 /** Custom donation functions */
 
@@ -74,8 +73,6 @@ class Leyka_Sms_Box extends Leyka_Text_Box {
         );
     }
 }
-
-
 
 add_action('leyka_init_pm_list', 'knd_add_sms_pm');
 function knd_add_sms_pm(Leyka_Gateway $gateway){
@@ -150,3 +147,118 @@ function knd_amount_field($form){
 <?php
 }
 
+function knd_donation_card(WP_Post $campaign){
+?>   
+    <article class="flex-md-6 tpl-post card">
+     
+<?php
+
+if($campaign->post_type != Leyka_Campaign_Management::$post_type) { // Wrong campaign data
+    return;
+}
+
+$current_post = get_post();
+if($current_post->ID == $campaign->ID) {
+    return;
+}
+
+$thumbnail_size = apply_filters('leyka_campaign_card_thumbnail_size', 'post-thumbnail', $campaign);
+$css_class = apply_filters('leyka_campaign_card_class', 'leyka-campaign-card', $campaign);
+if(has_post_thumbnail($campaign->ID)) {
+    $css_class .= ' has-thumb';
+}
+
+$url = trailingslashit(get_permalink($campaign->ID)).'#leyka-payment-form';
+
+$leyka_campaign = new Leyka_Campaign($campaign);
+
+$target = (int)$leyka_campaign->target;
+$curr_label = leyka_get_currency_label('rur');
+$collected = $leyka_campaign->get_collected_amount();
+
+if($target <= 0) {
+    return;
+}
+
+$percentage = round(($collected/$target)*100);
+if($percentage > 100) {
+    $percentage = 100;
+}
+
+$target_f = number_format($target, 0, '.', ' ');
+$collected_f = number_format($collected, 0, '.', ' ');
+
+$campaign_age = get_post_meta($campaign->ID, 'campaign_age', true);
+
+?>
+
+    <div class="<?php echo esc_attr($css_class);?>">
+        <?php if(has_post_thumbnail($campaign->ID)) {?>
+            <div class="lk-thumbnail">
+                <a href="<?php echo get_permalink($campaign);?>">
+                    <?php echo get_the_post_thumbnail(
+                        $campaign->ID,
+                        $thumbnail_size,
+                        array('alt' => esc_attr(sprintf(__('Thumbnail for - %s', 'leyka'), $campaign->post_title)),)
+                    );?>
+                </a>
+            </div>
+        <?php }?>
+
+        <div class="lk-info">
+        
+            <div class="help-purpose">Помощь семье</div>
+        
+            <h4 class="lk-title"><a href="<?php echo get_permalink($campaign);?>">
+                <?php echo get_the_title($campaign);?><?php if($campaign_age): echo ", {$campaign_age}"; endif;?>
+            </a></h4>
+
+            <?php
+                // Default excerpt filters:
+                add_filter('leyka_get_the_excerpt', 'wptexturize');
+                add_filter('leyka_get_the_excerpt', 'convert_smilies');
+                add_filter('leyka_get_the_excerpt', 'convert_chars');
+                add_filter('leyka_get_the_excerpt', 'wp_trim_excerpt');?>
+                <p>
+                    <?php if(has_excerpt($campaign->ID)) {
+                        $text = $campaign->post_excerpt;
+                    } else {
+
+                        $text = $campaign->post_content ? $campaign->post_content : ' '; // So wp_trim_excerpt work correctly
+                        $text = leyka_strip_string_by_words($text, 200, true).(mb_strlen($text) > 200 ? '...' : '');
+
+                    }
+                    echo apply_filters('leyka_get_the_excerpt', $text, $campaign);?>
+                </p>
+        </div>
+
+        <div class="leyka-scale-compact">
+            <div class="leyka-scale-scale">
+                <div class="target">
+                    <div style="width:<?php echo $percentage;?>%" class="collected">&nbsp;</div>
+                </div>
+            </div>
+            <div class="flex-row leyka-scale-label">
+                <div class="flex-md-5">
+                    <div class="caption"><?php _e("Collected")?></div>
+                    <div class="sum"><?php echo $collected_f?> <?php echo $curr_label?></div>
+                </div>
+                
+                <div class="flex-md-7 knd-campaign-needed">
+                    <div class="caption"><?php _e("Needed")?></div>
+                    <div class="sum"><?php echo $collected_f?> <?php echo $curr_label?></div>
+                </div>
+                
+            </div>
+        </div>
+        
+        <div class="leyka-scale-button-alone">
+            <a href="<?php echo $url;?>" <?php echo $campaign->ID == $current_post->ID ? 'class="leyka-scroll"' : '';?>>
+                <?php echo get_theme_mod('knd_hero_image_support_button_caption'); ?>
+            </a>
+        </div>
+
+    </div>
+    </article>
+<?php
+}

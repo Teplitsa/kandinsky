@@ -160,6 +160,11 @@ $modularscale: (
     font-weight: 400;
 }
 
+@mixin knd-card-text() {
+    @include knd-body-text();
+    line-height: 1.33;
+}
+
 @mixin knd-body-title-text() {
     font-size: 1.2em;
     font-family: $body;
@@ -217,6 +222,18 @@ $modularscale: (
     font-weight: 600;
 }
 
+@mixin knd-leyka-button-caption-text() {
+    //@include ms-respond(font-size, 2);
+    
+    @include for(small-screens) {
+        font-size: 22px;
+    }
+    
+    font-family: $nav;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
 @mixin knd-link-lonely-text() {
     @include ms-respond(font-size, 0);
     font-family: $body;
@@ -260,6 +277,14 @@ $modularscale: (
     font-weight: 600;
     letter-spacing: -0.10em;
     line-height: 1.33;
+}
+
+@mixin knd-link-donation-purpose() {
+    @include ms-respond(font-size, 0);
+    font-family: $body;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+    font-weight: 400;
 }
 
 @mixin about-name-text() {

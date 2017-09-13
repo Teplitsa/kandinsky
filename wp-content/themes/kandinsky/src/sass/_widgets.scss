@@ -791,3 +791,98 @@ background: linear-gradient(to bottom, rgba(0,0,0,0) 10%,rgba(0,0,0,.8) 100%);
     }
     
 }
+
+/* donations */
+.knd-donations-widget {
+    @extend .knd-news-widget;
+    background: $color-page-bg;
+    padding-top: $gut / 2.66;
+    padding-bottom: $gut / 2.7; 
+    
+    h2.section-title {
+        @include knd-head-exlarge-single-text();
+        text-transform: none;
+        color: $color-page-text;
+        text-align:center;
+    }
+    
+    .knd-donations-widget-body {
+        
+        padding-top: $gut * 1.11;
+        
+        .tpl-post {
+            border: 1px solid $color-page-bg-dark;
+            padding: $gut * 1.08 $gut;
+            
+            .help-purpose {
+                @include knd-link-donation-purpose();
+                color: var(--knd-color-main-dark);
+                padding-top: $gut / 2;
+            }
+            
+            .lk-title {
+                @include knd-head-main-text();
+                padding-top: $gut / 2.1;
+                padding-bottom: 7px;
+            }
+            
+            p {
+                @include knd-card-text();
+                padding-bottom: $gut * 1.6;
+            }
+            
+            .leyka-scale-scale {
+                width: 100%;
+                height: 7px;
+                
+                .target {
+                    height: inherit;
+                    background: $color-border-link;
+                    
+                    .collected {
+                        height: inherit;
+                        background: var(--knd-color-main);
+                    }
+                }
+            }
+            
+            .leyka-scale-label {
+                @include knd-link-related-text();
+                color: $color-page-text-light;
+                
+                .caption {
+                    @include knd-link-donation-purpose();
+                    padding-top: $gut / 3.8;
+                }
+                
+                .sum {
+                    color: var(--knd-color-main);
+                }
+                
+                .knd-campaign-needed .sum {
+                    color: $color-page-text;
+                }
+                
+            }
+            
+            .leyka-scale-button-alone {
+                text-align:right;
+            }
+            
+            .leyka-scale-button-alone {
+                a {
+                    @include button();
+                    @include knd-leyka-button-caption-text();
+                    margin-top:$gut / 1.4;
+                    
+                    @include for(medium-screens) {
+                        padding: 17px 40px;
+                    }
+                }
+            }
+        }
+    
+
+    }
+    
+}

@@ -608,6 +608,7 @@ class KND_Withyou_Data_Builder extends KND_Plot_Data_Builder {
         $this->data_routes['sidebar_widgets'] = array(
             'knd-homepage-sidebar' => array(
                 array('slug' => 'knd_ourorg', 'options' => array('title' => get_theme_mod('subtitle_org'), 'text' => get_theme_mod('subtitle_slogan'),) ),
+                array('slug' => 'knd_donations', 'options' => array('title' => __('They need help', 'knd'), 'num' => 4,) ),
                 array('slug' => 'knd_news', 'options' => array('title' => "Последние новости", 'num' => 6,) ),
                 array('slug' => 'knd_cta', 'options' => array() ),
                 array('slug' => 'knd_projects', 'options' => array('title' => "Наши проекты", 'num' => 3,) ),
