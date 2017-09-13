@@ -536,10 +536,14 @@ background: linear-gradient(to bottom, rgba(0,0,0,0) 10%,rgba(0,0,0,.8) 100%);
         position:relative;
         margin-bottom: 0px;
         padding-bottom: $gut * 1.2;
+        
+        @include upto(medium-screens) {
+            margin-bottom: $gut;
+        }
     
         @include for(medium-screens) {
             text-align:left;
-            min-height:none;
+            min-height: none;
         }
         
         h3 {

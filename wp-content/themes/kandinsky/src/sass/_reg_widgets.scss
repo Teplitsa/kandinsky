@@ -73,6 +73,9 @@
 
 .widget-full.widget_search {
     max-width: $page_cont;
+    position: relative;
+    z-index: 1;
+
 
     .searchform {
         position: relative;
@@ -85,24 +88,32 @@
         top: 17px;
         left: 17px;
         fill: $color-link-three;
+        z-index: 5;
     }
 
     .search-field {
+        position: relative;
+        z-index: 10;
+        background: transparent;
         border: 2px solid $color-link-three;
-        padding-left: 56px;
+        
+        &::placeholder {
+            color: transparent;
+        }
+
         &:focus, &:active {
             border-color: $color-link-one;
+            background: $color-white;
+            &::placeholder {
+                color: $color-text;
+            }
         }
 
         @include for(medium-screens) {
             padding-right: 90px;
         }
 
-        &::placeholder {
-            @include for(medium-screens) {
-                color: transparent;
-            }
-        }
+
     }
 
     
