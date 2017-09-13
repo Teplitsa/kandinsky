@@ -240,12 +240,12 @@ $campaign_age = get_post_meta($campaign->ID, 'campaign_age', true);
             </div>
             <div class="flex-row leyka-scale-label">
                 <div class="flex-md-5">
-                    <div class="caption"><?php _e("Collected")?></div>
+                    <div class="caption"><?php _e("Collected", 'knd')?></div>
                     <div class="sum"><?php echo $collected_f?> <?php echo $curr_label?></div>
                 </div>
                 
                 <div class="flex-md-7 knd-campaign-needed">
-                    <div class="caption"><?php _e("Needed")?></div>
+                    <div class="caption"><?php _e("Needed", 'knd')?></div>
                     <div class="sum"><?php echo $collected_f?> <?php echo $curr_label?></div>
                 </div>
                 
