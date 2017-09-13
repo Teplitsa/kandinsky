@@ -59,15 +59,6 @@ function knd_setup_starter_data($plot_name) {
     $imp = new KND_Import_Remote_Content($plot_name);
     $data = $imp->import_content();
     
-//     print_r($data['withyou']['kids']);
-//     exit();
-    
-//     $piece = $imp->get_piece('footer');
-//     var_dump($piece); echo "\n<br />\n";
-//     $title = $imp->get_val('article1', 'title', 'articles');
-//     var_dump($title); echo "\n<br />\n";
-//     exit();
-    
     $pdb = KND_Plot_Data_Builder::produce_builder($imp);
     $pdb->build_all();
     

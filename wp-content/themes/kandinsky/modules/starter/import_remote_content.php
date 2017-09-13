@@ -280,7 +280,7 @@ class KND_Import_Git_Content {
                 $this->plot_name = $plot_name;
                 break;
             default:
-                throw new Exception('Plot name is unknown or not given: '.$plot_name);
+                throw new Exception(sprintf(__('Plot name is unknown or not given: %s', 'knd'), $plot_name));
         }
 
         $this->piece_parser = new KND_Git_Piece_Parser();
@@ -344,11 +344,11 @@ class KND_Import_Git_Content {
     private function unzip_git_zip() {
 
         if(!$this->zip_fpath) {
-            throw new Exception("No zip file!");
+            throw new Exception(__('No zip file!', 'knd'));
         }
 
         if(!is_file($this->zip_fpath)) {
-            throw new Exception("Zip file not found: {$this->zip_fpath}");
+            throw new Exception(sprintf(__('Zip file not found: %s', 'knd'), $this->zip_fpath));
         }
 
         WP_Filesystem();
@@ -373,7 +373,7 @@ class KND_Import_Git_Content {
 
         } else {
             $this->import_content_files_dir = NULL;
-            throw new Exception("Unzip FAILED: {$this->zip_fpath} to {$destination['path']} Error: " . var_export($unzipfile, True) );
+            throw new Exception(sprintf(__('Unzip FAILED: %s to %s. Error: %s', 'knd'), $this->zip_fpath, $destination["path"], var_export($unzipfile, true)));
         }
     }
 
@@ -386,17 +386,17 @@ class KND_Import_Git_Content {
     private function parse_git_files($plot_name) {
 
         if( !$this->import_content_files_dir ) {
-            throw new Exception("No git content dir!");
+            throw new Exception(__('No git content dir!', 'knd'));
         }
 
         if( !is_dir($this->import_content_files_dir) ) {
-            throw new Exception("Unzipped dir not found: {$this->import_content_files_dir}");
+            throw new Exception(sprintf(__('Unzipped dir not found: %s', 'knd'), $this->import_content_files_dir));
         }
 
         $plot_dir = $this->import_content_files_dir;
 
         if(!is_dir($plot_dir)) {
-            throw new Exception("Plot dir not found: {$plot_dir}");
+            throw new Exception(sprintf(__('Plot dir not found: %s', 'knd'), $plot_dir));
         }
 
         $this->content_files[$plot_name] = $this->scan_content_dir($plot_dir);

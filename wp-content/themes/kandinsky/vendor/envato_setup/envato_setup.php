@@ -433,11 +433,17 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
             $show_content = true;
 
             echo '<div class="envato-setup-content">';
-            if( !empty($_REQUEST['save_step']) && isset($this->steps[ $this->step ]['handler'])) {
-                $show_content = call_user_func($this->steps[ $this->step ]['handler']);
-            }
-            if($show_content) {
-                $this->display_wizard_current_step_content();
+            try {
+
+                if( !empty($_REQUEST['save_step']) && isset($this->steps[ $this->step ]['handler'])) {
+                    $show_content = call_user_func($this->steps[ $this->step ]['handler']);
+                }
+                if($show_content) {
+                    $this->display_wizard_current_step_content();
+                }
+
+            } catch(Exception $ex) {
+                knd_display_wizard_error($ex);
             }
             echo '</div>';
             $this->display_wizard_footer();
@@ -447,7 +453,6 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
         }
 
         public function get_step_link($step) {
-
             return add_query_arg('step', $step, admin_url('admin.php?page='.$this->page_slug));
         }
 
@@ -532,7 +537,6 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 
         /** * Output the content for the current step */
         public function display_wizard_current_step_content() {
-
             isset($this->steps[ $this->step ]) ? call_user_func($this->steps[ $this->step ]['view']) : false;
         }
 
@@ -1456,7 +1460,6 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
         public $errors = array();
 
         public function error($message) {
-
             $this->logs[] = 'ERROR: '.$message;
         }
 
@@ -1469,6 +1472,11 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
                 <div class="theme-presets">
                     <ul>
                         <?php $current_scenario_id = get_theme_mod('knd_site_scenario', $this->get_default_site_scenario_id());
+
+                        if(empty($this->site_scenarios)) {
+                            throw new Exception(__('No scenarios detected', 'knd'), 1);
+                        }
+
                         foreach($this->site_scenarios as $scenario_id => $data) { ?>
                             <li <?php echo $scenario_id == $current_scenario_id ? 'class="current" ' : ''; ?>>
                                 <a href="#" data-scenario-id="<?php echo esc_attr($scenario_id); ?>">
@@ -1506,29 +1514,41 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
             check_admin_referer('knd-setup');
 
             if($_POST['new_scenario_id']) {
+
                 $plot_name = trim($_POST['new_scenario_id']);
 
                 set_theme_mod('knd_site_scenario', $plot_name);
 
                 if($plot_name) {
 
-                    $imp = new KND_Import_Remote_Content($plot_name);
-                    $data = $imp->import_content();
+                    try {
 
-                    $pdb = KND_Plot_Data_Builder::produce_builder($imp);
-                    if( !$pdb) { // Show some user-friendly error
-                        throw new Exception('Plot data builder was not produced for plot: '.$plot_name);
+                        $imp = new KND_Import_Remote_Content($plot_name);
+                        $data = $imp->import_content();
+
+                        $pdb = KND_Plot_Data_Builder::produce_builder($imp);
+                        if( !$pdb) { // Show some user-friendly error
+                            throw new Exception(sprintf(__('Plot data builder was not produced for plot: %s', 'knd'), $plot_name));
+                        }
+                        $pdb->build_theme_files();
+                        $pdb->build_option_files();
+                        $pdb->build_theme_colors();
+
+                        update_option('knd_setup_install_leyka', false);
+
+                        wp_redirect(esc_url_raw($this->get_next_step_link()));
+                        exit;
+
+                    } catch(Exception $ex) {
+
+                        set_theme_mod('knd_site_scenario', false);
+
+                        knd_display_wizard_error($ex);
+
                     }
-                    $pdb->build_theme_files();
-                    $pdb->build_option_files();
-                    $pdb->build_theme_colors();
-                    
-                    update_option('knd_setup_install_leyka', false);
+
                 }
             }
-
-            wp_redirect(esc_url_raw($this->get_next_step_link()));
-            exit;
 
         }
 
@@ -1786,6 +1806,28 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 
 }// if !class_exists
 
+function knd_display_wizard_error(Exception $ex) {
+
+    $message = $ex->getMessage();
+    $error_number = $ex->getCode();
+
+    echo '<div class="wizard-error">';
+
+    if($message) {
+        echo '<span class="error-begin">'.__('Error:', 'knd').'</span><span class="error-text">'.lcfirst($message).($error_number ? " (#$error_number)" : '').'.</span><div class="wizard-error-support-text">'.sprintf(__("Please, send a report about it to the <a href='mailto:%s' target='_blank'>theme technical support</a>.", 'knd'), KND_SUPPORT_EMAIL).'</div>';
+    } else {
+        echo sprintf(__("We're sorry, but some error occured during to this wizard step :( <div class='wizard-error-support-text'>Please, send a report about it to the <a href='mailto:%s' target='_blank'>theme technical support</a>.", 'knd'), KND_SUPPORT_EMAIL);
+    }
+
+    echo '<p class="envato-setup-actions error step">
+        <a href="'.admin_url().'" class="button button-large button-error">'.__('Back to the Dashboard', 'knd').'</a>
+        <a href="mailto:'.KND_SUPPORT_EMAIL.'" class="button button-error button-large button-primary">'.__('Email to the theme support', 'knd').'</a>
+    </p>
+
+    </div>';
+
+}
+
 /**
  * Loads the main instance of Envato_Theme_Setup_Wizard to have
  * ability extend class functionality
@@ -1809,7 +1851,6 @@ if( !function_exists('envato_theme_setup_wizard')) {
 
 // To remove the notice from Disable Comments plugin:
 add_action('wp_loaded', function() {
-
     if(
         class_exists('Disable_Comments') &&
         has_action('admin_print_footer_scripts', array(Disable_Comments::get_instance(), 'discussion_notice'))

@@ -9,6 +9,7 @@ define('KND_VERSION', '0.2');
 define('TST_DOC_URL', 'https://kms.te-st.ru/site-help/');
 define('KND_OFFICIAL_WEBSITE_URL', 'https://te-st.ru/');
 define('TST_OFFICIAL_WEBSITE_URL', 'https://te-st.ru/');
+define('KND_SUPPORT_EMAIL', 'support@te-st.ru');
 
 if( !isset($content_width) ) {
 	$content_width = 800; /* pixels */
@@ -111,10 +112,12 @@ foreach (glob(get_template_directory() . "/modules/*") as $module_file) {
     }
 }
 
-if(is_admin()){
-	require get_template_directory() . '/core/admin.php';
-	
-}
+if(is_admin()) {
 
-// run wizard after all modules included 
-require get_template_directory().'/vendor/envato_setup/envato_setup.php';
+	require get_template_directory() . '/core/admin.php';
+
+	if( !empty($_GET['page']) && $_GET['page'] == 'knd-setup-wizard' ) {
+        require get_template_directory().'/vendor/envato_setup/envato_setup.php'; // Run the wizard after all modules included
+    }
+
+}

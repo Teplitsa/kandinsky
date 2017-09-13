@@ -14,6 +14,11 @@ var EnvatoWizard = (function($){
         };
 
     function window_loaded(){
+
+        $('.wizard-error-support-text a').on('click', function(e){ // Follow the support link manually
+            window.location = $(this).attr('href');
+        });
+
         // init button clicks:
         $('.button-next').on( 'click', function(e) {
 
