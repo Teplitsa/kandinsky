@@ -3,8 +3,8 @@
  * Admin customization
  **/
 
-add_filter('manage_posts_columns', 'rdc_common_columns_names', 50, 2);
-function rdc_common_columns_names($columns, $post_type) {
+add_filter('manage_posts_columns', 'knd_common_columns_names', 50, 2);
+function knd_common_columns_names($columns, $post_type) {
 		
 	if(in_array($post_type, array('post', 'project', 'org', 'person', 'event'))){
 		
@@ -27,9 +27,9 @@ function rdc_common_columns_names($columns, $post_type) {
 	return $columns;
 }
 
-add_action('manage_pages_custom_column', 'rdc_common_columns_content', 2, 2);
-add_action('manage_posts_custom_column', 'rdc_common_columns_content', 2, 2);
-function rdc_common_columns_content($column_name, $post_id) {
+add_action('manage_pages_custom_column', 'knd_common_columns_content', 2, 2);
+add_action('manage_posts_custom_column', 'knd_common_columns_content', 2, 2);
+function knd_common_columns_content($column_name, $post_id) {
 	
 	$cpost = get_post($post_id);
 	if($column_name == 'id'){
@@ -55,8 +55,8 @@ function rdc_common_columns_content($column_name, $post_id) {
 }
 
 
-add_filter('manage_pages_columns', 'rdc_pages_columns_names', 50);
-function rdc_pages_columns_names($columns) {		
+add_filter('manage_pages_columns', 'knd_pages_columns_names', 50);
+function knd_pages_columns_names($columns) {
 		
 	if(isset($columns['author'])){
 		$columns['author'] = 'Создал';
@@ -72,9 +72,9 @@ function rdc_pages_columns_names($columns) {
 
 
 //manage_edit-topics_columns
-add_filter( "manage_edit-category_columns", 'rdc_common_tax_columns_names', 10);
-add_filter( "manage_edit-post_tag_columns", 'rdc_common_tax_columns_names', 10);
-function rdc_common_tax_columns_names($columns){
+add_filter( "manage_edit-category_columns", 'knd_common_tax_columns_names', 10);
+add_filter( "manage_edit-post_tag_columns", 'knd_common_tax_columns_names', 10);
+function knd_common_tax_columns_names($columns){
 	
 	$columns['id'] = 'ID';
 	
@@ -229,24 +229,39 @@ function rdc_remove_dashboard_widgets() {
 		
 	
 	//add ours
-	$locale = get_locale();
-    
-    if($locale == 'ru_RU') {
-        add_meta_box('custom_links', 'Полезные ссылки', 'rdc_custom_links_dashboard_screen', 'dashboard', 'side', 'core');
-    }	
+    add_meta_box('knd_custom_links', __('Kandinsky — useful links', 'knd'), 'knd_custom_links_dashboard_screen', 'dashboard', 'side', 'core');
+
+    if(get_locale() == 'ru_RU') {
+        add_meta_box('custom_links', __('Useful links', 'knd'), 'tst_custom_links_dashboard_screen', 'dashboard', 'side', 'core');
+    }
+
 } 
 
+function knd_custom_links_dashboard_screen() {?>
+
+<div id="knd-dashboard-card" class="knd-dashboard">
+    <div class="knd-logo">
+        <a href="<?php echo esc_url(KND_OFFICIAL_WEBSITE_URL);?>" target="_blank">
+            <img src="<?php echo esc_url(get_template_directory_uri().'/knd-logo.svg');?>">
+        </a>
+    </div>
+    <div class="knd-links">
+
+    </div>
+</div>
+
+<?php
+}
 
 
-function rdc_custom_links_dashboard_screen(){
-	
-	rdc_itv_info_widget();
-	rdc_support_widget();
+function tst_custom_links_dashboard_screen(){
 
+	tst_itv_info_widget();
+	tst_support_widget();
 
 }
 
-function rdc_itv_info_widget(){
+function tst_itv_info_widget(){
 	    
     $src = get_template_directory_uri().'/assets/img/logo-itv.png';
     $domain = parse_url(home_url()); 
@@ -267,7 +282,7 @@ function rdc_itv_info_widget(){
 <?php
 }
 
-function rdc_support_widget(){
+function tst_support_widget(){
 	
 	$src = get_template_directory_uri().'/assets/img/tst-logo';
 	
