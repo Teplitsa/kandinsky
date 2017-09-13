@@ -90,6 +90,20 @@ div[id*="leyka-pf-"] .inpage-card__thumb {
         padding-left: 6px;
         color: $color-text-semi;
     }
+
+    .purpose {
+        flex: 1 1 auto;
+        width: 40%;
+        padding-left: 6px;
+        color: $color-text-semi;
+        a {
+            color: $color-link-three;
+        }
+    }
+
+    .purpose + .meta {
+        width: 35%;
+    }
 }
 
 //donations archive
