@@ -262,3 +262,30 @@ $campaign_age = get_post_meta($campaign->ID, 'campaign_age', true);
     </article>
 <?php
 }
+
+// customize default leyka colors
+remove_action( 'wp_head', 'leyka_inline_scripts');
+
+add_action('wp_head', 'knd_leyka_inline_scripts');
+function knd_leyka_inline_scripts(){
+    
+    $main_color = knd_get_main_color();
+    $dark_color = knd_color_luminance($main_color, -0.1);
+    $light_color = knd_color_luminance($main_color, 0.2);
+    
+    $colors = array($main_color, $dark_color, $light_color); // Leyka green
+
+// detect if we have JS at all... ?>
+
+    <script>
+        document.documentElement.classList.add("leyka-js");
+    </script>
+    <style>
+        :root {
+            --color-main: 		<?php echo $colors[0];?>;
+            --color-main-dark: 	<?php echo $colors[1];?>;
+            --color-main-light: <?php echo $colors[2];?>;
+        }
+    </style>
+    <?php
+}
