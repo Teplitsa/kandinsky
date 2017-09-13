@@ -884,7 +884,7 @@ background: linear-gradient(to bottom, rgba(0,0,0,0) 10%,rgba(0,0,0,.8) 100%);
                 @include button();
                 @include knd-leyka-button-caption-text();
                 margin-top:$gut / 1.4;
-                
+                padding: 10px 30px;
             }
         }
         
