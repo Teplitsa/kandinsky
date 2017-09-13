@@ -112,6 +112,7 @@ class KND_Donations_Widget extends WP_Widget {
 	
 } //class end
 
+
 add_action('widgets_init', 'knd_donations_widgets', 25);
 function knd_donations_widgets(){
     

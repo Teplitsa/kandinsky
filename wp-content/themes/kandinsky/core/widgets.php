@@ -63,7 +63,7 @@ function knd_custom_widgets() {
 	
 	//Most of widgets do not perform well with MDL as for now
 	//unregister_widget('Leyka_Donations_List_Widget');
-	//unregister_widget('Leyka_Campaign_Card_Widget');
+	unregister_widget('Leyka_Campaign_Card_Widget');
 	unregister_widget('Leyka_Campaigns_List_Widget');
 	
 }

@@ -2,7 +2,7 @@
 
 .leyka-campaign{
     margin-bottom: $gut;
-    
+
     .entry-header-full {
         max-width: 800px;
         text-align: center;
@@ -89,5 +89,25 @@ div[id*="leyka-pf-"] .inpage-card__thumb {
         width: 75%;
         padding-left: 6px;
         color: $color-text-semi;
+    }
+}
+
+//donations archive
+.post-type-archive-leyka_donation {
+
+    .heading {
+        margin-bottom: $gut*1.5;
+        a {
+            color: $color-link-three;
+            &:hover { color: $color-link-one; }
+        }
+    }
+
+    .paging {
+        margin-top: $gut;
+    }
+
+    .main-content {
+        margin-bottom: $gut;
     }
 }
