@@ -112,8 +112,55 @@ class KND_Plot_Data_Builder {
         update_option('leyka_pm_available', $available_pms);
     }
     
+    public function _remove_all_section_campaigns_with_donations() {
+        
+        foreach($this->imp->possible_plots as $plot_name) {
+        
+            //             var_dump($plot_name);
+        
+            if($plot_name != $this->imp->plot_name) {
+        
+                //                 echo "deleting all posts...\n";
+        
+                $builder = self::produce_plot_builder($plot_name, $this->imp);
+                $plot_config = $builder->data_routes;
+        
+                //                 var_dump($plot_config['posts']);
+        
+                foreach($plot_config['leyka_campaigns'] as $section => $section_data) {
+        
+                    $post_type = Leyka_Campaign_Management::$post_type;
+                    $post_pieces_name = $section_data;
+        
+                    foreach($post_pieces_name as $piece_name) {
+        
+                        $piece = new KND_Piece(array('piece_name' => $piece_name, 'piece_section' => $section));
+                        $slug = $piece->get_post_slug();
+        
+                        //                         echo "slug: {$slug} \n";
+        
+                        $campaign = knd_get_post($slug, $post_type);
+                        if($campaign) {
+                            $leyka_campaign = new Leyka_Campaign($campaign);
+                            
+                            $donations = $leyka_campaign->get_donations();
+                            foreach($donations as $donation) {
+                                $donation->delete(True);
+                            }
+                            
+                            $leyka_campaign->delete(True);
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+    
     public function _install_campaigns_with_donations() {
 //         $this->remove_all_other_plots_posts();
+        
+        $this->_remove_all_section_campaigns_with_donations();
         
         foreach(array_keys($this->data_routes['leyka_campaigns']) as $section) {
             $this->_install_section_campaigns_with_donations($section);
