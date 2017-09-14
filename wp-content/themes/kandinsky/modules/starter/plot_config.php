@@ -446,13 +446,7 @@ class KND_Withyou_Data_Builder extends KND_Plot_Data_Builder {
                 'piece' => 'reports',
                 'post_type' => 'page',
                 'post_slug' => 'reports',
-            ),
-            array(
-                'section' => '',
-                'piece' => 'donate',
-                'post_type' => 'page',
-                'post_slug' => 'donate',
-            ),
+            )
         ),
         
         'pages_templates' => array(
@@ -478,6 +472,11 @@ class KND_Withyou_Data_Builder extends KND_Plot_Data_Builder {
                 'template' => 'page-gethelp',
                 'post_type' => 'page',
                 'post_slug' => 'gethelp',
+            ),
+            'demo' => array(
+                'template' => 'page-demo',
+                'post_type' => 'page',
+                'post_slug' => 'demo',
             ),
         ),
         
