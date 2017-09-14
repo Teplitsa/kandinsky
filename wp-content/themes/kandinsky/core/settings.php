@@ -55,42 +55,16 @@ add_action('wp_loaded', 'knd_hide_notices');
 
 function knd_admin_settings_page() {?>
 
-<!--    <h2>--><?php //_e('Test content', 'knd');?><!--</h2>-->
-<!--    <div class="install-test-content" data-nonce="--><?php //echo wp_create_nonce('install-test-content');?><!--" data-action="setup_starter_data">-->
-<!--        <a href="#">-->
-<!--            --><?php //_e('Install test content', 'knd');?>
-<!--        </a>-->
-<!--        <img src="--><?php //echo admin_url().'/images/spinner.gif';?><!--" style="display: none;"  class="ajax-loader">-->
-<!--        <div class="success" style="display: none;">--><?php //_e('Test content successfully imported!', 'knd');?><!--</div>-->
-<!--        <div class="failure" style="display: none;">--><?php //_e('Test content import failed', 'knd');?><!--</div>-->
-<!--    </div>-->
-
-    <?php /*?>
-    <h2><?php _e('Features', 'knd');?></h2>
-    <div class="install-test-content">
-        <form id="knd-features-form">
-            <div>
-                <input type="checkbox" id="knd-feature-events" name="features[]" value="events">
-                <label for="knd-feature-events"><?php _e('Events', 'knd');?></label>
-            </div>
-            <div>
-                <input type="checkbox" id="knd-feature-donations" name="features[]" value="donations">
-                <label for="knd-feature-donations"><?php _e('Donations', 'knd');?></label>
-            </div>
-            <div>
-                <input type="submit" name="knd-features-submit" value="<?php _e('Save', 'knd');?>">
-            </div>
-        </form>
-    </div>
-
-<?php */
-
+<?
 }
 
 function knd_add_admin_pages() {
-//    add_submenu_page('themes.php', __('Kandinsky settings', 'knd'), __('Kandinsky', 'knd'), 'manage_options', 'knd_admin_settings_page', 'knd_admin_settings_page');
-    add_menu_page( __('Kandinsky settings', 'knd'), __('Kandinsky', 'knd'), 'manage_options', 'knd-setup-wizard', 'envato_theme_setup_wizard', '', 100);
+
+    add_menu_page(__('Kandinsky settings', 'knd'), __('Kandinsky', 'knd'), 'manage_options', 'customize.php');
+    add_submenu_page('customize.php', __('Kandinsky setup wizard', 'knd'), __('Kandinsky setup wizard', 'knd'), 'manage_options', 'knd-setup-wizard', 'envato_theme_setup_wizard');
+
     add_submenu_page('themes.php', __('Kandinsky setup wizard', 'knd'), __('Kandinsky setup wizard', 'knd'), 'manage_options', 'knd-setup-wizard', 'envato_theme_setup_wizard');
+
 }
 add_action('admin_menu', 'knd_add_admin_pages');
 
