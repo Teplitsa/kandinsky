@@ -230,17 +230,14 @@ function rdc_remove_dashboard_widgets() {
 	
 	//add ours
     add_meta_box('knd_custom_links', __('Kandinsky — useful links', 'knd'), 'knd_custom_links_dashboard_screen', 'dashboard', 'side', 'core');
-    add_meta_box('knd_settings_links', __('Kandinsky — settings', 'knd'), 'knd_settings_links_dashboard_screen', 'dashboard', 'side', 'core');
-
-    if(get_locale() == 'ru_RU') {
-        add_meta_box('custom_links', __('Useful links', 'knd'), 'tst_custom_links_dashboard_screen', 'dashboard', 'side', 'core');
-    }
+//    add_meta_box('knd_settings_links', __('Kandinsky — settings', 'knd'), 'knd_settings_links_dashboard_screen', 'dashboard', 'side', 'core');
 
 }
 
 function knd_custom_links_dashboard_screen() {?>
 
 <div id="knd-dashboard-card" class="knd-dashboard">
+
     <div class="knd-logo">
         <a href="<?php echo esc_url(KND_OFFICIAL_WEBSITE_URL);?>" target="_blank">
             <img src="<?php echo esc_url(get_template_directory_uri().'/knd-logo.svg');?>">
@@ -249,15 +246,37 @@ function knd_custom_links_dashboard_screen() {?>
     <p>Хотите быть в курсе всех возможностей темы?<br>Найдите информацию на <a href="<?php echo KND_OFFICIAL_WEBSITE_URL;?>" target="_blank">её официальном сайте</a>.</p>
 
     <div class="knd-metabox-line">
-        <a href="<?php echo KND_OFFICIAL_WEBSITE_URL;?>" target="_blank" class="action"><span class="dashicons dashicons-admin-generic"></span>Открыть мастер настройки темы</a>
+        <a href="<?php echo KND_OFFICIAL_WEBSITE_URL;?>" target="_blank" class="action"><span class="dashicons dashicons-admin-generic"></span>Мастер настройки темы</a>
     </div>
 
     <div class="knd-metabox-line">
-        <a href="<?php echo KND_DOC_URL;?>" target="_blank" class="action"><span class="dashicons dashicons-book-alt"></span>Открыть документацию по теме</a>
+        <a href="<?php echo KND_DOC_URL;?>" target="_blank" class="action"><span class="dashicons dashicons-book-alt"></span>Документация по теме</a>
     </div>
 
     <div class="knd-metabox-line">
         <a href="mailto:<?php echo KND_SUPPORT_EMAIL;?>" target="_blank" class="action"><span class="dashicons dashicons-email"></span>Написать в службу поддержки</a>
+    </div>
+
+    <h3 id="knd-metabox-subtitle"><?php _e('Theme settings', 'knd');?></h3>
+
+    <div class="knd-metabox-line">
+        <a href="<?php echo admin_url('/customize.php?autofocus[section]=title_tagline');?>" target="_blank" class="action"><span class="dashicons dashicons-editor-insertmore"></span><?php _e('Site title and description', 'knd');?></a>
+    </div>
+
+    <div class="knd-metabox-line">
+        <a href="<?php echo admin_url('/customize.php?autofocus[panel]=knd_decoration');?>" target="_blank" class="action"><span class="dashicons dashicons-admin-appearance"></span><?php _e('Decoration', 'knd');?></a>
+    </div>
+
+    <div class="knd-metabox-line">
+        <a href="<?php echo admin_url('/customize.php?autofocus[section]=knd_social_links');?>" target="_blank" class="action"><span class="dashicons dashicons-share"></span><?php _e('Social media links', 'knd');?></a>
+    </div>
+
+    <div class="knd-metabox-line">
+        <a href="<?php echo admin_url('/customize.php?autofocus[section]=knd_cta_block_settings');?>" target="_blank" class="action"><span class="dashicons dashicons-thumbs-up"></span><?php _e('Call to action block', 'knd');?></a>
+    </div>
+
+    <div class="knd-metabox-line">
+        <a href="<?php echo admin_url('/customize.php?autofocus[panel]=widgets');?>" target="_blank" class="action"><span class="dashicons dashicons-exerpt-view"></span><?php _e('Widgets', 'knd');?></a>
     </div>
 
 </div>
@@ -268,87 +287,40 @@ function knd_custom_links_dashboard_screen() {?>
 function knd_settings_links_dashboard_screen() {?>
 
 <div id="knd-dashboard-card" class="knd-dashboard">
+
     <div class="knd-logo">
         <a href="<?php echo esc_url(KND_OFFICIAL_WEBSITE_URL);?>" target="_blank">
             <img src="<?php echo esc_url(get_template_directory_uri().'/knd-logo.svg');?>">
         </a>
     </div>
-    <p>Хотите быть в курсе всех возможностей темы?<br>Найдите информацию на <a href="<?php echo KND_OFFICIAL_WEBSITE_URL;?>" target="_blank">её официальном сайте</a>.</p>
 
     <div class="knd-metabox-line">
-        <a href="<?php echo KND_OFFICIAL_WEBSITE_URL;?>" target="_blank" class="action"><span class="dashicons dashicons-admin-generic"></span>Открыть мастер настройки темы</a>
+        <a href="<?php echo admin_url('/customize.php?autofocus[section]=title_tagline');?>" target="_blank" class="action"><span class="dashicons dashicons-editor-insertmore"></span><?php _e('Site title and description', 'knd');?></a>
     </div>
 
     <div class="knd-metabox-line">
-        <a href="<?php echo KND_DOC_URL;?>" target="_blank" class="action"><span class="dashicons dashicons-book-alt"></span>Открыть документацию по теме</a>
+        <a href="<?php echo admin_url('/customize.php?autofocus[panel]=knd_decoration');?>" target="_blank" class="action"><span class="dashicons dashicons-admin-appearance"></span><?php _e('Decoration', 'knd');?></a>
     </div>
 
     <div class="knd-metabox-line">
-        <a href="mailto:<?php echo KND_SUPPORT_EMAIL;?>" target="_blank" class="action"><span class="dashicons dashicons-email"></span>Написать в службу поддержки</a>
+        <a href="<?php echo admin_url('/customize.php?autofocus[section]=knd_social_links');?>" target="_blank" class="action"><span class="dashicons dashicons-share"></span><?php _e('Social media links', 'knd');?></a>
+    </div>
+
+    <div class="knd-metabox-line">
+        <a href="<?php echo admin_url('/customize.php?autofocus[section]=knd_cta_block_settings');?>" target="_blank" class="action"><span class="dashicons dashicons-yes"></span><?php _e('Call to action block', 'knd');?></a>
+    </div>
+
+    <div class="knd-metabox-line">
+        <a href="<?php echo admin_url('/customize.php?autofocus[panel]=widgets');?>" target="_blank" class="action"><span class="dashicons dashicons-exerpt-view"></span><?php _e('Widgets', 'knd');?></a>
     </div>
 
 </div>
 
-<?php
-}
-
-
-function tst_custom_links_dashboard_screen(){
-
-	tst_itv_info_widget();
-	tst_support_widget();
-
-}
-
-function tst_itv_info_widget(){
-	    
-    $src = get_template_directory_uri().'/assets/img/logo-itv.png';
-    $domain = parse_url(home_url()); 
-    $itv_url = "https://itv.te-st.ru/?giger=".$domain['host'];
-?>
-<div id="itv-dashboard-card" class="rdc-dashboard">
-	<div class="cols">
-		<div class="col-logo"><div class="itv-logo col-logo">
-			<a href="<?php echo esc_url($itv_url);?>" target="_blank"><img src="<?php echo esc_url($src);?>"></a>
-		</div></div>
-		<div class="col-btn"><a href="<?php echo esc_url($itv_url);?>" target="_blank" class="button">Опубликовать задачу</a></div>
-	</div>
-	
-	
-	<p>Вам нужна помощь в настройке или доработке сайта?<br>Опубликуйте задачу на платформе <a href="<?php echo esc_url($itv_url);?>" target="_blank">it-волонтер</a></p>                
-	
-</div>
-<?php
-}
-
-function tst_support_widget(){
-	
-	$src = get_template_directory_uri().'/assets/img/tst-logo';
-	
-	$doc = (defined('TST_DOC_URL') && !empty(TST_DOC_URL)) ? TST_DOC_URL : '';
-	if(!empty($doc))
-		$doc = str_replace('<a', '<a target="_blank" ', make_clickable($doc));
-	
-?>
-<div id="rdc-support-card" class="rdc-dashboard">
-	<div class="cols">
-		
-	<div class="col-logo"><div class="tree-logo">
-		<img src="<?php echo $src;?>.svg" onerror="this.onerror=null;this.src=<?php echo $src;?>.png">
-	</div></div>
-	<div class="col-btn"><a href="mailto:support@te-st.ru" target="_blank" class="button">Написать в поддержку</a></div>
-	</div>
-	
-	<p>Возникли проблемы с использованием сайта, нашли ошибку?<br>Обратитесь в поддержку Теплицы социальных технологий <a href="mailto:support@te-st.ru" target="_blank">support@te-st.ru</a></p>
-	<?php if(!empty($doc)) { ?>
-		<p>Справочная информация по работе с сайтом находится по ссылке <?php echo $doc; ?></p>
-	<?php } ?>
-</div>
 <?php
 }
 
 /** Doc link in footer text **/
-add_filter( 'admin_footer_text', 'rdc_admin_fotter_text' );
+add_filter('admin_footer_text', 'rdc_admin_fotter_text');
 function rdc_admin_fotter_text($text) {
 		
 	$doc = (defined('TST_DOC_URL') && !empty(TST_DOC_URL)) ? TST_DOC_URL : '';
@@ -361,9 +333,8 @@ function rdc_admin_fotter_text($text) {
 	
 	$text = '<span id="footer-thankyou">Краткое руководство по работе с сайтом - ' . $doc . '</span>';	
 	return $text;
+
 }
-
-
 
 /** Notification about wront thumbnail size **/
 add_filter('admin_post_thumbnail_html', 'rdc_thumbnail_dimensions_check', 10, 2);
