@@ -476,8 +476,8 @@ class KND_Withyou_Data_Builder extends KND_Plot_Data_Builder {
             'demo' => array(
                 'template' => 'page-demo',
                 'post_type' => 'page',
-                'post_slug' => 'demo',
-            ),
+                'post_slug' => 'demopage',
+            )
         ),
         
         'posts' => array(
