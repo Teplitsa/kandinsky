@@ -226,7 +226,7 @@ $modularscale: (
     //@include ms-respond(font-size, 2);
     
     @include for(small-screens) {
-        font-size: 22px;
+        //font-size: 22px;
     }
     
     font-family: $nav;

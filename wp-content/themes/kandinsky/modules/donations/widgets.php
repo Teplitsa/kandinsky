@@ -54,13 +54,13 @@ class KND_Donations_Widget extends WP_Widget {
         echo $before_widget;
         ?>
 
-<section class="container-wide knd-donations-widget">
-
-    <div class="container">
+<div class="container knd-donations-widget">
     
-    <h2 class="section-title"><?php echo $title;?></h2>
-    
-    <div class="main-content cards-holder knd-donations-widget-body">
+    <?php 
+        if(!empty($title)) { 
+            echo $before_title.$title.$after_title;
+        }
+    ?>  
     <div class="flex-row start cards-loop">
         <?php
             if(!empty($posts)){
@@ -70,12 +70,8 @@ class KND_Donations_Widget extends WP_Widget {
             }
         ?>
     </div>
-    
-    </div>
-    
-    </div>
 
-</section>
+</div>
 
 <?php 
 		echo $after_widget;
@@ -115,6 +111,7 @@ class KND_Donations_Widget extends WP_Widget {
 	}
 	
 } //class end
+
 
 add_action('widgets_init', 'knd_donations_widgets', 25);
 function knd_donations_widgets(){
