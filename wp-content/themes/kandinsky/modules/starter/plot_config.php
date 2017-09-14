@@ -462,6 +462,23 @@ class KND_Withyou_Data_Builder extends KND_Plot_Data_Builder {
                 'post_slug' => 'about',
         
             ),
+            'helpus' => array(
+                'template' => 'page-helpus',
+                'post_type' => 'page',
+                'post_slug' => 'helpus',
+        
+            ),
+            'volunteers' => array(
+                'template' => 'page-volunteers',
+                'post_type' => 'page',
+                'post_slug' => 'volunteers',
+        
+            ),
+            'gethelp' => array(
+                'template' => 'page-gethelp',
+                'post_type' => 'page',
+                'post_slug' => 'gethelp',
+            ),
         ),
         
         'posts' => array(
