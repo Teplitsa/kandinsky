@@ -17,7 +17,7 @@ function knd_text_pm_icon($icons){
 }
 
 /** Additionsl text PM */
-class Leyka_Sms_Box extends Leyka_Text_Box {
+class Leyka_Sms_Box_New extends Leyka_Text_Box {
 
     protected static $_instance = null;
 
@@ -74,7 +74,7 @@ class Leyka_Sms_Box extends Leyka_Text_Box {
     }
 }
 
-add_action('leyka_init_pm_list', 'knd_add_sms_pm');
+//add_action('leyka_init_pm_list', 'knd_add_sms_pm');
 function knd_add_sms_pm(Leyka_Gateway $gateway){
 
 	if($gateway->id == 'text'){		
