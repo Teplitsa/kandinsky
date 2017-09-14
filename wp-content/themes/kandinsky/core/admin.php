@@ -230,12 +230,13 @@ function rdc_remove_dashboard_widgets() {
 	
 	//add ours
     add_meta_box('knd_custom_links', __('Kandinsky — useful links', 'knd'), 'knd_custom_links_dashboard_screen', 'dashboard', 'side', 'core');
+    add_meta_box('knd_settings_links', __('Kandinsky — settings', 'knd'), 'knd_settings_links_dashboard_screen', 'dashboard', 'side', 'core');
 
     if(get_locale() == 'ru_RU') {
         add_meta_box('custom_links', __('Useful links', 'knd'), 'tst_custom_links_dashboard_screen', 'dashboard', 'side', 'core');
     }
 
-} 
+}
 
 function knd_custom_links_dashboard_screen() {?>
 
@@ -245,9 +246,47 @@ function knd_custom_links_dashboard_screen() {?>
             <img src="<?php echo esc_url(get_template_directory_uri().'/knd-logo.svg');?>">
         </a>
     </div>
-    <div class="knd-links">
+    <p>Хотите быть в курсе всех возможностей темы?<br>Найдите информацию на <a href="<?php echo KND_OFFICIAL_WEBSITE_URL;?>" target="_blank">её официальном сайте</a>.</p>
 
+    <div class="knd-metabox-line">
+        <a href="<?php echo KND_OFFICIAL_WEBSITE_URL;?>" target="_blank" class="action"><span class="dashicons dashicons-admin-generic"></span>Открыть мастер настройки темы</a>
     </div>
+
+    <div class="knd-metabox-line">
+        <a href="<?php echo KND_DOC_URL;?>" target="_blank" class="action"><span class="dashicons dashicons-book-alt"></span>Открыть документацию по теме</a>
+    </div>
+
+    <div class="knd-metabox-line">
+        <a href="mailto:<?php echo KND_SUPPORT_EMAIL;?>" target="_blank" class="action"><span class="dashicons dashicons-email"></span>Написать в службу поддержки</a>
+    </div>
+
+</div>
+
+<?php
+}
+
+function knd_settings_links_dashboard_screen() {?>
+
+<div id="knd-dashboard-card" class="knd-dashboard">
+    <div class="knd-logo">
+        <a href="<?php echo esc_url(KND_OFFICIAL_WEBSITE_URL);?>" target="_blank">
+            <img src="<?php echo esc_url(get_template_directory_uri().'/knd-logo.svg');?>">
+        </a>
+    </div>
+    <p>Хотите быть в курсе всех возможностей темы?<br>Найдите информацию на <a href="<?php echo KND_OFFICIAL_WEBSITE_URL;?>" target="_blank">её официальном сайте</a>.</p>
+
+    <div class="knd-metabox-line">
+        <a href="<?php echo KND_OFFICIAL_WEBSITE_URL;?>" target="_blank" class="action"><span class="dashicons dashicons-admin-generic"></span>Открыть мастер настройки темы</a>
+    </div>
+
+    <div class="knd-metabox-line">
+        <a href="<?php echo KND_DOC_URL;?>" target="_blank" class="action"><span class="dashicons dashicons-book-alt"></span>Открыть документацию по теме</a>
+    </div>
+
+    <div class="knd-metabox-line">
+        <a href="mailto:<?php echo KND_SUPPORT_EMAIL;?>" target="_blank" class="action"><span class="dashicons dashicons-email"></span>Написать в службу поддержки</a>
+    </div>
+
 </div>
 
 <?php

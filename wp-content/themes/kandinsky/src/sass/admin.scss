@@ -166,6 +166,18 @@ div [id *="ninja_forms_metabox"] .item-edit.metabox-item-edit {
   transition: all .1s ease-in-out;
 }
 
+.knd-dashboard .knd-metabox-line .action {
+    display: flex;
+    padding: 0 8px;
+    margin: 16px 0;
+    flex-grow: 0;
+    align-items: center;
+
+    .dashicons {
+        margin-right: 4px;
+    }
+}
+
 #wpadminbar #wp-admin-bar-kandinsky-main {
     
     a {

@@ -7,6 +7,7 @@
 
 define('KND_VERSION', '0.2');
 define('TST_DOC_URL', 'https://kms.te-st.ru/site-help/');
+define('KND_DOC_URL', 'https://github.com/Teplitsa/kandinsky/wiki/');
 define('KND_OFFICIAL_WEBSITE_URL', 'https://te-st.ru/'); /** @todo Change this URL */
 define('TST_OFFICIAL_WEBSITE_URL', 'https://te-st.ru/');
 define('KND_SUPPORT_EMAIL', 'support@te-st.ru');
