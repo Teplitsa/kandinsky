@@ -44,6 +44,9 @@ body {
 	@include page-section-margin();
 	position: relative;
 	z-index: 1;
+	&:first-child {
+		margin-top: 0;
+	}
 }
 
 .knd-img-bg {

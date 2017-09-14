@@ -48,7 +48,7 @@ if($paged == 1) { //featured posts
 
 <div class="knd-archive-sidebar">
 
-    <?php if(is_post_type_archive('post')):?>
+    <?php if(is_home()):?>
         <?php dynamic_sidebar( 'knd-news-archive-sidebar' );?>
     <?php else: ?>
         <?php dynamic_sidebar( 'knd-projects-archive-sidebar' );?>    

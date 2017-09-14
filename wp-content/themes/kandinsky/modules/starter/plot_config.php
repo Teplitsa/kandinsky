@@ -1,5 +1,4 @@
 <?php
-
 /**
  * WP content srtuctures builder for color-line plot.
  * The major part of the class is a config, named $this->data_routes.
@@ -26,13 +25,7 @@ class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
                 'piece' => 'reports',
                 'post_type' => 'page',
                 'post_slug' => 'reports',
-            ),
-            array(
-                'section' => 'about',
-                'piece' => 'history',
-                'post_type' => 'page',
-                'post_slug' => 'about-history',
-            ),
+            )
         ),
         
         'pages_templates' => array(
@@ -51,6 +44,11 @@ class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
                 'template' => 'page-volunteers',
                 'post_type' => 'page',
                 'post_slug' => 'volunteers',
+            ),
+            'history' => array(
+                'template' => 'page-history',
+                'post_type' => 'page',
+                'post_slug' => 'history',
             ),
         ),
 
@@ -476,7 +474,7 @@ class KND_Withyou_Data_Builder extends KND_Plot_Data_Builder {
             'demo' => array(
                 'template' => 'page-demo',
                 'post_type' => 'page',
-                'post_slug' => 'demopage',
+                'post_slug' => 'demo',
             )
         ),
         

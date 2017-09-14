@@ -82,10 +82,7 @@ function knd_amount_field($form){
 }
 
 function knd_donation_card(WP_Post $campaign){
-?>   
-    <article class="flex-md-6 tpl-post card">
-     
-<?php
+
 
 if($campaign->post_type != Leyka_Campaign_Management::$post_type) { // Wrong campaign data
     return;
@@ -125,7 +122,7 @@ $collected_f = number_format($collected, 0, '.', ' ');
 $campaign_age = get_post_meta($campaign->ID, 'campaign_age', true);
 
 ?>
-
+<article class="flex-md-6 tpl-post card">
     <div class="<?php echo esc_attr($css_class);?>">
         <?php if(has_post_thumbnail($campaign->ID)) {?>
             <div class="lk-thumbnail">
@@ -193,7 +190,7 @@ $campaign_age = get_post_meta($campaign->ID, 'campaign_age', true);
         </div>
 
     </div>
-    </article>
+</article>
 <?php
 }
 

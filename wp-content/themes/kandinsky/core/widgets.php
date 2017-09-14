@@ -59,7 +59,7 @@ function knd_custom_widgets() {
 	unregister_widget('WP_Widget_Recent_Posts');
 	unregister_widget('WP_Widget_Tag_Cloud');
 	unregister_widget('WP_Widget_RSS');
-	//unregister_widget('WP_Widget_Search');
+	unregister_widget('WP_Widget_Recent_Comments');
 	
 	//Most of widgets do not perform well with MDL as for now
 	//unregister_widget('Leyka_Donations_List_Widget');

@@ -28,10 +28,14 @@ class KND_Donations_Widget extends WP_Widget {
             'posts_per_page' => $num,
             'post_status' => 'publish',
         );
-        
-//         if( !empty($instance['exclude']) ) {
-//             $q_args['post__not_in'] = array_map('intval', explode(',', $instance['exclude']));
-//         }
+
+        if( !empty($instance['exclude']) ) {
+            $q_args['post__not_in'] = array_map('intval', explode(',', $instance['exclude']));
+        }
+        else {
+            $ex = get_page_by_path('kids-helpfund', OBJECT, 'leyka_campaign' ); 
+            $q_args['post__not_in'] = array($ex->ID);
+        }
         
         $q_args['meta_query'] = array(
             array(
@@ -76,11 +80,13 @@ class KND_Donations_Widget extends WP_Widget {
 <?php 
 		echo $after_widget;
 	}
+
+    
 	
 	function form($instance) {
 
 		/* Set up some default widget settings */
-		$defaults = array('title' => '', 'num' => 4);
+		$defaults = array('title' => '', 'num' => 4, 'exclude' => '');
 		$instance = wp_parse_args((array)$instance, $defaults);		
 	?>
 		<p>
@@ -92,6 +98,11 @@ class KND_Donations_Widget extends WP_Widget {
 			<label for="<?php echo $this->get_field_id('num');?>">Кол.-во:</label>
 			<input id="<?php echo $this->get_field_id('num'); ?>" name="<?php echo $this->get_field_name('num');?>" type="text" value="<?php echo intval($instance['num']);?>">
 		</p>
+
+        <p>
+            <label for="<?php echo $this->get_field_id('exclude');?>">Исключать кампании:</label>
+            <input id="<?php echo $this->get_field_id('exclude'); ?>" name="<?php echo $this->get_field_name('exclude');?>" type="text" value="<?php echo esc_attr($instance['exclude']);?>">
+        </p>
 	<?php
 	}
 
@@ -99,7 +110,8 @@ class KND_Donations_Widget extends WP_Widget {
 
 		$instance = $old_instance;
 		
-		$instance['title'] = sanitize_text_field($new_instance['title']);		
+		$instance['title'] = sanitize_text_field($new_instance['title']);	
+        $instance['exclude'] = sanitize_text_field($new_instance['exclude']);	
 		$instance['num'] = intval($new_instance['num']);
 
 		return $instance;

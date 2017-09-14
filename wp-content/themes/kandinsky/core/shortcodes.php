@@ -138,7 +138,15 @@ function knd_video_caption_shortcode($atts, $content = null){
     return '<div class="video-caption">'.$content.'</div>';
 }
 
+/* fallback for Leyka shortcode */
+if( !defined('LEYKA_VERSION') ) {
+    add_shortcode('leyka_inline_campaign', 'knd_leyka_inline_campaign_shortcode');
+    function knd_leyka_inline_campaign_shortcode($atts, $content = null){
+        // don't display anything when we don't have donations
 
+        return '';
+    }
+}
 
 
 /*** IN Dev ***/
