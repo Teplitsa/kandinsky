@@ -7,9 +7,11 @@
 
 define('KND_VERSION', '0.2');
 define('TST_DOC_URL', 'https://kms.te-st.ru/site-help/');
-define('KND_OFFICIAL_WEBSITE_URL', 'https://te-st.ru/');
+define('KND_DOC_URL', 'https://github.com/Teplitsa/kandinsky/wiki/');
+define('KND_OFFICIAL_WEBSITE_URL', 'https://te-st.ru/'); /** @todo Change this URL */
 define('TST_OFFICIAL_WEBSITE_URL', 'https://te-st.ru/');
 define('KND_SUPPORT_EMAIL', 'support@te-st.ru');
+define('KND_SETUP_WIZARD_URL', admin_url('themes.php?page=knd-setup-wizard'));
 
 if( !isset($content_width) ) {
 	$content_width = 800; /* pixels */
@@ -112,11 +114,11 @@ foreach (glob(get_template_directory() . "/modules/*") as $module_file) {
     }
 }
 
-if(is_admin()) {
+if(is_admin() || wp_doing_ajax()) {
 
 	require get_template_directory() . '/core/admin.php';
 
-	if( !empty($_GET['page']) && $_GET['page'] == 'knd-setup-wizard' ) {
+	if(wp_doing_ajax() || ( !empty($_GET['page']) && $_GET['page'] == 'knd-setup-wizard' )) {
         require get_template_directory().'/vendor/envato_setup/envato_setup.php'; // Run the wizard after all modules included
     }
 

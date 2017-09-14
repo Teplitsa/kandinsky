@@ -320,9 +320,20 @@ function knd_get_social_media_supported() {
     );
 }
 
-add_action('after_switch_theme', 'knd_flush_permalinks');
-function knd_flush_permalinks() {
+add_action('after_switch_theme', 'knd_after_theme_activation');
+function knd_after_theme_activation() {
+
     flush_rewrite_rules(false);
+
+    if( !get_transient('_knd_activation_redirect_done') ) {
+
+        set_transient('_knd_activation_redirect_done', true);
+        wp_safe_redirect(KND_SETUP_WIZARD_URL);
+
+        exit;
+
+    }
+
 }
 
 add_action('pre_get_posts', 'knd_posts_archive_entries_number');
