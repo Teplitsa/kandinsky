@@ -230,7 +230,6 @@ function rdc_remove_dashboard_widgets() {
 	
 	//add ours
     add_meta_box('knd_custom_links', __('Kandinsky — useful links', 'knd'), 'knd_custom_links_dashboard_screen', 'dashboard', 'side', 'core');
-//    add_meta_box('knd_settings_links', __('Kandinsky — settings', 'knd'), 'knd_settings_links_dashboard_screen', 'dashboard', 'side', 'core');
 
 }
 
@@ -273,41 +272,6 @@ function knd_custom_links_dashboard_screen() {?>
 
     <div class="knd-metabox-line">
         <a href="<?php echo admin_url('/customize.php?autofocus[section]=knd_cta_block_settings');?>" target="_blank" class="action"><span class="dashicons dashicons-thumbs-up"></span><?php _e('Call to action block', 'knd');?></a>
-    </div>
-
-    <div class="knd-metabox-line">
-        <a href="<?php echo admin_url('/customize.php?autofocus[panel]=widgets');?>" target="_blank" class="action"><span class="dashicons dashicons-exerpt-view"></span><?php _e('Widgets', 'knd');?></a>
-    </div>
-
-</div>
-
-<?php
-}
-
-function knd_settings_links_dashboard_screen() {?>
-
-<div id="knd-dashboard-card" class="knd-dashboard">
-
-    <div class="knd-logo">
-        <a href="<?php echo esc_url(KND_OFFICIAL_WEBSITE_URL);?>" target="_blank">
-            <img src="<?php echo esc_url(get_template_directory_uri().'/knd-logo.svg');?>">
-        </a>
-    </div>
-
-    <div class="knd-metabox-line">
-        <a href="<?php echo admin_url('/customize.php?autofocus[section]=title_tagline');?>" target="_blank" class="action"><span class="dashicons dashicons-editor-insertmore"></span><?php _e('Site title and description', 'knd');?></a>
-    </div>
-
-    <div class="knd-metabox-line">
-        <a href="<?php echo admin_url('/customize.php?autofocus[panel]=knd_decoration');?>" target="_blank" class="action"><span class="dashicons dashicons-admin-appearance"></span><?php _e('Decoration', 'knd');?></a>
-    </div>
-
-    <div class="knd-metabox-line">
-        <a href="<?php echo admin_url('/customize.php?autofocus[section]=knd_social_links');?>" target="_blank" class="action"><span class="dashicons dashicons-share"></span><?php _e('Social media links', 'knd');?></a>
-    </div>
-
-    <div class="knd-metabox-line">
-        <a href="<?php echo admin_url('/customize.php?autofocus[section]=knd_cta_block_settings');?>" target="_blank" class="action"><span class="dashicons dashicons-yes"></span><?php _e('Call to action block', 'knd');?></a>
     </div>
 
     <div class="knd-metabox-line">
