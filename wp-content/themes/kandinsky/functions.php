@@ -112,11 +112,11 @@ foreach (glob(get_template_directory() . "/modules/*") as $module_file) {
     }
 }
 
-if(is_admin()) {
+if(is_admin() || wp_doing_ajax()) {
 
 	require get_template_directory() . '/core/admin.php';
 
-	if( !empty($_GET['page']) && $_GET['page'] == 'knd-setup-wizard' ) {
+	if(wp_doing_ajax() || ( !empty($_GET['page']) && $_GET['page'] == 'knd-setup-wizard' )) {
         require get_template_directory().'/vendor/envato_setup/envato_setup.php'; // Run the wizard after all modules included
     }
 

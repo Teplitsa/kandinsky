@@ -179,7 +179,7 @@ var EnvatoWizard = (function($){
                     }
                 } else if(typeof response.done != 'undefined') {
                     find_next();
-                } else { // error processing this plugin
+                } else { // error processing
                     find_next();
                 }
 
