@@ -105,11 +105,11 @@ class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
         'theme_options' => array(
             
             'knd_hero_image_support_title' => 'Помоги бороться с алкогольной зависимостью!',
-            'knd_hero_image_support_text' => 'В Нашей области 777 человек, которые страдают от алкогольной зависимости. Ваша поддержка поможет организовать для них реабилитационную программу.',
+            'knd_hero_image_support_text' => 'В Нашей области 877 человек, которые страдают от алкогольной зависимости. Ваша поддержка поможет организовать для них реабилитационную программу.',
             'knd_hero_image_support_button_caption' => 'Помочь сейчас',
             
             'subtitle_org' => "Благотворительная организация  «Линия Цвета»",
-            'subtitle_slogan' => "Более 10 лет мы помогаем людям, страдающим алкоголизмом в нашем городе,  организуя реабилитационные программы и группы",
+            'subtitle_slogan' => "Более 10 лет мы помогаем людям, страдающим алкоголизмом,  организуем реабилитационные программы и группы",
             
             'home-subtitle-col1-title' => array('section' => 'homepage', 'piece' => 'whoweare-who', 'field' => 'title'),
             'home-subtitle-col1-content' => array('section' => 'homepage', 'piece' => 'whoweare-who'),
