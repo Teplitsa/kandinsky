@@ -44,3 +44,4 @@ node_modules
 .DS_Store
 /wp-content/themes/kandinsky/_temp
 /wp-content/debug.log
+/wp-content/themes/kandinsky/debug.log
