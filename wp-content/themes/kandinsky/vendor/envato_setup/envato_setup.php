@@ -853,6 +853,11 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
         
         public function _content_install_donations() {
             update_option('knd_setup_install_leyka', true);
+            
+            if(is_plugin_active('leyka/leyka.php')) {
+                knd_activate_leyka();
+            }
+            
             return true;
         }
 
