@@ -325,7 +325,7 @@ function knd_after_theme_activation() {
 
     flush_rewrite_rules(false);
 
-    if( !get_transient('_knd_activation_redirect_done') || get_option('knd_setup_complete', false) ) {
+    if( !get_transient('_knd_activation_redirect_done') ) {
 
         set_transient('_knd_activation_redirect_done', true);
         wp_safe_redirect(KND_SETUP_WIZARD_URL);
