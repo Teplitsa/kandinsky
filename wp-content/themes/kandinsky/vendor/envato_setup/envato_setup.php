@@ -201,7 +201,7 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 //			} else {
 //				$this->page_url = 'themes.php?page=' . $this->page_slug;
 //			}
-            $this->page_url = 'themes.php?page=knd-setup-wizard'; //apply_filters( $this->theme_name . '_theme_setup_wizard_page_url', $this->page_url );
+            $this->page_url = KND_SETUP_WIZARD_URL; //apply_filters( $this->theme_name . '_theme_setup_wizard_page_url', $this->page_url );
 
             // Set relative plugin path url:
             $this->plugin_path = trailingslashit($this->cleanFilePath(dirname(__FILE__)));
@@ -222,7 +222,7 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 
             if(apply_filters($this->theme_name.'_enable_setup_wizard', true) && current_user_can('manage_options')) {
 
-                add_action('after_switch_theme', array($this, 'switch_theme'));
+//                add_action('after_switch_theme', array($this, 'switch_theme'));
 
                 if(class_exists('TGM_Plugin_Activation') && isset($GLOBALS['tgmpa'])) {
                     add_action('init', array($this, 'get_tgmpa_instanse'), 30);
@@ -266,7 +266,7 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
          */
         public function is_default_content_installed() {
 
-            return ! !get_option('knd_default_content_installed');
+            return !!get_option('knd_default_content_installed');
         }
 
         public function enqueue_scripts() {
@@ -277,22 +277,8 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
             return is_admin() || current_user_can('install_themes');
         }
 
-        public function switch_theme() {
-
-            set_transient('_'.$this->theme_name.'_activation_redirect', 1);
-        }
-
         public function admin_redirects() {
-
-            if( !get_transient('_'.$this->theme_name.'_activation_redirect') || get_option('knd_setup_complete', false)) {
-                return;
-            }
-
-            delete_transient('_'.$this->theme_name.'_activation_redirect');
-            wp_safe_redirect(admin_url($this->page_url));
-
-            exit;
-
+            // ...
         }
 
         /**
@@ -302,7 +288,6 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
          * @since 1.1.2
          */
         public function get_tgmpa_instanse() {
-
             $this->tgmpa_instance = call_user_func(array(get_class($GLOBALS['tgmpa']), 'get_instance'));
         }
 
@@ -416,15 +401,13 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
                 'processing_text' => __('Processing...', 'knd'),
             ));
 
-            //wp_enqueue_style( 'envato_wizard_admin_styles', $this->plugin_url . '/css/admin.css', array(), $this->version );
             wp_enqueue_style('envato-setup', $this->plugin_url.'css/envato-setup.css', array(
                 'wp-admin',
                 'dashicons',
                 'install',
             ), $this->version);
 
-            //enqueue style for admin notices
-            wp_enqueue_style('wp-admin');
+            wp_enqueue_style('wp-admin'); // Styles for admin notices
 
             wp_enqueue_media();
             wp_enqueue_script('media');
@@ -466,7 +449,7 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 
         }
 
-        public function display_wizard_header() { ?>
+        public function display_wizard_header() {?>
 
             <!DOCTYPE html>
             <html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>

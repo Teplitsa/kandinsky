@@ -7,9 +7,10 @@
 
 define('KND_VERSION', '0.2');
 define('TST_DOC_URL', 'https://kms.te-st.ru/site-help/');
-define('KND_OFFICIAL_WEBSITE_URL', 'https://te-st.ru/');
+define('KND_OFFICIAL_WEBSITE_URL', 'https://te-st.ru/'); /** @todo Change this URL */
 define('TST_OFFICIAL_WEBSITE_URL', 'https://te-st.ru/');
 define('KND_SUPPORT_EMAIL', 'support@te-st.ru');
+define('KND_SETUP_WIZARD_URL', admin_url('themes.php?page=knd-setup-wizard'));
 
 if( !isset($content_width) ) {
 	$content_width = 800; /* pixels */
