@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-13 21:38+0200\n"
-"PO-Revision-Date: 2017-09-15 15:08+0200\n"
+"PO-Revision-Date: 2017-09-15 15:53+0200\n"
 "Last-Translator: sidorenko.a <sidorenko.a@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -32,21 +32,21 @@ msgstr "Кампания"
 
 #: archive-leyka_donation.php:38
 msgid "Anonymous"
-msgstr ""
+msgstr "Анонимус"
 
 #: core/admin.php:139 core/admin.php:148
 msgid "Website"
-msgstr ""
+msgstr "Сайт"
 
 #: core/admin.php:139 core/admin.php:153
 msgid "Excerpt"
-msgstr ""
+msgstr "Лид"
 
 #: core/admin.php:155
 msgid ""
 "Annotation for items lists (will be printed at the beginning of the single "
 "page)"
-msgstr ""
+msgstr "Аннотация для элементов списка (будет выведена в начале страницы)"
 
 #: core/admin.php:208
 msgid "Forms"
@@ -54,57 +54,59 @@ msgstr "Формы"
 
 #: core/admin.php:232
 msgid "Kandinsky — useful links"
-msgstr ""
+msgstr "Кандинский – полезные ссылки"
 
 #: core/admin.php:235
 msgid "Useful links"
-msgstr ""
+msgstr "Полезные ссылки"
 
 #: core/admin.php:346
 #, php-format
 msgid ""
 "ATTENTION! You thumbnail image is too small. It should be at least %s px"
 msgstr ""
+"Внимание! Ваше изображение слишком маленькое. Оно должно быть, как минимум, "
+"%s пикселей"
 
 #: core/admin.php:394 core/admin.php:410
 msgid "Facebook Profile"
-msgstr ""
+msgstr "Профиль на Facebook"
 
 #: core/admin.php:396 core/admin.php:412
 msgid "Enter URL of author's Facebook profile"
-msgstr ""
+msgstr "Введите ссылку на профиль автора в Facebook"
 
 #: core/admin.php:399 core/admin.php:415
 msgid "Avatar"
-msgstr ""
+msgstr "Аватарка"
 
 #: core/admin.php:447
 msgid "Taxonomy Term Image"
-msgstr ""
+msgstr "Изображение термина"
 
 #: core/admin.php:448
 msgid "Select which image should represent this term."
-msgstr ""
+msgstr "Выберите изображение для этого термина."
 
 #: core/admin.php:449
 msgid "Select Image"
-msgstr ""
+msgstr "Выберите изображение"
 
 #: core/admin.php:450
 msgid "Remove"
-msgstr ""
+msgstr "Удалить"
 
 #: core/admin.php:451
 msgid "Select or upload an image for this term"
-msgstr ""
+msgstr "Вставьте или закачайте изображение"
 
 #: core/admin.php:452
 msgid "Attach"
-msgstr ""
+msgstr "Вложение"
 
 #: core/author.php:29
 msgid "Author"
-msgstr ""
+msgstr "Автор"
 
 #: core/cards.php:24 core/cards.php:52 core/extras.php:63
 #: taxonomy-person_cat.php:20
@@ -259,7 +261,7 @@ msgstr "ВКонтакте"
 
 #: core/extras.php:294
 msgid "E.g., https://vk.com/club0123456789"
-msgstr "Например, https://vk.com/club0123456789"
+msgstr "Например, https://vk.com/teplitsast"
 
 #: core/extras.php:297
 msgid "Odnoklassniki"
@@ -275,7 +277,7 @@ msgstr "Facebook"
 
 #: core/extras.php:302
 msgid "E.g., https://www.facebook.com/your-organization-page"
-msgstr "Например, https://www.facebook.com/your-organization-page"
+msgstr "Например, https://www.facebook.com/TeplitsaST"
 
 #: core/extras.php:305
 msgid "Instagram"
@@ -291,7 +293,7 @@ msgstr "Twitter"
 
 #: core/extras.php:310
 msgid "E.g., https://twitter.com/your-organization-page"
-msgstr "Например, https://twitter.com/your-organization-page"
+msgstr "Например, https://twitter.com/TeplitsaST"
 
 #: core/extras.php:313
 msgid "Telegram"
@@ -299,7 +301,7 @@ msgstr "Telegram"
 
 #: core/extras.php:314
 msgid "E.g., https://tlgrm.ru/channels/@your-organization-page"
-msgstr "Например, https://tlgrm.ru/channels/@your-organization-page"
+msgstr "Например, https://telegram.me/TeplitsaPRO"
 
 #: core/extras.php:317
 msgid "YouTube"
@@ -307,7 +309,7 @@ msgstr "YouTube"
 
 #: core/extras.php:318
 msgid "E.g., https://youtube.com/channel/your-organization-channel"
-msgstr "Например, https://youtube.com/channel/your-organization-channel"
+msgstr "Например, https://www.youtube.com/user/teplitsast"
 
 #: core/settings.php:14
 msgid "Action failed. Please refresh the page and retry."
@@ -578,7 +580,7 @@ msgstr "Выбрать изображение"
 
 #: core/shortcodes-ui.php:64
 msgid "Select section image"
-msgstr ""
+msgstr "Выберите изображение раздела"
 
 #: core/shortcodes-ui.php:67
 msgid "Text placement"
@@ -682,7 +684,7 @@ msgstr "Ошибка 404: Страница не найдена"
 
 #: core/template-tags.php:371
 msgid "Post navigation"
-msgstr ""
+msgstr "Навигация по статье"
 
 #: core/template-tags.php:386 core/template-tags.php:396
 msgid "Homepage"
@@ -798,14 +800,17 @@ msgstr "Главное меню"
 #: modules/donations/donations.php:61
 msgid "Please, set a text of comment to describe an additional ways to donate."
 msgstr ""
+"Пожалуйста, установите текст комментария, чтобы описать дополнительные "
+"варианты пожертвований."
 
 #: modules/donations/donations.php:69
 msgid "Please, set a text to describe an additional ways to donate."
 msgstr ""
+"Пожалуйста, напишите текст, описывающий дополнительные методы пожертвований."
 
 #: modules/donations/donations.php:127
 msgid "Please, specify your donation amount"
-msgstr ""
+msgstr "Пожалуйста, выберите размер пожертвования"
 
 #: modules/donations/donations.php:134
 msgid "or"
@@ -813,12 +818,12 @@ msgstr "или"
 
 #: modules/donations/donations.php:135
 msgid "Specify the amount of your donation"
-msgstr ""
+msgstr "Укажите размер пожертвования"
 
 #: modules/donations/donations.php:202
 #, php-format
 msgid "Thumbnail for - %s"
-msgstr ""
+msgstr "Предпросмотр для – %s"
 
 #: modules/donations/donations.php:243
 msgid "Collected"
@@ -834,7 +839,7 @@ msgstr "Пожертвования"
 
 #: modules/donations/widgets.php:8
 msgid "Donations short list"
-msgstr ""
+msgstr "Краткий список жертвователей"
 
 #: modules/news.php:7 modules/starter/plot_config.php:186
 #: modules/starter/plot_config.php:199 modules/starter/plot_config.php:214
@@ -886,7 +891,7 @@ msgstr "Наша организация"
 
 #: modules/ourorg.php:73
 msgid "Content:"
-msgstr ""
+msgstr "Содержание:"
 
 #: modules/person/tax.php:6
 msgid "Volonteers"
@@ -920,35 +925,35 @@ msgstr "Ссылки в блоке проектов"
 #: modules/starter/import_remote_content.php:283
 #, php-format
 msgid "Plot name is unknown or not given: %s"
-msgstr ""
+msgstr "Нет названия сценария: %s"
 
 #: modules/starter/import_remote_content.php:347
 msgid "No zip file!"
-msgstr ""
+msgstr "Нет .zip-файла!"
 
 #: modules/starter/import_remote_content.php:351
 #, php-format
 msgid "Zip file not found: %s"
-msgstr ""
+msgstr ".zip-файл не найден: %s"
 
 #: modules/starter/import_remote_content.php:376
 #, php-format
 msgid "Unzip FAILED: %s to %s. Error: %s"
-msgstr ""
+msgstr "Процесс разархивирования НЕ УДАЛСЯ: %s – %s. Ошибка: %s"
 
 #: modules/starter/import_remote_content.php:389
 msgid "No git content dir!"
-msgstr ""
+msgstr "Git-директория не найдена!"
 
 #: modules/starter/import_remote_content.php:393
 #, php-format
 msgid "Unzipped dir not found: %s"
-msgstr ""
+msgstr "Разархивированная директория не найдена: %s"
 
 #: modules/starter/import_remote_content.php:399
 #, php-format
 msgid "Plot dir not found: %s"
-msgstr ""
+msgstr "Директория сценария не найдена: %s"
 
 #: modules/starter/plot_config.php:192 modules/starter/plot_config.php:396
 #: modules/starter/plot_config.php:592 modules/starter/sidebars.php:14
@@ -966,11 +971,11 @@ msgstr "Им нужна помощь"
 
 #: modules/starter/plot_data_builder.php:104
 msgid "I accept"
-msgstr ""
+msgstr "Принимаю"
 
 #: modules/starter/plot_data_builder.php:105
 msgid "Terms of Service"
-msgstr ""
+msgstr "Условия использования"
 
 #: modules/starter/plot_data_builder.php:331
 msgid "Home page"
@@ -1025,21 +1030,23 @@ msgstr "Познакомьтесь с другими проектами"
 #: vendor/class-tgm-plugin-activation.php:2522
 #: vendor/class-tgm-plugin-activation.php:3569
 msgid "Return to the Dashboard"
-msgstr ""
+msgstr "Вернуться в админку сайта"
 
 #: vendor/class-tgm-plugin-activation.php:511
 msgid "This plugin needs to be updated to be compatible with your theme."
-msgstr ""
+msgstr "Этот плагин необходимо обновить, чтобы он был совместим с вашей темой."
 
 #: vendor/class-tgm-plugin-activation.php:512
 msgid "Update Required"
-msgstr ""
+msgstr "Необходимо обновление"
 
 #: vendor/class-tgm-plugin-activation.php:923
 msgid ""
 "The remote plugin package does not contain a folder with the desired slug "
 "and renaming did not work."
 msgstr ""
+"Удаленный плагин не содержит папки с желаемым именем файла и переименование "
+"не сработало."
 
 #: vendor/class-tgm-plugin-activation.php:923
 #: vendor/class-tgm-plugin-activation.php:926
@@ -1047,143 +1054,147 @@ msgid ""
 "Please contact the plugin provider and ask them to package their plugin "
 "according to the WordPress guidelines."
 msgstr ""
+"Пожалуйста, свяжитесь с автором плагина и попросите его (или ее) упаковать "
+"плагин в соответствии с правилами WordPress."
 
 #: vendor/class-tgm-plugin-activation.php:926
 msgid ""
 "The remote plugin package consists of more than one file, but the files are "
 "not packaged in a folder."
 msgstr ""
+"Удаленный плагин содержит больше, чем один файл, но файлы не упакованы в "
+"папки."
 
 #: vendor/class-tgm-plugin-activation.php:1110
 #: vendor/class-tgm-plugin-activation.php:2937
 msgctxt "plugin A *and* plugin B"
 msgid "and"
-msgstr ""
+msgstr "и"
 
 #: vendor/class-tgm-plugin-activation.php:1971
 #, php-format
 msgid "TGMPA v%s"
-msgstr ""
+msgstr "TGMPA v%s"
 
 #: vendor/class-tgm-plugin-activation.php:2262
 msgid "Required"
-msgstr ""
+msgstr "Необходимо"
 
 #: vendor/class-tgm-plugin-activation.php:2265
 msgid "Recommended"
-msgstr ""
+msgstr "Рекомендовано"
 
 #: vendor/class-tgm-plugin-activation.php:2281
 msgid "WordPress Repository"
-msgstr ""
+msgstr "Репозиторий WordPress"
 
 #: vendor/class-tgm-plugin-activation.php:2284
 msgid "External Source"
-msgstr ""
+msgstr "Внешний источник"
 
 #: vendor/class-tgm-plugin-activation.php:2287
 msgid "Pre-Packaged"
-msgstr ""
+msgstr "Предустановлен"
 
 #: vendor/class-tgm-plugin-activation.php:2304
 msgid "Not Installed"
-msgstr ""
+msgstr "Не установлен"
 
 #: vendor/class-tgm-plugin-activation.php:2308
 msgid "Installed But Not Activated"
-msgstr ""
+msgstr "Установлен, но не активирован"
 
 #: vendor/class-tgm-plugin-activation.php:2310
 msgid "Active"
-msgstr ""
+msgstr "Активен"
 
 #: vendor/class-tgm-plugin-activation.php:2316
 msgid "Required Update not Available"
-msgstr ""
+msgstr "Необходимое обновление недоступно"
 
 #: vendor/class-tgm-plugin-activation.php:2319
 msgid "Requires Update"
-msgstr ""
+msgstr "Необходимо обновление"
 
 #: vendor/class-tgm-plugin-activation.php:2322
 msgid "Update recommended"
-msgstr ""
+msgstr "Обновление рекомендовано"
 
 #: vendor/class-tgm-plugin-activation.php:2331
 #, php-format
 msgctxt "Install/Update Status"
 msgid "%1$s, %2$s"
-msgstr ""
+msgstr "%1$s, %2$s"
 
 #: vendor/class-tgm-plugin-activation.php:2377
 #, php-format
 msgctxt "plugins"
 msgid "All <span class=\"count\">(%s)</span>"
 msgid_plural "All <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Все <span class=\"count\">(%s)</span>"
+msgstr[1] "Все <span class=\"count\">(%s)</span>"
+msgstr[2] "Все <span class=\"count\">(%s)</span>"
 
 #: vendor/class-tgm-plugin-activation.php:2381
 #, php-format
 msgid "To Install <span class=\"count\">(%s)</span>"
 msgid_plural "To Install <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Установить <span class=\"count\">(%s)</span>"
+msgstr[1] "Установить <span class=\"count\">(%s)</span>"
+msgstr[2] "Установить <span class=\"count\">(%s)</span>"
 
 #: vendor/class-tgm-plugin-activation.php:2385
 #, php-format
 msgid "Update Available <span class=\"count\">(%s)</span>"
 msgid_plural "Update Available <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Доступно обновление <span class=\"count\">(%s)</span>"
+msgstr[1] "Доступно обновление <span class=\"count\">(%s)</span>"
+msgstr[2] "Доступно обновление <span class=\"count\">(%s)</span>"
 
 #: vendor/class-tgm-plugin-activation.php:2389
 #, php-format
 msgid "To Activate <span class=\"count\">(%s)</span>"
 msgid_plural "To Activate <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Активировать <span class=\"count\">(%s)</span>"
+msgstr[1] "Активировать <span class=\"count\">(%s)</span>"
+msgstr[2] "Активировать <span class=\"count\">(%s)</span>"
 
 #: vendor/class-tgm-plugin-activation.php:2471
 msgctxt "as in: \"version nr unknown\""
 msgid "unknown"
-msgstr ""
+msgstr "неизвестно"
 
 #: vendor/class-tgm-plugin-activation.php:2479
 msgid "Installed version:"
-msgstr ""
+msgstr "Установленная версия:"
 
 #: vendor/class-tgm-plugin-activation.php:2487
 msgid "Minimum required version:"
-msgstr ""
+msgstr "Минимальная необходимая версия:"
 
 #: vendor/class-tgm-plugin-activation.php:2499
 msgid "Available version:"
-msgstr ""
+msgstr "Доступная версия:"
 
 #: vendor/class-tgm-plugin-activation.php:2522
 msgid "No plugins to install, update or activate."
-msgstr ""
+msgstr "Нет плагинов для инсталляции, обновления или активации."
 
 #: vendor/class-tgm-plugin-activation.php:2536
 msgid "Plugin"
-msgstr ""
+msgstr "Плагин"
 
 #: vendor/class-tgm-plugin-activation.php:2537
 msgid "Source"
-msgstr ""
+msgstr "Источник"
 
 #: vendor/class-tgm-plugin-activation.php:2538
 msgid "Type"
-msgstr ""
+msgstr "Тип"
 
 #: vendor/class-tgm-plugin-activation.php:2542
 msgid "Version"
-msgstr ""
+msgstr "Версия"
 
 #: vendor/class-tgm-plugin-activation.php:2543
 #: vendor/envato_setup/envato_setup.php:961
@@ -1193,21 +1204,21 @@ msgstr "Статус"
 #: vendor/class-tgm-plugin-activation.php:2592
 #, php-format
 msgid "Install %2$s"
-msgstr ""
+msgstr "Установить %2$s"
 
 #: vendor/class-tgm-plugin-activation.php:2597
 #, php-format
 msgid "Update %2$s"
-msgstr ""
+msgstr "Обновить %2$s"
 
 #: vendor/class-tgm-plugin-activation.php:2603
 #, php-format
 msgid "Activate %2$s"
-msgstr ""
+msgstr "Активировать %2$s"
 
 #: vendor/class-tgm-plugin-activation.php:2673
 msgid "Upgrade message from the plugin author:"
-msgstr ""
+msgstr "Сообщение об обновлении плагина от автора:"
 
 #: vendor/class-tgm-plugin-activation.php:2706
 #: vendor/envato_setup/envato_setup.php:682
@@ -1226,96 +1237,100 @@ msgstr "Активировать"
 
 #: vendor/class-tgm-plugin-activation.php:2746
 msgid "No plugins were selected to be installed. No action taken."
-msgstr ""
+msgstr "Ни один плагин не был выбран для инсталляции. Ничего не произошло."
 
 #: vendor/class-tgm-plugin-activation.php:2748
 msgid "No plugins were selected to be updated. No action taken."
-msgstr ""
+msgstr "Ни один плагин не был выбран для обновления. Ничего не произошло."
 
 #: vendor/class-tgm-plugin-activation.php:2789
 msgid "No plugins are available to be installed at this time."
-msgstr ""
+msgstr "Ни один плагин не установлен."
 
 #: vendor/class-tgm-plugin-activation.php:2791
 msgid "No plugins are available to be updated at this time."
-msgstr ""
+msgstr "Ни один плагин не может быть сейчас установлен."
 
 #: vendor/class-tgm-plugin-activation.php:2897
 msgid "No plugins were selected to be activated. No action taken."
-msgstr ""
+msgstr "Ни один плагин не был выбран для активации. Ничего не произошло."
 
 #: vendor/class-tgm-plugin-activation.php:2923
 msgid "No plugins are available to be activated at this time."
-msgstr ""
+msgstr "Ни один плагин не может быть сейчас активирован."
 
 #: vendor/class-tgm-plugin-activation.php:3147
 msgid "Plugin activation failed."
-msgstr ""
+msgstr "Активация плагина не удалась."
 
 #: vendor/class-tgm-plugin-activation.php:3487
 #, php-format
 msgid "Updating Plugin %1$s (%2$d/%3$d)"
-msgstr ""
+msgstr "Обновляем плагин %1$s (%2$d/%3$d)"
 
 #: vendor/class-tgm-plugin-activation.php:3490
 #, php-format
 msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
-msgstr ""
+msgstr "Произошла ошибка при установке %1$s: <strong>%2$s</strong>."
 
 #: vendor/class-tgm-plugin-activation.php:3492
 #, php-format
 msgid "The installation of %1$s failed."
-msgstr ""
+msgstr "Установка %1$s не удалась."
 
 #: vendor/class-tgm-plugin-activation.php:3496
 msgid ""
 "The installation and activation process is starting. This process may take a "
 "while on some hosts, so please be patient."
 msgstr ""
+"Процесс установки и активации начался. Он может занять какое-то время. "
+"Пожалуйста, будьте терпеливы."
 
 #: vendor/class-tgm-plugin-activation.php:3498
 #, php-format
 msgid "%1$s installed and activated successfully."
-msgstr ""
+msgstr "%1$s успешно установлен и активирован."
 
 #: vendor/class-tgm-plugin-activation.php:3498
 #: vendor/class-tgm-plugin-activation.php:3506
 msgid "Show Details"
-msgstr ""
+msgstr "Показать детали"
 
 #: vendor/class-tgm-plugin-activation.php:3498
 #: vendor/class-tgm-plugin-activation.php:3506
 msgid "Hide Details"
-msgstr ""
+msgstr "Спрятать детали"
 
 #: vendor/class-tgm-plugin-activation.php:3499
 msgid "All installations and activations have been completed."
-msgstr ""
+msgstr "Все установки и активации успешно завершены."
 
 #: vendor/class-tgm-plugin-activation.php:3501
 #, php-format
 msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
-msgstr ""
+msgstr "Устанавливаем и активируем плагин %1$s (%2$d/%3$d)"
 
 #: vendor/class-tgm-plugin-activation.php:3504
 msgid ""
 "The installation process is starting. This process may take a while on some "
 "hosts, so please be patient."
 msgstr ""
+"Процесс установки начался. Он может занять какое-то время. Пожалуйста, "
+"будьте терпеливы."
 
 #: vendor/class-tgm-plugin-activation.php:3506
 #, php-format
 msgid "%1$s installed successfully."
-msgstr ""
+msgstr "%1$s успешно установлен."
 
 #: vendor/class-tgm-plugin-activation.php:3507
 msgid "All installations have been completed."
-msgstr ""
+msgstr "Все установки успешно завершены."
 
 #: vendor/class-tgm-plugin-activation.php:3509
 #, php-format
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
-msgstr ""
+msgstr "Устанавливаем плагин %1$s (%2$d/%3$d)"
 
 #: vendor/envato_setup/envato_setup.php:182
 msgid "Template – NGO \"Color Line\""
@@ -1323,7 +1338,7 @@ msgstr "Шаблон – «Линия цвета» (НКО)"
 
 #: vendor/envato_setup/envato_setup.php:183
 msgid "We help people with alcoholic addiction"
-msgstr ""
+msgstr "Помогаем людям с алкогольной зависимостью"
 
 #: vendor/envato_setup/envato_setup.php:184
 msgid ""
@@ -1340,7 +1355,7 @@ msgstr "Шаблон – «Мы с тобой» (Фонд)"
 
 #: vendor/envato_setup/envato_setup.php:188
 msgid "Charity foundation helping children from low-income families"
-msgstr ""
+msgstr "Благотворительный фонд, помогающий детям из малоимущих семей"
 
 #: vendor/envato_setup/envato_setup.php:189
 msgid ""
@@ -1358,7 +1373,7 @@ msgstr "Шаблон - «Защитим Дубровино» (Кампания)"
 
 #: vendor/envato_setup/envato_setup.php:193
 msgid "City protection initiative"
-msgstr ""
+msgstr "Градозащитная инициатива"
 
 #: vendor/envato_setup/envato_setup.php:194
 msgid ""
@@ -1388,7 +1403,7 @@ msgstr "Параметры"
 
 #: vendor/envato_setup/envato_setup.php:372
 msgid "Plugins"
-msgstr ""
+msgstr "Плагины"
 
 #: vendor/envato_setup/envato_setup.php:378
 msgctxt "One word \"support service\" variant"
@@ -1621,20 +1636,20 @@ msgstr "Ошибка"
 
 #: vendor/envato_setup/envato_setup.php:1325
 msgid "Remote server did not respond"
-msgstr ""
+msgstr "Удаленный сервер не отвечает"
 
 #: vendor/envato_setup/envato_setup.php:1333
 msgid "Remote file is incorrect size"
-msgstr ""
+msgstr "Неправильный размер удаленного файла"
 
 #: vendor/envato_setup/envato_setup.php:1339
 msgid "Zero size file downloaded"
-msgstr ""
+msgstr "Скачался файл весом 0 килобайт"
 
 #: vendor/envato_setup/envato_setup.php:1345
 #, php-format
 msgid "Remote file is too large, limit is %s"
-msgstr ""
+msgstr "Удаленный файл слишком большой, максимальный размер это: %s"
 
 #: vendor/envato_setup/envato_setup.php:1468
 msgid "Choose website template"
@@ -1652,12 +1667,12 @@ msgstr ""
 
 #: vendor/envato_setup/envato_setup.php:1477
 msgid "No scenarios detected"
-msgstr ""
+msgstr "Сценариев не обнаружено"
 
 #: vendor/envato_setup/envato_setup.php:1531
 #, php-format
 msgid "Plot data builder was not produced for plot: %s"
-msgstr ""
+msgstr "Конструктор сценариев не обнаружен для сценария: %s"
 
 #: vendor/envato_setup/envato_setup.php:1560
 msgid ""
@@ -1828,7 +1843,7 @@ msgstr "#успех"
 
 #: vendor/envato_setup/envato_setup.php:1817
 msgid "Error:"
-msgstr ""
+msgstr "Ошибка:"
 
 #: vendor/envato_setup/envato_setup.php:1817
 #, php-format
@@ -1836,6 +1851,8 @@ msgid ""
 "Please, send a report about it to the <a href='mailto:%s' "
 "target='_blank'>theme technical support</a>."
 msgstr ""
+"Пожалуйста, напишите об этой ошибке <a href='mailto:%s' "
+"target='_blank'>нашей службе тех.поддержки</a>."
 
 #: vendor/envato_setup/envato_setup.php:1819
 #, php-format
@@ -1844,14 +1861,17 @@ msgid ""
 "class='wizard-error-support-text'>Please, send a report about it to the <a "
 "href='mailto:%s' target='_blank'>theme technical support</a>."
 msgstr ""
+"К сожалению, что-то произошло во время работы мастера установки темы :( <div "
+"class='wizard-error-support-text'>Пожалуйста, напишите об этом <a "
+"href='mailto:%s' target='_blank'>нашей службе тех.поддержки</a>."
 
 #: vendor/envato_setup/envato_setup.php:1823
 msgid "Back to the Dashboard"
-msgstr ""
+msgstr "Вернуться в административный раздел сайта"
 
 #: vendor/envato_setup/envato_setup.php:1824
 msgid "Email to the theme support"
-msgstr ""
+msgstr "Написать в службу поддержки темы (support@te-st.ru)"
 
 #~ msgid "Monthly donation"
 #~ msgstr "Перечислять ежемесячно"
