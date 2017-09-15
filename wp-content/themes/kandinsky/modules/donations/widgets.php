@@ -33,8 +33,11 @@ class KND_Donations_Widget extends WP_Widget {
             $q_args['post__not_in'] = array_map('intval', explode(',', $instance['exclude']));
         }
         else {
-            $ex = get_page_by_path('kids-helpfund', OBJECT, 'leyka_campaign' ); 
-            $q_args['post__not_in'] = array($ex->ID);
+            
+            $ex = $this->exclude_prebuild_campaigns();
+            if($ex) {
+                $q_args['post__not_in'] = array($ex->ID);
+            }
         }
         
         $q_args['meta_query'] = array(
@@ -51,33 +54,58 @@ class KND_Donations_Widget extends WP_Widget {
         self::print_widget($campaigns, $args, $title);
     }
 
+
+    protected function exclude_prebuild_campaigns(){
+        //don't show default leyka campaigns in widgets
+
+        $ids = get_transient('knd_default_campaigns');
+
+        if(empty($ids)){
+            $slugs = array('kids-helpfund'); //add 2 others
+
+            foreach ($slugs as $s) {
+                $ex = get_page_by_path($s, OBJECT, 'leyka_campaign' );
+                if($ex){
+                    $ids[] = $ex->ID;
+                } 
+            }
+
+            if(!empty($ids)) {
+                set_transient('knd_default_campaigns', implode(',', $ids));
+            }
+        }
+        else {
+            $ids = array_map('intval', explode(',', $ids));
+        }
+
+        return $ids;
+    }
+
     public static function print_widget($posts, $args, $title){
 
         extract($args);
         
         echo $before_widget;
-        ?>
-
-<div class="container knd-donations-widget">
-    
-    <?php 
-        if(!empty($title)) { 
-            echo $before_title.$title.$after_title;
-        }
-    ?>  
-    <div class="flex-row start cards-loop">
-        <?php
-            if(!empty($posts)){
-                foreach($posts as $p){
-                    knd_donation_card($p);
-                }
+    ?>
+     <div class="container knd-donations-widget">
+        
+        <?php 
+            if(!empty($title)) { 
+                echo $before_title.$title.$after_title;
             }
-        ?>
+        ?>  
+        <div class="flex-row start cards-loop">
+            <?php
+                if(!empty($posts)){
+                    foreach($posts as $p){
+                        knd_donation_card($p);
+                    }
+                }
+            ?>
+        </div>
+
     </div>
-
-</div>
-
-<?php 
+    <?php 
 		echo $after_widget;
 	}
 
@@ -130,4 +158,9 @@ function knd_donations_widgets(){
     
     register_widget('KND_Donations_Widget');
     
+}
+
+add_action('knd_save_demo_content', '');
+function knd_clear_donation_transients(){
+    delete_transient('knd_default_campaigns');
 }
