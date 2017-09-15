@@ -455,10 +455,10 @@ class KND_Withyou_Data_Builder extends KND_Plot_Data_Builder {
                 'post_slug' => 'about',
         
             ),
-            'helpus' => array(
+            'howtohelp' => array(
                 'template' => 'page-helpus',
                 'post_type' => 'page',
-                'post_slug' => 'helpus',
+                'post_slug' => 'howtohelp',
         
             ),
             'volunteers' => array(
@@ -587,10 +587,10 @@ class KND_Withyou_Data_Builder extends KND_Plot_Data_Builder {
         parent::__construct($imp);
     
         $this->cta_list = array(
-            'CTA_DONATE' => site_url('/donate/'),
+            'CTA_DONATE' => site_url('/howtohelp/'),
         );
         
-        $this->data_routes['theme_options']['knd_hero_image_support_url'] = get_permalink(get_page_by_path('donate'));
+        $this->data_routes['theme_options']['knd_hero_image_support_url'] = get_permalink(get_page_by_path('howtohelp'));
         $this->data_routes['theme_options']['knd_url_pd_policy'] = '#';
         $this->data_routes['theme_options']['knd_url_privacy_policy'] = '#';
         $this->data_routes['theme_options']['knd_url_public_oferta'] = '#';
@@ -603,7 +603,7 @@ class KND_Withyou_Data_Builder extends KND_Plot_Data_Builder {
                 array('title' => __('News', 'knd'), 'url' => home_url('/news/') ),
                 array('post_type' => 'page', 'slug' => 'reports' ),
                 array('title' => 'Проекты', 'url' => home_url('/projects/') ),
-                array('post_type' => 'page', 'slug' => 'helpus' ),
+                array('post_type' => 'page', 'slug' => 'howtohelp' ),
                 array('post_type' => 'page', 'slug' => 'volunteers' ),
                 array('post_type' => 'page', 'slug' => 'gethelp' ),
             ),

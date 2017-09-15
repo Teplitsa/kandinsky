@@ -36,7 +36,7 @@ class KND_Donations_Widget extends WP_Widget {
             
             $ex = $this->exclude_prebuild_campaigns();
             if($ex) {
-                $q_args['post__not_in'] = array($ex->ID);
+                $q_args['post__not_in'] = $ex;
             }
         }
         
@@ -61,7 +61,7 @@ class KND_Donations_Widget extends WP_Widget {
         $ids = get_transient('knd_default_campaigns');
 
         if(empty($ids)){
-            $slugs = array('kids-helpfund'); //add 2 others
+            $slugs = array('kids-helpfund', 'donate-helpfund'); //add 2 others
 
             foreach ($slugs as $s) {
                 $ex = get_page_by_path($s, OBJECT, 'leyka_campaign' );
@@ -160,7 +160,7 @@ function knd_donations_widgets(){
     
 }
 
-add_action('knd_save_demo_content', '');
+add_action('knd_save_demo_content', 'knd_clear_donation_transients');
 function knd_clear_donation_transients(){
     delete_transient('knd_default_campaigns');
 }
