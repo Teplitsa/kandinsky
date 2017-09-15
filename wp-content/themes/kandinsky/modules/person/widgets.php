@@ -17,7 +17,7 @@ class KND_Team_Widget extends WP_Widget {
         $title = apply_filters('widget_title', $title, $instance, $this->id_base);
 
         $num = empty($instance['num']) ? 5 : (int)$instance['num'];
-        $slug = empty($instance['slug']) ? 'team' :  trim($instance['slug']);
+        $slug = empty($instance['slug']) ? '' :  trim($instance['slug']);
 
         $people = $this->get_persons($num, $slug);
 
