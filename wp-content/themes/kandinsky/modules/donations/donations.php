@@ -278,6 +278,12 @@ function knd_leyka_rewrite_rules(){
     
     
     add_rewrite_rule(
+        '^campaign/active/page/(\d+)/?$',
+        'index.php?post_type=' . Leyka_Campaign_Management::$post_type . '&active=true&paged=$matches[1]',
+        'top'
+    );
+    
+    add_rewrite_rule(
         '^campaign/active/?$',
         'index.php?post_type=' . Leyka_Campaign_Management::$post_type . '&active=true',
         'top'
