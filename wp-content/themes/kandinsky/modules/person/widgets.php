@@ -84,14 +84,17 @@ class KND_Team_Widget extends WP_Widget {
         $args = array(
             'post_type'=> 'person',
             'posts_per_page' => $num,
-            'tax_query' => array(
+        );
+
+        if(!empty($slug)){
+            $args['tax_query'] = array(
                 array(
                     'taxonomy'=> 'person_cat',
                     'field'   => 'slug',
                     'terms'   => $slug
                 )
-            )
-        );
+            );
+        }
 
         return get_posts($args);
 	    
