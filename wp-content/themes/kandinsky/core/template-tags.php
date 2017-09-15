@@ -243,6 +243,8 @@ function rdc_get_post_type_archive_title($post_type) {
 
 function knd_section_title() {
 	
+    global $wp_query;
+    
 	$title = '';
 	$css = '';
 	
@@ -268,6 +270,15 @@ function knd_section_title() {
 	}
 	elseif(is_post_type_archive('project')){
 	    $title = __('Our projects', 'knd');
+	    $css = 'archive';
+	}
+	elseif(is_post_type_archive('leyka_campaign')){
+	    if(isset($wp_query->query_vars['completed']) && $wp_query->query_vars['completed'] == 'true') {
+	        $title = __('They alredy got help', 'knd');
+         }
+	    else {
+	        $title = __('They need help', 'knd');
+	    }
 	    $css = 'archive';
 	}
 	elseif(is_search()){

@@ -94,7 +94,7 @@ class KND_Donations_Widget extends WP_Widget {
                 echo $before_title.$title.$after_title;
             }
         ?>  
-        <div class="flex-row start cards-loop">
+        <div class="flex-row start cards-loop leyka-loop">
             <?php
                 if(!empty($posts)){
                     foreach($posts as $p){

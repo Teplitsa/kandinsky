@@ -23,9 +23,20 @@ get_header();
 			<?php echo apply_filters('the_content', $cpost->post_content); ?>
 		</div>
     
+    
+        <section class="addon related-card-holder">
+        
+        <div class="related-cards-loop">
+            <a href="<?php echo site_url('/campaign/active/'); ?>" class="entry-link"><?php _e('They need help', 'knd') ?></a> 
+            <a href="<?php echo site_url('/campaign/completed/'); ?>" class="entry-link"><?php _e('They alredy got help', 'knd') ?></a> 
+        </div>
+        
+        </section>
+    
 	</main>
 	
 </div>
 </article>
+
 <?php
 get_footer();

@@ -89,9 +89,6 @@ if($campaign->post_type != Leyka_Campaign_Management::$post_type) { // Wrong cam
 }
 
 $current_post = get_post();
-if($current_post->ID == $campaign->ID) {
-    return;
-}
 
 $thumbnail_size = apply_filters('leyka_campaign_card_thumbnail_size', 'post-thumbnail', $campaign);
 $css_class = apply_filters('leyka_campaign_card_class', 'leyka-campaign-card', $campaign);
@@ -120,6 +117,7 @@ $target_f = number_format($target, 0, '.', ' ');
 $collected_f = number_format($collected, 0, '.', ' ');
 
 $campaign_age = get_post_meta($campaign->ID, 'campaign_age', true);
+$is_finished = get_post_meta($campaign->ID, 'is_finished', true);
 
 ?>
 <article class="flex-md-6 tpl-post card">
@@ -164,30 +162,34 @@ $campaign_age = get_post_meta($campaign->ID, 'campaign_age', true);
         </div>
 
         <div class="leyka-scale-compact">
+            <?php if(!$is_finished):?>
             <div class="leyka-scale-scale">
                 <div class="target">
                     <div style="width:<?php echo $percentage;?>%" class="collected">&nbsp;</div>
                 </div>
             </div>
+            <?php endif?>
             <div class="flex-row leyka-scale-label">
+            
                 <div class="flex-md-5">
                     <div class="caption"><?php _e("Collected", 'knd')?></div>
                     <div class="sum"><?php echo $collected_f?> <?php echo $curr_label?></div>
                 </div>
                 
+                <?php if(!$is_finished):?>
                 <div class="flex-md-7 knd-campaign-needed">
                     <div class="caption"><?php _e("Needed", 'knd')?></div>
-                    <div class="sum"><?php echo $collected_f?> <?php echo $curr_label?></div>
+                    <div class="sum"><?php echo $target_f?> <?php echo $curr_label?></div>
                 </div>
+                <?php endif?>
                 
             </div>
         </div>
-        
+        <?php if(!$is_finished):?>
         <div class="leyka-scale-button-alone">
-            <a href="<?php echo $url;?>" <?php echo $campaign->ID == $current_post->ID ? 'class="leyka-scroll"' : '';?>>
-                <?php echo get_theme_mod('knd_hero_image_support_button_caption'); ?>
-            </a>
+            <a href="<?php echo $url;?>"><?php echo get_theme_mod('knd_hero_image_support_button_caption'); ?></a>
         </div>
+        <?php endif?>
 
     </div>
 </article>
@@ -220,3 +222,73 @@ function knd_leyka_inline_scripts(){
     </style>
     <?php
 }
+
+
+add_action('parse_query', 'knd_leyka_request_corrected');
+function knd_leyka_request_corrected(WP_Query $query) {
+
+    if(is_admin()) {
+        return;
+    }
+    
+    if(is_post_type_archive( Leyka_Campaign_Management::$post_type )) {
+        $meta_query = $query->get( 'meta_query' );
+        if(!$meta_query) {
+            $meta_query = array();
+        }
+        
+        $meta_query[] = array(
+            'key'     => 'campaign_target',
+            'value'   => '1',
+            'compare' => '>'
+        );
+        
+        if(isset($query->query_vars['completed']) && $query->query_vars['completed'] == 'true') {
+            $meta_query[] = array(
+                'key' => 'is_finished',
+                'value' => 1,
+            );
+        }
+        elseif(isset($query->query_vars['active']) && $query->query_vars['active'] == 'true') {
+            $meta_query[] = array(
+                'key' => 'is_finished',
+                'value' => 0,
+            );
+        }
+        
+        $query->set( 'meta_query', $meta_query );
+    }
+
+}
+
+add_action('init', 'knd_leyka_rewrite_rules');
+function knd_leyka_rewrite_rules(){
+    
+    add_rewrite_rule(
+        '^campaign/completed/page/(\d+)/?$',
+        'index.php?post_type=' . Leyka_Campaign_Management::$post_type . '&completed=true&paged=$matches[1]',
+        'top'
+    );
+    
+    add_rewrite_rule(
+        '^campaign/completed/?$',
+        'index.php?post_type=' . Leyka_Campaign_Management::$post_type . '&completed=true',
+        'top'
+    );
+    
+    
+    add_rewrite_rule(
+        '^campaign/active/?$',
+        'index.php?post_type=' . Leyka_Campaign_Management::$post_type . '&active=true',
+        'top'
+    );
+    
+    flush_rewrite_rules();
+}
+
+function knd_leyka_add_query_vars_filter( $vars ){
+    $vars[] = "completed";
+    $vars[] = "active";
+    return $vars;
+}
+add_filter( 'query_vars', 'knd_leyka_add_query_vars_filter' );
