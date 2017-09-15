@@ -245,7 +245,7 @@ function knd_custom_links_dashboard_screen() {?>
     <p>Хотите быть в курсе всех возможностей темы?<br>Найдите информацию на <a href="<?php echo KND_OFFICIAL_WEBSITE_URL;?>" target="_blank">её официальном сайте</a>.</p>
 
     <div class="knd-metabox-line">
-        <a href="<?php echo KND_OFFICIAL_WEBSITE_URL;?>" target="_blank" class="action"><span class="dashicons dashicons-admin-generic"></span>Мастер настройки темы</a>
+        <a href="<?php echo KND_SETUP_WIZARD_URL;?>" target="_blank" class="action"><span class="dashicons dashicons-admin-generic"></span>Мастер настройки темы</a>
     </div>
 
     <div class="knd-metabox-line">
@@ -275,7 +275,7 @@ function knd_custom_links_dashboard_screen() {?>
     </div>
 
     <div class="knd-metabox-line">
-        <a href="<?php echo admin_url('/customize.php?autofocus[panel]=widgets');?>" target="_blank" class="action"><span class="dashicons dashicons-exerpt-view"></span><?php _e('Widgets', 'knd');?></a>
+        <a href="<?php echo admin_url('/customize.php?autofocus[panel]=widgets');?>" target="_blank" class="action"><span class="dashicons dashicons-exerpt-view"></span><?php _e('Widgets');?></a>
     </div>
 
 </div>
