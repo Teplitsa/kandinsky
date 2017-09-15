@@ -50,8 +50,6 @@ class KND_Plot_Data_Builder {
      */
     public function build_all() {
         
-
-        $this->build_default_terms();
         $this->build_posts();
         $this->build_pages();
         $this->build_leyka_capmaigns();
@@ -805,6 +803,12 @@ class KND_Plot_Data_Builder {
         // header contacts
         $knd_address_phone = $this->data_routes['general_options']['knd_address_phone'];
         set_theme_mod('text_in_header', trim($knd_address_phone));
+
+        //save permastructure
+        $test = get_option('permalink_structure');
+        if(empty($test)){
+            update_option('permalink_structure', '/%year%/%monthnum%/%postname%/');
+        }
     }
     
     public function build_sidebars() {

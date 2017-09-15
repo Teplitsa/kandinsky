@@ -118,6 +118,12 @@ class KND_Shortcode_Builder {
         
         return $this->pack_shortcode_with_content($shortcode_name, $piece->content, $attributes);
     }
+
+    public function build_knd_leyka_inline_campaign($shortcode_name, $pieces, $attributes) {
+        $piece = $pieces[0];
+
+        return $this->pack_shortcode_with_attributes($shortcode_name, $attributes);
+    }
     
     /**
      * Compose shortcode from name and attributes key-value array.

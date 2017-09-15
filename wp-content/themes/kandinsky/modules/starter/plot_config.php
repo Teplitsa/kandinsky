@@ -72,6 +72,7 @@ class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
         ),
 
         'leyka_campaigns' => array(
+            'donate' => array('helpfund')
         ),
 
         'theme_files' => array(
@@ -280,6 +281,7 @@ class KND_Dubrovino_Data_Builder extends KND_Plot_Data_Builder {
         ),
         
         'leyka_campaigns' => array(
+            'donate' => array('helpfund')
         ),
         
         'theme_files' => array(

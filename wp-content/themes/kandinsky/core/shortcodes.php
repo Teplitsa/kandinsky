@@ -148,6 +148,47 @@ if( !defined('LEYKA_VERSION') ) {
     }
 }
 
+/** Wrapper to import leyka shortcodes correctly **/
+add_shortcode('knd_leyka_inline_campaign', 'knd_leyka_inline_campaign_shortcode');
+function knd_leyka_inline_campaign_shortcode($atts, $content = null) {
+
+    $atts = shortcode_atts(
+        array(
+            'slug' => ''
+        ),
+        $atts
+    );
+
+    if(empty($atts['slug']))
+        return '';
+
+    if(!defined('LEYKA_VERSION')) 
+        return '';
+
+    $camp = get_page_by_path($atts['slug'], OBJECT, 'leyka_campaign');
+    if(!$camp)
+        return '';
+
+    return do_shortcode('[leyka_inline_campaign id="'.$camp->ID.'" template="revo"]');
+}
+
+
+add_filter('leyka_revo_template_displayed', 'knd_test_for_revo_template');
+function knd_test_for_revo_template($revo_displayed){
+
+    if(!is_singular())
+        return $revo_displayed;
+
+    if(is_singular('leyka_campaign'))
+        return $revo_displayed;
+
+    if(get_post() && has_shortcode(get_post()->post_content, 'knd_leyka_inline_campaign')){
+        $revo_displayed = true;
+    }
+
+    return $revo_displayed;
+}
+
 
 /*** IN Dev ***/
 
