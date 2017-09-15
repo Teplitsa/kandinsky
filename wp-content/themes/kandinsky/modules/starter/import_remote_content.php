@@ -221,7 +221,7 @@ class KND_Import_Remote_Content {
         
         $new_text = $text;
         
-        $new_text = preg_replace("/\/\/(.*?)(\n|$)/", '[knd_r]\1[/knd_r]', $new_text);
+        $new_text = preg_replace("/(?:^|\s+)\/\/(.*?)(\n|$)/s", '[knd_r]\1[/knd_r]', $new_text);
         
         if(preg_match_all("/mdlink\s*=\s*\"(.*?)\"/", $new_text, $matches)) {
             foreach($matches[0] as $i => $match) {
