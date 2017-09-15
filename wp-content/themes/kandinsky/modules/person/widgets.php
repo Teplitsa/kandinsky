@@ -25,7 +25,13 @@ class KND_Team_Widget extends WP_Widget {
             echo $before_widget;
             echo $before_title.$title.$after_title;
 
-            echo $this->print_widget_content($people);
+        ?>
+        <div class="knd-people-gallery flex-row centered">
+            <?php foreach($people as $person) {?>
+                <div class="person flex-cell flex-sm-6 flex-md-col-5"><?php knd_person_card($person);?></div>
+            <?php }?>
+        </div>
+        <?php
 
             echo $after_widget;
         }
@@ -35,7 +41,7 @@ class KND_Team_Widget extends WP_Widget {
 	function form($instance) {
 
 		/* Set up some default widget settings */
-		$defaults = array('title' => '', 'num' => 4, 'slug' => 'team');
+		$defaults = array('title' => '', 'num' => 4, 'slug' => '');
 		$instance = wp_parse_args((array)$instance, $defaults);	
         $cats = get_terms(array('taxonomy' => 'person_cat', 'hide_empty' => 0));
 
@@ -93,18 +99,6 @@ class KND_Team_Widget extends WP_Widget {
         return get_posts($args);
 	    
 	}
-	
-	
-	function print_widget_content($people) {
-
-    ?>
-    <div class="knd-people-gallery flex-row centered">
-        <?php foreach($people as $person) {?>
-            <div class="person flex-cell flex-sm-6 flex-md-col-5"><?php knd_person_card($person);?></div>
-        <?php }?>
-    </div>
-    <?php
-	}
 
 
 	function update($new_instance, $old_instance) {
@@ -126,3 +120,5 @@ function knd_team_widgets(){
     register_widget('KND_Team_Widget');
     
 }
+
+

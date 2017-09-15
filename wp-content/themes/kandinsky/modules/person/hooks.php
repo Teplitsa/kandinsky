@@ -3,34 +3,34 @@
 add_action('init', 'knd_person_custom_content', 20);
 function knd_person_custom_content() {
 
-//    register_taxonomy('person_cat', array('person',), array(
-//        'labels' => array(
-//            'name'                       => 'Категории персон',
-//            'singular_name'              => 'Категория',
-//            'menu_name'                  => 'Категории',
-//            'all_items'                  => 'Все категории',
-//            'edit_item'                  => 'Редактировать категорию',
-//            'view_item'                  => 'Просмотреть',
-//            'update_item'                => 'Обновить категорию',
-//            'add_new_item'               => 'Добавить новую категорию',
-//            'new_item_name'              => 'Название новой категории',
-//            'parent_item'                => 'Родительская категория',
-//            'parent_item_colon'          => 'Родительская категория:',
-//            'search_items'               => 'Искать категории',
-//            'popular_items'              => 'Часто используемые',
-//            'separate_items_with_commas' => 'Разделять запятыми',
-//            'add_or_remove_items'        => 'Добавить или удалить категории',
-//            'choose_from_most_used'      => 'Выбрать из часто используемых',
-//            'not_found'                  => 'Не найдено'
-//        ),
-//        'hierarchical'      => true,
-//        'show_ui'           => true,
-//        'show_in_nav_menus' => true,
-//        'show_tagcloud'     => false,
-//        'show_admin_column' => true,
-//        'query_var'         => true,
-//        'rewrite'           => array('slug' => 'people', 'with_front' => false),
-//    ));
+   register_taxonomy('person_cat', array('person',), array(
+       'labels' => array(
+           'name'                       => 'Категории людей',
+           'singular_name'              => 'Категория',
+           'menu_name'                  => 'Категории',
+           'all_items'                  => 'Все категории',
+           'edit_item'                  => 'Редактировать категорию',
+           'view_item'                  => 'Просмотреть',
+           'update_item'                => 'Обновить категорию',
+           'add_new_item'               => 'Добавить новую категорию',
+           'new_item_name'              => 'Название новой категории',
+           'parent_item'                => 'Родительская категория',
+           'parent_item_colon'          => 'Родительская категория:',
+           'search_items'               => 'Искать категории',
+           'popular_items'              => 'Часто используемые',
+           'separate_items_with_commas' => 'Разделять запятыми',
+           'add_or_remove_items'        => 'Добавить или удалить категории',
+           'choose_from_most_used'      => 'Выбрать из часто используемых',
+           'not_found'                  => 'Не найдено'
+       ),
+       'hierarchical'      => true,
+       'show_ui'           => true,
+       'show_in_nav_menus' => true,
+       'show_tagcloud'     => false,
+       'show_admin_column' => true,
+       'query_var'         => true,
+       'rewrite'           => array('slug' => 'people', 'with_front' => false),
+   ));
 
     register_post_type('person', array(
         'labels' => array(
