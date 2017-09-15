@@ -67,7 +67,7 @@ class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
             ),
             'team' => array(
                 'post_type' => 'person',
-                'pieces' => array('fellow1', 'fellow2', 'fellow3', 'fellow4', 'fellow5',),
+                'pieces' => array('fellow1', 'fellow2', 'fellow3', 'fellow4', 'fellow5', 'fellow6', 'fellow7'),
             ),
         ),
 
