@@ -22,11 +22,11 @@ function knd_person_card(WP_Post $cpost, $linked = false){
 }
 
 
-function knd_people_gallery($category_ids = '', $person_ids = ''){
+function knd_people_gallery($category_ids = '', $person_ids = '', $num = -1){
     
     $args = array(
         'post_type'=> 'person',
-        'posts_per_page' => -1
+        'posts_per_page' => (int)$num
     );
     
     if($person_ids) {

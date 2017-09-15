@@ -175,6 +175,12 @@ function knd_add_shortcodes_ui() {
                 'meta'   => array('placeholder' => __('E.g., "Our team"', 'knd'),),
             ),
             array(
+                'label'  => __('Nubmer', 'knd'),
+                'attr'   => 'num',
+                'type'   => 'text',
+                'encode' => false
+            ),
+            array(
                 'label'    => __('Person categories', 'knd'),
                 'attr'     => 'category',
                 'type'     => 'term_select',

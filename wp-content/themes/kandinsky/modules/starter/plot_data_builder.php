@@ -50,6 +50,8 @@ class KND_Plot_Data_Builder {
      */
     public function build_all() {
         
+
+        $this->build_default_terms();
         $this->build_posts();
         $this->build_pages();
         $this->build_leyka_capmaigns();
@@ -62,7 +64,7 @@ class KND_Plot_Data_Builder {
         $this->build_menus();
         $this->build_sidebars();
     }
-    
+
     public function build_leyka_capmaigns() {
         $this->_install_leyka_settings();
         $this->_install_payment_methods();
@@ -670,9 +672,9 @@ class KND_Plot_Data_Builder {
             }
         }
         
-        if(count($piece->cat)) {
-            $taxonomy = 'category';
-            $terms_list = $this->get_terms_list($piece->cat, $taxonomy);
+        if(count($piece->cats)) {
+            $taxonomy = ($post_type == 'person') ? 'person_cat' : 'category';
+            $terms_list = $this->get_terms_list($piece->cats, $taxonomy);
         
             if($terms_list) {
                 wp_set_object_terms((int)$uid, $terms_list, $taxonomy, false);

@@ -541,7 +541,7 @@ class KND_Piece {
     public $url = "";
     
     public $tags = array();
-    public $cat = array();
+    public $cats = array();
     
     public $piece_section = NULL;
     public $piece_name = NULL;

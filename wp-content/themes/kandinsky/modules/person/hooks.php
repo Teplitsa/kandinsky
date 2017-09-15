@@ -69,5 +69,18 @@ function knd_person_custom_content() {
 
 }
 
-add_action('knd_save_demo_content', array('KND_PersonCategory', 'setup_starter_data'));
-add_action('knd_save_demo_content', array('KND_Person', 'setup_starter_data'));
+add_action('knd_before_build_plot_posts', 'knd_person_cat_defaults');
+function knd_person_cat_defaults(){
+
+    if(!term_exists('volunteers', 'person_cat')) {
+        wp_insert_term( __('Volonteers', 'knd'), 'person_cat', array('slug' => 'volunteers'));
+    }
+
+    if(!term_exists('team', 'person_cat')) {
+        wp_insert_term( __('Team', 'knd'), 'person_cat', array('slug' => 'team'));
+    }
+
+    if(!term_exists('board', 'person_cat')) {
+        wp_insert_term( __('Board', 'knd'), 'person_cat', array('slug' => 'board'));
+    }
+}

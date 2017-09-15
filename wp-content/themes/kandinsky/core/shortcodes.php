@@ -262,6 +262,7 @@ function knd_people_list_shortcode($atts = array()) {
         'title'     => '',
         'category'  => '',
         'ids'       => '',
+        'num'       => -1,
         'class'     => '',
     ), $atts);
 
@@ -277,7 +278,7 @@ function knd_people_list_shortcode($atts = array()) {
         <?php }?>
 
         <div class="knd-section-extend">
-        <?php knd_people_gallery($atts['category'], $atts['ids']); ?>
+        <?php knd_people_gallery($atts['category'], $atts['ids'], $atts['num']); ?>
         </div>
 
     </div>

@@ -76,9 +76,6 @@ class KND_Team_Widget extends WP_Widget {
 	    if($num <= 0) {
 	        $num = 5;
 	    }
-	    elseif($num > 10){
-	        $num = 10;
-	    }
 
 	    //query
         $args = array(

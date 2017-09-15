@@ -247,12 +247,6 @@ class KND_Dubrovino_Data_Builder extends KND_Plot_Data_Builder {
         
         'pages' => array(
             array(
-                'section' => 'contacts',
-                'piece' => 'contacts',
-                'post_type' => 'page',
-                'post_slug' => 'contacts',
-            ),
-            array(
                 'section' => '',
                 'piece' => 'petition',
                 'post_type' => 'page',
@@ -267,6 +261,11 @@ class KND_Dubrovino_Data_Builder extends KND_Plot_Data_Builder {
                 'post_slug' => 'about',
         
             ),
+            'contacts' => array(
+                'template' => 'page-contacts',
+                'post_type' => 'page',
+                'post_slug' => 'contacts',
+            ),
         ),
         
         'posts' => array(
@@ -276,7 +275,7 @@ class KND_Dubrovino_Data_Builder extends KND_Plot_Data_Builder {
             ),
             'team' => array(
                 'post_type' => 'person',
-                'pieces' => array('fellow1', 'fellow2', 'fellow3', 'fellow4', 'fellow5',),
+                'pieces' => array('fellow1', 'fellow2', 'fellow3', 'fellow4', 'fellow5', 'fellow6', 'fellow7', 'fellow8'),
             ),
         ),
         
@@ -489,7 +488,7 @@ class KND_Withyou_Data_Builder extends KND_Plot_Data_Builder {
             ),
             'team' => array(
                 'post_type' => 'person',
-                'pieces' => array('fellow1', 'fellow2', 'fellow3', 'fellow4', 'fellow5', 'fellow6', 'fellow7', 'fellow8', 'fellow9', 'fellow10',),
+                'pieces' => array('fellow1', 'fellow2', 'fellow3', 'fellow4', 'fellow5', 'fellow6', 'fellow7', 'fellow8', 'fellow9', 'fellow10'),
             ),
         ),
     

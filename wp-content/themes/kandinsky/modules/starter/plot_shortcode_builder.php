@@ -89,7 +89,7 @@ class KND_Shortcode_Builder {
 
         $piece = $pieces[0];
 
-        return $this->pack_shortcode_with_content($shortcode_name, $piece->content, $attributes);
+        return $this->pack_shortcode_with_attributes($shortcode_name, $attributes);
     }
     
     public function build_knd_image_section($shortcode_name, $pieces, $attributes) {
