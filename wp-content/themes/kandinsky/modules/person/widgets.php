@@ -17,7 +17,7 @@ class KND_Team_Widget extends WP_Widget {
         $title = apply_filters('widget_title', $title, $instance, $this->id_base);
 
         $num = empty($instance['num']) ? 5 : (int)$instance['num'];
-        $slug = empty($instance['slug']) ? '' :  trim($instance['slug']);
+        $slug = empty($instance['slug']) ? 'team' :  trim($instance['slug']);
 
         $people = $this->get_persons($num, $slug);
 
@@ -84,17 +84,14 @@ class KND_Team_Widget extends WP_Widget {
         $args = array(
             'post_type'=> 'person',
             'posts_per_page' => $num,
-        );
-
-        if(!empty($slug)){
-            $args['tax_query'] = array(
+            'tax_query' => array(
                 array(
                     'taxonomy'=> 'person_cat',
                     'field'   => 'slug',
                     'terms'   => $slug
                 )
-            );
-        }
+            )
+        );
 
         return get_posts($args);
 	    
