@@ -3,6 +3,334 @@
  * Admin customization
  **/
 
+function knd_get_admin_menu_items() {
+    return array(
+        'section_knd-settings-content' => array(
+            'title' => __('Theme settings & content'),
+            'link' => '#knd-admin-menu-settings',
+            'items' => array(
+                'site-title-description' => array(
+                    'class' => '',
+                    'icon' => 'dashicons-editor-insertmore',
+                    'text' => __('Site title and description', 'knd'),
+                    'link' => admin_url('/customize.php?autofocus[section]=title_tagline'),
+                ),
+                'decoration' => array(
+                    'class' => '',
+                    'icon' => 'dashicons-admin-appearance',
+                    'text' => __('Decoration', 'knd'),
+                    'link' => admin_url('/customize.php?autofocus[panel]=knd_decoration'),
+                ),
+                'social-media-links' => array(
+                    'class' => '',
+                    'icon' => 'dashicons-share',
+                    'text' => __('Social media links', 'knd'),
+                    'link' => admin_url('/customize.php?autofocus[section]=knd_social_links'),
+                ),
+                'cta-block' => array(
+                    'class' => '',
+                    'icon' => 'dashicons-thumbs-up',
+                    'text' => __('"Call to action" block', 'knd'),
+                    'link' => admin_url('/customize.php?autofocus[section]=knd_cta_block_settings'),
+                ),
+                'page-list' => array(
+                    'class' => '',
+                    'icon' => 'dashicons-admin-page',
+                    'text' => __('Static pages', 'knd'),
+                    'link' => admin_url('/edit.php?post_type=page'),
+                ),
+                'news-list' => array(
+                    'class' => '',
+                    'icon' => 'dashicons-admin-post',
+                    'text' => __('News', 'knd'),
+                    'link' => admin_url('/edit.php'),
+                ),
+                'person-list' => array(
+                    'class' => '',
+                    'icon' => 'dashicons-groups',
+                    'text' => __('Team', 'knd'),
+                    'link' => admin_url('/edit.php?post_type=person'),
+                ),
+                'project-list' => array(
+                    'class' => '',
+                    'icon' => 'dashicons-category',
+                    'text' => __('Projects', 'knd'),
+                    'link' => admin_url('/edit.php?post_type=project'),
+                ),
+                'search-engines-social-display' => array(
+                    'class' => '',
+                    'icon' => 'dashicons-facebook',
+                    'text' => __('Search engines & social networks display', 'knd'),
+                    'link' => admin_url('/admin.php?page=wpseo_dashboard#top#knowledge-graph'),
+                ),
+                'donation-list' => array(
+                    'class' => '',
+                    'icon' => 'dashicons-chart-area',
+                    'text' => __('Donations', 'knd'),
+                    'link' => admin_url('/edit.php?post_type=leyka_donation'),
+                ),
+            ),
+        ),
+
+        'section_other' => array(
+            'title' => __('Other', 'knd'),
+            'link' => '#knd-admin-menu-other',
+            'items' => array(
+                'knd-wizard' => array(
+                    'class' => '',
+                    'icon' => 'dashicons-admin-generic',
+                    'text' => __('Theme setup wizard', 'knd'),
+                    'link' => KND_SETUP_WIZARD_URL,
+                ),
+                'user-docs' => array(
+                    'class' => '',
+                    'icon' => 'dashicons-book-alt',
+                    'text' => __('User documentation', 'knd'),
+                    'link' => KND_DOC_URL,
+                ),
+                'email-to-support' => array(
+                    'class' => '',
+                    'icon' => 'dashicons-email',
+                    'text' => __('Email to the tech support', 'knd'),
+                    'link' => 'mailto:'.KND_SUPPORT_EMAIL,
+                ),
+//                '' => array(
+//                    'class' => '',
+//                    'icon' => '',
+//                    'text' => __('', 'knd'),
+//                    'link' => ,
+//                ),
+            ),
+        ),
+    );
+}
+
+function knd_add_admin_pages($items = array(), $is_inital_call = true) {
+
+    $items = empty($items) || !is_array($items) ? knd_get_admin_menu_items() : $items;
+
+    if( !!$is_inital_call ) {
+
+        add_menu_page(__('Kandinsky settings', 'knd'), __('Kandinsky', 'knd'), 'manage_options', 'customize.php');
+        add_submenu_page('themes.php', __('Kandinsky setup wizard', 'knd'), __('Kandinsky setup wizard', 'knd'), 'manage_options', 'knd-setup-wizard', 'envato_theme_setup_wizard');
+
+    }
+
+    foreach($items as $key => $item) {
+
+        if(stristr($key, 'section_') !== false) { // Section
+
+            if( !empty($item['items']) ) { // Just display all section items
+                knd_add_admin_pages($item['items'], false);
+            }
+
+        } else {
+
+            global $submenu;
+            $submenu['customize.php'][] = array($item['text'], 'manage_options', $item['link']);
+
+        }
+    }
+
+}
+add_action('admin_menu', 'knd_add_admin_pages');
+
+function knd_add_menu_item(WP_Admin_Bar $admin_bar)  { /** @todo */
+
+    $knd_get_admin_notif_count = knd_get_admin_notif_count();
+    $notif_html = $knd_get_admin_notif_count ? '<div class="wp-core-ui wp-ui-notification knd-adminbar-notif"><span aria-hidden="true">'.$knd_get_admin_notif_count.'</span></div>' : '';
+
+    $admin_bar->add_menu(array( // Parent node
+        'id' => 'kandinsky-main',
+        'title' => __('Kandinsky', 'knd'),
+        'href' => '', //admin_url('customize.php'),
+        'meta' => array(
+            'html' => $notif_html,
+        ),
+    ));
+
+}
+add_action('admin_bar_menu', 'knd_add_menu_item', 111);
+
+function knd_admin_notice() {
+
+    global $pagenow;
+
+    if('themes.php' == $pagenow && isset($_GET['activated'])) {
+
+        add_action('admin_notices', 'knd_welcome_notice');
+        update_option('knd_admin_notice_welcome', 1);
+//        update_option('knd_test_content_installed', 0);
+
+    } elseif( !get_option('knd_admin_notice_welcome') ) {
+        add_action('admin_notices', 'knd_welcome_notice');
+    }
+
+}
+add_action('load-themes.php', 'knd_admin_notice');
+
+function knd_welcome_notice() {?>
+
+    <div id="message" class="updated knd-message">
+        <a class="knd-message-close notice-dismiss" href="<?php echo esc_url(wp_nonce_url(remove_query_arg(array('activated'), add_query_arg('knd-hide-notice', 'welcome')), 'knd_hide_notices_nonce', '_knd_notice_nonce'));?>">
+            <?php esc_html_e('Dismiss', 'knd');?>
+        </a>
+        <p><?php printf(esc_html__('Welcome! Thank you for choosing Kandinsky! To fully take advantage of the best our theme can offer please make sure you configured %snecessary theme settings%s.', 'knd'), '<a href="'.admin_url('customize.php').'" target="_blank">', '</a>');?></p>
+        <p class="submit">
+            <a class="button-secondary" href="<?php echo esc_url(remove_query_arg(array('activated'), add_query_arg('page', 'knd-setup-wizard')));?>">
+                <?php esc_html_e('Open the theme setup wizard', 'knd');?>
+            </a>
+            <a class="button-secondary" href="<?php echo admin_url('customize.php');?>">
+                <?php esc_html_e('Open theme settings', 'knd');?>
+            </a>
+        </p>
+    </div>
+    <?php
+}
+
+/**
+ * Register the required plugins for this theme.
+ *
+ * In this example, we register five plugins:
+ * - one included with the TGMPA library
+ * - two from an external source, one from an arbitrary source, one from a GitHub repository
+ * - two from the .org repo, where one demonstrates the use of the `is_callable` argument
+ *
+ * The variables passed to the `tgmpa()` function should be:
+ * - an array of plugin arrays;
+ * - optionally a configuration array.
+ * If you are not changing anything in the configuration array, you can remove the array and remove the
+ * variable from the function call: `tgmpa( $plugins );`.
+ * In that case, the TGMPA default settings will be used.
+ *
+ * This function is hooked into `tgmpa_register`, which is fired on the WP `init` action on priority 10.
+ */
+function knd_register_required_plugins() {
+
+    /*
+     * Array of plugin arrays. Required keys are name and slug.
+     * If the source is NOT from the .org repo, then source is also required.
+     */
+    $plugins = array(
+        array(
+            'name'        => __('Yoast SEO', 'knd'),
+            'slug'        => 'wordpress-seo',
+            'is_callable' => 'wpseo_init',
+            'required'    => true,
+            'description' => __('A great tool to boost your website SEO positions.', 'knd'),
+        ),
+        array(
+            'name'        => __('Cyr to Lat enhanced', 'knd'),
+            'slug'        => 'cyr3lat',
+            'is_callable' => 'ctl_sanitize_title',
+            'required'    => true,
+            'description' => __('Small helper to seamlessly convert cyrillic pages slugs into latin ones.', 'knd'),
+        ),
+        array(
+            'name'        => __('Disable Comments', 'knd'),
+            'slug'        => 'disable-comments',
+            'is_callable' => array('Disable_Comments', 'get_instance'),
+            'required'    => true,
+            'description' => __('Comments on the website may be harmful, so this small plugin turns them off.', 'knd'),
+        ),
+        array(
+            'name'        => __('Shortcake (Shortcodes UI)', 'knd'),
+            'slug'        => 'shortcode-ui',
+            'is_callable' => 'shortcode_ui_init',
+            'required'    => true,
+            'description' => __('A visual editing for shortcodes to enrich your content management experience.', 'knd'),
+        ),
+//        array(
+//            'name'        => __('Shortcake Richtext', 'knd'),
+//            'slug'        => 'shortcode-ui-richtext',
+//            'is_callable' => array('ShortcodeUiRichtext\Plugin', '__construct'),
+//            'required'    => true,
+//            'description' => __('Rich text fields for shortcodes UI.', 'knd'),
+//        ),
+        array(
+            'name'        => __('Leyka', 'knd'),
+            'slug'        => 'leyka',
+            'is_callable' => 'leyka',
+            'required'    => get_option('knd_setup_install_leyka'), //get_theme_mod('knd_site_scenario') == 'fundraising-org',
+            'description' => __('This plugin will add means for donations collection to your website.', 'knd'),
+        ),
+    );
+
+    /*
+     * Array of configuration settings. Amend each line as needed.
+     *
+     * TGMPA will start providing localized text strings soon. If you already have translations of our standard
+     * strings available, please help us make TGMPA even better by giving us access to these translations or by
+     * sending in a pull-request with .po file(s) with the translations.
+     *
+     * Only uncomment the strings in the config array if you want to customize the strings.
+     */
+    $config = array(
+        'id'           => 'knd',                 // Unique ID for hashing notices for multiple instances of TGMPA.
+        'default_path' => '',                      // Default absolute path to bundled plugins.
+        'menu'         => 'knd-install-plugins',  // Menu slug.
+        'has_notices'  => false,                    // Show admin notices or not.
+        'dismissable'  => false,                    // If false, a user cannot dismiss the nag message.
+        'dismiss_msg'  => '',                      // If 'dismissable' is false, this message will be output at top of nag.
+        'is_automatic' => true,                   // Automatically activate plugins after installation or not.
+        'message'      => '',                     // Message to output right before the plugins table.
+
+        'strings'      => array(
+            'page_title'                      => __( 'Install Required Plugins', 'knd' ),
+            'menu_title'                      => __( 'Install Plugins', 'knd' ),
+            /* translators: %s: plugin name. */
+            'installing'                      => __( 'Installing Plugin: %s', 'knd' ),
+            /* translators: %s: plugin name. */
+            'updating'                        => __( 'Updating Plugin: %s', 'knd' ),
+            'oops'                            => __( 'Something went wrong with the plugin API.', 'knd' ),
+            'notice_can_install_required'     => _n_noop('This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.', 'knd'),
+            'notice_can_install_recommended'  => _n_noop('This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.', 'knd'),
+            'notice_ask_to_update'            => _n_noop('The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.', 'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.', 'knd'),
+            'notice_ask_to_update_maybe'      => _n_noop('There is an update available for: %1$s.', 'There are updates available for the following plugins: %1$s.', 'knd'),
+            'notice_can_activate_required'    => _n_noop('The following required plugin is currently inactive: %1$s.', 'The following required plugins are currently inactive: %1$s.', 'knd'),
+            'notice_can_activate_recommended' => _n_noop('The following recommended plugin is currently inactive: %1$s.', 'The following recommended plugins are currently inactive: %1$s.', 'knd'),
+            'install_link'                    => _n_noop('Begin installing plugin', 'Begin installing plugins', 'knd'),
+            'update_link' 					  => _n_noop('Begin updating plugin', 'Begin updating plugins', 'knd'),
+            'activate_link'                   => _n_noop('Begin activating plugin', 'Begin activating plugins', 'knd'),
+            'return'                          => __( 'Return to Required Plugins Installer', 'knd' ),
+            'plugin_activated'                => __( 'Plugin activated successfully.', 'knd' ),
+            'activated_successfully'          => __( 'The following plugin was activated successfully:', 'knd' ),
+            /* translators: 1: plugin name. */
+            'plugin_already_active'           => __( 'No action taken. Plugin %1$s was already active.', 'knd' ),
+            /* translators: 1: plugin name. */
+            'plugin_needs_higher_version'     => __( 'Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin.', 'knd' ),
+            /* translators: 1: dashboard link. */
+            'complete'                        => __( 'All plugins installed and activated successfully. %1$s', 'knd' ),
+            'dismiss'                         => __( 'Dismiss this notice', 'knd' ),
+            'notice_cannot_install_activate'  => __( 'There are one or more required or recommended plugins to install, update or activate.', 'knd' ),
+            'contact_admin'                   => __( 'Please contact the administrator of this site for help.', 'knd' ),
+
+            'nag_type'                        => '', // Determines admin notice type - can only be one of the typical WP notice classes, such as 'updated', 'update-nag', 'notice-warning', 'notice-info' or 'error'. Some of which may not work as expected in older WP versions.
+        ),
+    );
+
+    tgmpa($plugins, $config);
+
+}
+add_action('tgmpa_register', 'knd_register_required_plugins');
+
+function knd_hide_notices() {
+    if(isset($_GET['knd-hide-notice']) && isset($_GET['_knd_notice_nonce'])) {
+
+        if( !wp_verify_nonce($_GET['_knd_notice_nonce'], 'knd_hide_notices_nonce') ) {
+            wp_die(__('Action failed. Please refresh the page and retry.', 'knd'));
+        }
+
+        if( !current_user_can( 'manage_options') ) {
+            wp_die(__( 'Action failed.', 'knd'));
+        }
+
+        update_option('knd_admin_notice_'.sanitize_text_field($_GET['knd-hide-notice']), 1);
+
+    }
+}
+add_action('wp_loaded', 'knd_hide_notices');
+
 add_filter('manage_posts_columns', 'knd_common_columns_names', 50, 2);
 function knd_common_columns_names($columns, $post_type) {
 		
@@ -233,7 +561,11 @@ function rdc_remove_dashboard_widgets() {
 
 }
 
-function knd_custom_links_dashboard_screen() {?>
+function knd_custom_links_dashboard_screen($items = array(), $is_initial_call = true) {
+
+    $items = empty($items) || !is_array($items) ? knd_get_admin_menu_items() : $items;
+
+    if( !!$is_initial_call ) {?>
 
 <div id="knd-dashboard-card" class="knd-dashboard">
 
@@ -244,83 +576,42 @@ function knd_custom_links_dashboard_screen() {?>
     </div>
     <p>Хотите быть в курсе всех возможностей темы?<br>Найдите информацию на <a href="<?php echo KND_OFFICIAL_WEBSITE_URL;?>" target="_blank">её официальном сайте</a>.</p>
 
-    <h3 id="knd-metabox-subtitle"><?php _e('Theme settings', 'knd');?></h3>
+    <?php }
 
-<!--    Site title and description-->
-<!--    Оформление-->
-<!--    Social media links-->
-<!--    Call to action block-->
-<!--    Статические страницы-->
-<!--    Новости-->
-<!--    Команда-->
-<!--    Проекты-->
-<!--    Отображение в соц.сетях-->
-<!--    Пожертвования-->
+    foreach($items as $key => $item) {
 
-    <div class="knd-metabox-line">
-        <a href="<?php echo admin_url('/customize.php?autofocus[section]=title_tagline');?>" target="_blank" class="action"><span class="dashicons dashicons-editor-insertmore"></span><?php _e('Site title and description', 'knd');?></a>
-    </div>
+        if(stristr($key, 'section_') !== false) { $section_id = str_replace('section_', '', $key); // Section ?>
 
-    <div class="knd-metabox-line">
-        <a href="<?php echo admin_url('/customize.php?autofocus[panel]=knd_decoration');?>" target="_blank" class="action"><span class="dashicons dashicons-admin-appearance"></span><?php _e('Decoration', 'knd');?></a>
-    </div>
+            <h3 id="<?php echo 'knd-dashboard-'.$section_id; ?>" class="knd-metabox-subtitle"><?php echo $item['title']; ?></h3>
 
-    <div class="knd-metabox-line">
-        <a href="<?php echo admin_url('/customize.php?autofocus[section]=knd_social_links');?>" target="_blank" class="action"><span class="dashicons dashicons-share"></span><?php _e('Social media links', 'knd');?></a>
-    </div>
+            <?php if( !empty($item['items'])) {
+                knd_custom_links_dashboard_screen($item['items'], false);
+            }
 
-    <div class="knd-metabox-line">
-        <a href="<?php echo admin_url('/customize.php?autofocus[section]=knd_cta_block_settings');?>" target="_blank" class="action"><span class="dashicons dashicons-thumbs-up"></span><?php _e('Call to action block', 'knd');?></a>
-    </div>
+        } else { // Normal item ?>
 
-    <div class="knd-metabox-line">
-        <a href="<?php echo admin_url('/edit.php?post_type=page');?>" target="_blank" class="action"><span class="dashicons dashicons-admin-page"></span><?php _e('Static pages', 'knd');?></a>
-    </div>
+            <div class="knd-metabox-line">
+                <a href="<?php echo empty($item['link']) ? '#' : esc_url($item['link']);?>" target="_blank" class="action">
+                    <span class="<?php echo empty($item['icon']) ? '' : 'dashicons '.$item['icon'];?>"></span>
+                    <?php echo empty($item['text']) ? '' : $item['text'];?>
+                </a>
+            </div>
 
-    <div class="knd-metabox-line">
-        <a href="<?php echo admin_url('/edit.php');?>" target="_blank" class="action"><span class="dashicons dashicons-admin-post"></span><?php _e('News', 'knd');?></a>
-    </div>
+        <?php }
 
-    <div class="knd-metabox-line">
-        <a href="<?php echo admin_url('/edit.php?post_type=person');?>" target="_blank" class="action"><span class="dashicons dashicons-groups"></span><?php _e('Team', 'knd');?></a>
-    </div>
+    }
 
-    <div class="knd-metabox-line">
-        <a href="<?php echo admin_url('/edit.php?post_type=project');?>" target="_blank" class="action"><span class="dashicons dashicons-category"></span><?php _e('Projects', 'knd');?></a>
-    </div>
-
-    <div class="knd-metabox-line">
-        <a href="<?php echo admin_url('/admin.php?page=wpseo_dashboard#top#knowledge-graph');?>" target="_blank" class="action"><span class="dashicons dashicons-facebook"></span><?php _e('Search engines & social networks display', 'knd');?></a>
-    </div>
-
-    <div class="knd-metabox-line">
-        <a href="<?php echo admin_url('/edit.php?post_type=leyka_donation');?>" target="_blank" class="action"><span class="dashicons dashicons-chart-area"></span><?php _e('Donations', 'knd');?></a>
-    </div>
-
-    <h3 id="knd-metabox-subtitle"><?php _e('Other', 'knd');?></h3>
-
-    <div class="knd-metabox-line">
-        <a href="<?php echo KND_SETUP_WIZARD_URL;?>" target="_blank" class="action"><span class="dashicons dashicons-admin-generic"></span>Theme setup wizard</a>
-    </div>
-
-    <div class="knd-metabox-line">
-        <a href="<?php echo KND_DOC_URL;?>" target="_blank" class="action"><span class="dashicons dashicons-book-alt"></span>User documentation</a>
-    </div>
-
-    <div class="knd-metabox-line">
-        <a href="mailto:<?php echo KND_SUPPORT_EMAIL;?>" target="_blank" class="action"><span class="dashicons dashicons-email"></span>Send and email to the tech support</a>
-    </div>
-
+    if( !!$is_initial_call ) {?>
 </div>
+    <?php }
 
-<?php
 }
 
 /** Doc link in footer text **/
 add_filter('admin_footer_text', 'rdc_admin_fotter_text');
 function rdc_admin_fotter_text($text) {
-		
-	$doc = (defined('TST_DOC_URL') && !empty(TST_DOC_URL)) ? TST_DOC_URL : '';
+
+	$doc = defined('TST_DOC_URL') && !empty(TST_DOC_URL) ? TST_DOC_URL : '';
 	
 	if(empty($doc))
 		return $text;

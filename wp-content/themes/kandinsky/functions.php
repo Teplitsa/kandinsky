@@ -90,9 +90,8 @@ require get_template_directory().'/core/shortcodes.php';
 require get_template_directory().'/core/shortcodes-ui.php';
 require get_template_directory().'/core/template-tags.php';
 require get_template_directory().'/core/widgets.php';
-require get_template_directory().'/core/settings.php';
+//require get_template_directory().'/core/settings.php';
 require get_template_directory().'/core/customizer.php';
-require get_template_directory().'/vendor/class-tgm-plugin-activation.php';
 
 // import data utils
 require get_template_directory().'/core/class-mediamnt.php';
@@ -114,12 +113,11 @@ foreach (glob(get_template_directory() . "/modules/*") as $module_file) {
     }
 }
 
-if(is_admin() || wp_doing_ajax()) {
+if(is_admin()) {
+    require get_template_directory() . '/core/admin.php';
+    require get_template_directory().'/vendor/class-tgm-plugin-activation.php';
+}
 
-	require get_template_directory() . '/core/admin.php';
-
-	if(wp_doing_ajax() || ( !empty($_GET['page']) && $_GET['page'] == 'knd-setup-wizard' )) {
-        require get_template_directory().'/vendor/envato_setup/envato_setup.php'; // Run the wizard after all modules included
-    }
-
+if((is_admin() && !empty($_GET['page']) && $_GET['page'] == 'knd-setup-wizard' ) || wp_doing_ajax()) {
+    require get_template_directory().'/vendor/envato_setup/envato_setup.php'; // Run the wizard after all modules included
 }
