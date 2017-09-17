@@ -244,19 +244,18 @@ function knd_custom_links_dashboard_screen() {?>
     </div>
     <p>Хотите быть в курсе всех возможностей темы?<br>Найдите информацию на <a href="<?php echo KND_OFFICIAL_WEBSITE_URL;?>" target="_blank">её официальном сайте</a>.</p>
 
-    <div class="knd-metabox-line">
-        <a href="<?php echo KND_SETUP_WIZARD_URL;?>" target="_blank" class="action"><span class="dashicons dashicons-admin-generic"></span>Мастер настройки темы</a>
-    </div>
-
-    <div class="knd-metabox-line">
-        <a href="<?php echo KND_DOC_URL;?>" target="_blank" class="action"><span class="dashicons dashicons-book-alt"></span>Документация по теме</a>
-    </div>
-
-    <div class="knd-metabox-line">
-        <a href="mailto:<?php echo KND_SUPPORT_EMAIL;?>" target="_blank" class="action"><span class="dashicons dashicons-email"></span>Написать в службу поддержки</a>
-    </div>
-
     <h3 id="knd-metabox-subtitle"><?php _e('Theme settings', 'knd');?></h3>
+
+<!--    Site title and description-->
+<!--    Оформление-->
+<!--    Social media links-->
+<!--    Call to action block-->
+<!--    Статические страницы-->
+<!--    Новости-->
+<!--    Команда-->
+<!--    Проекты-->
+<!--    Отображение в соц.сетях-->
+<!--    Пожертвования-->
 
     <div class="knd-metabox-line">
         <a href="<?php echo admin_url('/customize.php?autofocus[section]=title_tagline');?>" target="_blank" class="action"><span class="dashicons dashicons-editor-insertmore"></span><?php _e('Site title and description', 'knd');?></a>
@@ -275,7 +274,41 @@ function knd_custom_links_dashboard_screen() {?>
     </div>
 
     <div class="knd-metabox-line">
-        <a href="<?php echo admin_url('/customize.php?autofocus[panel]=widgets');?>" target="_blank" class="action"><span class="dashicons dashicons-exerpt-view"></span><?php _e('Widgets');?></a>
+        <a href="<?php echo admin_url('/edit.php?post_type=page');?>" target="_blank" class="action"><span class="dashicons dashicons-admin-page"></span><?php _e('Static pages', 'knd');?></a>
+    </div>
+
+    <div class="knd-metabox-line">
+        <a href="<?php echo admin_url('/edit.php');?>" target="_blank" class="action"><span class="dashicons dashicons-admin-post"></span><?php _e('News', 'knd');?></a>
+    </div>
+
+    <div class="knd-metabox-line">
+        <a href="<?php echo admin_url('/edit.php?post_type=person');?>" target="_blank" class="action"><span class="dashicons dashicons-groups"></span><?php _e('Team', 'knd');?></a>
+    </div>
+
+    <div class="knd-metabox-line">
+        <a href="<?php echo admin_url('/edit.php?post_type=project');?>" target="_blank" class="action"><span class="dashicons dashicons-category"></span><?php _e('Projects', 'knd');?></a>
+    </div>
+
+    <div class="knd-metabox-line">
+        <a href="<?php echo admin_url('/admin.php?page=wpseo_dashboard#top#knowledge-graph');?>" target="_blank" class="action"><span class="dashicons dashicons-facebook"></span><?php _e('Search engines & social networks display', 'knd');?></a>
+    </div>
+
+    <div class="knd-metabox-line">
+        <a href="<?php echo admin_url('/edit.php?post_type=leyka_donation');?>" target="_blank" class="action"><span class="dashicons dashicons-chart-area"></span><?php _e('Donations', 'knd');?></a>
+    </div>
+
+    <h3 id="knd-metabox-subtitle"><?php _e('Other', 'knd');?></h3>
+
+    <div class="knd-metabox-line">
+        <a href="<?php echo KND_SETUP_WIZARD_URL;?>" target="_blank" class="action"><span class="dashicons dashicons-admin-generic"></span>Theme setup wizard</a>
+    </div>
+
+    <div class="knd-metabox-line">
+        <a href="<?php echo KND_DOC_URL;?>" target="_blank" class="action"><span class="dashicons dashicons-book-alt"></span>User documentation</a>
+    </div>
+
+    <div class="knd-metabox-line">
+        <a href="mailto:<?php echo KND_SUPPORT_EMAIL;?>" target="_blank" class="action"><span class="dashicons dashicons-email"></span>Send and email to the tech support</a>
     </div>
 
 </div>
