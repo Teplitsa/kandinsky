@@ -138,38 +138,36 @@ function knd_video_caption_shortcode($atts, $content = null){
     return '<div class="video-caption">'.$content.'</div>';
 }
 
-/* fallback for Leyka shortcode */
-if( !defined('LEYKA_VERSION') ) {
-    add_shortcode('leyka_inline_campaign', 'knd_leyka_inline_campaign_shortcode');
+add_shortcode('leyka_inline_campaign', 'knd_leyka_inline_campaign_shortcode');
+if(defined('LEYKA_VERSION')) {
+    /** Wrapper to import leyka shortcodes correctly **/
+    function knd_leyka_inline_campaign_shortcode($atts, $content = null) {
+
+        $atts = shortcode_atts(
+            array(
+                'slug' => ''
+            ),
+            $atts
+        );
+
+        if(empty($atts['slug']))
+            return '';
+
+        if(!defined('LEYKA_VERSION'))
+            return '';
+
+        $camp = get_page_by_path($atts['slug'], OBJECT, 'leyka_campaign');
+        if(!$camp)
+            return '';
+
+        return do_shortcode('[leyka_inline_campaign id="'.$camp->ID.'" template="revo"]');
+    }
+} else {  // fallback for Leyka shortcode
     function knd_leyka_inline_campaign_shortcode($atts, $content = null){
         // don't display anything when we don't have donations
 
         return '';
     }
-}
-
-/** Wrapper to import leyka shortcodes correctly **/
-add_shortcode('knd_leyka_inline_campaign', 'knd_leyka_inline_campaign_shortcode');
-function knd_leyka_inline_campaign_shortcode($atts, $content = null) {
-
-    $atts = shortcode_atts(
-        array(
-            'slug' => ''
-        ),
-        $atts
-    );
-
-    if(empty($atts['slug']))
-        return '';
-
-    if(!defined('LEYKA_VERSION')) 
-        return '';
-
-    $camp = get_page_by_path($atts['slug'], OBJECT, 'leyka_campaign');
-    if(!$camp)
-        return '';
-
-    return do_shortcode('[leyka_inline_campaign id="'.$camp->ID.'" template="revo"]');
 }
 
 
