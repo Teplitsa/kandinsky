@@ -22,16 +22,14 @@ function knd_empty_icons($icons){
 	return array();
 }
 
-if(!function_exists('knd_activate_leyka')) {
-    function knd_activate_leyka() {
-        $imp = new KND_Import_Remote_Content(get_theme_mod('knd_site_scenario'));
-        $imp->import_downloaded_content();
-        
-        $pdb = KND_Plot_Data_Builder::produce_builder($imp);
-        $pdb->build_leyka_capmaigns();
-    }
-    register_activation_hook( 'leyka/leyka.php', 'knd_activate_leyka' );
+function knd_activate_leyka() {
+    $imp = new KND_Import_Remote_Content(get_theme_mod('knd_site_scenario'));
+    $imp->import_downloaded_content();
+    
+    $pdb = KND_Plot_Data_Builder::produce_builder($imp);
+    $pdb->build_leyka_capmaigns();
 }
+register_activation_hook( 'leyka/leyka.php', 'knd_activate_leyka' );
 
 /** Form template **/
 //custom amount field
