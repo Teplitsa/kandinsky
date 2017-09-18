@@ -148,9 +148,12 @@ class KND_Import_Remote_Content {
     function get_piece($piece_name, $section = '') {
         
         try {
-            $val = $section ?
-                $this->plot_data[$this->plot_name][$section][$piece_name]['piece'] :
-                $this->plot_data[$this->plot_name][$piece_name]['piece'];
+            if($section) {
+                $val = isset($this->plot_data[$this->plot_name][$section][$piece_name]['piece']) ? $this->plot_data[$this->plot_name][$section][$piece_name]['piece'] : NULL;
+            }
+            else {
+                $val = isset($this->plot_data[$this->plot_name][$piece_name]['piece']) ? $this->plot_data[$this->plot_name][$piece_name]['piece'] : NULL;
+            }
         } catch (Exception $ex) {
             $val = NULL;
         }

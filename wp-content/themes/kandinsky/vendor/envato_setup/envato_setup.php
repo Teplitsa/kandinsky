@@ -852,10 +852,12 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
         }
         
         public function _content_install_donations() {
-            update_option('knd_setup_install_leyka', true);
             
             if(is_plugin_active('leyka/leyka.php')) {
                 knd_activate_leyka();
+            }
+            else {
+                update_option('knd_setup_install_leyka', true);
             }
             
             return true;
@@ -1672,7 +1674,18 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 
         }
 
-        public function step_support_view() { ?>
+        public function step_support_view() {
+            
+            if(defined('LEYKA_VERSION') && get_option('knd_setup_install_leyka')) {
+                
+                if(is_plugin_active('leyka/leyka.php')) {
+                    knd_activate_leyka();
+                    update_option('knd_setup_install_leyka', false);
+                }
+                
+            }
+            
+        ?>
 
             <h1><?php _e('Help and support', 'knd'); ?></h1>
 
