@@ -50,6 +50,11 @@ class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
                 'post_type' => 'page',
                 'post_slug' => 'history',
             ),
+            'demo' => array(
+                'template' => 'page-demo',
+                'post_type' => 'page',
+                'post_slug' => 'demo',
+            ),
         ),
 
         'posts' => array(
@@ -275,6 +280,11 @@ class KND_Dubrovino_Data_Builder extends KND_Plot_Data_Builder {
                 'template' => 'page-contacts',
                 'post_type' => 'page',
                 'post_slug' => 'contacts',
+            ),
+            'demo' => array(
+                'template' => 'page-demo',
+                'post_type' => 'page',
+                'post_slug' => 'demo',
             ),
         ),
         
