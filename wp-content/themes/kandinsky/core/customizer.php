@@ -56,8 +56,6 @@ function knd_customize_register(WP_Customize_Manager $wp_customize) {
     //Common settings
     $wp_customize->add_setting('text_in_header', array(
         'default'   => '',
-        'transport' => 'postMessage',
-        'option' => 'option'
     ));
     
     $wp_customize->add_control('text_in_header', array(
@@ -446,8 +444,6 @@ function knd_customize_register(WP_Customize_Manager $wp_customize) {
 
         $wp_customize->add_setting('knd_social_links_'.$id, array(
             'capability' => 'edit_theme_options',
-//            'type' => 'option',
-//            'sanitize_callback' => 'knd_sanitize_social_link_'.$id,
         ));
 
         $wp_customize->add_control('knd_social_links_'.$id, array(

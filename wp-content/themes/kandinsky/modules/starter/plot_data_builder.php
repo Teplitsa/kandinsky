@@ -171,7 +171,6 @@ class KND_Plot_Data_Builder {
         
     }
     
-    
     public function _install_section_campaigns_with_donations($section) {
         global $wpdb;
         
@@ -569,6 +568,7 @@ class KND_Plot_Data_Builder {
                 }
                 else {
                     $piece = NULL;
+                    $pieces = array();
                 }
                 
                 $build_method_name = "build_{$attributes['name']}";

@@ -31,7 +31,6 @@ function knd_activate_leyka() {
 }
 register_activation_hook( 'leyka/leyka.php', 'knd_activate_leyka' );
 
-
 /** Form template **/
 //custom amount field
 function knd_amount_field($form){

@@ -10,6 +10,10 @@ class KND_Team_Widget extends WP_Widget {
     }
 
     function widget($args, $instance) {
+        
+        if(isset($args['id']) && in_array($args['id'], array('knd-footer-sidebar', ''))) {
+            return;
+        }
 
         extract($args);
 

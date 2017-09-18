@@ -10,6 +10,10 @@ class KND_Org_Widget extends WP_Widget {
     }
 
     public function widget($args, $instance) {
+        
+        if(isset($args['id']) && in_array($args['id'], array('knd-footer-sidebar', ''))) {
+            return;
+        }
 
         $title = apply_filters('widget_title', empty($instance['title']) ? '' : $instance['title'], $instance, $this->id_base);
         $num = empty($instance['num']) ? 4 : (int)$instance['num'];

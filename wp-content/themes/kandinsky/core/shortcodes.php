@@ -138,7 +138,8 @@ function knd_video_caption_shortcode($atts, $content = null){
     return '<div class="video-caption">'.$content.'</div>';
 }
 
-add_shortcode('leyka_inline_campaign', 'knd_leyka_inline_campaign_shortcode');
+
+add_shortcode('knd_leyka_inline_campaign', 'knd_leyka_inline_campaign_shortcode');
 if(defined('LEYKA_VERSION')) {
     /** Wrapper to import leyka shortcodes correctly **/
     function knd_leyka_inline_campaign_shortcode($atts, $content = null) {

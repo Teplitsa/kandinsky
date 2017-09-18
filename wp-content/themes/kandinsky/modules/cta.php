@@ -18,6 +18,9 @@ class KND_Cta_Widget extends WP_Widget {
     }
 
     function widget($args, $instance) {
+        if(isset($args['id']) && in_array($args['id'], array('knd-footer-sidebar', ''))) {
+            return;
+        }
         knd_show_cta_block();
     }
     
