@@ -17,7 +17,7 @@ $footer_text = get_theme_mod('footer_text');
 <div id="bottom_bar" class="bottom-bar">
     <div class="container">
         <div class="flex-row">
-            <div class="flex-mf-5">
+            <div class="flex-mf-12 flex-md-5">
             
             <h1 class="logo-name"><?php bloginfo('name');?></h1>
             <h2 class="logo-name"><?php bloginfo('description');?></h2>
@@ -32,7 +32,7 @@ $footer_text = get_theme_mod('footer_text');
             
             </div>
 
-            <div class="flex-mf-4">
+            <div class="flex-mf-12 flex-md-7">
             <?php $social_icons = knd_social_links(array(), false);
 
             if($social_icons) {?>

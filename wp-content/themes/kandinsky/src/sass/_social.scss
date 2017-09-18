@@ -48,6 +48,11 @@ $social_color: (
 		float: left;
 		margin-right: 8px;
 		margin-bottom: 8px;
+		
+        @include for(medium-screens) {
+          float: right;
+        }
+		
 		a {
 			@include social-button-link(46px, 20px);			
 			span { display: none; }
