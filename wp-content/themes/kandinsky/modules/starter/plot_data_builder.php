@@ -568,6 +568,7 @@ class KND_Plot_Data_Builder {
                 }
                 else {
                     $piece = NULL;
+                    $pieces = array();
                 }
                 
                 $build_method_name = "build_{$attributes['name']}";
