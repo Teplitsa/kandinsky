@@ -129,6 +129,15 @@ class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
             'cta-description' => array('section' => 'homepage', 'piece' => 'cta_block', 'field' => 'content'),
             'cta-button-caption' => array('section' => 'homepage', 'piece' => 'cta_block', 'field' => 'lead'),
             'cta-url' => array('section' => 'homepage', 'piece' => 'cta_block', 'field' => 'url'),
+            
+            'knd_social_links_vk' => 'https://vk.com/teplitsast',
+            'knd_social_links_ok' => 'https://ok.ru/profile/0123456789',
+            'knd_social_links_facebook' => 'https://www.facebook.com/TeplitsaST',
+            'knd_social_links_instagram' => 'https://www.instagram.com/your-organization-page',
+            'knd_social_links_twitter' => 'https://twitter.com/TeplitsaST',
+            'knd_social_links_telegram' => 'https://telegram.me/TeplitsaPRO',
+            'knd_social_links_youtube' => 'https://www.youtube.com/user/teplitsast',
+            
         ),
         
         'general_options' => array(
@@ -336,6 +345,14 @@ class KND_Dubrovino_Data_Builder extends KND_Plot_Data_Builder {
             'cta-description' => array('section' => 'homepage', 'piece' => 'cta_block', 'field' => 'content'),
             'cta-button-caption' => array('section' => 'homepage', 'piece' => 'cta_block', 'field' => 'lead'),
             'cta-url' => array('section' => 'homepage', 'piece' => 'cta_block', 'field' => 'url'),
+            
+            'knd_social_links_vk' => 'https://vk.com/teplitsast',
+            'knd_social_links_ok' => 'https://ok.ru/profile/0123456789',
+            'knd_social_links_facebook' => 'https://www.facebook.com/TeplitsaST',
+            'knd_social_links_instagram' => 'https://www.instagram.com/your-organization-page',
+            'knd_social_links_twitter' => 'https://twitter.com/TeplitsaST',
+            'knd_social_links_telegram' => 'https://telegram.me/TeplitsaPRO',
+            'knd_social_links_youtube' => 'https://www.youtube.com/user/teplitsast',
             
         ),
         
@@ -550,6 +567,14 @@ class KND_Withyou_Data_Builder extends KND_Plot_Data_Builder {
             'cta-description' => array('section' => 'homepage', 'piece' => 'cta_block', 'field' => 'content'),
             'cta-button-caption' => array('section' => 'homepage', 'piece' => 'cta_block', 'field' => 'lead'),
             'cta-url' => array('section' => 'homepage', 'piece' => 'cta_block', 'field' => 'url'),
+            
+            'knd_social_links_vk' => 'https://vk.com/teplitsast',
+            'knd_social_links_ok' => 'https://ok.ru/profile/0123456789',
+            'knd_social_links_facebook' => 'https://www.facebook.com/TeplitsaST',
+            'knd_social_links_instagram' => 'https://www.instagram.com/your-organization-page',
+            'knd_social_links_twitter' => 'https://twitter.com/TeplitsaST',
+            'knd_social_links_telegram' => 'https://telegram.me/TeplitsaPRO',
+            'knd_social_links_youtube' => 'https://www.youtube.com/user/teplitsast',
         ),
         
         'general_options' => array(
