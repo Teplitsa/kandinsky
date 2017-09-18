@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-18 10:51+0200\n"
-"PO-Revision-Date: 2017-09-18 10:53+0200\n"
+"PO-Revision-Date: 2017-09-18 17:54+0200\n"
 "Last-Translator: sidorenko.a <sidorenko.a@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10 >= 2 && n"
 "%10<=4 &&(n%100<10||n%100 >= 20)? 1 : 2);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.8.4\n"
+"X-Generator: Poedit 2.0.3\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
 "__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
@@ -36,11 +36,11 @@ msgstr "Анонимус"
 
 #: core/admin.php:9
 msgid "Theme settings & content"
-msgstr ""
+msgstr "Настройки темы"
 
 #: core/admin.php:15
 msgid "Site title and description"
-msgstr ""
+msgstr "Название сайта"
 
 #: core/admin.php:21 core/customizer.php:88
 msgid "Decoration"
@@ -48,15 +48,15 @@ msgstr "Оформление"
 
 #: core/admin.php:27
 msgid "Social media links"
-msgstr ""
+msgstr "Ссылки на соц.сети"
 
 #: core/admin.php:33
 msgid "\"Call to action\" block"
-msgstr ""
+msgstr "Кнопка действия"
 
 #: core/admin.php:39
 msgid "Static pages"
-msgstr ""
+msgstr "Страницы"
 
 #: core/admin.php:45 modules/news.php:7 modules/starter/plot_config.php:194
 #: modules/starter/plot_config.php:207 modules/starter/plot_config.php:222
@@ -75,7 +75,7 @@ msgstr "Проекты"
 
 #: core/admin.php:63
 msgid "Search engines & social networks display"
-msgstr ""
+msgstr "SEO"
 
 #: core/admin.php:69 modules/donations/widgets.php:7
 #: vendor/envato_setup/envato_setup.php:923
@@ -84,19 +84,19 @@ msgstr "Пожертвования"
 
 #: core/admin.php:76
 msgid "Other"
-msgstr ""
+msgstr "Другое"
 
 #: core/admin.php:82
 msgid "Theme setup wizard"
-msgstr ""
+msgstr "Мастер настройки"
 
 #: core/admin.php:88
 msgid "User documentation"
-msgstr ""
+msgstr "Документация"
 
 #: core/admin.php:94
 msgid "Email to the tech support"
-msgstr ""
+msgstr "Тех.поддержка"
 
 #: core/admin.php:114
 msgid "Kandinsky settings"
@@ -679,7 +679,7 @@ msgstr "Например, «Наша команда»"
 
 #: core/shortcodes-ui.php:178
 msgid "Nubmer"
-msgstr ""
+msgstr "Номер"
 
 #: core/shortcodes-ui.php:184
 msgid "Person categories"
@@ -942,7 +942,7 @@ msgstr "Волонтеры"
 
 #: modules/person/hooks.php:84
 msgid "Board"
-msgstr ""
+msgstr "Руководство"
 
 #: modules/person/widgets.php:7
 msgid "People list"
