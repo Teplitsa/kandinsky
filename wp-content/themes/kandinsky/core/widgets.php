@@ -39,7 +39,7 @@ function knd_sidebars_init() {
     register_sidebar(array(
         'name' => __('Footer - Columns', 'knd'),
         'id' => 'knd-footer-sidebar',
-        'description' => __('Footer columns area accepts 4 widgets', 'knd'),
+        'description' => __('Footer columns area accepts 4 widgets. Does not accept wide widgets.', 'knd'),
         'before_widget' => '<div id="%1$s" class="widget-bottom %2$s">',
         'after_widget' => '</div>',
         'before_title' => '<h3 class="widget-title">',

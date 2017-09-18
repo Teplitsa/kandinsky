@@ -10,6 +10,10 @@ class KND_News_Widget extends WP_Widget {
     }
 
     function widget($args, $instance) {
+        
+        if(isset($args['id']) && in_array($args['id'], array('knd-footer-sidebar', ''))) {
+            return;
+        }
 
         $title = apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base );
         $num = intval($instance['num']);
