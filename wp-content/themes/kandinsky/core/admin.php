@@ -135,22 +135,54 @@ function knd_add_admin_pages($items = array(), $is_inital_call = true) {
 }
 add_action('admin_menu', 'knd_add_admin_pages');
 
-function knd_add_menu_item(WP_Admin_Bar $admin_bar)  { /** @todo */
+function knd_add_adminbar_menu(WP_Admin_Bar $admin_bar, $items = array(), $is_initial_call = true, $parent_item = false)  {
 
-    $knd_get_admin_notif_count = knd_get_admin_notif_count();
-    $notif_html = $knd_get_admin_notif_count ? '<div class="wp-core-ui wp-ui-notification knd-adminbar-notif"><span aria-hidden="true">'.$knd_get_admin_notif_count.'</span></div>' : '';
+    $items = empty($items) || !is_array($items) ? knd_get_admin_menu_items() : $items;
+    $parent_item = $parent_item ? $parent_item : 'root';
 
-    $admin_bar->add_menu(array( // Parent node
-        'id' => 'kandinsky-main',
-        'title' => __('Kandinsky', 'knd'),
-        'href' => '', //admin_url('customize.php'),
-        'meta' => array(
-            'html' => $notif_html,
-        ),
-    ));
+    if( !!$is_initial_call ) {
+
+        $knd_get_admin_notif_count = knd_get_admin_notif_count();
+        $notif_html = $knd_get_admin_notif_count ? '<div class="wp-core-ui wp-ui-notification knd-adminbar-notif"><span aria-hidden="true">'.$knd_get_admin_notif_count.'</span></div>' : '';
+
+        $root_node_id = 'knd-adminbar-main';
+        $admin_bar->add_menu(array( // Parent node
+            'id' => $root_node_id,
+            'title' => __('Kandinsky', 'knd'),
+            'href' => admin_url('customize.php'),
+//            'meta' => array('html' => $notif_html,),
+        ));
+
+        $parent_item = $root_node_id;
+
+    }
+
+    foreach($items as $key => $item) {
+
+        if(stristr($key, 'section_') !== false) { $section_id = str_replace('section_', '', $key); // Section
+
+            $admin_bar->add_menu(array(
+                'id' => $section_id,
+                'title' => $item['title'],
+                'parent' => $parent_item,
+            ));
+
+            if( !empty($item['items'])) {
+                knd_add_adminbar_menu($admin_bar, $item['items'], false, $section_id);
+            }
+
+        } else { // Normal item
+            $admin_bar->add_node(array(
+                'id' => $key,
+                'title' => $item['text'],
+                'href' => $item['link'],
+                'parent' => $parent_item,
+            ));
+        }
+    }
 
 }
-add_action('admin_bar_menu', 'knd_add_menu_item', 111);
+add_action('admin_bar_menu', 'knd_add_adminbar_menu', 111);
 
 function knd_admin_notice() {
 
