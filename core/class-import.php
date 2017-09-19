@@ -171,7 +171,8 @@
 
 //             printf( "file url: %s\n", $url );
             
-            $tmp_dir = knd_get_temp_dir() . '/kandinsky';
+            $tmp_dir = knd_get_temp_dir();
+            
             if( !is_dir( $tmp_dir ) && !mkdir($tmp_dir) ) {
                 throw new Exception(sprintf(__("Can't create a download temporary directory: %s", 'knd'), $tmp_dir));
             }

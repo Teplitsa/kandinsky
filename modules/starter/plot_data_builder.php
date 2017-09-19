@@ -64,6 +64,11 @@ class KND_Plot_Data_Builder {
     }
 
     public function build_leyka_capmaigns() {
+        
+        if(!defined('LEYKA_VERSION')) {
+            return;
+        }
+        
         $this->_install_leyka_settings();
         $this->_install_payment_methods();
         $this->_install_campaigns_with_donations();
@@ -651,6 +656,7 @@ class KND_Plot_Data_Builder {
 //         }
         
         //thumbnail
+        print_r($piece);
         $thumb_id = $this->imp->get_thumb_attachment_id($piece);
         
         if($thumb_id){

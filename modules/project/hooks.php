@@ -40,4 +40,4 @@ function knd_project_custom_content() {
 
 }
 
-add_action('knd_save_demo_content', array('KND_Pproject', 'setup_starter_data'));
+add_action('knd_save_demo_content', array('KND_Project', 'setup_starter_data'));
