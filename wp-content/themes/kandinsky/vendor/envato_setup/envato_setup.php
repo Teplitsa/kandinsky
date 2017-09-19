@@ -479,7 +479,7 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
         public function display_wizard_footer() { ?>
             <?php if($this->step == 'next_steps') { ?>
                 <a class="wc-return-to-dashboard" href="<?php echo esc_url(admin_url()); ?>">
-                    <?php esc_html_e('Return to the WordPress Dashboard', 'knd'); ?>
+                    <?php esc_html_e('Return to the Dashboard', 'knd'); ?>
                 </a>
             <?php } ?>
             </body>
@@ -1536,6 +1536,8 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
                         set_theme_mod('knd_site_scenario', false);
 
                         knd_display_wizard_error($ex);
+
+                        die();
 
                     }
 

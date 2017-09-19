@@ -168,13 +168,12 @@
         }
         
         public function import_big_file( $url ) {
-            $attachment_id = 0;
-        
+
 //             printf( "file url: %s\n", $url );
             
             $tmp_dir = knd_get_temp_dir() . '/kandinsky';
-            if( !is_dir( $tmp_dir ) ) {
-                mkdir( $tmp_dir );
+            if( !is_dir( $tmp_dir ) && !mkdir($tmp_dir) ) {
+                throw new Exception(sprintf(__("Can't create a download temporary directory: %s", 'knd'), $tmp_dir));
             }
             
 //             print_r( $tmp_dir ); echo "\n";
@@ -182,8 +181,9 @@
             $tmp_file = tempnam( $tmp_dir, 'kandinsky_' );
             set_time_limit(0);
             $fp = fopen ( $tmp_file, 'w+' );
-
-
+            if( !$fp ) {
+                throw new Exception(sprintf(__("Can't create a download temporary file: %s", 'knd'), $tmp_file));
+            }
             
             $ch = curl_init();
             curl_setopt ($ch, CURLOPT_URL, $url );
@@ -195,7 +195,7 @@
 
             curl_setopt( $ch, CURLOPT_FILE, $fp );
             if(curl_exec($ch) === false) {
-                echo 'Ошибка curl: ' . curl_error($ch);
+                throw new Exception(sprintf(__('CURL error: %s', 'knd'), curl_error($ch)));
             }
             curl_close( $ch );
             fclose($fp);
@@ -207,22 +207,25 @@
             $filedir = dirname( $tmp_file );
             $new_file = $filedir . "/" . $filename_no_ext . '.' . $extension;
 //             echo $new_file . "\n";
-            
-            rename( $tmp_file, $new_file );
+
+            if( !rename( $tmp_file, $new_file ) ) {
+                throw new Exception(sprintf(__("Can't rename downloaded file: from %s to %s", 'knd'), $tmp_file, $new_file));
+            }
 
             $tmp_file = $new_file;
-            
+
             $attachment_id = knd_upload_file_from_path( $tmp_file );
-//             printf( "res_att_id: %d\n", $attachment_id );
 
             if( file_exists( $tmp_file ) ) {
                 unlink( $tmp_file );
             }
-            
+
             if( $attachment_id ) {
                 update_post_meta( $attachment_id, 'old_url', $url );
+            } else {
+                throw new Exception(sprintf(__("File wasn't uploaded: %s", 'knd'), $tmp_file));
             }
-            
+
             return $attachment_id;
         }
         

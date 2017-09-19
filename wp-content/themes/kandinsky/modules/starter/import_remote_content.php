@@ -347,7 +347,7 @@ class KND_Import_Git_Content {
     private function unzip_git_zip() {
 
         if(!$this->zip_fpath) {
-            throw new Exception(__('No zip file!', 'knd'));
+            throw new Exception(__('No zip file', 'knd'));
         }
 
         if(!is_file($this->zip_fpath)) {
