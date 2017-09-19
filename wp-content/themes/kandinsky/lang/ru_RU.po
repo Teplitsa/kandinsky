@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-18 10:51+0200\n"
-"PO-Revision-Date: 2017-09-18 17:54+0200\n"
+"PO-Revision-Date: 2017-09-19 13:53+0200\n"
 "Last-Translator: sidorenko.a <sidorenko.a@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -1057,7 +1057,7 @@ msgstr "Познакомьтесь с другими проектами"
 #: vendor/class-tgm-plugin-activation.php:2522
 #: vendor/class-tgm-plugin-activation.php:3569
 msgid "Return to the Dashboard"
-msgstr "Вернуться в админку сайта"
+msgstr "Вернуться в админку"
 
 #: vendor/class-tgm-plugin-activation.php:511
 msgid "This plugin needs to be updated to be compatible with your theme."
@@ -1459,7 +1459,7 @@ msgstr "Мастер настройки темы"
 
 #: vendor/envato_setup/envato_setup.php:482
 msgid "Return to the WordPress Dashboard"
-msgstr "Вернуться в административную панель"
+msgstr "Вернуться в админку"
 
 #: vendor/envato_setup/envato_setup.php:537
 #, php-format
@@ -1898,7 +1898,7 @@ msgstr "Вернуться в административный раздел са
 
 #: vendor/envato_setup/envato_setup.php:1814
 msgid "Email to the theme support"
-msgstr "Написать в службу поддержки темы (support@te-st.ru)"
+msgstr "Написать тех.службе"
 
 #~ msgid "Footer columns area accepts 4 widgets"
 #~ msgstr "Колонки в подвале сайта. Область принимает 4 виджета"
