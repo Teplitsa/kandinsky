@@ -656,7 +656,7 @@ class KND_Plot_Data_Builder {
 //         }
         
         //thumbnail
-        print_r($piece);
+//         print_r($piece);
         $thumb_id = $this->imp->get_thumb_attachment_id($piece);
         
         if($thumb_id){
