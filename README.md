@@ -1,8 +1,11 @@
 # Кандинский
-Проект Кандинский. Красивый сайт для НКО. [Инструкция по установке](https://github.com/Teplitsa/kandinsky/wiki)
+Проект Кандинский. Красивый сайт для НКО.
+* [Инструкция по установке](https://github.com/Teplitsa/kandinsky/wiki)
+* [Нашли ошибку или есть вопрос?](https://github.com/Teplitsa/kandinsky/issues)
+* [Хотите пообщаться с разработчиками в Telegram-канале?](https://t.me/joinchat/AAAAAENN3prSrvAs7KwWrg)
 
 ## Проблема 
-Почти половина всех запросов, которые приходят в Теплицу от некоммерческих организаций – о том, что организации нужен сайт. Простой, красивый, настраиваемый, и требующий минимум ресурсов в обслуживании. 
+Почти половина всех запросов, которые приходят в Теплицу от некоммерческих организаций – о том, что организации нужен сайт. Теплица даже [исследование](https://te-st.ru/2017/09/18/kandinsky-research/) провела. Простой, красивый, настраиваемый, и требующий минимум ресурсов в обслуживании. 
 
 ## Решение
 Наше решение – тема для WordPress, которая устанавливается в несколько кликов, не требует навыков программирования, позволяет широкую настройку и уже содержит все то, что средняя некоммерческая организация может захотеть. Включая тексты разделов "О нас", структуру меню, фандрайзинговый плагин "Лейка", модули настройки соц.сетей и безопасности. 
@@ -18,10 +21,7 @@
 - Скорость
 - Безопасность
 - Документация
-- Геймификация в настройке и заполнении контента
 - Open Source
-
-Над темой работает практически вся команда Теплицы социальных технологий. Присоединяйтесь к сообществу тестировщиков в Telegram - https://t.me/joinchat/AAAAAENN3prSrvAs7KwWrg
 
 # Kandinsky. Beautiful websites for NGOs.
  
@@ -40,7 +40,4 @@ Our solution is a website layout based on WordPress. We called it Kandinsky. Kan
 - Speed
 - Security
 - Documentation
-- Gamification in configuration and content filling
 - Open Source
- 
-The whole team of Teplitsa is working on the topic. Join the community of testers on Telegram – https://t.me/joinchat/AAAAAENN3prSrvAs7KwWrg
