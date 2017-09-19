@@ -46,6 +46,8 @@ class KND_Import_Remote_Content {
     public function __get($name) {
         if($name == 'plot_name') {
             return $this->plot_name;
+        } elseif($name == 'plot_data') {
+            return $this->plot_data;
         } elseif($name == 'possible_plots') {
             return array_values(knd_get_wizard_plot_names());
         } elseif($name == 'possible_wizard_plots') {
