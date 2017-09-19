@@ -135,13 +135,15 @@ class TST_Event {
 
             $label = '';
 
+            $start_time = $this->time_start;
+            
             if($show_weekday) {
                 //week mark
                 $weekday = date('w', $start_date);
                 $week = array('вс', 'пн', 'вт', 'ср', 'чт', 'пт','сб');
                 $weekday = (isset($week[(int)$weekday])) ? $week[(int)$weekday] : '';
                 	
-                if(!empty($start_time = $this->time_start)){
+                if(!empty($start_time)){
                     $label = sprintf('%s. %s, %s', $weekday, date_i18n('d.m.Y', $start_date), date_i18n('H:i', strtotime($start_time)));
                     $date_text = date('Y-m-d', $start_date).'T'.date('H:i', strtotime($start_time));
                 }
@@ -151,7 +153,8 @@ class TST_Event {
                 }
             }
             else {
-                if(!empty($start_time = $this->time_start)){
+                
+                if(!empty($start_time)){
                     $label = sprintf('%s, %s', date_i18n('d.m.Y', $start_date), date_i18n('H:i', strtotime($start_time)));
                     $date_text = date('Y-m-d', $start_date).'T'.date('H:i', strtotime($start_time));
                 }
