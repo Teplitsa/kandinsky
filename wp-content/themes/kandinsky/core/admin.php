@@ -6,7 +6,7 @@
 function knd_get_admin_menu_items() {
     return array(
         'section_knd-settings-content' => array(
-            'title' => __('Theme settings & content'),
+            'title' => __('Theme settings & content', 'knd'),
             'link' => '#knd-admin-menu-settings',
             'items' => array(
                 'site-title-description' => array(
