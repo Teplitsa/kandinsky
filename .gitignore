@@ -4,7 +4,6 @@ out
 gen
 .htaccess
 .idea/
-license.txt
 readme.html
 wp-activate.php
 wp-admin/
