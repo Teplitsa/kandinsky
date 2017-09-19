@@ -1621,7 +1621,7 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
                             <div id="current-site-icon">
                                 <?php $image_url = knd_get_site_icon_img_url();
                                 if($image_url) {
-                                    printf('<img class="site-logo" src="%s" style="width: 32px; height: auto;">', $image_url);
+                                    printf('<img class="site-logo-img" src="%s" style="width: 32px; height: auto;">', $image_url);
                                 } ?>
                             </div>
                         </td>

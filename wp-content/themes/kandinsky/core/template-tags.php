@@ -748,7 +748,7 @@ function knd_get_logo_img() {
 
     $logo_id = knd_get_logo_img_id();
     return $logo_id ?
-        wp_get_attachment_image($logo_id, 'full', false, array('alt' => get_bloginfo('name'))) :
+        wp_get_attachment_image($logo_id, 'full', false, array('alt' => get_bloginfo('name'), 'class' => 'site-logo-img')) :
         '<img class="site-logo-img" src="'.get_template_directory_uri().'/vendor/envato_setup/images/'.get_theme_mod('knd_site_scenario').'/logo.svg" width="315" height="66" alt="'.get_bloginfo('name').'">';
 
 }
