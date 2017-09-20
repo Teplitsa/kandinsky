@@ -1711,7 +1711,9 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 
         public function step_ready_view() {
 
-            update_option('knd_setup_complete', time()); ?>
+            update_option('knd_setup_complete', time()); 
+            
+        ?>
 
             <h1><?php _e('Yay! Your website is ready!', 'knd'); ?></h1>
 

@@ -369,7 +369,6 @@ class KND_Dubrovino_Data_Builder extends KND_Plot_Data_Builder {
         'general_options' => array(
             'site_name' => 'Защитим Дубровино!',
             'site_description' => 'Градозащитная инициатива',
-            
             'knd_footer_contacts' => "
 <p>
 Вместе остановим уничтожение леса!

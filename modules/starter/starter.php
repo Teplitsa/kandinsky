@@ -60,7 +60,7 @@ add_action('wp_ajax_setup_starter_data', 'knd_ajax_setup_starter_data');
 
 
 /** Check for remove comments functions */
-add_action('knd_build_test_content_options', 'knd_disable_comments');
+add_action('knd_plotdata_build_theme_options', 'knd_disable_comments');
 function knd_disable_comments() {
     
 
@@ -70,9 +70,8 @@ function knd_disable_comments() {
     $options['remove_everywhere'] = true;
     $options['permanent'] = false;
     $options['extra_post_types'] = false;
+    $options['db_version'] = 6;
     
     update_option('disable_comments_options', $options);
-    update_option('knd_disable_comments', 1);
-    
 }
 

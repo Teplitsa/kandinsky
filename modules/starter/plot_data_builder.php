@@ -769,7 +769,7 @@ class KND_Plot_Data_Builder {
         
 //         print_r($this->data_routes['theme_options']);
         $this->save_theme_options($this->data_routes['theme_options']);
-        add_action('knd_build_test_content_options');
+        do_action('knd_plotdata_build_theme_options');
     }
     
     
