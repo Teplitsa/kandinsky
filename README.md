@@ -3,7 +3,7 @@
 * [Краткая видео-инструкция](https://www.youtube.com/watch?v=aJ-vGgrvw_Q);
 * [Инструкция по установке](https://github.com/Teplitsa/kandinsky/wiki); 
 * [Нашли ошибку или есть вопрос?](https://github.com/Teplitsa/kandinsky/issues);
-* [Хотите пообщаться с разработчиками в Telegram-канале?](https://t.me/joinchat/AAAAAENN3prSrvAs7KwWrg).
+* [Хотите пообщаться с разработчиками в Telegram-канале?](https://t.me/joinchat/AAAAAENN3prSrvAs7KwWrg)
 
 ## Проблема 
 Почти половина всех запросов, которые приходят в Теплицу от некоммерческих организаций – о том, что организации нужен сайт. Теплица даже [исследование](https://te-st.ru/2017/09/18/kandinsky-research/) провела. Простой, красивый, настраиваемый, и требующий минимум ресурсов в обслуживании. 
