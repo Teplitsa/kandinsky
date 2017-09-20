@@ -698,7 +698,7 @@ class KND_Plot_Data_Builder {
      * @return array     WP terms_id list
      */
     public function get_terms_list($terms_names, $taxonomy) {
-        $terms_list = [];
+        $terms_list = array();
         
         foreach($terms_names as $term_name) {
         

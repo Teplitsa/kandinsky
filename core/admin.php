@@ -577,7 +577,7 @@ function knd_custom_links_dashboard_screen($items = array(), $is_initial_call = 
 add_filter('admin_footer_text', 'rdc_admin_fotter_text');
 function rdc_admin_fotter_text($text) {
 
-	$doc = defined('TST_DOC_URL') && !empty(TST_DOC_URL) ? TST_DOC_URL : '';
+	$doc = defined('TST_DOC_URL') ? TST_DOC_URL : '';
 	
 	if(empty($doc))
 		return $text;
