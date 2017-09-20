@@ -169,15 +169,11 @@
         
         public function import_big_file( $url ) {
 
-//             printf( "file url: %s\n", $url );
-            
             $tmp_dir = knd_get_temp_dir();
             
             if( !is_dir( $tmp_dir ) && !mkdir($tmp_dir) ) {
                 throw new Exception(sprintf(__("Can't create a download temporary directory: %s", 'knd'), $tmp_dir));
             }
-            
-//             print_r( $tmp_dir ); echo "\n";
             
             $tmp_file = tempnam( $tmp_dir, 'kandinsky_' );
             set_time_limit(0);
@@ -201,15 +197,18 @@
             curl_close( $ch );
             fclose($fp);
             
-//             printf( "file: %s\n", $tmp_file );
-            
             $filename_no_ext = pathinfo( $url, PATHINFO_FILENAME );
             $extension = pathinfo( $url, PATHINFO_EXTENSION );
             $filedir = dirname( $tmp_file );
             $new_file = $filedir . "/" . $filename_no_ext . '.' . $extension;
-//             echo $new_file . "\n";
 
-            if( !rename( $tmp_file, $new_file ) ) {
+            if( !file_exists($tmp_file) ) {
+                throw new Exception(sprintf(__("%s - temporary download file doesn't exist", 'knd'), $new_file));
+            } else if(file_exists($new_file) && !unlink($new_file)) {
+                throw new Exception(sprintf(__("%s - a downloaded file already exists and can't be deleted", 'knd'), $new_file));
+            } else if(file_exists($new_file) && !is_writable($new_file) && !chmod($new_file, '0755') ) {
+                throw new Exception(sprintf(__("%s - a downloaded file isn't writable and can't be made so", 'knd'), $new_file));
+            } else if( !rename( $tmp_file, $new_file ) ) {
                 throw new Exception(sprintf(__("Can't rename downloaded file: from %s to %s", 'knd'), $tmp_file, $new_file));
             }
 
