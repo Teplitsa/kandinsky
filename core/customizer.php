@@ -379,6 +379,64 @@ function knd_customize_register(WP_Customize_Manager $wp_customize) {
         'priority' => 55,
     ));
 
+    
+    // ourorg columns
+    $wp_customize->add_section('knd_ourorg_columns_settings', array(
+        'priority' => 57,
+        'title' => __('Our organization columns settings', 'knd'),
+        'panel' => 'knd_homepage',
+    ));
+    
+    for($i = 1; $i <=3; $i++) {
+        
+        $wp_customize->add_setting('home-subtitle-col' . $i . '-title', array(
+            'default'           => '',
+        ));
+        
+        $wp_customize->add_setting('home-subtitle-col' . $i . '-content', array(
+            'default'   => '',
+        ));
+        
+        $wp_customize->add_setting('home-subtitle-col' . $i . '-link-text', array(
+            'default'   => '',
+        ));
+        
+        $wp_customize->add_setting('home-subtitle-col' . $i . '-link-url', array(
+            'default'   => '',
+        ));
+        
+        $wp_customize->add_control('home-subtitle-col' . $i . '-title', array(
+            'type'     => 'text',
+            'label'    => __('Column title', 'knd'),
+            'section'  => 'knd_ourorg_columns_settings',
+            'settings' => 'home-subtitle-col' . $i . '-title',
+            'priority' => $i * 10
+        ));
+        
+        $wp_customize->add_control('home-subtitle-col' . $i . '-content', array(
+            'type'     => 'textarea',
+            'label'    => __('Column content', 'knd'),
+            'section'  => 'knd_ourorg_columns_settings',
+            'settings' => 'home-subtitle-col' . $i . '-content',
+            'priority' => $i * 10 + 2
+        ));
+        
+        $wp_customize->add_control('home-subtitle-col' . $i . '-link-text', array(
+            'type'     => 'text',
+            'label'    => __('Column link caption', 'knd'),
+            'section'  => 'knd_ourorg_columns_settings',
+            'settings' => 'home-subtitle-col' . $i . '-link-text',
+            'priority' => $i * 10 + 4
+        ));
+        
+        $wp_customize->add_control('home-subtitle-col' . $i . '-link-url', array(
+            'type'     => 'text',
+            'label'    => __('Column link URL', 'knd'),
+            'section'  => 'knd_ourorg_columns_settings',
+            'settings' => 'home-subtitle-col' . $i . '-link-url',
+            'priority' => $i * 10 + 6
+        ));
+    }
 
     // cta options
     $wp_customize->add_section('knd_cta_block_settings', array(
