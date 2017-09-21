@@ -8,39 +8,30 @@
  */
 
 $cc_link = '<a href="http://creativecommons.org/licenses/by-sa/3.0/" target="_blank">Creative Commons СС-BY-SA 3.0</a>';
-$tst = __("Teplitsa of social technologies", 'knd');
-$banner = get_template_directory_uri().'/assets/images/te-st-logo-10x50';
+
+
 $footer_text = get_theme_mod('footer_text');
 ?>
 </div><!--  #site_content -->
 
 <div id="bottom_bar" class="bottom-bar">
     <div class="container">
-        <div class="flex-row">
-            <div class="flex-mf-12 flex-md-5">
-            
-            <h1 class="logo-name"><?php bloginfo('name');?></h1>
-            <h2 class="logo-name"><?php bloginfo('description');?></h2>
-            
-            <?php if( False && !is_page('subscribe') ) {?>
-                <h5><?php #_e('Subscribe to our newsletter', 'knd');?></h5>
-                <div class="newsletter-form in-footer">
-                    <?php #echo rdc_get_newsletter_form('bottom');?>
-                </div>
-            <?php }?>
-            
-            
+        <div class="flex-row align-bottom bottom-branding">
+
+            <div class="flex-cell flex-md-5">
+                <h1 class="logo-name"><?php bloginfo('name');?></h1>
+                <h2 class="logo-name"><?php bloginfo('description');?></h2>
             </div>
 
-            <div class="flex-mf-12 flex-md-7">
-            <?php $social_icons = knd_social_links(array(), false);
-
-            if($social_icons) {?>
-
-                <?php echo $social_icons;?>
-
-            <?php }?>
+            <div class="flex-cell flex-md-7">
+            <?php 
+                $social_icons = knd_social_links(array(), false);
+                if($social_icons) {
+                    echo $social_icons;
+                }
+            ?>
             </div>
+
         </div>
     </div>
 </div>
@@ -51,9 +42,9 @@ $footer_text = get_theme_mod('footer_text');
     
 	<div class="hr"></div>
     
-	<div class="flex-row">
+	<div class="flex-row footer-credits align-center">
 		
-		<div class="flex-mf-6 flex-sm-4 flex-md-6">		
+		<div class="flex-cell flex-mf-8  flex-md-6">		
 				
 			<div class="copy">
 				<?php echo apply_filters('knd_the_content', $footer_text); ?>	
@@ -62,14 +53,14 @@ $footer_text = get_theme_mod('footer_text');
 			
 		</div>
 		
-		<div class="flex-mf-6 flex-sm-8 flex-md-6">
-			<div class="te-st-bn">
-				<p class="support">Сайт работает <br>на «Кандинском»</p>
-				<a title="<?php echo $tst;?>" href="http://te-st.ru/" class="rdc-banner">					
-					<svg class="knd-icon"><use xlink:href="#icon-te-st" /></svg>
+		<div class="flex-cell flex-mf-4 flex-md-6">
+			<div class="knd-brand">
+				<div class="support"><?php echo esc_html(__('Powered by Kandinsky', 'knd')); ?></div>
+				<a title="<?php _e("Project Kandinsky", 'knd');?>" href="http://knd.te-st.ru/" class="knd-banner">		<svg class="knd-icon pic-knd"><use xlink:href="#pic-knd" /></svg>
 				</a>
 			</div>			
 		</div>
+
 	</div>
 	
 	

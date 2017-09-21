@@ -438,28 +438,9 @@ function knd_more_section($posts, $title = '', $type = 'news', $css= ''){
 	if(empty($posts))
 		return;
 	
-	$all_link = '';
-	
 	if($type == 'projects'){
 		$all_link = "<a href='".home_url('activity')."'>".__('More projects', 'knd')."&nbsp;&rarr;</a>";
 		$title = (empty($title)) ? __('Our projects', 'knd') : $title;
-	}
-	elseif($type == 'people') {
-		$cat = get_term_by('slug', 'volunteers', 'person_cat');
-		$all_link = "<a href='".get_term_link($cat)."'>".__('More volunteers', 'knd')."&nbsp;&rarr;</a>";
-		$title = (empty($title)) ? __('Our volunteers', 'knd') : $title;
-	}
-	elseif($type == 'team') {
-	    $cat = get_term_by('slug', 'team', 'person_cat');
-	    $all_link = "<a href='".get_term_link($cat)."'>".__('More team members', 'knd')."&nbsp;&rarr;</a>";
-	    $title = (empty($title)) ? __('Our team', 'knd') : $title;
-	}
-	elseif($type == 'events') {
-		$p = get_page_by_path('events');
-		if($p) {
-			$all_link = "<a href='".get_permalink($p)."'>".__('More events', 'knd')."&nbsp;&rarr;</a>";
-			$title = (empty($title)) ? get_the_title($p) : $title;
-		}
 	}
 	else {
 		$all_link = "<a href='".home_url('news')."'>".__('More news', 'knd')."&nbsp;&rarr;</a>";
@@ -472,15 +453,6 @@ function knd_more_section($posts, $title = '', $type = 'news', $css= ''){
 
 <h3 class="related-title"><?php echo $title; ?></h3>
 
-<?php if(is_singular('person')) { ?>
-<div class="cards-loop related-people-loop flex-row">
-	<?php
-		foreach($posts as $p){
-			knd_person_card($p, true);
-		}
-	?>
-</div>
-<?php } else { ?>
 <div class="related-cards-loop">
 	<?php
 		foreach($posts as $p){			
@@ -488,9 +460,6 @@ function knd_more_section($posts, $title = '', $type = 'news', $css= ''){
 		}		
 	?>
 </div>
-<?php } ?>
-
-<!-- <div class="related-all-link"><?php echo $all_link;?></div> -->
 
 </section>
 <?php

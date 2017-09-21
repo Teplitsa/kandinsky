@@ -119,7 +119,7 @@ $campaign_age = get_post_meta($campaign->ID, 'campaign_age', true);
 $is_finished = get_post_meta($campaign->ID, 'is_finished', true);
 
 ?>
-<article class="flex-md-6 tpl-post card">
+<article class="tpl-post card flex-cell flex-md-6">
     <div class="<?php echo esc_attr($css_class);?>">
         <?php if(has_post_thumbnail($campaign->ID)) {?>
             <div class="lk-thumbnail">
@@ -170,13 +170,13 @@ $is_finished = get_post_meta($campaign->ID, 'is_finished', true);
             <?php endif?>
             <div class="flex-row leyka-scale-label">
             
-                <div class="flex-md-5">
+                <div class="flex-cell flex-md-6">
                     <div class="caption"><?php _e("Collected", 'knd')?></div>
                     <div class="sum"><?php echo $collected_f?> <?php echo $curr_label?></div>
                 </div>
                 
                 <?php if(!$is_finished):?>
-                <div class="flex-md-7 knd-campaign-needed">
+                <div class="flex-cell flex-md-6 knd-campaign-needed">
                     <div class="caption"><?php _e("Needed", 'knd')?></div>
                     <div class="sum"><?php echo $target_f?> <?php echo $curr_label?></div>
                 </div>
@@ -230,7 +230,7 @@ function knd_leyka_request_corrected(WP_Query $query) {
         return;
     }
     
-    if(is_post_type_archive( Leyka_Campaign_Management::$post_type )) {
+    if(is_post_type_archive( Leyka_Campaign_Management::$post_type ) && $query->is_main_query()) {
         $meta_query = $query->get( 'meta_query' );
         if(!$meta_query) {
             $meta_query = array();

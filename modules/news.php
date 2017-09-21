@@ -10,7 +10,7 @@ class KND_News_Widget extends WP_Widget {
     }
 
     function widget($args, $instance) {
-        
+
         if(isset($args['id']) && in_array($args['id'], array('knd-footer-sidebar', ''))) {
             return;
         }
@@ -20,10 +20,7 @@ class KND_News_Widget extends WP_Widget {
 
         //num
         if($num <= 0) {
-            $num = 4;
-        }
-        elseif($num > 10){
-            $num = 10;
+            $num = 3;
         }
 
         //query
@@ -39,22 +36,22 @@ class KND_News_Widget extends WP_Widget {
         echo $before_widget;
         ?>
 
-<section class="container-wide knd-news-widget">
+<section class="knd-news-widget">
 
     <div class="container">
     
     <h2 class="section-title"><?php echo $title;?></h2>
     
-    <div class="main-content cards-holder knd-news-widget-body">
-    <div class="flex-row start cards-loop">
-        <?php
-            if(!empty($posts)){
-                foreach($posts as $p){
-                    knd_post_card($p);
+    <div class="cards-holder knd-news-widget-body">
+        <div class="flex-row start cards-loop">
+            <?php
+                if(!empty($posts)){
+                    foreach($posts as $p){
+                        knd_post_card($p);
+                    }
                 }
-            }
-        ?>
-    </div>
+            ?>
+        </div>
     
     </div>
     

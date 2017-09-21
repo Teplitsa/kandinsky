@@ -73,7 +73,7 @@ a {
 /** Social panel **/
 .bottom-bar {    
 	background: $color-bg-light;
-	padding: $base*2.2 0 $base*1.8;
+	padding: $base*2.2 0 0;
 	color: $color-text-black;
 	
     body.plot-public-campaign & {
@@ -97,12 +97,11 @@ a {
 	}
 	
 	.knd-social-links  {
-	   padding-top:20px;
 	   
-	   li a {
+	   	li a {
 	       width:42px;
-	       height:32px;
-	       padding:5px 0px;
+	       height: 42px;
+	       padding: 5px 0px;
 	       
 	       .svg-icon {
 	           fill: $color-text-black;
@@ -113,11 +112,14 @@ a {
 	               fill: $color-text;
 	           }
 	       } 
-	   }
+	   	}
 	}
 }
 
-
+.bottom-branding {
+	padding-bottom: $gut/2;
+	.flex-cell { margin-bottom: $gut/2; }
+}
 
 
 /** Footer **/
@@ -156,28 +158,22 @@ a {
 	}
 	
 	.copy {
-	   padding-top: 27px;
-	   color: $color-text-light;
+		@include knd-supersmall-text();
+	   	color: $color-text-light;
+	   	max-width: 300px;
 	   
         body.plot-public-campaign & {
             color: $color-text;
         }
 	   
-	   @include knd-supersmall-text();
 		a { 
-		  white-space: nowrap;
-		  color: $color-text-light;
+		  	white-space: nowrap;
+		  	color: $color-text-light;
 		  
             body.plot-public-campaign & {
                 color: $color-text;
             }
-		  
 	    }
-	}
-	
-	.widget-title {
-	   font-weight: bold;
-	   margin-bottom: 1.5em;
 	}
 	
 	//layout
@@ -219,15 +215,6 @@ a {
                 padding-left:$gut;
             }
 		}
-		
-		&:nth-of-type(1){
-		    .textwidget {
-			     a {
-                     @include knd-link-footerblack-text();
-			         color: $color-text;
-			     }
-            }
-		}
 	}
 	
 	.hr {
@@ -245,133 +232,57 @@ a {
 			margin-right: 0;
 		}
 	}
-	
-	.ghost-button {
-		@include ghost-button(14px, $color-link-three, $color-white);
-		text-decoration: none;
-		&:hover, &:focus, &:active {
-			text-decoration: none;
-		}
-	}	
-	
-	.button {
-		@include button();
-		&:hover, &:focus, &:active {
-			text-decoration: none;
-		}
-		
-		span {
-			@include for(small-screens){ display: none; }
-			@include for(medium-screens){ display: inline; }
-			@include for(large-screens){ display: none; }
-		}
-	}
 }
 
-//columns
-.sf-cols {	
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: space-between;
-	align-items: center;
-	margin: 0 $gut/2;
-	
-	@include for(small-screens) {
-		flex-flow: row nowrap;
-	}
-	
-	@include for(xxlarge-screens) {
-		margin: 0 -1*$gut/2;
-	}
-	
-	.sf-cols-8 {
-		flex: 1 0 auto;
-		margin: 0 $gut/2;		
-		width: calc(100% - 30px);
-		
-		@include for(small-screens) {
-			flex: 1 1 auto;			
-            width: calc(100% - 250px);
-		}
-		@include for(large-screens) {
-			width: calc(75% - 30px);
-		}
-		
-	}
-	.sf-cols-4 {
-		flex: 0 0 auto;
-		margin: 0 $gut/2;
-		width: calc(100% - 30px);
-		
-		@include for(small-screens) { width: 200px;	}
-		
-		@include for(large-screens) { width: calc(25% - 30px); }
-	}
+.footer-credits {
+	padding-top: $gut/3;
 }
 
-.te-st-bn {	
+.knd-brand {	
 	position: relative;
-	text-align: right;
-	margin-top: $gut / 2;
-	
-	@include for(small-screens) {
-	}
-	
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-end;
+	align-items: center;
+
 	.knd-icon {
 		display: inline-block;
-		width: 103px;
-		height: 42px;
-		fill: rgba(0,0,0, 0.75);
+		width: 100%; 
+		height: 100%;
 		
         body.plot-public-campaign & {
-           fill: $color-text;
+           
         }
         
 	}
 	
 	a {
 		display: block;
-		width: 100px;
+		flex: 0 0 auto;
+		width: 48px;
 		height: 48px;
-		padding-top: 4px;
-		text-align: center;
-		box-sizing: border-box;		
-		transition: all 0.35s;
-		
-		&:hover, &:focus, &:active {
-			.knd-icon { 
-			     fill:rgba(0,0,0, 1);
-			     
-			    body.plot-public-campaign & {
-                    fill: $color-text;
-                }
-			 }
-		}
-		
-		position: absolute;
-		top: 0;
-		right: 0;
 	}
 		
 	.support {
-		
-		font-size: 11px;
-		line-height: 14px;
-		margin-right: 110px;
-		padding-top: 8px;
-		color: rgba(0,0,0, 0.75);
+		@include knd-supersmall-text();
+		line-height: 16px;
+		color: #999;
+		padding-right: 20px;
+		width: 104px;
+		text-align: right;
+		display: none;
+
+		@include for(small-screens) {
+			display: block;
+		}
 
         body.plot-public-campaign & {
-            color: $color-text;
-        }
-		
-		display:none;
-        @include for(small-screens) {
-            display: inline-block;
+            color: rgba(255,255,255, 0.9);
         }
 	}
 }
 
 .main-content {
     overflow:hidden;
+    min-height: 60vh;
 } 

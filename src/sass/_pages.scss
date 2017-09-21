@@ -15,12 +15,13 @@ body {
 }
 
 .page-intro {
-	margin-top: $gut;
+	margin-top: $gut/2;
 	@include knd-head-large-text(); 
 }
 
 .page-content {
 	padding-bottom: $gut;
+	min-height: 60vh;
 }
 
 .page-crumb {
@@ -237,6 +238,10 @@ background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.1) 27%,rgba
 	}
 }
 
+.err-404-text {
+	text-align: center;
+	margin-bottom: 2em; 
+}
 
 
 

@@ -13,46 +13,29 @@ get_header();
     <?php knd_section_title(); ?>
 </section>
 
-<?php 
-if($paged == 1) { //featured posts
-	//2 for featured 
-	$featured = array_slice($posts, 0, 2);
-	array_splice($posts, 0, 2);
-?>
-<section class="container-wide">
-    <div class="featured-post listing-bg">
-        <div class="container">
-            <div class="flex-row cards-loop leyka-loop">
-            <?php
-                foreach($featured as $f){
-                    knd_donation_card($f);
-                }
-            ?>
-            </div>
-        </div>
+
+<div class="main-loop container">
+    <?php if(!empty($posts)) { ?>
+    <div class="flex-row leyka-loop">
+        <?php
+            foreach($posts as $p){
+                knd_donation_card($p);
+            }
+        ?>
     </div>
-</section>
+    <?php } else { ?>
+        <div class="empty-message"><?php _e('Unfortunately, nothing found', 'knd');?></div>
+    <?php } ?>
+</div>
+
+<?php if(!empty($posts)) { ?>
+<div class="paging"><?php knd_paging_nav($wp_query); ?></div>
 <?php } ?>
 
-<section class="main-content cards-holder listing-bg archive-post-list <?php if($paged > 1):?>next-page<?php endif?>"><div class="container">
-<div class="flex-row start cards-loop leyka-loop">
-<?php if(!empty($posts)){
-    foreach($posts as $p){
-        knd_donation_card($p);
-    }
-}?>
-</div>
-</div></section>
 
-<section class="paging listing-bg"><?php knd_paging_nav($wp_query); ?></section>
+<div class="knd-aux-sidebar">
 
-<div class="knd-archive-sidebar">
-
-    <?php if(is_home()):?>
-        <?php dynamic_sidebar( 'knd-news-archive-sidebar' );?>
-    <?php else: ?>
-        <?php dynamic_sidebar( 'knd-projects-archive-sidebar' );?>    
-    <?php endif ?>
+    <?php dynamic_sidebar( 'knd-projects-archive-sidebar' );?>    
     
 </div>
 

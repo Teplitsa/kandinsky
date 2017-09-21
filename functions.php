@@ -25,13 +25,7 @@ function knd_setup() {
 	add_theme_support('title-tag');
 	add_theme_support('html5', array('search-form', 'comment-form', 'comment-list', 'gallery', 'caption',));
 
-	// Thumbnails:
-	add_theme_support('post-thumbnails');
-	set_post_thumbnail_size(640, 395, true ); // regular thumbnails	
-	add_image_size('square', 450, 450, true ); // square thumbnail 
-	add_image_size('medium-thumbnail', 790, 488, true ); // poster in widget	
-	add_image_size('landscape-mini', 300, 185, true ); // fixed size for embedding
-	//add_image_size('cover', 400, 567, true ); // long thumbnail for pages
+	
 
 	// Menus
 	$menus = array(
@@ -54,18 +48,8 @@ function knd_content_init() {
 add_action( 'init', 'knd_content_init', 30 );
 
 
-/** Custom image size for medialib **/
-add_filter('image_size_names_choose', 'rdc_medialib_custom_image_sizes');
-function rdc_medialib_custom_image_sizes($sizes) {
-	
-	$addsizes = apply_filters('rdc_medialib_custom_image_sizes', array(
-		'landscape-mini' 	=> __('Landscape thumbnail', 'knd'),
-		'post-thumbnail' 	=> __('Post thumbnail', 'knd'),
-		'medium-thumbnail' 	=> __('Fixed for embed', 'knd')
-	));
-		
-	return array_merge($sizes, $addsizes);
-}
+
+
 
 
 
@@ -80,8 +64,7 @@ require_once( ABSPATH . 'wp-admin/includes/media.php' );
 
 require get_template_directory().'/core/class-cssjs.php';
 
-require get_template_directory().'/core/aq_resizer.php';
-require get_template_directory().'/core/author.php';
+require get_template_directory().'/core/media.php';
 require get_template_directory().'/core/cards.php';
 require get_template_directory().'/core/extras.php';
 require get_template_directory().'/core/forms.php';

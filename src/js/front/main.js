@@ -161,8 +161,8 @@ jQuery(document).ready(function($){
 	
 	/** Sticky elements **/
 	var position = $(window).scrollTop(), //store intitial scroll position
-		scrollTopLimit = ($('body').hasClass('adminbar')) ? 62+32 + 280 : 62 + 280,
-		fixedTopPosition = ($('body').hasClass('adminbar')) ? 95 + 32 + 280 : 95 + 280;
+		scrollTopLimit = ($('body').hasClass('adminbar')) ? 99+32 + 90 : 99 + 90,
+		fixedTopPosition = ($('body').hasClass('adminbar')) ? 99 + 32 + 90 : 99 + 90;
 		
 	
 	$(window).scroll(function () {
@@ -179,25 +179,10 @@ jQuery(document).ready(function($){
 		if((Math.abs(scroll-position) < 3) || rdc_scroll_outOfBounds(scroll))
 			return true;
 		
-		//stick header
-		if (scroll < position) { //upword
-			$site_header.removeClass('invisible').addClass('fixed-header');
-		}
-		else if(scroll >= scrollTopLimit) {
-			$site_header.removeClass('fixed-header').addClass('invisible');
-		}
-		else {
-			$site_header.removeClass('fixed-header').removeClass('invisible');
-		}
 		
 		//sticky sharing
 		if (winW >= breakPointMedium && $('#knd_sharing').length > 0) {
 			stickInParent('#knd_sharing .social-likes-wrapper', '#knd_sharing', position, fixedTopPosition);
-		}
-		
-		//sticky sidebar
-		if (winW >= breakPointMedium && $('#rdc_sidebar').length > 0) {
-			stickInParent('#rdc_sidebar .related-widget', '#rdc_sidebar', position, fixedTopPosition);
 		}
 		
 		knd_setup_header_for_small_screens();

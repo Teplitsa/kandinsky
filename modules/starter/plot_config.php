@@ -18,7 +18,7 @@ class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
         'pages' => array(
             '' => array(
                 'post_type' => 'page',
-                'pieces' => array('needhelp', 'contacts' ),
+                'pieces' => array('gethelp', 'contacts' ),
             ),
             array(
                 'section' => 'about',

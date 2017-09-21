@@ -176,7 +176,7 @@ $modularscale: (
     @include ms-respond(font-size, 0);
     font-family: $body;
     font-weight: 400;
-    line-height: 1;
+    line-height: 1.5;
 }
 
 @mixin knd-footer-text() {
@@ -188,7 +188,7 @@ $modularscale: (
 
 @mixin knd-supersmall-text() {
     font-family: $body;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 400;
 }
 

@@ -6,7 +6,7 @@
 
 .fixed-top {
 	position: fixed;
-	top: 95px + 280px;
+	top: 99px + 90px;
 }
 
 .fixed-bottom {
@@ -16,19 +16,6 @@
 
 
 /**  Cards Structure **/
-
-
-.cards-loop {
-
-    margin-left: -1.8*$base;
-
-	.card {
-		margin-bottom: $gut;
-        margin-left: 1.8*$base;
-	}
-	
-}
-
 
 /** News **/
 @mixin post-meta() {
@@ -119,13 +106,11 @@
 }
 
 .tpl-post {
-	//background: $color-white;
-	background: $color-page-bg;
-	
+	background: $color-white;
 	transition: all 0.3s;
 	
 	&:hover {
-		//background: transparentize($color-white, .3);
+		background: transparentize($color-white, .3);
 		.entry-preview:after { background: rgba(0,0,0, 0.25); }
 	}
 	
@@ -258,7 +243,7 @@
 	@extend .tpl-post;
 	
 	&:hover {
-		background: $color-secondary-alt;		
+		//background: $color-secondary-alt;		
 	}
 	
 	.entry-data {
@@ -284,9 +269,13 @@
 
 
 /** Single **/
-.entry-header-full {
-	padding: $gut/1.5 0px $gut/1.33 0px;
+.entry-header-single {
+	padding: $gut/1.5 0 0 0;
 	
+    .flex-cell {
+        flex: 0 0 auto;
+    }
+
 	.entry-title {
 		@include knd-head-exlarge-single-text();
 		hyphens: auto;
@@ -296,85 +285,46 @@
 		@include post-meta();
 		padding: 4px 0px 13px 0px;
 	}
-		
-	.full-event-metas {
-		margin-top: $gut/4;
-		
-		@include for(medium-screens) {
-			margin-top: $gut/2;
-			//@include calc(width, '66.66% - 16px');
-			font-size: 1.2em;
-			font-weight: 300;
-		}
-	}
-}
 
-.full-width-image {
-    @include vertical-image-header-fixed();
-    margin-bottom: $gut;
-    
-    @include for(large-screens) {
-        height: 500px;
-    }
-    
-    .entry-preview {
-    }
-    
-    .entry-header-full {
-        transform: translateY(-100%);
-        padding-bottom: $gut * 2;
-        
-        .entry-title {
-            padding-top: 10px;
-            @include knd-head-exlarge-intro-text();
-        }
-        
-        .entry-meta {
-            color: $color-white;
-            
-            .date {
-                color: $color-white;
-            }
-            
-            .sep {
-                border-color: $color-white;
-            }
-        }
-        
-        .entry-title {
-            color: $color-white;
-        }
+    .mobile-sharing {
+        margin-top: 20px;
     }
 }
 
-.single-post-section {
-    .full-width-image {
-        .introimg {
-            @include for(large-screens) {
-                height: 500px;
-            }
-        }
+.entry-preview-single {
+    @include for(medium-screens) { 
+        margin-bottom: 10px;
+        margin-top: 10px; 
+    }
+    
+    .flex-cell {
+        flex: 0 0 auto;
     }
 }
 
-.single-post-section {
-	position: relative;
-		
-	.entry-preview {
-		position: relative;
-		margin-bottom: $gut / 1.15;
-	}
-	
-	.introimg  {
-		@include vertical-image-header-fixed();
-	}
+.introimg-figure{
+    width: 100%;
+    height: 0;
+    padding-bottom: 65%;
+    position: relative;
+
+    .introimg {
+        position:absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    .tpl-pictured-bg {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.entry-content-single {
 	
     .entry-lead {
         @include knd-lead-text();
         margin-bottom: $gut / 1.33;
-        
-        @include for(medium-screens) {
-        }
     }
 }
 
@@ -386,7 +336,7 @@
 .regular-sharing {
 	position: absolute;
 	width: 45px;
-	height: calc(100% - 280px);
+	height: calc(100% - 20px);
 	top: 0px;
 	left: 0;
 	z-index: 100;
@@ -732,7 +682,7 @@
 	
 /* single */
 .knd-signle-after-content {
-    margin-top:$gut * 1.5;
+    margin-top: $gut/2;
 }
 
 /* archive */
@@ -765,3 +715,31 @@
     }
 }
 
+//search
+.tpl-search {
+    margin-bottom: $gut;
+
+    a {
+        color: $color-text;
+    }
+
+    .entry-title {
+        @include knd-body-title-text();             
+        padding-top: 0px;
+        hyphens: auto;
+        color: $color-text;
+        margin-bottom: 0;
+    }
+
+    .entry-meta {
+        font-size: .85em;
+        color: $color-third;
+        margin-top: 2px;
+        margin-bottom: 1em;
+    }
+    
+    .entry-summary {
+        @include knd-body-text();
+        color: $color-text;
+    }
+}

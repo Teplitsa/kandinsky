@@ -59,6 +59,19 @@ $color-bg-light:        	#eeeeee;
 */
 }
 
+//Color sheme
+$color-main: 		var(--knd-color-main);
+$color-main-dark: 	var(--knd-color-main-dark);
+
+$color-second: 		var(--knd-color-second);
+$color-second-dark: var(--knd-color-second-dark);
+
+$color-third: 		var(--knd-color-third);
+$color-third-dark: 	var(--knd-color-third-dark);
+
+
+
+
 //Variables of color scheme
 $color-link-three: var(--knd-color-main); //this is the main scheme color
 $color-link-one:   var(--knd-color-main-dark); //hover state

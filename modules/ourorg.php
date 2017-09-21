@@ -29,14 +29,10 @@ class KND_Ourorg_Widget extends WP_Widget {
 ?>
 <div class="container knd-ourorg-widget">
 
-<div class="widget">
-
 <h2><?php echo $title?></h2>
 
-<div class="flex-row knd-whoweare-headlike-text-wrapper">
-    <p class="knd-whoweare-headlike-text flex-mf-12"><?php echo $text?></p>
-</div>
-
+<div class="knd-whoweare-headlike-text-wrapper">
+    <p class="knd-whoweare-headlike-text"><?php echo $text?></p>
 </div>
 
 </div>
@@ -44,14 +40,15 @@ class KND_Ourorg_Widget extends WP_Widget {
 <div class="container knd-whoweare-section">
     <div class="flex-row justify-between">
     
-        <?php for($i = 1; $i <= 3; $i++):?>
-        <div class="whoweare-item flex-mf-12 flex-sm-6 flex-md-4">
+        <?php for($i = 1; $i <= 3; $i++): ?>
+        <div class="whoweare-item flex-cell flex-mf-12 flex-sm-6 flex-md-4">
             <h3><?php echo get_theme_mod("home-subtitle-col{$i}-title") ?></h3>
             <p>
             <?php echo get_theme_mod("home-subtitle-col{$i}-content") ?>
             </p>
             <a href="<?php echo get_theme_mod("home-subtitle-col{$i}-link-url") ?>"><?php echo get_theme_mod("home-subtitle-col{$i}-link-text") ?></a>
         </div>
+        
         <?php endfor;?>
         
     </div>

@@ -2,25 +2,25 @@
 /** Error **/
 
 
-$er_text = get_theme_mod('er_text');
-$src = get_template_directory_uri().'/assets/img/er404.jpg';
+$er_text = __('Unfortunately this page has been removed or never exists. Please, use the search field to find the information you need or visit the homepage.', 'knd');
+
 get_header();
 ?>
 
-<section class="heading">
-	<div class="container"><?php knd_section_title(); ?></div>
-</section>
+<header class="page-header">
+    <div class="container"><div class="text-column">
+    
+        <h1 class="page-title"><?php _e('Error 404', 'knd');?></h1>
+        <div class="page-intro"><?php _e('Page not found', 'knd');?></div>
+    </div></div>
+</header>
 
-<section class="main-content single-post-section">
-	<div class="entry-content err-text">
-		<?php echo apply_filters('knd_the_content', $er_text); ?>	
-	</div>
-</section>
+<div class="page-content">
+    <div class="container"><div class="the-content text-column err-404-text">
+        <?php echo apply_filters('knd_entry_the_content', $er_text); ?>
+    </div></div>
+    <div class="widget-full widget_search search-holder"><?php get_search_form();?></div>
+</div>
 
-<section class="er-picture">
-	<div class="container-wide">
-		<div class="err-bg" style="background-image: url(<?php echo $src;?>);"></div>
-	</div>
-</section>
 
-<?php get_footer(); ?>
+<?php get_footer(); 
