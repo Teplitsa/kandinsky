@@ -104,3 +104,8 @@ if(is_admin()) {
 if((is_admin() && !empty($_GET['page']) && $_GET['page'] == 'knd-setup-wizard' ) || wp_doing_ajax()) {
     require get_template_directory().'/vendor/envato_setup/envato_setup.php'; // Run the wizard after all modules included
 }
+
+// Service lines (to localize):
+__('Kandinsky', 'knd');
+__('Teplitsa', 'knd');
+__('The beautiful design and useful features for nonprofit website', 'knd');
