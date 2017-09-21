@@ -1,6 +1,8 @@
-/** Widgets **/
+/** == Kandinsky-specific widgets (_builin.scss) == */
+// Support for some core widgets in general widget area and in footer 
 
 
+// Common styles
 .button {
 	@include button();
 }	
@@ -14,26 +16,6 @@
     background-position: center top;
 }
 
-
-/* recommendations */
-.the-content .knd-recommend,
-.knd-recommend {
-    font-family: Arial, serif !important;
-    font-style: italic;
-    font-weight: normal !important;
-    letter-spacing: normal !important;
-    font-size: 14px;
-    line-height: 1.45;
-    color: #000;
-    padding: $base*.5 $base*.75;
-    background-color: #f7f7af;
-    margin: $base 0;
-    text-align: left !important;
-}
-
-
-
-/* homepage widgets */
 .knd-homepage-sidebar {
     padding-top: $gut;
     
@@ -55,7 +37,26 @@
     padding-top: $gut * 1.2;
 }
 
-/* news widget */
+
+
+// Recommendations 
+.the-content .knd-recommend,
+.knd-recommend {
+    font-family: Arial, serif !important;
+    font-style: italic;
+    font-weight: normal !important;
+    letter-spacing: normal !important;
+    font-size: 14px;
+    line-height: 1.45;
+    color: #000;
+    padding: $base*.5 $base*.75;
+    background-color: #f7f7af;
+    margin: $base 0;
+    text-align: left !important;
+}
+
+
+// News widget 
 .knd-news-widget {
     
     padding: 54px 0px 0px 0px;
@@ -77,7 +78,7 @@
     
 }
 
-/* projects */
+// Projects
 .knd-projects-widget {
 
     @extend .knd-news-widget;
@@ -138,7 +139,7 @@
 
 
 
-/* ourorg widget */
+// About organization widget at homepage
 .knd-ourorg-widget {
     display:none;
     @include for(medium-screens) {
@@ -171,7 +172,8 @@
     }
 }
 
-/* who we are */
+
+// Who we are
 .knd-whoweare-section {
     
     padding-bottom: 0px;
@@ -301,7 +303,7 @@
     }
 }
 
-/* join us bar */
+// join us bar 
 .knd-joinus-widget {
     
     display:block;
@@ -355,7 +357,7 @@
 }
 
 
-/* partners */
+//  Partners 
 .knd-partners-widget {
     @extend .knd-news-widget;
     padding-top: 56px;
@@ -389,7 +391,42 @@
     
 }
 
-/* donations */
+
+
+//  Team widget and shortcode 
+.widget-full.widget_knd_team {
+    max-width: $full_cont;
+    padding-bottom: 0;
+}
+
+.knd-people-title {
+    @include knd-head-exlarge-text();
+    color: $color-text-black;
+    margin-bottom: $inpage-margin-base;
+    text-align: center;
+}
+
+.knd-people-gallery {
+    margin-left: -24px;
+    margin-right: -24px;
+
+    .tpl-person {
+        a {
+            display: block;
+            color: $color-text-black;
+        }
+
+        margin-bottom: 0;
+
+        .entry-data {
+            text-align: left;
+            padding: 24px 0 0;
+        }
+    }
+}
+
+
+// Donations 
 .knd-donations-widget {
     @extend .knd-news-widget;
     background: $color-page-bg; 
@@ -405,18 +442,18 @@
 .leyka-loop {
     .tpl-post {
         border: 1px solid $color-page-bg-dark;
-        padding: $gut*.5 $gut*.54;
+        padding: $gut*.5 $gut*.54 $gut/2;
         
         @include for(small-screens) {
-            padding: $gut * 1.08 $gut;
+            padding: $gut * 1.08 $gut $gut/2;
         }
 
         @include for(medium-screens) {
-            padding: $gut*.5 $gut*.54;
+            padding: $gut*.5 $gut*.54 $gut/2;
         }
 
         @include for(large-screens) {
-            padding: $gut * 1.08 $gut;
+            padding: $gut * 1.08 $gut $gut/2;
         }
         
         .help-purpose {
@@ -490,3 +527,4 @@
     }
     
 }
+

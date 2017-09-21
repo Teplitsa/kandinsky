@@ -3,10 +3,9 @@
 .leyka-campaign{
     margin-bottom: $gut;
 
-    .entry-header-full {
-        max-width: 800px;
+    .entry-header-single {
         text-align: center;
-        margin: 0 auto;
+        margin: 0 auto $gut;
     }
 
     .campaign-card {
@@ -25,8 +24,29 @@
     div[id*="leyka-pf-"] {
         
     }
+
+    .related-campaigns {
+        text-align: center;
+        margin-top: $gut*.6;
+        margin-bottom: $gut;
+
+        a {
+            display: inline-block;
+            margin: 0 10px;
+            color: $color-link-one;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+    }
 }
 
+.leyka-scale-label {
+    .flex-cell {
+        margin-bottom: $gut/2;
+    }
+}
 
 //single fixes
 div[id*="leyka-pf-bottom"] .bottom-form__button button,

@@ -1,0 +1,44 @@
+/** == General (_general.scss) == */
+// Frontend styles that don't belong other places
+
+html {
+	//font-size: 62.5%; //10px
+	background-color: $color-white;	
+}
+
+body {
+	background: $color-page-bg;
+    color: $color-page-text;
+
+	text-rendering: optimizeLegibility;	
+	@include knd-body-text();
+	
+	& > svg { display: none; }	
+}
+
+
+a {
+	text-decoration: none;
+	outline: none;
+}
+
+.svg-icon, .svg-pic {
+	display: inline-block;
+}
+
+
+//global page elements
+.main-content {
+    overflow:hidden;
+    min-height: 60vh;
+} 
+
+.heading {
+    h1 {
+        padding: $gut / 1.2 0px $gut / 1.7 0px;
+    }
+}
+
+.section-title {
+	@include knd-head-exlarge-single-text();
+}

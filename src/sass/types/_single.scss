@@ -1,0 +1,114 @@
+/** == Single posts (_single.scss) == */
+// Styles for single posts templates with CPTs variants
+
+
+// Content part
+.entry-header-single {
+    padding: $gut/1.5 0 0 0;
+    
+    .flex-cell {
+        flex: 0 0 auto;
+    }
+
+    .entry-title {
+        @include knd-head-exlarge-single-text();
+        hyphens: auto;
+    }
+    
+    .entry-meta {
+        @include post-meta();
+        padding: 4px 0px 13px 0px;
+    }
+
+    .mobile-sharing {
+        margin-top: 20px;
+    }
+}
+
+.entry-preview-single {
+    @include for(medium-screens) { 
+        margin-bottom: 10px;
+        margin-top: 10px; 
+    }
+    
+    .flex-cell {
+        flex: 0 0 auto;
+    }
+}
+
+.introimg-figure{
+    width: 100%;
+    height: 0;
+    padding-bottom: 65%;
+    position: relative;
+
+    .introimg {
+        position:absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    .tpl-pictured-bg {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.entry-content-single {
+    
+    .entry-lead {
+        @include knd-lead-text();
+        margin-bottom: $gut / 1.33;
+    }
+}
+
+.single {
+    .entry-content {
+        min-height: 50vh;
+    }
+}
+
+
+.knd-signle-after-content {
+    margin-top: $gut/2;
+}
+
+
+// sharing
+.single-sharing-col {
+    position:relative;
+}
+
+.regular-sharing {
+    position: absolute;
+    width: 45px;
+    height: calc(100% - 20px);
+    top: 0px;
+    left: 0;
+    z-index: 100;
+    
+    //.single & .social-likes { padding-top: $gut; }
+}
+    
+.mobile-sharing {   
+    .social-likes {
+        @include clearfix;
+        padding: 8px 0;
+    }
+    
+    .social-likes__widget {
+        float: left;
+        margin: 0 8px 0 0;
+    }
+}
+
+
+// single post terms 
+.tags-line {
+    padding-top: $gut / 2.2;
+    a {
+        color: var(--knd-color-main-dark);
+        @include knd-link-terms-text();
+        margin-right: 4px;
+    }
+}

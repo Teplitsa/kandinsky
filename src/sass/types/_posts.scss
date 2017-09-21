@@ -1,8 +1,14 @@
-/** Main styles for content objects **/
+/** == Posts listings (_builin.scss) == */
+// Styles for posts listings and cards with CPT varianst
 
 /** Commons **/
-.thumbnail-link { display: block; }
-.sep { padding: 0 4px; }
+.thumbnail-link { 
+    display: block;
+}
+
+.sep { 
+    padding: 0 4px; 
+}
 
 .fixed-top {
 	position: fixed;
@@ -17,11 +23,12 @@
 
 /**  Cards Structure **/
 
-/** News **/
+// Post meta elemnts - wrappen in mixin
 @mixin post-meta() {
-	@include nav-text(meta_small);
-	display: inline-block;
+	@include knd-nav-caps-text();
 	color: var(--knd-color-main-dark);
+
+    display: inline-block;
 	padding: 4px 8px;
 
     span.category {
@@ -80,31 +87,9 @@
 	
 }
 
-@mixin shadowed-preview {
-	width: 100%;
-	position: relative;
-	z-index: 1;
-	
-	img {
-		position: relative;
-		width: 100%;
-		z-index: 2;
-	}
-	
-	&:after {
-		content: '';
-		display: block;
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background: rgba(0,0,0, 0);
-		z-index: 10;
-		transition: all 0.35s;
-	}	
-}
 
+/* Post */
+// Post card template
 .tpl-post {
 	background: $color-white;
 	transition: all 0.3s;
@@ -153,7 +138,7 @@
 	}
 	
 	.entry-title {
-		@include post-title();
+		@include knd-head-card-text();
 		margin-bottom: $base*0.75;				
 		padding-top: 0px;
 		hyphens: auto;
@@ -166,33 +151,7 @@
 }
 
 
-/** paging **/
-.paging {
-    @include knd-link-paging-text();
-	padding: $base/1.5 0 $base * 3.2 0;
-	text-align: center;
-	
-	.page-numbers {
-		display: inline-block;
-		color: $color-page-text;
-		padding: 0px 10px;
-		transition: all 0.3;
-		
-		&:hover, &:focus, &:active {
-			color: $color-page-bg;
-			background: var(--knd-color-main);
-		}
-		&.current {
-			color: $color-page-bg;
-			background: var(--knd-color-main);
-		}
-	}
-	
-	&:empty { display: none; }
-}
-
-
-/* Related section */
+// Related section variants
 .related-card-holder {
     margin-top: $gut;
     
@@ -267,108 +226,6 @@
 }
 
 
-
-/** Single **/
-.entry-header-single {
-	padding: $gut/1.5 0 0 0;
-	
-    .flex-cell {
-        flex: 0 0 auto;
-    }
-
-	.entry-title {
-		@include knd-head-exlarge-single-text();
-		hyphens: auto;
-	}
-	
-	.entry-meta {
-		@include post-meta();
-		padding: 4px 0px 13px 0px;
-	}
-
-    .mobile-sharing {
-        margin-top: 20px;
-    }
-}
-
-.entry-preview-single {
-    @include for(medium-screens) { 
-        margin-bottom: 10px;
-        margin-top: 10px; 
-    }
-    
-    .flex-cell {
-        flex: 0 0 auto;
-    }
-}
-
-.introimg-figure{
-    width: 100%;
-    height: 0;
-    padding-bottom: 65%;
-    position: relative;
-
-    .introimg {
-        position:absolute;
-        width: 100%;
-        height: 100%;
-    }
-
-    .tpl-pictured-bg {
-        width: 100%;
-        height: 100%;
-    }
-}
-
-.entry-content-single {
-	
-    .entry-lead {
-        @include knd-lead-text();
-        margin-bottom: $gut / 1.33;
-    }
-}
-
-/* sharing */
-.single-sharing-col {
-    position:relative;
-}
-
-.regular-sharing {
-	position: absolute;
-	width: 45px;
-	height: calc(100% - 20px);
-	top: 0px;
-	left: 0;
-	z-index: 100;
-	
-	//.single & .social-likes { padding-top: $gut; }
-}
-	
-.mobile-sharing {	
-	.social-likes {
-		@include clearfix;
-		padding: 8px 0;
-	}
-	
-	.social-likes__widget {
-		float: left;
-		margin: 0 8px 0 0;
-	}
-}
-
-/* single post terms */
-.single-post-terms {
-}
-
-.tags-line {
-    padding-top: $gut / 2.2;
-    a {
-        color: var(--knd-color-main-dark);
-        @include knd-link-terms-text();
-        margin-right: 4px;
-    }
-}
-
 /** Programms **/
 .tpl-project {
     transition: all 0.3s;
@@ -393,13 +250,12 @@
     }
     
     .entry-title {
-        @include post-title();
+        @include knd-head-card-text();
         margin-bottom: $base*0.75;
         padding: 24px 0px 0px 0px;
         hyphens: auto;
     }
 }
-
 
 
 /** People **/
@@ -417,9 +273,9 @@
 	
 	
 	.entry-title {		
-		@include post-title(small_title);
+		@include knd-head-card-text();
 		line-height: 1.2;
-		margin-bottom: 12px;
+		margin-bottom: 12px; 
 	}
 	
 	.entry-preview {
@@ -455,36 +311,6 @@
 		padding-bottom: 0;
 	}
 }
-
-
-/** Events **/
-.tpl-event {
-	@extend .tpl-post;
-	
-	span[itemprop="address"]{
-		span[itemprop="streetAddress"] { display: none; }
-		span[itemprop="name"]:before {
-			content: ', ';
-		}
-	}
-}
-
-.full-event-metas {		
-	color: $color-page-text;
-	
-	p:last-of-type { margin-top: 8px;}
-	
-	span[itemprop="addressLocality"] + span[itemprop="name"],
-	span[itemprop="addressLocality"] + span[itemprop="streetAddress"],
-	span[itemprop="streetAddress"] + span[itemprop="name"] {
-		&:before { content: ', '; }
-	}
-}
-
-.entry-content .lead {
-	margin-bottom: $inpage-margin-base;	
-}
-
 
 
 /** Partners **/
@@ -528,44 +354,7 @@
 }
 
 
-
-	
-/* single */
-.knd-signle-after-content {
-    margin-top: $gut/2;
-}
-
-/* archive */
-.cards-holder.archive-post-list {
-    padding-top:0px;
-    
-    &.next-page {
-        padding-top: $gut;
-    }
-}
-
-.listing-bg {
-   background: $color-bg-light;
-}
-
-.featured-post {
-    
-   margin-top: 70px;
-   margin-bottom: -70px;
-   
-   .cards-loop {
-       transform: translateY(-70px);
-   } 
-}
-
-/* single post */
-.single {
-    .entry-content {
-        min-height: 50vh;
-    }
-}
-
-//search
+/* Search card */
 .tpl-search {
     margin-bottom: $gut;
 
@@ -593,3 +382,53 @@
         color: $color-text;
     }
 }
+
+
+/*  Archive layouts */
+.cards-holder.archive-post-list {
+    padding-top:0px;
+    
+    &.next-page {
+        padding-top: $gut;
+    }
+}
+
+.listing-bg {
+   background: $color-bg-light;
+}
+
+.featured-post {
+    
+   margin-top: 70px;
+   margin-bottom: -70px;
+   
+   .cards-loop {
+       transform: translateY(-70px);
+   } 
+}
+
+// paging 
+.paging {
+    @include knd-link-paging-text();
+    padding: $base/1.5 0 $base * 3.2 0;
+    text-align: center;
+    
+    .page-numbers {
+        display: inline-block;
+        color: $color-page-text;
+        padding: 0px 10px;
+        transition: all 0.3;
+        
+        &:hover, &:focus, &:active {
+            color: $color-page-bg;
+            background: var(--knd-color-main);
+        }
+        &.current {
+            color: $color-page-bg;
+            background: var(--knd-color-main);
+        }
+    }
+    
+    &:empty { display: none; }
+}
+

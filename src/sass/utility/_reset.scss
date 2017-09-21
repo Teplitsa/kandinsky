@@ -1,7 +1,7 @@
-/*---------------------------------------------------------
- Reset (_reset.scss)
--------------------------------------------------------- */
-// Reset
+/** == Reset (_reset.scss) == **/
+// Normalisations and reset styles
+
+/*  Reset */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed,  figure, figcaption, footer, header, hgroup,  menu, nav, output, ruby, section, summary, time, mark, audio, video {
 	margin: 0;
 	padding: 0;
@@ -33,13 +33,12 @@ table {
 }
 
 
-// Normalize.css
+/*  Normalize.css */
 html {  //  normalisation for font size and position on page
 	font-size: 100%; 
 	//overflow-y: scroll; 
 	-webkit-text-size-adjust: 100%; 
 	-ms-text-size-adjust: 100%;
-	background: #fff;
 }
 
 // Focus states
@@ -123,15 +122,15 @@ svg:not(:root) {
 	overflow: hidden; }
 
 
-/** forms **/
 
+/** Forms **/
 button,
 input,
 select,
 textarea {
-	font-size: 100%; /* Corrects font size not being inherited in all browsers */
-	margin: 0; /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
-	vertical-align: baseline; /* Improves appearance and consistency in all browsers */
+	font-size: 100%; // Corrects font size not being inherited in all browsers 
+	margin: 0; // Addresses margins set differently in IE6/7, F3/4, S5, Chrome 
+	vertical-align: baseline; // Improves appearance and consistency in all browsers 
 	*vertical-align: middle;
 }
 
@@ -145,17 +144,17 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	-webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
+	-webkit-appearance: button; // Corrects inability to style clickable 'input' types in iOS 
 	cursor: pointer;
 }
 
 
 input[type="checkbox"],
 input[type="radio"] {
-	padding: 0; /* Addresses excess padding in IE8/9 */
+	padding: 0; // Addresses excess padding in IE8/9 
 }
 
-input[type="search"]::-webkit-search-decoration { /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
+input[type="search"]::-webkit-search-decoration { // Corrects inner padding displayed oddly in S5, Chrome on OSX 
 	-webkit-appearance: none;
 }
 
@@ -175,7 +174,9 @@ input[type=text]::-ms-clear {  display: none; width : 0; height: 0; }
 input[type=text]::-ms-reveal {  display: none; width : 0; height: 0; }
 
 button::-moz-focus-inner,
-input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
+input::-moz-focus-inner { 
+// Corrects inner padding and border displayed oddly in FF3/4 
+// www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ 
 	border: 0;
 	padding: 0;
 }
@@ -198,9 +199,9 @@ input[type="search"] {
 }
 
 textarea {
-	overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
+	overflow: auto; // Removes default vertical scrollbar in IE6/7/8/9 
 	padding-left: 3px;
-	vertical-align: top; /* Improves readability and alignment in all browsers */
+	vertical-align: top; // Improves readability and alignment in all browsers 
 	width: 100%;
 }
 

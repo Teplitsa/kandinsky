@@ -1,5 +1,7 @@
-/** Regular widgets **/
+/** == Built-in WordPress widgets (_builin.scss) == */
+// Support for some core widgets in general widget area and in footer 
 
+/* General large styles */
 .widget-full {
     
     .widget-full-title  {
@@ -21,16 +23,15 @@
 }
 
 .widget-bottom {
-
     .widget-title {
         @include knd-link-footerblack-text();
         margin-bottom: 1.5em;
         text-transform: uppercase;
     }
-
-
 }
 
+
+// Nav menu 
 .widget-full.widget_nav_menu {
 
     li {
@@ -68,6 +69,7 @@
 }
 
 
+// Text
 .widget-full.widget_text {
     max-width: $full_cont;
 
@@ -84,6 +86,8 @@
     }
 }
 
+
+// Image
 .widget-full.widget_media_image {
     text-align: center;
     
@@ -94,11 +98,14 @@
 }
 
 
+// Video and audio
 .widget-full.widget_media_video,
 .widget-full.widget_media_audio {
     max-width: $page_cont;
 }
 
+
+// Search
 .widget-full.widget_search {
     max-width: $page_cont;
     position: relative;
@@ -143,11 +150,8 @@
         @include for(medium-screens) {
             padding-right: 90px;
         }
-
-
     }
 
-    
     .action {
         @include for(medium-screens) {
             display: inline-block;
@@ -173,6 +177,7 @@
         padding-bottom: 0;
     }
 }
+
 
 .widget-bottom.widget_search {
     .searchform {
@@ -206,39 +211,7 @@
 }
 
 
-/* team widget and shortcode */
-.widget-full.widget_knd_team {
-    max-width: $full_cont;
-    padding-bottom: 0;
-}
-
-.knd-people-title {
-    @include knd-head-exlarge-text();
-    color: $color-text-black;
-    margin-bottom: $inpage-margin-base;
-    text-align: center;
-}
-
-.knd-people-gallery {
-    margin-left: -24px;
-    margin-right: -24px;
-
-    .tpl-person {
-        a {
-            display: block;
-            color: $color-text-black;
-        }
-
-        margin-bottom: 0;
-
-        .entry-data {
-            text-align: left;
-            padding: 24px 0 0;
-        }
-    }
-}
-
-/* leyka defaut donations list */
+// Leyka defaut donations list
 .leyka_donations_list {
     .widget-full-title {
         text-align: center;

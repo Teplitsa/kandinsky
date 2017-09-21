@@ -1,5 +1,5 @@
-/** == Typography (_typo.scss) == **/
-//Typography settings and mixins
+/** == Typography (_mixins-typography.scss) == **/
+// Typography settings and mixins - don't set font styling directly in elements
 
 $modularscale: (
     base: 12px,
@@ -17,53 +17,7 @@ $modularscale: (
 );
 
 
-
-
-@mixin post-title($mod: default) {
-    @include knd-head-card-text();
-
-    @if $mod == bold {
-        font-size: 1.11em;
-        font-weight: 600; 
-        line-height: 1.33;
-    }
-    @else if $mod == regular_card {
-        @include ms-respond(font-size, 3);
-        line-height: 1.15;
-        font-weight: 600;
-    }
-    @else if $mod == intext {
-        @include ms-respond(font-size, 2);
-        line-height: 1.2;
-        font-weight: 600;
-    }
-    @else if $mod == feature_card {
-        @include ms-respond(font-size, 3);
-        font-weight: 600;
-    }
-    @else if $mod == smaller {
-        font-size: 1em;
-        line-height: 1.33;
-        letter-spacing: 0.03em;
-        font-weight: 400;
-    }
-}
-
-@mixin small-text() {
-    font-family: $body;
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 1.33;
-}
-
-
-/* 
- * Kandinsky common typo
- *
- */
- 
-// headers
-
+//Heading styles
 @mixin knd-head-main-text() {
     @include ms-respond(font-size, 2);
     font-family: $heading;
@@ -142,8 +96,7 @@ $modularscale: (
     @include ms-respond(font-size, 2);
 }
 
-//pages
-@mixin knd-page-head(){
+@mixin knd-head-page(){
     @include ms-respond(font-size, 5);
     font-family: $body;
     line-height: 1.05;
@@ -152,7 +105,16 @@ $modularscale: (
     text-transform: uppercase;
 }
 
-// body texts
+@mixin knd-subhead-text() {
+    @include ms-respond(font-size, 0);
+    font-family: $body;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+
+
+// Body texts
 @mixin knd-body-text() {
     @include ms-respond(font-size, 1);
     font-family: $body;
@@ -170,13 +132,6 @@ $modularscale: (
     font-family: $body;
     line-height: 1.44;
     font-weight: 600;
-}
-
-@mixin knd-subhead-text() {
-    @include ms-respond(font-size, 0);
-    font-family: $body;
-    font-weight: 400;
-    line-height: 1.5;
 }
 
 @mixin knd-footer-text() {
@@ -198,6 +153,13 @@ $modularscale: (
     font-weight: 400;
 }
 
+@mixin knd-nav-caps-text() {
+    @include ms-respond(font-size, 0);
+    font-family: $body;
+    font-weight: 400;
+    text-transform: uppercase
+}
+
 @mixin knd-lead-text() {
     @include ms-respond(font-size, 2);
     font-family: $body;
@@ -205,7 +167,9 @@ $modularscale: (
     line-height: 1.4;
 }
 
-// captions and links
+
+
+// Captions and links
 @mixin knd-button-caption-text() {
     @include ms-respond(font-size, 1);
     font-family: $body;
@@ -285,38 +249,5 @@ $modularscale: (
     text-transform: uppercase;
     letter-spacing: .03em;
     font-weight: 400;
-}
-
-@mixin about-name-text() {
-}
-
-@mixin col-head-text() {
-}
-
-@mixin col-body-text() {
-}
-
-@mixin col-link-text() {
-}
-
-@mixin section-head-text() {
-}
-
-@mixin card-head-text() {
-}
-
-@mixin card-date-text() {
-}
-
-@mixin footer-about-head-text() {
-}
-
-@mixin footer-about-sub-text() {
-}
-
-@mixin footer-link-text() {
-}
-
-@mixin footer-body-text() {
 }
 

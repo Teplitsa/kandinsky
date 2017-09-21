@@ -1,28 +1,15 @@
-/** Header **/
+/** == Header (_header.scss) == */
+// Global header and menu styles
 
-//sizes 
-$height_gap : 33px;
 
-$logo_small_h : 42px;
-$logo_small_w : 42px;
-
-$logo_full_w : 66px;
-$logo_full_h : 66px;
-
-$mobile_height : $logo_small_h + $height_gap;
-$full_height   : $logo_full_h + $height_gap;
-
-//layout
+/* Header layout */
 .site-header {
 	position: absolute;
 	width: 100%;
 	top: 0;
 	left: 0;
 	
-	//background: $color-white;
 	background: $color-page-bg;
-	
-	//border-bottom: 1px solid $color-border-normal;
 	border-bottom: 1px solid $color-page-bg-dark;
 	transition: opacity 0.3s;
 	
@@ -75,13 +62,13 @@ $full_height   : $logo_full_h + $height_gap;
 	}
 }
 
-//flexbox for header
+//Flexbox for header
 .site-panel-row {
 	display: flex;
 	flex-flow: row nowrap;	
-
 }
 
+// Cell sizes and positions
 .site-panel-cell {
 	height: $logo_small_h + $height_gap;	
 	
@@ -119,14 +106,13 @@ $full_height   : $logo_full_h + $height_gap;
     }
 }
 
-//logo layout
+//Logo layout
 .site-logo {
     display: block;
     height: 100%;
     padding-left: $gut/(2*1.33);
 
     @media screen and (max-width: 1400px) { padding-left: $height_gap/2; }
-
 }
 
 .logo-image-only {
@@ -184,7 +170,7 @@ $full_height   : $logo_full_h + $height_gap;
 }
 
 
-//address in vertical
+//Address info
 .site-details-cell {
 	min-width: 1px;  
 	min-height: 1px;
@@ -205,8 +191,9 @@ $full_height   : $logo_full_h + $height_gap;
 }
 
 
-/* Styling parts */
-//title
+/* Styling of header elements */
+
+//Title
 .logo-name {
 	text-transform: uppercase;		
 	line-height: 1;
@@ -228,10 +215,7 @@ h2.logo-name {
 	@include knd-subhead-text();
 }
 
-
-
-
-//contacts
+//Contacts
 .site-details {
 	text-align: right;		
 	p {		
@@ -248,7 +232,7 @@ h2.logo-name {
 	}
 }
 
-//buttons
+//Buttons
 .trigger-button {	
 	cursor: pointer;
 	
@@ -576,32 +560,5 @@ h2.logo-name {
 		}
 		
 		ul.sub-menu { display: block; }
-	}
-}
-
-
-/** Newsletter **/
-.newsletter-panel {
-	display: none;
-	position: absolute;
-	width: 100%;
-	left: 0;
-	margin-top: 1px;
-	background: $color-white;	
-	border-bottom: 1px solid $color-border-normal;
-	padding: $gut;
-	z-index: 1000;
-	
-	.newsletter-form {
-		margin: 0 auto;
-	}
-	
-	.wpcf7-mail-sent-ok ,
-	.wpcf7-validation-errors {
-		
-	}
-	
-	.newsletter-open & {
-		display: block;		
 	}
 }

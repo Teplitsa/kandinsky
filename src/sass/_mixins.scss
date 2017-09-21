@@ -1,5 +1,5 @@
 /** == Mixins (_mixins.scss) == **/
-/** Functions and mixins for further usage **/
+// Functions and mixins for further usage 
 
 
 /** Utilities **/
@@ -93,6 +93,32 @@
 }
 
 
+/** Post content elements **/
+@mixin link-in-content {
+    color: $color-link-one;
+    //display: inline-block;
+    border-bottom: 1px solid $color-link-three;
+    transition: all .35s;
+
+    &:hover, &:focus, &:active {
+        color: $color-link-one;
+        border-bottom-color: $color-link-one;
+    }
+}
+
+@mixin caption-text {
+    color: $color-text-semi;
+    @include knd-footer-text();
+
+    .svg-icon {
+        fill: $color-text-semi;
+        width: 15px;
+        height: 19px;
+        margin-right: 8px; 
+        vertical-align: bottom;
+    }
+}
+
 
 /* Elements */
 @mixin button($mod: default){
@@ -141,4 +167,31 @@
             border-color: darken($leyka_green, 10%);            
         }
     }
+}
+
+
+// thumbnail with shadow
+@mixin shadowed-preview {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    
+    img {
+        position: relative;
+        width: 100%;
+        z-index: 2;
+    }
+    
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0, 0);
+        z-index: 10;
+        transition: all 0.35s;
+    }   
 }

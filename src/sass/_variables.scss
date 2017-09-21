@@ -1,6 +1,5 @@
-/** == Variables (_variables.scss) == */
-/** Variables used in code */
-
+/** == Kandinsky-specific widgets (_widgetsn.scss) == */
+// Support for some core widgets in general widget area and in footer
 
 //Fonts
 $body:		"SourceSansPro", Arial, sans-serif !default;
@@ -30,6 +29,18 @@ $inpage-margin-base:	26px !default;
 $adminbar_large_screen: 32px;
 $adminbar_small_screen: 46px;
 
+
+//Header element sizes 
+$height_gap : 34px; 
+
+$logo_small_h : 42px; //size of logo icon for mobile version
+$logo_small_w : 42px; 
+
+$logo_full_w : 66px; //size of logo icon for desktop version
+$logo_full_h : 66px;
+
+$mobile_height : $logo_small_h + $height_gap; //full header height on mobile
+$full_height   : $logo_full_h + $height_gap; //full header height on desktop
 
 
 /** Colors **/

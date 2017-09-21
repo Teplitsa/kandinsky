@@ -1,72 +1,60 @@
-/** == Helpers and in-page styles (_utility.scss) == */
+/** == Texts (_text.scss) == */
+// Helpers, utilities and styles for text elements 
 
+
+/* Screen-reader only text */
 .screen-reader-text {
 	@include screen-reader();
 }
 
 /* text alignment */
 .text-left   {
-	text-align: left; }
+	text-align: left; 
+}
 
 .text-right  {
-	text-align: right; }
+	text-align: right; 
+}
 
 .text-center {
-	text-align: center; }
+	text-align: center; 
+}
 
 
 /* selections */
 a:link {
 	-webkit-tap-highlight-color: $color-link-one;
-	-webkit-tap-highlight-color : $color-link-one; } /*  highloght color for Safari iOS */
+	-webkit-tap-highlight-color : $color-link-one; 
+} 
 
 ::-webkit-selection {
 	opacity: 1;
 	background : $color-link-one;
 	color : $color-white;
-	text-shadow : none; }
+	text-shadow : none; 
+}
 
 ::-moz-selection {
 	opacity: 1;
 	background : $color-link-one;
 	color : $color-white;
-	text-shadow : none; }
+	text-shadow : none; 
+}
 
 ::selection {
 	opacity: 1;
 	background : $color-link-one;
 	color : $color-white;
-	text-shadow : none; }
-
-
-
-/** == Post content elements == **/
-@mixin link-in-content {
-	color: $color-link-one;
-	//display: inline-block;
-	border-bottom: 1px solid $color-link-three;
-	transition: all .35s;
-
-	&:hover, &:focus, &:active {
-		color: $color-link-one;
-		border-bottom-color: $color-link-one;
-	}
-}
-
-@mixin caption-text {
-	color: $color-text-semi;
-	@include knd-footer-text();
-
-	.svg-icon {
-        fill: $color-text-semi;
-        width: 15px;
-        height: 19px;
-        margin-right: 8px; 
-        vertical-align: bottom;
-    }
+	text-shadow : none; 
 }
 
 
+
+/** Post content elements  **/
+
+// We wrap them into mixin to apply easily to the_content-like blocks
+// but isolate front other general text styles
+// we don't want them affect the elements outsite the_content-like blocks
 
 @mixin the-content {
 
@@ -221,9 +209,6 @@ a:link {
 		font-size: 0.8em;
 		line-height: 1.75;
 	}
-	//in text shortcodes
-
-
 
 	//image caption
 	.wp-caption {
@@ -338,13 +323,12 @@ a:link {
 	}
 }
 
-
-
 .the-content  {
 	@include the-content();
 }
 
-//Gallery
+
+/* Default WP Galleries */
 .the-content .gallery,
 .gallery {
 	margin-top: $inpage-margin-base;
@@ -377,8 +361,6 @@ a:link {
 		}
 	}
 }
-
-
 
 @for $i from 1 through 9 {
   .gallery-columns-#{$i} .gallery-item { width: 100% / $i; }

@@ -1,9 +1,7 @@
-body {
-    color: $color-page-text;
-    background: $color-page-bg;
-}
+/** == Pages (_pages.scss) == **/
+// Styles of elements used on static pages 
 
-/** Pages **/
+/** Parts **/
 
 .page-header {
 	text-align: center;
@@ -11,7 +9,7 @@ body {
 }
 
 .page-title {
-	@include knd-page-head();
+	@include knd-head-page();
 }
 
 .page-intro {
