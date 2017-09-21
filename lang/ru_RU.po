@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-21 00:39+0200\n"
-"PO-Revision-Date: 2017-09-21 00:41+0200\n"
+"POT-Creation-Date: 2017-09-21 14:55+0300\n"
+"PO-Revision-Date: 2017-09-21 14:57+0300\n"
 "Last-Translator: sidorenko.a <sidorenko.a@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10 >= 2 && n"
 "%10<=4 &&(n%100<10||n%100 >= 20)? 1 : 2);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.8.4\n"
+"X-Generator: Poedit 1.8.11\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
 "__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
@@ -25,6 +25,26 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: bower_components\n"
 "X-Poedit-SearchPathExcluded-1: node_modules\n"
 "X-Poedit-SearchPathExcluded-2: assets\n"
+
+#: 404.php:5
+msgid ""
+"Unfortunately this page has been removed or never exists. Please, use the "
+"search field to find the information you need or visit the homepage."
+msgstr ""
+"К сожалению, запрошенная страница удалена или никогда не существовала. "
+"Пожалуйста, воспользуйтесь поиском или перейдите на Главную."
+
+#: 404.php:13
+msgid "Error 404"
+msgstr "Ошибка 404"
+
+#: 404.php:14
+msgid "Page not found"
+msgstr "Страница не найдена"
+
+#: archive-leyka_campaign.php:27 index.php:18
+msgid "Unfortunately, nothing found"
+msgstr "К сожалению, ничего не найдено."
 
 #: archive-leyka_donation.php:20
 msgid "Campaign"
@@ -60,7 +80,7 @@ msgstr "Страницы"
 
 #: core/admin.php:45 modules/news.php:7 modules/starter/plot_config.php:199
 #: modules/starter/plot_config.php:212 modules/starter/plot_config.php:227
-#: modules/starter/plot_config.php:420 modules/starter/plot_config.php:638
+#: modules/starter/plot_config.php:419 modules/starter/plot_config.php:637
 #: modules/starter/plot_data_builder.php:388 modules/starter/sidebars.php:43
 msgid "News"
 msgstr "Новости"
@@ -333,29 +353,11 @@ msgstr "Операция завершилась с ошибкой. Пожалу�
 msgid "Action failed."
 msgstr "Операция завершилась с ошибкой."
 
-#: core/admin.php:499 core/admin.php:508
-msgid "Website"
-msgstr "Сайт"
-
-#: core/admin.php:499 core/admin.php:513
-msgid "Excerpt"
-msgstr "Лид"
-
-#: core/admin.php:515
-msgid ""
-"Annotation for items lists (will be printed at the beginning of the single "
-"page)"
-msgstr "Аннотация для элементов списка (будет выведена в начале страницы)"
-
-#: core/admin.php:568
-msgid "Forms"
-msgstr "Формы"
-
-#: core/admin.php:592
+#: core/admin.php:526
 msgid "Kandinsky — useful links"
 msgstr "Кандинский – полезные ссылки"
 
-#: core/admin.php:676
+#: core/admin.php:610
 #, php-format
 msgid ""
 "ATTENTION! You thumbnail image is too small. It should be at least %s px"
@@ -363,49 +365,9 @@ msgstr ""
 "Внимание! Ваше изображение слишком маленькое. Оно должно быть, как минимум, "
 "%s пикселей"
 
-#: core/admin.php:724 core/admin.php:740
-msgid "Facebook Profile"
-msgstr "Профиль на Facebook"
-
-#: core/admin.php:726 core/admin.php:742
-msgid "Enter URL of author's Facebook profile"
-msgstr "Введите ссылку на профиль автора в Facebook"
-
-#: core/admin.php:729 core/admin.php:745
-msgid "Avatar"
-msgstr "Аватарка"
-
-#: core/admin.php:777
-msgid "Taxonomy Term Image"
-msgstr "Изображение термина"
-
-#: core/admin.php:778
-msgid "Select which image should represent this term."
-msgstr "Выберите изображение для этого термина."
-
-#: core/admin.php:779
-msgid "Select Image"
-msgstr "Выберите изображение"
-
-#: core/admin.php:780
-msgid "Remove"
-msgstr "Удалить"
-
-#: core/admin.php:781
-msgid "Select or upload an image for this term"
-msgstr "Вставьте или закачайте изображение"
-
-#: core/admin.php:782
-msgid "Attach"
-msgstr "Вложение"
-
 #: core/author.php:29
 msgid "Author"
 msgstr "Автор"
-
-#: core/cards.php:24 core/cards.php:52 core/extras.php:63
-msgid "More"
-msgstr "Ещё"
 
 #: core/class-import.php:175
 #, php-format
@@ -605,6 +567,10 @@ msgstr "Ссылки на социальные сети"
 msgid "Recommended plugins to install"
 msgstr "Рекомендуем установить плагины"
 
+#: core/extras.php:63
+msgid "More"
+msgstr "Ещё"
+
 #: core/extras.php:293
 msgid "VKontakte"
 msgstr "ВКонтакте"
@@ -660,6 +626,18 @@ msgstr "YouTube"
 #: core/extras.php:318
 msgid "E.g., https://youtube.com/channel/your-organization-channel"
 msgstr "Например, https://www.youtube.com/user/teplitsast"
+
+#: core/media.php:27
+msgid "Landscape thumbnail"
+msgstr "Горизонтальная миниатюра"
+
+#: core/media.php:28
+msgid "Post thumbnail"
+msgstr "Стандартная миниатюра"
+
+#: core/media.php:29
+msgid "Fixed for embed"
+msgstr "Фиксированный"
 
 #: core/shortcodes-ui.php:20
 msgid "Key phrase"
@@ -725,59 +703,59 @@ msgstr "Подпись к видео"
 msgid "A caption text"
 msgstr "Текст подписи"
 
-#: core/shortcodes-ui.php:161
+#: core/shortcodes-ui.php:124
 msgid "A list of people"
 msgstr "Список людей"
 
-#: core/shortcodes-ui.php:171 core/shortcodes-ui.php:218
+#: core/shortcodes-ui.php:134 core/shortcodes-ui.php:181
 msgid "List title"
 msgstr "Заголовок списка"
 
-#: core/shortcodes-ui.php:175
+#: core/shortcodes-ui.php:138
 msgid "E.g., \"Our team\""
 msgstr "Например, «Наша команда»"
 
-#: core/shortcodes-ui.php:178
+#: core/shortcodes-ui.php:141
 msgid "Nubmer"
 msgstr "Номер"
 
-#: core/shortcodes-ui.php:184
+#: core/shortcodes-ui.php:147
 msgid "Person categories"
 msgstr "Категории людей"
 
-#: core/shortcodes-ui.php:191
+#: core/shortcodes-ui.php:154
 msgid "Only particular people in the list"
 msgstr "Конкретные люди в списке"
 
-#: core/shortcodes-ui.php:198
+#: core/shortcodes-ui.php:161
 msgid "Custom CSS class"
 msgstr "CSS класс"
 
-#: core/shortcodes-ui.php:202 core/shortcodes-ui.php:243
+#: core/shortcodes-ui.php:165 core/shortcodes-ui.php:206
 msgid "An additional CSS class (or several) for the section"
 msgstr "Дополнительный класс (или несколько) для секции"
 
-#: core/shortcodes-ui.php:208
+#: core/shortcodes-ui.php:171
 msgid "A list of organizations"
 msgstr "Список организаций"
 
-#: core/shortcodes-ui.php:222
+#: core/shortcodes-ui.php:185
 msgid "E.g., \"Our partners\""
 msgstr "Например, «Наши партнеры»"
 
-#: core/shortcodes-ui.php:225
+#: core/shortcodes-ui.php:188
 msgid "Organization categories"
 msgstr "Категории организаций"
 
-#: core/shortcodes-ui.php:232
+#: core/shortcodes-ui.php:195
 msgid "Only particular organizations in the list"
 msgstr "Выводить в списке только указанные организации"
 
-#: core/shortcodes-ui.php:239
+#: core/shortcodes-ui.php:202
 msgid "Section CSS class"
 msgstr "CSS-класс для секции"
 
-#: core/shortcodes.php:425
+#: core/shortcodes.php:270
 msgid "Recommendations:"
 msgstr "Рекомендации:"
 
@@ -789,16 +767,17 @@ msgstr "Страница"
 msgid "Donations history"
 msgstr "История пожертвований"
 
-#: core/template-tags.php:272 core/template-tags.php:445
+#: core/template-tags.php:272 core/template-tags.php:443
 msgid "Our projects"
 msgstr "Наши проекты"
 
-#: core/template-tags.php:277 single-leyka_campaign.php:31
+#: core/template-tags.php:277 single-leyka_campaign.php:24
+#: single-leyka_campaign.php:44
 msgid "They alredy got help"
 msgstr "Уже получили помощь"
 
-#: core/template-tags.php:280 modules/starter/plot_config.php:664
-#: single-leyka_campaign.php:30
+#: core/template-tags.php:280 modules/starter/plot_config.php:663
+#: single-leyka_campaign.php:28 single-leyka_campaign.php:43
 msgid "They need help"
 msgstr "Им нужна помощь"
 
@@ -818,43 +797,23 @@ msgstr "Навигация по статье"
 msgid "Homepage"
 msgstr "Главная"
 
-#: core/template-tags.php:444
+#: core/template-tags.php:442
 msgid "More projects"
 msgstr "Еще проекты"
 
-#: core/template-tags.php:449
-msgid "More volunteers"
-msgstr "Еще волонтеры"
-
-#: core/template-tags.php:450
-msgid "Our volunteers"
-msgstr "Наши волонтеры"
-
-#: core/template-tags.php:454
-msgid "More team members"
-msgstr "Вся команда"
-
-#: core/template-tags.php:455
-msgid "Our team"
-msgstr "Наша команда"
-
-#: core/template-tags.php:460
-msgid "More events"
-msgstr "Еще анонсы"
-
-#: core/template-tags.php:465
+#: core/template-tags.php:446
 msgid "More news"
 msgstr "Еще новости"
 
-#: core/template-tags.php:466
+#: core/template-tags.php:447
 msgid "Latest news"
 msgstr "Последние новости"
 
-#: core/template-tags.php:508
+#: core/template-tags.php:477
 msgid "Related project"
 msgstr "Проекты по теме"
 
-#: core/template-tags.php:527
+#: core/template-tags.php:496
 msgid "Help now"
 msgstr "Помочь сейчас"
 
@@ -892,37 +851,29 @@ msgstr ""
 "Колонки в подвале сайта. Область принимает 4 виджета. Не поддерживает "
 "большие виджеты."
 
-#: footer.php:11
-msgid "Teplitsa of social technologies"
-msgstr "Теплица социальных технологий"
-
-#: footer.php:60
+#: footer.php:51
 #, php-format
 msgid "All materials of the site are avaliabe under license %s"
 msgstr "Все материалы сайта доступны по лицензии %s"
 
-#: functions.php:38
+#: footer.php:58
+msgid "Project Kandinsky"
+msgstr "Проект Кандинский"
+
+#: footer.php:59
+msgid "Powered by Kandinsky"
+msgstr "Работает на Кандинском"
+
+#: functions.php:32
 msgid "Primary menu"
 msgstr "﻿Главное меню"
-
-#: functions.php:62
-msgid "Landscape thumbnail"
-msgstr "Горизонтальная миниатюра"
-
-#: functions.php:63
-msgid "Post thumbnail"
-msgstr "Стандартная миниатюра"
-
-#: functions.php:64
-msgid "Fixed for embed"
-msgstr "Фиксированный"
 
 #: header.php:18
 msgid "Skip to content"
 msgstr "Перейти к содержанию"
 
 #: header.php:61 modules/starter/plot_config.php:195
-#: modules/starter/plot_config.php:416 modules/starter/plot_config.php:634
+#: modules/starter/plot_config.php:415 modules/starter/plot_config.php:633
 msgid "Main menu"
 msgstr "Главное меню"
 
@@ -967,12 +918,12 @@ msgstr "Партнеры"
 msgid "Partner organization banners list"
 msgstr "Список баннеров партнерских организаций"
 
-#: modules/org/widgets.php:47 modules/ourorg.php:73
-#: modules/project/widgets.php:45
+#: modules/org/widgets.php:47 modules/ourorg.php:70
+#: modules/project/widgets.php:47
 msgid "Title:"
 msgstr "Заголовок:"
 
-#: modules/org/widgets.php:52 modules/project/widgets.php:50
+#: modules/org/widgets.php:52 modules/project/widgets.php:52
 msgid "Number:"
 msgstr "Количество:"
 
@@ -992,7 +943,7 @@ msgstr "Описание организации на главной страни
 msgid "Our organization"
 msgstr "Наша организация"
 
-#: modules/ourorg.php:77
+#: modules/ourorg.php:74
 msgid "Content:"
 msgstr "Содержание:"
 
@@ -1016,8 +967,8 @@ msgstr "Галерея карточек людей - например, кома�
 msgid "Projects short list"
 msgstr "Блоки проектов"
 
-#: modules/project/widgets.php:64 modules/starter/plot_config.php:217
-#: modules/starter/plot_config.php:429 modules/starter/plot_config.php:654
+#: modules/project/widgets.php:66 modules/starter/plot_config.php:217
+#: modules/starter/plot_config.php:428 modules/starter/plot_config.php:653
 msgid "Kandinsky projects block menu"
 msgstr "Ссылки в блоке проектов"
 
@@ -1054,13 +1005,13 @@ msgstr "Разархивированная директория не найде�
 msgid "Plot dir not found: %s"
 msgstr "Директория сценария не найдена: %s"
 
-#: modules/starter/plot_config.php:205 modules/starter/plot_config.php:422
-#: modules/starter/plot_config.php:645 modules/starter/sidebars.php:14
+#: modules/starter/plot_config.php:205 modules/starter/plot_config.php:421
+#: modules/starter/plot_config.php:644 modules/starter/sidebars.php:14
 msgid "Kandinsky our work footer menu"
 msgstr "Меню «Наша работа» в подвале"
 
-#: modules/starter/plot_config.php:211 modules/starter/plot_config.php:426
-#: modules/starter/plot_config.php:650 modules/starter/sidebars.php:17
+#: modules/starter/plot_config.php:211 modules/starter/plot_config.php:425
+#: modules/starter/plot_config.php:649 modules/starter/sidebars.php:17
 msgid "Kandinsky news footer menu"
 msgstr "Меню «Новости» в подвале"
 
@@ -1088,11 +1039,23 @@ msgstr "Наша работа"
 msgid "Security policy"
 msgstr "Политика безопасности"
 
-#: search.php:47
+#: search.php:21
+msgid "Search"
+msgstr "Поиск"
+
+#: search.php:28
+#, php-format
+msgid "%s result"
+msgid_plural "%s results"
+msgstr[0] "%s результат"
+msgstr[1] "%s результата"
+msgstr[2] "%s результатов"
+
+#: search.php:35
 msgid "Enter terms for search in the form and hit Enter"
 msgstr "Укажите слова для поиска в форме и нажмите Enter"
 
-#: search.php:51
+#: search.php:39
 msgid "Nothing found under your request"
 msgstr "По вашему запросу ничего не найдено"
 
@@ -1104,11 +1067,11 @@ msgstr "Найти"
 msgid "Press Enter"
 msgstr "Нажмите Enter"
 
-#: single.php:154
+#: single.php:91
 msgid "Related items"
 msgstr "Еще по теме"
 
-#: single.php:166
+#: single.php:103
 msgid "Related projects"
 msgstr "Познакомьтесь с другими проектами"
 
@@ -1880,11 +1843,11 @@ msgstr ""
 msgid "OK, I've got it!"
 msgstr "Понятно!"
 
-#: vendor/envato_setup/envato_setup.php:1720
+#: vendor/envato_setup/envato_setup.php:1722
 msgid "Yay! Your website is ready!"
 msgstr "Ура! Ваш сайт готов!"
 
-#: vendor/envato_setup/envato_setup.php:1722
+#: vendor/envato_setup/envato_setup.php:1724
 msgid ""
 "Congratulations! You’re doing really good #success! You’ve successfully "
 "installed and set up your Kandinsky theme. You need, however, to do a little "
@@ -1893,7 +1856,7 @@ msgstr ""
 "Поздравляем! Вам все удалось! Вы установили и частично настроили ваш новый "
 "сайт! Но на этом работа не заканчивается."
 
-#: vendor/envato_setup/envato_setup.php:1723
+#: vendor/envato_setup/envato_setup.php:1725
 msgid ""
 "As a part of the installation process, we’ve added some test content of an "
 "imaginary organization that you will need to edit (we’ve provided the "
@@ -1904,7 +1867,7 @@ msgstr ""
 "задачи и нужды. В тексте даны наши рекомендации по написанию ключевой "
 "информации."
 
-#: vendor/envato_setup/envato_setup.php:1724
+#: vendor/envato_setup/envato_setup.php:1726
 msgid ""
 "Moreover, you need to set up few additional plug-ins for the optimal work of "
 "your site (don’t worry, our recommendations will help you)."
@@ -1913,23 +1876,23 @@ msgstr ""
 "волнуйтесь, мы вам поможем подробными пошаговыми инструкциями по ходу "
 "установки."
 
-#: vendor/envato_setup/envato_setup.php:1731
+#: vendor/envato_setup/envato_setup.php:1733
 msgid "Continue the set-up"
 msgstr "Перейти к подробной настройке"
 
-#: vendor/envato_setup/envato_setup.php:1736
+#: vendor/envato_setup/envato_setup.php:1738
 msgid "View your new website!"
 msgstr "Посмотреть на новый сайт!"
 
-#: vendor/envato_setup/envato_setup.php:1742
+#: vendor/envato_setup/envato_setup.php:1744
 msgid "#success"
 msgstr "#успех"
 
-#: vendor/envato_setup/envato_setup.php:1826
+#: vendor/envato_setup/envato_setup.php:1828
 msgid "Error:"
 msgstr "Ошибка:"
 
-#: vendor/envato_setup/envato_setup.php:1826
+#: vendor/envato_setup/envato_setup.php:1828
 #, php-format
 msgid ""
 "Please, send a report about it to the <a href='mailto:%s' "
@@ -1938,7 +1901,7 @@ msgstr ""
 "Пожалуйста, напишите об этой ошибке <a href='mailto:%s' "
 "target='_blank'>нашей службе тех.поддержки</a>."
 
-#: vendor/envato_setup/envato_setup.php:1828
+#: vendor/envato_setup/envato_setup.php:1830
 #, php-format
 msgid ""
 "We're sorry, but some error occured during to this wizard step :( <div "
@@ -1949,13 +1912,72 @@ msgstr ""
 "class='wizard-error-support-text'>Пожалуйста, напишите об этом <a "
 "href='mailto:%s' target='_blank'>нашей службе тех.поддержки</a>."
 
-#: vendor/envato_setup/envato_setup.php:1832
+#: vendor/envato_setup/envato_setup.php:1834
 msgid "Back to the Dashboard"
 msgstr "Вернуться в административный раздел сайта"
 
-#: vendor/envato_setup/envato_setup.php:1833
+#: vendor/envato_setup/envato_setup.php:1835
 msgid "Email to the theme support"
 msgstr "Написать тех.службе"
+
+#~ msgid "Website"
+#~ msgstr "Сайт"
+
+#~ msgid "Excerpt"
+#~ msgstr "Лид"
+
+#~ msgid ""
+#~ "Annotation for items lists (will be printed at the beginning of the "
+#~ "single page)"
+#~ msgstr "Аннотация для элементов списка (будет выведена в начале страницы)"
+
+#~ msgid "Forms"
+#~ msgstr "Формы"
+
+#~ msgid "Facebook Profile"
+#~ msgstr "Профиль на Facebook"
+
+#~ msgid "Enter URL of author's Facebook profile"
+#~ msgstr "Введите ссылку на профиль автора в Facebook"
+
+#~ msgid "Avatar"
+#~ msgstr "Аватарка"
+
+#~ msgid "Taxonomy Term Image"
+#~ msgstr "Изображение термина"
+
+#~ msgid "Select which image should represent this term."
+#~ msgstr "Выберите изображение для этого термина."
+
+#~ msgid "Select Image"
+#~ msgstr "Выберите изображение"
+
+#~ msgid "Remove"
+#~ msgstr "Удалить"
+
+#~ msgid "Select or upload an image for this term"
+#~ msgstr "Вставьте или закачайте изображение"
+
+#~ msgid "Attach"
+#~ msgstr "Вложение"
+
+#~ msgid "More volunteers"
+#~ msgstr "Еще волонтеры"
+
+#~ msgid "Our volunteers"
+#~ msgstr "Наши волонтеры"
+
+#~ msgid "More team members"
+#~ msgstr "Вся команда"
+
+#~ msgid "Our team"
+#~ msgstr "Наша команда"
+
+#~ msgid "More events"
+#~ msgstr "Еще анонсы"
+
+#~ msgid "Teplitsa of social technologies"
+#~ msgstr "Теплица социальных технологий"
 
 #~ msgid "No zip file!"
 #~ msgstr "Нет .zip-файла!"
