@@ -170,13 +170,13 @@ $is_finished = get_post_meta($campaign->ID, 'is_finished', true);
             <?php endif?>
             <div class="flex-row leyka-scale-label">
             
-                <div class="flex-cell flex-md-6">
+                <div class="flex-cell flex-sm-6">
                     <div class="caption"><?php _e("Collected", 'knd')?></div>
                     <div class="sum"><?php echo $collected_f?> <?php echo $curr_label?></div>
                 </div>
                 
                 <?php if(!$is_finished):?>
-                <div class="flex-cell flex-md-6 knd-campaign-needed">
+                <div class="flex-cell flex-sm-6 knd-campaign-needed">
                     <div class="caption"><?php _e("Needed", 'knd')?></div>
                     <div class="sum"><?php echo $target_f?> <?php echo $curr_label?></div>
                 </div>

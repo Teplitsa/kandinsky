@@ -80,6 +80,19 @@
 	}
 }
 
+.knd-section-extend-on-large {
+	
+    @include for(medium-screens) {
+    	margin-left: calc(400px - 50vw);
+    	margin-right: calc(400px - 50vw);
+    }
+
+	@include for(large-screens) {
+		margin-left: -26.6%;
+		margin-right: -26.6%;
+	}
+}
+
 .mark-title { 
 	@include knd-head-main-text();
 	margin-bottom: $base;

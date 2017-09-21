@@ -215,7 +215,7 @@ function knd_people_list_shortcode($atts = array()) {
         <div class="knd-people-title"><?php echo apply_filters('knd_the_title', $atts['title']);?></div>
         <?php }?>
 
-        <div class="knd-section-extend">
+        <div class="knd-section-extend-on-large">
         <?php knd_people_gallery($atts['category'], $atts['ids'], $atts['num']); ?>
         </div>
 
