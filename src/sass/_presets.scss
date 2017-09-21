@@ -158,6 +158,14 @@ $margin_base: 26px;
 	   		user-select: none;
 }
 
+@mixin cf {
+	&:after {
+	    content:" ";
+	    display:table;
+	    clear:both;
+	}
+}
+
 @function value_from_map($key, $map) {
 	@if map-has-key($map, $key) {
 		@return map-get($map, $key);

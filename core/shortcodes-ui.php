@@ -120,43 +120,6 @@ function knd_add_shortcodes_ui() {
     ));
 
 
-
-   /*  shortcode_ui_register_for_shortcode('knd_button', array(
-        'label' => __('A "call to action" button', 'knd'), // Shortcode label in the UI. Required
-        'listItemImage' => 'dashicons-external', // Dashicon class or full <img> HTML
-
-//        'inner_content' => array( // A UI for the "inner content" of the shortcode. Optional
-//            'label'        => __('A quote text', 'knd'),
-//            'description'  => __('A text of the quote.', 'knd'),
-//        ),
-
-        'attrs' => array( // Define & bind the UI for shortcode attributes. Optional
-            array(
-                'label'  => __('Button label', 'knd'),
-                'attr'   => 'txt',
-                'type'   => 'text',
-                'encode' => false,
-                'meta'   => array('placeholder' => __('A text for button', 'knd'),),
-            ),
-            array(
-                'label'  => __('Button URL', 'knd'),
-                'attr'   => 'url',
-                'type'   => 'url',
-                'encode' => false,
-                'meta'   => array('placeholder' => __('An URL for button', 'knd'),),
-            ),
-            array(
-                'label'  => __('Open link in a new window', 'knd'),
-                'attr'   => 'in_new_window',
-                'type'   => 'checkbox',
-                'default' => false,
-                'encode' => false,
-            ),
-        ),
-    ));*/
-
-    
-
     shortcode_ui_register_for_shortcode('knd_people_list', array(
         'label' => __('A list of people', 'knd'), // Shortcode label in the UI. Required
         'listItemImage' => 'dashicons-groups', // Dashicon class or full <img> HTML
@@ -244,70 +207,4 @@ function knd_add_shortcodes_ui() {
             ),
         ),
     ));
-
-    /* shortcode_ui_register_for_shortcode('knd_columns', array(
-        'label' => __('A columns text markup', 'knd'), // Shortcode label in the UI. Required
-        'listItemImage' => 'dashicons-welcome-widgets-menus', // Dashicon class or full <img> HTML
-
-//        'inner_content' => array( // A UI for the "inner content" of the shortcode. Optional
-//            'label'        => __('A quote text', 'knd'),
-//            'description'  => __('A text of the quote.', 'knd'),
-//        ),
-
-        'attrs' => array( // Define & bind the UI for shortcode attributes. Optional
-            array(
-                'label'  => __('Section title', 'knd'),
-                'attr'   => 'title',
-                'type'   => 'text',
-                'encode' => false,
-            ),
-            array(
-                'label'  => __('First column title', 'knd'),
-                'attr'   => '1-title',
-                'type'   => 'text',
-                'encode' => false,
-            ),
-            array(
-                'label'  => __('First column content', 'knd'),
-                'attr'   => '1-text',
-                'type'   => 'textarea',
-                'encode' => true,
-                'meta' => array('class' => 'shortcake-richtext',),
-            ),
-            array(
-                'label'  => __('Second column title', 'knd'),
-                'attr'   => '2-title',
-                'type'   => 'text',
-                'encode' => false,
-            ),
-            array(
-                'label'  => __('Second column content', 'knd'),
-                'attr'   => '2-text',
-                'type'   => 'textarea',
-                'encode' => true,
-                'meta' => array('class' => 'shortcake-richtext',),
-            ),
-            array(
-                'label'  => __('Third column title', 'knd'),
-                'attr'   => '3-title',
-                'type'   => 'text',
-                'encode' => false,
-            ),
-            array(
-                'label'  => __('Third column content', 'knd'),
-                'attr'   => '3-text',
-                'type'   => 'textarea',
-                'encode' => true,
-                'meta' => array('class' => 'shortcake-richtext',),
-            ),
-            array(
-                'label'  => __('Section CSS class', 'knd'),
-                'attr'   => 'class',
-                'type'   => 'text',
-                'encode' => false,
-                'meta'   => array('placeholder' => __('An additional CSS class (or several) for the section', 'knd'),),
-            ),
-        ),
-    ));*/
-
 }

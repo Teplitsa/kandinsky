@@ -240,10 +240,8 @@ a {
 
 .knd-brand {	
 	position: relative;
-	display: flex;
-	flex-flow: row nowrap;
-	justify-content: flex-end;
-	align-items: center;
+    @include cf;
+
 
 	.knd-icon {
 		display: inline-block;
@@ -256,11 +254,25 @@ a {
         
 	}
 	
-	a {
+    a {
+        float: right;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-end;
+        align-items: center;
+        text-align: right;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+	.knd-banner {
 		display: block;
 		flex: 0 0 auto;
 		width: 48px;
-		height: 48px;
+		height: 48px; 
 	}
 		
 	.support {

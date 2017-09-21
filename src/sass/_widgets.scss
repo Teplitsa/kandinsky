@@ -1,23 +1,6 @@
 /** Widgets **/
 
 
-
-.donation_cta {
-	margin-bottom: $gut*1.5;
-	
-	h3, .widget-title, h5 { color: inherit; }
-	
-	h5 {
-		@include post-title(small_title);
-		margin-bottom: $base;
-		&:last-child { margin-bottom :0;}
-	}
-	
-	
-}
-
-
-.rdc-button,
 .button {
 	@include button();
 }	
@@ -29,21 +12,6 @@
 
     &.knd-background-text.text {
         margin: 2*$base/3;
-    }
-}
-
-.knd-quote {
-    font-style: italic;
-}
-
-.knd-columns .markup-columns {
-    display: flex;
-    flex: 0 1 auto;
-    justify-content: space-between;
-    //flex-wrap: wrap;
-
-    .markup-column:not(:last-of-type) {
-        margin-right: $base;
     }
 }
 
@@ -66,7 +34,7 @@
 
 /* intro section */
 
-//page with cards
+/* hero image */
 .intro-head-image {
     position: relative;
     z-index: 1;
