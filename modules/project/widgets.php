@@ -16,9 +16,11 @@ class KND_Projects_Widget extends WP_Widget {
         }
 
         $title = apply_filters('widget_title', empty($instance['title']) ? '' : $instance['title'], $instance, $this->id_base);
+
         $num = empty($instance['num']) ? 3 : (int)$instance['num'];
 
         $projects = KND_Project::get_short_list($num);
+        
         if(count($projects)) {
             $this->print_widget($projects, $args, $title);
         }

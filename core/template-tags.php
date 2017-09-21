@@ -848,34 +848,32 @@ function knd_show_cta_block() {
 
 function knd_show_posts_shortlist($posts, $title, $links) {
 ?>
-        <section class="container-wide knd-projects-widget">
-        
-        <div class="container">
-        
-        <h2 class="section-title"><?php echo $title; ?></h2>
-        
-        <div class="section-links">
-            <?php foreach($links as $link):?>
-            <a href="<?php echo $link['url']?>"><?php echo $link['title']?></a>
-            <?php endforeach?>
-        </div>
-            
-        <div class="main-content cards-holder knd-news-widget-body">
-        
-        <div class="flex-row cards-loop">
-            <?php
-                if(!empty($posts)){
-                    foreach($posts as $p){
-                        knd_project_card($p);
-                    }
-                }
-            ?>
-        </div>
-        
-        </div>
-        
-        </div>
-        
-        </section>
+<div class="knd-projects-widget">
+<div class="container">
+
+	<h2 class="section-title"><?php echo $title; ?></h2>
+
+	<div class="section-links">
+	    <?php foreach($links as $link):?>
+	    <a href="<?php echo $link['url']?>"><?php echo $link['title']?></a>
+	    <?php endforeach?>
+	</div>
+	    
+	<div class="knd-news-widget-body">
+
+	<div class="flex-row">
+	    <?php
+	        if(!empty($posts)){
+	            foreach($posts as $p){
+	                knd_project_card($p);
+	            }
+	        }
+	    ?>
+	</div>
+
+	</div>
+
+</div>
+</div>
 <?php
 }

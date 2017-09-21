@@ -15,7 +15,7 @@ get_header();
     </div></div>
 </header>
 
-<div class="page-content">
+<div class="page-content err404-content">
     <div class="container"><div class="the-content text-column err-404-text">
         <?php echo apply_filters('knd_entry_the_content', $er_text); ?>
     </div></div>

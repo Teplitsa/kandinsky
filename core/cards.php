@@ -53,7 +53,7 @@ function knd_project_card(WP_Post $cpost){
 	
 	$pl = get_permalink($cpost);
 ?>
-<article class="flex-md-4 tpl-project card"><a href="<?php echo $pl; ?>" class="entry-link">	
+<article class="flex-cell flex-md-4 tpl-project card"><a href="<?php echo $pl; ?>" class="entry-link">	
 	<div class="entry-preview"><?php echo knd_post_thumbnail($cpost->ID, 'post-thumbnail');?></div>
 	<h4 class="entry-title"><span><?php echo get_the_title($cpost);?></span></h4>
 </a></article>

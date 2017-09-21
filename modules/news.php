@@ -36,13 +36,13 @@ class KND_News_Widget extends WP_Widget {
         echo $before_widget;
         ?>
 
-<section class="knd-news-widget">
+<div class="knd-news-widget">
 
     <div class="container">
     
     <h2 class="section-title"><?php echo $title;?></h2>
     
-    <div class="cards-holder knd-news-widget-body">
+    <div class="knd-news-widget-body">
         <div class="flex-row start cards-loop">
             <?php
                 if(!empty($posts)){
@@ -57,7 +57,7 @@ class KND_News_Widget extends WP_Widget {
     
     </div>
 
-</section>
+</div>
 
 <?php 
 		echo $after_widget;
