@@ -844,6 +844,10 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
             $pdb = KND_Plot_Data_Builder::produce_builder($imp);
             $pdb->build_posts();
             $pdb->build_pages();
+            
+            // re-setup theme options after pages created
+            $pdb->build_theme_options();
+            
             $pdb->build_menus();
             $pdb->build_sidebars();
         
