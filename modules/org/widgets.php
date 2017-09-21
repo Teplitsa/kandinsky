@@ -105,7 +105,7 @@ class KND_Org_Widget extends WP_Widget {
     public function print_widget_content($title, $orgs) {?>
 
 
-    <section class="container-wide knd-partners-widget">
+    <section class="knd-partners-widget">
     
         <div class="container">
         

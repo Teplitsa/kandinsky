@@ -1,15 +1,22 @@
-/* modules */
+@charset "UTF-8";
+
+
+//dependencies
 @import 'bourbon';
 @import 'modularscale';
 
+//settings and functions
+@import 'variables';
+@import 'mixins';
+@import 'typo';
+
+//global styling
 @import 'fonts';
 @import 'reset';
-@import 'presets';
-@import 'typo';
 @import 'utility';
 @import 'grid';
 
-
+//website parts
 @import 'front';
 @import 'forms';
 @import 'social';

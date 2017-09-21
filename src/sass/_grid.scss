@@ -1,6 +1,6 @@
-/*---------------------------------------------------------
- Grid (_grid.scss)
--------------------------------------------------------- */
+/** == Helpers and in-page styles (_utility.scss) == */
+/** Common layout rules and flex-box based grid **/
+
 *,
 *:after,
 *:before {
@@ -12,7 +12,7 @@
 
 
 
-//hide
+/* Hide utp/after some break point  */
 .hide-upto-small {
 	@include upto(small-screens) { display: none;}
 }
@@ -22,6 +22,7 @@
 .hide-upto-large {
 	@include upto(large-screens) { display: none;}
 }
+
 
 .hide-on-small {
 	@include for(small-screens) { display: none;}
@@ -33,7 +34,8 @@
 	@include for(large-screens) { display: none;}
 }
 
-//no-js hide
+
+/* Support for no JS case */
 .no-js .no-js-hide-upto-small {
     @include upto(small-screens) { display: none;}
 }
@@ -46,15 +48,13 @@
     @include upto(large-screens) { display: none;}
 }
 
-.no-js .no-js-hide-upto-exlarge {
-    @include upto(exlarge-screens) { display: none;}
-}
 
-/** Flexbox grid **/
+
+/* Flexbox grid */
 .flex-row {
     
-    margin-left: -1 * $flex-gut/2;
-    margin-right: -1 * $flex-gut/2;
+    margin-left: -1 * $gut/2;
+    margin-right: -1 * $gut/2;
     
 
     display: flex;
@@ -77,32 +77,35 @@
     position: relative;
     min-height: 1px;
 
-    margin: 0 $flex-gut/2 $flex-gut;
-    width: calc(100% - #{$flex-gut});
+    margin: 0 $gut/2 $gut;
+    width: calc(100% - #{$gut});
 }
 
+
+// mobile screen
 @for $i from 1 through 12 {
     .flex-mf-#{$i} {
         $w: percentage($i/12);
-        width: calc(#{$w} - #{$flex-gut});
+        width: calc(#{$w} - #{$gut});
     }
 }
 
 .flex-mf-col-5 {
-    width: calc(20% - #{$flex-gut});
+    width: calc(20% - #{$gut});
 }
+
 
 // small screens
 @include for(small-screens) {
     @for $i from 1 through 12 {
         .flex-sm-#{$i} {
             $w: percentage($i/12);
-            width: calc(#{$w} - #{$flex-gut});
+            width: calc(#{$w} - #{$gut});
         }
     }
 
     .flex-sm-col-5 {
-        width: calc(20% - #{$flex-gut});
+        width: calc(20% - #{$gut});
     }
 }
 
@@ -112,46 +115,32 @@
     @for $i from 1 through 12 {
         .flex-md-#{$i} {
             $w: percentage($i/12);
-            width: calc(#{$w} - #{$flex-gut});
+            width: calc(#{$w} - #{$gut});
         }
     }
 
     .flex-md-col-5 {
-        width: calc(20% - #{$flex-gut});
+        width: calc(20% - #{$gut});
     }
 }
 
 
-//the largest screen
+//large screen
 @include for(large-screens) {
     @for $i from 1 through 12 {
         .flex-lg-#{$i} {
             $w: percentage($i/12);
-            width: calc(#{$w} - #{$flex-gut});
+            width: calc(#{$w} - #{$gut});
         }
     }
 
     .flex-lg-col-5 {
-        width: calc(20% - #{$flex-gut});
+        width: calc(20% - #{$gut});
     }
 }
+
 
 /** Containers **/
-@mixin container-base {
-    position: relative;
-    width: 88%;
-    margin-left: auto; 
-    margin-right: auto; 
-
-    @media screen and (min-width: 400px) { 
-        width: calc(100% - 80px);
-    }
-
-    @include for(large-screens) {
-        width: 92%;
-    }
-}
-
 .container {
     @include container-base();
     max-width: $full_cont; //1104
@@ -168,23 +157,6 @@
         margin-left: auto;
         margin-right: auto;
     }
-}
-
-//not used ???
-.container-inner {
-    @include container-base();
-    max-width: $inner_cont;
-}
-
-.container-wide {
-    @extend .container;
-    max-width: none;
-    width: 100%;
-}
-
-.container-narrow {
-    @extend .container;
-    max-width: 900px;
 }
 
 

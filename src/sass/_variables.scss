@@ -1,0 +1,117 @@
+/** == Variables (_variables.scss) == */
+/** Variables used in code */
+
+
+//Fonts
+$body:		"SourceSansPro", Arial, sans-serif !default;
+$heading:	"Exo2", Arial, sans-serif !default;
+$mono:		"Lucida Sans Typewriter", "Lucida Console", Monaco, monospace !default;
+
+
+//Break points
+$one:					480px !default; //small
+$two:					800px !default; //medium
+$three:					1104px !default; //large
+
+
+//Page layout
+$full_cont:				1104px !default;
+$page_cont:				720px !default;
+$col:					48px !default;
+$gut:					48px !default;
+
+
+//Baseline
+$base:					26px !default;
+$inpage-margin-base:	26px !default; 
+
+
+//WP adminbar sizes
+$adminbar_large_screen: 32px;
+$adminbar_small_screen: 46px;
+
+
+
+/** Colors **/
+
+// color-line
+$color-blue:                #00bcd4;
+$color-yellow:              #ffc914;
+$color-dark-bg:             #0e0a2b;
+$color-bg-light:        	#eeeeee;
+
+:root {
+/*
+    --knd-color-main:         $color-blue;
+    --knd-color-main-dark:    darken($color-blue, 10%);
+    
+    --knd-color-second:       $color-yellow;
+    --knd-color-second-dark:  darken($color-yellow, 10%);
+    
+    --knd-color-third:        $color-dark-bg;
+    --knd-color-third-dark:   darken($color-dark-bg, 10%);;
+    
+    --knd-text1-color:        #000000;
+    --knd-text2-color:        #000000;
+    --knd-text2-color-dark:   #000000;
+
+    --knd-text3-color:        #000000;
+    --knd-text3-color-dark:   #000000;
+*/
+}
+
+//Color sheme
+$color-main: 		var(--knd-color-main);
+$color-main-dark: 	var(--knd-color-main-dark);
+
+$color-second: 		var(--knd-color-second);
+$color-second-dark: var(--knd-color-second-dark);
+
+$color-third: 		var(--knd-color-third);
+$color-third-dark: 	var(--knd-color-third-dark);
+
+
+
+
+//Variables of color scheme
+$color-link-three: var(--knd-color-main); //this is the main scheme color
+$color-link-one:   var(--knd-color-main-dark); //hover state
+$color-link-two:   var(--knd-color-main-dark); //hover state 
+
+//others color variables - clear unused colors!!!
+$color-text:                var(--knd-text1-color);
+
+$color-page-bg:            var(--knd-page-bg-color);
+$color-page-bg-dark:       var(--knd-page-bg-color-dark);
+$color-page-text:          var(--knd-page-text-color);
+$color-page-text-light:    var(--knd-page-text-color-light);
+
+$color-white:               #ffffff;
+$color-text-white:          $color-white;
+$color-text-black:          #000000;
+$color-text-semi:			#666666;
+$color-text-light:			#999999;
+
+$color-secondary:			$color-bg-light;
+$color-secondary-alt:		$color-bg-light;
+$color-secondary-dark:		$color-dark-bg;
+
+
+$color-border-normal:   #dfdfdf;
+$color-border-light:    #eeeeee;
+$color-border-link:     #eeeeee;
+$color-border-dark:     #5d5d5d;
+$color-form-invalid:    #ED1C24;
+$color-bg-dark-gray:    #353535;
+
+$leyka_green : #1DB318;
+
+
+
+
+
+
+
+
+
+

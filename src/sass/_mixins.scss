@@ -1,0 +1,144 @@
+/** == Mixins (_mixins.scss) == **/
+/** Functions and mixins for further usage **/
+
+
+/** Utilities **/
+@mixin hidden { //Hide for both screenreaders and browsers
+    display: none;
+    visibility: hidden; 
+}
+
+@mixin visuallyhidden { //Hide only visually, but have it available for screenreaders
+    position : absolute;
+    clip : rect(0 0 0 0); 
+    overflow : hidden;
+    margin: -1px;
+    padding : 0;
+    height : 1px;      
+    width : 1px;
+    border : 0; 
+}
+
+@mixin image-replace {
+    font: 0/0 a;
+    text-shadow: none;
+    color: transparent;
+    text-decoration: none;
+}
+
+@mixin screen-reader {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+@mixin no-select {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
+@mixin cf {
+    &:after {
+        content:" ";
+        display:table;
+        clear:both;
+    }
+}
+
+
+/* Media queries */
+@mixin for($media) {
+    @if $media == small-screens {
+        @media screen and (min-width: $one) { @content; }
+    }
+    @else if $media == medium-screens {
+        @media screen and (min-width: $two) { @content; }
+    }
+    @else if $media == large-screens {
+        @media screen and (min-width: $three) { @content; }
+    }
+}
+
+@mixin upto($media) {
+    @if $media == small-screens {
+        @media screen and (max-width: $one - 1) { @content; }
+    }
+    @else if $media == medium-screens {
+        @media screen and (max-width: $two - 1) { @content; }
+    }
+    @else if $media == large-screens {
+        @media screen and (max-width: $three - 1) { @content; }
+    }
+}
+
+
+/** Global layout presets **/
+@mixin container-base {
+    position: relative;
+    width: 88%;
+    margin-left: auto; 
+    margin-right: auto; 
+
+    @media screen and (min-width: 400px) { 
+        width: calc(100% - 80px);
+    }
+
+    @include for(large-screens) {
+        width: 92%;
+    }
+}
+
+
+
+/* Elements */
+@mixin button($mod: default){
+    @include knd-button-caption-text();
+    
+    display: inline-block;
+    color: $color-white;
+    background: $color-link-three;
+    border: 1px solid $color-link-three;    
+    transition: all 0.3;
+    text-align:center;
+    
+    padding: 6px 16px;
+    @include for(small-screens) {
+        padding: 12px 35px;
+    }
+    
+    &:visited {
+        color: $color-white;
+    }
+    &:hover, &:focus, &:active {
+        //background: darken($color-link-three, 10%);
+        background: $color-link-two;
+        color: $color-white;
+        border-color: $color-link-two;
+    }
+    
+    @if $mod == white {
+        background: $color-white;
+        border: 1px solid $color-white;
+        color: $color-link-three;
+        &:visited { color: $color-link-three; }
+        
+        &:hover, &:focus, &:active {            
+            background: $color-link-two;
+            color: $color-white;
+            border-color: $color-link-two;
+        }
+    }
+    @else if $mod == leyka {
+        background: $leyka_green;
+        border: 1px solid $leyka_green;
+        
+        &:hover, &:focus, &:active {            
+            background: darken($leyka_green, 10%);
+            border-color: darken($leyka_green, 10%);            
+        }
+    }
+}

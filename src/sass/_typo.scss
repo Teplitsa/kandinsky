@@ -194,7 +194,7 @@ $modularscale: (
 
 @mixin knd-nav-text() {
     @include ms-respond(font-size, 0);
-    font-family: $nav;
+    font-family: $body;
     font-weight: 400;
 }
 
@@ -208,7 +208,7 @@ $modularscale: (
 // captions and links
 @mixin knd-button-caption-text() {
     @include ms-respond(font-size, 1);
-    font-family: $nav;
+    font-family: $body;
     text-transform: uppercase;
     line-height: 1.33;
     letter-spacing: .03em;
@@ -217,7 +217,7 @@ $modularscale: (
 
 @mixin knd-button-bigcaption-text() {
     @include ms-respond(font-size, 2);
-    font-family: $nav;
+    font-family: $body;
     text-transform: uppercase;
     font-weight: 600;
 }
@@ -229,7 +229,7 @@ $modularscale: (
         //font-size: 22px;
     }
     
-    font-family: $nav;
+    font-family: $body;
     text-transform: uppercase;
     font-weight: 600;
 }
@@ -272,7 +272,7 @@ $modularscale: (
 
 @mixin knd-link-paging-text() {
     @include ms-respond(font-size, 2);
-    font-family: $nav;
+    font-family: $body;
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: -0.10em;

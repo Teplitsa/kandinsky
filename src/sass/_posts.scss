@@ -160,7 +160,7 @@
 	}
 	
 	.entry-summary {
-		@include body-text(summary);
+		@include knd-subhead-text();
 		color: $color-text;
 	}
 }
@@ -427,9 +427,10 @@
 	}
 	
 	.entry-meta {		
-		@include sub-title();
+		@include knd-subhead-text();
 		line-height: 1.4;
 		text-transform: none;
+        color: $color-text-light;
 		
 		a[href *= "tel"] {
 			color: $color-page-text;
@@ -481,7 +482,7 @@
 }
 
 .entry-content .lead {
-	margin-bottom: $margin-base;	
+	margin-bottom: $inpage-margin-base;	
 }
 
 
@@ -526,159 +527,8 @@
 	}
 }
 
-/** Store **/
-.tpl-storeitem {
-	cursor: pointer;
-	
-	.entry-preview {
-		width: 100%;
-		height: 0;
-		padding-bottom: 65%;
-		position: relative;
-		@include shadowed-preview();
-		
-		.tpl-pictured-bg {
-			position: absolute;
-			z-index: 2;
-		}
-	}
-	
-	.entry-data {
-		position: relative;
-	}
-	
-	.entry-price {
-		@include post-meta();
-		background: $color-link-two;
-		position: absolute;
-		top: 0;
-		transform: translateY(-100%);
-		z-index: 100;
-	}
-	
-	.entry-title {
-		@include post-title();
-		margin: 0;				
-		padding-top: $base/2;		
-	}
-	
-	.entry-summary { 
-		@include body-text(small);
-		color: $color-text;
-		margin-top: $base;
-	}
-	
-	&:hover { 
-		
-		.entry-preview:after { background: rgba(0,0,0, 0.08); }
-	}
-}
 
-@media screen and (max-width: 640px) {
-	.panel-grid .store_bubble_left {
-		top: 80px;
-	}
-	.store_title .store_bubble {
-		top:75px;
-	}
-	.panel-grid .store_bubble, .panel-grid .store_bubble_left {
-		font-size: 23px;
-		padding: 18px;
-	}
-}
 
-@media screen and (max-width: 380px) {
-	.panel-grid .store_bubble_left, .store_title .store_bubble {
-		font-size: 20px;
-		width: 100%;
-		text-align: center;
-	}
-	.panel-grid .store_bubble {
-		top:115px;		
-	}
-	.panel-grid .store_bubble_left {
-		top:130px;		
-	}
-}
-.store_bubble, .store_bubble_left {
-	display: none;
-	position: absolute;
-	background: #d82332;
-	color: #fff;
-	padding: 20px;
-	box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
-	font:26px "Roboto Condensed","HelveticaNeue-CondensedBold","Helvetica Neue",Helvetica Neue,Helvetica,sans-serif;
-	-webkit-border-radius: 1px;
-	-moz-border-radius: 1px;
-	-o-border-radius: 1px;
-	border-radius: 1px;
-	&.fadeIn {
-		display: block;
-	}
-}
-.store_bubble {
-	right: 0%;
-	top: 40px;
-}
-.store_bubble_left {
-	right: 0;
-	top: 44px;
-}
-.store_form {
-	position: relative;
-}
-// .store_bubble.fadeIn, .store_bubble_left.fadeIn {
-// 	display: block;
-// }
-.animated {
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-@-webkit-keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-.fadeIn {
-  -webkit-animation-name: fadeIn;
-  animation-name: fadeIn;
-}
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-
-  to {
-    opacity: 0;
-  }
-}
-
-.fadeOut {
-  -webkit-animation-name: fadeOut;
-  animation-name: fadeOut;
-}
-@media screen and (max-width: 1180px) {
-	.store_title .store_bubble {
-		right: 0;
-	}
-}
 	
 /* single */
 .knd-signle-after-content {

@@ -822,7 +822,7 @@ function knd_show_post_terms($post_id) {
 
 function knd_show_cta_block() {
 ?>
-    <div class="container-wide knd-joinus-widget">
+    <div class="knd-joinus-widget">
     
         <div class="container widget">
         

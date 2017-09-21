@@ -1,6 +1,6 @@
-/*---------------------------------------------------------
- Global Layout (_front.scss)
--------------------------------------------------------- */
+/** == Front (_front.scss) == */
+/** Basic front styles and global elements **/
+
 html {
 	//font-size: 62.5%; //10px
 	background-color: $color-white;	
@@ -23,54 +23,27 @@ a {
 	display: inline-block;
 }
 
+.main-content {
+    overflow:hidden;
+    min-height: 60vh;
+} 
 
 
-/** Layout structure **/
-// inde
+/** Headings **/
 .heading {
     
     h1 {
         padding: $gut / 1.2 0px $gut / 1.7 0px;
     }
     
-    &.no-posts { display: none; }
 }
 
 .section-title {
 	@include knd-head-exlarge-single-text();
 }
 
-.cards-holder {
-	padding-top: $gut;
-	
-	&.squared {
-		background: transparent;
-		padding-top: 0;
-	}
 
-    &.no-posts { padding-top: 0; }
-}
-
-
-.bottom-content {
-	margin-bottom: $gut*2;
-	
-	.container-wide {
-		background: $color-secondary;
-		padding-top: $gut;
-		padding-bottom: $gut;
-	}
-	
-	.page-section:last-of-type { margin-bottom: 0; }
-}
-
-
-
-
-
-
-
-/** Social panel **/
+/** Bottom branding pannel with social links **/
 .bottom-bar {    
 	background: $color-bg-light;
 	padding: $base*2.2 0 0;
@@ -80,22 +53,7 @@ a {
        color: $color-text;
        background: var(--knd-color-third);
     }
-		
-	h5 {
-		@include header-title();
-		margin-bottom: $base/2;
-	}
-	
-	.icons-label {
-		@include for(medium-screens){
-			display: none;
-		}
-		
-		@include for(large-screens) {
-			display: inline;
-		}
-	}
-	
+
 	.knd-social-links  {
 	   
 	   	li a {
@@ -115,6 +73,7 @@ a {
 	   	}
 	}
 }
+
 
 .bottom-branding {
 	padding-bottom: $gut/2;
@@ -234,6 +193,8 @@ a {
 	}
 }
 
+
+/** Footer credits block */
 .footer-credits {
 	padding-top: $gut/3;
 }
@@ -294,7 +255,4 @@ a {
 	}
 }
 
-.main-content {
-    overflow:hidden;
-    min-height: 60vh;
-} 
+

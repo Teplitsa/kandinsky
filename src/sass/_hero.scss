@@ -1,6 +1,42 @@
 
 /* intro section */
 
+@mixin container-extended() {
+    margin: 0 -4.35%;
+    position: relative;
+    width: auto;
+    
+    & > div[id *="pl-"],
+    & > div[class *="so-widget"] {
+        max-width: $page_cont;
+        width: 92%;
+        margin: 0 auto;
+    }
+    
+    $ex_cont_width_mq: $page_cont / 0.92 + 1px;
+    @media screen and (min-width: $ex_cont_width_mq ) { 
+        margin: 0 -1 * ($full_cont - $page_cont) / 2;   
+    }
+    
+}
+
+@mixin vertical-image-header-fixed(){
+    //60vh;
+    height: 360px;
+    
+    @include for(small-screens) {
+        height: 400px;
+    }
+    
+    @include for(medium-screens) {
+        height: 460px;
+    }
+    
+    @include for(large-screens) {
+        height: 480px;
+    }
+}
+
 /* hero image */
 .intro-head-image {
     position: relative;
@@ -115,7 +151,7 @@ background: linear-gradient(to bottom, rgba(0,0,0,0) 10%,rgba(0,0,0,.8) 100%);
         }
         
         .ihc-desc {
-            @include body-text();
+            @include knd-subhead-text();
             
             line-height: 1.33;
             color: $color-white;

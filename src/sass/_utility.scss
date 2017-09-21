@@ -1,5 +1,8 @@
 /** == Helpers and in-page styles (_utility.scss) == */
 
+.screen-reader-text {
+	@include screen-reader();
+}
 
 /* text alignment */
 .text-left   {
@@ -63,7 +66,7 @@ a:link {
     }
 }
 
-$inpage-margin-base: 26px;
+
 
 @mixin the-content {
 

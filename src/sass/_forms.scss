@@ -1,5 +1,52 @@
 /** Forms **/
 
+@mixin form-text($mod: default) {	
+	font-family: $body;
+	color: $color-text;
+	font-weight: normal;
+	text-transform: none;
+	letter-spacing: normal;
+	
+	font-size: 14px;	
+	line-height: 1.5;
+	
+	@if $mod == small {
+		font-size: 12px;
+	}
+	@if $mod == semi {
+		font-size: 16px;
+	}
+}
+
+
+@mixin nav-text($mod: default) {
+	
+	@include knd-nav-text();
+	
+	text-transform: uppercase;
+	font-weight: normal;
+	
+	@if $mod == multiline {
+		line-height: 20px;
+	}
+	@else if $mod == meta {
+		font-size: 16px;
+		line-height: 16px;
+	}
+	@else if $mod == meta_small {
+		font-size: 14px;
+		line-height: 16px;
+	}
+	@else if $mod == menu {
+		font-size: 16px;
+		letter-spacing: 0.5px;
+		font-weight: 700;
+	}
+	@else if $mod == lowercase {		
+		text-transform: none;
+	}
+}
+
 @mixin material-animation-default($duration:0.2s) {
 	transition-duration: $duration;
 	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -15,7 +62,7 @@ $input-border-color: lighten($color-border-normal, 3%);
 $label-text-color: $color-text;	
 
 @mixin input-text-label {
-	font-family: $title;	
+	font-family: $heading;	
 	line-height: 1;
 	color: $label-text-color;
 	white-space: nowrap;
@@ -24,14 +71,14 @@ $label-text-color: $color-text;
 }
 
 @mixin input-text {
-	font-family: $title;	
+	font-family: $heading;	
 	line-height: 1;
 	background: transparent;
 	text-align: left;
 }
 
 @mixin checkbox-text($size: 18px) {
-	font-family: $title;	
+	font-family: $heading;	
 	line-height: 1.2;
 	color: $label-text-color;	
 	text-align: left;
@@ -352,7 +399,7 @@ $label-text-color: $color-text;
 		-webkit-appearance: none;
 		outline: none;
 		
-		font-family: $title;	
+		font-family: $heading;	
 		line-height: 1.5;		
 		text-align: left;
 		font-size: 14px;		
@@ -364,7 +411,7 @@ $label-text-color: $color-text;
 	}
 	
 	option {
-		font-family: $title;	
+		font-family: $heading;	
 		line-height: 1.5;		
 		color: $label-text-color;
 		text-align: left;
