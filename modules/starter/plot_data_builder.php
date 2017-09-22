@@ -700,19 +700,21 @@ class KND_Plot_Data_Builder {
     public function get_terms_list($terms_names, $taxonomy) {
         $terms_list = array();
         
-        foreach($terms_names as $term_name) {
-        
-            $term = get_term_by( 'name', $term_name, $taxonomy );
-            if($term) {
-                $terms_list[] = $term->term_id;
-            }
-            else {
-                $res = wp_insert_term( $term_name, $taxonomy );
-                if(!is_wp_error($res)) {
-                    $terms_list[] = $res['term_id'];
+        if(!empty($terms_names)) {
+            foreach($terms_names as $term_name) {
+            
+                $term = get_term_by( 'name', $term_name, $taxonomy );
+                if($term) {
+                    $terms_list[] = $term->term_id;
                 }
+                else {
+                    $res = wp_insert_term( $term_name, $taxonomy );
+                    if(!is_wp_error($res)) {
+                        $terms_list[] = $res['term_id'];
+                    }
+                }
+            
             }
-        
         }
         
         return $terms_list;
