@@ -43,28 +43,32 @@ $social_color: (
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
-	@include clearfix;
+
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+	align-items: flex-end;
 	
+	.links-right & {
+		@include for(medium-screens) {
+			justify-content: flex-end;
+		}
+	}
+
 	li {
-		float: left;
-		margin-right: 8px;
-		margin-bottom: 8px;
-		
-        @include for(medium-screens) {
-          float: right;
-        }
+		text-align: center;
 		
 		a {
-			@include social-button-link(46px, 20px);			
+			@include social-button-link(46px, 22px);			
 			span { display: none; }
 		}
 
 		.svg-icon {
 			display: inline-block;
-			fill: #ffffff;
 			vertical-align: top;
 			width: 20px;
 			height: 20px;
+			//fill: $color-text;
 		}
 	}
 }

@@ -23,7 +23,7 @@ $footer_text = get_theme_mod('footer_text');
                 <h2 class="logo-name"><?php bloginfo('description');?></h2>
             </div>
 
-            <div class="flex-cell flex-md-7">
+            <div class="flex-cell flex-md-7 links-right">
             <?php 
                 $social_icons = knd_social_links(array(), false);
                 if($social_icons) {

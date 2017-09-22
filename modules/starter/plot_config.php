@@ -280,6 +280,18 @@ class KND_Dubrovino_Data_Builder extends KND_Plot_Data_Builder {
                 'post_type' => 'page',
                 'post_slug' => 'legal',
             ),
+            array(
+                'section' => '',
+                'piece' => 'reports',
+                'post_type' => 'page',
+                'post_slug' => 'reports',
+            ),
+            array(
+                'section' => 'howtohelp',
+                'piece' => 'petition',
+                'post_type' => 'page',
+                'post_slug' => 'gethelp',
+            )
         ),
         
         'pages_templates' => array(
@@ -446,13 +458,13 @@ class KND_Dubrovino_Data_Builder extends KND_Plot_Data_Builder {
                 array('title' => __('News', 'knd'), 'url' => home_url('/news/') ),
                 array('post_type' => 'page', 'slug' => 'howtohelp' ),
                 array('post_type' => 'page', 'slug' => 'contacts' ),
-                array('post_type' => 'page', 'slug' => 'howtojoin' ),
+                array('post_type' => 'page', 'slug' => 'volunteers' ),
             ),
             __( 'Kandinsky our work footer menu', 'knd' ) => array(
                 array('post_type' => 'page', 'slug' => 'about' ),
                 array('post_type' => 'page', 'slug' => 'contacts' ),
                 array('post_type' => 'page', 'slug' => 'reports' ),
-                array('post_type' => 'page', 'slug' => 'howtojoin' ),
+                array('post_type' => 'page', 'slug' => 'demo' ),
             ),
             __( 'Kandinsky news footer menu', 'knd' ) => array(
                 array('title' => __('Extertise', 'knd'), 'url' => home_url('/projects/') ),
@@ -511,7 +523,8 @@ class KND_Withyou_Data_Builder extends KND_Plot_Data_Builder {
                 'piece' => 'reports',
                 'post_type' => 'page',
                 'post_slug' => 'reports',
-            )
+            ),
+
         ),
         
         'pages_templates' => array(
