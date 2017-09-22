@@ -186,10 +186,10 @@ class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
             'CTA_DONATE' => home_url('/howtohelp/'),
         );
         
-        $this->data_routes['theme_options']['knd_hero_image_support_url'] = get_permalink(get_page_by_path('howtohelp'));
-        $this->data_routes['theme_options']['knd_url_pd_policy'] = '#';
-        $this->data_routes['theme_options']['knd_url_privacy_policy'] = '#';
-        $this->data_routes['theme_options']['knd_url_public_oferta'] = '#';
+        $this->data_routes['theme_options']['knd_hero_image_support_url'] = home_url('howtohelp');
+        $this->data_routes['theme_options']['knd_url_pd_policy'] = home_url('legal');
+        $this->data_routes['theme_options']['knd_url_privacy_policy'] = home_url('legal');
+        $this->data_routes['theme_options']['knd_url_public_oferta'] = home_url('legal');
         
         $this->data_routes['menus'] = array(
             __('Main menu', 'knd') => array(
@@ -279,12 +279,6 @@ class KND_Dubrovino_Data_Builder extends KND_Plot_Data_Builder {
                 'piece' => 'legal',
                 'post_type' => 'page',
                 'post_slug' => 'legal',
-            ),
-            array(
-                'section' => '',
-                'piece' => 'reports',
-                'post_type' => 'page',
-                'post_slug' => 'reports',
             ),
             array(
                 'section' => 'howtohelp',
@@ -464,7 +458,7 @@ class KND_Dubrovino_Data_Builder extends KND_Plot_Data_Builder {
                 array('post_type' => 'page', 'slug' => 'about' ),
                 array('post_type' => 'page', 'slug' => 'contacts' ),
                 array('post_type' => 'page', 'slug' => 'reports' ),
-                array('post_type' => 'page', 'slug' => 'demo' ),
+                array('post_type' => 'page', 'slug' => 'volunteers' ),
             ),
             __( 'Kandinsky news footer menu', 'knd' ) => array(
                 array('title' => __('Extertise', 'knd'), 'url' => home_url('/projects/') ),
