@@ -274,6 +274,12 @@ class KND_Dubrovino_Data_Builder extends KND_Plot_Data_Builder {
                 'post_type' => 'page',
                 'post_slug' => 'volunteers',
             ),
+            array(
+                'section' => '',
+                'piece' => 'legal',
+                'post_type' => 'page',
+                'post_slug' => 'legal',
+            ),
         ),
         
         'pages_templates' => array(
@@ -423,41 +429,55 @@ class KND_Dubrovino_Data_Builder extends KND_Plot_Data_Builder {
         parent::__construct($imp);
     
         $this->cta_list = array(
-            'CTA_DONATE' => site_url('/petition/'),
+            'CTA_DONATE' => site_url('/howtohelp/'),
         );
         
-        $this->data_routes['theme_options']['knd_hero_image_support_url'] = get_permalink(get_page_by_path('petition'));
-        $this->data_routes['theme_options']['knd_url_pd_policy'] = '#';
-        $this->data_routes['theme_options']['knd_url_privacy_policy'] = '#';
-        $this->data_routes['theme_options']['knd_url_public_oferta'] = '#';
+        $this->data_routes['theme_options']['knd_hero_image_support_url'] = get_permalink(get_page_by_path('howtohelp'));
+        $this->data_routes['theme_options']['knd_url_pd_policy'] = get_permalink(get_page_by_path('legal'));
+        $this->data_routes['theme_options']['knd_url_privacy_policy'] = get_permalink(get_page_by_path('howtohelp'));
+        $this->data_routes['theme_options']['knd_url_public_oferta'] = get_permalink(get_page_by_path('howtohelp'));
         
         $this->data_routes['menus'] = array(
             __('Main menu', 'knd') => array(
                 array('title' => "Главная", 'url' => home_url('/') ),
                 array('post_type' => 'page', 'slug' => 'about' ),
-                array('post_type' => 'page', 'slug' => 'contacts' ),
+                array('post_type' => 'page', 'slug' => 'history' ),
+                array('title' => __('Extertise', 'knd'), 'url' => home_url('/projects/') ),
                 array('title' => __('News', 'knd'), 'url' => home_url('/news/') ),
+                array('post_type' => 'page', 'slug' => 'howtohelp' ),
+                array('post_type' => 'page', 'slug' => 'contacts' ),
+                array('post_type' => 'page', 'slug' => 'howtojoin' ),
             ),
             __( 'Kandinsky our work footer menu', 'knd' ) => array(
                 array('post_type' => 'page', 'slug' => 'about' ),
                 array('post_type' => 'page', 'slug' => 'contacts' ),
+                array('post_type' => 'page', 'slug' => 'reports' ),
+                array('post_type' => 'page', 'slug' => 'howtojoin' ),
             ),
             __( 'Kandinsky news footer menu', 'knd' ) => array(
-                array('post_type' => 'page', 'slug' => 'news' ),
+                array('title' => __('Extertise', 'knd'), 'url' => home_url('/projects/') ),
+                array('title' => __('News', 'knd'), 'url' => home_url('/news/') ),
+                array('post_type' => 'page', 'slug' => 'history' ),
+                array('post_type' => 'page', 'slug' => 'howtohelp' ),
             ),
             __( 'Kandinsky projects block menu', 'knd' ) => array(
+                array('title' => __('Extertise', 'knd'), 'url' => home_url('/projects/') ),
+                array('post_type' => 'page', 'slug' => 'history' ),
+                array('post_type' => 'page', 'slug' => 'reports' ),
             ),
         );
         
         $this->data_routes['sidebar_widgets'] = array(
             'knd-homepage-sidebar' => array(
                 array('slug' => 'knd_ourorg', 'options' => array('title' => get_theme_mod('subtitle_org'), 'text' => get_theme_mod('subtitle_slogan'),) ),
-                array('slug' => 'knd_news', 'options' => array('title' => "Хроника кампании", 'num' => 6,) ),
+                array('slug' => 'knd_news', 'options' => array('title' => "Последние новости", 'num' => 6,) ),
                 array('slug' => 'knd_cta', 'options' => array() ),
+                array('slug' => 'knd_projects', 'options' => array('title' => "Экспертиза", 'num' => 3,) ),
                 array('slug' => 'knd_orgs', 'options' => array('title' => 'О нас пишут', 'num' => 4), ),
             ),
             'knd-news-archive-sidebar' => array(
                 array('slug' => 'knd_cta', 'options' => array() ),
+                array('slug' => 'knd_projects', 'options' => array('title' => "Экспертиза", 'num' => 3,) ),
                 array('slug' => 'knd_orgs', 'options' => array('title' => 'О нас пишут', 'num' => 4), ),
             ),
             'knd-projects-archive-sidebar' => array(
