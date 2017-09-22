@@ -25,6 +25,12 @@ class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
                 'piece' => 'reports',
                 'post_type' => 'page',
                 'post_slug' => 'reports',
+            ),
+            array(
+                'section' => '',
+                'piece' => 'legal',
+                'post_type' => 'page',
+                'post_slug' => 'legal',
             )
         ),
         
@@ -205,7 +211,7 @@ class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
             ),
             __( 'Kandinsky our work footer menu', 'knd' ) => array(
                 array('post_type' => 'page', 'slug' => 'about' ),
-                array('title' => "История", 'url' => home_url('/about-history/') ),
+                array('post_type' => 'page', 'slug' => 'history' ),
                 array('post_type' => 'page', 'slug' => 'reports' ),
                 array('post_type' => 'page', 'slug' => 'contacts' ),
             ),
@@ -518,7 +524,12 @@ class KND_Withyou_Data_Builder extends KND_Plot_Data_Builder {
                 'post_type' => 'page',
                 'post_slug' => 'reports',
             ),
-
+            array(
+                'section' => '',
+                'piece' => 'legal',
+                'post_type' => 'page',
+                'post_slug' => 'legal',
+            )
         ),
         
         'pages_templates' => array(
@@ -671,10 +682,10 @@ class KND_Withyou_Data_Builder extends KND_Plot_Data_Builder {
             'CTA_DONATE' => site_url('/howtohelp/'),
         );
         
-        $this->data_routes['theme_options']['knd_hero_image_support_url'] = get_permalink(get_page_by_path('howtohelp'));
-        $this->data_routes['theme_options']['knd_url_pd_policy'] = '#';
-        $this->data_routes['theme_options']['knd_url_privacy_policy'] = '#';
-        $this->data_routes['theme_options']['knd_url_public_oferta'] = '#';
+        $this->data_routes['theme_options']['knd_hero_image_support_url'] = home_url('howtohelp');
+        $this->data_routes['theme_options']['knd_url_pd_policy'] = home_url('legal');
+        $this->data_routes['theme_options']['knd_url_privacy_policy'] = home_url('legal');
+        $this->data_routes['theme_options']['knd_url_public_oferta'] = home_url('legal');
         
         $this->data_routes['menus'] = array(
             __('Main menu', 'knd') => array(
@@ -695,7 +706,9 @@ class KND_Withyou_Data_Builder extends KND_Plot_Data_Builder {
             ),
             __( 'Kandinsky news footer menu', 'knd' ) => array(
                 array('post_type' => 'page', 'slug' => 'news' ),
-                array('post_type' => 'page', 'slug' => 'projects' ),
+                array('title' => 'Все проекты', 'url' => home_url('/projects/') ),
+                array('title' => 'Им нужна помощь', 'url' => home_url('campaign/active') ),
+                array('title' => 'Вы помогли', 'url' => home_url('campaign/completed') ),
             ),
             __( 'Kandinsky projects block menu', 'knd' ) => array(
                 array('title' => 'Все проекты', 'url' => home_url('/projects/') ),

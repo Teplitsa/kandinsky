@@ -27,7 +27,7 @@
     }
 
     h2.logo-name {
-        padding-top: 12px;
+        padding-top: 8px;
     }
 }
 
@@ -83,7 +83,10 @@
             color: $color-text;
         }
 
-        opacity: .5;
+        opacity: .75;
+        body.plot-public-campaign & {
+            opacity: .5;
+        }
     }
     
     //layout
@@ -160,11 +163,6 @@
         display: inline-block;
         width: 100%; 
         height: 100%;
-        
-        body.plot-public-campaign & {
-           
-        }
-        
     }
     
     a {
@@ -201,7 +199,10 @@
             display: block;
         }
 
-        opacity: .5;
+        opacity: .75;
+        body.plot-public-campaign & {
+            opacity: .5;
+        }
     }
 }
 

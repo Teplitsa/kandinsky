@@ -55,6 +55,8 @@ $( '#trigger_menu_close' )
 		e.preventDefault();
 	} );
 
+	
+
 /** Submenu toggle  **/
 $( '.submenu-trigger' )
 	.on( 'click', function( e ) {
@@ -80,55 +82,9 @@ $( '.submenu-trigger' )
 		}
 	} );
 
-/** Newsletter **/
-$( '#trigger_newsletter' )
-	.on( 'click', function( e ) {
 
-		if ( $( 'body' )
-				.hasClass( 'slug-subscribe' ) ) {
-			return false;
-		}
 
-		var winW = $( '#top' )
-			.width();
 
-		if ( winW > breakPointMedium && ! $site_header.hasClass( 'newsletter-open' ) ) {
-			e.preventDefault();
-			e.stopPropagation();
-
-			$site_header.find( '#newsletter_panel' )
-				.slideDown( 150, function() {
-					$site_header.addClass( 'newsletter-open' )
-						.find( '.rdc-textfield__input' )
-						.focus();
-					$( this )
-						.removeAttr( 'style' );
-				} );
-		}
-		else if ( $site_header.hasClass( 'newsletter-open' ) ) {
-			e.preventDefault();
-			e.stopPropagation();
-
-			$site_header.find( '#newsletter_panel' )
-				.slideUp( 150, function() {
-					$site_header.removeClass( 'newsletter-open' );
-					$( this )
-						.removeAttr( 'style' );
-				} );
-		}
-	} );
-
-// No validate no autocomplete
-$( '.novalidate' )
-	.attr( 'novalidate', 'novalidate' )
-	.find( '.frm_form_field input' )
-	.attr( 'autocomplete', 'off' );
-
-// Open panel after submit
-if ( ! $( 'body' ).hasClass( 'slug-subscribe' ) && $site_header.find( '#newsletter_panel' )
-     .find( '.frm_message, .frm_error_style' ).length > 0 ) {
-	$site_header.addClass( 'newsletter-open' );
-}
 
 /** Close by key and click **/
 $( document )
@@ -173,19 +129,7 @@ $( document )
 		}
 	} );
 
-// Search forcus on search page
-function rdc_search_focus_position( SearchInput ) {
-	if ( SearchInput.length > 0 ) {
-		var strLength = SearchInput.val().length * 2;
 
-		SearchInput.focus();
-		SearchInput[ 0 ].setSelectionRange( strLength, strLength ); //this put cursor in
-	                                                                // last position
-	}
-}
-
-rdc_search_focus_position( $( '#sr_form' )
-	.find( '.search-field' ) );
 
 /** Sticky elements **/
 var position = $( window )
@@ -323,59 +267,6 @@ $( window )
 		resize_embed_media();
 	});
 
-/** Leyka custom modal **/
-var leykaTopPad = (windowWidth > 940) ? 120 : 66;
-
-$( '#leyka-agree-text' )
-	.easyModal( {
-		hasVariableWidth: true,
-		top: leykaTopPad,
-		//transitionIn: 'animated zoomIn',
-		//transitionOut: 'animated zoomOut',
-		onClose: function() { }
-	} );
-
-$( 'body' )
-	.on( 'click', '.leyka-custom-confirmation-trigger', function( e ) {
-
-		$( '#leyka-agree-text' )
-			.trigger( 'openModal' );
-		e.preventDefault();
-	} );
-
-$( 'body' )
-	.on( 'click', '.leyka-modal-close', function( e ) {
-
-		$( '#leyka-agree-text' )
-			.trigger( 'closeModal' );
-	} );
-
-/* Center logos  */
-function logo_vertical_center() {
-	$( '.logo-gallery' )
-		.each(function() {
-
-			var logoH = $( this )
-				            .find( '.logo' )
-				            .eq( 0 )
-				            .parents( '.bit' )
-				            .height() - 3;
-
-			$( this )
-				.find( '.logo-frame' )
-				.find( 'span' )
-				.css( { 'line-height': logoH + 'px' } );
-		});
-}
-
-imagesLoaded( '#site_content', function() {
-	logo_vertical_center();
-} );
-
-$( window )
-	.resize(function() {
-		logo_vertical_center();
-	});
 
 /* Scroll */
 $( '.local-scroll, .inpage-menu a' )
@@ -395,64 +286,6 @@ $( '.local-scroll, .inpage-menu a' )
 
 	} );
 
-/** Store **/
-$( document )
-	.on( 'click', '.tpl-storeitem', function( e ) {
 
-		var $_item = $( this ),
-			$_target_data = $_item.parents( '.panel-widget-style' )
-				.attr( 'class' ),
-			$_target_raw = $_target_data.split( ' ' );
-		scroll_target = $( '.frm_form_widget' )
-			.eq( 0 )
-			.offset();
-
-		if ( $_target_raw[ 0 ] && $_target_raw[ 0 ].length > 0 ) {
-			//find and check checkbox
-			$( '#' + $_target_raw[ 0 ] )
-				.prop( 'checked', true );
-
-			//scroll
-			$( 'html, body' )
-				.animate( { scrollTop: scroll_target.top - 50 }, 900 );
-		}
-		$( '.store_form' )
-			.delay( 500 )
-			.queue( function( form ) {
-				$( '.store_bubble' )
-					.hide();
-				$( this )
-					.closest( '.panel-grid' )
-					.css( 'position', 'relative' )
-					.append( '<div class="store_bubble_left animated">Шаг 2. Заполните поля формы</div>' );
-				$( '.store_bubble_left' )
-					.addClass( 'fadeIn' );
-				form();
-				$( document )
-					.on( 'click', function( e ) {
-						$( '.store_bubble_left' )
-							.addClass( 'fadeOut' );
-					} );
-			} )
-			.one();
-		console.log( $_target_raw[ 0 ] );
-	} );
-
-// Showing bubble after page load
-$( document )
-	.find( '.store_title' )
-	.delay( 1000 )
-	.queue( function( next ) {
-		$( this )
-			.append( '<div class="store_bubble animated">Шаг 1. Выберите Продукт</div>' );
-		$( '.store_bubble' )
-			.addClass( 'fadeIn' );
-		next();
-		$( document )
-			.on( 'click', function( e ) {
-				$( '.store_bubble' )
-					.addClass( 'fadeOut' );
-			} );
-	} );
 
 } ); //jQuery
