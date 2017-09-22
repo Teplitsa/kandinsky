@@ -183,7 +183,7 @@ class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
         parent::__construct($imp);
         
         $this->cta_list = array(
-            'CTA_DONATE' => site_url('/howtohelp/'),
+            'CTA_DONATE' => home_url('/howtohelp/'),
         );
         
         $this->data_routes['theme_options']['knd_hero_image_support_url'] = get_permalink(get_page_by_path('howtohelp'));
@@ -432,10 +432,10 @@ class KND_Dubrovino_Data_Builder extends KND_Plot_Data_Builder {
             'CTA_DONATE' => site_url('/howtohelp/'),
         );
         
-        $this->data_routes['theme_options']['knd_hero_image_support_url'] = get_permalink(get_page_by_path('howtohelp'));
-        $this->data_routes['theme_options']['knd_url_pd_policy'] = get_permalink(get_page_by_path('legal'));
-        $this->data_routes['theme_options']['knd_url_privacy_policy'] = get_permalink(get_page_by_path('howtohelp'));
-        $this->data_routes['theme_options']['knd_url_public_oferta'] = get_permalink(get_page_by_path('howtohelp'));
+        $this->data_routes['theme_options']['knd_hero_image_support_url'] = home_url('howtohelp');
+        $this->data_routes['theme_options']['knd_url_pd_policy'] = home_url('legal');
+        $this->data_routes['theme_options']['knd_url_privacy_policy'] = home_url('legal');
+        $this->data_routes['theme_options']['knd_url_public_oferta'] = home_url('legal');
         
         $this->data_routes['menus'] = array(
             __('Main menu', 'knd') => array(
