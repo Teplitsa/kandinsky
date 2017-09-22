@@ -201,6 +201,7 @@ class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
                 array('post_type' => 'page', 'slug' => 'reports' ),
                 array('title' => 'Проекты', 'url' => home_url('/projects/') ),
                 array('post_type' => 'page', 'slug' => 'volunteers' ),
+                array('post_type' => 'page', 'slug' => 'gethelp' ),
             ),
             __( 'Kandinsky our work footer menu', 'knd' ) => array(
                 array('post_type' => 'page', 'slug' => 'about' ),
@@ -262,24 +263,39 @@ class KND_Dubrovino_Data_Builder extends KND_Plot_Data_Builder {
         
         'pages' => array(
             array(
-                'section' => '',
-                'piece' => 'petition',
+                'section' => 'about',
+                'piece' => 'reports',
                 'post_type' => 'page',
-                'post_slug' => 'petition',
+                'post_slug' => 'reports',
+            ),
+            array(
+                'section' => 'howtojoin',
+                'piece' => 'howtojoin',
+                'post_type' => 'page',
+                'post_slug' => 'volunteers',
             ),
         ),
         
         'pages_templates' => array(
-            'aboutus' => array(
+            'about' => array(
                 'template' => 'page-about',
                 'post_type' => 'page',
                 'post_slug' => 'about',
-        
             ),
             'contacts' => array(
                 'template' => 'page-contacts',
                 'post_type' => 'page',
                 'post_slug' => 'contacts',
+            ),
+            'chronics' => array(
+                'template' => 'page-chronics',
+                'post_type' => 'page',
+                'post_slug' => 'history',
+            ),
+            'howtohelp' => array(
+                'template' => 'page-howtohelp',
+                'post_type' => 'page',
+                'post_slug' => 'howtohelp',
             ),
             'demo' => array(
                 'template' => 'page-demo',
@@ -289,9 +305,13 @@ class KND_Dubrovino_Data_Builder extends KND_Plot_Data_Builder {
         ),
         
         'posts' => array(
-            'chronics' => array(
+            'news' => array(
                 'post_type' => 'post',
                 'pieces' => array('news1', 'news2', 'news3', ),
+            ),
+            'docs' => array(
+                'post_type' => 'project',
+                'pieces' => array('expert', 'lawreason', 'dictionary' ),
             ),
             'team' => array(
                 'post_type' => 'person',
