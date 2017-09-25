@@ -59,7 +59,7 @@
 // News widget 
 .knd-news-widget {
     
-    padding: 54px 0px 0px 0px;
+    padding: 54px 0px 0px $gut/2;
     background: $color-gray-light;
     
     body.plot-public-campaign & {
@@ -71,15 +71,14 @@
         color: $color-page-text;
     }
     
-    .knd-news-widget-body {
+    .cards-row {
         padding-top: $gut;
-        padding-bottom: $gut/2;
     }
     
 }
 
 // Projects
-.knd-projects-widget {
+.knd-shortlist-widget {
 
     @extend .knd-news-widget;
     background: $color-third;
@@ -90,26 +89,37 @@
     
     h2.section-title {
         color: $color-white;
+        @include for(medium-screens) {
+            width: 50%;
+        }
     }
     
-    .section-links {
-        display: flex;
-        justify-content: flex-start;
-        border-bottom: 1px solid $color-page-bg-dark;
-        padding-bottom: 15px;
-        padding-top: 10px;
-
+    .knd-widget-head {
         @include for(medium-screens) {
-            justify-content: flex-end;
-            transform: translateY(-55%);
-            padding-top: 0px;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            align-items: flex-end;
+
+            padding-bottom: 13px;
+            border-bottom: 1px solid $color-white;
         }
+    }
+
+    .section-links {
+        padding-top: 8px;
         
+        @include for(medium-screens) {
+            text-align: right;
+            width: 50%;
+            padding-top: 0;
+        }
+
         a {
             @include knd-link-section-text();
             color: $color-main-dark;
-            
             margin-right: 20px;
+
             @include for(medium-screens) {
                 margin-left: 44px;
                 margin-right: 0px;
@@ -125,15 +135,6 @@
             
         }
         
-        body.plot-fundraising-org & {
-            border-color: $color-page-bg-dark;
-        }
-        
-    }
-
-    .knd-news-widget-body {
-        padding-top: $gut/2;
-        padding-bottom: $gut/4;
     }
 }
 

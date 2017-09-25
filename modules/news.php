@@ -40,21 +40,17 @@ class KND_News_Widget extends WP_Widget {
 
         <h2 class="section-title"><?php echo $title;?></h2>
 
-        <div class="knd-news-widget-body">
-            <div class="flex-row start cards-loop">
-            <?php
-		if ( ! empty( $posts ) ) {
-			foreach ( $posts as $p ) {
-				knd_post_card( $p );
-			}
-		}
+        <div class="flex-row start cards-row">
+        <?php
+    		if ( ! empty( $posts ) ) {
+    			foreach ( $posts as $p ) {
+    				knd_post_card( $p );
+    			}
+    		}
 		?>
         </div>
 
-        </div>
-
     </div>
-
 </div>
 
 <?php

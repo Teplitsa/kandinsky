@@ -213,7 +213,7 @@ $modularscale: (
     @include ms-respond(font-size, 1);
     font-family: $body;
     line-height: 1.33;
-    letter-spacing: .07em;
+    letter-spacing: .03em;
 }
 
 @mixin knd-link-footerblack-text() {

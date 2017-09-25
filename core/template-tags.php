@@ -641,33 +641,29 @@ function knd_show_cta_block() {
 }
 
 function knd_show_posts_shortlist( $posts, $title, $links ) {
-	?>
-<div class="knd-projects-widget">
-    <div class="container">
+?>
+<div class="knd-shortlist-widget"><div class="container">
 
+	<div class="knd-widget-head">
         <h2 class="section-title"><?php echo $title; ?></h2>
 
         <div class="section-links">
-	    <?php foreach($links as $link):?>
-	    <a href="<?php echo $link['url']?>"><?php echo $link['title']?></a>
-	    <?php endforeach?>
+	    	<?php foreach( $links as $link ){ ?>
+	    		<a href="<?php echo $link['url']; ?>"><?php echo $link['title']; ?></a>
+	    	<?php } ?>
+		</div>
 	</div>
 
-        <div class="knd-news-widget-body">
-
-            <div class="flex-row">
-	    <?php
-	if ( ! empty( $posts ) ) {
-		foreach ( $posts as $p ) {
-			knd_project_card( $p );
+    <div class="flex-row start cards-row">
+	<?php
+		if ( ! empty( $posts ) ) {
+			foreach ( $posts as $p ) {
+				knd_project_card( $p );
+			}
 		}
-	}
 	?>
 	</div>
 
-        </div>
-
-    </div>
-</div>
+</div></div>
 <?php
 }

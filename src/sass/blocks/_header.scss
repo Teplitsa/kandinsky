@@ -181,7 +181,7 @@
 		display: flex;
 		flex-flow: column nowrap;
 		justify-content: center;
-        align-items: right;
+        align-items: flex-end;
 		height: $logo_full_h + $height_gap;
 		margin-right: $height_gap /2 ;
 		
