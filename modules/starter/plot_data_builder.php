@@ -142,8 +142,6 @@ class KND_Plot_Data_Builder {
                         $piece = new KND_Piece(array('piece_name' => $piece_name, 'piece_section' => $section));
                         $slug = $piece->get_post_slug();
         
-                        //                         echo "slug: {$slug} \n";
-        
                         $campaign = knd_get_post($slug, $post_type);
                         if($campaign) {
                             $leyka_campaign = new Leyka_Campaign($campaign);
@@ -314,45 +312,144 @@ class KND_Plot_Data_Builder {
     }
     
     public function remove_all_other_plots_posts() {
-//         var_dump($this->imp->possible_plots);
-
         foreach($this->imp->possible_plots as $plot_name) {
-            
-//             var_dump($plot_name);
             
             if($plot_name != $this->imp->plot_name) {
                 
-//                 echo "deleting all posts...\n";
-                
                 $builder = self::produce_plot_builder($plot_name, $this->imp);
                 $plot_config = $builder->data_routes;
-                
-//                 var_dump($plot_config['posts']);
                 
                 foreach($plot_config['posts'] as $section => $section_data) {
                     
                     $post_type = isset($section_data['post_type']) ? $section_data['post_type'] : 'post';
                     $post_pieces_name = $section_data['pieces'];
                     
-//                     echo "deleting pt: {$post_type}...\n";
-//                     var_dump($post_pieces_name);
-                    
                     foreach($post_pieces_name as $piece_name) {
                         
                         $piece = new KND_Piece(array('piece_name' => $piece_name, 'piece_section' => $section));
                         $slug = $piece->get_post_slug();
                         
-//                         echo "slug: {$slug} \n";
-                        
                         $post = knd_get_post($slug, $post_type);
                         if($post) {
-//                             echo "delete {$slug} \n";
                             wp_delete_post( $post->ID, true );
                         }
                     }
                 }
             }
         }
+    }
+    
+    public function remove_all_content() {
+    	
+        foreach($this->imp->possible_plots as $plot_name) {
+                $builder = self::produce_plot_builder($plot_name, $this->imp);
+                $plot_config = $builder->data_routes;
+        
+                foreach($plot_config['posts'] as $section => $section_data) {
+        
+                    $post_type = isset($section_data['post_type']) ? $section_data['post_type'] : 'post';
+                    $post_pieces_name = $section_data['pieces'];
+        
+                    foreach($post_pieces_name as $piece_name) {
+        
+                        $piece = new KND_Piece(array('piece_name' => $piece_name, 'piece_section' => $section));
+                        $slug = $piece->get_post_slug();
+        
+                        $post = knd_get_post($slug, $post_type);
+                        if($post) {
+                            wp_delete_post( $post->ID, true );
+                        }
+                    }
+                }
+                
+                foreach($plot_config['pages'] as $section => $section_data) {
+                
+                	$post_type = isset($section_data['post_type']) ? $section_data['post_type'] : 'page';
+                	if(isset($section_data['piece'])) {
+	                	$slug = $section_data['post_slug'];
+	                	$post = knd_get_post($slug, $post_type);
+	                	if($post) {
+	                		wp_delete_post( $post->ID, true );
+	                	}
+                	}
+                	elseif(isset($section_data['pieces'])) {
+                		$post_pieces_name = $section_data['pieces'];
+                		
+                		foreach($post_pieces_name as $piece_name) {
+                		
+                			$piece = new KND_Piece(array('piece_name' => $piece_name, 'piece_section' => $section));
+                			$slug = $piece->get_post_slug();
+                		
+                			$post = knd_get_post($slug, $post_type);
+                			if($post) {
+                				wp_delete_post( $post->ID, true );
+                			}
+                		}
+                	}
+                }
+                
+                foreach($plot_config['pages_templates'] as $section => $section_data) {
+                
+                	$post_type = isset($section_data['post_type']) ? $section_data['post_type'] : 'page';
+                	$slug = $section_data['post_slug'];
+                	$post = knd_get_post($slug, $post_type);
+                	if($post) {
+                		wp_delete_post( $post->ID, true );
+                	}
+                }
+                
+                if(defined('LEYKA_VERSION')) {
+	                foreach($plot_config['leyka_campaigns'] as $section => $section_data) {
+	                
+	                	$post_type = Leyka_Campaign_Management::$post_type;
+	                	$post_pieces_name = $section_data;
+	                
+	                	foreach($post_pieces_name as $piece_name) {
+	                
+	                		$piece = new KND_Piece(array('piece_name' => $piece_name, 'piece_section' => $section));
+	                		$slug = $piece->get_post_slug();
+	                
+	                		$campaign = knd_get_post($slug, $post_type);
+	                		if($campaign) {
+	                			$leyka_campaign = new Leyka_Campaign($campaign);
+	                
+	                			$donations = $leyka_campaign->get_donations();
+	                			foreach($donations as $donation) {
+	                				$donation->delete(true);
+	                			}
+	                
+	                			$leyka_campaign->delete(true);
+	                		}
+	                	}
+	                }
+                }
+                
+                $this->remove_options($plot_config);
+        }
+        
+        $themes = wp_get_themes();
+        foreach($themes as $theme) {
+        	if($theme->template != 'kandinsky') {
+        		switch_theme($theme->template);
+        		break;
+        	}
+        }
+    }
+    
+    public function remove_options($plot_config) {
+    	
+    	foreach(array_keys($plot_config['theme_options']) as $key) {
+    		remove_theme_mod( $key );
+    	}
+    	
+    	foreach(array_keys($plot_config['theme_colors']) as $key) {
+    		remove_theme_mod( $key );
+    	}
+    	
+    	foreach(array_keys($plot_config['general_options']) as $key) {
+    		delete_option( $key );
+    	}
+    	
     }
     
     /**

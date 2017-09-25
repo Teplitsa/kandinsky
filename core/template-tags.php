@@ -281,9 +281,9 @@ function knd_paging_nav( WP_Query $query = null ) {
 }
 
 function knd_paginate_links( WP_Query $query = null, $echo = true ) {
+	global $wp_query;
+	
 	if ( ! $query ) {
-		
-		global $wp_query;
 		$query = $wp_query;
 	}
 	

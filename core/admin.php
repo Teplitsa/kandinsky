@@ -74,6 +74,11 @@ function knd_get_admin_menu_items() {
 					'icon' => 'dashicons-book-alt', 
 					'text' => __( 'User documentation', 'knd' ), 
 					'link' => KND_DOC_URL ), 
+				'remove-theme' => array(
+					'class' => '',
+					'icon' => 'dashicons-no',
+					'text' => __( 'Remove theme', 'knd' ),
+					'link' => admin_url( 'admin.php?page=remove-kandinsky-theme' ) ),
 				'email-to-support' => array( 
 					'class' => '', 
 					'icon' => 'dashicons-email', 
@@ -87,9 +92,53 @@ function knd_get_admin_menu_items() {
 	// ),
 }
 
+function knd_remove_theme() {
+	$is_theme_data_removed = false;
+	
+	if(isset($_POST['submit'])) {
+		$nonce = $_REQUEST['_wpnonce'];
+		if(wp_verify_nonce( $nonce, 'knd-remove-theme' )) {
+			
+			get_theme_mod('knd_site_scenario');
+			
+			$imp = new KND_Import_Remote_Content(get_theme_mod('knd_site_scenario'));
+			$imp->import_downloaded_content();
+			
+			$pdb = KND_Plot_Data_Builder::produce_builder($imp);
+			$pdb->remove_all_content();
+				
+			$is_theme_data_removed = true;
+		}
+	}
+	
+?>
+<div class="wrap">
+	<h2><?php echo get_admin_page_title() ?></h2>
+
+<?php if($is_theme_data_removed): ?>
+        <div class="notice notice-success is-dismissible">
+          <p><?php esc_html_e( 'Kandinsky theme removed', 'knd' ); ?></p>
+        </div>
+<?php else:?>
+
+	<form action="" method="POST">
+		<?php
+			wp_nonce_field('knd-remove-theme');
+			?>
+            <h2><?php esc_html_e("Are you sure you want to remove Kandinsky theme?", 'knd'); ?></h2>
+            <?php
+			submit_button(__("Yes, remove Kandinsky theme", 'knd'));
+		?>
+	</form>
+    
+</div>
+<?php
+	endif;
+}
+
 function knd_add_admin_pages( $items = array(), $is_inital_call = true ) {
 	$items = empty( $items ) || ! is_array( $items ) ? knd_get_admin_menu_items() : $items;
-	
+
 	if ( ! ! $is_inital_call ) {
 		
 		add_menu_page( __( 'Kandinsky settings', 'knd' ), __( 'Kandinsky', 'knd' ), 'manage_options', 'customize.php' );
@@ -100,6 +149,14 @@ function knd_add_admin_pages( $items = array(), $is_inital_call = true ) {
 			'manage_options', 
 			'knd-setup-wizard', 
 			'envato_theme_setup_wizard' );
+		
+		add_menu_page(
+			__( 'Remove theme', 'knd' ),
+			__( 'Remove theme', 'knd' ),
+			'manage_options',
+			'remove-kandinsky-theme',
+			'knd_remove_theme' );
+					
 	}
 	
 	foreach ( $items as $key => $item ) {

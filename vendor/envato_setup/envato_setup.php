@@ -397,8 +397,10 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
                 'tgm_bulk_url' => admin_url($this->tgmpa_url),
                 'ajaxurl' => admin_url('admin-ajax.php'),
                 'wpnonce' => wp_create_nonce('knd-setup-nonce'),
-                'verify_text' => __('...verifying', 'knd'),
-                'processing_text' => __('Processing...', 'knd'),
+                'verify_text' => esc_html__('...verifying', 'knd'),
+                'processing_text' => esc_html__('Processing...', 'knd'),
+                'upload_logo_text' => esc_html__('Upload Logo', 'knd'),
+                'select_logo_text' => esc_html__('Select Logo', 'knd'),
             ));
 
             wp_enqueue_style('envato-setup', $this->plugin_url.'css/envato-setup.css', array(
@@ -693,7 +695,7 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
                 } ?>
 
                 <p class="envato-setup-actions step">
-                    <a href="<?php echo esc_url($this->get_next_step_link()); ?>" class="button-primary button button-large button-next" data-callback="install_plugins">
+                    <a href="<?php echo esc_url($this->get_next_step_link()); ?>" class="button-primary button button-large button-next" data-callback="installPlugins">
                         <?php esc_html_e('Continue', 'knd'); ?>
                     </a>
                     <a href="<?php echo esc_url($this->get_next_step_link()); ?>" class="button button-large button-next">
@@ -844,26 +846,26 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
             $pdb = KND_Plot_Data_Builder::produce_builder($imp);
             $pdb->build_posts();
             $pdb->build_pages();
-            
+
             // re-setup theme options after pages created
             $pdb->build_theme_options();
-            
+
             $pdb->build_menus();
             $pdb->build_sidebars();
-        
+
             return true;
-        
+
         }
-        
+
         public function _content_install_donations() {
-            
+
             if(is_plugin_active('leyka/leyka.php')) {
                 knd_activate_leyka();
             }
             else {
                 update_option('knd_setup_install_leyka', true);
             }
-            
+
             return true;
         }
 
@@ -934,13 +936,13 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
                 'install_callback' => array($this, '_content_install_donations'),
                 'checked' => $this->is_default_content_installed(),
             );
-            
+
             return apply_filters($this->theme_name.'_theme_setup_wizard_content', $content);
 
         }
 
         public function step_content_view() { ?>
-            
+
             <h1><?php esc_html_e('Theme default content', 'knd'); ?></h1>
             <form method="post">
                 <?php if($this->is_default_content_installed()) { ?>
@@ -978,7 +980,7 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
                 </table>
 
                 <p class="envato-setup-actions step">
-                    <a href="<?php echo esc_url($this->get_next_step_link()); ?>" class="button-primary button button-large button-next" data-callback="install_content">
+                    <a href="<?php echo esc_url($this->get_next_step_link()); ?>" class="button-primary button button-large button-next" data-callback="installContent">
                         <?php esc_html_e('Set up', 'knd'); ?>
                     </a>
                     <a href="<?php echo esc_url($this->get_next_step_link()); ?>" class="button button-large button-next">
@@ -1640,7 +1642,6 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 
                 <p class="envato-setup-actions step">
                     <input type="submit" class="button-primary button button-large button-next" value="<?php esc_attr_e('Continue', 'knd'); ?>" name="save_step">
-                    <!-- data-callback="update_settings" -->
                     <a href="<?php echo esc_url($this->get_next_step_link()); ?>" class="button button-large button-next">
                         <?php esc_html_e('Skip this step', 'knd'); ?>
                     </a>
@@ -1681,16 +1682,16 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
         }
 
         public function step_support_view() {
-            
+
             if(defined('LEYKA_VERSION') && get_option('knd_setup_install_leyka')) {
-                
+
                 if(is_plugin_active('leyka/leyka.php')) {
                     knd_activate_leyka();
                     update_option('knd_setup_install_leyka', false);
                 }
-                
+
             }
-            
+
         ?>
 
             <h1><?php _e('Help and support', 'knd'); ?></h1>
@@ -1715,8 +1716,8 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 
         public function step_ready_view() {
 
-            update_option('knd_setup_complete', time()); 
-            
+            update_option('knd_setup_complete', time());
+
         ?>
 
             <h1><?php _e('Yay! Your website is ready!', 'knd'); ?></h1>
