@@ -3,7 +3,7 @@
 class KND_Cta_Widget extends WP_Widget {
 
 	function __construct() {
-		$widget_ops = array( 'description' => __( 'CTA block', 'knd' ), 'customize_selective_refresh' => true );
+		$widget_ops = array( 'description' => __( 'Call To Action block', 'knd' ), 'customize_selective_refresh' => true );
 		
 		$control_ops = array( 'width' => 400, 'height' => 350 );
 		
@@ -18,6 +18,13 @@ class KND_Cta_Widget extends WP_Widget {
 	}
 
 	public function form( $instance ) {
+		?>
+<p>
+    <?php _e( 'You can change CTA text and link in ', 'knd' ); ?>
+    <a href="<?php echo admin_url('/customize.php?autofocus%5Bsection%5D=knd_cta_block_settings')?>"><?php _e( 'Appearence / Customize / CTA block settings', 'knd' ); ?></a>
+</p>
+        <?php 
+		
 	}
 
 	public function update( $new_instance, $old_instance ) {

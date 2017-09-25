@@ -115,6 +115,20 @@ class KND_Plot_Data_Builder {
             'yandex-yandex_money', 'mixplat-sms', 'quittance-bank_order', 'text-text_box'
         );
         update_option('leyka_pm_available', $available_pms);
+        
+        if( !get_option('leyka_pm_order') ) {
+        
+        	$pm_order = array();
+        	foreach((array)get_option('leyka_pm_available') as $pm_full_id) {
+        		if($pm_full_id) {
+        			$pm_order[] = "pm_order[]={$pm_full_id}";
+        		}
+        	}
+        
+        	update_option('leyka_pm_order', implode('&', $pm_order));
+        
+        }
+        
     }
     
     public function _remove_all_section_campaigns_with_donations() {
@@ -425,6 +439,9 @@ class KND_Plot_Data_Builder {
                 }
                 
                 $this->remove_options($plot_config);
+                $this->remove_menus($plot_config);
+                $this->remove_sidebars($plot_config);
+                
         }
         
         $themes = wp_get_themes();
@@ -434,6 +451,32 @@ class KND_Plot_Data_Builder {
         		break;
         	}
         }
+    }
+    
+    public function remove_sidebars($plot_config) {
+    	
+    	foreach($plot_config['sidebar_widgets'] as $key => $sidebar_widgets) {
+    		
+    		foreach($this->data_routes['sidebar_widgets'] as $sidebar_name => $widgets_list) {
+    			$sidebars = get_option( 'sidebars_widgets' );
+    			$sidebars[$sidebar_name] = array();
+    			update_option( 'sidebars_widgets', $sidebars );
+    		}
+    		
+    		unregister_sidebar($key);
+    	}
+    	 
+    }
+    
+    public function remove_menus($plot_config) {
+    	
+    	foreach(array_keys($plot_config['menus']) as $key) {
+    		$menu_object = wp_get_nav_menu_object( $key );
+    		if($menu_object) {
+    			wp_delete_term( $menu_object->term_id, 'nav_menu' );
+    		}
+    	}
+    	
     }
     
     public function remove_options($plot_config) {
@@ -934,13 +977,10 @@ class KND_Plot_Data_Builder {
             $sidebars[$sidebar_name] = array();
             update_option( 'sidebars_widgets', $sidebars );
             
-//             echo $sidebar_name . "\n";
             foreach($widgets_list as $widget) {
                 
                 $widget_options = $widget['options'];
                 $widget_name = $widget['slug'];
-//                 echo $widget_name . "\n";
-//                 echo print_r($widget_options, true) . "\n";
                 
                 // add text on home
                 $widgets = get_option('widget_' . $widget_name);

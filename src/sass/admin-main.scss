@@ -226,3 +226,44 @@ li[id^="customize-control-widget_knd_cta-"] {
         display:none;
     }
 }
+
+div.knd-metabox-line {
+    a[href$="?page=remove-kandinsky-theme"] {
+        color: #d54e21;
+    }
+}
+
+li#wp-admin-bar-remove-theme {
+    a {
+        background: #d54e21;
+        
+        &:hover,
+        &:active {
+            background: #d54e21;
+        }
+    }
+    
+}
+
+#adminmenu {
+    ul.wp-submenu {
+        li {
+            a[href$="?page=remove-kandinsky-theme"] {
+            
+                background: #d54e21;
+                
+                &:hover,
+                &:active {
+                    background: #d54e21;
+                }
+                
+            }
+        }
+    }
+}
+
+.knd-confirm-remove-theme {
+    input.button-primary {
+        margin-right: 20px;
+    }
+}

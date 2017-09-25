@@ -75,7 +75,7 @@ function knd_get_admin_menu_items() {
 					'text' => __( 'User documentation', 'knd' ), 
 					'link' => KND_DOC_URL ), 
 				'remove-theme' => array(
-					'class' => '',
+					'class' => 'knd-remove-theme',
 					'icon' => 'dashicons-no',
 					'text' => __( 'Remove theme', 'knd' ),
 					'link' => admin_url( 'admin.php?page=remove-kandinsky-theme' ) ),
@@ -84,18 +84,19 @@ function knd_get_admin_menu_items() {
 					'icon' => 'dashicons-email', 
 					'text' => __( 'Email to the tech support', 'knd' ), 
 					'link' => 'mailto:' . KND_SUPPORT_EMAIL ) ) ) );
-	// '' => array(
-	// 'class' => '',
-	// 'icon' => '',
-	// 'text' => __('', 'knd'),
-	// 'link' => ,
-	// ),
 }
+
+function knd_cancel_remove_theme() {
+	if(isset($_POST['knd-cancel-remove-theme'])) {
+		wp_redirect( admin_url( '/index.php' ) );
+	}
+}
+add_action( 'admin_init', 'knd_cancel_remove_theme' );
 
 function knd_remove_theme() {
 	$is_theme_data_removed = false;
 	
-	if(isset($_POST['submit'])) {
+	if(isset($_POST['knd-remove-theme'])) {
 		$nonce = $_REQUEST['_wpnonce'];
 		if(wp_verify_nonce( $nonce, 'knd-remove-theme' )) {
 			
@@ -121,14 +122,17 @@ function knd_remove_theme() {
         </div>
 <?php else:?>
 
-	<form action="" method="POST">
+	<form action="" method="POST" class="knd-confirm-remove-theme">
 		<?php
 			wp_nonce_field('knd-remove-theme');
 			?>
             <h2><?php esc_html_e("Are you sure you want to remove Kandinsky theme?", 'knd'); ?></h2>
+            <p>
             <?php
-			submit_button(__("Yes, remove Kandinsky theme", 'knd'));
+			submit_button(__("Yes, remove Kandinsky theme", 'knd'), 'primary', 'knd-remove-theme', false);
+			submit_button(__("Cancel", 'knd'), 'secondary', 'knd-cancel-remove-theme', false, array('class' => 'knd-cancel-remove-theme-button'));
 		?>
+            </p>
 	</form>
     
 </div>
