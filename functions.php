@@ -67,8 +67,6 @@ require get_template_directory().'/core/class-cssjs.php';
 require get_template_directory().'/core/media.php';
 require get_template_directory().'/core/cards.php';
 require get_template_directory().'/core/extras.php';
-require get_template_directory().'/core/forms.php';
-require get_template_directory().'/core/request.php';
 require get_template_directory().'/core/shortcodes.php';
 require get_template_directory().'/core/shortcodes-ui.php';
 require get_template_directory().'/core/template-tags.php';

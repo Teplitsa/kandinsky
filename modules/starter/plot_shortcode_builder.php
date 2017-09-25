@@ -86,9 +86,6 @@ class KND_Shortcode_Builder {
     }
 
     public function build_knd_people_list($shortcode_name, $pieces, $attributes) {
-
-        $piece = $pieces[0];
-
         return $this->pack_shortcode_with_attributes($shortcode_name, $attributes);
     }
     
@@ -120,8 +117,6 @@ class KND_Shortcode_Builder {
     }
 
     public function build_knd_leyka_inline_campaign($shortcode_name, $pieces, $attributes) {
-        $piece = $pieces[0];
-
         return $this->pack_shortcode_with_attributes($shortcode_name, $attributes);
     }
     

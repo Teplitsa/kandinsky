@@ -18,7 +18,7 @@ function knd_text_pm_icon($icons){
 
 //no icon for text gateway
 add_filter('leyka_icons_text_text_box', 'knd_empty_icons');	
-function knd_empty_icons($icons){
+function knd_empty_icons(){
 	return array();
 }
 
@@ -86,8 +86,6 @@ function knd_donation_card(WP_Post $campaign){
 if($campaign->post_type != Leyka_Campaign_Management::$post_type) { // Wrong campaign data
     return;
 }
-
-$current_post = get_post();
 
 $thumbnail_size = apply_filters('leyka_campaign_card_thumbnail_size', 'post-thumbnail', $campaign);
 $css_class = apply_filters('leyka_campaign_card_class', 'leyka-campaign-card', $campaign);
