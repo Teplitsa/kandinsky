@@ -31,7 +31,6 @@ $social_color: (
 	vertical-align: middle;	
 	transition: all 0.2s;
 	text-decoration: none;
-	color: #fff;
 	width: $button-size;
 	height: $button-size;
 	padding: ($button-size - $icon-size)/2 0;
@@ -68,7 +67,6 @@ $social_color: (
 			vertical-align: top;
 			width: 20px;
 			height: 20px;
-			//fill: $color-text;
 		}
 	}
 }

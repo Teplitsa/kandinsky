@@ -48,12 +48,12 @@
 	<div class="nav-overlay"></div>
 	<nav id="site_nav" class="site-nav">
 		<div class="site-nav-title">
-			<div class="snt-cell">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="site-logo">
-					<h1 class="logo-name"><?php bloginfo('name'); ?></h1>
-					<h2 class="logo-name hide-upto-medium"><?php bloginfo('description'); ?></h2>
-				</a>
-			</div>
+			
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="snt-cell">
+				<h1 class="logo-name"><?php bloginfo('name'); ?></h1>
+				<h2 class="logo-name hide-upto-medium"><?php bloginfo('description'); ?></h2>
+			</a>
+			
 			<div id="trigger_menu_close" class="trigger-button close"><?php knd_svg_icon('icon-close');?></div>
 		</div>
 		<?php

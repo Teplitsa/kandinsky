@@ -220,7 +220,7 @@ h2.logo-name {
 .site-details {
 	text-align: right;		
 	p {		
-		color: $color-text;
+		color: $color-text-contrast;
 		@include knd-nav-text();
 		margin: 0;
 		
@@ -326,6 +326,7 @@ h2.logo-name {
 
 .searchform {
 	width: 100%;
+
 	.action {
         display: none;
     }
@@ -346,8 +347,11 @@ h2.logo-name {
         }
 		
 		&:focus {
-			box-shadow: inset 0px 1px 2px rgba(50,50,50, 0.08);			
-			border-color: #bebebe;
+			box-shadow: inset 0px 1px 2px rgba(50,50,50, 0.08);
+            background: $color-white;
+            color: $color-black;
+            padding-bottom: 17px;			
+			border-bottom: 2px solid $color-main;
 			//border-bottom: 2px solid $color-text;
 		}
 	}
@@ -391,6 +395,13 @@ h2.logo-name {
 	
 	.knd-social-links {
 		padding: $gut/2;
+        .svg-icon {
+            fill: $color-text;
+
+            body.plot-public-campaign & {
+                fill: $color-text-contrast;
+            }
+        }
 	}
 }
 
@@ -405,16 +416,12 @@ h2.logo-name {
 
 	@include for(medium-screens) { height: $logo_full_h + $height_gap;}
 	
-	.site-logo {
-		display: block;		
-		padding: $gut/2 ($logo_small_h + $height_gap) 0 $gut/2;			
-	}
-	
 	.snt-cell {
 		display: flex;
 		flex-flow: column nowrap;
 		justify-content: center;				
 		height: $logo_small_h + $height_gap;
+        padding-left: $gut/2;
 		
 		@include for(medium-screens){
 			height: $logo_full_h + $height_gap;
@@ -422,13 +429,15 @@ h2.logo-name {
 	}
 	
 	h1.logo-name {
-		font-size: 14px;
-		line-height: 15px;
+		font-size: 15px;
+		line-height: 16px;
 	}
+
 	h2.logo-name {
-		font-size: 11px;
+		font-size: 11.5px;
 		line-height: 15px;
         text-transform: none;
+        padding-top: 6px;
 	}
 	
 	.close {
@@ -470,25 +479,24 @@ h2.logo-name {
 		
 		& > a {
 			display: block;
+            padding: 19px $gut/2;
+            margin-right: 21px + 19px + 19px;
+            transition: all 0.3s;
+
             @include knd-nav-caps-text();
             font-weight: bold;
 			color: $color-text;
-			transition: all 0.3s;
 			
             body.plot-public-campaign & {
                 background: $color-third;
                 color: $color-text-contrast;
             }
-			
-			
-			padding: 19px $gut/2;
-			margin-right: $logo_small_h + $height_gap;
-						
+				
 			&:hover, &:focus, &:active {
 				background: $color-page-bg-dark;
 				
     			body.plot-public-campaign & {
-                    background: $color-third;
+                    background: $color-main;
                     color: $color-text-contrast;
                 }
 						
@@ -499,6 +507,7 @@ h2.logo-name {
 	}
 	
 	.menu-item-has-children {
+
 		.submenu-trigger {
 			display: block;
 			border-left: 1px solid $color-page-bg-dark;
@@ -509,24 +518,41 @@ h2.logo-name {
 			cursor: pointer;
 			text-align: center;
 			
-			width: $logo_small_h + $height_gap;
-			height: $logo_small_h + $height_gap;
-			padding: ($logo_small_h + $height_gap - 14px)/2;
+			width: 21px + 19px + 19px;
+			height: 21px + 19px + 19px;
+			padding: (21px + 19px + 19px - 14px)/2;
 			
+            body.plot-public-campaign & {
+                border-left-color: $color-second;
+            }
 			
 			.svg-icon {
+                display: block;
 				width: 14px;
 				height: 14px;
 				fill: $color-text;
+                vertical-align: middle;
+
+                body.plot-public-campaign & {
+                    fill: $color-text-contrast;
+                }
 			}
 			
 			&:hover {
 				background: $color-text;
-				border-left: none;
+				border-left-color: $color-text;
 				.svg-icon  { fill: $color-white; }
+
+                body.plot-public-campaign & {
+                    background: $color-main;
+                    border-left-color: $color-main;
+                    .svg-icon  { fill: $color-white; }
+                }
 			}
 			
-			.icon-up { display: none; }
+			.icon-up { 
+                display: none; 
+            }
 		}
 		
 		ul.sub-menu .submenu-trigger { display: none; }
@@ -542,23 +568,37 @@ h2.logo-name {
 		a {
 			color: $color-white;
 			margin-right: 0;
+            transition: all .35s;
 			
 			&:hover, &:focus, &:active {
-				background: $color-text;		
+				opacity: .5;
 			}
 		}
+
+        body.plot-public-campaign & {
+            background: $color-main;
+            li a { background: $color-main;}
+        }
 	}
 	
 	li.open {
 		.submenu-trigger {
 			background: $color-text;
-			border-left: none;
-			.icon-down { display: none; }
+			border-left-color: $color-text;
+			.icon-down { 
+                display: none; 
+            }
 			.icon-up {
-				display: inline-block;
+				display: block;
 				fill: $color-white;
 			}
+
+            body.plot-public-campaign & {
+                background: $color-main;
+                border-left-color: $color-main;
+            }
 		}
+
 		
 		ul.sub-menu { display: block; }
 	}

@@ -25,7 +25,7 @@
     
     body.home.plot-public-campaign & {
         background: $color-main;
-        color: $color-text;
+        color: $color-text-contrast;
     }
     
 }
@@ -319,7 +319,7 @@
         letter-spacing: 0.1em;
         
         body.plot-public-campaign & {
-            color: $color-text;
+            color: $color-text-contrast;
         }
         
         body.plot-fundraising-org & {
@@ -335,7 +335,7 @@
             hyphens: none;
             
             body.plot-public-campaign & {
-                color: $color-text;
+                color: $color-text-contrast;
             }
             
             body.plot-fundraising-org & {

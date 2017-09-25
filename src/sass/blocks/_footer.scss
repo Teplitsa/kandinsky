@@ -9,7 +9,7 @@
     color: $color-black;
     
     body.plot-public-campaign & {
-       color: $color-text;
+       color: $color-text-contrast;
        background: $color-third;
     }
 
@@ -20,7 +20,7 @@
                fill: $color-black;
                
                body.plot-public-campaign & {
-                   fill: $color-text;
+                   fill: $color-text-contrast;
                }
            } 
         }
@@ -47,7 +47,7 @@
     color: $color-black;
     
     body.plot-public-campaign & {
-        color: $color-text;
+        color: $color-text-contrast;
         background: $color-third;
     }
     
@@ -88,8 +88,9 @@
 
     
         body.plot-public-campaign & {
-            color: $color-text;
-            a { color: $color-text; }
+            color: $color-text-contrast;
+            a { color: $color-text-contrast; }
+
             opacity: .5;
         }
     }
@@ -205,7 +206,9 @@
         }
 
         opacity: .75;
+
         body.plot-public-campaign & {
+            color: $color-text-contrast;
             opacity: .5;
         }
     }
