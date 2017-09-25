@@ -15,7 +15,7 @@
 body {
     background-color: transparent;
     text-rendering: optimizeLegibility;
-    color: $color-page-text;
+    color: $color-text;
     @include knd-body-text();
 }
 

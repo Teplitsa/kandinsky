@@ -67,18 +67,18 @@ a:link {
 		&:first-child { margin-top: 0; }
 		&:last-child { margin-bottom: 0; }
 
-		color: $color-page-text;
+		color: $color-text;
 		strong, b { font-weight: normal; }
 	}
 
 	h2, h3 {
 		@include knd-head-exlarge-text();
-		color: $color-page-text;
+		color: $color-text;
 	}
 
 	h4 {
 		@include knd-body-title-text();
-		color: $color-page-text;
+		color: $color-text;
 	}
 
 	h5 {
@@ -92,7 +92,7 @@ a:link {
 
 
 	strong, b {
-		color: $color-page-text;
+		color: $color-text;
 	}
 
 	em {
@@ -319,7 +319,7 @@ a:link {
 	//pre
 	pre, code {
 		@include knd-body-text();
-		color: $color-page-text;
+		color: $color-text;
 	}
 }
 

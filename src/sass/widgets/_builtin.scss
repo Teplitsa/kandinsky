@@ -143,7 +143,7 @@
             padding-left: 24px;
 
             &::placeholder {
-                color: $color-page-text;
+                color: $color-text;
             }
         }
 
@@ -161,14 +161,14 @@
             font-weight: 400;
             text-transform: uppercase;
             letter-spacing: normal;
-            color: $color-page-text-light;
+            color: $color-text-light;
             top: 20px;
         }
     }
 
     .sr-num {
         font-size: .85em;
-        color: $color-page-text-light;
+        color: $color-text-light;
         text-align: left;
         margin-top: 8px;
     }
@@ -190,11 +190,11 @@
         position: absolute;
         top: 14px;
         left: 10px;
-        fill: $color-page-text;
+        fill: $color-text;
     }
 
     .search-field {
-        border: 1px solid $color-page-text;
+        border: 1px solid $color-text;
         background: transparent;
         padding: 12px 12px 12px 44px;
 

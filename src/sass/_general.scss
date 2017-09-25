@@ -8,7 +8,7 @@ html {
 
 body {
 	background: $color-page-bg;
-    color: $color-page-text;
+    color: $color-text;
 
 	text-rendering: optimizeLegibility;	
 	@include knd-body-text();

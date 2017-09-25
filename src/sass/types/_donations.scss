@@ -98,7 +98,7 @@ div[id*="leyka-pf-"] .inpage-card__thumb {
     }
     
     .amount {
-        color: $color-page-text;
+        color: $color-text;
         flex: 1 0 auto;
         width: 25%;
         min-width: 80px;
@@ -108,14 +108,14 @@ div[id*="leyka-pf-"] .inpage-card__thumb {
         flex: 1 1 auto;
         width: 75%;
         padding-left: 6px;
-        color: $color-page-text-light;
+        color: $color-text-light;
     }
 
     .purpose {
         flex: 1 1 auto;
         width: 40%;
         padding-left: 6px;
-        color: $color-page-text-light;
+        color: $color-text-light;
         a {
             color: $color-main;
         }

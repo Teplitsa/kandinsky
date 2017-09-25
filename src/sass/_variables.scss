@@ -57,21 +57,20 @@ $color-second-dark:         var(--knd-color-second-dark) !default; //darker vari
 $color-third: 		        var(--knd-color-third) !default; //dark color in theme
 $color-third-dark: 	        var(--knd-color-third-dark) !default; //darker variant
 
-
-$color-page-text1:          var(--knd-text1-color) !default;
-
-$color-page-text2:          var(--knd-text2-color) !default;
-$color-page-text2-dark:     var(--knd-text2-color-dark) !default;
-
-$color-page-text3:          var(--knd-text3-color) !default;
-$color-page-text3-dark:     var(--knd-text3-color-dark) !default;
-
-
 $color-page-bg:             var(--knd-page-bg-color) !default; //main bg color
 $color-page-bg-dark:        var(--knd-page-bg-color-dark) !default; //for borders
 
-$color-page-text:           var(--knd-page-text-color) !default; //main page text
-$color-page-text-light:     var(--knd-page-text-color-light) !default; //text lighter than main one
+$color-text:                var(--knd-page-text-color) !default; //main page text
+$color-text-light:          var(--knd-page-text-color-light) !default; //text lighter than main one
+
+$color-text-contrast:       var(--knd-text1-color) !default; //contast text for inverse situations
+
+$color-text-accent1:        var(--knd-text2-color) !default; //color accent for Dubrovino
+$color-text-accent1-dark:   var(--knd-text2-color-dark) !default;
+
+$color-text-accent2:        var(--knd-text3-color) !default; //color accent for Dubrovino
+$color-text-accent2-dark:   var(--knd-text3-color-dark) !default;
+
 
 
 //Scheme independent colors

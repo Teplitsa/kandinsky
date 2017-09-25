@@ -101,7 +101,7 @@ class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
             'knd_color_second'  => '#ffc914',
             'knd_color_third'   => '#0e0a2b',
 
-            'knd_text1_color'   => '#000000',
+            'knd_text1_color'   => '#ffffff',
             'knd_text2_color'   => '#000000',
             'knd_text3_color'   => '#000000',
 
@@ -596,7 +596,7 @@ class KND_Withyou_Data_Builder extends KND_Plot_Data_Builder {
             'knd_color_second' => '#ffbe2c',
             'knd_color_third' => '#008ceb',
             
-            'knd_text1_color' => '#000000',
+            'knd_text1_color' => '#ffffff',
             'knd_text2_color' => '#000000',
             'knd_text3_color' => '#000000',
             

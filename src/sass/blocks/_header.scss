@@ -10,12 +10,12 @@
 	left: 0;
 	
 	background: $color-page-bg;
-	border-bottom: 1px solid $color-page-bg-dark;
+	border-bottom: 1px solid $color-page-bg;
 	transition: opacity 0.3s;
 	
     body.plot-public-campaign & {
         background: $color-third;
-        border-bottom: 1px solid $color-third;
+        border-bottom-color: $color-third;;
     }
 	
 	&.fixed-header {
@@ -199,11 +199,10 @@
 .logo-name {
 	text-transform: uppercase;		
 	line-height: 1;
-	//color: $color-page-text;
-	color: $color-page-text;
+	color: $color-text;
 	
 	body.plot-public-campaign & {
-	   color: $color-page-text;
+	   color: $color-text-contrast;
 	}
 }
 
@@ -221,7 +220,7 @@ h2.logo-name {
 .site-details {
 	text-align: right;		
 	p {		
-		color: $color-page-text;
+		color: $color-text;
 		@include knd-nav-text();
 		margin: 0;
 		
@@ -280,7 +279,7 @@ h2.logo-name {
 		.svg-icon {
 			width: 18px;
 			height: 18px;
-			fill: $color-page-text;
+			fill: $color-text;
 			pointer-events: none;
 			
             body.plot-public-campaign & {
@@ -311,7 +310,7 @@ h2.logo-name {
 	background: rgba(0,0,0, 0.4);
 	
     body.plot-public-campaign & {
-        background: rgba(255,255,255, 0.4);
+        background: rgba(255,255,255, 0.6);
     }	
 	
 	.menu-open & {
@@ -336,20 +335,20 @@ h2.logo-name {
         letter-spacing: normal;
 		text-transform: none;
 		padding: 18px $gut/2;
-		color: $color-page-text;
+		color: $color-text;
 		background: transparent;
 		border: none;
 		width: 100%;
 		border-bottom: 1px solid $color-page-bg-dark;
 		
         &::placeholder {
-            color: $color-page-text-light;
+            color: $color-text-light;
         }
 		
 		&:focus {
 			box-shadow: inset 0px 1px 2px rgba(50,50,50, 0.08);			
 			border-color: #bebebe;
-			//border-bottom: 2px solid $color-page-text;
+			//border-bottom: 2px solid $color-text;
 		}
 	}
 }
@@ -368,7 +367,7 @@ h2.logo-name {
 	
 	body.plot-public-campaign & {
         background: $color-third;
-        color: $color-page-text;
+        color: $color-text-contrast;
     }
 	
 	@include for(medium-screens){
@@ -473,12 +472,12 @@ h2.logo-name {
 			display: block;
             @include knd-nav-caps-text();
             font-weight: bold;
-			color: $color-page-text;
+			color: $color-text;
 			transition: all 0.3s;
 			
             body.plot-public-campaign & {
                 background: $color-third;
-                color: $color-page-text;
+                color: $color-text-contrast;
             }
 			
 			
@@ -490,7 +489,7 @@ h2.logo-name {
 				
     			body.plot-public-campaign & {
                     background: $color-third;
-                    color: $color-page-text;
+                    color: $color-text-contrast;
                 }
 						
 			}
@@ -518,11 +517,11 @@ h2.logo-name {
 			.svg-icon {
 				width: 14px;
 				height: 14px;
-				fill: $color-page-text;
+				fill: $color-text;
 			}
 			
 			&:hover {
-				background: $color-page-text;
+				background: $color-text;
 				border-left: none;
 				.svg-icon  { fill: $color-white; }
 			}
@@ -535,7 +534,7 @@ h2.logo-name {
 	
 	ul.sub-menu {
 		display: none;
-		background: $color-page-text;
+		background: $color-text;
 		color: $color-white;
 		
 		li { border: none; }
@@ -545,14 +544,14 @@ h2.logo-name {
 			margin-right: 0;
 			
 			&:hover, &:focus, &:active {
-				background: $color-page-text;		
+				background: $color-text;		
 			}
 		}
 	}
 	
 	li.open {
 		.submenu-trigger {
-			background: $color-page-text;
+			background: $color-text;
 			border-left: none;
 			.icon-down { display: none; }
 			.icon-up {

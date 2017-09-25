@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-22 09:35+0300\n"
-"PO-Revision-Date: 2017-09-22 09:36+0300\n"
+"PO-Revision-Date: 2017-09-25 11:43+0300\n"
 "Last-Translator: ahaenor <ahaenor@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -1387,7 +1387,7 @@ msgstr ""
 
 #: vendor/envato_setup/envato_setup.php:182
 msgid "Template – NGO \"Color Line\""
-msgstr "Шаблон – «Линия цвета» (НКО)"
+msgstr "Линия цвета (НКО)"
 
 #: vendor/envato_setup/envato_setup.php:183
 msgid "We help people with alcoholic addiction"
@@ -1404,7 +1404,7 @@ msgstr ""
 
 #: vendor/envato_setup/envato_setup.php:187
 msgid "Template – We Are With You"
-msgstr "Шаблон – «Мы с тобой» (Фонд)"
+msgstr "Мы с тобой (Фонд)"
 
 #: vendor/envato_setup/envato_setup.php:188
 msgid "Charity foundation helping children from low-income families"
@@ -1422,7 +1422,7 @@ msgstr ""
 
 #: vendor/envato_setup/envato_setup.php:192
 msgid "Template – Protect Dubrovino! Campaign"
-msgstr "Шаблон - «Защитим Дубровино» (Кампания)"
+msgstr "Защитим Дубровино (Кампания)"
 
 #: vendor/envato_setup/envato_setup.php:193
 msgid "City protection initiative"

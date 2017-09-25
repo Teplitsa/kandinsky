@@ -49,18 +49,18 @@
 	}
 	
     .date {
-        color: $color-page-text;
+        color: $color-text;
       
         body.plot-public-campaign & {
-            color: $color-page-text;
+            color: $color-text;
         }
         
         body.plot-public-campaign.single & {
-            color: $color-page-text;
+            color: $color-text;
         }
         
         body.plot-fundraising-org.single & {
-            color: $color-page-text;
+            color: $color-text;
         }
         
     }
@@ -72,11 +72,11 @@
         border: solid 1px $color-page-bg-dark;
         
         body.plot-public-campaign & {
-            border-color: $color-page-text;
+            border-color: $color-text;
         }
         
         body.plot-public-campaign.single & {
-            border-color: $color-page-text;
+            border-color: $color-text;
         }
         
         border-radius: 5px;
@@ -105,13 +105,13 @@
 	
 	a {
 		display: block;
-		//color: $color-page-text;
-		color: $color-page-text;
+		//color: $color-text;
+		color: $color-text;
 		position:relative;
 		height: 100%;
 		
 		body.plot-public-campaign & {
-		  color: $color-page-text;
+		  color: $color-text;
 		}
 	}
 	
@@ -146,7 +146,7 @@
 	
 	.entry-summary {
 		@include knd-subhead-text();
-		color: $color-page-text;
+		color: $color-text;
 	}
 }
 
@@ -212,7 +212,7 @@
     
     a {
         display: block;
-        color: $color-white;
+        color: $color-text-contrast;
         position:relative;
         height: 100%;
     }
@@ -237,16 +237,12 @@
 /** People **/
 .tpl-person {
 	margin-bottom: $gut;
-	//background: $color-white;
 	background: $color-page-bg;
-	
 	transition: background 0.3s;
 		
 	&.linked:hover {
-		
-		.entry-preview:after { background: rgba(0,0,0, 0.08); }
+
 	}
-	
 	
 	.entry-title {		
 		@include knd-head-card-text();
@@ -262,12 +258,12 @@
 		@include knd-subhead-text();
 		line-height: 1.4;
 		text-transform: none;
-        color: $color-page-text-light;
+        color: $color-text-light;
 		
 		a[href *= "tel"] {
-			color: $color-page-text;
+			color: $color-text;
 			cursor: default;
-			&:hover {  color: $color-page-text; }
+			&:hover {  color: $color-text; }
 		}
 	}
 	
@@ -335,14 +331,14 @@
     margin-bottom: $gut;
 
     a {
-        color: $color-page-text;
+        color: $color-text;
     }
 
     .entry-title {
         @include knd-body-title-text();             
         padding-top: 0px;
         hyphens: auto;
-        color: $color-page-text;
+        color: $color-text;
         margin-bottom: 0;
     }
 
@@ -355,7 +351,7 @@
     
     .entry-summary {
         @include knd-body-text();
-        color: $color-page-text;
+        color: $color-text;
     }
 }
 
@@ -391,7 +387,7 @@
     
     .page-numbers {
         display: inline-block;
-        color: $color-page-text;
+        color: $color-text;
         padding: 0px 10px;
         transition: all 0.3;
         

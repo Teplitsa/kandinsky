@@ -9,7 +9,7 @@
     color: $color-black;
     
     body.plot-public-campaign & {
-       color: $color-page-text;
+       color: $color-text;
        background: $color-third;
     }
 
@@ -20,7 +20,7 @@
                fill: $color-black;
                
                body.plot-public-campaign & {
-                   fill: $color-page-text;
+                   fill: $color-text;
                }
            } 
         }
@@ -47,7 +47,7 @@
     color: $color-black;
     
     body.plot-public-campaign & {
-        color: $color-page-text;
+        color: $color-text;
         background: $color-third;
     }
     
@@ -88,8 +88,8 @@
 
     
         body.plot-public-campaign & {
-            color: $color-page-text;
-            a { color: $color-page-text; }
+            color: $color-text;
+            a { color: $color-text; }
             opacity: .5;
         }
     }
@@ -194,7 +194,7 @@
     .support {
         @include knd-supersmall-text();
         line-height: 16px;
-        color: $color-page-text;
+        color: $color-text;
         padding-right: 20px;
         width: 104px;
         text-align: right;
