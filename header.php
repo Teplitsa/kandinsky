@@ -36,7 +36,7 @@
 			
 			<div class="trigger-button menu site-panel-cell">
 				<a id="trigger_menu" href="<?php echo home_url('sitemap');?>">
-					<?php rdc_svg_icon('icon-menu');?>					
+					<?php knd_svg_icon('icon-menu');?>					
 				</a>				
 			</div>
 			
@@ -54,10 +54,10 @@
 					<h2 class="logo-name hide-upto-medium"><?php bloginfo('description'); ?></h2>
 				</a>
 			</div>
-			<div id="trigger_menu_close" class="trigger-button close"><?php rdc_svg_icon('icon-close');?></div>
+			<div id="trigger_menu_close" class="trigger-button close"><?php knd_svg_icon('icon-close');?></div>
 		</div>
 		<?php
-			$after = '<span class="submenu-trigger">'.rdc_svg_icon('icon-up', false).rdc_svg_icon('icon-down', false).'</span>';
+			$after = '<span class="submenu-trigger">'.knd_svg_icon('icon-up', false).knd_svg_icon('icon-down', false).'</span>';
 			wp_nav_menu(array('menu' => __('Main menu', 'knd'), 'theme_location' => 'primary', 'container' => false, 'menu_class' => 'main-menu', 'after' => $after));
 		?>
 		<div class="search-holder"><?php get_search_form();?></div>

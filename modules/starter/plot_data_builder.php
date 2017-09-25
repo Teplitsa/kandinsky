@@ -651,12 +651,7 @@ class KND_Plot_Data_Builder {
         $page_data['post_content'] = trim($piece->content);
         $page_data['post_parent'] = 0;
         
-//         foreach($post_meta as $meta_name => $value_index) {
-//             $page_data['meta_input'][$meta_name] = empty($line[$value_index]) ? '' : trim($line[$value_index]);
-//         }
-        
         //thumbnail
-//         print_r($piece);
         $thumb_id = $this->imp->get_thumb_attachment_id($piece);
         
         if($thumb_id){
@@ -700,7 +695,7 @@ class KND_Plot_Data_Builder {
     public function get_terms_list($terms_names, $taxonomy) {
         $terms_list = array();
         
-        if(!empty($terms_names)) {
+        if(!empty($terms_names) && is_array($terms_names)) {
             foreach($terms_names as $term_name) {
             
                 $term = get_term_by( 'name', $term_name, $taxonomy );

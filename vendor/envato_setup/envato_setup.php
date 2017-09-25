@@ -1520,7 +1520,7 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
                     try {
 
                         $imp = new KND_Import_Remote_Content($plot_name);
-                        $data = $imp->import_content();
+                        $imp->import_content();
 
                         $pdb = KND_Plot_Data_Builder::produce_builder($imp);
                         if( !$pdb) { // Show some user-friendly error
