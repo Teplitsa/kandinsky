@@ -151,12 +151,14 @@ $modularscale: (
     @include ms-respond(font-size, 0);
     font-family: $body;
     font-weight: 400;
+    line-height: 1.5;
 }
 
 @mixin knd-nav-caps-text() {
     @include ms-respond(font-size, 0);
     font-family: $body;
     font-weight: 400;
+    line-height: 1.5;
     text-transform: uppercase
 }
 

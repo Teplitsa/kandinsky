@@ -33,7 +33,7 @@
         a {
             display: inline-block;
             margin: 0 10px;
-            color: $color-link-one;
+            color: $color-main-dark;
             &:hover {
                 text-decoration: underline;
             }
@@ -76,29 +76,29 @@ div[id*="leyka-pf-"] .inpage-card__thumb {
 .donation_history {
 
     .all-link {
-        border-bottom: 1px solid $color-border-normal;
+        border-bottom: 1px solid $color-page-bg-dark;
         padding: $base/2 0;
 
         a {
-            color: $color-link-three;
+            color: $color-main;
         }
     }
 }
 
 .ldl-item {
-    border-bottom: 1px solid $color-border-normal;
+    border-bottom: 1px solid $color-page-bg-dark;
     padding: $base/2 0;
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
-    @include form-text();
+    @include knd-nav-text(); 
     
     &:first-of-type {
-        border-top: 1px solid $color-border-normal;
+        border-top: 1px solid $color-page-bg-dark;
     }
     
     .amount {
-        color: $color-text-black;
+        color: $color-page-text;
         flex: 1 0 auto;
         width: 25%;
         min-width: 80px;
@@ -108,16 +108,16 @@ div[id*="leyka-pf-"] .inpage-card__thumb {
         flex: 1 1 auto;
         width: 75%;
         padding-left: 6px;
-        color: $color-text-semi;
+        color: $color-page-text-light;
     }
 
     .purpose {
         flex: 1 1 auto;
         width: 40%;
         padding-left: 6px;
-        color: $color-text-semi;
+        color: $color-page-text-light;
         a {
-            color: $color-link-three;
+            color: $color-main;
         }
     }
 
@@ -132,8 +132,8 @@ div[id*="leyka-pf-"] .inpage-card__thumb {
     .heading {
         margin-bottom: $gut*1.5;
         a {
-            color: $color-link-three;
-            &:hover { color: $color-link-one; }
+            color: $color-main;
+            &:hover { color: $color-main-dark; }
         }
     }
 

@@ -37,7 +37,7 @@ function knd_setup() {
 	register_nav_menus($menus);
 
 	// Editor style
-	//add_editor_style(array('css/editor-style.css'));
+    add_editor_style(array('assets/css/editor.css'));
 }
 add_action( 'after_setup_theme', 'knd_setup', 9 ); // Theme wizard initialize at 10, this init should occur befure it
 

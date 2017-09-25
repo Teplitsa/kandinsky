@@ -18,7 +18,7 @@ class FRL_CssJs {
 		add_action('admin_enqueue_scripts',  array($this, 'load_admin_scripts'), 30);
 		add_action('login_enqueue_scripts',  array($this, 'load_login_scripts'), 30);
 
-        add_action('wp_enqueue_scripts', array($this, 'inline_styles'), 10);
+        add_action('wp_enqueue_scripts', array($this, ''), 10);
 		
 	}
 	
@@ -112,32 +112,32 @@ class FRL_CssJs {
         $knd_page_text_color_light = knd_color_luminance($knd_page_text_color, 2);
         
         ?>
-            <style>
-                :root {
-                    --knd-color-main:         <?php echo $main_color; ?>;
-                    --knd-color-main-dark:    <?php echo $dark_color; ?>;
-                  
-                    --knd-color-second:       <?php echo $second_color; ?>;
-                    --knd-color-second-dark:  <?php echo $dark_second_color; ?>;
-                    
-                    --knd-color-third:        <?php echo $third_color; ?>;
-                    --knd-color-third-dark:   <?php echo $dark_third_color; ?>;
-                    
-                    --knd-text1-color:        <?php echo $knd_text1_color; ?>;
-                    --knd-text2-color:        <?php echo $knd_text2_color; ?>;
-                    --knd-text2-color-dark:   <?php echo $knd_text2_color_dark; ?>;
-                    
-                    --knd-text3-color:        <?php echo $knd_text3_color; ?>;
-                    --knd-text3-color-dark:   <?php echo $knd_text3_color_dark; ?>;
-                    
-                    --knd-page-bg-color:        <?php echo $knd_page_bg_color; ?>;
-                    --knd-page-bg-color-dark:   <?php echo $knd_page_bg_color_dark; ?>;
-                    
-                    --knd-page-text-color:       <?php echo $knd_page_text_color; ?>;
-                    --knd-page-text-color-light:  <?php echo $knd_page_text_color_light; ?>;
-                    
-                }
-            </style>
+<style>
+    :root {
+        --knd-color-main:         <?php echo $main_color; ?>;
+        --knd-color-main-dark:    <?php echo $dark_color; ?>;
+      
+        --knd-color-second:       <?php echo $second_color; ?>;
+        --knd-color-second-dark:  <?php echo $dark_second_color; ?>;
+        
+        --knd-color-third:        <?php echo $third_color; ?>;
+        --knd-color-third-dark:   <?php echo $dark_third_color; ?>;
+        
+        --knd-text1-color:        <?php echo $knd_text1_color; ?>;
+        --knd-text2-color:        <?php echo $knd_text2_color; ?>;
+        --knd-text2-color-dark:   <?php echo $knd_text2_color_dark; ?>;
+        
+        --knd-text3-color:        <?php echo $knd_text3_color; ?>;
+        --knd-text3-color-dark:   <?php echo $knd_text3_color_dark; ?>;
+        
+        --knd-page-bg-color:        <?php echo $knd_page_bg_color; ?>;
+        --knd-page-bg-color-dark:   <?php echo $knd_page_bg_color_dark; ?>;
+        
+        --knd-page-text-color:       <?php echo $knd_page_text_color; ?>;
+        --knd-page-text-color-light:  <?php echo $knd_page_text_color_light; ?>;
+        
+    }
+</style>
         <?php
     }
 

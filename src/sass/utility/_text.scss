@@ -23,27 +23,27 @@
 
 /* selections */
 a:link {
-	-webkit-tap-highlight-color: $color-link-one;
-	-webkit-tap-highlight-color : $color-link-one; 
+	-webkit-tap-highlight-color: $color-main-dark;
+	-webkit-tap-highlight-color : $color-main-dark; 
 } 
 
 ::-webkit-selection {
 	opacity: 1;
-	background : $color-link-one;
+	background : $color-main-dark;
 	color : $color-white;
 	text-shadow : none; 
 }
 
 ::-moz-selection {
 	opacity: 1;
-	background : $color-link-one;
+	background : $color-main-dark;
 	color : $color-white;
 	text-shadow : none; 
 }
 
 ::selection {
 	opacity: 1;
-	background : $color-link-one;
+	background : $color-main-dark;
 	color : $color-white;
 	text-shadow : none; 
 }
@@ -195,7 +195,7 @@ a:link {
 	        position: absolute;
 	        left: -12px;
 	        top: -12px;
-	        color: $color-link-three;
+	        color: $color-main;
 	    }
 
 	    &:first-child { margin-top: 0; }

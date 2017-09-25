@@ -10,7 +10,7 @@
 .tpl-pictured-bg {
     width: 100%;
     height: 100%;
-    background-color: $color-secondary;
+    background-color: $color-page-bg-dark;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center top;
@@ -24,15 +24,15 @@
     }
     
     body.home.plot-public-campaign & {
-        background: var(--knd-color-main);
-        color: $color-text;
+        background: $color-main;
+        color: $color-page-text;
     }
     
 }
 
 .knd-archive-sidebar {
     @extend .knd-homepage-sidebar;
-    background: $color-bg-light;
+    background: $color-gray-light;
     
     padding-top: $gut * 1.2;
 }
@@ -60,15 +60,15 @@
 .knd-news-widget {
     
     padding: 54px 0px 0px 0px;
-    background: $color-bg-light;
+    background: $color-gray-light;
     
     body.plot-public-campaign & {
-        background: var(--knd-color-third);
+        background: $color-third;
     }
     
     h2.section-title {
         @include knd-head-section-text();
-        color: $color-text;
+        color: $color-page-text;
     }
     
     .knd-news-widget-body {
@@ -82,10 +82,10 @@
 .knd-projects-widget {
 
     @extend .knd-news-widget;
-    background: var(--knd-color-third);
+    background: $color-third;
     
     body.plot-public-campaign & {
-        background: var(--knd-color-third);
+        background: $color-third;
     }
     
     h2.section-title {
@@ -95,7 +95,7 @@
     .section-links {
         display: flex;
         justify-content: flex-start;
-        border-bottom: 1px solid $color-border-dark;
+        border-bottom: 1px solid $color-page-bg-dark;
         padding-bottom: 15px;
         padding-top: 10px;
 
@@ -107,7 +107,7 @@
         
         a {
             @include knd-link-section-text();
-            color: var(--knd-color-main-dark);
+            color: $color-main-dark;
             
             margin-right: 20px;
             @include for(medium-screens) {
@@ -116,17 +116,17 @@
             }
             
             &:hover, &:focus, &:active {
-                color: var(--knd-color-main);
+                color: $color-main;
             }
             
             body.plot-fundraising-org & {
-                color: $color_text_white;
+                color: $color-white;
             }
             
         }
         
         body.plot-fundraising-org & {
-            border-color: $color-border-light;
+            border-color: $color-page-bg-dark;
         }
         
     }
@@ -153,11 +153,11 @@
         @include knd-head-tiny-text();
         
         body.plot-public-campaign & {
-            color: var(--knd-text2-color);
+            color: $color-page-text2;
         }
         
         body.plot-fundraising-org & {
-            color: var(--knd-color-third);
+            color: $color-third;
         }
     }
     
@@ -201,7 +201,7 @@
             @include knd-head-main-text();
             
             body.plot-fundraising-org & {
-                color: var(--knd-color-third);
+                color: $color-third;
             }
         }
         
@@ -222,7 +222,7 @@
             @include knd-link-lonely-text();
             display:inline-block;
             color: $color-page-text;
-            border-bottom: 4px solid var(--knd-color-main);
+            border-bottom: 4px solid $color-main;
             padding: 0px 0px 4px 0px;
             text-decoration:none;
             position:absolute;
@@ -231,28 +231,28 @@
             
             &:hover {
                 text-decoration:none;
-                border-color: var(--knd-color-main-dark);
+                border-color: $color-main-dark;
             }
             
             body.plot-public-campaign & {
             
-                color: var(--knd-text2-color);
-                border-color: var(--knd-text2-color);
+                color: $color-page-text2;
+                border-color: $color-page-text2;
                 
                 &:hover {
-                    color: var(--knd-text2-color-dark);
-                    border-color: var(--knd-text2-color-dark);
+                    color: $color-page-text2-dark;
+                    border-color: $color-page-text2-dark;
                 }
             }
             
             body.plot-fundraising-org & {
             
-                color: var(--knd-color-third);
-                border-color: var(--knd-color-third);
+                color: $color-third;
+                border-color: $color-third;
                 
                 &:hover {
-                    color: var(--knd-color-third-dark);
-                    border-color: var(--knd-color-third-dark);
+                    color: $color-third-dark;
+                    border-color: $color-third-dark;
                 }
             }
             
@@ -264,39 +264,39 @@
         h3 {
         
             body.plot-public-campaign & {
-                color: var(--knd-text3-color);
+                color: $color-page-text3;
             }
             
             body.plot-fundraising-org & {
-                color: var(--knd-color-main);
+                color: $color-main;
             }
         }
     
         a {
-            border-color: var(--knd-color-second);
+            border-color: $color-second;
             &:hover {
-                border-color: var(--knd-color-second-dark);
+                border-color: $color-second-dark;
             }
             
             body.plot-public-campaign & {
             
-                color: var(--knd-text3-color);
-                border-color: var(--knd-text3-color);
+                color: $color-page-text3;
+                border-color: $color-page-text3;
                 
                 &:hover {
-                    color: var(--knd-text3-color-dark);
-                    border-color: var(--knd-text3-color-dark);
+                    color: $color-page-text3-dark;
+                    border-color: $color-page-text3-dark;
                 }
             }
             
             body.plot-fundraising-org & {
             
-                color: var(--knd-color-main);
-                border-color: var(--knd-color-main);
+                color: $color-main;
+                border-color: $color-main;
                 
                 &:hover {
-                    color: var(--knd-color-main-dark);
-                    border-color: var(--knd-color-main-dark);
+                    color: $color-main-dark;
+                    border-color: $color-main-dark;
                 }
             }
         }
@@ -309,21 +309,21 @@
     display:block;
     
     @extend .knd-ourorg-widget;
-    background: var(--knd-color-second);
+    background: $color-second;
     padding-top: $gut * 1.22;
     padding-bottom: $gut * 1.35;
     
-    color: $color-text;
+    color: $color-page-text;
      
     h2 {
         letter-spacing: 0.1em;
         
         body.plot-public-campaign & {
-            color: $color_text;
+            color: $color-page-text;
         }
         
         body.plot-fundraising-org & {
-            color: $color_text_white;
+            color: $color-white;
         }
     }
     
@@ -335,11 +335,11 @@
             hyphens: none;
             
             body.plot-public-campaign & {
-                color: $color_text;
+                color: $color-page-text;
             }
             
             body.plot-fundraising-org & {
-                color: $color_text_white;
+                color: $color-white;
             }
             
         }
@@ -369,7 +369,7 @@
         background: $color-white;
         
         h2.section-title {
-            color: var(--knd-color-third);
+            color: $color-third;
         }
     }
     
@@ -401,7 +401,7 @@
 
 .knd-people-title {
     @include knd-head-exlarge-text();
-    color: $color-text-black;
+    color: $color-page-text;
     margin-bottom: $inpage-margin-base;
     text-align: center;
 }
@@ -413,7 +413,7 @@
     .tpl-person {
         a {
             display: block;
-            color: $color-text-black;
+            color: $color-page-text;
         }
 
         margin-bottom: 0;
@@ -458,7 +458,7 @@
         
         .help-purpose {
             @include knd-link-donation-purpose();
-            color: var(--knd-color-main-dark);
+            color: $color-main-dark;
             padding-top: $gut / 2;
         }
         
@@ -479,11 +479,11 @@
             
             .target {
                 height: inherit;
-                background: $color-border-link;
+                background: $color-gray-light;
                 
                 .collected {
                     height: inherit;
-                    background: var(--knd-color-main);
+                    background: $color-main;
                 }
             }
         }
@@ -498,7 +498,7 @@
             }
             
             .sum {
-                color: var(--knd-color-main);
+                color: $color-main;
             }
             
             .knd-campaign-needed .sum {

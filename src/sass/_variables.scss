@@ -45,77 +45,44 @@ $full_height   : $logo_full_h + $height_gap; //full header height on desktop
 
 /** Colors **/
 
-// color-line
-$color-blue:                #00bcd4;
-$color-yellow:              #ffc914;
-$color-dark-bg:             #0e0a2b;
-$color-bg-light:        	#eeeeee;
-
-:root {
-/*
-    --knd-color-main:         $color-blue;
-    --knd-color-main-dark:    darken($color-blue, 10%);
-    
-    --knd-color-second:       $color-yellow;
-    --knd-color-second-dark:  darken($color-yellow, 10%);
-    
-    --knd-color-third:        $color-dark-bg;
-    --knd-color-third-dark:   darken($color-dark-bg, 10%);;
-    
-    --knd-text1-color:        #000000;
-    --knd-text2-color:        #000000;
-    --knd-text2-color-dark:   #000000;
-
-    --knd-text3-color:        #000000;
-    --knd-text3-color-dark:   #000000;
-*/
-}
-
 //Color sheme
-$color-main: 		var(--knd-color-main);
-$color-main-dark: 	var(--knd-color-main-dark);
+//uses CSS variables from theme settings
 
-$color-second: 		var(--knd-color-second);
-$color-second-dark: var(--knd-color-second-dark);
+$color-main:                var(--knd-color-main) !default; //main accent color
+$color-main-dark:           var(--knd-color-main-dark) !default; //darker variant
 
-$color-third: 		var(--knd-color-third);
-$color-third-dark: 	var(--knd-color-third-dark);
+$color-second:              var(--knd-color-second) !default; //complimentary color
+$color-second-dark:         var(--knd-color-second-dark) !default; //darker variant
 
-
-
-
-//Variables of color scheme
-$color-link-three: var(--knd-color-main); //this is the main scheme color
-$color-link-one:   var(--knd-color-main-dark); //hover state
-$color-link-two:   var(--knd-color-main-dark); //hover state 
-
-//others color variables - clear unused colors!!!
-$color-text:                var(--knd-text1-color);
-
-$color-page-bg:            var(--knd-page-bg-color);
-$color-page-bg-dark:       var(--knd-page-bg-color-dark);
-$color-page-text:          var(--knd-page-text-color);
-$color-page-text-light:    var(--knd-page-text-color-light);
-
-$color-white:               #ffffff;
-$color-text-white:          $color-white;
-$color-text-black:          #000000;
-$color-text-semi:			#666666;
-$color-text-light:			#999999;
-
-$color-secondary:			$color-bg-light;
-$color-secondary-alt:		$color-bg-light;
-$color-secondary-dark:		$color-dark-bg;
+$color-third: 		        var(--knd-color-third) !default; //dark color in theme
+$color-third-dark: 	        var(--knd-color-third-dark) !default; //darker variant
 
 
-$color-border-normal:   #dfdfdf;
-$color-border-light:    #eeeeee;
-$color-border-link:     #eeeeee;
-$color-border-dark:     #5d5d5d;
-$color-form-invalid:    #ED1C24;
-$color-bg-dark-gray:    #353535;
+$color-page-text1:          var(--knd-text1-color) !default;
 
-$leyka_green : #1DB318;
+$color-page-text2:          var(--knd-text2-color) !default;
+$color-page-text2-dark:     var(--knd-text2-color-dark) !default;
+
+$color-page-text3:          var(--knd-text3-color) !default;
+$color-page-text3-dark:     var(--knd-text3-color-dark) !default;
+
+
+$color-page-bg:             var(--knd-page-bg-color) !default; //main bg color
+$color-page-bg-dark:        var(--knd-page-bg-color-dark) !default; //for borders
+
+$color-page-text:           var(--knd-page-text-color) !default; //main page text
+$color-page-text-light:     var(--knd-page-text-color-light) !default; //text lighter than main one
+
+
+//Scheme independent colors
+$color-white:           #ffffff; // intentionally white
+$color-black:           #000000; // intentionally black
+$color-gray-light:      #eeeeee; // light gray for backgrounds and shadows
+
+$color-error:           #ED1C24; // error messages
+$color-ok :             #1DB318; // ok messages
+
+
 
 
 

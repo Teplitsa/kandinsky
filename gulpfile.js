@@ -81,7 +81,7 @@ gulp.task('build-css', function() {
     paths.push(basePaths.bower + 'modular-scale/stylesheets');
 
     var vendorFiles = gulp.src([]), //components
-        appFiles = gulp.src(basePaths.src+'sass/main.scss') //our main file with @import-s
+        appFiles = gulp.src(basePaths.src+'sass/front-main.scss') //our main file with @import-s
         .pipe(!isProduction ? plugins.sourcemaps.init() : gutil.noop())  //process the original sources for sourcemap
         .pipe(plugins.sass({
                 outputStyle: sassStyle, //SASS syntas
@@ -102,10 +102,36 @@ gulp.task('build-css', function() {
         .on('error', console.log); //log
 });
 
+
+gulp.task('build-editor-css', function() {
+
+    var paths = require('node-bourbon').includePaths,
+        vendorFiles = gulp.src([]),
+        appFiles = gulp.src(basePaths.src+'sass/editor-main.scss')
+        .pipe(!isProduction ? plugins.sourcemaps.init() : gutil.noop())  //process the original sources for sourcemap
+        .pipe(plugins.sass({
+                outputStyle: sassStyle, //SASS syntas
+                includePaths: paths //add bourbon + mdl
+            }).on('error', plugins.sass.logError))//sass own error log
+        .pipe(plugins.autoprefixer({ //autoprefixer
+                browsers: ['last 4 versions'],
+                cascade: false
+            }))
+        .pipe(!isProduction ? plugins.sourcemaps.write() : gutil.noop()) //add the map to modified source
+        .on('error', console.log); //log
+
+    return es.concat(appFiles, vendorFiles) //combine vendor CSS files and our files after-SASS
+        .pipe(plugins.concat('editor.css')) //combine into file
+        .pipe(isProduction ? plugins.cssmin() : gutil.noop()) //minification on production
+        .pipe(plugins.size()) //display size
+        .pipe(gulp.dest(basePaths.dest+'css')) //write file
+        .on('error', console.log); //log
+});
+
 gulp.task('build-admin-css', function() {
     
     var paths = require('node-bourbon').includePaths,
-        appFiles = gulp.src(basePaths.src+'sass/admin.scss')
+        appFiles = gulp.src(basePaths.src+'sass/admin-main.scss')
         .pipe(!isProduction ? plugins.sourcemaps.init() : gutil.noop())  //process the original sources for sourcemap
         .pipe(plugins.sass({
                 outputStyle: sassStyle, //SASS syntas
@@ -146,6 +172,7 @@ gulp.task('revision', function(){
 //builds
 gulp.task('full-build', function(callback) {
     runSequence('build-css',
+        'build-editor-css',
         'build-admin-css',
         'build-js',
         'svg-opt',
@@ -156,6 +183,7 @@ gulp.task('full-build', function(callback) {
 
 gulp.task('full-build-css', function(callback) {
     runSequence('build-css',
+        'build-editor-css',
         'build-admin-css',
         'revision-clean',
         'revision',

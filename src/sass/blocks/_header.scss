@@ -14,8 +14,8 @@
 	transition: opacity 0.3s;
 	
     body.plot-public-campaign & {
-        background: var(--knd-color-third);
-        border-bottom: 1px solid var(--knd-color-third);
+        background: $color-third;
+        border-bottom: 1px solid $color-third;
     }
 	
 	&.fixed-header {
@@ -181,11 +181,13 @@
 		display: flex;
 		flex-flow: column nowrap;
 		justify-content: center;
+        align-items: right;
 		height: $logo_full_h + $height_gap;
 		margin-right: $height_gap /2 ;
 		
 		p {
 			display: block;
+            max-width: 400px;
 		}
 	}
 }
@@ -197,11 +199,11 @@
 .logo-name {
 	text-transform: uppercase;		
 	line-height: 1;
-	//color: $color-text-black;
-	color: $color-text;
+	//color: $color-page-text;
+	color: $color-page-text;
 	
 	body.plot-public-campaign & {
-	   color: $color-text;
+	   color: $color-page-text;
 	}
 }
 
@@ -219,9 +221,8 @@ h2.logo-name {
 .site-details {
 	text-align: right;		
 	p {		
-		color: $color-text;
-		@include nav-text(multiline);
-		text-transform: none;
+		color: $color-page-text;
+		@include knd-nav-text();
 		margin: 0;
 		
 		a {
@@ -279,19 +280,19 @@ h2.logo-name {
 		.svg-icon {
 			width: 18px;
 			height: 18px;
-			fill: $color-text;
+			fill: $color-page-text;
 			pointer-events: none;
 			
             body.plot-public-campaign & {
-                fill: var(--knd-color-main);
+                fill: $color-main;
             }
 		}
 		
 		&:hover .svg-icon {
-			fill: $color-link-two;
+			fill: $color-main-dark;
 			
             body.plot-public-campaign & {
-                fill: var(--knd-color-main-dark);
+                fill: $color-main-dark;
             }
 			
 		}
@@ -335,20 +336,20 @@ h2.logo-name {
         letter-spacing: normal;
 		text-transform: none;
 		padding: 18px $gut/2;
-		color: $color-text;
+		color: $color-page-text;
 		background: transparent;
 		border: none;
 		width: 100%;
-		border-bottom: 1px solid $color-border-light;
+		border-bottom: 1px solid $color-page-bg-dark;
 		
         &::placeholder {
-            color: $color-text-semi;
+            color: $color-page-text-light;
         }
 		
 		&:focus {
 			box-shadow: inset 0px 1px 2px rgba(50,50,50, 0.08);			
 			border-color: #bebebe;
-			//border-bottom: 2px solid $color-text-black;
+			//border-bottom: 2px solid $color-page-text;
 		}
 	}
 }
@@ -366,8 +367,8 @@ h2.logo-name {
 	transition: all 0.4s;
 	
 	body.plot-public-campaign & {
-        background: var(--knd-color-third);
-        color: $color-text;
+        background: $color-third;
+        color: $color-page-text;
     }
 	
 	@include for(medium-screens){
@@ -386,7 +387,7 @@ h2.logo-name {
 
 	.search-holder {
 		.svg-icon { display: none; }
-		//border-bottom: 1px solid $color-border-light;
+		//border-bottom: 1px solid $color-page-bg-dark;
 	}
 	
 	.knd-social-links {
@@ -395,12 +396,12 @@ h2.logo-name {
 }
 
 .site-nav-title {
-	border-bottom: 1px solid $color-border-light;
+	border-bottom: 1px solid $color-page-bg-dark;
 	position: relative;
 	height: $logo_small_h + $height_gap;
 	
     body.plot-public-campaign & {
-        border-color: $color-border-dark;
+        border-color: $color-second;
     }
 
 	@include for(medium-screens) { height: $logo_full_h + $height_gap;}
@@ -432,7 +433,7 @@ h2.logo-name {
 	}
 	
 	.close {
-		background: $color-link-three;
+		background: $color-main;
 		width: $logo_small_h + $height_gap;
 		height: $logo_small_h + $height_gap;
 		text-align: center;
@@ -450,7 +451,7 @@ h2.logo-name {
 		}
 		
 		&:hover {
-			background: $color-link-two;
+			background: $color-main-dark;
 		}
 		
 		@include for(medium-screens){
@@ -461,22 +462,23 @@ h2.logo-name {
 
 .main-menu {	
 	li {
-		border-bottom: 1px solid $color-border-light;
+		border-bottom: 1px solid $color-page-bg-dark;
 		position: relative;
 		
         body.plot-public-campaign & {
-            border-color: $color-border-dark;
+            border-color: $color-second;
         }
 		
 		& > a {
 			display: block;
-			@include nav-text(menu);
-			color: $color-text;
+            @include knd-nav-caps-text();
+            font-weight: bold;
+			color: $color-page-text;
 			transition: all 0.3s;
 			
             body.plot-public-campaign & {
-                background: var(--knd-color-third);
-                color: $color-text;
+                background: $color-third;
+                color: $color-page-text;
             }
 			
 			
@@ -484,11 +486,11 @@ h2.logo-name {
 			margin-right: $logo_small_h + $height_gap;
 						
 			&:hover, &:focus, &:active {
-				background: $color-border-light;
+				background: $color-page-bg-dark;
 				
     			body.plot-public-campaign & {
-                    background: var(--knd-color-third);
-                    color: $color-text;
+                    background: $color-third;
+                    color: $color-page-text;
                 }
 						
 			}
@@ -500,7 +502,7 @@ h2.logo-name {
 	.menu-item-has-children {
 		.submenu-trigger {
 			display: block;
-			border-left: 1px solid $color-border-light;
+			border-left: 1px solid $color-page-bg-dark;
 			position: absolute;
 			top: 0;
 			right: 0;
@@ -516,11 +518,11 @@ h2.logo-name {
 			.svg-icon {
 				width: 14px;
 				height: 14px;
-				fill: $color-text-black;
+				fill: $color-page-text;
 			}
 			
 			&:hover {
-				background: $color-text-black;
+				background: $color-page-text;
 				border-left: none;
 				.svg-icon  { fill: $color-white; }
 			}
@@ -533,7 +535,7 @@ h2.logo-name {
 	
 	ul.sub-menu {
 		display: none;
-		background: $color-text;
+		background: $color-page-text;
 		color: $color-white;
 		
 		li { border: none; }
@@ -543,14 +545,14 @@ h2.logo-name {
 			margin-right: 0;
 			
 			&:hover, &:focus, &:active {
-				background: $color-text-black;		
+				background: $color-page-text;		
 			}
 		}
 	}
 	
 	li.open {
 		.submenu-trigger {
-			background: $color-text;
+			background: $color-page-text;
 			border-left: none;
 			.icon-down { display: none; }
 			.icon-up {

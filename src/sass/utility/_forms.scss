@@ -2,7 +2,7 @@
 
 @mixin form-text($mod: default) {	
 	font-family: $body;
-	color: $color-text;
+	color: $color-page-text;
 	font-weight: normal;
 	text-transform: none;
 	letter-spacing: normal;
@@ -56,10 +56,10 @@
 
 //variables
 $input-top-gut: 24px;
-$input-color-active: $color-link-three;
-$input-color-error: $color-form-invalid;
-$input-border-color: lighten($color-border-normal, 3%);
-$label-text-color: $color-text;	
+$input-color-active: $color-main;
+$input-color-error: $color-error;
+$input-border-color: lighten($color-page-bg-dark, 3%);
+$label-text-color: $color-page-text;	
 
 @mixin input-text-label {
 	font-family: $heading;	
@@ -88,7 +88,7 @@ $label-text-color: $color-text;
 @mixin response-block($mod : default) {
 	@include form-text();	
 	padding: 8px 14px;
-	border: 1px solid $color-border-normal;
+	border: 1px solid $color-page-bg-dark;
 	position: relative;
 	color: $color-page-text;
 	
@@ -96,7 +96,7 @@ $label-text-color: $color-text;
 		content: '';
 		width: 6px;
 		height: 100%;
-		background: $color-border-normal;
+		background: $color-page-bg-dark;
 		position: absolute;
 		top: 0;
 		left: -1px;
@@ -104,11 +104,11 @@ $label-text-color: $color-text;
 	}
 	
 	@if $mod == error {
-		&:before { background: $color-link-two; }
+		&:before { background: $color-main-dark; }
 	}
 	@else if $mod == ok {		
-		&:before { background: $leyka_green; }
-		color: $leyka_green;
+		&:before { background: $color-ok; }
+		color: $color-ok;
 	}
 }
 
@@ -135,8 +135,8 @@ $label-text-color: $color-text;
 .entry-content .frm_forms,
 .regular-form .frm_forms {	
 	padding: $gut $gut $gut;
-	border: 1px solid darken($color-border-normal, 7%);
-	border-top: 4px solid $color-link-three;
+	border: 1px solid darken($color-page-bg-dark, 7%);
+	border-top: 4px solid $color-main;
 	box-shadow: 1px 1px 3px rgba(150, 150, 150, 0.3);	
 	background: $color-white;
 }
@@ -169,7 +169,7 @@ $label-text-color: $color-text;
 	display: inline-block;
 	padding: 0 2px ;
 	font-size: 11px;
-	color: $color-link-two;
+	color: $color-main-dark;
 }
 
 
@@ -256,7 +256,7 @@ $label-text-color: $color-text;
 	.rdc-inputfix__label {
 		display: inline-block;
 		@include checkbox-text();
-		color: $color-text;
+		color: $color-page-text;
 	}
 	
 	.frm_opt_container {
@@ -293,7 +293,7 @@ $label-text-color: $color-text;
 			height: 16px;
 			border-radius: 2px;
 			background: $color-white;
-			border: 2px solid $color-text;
+			border: 2px solid $color-page-text;
 			position: absolute;
 			top: 1px;
 			left: -26px;
@@ -343,7 +343,7 @@ $label-text-color: $color-text;
 			height: 16px;
 			border-radius: 50%;
 			background: $color-white;
-			border: 2px solid $color-text;			
+			border: 2px solid $color-page-text;			
 			position: absolute;
 			top: 1px;
 			left: -26px;
@@ -374,7 +374,7 @@ $label-text-color: $color-text;
 	.rdc-inputfix__label {
 		display: block;
 		@include checkbox-text();
-		color: $color-text;
+		color: $color-page-text;
 	}
 	
 	.rdc-select-wrap {
@@ -441,7 +441,7 @@ $label-text-color: $color-text;
 		color: $color-white;
 		transition: background 0.2s;
 		&:hover {
-			background: $color-link-two;		
+			background: $color-main-dark;		
 		}
 	}
 }

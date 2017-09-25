@@ -97,16 +97,16 @@ class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
 
         'theme_colors' => array(
 
-            'knd_main_color' => '#00bcd4',
-            'knd_color_second' => '#ffc914',
-            'knd_color_third' => '#0e0a2b',
+            'knd_main_color'    => '#00bcd4',
+            'knd_color_second'  => '#ffc914',
+            'knd_color_third'   => '#0e0a2b',
 
-            'knd_text1_color' => '#000000',
-            'knd_text2_color' => '#000000',
-            'knd_text3_color' => '#000000',
+            'knd_text1_color'   => '#000000',
+            'knd_text2_color'   => '#000000',
+            'knd_text3_color'   => '#000000',
 
-            'knd_page_bg_color' => '#ffffff',
-            'knd_page_text_color' => '#000000',
+            'knd_page_bg_color'     => '#ffffff',
+            'knd_page_text_color'   => '#000000',
 
             'knd_custom_logo_mod' => 'image_and_text',
             
@@ -656,8 +656,7 @@ class KND_Withyou_Data_Builder extends KND_Plot_Data_Builder {
 </p>
 ",
             
-            'knd_address_phone' => 'Архангельская область, Вельский район, г. Вельск, ул. Рогозина, д. 48, каб. 12
-+7 (495) 878-53-42
+            'knd_address_phone' => 'Архангельская область, Вельский район, г. Вельск, ул. Рогозина, д. 48, каб. 12, +7 (495) 878-53-42
 ',
             
             'knd_footer_security_pd' => "<p>

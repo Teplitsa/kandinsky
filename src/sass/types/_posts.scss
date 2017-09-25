@@ -26,7 +26,7 @@
 // Post meta elemnts - wrappen in mixin
 @mixin post-meta() {
 	@include knd-nav-caps-text();
-	color: var(--knd-color-main-dark);
+	color: $color-main-dark;
 
     display: inline-block;
 	padding: 4px 8px;
@@ -38,7 +38,7 @@
         
         body.plot-fundraising-org & {
             @include knd-link-lonely-text();
-            color: var(--knd-color-third);
+            color: $color-third;
         }
         
     }
@@ -49,10 +49,10 @@
 	}
 	
     .date {
-        color: $color-border-dark;
+        color: $color-page-text;
       
         body.plot-public-campaign & {
-            color: $color-text;
+            color: $color-page-text;
         }
         
         body.plot-public-campaign.single & {
@@ -69,14 +69,14 @@
         display:inline-block;
         width: 5px;
         height: 5px;
-        border: solid 1px $color-border-dark;
+        border: solid 1px $color-page-bg-dark;
         
         body.plot-public-campaign & {
-            border-color: $color-text;
+            border-color: $color-page-text;
         }
         
         body.plot-public-campaign.single & {
-            border-color: $color-text-black;
+            border-color: $color-page-text;
         }
         
         border-radius: 5px;
@@ -100,18 +100,18 @@
 	}
 	
     body.plot-public-campaign & {
-        background: $color-bg-dark-gray;
+        background: $color-second-dark;
     }
 	
 	a {
 		display: block;
-		//color: $color-text;
+		//color: $color-page-text;
 		color: $color-page-text;
 		position:relative;
 		height: 100%;
 		
 		body.plot-public-campaign & {
-		  color: $color-text;
+		  color: $color-page-text;
 		}
 	}
 	
@@ -146,7 +146,7 @@
 	
 	.entry-summary {
 		@include knd-subhead-text();
-		color: $color-text;
+		color: $color-page-text;
 	}
 }
 
@@ -161,35 +161,11 @@
 	
 	a {
 	   @include knd-link-related-text();
-	   color: var(--knd-color-main-dark);
+	   color: $color-main-dark;
 	   margin-bottom: 16px;
 	}	
 }
 
-.related-all-link {
-	text-align: center;
-	padding-bottom: $gut;
-	color: $color-link-three;
-	
-	a {
-		@include nav-text(meta);
-		padding: 14px 24px;
-		font-size: 16px;
-		line-height: 18px;
-		color: $color-page-text;			
-		text-align: center;
-		
-		&:hover, &:focus, &:active {
-			color: $color-page-bg;
-			background: $color-page-text;	
-		}
-	}
-	
-	margin-top: $gut;
-	@include for(medium-screens) {
-		margin-top: 0;
-	}
-}
 
 .related-cards-loop {
     margin-top: $gut / 2;
@@ -202,7 +178,7 @@
 	@extend .tpl-post;
 	
 	&:hover {
-		//background: $color-secondary-alt;		
+				
 	}
 	
 	.entry-data {
@@ -267,7 +243,7 @@
 	transition: background 0.3s;
 		
 	&.linked:hover {
-		//background: $color-secondary-alt;
+		
 		.entry-preview:after { background: rgba(0,0,0, 0.08); }
 	}
 	
@@ -286,7 +262,7 @@
 		@include knd-subhead-text();
 		line-height: 1.4;
 		text-transform: none;
-        color: $color-text-light;
+        color: $color-page-text-light;
 		
 		a[href *= "tel"] {
 			color: $color-page-text;
@@ -359,14 +335,14 @@
     margin-bottom: $gut;
 
     a {
-        color: $color-text;
+        color: $color-page-text;
     }
 
     .entry-title {
         @include knd-body-title-text();             
         padding-top: 0px;
         hyphens: auto;
-        color: $color-text;
+        color: $color-page-text;
         margin-bottom: 0;
     }
 
@@ -379,7 +355,7 @@
     
     .entry-summary {
         @include knd-body-text();
-        color: $color-text;
+        color: $color-page-text;
     }
 }
 
@@ -394,7 +370,7 @@
 }
 
 .listing-bg {
-   background: $color-bg-light;
+   background: $color-gray-light;
 }
 
 .featured-post {
@@ -421,11 +397,11 @@
         
         &:hover, &:focus, &:active {
             color: $color-page-bg;
-            background: var(--knd-color-main);
+            background: $color-main;
         }
         &.current {
             color: $color-page-bg;
-            background: var(--knd-color-main);
+            background: $color-main;
         }
     }
     

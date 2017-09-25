@@ -107,7 +107,7 @@
 .tags-line {
     padding-top: $gut / 2.2;
     a {
-        color: var(--knd-color-main-dark);
+        color: $color-main-dark;
         @include knd-link-terms-text();
         margin-right: 4px;
     }

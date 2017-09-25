@@ -27,8 +27,8 @@
 	@include knd-head-tiny-text();
 	margin-bottom: $gut/4;
 	a {
-		color: $color-link-three;
-		&:hover, &:focus, &:active { color: $color-link-one; }
+		color: $color-main;
+		&:hover, &:focus, &:active { color: $color-main-dark; }
 	}
 }
 
@@ -54,7 +54,7 @@
 	width: 100%;
 	height: 0;
 	padding-bottom: 60%;
-	background-color: $color-text;
+	background-color: $color-page-text;
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover; 
@@ -168,7 +168,7 @@ background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.1) 27%,rgba
 	.knd-img-bg:after { display: none; }
 
 	.kng-img-mark {
-		background: $color-link-three;
+		background: $color-main;
 		padding: $gut;
 	}
 
@@ -207,7 +207,7 @@ background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.1) 27%,rgba
 	text-align: center;
 
 	.knd-section-extend {
-		background: var(--knd-color-second);
+		background: $color-second;
 		padding: $gut;
 
 		@include for(medium-screens) {

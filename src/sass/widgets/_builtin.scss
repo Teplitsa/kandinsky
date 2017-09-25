@@ -42,11 +42,11 @@
     a {
         @include knd-link-section-text();
         text-transform: uppercase;
-        color: $color-link-three;
+        color: $color-main;
         border-bottom: 1px solid;
 
         &:hover {
-            color: $color-link-one;
+            color: $color-main-dark;
         }
     }
 }
@@ -60,10 +60,10 @@
     a {
         @include knd-footer-text();
         text-transform: uppercase;
-        color: $color-link-three;
+        color: $color-main;
 
         &:hover {
-            color: $color-link-one;
+            color: $color-main-dark;
         }
     }
 }
@@ -122,7 +122,7 @@
         position: absolute;
         top: 17px;
         left: 17px;
-        fill: $color-link-three;
+        fill: $color-main;
         z-index: 5;
     }
 
@@ -130,7 +130,7 @@
         position: relative;
         z-index: 10;
         background: transparent;
-        border: 2px solid $color-link-three;
+        border: 2px solid $color-main;
         padding-left: 54px;
         
         &::placeholder {
@@ -138,12 +138,12 @@
         }
 
         &:focus, &:active {
-            border-color: $color-link-one;
+            border-color: $color-main-dark;
             background: $color-white;
             padding-left: 24px;
 
             &::placeholder {
-                color: $color-text;
+                color: $color-page-text;
             }
         }
 
@@ -161,14 +161,14 @@
             font-weight: 400;
             text-transform: uppercase;
             letter-spacing: normal;
-            color: $color-text-light;
+            color: $color-page-text-light;
             top: 20px;
         }
     }
 
     .sr-num {
         font-size: .85em;
-        color: $color-text-light;
+        color: $color-page-text-light;
         text-align: left;
         margin-top: 8px;
     }
@@ -190,11 +190,11 @@
         position: absolute;
         top: 14px;
         left: 10px;
-        fill: $color-text-black;
+        fill: $color-page-text;
     }
 
     .search-field {
-        border: 1px solid $color-text-black;
+        border: 1px solid $color-page-text;
         background: transparent;
         padding: 12px 12px 12px 44px;
 

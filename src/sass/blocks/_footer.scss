@@ -4,23 +4,23 @@
 
 /** Bottom branding pannel with social links **/
 .bottom-bar {    
-    background: $color-bg-light;
+    background: $color-gray-light;
     padding: $base*2.2 0 0;
-    color: $color-text-black;
+    color: $color-black;
     
     body.plot-public-campaign & {
-       color: $color-text;
-       background: var(--knd-color-third);
+       color: $color-page-text;
+       background: $color-third;
     }
 
     .knd-social-links  {
        
         li a {
             .svg-icon {
-               fill: $color-text-black;
+               fill: $color-black;
                
                body.plot-public-campaign & {
-                   fill: $color-text;
+                   fill: $color-page-text;
                }
            } 
         }
@@ -43,25 +43,27 @@
     
     @include knd-footer-text();
     padding: 10px 0px 30px 0px;
-    background: $color-bg-light;
-    color: $color-text;
+    background: $color-gray-light;
+    color: $color-black;
     
     body.plot-public-campaign & {
-       background: var(--knd-color-third);
+        color: $color-page-text;
+        background: $color-third;
     }
     
     a {
-        color: $color-link-one;
+        color: $color-main-dark;
+
         &:hover, &:focus, &:active {
             text-decoration: underline;
-            color: $color-link-three;
+            color: $color-main;
         }
         
         body.plot-fundraising-org & {
-            color: var(--knd-color-third);
+            color: $color-third;
             
             &:hover, &:focus, &:active {
-                color: var(--knd-color-third-dark);
+                color: $color-third-dark;
             }
         }
         
@@ -75,16 +77,19 @@
     
     .copy {
         @include knd-supersmall-text();
-        color: $color-text;
+        color: $color-black;
         max-width: 300px;
-       
+        opacity: .75;
+
         a { 
             white-space: nowrap;
-            color: $color-text;
+            color: $color-black;
         }
 
-        opacity: .75;
+    
         body.plot-public-campaign & {
+            color: $color-page-text;
+            a { color: $color-page-text; }
             opacity: .5;
         }
     }
@@ -137,7 +142,7 @@
         border-bottom: 1px solid rgba(0,0,0, 0.2);
         
         body.plot-public-campaign & {
-           border-bottom: 1px solid $color-border-dark;
+           border-bottom: 1px solid $color-second;
         }
         
         @include for(xxlarge-screens) {
@@ -189,7 +194,7 @@
     .support {
         @include knd-supersmall-text();
         line-height: 16px;
-        color: $color-text;
+        color: $color-page-text;
         padding-right: 20px;
         width: 104px;
         text-align: right;

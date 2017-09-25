@@ -95,23 +95,23 @@
 
 /** Post content elements **/
 @mixin link-in-content {
-    color: $color-link-one;
+    color: $color-main-dark;
     //display: inline-block;
-    border-bottom: 1px solid $color-link-three;
+    border-bottom: 1px solid $color-main;
     transition: all .35s;
 
     &:hover, &:focus, &:active {
-        color: $color-link-one;
-        border-bottom-color: $color-link-one;
+        color: $color-main-dark;
+        border-bottom-color: $color-main-dark;
     }
 }
 
 @mixin caption-text {
-    color: $color-text-semi;
+    color: $color-page-text-light;
     @include knd-footer-text();
 
     .svg-icon {
-        fill: $color-text-semi;
+        fill: $color-page-text-light;
         width: 15px;
         height: 19px;
         margin-right: 8px; 
@@ -126,8 +126,8 @@
     
     display: inline-block;
     color: $color-white;
-    background: $color-link-three;
-    border: 1px solid $color-link-three;    
+    background: $color-main;
+    border: 1px solid $color-main;    
     transition: all 0.3;
     text-align:center;
     
@@ -140,31 +140,31 @@
         color: $color-white;
     }
     &:hover, &:focus, &:active {
-        //background: darken($color-link-three, 10%);
-        background: $color-link-two;
+        //background: darken($color-main, 10%);
+        background: $color-main-dark;
         color: $color-white;
-        border-color: $color-link-two;
+        border-color: $color-main-dark;
     }
     
     @if $mod == white {
         background: $color-white;
         border: 1px solid $color-white;
-        color: $color-link-three;
-        &:visited { color: $color-link-three; }
+        color: $color-main;
+        &:visited { color: $color-main; }
         
         &:hover, &:focus, &:active {            
-            background: $color-link-two;
+            background: $color-main-dark;
             color: $color-white;
-            border-color: $color-link-two;
+            border-color: $color-main-dark;
         }
     }
     @else if $mod == leyka {
-        background: $leyka_green;
-        border: 1px solid $leyka_green;
+        background: $color-ok;
+        border: 1px solid $color-ok;
         
         &:hover, &:focus, &:active {            
-            background: darken($leyka_green, 10%);
-            border-color: darken($leyka_green, 10%);            
+            background: darken($color-ok, 10%);
+            border-color: darken($color-ok, 10%);            
         }
     }
 }
