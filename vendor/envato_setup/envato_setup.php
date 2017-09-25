@@ -1532,8 +1532,8 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 
                         update_option('knd_setup_install_leyka', false);
 
-                        wp_redirect(esc_url_raw($this->get_next_step_link()));
-                        exit;
+//                         wp_redirect(esc_url_raw($this->get_next_step_link()));
+//                         exit;
 
                     } catch(Exception $ex) {
 
