@@ -165,6 +165,7 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 			'knd_page_bg_color', 
 			array( 
 				'label' => __( 'Page Background Color', 'knd' ), 
+				'description' => __('Recommended - white', 'knd'), 
 				'section' => 'knd_decoration_colors', 
 				'settings' => 'knd_page_bg_color', 
 				'priority' => 15 ) ) );
@@ -174,7 +175,8 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 			$wp_customize, 
 			'knd_page_text_color', 
 			array( 
-				'label' => __( 'Main Text Color', 'knd' ), 
+				'label' => __( 'Main Text Color', 'knd' ),
+				'description' => __('Recommended - black', 'knd'),  
 				'section' => 'knd_decoration_colors', 
 				'settings' => 'knd_page_text_color', 
 				'priority' => 17 ) ) );
@@ -185,6 +187,7 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 			'knd_text1_color', 
 			array( 
 				'label' => __( 'Inverse Text Color', 'knd' ),
+				'description' => __('Recommended - white', 'knd'), 
 				'section' => 'knd_decoration_colors', 
 				'settings' => 'knd_text1_color', 
 				'priority' => 20 ) ) );
