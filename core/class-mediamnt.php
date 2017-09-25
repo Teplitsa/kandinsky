@@ -16,9 +16,7 @@ class TST_Media {
 	/* Construct */
 	private function __construct() {
 		if ( defined( 'TST_DEVMODE' ) && TST_DEVMODE ) {
-			// add_action('tst_before_get_post_thumbnail', array($this, 'localize_thumbnail'), 2, 2);
 			add_action( 'tst_before_display_attachment', array( $this, 'regenerate_attachment' ), 2, 2 );
-			// add_filter('tst_entry_the_content', array($this, 'localize_images_in_content'), 15);
 		}
 	}
 
@@ -54,8 +52,6 @@ class TST_Media {
 	// action for tst_get_thumbnail
 	public function localize_thumbnail( $post_id, $size = 'post-thumbnail' ) {
 		
-		// if(!is_single()) //only on single for performance
-		// return;
 		$thumb_id = get_post_thumbnail_id( $post_id );
 		
 		if ( ! $this->_is_original_file_exists( $thumb_id ) ) { // do we have original file

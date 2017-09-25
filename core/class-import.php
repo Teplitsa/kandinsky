@@ -73,9 +73,7 @@ class TST_Import {
 			$response_code = $file['response']['code'];
 			
 			if ( $response_code == '200' && isset( $file['headers']['content-type'] ) ) {
-				//
-				// if( file_exists( $tmp_file ) ) {
-				// if( true ) {
+				
 				$filename = basename( $url );
 				$upload_file = wp_upload_bits( $filename, null, $file['body'] );
 				

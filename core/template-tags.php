@@ -61,7 +61,7 @@ function is_page_branch( $pageID ) {
 }
 
 function is_tax_branch( $slug, $tax ) {
-	// global $post;
+	
 	$test = get_term_by( 'slug', $slug, $tax );
 	if ( empty( $test ) )
 		return false;
@@ -71,9 +71,6 @@ function is_tax_branch( $slug, $tax ) {
 		if ( $qobj->term_id == $test->term_id || $qobj->parent == $test->term_id )
 			return true;
 	}
-	
-	// if(is_singular() && is_object_in_term($post->ID, $tax, $test->term_id))
-	// return true;
 	
 	return false;
 }

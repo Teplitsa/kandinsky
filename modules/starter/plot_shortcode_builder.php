@@ -146,10 +146,6 @@ class KND_Shortcode_Builder {
         $attr_str_list = array();
         foreach($attributes as $name => $value) {
         
-//             if($name == 'subtitle' || preg_match('/^\d+-text$/', $name)) {
-//                 $encoded_value = urlencode($value);
-//             }
-//             elseif($name == 'cta-url') {
             if($name == 'cta-url') {
                 $encoded_value = $this->data_builder->get_cta_url($value);
             }

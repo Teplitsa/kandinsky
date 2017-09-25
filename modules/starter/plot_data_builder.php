@@ -135,16 +135,10 @@ class KND_Plot_Data_Builder {
         
         foreach($this->imp->possible_plots as $plot_name) {
         
-            //             var_dump($plot_name);
-        
             if($plot_name != $this->imp->plot_name) {
-        
-                //                 echo "deleting all posts...\n";
         
                 $builder = self::produce_plot_builder($plot_name, $this->imp);
                 $plot_config = $builder->data_routes;
-        
-                //                 var_dump($plot_config['posts']);
         
                 foreach($plot_config['leyka_campaigns'] as $section => $section_data) {
         
@@ -175,7 +169,6 @@ class KND_Plot_Data_Builder {
     }
     
     public function _install_campaigns_with_donations() {
-//         $this->remove_all_other_plots_posts();
         
         $this->_remove_all_section_campaigns_with_donations();
         
@@ -619,8 +612,6 @@ class KND_Plot_Data_Builder {
         $template_piece = $this->imp->get_piece($template, $section);
         
         $template_piece->content = $this->fill_template_with_pieces( $template_piece->content, $section );
-        // parsedown here escape quotes and breakes shorcodes, so disable it for now
-//         $template_piece->content = $this->imp->parse_text($template_piece->content);
         $template_piece->slug = $post_slug;
         
         $this->save_post($template_piece, $post_type);
@@ -904,7 +895,6 @@ class KND_Plot_Data_Builder {
 
     public function build_theme_options() {
         
-//         print_r($this->data_routes['theme_options']);
         $this->save_theme_options($this->data_routes['theme_options']);
         do_action('knd_plotdata_build_theme_options');
     }
@@ -912,14 +902,12 @@ class KND_Plot_Data_Builder {
     
     public function build_theme_colors() {
     
-        //         print_r($this->data_routes['theme_options']);
         $this->save_theme_options($this->data_routes['theme_colors']);
     
     }
     
     public function save_theme_options($theme_options_list) {
         
-//         print_r($theme_options_list);
         foreach($theme_options_list as $theme_option_name => $theme_option_piece_data) {
     
             if(is_array($theme_option_piece_data)) {
@@ -928,7 +916,6 @@ class KND_Plot_Data_Builder {
                 $field = isset($theme_option_piece_data['field']) ? $theme_option_piece_data['field'] : 'content';
                 $section = isset($theme_option_piece_data['section']) ? $theme_option_piece_data['section'] : '';
     
-//                 echo "<br />" . $section . " - " . $piece . ' - ' . $this->imp->get_val($piece, $field, $section) . "<br />";
     
                 set_theme_mod($theme_option_name, $this->imp->get_val($piece, $field, $section));
                 

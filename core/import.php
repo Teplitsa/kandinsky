@@ -111,12 +111,9 @@ function knd_build_imported_url( $url ) {
 	$res_url = home_url();
 	
 	if ( $url ) {
-		// echo "{$url}\n";
 		if ( preg_match( "/^\/.*/", $url ) || preg_match( "/^http[s]?:\/\/.*/", $url ) ) {
-			// echo "root URL\n";
 			$res_url = home_url( $url );
 		} elseif ( preg_match( "/^([-0-9a-z_]+)\/(.+)$/", $url, $matches ) ) {
-			// print_r($matches);
 			$post_type = $matches[1];
 			$post_slug = $matches[2];
 			
