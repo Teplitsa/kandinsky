@@ -35,7 +35,7 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 	
 	$wp_customize->add_section( 
 		'knd_important_links', 
-		array( 'priority' => 1, 'title' => __( 'Important Links', 'knd' ) ) );
+		array( 'priority' => 150, 'title' => __( 'Important Links', 'knd' ) ) );
 	
 	$wp_customize->add_setting( 
 		'knd_important_links', 
@@ -63,6 +63,7 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 			'settings' => 'text_in_header', 
 			'priority' => 30 ) );
 	
+
 	// Design section
 	$wp_customize->add_panel( 
 		'knd_decoration', 
@@ -126,12 +127,14 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 	
 	$wp_customize->add_setting( 'knd_custom_logo_mod', array( 'default' => 'image_only' ) );
 	
+
+	//color controlls
 	$wp_customize->add_control( 
 		new WP_Customize_Color_Control( 
 			$wp_customize, 
 			'knd_main_color', 
 			array( 
-				'label' => __( 'Main Color', 'knd' ), 
+				'label' => __( 'Action Color', 'knd' ), 
 				'section' => 'knd_decoration_colors', 
 				'settings' => 'knd_main_color', 
 				'priority' => 10 ) ) );
@@ -141,7 +144,7 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 			$wp_customize, 
 			'knd_color_second', 
 			array( 
-				'label' => __( 'Second Color', 'knd' ), 
+				'label' => __( 'Complimentary Color', 'knd' ), 
 				'section' => 'knd_decoration_colors', 
 				'settings' => 'knd_color_second', 
 				'priority' => 11 ) ) );
@@ -151,61 +154,67 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 			$wp_customize, 
 			'knd_color_third', 
 			array( 
-				'label' => __( 'Third Color', 'knd' ), 
+				'label' => __( 'Dark Color', 'knd' ), 
 				'section' => 'knd_decoration_colors', 
 				'settings' => 'knd_color_third', 
 				'priority' => 12 ) ) );
-	
-	$wp_customize->add_control( 
-		new WP_Customize_Color_Control( 
-			$wp_customize, 
-			'knd_text1_color', 
-			array( 
-				'label' => __( 'First Text Color', 'knd' ), 
-				'section' => 'knd_decoration_colors', 
-				'settings' => 'knd_text1_color', 
-				'priority' => 13 ) ) );
-	
-	$wp_customize->add_control( 
-		new WP_Customize_Color_Control( 
-			$wp_customize, 
-			'knd_text2_color', 
-			array( 
-				'label' => __( 'Second Text Color', 'knd' ), 
-				'section' => 'knd_decoration_colors', 
-				'settings' => 'knd_text2_color', 
-				'priority' => 14 ) ) );
-	
-	$wp_customize->add_control( 
-		new WP_Customize_Color_Control( 
-			$wp_customize, 
-			'knd_text3_color', 
-			array( 
-				'label' => __( 'Third Text Color', 'knd' ), 
-				'section' => 'knd_decoration_colors', 
-				'settings' => 'knd_text3_color', 
-				'priority' => 15 ) ) );
-	
+
 	$wp_customize->add_control( 
 		new WP_Customize_Color_Control( 
 			$wp_customize, 
 			'knd_page_bg_color', 
 			array( 
-				'label' => __( 'Pages Background Color', 'knd' ), 
+				'label' => __( 'Page Background Color', 'knd' ), 
 				'section' => 'knd_decoration_colors', 
 				'settings' => 'knd_page_bg_color', 
-				'priority' => 16 ) ) );
+				'priority' => 15 ) ) );
 	
 	$wp_customize->add_control( 
 		new WP_Customize_Color_Control( 
 			$wp_customize, 
 			'knd_page_text_color', 
 			array( 
-				'label' => __( 'Pages Text Color', 'knd' ), 
+				'label' => __( 'Main Text Color', 'knd' ), 
 				'section' => 'knd_decoration_colors', 
 				'settings' => 'knd_page_text_color', 
 				'priority' => 17 ) ) );
 	
+	$wp_customize->add_control( 
+		new WP_Customize_Color_Control( 
+			$wp_customize, 
+			'knd_text1_color', 
+			array( 
+				'label' => __( 'Inverse Text Color', 'knd' ),
+				'section' => 'knd_decoration_colors', 
+				'settings' => 'knd_text1_color', 
+				'priority' => 20 ) ) );
+	
+	$wp_customize->add_control( 
+		new WP_Customize_Color_Control( 
+			$wp_customize, 
+			'knd_text2_color', 
+			array( 
+				'label' => __( 'Accent Text Color - 1', 'knd' ), 
+				'description' => __('Applicable only for Dubrovino template', 'knd'), 
+				'section' => 'knd_decoration_colors', 
+				'settings' => 'knd_text2_color', 
+				'priority' => 24 ) ) );
+	
+	$wp_customize->add_control( 
+		new WP_Customize_Color_Control( 
+			$wp_customize, 
+			'knd_text3_color', 
+			array( 
+				'label' => __( 'Accent Text Color - 2', 'knd' ), 
+				'description' => __('Applicable only for Dubrovino template', 'knd'), 
+				'section' => 'knd_decoration_colors', 
+				'settings' => 'knd_text3_color', 
+				'priority' => 26 ) ) );
+	
+	
+	
+
+	//logo controlls
 	$wp_customize->add_control( 
 		'knd_custom_logo_mod', 
 		array( 
@@ -392,7 +401,7 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 	// cta options
 	$wp_customize->add_section( 
 		'knd_cta_block_settings', 
-		array( 'priority' => 60, 'title' => __( 'CTA block settings', 'knd' ) ) );
+		array( 'priority' => 40, 'title' => __( 'CTA block settings', 'knd' ) ) );
 	
 	$wp_customize->add_setting( 'cta-title', array( 'default' => '' ) );
 	
@@ -441,7 +450,7 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 	// Social media links
 	$wp_customize->add_section( 
 		'knd_social_links', 
-		array( 'priority' => 40, 'title' => __( 'Social networks links', 'knd' ) ) );
+		array( 'priority' => 60, 'title' => __( 'Social networks links', 'knd' ) ) );
 	
 	foreach ( knd_get_social_media_supported() as $id => $data ) {
 		
