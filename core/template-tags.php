@@ -552,6 +552,7 @@ function knd_logo_markup() {
 }
 
 function knd_hero_image_markup() {
+
 	$hero = get_theme_mod( 'knd_hero_image' );
 	$hero_img = '';
 	
@@ -567,37 +568,27 @@ function knd_hero_image_markup() {
 		$knd_hero_image_support_url = get_theme_mod( 'knd_hero_image_support_url' );
 		$knd_hero_image_support_text = get_theme_mod( 'knd_hero_image_support_text' );
 		$knd_hero_image_support_button_caption = get_theme_mod( 'knd_hero_image_support_button_caption' );
-		?>
-<section class="intro-head-image text-over-image">
-    <div class="tpl-pictured-bg" style="background-image: url(<?php echo $hero_img;?>)"></div>
-</section>
+?>
+<div class="hero-section" style="background-image: url(<?php echo $hero_img;?>)">
+	<div class="container">
+		<div class="hero-content">
 
-<section class="container intro-head-content text-over-image has-button">
+		<?php if($knd_hero_image_support_title) { ?>
+			<div class="hero-title"><?php echo $knd_hero_image_support_title ?></div>
+		<?php } ?>
 
-    <div class="ihc-content">
-        <a href="<?php echo $knd_hero_image_support_url ?>">
-<?php if($knd_hero_image_support_title):?>
-<h1 class="ihc-title">
-                <span><?php echo $knd_hero_image_support_title ?></span>
-            </h1>
-<?php endif; ?>
+		<?php if($knd_hero_image_support_text) { ?>
+			<div class="hero-text"><?php echo $knd_hero_image_support_text ?></div>
+		<?php } ?>
 
-<?php if($knd_hero_image_support_text):?>
-<div class="ihc-desc">
-                <p>
-<?php echo $knd_hero_image_support_text ?>
-</p>
-            </div>
-<?php endif; ?>
-
-<?php if($knd_hero_image_support_button_caption):?>
-<div class="cta"><?php echo $knd_hero_image_support_button_caption ?></div>
-<?php endif;?>
-</a>
-    </div>
-
-</section>
-
+		<?php if( $knd_hero_image_support_url && $knd_hero_image_support_button_caption ) { ?>
+		<a href="<?php echo esc_url($knd_hero_image_support_url); ?>" class="hero-button">
+			<?php echo $knd_hero_image_support_button_caption; ?>
+		</a>
+		<?php } ?>
+		</div>
+	</div>
+</div>
 <?php
 	}
 }

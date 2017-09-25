@@ -1,220 +1,78 @@
 /** == Hero image at home (_hero.scss) == */
 // Hero image seaction at homepage
 
+.hero-section {
+    background-color: $color-page-bg-dark;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
-
-
-@mixin container-extended() {
-    margin: 0 -4.35%;
     position: relative;
-    width: auto;
-    
-    & > div[id *="pl-"],
-    & > div[class *="so-widget"] {
-        max-width: $page_cont;
-        width: 92%;
-        margin: 0 auto;
-    }
-    
-    $ex_cont_width_mq: $page_cont / 0.92 + 1px;
-    @media screen and (min-width: $ex_cont_width_mq ) { 
-        margin: 0 -1 * ($full_cont - $page_cont) / 2;   
-    }
-    
-}
 
-@mixin vertical-image-header-fixed(){
-    //60vh;
-    height: 360px;
-    
-    @include for(small-screens) {
-        height: 400px;
+    &:after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        z-index: 3;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: -moz-linear-gradient(top, rgba(0,0,0,0) 10%, rgba(0,0,0,.8) 100%); 
+        background: -webkit-linear-gradient(top, rgba(0,0,0,0) 10%,rgba(0,0,0,.8) 100%); 
+        background: linear-gradient(to bottom, rgba(0,0,0,0) 10%,rgba(0,0,0,.8) 100%); 
     }
-    
-    @include for(medium-screens) {
-        height: 460px;
-    }
-    
-    @include for(large-screens) {
-        height: 480px;
-    }
-}
 
-/* hero image */
-.intro-head-image {
-    position: relative;
-    z-index: 1;
-    @include vertical-image-header-fixed();
-    @include container-extended();
-    
-    .tpl-pictured-bg {
-       background-position:none;
-       
-       @include for(medium-screens) {
-           background-position: 150px 25%;
-       }
-    }
-    
-    &.text-over-image {
-        height: 400px;
-        
-    
-        @include for(small-screens) {
-            height: 440px;
-        }
-        
-        @include for(medium-screens) {
-            height: 480px;
-        }
-        
-        @include for(large-screens) {
-            height: 580px;
-        }
-
-        .tpl-pictured-bg {
-            position: relative;
-            z-index: 1;
-
-            &:after {
-                content: '';
-                display: block;
-                width: 100%;
-                height: 100%;
-                z-index: 3;
-                position: absolute;
-                top: 0;
-                left: 0;
-                /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.32+0,1+100 */
-background: -moz-linear-gradient(top, rgba(0,0,0,0) 10%, rgba(0,0,0,.8) 100%); 
-background: -webkit-linear-gradient(top, rgba(0,0,0,0) 10%,rgba(0,0,0,.8) 100%); 
-background: linear-gradient(to bottom, rgba(0,0,0,0) 10%,rgba(0,0,0,.8) 100%); 
-            }
-        }
-    }
-}
-
-
-
-.intro-head-content {
-    z-index: 10;
-    .ihc-title {
-        @include knd-head-large-text();
-        color: $color-white;
-    }
-    
-    .ihc-content:not(.text-over-color) {
+    .container {
         position: relative;
-        margin-top: -40px;
-        padding-bottom: $base;
-    }
-        
-    p:last-child { margin-bottom: 0;}
-    
-    .md-4 {
-        @include for(medium-screens) { text-align: right; }
-        a { @include button();  }
-    }
-    
-    &.has-button {
-        .ihc-title {
-        }
-        .ihc-desc {
-        }
-    }
-    
-    &.text-over-image {
-        height: 1px;
-        
-        .ihc-content {
-
-            transform: translateY(-100%);
-            width: 47%;
-            
-            @include for(medium-screens) {
-                padding-bottom: $gut*2;
-                margin-top: -15px;
-                transform: translateY(-100%);
-                width: 47%;
-            }
-            
-            color: $color-white;
-            position: relative;
-            
-            & > a { 
-               display: block;
-            }
-        }
-        
-        .ihc-title {
-            @include knd-head-large-text();
-            
-            span {
-                display: inline-block;
-            }
-        }
-        
-        .ihc-desc {
-            @include knd-subhead-text();
-            
-            line-height: 1.33;
-            color: $color-white;
-            
-            margin-top:$height_gap + 2px;
-            
-            @include for(medium-screens) {
-                line-height: 1.33;
-            }
-        }
-        
-        .cta {
-            @include button();
-            margin-top: $height_gap + 8px;
-        }
+        z-index: 10;
     }
 
-    &.text-over-color {
+    .hero-content {
+        //set height for whole block
+        padding-top: 40vh;
+        padding-bottom: 15vh;
+        min-height: calc(100vh - 77px);
 
-        .ihc-content {
-            padding: $base;
-            margin: 0;
+        //set width
+        width: 100%;
 
-            & > a {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
+        @include for(medium-screens) {
+            width: 60%;
+            padding-top: $gut;
+            padding-bottom: 90px;
+            min-height: calc(100vh - 101px);
         }
 
-        .ihc-title {
-            padding: 0;
-            span {
-                color: $color-text;
-                display: inline-block;
-                padding: 8px 0;
-                margin-left: 8px;
-            }
+        @include for(large-screens) {
+            width: 46%;
+            min-height: 650px;
         }
 
-        .cta {
-            @include button();
-            margin: $base 0;
-        }
-
+        //push elements to bottom
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-end;
+        align-items: flex-start;
     }
+
 }
 
-.knd-background-text.background {
-    @extended .intro-head-image;
+
+.hero-title {
+    @include knd-head-large-text();
+    color: $color-white;
 }
 
-.knd-background-text.text {
-    @extended .intro-head-content;
+.hero-text {
+    @include knd-card-text();
+    color: $color-white;
+    margin-top: $gut/2;
 }
 
-.homepage-intro .intro-head-content .ihc-content {
-    border-bottom: none;    
+.hero-button {
+    @include button();
+    margin-top: $gut/2;
 }
 
-.intro-head-content + .mobile-sharing {
-    margin-top: $base - 8px;
-}
+
