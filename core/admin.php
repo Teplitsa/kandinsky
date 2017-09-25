@@ -78,7 +78,7 @@ function knd_get_admin_menu_items() {
 					'class' => '',
 					'icon' => 'dashicons-no',
 					'text' => __( 'Remove theme', 'knd' ),
-					'link' => KND_DOC_URL ),
+					'link' => admin_url( 'admin.php?page=remove-kandinsky-theme' ) ),
 				'email-to-support' => array( 
 					'class' => '', 
 					'icon' => 'dashicons-email', 
