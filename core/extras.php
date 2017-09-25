@@ -309,14 +309,6 @@ function knd_after_theme_activation() {
 	}
 }
 
-add_action( 'pre_get_posts', 'knd_posts_archive_entries_number' );
-
-function knd_posts_archive_entries_number( WP_Query $query ) {
-	if ( $query->is_main_query() && $query->is_posts_page ) {
-		$query->set( 'posts_per_page', 11 );
-	}
-}
-
 add_action( 'init', 'knd_remove_scenario_unzipped_dir' );
 
 function knd_remove_scenario_unzipped_dir() {
