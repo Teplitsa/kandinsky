@@ -493,7 +493,8 @@ h2.logo-name {
             }
 				
 			&:hover, &:focus, &:active {
-				background: $color-page-bg-dark;
+				background: $color-main;
+                color: $color-white;
 				
     			body.plot-public-campaign & {
                     background: $color-main;
@@ -539,15 +540,9 @@ h2.logo-name {
 			}
 			
 			&:hover {
-				background: $color-text;
-				border-left-color: $color-text;
+				background: $color-main;
+				border-left-color: $color-main;
 				.svg-icon  { fill: $color-white; }
-
-                body.plot-public-campaign & {
-                    background: $color-main;
-                    border-left-color: $color-main;
-                    .svg-icon  { fill: $color-white; }
-                }
 			}
 			
 			.icon-up { 
@@ -560,12 +555,13 @@ h2.logo-name {
 	
 	ul.sub-menu {
 		display: none;
-		background: $color-text;
+		background: $color-main;
 		color: $color-white;
 		
 		li { border: none; }
 		
 		a {
+            background: $color-main;
 			color: $color-white;
 			margin-right: 0;
             transition: all .35s;
@@ -574,17 +570,13 @@ h2.logo-name {
 				opacity: .5;
 			}
 		}
-
-        body.plot-public-campaign & {
-            background: $color-main;
-            li a { background: $color-main;}
-        }
 	}
 	
 	li.open {
 		.submenu-trigger {
-			background: $color-text;
-			border-left-color: $color-text;
+			background: $color-main;
+			border-left-color: $color-main;
+
 			.icon-down { 
                 display: none; 
             }
@@ -592,11 +584,6 @@ h2.logo-name {
 				display: block;
 				fill: $color-white;
 			}
-
-            body.plot-public-campaign & {
-                background: $color-main;
-                border-left-color: $color-main;
-            }
 		}
 
 		
