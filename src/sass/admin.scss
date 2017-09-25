@@ -216,8 +216,8 @@ div [id *="ninja_forms_metabox"] .item-edit.metabox-item-edit {
 }
 
 li[id^="customize-control-widget_knd_cta-"] {
-    .widget-inside {
-        visibility:hidden;
+    .widget-content {
+        display:none;
     }
 }
 
