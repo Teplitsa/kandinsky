@@ -184,8 +184,6 @@ function knd_add_adminbar_menu( WP_Admin_Bar $admin_bar, $items = array(), $is_i
 	
 	if ( ! ! $is_initial_call ) {
 		
-		$knd_get_admin_notif_count = knd_get_admin_notif_count();
-		
 		$root_node_id = 'knd-adminbar-main';
 		$admin_bar->add_menu( 
 			array( // Parent node

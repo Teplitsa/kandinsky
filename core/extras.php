@@ -76,7 +76,6 @@ function knd_custom_excerpt_length( $l ) {
 add_filter( 'get_the_excerpt', 'knd_custom_excerpt_more' );
 
 function knd_custom_excerpt_more( $output ) {
-	global $post;
 	
 	if ( is_singular() || is_search() )
 		return $output;

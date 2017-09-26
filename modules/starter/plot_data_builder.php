@@ -705,7 +705,6 @@ class KND_Plot_Data_Builder {
                     
                 }
                 else {
-                    $piece = NULL;
                     $pieces = array();
                 }
                 

@@ -3,7 +3,6 @@
 /** == Posts elements == **/
 function knd_post_card( WP_Post $cpost ) {
 	$pl = get_permalink( $cpost );
-	$ex = apply_filters( 'knd_the_title', knd_get_post_excerpt( $cpost, 25, true ) );
 	?>
 <article class="flex-cell flex-md-6 flex-lg-4 tpl-post card">
     <a href="<?php echo $pl; ?>" class="thumbnail-link">
@@ -20,7 +19,6 @@ function knd_post_card( WP_Post $cpost ) {
 
 function knd_related_post_card( WP_Post $cpost ) {
 	$pl = get_permalink( $cpost );
-	$ex = apply_filters( 'knd_the_title', knd_get_post_excerpt( $cpost, 40, true ) );
 	?>
 <article class="flex-cell flex-md-6 tpl-related-post card">
     <a href="<?php echo $pl; ?>" class="entry-link">
