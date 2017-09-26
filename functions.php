@@ -95,7 +95,7 @@ foreach (glob(get_template_directory() . "/modules/*") as $module_file) {
     }
 }
 
-if(is_admin()) {
+if(is_admin() || current_user_can('manage_options')) {
     require get_template_directory() . '/core/admin.php';
     require get_template_directory().'/vendor/class-tgm-plugin-activation.php';
 }
