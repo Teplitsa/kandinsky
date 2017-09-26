@@ -14,7 +14,7 @@ var EnvatoWizard = (function( $ ) {
 
 	function windowLoaded() {
 
-		$( '.wizard-error-support-text a' ).on( 'click', function( e ) {
+		$( '.wizard-error-support-text a' ).on( 'click', function() {
 			// Follow the support link manually
 			window.location = $( this ).attr( 'href' );
 		} );
@@ -39,13 +39,13 @@ var EnvatoWizard = (function( $ ) {
 				return true;
 
 			}
-		} );
+		});
 		$( '.button-upload' ).on( 'click', function( e ) {
 
 			e.preventDefault();
 			renderMediaUploader();
 
-		} );
+		});
 		$( '.theme-presets a' ).on( 'click', function( e ) {
 
 			e.preventDefault();
@@ -79,7 +79,7 @@ var EnvatoWizard = (function( $ ) {
 			currentItemHash = '';
 
 		function ajaxCallback( response ) {
-			if ( typeof response === 'object' && typeof response.message !== 'undefined' ) {
+			if ( 'object' === typeof response && 'undefined' !== typeof response.message ) {
 
 				$currentNode.find( 'span' ).text( response.message );
 				if ( typeof response.url !== 'undefined' ) {
@@ -93,7 +93,7 @@ var EnvatoWizard = (function( $ ) {
 						jQuery.post( response.url, response, function() {
 							processCurrent();
 							$currentNode.find( 'span' ).
-								text( response.message + envato_setup_params.verify_text );
+								text( response.message + envatoSetupParams.verify_text );
 						} ).fail( ajaxCallback );
 					}
 
@@ -117,9 +117,9 @@ var EnvatoWizard = (function( $ ) {
 				// Query our ajax handler to get the ajax to send to TGM
 				// if we don't get a reply we can assume everything worked and continue onto the
 				// next one.
-				jQuery.post( envato_setup_params.ajaxurl, {
+				jQuery.post( envatoSetupParams.ajaxurl, {
 					action: 'knd_wizard_setup_plugins',
-					wpnonce: envato_setup_params.wpnonce,
+					wpnonce: envatoSetupParams.wpnonce,
 					slug: currentItem
 				}, ajaxCallback ).fail( ajaxCallback );
 			}
@@ -127,17 +127,16 @@ var EnvatoWizard = (function( $ ) {
 
 		function findNext() {
 			var doNext = false,
-				$li = $( '.envato-wizard-plugins li,.envato-wizard-plugins-recommended')
-					.find( 'li:has(.plugin-accepted:checked)' );
+				$li = $( '.envato-wizard-plugins li,.envato-wizard-plugins-recommended li:has(.plugin-accepted:checked)');
 			if ( $currentNode ) {
 				if ( ! $currentNode.data( 'done_item' ) ) {
-					itemsCompleted ++;
+					itemsCompleted++;
 					$currentNode.data( 'done_item', 1 );
 				}
 				$currentNode.find( '.spinner' ).css( 'visibility', 'hidden' );
 			}
-			$li.each( function() {
-				if ( currentItem === '' || doNext ) {
+			$li.each(function() {
+				if ( '' === currentItem || doNext ) {
 					currentItem = $( this ).data( 'slug' );
 					$currentNode = $( this );
 					processCurrent();
@@ -145,7 +144,7 @@ var EnvatoWizard = (function( $ ) {
 				} else if ( $( this ).data( 'slug' ) === currentItem ) {
 					doNext = true;
 				}
-			} );
+			});
 			if ( itemsCompleted >= $li.length ) {
 				complete();
 			}
@@ -172,7 +171,7 @@ var EnvatoWizard = (function( $ ) {
 			currentItemHash = '';
 
 		function ajaxCallback( response ) {
-			if ( typeof response === 'object' && typeof response.message !== 'undefined' ) {
+			if ( 'object' === typeof response && 'undefined' !== typeof response.message ) {
 
 				$currentNode.find( 'span' ).text( response.message );
 				if ( typeof response.url !== 'undefined' ) {
@@ -206,14 +205,14 @@ var EnvatoWizard = (function( $ ) {
 			if ( currentItem ) {
 
 				if ( $currentNode.find( 'input:checkbox' ).is( ':checked' ) ) {
-					jQuery.post( envato_setup_params.ajaxurl, {
+					jQuery.post( envatoSetupParams.ajaxurl, {
 						action: 'knd_wizard_setup_content',
-						wpnonce: envato_setup_params.wpnonce,
+						wpnonce: envatoSetupParams.wpnonce,
 						content: currentItem
 					}, ajaxCallback ).fail( ajaxCallback );
 				} else {
 
-					$currentNode.find( 'span' ).text( envato_setup_params.text_processing );
+					$currentNode.find( 'span' ).text( envatoSetupParams.text_processing );
 					setTimeout( findNext, 300 );
 
 				}
@@ -233,8 +232,8 @@ var EnvatoWizard = (function( $ ) {
 				$currentNode.find( '.spinner' ).css( 'visibility', 'hidden' );
 			}
 
-			$items.each( function() {
-				if ( currentItem === '' || doNext ) {
+			$items.each(function() {
+				if ( '' === currentItem || doNext ) {
 					currentItem = $( this ).data( 'content' );
 					$currentNode = $( this );
 					processCurrent();
@@ -242,7 +241,7 @@ var EnvatoWizard = (function( $ ) {
 				} else if ( $( this ).data( 'content' ) === currentItem ) {
 					doNext = true;
 				}
-			} );
+			});
 			if ( itemsCompleted >= $items.length ) {
 				complete();
 			}
@@ -280,9 +279,9 @@ var EnvatoWizard = (function( $ ) {
 		}
 
 		fileFrame = wp.media.frames.file_frame = wp.media({
-			title: envato_setup_params.upload_logo_text,
+			title: envatoSetupParams.upload_logo_text,
 			button: {
-				text: envato_setup_params.select_logo_text,
+				text: envatoSetupParams.select_logo_text,
 			},
 			multiple: false // Set to true to allow multiple files to be selected
 		});
@@ -311,7 +310,7 @@ var EnvatoWizard = (function( $ ) {
 			_modifier = $button.is( 'input' ) || $button.is( 'button' ) ? 'val' : 'text',
 			animIndex = [ 0, 1, 2 ];
 
-		if ( $button.data( 'done-loading' ) === 'yes' ) {
+		if ( 'yes' === $button.data( 'done-loading' ) ) {
 			return false;
 		}
 

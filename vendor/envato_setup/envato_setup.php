@@ -389,7 +389,7 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
                 'jquery',
                 'jquery-blockui',
             ), $this->version);
-            wp_localize_script('envato-setup', 'envato_setup_params', array(
+            wp_localize_script('envato-setup', 'envatoSetupParams', array(
                 'tgm_plugin_nonce' => array(
                     'update' => wp_create_nonce('tgmpa-update'),
                     'install' => wp_create_nonce('tgmpa-install'),
