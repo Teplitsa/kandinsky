@@ -444,6 +444,8 @@ class KND_Plot_Data_Builder {
         		break;
         	}
         }
+        
+        set_transient( '_knd_activation_redirect_done', false );
     }
     
     public function remove_sidebars($plot_config) {

@@ -103,7 +103,6 @@ function knd_remove_theme() {
 			get_theme_mod('knd_site_scenario');
 			
 			$imp = new KND_Import_Remote_Content(get_theme_mod('knd_site_scenario'));
-			$imp->import_downloaded_content();
 			
 			$pdb = KND_Plot_Data_Builder::produce_builder($imp);
 			$pdb->remove_all_content();
