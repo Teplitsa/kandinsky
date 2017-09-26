@@ -18,6 +18,7 @@
 
 .knd-homepage-sidebar {
     padding-top: $gut;
+    position: relative;
     
     @include for(medium-screens) {
         padding-top: $gut * 1.8;
@@ -32,6 +33,7 @@
 
 .knd-archive-sidebar {
     @extend .knd-homepage-sidebar;
+    position: relative;
     background: $color-gray-light;
     
     padding-top: $gut * 1.2;
@@ -59,7 +61,7 @@
 // News widget 
 .knd-news-widget {
     
-    padding: 54px 0px 0px $gut/2;
+    padding-top: 54px;
     background: $color-gray-light;
     
     body.plot-public-campaign & {

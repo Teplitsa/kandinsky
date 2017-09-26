@@ -79,7 +79,7 @@
 /** Global layout presets **/
 @mixin container-base {
     position: relative;
-    width: 88%;
+    width: calc(100% - 54px);
     margin-left: auto; 
     margin-right: auto; 
 
