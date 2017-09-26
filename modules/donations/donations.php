@@ -133,7 +133,7 @@ $is_finished = get_post_meta($campaign->ID, 'is_finished', true);
 
         <div class="lk-info">
         
-            <div class="help-purpose">Помощь семье</div>
+            <div class="help-purpose"><?php echo knd_leyka_help_purpose($campaign);?></div>
         
             <h4 class="lk-title"><a href="<?php echo get_permalink($campaign);?>">
                 <?php echo get_the_title($campaign);?><?php if($campaign_age): echo ", {$campaign_age}"; endif;?>
@@ -295,3 +295,67 @@ function knd_leyka_add_query_vars_filter( $vars ){
     return $vars;
 }
 add_filter( 'query_vars', 'knd_leyka_add_query_vars_filter' );
+
+function knd_leyka_help_purpose($campaign) {
+	$terms = wp_get_post_terms( $campaign->ID, 'post_tag' );
+	$cnt = count($terms);
+	return $cnt && isset($terms[$cnt - 1]) ? $terms[$cnt - 1]->name : __('Charity', 'knd');
+}
+
+// edit kid age
+function knd_leyka_age_metabox_display_callback($post) {
+	
+	$kid_age = get_post_meta($post->ID, 'campaign_age', true);
+?>
+	<div class='inside'>
+	    <p>
+	        <input type="text" name="knd-leyka-kid-age" value="<?php echo esc_html($kid_age); ?>" /> 
+	    </p>
+	</div>
+<?php 
+	wp_nonce_field( 'knd_leyka_kid_age_nonce_action', 'knd-leyka-save-kid-age' );
+}
+
+function knd_leyka_add_metabox() {
+	$plot = get_theme_mod('knd_site_scenario');
+	if($plot == 'fundraising-org') {
+		add_meta_box( 'knd-leyka-kid-age', __( 'Kid age', 'knd' ), 'knd_leyka_age_metabox_display_callback', 'leyka_campaign' );
+	}
+}
+add_action( 'add_meta_boxes', 'knd_leyka_add_metabox' );
+
+function knd_leyka_save_kid_age_metabox( $post_id, $post ) {
+	
+	$nonce_name   = isset( $_POST['knd-leyka-save-kid-age'] ) ? $_POST['knd-leyka-save-kid-age'] : '';
+	$campaign_age   = isset( $_POST['knd-leyka-kid-age'] ) ? $_POST['knd-leyka-kid-age'] : '';
+	
+	$nonce_action = 'knd_leyka_kid_age_nonce_action';
+	
+	if ( ! isset( $nonce_name ) ) {
+		return;
+	}
+	
+	if( $post->post_type != 'leyka_campaign' ) {
+		return;
+	}
+
+	if ( ! wp_verify_nonce( $nonce_name, $nonce_action ) ) {
+		return;
+	}
+
+	if ( ! current_user_can( 'edit_post', $post_id ) ) {
+		return;
+	}
+
+	if ( wp_is_post_autosave( $post_id ) ) {
+		return;
+	}
+
+	if ( wp_is_post_revision( $post_id ) ) {
+		return;
+	}
+	
+	update_post_meta( $post_id, 'campaign_age', $campaign_age );
+	
+}
+add_action( 'save_post', 'knd_leyka_save_kid_age_metabox', 10, 2 );

@@ -225,6 +225,16 @@ class KND_Plot_Data_Builder {
                 $this->_install_campaign_donations($campaign);
                 $campaign->refresh_target_state();
                 
+                // add tags
+                if(count($piece->tags_list)) {
+                	$taxonomy = 'post_tag';
+                	$terms_list = $this->get_terms_list($piece->tags_list, $taxonomy);
+                
+                	if($terms_list) {
+                		wp_set_object_terms((int)$campaign_id, $terms_list, $taxonomy, false);
+                	}
+                }
+                
                 //finished campaign
                 if(preg_match("/^closed.*/", $piece_name)) {
                     update_post_meta($campaign_id, 'is_finished', 1);
@@ -238,6 +248,7 @@ class KND_Plot_Data_Builder {
             }
         }
         
+        wp_cache_flush();
     }
     
     public function _install_campaign_donations($campaign) {
@@ -793,9 +804,9 @@ class KND_Plot_Data_Builder {
         $uid = wp_insert_post($page_data);
         
         // add to tax
-        if(count($piece->tags)) {
+        if(count($piece->tags_list)) {
             $taxonomy = 'post_tag';
-            $terms_list = $this->get_terms_list($piece->tags, $taxonomy);
+            $terms_list = $this->get_terms_list($piece->tags_list, $taxonomy);
             
             if($terms_list) {
                 wp_set_object_terms((int)$uid, $terms_list, $taxonomy, false);
@@ -803,9 +814,9 @@ class KND_Plot_Data_Builder {
             }
         }
         
-        if(count($piece->cats)) {
+        if(count($piece->cats_list)) {
             $taxonomy = ($post_type == 'person') ? 'person_cat' : 'category';
-            $terms_list = $this->get_terms_list($piece->cats, $taxonomy);
+            $terms_list = $this->get_terms_list($piece->cats_list, $taxonomy);
         
             if($terms_list) {
                 wp_set_object_terms((int)$uid, $terms_list, $taxonomy, false);

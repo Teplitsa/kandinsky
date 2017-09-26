@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-26 00:59+0200\n"
-"PO-Revision-Date: 2017-09-26 02:38+0200\n"
+"POT-Creation-Date: 2017-09-26 04:09+0200\n"
+"PO-Revision-Date: 2017-09-26 04:10+0200\n"
 "Last-Translator: ahaenor <ahaenor@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -82,7 +82,7 @@ msgstr "Страницы"
 #: modules/starter/plot_config.php:219 modules/starter/plot_config.php:234
 #: modules/starter/plot_config.php:458 modules/starter/plot_config.php:471
 #: modules/starter/plot_config.php:694
-#: modules/starter/plot_data_builder.php:528 modules/starter/sidebars.php:43
+#: modules/starter/plot_data_builder.php:534 modules/starter/sidebars.php:40
 msgid "News"
 msgstr "Новости"
 
@@ -115,7 +115,7 @@ msgstr "Мастер настройки"
 msgid "User documentation"
 msgstr "Документация"
 
-#: core/admin.php:80 core/admin.php:158 core/admin.php:159
+#: core/admin.php:80 core/admin.php:157 core/admin.php:158
 msgid "Remove theme"
 msgstr "Удалить тему"
 
@@ -123,39 +123,39 @@ msgstr "Удалить тему"
 msgid "Email to the tech support"
 msgstr "Тех.поддержка"
 
-#: core/admin.php:121
+#: core/admin.php:120
 msgid "Kandinsky theme removed"
 msgstr "Тема удалена"
 
-#: core/admin.php:129
+#: core/admin.php:128
 msgid "Are you sure you want to remove Kandinsky theme?"
 msgstr "Вы уверены, что хотите удалить тему \"Кандинский\"?"
 
-#: core/admin.php:132
+#: core/admin.php:131
 msgid "Yes, remove Kandinsky theme"
 msgstr "Да, удалить тему"
 
-#: core/admin.php:133
+#: core/admin.php:132
 msgid "Cancel"
 msgstr "Отмена"
 
-#: core/admin.php:148
+#: core/admin.php:147
 msgid "Kandinsky settings"
 msgstr "«Кандинский» – настройки"
 
-#: core/admin.php:148 core/admin.php:193 functions.php:107
+#: core/admin.php:147 core/admin.php:190 functions.php:108
 msgid "Kandinsky"
 msgstr "Кандинский"
 
-#: core/admin.php:151 core/admin.php:152
+#: core/admin.php:150 core/admin.php:151
 msgid "Kandinsky setup wizard"
 msgstr "Мастер настройки"
 
-#: core/admin.php:236
+#: core/admin.php:233
 msgid "Dismiss"
 msgstr "Скрыть"
 
-#: core/admin.php:238
+#: core/admin.php:235
 #, php-format
 msgid ""
 "Welcome! Thank you for choosing Kandinsky! To fully take advantage of the "
@@ -165,88 +165,88 @@ msgstr ""
 "Здравствуйте! Благодарим вас за выбор темы «Кандинский»! Чтобы использовать "
 "все её возможности, пожалуйста, выполните %sвсе необходимые настройки%s."
 
-#: core/admin.php:242
+#: core/admin.php:239
 msgid "Open the theme setup wizard"
 msgstr "Мастер настройки темы"
 
-#: core/admin.php:245
+#: core/admin.php:242
 msgid "Open theme settings"
 msgstr "Настройки темы"
 
-#: core/admin.php:277
+#: core/admin.php:274
 msgid "Yoast SEO"
 msgstr "Yoast SEO"
 
-#: core/admin.php:281
+#: core/admin.php:278
 msgid "A great tool to boost your website SEO positions."
 msgstr ""
 "Прекрасный плагин, помогающий улучшить позиции сайта в поисковых системах."
 
-#: core/admin.php:283
+#: core/admin.php:280
 msgid "Cyr to Lat enhanced"
 msgstr "Cyr to Lat enhanced"
 
-#: core/admin.php:287
+#: core/admin.php:284
 msgid ""
 "Small helper to seamlessly convert cyrillic pages slugs into latin ones."
 msgstr ""
 "Небольшой плагин для автоматического перевода символов в адресах страниц из "
 "кириллицы в латиницу."
 
-#: core/admin.php:289
+#: core/admin.php:286
 msgid "Disable Comments"
 msgstr "Disable Comments"
 
-#: core/admin.php:293
+#: core/admin.php:290
 msgid ""
 "Comments on the website may be harmful, so this small plugin turns them off."
 msgstr ""
 "Плагин отключает комментарии, встроенные в WordPress по умолчанию. "
 "Комментарии можно включить в любой момент."
 
-#: core/admin.php:295
+#: core/admin.php:292
 msgid "Shortcake (Shortcodes UI)"
 msgstr "Shortcake (Shortcodes UI)"
 
-#: core/admin.php:300
+#: core/admin.php:297
 msgid ""
 "A visual editing for shortcodes to enrich your content management experience."
 msgstr ""
 "Возможности визуального редактирования шорткодов, чтобы сделать процесс "
 "редактирования страниц более современным."
 
-#: core/admin.php:310
+#: core/admin.php:300
 msgid "Leyka"
 msgstr "Лейка"
 
-#: core/admin.php:315
+#: core/admin.php:305
 msgid "This plugin will add means for donations collection to your website."
 msgstr ""
 "Этот плагин добавит на сайт возможности сбора и управления пожертвованиями."
 
-#: core/admin.php:337 vendor/class-tgm-plugin-activation.php:327
+#: core/admin.php:327 vendor/class-tgm-plugin-activation.php:327
 msgid "Install Required Plugins"
 msgstr "Установить требуемые плагины"
 
-#: core/admin.php:338 vendor/class-tgm-plugin-activation.php:328
+#: core/admin.php:328 vendor/class-tgm-plugin-activation.php:328
 msgid "Install Plugins"
 msgstr "Установить плагины"
 
-#: core/admin.php:340 vendor/class-tgm-plugin-activation.php:330
+#: core/admin.php:330 vendor/class-tgm-plugin-activation.php:330
 #, php-format
 msgid "Installing Plugin: %s"
 msgstr "Установка плагина: %s"
 
-#: core/admin.php:342 vendor/class-tgm-plugin-activation.php:332
+#: core/admin.php:332 vendor/class-tgm-plugin-activation.php:332
 #, php-format
 msgid "Updating Plugin: %s"
 msgstr "Обновление плагина: %s"
 
-#: core/admin.php:343 vendor/class-tgm-plugin-activation.php:333
+#: core/admin.php:333 vendor/class-tgm-plugin-activation.php:333
 msgid "Something went wrong with the plugin API."
 msgstr "Ошибка при работе с API плагина."
 
-#: core/admin.php:345 vendor/class-tgm-plugin-activation.php:334
+#: core/admin.php:335 vendor/class-tgm-plugin-activation.php:334
 #, php-format
 msgid "This theme requires the following plugin: %1$s."
 msgid_plural "This theme requires the following plugins: %1$s."
@@ -254,7 +254,7 @@ msgstr[0] "Необходимо установить плагин %1$s."
 msgstr[1] "Необходимо установить плагины: %1$s."
 msgstr[2] "Необходимо установить плагины: %1$s."
 
-#: core/admin.php:349 vendor/class-tgm-plugin-activation.php:335
+#: core/admin.php:339 vendor/class-tgm-plugin-activation.php:335
 #, php-format
 msgid "This theme recommends the following plugin: %1$s."
 msgid_plural "This theme recommends the following plugins: %1$s."
@@ -262,7 +262,7 @@ msgstr[0] "Рекомендуется установить плагин %1$s."
 msgstr[1] "Рекомендуется установить плагины: %1$s."
 msgstr[2] "Рекомендуется установить плагины: %1$s."
 
-#: core/admin.php:353 vendor/class-tgm-plugin-activation.php:337
+#: core/admin.php:343 vendor/class-tgm-plugin-activation.php:337
 #, php-format
 msgid ""
 "The following plugin needs to be updated to its latest version to ensure "
@@ -274,7 +274,7 @@ msgstr[0] "Необходимо обновить плагин %1$s."
 msgstr[1] "Необходимо обновить плагины: %1$s."
 msgstr[2] "Необходимо обновить плагины: %1$s."
 
-#: core/admin.php:357 vendor/class-tgm-plugin-activation.php:343
+#: core/admin.php:347 vendor/class-tgm-plugin-activation.php:343
 #, php-format
 msgid "There is an update available for: %1$s."
 msgid_plural "There are updates available for the following plugins: %1$s."
@@ -282,7 +282,7 @@ msgstr[0] "%1$s: доступно обновление."
 msgstr[1] "%1$s: доступно обновление."
 msgstr[2] "%1$s: доступно обновление."
 
-#: core/admin.php:361 vendor/class-tgm-plugin-activation.php:349
+#: core/admin.php:351 vendor/class-tgm-plugin-activation.php:349
 #, php-format
 msgid "The following required plugin is currently inactive: %1$s."
 msgid_plural "The following required plugins are currently inactive: %1$s."
@@ -290,7 +290,7 @@ msgstr[0] "Необходимо активировать плагин %1$s."
 msgstr[1] "Необходимо активировать плагины: %1$s."
 msgstr[2] "Необходимо активировать плагины: %1$s."
 
-#: core/admin.php:365 vendor/class-tgm-plugin-activation.php:355
+#: core/admin.php:355 vendor/class-tgm-plugin-activation.php:355
 #, php-format
 msgid "The following recommended plugin is currently inactive: %1$s."
 msgid_plural "The following recommended plugins are currently inactive: %1$s."
@@ -298,47 +298,47 @@ msgstr[0] "Рекомендуется активировать плагин %1$s
 msgstr[1] "Рекомендуется активировать плагины: %1$s."
 msgstr[2] "Рекомендуется активировать плагины: %1$s."
 
-#: core/admin.php:368 vendor/class-tgm-plugin-activation.php:360
+#: core/admin.php:358 vendor/class-tgm-plugin-activation.php:360
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
 msgstr[0] "Установить плагин"
 msgstr[1] "Установить плагины"
 msgstr[2] "Установить плагин"
 
-#: core/admin.php:369 vendor/class-tgm-plugin-activation.php:365
+#: core/admin.php:359 vendor/class-tgm-plugin-activation.php:365
 msgid "Begin updating plugin"
 msgid_plural "Begin updating plugins"
 msgstr[0] "Обновить плагин"
 msgstr[1] "Обновить плагины"
 msgstr[2] "Обновить плагин"
 
-#: core/admin.php:370 vendor/class-tgm-plugin-activation.php:370
+#: core/admin.php:360 vendor/class-tgm-plugin-activation.php:370
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
 msgstr[0] "Активировать плагин"
 msgstr[1] "Активировать плагины"
 msgstr[2] "Активировать плагин"
 
-#: core/admin.php:371 vendor/class-tgm-plugin-activation.php:374
+#: core/admin.php:361 vendor/class-tgm-plugin-activation.php:374
 msgid "Return to Required Plugins Installer"
 msgstr "На страницу установки требуемых плагинов"
 
-#: core/admin.php:372 vendor/class-tgm-plugin-activation.php:376
+#: core/admin.php:362 vendor/class-tgm-plugin-activation.php:376
 #: vendor/class-tgm-plugin-activation.php:3148
 msgid "Plugin activated successfully."
 msgstr "Плагин активирован."
 
-#: core/admin.php:373 vendor/class-tgm-plugin-activation.php:377
+#: core/admin.php:363 vendor/class-tgm-plugin-activation.php:377
 #: vendor/class-tgm-plugin-activation.php:2941
 msgid "The following plugin was activated successfully:"
 msgstr "Плагин успешно активирован:"
 
-#: core/admin.php:375 vendor/class-tgm-plugin-activation.php:379
+#: core/admin.php:365 vendor/class-tgm-plugin-activation.php:379
 #, php-format
 msgid "No action taken. Plugin %1$s was already active."
 msgstr "Плагин %1$s уже активирован."
 
-#: core/admin.php:378 vendor/class-tgm-plugin-activation.php:381
+#: core/admin.php:368 vendor/class-tgm-plugin-activation.php:381
 #, php-format
 msgid ""
 "Plugin not activated. A higher version of %s is needed for this theme. "
@@ -347,38 +347,38 @@ msgstr ""
 "Плагин не активирован – тема требует более высокой версии %s. Пожалуйста, "
 "обновите плагин."
 
-#: core/admin.php:381 vendor/class-tgm-plugin-activation.php:383
+#: core/admin.php:371 vendor/class-tgm-plugin-activation.php:383
 #, php-format
 msgid "All plugins installed and activated successfully. %1$s"
 msgstr "Все плагины установлены и активированы. %1$s"
 
-#: core/admin.php:382 vendor/class-tgm-plugin-activation.php:384
+#: core/admin.php:372 vendor/class-tgm-plugin-activation.php:384
 msgid "Dismiss this notice"
 msgstr "Закрыть уведомление"
 
-#: core/admin.php:384 vendor/class-tgm-plugin-activation.php:385
+#: core/admin.php:374 vendor/class-tgm-plugin-activation.php:385
 msgid ""
 "There are one or more required or recommended plugins to install, update or "
 "activate."
 msgstr "Некоторые плагины необходимо установить, обновить или активировать."
 
-#: core/admin.php:386 vendor/class-tgm-plugin-activation.php:386
+#: core/admin.php:376 vendor/class-tgm-plugin-activation.php:386
 msgid "Please contact the administrator of this site for help."
 msgstr "Пожалуйста, свяжитесь с администрацией сайта."
 
-#: core/admin.php:403
+#: core/admin.php:393
 msgid "Action failed. Please refresh the page and retry."
 msgstr "Операция завершилась с ошибкой. Пожалуйста, перезагрузите страницу."
 
-#: core/admin.php:407
+#: core/admin.php:397
 msgid "Action failed."
 msgstr "Операция завершилась с ошибкой."
 
-#: core/admin.php:561
+#: core/admin.php:550
 msgid "Kandinsky — useful links"
 msgstr "Кандинский – полезные ссылки"
 
-#: core/admin.php:662
+#: core/admin.php:651
 #, php-format
 msgid ""
 "ATTENTION! You thumbnail image is too small. It should be at least %s px"
@@ -388,42 +388,42 @@ msgstr ""
 msgid "Author"
 msgstr ""
 
-#: core/class-import.php:114
+#: core/class-import.php:112
 #, php-format
 msgid "Can't create a download temporary directory: %s"
 msgstr "Невозможно создать временную директорию при загрузке: %s"
 
-#: core/class-import.php:121
+#: core/class-import.php:119
 #, php-format
 msgid "Can't create a download temporary file: %s"
 msgstr "Невозможно создать временный файл при загрузке: %s"
 
-#: core/class-import.php:134
+#: core/class-import.php:132
 #, php-format
 msgid "CURL error: %s"
 msgstr "Ошибка cURL: %s"
 
-#: core/class-import.php:145
+#: core/class-import.php:143
 #, php-format
 msgid "%s - temporary download file doesn't exist"
 msgstr "%s - временный файл загрузки не найден"
 
-#: core/class-import.php:149
+#: core/class-import.php:147
 #, php-format
 msgid "%s - a downloaded file already exists and can't be deleted"
 msgstr "%s - загружаемый файл уже найден (и не может быть удалён)"
 
-#: core/class-import.php:153
+#: core/class-import.php:151
 #, php-format
 msgid "%s - a downloaded file isn't writable and can't be made so"
 msgstr "%s - нет прав на запись во временный файл загрузки"
 
-#: core/class-import.php:157
+#: core/class-import.php:155
 #, php-format
 msgid "Can't rename downloaded file: from %s to %s"
 msgstr "Невозможно переименовать загружаемый файл: из %s в %s"
 
-#: core/class-import.php:171
+#: core/class-import.php:169
 #, php-format
 msgid "File wasn't uploaded: %s"
 msgstr "Файл не был загружен: %s"
@@ -602,59 +602,59 @@ msgstr "Рекомендуем установить плагины"
 msgid "More"
 msgstr ""
 
-#: core/extras.php:276
+#: core/extras.php:283
 msgid "VKontakte"
 msgstr "ВКонтакте"
 
-#: core/extras.php:277
+#: core/extras.php:284
 msgid "E.g., https://vk.com/club0123456789"
 msgstr "Например, https://vk.com/teplitsast"
 
-#: core/extras.php:279
+#: core/extras.php:286
 msgid "Odnoklassniki"
 msgstr "Одноклассники"
 
-#: core/extras.php:280
+#: core/extras.php:287
 msgid "E.g., https://ok.ru/profile/0123456789"
 msgstr "Например, https://ok.ru/profile/0123456789"
 
-#: core/extras.php:282
+#: core/extras.php:289
 msgid "Facebook"
 msgstr "Facebook"
 
-#: core/extras.php:283
+#: core/extras.php:290
 msgid "E.g., https://www.facebook.com/your-organization-page"
 msgstr "Например, https://www.facebook.com/TeplitsaST"
 
-#: core/extras.php:285
+#: core/extras.php:292
 msgid "Instagram"
 msgstr "Instagram"
 
-#: core/extras.php:286
+#: core/extras.php:293
 msgid "E.g., https://www.instagram.com/your-organization-page"
 msgstr "Например, https://www.instagram.com/your-organization-page"
 
-#: core/extras.php:288
+#: core/extras.php:295
 msgid "Twitter"
 msgstr "Twitter"
 
-#: core/extras.php:289
+#: core/extras.php:296
 msgid "E.g., https://twitter.com/your-organization-page"
 msgstr "Например, https://twitter.com/TeplitsaST"
 
-#: core/extras.php:291
+#: core/extras.php:298
 msgid "Telegram"
 msgstr "Telegram"
 
-#: core/extras.php:292
+#: core/extras.php:299
 msgid "E.g., https://tlgrm.ru/channels/@your-organization-page"
 msgstr "Например, https://telegram.me/TeplitsaPRO"
 
-#: core/extras.php:294
+#: core/extras.php:301
 msgid "YouTube"
 msgstr "YouTube"
 
-#: core/extras.php:295
+#: core/extras.php:302
 msgid "E.g., https://youtube.com/channel/your-organization-channel"
 msgstr "Например, https://www.youtube.com/user/teplitsast"
 
@@ -790,53 +790,53 @@ msgstr "CSS-класс для секции"
 msgid "Recommendations:"
 msgstr "Рекомендации:"
 
-#: core/template-tags.php:162
+#: core/template-tags.php:159
 msgid "Page"
 msgstr "Страница"
 
-#: core/template-tags.php:238
+#: core/template-tags.php:235
 msgid "Donations history"
 msgstr "История пожертвований"
 
-#: core/template-tags.php:241 core/template-tags.php:341
+#: core/template-tags.php:238 core/template-tags.php:338
 msgid "Our projects"
 msgstr "Наши проекты"
 
-#: core/template-tags.php:245 single-leyka_campaign.php:24
+#: core/template-tags.php:242 single-leyka_campaign.php:24
 #: single-leyka_campaign.php:44
 msgid "They alredy got help"
 msgstr "Уже получили помощь"
 
-#: core/template-tags.php:247 modules/starter/plot_config.php:722
+#: core/template-tags.php:244 modules/starter/plot_config.php:722
 #: single-leyka_campaign.php:28 single-leyka_campaign.php:43
 msgid "They need help"
 msgstr "Им нужна помощь"
 
-#: core/template-tags.php:251
+#: core/template-tags.php:248
 msgid "Search results"
 msgstr "Результаты поиска"
 
-#: core/template-tags.php:254
+#: core/template-tags.php:251
 msgid "404: Page not found"
 msgstr "Ошибка 404: Страница не найдена"
 
-#: core/template-tags.php:340
+#: core/template-tags.php:337
 msgid "More projects"
 msgstr "Еще проекты"
 
-#: core/template-tags.php:343
+#: core/template-tags.php:340
 msgid "More news"
 msgstr "Еще новости"
 
-#: core/template-tags.php:344
+#: core/template-tags.php:341
 msgid "Latest news"
 msgstr "Последние новости"
 
-#: core/template-tags.php:371
+#: core/template-tags.php:368
 msgid "Related project"
 msgstr ""
 
-#: core/template-tags.php:389
+#: core/template-tags.php:386
 msgid "Help now"
 msgstr ""
 
@@ -896,11 +896,11 @@ msgstr "Работает на Кандинском"
 msgid "Primary menu"
 msgstr "﻿Главное меню"
 
-#: functions.php:108
+#: functions.php:109
 msgid "Teplitsa"
 msgstr "Теплица социальных технологий"
 
-#: functions.php:109
+#: functions.php:110
 msgid "The beautiful design and useful features for nonprofit website"
 msgstr "Красивый дизайн и полезные функции для сайта НКО"
 
@@ -949,6 +949,14 @@ msgstr "Собрано"
 #: modules/donations/donations.php:178
 msgid "Needed"
 msgstr "Нужно"
+
+#: modules/donations/donations.php:301
+msgid "Charity"
+msgstr "Благотворительность"
+
+#: modules/donations/donations.php:319
+msgid "Kid age"
+msgstr "Возраст"
 
 #: modules/donations/widgets.php:8
 msgid "Donations short list"
@@ -1054,12 +1062,12 @@ msgid "Plot dir not found: %s"
 msgstr "Директория сценария не найдена: %s"
 
 #: modules/starter/plot_config.php:212 modules/starter/plot_config.php:463
-#: modules/starter/plot_config.php:701 modules/starter/sidebars.php:14
+#: modules/starter/plot_config.php:701 modules/starter/sidebars.php:13
 msgid "Kandinsky our work footer menu"
 msgstr "Меню «Наша работа» в подвале"
 
 #: modules/starter/plot_config.php:218 modules/starter/plot_config.php:469
-#: modules/starter/plot_config.php:706 modules/starter/sidebars.php:17
+#: modules/starter/plot_config.php:706 modules/starter/sidebars.php:16
 msgid "Kandinsky news footer menu"
 msgstr "Меню «Новости» в подвале"
 
@@ -1076,19 +1084,19 @@ msgstr ""
 msgid "Terms of Service"
 msgstr ""
 
-#: modules/starter/plot_data_builder.php:522
+#: modules/starter/plot_data_builder.php:528
 msgid "Home page"
 msgstr "Главная"
 
-#: modules/starter/sidebars.php:27
+#: modules/starter/sidebars.php:25
 msgid "About Us"
 msgstr "О нас"
 
-#: modules/starter/sidebars.php:36
+#: modules/starter/sidebars.php:33
 msgid "Our Work"
 msgstr "Наша работа"
 
-#: modules/starter/sidebars.php:51
+#: modules/starter/sidebars.php:48
 msgid "Security policy"
 msgstr "Политика безопасности"
 

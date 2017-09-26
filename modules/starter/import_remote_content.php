@@ -537,16 +537,16 @@ class KND_Git_Piece_Parser {
 class KND_Piece {
 
     public $title = "";
-    public $tags_str = "";
-    public $cat_str = "";
+    public $tags= "";
+    public $cat = "";
     public $thumb = "";
     public $lead = "";
     public $content = "";
     public $slug = "";
     public $url = "";
     
-    public $tags = array();
-    public $cats = array();
+    public $tags_list = array();
+    public $cats_list = array();
     
     public $piece_section = NULL;
     public $piece_name = NULL;
@@ -564,19 +564,19 @@ class KND_Piece {
             $this->url = knd_build_imported_url(isset($post_params['link']) ? $post_params['link'] : "");
         }
         
-        $terms = explode(",", $this->tags_str);
+        $terms = explode(",", $this->tags);
         foreach($terms as $term) {
             $term = trim($term);
             if($term) {
-                $this->tags[] = $term;
+                $this->tags_list[] = $term;
             }
         }
         
-        $terms = explode(",", $this->cat_str);
+        $terms = explode(",", $this->cat);
         foreach($terms as $term) {
             $term = trim($term);
             if($term && strtolower($term) != 'uncategorized') {
-                $this->cat[] = $term;
+                $this->cats_list[] = $term;
             }
         }
         

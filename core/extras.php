@@ -345,3 +345,9 @@ function knd_remove_scenario_unzipped_dir() {
 		}
 	}
 }
+
+add_action('init','knd_add_tags_to_leyka_campaign');
+
+function knd_add_tags_to_leyka_campaign() {
+	register_taxonomy_for_object_type('post_tag', 'leyka_campaign');
+}
