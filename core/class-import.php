@@ -1,5 +1,8 @@
 <?php
 
+if ( ! defined( 'WPINC' ) )
+	die();
+
 class TST_Import {
 
 	private static $convert2pdf_ext = array( 'doc', 'docx' );

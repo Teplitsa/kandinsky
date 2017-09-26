@@ -1,9 +1,16 @@
-<?php
-
-/**
+<?php /**
  * Admin customization
  **/
-function knd_get_admin_menu_items() {
+
+if ( ! defined( 'WPINC' ) )
+	die();
+
+function knd_get_admin_menu_items($place) {
+    $items = array(
+        'adminBar' => array(),
+        'adminMenu' => array(),
+        'dashboardWidget' => array(),
+    );
 	return array( 
 		'section_knd-settings-content' => array( 
 			'title' => __( 'Theme settings & content', 'knd' ), 

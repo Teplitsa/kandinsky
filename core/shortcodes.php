@@ -1,10 +1,9 @@
-<?php
+<?php /**
+ * Shortcodes
+ **/
 
 if ( ! defined( 'WPINC' ) )
 	die();
-/**
- * Shortcodes
- **/
 
 add_shortcode( 'knd_key_phrase', 'knd_key_phrase_shortcode' );
 

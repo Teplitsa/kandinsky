@@ -1,5 +1,8 @@
 <?php
 
+if ( ! defined( 'WPINC' ) )
+	die();
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit();
 }

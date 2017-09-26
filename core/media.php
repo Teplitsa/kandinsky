@@ -1,12 +1,10 @@
-<?php
+<?php /**
+ * Common media settings and utilities
+ *
+ **/
 
 if ( ! defined( 'WPINC' ) )
 	die();
-
-/** 
- * Common media settings and utilities 
- * 
- **/
 	
 /* Register thumbnails */
 add_action( 'after_setup_theme', 'knd_thumbnails_sizes', 15 );

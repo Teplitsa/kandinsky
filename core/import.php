@@ -1,5 +1,8 @@
 <?php
 
+if ( ! defined( 'WPINC' ) )
+	die();
+
 function knd_get_post( $post_id, $post_type = 'post' ) {
 	global $wpdb;
 	$post = null;
