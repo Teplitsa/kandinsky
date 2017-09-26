@@ -1,10 +1,7 @@
-<?php
+<?php /** Customizer options **/
 
 if ( ! defined( 'WPINC' ) )
 	die();
-/** 
- Customizer options
- **/
 
 add_action( 'customize_register', 'knd_customize_register', 15 );
 

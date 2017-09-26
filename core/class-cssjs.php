@@ -1,8 +1,10 @@
-<?php
-
-/**
+<?php /**
  * Class for CSSJS handling
  **/
+
+if ( ! defined( 'WPINC' ) )
+	die();
+
 class FRL_CssJs {
 
 	private static $_instance = null;

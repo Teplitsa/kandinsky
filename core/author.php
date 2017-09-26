@@ -1,4 +1,8 @@
 <?php
+
+if ( ! defined( 'WPINC' ) )
+	die();
+
 /** Facebook author tag - till 4.4 **/
 add_action( 'wp_head', 'knd_facebook_author_tag' );
 

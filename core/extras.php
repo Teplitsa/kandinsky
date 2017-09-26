@@ -1,14 +1,13 @@
-<?php
-
-if ( ! defined( 'WPINC' ) )
-	die();
-/**
+<?php /**
  * Custom functions that act independently of the theme templates
  *
  * Eventually, some of the functionality here could be replaced by core features
  *
  * @package bb
  */
+
+if ( ! defined( 'WPINC' ) )
+	die();
 
 /** Default filters **/
 add_filter( 'knd_the_content', 'wptexturize' );

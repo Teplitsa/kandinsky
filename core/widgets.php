@@ -1,7 +1,10 @@
-<?php
-/**
+<?php /**
  * Widgets
  **/
+
+if ( ! defined( 'WPINC' ) )
+	die();
+
 add_action( 'init', 'knd_sidebars_init', 25 );
 
 function knd_sidebars_init() {

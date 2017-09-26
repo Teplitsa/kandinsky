@@ -1,5 +1,8 @@
 <?php
 
+if ( ! defined( 'WPINC' ) )
+	die();
+
 /** == Posts elements == **/
 function knd_post_card( WP_Post $cpost ) {
 	$pl = get_permalink( $cpost );

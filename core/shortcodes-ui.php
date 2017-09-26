@@ -1,9 +1,9 @@
-<?php
-if ( ! defined( 'WPINC' ) )
-	die();
-/**
+<?php /**
  * Shortcodes UI. Shortcake plugin needed.
  */
+
+if ( ! defined( 'WPINC' ) )
+	die();
 
 if ( ! defined( 'SHORTCODE_UI_VERSION' ) ) {
 	return;

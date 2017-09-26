@@ -1,14 +1,14 @@
-<?php
-if ( ! defined( 'WPINC' ) )
-	die();
-
-/**
+<?php /**
  * Custom template tags for this theme.
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
  * @package bb
  */
+
+if ( ! defined( 'WPINC' ) )
+	die();
+
 function knd_has_authors() {
 	if ( defined( 'TST_HAS_AUTHORS' ) && TST_HAS_AUTHORS && function_exists( 'get_term_meta' ) )
 		return true;

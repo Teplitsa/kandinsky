@@ -1,8 +1,10 @@
-<?php
-
-/**
+<?php /**
  * Class for Media management
  **/
+
+if ( ! defined( 'WPINC' ) )
+	die();
+
 class TST_Media {
 
 	private static $_instance = null;
