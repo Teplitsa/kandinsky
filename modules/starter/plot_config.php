@@ -331,6 +331,10 @@ class KND_Dubrovino_Data_Builder extends KND_Plot_Data_Builder {
                 'post_type' => 'project',
                 'pieces' => array('expert', 'lawreason', 'dictionary' ),
             ),
+            'partners' => array(
+                'post_type' => 'org',
+                'pieces' => array('partner3', 'partner2', 'partner4', 'partner1', ),
+            ),
             'team' => array(
                 'post_type' => 'person',
                 'pieces' => array('fellow1', 'fellow2', 'fellow3', 'fellow4', 'fellow5', 'fellow6', 'fellow7', 'fellow8'),
@@ -571,6 +575,10 @@ class KND_Withyou_Data_Builder extends KND_Plot_Data_Builder {
             'programs' => array(
                 'post_type' => 'project',
                 'pieces' => array('program1', 'program2', 'program3', 'program4', ),
+            ),
+            'partners' => array(
+                'post_type' => 'org',
+                'pieces' => array('partner3', 'partner2', 'partner4', 'partner1', ),
             ),
             'team' => array(
                 'post_type' => 'person',

@@ -17,7 +17,6 @@ class FRL_CssJs {
 		add_action( 'init', array( $this, 'disable_wp_emojicons' ) );
 		
 		add_action( 'admin_enqueue_scripts', array( $this, 'load_admin_scripts' ), 30 );
-		add_action( 'login_enqueue_scripts', array( $this, 'load_login_scripts' ), 30 );
 		
 		add_action( 'wp_enqueue_scripts', array( $this, 'inline_styles' ), 10 );
 	}
@@ -178,80 +177,7 @@ class FRL_CssJs {
 		wp_enqueue_style( 'knd-admin', $url . '/assets/rev/' . $this->get_rev_filename( 'admin.css' ), array(), null );
 	}
 
-	/* login style - make it inline ? */
-	public function load_login_scripts() {
-		?>
-<style>
-#login h1 a {
-    background-size: contain;
-    background-image:
-        url('<?php echo get_template_directory_uri();?>/assets/img/tree.png');
-    background-image:
-        url('<?php echo get_template_directory_uri();?>/assets/img/tree.svg');
-    width: 110px;
-    height: 110px;
-}
-
-.login input[type="text"]:focus, .login input[type="password"]:focus {
-    border-color: #03E21C;
-    -webkit-box-shadow: 0 0 2px 0 rgba(3, 226, 28, 0.75);
-    box-shadow: 0 0 2px 0 rgba(3, 226, 28, 0.75);
-}
-
-#wp-submit {
-    background: #099724;
-    border-color: #099724;
-    text-shadow: 0 0 0 transparent;
-    -webkit-box-shadow: 1px 1px 0 0 #127818;
-    box-shadow: 1px 1px 0 0 #127818;
-}
-
-#wp-submit:hover, #wp-submit:focus, #wp-submit:active {
-    background: #2BCC4A;
-    border-color: #2BCC4A;
-    text-shadow: 0 0 0 transparent;
-}
-
-#login .message {
-    border-left-color: #03E21C;
-}
-
-#login #backtoblog a:hover, .login h1 a:hover, #login #backtoblog a:focus,
-    .login h1 a:focus, #login #backtoblog a:active, .login h1 a:active {
-    outline: none;
-    color: #2BCC4A;
-    -webkit-box-shadow: 0 0 0 rgba(255, 255, 255, 0);
-    box-shadow: 0 0 0 rgba(255, 255, 255, 0);
-}
-
-#login #nav a {
-    display: inline-block;
-    color: #444;
-    border-bottom: 1px solid #2BCC4A;
-    -webkit-box-shadow: inset 0 0 0 rgba(255, 255, 255, 0);
-    box-shadow: inset 0 -2px 0 #2BCC4A;
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -ms-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-}
-
-.login #nav a:hover, .login #nav a:focus, .login #nav a:active {
-    color: #111;
-    background: #2BCC4A;
-}
-
-#login_error a {
-    color: #dd3d36;
-}
-</style>
-<?php
-	}
-
-	function dequeue_wpcf7_styles() {
-		wp_dequeue_style( 'contact-form-7' );
-	}
+	
 } // class
 
 FRL_CssJs::get_instance();
