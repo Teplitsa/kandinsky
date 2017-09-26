@@ -154,13 +154,13 @@ $is_finished = get_post_meta($campaign->ID, 'is_finished', true);
         </div>
 
         <div class="leyka-scale-compact">
-            <?php if(!$is_finished):?>
+            
             <div class="leyka-scale-scale">
                 <div class="target">
                     <div style="width:<?php echo $percentage;?>%" class="collected">&nbsp;</div>
                 </div>
             </div>
-            <?php endif?>
+            
             <div class="flex-row leyka-scale-label">
             
                 <div class="flex-cell flex-sm-6">
