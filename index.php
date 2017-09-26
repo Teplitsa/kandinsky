@@ -40,17 +40,19 @@ get_header();
 
     <?php } ?>
 
+    <?php if(!empty($posts)):?>
     <div class="main-content cards-holder listing-bg archive-post-list <?php if($paged > 1):?>next-page<?php endif?>">
         <div class="container">
             <div class="flex-row start cards-loop">
-            <?php if(!empty($posts)){
+            <?php
                 foreach($posts as $p){
                     knd_post_card($p);
                 }
-            }?>
+            ?>
             </div>
         </div>
     </div>
+    <?php endif;?>
 
 
     <div class="paging listing-bg"><?php knd_paging_nav($wp_query); ?></div>
