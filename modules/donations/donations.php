@@ -140,22 +140,17 @@ $is_finished = get_post_meta($campaign->ID, 'is_finished', true);
             </a></h4>
 
             <?php
-                // Default excerpt filters:
-                add_filter('leyka_get_the_excerpt', 'wptexturize');
-                add_filter('leyka_get_the_excerpt', 'convert_smilies');
-                add_filter('leyka_get_the_excerpt', 'convert_chars');
-                add_filter('leyka_get_the_excerpt', 'wp_trim_excerpt');?>
-                <p>
-                    <?php if(has_excerpt($campaign->ID)) {
-                        $text = $campaign->post_excerpt;
-                    } else {
+                if($is_finished){
+                    $ex = __('Thank you for you support. This campaign is finished and help is going to be provided. Please follow the updates.', 'knd');
+                    $css = 'closed';
+                }
+                else {
+                    $ex = knd_get_post_excerpt($campaign, 28, false);
+                    $css = 'regular';
+                }
+            ?>
+            <p class='<?php echo $css;?>'><?php echo apply_filters('the_title', $ex, $campaign);?></p>
 
-                        $text = $campaign->post_content ? $campaign->post_content : ' '; // So wp_trim_excerpt work correctly
-                        $text = leyka_strip_string_by_words($text, 200, true).(mb_strlen($text) > 200 ? '...' : '');
-
-                    }
-                    echo apply_filters('leyka_get_the_excerpt', $text, $campaign);?>
-                </p>
         </div>
 
         <div class="leyka-scale-compact">
