@@ -8,11 +8,11 @@ jQuery( document ).ready(function( $ ) {
 	var windowWidth = $( '#top' ).width(),
 		$adminbar = $( '#wpadminbar' ),
 		$siteHeader = $( '#site_header' ),
-		breakPointSmall = 480, //small screens break point
-		breakPointMedium = 767; //medium screen break point
+		breakPointSmall = 480, // Small screens break point
+		breakPointMedium = 767; // Medium screen break point
 
 	/** Resize event **/
-	$( window ).resize( function() {
+	$( window ).resize(function() {
 		var winW = $( '#top' ).width();
 
 		if ( winW < breakPointMedium && $siteHeader.hasClass( 'newsletter-open' ) ) {
@@ -20,9 +20,9 @@ jQuery( document ).ready(function( $ ) {
 		}
 
 		kndSetupHeaderForSmallScreens();
-	} );
+	});
 
-	/** == Header states == **/
+	/** Header states **/
 
 	/** Drawer **/
 	$( '#trigger_menu' ).on( 'click', function( e ) {
@@ -38,7 +38,7 @@ jQuery( document ).ready(function( $ ) {
 		e.stopPropagation();
 		e.preventDefault();
 
-	} );
+	});
 
 	$( '#trigger_menu_close' ).on( 'click', function( e ) {
 
@@ -47,7 +47,7 @@ jQuery( document ).ready(function( $ ) {
 		e.stopImmediatePropagation();
 		e.stopPropagation();
 		e.preventDefault();
-	} );
+	});
 
 	/** Submenu toggle  **/
 	$( '.submenu-trigger' ).on( 'click', function( e ) {
@@ -58,15 +58,14 @@ jQuery( document ).ready(function( $ ) {
 				li.removeClass( 'open' );
 				$( this ).removeAttr( 'style' );
 			});
-		}
-		else {
+		} else {
 
 			li.find( '.sub-menu' ).slideDown( 300, function() {
 				li.addClass( 'open' );
 				$( this ).removeAttr( 'style' );
 			});
 		}
-	} );
+	});
 
 	/** Close by key and click **/
 	$( document ).on( 'click', function( e ) {
@@ -78,21 +77,19 @@ jQuery( document ).ready(function( $ ) {
 				 ! $eTarget.closest( '#site_nav, #trigger_menu' ).length ) {
 				$siteHeader.removeClass( 'menu-open' );
 			}
-		}
-		else if ( $siteHeader.hasClass( 'newsletter-open' ) ) {
+		} else if ( $siteHeader.hasClass( 'newsletter-open' ) ) {
 			if ( ! $eTarget.is( '#newsletter_panel, #trigger_newsletter' ) &&
 				 ! $eTarget.closest( '#newsletter_panel, #trigger_newsletter' ).length ) {
 				$siteHeader.removeClass( 'newsletter-open' );
 			}
 		}
 
-	} ).on( 'keyup', function( e ) { //close search on by ESC
+	}).on( 'keyup', function( e ) { //close search on by ESC
 		if ( 27 === e.keyCode ) {
 			//hide menu on newsletter
 			if ( $siteHeader.hasClass( 'menu-open' ) ) {
 				$siteHeader.removeClass( 'menu-open' );
-			}
-			else if ( $siteHeader.hasClass( 'newsletter-open' ) ) {
+			} else if ( $siteHeader.hasClass( 'newsletter-open' ) ) {
 				$siteHeader.removeClass( 'newsletter-open' );
 			}
 		}
@@ -101,19 +98,18 @@ jQuery( document ).ready(function( $ ) {
 			//hide menu on newsletter
 			if ( $siteHeader.hasClass( 'menu-open' ) ) {
 				$siteHeader.removeClass( 'menu-open' );
-			}
-			else if ( $siteHeader.hasClass( 'newsletter-open' ) ) {
+			} else if ( $siteHeader.hasClass( 'newsletter-open' ) ) {
 				$siteHeader.removeClass( 'newsletter-open' );
 			}
 		}
-	} );
+	});
 
 	/** Sticky elements **/
 	var position = $( window ).scrollTop(), //store intitial scroll position
 		scrollTopLimit = ($( 'body' ).hasClass( 'adminbar' )) ? 99 + 32 + 90 : 99 + 90,
 		fixedTopPosition = ($( 'body' ).hasClass( 'adminbar' )) ? 99 + 32 + 90 : 99 + 90;
 
-	$( window ).scroll( function() {
+	$( window ).scroll(function() {
 		var scroll = $( window ).scrollTop(),
 			winW = $( '#top' ).width();
 
@@ -137,7 +133,7 @@ jQuery( document ).ready(function( $ ) {
 
 		position = scroll; //upd scroll position
 		return true;
-	} );
+	});
 
 	function kndSetupHeaderForSmallScreens() {
 		var scroll = $( window ).scrollTop(),
@@ -168,7 +164,7 @@ jQuery( document ).ready(function( $ ) {
 			if ( scroll > elementPosition ) {
 				$element.addClass( 'fixed-bottom' ).removeClass( 'fixed-top' );
 			}
-		} else if ( scroll > ((height + topPos) - $element.outerHeight() - elementFixedTopPosition) ) {
+		} else if ( scroll > height + topPos - $element.outerHeight() - elementFixedTopPosition ) {
 			// Unstick on bottom
 			if ( scroll < elementPosition ) {
 				$element.removeClass( 'fixed-bottom' ).addClass( 'fixed-top' );
@@ -182,17 +178,10 @@ jQuery( document ).ready(function( $ ) {
 
 	// Determines if the scroll position is outside of document boundaries
 	function kndScrollOutOfBounds( scroll ) {
-		var documentH = $( document ).height(),
-			winH = $( window ).height();
-
-		if ( scroll < 0 || scroll > (documentH + winH) ) {
-			return true;
-		}
-
-		return false;
+		return scroll < 0 || scroll > $( document ).height() + $( window ).height();
 	}
 
-	/** == Responsive media == **/
+	/** Responsive media **/
 	var resizeEmbedMedia = function() {
 
 		$( 'iframe, embed, object' ).each(function() {
@@ -219,10 +208,12 @@ jQuery( document ).ready(function( $ ) {
 		});
 	};
 
-	resizeEmbedMedia(); // Initial page rendering
-	$( window ).resize( function() {
+	// Initial page rendering
+	resizeEmbedMedia();
+
+	$( window ).resize(function() {
 		resizeEmbedMedia();
-	} );
+	});
 
 	/* Scroll */
 	$( '.local-scroll, .inpage-menu a' ).on( 'click', function( e ) {
@@ -236,6 +227,6 @@ jQuery( document ).ready(function( $ ) {
 			$( 'html, body' ).animate( { scrollTop: target.top - 50 }, 900 );
 		}
 
-	} );
+	});
 
 }); //jQuery
