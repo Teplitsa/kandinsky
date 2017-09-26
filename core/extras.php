@@ -95,11 +95,19 @@ if ( ! function_exists( 'knd_current_url' ) ) {
 			$pageURL .= "s";
 		}
 		$pageURL .= "://";
+
+		if(isset($_SERVER["SERVER_NAME"])) {
+			$pageURL .= $_SERVER["SERVER_NAME"];
+		}
+			
+		if ( isset($_SERVER["SERVER_PORT"]) && $_SERVER["SERVER_PORT"] != "80" ) {
+			
+			$pageURL .= ":" . $_SERVER["SERVER_PORT"];
+			
+		}
 		
-		if ( $_SERVER["SERVER_PORT"] != "80" ) {
-			$pageURL .= $_SERVER["SERVER_NAME"] . ":" . $_SERVER["SERVER_PORT"] . $_SERVER["REQUEST_URI"];
-		} else {
-			$pageURL .= $_SERVER["SERVER_NAME"] . $_SERVER["REQUEST_URI"];
+		if(isset($_SERVER["REQUEST_URI"])) {
+			$pageURL .= $_SERVER["REQUEST_URI"];
 		}
 		
 		return $pageURL;
