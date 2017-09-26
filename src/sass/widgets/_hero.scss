@@ -45,8 +45,14 @@
         }
 
         @include for(large-screens) {
-            width: 46%;
-            min-height: 650px;
+            width: 50%;
+            padding-bottom: 15vh;
+        }
+
+        @media screen and (min-width: $three) and (min-height: 950px){ 
+            height: 580px;
+            padding-bottom: 100px;
+            min-height: 0;
         }
 
         //push elements to bottom
@@ -72,7 +78,7 @@
 
 .hero-button {
     @include button();
-    margin-top: $gut/2;
+    margin-top: $gut;
 }
 
 

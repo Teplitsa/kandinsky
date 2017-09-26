@@ -296,13 +296,13 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 			'knd_hero_image', 
 			array( 
 				'label' => __( 'Hero Image', 'knd' ), 
-				'description' => __( 'Recommended size 1400x656px', 'knd' ), 
+				'description' => __( 'Recommended size 1600x663px', 'knd' ), 
 				'section' => 'knd_homepage_hero', 
 				'settings' => 'knd_hero_image', 
 				'flex_width' => true, 
 				'flex_height' => false, 
-				'width' => 1400, 
-				'height' => 656, 
+				'width' => 1600, 
+				'height' => 663, 
 				'priority' => 40 ) ) );
 	
 	$wp_customize->add_control( 
