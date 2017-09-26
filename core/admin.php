@@ -86,7 +86,7 @@ function knd_get_admin_menu_items( $place = '' ) {
 			        ),
 			        'footer' => array(
 				        'class' => '',
-				        'icon' => 'dashicons-',
+				        'icon' => 'dashicons-download',
 				        'text' => esc_attr__( 'Site footer', 'knd' ),
 				        'link' => admin_url( '/customize.php?autofocus[section]=sidebar-widgets-knd-footer-sidebar' )
 			        ),
@@ -110,7 +110,6 @@ function knd_get_admin_menu_items( $place = '' ) {
                     )
                 )
             ),
-
 	        'section_other' => array(
 		        'title' => __( 'Other', 'knd' ),
 		        'link' => '',
@@ -123,7 +122,7 @@ function knd_get_admin_menu_items( $place = '' ) {
                     ),
 			        'support-telegram' => array(
 				        'class' => '',
-				        'icon' => 'dashicons-',
+				        'icon' => 'dashicons-format-chat',
 				        'text' => __( 'Support Telegram channel', 'knd' ),
 				        'link' => esc_url( 'https://t.me/joinchat/AAAAAENN3prSrvAs7KwWrg' )
 			        ),
@@ -135,114 +134,68 @@ function knd_get_admin_menu_items( $place = '' ) {
                     ),
 			        'bug-report' => array(
 				        'class' => '',
-				        'icon' => 'dashicons-',
+				        'icon' => 'dashicons-warning',
 				        'text' => __( 'Report of an error', 'knd' ),
 				        'link' => esc_url( 'https://github.com/Teplitsa/kandinsky/issues/new' )
 			        ),
 		        )
             ),
         ),
-        'adminMenu' => array(),
-        'dashboardWidget' => array(),
+        'adminMenu' => array(
+            'section_knd-admin-menu' => array(
+                'title' => '',
+                'link' => '',
+                'items' => array(
+                    'theme-settings' => array(
+                        'class' => '',
+                        'icon' => 'dashicons-admin-generic',
+                        'text' => esc_attr__( 'Theme Settings', 'knd' ),
+                        'link' => admin_url( '/customize.php' )
+                    ),
+                    'theme-setup-wizard' => array(
+                        'class' => '',
+                        'icon' => 'dashicons-admin-generic',
+                        'text' => esc_attr__( 'Theme setup wizard', 'knd' ),
+                        'link' => KND_SETUP_WIZARD_URL
+                    ),
+                    'user-docs' => array(
+                        'class' => '',
+                        'icon' => 'dashicons-book-alt',
+                        'text' => __( 'User documentation', 'knd' ),
+                        'link' => KND_DOC_URL
+                    ),
+                    'email-to-support' => array(
+                        'class' => '',
+                        'icon' => 'dashicons-email',
+                        'text' => __( 'Email to the tech support', 'knd' ),
+                        'link' => 'mailto:' . KND_SUPPORT_EMAIL
+                    ),
+                    'remove-theme' => array(
+                        'class' => 'knd-remove-theme',
+                        'icon' => 'dashicons-no',
+                        'text' => __( 'Remove theme', 'knd' ),
+                        'link' => admin_url( 'admin.php?page=remove-kandinsky-theme' )
+                    ),
+                ),
+            ),
+        ),
+//        'dashboardWidget' => array(),
     );
 
     switch( $place ) {
         case 'adminbar':
         case 'adminBar':
+        case 'dashboard_metabox':
+        case 'dashboardMetabox':
+        case 'dashboard_widget':
+        case 'dashboardWidget':
             $items = $items['adminBar'];
             break;
         case 'adminmenu':
         case 'adminMenu':
             $items = $items['adminMenu'];
             break;
-        case 'dashboard_metabox':
-        case 'dashboardMetabox':
-        case 'dashboard_widget':
-        case 'dashboardWidget':
-            $items = $items['dashboardWidget'];
-            break;
         default:
-            /** @todo Remove this! */
-	        return array(
-		        'section_knd-settings-content' => array(
-			        'title' => __( 'Theme settings & content', 'knd' ),
-			        'link' => '#knd-admin-menu-settings',
-			        'items' => array(
-				        'site-title-description' => array(
-					        'class' => '',
-					        'icon' => 'dashicons-editor-insertmore',
-					        'text' => __( 'Site title and description', 'knd' ),
-					        'link' => admin_url( '/customize.php?autofocus[section]=title_tagline' ) ),
-				        'decoration' => array(
-					        'class' => '',
-					        'icon' => 'dashicons-admin-appearance',
-					        'text' => __( 'Decoration', 'knd' ),
-					        'link' => admin_url( '/customize.php?autofocus[panel]=knd_decoration' ) ),
-				        'social-media-links' => array(
-					        'class' => '',
-					        'icon' => 'dashicons-share',
-					        'text' => __( 'Social media links', 'knd' ),
-					        'link' => admin_url( '/customize.php?autofocus[section]=knd_social_links' ) ),
-				        'cta-block' => array(
-					        'class' => '',
-					        'icon' => 'dashicons-thumbs-up',
-					        'text' => __( '"Call to action" block', 'knd' ),
-					        'link' => admin_url( '/customize.php?autofocus[section]=knd_cta_block_settings' ) ),
-				        'page-list' => array(
-					        'class' => '',
-					        'icon' => 'dashicons-admin-page',
-					        'text' => __( 'Static pages', 'knd' ),
-					        'link' => admin_url( '/edit.php?post_type=page' ) ),
-				        'news-list' => array(
-					        'class' => '',
-					        'icon' => 'dashicons-admin-post',
-					        'text' => __( 'News', 'knd' ),
-					        'link' => admin_url( '/edit.php' ) ),
-				        'person-list' => array(
-					        'class' => '',
-					        'icon' => 'dashicons-groups',
-					        'text' => __( 'Team', 'knd' ),
-					        'link' => admin_url( '/edit.php?post_type=person' ) ),
-				        'project-list' => array(
-					        'class' => '',
-					        'icon' => 'dashicons-category',
-					        'text' => __( 'Projects', 'knd' ),
-					        'link' => admin_url( '/edit.php?post_type=project' ) ),
-				        'search-engines-social-display' => array(
-					        'class' => '',
-					        'icon' => 'dashicons-facebook',
-					        'text' => __( 'Search engines & social networks display', 'knd' ),
-					        'link' => admin_url( '/admin.php?page=wpseo_dashboard#top#knowledge-graph' ) ),
-				        'donation-list' => array(
-					        'class' => '',
-					        'icon' => 'dashicons-chart-area',
-					        'text' => __( 'Donations', 'knd' ),
-					        'link' => admin_url( '/edit.php?post_type=leyka_donation' ) ) ) ),
-
-		        'section_other' => array(
-			        'title' => __( 'Other', 'knd' ),
-			        'link' => '#knd-admin-menu-other',
-			        'items' => array(
-				        'knd-wizard' => array(
-					        'class' => '',
-					        'icon' => 'dashicons-admin-generic',
-					        'text' => __( 'Theme setup wizard', 'knd' ),
-					        'link' => KND_SETUP_WIZARD_URL ),
-				        'user-docs' => array(
-					        'class' => '',
-					        'icon' => 'dashicons-book-alt',
-					        'text' => __( 'User documentation', 'knd' ),
-					        'link' => KND_DOC_URL ),
-				        'remove-theme' => array(
-					        'class' => 'knd-remove-theme',
-					        'icon' => 'dashicons-no',
-					        'text' => __( 'Remove theme', 'knd' ),
-					        'link' => admin_url( 'admin.php?page=remove-kandinsky-theme' ) ),
-				        'email-to-support' => array(
-					        'class' => '',
-					        'icon' => 'dashicons-email',
-					        'text' => __( 'Email to the tech support', 'knd' ),
-					        'link' => 'mailto:' . KND_SUPPORT_EMAIL ) ) ) );
     }
 
 	return $items;
@@ -302,7 +255,7 @@ function knd_remove_theme() {
 }
 
 function knd_add_admin_pages( $items = array(), $is_inital_call = true ) {
-	$items = empty( $items ) || ! is_array( $items ) ? knd_get_admin_menu_items() : $items;
+	$items = empty( $items ) || ! is_array( $items ) ? knd_get_admin_menu_items('adminMenu') : $items;
 
 	if ( ! ! $is_inital_call ) {
 		
@@ -718,7 +671,7 @@ function knd_remove_dashboard_widgets() {
 }
 
 function knd_custom_links_dashboard_screen( $items = array(), $is_initial_call = true ) {
-	$items = empty( $items ) || ! is_array( $items ) ? knd_get_admin_menu_items() : $items;
+	$items = empty( $items ) || ! is_array( $items ) ? knd_get_admin_menu_items('dashboardWidget') : $items;
 	
 	if ( ! ! $is_initial_call ) {
 		?>
