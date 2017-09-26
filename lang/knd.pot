@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-30 15:57+0000\n"
+"POT-Creation-Date: 2017-09-26 21:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -14,268 +14,261 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco - https://localise.biz/"
 
+#: 404.php:5
+msgid ""
+"Unfortunately this page has been removed or never exists. Please, use the "
+"search field to find the information you need or visit the homepage."
+msgstr ""
+
+#: 404.php:13
+msgid "Error 404"
+msgstr ""
+
+#: 404.php:14
+msgid "Page not found"
+msgstr ""
+
+#: archive-leyka_campaign.php:27 index.php:18
+msgid "Unfortunately, nothing found"
+msgstr ""
+
 #: archive-leyka_donation.php:20
 msgid "Campaign"
 msgstr ""
 
-#: footer.php:11
-msgid "Teplitsa of social technologies"
-msgstr ""
-
-#: footer.php:60
+#: footer.php:51
 #, php-format
 msgid "All materials of the site are avaliabe under license %s"
 msgstr ""
 
-#: functions.php:35 modules/starter/class-demo.php:96
-#: modules/starter/class-demo.php:250
+#: footer.php:58
+msgid "Project Kandinsky"
+msgstr ""
+
+#: footer.php:59
+msgid "Powered by Kandinsky"
+msgstr ""
+
+#: functions.php:32
 msgid "Primary menu"
+msgstr ""
+
+#. Name of the theme
+#: functions.php:108 core/admin.php:262 core/admin.php:306
+msgid "Kandinsky"
+msgstr ""
+
+#. Author of the theme
+#: functions.php:109
+msgid "Teplitsa"
+msgstr ""
+
+#. Description of the theme
+#: functions.php:110
+msgid "The beautiful design and useful features for nonprofit website"
 msgstr ""
 
 #: header.php:18
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:34
-msgid "Donate"
-msgstr ""
-
-#. Name of the template
-msgid "Events"
-msgstr ""
-
-#: page-events.php:72
-msgid "Future events"
-msgstr ""
-
-#: page-events.php:87
-msgid "Past events"
-msgstr ""
-
-#. Name of the template
-msgid "Fullwidth"
+#: header.php:61 modules/starter/plot_config.php:201
+#: modules/starter/plot_config.php:457 modules/starter/plot_config.php:698
+msgid "Main menu"
 msgstr ""
 
 #. Name of the template
 msgid "Homepage"
 msgstr ""
 
-#: search.php:47
+#: search.php:21
+msgid "Search"
+msgstr ""
+
+#: search.php:28
+#, php-format
+msgid "%s result"
+msgid_plural "%s results"
+msgstr[0] ""
+msgstr[1] ""
+
+#: search.php:35
 msgid "Enter terms for search in the form and hit Enter"
 msgstr ""
 
-#: search.php:51
+#: search.php:39
 msgid "Nothing found under your request"
 msgstr ""
 
-#: single-event.php:113
-msgid "Visit or events"
+#: searchform.php:8
+msgid "Find"
 msgstr ""
 
-#: single-leyka_campaign.php:29
-msgid "Our supporters"
+#: searchform.php:9
+msgid "Press Enter"
 msgstr ""
 
-#: single-leyka_campaign.php:32
-msgid "Full list"
+#: single-leyka_campaign.php:24 single-leyka_campaign.php:44
+#: core/template-tags.php:242
+msgid "They alredy got help"
 msgstr ""
 
-#: single-person.php:83
-msgid "Related news"
+#: single-leyka_campaign.php:28 single-leyka_campaign.php:43
+#: core/template-tags.php:244 modules/starter/plot_config.php:730
+msgid "They need help"
 msgstr ""
 
-#: single-person.php:95 single-project.php:48 single.php:136
-msgid "Related projects"
-msgstr ""
-
-#: single-person.php:116 core/template-tags.php:441
-msgid "Our team"
-msgstr ""
-
-#: single.php:124
+#: single.php:91
 msgid "Related items"
 msgstr ""
 
-#: single.php:157 core/template-tags.php:436
-msgid "Our volunteers"
+#: single.php:103
+msgid "Related projects"
 msgstr ""
 
-#: taxonomy-person_cat.php:20 core/cards.php:24 core/cards.php:52
-msgid "More"
+#: core/admin.php:12
+msgid "Theme settings"
 msgstr ""
 
-#: core/customizer.php:19
-msgid "Theme Info"
+#: core/admin.php:18
+msgid "Site title"
 msgstr ""
 
-#: core/customizer.php:23
-msgid "Support"
+#: core/admin.php:24 core/customizer.php:71
+msgid "Decoration"
 msgstr ""
 
-#: core/customizer.php:27
+#: core/admin.php:30
+msgid "\"Call to action\" button"
+msgstr ""
+
+#: core/admin.php:36
+msgid "Social media links"
+msgstr ""
+
+#: core/admin.php:42
+msgid "Change the site template"
+msgstr ""
+
+#: core/admin.php:48 vendor/envato_setup/envato_setup.php:343
+#: vendor/envato_setup/envato_setup.php:922
+msgid "Content"
+msgstr ""
+
+#: core/admin.php:54
+msgid "Static pages"
+msgstr ""
+
+#: core/admin.php:60
+msgid "Menu"
+msgstr ""
+
+#: core/admin.php:66 modules/news.php:8 modules/starter/plot_config.php:205
+#: modules/starter/plot_config.php:219 modules/starter/plot_config.php:234
+#: modules/starter/plot_config.php:462 modules/starter/plot_config.php:475
+#: modules/starter/plot_config.php:702
+#: modules/starter/plot_data_builder.php:534 modules/starter/sidebars.php:40
+msgid "News"
+msgstr ""
+
+#: core/admin.php:72 modules/project/widgets.php:7
+msgid "Projects"
+msgstr ""
+
+#: core/admin.php:78 modules/person/hooks.php:80 modules/person/tax.php:7
+msgid "Team"
+msgstr ""
+
+#: core/admin.php:84 modules/org/tax.php:6 modules/org/widgets.php:7
+msgid "Partners"
+msgstr ""
+
+#: core/admin.php:90
+msgid "Site footer"
+msgstr ""
+
+#: core/admin.php:96
+msgid "Plugins"
+msgstr ""
+
+#: core/admin.php:102
+msgid "SEO"
+msgstr ""
+
+#: core/admin.php:108 modules/donations/widgets.php:7
+#: vendor/envato_setup/envato_setup.php:931
+msgid "Donations"
+msgstr ""
+
+#: core/admin.php:114
+msgid "Other"
+msgstr ""
+
+#: core/admin.php:120 core/customizer.php:25
 msgid "Documentation"
 msgstr ""
 
-#: core/customizer.php:40 core/customizer.php:49
-msgid "Important Links"
+#: core/admin.php:126
+msgid "Support Telegram channel"
 msgstr ""
 
-#: core/customizer.php:65
-msgid "Header text"
+#: core/admin.php:132
+msgid "Email to the support"
 msgstr ""
 
-#: core/customizer.php:88
-msgid "Decoration Basics"
+#: core/admin.php:138
+msgid "Report of an error"
 msgstr ""
 
-#: core/customizer.php:110
-msgid "Main Color"
+#: core/admin.php:152
+msgid "Theme Settings"
 msgstr ""
 
-#: core/customizer.php:120
-msgid "Logo mode"
+#: core/admin.php:158
+msgid "Theme setup wizard"
 msgstr ""
 
-#: core/customizer.php:125
-msgid "Image only"
+#: core/admin.php:164
+msgid "User documentation"
 msgstr ""
 
-#: core/customizer.php:126
-msgid "Image with site name"
+#: core/admin.php:170
+msgid "Email to the tech support"
 msgstr ""
 
-#: core/customizer.php:127
-msgid "Site name only"
+#: core/admin.php:176 core/admin.php:272 core/admin.php:273
+msgid "Remove theme"
 msgstr ""
 
-#: core/customizer.php:128
-msgid "Do not show"
+#: core/admin.php:235
+msgid "Kandinsky theme removed"
 msgstr ""
 
-#: core/customizer.php:137
-msgid "Logo"
+#: core/admin.php:243
+msgid "Are you sure you want to remove Kandinsky theme?"
 msgstr ""
 
-#: core/customizer.php:138
-msgid ""
-"Recommended size 315x66px for Image only mode and 66x66px for Image with "
-"site name"
+#: core/admin.php:246
+msgid "Yes, remove Kandinsky theme"
 msgstr ""
 
-#: core/customizer.php:176
-msgid "Hero Image"
+#: core/admin.php:247
+msgid "Cancel"
 msgstr ""
 
-#: core/customizer.php:177
-msgid "Recommended size 1400x656px"
-msgstr ""
-
-#: core/customizer.php:190
-msgid "Call to action title"
-msgstr ""
-
-#: core/customizer.php:198
-msgid "Call to action URL"
-msgstr ""
-
-#: core/customizer.php:206
-msgid "Call to action text"
-msgstr ""
-
-#: core/customizer.php:214
-msgid "Action button caption"
-msgstr ""
-
-#: core/customizer.php:223
-msgid "Social networks links"
-msgstr ""
-
-#: core/customizer.php:254
-msgid "Recommended plugins to install"
-msgstr ""
-
-#: core/extras.php:287
-msgid "VKontakte"
-msgstr ""
-
-#: core/extras.php:288
-msgid "E.g., https://vk.com/club0123456789"
-msgstr ""
-
-#: core/extras.php:291
-msgid "Odnoklassniki"
-msgstr ""
-
-#: core/extras.php:292
-msgid "E.g., https://ok.ru/profile/0123456789"
-msgstr ""
-
-#: core/extras.php:295
-msgid "Facebook"
-msgstr ""
-
-#: core/extras.php:296
-msgid "E.g., https://www.facebook.com/your-organization-page"
-msgstr ""
-
-#: core/extras.php:299
-msgid "Instagram"
-msgstr ""
-
-#: core/extras.php:300
-msgid "E.g., https://www.instagram.com/your-organization-page"
-msgstr ""
-
-#: core/extras.php:303
-msgid "Twitter"
-msgstr ""
-
-#: core/extras.php:304
-msgid "E.g., https://twitter.com/your-organization-page"
-msgstr ""
-
-#: core/extras.php:307
-msgid "Telegram"
-msgstr ""
-
-#: core/extras.php:308
-msgid "E.g., https://tlgrm.ru/channels/@your-organization-page"
-msgstr ""
-
-#: core/extras.php:311
-msgid "YouTube"
-msgstr ""
-
-#: core/extras.php:312
-msgid "E.g., https://youtube.com/channel/your-organization-channel"
-msgstr ""
-
-#: core/settings.php:14
-msgid "Action failed. Please refresh the page and retry."
-msgstr ""
-
-#: core/settings.php:18
-msgid "Action failed."
-msgstr ""
-
-#: core/settings.php:92
+#: core/admin.php:262
 msgid "Kandinsky settings"
 msgstr ""
 
-#. Name of the theme
-#: core/settings.php:92 core/settings.php:104
-msgid "Kandinsky"
-msgstr ""
-
-#: core/settings.php:93 core/settings.php:93
+#: core/admin.php:265 core/admin.php:266
 msgid "Kandinsky setup wizard"
 msgstr ""
 
-#: core/settings.php:136
+#: core/admin.php:349
 msgid "Dismiss"
 msgstr ""
 
-#: core/settings.php:138
+#: core/admin.php:351
 #, php-format
 msgid ""
 "Welcome! Thank you for choosing Kandinsky! To fully take advantage of the "
@@ -283,104 +276,96 @@ msgid ""
 "settings%s."
 msgstr ""
 
-#: core/settings.php:144
+#: core/admin.php:355
 msgid "Open the theme setup wizard"
 msgstr ""
 
-#: core/settings.php:147
+#: core/admin.php:358
 msgid "Open theme settings"
 msgstr ""
 
-#: core/settings.php:179
+#: core/admin.php:390
 msgid "Yoast SEO"
 msgstr ""
 
-#: core/settings.php:183
+#: core/admin.php:394
 msgid "A great tool to boost your website SEO positions."
 msgstr ""
 
-#: core/settings.php:186
+#: core/admin.php:396
 msgid "Cyr to Lat enhanced"
 msgstr ""
 
-#: core/settings.php:190
+#: core/admin.php:400
 msgid ""
 "Small helper to seamlessly convert cyrillic pages slugs into latin ones."
 msgstr ""
 
-#: core/settings.php:193
+#: core/admin.php:402
 msgid "Disable Comments"
 msgstr ""
 
-#: core/settings.php:197
+#: core/admin.php:406
 msgid ""
 "Comments on the website may be harmful, so this small plugin turns them off."
 msgstr ""
 
-#: core/settings.php:200
+#: core/admin.php:408
 msgid "Shortcake (Shortcodes UI)"
 msgstr ""
 
-#: core/settings.php:204
+#: core/admin.php:412
 msgid ""
 "A visual editing for shortcodes to enrich your content management experience."
 msgstr ""
 
-#: core/settings.php:207
-msgid "Shortcake Richtext"
-msgstr ""
-
-#: core/settings.php:211
-msgid "Rich text fields for shortcodes UI."
-msgstr ""
-
-#: core/settings.php:214
+#: core/admin.php:416
 msgid "Leyka"
 msgstr ""
 
-#: core/settings.php:218
+#: core/admin.php:421
 msgid "This plugin will add means for donations collection to your website."
 msgstr ""
 
-#: core/settings.php:242
+#: core/admin.php:443
 msgid "Install Required Plugins"
 msgstr ""
 
-#: core/settings.php:243
+#: core/admin.php:444
 msgid "Install Plugins"
 msgstr ""
 
 #. %s: plugin name.
-#: core/settings.php:245
+#: core/admin.php:446
 #, php-format
 msgid "Installing Plugin: %s"
 msgstr ""
 
 #. %s: plugin name.
-#: core/settings.php:247
+#: core/admin.php:448
 #, php-format
 msgid "Updating Plugin: %s"
 msgstr ""
 
-#: core/settings.php:248
+#: core/admin.php:449
 msgid "Something went wrong with the plugin API."
 msgstr ""
 
-#: core/settings.php:249
+#: core/admin.php:450
 #, php-format
 msgid "This theme requires the following plugin: %1$s."
 msgid_plural "This theme requires the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/settings.php:250
+#: core/admin.php:454
 #, php-format
 msgid "This theme recommends the following plugin: %1$s."
 msgid_plural "This theme recommends the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/settings.php:251
+#: core/admin.php:458
 #, php-format
 msgid ""
 "The following plugin needs to be updated to its latest version to ensure "
@@ -391,65 +376,65 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/settings.php:252
+#: core/admin.php:462
 #, php-format
 msgid "There is an update available for: %1$s."
 msgid_plural "There are updates available for the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/settings.php:253
+#: core/admin.php:466
 #, php-format
 msgid "The following required plugin is currently inactive: %1$s."
 msgid_plural "The following required plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/settings.php:254
+#: core/admin.php:470
 #, php-format
 msgid "The following recommended plugin is currently inactive: %1$s."
 msgid_plural "The following recommended plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/settings.php:255
+#: core/admin.php:474
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/settings.php:256
+#: core/admin.php:475
 msgid "Begin updating plugin"
 msgid_plural "Begin updating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/settings.php:257
+#: core/admin.php:476
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/settings.php:258
+#: core/admin.php:477
 msgid "Return to Required Plugins Installer"
 msgstr ""
 
-#: core/settings.php:259
+#: core/admin.php:478
 msgid "Plugin activated successfully."
 msgstr ""
 
-#: core/settings.php:260
+#: core/admin.php:479
 msgid "The following plugin was activated successfully:"
 msgstr ""
 
 #. 1: plugin name.
-#: core/settings.php:262
+#: core/admin.php:481
 #, php-format
 msgid "No action taken. Plugin %1$s was already active."
 msgstr ""
 
 #. 1: plugin name.
-#: core/settings.php:264
+#: core/admin.php:483
 #, php-format
 msgid ""
 "Plugin not activated. A higher version of %s is needed for this theme. "
@@ -457,265 +442,503 @@ msgid ""
 msgstr ""
 
 #. 1: dashboard link.
-#: core/settings.php:266
+#: core/admin.php:487
 #, php-format
 msgid "All plugins installed and activated successfully. %1$s"
 msgstr ""
 
-#: core/settings.php:267
+#: core/admin.php:488
 msgid "Dismiss this notice"
 msgstr ""
 
-#: core/settings.php:268
+#: core/admin.php:489
 msgid ""
 "There are one or more required or recommended plugins to install, update or "
 "activate."
 msgstr ""
 
-#: core/settings.php:269
+#: core/admin.php:492
 msgid "Please contact the administrator of this site for help."
 msgstr ""
 
-#: core/shortcodes-ui.php:19
-msgid "A quote"
+#: core/admin.php:509
+msgid "Action failed. Please refresh the page and retry."
 msgstr ""
 
-#: core/shortcodes-ui.php:24
-msgid "A quote text"
+#: core/admin.php:513
+msgid "Action failed."
 msgstr ""
 
-#: core/shortcodes-ui.php:30
-msgid "Quote origin"
+#: core/admin.php:666
+msgid "Kandinsky — useful links"
 msgstr ""
 
-#: core/shortcodes-ui.php:34
-msgid "A quote origin (or author)"
+#: core/class-import.php:115
+#, php-format
+msgid "Can't create a download temporary directory: %s"
 msgstr ""
 
-#: core/shortcodes-ui.php:40
-msgid "A \"call to action\" button"
+#: core/class-import.php:122
+#, php-format
+msgid "Can't create a download temporary file: %s"
 msgstr ""
 
-#: core/shortcodes-ui.php:50 core/shortcodes-ui.php:113
-msgid "Button label"
+#: core/class-import.php:135
+#, php-format
+msgid "CURL error: %s"
 msgstr ""
 
-#: core/shortcodes-ui.php:54
-msgid "A text for button"
+#: core/class-import.php:146
+#, php-format
+msgid "%s - temporary download file doesn't exist"
 msgstr ""
 
-#: core/shortcodes-ui.php:57 core/shortcodes-ui.php:120
-msgid "Button URL"
+#: core/class-import.php:150
+#, php-format
+msgid "%s - a downloaded file already exists and can't be deleted"
 msgstr ""
 
-#: core/shortcodes-ui.php:61
-msgid "An URL for button"
+#: core/class-import.php:154
+#, php-format
+msgid "%s - a downloaded file isn't writable and can't be made so"
 msgstr ""
 
-#: core/shortcodes-ui.php:64
-msgid "Open link in a new window"
+#: core/class-import.php:158
+#, php-format
+msgid "Can't rename downloaded file: from %s to %s"
 msgstr ""
 
-#: core/shortcodes-ui.php:74
-msgid "A text with image or colored background"
+#: core/class-import.php:172
+#, php-format
+msgid "File wasn't uploaded: %s"
 msgstr ""
 
-#: core/shortcodes-ui.php:85
-msgid "Background image"
+#: core/customizer.php:19
+msgid "Theme Info"
 msgstr ""
 
-#: core/shortcodes-ui.php:89
-msgid "Select image"
+#: core/customizer.php:22
+msgid "Support"
 msgstr ""
 
-#: core/shortcodes-ui.php:90
-msgid "Select section background image"
+#: core/customizer.php:35 core/customizer.php:46
+msgid "Important Links"
 msgstr ""
 
-#: core/shortcodes-ui.php:93
-msgid "Background color"
+#: core/customizer.php:58
+msgid "Header text"
 msgstr ""
 
-#: core/shortcodes-ui.php:96
-msgid "E.g., #123abc"
+#: core/customizer.php:76
+msgid "Color scheme"
 msgstr ""
 
-#: core/shortcodes-ui.php:99
-msgid "Title"
+#: core/customizer.php:84 core/customizer.php:237
+msgid "Logo"
 msgstr ""
 
-#: core/shortcodes-ui.php:103
-msgid "A title text"
+#: core/customizer.php:134
+msgid "Action Color"
 msgstr ""
 
-#: core/shortcodes-ui.php:106
+#: core/customizer.php:144
+msgid "Complimentary Color"
+msgstr ""
+
+#: core/customizer.php:154
+msgid "Dark Color"
+msgstr ""
+
+#: core/customizer.php:164
+msgid "Page Background Color"
+msgstr ""
+
+#: core/customizer.php:165 core/customizer.php:187
+msgid "Recommended - white"
+msgstr ""
+
+#: core/customizer.php:175
+msgid "Main Text Color"
+msgstr ""
+
+#: core/customizer.php:176
+msgid "Recommended - black"
+msgstr ""
+
+#: core/customizer.php:186
+msgid "Inverse Text Color"
+msgstr ""
+
+#: core/customizer.php:197
+msgid "Accent Text Color - 1"
+msgstr ""
+
+#: core/customizer.php:198 core/customizer.php:209
+msgid "Applicable only for Dubrovino template"
+msgstr ""
+
+#: core/customizer.php:208
+msgid "Accent Text Color - 2"
+msgstr ""
+
+#: core/customizer.php:222
+msgid "Logo mode"
+msgstr ""
+
+#: core/customizer.php:227
+msgid "Image only"
+msgstr ""
+
+#: core/customizer.php:228
+msgid "Image with site name"
+msgstr ""
+
+#: core/customizer.php:229
+msgid "Site name only"
+msgstr ""
+
+#: core/customizer.php:230
+msgid "Do not show"
+msgstr ""
+
+#: core/customizer.php:238
+msgid ""
+"Recommended size 315x66px for Image only mode and 66x66px for Image with "
+"site name"
+msgstr ""
+
+#: core/customizer.php:257
+msgid "Homepage settings"
+msgstr ""
+
+#: core/customizer.php:263 core/customizer.php:295
+msgid "Hero Image"
+msgstr ""
+
+#: core/customizer.php:269
+msgid "Static page settings"
+msgstr ""
+
+#: core/customizer.php:296
+msgid "Recommended size 1600x663px"
+msgstr ""
+
+#: core/customizer.php:309 core/customizer.php:418
+msgid "Call to action title"
+msgstr ""
+
+#: core/customizer.php:318 core/customizer.php:427
+msgid "Call to action URL"
+msgstr ""
+
+#: core/customizer.php:327 core/customizer.php:436
+msgid "Call to action text"
+msgstr ""
+
+#: core/customizer.php:336 core/customizer.php:445
+msgid "Action button caption"
+msgstr ""
+
+#: core/customizer.php:344
+msgid "Our organization columns settings"
+msgstr ""
+
+#: core/customizer.php:368
+msgid "Column title"
+msgstr ""
+
+#: core/customizer.php:377
+msgid "Column content"
+msgstr ""
+
+#: core/customizer.php:386
+msgid "Column link caption"
+msgstr ""
+
+#: core/customizer.php:395
+msgid "Column link URL"
+msgstr ""
+
+#: core/customizer.php:404
+msgid "CTA block settings"
+msgstr ""
+
+#: core/customizer.php:453
+msgid "Social networks links"
+msgstr ""
+
+#: core/customizer.php:481
+msgid "Recommended plugins to install"
+msgstr ""
+
+#: core/extras.php:282
+msgid "VKontakte"
+msgstr ""
+
+#: core/extras.php:283
+msgid "E.g., https://vk.com/club0123456789"
+msgstr ""
+
+#: core/extras.php:285
+msgid "Odnoklassniki"
+msgstr ""
+
+#: core/extras.php:286
+msgid "E.g., https://ok.ru/profile/0123456789"
+msgstr ""
+
+#: core/extras.php:288
+msgid "Facebook"
+msgstr ""
+
+#: core/extras.php:289
+msgid "E.g., https://www.facebook.com/your-organization-page"
+msgstr ""
+
+#: core/extras.php:291
+msgid "Instagram"
+msgstr ""
+
+#: core/extras.php:292
+msgid "E.g., https://www.instagram.com/your-organization-page"
+msgstr ""
+
+#: core/extras.php:294
+msgid "Twitter"
+msgstr ""
+
+#: core/extras.php:295
+msgid "E.g., https://twitter.com/your-organization-page"
+msgstr ""
+
+#: core/extras.php:297
+msgid "Telegram"
+msgstr ""
+
+#: core/extras.php:298
+msgid "E.g., https://tlgrm.ru/channels/@your-organization-page"
+msgstr ""
+
+#: core/extras.php:300
+msgid "YouTube"
+msgstr ""
+
+#: core/extras.php:301
+msgid "E.g., https://youtube.com/channel/your-organization-channel"
+msgstr ""
+
+#: core/media.php:29
+msgid "Landscape thumbnail"
+msgstr ""
+
+#: core/media.php:30
+msgid "Post thumbnail"
+msgstr ""
+
+#: core/media.php:31
+msgid "Fixed for embed"
+msgstr ""
+
+#: core/shortcodes-ui.php:25
+msgid "Key phrase"
+msgstr ""
+
+#: core/shortcodes-ui.php:31
+msgid "Phrase text"
+msgstr ""
+
+#: core/shortcodes-ui.php:36 core/shortcodes-ui.php:86
 msgid "Subtitle"
 msgstr ""
 
-#: core/shortcodes-ui.php:117
-msgid "A label for a \"call to action\" button"
+#: core/shortcodes-ui.php:45
+msgid "Image section"
 msgstr ""
 
-#: core/shortcodes-ui.php:124
-msgid "An URL for a \"call to action\" button"
+#: core/shortcodes-ui.php:51 vendor/envato_setup/envato_setup.php:958
+msgid "Description"
 msgstr ""
 
-#: core/shortcodes-ui.php:127 core/shortcodes-ui.php:168
-#: core/shortcodes-ui.php:209 core/shortcodes-ui.php:274
-msgid "Section CSS class"
+#: core/shortcodes-ui.php:55
+msgid "Title"
 msgstr ""
 
-#: core/shortcodes-ui.php:131 core/shortcodes-ui.php:172
-#: core/shortcodes-ui.php:213 core/shortcodes-ui.php:278
-msgid "An additional CSS class (or several) for the section"
+#: core/shortcodes-ui.php:57
+msgid "Image"
 msgstr ""
 
-#: core/shortcodes-ui.php:137
-msgid "A list of persons"
+#: core/shortcodes-ui.php:61
+msgid "Select image"
 msgstr ""
 
-#: core/shortcodes-ui.php:147 core/shortcodes-ui.php:188
+#: core/shortcodes-ui.php:62
+msgid "Select section image"
+msgstr ""
+
+#: core/shortcodes-ui.php:64
+msgid "Text placement"
+msgstr ""
+
+#: core/shortcodes-ui.php:75 modules/cta.php:10
+msgid "CTA block"
+msgstr ""
+
+#: core/shortcodes-ui.php:81
+msgid "CTA text"
+msgstr ""
+
+#: core/shortcodes-ui.php:92
+msgid "Link"
+msgstr ""
+
+#: core/shortcodes-ui.php:98
+msgid "Button label"
+msgstr ""
+
+#: core/shortcodes-ui.php:107
+msgid "Video caption"
+msgstr ""
+
+#: core/shortcodes-ui.php:109
+msgid "A caption text"
+msgstr ""
+
+#: core/shortcodes-ui.php:114
+msgid "A list of people"
+msgstr ""
+
+#: core/shortcodes-ui.php:124 core/shortcodes-ui.php:163
 msgid "List title"
 msgstr ""
 
-#: core/shortcodes-ui.php:151
+#: core/shortcodes-ui.php:128
 msgid "E.g., \"Our team\""
 msgstr ""
 
-#: core/shortcodes-ui.php:154
+#: core/shortcodes-ui.php:129
+msgid "Nubmer"
+msgstr ""
+
+#: core/shortcodes-ui.php:131
 msgid "Person categories"
 msgstr ""
 
-#: core/shortcodes-ui.php:161
-msgid "Only particular persons in the list"
+#: core/shortcodes-ui.php:137
+msgid "Only particular people in the list"
 msgstr ""
 
-#: core/shortcodes-ui.php:178
+#: core/shortcodes-ui.php:143
+msgid "Custom CSS class"
+msgstr ""
+
+#: core/shortcodes-ui.php:148 core/shortcodes-ui.php:186
+msgid "An additional CSS class (or several) for the section"
+msgstr ""
+
+#: core/shortcodes-ui.php:153
 msgid "A list of organizations"
 msgstr ""
 
-#: core/shortcodes-ui.php:192
+#: core/shortcodes-ui.php:167
 msgid "E.g., \"Our partners\""
 msgstr ""
 
-#: core/shortcodes-ui.php:195
+#: core/shortcodes-ui.php:169
 msgid "Organization categories"
 msgstr ""
 
-#: core/shortcodes-ui.php:202
+#: core/shortcodes-ui.php:175
 msgid "Only particular organizations in the list"
 msgstr ""
 
-#: core/shortcodes-ui.php:219
-msgid "A columns text markup"
+#: core/shortcodes-ui.php:181
+msgid "Section CSS class"
 msgstr ""
 
-#: core/shortcodes-ui.php:229
-msgid "Section title"
-msgstr ""
-
-#: core/shortcodes-ui.php:235
-msgid "First column title"
-msgstr ""
-
-#: core/shortcodes-ui.php:241
-msgid "First column content"
-msgstr ""
-
-#: core/shortcodes-ui.php:248
-msgid "Second column title"
-msgstr ""
-
-#: core/shortcodes-ui.php:254
-msgid "Second column content"
-msgstr ""
-
-#: core/shortcodes-ui.php:261
-msgid "Third column title"
-msgstr ""
-
-#: core/shortcodes-ui.php:267
-msgid "Third column content"
-msgstr ""
-
-#: core/shortcodes.php:363
+#: core/shortcodes.php:261
 msgid "Recommendations:"
 msgstr ""
 
-#: core/template-tags.php:180
+#: core/template-tags.php:159
 msgid "Page"
 msgstr ""
 
-#: core/template-tags.php:267
+#: core/template-tags.php:235
 msgid "Donations history"
 msgstr ""
 
-#: core/template-tags.php:271
-msgid "Search results"
-msgstr ""
-
-#: core/template-tags.php:275
-msgid "404: Page not found"
-msgstr ""
-
-#: core/template-tags.php:430
-msgid "More projects"
-msgstr ""
-
-#: core/template-tags.php:431
+#: core/template-tags.php:238 core/template-tags.php:338
 msgid "Our projects"
 msgstr ""
 
-#: core/template-tags.php:435
-msgid "More volunteers"
+#: core/template-tags.php:248
+msgid "Search results"
 msgstr ""
 
-#: core/template-tags.php:440
-msgid "More team members"
+#: core/template-tags.php:251
+msgid "404: Page not found"
 msgstr ""
 
-#: core/template-tags.php:446
-msgid "More events"
+#: core/template-tags.php:337
+msgid "More projects"
 msgstr ""
 
-#: core/template-tags.php:451
+#: core/template-tags.php:340
 msgid "More news"
 msgstr ""
 
-#: core/template-tags.php:452
+#: core/template-tags.php:341
 msgid "Latest news"
 msgstr ""
 
-#: core/widgets.php:10
-msgid "Homepage widgets"
+#: core/widgets.php:13
+msgid "Homepage - Content"
 msgstr ""
 
-#: core/widgets.php:12
+#: core/widgets.php:15
 msgid "Homepage custom content area"
 msgstr ""
 
-#: core/widgets.php:20
-msgid "Footer custom columns"
+#: core/widgets.php:23
+msgid "News - bottom panel"
 msgstr ""
 
-#: core/widgets.php:22
-msgid "Footer custom columns area"
+#: core/widgets.php:25
+msgid "Bottom blocks for news archive page"
 msgstr ""
 
-#: modules/donations.php:128
-msgid "or"
+#: core/widgets.php:33
+msgid "Archives - bottom panel"
 msgstr ""
 
-#: modules/donations.php:222
-msgid "Monthly donation"
+#: core/widgets.php:35
+msgid "Bottom blocks for archive and search pages"
 msgstr ""
 
-#: modules/news.php:7 modules/starter/sidebars.php:54
-#: modules/starter/sidebars.php:112
-msgid "News"
+#: core/widgets.php:43
+msgid "Footer - Columns"
 msgstr ""
 
-#: modules/news.php:8
+#: core/widgets.php:45
+msgid ""
+"Footer columns area accepts 4 widgets. Does not accept wide widgets, like "
+"News, Partners, Projects, Donations or CTA. You should place here widgets "
+"like Custom HTML, Custom Menu, Text etc."
+msgstr ""
+
+#: modules/cta.php:6
+msgid "Call To Action block"
+msgstr ""
+
+#: modules/cta.php:23
+msgid "You can change CTA text and link in "
+msgstr ""
+
+#: modules/cta.php:24
+msgid "Appearence / Customize / CTA block settings"
+msgstr ""
+
+#: modules/news.php:9
 msgid "Latest news list"
 msgstr ""
 
@@ -727,143 +950,239 @@ msgstr ""
 msgid "Our organization"
 msgstr ""
 
-#: modules/org/tax.php:6 modules/org/widgets.php:7
-msgid "Partners"
+#: modules/donations/donations.php:67
+msgid "or"
 msgstr ""
 
-#: modules/org/tax.php:7
-msgid "Homepage Partners"
+#: modules/donations/donations.php:144
+msgid ""
+"Thank you for you support. This campaign is finished and help is going to be "
+"provided. Please follow the updates."
+msgstr ""
+
+#: modules/donations/donations.php:167
+msgid "Collected"
+msgstr ""
+
+#: modules/donations/donations.php:173
+msgid "Needed"
+msgstr ""
+
+#: modules/donations/donations.php:297
+msgid "Charity"
+msgstr ""
+
+#: modules/donations/donations.php:317
+msgid "Kid age"
+msgstr ""
+
+#: modules/donations/widgets.php:8
+msgid "Donations short list"
 msgstr ""
 
 #: modules/org/widgets.php:8
 msgid "Partner organization banners list"
 msgstr ""
 
-#: modules/org/widgets.php:40
+#: modules/org/widgets.php:47 modules/project/widgets.php:47
 msgid "Title:"
 msgstr ""
 
-#: modules/org/widgets.php:45
+#: modules/org/widgets.php:52 modules/project/widgets.php:52
 msgid "Number:"
 msgstr ""
 
-#: modules/org/widgets.php:51
+#: modules/org/widgets.php:62
 msgid "Category:"
 msgstr ""
 
-#: modules/org/widgets.php:53
+#: modules/org/widgets.php:64
 msgid "All categories"
 msgstr ""
 
-#: modules/person/tax.php:6
+#: modules/person/hooks.php:76 modules/person/tax.php:6
 msgid "Volonteers"
 msgstr ""
 
-#: modules/person/tax.php:7
-msgid "Team"
+#: modules/person/hooks.php:84
+msgid "Board"
 msgstr ""
 
-#: modules/starter/menus.php:28 modules/starter/sidebars.php:14
+#: modules/person/widgets.php:7
+msgid "People list"
+msgstr ""
+
+#: modules/person/widgets.php:8
+msgid "Gallery of people - eg. team"
+msgstr ""
+
+#: modules/project/widgets.php:8
+msgid "Projects short list"
+msgstr ""
+
+#: modules/project/widgets.php:66 modules/starter/plot_config.php:224
+#: modules/starter/plot_config.php:479 modules/starter/plot_config.php:720
+msgid "Kandinsky projects block menu"
+msgstr ""
+
+#: modules/starter/import_remote_content.php:288
+#, php-format
+msgid "Plot name is unknown or not given: %s"
+msgstr ""
+
+#: modules/starter/import_remote_content.php:352
+msgid "No zip file"
+msgstr ""
+
+#: modules/starter/import_remote_content.php:356
+#, php-format
+msgid "Zip file not found: %s"
+msgstr ""
+
+#: modules/starter/import_remote_content.php:381
+#, php-format
+msgid "Unzip FAILED: %s to %s. Error: %s"
+msgstr ""
+
+#: modules/starter/import_remote_content.php:394
+msgid "No git content dir!"
+msgstr ""
+
+#: modules/starter/import_remote_content.php:398
+#, php-format
+msgid "Unzipped dir not found: %s"
+msgstr ""
+
+#: modules/starter/import_remote_content.php:404
+#, php-format
+msgid "Plot dir not found: %s"
+msgstr ""
+
+#: modules/starter/plot_config.php:212 modules/starter/plot_config.php:467
+#: modules/starter/plot_config.php:709 modules/starter/sidebars.php:13
 msgid "Kandinsky our work footer menu"
 msgstr ""
 
-#: modules/starter/menus.php:47 modules/starter/sidebars.php:17
+#: modules/starter/plot_config.php:218 modules/starter/plot_config.php:473
+#: modules/starter/plot_config.php:714 modules/starter/sidebars.php:16
 msgid "Kandinsky news footer menu"
 msgstr ""
 
-#: modules/starter/sidebars.php:38
+#: modules/starter/plot_config.php:461 modules/starter/plot_config.php:474
+#: modules/starter/plot_config.php:480
+msgid "Extertise"
+msgstr ""
+
+#: modules/starter/plot_data_builder.php:528
+msgid "Home page"
+msgstr ""
+
+#: modules/starter/sidebars.php:25
 msgid "About Us"
 msgstr ""
 
-#: modules/starter/sidebars.php:47
+#: modules/starter/sidebars.php:33
 msgid "Our Work"
 msgstr ""
 
-#: modules/starter/sidebars.php:72
+#: modules/starter/sidebars.php:48
 msgid "Security policy"
 msgstr ""
 
-#: modules/starter/sidebars.php:100
-msgid "Our organization «Color Line»"
+#: vendor/envato_setup/envato_setup.php:182
+msgid "Template – NGO \"Color Line\""
 msgstr ""
 
-#: modules/starter/sidebars.php:100
+#: vendor/envato_setup/envato_setup.php:183
+msgid "We help people with alcoholic addiction"
+msgstr ""
+
+#: vendor/envato_setup/envato_setup.php:184
 msgid ""
-"We have been helping people with alcoholism in our city over 10 years<br />"
-"by organizing rehabilitation programs."
+"Landing page for a typical non-profit. The template has legal information, "
+"projects, news, organization’s staff, partners."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:204
-msgid "Template – NGO "Color Line""
-msgstr ""
-
-#: vendor/envato_setup/envato_setup.php:205
-msgid "Landing page for a typical non-profit. The template has legal information, projects, news, organization’s staff, partners."
-msgstr ""
-
-#: vendor/envato_setup/envato_setup.php:208
+#: vendor/envato_setup/envato_setup.php:187
 msgid "Template – We Are With You"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:209
-msgid "Charity foundation website that is mostly focused on fundraising. Aside from basic information it includes integration with payment systems (Leyka plugin)."
+#: vendor/envato_setup/envato_setup.php:188
+msgid "Charity foundation helping children from low-income families"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:212
+#: vendor/envato_setup/envato_setup.php:189
+msgid ""
+"Charity foundation website that is mostly focused on fundraising. Aside from "
+"basic information it includes integration with payment systems (Leyka plugin)"
+"."
+msgstr ""
+
+#: vendor/envato_setup/envato_setup.php:192
 msgid "Template – Protect Dubrovino! Campaign"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:213
-msgid "Urban activism campaign – it includes information on campaign (e.g. a campaign in defence of a local park), documents, call to sign a petition."
+#: vendor/envato_setup/envato_setup.php:193
+msgid "City protection initiative"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:372
+#: vendor/envato_setup/envato_setup.php:194
+msgid ""
+"Urban activism campaign – it includes information on campaign (e.g. a "
+"campaign in defence of a local park), documents, call to sign a petition."
+msgstr ""
+
+#: vendor/envato_setup/envato_setup.php:332
 msgid "Introduction"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:378
+#: vendor/envato_setup/envato_setup.php:338
 msgid "Template"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:383
-msgid "Content"
-msgstr ""
-
-#: vendor/envato_setup/envato_setup.php:405
+#: vendor/envato_setup/envato_setup.php:365
 msgctxt "One word \"support service\" variant"
 msgid "Support"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:410
+#: vendor/envato_setup/envato_setup.php:370
 msgid "Ready!"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:441
+#: vendor/envato_setup/envato_setup.php:400
 msgid "...verifying"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:442
+#: vendor/envato_setup/envato_setup.php:401
 msgid "Processing..."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:497
+#: vendor/envato_setup/envato_setup.php:402
+msgid "Upload Logo"
+msgstr ""
+
+#: vendor/envato_setup/envato_setup.php:403
+msgid "Select Logo"
+msgstr ""
+
+#: vendor/envato_setup/envato_setup.php:463
 msgid "Kandinsky - setup wizard"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:506
+#: vendor/envato_setup/envato_setup.php:472
 msgid "Kandinsky theme setup wizard"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:518
-msgid "Return to the WordPress Dashboard"
+#: vendor/envato_setup/envato_setup.php:484
+msgid "Return to the Dashboard"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:566
+#: vendor/envato_setup/envato_setup.php:539
 #, php-format
 msgid "Welcome to the %s setup wizard"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:567
+#: vendor/envato_setup/envato_setup.php:540
 msgid ""
 "Hello! Let's set up your organization website together. With few simple "
 "steps we will configure minimal necessary settings, like installing of "
@@ -872,182 +1191,163 @@ msgid ""
 "in the Plugins admin folder."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:570
+#: vendor/envato_setup/envato_setup.php:543
 msgid "Let's go!"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:571
+#: vendor/envato_setup/envato_setup.php:544
 msgid "Not right now"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:619
+#: vendor/envato_setup/envato_setup.php:588
 msgid "Failed to find TGM plugin"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:638
+#: vendor/envato_setup/envato_setup.php:608
 msgid "Default Plugins"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:656
+#: vendor/envato_setup/envato_setup.php:626
 msgid ""
 "Your website needs a few essential plugins. The following plugins will be "
 "installed or updated:"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:657
+#: vendor/envato_setup/envato_setup.php:627
 msgid "You can add and remove plugins later on, in the Plugins admin folder."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:666
+#: vendor/envato_setup/envato_setup.php:636
 msgid "Installation required"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:669
+#: vendor/envato_setup/envato_setup.php:639
 msgid "Update and activation required"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:669
+#: vendor/envato_setup/envato_setup.php:639
 msgid "Update required"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:671
+#: vendor/envato_setup/envato_setup.php:641
 msgid "Activation required"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:687
+#: vendor/envato_setup/envato_setup.php:657
 msgid "We also recommend to add several more:"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:689
+#: vendor/envato_setup/envato_setup.php:659
 msgid "We recommend to add or update the following plugins:"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:699
+#: vendor/envato_setup/envato_setup.php:669
 msgid "Install"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:702
+#: vendor/envato_setup/envato_setup.php:672
 msgid "Update and activate"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:702
+#: vendor/envato_setup/envato_setup.php:672
 msgid "Update"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:704
+#: vendor/envato_setup/envato_setup.php:674
 msgid "Activate"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:723
+#: vendor/envato_setup/envato_setup.php:694
 msgid ""
 "Good news! All plugins are already installed and up to date. Let's proceed "
 "further."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:728
-#: vendor/envato_setup/envato_setup.php:1453
-#: vendor/envato_setup/envato_setup.php:1501
-#: vendor/envato_setup/envato_setup.php:1568
+#: vendor/envato_setup/envato_setup.php:699
+#: vendor/envato_setup/envato_setup.php:1497
+#: vendor/envato_setup/envato_setup.php:1577
+#: vendor/envato_setup/envato_setup.php:1644
 msgid "Continue"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:731
-#: vendor/envato_setup/envato_setup.php:952
-#: vendor/envato_setup/envato_setup.php:1455
-#: vendor/envato_setup/envato_setup.php:1503
-#: vendor/envato_setup/envato_setup.php:1570
+#: vendor/envato_setup/envato_setup.php:702
+#: vendor/envato_setup/envato_setup.php:987
+#: vendor/envato_setup/envato_setup.php:1499
+#: vendor/envato_setup/envato_setup.php:1579
+#: vendor/envato_setup/envato_setup.php:1646
 msgid "Skip this step"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:742
+#: vendor/envato_setup/envato_setup.php:713
 msgid "No slug found"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:761
+#: vendor/envato_setup/envato_setup.php:732
 msgid "Activating Plugin"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:775
+#: vendor/envato_setup/envato_setup.php:746
 msgid "Updating Plugin"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:789
+#: vendor/envato_setup/envato_setup.php:760
 msgid "Installing Plugin"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:801
+#: vendor/envato_setup/envato_setup.php:772
 msgid "Success"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:860
+#: vendor/envato_setup/envato_setup.php:877
 msgid "Website title and description"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:861
+#: vendor/envato_setup/envato_setup.php:878
 msgid "Insert default website title and description as seen in the demo."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:862
-#: vendor/envato_setup/envato_setup.php:871
-#: vendor/envato_setup/envato_setup.php:880
-#: vendor/envato_setup/envato_setup.php:889
-#: vendor/envato_setup/envato_setup.php:898
+#: vendor/envato_setup/envato_setup.php:879
+#: vendor/envato_setup/envato_setup.php:906
+#: vendor/envato_setup/envato_setup.php:924
+#: vendor/envato_setup/envato_setup.php:933
 msgid "Pending"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:863
-#: vendor/envato_setup/envato_setup.php:872
-#: vendor/envato_setup/envato_setup.php:881
-#: vendor/envato_setup/envato_setup.php:890
-#: vendor/envato_setup/envato_setup.php:899
+#: vendor/envato_setup/envato_setup.php:880
+#: vendor/envato_setup/envato_setup.php:907
+#: vendor/envato_setup/envato_setup.php:925
+#: vendor/envato_setup/envato_setup.php:934
 msgid "Installing..."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:864
-#: vendor/envato_setup/envato_setup.php:873
-#: vendor/envato_setup/envato_setup.php:882
-#: vendor/envato_setup/envato_setup.php:891
-#: vendor/envato_setup/envato_setup.php:900
+#: vendor/envato_setup/envato_setup.php:881
+#: vendor/envato_setup/envato_setup.php:908
+#: vendor/envato_setup/envato_setup.php:926
+#: vendor/envato_setup/envato_setup.php:935
 msgid "Success!"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:869
-msgid "Pages"
-msgstr ""
-
-#: vendor/envato_setup/envato_setup.php:870
-msgid "Insert default website pages as seen in the demo."
-msgstr ""
-
-#: vendor/envato_setup/envato_setup.php:878
-msgid "Posts"
-msgstr ""
-
-#: vendor/envato_setup/envato_setup.php:879
-msgid "Insert default website posts as seen in the demo."
-msgstr ""
-
-#: vendor/envato_setup/envato_setup.php:887
+#: vendor/envato_setup/envato_setup.php:904
 msgid "Settings"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:888
+#: vendor/envato_setup/envato_setup.php:905
 msgid "Insert default website settings as seen in the demo."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:896
-msgid "Menu"
+#: vendor/envato_setup/envato_setup.php:923
+msgid "Install default website posts, pages and menus."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:897
-msgid "Insert default website menu as seen in the demo."
+#: vendor/envato_setup/envato_setup.php:932
+msgid "Install donations components."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:911
+#: vendor/envato_setup/envato_setup.php:946
 msgid "Theme default content"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:914
+#: vendor/envato_setup/envato_setup.php:949
 msgid ""
 "It looks like you already have content installed on this website. If you "
 "would like to install the default demo content as well you can select it "
@@ -1055,7 +1355,7 @@ msgid ""
 "to date."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:916
+#: vendor/envato_setup/envato_setup.php:951
 msgid ""
 "It's time to insert some default content for your new WordPress website. "
 "Choose what you would like inserted below and click Install. We recommend to "
@@ -1063,39 +1363,47 @@ msgid ""
 "WordPress admin dashboard."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:922
+#: vendor/envato_setup/envato_setup.php:957
 msgid "Item"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:923
-msgid "Description"
-msgstr ""
-
-#: vendor/envato_setup/envato_setup.php:924
+#: vendor/envato_setup/envato_setup.php:959
 msgid "Status"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:949
+#: vendor/envato_setup/envato_setup.php:984
 msgid "Set up"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:968
+#: vendor/envato_setup/envato_setup.php:1003
 msgid "No content Found"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1033
+#: vendor/envato_setup/envato_setup.php:1068
 msgid "Error"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1427
+#: vendor/envato_setup/envato_setup.php:1466
 msgid "Choose website template"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1429
-msgid "For your convenience, we’ve created several templates for NGOs. Select the one that you fits you best. You will be able to change colours, content (text and images)."
+#: vendor/envato_setup/envato_setup.php:1468
+msgid ""
+"For your convenience, we’ve created several templates for NGOs. Select the "
+"one that you fits you best. You will be able to change colours, content "
+"(text and images)."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1484
+#: vendor/envato_setup/envato_setup.php:1475
+msgid "No scenarios detected"
+msgstr ""
+
+#: vendor/envato_setup/envato_setup.php:1529
+#, php-format
+msgid "Plot data builder was not produced for plot: %s"
+msgstr ""
+
+#: vendor/envato_setup/envato_setup.php:1560
 msgid ""
 "Please add your organization main logo below. The recommended size is "
 "<strong>315 x 66 px</strong> (for \"Image only\" mode) and <strong>66 x 66 "
@@ -1103,48 +1411,48 @@ msgid ""
 "any time from the Appearance > Customize area in your website dashboard."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1486
+#: vendor/envato_setup/envato_setup.php:1562
 #, php-format
 msgid "Try our %sPaseka program%s if you need a new logo designed."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1493
+#: vendor/envato_setup/envato_setup.php:1569
 msgid "Upload new logo"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1532
+#: vendor/envato_setup/envato_setup.php:1608
 msgid "NGO settings"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1537
+#: vendor/envato_setup/envato_setup.php:1613
 msgid "The website title"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1542
+#: vendor/envato_setup/envato_setup.php:1618
 msgid "The website description"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1545
+#: vendor/envato_setup/envato_setup.php:1621
 msgid ""
 "Please add your site icon below. The recommended size is <strong>64 x 64 "
 "px</strong>. The site icon can be changed at any time from the Appearance > "
 "Customize area in your website dashboard."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1547
+#: vendor/envato_setup/envato_setup.php:1623
 #, php-format
 msgid "Try our %sPaseka program%s if you need a new site icon designed."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1559
+#: vendor/envato_setup/envato_setup.php:1635
 msgid "Upload new site icon"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1611
+#: vendor/envato_setup/envato_setup.php:1697
 msgid "Help and support"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1614
+#: vendor/envato_setup/envato_setup.php:1700
 #, php-format
 msgid ""
 "Thank you for using “Kandinsky” theme on your website.<br>“Kandinsky” — is a "
@@ -1153,31 +1461,31 @@ msgid ""
 "independent developers."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1616
+#: vendor/envato_setup/envato_setup.php:1702
 msgid ""
 "In case you encounter any questions or issues, we recommend you the "
 "following links:"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1618
+#: vendor/envato_setup/envato_setup.php:1704
 msgid ""
 "Documentation and FAQ — <a href=\"https://github."
 "com/Teplitsa/kandinsky/wiki/\" target=\"_blank\">GitHub Wiki</a>"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1619
+#: vendor/envato_setup/envato_setup.php:1705
 msgid ""
 "Source code — <a href=\"https://github.com/Teplitsa/kandinsky/\" "
 "target=\"_blank\">GitHub</a>"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1620
+#: vendor/envato_setup/envato_setup.php:1706
 msgid ""
 "Developers’ <a href=\"https://t.me/joinchat/AAAAAENN3prSrvAs7KwWrg\">"
 "Telegram-channel</a> (in Russian)"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1622
+#: vendor/envato_setup/envato_setup.php:1708
 msgid ""
 "If you need personalized (free during the testing period) consultations from "
 "the theme developers, please feel free to write at <a href=\"mailto:"
@@ -1186,52 +1494,71 @@ msgid ""
 "at GitHub</a>."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1625
+#: vendor/envato_setup/envato_setup.php:1711
 msgid "OK, I've got it!"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1635
+#: vendor/envato_setup/envato_setup.php:1723
 msgid "Yay! Your website is ready!"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1637
+#: vendor/envato_setup/envato_setup.php:1725
 msgid ""
 "Congratulations! You’re doing really good #success! You’ve successfully "
 "installed and set up your Kandinsky theme. You need, however, to do a little "
 "bit more."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1638
+#: vendor/envato_setup/envato_setup.php:1726
 msgid ""
 "As a part of the installation process, we’ve added some test content of an "
 "imaginary organization that you will need to edit (we’ve provided the "
 "recommendations on how to make great content)."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1639
+#: vendor/envato_setup/envato_setup.php:1727
 msgid ""
 "Moreover, you need to set up few additional plug-ins for the optimal work of "
 "your site (don’t worry, our recommendations will help you)."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1646
+#: vendor/envato_setup/envato_setup.php:1734
 msgid "Continue the set-up"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1651
+#: vendor/envato_setup/envato_setup.php:1739
 msgid "View your new website!"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1657
+#: vendor/envato_setup/envato_setup.php:1745
 msgid "#success"
 msgstr ""
 
-#. Description of the theme
-msgid "The beautiful design and useful features for nonprofit website"
+#: vendor/envato_setup/envato_setup.php:1829
+msgid "Error:"
 msgstr ""
 
-#. Author of the theme
-msgid "Teplitsa"
+#: vendor/envato_setup/envato_setup.php:1829
+#, php-format
+msgid ""
+"Please, send a report about it to the <a href='mailto:%s' target='_blank'>"
+"theme technical support</a>."
+msgstr ""
+
+#: vendor/envato_setup/envato_setup.php:1831
+#, php-format
+msgid ""
+"We're sorry, but some error occured during to this wizard step :( <div "
+"class='wizard-error-support-text'>Please, send a report about it to the <a "
+"href='mailto:%s' target='_blank'>theme technical support</a>."
+msgstr ""
+
+#: vendor/envato_setup/envato_setup.php:1835
+msgid "Back to the Dashboard"
+msgstr ""
+
+#: vendor/envato_setup/envato_setup.php:1836
+msgid "Email to the theme support"
 msgstr ""
 
 #. Author URI of the theme
