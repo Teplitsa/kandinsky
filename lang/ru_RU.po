@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-26 04:09+0200\n"
-"PO-Revision-Date: 2017-09-26 04:10+0200\n"
+"PO-Revision-Date: 2017-09-26 15:17+0300\n"
 "Last-Translator: ahaenor <ahaenor@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10 >= 2 && n"
 "%10<=4 &&(n%100<10||n%100 >= 20)? 1 : 2);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.8.4\n"
+"X-Generator: Poedit 1.8.11\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
 "__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
@@ -1436,7 +1436,7 @@ msgstr ""
 
 #: vendor/envato_setup/envato_setup.php:182
 msgid "Template – NGO \"Color Line\""
-msgstr "Шаблон – «Линия цвета» (НКО)"
+msgstr "Линия цвета (НКО)"
 
 #: vendor/envato_setup/envato_setup.php:183
 msgid "We help people with alcoholic addiction"
@@ -1453,7 +1453,7 @@ msgstr ""
 
 #: vendor/envato_setup/envato_setup.php:187
 msgid "Template – We Are With You"
-msgstr "Шаблон – «Мы с тобой» (Фонд)"
+msgstr "Мы с тобой (Фонд)"
 
 #: vendor/envato_setup/envato_setup.php:188
 msgid "Charity foundation helping children from low-income families"
@@ -1471,7 +1471,7 @@ msgstr ""
 
 #: vendor/envato_setup/envato_setup.php:192
 msgid "Template – Protect Dubrovino! Campaign"
-msgstr "Шаблон - «Защитим Дубровино» (Кампания)"
+msgstr "Защитим Дубровино (Кампания)"
 
 #: vendor/envato_setup/envato_setup.php:193
 msgid "City protection initiative"
