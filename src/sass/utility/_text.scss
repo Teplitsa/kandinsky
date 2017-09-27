@@ -25,23 +25,23 @@
 a:link {
 	-webkit-tap-highlight-color: $color-main-dark;
 	-webkit-tap-highlight-color : $color-main-dark; 
-} 
+}
 
-::-webkit-selection {
+body:not(#tinymce) ::-webkit-selection {
 	opacity: 1;
 	background : $color-main-dark;
 	color : $color-white;
 	text-shadow : none; 
 }
 
-::-moz-selection {
+body:not(#tinymce) ::-moz-selection {
 	opacity: 1;
 	background : $color-main-dark;
 	color : $color-white;
 	text-shadow : none; 
 }
 
-::selection {
+body:not(#tinymce) ::selection {
 	opacity: 1;
 	background : $color-main-dark;
 	color : $color-white;
