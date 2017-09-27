@@ -421,6 +421,7 @@ h2.logo-name {
 		flex-flow: column nowrap;
 		justify-content: center;				
 		height: $logo_small_h + $height_gap;
+        max-width: 196px;
         padding-left: $gut/2;
 		
 		@include for(medium-screens){
