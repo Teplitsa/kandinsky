@@ -4,9 +4,9 @@ class KND_News_Widget extends WP_Widget {
 
 	function __construct() {
 		parent::__construct( 
-			'knd_news', 
-			__( 'News', 'knd' ), 
-			array( 'description' => __( 'Latest news list', 'knd' ) ) );
+			'knd_news',
+            esc_html__( 'News', 'knd' ), 
+			array( 'description' => esc_html__( 'Latest news list', 'knd' ) ) );
 	}
 
 	function widget( $args, $instance ) {

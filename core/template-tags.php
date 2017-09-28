@@ -156,7 +156,7 @@ function knd_posted_on( WP_Post $cpost ) {
 		}
 	} elseif ( 'page' == $cpost->post_type && is_search() ) {
 		
-		$meta[] = "<span class='category'>" . __( 'Page', 'knd' ) . "</span>";
+		$meta[] = "<span class='category'>" . esc_html__( 'Page', 'knd' ) . "</span>";
 	}
 	
 	return implode( $sep, $meta );
@@ -232,23 +232,23 @@ function knd_section_title() {
 		$title = get_the_title( $p );
 		$css = 'archive';
 	} elseif ( is_post_type_archive( 'leyka_donation' ) ) {
-		$title = __( 'Donations history', 'knd' );
+		$title = esc_html__( 'Donations history', 'knd' );
 		$css = 'archive';
 	} elseif ( is_post_type_archive( 'project' ) ) {
-		$title = __( 'Our projects', 'knd' );
+		$title = esc_html__( 'Our projects', 'knd' );
 		$css = 'archive';
 	} elseif ( is_post_type_archive( 'leyka_campaign' ) ) {
 		if ( isset( $wp_query->query_vars['completed'] ) && $wp_query->query_vars['completed'] == 'true' ) {
-			$title = __( 'They alredy got help', 'knd' );
+			$title = esc_html__( 'They alredy got help', 'knd' );
 		} else {
-			$title = __( 'They need help', 'knd' );
+			$title = esc_html__( 'They need help', 'knd' );
 		}
 		$css = 'archive';
 	} elseif ( is_search() ) {
-		$title = __( 'Search results', 'knd' );
+		$title = esc_html__( 'Search results', 'knd' );
 		$css = 'archive search';
 	} elseif ( is_404() ) {
-		$title = __( '404: Page not found', 'knd' );
+		$title = esc_html__( '404: Page not found', 'knd' );
 		$css = 'archive e404';
 	}
 	
@@ -334,11 +334,11 @@ function knd_more_section( $posts, $title = '', $type = 'news', $css = '' ) {
 		return;
 	
 	if ( $type == 'projects' ) {
-		$all_link = "<a href='" . home_url( 'activity' ) . "'>" . __( 'More projects', 'knd' ) . "&nbsp;&rarr;</a>";
-		$title = ( empty( $title ) ) ? __( 'Our projects', 'knd' ) : $title;
+		$all_link = "<a href='" . home_url( 'activity' ) . "'>" . esc_html__( 'More projects', 'knd' ) . "&nbsp;&rarr;</a>";
+		$title = ( empty( $title ) ) ? esc_html__( 'Our projects', 'knd' ) : $title;
 	} else {
-		$all_link = "<a href='" . home_url( 'news' ) . "'>" . __( 'More news', 'knd' ) . "&nbsp;&rarr;</a>";
-		$title = ( empty( $title ) ) ? __( 'Latest news', 'knd' ) : $title;
+		$all_link = "<a href='" . home_url( 'news' ) . "'>" . esc_html__( 'More news', 'knd' ) . "&nbsp;&rarr;</a>";
+		$title = ( empty( $title ) ) ? esc_html__( 'Latest news', 'knd' ) : $title;
 	}
 	
 	$css .= ' related-card-holder';
@@ -365,7 +365,7 @@ function knd_related_project( WP_Post $cpost ) {
 	$ex = apply_filters( 'knd_the_title', knd_get_post_excerpt( $cpost, 25, true ) );
 	?>
 <div class="related-widget widget">
-    <h3 class="widget-title"><?php _e('Related project', 'kds');?></h3>
+    <h3 class="widget-title"><?php _e('Related project', 'knd');?></h3>
     <a href="<?php echo $pl;?>" class="entry-link">
         <div class="rw-preview">
 			<?php echo knd_post_thumbnail($cpost->ID, 'post-thumbnail');?>
@@ -383,7 +383,7 @@ function knd_related_project( WP_Post $cpost ) {
 }
 
 function knd_get_help_now_cta( $cpost = null, $label = '' ) {
-	$label = ( empty( $label ) ) ? __( 'Help now', 'kds' ) : $label;
+	$label = ( empty( $label ) ) ? esc_html__( 'Help now', 'knd' ) : $label;
 	$cta = '';
 	
 	if ( ! $cpost ) {

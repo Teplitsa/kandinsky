@@ -99,43 +99,43 @@ function knd_get_admin_menu_items( $place = '' ) {
 			        'search-engines-social-display' => array(
 				        'class' => '',
 				        'icon' => 'dashicons-facebook',
-				        'text' => __( 'SEO', 'knd' ),
+				        'text' => esc_html__( 'SEO', 'knd' ),
 				        'link' => admin_url( '/admin.php?page=wpseo_dashboard#top#knowledge-graph' )
                     ),
 			        'donation-list' => array(
 				        'class' => '',
 				        'icon' => 'dashicons-chart-area',
-				        'text' => __( 'Donations', 'knd' ),
+				        'text' => esc_html__( 'Donations', 'knd' ),
 				        'link' => admin_url( '/edit.php?post_type=leyka_donation' )
                     )
                 )
             ),
 	        'section_other' => array(
-		        'title' => __( 'Other', 'knd' ),
+		        'title' => esc_html__( 'Other', 'knd' ),
 		        'link' => '',
 		        'items' => array(
 			        'user-docs' => array(
 				        'class' => '',
 				        'icon' => 'dashicons-book-alt',
-				        'text' => __( 'Documentation', 'knd' ),
+				        'text' => esc_html__( 'Documentation', 'knd' ),
 				        'link' => KND_DOC_URL
                     ),
 			        'support-telegram' => array(
 				        'class' => '',
 				        'icon' => 'dashicons-format-chat',
-				        'text' => __( 'Support Telegram channel', 'knd' ),
+				        'text' => esc_html__( 'Support Telegram channel', 'knd' ),
 				        'link' => esc_url( 'https://t.me/joinchat/AAAAAENN3prSrvAs7KwWrg' )
 			        ),
 			        'support-email' => array(
 				        'class' => '',
 				        'icon' => 'dashicons-email',
-				        'text' => __( 'Email to the support', 'knd' ),
+				        'text' => esc_html__( 'Email to the support', 'knd' ),
 				        'link' => 'mailto:' . KND_SUPPORT_EMAIL
                     ),
 			        'bug-report' => array(
 				        'class' => '',
 				        'icon' => 'dashicons-warning',
-				        'text' => __( 'Report of an error', 'knd' ),
+				        'text' => esc_html__( 'Report of an error', 'knd' ),
 				        'link' => esc_url( 'https://github.com/Teplitsa/kandinsky/issues/new' )
 			        ),
 		        )
@@ -161,19 +161,19 @@ function knd_get_admin_menu_items( $place = '' ) {
                     'user-docs' => array(
                         'class' => '',
                         'icon' => 'dashicons-book-alt',
-                        'text' => __( 'User documentation', 'knd' ),
+                        'text' => esc_html__( 'User documentation', 'knd' ),
                         'link' => KND_DOC_URL
                     ),
                     'email-to-support' => array(
                         'class' => '',
                         'icon' => 'dashicons-email',
-                        'text' => __( 'Email to the tech support', 'knd' ),
+                        'text' => esc_html__( 'Email to the tech support', 'knd' ),
                         'link' => 'mailto:' . KND_SUPPORT_EMAIL
                     ),
                     'remove-theme' => array(
                         'class' => 'knd-remove-theme',
                         'icon' => 'dashicons-no',
-                        'text' => __( 'Remove theme', 'knd' ),
+                        'text' => esc_html__( 'Remove theme', 'knd' ),
                         'link' => admin_url( 'admin.php?page=remove-kandinsky-theme' )
                     ),
                 ),
@@ -259,18 +259,18 @@ function knd_add_admin_pages( $items = array(), $is_inital_call = true ) {
 
 	if ( ! ! $is_inital_call ) {
 		
-		add_menu_page( __( 'Kandinsky settings', 'knd' ), __( 'Kandinsky', 'knd' ), 'manage_options', 'customize.php' );
+		add_menu_page( esc_html__( 'Kandinsky settings', 'knd' ), esc_html__( 'Kandinsky', 'knd' ), 'manage_options', 'customize.php' );
 		add_submenu_page( 
-			'themes.php', 
-			__( 'Kandinsky setup wizard', 'knd' ), 
-			__( 'Kandinsky setup wizard', 'knd' ), 
+			'themes.php',
+            esc_html__( 'Kandinsky setup wizard', 'knd' ),
+            esc_html__( 'Kandinsky setup wizard', 'knd' ),
 			'manage_options', 
 			'knd-setup-wizard', 
 			'envato_theme_setup_wizard' );
 		
 		add_menu_page(
-			__( 'Remove theme', 'knd' ),
-			__( 'Remove theme', 'knd' ),
+            esc_html__( 'Remove theme', 'knd' ),
+            esc_html__( 'Remove theme', 'knd' ),
 			'manage_options',
 			'remove-kandinsky-theme',
 			'knd_remove_theme' );
@@ -303,7 +303,7 @@ function knd_add_adminbar_menu( WP_Admin_Bar $admin_bar, $items = array(), $is_i
 		$root_node_id = 'knd-adminbar-main';
 		$admin_bar->add_menu( 
 			array( // Parent node
-'id' => $root_node_id, 'title' => __( 'Kandinsky', 'knd' ), 'href' => admin_url( 'customize.php' ) ) );
+'id' => $root_node_id, 'title' => esc_html__( 'Kandinsky', 'knd' ), 'href' => admin_url( 'customize.php' ) ) );
 		$parent_item = $root_node_id;
 	}
 	
@@ -387,38 +387,38 @@ function knd_register_required_plugins() {
 	 */
 	$plugins = array( 
 		array( 
-			'name' => __( 'Yoast SEO', 'knd' ), 
+			'name' => esc_html__( 'Yoast SEO', 'knd' ),
 			'slug' => 'wordpress-seo', 
 			'is_callable' => 'wpseo_init', 
 			'required' => true, 
-			'description' => __( 'A great tool to boost your website SEO positions.', 'knd' ) ), 
+			'description' => esc_html__( 'A great tool to boost your website SEO positions.', 'knd' ) ),
 		array( 
-			'name' => __( 'Cyr to Lat enhanced', 'knd' ), 
+			'name' => esc_html__( 'Cyr to Lat enhanced', 'knd' ),
 			'slug' => 'cyr3lat', 
 			'is_callable' => 'ctl_sanitize_title', 
 			'required' => true, 
-			'description' => __( 'Small helper to seamlessly convert cyrillic pages slugs into latin ones.', 'knd' ) ), 
+			'description' => esc_html__( 'Small helper to seamlessly convert cyrillic pages slugs into latin ones.', 'knd' ) ),
 		array( 
-			'name' => __( 'Disable Comments', 'knd' ), 
+			'name' => esc_html__( 'Disable Comments', 'knd' ),
 			'slug' => 'disable-comments', 
 			'is_callable' => array( 'Disable_Comments', 'get_instance' ), 
 			'required' => true, 
-			'description' => __( 'Comments on the website may be harmful, so this small plugin turns them off.', 'knd' ) ), 
+			'description' => esc_html__( 'Comments on the website may be harmful, so this small plugin turns them off.', 'knd' ) ),
 		array( 
-			'name' => __( 'Shortcake (Shortcodes UI)', 'knd' ), 
+			'name' => esc_html__( 'Shortcake (Shortcodes UI)', 'knd' ),
 			'slug' => 'shortcode-ui', 
 			'is_callable' => 'shortcode_ui_init', 
 			'required' => true, 
-			'description' => __( 
+			'description' => esc_html__(
 				'A visual editing for shortcodes to enrich your content management experience.', 
 				'knd' ) ), 
 		array( 
-			'name' => __( 'Leyka', 'knd' ), 
+			'name' => esc_html__( 'Leyka', 'knd' ),
 			'slug' => 'leyka', 
 			'is_callable' => 'leyka', 
 			'required' => get_option( 'knd_setup_install_leyka' ),  // get_theme_mod('knd_site_scenario') ==
 			                                                        // 'fundraising-org',
-			'description' => __( 'This plugin will add means for donations collection to your website.', 'knd' ) ) );
+			'description' => esc_html__( 'This plugin will add means for donations collection to your website.', 'knd' ) ) );
 	
 	/*
 	 * Array of configuration settings. Amend each line as needed.
@@ -440,13 +440,13 @@ function knd_register_required_plugins() {
 		'message' => '',  // Message to output right before the plugins table.
 		
 		'strings' => array( 
-			'page_title' => __( 'Install Required Plugins', 'knd' ), 
-			'menu_title' => __( 'Install Plugins', 'knd' ),
+			'page_title' => esc_html__( 'Install Required Plugins', 'knd' ),
+			'menu_title' => esc_html__( 'Install Plugins', 'knd' ),
             /* translators: %s: plugin name. */
-            'installing' => __( 'Installing Plugin: %s', 'knd' ),
+            'installing' => esc_html__( 'Installing Plugin: %s', 'knd' ),
             /* translators: %s: plugin name. */
-            'updating' => __( 'Updating Plugin: %s', 'knd' ), 
-			'oops' => __( 'Something went wrong with the plugin API.', 'knd' ), 
+            'updating' => esc_html__( 'Updating Plugin: %s', 'knd' ),
+			'oops' => esc_html__( 'Something went wrong with the plugin API.', 'knd' ),
 			'notice_can_install_required' => _n_noop( 
 				'This theme requires the following plugin: %1$s.', 
 				'This theme requires the following plugins: %1$s.', 
@@ -474,22 +474,22 @@ function knd_register_required_plugins() {
 			'install_link' => _n_noop( 'Begin installing plugin', 'Begin installing plugins', 'knd' ), 
 			'update_link' => _n_noop( 'Begin updating plugin', 'Begin updating plugins', 'knd' ), 
 			'activate_link' => _n_noop( 'Begin activating plugin', 'Begin activating plugins', 'knd' ), 
-			'return' => __( 'Return to Required Plugins Installer', 'knd' ), 
-			'plugin_activated' => __( 'Plugin activated successfully.', 'knd' ), 
-			'activated_successfully' => __( 'The following plugin was activated successfully:', 'knd' ),
+			'return' => esc_html__( 'Return to Required Plugins Installer', 'knd' ),
+			'plugin_activated' => esc_html__( 'Plugin activated successfully.', 'knd' ),
+			'activated_successfully' => esc_html__( 'The following plugin was activated successfully:', 'knd' ),
             /* translators: 1: plugin name. */
-            'plugin_already_active' => __( 'No action taken. Plugin %1$s was already active.', 'knd' ),
+            'plugin_already_active' => esc_html__( 'No action taken. Plugin %1$s was already active.', 'knd' ),
             /* translators: 1: plugin name. */
-            'plugin_needs_higher_version' => __( 
+            'plugin_needs_higher_version' => esc_html__(
 				'Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin.', 
 				'knd' ),
             /* translators: 1: dashboard link. */
-            'complete' => __( 'All plugins installed and activated successfully. %1$s', 'knd' ), 
-			'dismiss' => __( 'Dismiss this notice', 'knd' ), 
-			'notice_cannot_install_activate' => __( 
+            'complete' => esc_html__( 'All plugins installed and activated successfully. %1$s', 'knd' ),
+			'dismiss' => esc_html__( 'Dismiss this notice', 'knd' ),
+			'notice_cannot_install_activate' => esc_html__(
 				'There are one or more required or recommended plugins to install, update or activate.', 
 				'knd' ), 
-			'contact_admin' => __( 'Please contact the administrator of this site for help.', 'knd' ), 
+			'contact_admin' => esc_html__( 'Please contact the administrator of this site for help.', 'knd' ),
 			
 			'nag_type' => '' ) ); // Determines admin notice type - can only be one of the typical WP notice classes, such
 			   // as 'updated',
@@ -506,11 +506,11 @@ function knd_hide_notices() {
 	if ( isset( $_GET['knd-hide-notice'] ) && isset( $_GET['_knd_notice_nonce'] ) ) {
 		
 		if ( ! wp_verify_nonce( $_GET['_knd_notice_nonce'], 'knd_hide_notices_nonce' ) ) {
-			wp_die( __( 'Action failed. Please refresh the page and retry.', 'knd' ) );
+			wp_die( esc_html__( 'Action failed. Please refresh the page and retry.', 'knd' ) );
 		}
 		
 		if ( ! current_user_can( 'manage_options' ) ) {
-			wp_die( __( 'Action failed.', 'knd' ) );
+			wp_die( esc_html__( 'Action failed.', 'knd' ) );
 		}
 		
 		update_option( 'knd_admin_notice_' . sanitize_text_field( $_GET['knd-hide-notice'] ), 1 );
@@ -662,8 +662,8 @@ function knd_remove_dashboard_widgets() {
 	
 	// add ours
 	add_meta_box( 
-		'knd_custom_links', 
-		__( 'Kandinsky — useful links', 'knd' ), 
+		'knd_custom_links',
+        esc_html__( 'Kandinsky — useful links', 'knd' ),
 		'knd_custom_links_dashboard_screen', 
 		'dashboard', 
 		'side', 
@@ -764,7 +764,7 @@ function knd_thumbnail_dimensions_check( $thumbnail_html, $post_id ) {
 		 ( $meta['width'] < $needed_sizes['width'] || $meta['height'] < $needed_sizes['height'] ) ) {
 		
 		$size = "<b>" . $needed_sizes['width'] . 'x' . $needed_sizes['height'] . "</b>";
-		$txt = sprintf( __( 'ATTENTION! You thumbnail image is too small. It should be at least %s px', 'kds' ), $size );
+		$txt = sprintf( esc_html__( 'ATTENTION! You thumbnail image is too small. It should be at least %s px', 'knd' ), $size );
 		
 		echo "<p class='rdc-error'>{$txt}<p>";
 	}

@@ -16,6 +16,8 @@ add_filter( 'knd_the_content', 'convert_chars' );
 add_filter( 'knd_the_content', 'wpautop' );
 add_filter( 'knd_the_content', 'shortcode_unautop' );
 add_filter( 'knd_the_content', 'do_shortcode' );
+add_filter( 'knd_the_content', 'wp_kses_post', 5 );
+
 
 add_filter( 'knd_the_title', 'wptexturize' );
 add_filter( 'knd_the_title', 'convert_chars' );
@@ -33,6 +35,7 @@ add_filter( 'knd_entry_the_content', 'prepend_attachment' );
 add_filter( 'knd_entry_the_content', 'knd_force_https' );
 add_filter( 'knd_entry_the_content', 'wp_make_content_images_responsive' );
 add_filter( 'knd_entry_the_content', 'do_shortcode', 11 );
+add_filter( 'knd_entry_the_content', 'wp_kses_post', 7 );
 
 /* jpeg compression */
 add_filter( 'jpeg_quality', create_function( '', 'return 95;' ) );
@@ -55,7 +58,7 @@ function knd_continue_reading_link() {
 }
 
 function knd_get_more_text() {
-	return __( 'More', 'kds' ) . "&nbsp;&raquo;";
+	return esc_html__( 'More', 'knd' ) . "&nbsp;&raquo;";
 }
 
 /** excerpt filters  */
@@ -280,25 +283,25 @@ function knd_get_social_media_supported() {
 	return array( 
 		'vk' => array( 
 			'label' => esc_html__( 'VKontakte', 'knd' ), 
-			'description' => __( 'E.g., https://vk.com/club0123456789', 'knd' ) ), 
+			'description' => esc_html__( 'E.g., https://vk.com/club0123456789', 'knd' ) ), 
 		'ok' => array( 
 			'label' => esc_html__( 'Odnoklassniki', 'knd' ), 
-			'description' => __( 'E.g., https://ok.ru/profile/0123456789', 'knd' ) ), 
+			'description' => esc_html__( 'E.g., https://ok.ru/profile/0123456789', 'knd' ) ), 
 		'facebook' => array( 
 			'label' => esc_html__( 'Facebook', 'knd' ), 
-			'description' => __( 'E.g., https://www.facebook.com/your-organization-page', 'knd' ) ), 
+			'description' => esc_html__( 'E.g., https://www.facebook.com/your-organization-page', 'knd' ) ), 
 		'instagram' => array( 
 			'label' => esc_html__( 'Instagram', 'knd' ), 
-			'description' => __( 'E.g., https://www.instagram.com/your-organization-page', 'knd' ) ), 
+			'description' => esc_html__( 'E.g., https://www.instagram.com/your-organization-page', 'knd' ) ), 
 		'twitter' => array( 
 			'label' => esc_html__( 'Twitter', 'knd' ), 
-			'description' => __( 'E.g., https://twitter.com/your-organization-page', 'knd' ) ), 
+			'description' => esc_html__( 'E.g., https://twitter.com/your-organization-page', 'knd' ) ), 
 		'telegram' => array( 
 			'label' => esc_html__( 'Telegram', 'knd' ), 
-			'description' => __( 'E.g., https://tlgrm.ru/channels/@your-organization-page', 'knd' ) ), 
+			'description' => esc_html__( 'E.g., https://tlgrm.ru/channels/@your-organization-page', 'knd' ) ), 
 		'youtube' => array( 
 			'label' => esc_html__( 'YouTube', 'knd' ), 
-			'description' => __( 'E.g., https://youtube.com/channel/your-organization-channel', 'knd' ) ) );
+			'description' => esc_html__( 'E.g., https://youtube.com/channel/your-organization-channel', 'knd' ) ) );
 }
 
 add_action( 'after_switch_theme', 'knd_after_theme_activation' );

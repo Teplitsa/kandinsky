@@ -32,7 +32,7 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 	
 	$wp_customize->add_section( 
 		'knd_important_links', 
-		array( 'priority' => 150, 'title' => __( 'Important Links', 'knd' ) ) );
+		array( 'priority' => 150, 'title' => esc_html__( 'Important Links', 'knd' ) ) );
 	
 	$wp_customize->add_setting( 
 		'knd_important_links', 
@@ -43,7 +43,7 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 			$wp_customize, 
 			'important_links', 
 			array( 
-				'label' => __( 'Important Links', 'knd' ), 
+				'label' => esc_html__( 'Important Links', 'knd' ), 
 				'section' => 'knd_important_links', 
 				'settings' => 'knd_important_links' ) ) );
 	// Theme Important Links Ended
@@ -55,7 +55,7 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 		'text_in_header', 
 		array( 
 			'type' => 'textarea', 
-			'label' => __( 'Header text', 'knd' ), 
+			'label' => esc_html__( 'Header text', 'knd' ), 
 			'section' => 'title_tagline', 
 			'settings' => 'text_in_header', 
 			'priority' => 30 ) );
@@ -68,12 +68,12 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 			'priority' => 25, 
 			'capability' => 'edit_theme_options', 
 			'theme_supports' => '', 
-			'title' => __( 'Decoration', 'knd' ) ) );
+			'title' => esc_html__( 'Decoration', 'knd' ) ) );
 	
 	$wp_customize->add_section( 
 		'knd_decoration_colors', 
 		array( 
-			'title' => __( 'Color scheme', 'knd' ), 
+			'title' => esc_html__( 'Color scheme', 'knd' ), 
 			'priority' => 20, 
 			'capability' => 'edit_theme_options', 
 			'panel' => 'knd_decoration' ) );
@@ -81,7 +81,7 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_section( 
 		'knd_decoration_logo', 
 		array( 
-			'title' => __( 'Logo', 'knd' ), 
+			'title' => esc_html__( 'Logo', 'knd' ), 
 			'priority' => 30, 
 			'capability' => 'edit_theme_options', 
 			'panel' => 'knd_decoration' ) );
@@ -131,7 +131,7 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 			$wp_customize, 
 			'knd_main_color', 
 			array( 
-				'label' => __( 'Action Color', 'knd' ), 
+				'label' => esc_html__( 'Action Color', 'knd' ), 
 				'section' => 'knd_decoration_colors', 
 				'settings' => 'knd_main_color', 
 				'priority' => 10 ) ) );
@@ -141,7 +141,7 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 			$wp_customize, 
 			'knd_color_second', 
 			array( 
-				'label' => __( 'Complimentary Color', 'knd' ), 
+				'label' => esc_html__( 'Complimentary Color', 'knd' ), 
 				'section' => 'knd_decoration_colors', 
 				'settings' => 'knd_color_second', 
 				'priority' => 11 ) ) );
@@ -151,7 +151,7 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 			$wp_customize, 
 			'knd_color_third', 
 			array( 
-				'label' => __( 'Dark Color', 'knd' ), 
+				'label' => esc_html__( 'Dark Color', 'knd' ), 
 				'section' => 'knd_decoration_colors', 
 				'settings' => 'knd_color_third', 
 				'priority' => 12 ) ) );
@@ -161,7 +161,7 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 			$wp_customize, 
 			'knd_page_bg_color', 
 			array( 
-				'label' => __( 'Page Background Color', 'knd' ), 
+				'label' => esc_html__( 'Page Background Color', 'knd' ), 
 				'description' => __('Recommended - white', 'knd'), 
 				'section' => 'knd_decoration_colors', 
 				'settings' => 'knd_page_bg_color', 
@@ -172,7 +172,7 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 			$wp_customize, 
 			'knd_page_text_color', 
 			array( 
-				'label' => __( 'Main Text Color', 'knd' ),
+				'label' => esc_html__( 'Main Text Color', 'knd' ),
 				'description' => __('Recommended - black', 'knd'),  
 				'section' => 'knd_decoration_colors', 
 				'settings' => 'knd_page_text_color', 
@@ -183,7 +183,7 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 			$wp_customize, 
 			'knd_text1_color', 
 			array( 
-				'label' => __( 'Inverse Text Color', 'knd' ),
+				'label' => esc_html__( 'Inverse Text Color', 'knd' ),
 				'description' => __('Recommended - white', 'knd'), 
 				'section' => 'knd_decoration_colors', 
 				'settings' => 'knd_text1_color', 
@@ -194,7 +194,7 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 			$wp_customize, 
 			'knd_text2_color', 
 			array( 
-				'label' => __( 'Accent Text Color - 1', 'knd' ), 
+				'label' => esc_html__( 'Accent Text Color - 1', 'knd' ), 
 				'description' => __('Applicable only for Dubrovino template', 'knd'), 
 				'section' => 'knd_decoration_colors', 
 				'settings' => 'knd_text2_color', 
@@ -205,7 +205,7 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 			$wp_customize, 
 			'knd_text3_color', 
 			array( 
-				'label' => __( 'Accent Text Color - 2', 'knd' ), 
+				'label' => esc_html__( 'Accent Text Color - 2', 'knd' ), 
 				'description' => __('Applicable only for Dubrovino template', 'knd'), 
 				'section' => 'knd_decoration_colors', 
 				'settings' => 'knd_text3_color', 
@@ -219,23 +219,23 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 		'knd_custom_logo_mod', 
 		array( 
 			'type' => 'radio', 
-			'label' => __( 'Logo mode', 'knd' ), 
+			'label' => esc_html__( 'Logo mode', 'knd' ), 
 			'section' => 'knd_decoration_logo', 
 			'settings' => 'knd_custom_logo_mod', 
 			'priority' => 20, 
 			'choices' => array( 
-				'image_only' => __( 'Image only', 'knd' ), 
-				'image_text' => __( 'Image with site name', 'knd' ), 
-				'text_only' => __( 'Site name only', 'knd' ), 
-				'nothing' => __( 'Do not show', 'knd' ) ) ) );
+				'image_only' => esc_html__( 'Image only', 'knd' ), 
+				'image_text' => esc_html__( 'Image with site name', 'knd' ), 
+				'text_only' => esc_html__( 'Site name only', 'knd' ), 
+				'nothing' => esc_html__( 'Do not show', 'knd' ) ) ) );
 	
 	$wp_customize->add_control( 
 		new WP_Customize_Cropped_Image_Control( 
 			$wp_customize, 
 			'knd_custom_logo', 
 			array( 
-				'label' => __( 'Logo', 'knd' ), 
-				'description' => __( 
+				'label' => esc_html__( 'Logo', 'knd' ), 
+				'description' => esc_html__( 
 					'Recommended size 315x66px for Image only mode and 66x66px for Image with site name', 
 					'knd' ), 
 				'section' => 'knd_decoration_logo', 
@@ -254,19 +254,19 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 			'priority' => 25, 
 			'capability' => 'edit_theme_options', 
 			'theme_supports' => '', 
-			'title' => __( 'Homepage settings', 'knd' ), 
-			'description' => __( 'Homepage settings and blocks' ) ) );
+			'title' => esc_html__( 'Homepage settings', 'knd' ), 
+			'description' => esc_html__( 'Homepage settings and blocks' ) ) );
 	
 	$wp_customize->add_section( 
 		'knd_homepage_hero', 
 		array( 
-			'title' => __( 'Hero Image', 'knd' ), 
+			'title' => esc_html__( 'Hero Image', 'knd' ), 
 			'priority' => 20, 
 			'capability' => 'edit_theme_options', 
 			'panel' => 'knd_homepage' ) );
 	
 	$wp_customize->get_section( 'static_front_page' )->panel = 'knd_homepage';
-	$wp_customize->get_section( 'static_front_page' )->title = __( 'Static page settings', 'knd' );
+	$wp_customize->get_section( 'static_front_page' )->title = esc_html__( 'Static page settings', 'knd' );
 	
 	// move widgets in home
 	$homepage_sidebar = $wp_customize->get_section( 'sidebar-widgets-knd-homepage-sidebar' );
@@ -292,8 +292,8 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 			$wp_customize, 
 			'knd_hero_image', 
 			array( 
-				'label' => __( 'Hero Image', 'knd' ), 
-				'description' => __( 'Recommended size 1600x663px', 'knd' ), 
+				'label' => esc_html__( 'Hero Image', 'knd' ), 
+				'description' => esc_html__( 'Recommended size 1600x663px', 'knd' ), 
 				'section' => 'knd_homepage_hero', 
 				'settings' => 'knd_hero_image', 
 				'flex_width' => true, 
@@ -306,7 +306,7 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 		'knd_hero_image_support_title', 
 		array( 
 			'type' => 'text', 
-			'label' => __( 'Call to action title', 'knd' ), 
+			'label' => esc_html__( 'Call to action title', 'knd' ), 
 			'section' => 'knd_homepage_hero', 
 			'settings' => 'knd_hero_image_support_title', 
 			'priority' => 45 ) );
@@ -315,7 +315,7 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 		'knd_hero_image_support_url', 
 		array( 
 			'type' => 'text', 
-			'label' => __( 'Call to action URL', 'knd' ), 
+			'label' => esc_html__( 'Call to action URL', 'knd' ), 
 			'section' => 'knd_homepage_hero', 
 			'settings' => 'knd_hero_image_support_url', 
 			'priority' => 45 ) );
@@ -324,7 +324,7 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 		'knd_hero_image_support_text', 
 		array( 
 			'type' => 'textarea', 
-			'label' => __( 'Call to action text', 'knd' ), 
+			'label' => esc_html__( 'Call to action text', 'knd' ), 
 			'section' => 'knd_homepage_hero', 
 			'settings' => 'knd_hero_image_support_text', 
 			'priority' => 50 ) );
@@ -333,7 +333,7 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 		'knd_hero_image_support_button_caption', 
 		array( 
 			'type' => 'text', 
-			'label' => __( 'Action button caption', 'knd' ), 
+			'label' => esc_html__( 'Action button caption', 'knd' ), 
 			'section' => 'knd_homepage_hero', 
 			'settings' => 'knd_hero_image_support_button_caption', 
 			'priority' => 55 ) );
@@ -341,7 +341,7 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 	// ourorg columns
 	$wp_customize->add_section( 
 		'knd_ourorg_columns_settings', 
-		array( 'priority' => 57, 'title' => __( 'Our organization columns settings', 'knd' ), 'panel' => 'knd_homepage' ) );
+		array( 'priority' => 57, 'title' => esc_html__( 'Our organization columns settings', 'knd' ), 'panel' => 'knd_homepage' ) );
 	
 	for ( $i = 1; $i <= 3; $i++ ) {
 		
@@ -365,7 +365,7 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 			'home-subtitle-col' . $i . '-title', 
 			array( 
 				'type' => 'text', 
-				'label' => __( 'Column title', 'knd' ), 
+				'label' => esc_html__( 'Column title', 'knd' ), 
 				'section' => 'knd_ourorg_columns_settings', 
 				'settings' => 'home-subtitle-col' . $i . '-title', 
 				'priority' => $i * 10 ) );
@@ -374,7 +374,7 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 			'home-subtitle-col' . $i . '-content', 
 			array( 
 				'type' => 'textarea', 
-				'label' => __( 'Column content', 'knd' ), 
+				'label' => esc_html__( 'Column content', 'knd' ), 
 				'section' => 'knd_ourorg_columns_settings', 
 				'settings' => 'home-subtitle-col' . $i . '-content', 
 				'priority' => $i * 10 + 2 ) );
@@ -383,7 +383,7 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 			'home-subtitle-col' . $i . '-link-text', 
 			array( 
 				'type' => 'text', 
-				'label' => __( 'Column link caption', 'knd' ), 
+				'label' => esc_html__( 'Column link caption', 'knd' ), 
 				'section' => 'knd_ourorg_columns_settings', 
 				'settings' => 'home-subtitle-col' . $i . '-link-text', 
 				'priority' => $i * 10 + 4 ) );
@@ -392,7 +392,7 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 			'home-subtitle-col' . $i . '-link-url', 
 			array( 
 				'type' => 'text', 
-				'label' => __( 'Column link URL', 'knd' ), 
+				'label' => esc_html__( 'Column link URL', 'knd' ), 
 				'section' => 'knd_ourorg_columns_settings', 
 				'settings' => 'home-subtitle-col' . $i . '-link-url', 
 				'priority' => $i * 10 + 6 ) );
@@ -401,7 +401,7 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 	// cta options
 	$wp_customize->add_section( 
 		'knd_cta_block_settings', 
-		array( 'priority' => 40, 'title' => __( 'CTA block settings', 'knd' ) ) );
+		array( 'priority' => 40, 'title' => esc_html__( 'CTA block settings', 'knd' ) ) );
 	
 	$wp_customize->add_setting( 'cta-title', array( 'default' => '' ) );
 	
@@ -415,7 +415,7 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 		'cta-title', 
 		array( 
 			'type' => 'text', 
-			'label' => __( 'Call to action title', 'knd' ), 
+			'label' => esc_html__( 'Call to action title', 'knd' ), 
 			'section' => 'knd_cta_block_settings', 
 			'settings' => 'cta-title', 
 			'priority' => 40 ) );
@@ -424,7 +424,7 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 		'cta-url', 
 		array( 
 			'type' => 'text', 
-			'label' => __( 'Call to action URL', 'knd' ), 
+			'label' => esc_html__( 'Call to action URL', 'knd' ), 
 			'section' => 'knd_cta_block_settings', 
 			'settings' => 'cta-url', 
 			'priority' => 45 ) );
@@ -433,7 +433,7 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 		'cta-description', 
 		array( 
 			'type' => 'textarea', 
-			'label' => __( 'Call to action text', 'knd' ), 
+			'label' => esc_html__( 'Call to action text', 'knd' ), 
 			'section' => 'knd_cta_block_settings', 
 			'settings' => 'cta-description', 
 			'priority' => 50 ) );
@@ -442,7 +442,7 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 		'cta-button-caption', 
 		array( 
 			'type' => 'text', 
-			'label' => __( 'Action button caption', 'knd' ), 
+			'label' => esc_html__( 'Action button caption', 'knd' ), 
 			'section' => 'knd_cta_block_settings', 
 			'settings' => 'cta-button-caption', 
 			'priority' => 55 ) );
@@ -450,7 +450,7 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 	// Social media links
 	$wp_customize->add_section( 
 		'knd_social_links', 
-		array( 'priority' => 60, 'title' => __( 'Social networks links', 'knd' ) ) );
+		array( 'priority' => 60, 'title' => esc_html__( 'Social networks links', 'knd' ) ) );
 	
 	foreach ( knd_get_social_media_supported() as $id => $data ) {
 		
@@ -478,7 +478,7 @@ function knd_show_notification_bubble( $menu ) {
 		foreach ( $menu as $menu_key => $menu_data ) {
 			if ( $menu_data[2] == 'knd-setup-wizard' ) {
 				$menu[$menu_key][0] .= " <span class='update-plugins' title='" .
-					 __( 'Recommended plugins to install', 'knd' ) . "'><span class='plugin-count'>" . $notif_count .
+                    esc_html__( 'Recommended plugins to install', 'knd' ) . "'><span class='plugin-count'>" . $notif_count .
 					 '</span></span>';
 			}
 		}

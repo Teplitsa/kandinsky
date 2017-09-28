@@ -314,7 +314,7 @@ function knd_leyka_age_metabox_display_callback($post) {
 function knd_leyka_add_metabox() {
 	$plot = get_theme_mod('knd_site_scenario');
 	if($plot == 'fundraising-org') {
-		add_meta_box( 'knd-leyka-kid-age', __( 'Kid age', 'knd' ), 'knd_leyka_age_metabox_display_callback', 'leyka_campaign' );
+		add_meta_box( 'knd-leyka-kid-age', esc_html__( 'Kid age', 'knd' ), 'knd_leyka_age_metabox_display_callback', 'leyka_campaign' );
 	}
 }
 add_action( 'add_meta_boxes', 'knd_leyka_add_metabox' );

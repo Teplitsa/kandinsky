@@ -10,10 +10,10 @@ class KND_StarterSidebars {
         $sidebars['knd-footer-sidebar'] = array();
         update_option( 'sidebars_widgets', $sidebars );
         
-        $menu_name = __( 'Kandinsky our work footer menu', 'knd' );
+        $menu_name = esc_html__( 'Kandinsky our work footer menu', 'knd' );
         $our_work_menu = wp_get_nav_menu_object( $menu_name );
         
-        $menu_name = __( 'Kandinsky news footer menu', 'knd' );
+        $menu_name = esc_html__( 'Kandinsky news footer menu', 'knd' );
         $news_menu = wp_get_nav_menu_object( $menu_name );
         
         if(true) { // always change

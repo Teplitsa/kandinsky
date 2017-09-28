@@ -28,7 +28,7 @@ function knd_facebook_author_tag() {
 
 /** Default author avatar **/
 function knd_get_default_author_avatar() {
-	$alt = __( 'Author', 'tst' );
+	$alt = esc_html__( 'Author', 'tst' );
 	$img = '';
 	
 	$def_img_id = attachment_url_to_postid( get_theme_mod( 'default_avatar' ) );

@@ -26,9 +26,9 @@ function knd_medialib_custom_image_sizes( $sizes ) {
 	$addsizes = apply_filters( 
 		'knd_medialib_custom_image_sizes', 
 		array( 
-			'landscape-mini' => __( 'Landscape thumbnail', 'knd' ), 
-			'post-thumbnail' => __( 'Post thumbnail', 'knd' ), 
-			'medium-thumbnail' => __( 'Fixed for embed', 'knd' ) ) );
+			'landscape-mini' => esc_html__( 'Landscape thumbnail', 'knd' ), 
+			'post-thumbnail' => esc_html__( 'Post thumbnail', 'knd' ), 
+			'medium-thumbnail' => esc_html__( 'Fixed for embed', 'knd' ) ) );
 	
 	return array_merge( $sizes, $addsizes );
 }

@@ -10,9 +10,9 @@ add_action( 'init', 'knd_sidebars_init', 25 );
 function knd_sidebars_init() {
 	register_sidebar( 
 		array( 
-			'name' => __( 'Homepage - Content', 'knd' ), 
+			'name' => esc_html__( 'Homepage - Content', 'knd' ),
 			'id' => 'knd-homepage-sidebar', 
-			'description' => __( 'Homepage custom content area', 'knd' ), 
+			'description' => esc_html__( 'Homepage custom content area', 'knd' ),
 			'before_widget' => '<div id="%1$s" class="widget-full %2$s">', 
 			'after_widget' => '</div>', 
 			'before_title' => '<h3 class="widget-full-title">', 
@@ -20,9 +20,9 @@ function knd_sidebars_init() {
 	
 	register_sidebar( 
 		array( 
-			'name' => __( 'News - bottom panel', 'knd' ), 
+			'name' => esc_html__( 'News - bottom panel', 'knd' ),
 			'id' => 'knd-news-archive-sidebar', 
-			'description' => __( 'Bottom blocks for news archive page', 'knd' ), 
+			'description' => esc_html__( 'Bottom blocks for news archive page', 'knd' ),
 			'before_widget' => '', 
 			'after_widget' => '', 
 			'before_title' => '<h3 class="widget-full-title">', 
@@ -30,9 +30,9 @@ function knd_sidebars_init() {
 	
 	register_sidebar( 
 		array( 
-			'name' => __( 'Archives - bottom panel', 'knd' ), 
+			'name' => esc_html__( 'Archives - bottom panel', 'knd' ),
 			'id' => 'knd-projects-archive-sidebar', 
-			'description' => __( 'Bottom blocks for archive and search pages', 'knd' ), 
+			'description' => esc_html__( 'Bottom blocks for archive and search pages', 'knd' ),
 			'before_widget' => '', 
 			'after_widget' => '', 
 			'before_title' => '<h3 class="widget-full-title">', 
@@ -40,9 +40,9 @@ function knd_sidebars_init() {
 	
 	register_sidebar( 
 		array( 
-			'name' => __( 'Footer - Columns', 'knd' ), 
+			'name' => esc_html__( 'Footer - Columns', 'knd' ),
 			'id' => 'knd-footer-sidebar', 
-			'description' => __( 'Footer columns area accepts 4 widgets. Does not accept wide widgets, like News, Partners, Projects, Donations or CTA. You should place here widgets like Custom HTML, Custom Menu, Text etc.', 'knd' ), 
+			'description' => esc_html__( 'Footer columns area accepts 4 widgets. Does not accept wide widgets, like News, Partners, Projects, Donations or CTA. You should place here widgets like Custom HTML, Custom Menu, Text etc.', 'knd' ),
 			'before_widget' => '<div id="%1$s" class="widget-bottom %2$s">', 
 			'after_widget' => '</div>', 
 			'before_title' => '<h3 class="widget-title">', 

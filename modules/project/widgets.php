@@ -63,7 +63,7 @@ class KND_Projects_Widget extends WP_Widget {
 
     public function print_widget_content($title, $projects) {
         
-        $menu_items = wp_get_nav_menu_items(__( 'Kandinsky projects block menu', 'knd' ));
+        $menu_items = wp_get_nav_menu_items( esc_html__( 'Kandinsky projects block menu', 'knd' ) );
         $project_menu_items = array();
         if($menu_items && is_array($menu_items)) {
             foreach($menu_items as $k => $v) {

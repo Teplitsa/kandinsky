@@ -3,11 +3,11 @@
 class KND_Cta_Widget extends WP_Widget {
 
 	function __construct() {
-		$widget_ops = array( 'description' => __( 'Call To Action block', 'knd' ), 'customize_selective_refresh' => true );
+		$widget_ops = array( 'description' => esc_html__( 'Call To Action block', 'knd' ), 'customize_selective_refresh' => true );
 		
 		$control_ops = array( 'width' => 400, 'height' => 350 );
 		
-		parent::__construct( 'knd_cta', __( 'CTA block', 'knd' ), $widget_ops, $control_ops );
+		parent::__construct( 'knd_cta', esc_html__( 'CTA block', 'knd' ), $widget_ops, $control_ops );
 	}
 
 	function widget( $args, $instance ) {

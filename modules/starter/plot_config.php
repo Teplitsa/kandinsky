@@ -198,7 +198,7 @@ class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
         $this->data_routes['theme_options']['knd_url_public_oferta'] = home_url('legal');
         
         $this->data_routes['menus'] = array(
-            __('Main menu', 'knd') => array(
+            esc_html__('Main menu', 'knd') => array(
                 array('title' => "Главная", 'url' => home_url('/') ),
                 array('post_type' => 'page', 'slug' => 'about' ),
                 array('post_type' => 'page', 'slug' => 'contacts' ),
@@ -209,19 +209,19 @@ class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
                 array('post_type' => 'page', 'slug' => 'volunteers' ),
                 array('post_type' => 'page', 'slug' => 'gethelp' ),
             ),
-            __( 'Kandinsky our work footer menu', 'knd' ) => array(
+            esc_html__( 'Kandinsky our work footer menu', 'knd' ) => array(
                 array('post_type' => 'page', 'slug' => 'about' ),
                 array('post_type' => 'page', 'slug' => 'history' ),
                 array('post_type' => 'page', 'slug' => 'reports' ),
                 array('post_type' => 'page', 'slug' => 'contacts' ),
             ),
-            __( 'Kandinsky news footer menu', 'knd' ) => array(
+            esc_html__( 'Kandinsky news footer menu', 'knd' ) => array(
                 array('title' => __('News', 'knd'), 'url' => home_url('/news/') ),
                 array('title' => 'Проекты', 'url' => home_url('/projects/') ),
                 array('post_type' => 'page', 'slug' => 'volunteers' ),
                 array('post_type' => 'page', 'slug' => 'howtohelp' ),
             ),
-            __( 'Kandinsky projects block menu', 'knd' ) => array(
+            esc_html__( 'Kandinsky projects block menu', 'knd' ) => array(
                 array('title' => 'Все проекты', 'url' => home_url('/projects/') ),
                 array('post_type' => 'page', 'slug' => 'about' ),
                 array('post_type' => 'page', 'slug' => 'reports' ),
@@ -464,19 +464,19 @@ class KND_Dubrovino_Data_Builder extends KND_Plot_Data_Builder {
                 array('post_type' => 'page', 'slug' => 'contacts' ),
                 array('post_type' => 'page', 'slug' => 'volunteers' ),
             ),
-            __( 'Kandinsky our work footer menu', 'knd' ) => array(
+            esc_html__( 'Kandinsky our work footer menu', 'knd' ) => array(
                 array('post_type' => 'page', 'slug' => 'about' ),
                 array('post_type' => 'page', 'slug' => 'contacts' ),
                 array('post_type' => 'page', 'slug' => 'reports' ),
                 array('post_type' => 'page', 'slug' => 'volunteers' ),
             ),
-            __( 'Kandinsky news footer menu', 'knd' ) => array(
+            esc_html__( 'Kandinsky news footer menu', 'knd' ) => array(
                 array('title' => __('Extertise', 'knd'), 'url' => home_url('/projects/') ),
                 array('title' => __('News', 'knd'), 'url' => home_url('/news/') ),
                 array('post_type' => 'page', 'slug' => 'history' ),
                 array('post_type' => 'page', 'slug' => 'howtohelp' ),
             ),
-            __( 'Kandinsky projects block menu', 'knd' ) => array(
+            esc_html__( 'Kandinsky projects block menu', 'knd' ) => array(
                 array('title' => __('Extertise', 'knd'), 'url' => home_url('/projects/') ),
                 array('post_type' => 'page', 'slug' => 'history' ),
                 array('post_type' => 'page', 'slug' => 'reports' ),
@@ -706,18 +706,18 @@ class KND_Withyou_Data_Builder extends KND_Plot_Data_Builder {
                 array('post_type' => 'page', 'slug' => 'volunteers' ),
                 array('post_type' => 'page', 'slug' => 'gethelp' ),
             ),
-            __( 'Kandinsky our work footer menu', 'knd' ) => array(
+            esc_html__( 'Kandinsky our work footer menu', 'knd' ) => array(
                 array('post_type' => 'page', 'slug' => 'about' ),
                 array('post_type' => 'page', 'slug' => 'reports' ),
                 array('post_type' => 'page', 'slug' => 'contacts' ),
             ),
-            __( 'Kandinsky news footer menu', 'knd' ) => array(
+            esc_html__( 'Kandinsky news footer menu', 'knd' ) => array(
                 array('post_type' => 'page', 'slug' => 'news' ),
                 array('title' => 'Все проекты', 'url' => home_url('/projects/') ),
                 array('title' => 'Им нужна помощь', 'url' => home_url('campaign/active') ),
                 array('title' => 'Вы помогли', 'url' => home_url('campaign/completed') ),
             ),
-            __( 'Kandinsky projects block menu', 'knd' ) => array(
+            esc_html__( 'Kandinsky projects block menu', 'knd' ) => array(
                 array('title' => 'Все проекты', 'url' => home_url('/projects/') ),
                 array('post_type' => 'page', 'slug' => 'about' ),
                 array('post_type' => 'page', 'slug' => 'reports' ),

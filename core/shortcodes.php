@@ -258,6 +258,6 @@ add_shortcode( 'knd_r', 'knd_recommendation_shortcode' );
 
 function knd_recommendation_shortcode( $atts, $content = null ) {
 	return current_user_can( 'edit_posts' ) ? '<div class="knd-recommend"><span class="recommend">' .
-		 __( 'Recommendations:', 'knd' ) . '</span> ' . apply_filters( 'knd_the_content', $content ) . '</div>' : '';
+        esc_html__( 'Recommendations:', 'knd' ) . '</span> ' . apply_filters( 'knd_the_content', $content ) . '</div>' : '';
 }
 

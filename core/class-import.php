@@ -112,14 +112,14 @@ class TST_Import {
 		$tmp_dir = knd_get_temp_dir();
 		
 		if ( ! is_dir( $tmp_dir ) && ! mkdir( $tmp_dir ) ) {
-			throw new Exception( sprintf( __( "Can't create a download temporary directory: %s", 'knd' ), $tmp_dir ) );
+			throw new Exception( sprintf( esc_html__( "Can't create a download temporary directory: %s", 'knd' ), $tmp_dir ) );
 		}
 		
 		$tmp_file = tempnam( $tmp_dir, 'kandinsky_' );
 		set_time_limit( 0 );
 		$fp = fopen( $tmp_file, 'w+' );
 		if ( ! $fp ) {
-			throw new Exception( sprintf( __( "Can't create a download temporary file: %s", 'knd' ), $tmp_file ) );
+			throw new Exception( sprintf( esc_html__( "Can't create a download temporary file: %s", 'knd' ), $tmp_file ) );
 		}
 		
 		$ch = curl_init();
@@ -132,7 +132,7 @@ class TST_Import {
 		
 		curl_setopt( $ch, CURLOPT_FILE, $fp );
 		if ( curl_exec( $ch ) === false ) {
-			throw new Exception( sprintf( __( 'CURL error: %s', 'knd' ), curl_error( $ch ) ) );
+			throw new Exception( sprintf( esc_html__( 'CURL error: %s', 'knd' ), curl_error( $ch ) ) );
 		}
 		curl_close( $ch );
 		fclose( $fp );
@@ -143,19 +143,19 @@ class TST_Import {
 		$new_file = $filedir . "/" . $filename_no_ext . '.' . $extension;
 		
 		if ( ! file_exists( $tmp_file ) ) {
-			throw new Exception( sprintf( __( "%s - temporary download file doesn't exist", 'knd' ), $new_file ) );
+			throw new Exception( sprintf( esc_html__( "%s - temporary download file doesn't exist", 'knd' ), $new_file ) );
 		} else 
 			if ( file_exists( $new_file ) && ! unlink( $new_file ) ) {
 				throw new Exception( 
-					sprintf( __( "%s - a downloaded file already exists and can't be deleted", 'knd' ), $new_file ) );
+					sprintf( esc_html__( "%s - a downloaded file already exists and can't be deleted", 'knd' ), $new_file ) );
 			} else 
 				if ( file_exists( $new_file ) && ! is_writable( $new_file ) && ! chmod( $new_file, '0755' ) ) {
 					throw new Exception( 
-						sprintf( __( "%s - a downloaded file isn't writable and can't be made so", 'knd' ), $new_file ) );
+						sprintf( esc_html__( "%s - a downloaded file isn't writable and can't be made so", 'knd' ), $new_file ) );
 				} else 
 					if ( ! rename( $tmp_file, $new_file ) ) {
 						throw new Exception( 
-							sprintf( __( "Can't rename downloaded file: from %s to %s", 'knd' ), $tmp_file, $new_file ) );
+							sprintf( esc_html__( "Can't rename downloaded file: from %s to %s", 'knd' ), $tmp_file, $new_file ) );
 					}
 		
 		$tmp_file = $new_file;
@@ -169,7 +169,7 @@ class TST_Import {
 		if ( $attachment_id ) {
 			update_post_meta( $attachment_id, 'old_url', $url );
 		} else {
-			throw new Exception( sprintf( __( "File wasn't uploaded: %s", 'knd' ), $tmp_file ) );
+			throw new Exception( sprintf( esc_html__( "File wasn't uploaded: %s", 'knd' ), $tmp_file ) );
 		}
 		
 		return $attachment_id;

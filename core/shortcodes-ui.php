@@ -22,18 +22,18 @@ function knd_add_shortcodes_ui() {
 	shortcode_ui_register_for_shortcode( 
 		'knd_key_phrase', 
 		array( 
-			'label' => __( 'Key phrase', 'knd' ),  // Shortcode label in the UI. Required
+			'label' => esc_html__( 'Key phrase', 'knd' ),  // Shortcode label in the UI. Required
 			'listItemImage' => 'dashicons-editor-aligncenter',  // Dashicon class or full <img> HTML
 			                                                   // 'post_type' => array('post'), // Limit this shortcode UI
 			                                                   // to specific posts. Optional
 			
 			'inner_content' => array( // A UI for the "inner content" of the shortcode. Optional
-'label' => __( 'Phrase text', 'knd' ) ), 
+'label' => esc_html__( 'Phrase text', 'knd' ) ),
 			// 'description' => __('A text of the quote.', 'knd'),
 			
 			'attrs' => array(  // Define & bind the UI for shortcode attributes. Optional
 				array( 
-					'label' => __( 'Subtitle', 'knd' ), 
+					'label' => esc_html__( 'Subtitle', 'knd' ),
 					'attr' => 'subtitle', 
 					'type' => 'text', 
 					'encode' => false, 
@@ -42,26 +42,26 @@ function knd_add_shortcodes_ui() {
 	shortcode_ui_register_for_shortcode( 
 		'knd_image_section', 
 		array( 
-			'label' => __( 'Image section', 'knd' ),  // Shortcode label in the UI. Required
+			'label' => esc_html__( 'Image section', 'knd' ),  // Shortcode label in the UI. Required
 			'listItemImage' => 'dashicons-format-image',  // Dashicon class or full <img> HTML
 			                                             // 'post_type' => array('post'), // Limit this shortcode UI to
 			                                             // specific posts. Optional
 			
 			'inner_content' => array( // A UI for the "inner content" of the shortcode. Optional
-'label' => __( 'Description', 'knd' ) ), 
+'label' => esc_html__( 'Description', 'knd' ) ),
 			// 'description' => __('A text of the quote.', 'knd'),
 			
 			'attrs' => array(  // Define & bind the UI for shortcode attributes. Optional
-				array( 'label' => __( 'Title', 'knd' ), 'attr' => 'title', 'type' => 'text', 'encode' => false, 'meta' => array() ), 
+				array( 'label' => esc_html__( 'Title', 'knd' ), 'attr' => 'title', 'type' => 'text', 'encode' => false, 'meta' => array() ),
 				array( 
-					'label' => __( 'Image', 'knd' ), 
+					'label' => esc_html__( 'Image', 'knd' ),
 					'attr' => 'img', 
 					'type' => 'attachment', 
 					'libraryType' => array( 'image' ), 
-					'addButton' => __( 'Select image', 'knd' ), 
-					'frameTitle' => __( 'Select section image', 'knd' ) ), 
+					'addButton' => esc_html__( 'Select image', 'knd' ),
+					'frameTitle' => esc_html__( 'Select section image', 'knd' ) ),
 				array( 
-					'label' => __( 'Text placement', 'knd' ), 
+					'label' => esc_html__( 'Text placement', 'knd' ),
 					'attr' => 'text_place', 
 					'type' => 'select', 
 					'options' => array( 
@@ -72,30 +72,30 @@ function knd_add_shortcodes_ui() {
 	shortcode_ui_register_for_shortcode( 
 		'knd_cta_section', 
 		array( 
-			'label' => __( 'CTA block', 'knd' ),  // Shortcode label in the UI. Required
+			'label' => esc_html__( 'CTA block', 'knd' ),  // Shortcode label in the UI. Required
 			'listItemImage' => 'dashicons-controls-volumeoff',  // Dashicon class or full <img> HTML
 			                                                   // 'post_type' => array('post'), // Limit this shortcode UI
 			                                                   // to specific posts. Optional
 			
 			'inner_content' => array( // A UI for the "inner content" of the shortcode. Optional
-'label' => __( 'CTA text', 'knd' ) ), 
+'label' => esc_html__( 'CTA text', 'knd' ) ),
 			// 'description' => __('A text of the quote.', 'knd'),
 			
 			'attrs' => array(  // Define & bind the UI for shortcode attributes. Optional
 				array( 
-					'label' => __( 'Subtitle', 'knd' ), 
+					'label' => esc_html__( 'Subtitle', 'knd' ),
 					'attr' => 'subtitle', 
 					'type' => 'text', 
 					'encode' => false, 
 					'meta' => array() ), 
 				array( 
-					'label' => __( 'Link', 'knd' ), 
+					'label' => esc_html__( 'Link', 'knd' ),
 					'attr' => 'link', 
 					'type' => 'url', 
 					'encode' => false, 
 					'meta' => array() ), 
 				array( 
-					'label' => __( "Button label", 'knd' ), 
+					'label' => esc_html__( "Button label", 'knd' ),
 					'attr' => 'button', 
 					'type' => 'text', 
 					'encode' => false, 
@@ -104,14 +104,14 @@ function knd_add_shortcodes_ui() {
 	shortcode_ui_register_for_shortcode( 
 		'knd_video_caption', 
 		array( 
-			'label' => __( 'Video caption', 'knd' ), 
+			'label' => esc_html__( 'Video caption', 'knd' ),
 			'listItemImage' => 'dashicons-format-video', 
-			'inner_content' => array( 'label' => __( 'A caption text', 'knd' ) ) ) );
+			'inner_content' => array( 'label' => esc_html__( 'A caption text', 'knd' ) ) ) );
 	
 	shortcode_ui_register_for_shortcode( 
 		'knd_people_list', 
 		array( 
-			'label' => __( 'A list of people', 'knd' ),  // Shortcode label in the UI. Required
+			'label' => esc_html__( 'A list of people', 'knd' ),  // Shortcode label in the UI. Required
 			'listItemImage' => 'dashicons-groups',  // Dashicon class or full <img> HTML
 			                                       
 			// 'inner_content' => array( // A UI for the "inner content" of the shortcode. Optional
@@ -121,36 +121,36 @@ function knd_add_shortcodes_ui() {
 			
 			'attrs' => array(  // Define & bind the UI for shortcode attributes. Optional
 				array( 
-					'label' => __( 'List title', 'knd' ), 
+					'label' => esc_html__( 'List title', 'knd' ),
 					'attr' => 'title', 
 					'type' => 'text', 
 					'encode' => false, 
-					'meta' => array( 'placeholder' => __( 'E.g., "Our team"', 'knd' ) ) ), 
-				array( 'label' => __( 'Nubmer', 'knd' ), 'attr' => 'num', 'type' => 'text', 'encode' => false ), 
+					'meta' => array( 'placeholder' => esc_html__( 'E.g., "Our team"', 'knd' ) ) ),
+				array( 'label' => esc_html__( 'Nubmer', 'knd' ), 'attr' => 'num', 'type' => 'text', 'encode' => false ),
 				array( 
-					'label' => __( 'Person categories', 'knd' ), 
+					'label' => esc_html__( 'Person categories', 'knd' ),
 					'attr' => 'category', 
 					'type' => 'term_select', 
 					'taxonomy' => 'person_cat', 
 					'multiple' => true ), 
 				array( 
-					'label' => __( 'Only particular people in the list', 'knd' ), 
+					'label' => esc_html__( 'Only particular people in the list', 'knd' ),
 					'attr' => 'ids', 
 					'type' => 'post_select', 
 					'query' => array( 'post_type' => 'person' ), 
 					'multiple' => true ), 
 				array( 
-					'label' => __( 'Custom CSS class', 'knd' ), 
+					'label' => esc_html__( 'Custom CSS class', 'knd' ),
 					'attr' => 'class', 
 					'type' => 'text', 
 					'encode' => false, 
 					'meta' => array( 
-					'placeholder' => __( 'An additional CSS class (or several) for the section', 'knd' ) ) ) ) ) );
+					'placeholder' => esc_html__( 'An additional CSS class (or several) for the section', 'knd' ) ) ) ) ) );
 	
 	shortcode_ui_register_for_shortcode( 
 		'knd_orgs_list', 
 		array( 
-			'label' => __( 'A list of organizations', 'knd' ),  // Shortcode label in the UI. Required
+			'label' => esc_html__( 'A list of organizations', 'knd' ),  // Shortcode label in the UI. Required
 			'listItemImage' => 'dashicons-networking',  // Dashicon class or full <img> HTML
 			                                           
 			// 'inner_content' => array( // A UI for the "inner content" of the shortcode. Optional
@@ -160,28 +160,28 @@ function knd_add_shortcodes_ui() {
 			
 			'attrs' => array(  // Define & bind the UI for shortcode attributes. Optional
 				array( 
-					'label' => __( 'List title', 'knd' ), 
+					'label' => esc_html__( 'List title', 'knd' ),
 					'attr' => 'title', 
 					'type' => 'text', 
 					'encode' => false, 
-					'meta' => array( 'placeholder' => __( 'E.g., "Our partners"', 'knd' ) ) ), 
+					'meta' => array( 'placeholder' => esc_html__( 'E.g., "Our partners"', 'knd' ) ) ),
 				array( 
-					'label' => __( 'Organization categories', 'knd' ), 
+					'label' => esc_html__( 'Organization categories', 'knd' ),
 					'attr' => 'org-categories', 
 					'type' => 'term_select', 
 					'taxonomy' => 'org_cat', 
 					'multiple' => true ), 
 				array( 
-					'label' => __( 'Only particular organizations in the list', 'knd' ), 
+					'label' => esc_html__( 'Only particular organizations in the list', 'knd' ),
 					'attr' => 'persons', 
 					'type' => 'post_select', 
 					'query' => array( 'post_type' => 'person' ), 
 					'multiple' => true ), 
 				array( 
-					'label' => __( 'Section CSS class', 'knd' ), 
+					'label' => esc_html__( 'Section CSS class', 'knd' ),
 					'attr' => 'class', 
 					'type' => 'text', 
 					'encode' => false, 
 					'meta' => array( 
-					'placeholder' => __( 'An additional CSS class (or several) for the section', 'knd' ) ) ) ) ) );
+					'placeholder' => esc_html__( 'An additional CSS class (or several) for the section', 'knd' ) ) ) ) ) );
 }
