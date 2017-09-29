@@ -7,7 +7,7 @@ if ( ! defined( 'WPINC' ) )
 function knd_post_card( WP_Post $cpost ) {
 	$pl = get_permalink( $cpost );
 	?>
-<article class="flex-cell flex-md-6 flex-lg-4 tpl-post card">
+<article <?php post_class('flex-cell flex-md-6 flex-lg-4 tpl-post card');?>>
     <a href="<?php echo $pl; ?>" class="thumbnail-link">
         <div class="entry-preview"><?php echo knd_post_thumbnail($cpost->ID, 'post-thumbnail');?></div>
         <div class="entry-data">
@@ -21,9 +21,9 @@ function knd_post_card( WP_Post $cpost ) {
 }
 
 function knd_related_post_card( WP_Post $cpost ) {
-	$pl = get_permalink( $cpost );
-	?>
-<article class="flex-cell flex-md-6 tpl-related-post card">
+	$pl = get_permalink( $cpost );?>
+
+<article <?php post_class('flex-cell flex-md-6 tpl-related-post card');?>>
     <a href="<?php echo $pl; ?>" class="entry-link">
         <div class="entry-preview"><?php echo knd_post_thumbnail($cpost->ID, 'post-thumbnail');?></div>
         <div class="entry-data">
@@ -47,9 +47,9 @@ function knd_related_post_link( WP_Post $cpost ) {
 
 /** Projects */
 function knd_project_card( WP_Post $cpost ) {
-	$pl = get_permalink( $cpost );
-	?>
-<article class="flex-cell flex-md-4 tpl-project card">
+	$pl = get_permalink( $cpost );?>
+
+<article <?php post_class('flex-cell flex-md-4 tpl-project card');?>>
     <a href="<?php echo $pl; ?>" class="entry-link">
         <div class="entry-preview"><?php echo knd_post_thumbnail($cpost->ID, 'post-thumbnail');?></div>
         <h4 class="entry-title">
@@ -63,7 +63,7 @@ function knd_project_card( WP_Post $cpost ) {
 /* Orgs */
 function knd_org_card( WP_Post $cpost ) {
 	?>
-<article class="tpl-org logo">
+<article <?php post_class('tpl-org logo');?>>
     <a href="<?php echo esc_url($cpost->post_excerpt);?>"
         class="logo-link logo-frame" target="_blank"
         title="<?php echo esc_attr($cpost->post_title);?>"> <span><?php echo get_the_post_thumbnail($cpost, 'post-thumbnail');?></span>

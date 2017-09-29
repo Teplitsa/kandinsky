@@ -52,19 +52,19 @@ class KND_Team_Widget extends WP_Widget {
 
 	?>
 		<p>
-			<label for="<?php echo $this->get_field_id('title');?>">Заголовок:</label>
+			<label for="<?php echo $this->get_field_id('title');?>"><?php esc_html_e('Title', 'knd' ); ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title');?>" type="text" value="<?php echo esc_attr($instance['title']);?>">
 		</p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id('num');?>">Кол.-во:</label>
+			<label for="<?php echo $this->get_field_id('num');?>"><?php esc_html_e('Number of persons to output', 'knd'); ?></label>
 			<input id="<?php echo $this->get_field_id('num'); ?>" name="<?php echo $this->get_field_name('num');?>" type="text" value="<?php echo intval($instance['num']);?>">
 		</p>
         <?php if(!is_wp_error($cats) && !empty($cats)) { ?>
         <p>
-            <label for="<?php echo $this->get_field_id('slug');?>">Категория:</label>
+            <label for="<?php echo $this->get_field_id('slug');?>"><?php esc_html_e('Category', 'knd');?></label>
             <select id="<?php echo $this->get_field_id('slug');?>" name="<?php echo $this->get_field_name('slug');?>">
-                <option value="0">Выберите категорию</option>
+                <option value="0"><?php esc_html_e('Select a category', 'knd'); ?></option>
                 <?php foreach ($cats as $cat) { ?>
                 <option value="<?php echo esc_attr($cat->slug);?>"<?php selected(trim($cat->slug), trim($instance['slug']));?>><?php echo esc_attr($cat->name);?></option>
                 <?php } ?>

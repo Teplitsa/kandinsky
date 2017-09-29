@@ -18,7 +18,7 @@ get_header();
 <header class="page-header">
     <div class="container">
     	<div class="text-column">
-    		<h1 class="page-title"><?php _e('Search', 'knd');?></h1>
+    		<h1 class="page-title"><?php esc_html_e('Search', 'knd');?></h1>
         
     	</div>
     	

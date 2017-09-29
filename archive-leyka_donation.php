@@ -17,7 +17,7 @@ get_header();
 	<div class="container-text">
 		<?php knd_section_title(); ?>
 		<?php if($campaign){ ?>
-		<h4><?php _e('Campaign', 'knd');?>: <a href="<?php echo get_permalink($campaign);?>"><?php echo get_the_title($campaign);?></a></h4>
+		<h4><?php esc_html_e('Campaign', 'knd');?>: <a href="<?php echo get_permalink($campaign);?>"><?php echo get_the_title($campaign);?></a></h4>
 		<?php } ?>
 	</div>
 </header>
@@ -35,7 +35,7 @@ get_header();
 			
 			$meta = array();
 			$name = $donation->donor_name;
-			$name = (!empty($name)) ? $name : __('Anonymous', 'leyka');				
+			$name = (!empty($name)) ? $name : __('Anonymous', 'knd');				
 			$meta[] = '<span>'.$name.'</span>';
 			
 			$meta[] = '<time>'.$donation->date_funded.'</time>';
@@ -45,7 +45,6 @@ get_header();
 	}
 	else {
 		echo "<p>";
-		_e();
 		echo "</p>";
 	}
 ?>

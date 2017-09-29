@@ -57,15 +57,15 @@ function knd_amount_field($form){
 		<div class="<?php echo $currency;?> amount-variants-container" <?php echo $currency == $current_curr ? '' : 'style="display:none;"';?> >
 			<div class="amount-variants-row">
 				<?php foreach($variants as $i => $amount) { ?>
-					<label class="figure rdc-radio" title="<?php _e('Please, specify your donation amount', 'leyka');?>">
+					<label class="figure rdc-radio" title="<?php esc_attr_e( 'Please, specify your donation amount', 'knd' );?>">
 						<input type="radio" value="<?php echo (int)$amount;?>" name="leyka_donation_amount" class="rdc-radio__button" <?php checked($i, 0);?> <?php echo $currency == $current_curr ? '' : 'disabled="disabled"';?>>
 						<span class="rdc-radio__label"><?php echo (int)$amount;?></span>
 					</label>
 				<?php } ?>
 				
 				<label class="figure-flex">
-					<span class="figure-sep"><?php _e('or', 'knd');?></span>
-					<input type="text" title="<?php echo __('Specify the amount of your donation', 'leyka');?>" name="leyka_donation_amount" class="donate_amount_flex" value="<?php echo esc_attr($supported_curr[$current_curr]['amount_settings']['flexible']);?>" <?php echo $currency == $current_curr ? '' : 'disabled="disabled"';?> maxlength="6" size="6">
+					<span class="figure-sep"><?php esc_html_e('or', 'knd');?></span>
+					<input type="text" title="<?php esc_attr_e( 'Specify the amount of your donation', 'knd' );?>" name="leyka_donation_amount" class="donate_amount_flex" value="<?php echo esc_attr($supported_curr[$current_curr]['amount_settings']['flexible']);?>" <?php echo $currency == $current_curr ? '' : 'disabled="disabled"';?> maxlength="6" size="6">
 				</label>
 			</div>
 		</div>	
@@ -117,7 +117,7 @@ $campaign_age = get_post_meta($campaign->ID, 'campaign_age', true);
 $is_finished = get_post_meta($campaign->ID, 'is_finished', true);
 
 ?>
-<article class="tpl-post card flex-cell flex-md-6">
+<article <?php post_class('tpl-post card flex-cell flex-md-6'); ?>>
     <div class="<?php echo esc_attr($css_class);?>">
         <?php if(has_post_thumbnail($campaign->ID)) {?>
             <div class="lk-thumbnail">
@@ -125,7 +125,7 @@ $is_finished = get_post_meta($campaign->ID, 'is_finished', true);
                     <?php echo get_the_post_thumbnail(
                         $campaign->ID,
                         $thumbnail_size,
-                        array('alt' => esc_attr(sprintf(__('Thumbnail for - %s', 'leyka'), $campaign->post_title)),)
+                        array('alt' => esc_attr(sprintf(__('Thumbnail for - %s', 'knd'), $campaign->post_title)),)
                     );?>
                 </a>
             </div>
@@ -164,13 +164,13 @@ $is_finished = get_post_meta($campaign->ID, 'is_finished', true);
             <div class="flex-row leyka-scale-label">
             
                 <div class="flex-cell flex-sm-6">
-                    <div class="caption"><?php _e("Collected", 'knd')?></div>
+                    <div class="caption"><?php esc_html_e('Collected', 'knd')?></div>
                     <div class="sum"><?php echo $collected_f?> <?php echo $curr_label?></div>
                 </div>
                 
                 <?php if(!$is_finished):?>
                 <div class="flex-cell flex-sm-6 knd-campaign-needed">
-                    <div class="caption"><?php _e("Needed", 'knd')?></div>
+                    <div class="caption"><?php esc_html_e('Needed', 'knd')?></div>
                     <div class="sum"><?php echo $target_f?> <?php echo $curr_label?></div>
                 </div>
                 <?php endif?>

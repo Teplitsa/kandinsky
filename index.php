@@ -15,7 +15,7 @@ get_header();
 
 <?php if(empty($posts)) { ?>
     <div class="main-content listing-bg"><div class="container">
-        <div class="empty-message"><?php _e('Unfortunately, nothing found', 'knd');?></div>
+        <div class="empty-message"><?php esc_html_e('Unfortunately, nothing found', 'knd');?></div>
     </div></div>
 
 <?php  } else { ?>

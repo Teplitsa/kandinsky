@@ -44,33 +44,17 @@ class KND_Org_Widget extends WP_Widget {
 		$instance = wp_parse_args((array)$instance, array('title' => '', 'num' => 4, 'category' => '',));?>
 
 		<p>
-			<label for="<?php echo $this->get_field_id('title');?>"><?php _e('Title:', 'knd');?></label>
+			<label for="<?php echo $this->get_field_id('title');?>"><?php esc_html_e('Title:', 'knd');?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id('title');?>" name="<?php echo $this->get_field_name('title');?>" type="text" value="<?php echo esc_attr($instance['title']);?>">
 		</p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id('num');?>"><?php _e('Number:', 'knd');?></label>
+			<label for="<?php echo $this->get_field_id('num');?>"><?php esc_html_e('Number:', 'knd');?></label>
 			<input id="<?php echo $this->get_field_id('num');?>" name="<?php echo $this->get_field_name('num');?>" type="text" value="<?php echo intval($instance['num']);?>">
 		</p>
 
-        <?php 
-        
+        <?php
         return;
-        
-        $org_cats = get_terms(array('taxonomy' => 'org_cat', 'hide_empty' => false,));?>
-        <p>
-            <label for="<?php echo $this->get_field_id('category');?>"><?php _e('Category:', 'knd');?></label>
-            <select id="<?php echo $this->get_field_id('category');?>" name="<?php echo $this->get_field_name('category');?>" <?php echo !count($org_cats) ? 'disabled="disabled"' : '';?>>
-                <option value=""><?php _e('All categories', 'knd');?></option>
-            <?php foreach($org_cats as $cat) {?>
-                <option value="<?php echo $cat->slug;?>" <?php echo $cat->slug == $instance['category'] ? 'selected="selected"' : '';?>>
-                    <?php echo $cat->name;?>
-                </option>
-            <?php }?>
-            </select>
-        </p>
-
-	<?php
 	}
 
     public function get_orgs($num, $category = '') {
@@ -122,7 +106,7 @@ class KND_Org_Widget extends WP_Widget {
             </div>
             
         </div>
-    </div>
+    </section>
 
 <?php 
 	}

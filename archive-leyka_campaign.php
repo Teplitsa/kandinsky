@@ -24,7 +24,7 @@ get_header();
         ?>
     </div>
     <?php } else { ?>
-        <div class="empty-message"><?php _e('Unfortunately, nothing found', 'knd');?></div>
+        <div class="empty-message"><?php esc_html_e('Unfortunately, nothing found', 'knd');?></div>
     <?php } ?>
 </div>
 

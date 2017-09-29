@@ -20,8 +20,8 @@ class KND_Cta_Widget extends WP_Widget {
 	public function form( $instance ) {
 		?>
 <p>
-    <?php _e( 'You can change CTA text and link in ', 'knd' ); ?>
-    <a href="<?php echo admin_url('/customize.php?autofocus%5Bsection%5D=knd_cta_block_settings')?>"><?php _e( 'Appearence / Customize / CTA block settings', 'knd' ); ?></a>
+    <?php esc_html_e( 'You can change CTA text and link in ', 'knd' ); ?>
+    <a href="<?php echo admin_url('/customize.php?autofocus%5Bsection%5D=knd_cta_block_settings')?>"><?php esc_html_e( 'Appearence / Customize / CTA block settings', 'knd' ); ?></a>
 </p>
         <?php 
 		

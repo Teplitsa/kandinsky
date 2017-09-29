@@ -365,7 +365,7 @@ function knd_related_project( WP_Post $cpost ) {
 	$ex = apply_filters( 'knd_the_title', knd_get_post_excerpt( $cpost, 25, true ) );
 	?>
 <div class="related-widget widget">
-    <h3 class="widget-title"><?php _e('Related project', 'knd');?></h3>
+    <h3 class="widget-title"><?php esc_html_e('Related project', 'knd');?></h3>
     <a href="<?php echo $pl;?>" class="entry-link">
         <div class="rw-preview">
 			<?php echo knd_post_thumbnail($cpost->ID, 'post-thumbnail');?>

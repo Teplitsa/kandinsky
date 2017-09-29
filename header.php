@@ -15,7 +15,7 @@
 
 <body id="top" <?php body_class(); ?>>
 <?php include_once(get_template_directory()."/assets/svg/svg.svg"); //all svgs ?>
-<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'knd' ); ?></a>
+<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'knd' ); ?></a>
 
 <header id="site_header" class="site-header">
 	

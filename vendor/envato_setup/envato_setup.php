@@ -303,73 +303,52 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 
         }
 
-        /**
-         * Add admin menus/screens.
-         */
-//		public function admin_menus() {
-//
-//			if ( $this->is_submenu_page() ) {
-//				//prevent Theme Check warning about "themes should use add_theme_page for adding admin pages"
-//				$add_subpage_function = 'add_submenu' . '_page';
-//				$add_subpage_function( $this->parent_slug, esc_html__( 'Setup Wizard' ), esc_html__( 'Setup Wizard' ), 'manage_options', $this->page_slug, array(
-//					$this,
-//					'setup_wizard',
-//				) );
-//			} else {
-//				add_theme_page( esc_html__( 'Setup Wizard' ), esc_html__( 'Setup Wizard' ), 'manage_options', $this->page_slug, array(
-//					$this,
-//					'setup_wizard',
-//				) );
-//			}
-//
-//		}
-
         /** Wizard steps. */
         public function init_wizard_steps() {
 
             $this->steps = array(
                 'introduction' => array(
-                    'name' => esc_html__('Introduction', 'knd'),
+                    'name' => esc_attr__('Introduction', 'knd'),
                     'view' => array($this, 'step_intro_view'),
                     'handler' => '',
                 ),
             );
             $this->steps['scenario'] = array(
-                'name' => esc_html__('Template', 'knd'),
+                'name' => esc_attr__('Template', 'knd'),
                 'view' => array($this, 'step_scenario_view'),
                 'handler' => array($this, 'step_scenario_handler'),
             );
             $this->steps['default_content'] = array(
-                'name' => esc_html__('Content', 'knd'),
+                'name' => esc_attr__('Content', 'knd'),
                 'view' => array($this, 'step_content_view'),
                 'handler' => '',
             );
             $this->steps['design'] = array(
-                'name' => esc_html__('Logo'),
+                'name' => esc_attr__('Logo', 'knd'),
                 'view' => array($this, 'step_logo_design_view'),
                 'handler' => array($this, 'step_logo_design_handler'),
             );
             $this->steps['settings'] = array(
-                'name' => esc_html__('Settings'),
+                'name' => esc_attr__('Settings', 'knd'),
                 'view' => array($this, 'step_settings_view'),
                 'handler' => array($this, 'step_settings_handler'),
             );
             if(class_exists('TGM_Plugin_Activation') && isset($GLOBALS['tgmpa'])) {
                 $this->steps['default_plugins'] = array(
-                    'name' => esc_html__('Plugins'),
+                    'name' => esc_attr__('Plugins', 'knd'),
                     'view' => array($this, 'step_default_plugins_view'),
                     'handler' => '',
                 );
             }
             $this->steps['support'] = array(
-                'name' => _x('Support', 'One word "support service" variant', 'knd'),
+                'name' => esc_attr_x('Support', 'One word "support service" variant', 'knd'),
                 'view' => array($this, 'step_support_view'),
                 'handler' => '', //array($this, 'step_support_handler'),
             );
             $this->steps['next_steps'] = array(
-                'name' => esc_html__('Ready!', 'knd'),
+                'name' => esc_attr__('Ready!', 'knd'),
                 'view' => array($this, 'step_ready_view'),
-                'handler' => '', //array($this, 'step_ready_handler'),
+                'handler' => '',
             );
 
             $this->steps = apply_filters($this->theme_name.'_theme_setup_wizard_steps', $this->steps);
@@ -1075,338 +1054,10 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 
         }
 
-        private function _imported_term_id($original_term_id, $new_term_id = false) {
-
-//			$terms = get_transient( 'importtermids' );
-//			if ( ! is_array( $terms ) ) {
-//				$terms = array();
-//			}
-//			if ( $new_term_id ) {
-//				if ( ! isset( $terms[ $original_term_id ] ) ) {
-//					$this->log( 'Insert old TERM ID ' . $original_term_id . ' as new TERM ID: ' . $new_term_id );
-//				} else if ( $terms[ $original_term_id ] != $new_term_id ) {
-//					$this->error( 'Replacement OLD TERM ID ' . $original_term_id . ' overwritten by new TERM ID: ' . $new_term_id );
-//				}
-//				$terms[ $original_term_id ] = $new_term_id;
-//				set_transient( 'importtermids', $terms, 60 * 60 * 24 );
-//			} else if ( $original_term_id && isset( $terms[ $original_term_id ] ) ) {
-//				return $terms[ $original_term_id ];
-//			}
-
-            return false;
-        }
-
-        public function vc_post($post_id = false) {
-
-            $vc_post_ids = get_transient('import_vc_posts');
-            if( !is_array($vc_post_ids)) {
-                $vc_post_ids = array();
-            }
-            if($post_id) {
-                $vc_post_ids[ $post_id ] = $post_id;
-                set_transient('import_vc_posts', $vc_post_ids, 60 * 60 * 24);
-            } else {
-
-                $this->log('Processing vc pages 2: ');
-
-                return;
-                if(class_exists('Vc_Manager') && class_exists('Vc_Post_Admin')) {
-                    $this->log($vc_post_ids);
-                    $vc_manager = Vc_Manager::getInstance();
-                    $vc_base = $vc_manager->vc();
-                    $post_admin = new Vc_Post_Admin();
-                    foreach($vc_post_ids as $vc_post_id) {
-                        $this->log('Save '.$vc_post_id);
-                        $vc_base->buildShortcodesCustomCss($vc_post_id);
-                        $post_admin->save($vc_post_id);
-                        $post_admin->setSettings($vc_post_id);
-                        //twice? bug?
-                        $vc_base->buildShortcodesCustomCss($vc_post_id);
-                        $post_admin->save($vc_post_id);
-                        $post_admin->setSettings($vc_post_id);
-                    }
-                }
-            }
-
-        }
-
-        public function elementor_post($post_id = false) {
-
-            // regenrate the CSS for this Elementor post
-            if(class_exists('Elementor\Post_CSS_File')) {
-                $post_css = new Elementor\Post_CSS_File($post_id);
-                $post_css->update();
-            }
-
-        }
-
-        private function _imported_post_id($original_id = false, $new_id = false) {
-
-            if(is_array($original_id) || is_object($original_id)) {
-                return false;
-            }
-            $post_ids = get_transient('importpostids');
-            if( !is_array($post_ids)) {
-                $post_ids = array();
-            }
-            if($new_id) {
-                if( !isset($post_ids[ $original_id ])) {
-                    $this->log('Insert old ID '.$original_id.' as new ID: '.$new_id);
-                } else if($post_ids[ $original_id ] != $new_id) {
-                    $this->error('Replacement OLD ID '.$original_id.' overwritten by new ID: '.$new_id);
-                }
-                $post_ids[ $original_id ] = $new_id;
-                set_transient('importpostids', $post_ids, 60 * 60 * 24);
-            } else if($original_id && isset($post_ids[ $original_id ])) {
-                return $post_ids[ $original_id ];
-            } else if($original_id === false) {
-                return $post_ids;
-            }
-
-            return false;
-        }
-
-        private function _post_orphans($original_id = false, $missing_parent_id = false) {
-
-            $post_ids = get_transient('postorphans');
-            if( !is_array($post_ids)) {
-                $post_ids = array();
-            }
-            if($missing_parent_id) {
-                $post_ids[ $original_id ] = $missing_parent_id;
-                set_transient('postorphans', $post_ids, 60 * 60 * 24);
-            } else if($original_id && isset($post_ids[ $original_id ])) {
-                return $post_ids[ $original_id ];
-            } else if($original_id === false) {
-                return $post_ids;
-            }
-
-            return false;
-        }
-
-        private function _cleanup_imported_ids() {
-            // loop over all attachments and assign the correct post ids to those attachments.
-
-        }
-
-        private $delay_posts = array();
-
-        private function _delay_post_process($post_type, $post_data) {
-
-            if( !isset($this->delay_posts[ $post_type ])) {
-                $this->delay_posts[ $post_type ] = array();
-            }
-            $this->delay_posts[ $post_type ][ $post_data['post_id'] ] = $post_data;
-
-        }
-
         // return the difference in length between two strings
         public function cmpr_strlen($a, $b) {
 
             return strlen($b) - strlen($a);
-        }
-
-        private function _parse_gallery_shortcode_content($content) {
-
-            // we have to format the post content. rewriting images and gallery stuff
-            $replace = $this->_imported_post_id();
-            $urls_replace = array();
-            foreach($replace as $key => $val) {
-                if($key && $val && !is_numeric($key) && !is_numeric($val)) {
-                    $urls_replace[ $key ] = $val;
-                }
-            }
-            if($urls_replace) {
-                uksort($urls_replace, array(&$this, 'cmpr_strlen'));
-                foreach($urls_replace as $from_url => $to_url) {
-                    $content = str_replace($from_url, $to_url, $content);
-                }
-            }
-            if(preg_match_all('#\[gallery[^\]]*\]#', $content, $matches)) {
-                foreach($matches[0] as $match_id => $string) {
-                    if(preg_match('#ids="([^"]+)"#', $string, $ids_matches)) {
-                        $ids = explode(',', $ids_matches[1]);
-                        foreach($ids as $key => $val) {
-                            $new_id = $val ? $this->_imported_post_id($val) : false;
-                            if( !$new_id) {
-                                unset($ids[ $key ]);
-                            } else {
-                                $ids[ $key ] = $new_id;
-                            }
-                        }
-                        $new_ids = implode(',', $ids);
-                        $content = str_replace($ids_matches[0], 'ids="'.$new_ids.'"', $content);
-                    }
-                }
-            }
-            // contact form 7 id fixes.
-            if(preg_match_all('#\[contact-form-7[^\]]*\]#', $content, $matches)) {
-                foreach($matches[0] as $match_id => $string) {
-                    if(preg_match('#id="(\d+)"#', $string, $id_match)) {
-                        $new_id = $this->_imported_post_id($id_match[1]);
-                        if($new_id) {
-                            $content = str_replace($id_match[0], 'id="'.$new_id.'"', $content);
-                        } else {
-                            // no imported ID found. remove this entry.
-                            $content = str_replace($matches[0], '(insert contact form here)', $content);
-                        }
-                    }
-                }
-            }
-
-            return $content;
-        }
-
-        private function _handle_delayed_posts($last_delay = false) {
-
-            $this->log(' ---- Processing '.count($this->delay_posts, COUNT_RECURSIVE).' delayed posts');
-            for($x = 1; $x < 4; $x++) {
-                foreach($this->delay_posts as $delayed_post_type => $delayed_post_datas) {
-                    foreach($delayed_post_datas as $delayed_post_id => $delayed_post_data) {
-                        if($this->_imported_post_id($delayed_post_data['post_id'])) {
-                            $this->log($x.' - Successfully processed '.$delayed_post_type.' ID '.$delayed_post_data['post_id'].' previously.');
-                            unset($this->delay_posts[ $delayed_post_type ][ $delayed_post_id ]);
-                            $this->log(' ( '.count($this->delay_posts, COUNT_RECURSIVE).' delayed posts remain ) ');
-                        } else if($this->_process_post_data($delayed_post_type, $delayed_post_data, $last_delay)) {
-                            $this->log($x.' - Successfully found delayed replacement for '.$delayed_post_type.' ID '.$delayed_post_data['post_id'].'.');
-                            // successfully inserted! don't try again.
-                            unset($this->delay_posts[ $delayed_post_type ][ $delayed_post_id ]);
-                            $this->log(' ( '.count($this->delay_posts, COUNT_RECURSIVE).' delayed posts remain ) ');
-                        }
-                    }
-                }
-            }
-        }
-
-        private function _fetch_remote_file($url, $post) {
-
-            // extract the file name and extension from the url
-            $file_name = basename($url);
-            $local_file = trailingslashit(get_template_directory()).'images/stock/'.$file_name;
-            $upload = false;
-            if(is_file($local_file) && filesize($local_file) > 0) {
-                require_once(ABSPATH.'wp-admin/includes/file.php');
-                WP_Filesystem();
-                global $wp_filesystem;
-                $file_data = $wp_filesystem->get_contents($local_file);
-                $upload = wp_upload_bits($file_name, 0, $file_data, $post['upload_date']);
-                if($upload['error']) {
-                    return new WP_Error('upload_dir_error', $upload['error']);
-                }
-            }
-
-            if( !$upload || $upload['error']) {
-                // get placeholder file in the upload dir with a unique, sanitized filename
-                $upload = wp_upload_bits($file_name, 0, '', $post['upload_date']);
-                if($upload['error']) {
-                    return new WP_Error('upload_dir_error', $upload['error']);
-                }
-
-                // fetch the remote url and write it to the placeholder file
-                //$headers = wp_get_http( $url, $upload['file'] );
-
-                $max_size = (int)apply_filters('import_attachment_size_limit', 0);
-
-                // we check if this file is uploaded locally in the source folder.
-                $response = wp_remote_get($url);
-                if(is_array($response) && !empty($response['body']) && $response['response']['code'] == '200') {
-                    require_once(ABSPATH.'wp-admin/includes/file.php');
-                    $headers = $response['headers'];
-                    WP_Filesystem();
-                    global $wp_filesystem;
-                    $wp_filesystem->put_contents($upload['file'], $response['body']);
-                    //
-                } else {
-                    // required to download file failed.
-                    @unlink($upload['file']);
-
-                    return new WP_Error('import_file_error', esc_html__('Remote server did not respond'));
-                }
-
-                $filesize = filesize($upload['file']);
-
-                if(isset($headers['content-length']) && $filesize != $headers['content-length']) {
-                    @unlink($upload['file']);
-
-                    return new WP_Error('import_file_error', esc_html__('Remote file is incorrect size'));
-                }
-
-                if(0 == $filesize) {
-                    @unlink($upload['file']);
-
-                    return new WP_Error('import_file_error', esc_html__('Zero size file downloaded'));
-                }
-
-                if( !empty($max_size) && $filesize > $max_size) {
-                    @unlink($upload['file']);
-
-                    return new WP_Error('import_file_error', sprintf(esc_html__('Remote file is too large, limit is %s'), size_format($max_size)));
-                }
-            }
-
-            // keep track of the old and new urls so we can substitute them later
-            $this->_imported_post_id($url, $upload['url']);
-            $this->_imported_post_id($post['guid'], $upload['url']);
-            // keep track of the destination if the remote url is redirected somewhere else
-            if(isset($headers['x-final-location']) && $headers['x-final-location'] != $url) {
-                $this->_imported_post_id($headers['x-final-location'], $upload['url']);
-            }
-
-            return $upload;
-        }
-
-        private function _content_install_widgets() {
-
-            // todo: pump these out into the 'content/' folder along with the XML so it's a little nicer to play with
-//			$import_widget_positions = $this->_get_json( 'widget_positions.json' );
-//			$import_widget_options   = $this->_get_json( 'widget_options.json' );
-//
-//			// importing.
-//			$widget_positions = get_option( 'sidebars_widgets' );
-//			if ( ! is_array( $widget_positions ) ) {
-//				$widget_positions = array();
-//			}
-//
-//			foreach ( $import_widget_options as $widget_name => $widget_options ) {
-//				// replace certain elements with updated imported entries.
-//				foreach ( $widget_options as $widget_option_id => $widget_option ) {
-//
-//					// replace TERM ids in widget settings.
-//					foreach ( array( 'nav_menu' ) as $key_to_replace ) {
-//						if ( ! empty( $widget_option[ $key_to_replace ] ) ) {
-//							// check if this one has been imported yet.
-//							$new_id = $this->_imported_term_id( $widget_option[ $key_to_replace ] );
-//							if ( ! $new_id ) {
-//								// do we really clear this out? nah. well. maybe.. hmm.
-//							} else {
-//								$widget_options[ $widget_option_id ][ $key_to_replace ] = $new_id;
-//							}
-//						}
-//					}
-//					// replace POST ids in widget settings.
-//					foreach ( array( 'image_id', 'post_id' ) as $key_to_replace ) {
-//						if ( ! empty( $widget_option[ $key_to_replace ] ) ) {
-//							// check if this one has been imported yet.
-//							$new_id = $this->_imported_post_id( $widget_option[ $key_to_replace ] );
-//							if ( ! $new_id ) {
-//								// do we really clear this out? nah. well. maybe.. hmm.
-//							} else {
-//								$widget_options[ $widget_option_id ][ $key_to_replace ] = $new_id;
-//							}
-//						}
-//					}
-//				}
-//				$existing_options = get_option( 'widget_' . $widget_name, array() );
-//				if ( ! is_array( $existing_options ) ) {
-//					$existing_options = array();
-//				}
-//				$new_options = $existing_options + $widget_options;
-//				update_option( 'widget_' . $widget_name, $new_options );
-//			}
-//			update_option( 'sidebars_widgets', array_merge( $widget_positions, $import_widget_positions ) );
-
-            return true;
-
         }
 
         public function _get_json($file) {
@@ -1431,21 +1082,6 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
             }
 
             return array();
-        }
-
-        private function _get_sql($file) {
-
-            if(is_file(__DIR__.'/content/'.basename($file))) {
-                WP_Filesystem();
-                global $wp_filesystem;
-                $file_name = __DIR__.'/content/'.basename($file);
-                if(file_exists($file_name)) {
-                    return $wp_filesystem->get_contents($file_name);
-                }
-            }
-
-            return false;
-
         }
 
         public $logs = array();
@@ -1554,10 +1190,10 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 
         public function step_logo_design_view() { ?>
 
-            <h1><?php esc_html_e('Logo'); ?></h1>
+            <h1><?php esc_html_e( 'Logo', 'knd' ); ?></h1>
             <form method="post">
 
-                <p><?php _e('Please add your organization main logo below. The recommended size is <strong>315 x 66 px</strong> (for "Image only" mode) and <strong>66 x 66 px</strong> (for "Image with site name" mode). The logo can be changed at any time from the Appearance > Customize area in your website dashboard.', 'knd'); ?></p>
+                <p><?php _e( 'Please add your organization main logo below. The recommended size is <strong>315 x 66 px</strong> (for "Image only" mode) and <strong>66 x 66 px</strong> (for "Image with site name" mode). The logo can be changed at any time from the Appearance > Customize area in your website dashboard.', 'knd' ); ?></p>
 
                 <p><?php printf(esc_html__('Try our %sPaseka program%s if you need a new logo designed.', 'knd'), '<a href="https://paseka.te-st.ru/" target="_blank">', '</a>'); ?></p>
                 <table>
@@ -1605,20 +1241,20 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 
         public function step_settings_view() { ?>
 
-            <h1><?php _e('NGO settings', 'knd'); ?></h1>
+            <h1><?php esc_html_e('NGO settings', 'knd'); ?></h1>
 
             <form method="post" class="knd-wizard-step settings-step">
                 <p>
                     <input type="text" name="knd_org_name" id="knd-org-name" value="<?php echo get_option('blogname'); ?>" class="knd-setup-wizard-control">
-                    <label for="knd-org-name"><?php _e('The website title', 'knd'); ?></label>
+                    <label for="knd-org-name"><?php esc_html_e('The website title', 'knd'); ?></label>
                 </p>
 
                 <p>
                     <input type="text" name="knd_org_description" id="knd-org-description" value="<?php echo get_option('blogdescription'); ?>" class="knd-setup-wizard-control">
-                    <label for="knd-org-description"><?php _e('The website description', 'knd'); ?></label>
+                    <label for="knd-org-description"><?php esc_html_e('The website description', 'knd'); ?></label>
                 </p>
 
-                <p><?php _e('Please add your site icon below. The recommended size is <strong>64 x 64 px</strong>. The site icon can be changed at any time from the Appearance > Customize area in your website dashboard.', 'knd'); ?></p>
+                <p><?php _e( 'Please add your site icon below. The recommended size is <strong>64 x 64 px</strong>. The site icon can be changed at any time from the Appearance > Customize area in your website dashboard.', 'knd' ); ?></p>
 
                 <p><?php printf(esc_html__('Try our %sPaseka program%s if you need a new site icon designed.', 'knd'), '<a href="https://paseka.te-st.ru/" target="_blank">', '</a>'); ?></p>
                 <table>
@@ -1694,12 +1330,12 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 
         ?>
 
-            <h1><?php _e('Help and support', 'knd'); ?></h1>
+            <h1><?php esc_html_e('Help and support', 'knd'); ?></h1>
 
             <p>
                 <?php printf(__('Thank you for using “Kandinsky” theme on your website.<br>“Kandinsky” — is a free and open-source project supported by <a href="%s" target="_blank">Teplitsa. Technologies for Social Good</a> together with the community of independent developers.', 'knd'), TST_OFFICIAL_WEBSITE_URL); ?>
             </p>
-            <p><?php _e('In case you encounter any questions or issues, we recommend you the following links:', 'knd'); ?></p>
+            <p><?php esc_html_e('In case you encounter any questions or issues, we recommend you the following links:', 'knd'); ?></p>
             <ul class="knd-wizard-support-variants">
                 <li><?php _e('Documentation and FAQ — <a href="https://github.com/Teplitsa/kandinsky/wiki/" target="_blank">GitHub Wiki</a>', 'knd'); ?></li>
                 <li><?php _e('Source code — <a href="https://github.com/Teplitsa/kandinsky/" target="_blank">GitHub</a>', 'knd'); ?></li>
@@ -1720,85 +1356,33 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 
         ?>
 
-            <h1><?php _e('Yay! Your website is ready!', 'knd'); ?></h1>
+            <h1><?php esc_html_e('Yay! Your website is ready!', 'knd'); ?></h1>
 
-            <p><?php _e('Congratulations! You’re doing really good #success! You’ve successfully installed and set up your Kandinsky theme. You need, however, to do a little bit more.', 'knd'); ?></p>
-            <p><?php _e('As a part of the installation process, we’ve added some test content of an imaginary organization that you will need to edit (we’ve provided the recommendations on how to make great content).', 'knd'); ?></p>
-            <p><?php _e('Moreover, you need to set up few additional plug-ins for the optimal work of your site (don’t worry, our recommendations will help you).', 'knd'); ?></p>
+            <p><?php esc_html_e('Congratulations! You’re doing really good #success! You’ve successfully installed and set up your Kandinsky theme. You need, however, to do a little bit more.', 'knd'); ?></p>
+            <p><?php esc_html_e('As a part of the installation process, we’ve added some test content of an imaginary organization that you will need to edit (we’ve provided the recommendations on how to make great content).', 'knd'); ?></p>
+            <p><?php esc_html_e('Moreover, you need to set up few additional plug-ins for the optimal work of your site (don’t worry, our recommendations will help you).', 'knd'); ?></p>
 
             <div class="envato-setup-next-steps">
                 <div class="envato-setup-next-steps-first">
                     <ul>
                         <li class="setup-product">
                             <a class="button button-primary button-large" href="<?php echo admin_url(); ?>">
-                                <?php _e('Continue the set-up', 'knd'); ?>
+                                <?php esc_html_e('Continue the set-up', 'knd'); ?>
                             </a>
                         </li>
                         <li class="setup-product">
                             <a class="button button-next button-large" href="<?php echo home_url(); ?>">
-                                <?php _e('View your new website!', 'knd'); ?>
+                                <?php esc_html_e('View your new website!', 'knd'); ?>
                             </a>
                         </li>
                     </ul>
                 </div>
                 <div class="envato-setup-next-steps-last">
-                    <img src="https://media.giphy.com/media/XreQmk7ETCak0/giphy.gif" alt="<?php _e('#success', 'knd'); ?>">
+                    <img src="https://media.giphy.com/media/XreQmk7ETCak0/giphy.gif" alt="<?php esc_attr_e('#success', 'knd'); ?>">
                 </div>
             </div>
             <?php
         }
-
-        /*public function ajax_notice_handler() {
-            check_ajax_referer( 'dtnwp-ajax-nonce', 'security' );
-        }
-
-        public function admin_theme_auth_notice() {
-
-
-            if(function_exists('envato_market')) {
-                $option = envato_market()->get_options();
-
-                $envato_items = get_option( 'envato_setup_wizard', array() );
-
-                if ( !$option || empty($option['oauth']) || empty( $option['oauth'][ $this->envato_username ] ) || empty($envato_items) || empty($envato_items['items']) || !envato_market()->items()->themes( 'purchased' )) {
-
-                    // we show an admin notice if it hasn't been dismissed
-                    $dissmissed_time = get_option('dtbwp_update_notice', false );
-
-                    if ( ! $dissmissed_time || $dissmissed_time < strtotime('-7 days') ) {
-                        // Added the class "notice-my-class" so jQuery pick it up and pass via AJAX,
-                        // and added "data-notice" attribute in order to track multiple / different notices
-                        // multiple dismissible notice states ?>
-                        <div class="notice notice-warning notice-dtbwp-themeupdates is-dismissible">
-                            <p><?php
-                            _e( 'Please activate ThemeForest updates to ensure you have the latest version of this theme.' );
-                                ?></p>
-                            <p>
-                            <?php printf( __( '<a class="button button-primary" href="%s">Activate Updates</a>' ),  esc_url($this->get_oauth_login_url( admin_url( 'admin.php?page=' . envato_market()->get_slug() . '' ) ) ) ); ?>
-                            </p>
-                        </div>
-                        <script type="text/javascript">
-                            jQuery(function($) {
-                                $( document ).on( 'click', '.notice-dtbwp-themeupdates .notice-dismiss', function () {
-                                    $.ajax( ajaxurl,
-                                        {
-                                            type: 'POST',
-                                            data: {
-                                                action: 'dtbwp_update_notice_handler',
-                                                security: '<?php echo wp_create_nonce( "dtnwp-ajax-nonce" ); ?>'
-                                            }
-                                        } );
-                                } );
-                            });
-                        </script>
-                    <?php }
-
-                }
-            }
-
-
-
-        }*/
 
         public static function cleanFilePath($path) {
 

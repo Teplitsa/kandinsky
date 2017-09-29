@@ -255,7 +255,7 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 			'capability' => 'edit_theme_options', 
 			'theme_supports' => '', 
 			'title' => esc_html__( 'Homepage settings', 'knd' ), 
-			'description' => esc_html__( 'Homepage settings and blocks' ) ) );
+			'description' => esc_html__( 'Homepage settings and blocks', 'knd' ) ) );
 	
 	$wp_customize->add_section( 
 		'knd_homepage_hero', 

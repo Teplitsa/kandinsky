@@ -28,9 +28,8 @@ function knd_facebook_author_tag() {
 
 /** Default author avatar **/
 function knd_get_default_author_avatar() {
-	$alt = esc_html__( 'Author', 'tst' );
-	$img = '';
-	
+	$alt = esc_attr__( 'Author', 'knd' );
+
 	$def_img_id = attachment_url_to_postid( get_theme_mod( 'default_avatar' ) );
 	if ( ! empty( $def_img_id ) ) {
 		$img = wp_get_attachment_image( $def_img_id, 'thumbnail', array( 'alt' => $alt ) );

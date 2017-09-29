@@ -21,11 +21,11 @@ get_header();
         <div class="entry-meta">
         <?php if($is_finished) { ?>
             <a href="<?php echo site_url('/campaign/completed/'); ?>" class="entry-link">
-                <?php _e('They alredy got help', 'knd') ?>
+                <?php esc_html_e('They alredy got help', 'knd'); ?>
             </a> 
         <?php } else { ?>
             <a href="<?php echo site_url('/campaign/active/'); ?>" class="entry-link">
-                <?php _e('They need help', 'knd') ?>
+                <?php esc_html_e('They need help', 'knd'); ?>
             </a> 
         <?php } ?>
         </div>
@@ -40,8 +40,8 @@ get_header();
 
     
         <div class="related-campaigns">
-            <a href="<?php echo site_url('/campaign/active/'); ?>" class="entry-link"><?php _e('They need help', 'knd') ?></a> 
-            <a href="<?php echo site_url('/campaign/completed/'); ?>" class="entry-link"><?php _e('They alredy got help', 'knd') ?></a> 
+            <a href="<?php echo site_url('/campaign/active/'); ?>" class="entry-link"><?php esc_html_e('They need help', 'knd') ?></a> 
+            <a href="<?php echo site_url('/campaign/completed/'); ?>" class="entry-link"><?php esc_html_e('They alredy got help', 'knd') ?></a> 
         </div>
     
 	</main>

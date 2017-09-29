@@ -67,11 +67,11 @@ class KND_Ourorg_Widget extends WP_Widget {
             );
 ?>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
-			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ); ?>"/>
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php esc_html_e( 'Title:', 'knd' ); ?></label>
+			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ); ?>">
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'text' ); ?>"><?php _e( 'Content:' ); ?></label>
+			<label for="<?php echo $this->get_field_id( 'text' ); ?>"><?php esc_html_e( 'Content:', 'knd' ); ?></label>
 			<textarea class="widefat" rows="16" cols="20" id="<?php echo $this->get_field_id( 'text' ); ?>" name="<?php echo $this->get_field_name( 'text' ); ?>"><?php echo esc_textarea( $instance['text'] ); ?></textarea>
 		</p>
 <?php
@@ -85,7 +85,7 @@ class KND_Ourorg_Widget extends WP_Widget {
         if ( current_user_can( 'unfiltered_html' ) ) {
             $instance['text'] = $new_instance['text'];
         } else {
-            $instance['text'] = $new_instance['text'];#wp_kses_post( $new_instance['text'] );
+            $instance['text'] = $new_instance['text'];
         }
         
         return $instance;
