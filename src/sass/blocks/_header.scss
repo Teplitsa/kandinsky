@@ -220,9 +220,13 @@ h2.logo-name {
 .site-details {
 	text-align: right;		
 	p {		
-		color: $color-text-contrast;
+		color: $color-text;
 		@include knd-nav-text();
 		margin: 0;
+		
+		body.plot-public-campaign & {
+		  color: $color-text-contrast;
+		}
 		
 		a {
 			color: inherit;

@@ -171,8 +171,10 @@ body:not(#tinymce) ::selection {
 	ol ul,
 	ol ol {
 	   margin-bottom: 0;
+	   
+	   &:first-child { margin-top: $inpage-margin-base/2;  }
 	}
-
+	
 	li {
 		margin-bottom: $inpage-margin-base/2;
 		&:last-child { margin-bottom: 0; }
