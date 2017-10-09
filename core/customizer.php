@@ -48,6 +48,11 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 				'settings' => 'knd_important_links' ) ) );
 	// Theme Important Links Ended
 	
+	// titles and captions
+	$wp_customize->add_section(
+		'knd_titles_and_captions',
+		array( 'priority' => 160, 'title' => esc_html__( 'Titles and captions', 'knd' ) ) );
+	
 	// Common settings
 	$wp_customize->add_setting( 'text_in_header', array( 'default' => '' ) );
 	

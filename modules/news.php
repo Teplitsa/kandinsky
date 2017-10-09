@@ -101,3 +101,20 @@ function knd_news_widgets() {
 	register_widget('KND_News_Widget');
     
 }
+
+add_action( 'customize_register', 'knd_news_customize_register', 20 ); // 20 is important, must be more then priority in customizer.php
+function knd_news_customize_register( WP_Customize_Manager $wp_customize ) {
+	
+	$wp_customize->add_setting(
+		'knd_news_archive_title',
+		array( 'default' => esc_html__('News', 'knd') ) );
+	
+	$wp_customize->add_control(
+		'knd_news_archive_title',
+		array(
+			'label' => esc_html__('News archive title', 'knd'),
+			'type' => 'text',
+			'priority' => 10,
+			'section' => 'knd_titles_and_captions' ) );
+	
+}

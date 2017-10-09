@@ -228,20 +228,32 @@ function knd_section_title() {
 		$title = single_term_title( '', false );
 		$css = 'archive';
 	} elseif ( is_home() ) {
-		$p = get_post( get_option( 'page_for_posts' ) );
-		$title = get_the_title( $p );
+		$title = get_theme_mod( 'knd_news_archive_title' );
+		if($title === false) {
+			$p = get_post( get_option( 'page_for_posts' ) );
+			$title = get_the_title( $p );
+		}
 		$css = 'archive';
 	} elseif ( is_post_type_archive( 'leyka_donation' ) ) {
 		$title = esc_html__( 'Donations history', 'knd' );
 		$css = 'archive';
 	} elseif ( is_post_type_archive( 'project' ) ) {
-		$title = esc_html__( 'Our projects', 'knd' );
+		$title = get_theme_mod( 'knd_projects_archive_title' );
+		if($title === false) {
+			$title = esc_html__( 'Our projects', 'knd' );
+		}
 		$css = 'archive';
 	} elseif ( is_post_type_archive( 'leyka_campaign' ) ) {
 		if ( isset( $wp_query->query_vars['completed'] ) && $wp_query->query_vars['completed'] == 'true' ) {
-			$title = esc_html__( 'They alredy got help', 'knd' );
+			$title = get_theme_mod( 'knd_completed_campaigns_archive_title' );
+			if($title === false) {
+				$title = esc_html__( 'They alredy got help', 'knd' );
+			}
 		} else {
-			$title = esc_html__( 'They need help', 'knd' );
+			$title = get_theme_mod( 'knd_active_campaigns_archive_title' );
+			if($title === false) {
+				$title = esc_html__( 'They need help', 'knd' );
+			}
 		}
 		$css = 'archive';
 	} elseif ( is_search() ) {

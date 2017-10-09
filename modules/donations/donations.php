@@ -354,3 +354,31 @@ function knd_leyka_save_kid_age_metabox( $post_id, $post ) {
 	
 }
 add_action( 'save_post', 'knd_leyka_save_kid_age_metabox', 10, 2 );
+
+add_action( 'customize_register', 'knd_donations_customize_register', 20 ); // 20 is important, must be more then priority in customizer.php
+function knd_donations_customize_register( WP_Customize_Manager $wp_customize ) {
+
+	$wp_customize->add_setting(
+		'knd_active_campaigns_archive_title',
+		array( 'default' => esc_html__( 'They need help', 'knd' ) ) );
+
+	$wp_customize->add_control(
+		'knd_active_campaigns_archive_title',
+		array(
+			'label' => esc_html__('Active campaigns archive title', 'knd'),
+			'type' => 'text',
+			'priority' => 30,
+			'section' => 'knd_titles_and_captions' ) );
+
+	$wp_customize->add_setting(
+		'knd_completed_campaigns_archive_title',
+		array( 'default' => esc_html__( 'They alredy got help', 'knd' ) ) );
+	
+	$wp_customize->add_control(
+		'knd_completed_campaigns_archive_title',
+		array(
+			'label' => esc_html__('Completed campaigns archive title', 'knd'),
+			'type' => 'text',
+			'priority' => 40,
+			'section' => 'knd_titles_and_captions' ) );
+}
