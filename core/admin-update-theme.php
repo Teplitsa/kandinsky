@@ -187,8 +187,8 @@ function knd_download_theme_archive() {
 	}
 	else {
 		try {
-// 			$wp_filesystem->delete(get_template_directory());
 			unzip_file($downloaded_theme_fpath, get_theme_root());
+			copy_dir(get_theme_root() . '/kandinsky-master', get_template_directory());
 			
 			$json_response = array( 'status' => 'ok' );
 		}
