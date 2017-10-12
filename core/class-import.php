@@ -355,7 +355,8 @@ class TST_Import {
 		$res = preg_replace( '/\n/is', ' ', $res );
 		$res = preg_replace( '/\s+/is', ' ', $res );
 		$res = preg_replace( '/\s+/isu', ' ', $res );
-		$res = trim( strip_tags( $res ) );
+		$res = trim( $res );
+		$res = strip_tags( $res );
 		return $res;
 	}
 

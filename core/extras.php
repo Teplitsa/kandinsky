@@ -353,3 +353,8 @@ add_action('init','knd_add_tags_to_leyka_campaign');
 function knd_add_tags_to_leyka_campaign() {
 	register_taxonomy_for_object_type('post_tag', 'leyka_campaign');
 }
+
+function knd_sanitize_text($text) {
+    $text = strip_tags($text);
+    return trim($text);
+}
