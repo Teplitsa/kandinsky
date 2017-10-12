@@ -46,12 +46,7 @@ function knd_setup() {
     add_editor_style(array('assets/css/editor.css'));
 
     // Support automatic feed links
-	global $wp_version;
-	if ( version_compare( $wp_version, '3.0', '>=' ) ) {
-		add_theme_support( 'automatic-feed-links' );
-	} else {
-		automatic_feed_links();
-	}
+	add_theme_support( 'automatic-feed-links' );
 
 }
 add_action( 'after_setup_theme', 'knd_setup', 9 ); // Theme wizard initialize at 10, this init should occur befure it
