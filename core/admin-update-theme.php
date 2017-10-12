@@ -116,7 +116,7 @@ function knd_update_theme_ajax_data(){
 		}
 	}
 
-	wp_localize_script( 'knd-admin', 'knd_admin_update_theme', $knd_admin_js_vars );
+	wp_localize_script( 'knd-admin', 'kndAdminUpdateTheme', $knd_admin_js_vars );
 }
 
 
@@ -231,7 +231,9 @@ function knd_update_title_and_description() {
 	$pdb = knd_get_current_plot_pbd();
 	$is_may_remove_my_content = get_option( 'knd_update_may_remove_my_content', false );
 	
-	$pdb->build_title_and_description();
+	if($is_may_remove_my_content) {
+		$pdb->build_title_and_description();
+	}
 	
 	$json_response = array( 'status' => 'ok' );
 	return $json_response;
@@ -241,8 +243,10 @@ function knd_update_theme_settings() {
 	$pdb = knd_get_current_plot_pbd();
 	$is_may_remove_my_content = get_option( 'knd_update_may_remove_my_content', false );
 	
-	$pdb->build_theme_options();
-	$pdb->build_general_options();
+	if($is_may_remove_my_content) {
+		$pdb->build_theme_options();
+		$pdb->build_general_options();
+	}
 	
 	$json_response = array( 'status' => 'ok' );
 	return $json_response;
@@ -252,22 +256,26 @@ function knd_update_theme_content() {
 	$pdb = knd_get_current_plot_pbd();
 	$is_may_remove_my_content = get_option( 'knd_update_may_remove_my_content', false );
 	
-	$pdb->build_posts();
-	$pdb->build_pages();
-	$pdb->build_theme_options();
-	$pdb->build_menus();
-	$pdb->build_sidebars();
+	if($is_may_remove_my_content) {
+		$pdb->build_posts();
+		$pdb->build_pages();
+		$pdb->build_theme_options();
+		$pdb->build_menus();
+		$pdb->build_sidebars();
+	}
 	
 	$json_response = array( 'status' => 'ok' );
 	return $json_response;
 }
 
 function knd_update_theme_donations() {
-	$pdb = knd_get_current_plot_pbd();
+	knd_get_current_plot_pbd();
 	$is_may_remove_my_content = get_option( 'knd_update_may_remove_my_content', false );
 	
-	if(is_plugin_active('leyka/leyka.php')) {
-		knd_activate_leyka();
+	if($is_may_remove_my_content) {
+		if(is_plugin_active('leyka/leyka.php')) {
+			knd_activate_leyka();
+		}
 	}
 	
 	$json_response = array( 'status' => 'ok' );
