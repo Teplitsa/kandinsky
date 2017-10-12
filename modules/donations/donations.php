@@ -3,7 +3,7 @@
 if(!class_exists('Leyka_Payment_Method'))
     return;
 
-require get_template_directory().'/modules/donations/widgets.php';
+get_template_part('/modules/donations/widgets');
 
 /** Custom donation functions */
 

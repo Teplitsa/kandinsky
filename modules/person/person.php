@@ -1,8 +1,8 @@
 <?php
-require get_template_directory().'/modules/person/widgets.php';
-require get_template_directory().'/modules/person/hooks.php';
-//require get_template_directory().'/modules/person/tax.php';
-require get_template_directory().'/modules/person/templates.php';
+get_template_part('/modules/person/widgets');
+get_template_part('/modules/person/hooks');
+// get_template_part('/modules/person/tax');
+get_template_part('/modules/person/templates');
 
 class KND_Person {
     

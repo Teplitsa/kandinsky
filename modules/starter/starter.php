@@ -2,13 +2,13 @@
 if ( ! defined( 'WPINC' ) )
 	die();
 
-require get_template_directory() . '/modules/starter/menus.php';
-require get_template_directory() . '/modules/starter/sidebars.php';
-require get_template_directory() . '/vendor/parsedown/Parsedown.php';
-require get_template_directory() . '/modules/starter/plot_data_builder.php';
-require get_template_directory() . '/modules/starter/plot_shortcode_builder.php';
-require get_template_directory() . '/modules/starter/plot_config.php';
-require get_template_directory() . '/modules/starter/import_remote_content.php';
+get_template_part('/modules/starter/menus');
+get_template_part('/modules/starter/sidebars');
+get_template_part('/vendor/parsedown/Parsedown');
+get_template_part('/modules/starter/plot_data_builder');
+get_template_part('/modules/starter/plot_shortcode_builder');
+get_template_part('/modules/starter/plot_config');
+get_template_part('/modules/starter/import_remote_content');
 
 /**
  * Check for remove comments functions
