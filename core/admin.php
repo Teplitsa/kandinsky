@@ -170,6 +170,12 @@ function knd_get_admin_menu_items( $place = '' ) {
                         'text' => esc_html__( 'Email to the tech support', 'knd' ),
                         'link' => 'mailto:' . KND_SUPPORT_EMAIL
                     ),
+                	'update-theme' => array(
+                		'class' => 'knd-update-theme',
+                		'icon' => 'dashicons-controls-repeat',
+                		'text' => esc_html__( 'Update theme', 'knd' ),
+                		'link' => admin_url( 'admin.php?page=update-kandinsky-theme' )
+                	),
                     'remove-theme' => array(
                         'class' => 'knd-remove-theme',
                         'icon' => 'dashicons-no',
@@ -262,15 +268,22 @@ function knd_add_admin_pages( $items = array(), $is_inital_call = true ) {
 		add_menu_page( esc_html__( 'Kandinsky settings', 'knd' ), esc_html__( 'Kandinsky', 'knd' ), 'manage_options', 'customize.php' );
 		add_submenu_page( 
 			'themes.php',
-            esc_html__( 'Kandinsky setup wizard', 'knd' ),
-            esc_html__( 'Kandinsky setup wizard', 'knd' ),
+			esc_html__( 'Kandinsky setup wizard', 'knd' ),
+			esc_html__( 'Kandinsky setup wizard', 'knd' ),
 			'manage_options', 
 			'knd-setup-wizard', 
 			'envato_theme_setup_wizard' );
 		
 		add_menu_page(
-            esc_html__( 'Remove theme', 'knd' ),
-            esc_html__( 'Remove theme', 'knd' ),
+			esc_html__( 'Update theme', 'knd' ),
+			esc_html__( 'Update theme', 'knd' ),
+			'manage_options',
+			'update-kandinsky-theme',
+			'knd_update_theme' );
+
+		add_menu_page(
+			esc_html__( 'Remove theme', 'knd' ),
+			esc_html__( 'Remove theme', 'knd' ),
 			'manage_options',
 			'remove-kandinsky-theme',
 			'knd_remove_theme' );

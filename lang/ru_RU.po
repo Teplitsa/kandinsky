@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-09 10:46+0200\n"
-"PO-Revision-Date: 2017-10-09 10:48+0200\n"
+"POT-Creation-Date: 2017-10-12 01:52+0200\n"
+"PO-Revision-Date: 2017-10-12 01:59+0200\n"
 "Last-Translator: ahaenor <ahaenor@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -53,6 +53,97 @@ msgstr "Кампания"
 #: archive-leyka_donation.php:38
 msgid "Anonymous"
 msgstr ""
+
+#: core/admin-update-theme.php:50
+msgid "Updating Kandisky theme is in progress..."
+msgstr "Обновление Кандинского работает..."
+
+#: core/admin-update-theme.php:53
+msgid "Downloading latest version of Kandisky theme..."
+msgstr "Скачивание последней версии темы \"Кандинский\"..."
+
+#: core/admin-update-theme.php:61
+msgid "You are going to update Kandinsky theme. Continue?"
+msgstr "Вы собираетесь обновить тему \"Кандинский\". Продолжить?"
+
+#: core/admin-update-theme.php:63
+msgid "Remove all my content and install Kandinsky demo content instead."
+msgstr "Удалить мой контент и установить демо-контент Кандинского."
+
+#: core/admin-update-theme.php:67
+msgid "Yes, update theme to the latest version"
+msgstr "Да, обновить тему до последней версии"
+
+#: core/admin-update-theme.php:68 core/admin.php:253
+msgid "Cancel"
+msgstr "Отмена"
+
+#: core/admin-update-theme.php:96
+msgid "Are you sure you want to delete your content?"
+msgstr ""
+
+#: core/admin-update-theme.php:97
+msgid "Unzipping theme archive..."
+msgstr "Распаковка архива темы..."
+
+#: core/admin-update-theme.php:98
+msgid "Downloading Kandinsky content..."
+msgstr "Скачивание контента..."
+
+#: core/admin-update-theme.php:99
+msgid "Upating title and description..."
+msgstr "Обновление названия и описания..."
+
+#: core/admin-update-theme.php:100
+msgid "Updating theme settings..."
+msgstr "Обновление настроек..."
+
+#: core/admin-update-theme.php:101
+msgid "Updating theme content..."
+msgstr "Обновление контента..."
+
+#: core/admin-update-theme.php:102
+msgid "Updating donations..."
+msgstr "Обновление пожертвований..."
+
+#: core/admin-update-theme.php:103
+msgid "Kandinsky theme updated successfully."
+msgstr "Кандинский успешно обновлен."
+
+#: core/admin-update-theme.php:104 vendor/envato_setup/envato_setup.php:860
+#: vendor/envato_setup/envato_setup.php:887
+#: vendor/envato_setup/envato_setup.php:905
+#: vendor/envato_setup/envato_setup.php:914
+msgid "Success!"
+msgstr "Успех!"
+
+#: core/admin-update-theme.php:105
+msgid "Failed!"
+msgstr "Ошибка!"
+
+#: core/admin-update-theme.php:106
+msgid "Visit site"
+msgstr ""
+
+#: core/admin-update-theme.php:133
+msgid "Unknown update action"
+msgstr "Неизвестное действие при обновлении."
+
+#: core/admin-update-theme.php:145 core/admin-update-theme.php:182
+msgid "Unknown error"
+msgstr "Внутренняя ошибка Кандинского!"
+
+#: core/admin-update-theme.php:150
+msgid "Security check failed while updating theme"
+msgstr "Ошибка при проверке безопасности!"
+
+#: core/admin-update-theme.php:186
+msgid "Downloading theme file failed!"
+msgstr "При скачивании темы произошла ошибка!"
+
+#: core/admin-update-theme.php:197
+msgid "Saving theme file failed!"
+msgstr "При сохранении темы произошла ошибка!"
 
 #: core/admin.php:12
 msgid "Theme settings"
@@ -164,43 +255,43 @@ msgstr "Документация"
 msgid "Email to the tech support"
 msgstr "Тех.поддержка"
 
-#: core/admin.php:176 core/admin.php:272 core/admin.php:273
+#: core/admin.php:176 core/admin.php:278 core/admin.php:279
+msgid "Update theme"
+msgstr "Обновление темы"
+
+#: core/admin.php:182 core/admin.php:285 core/admin.php:286
 msgid "Remove theme"
 msgstr "Удалить тему"
 
-#: core/admin.php:235
+#: core/admin.php:241
 msgid "Kandinsky theme removed"
 msgstr "Тема удалена"
 
-#: core/admin.php:243
+#: core/admin.php:249
 msgid "Are you sure you want to remove Kandinsky theme?"
 msgstr "Вы уверены, что хотите удалить тему \"Кандинский\"?"
 
-#: core/admin.php:246
+#: core/admin.php:252
 msgid "Yes, remove Kandinsky theme"
 msgstr "Да, удалить тему"
 
-#: core/admin.php:247
-msgid "Cancel"
-msgstr "Отмена"
-
-#: core/admin.php:262
+#: core/admin.php:268
 msgid "Kandinsky settings"
 msgstr "«Кандинский» – настройки"
 
-#: core/admin.php:262 core/admin.php:306 functions.php:108
+#: core/admin.php:268 core/admin.php:319 functions.php:109
 msgid "Kandinsky"
 msgstr "Кандинский"
 
-#: core/admin.php:265 core/admin.php:266
+#: core/admin.php:271 core/admin.php:272
 msgid "Kandinsky setup wizard"
 msgstr "Мастер настройки"
 
-#: core/admin.php:349
+#: core/admin.php:362
 msgid "Dismiss"
 msgstr "Скрыть"
 
-#: core/admin.php:351
+#: core/admin.php:364
 #, php-format
 msgid ""
 "Welcome! Thank you for choosing Kandinsky! To fully take advantage of the "
@@ -210,88 +301,88 @@ msgstr ""
 "Здравствуйте! Благодарим вас за выбор темы «Кандинский»! Чтобы использовать "
 "все её возможности, пожалуйста, выполните %sвсе необходимые настройки%s."
 
-#: core/admin.php:355
+#: core/admin.php:368
 msgid "Open the theme setup wizard"
 msgstr "Мастер настройки темы"
 
-#: core/admin.php:358
+#: core/admin.php:371
 msgid "Open theme settings"
 msgstr "Настройки темы"
 
-#: core/admin.php:390
+#: core/admin.php:403
 msgid "Yoast SEO"
 msgstr "Yoast SEO"
 
-#: core/admin.php:394
+#: core/admin.php:407
 msgid "A great tool to boost your website SEO positions."
 msgstr ""
 "Прекрасный плагин, помогающий улучшить позиции сайта в поисковых системах."
 
-#: core/admin.php:396
+#: core/admin.php:409
 msgid "Cyr to Lat enhanced"
 msgstr "Cyr to Lat enhanced"
 
-#: core/admin.php:400
+#: core/admin.php:413
 msgid ""
 "Small helper to seamlessly convert cyrillic pages slugs into latin ones."
 msgstr ""
 "Небольшой плагин для автоматического перевода символов в адресах страниц из "
 "кириллицы в латиницу."
 
-#: core/admin.php:402
+#: core/admin.php:415
 msgid "Disable Comments"
 msgstr "Disable Comments"
 
-#: core/admin.php:406
+#: core/admin.php:419
 msgid ""
 "Comments on the website may be harmful, so this small plugin turns them off."
 msgstr ""
 "Плагин отключает комментарии, встроенные в WordPress по умолчанию. "
 "Комментарии можно включить в любой момент."
 
-#: core/admin.php:408
+#: core/admin.php:421
 msgid "Shortcake (Shortcodes UI)"
 msgstr "Shortcake (Shortcodes UI)"
 
-#: core/admin.php:413
+#: core/admin.php:426
 msgid ""
 "A visual editing for shortcodes to enrich your content management experience."
 msgstr ""
 "Возможности визуального редактирования шорткодов, чтобы сделать процесс "
 "редактирования страниц более современным."
 
-#: core/admin.php:416
+#: core/admin.php:429
 msgid "Leyka"
 msgstr "Лейка"
 
-#: core/admin.php:421
+#: core/admin.php:434
 msgid "This plugin will add means for donations collection to your website."
 msgstr ""
 "Этот плагин добавит на сайт возможности сбора и управления пожертвованиями."
 
-#: core/admin.php:443 vendor/class-tgm-plugin-activation.php:327
+#: core/admin.php:456 vendor/class-tgm-plugin-activation.php:327
 msgid "Install Required Plugins"
 msgstr "Установить требуемые плагины"
 
-#: core/admin.php:444 vendor/class-tgm-plugin-activation.php:328
+#: core/admin.php:457 vendor/class-tgm-plugin-activation.php:328
 msgid "Install Plugins"
 msgstr "Установить плагины"
 
-#: core/admin.php:446 vendor/class-tgm-plugin-activation.php:330
+#: core/admin.php:459 vendor/class-tgm-plugin-activation.php:330
 #, php-format
 msgid "Installing Plugin: %s"
 msgstr "Установка плагина: %s"
 
-#: core/admin.php:448 vendor/class-tgm-plugin-activation.php:332
+#: core/admin.php:461 vendor/class-tgm-plugin-activation.php:332
 #, php-format
 msgid "Updating Plugin: %s"
 msgstr "Обновление плагина: %s"
 
-#: core/admin.php:449 vendor/class-tgm-plugin-activation.php:333
+#: core/admin.php:462 vendor/class-tgm-plugin-activation.php:333
 msgid "Something went wrong with the plugin API."
 msgstr "Ошибка при работе с API плагина."
 
-#: core/admin.php:451 vendor/class-tgm-plugin-activation.php:334
+#: core/admin.php:464 vendor/class-tgm-plugin-activation.php:334
 #, php-format
 msgid "This theme requires the following plugin: %1$s."
 msgid_plural "This theme requires the following plugins: %1$s."
@@ -299,7 +390,7 @@ msgstr[0] "Необходимо установить плагин %1$s."
 msgstr[1] "Необходимо установить плагины: %1$s."
 msgstr[2] "Необходимо установить плагины: %1$s."
 
-#: core/admin.php:455 vendor/class-tgm-plugin-activation.php:335
+#: core/admin.php:468 vendor/class-tgm-plugin-activation.php:335
 #, php-format
 msgid "This theme recommends the following plugin: %1$s."
 msgid_plural "This theme recommends the following plugins: %1$s."
@@ -307,7 +398,7 @@ msgstr[0] "Рекомендуется установить плагин %1$s."
 msgstr[1] "Рекомендуется установить плагины: %1$s."
 msgstr[2] "Рекомендуется установить плагины: %1$s."
 
-#: core/admin.php:459 vendor/class-tgm-plugin-activation.php:337
+#: core/admin.php:472 vendor/class-tgm-plugin-activation.php:337
 #, php-format
 msgid ""
 "The following plugin needs to be updated to its latest version to ensure "
@@ -319,7 +410,7 @@ msgstr[0] "Необходимо обновить плагин %1$s."
 msgstr[1] "Необходимо обновить плагины: %1$s."
 msgstr[2] "Необходимо обновить плагины: %1$s."
 
-#: core/admin.php:463 vendor/class-tgm-plugin-activation.php:343
+#: core/admin.php:476 vendor/class-tgm-plugin-activation.php:343
 #, php-format
 msgid "There is an update available for: %1$s."
 msgid_plural "There are updates available for the following plugins: %1$s."
@@ -327,7 +418,7 @@ msgstr[0] "%1$s: доступно обновление."
 msgstr[1] "%1$s: доступно обновление."
 msgstr[2] "%1$s: доступно обновление."
 
-#: core/admin.php:467 vendor/class-tgm-plugin-activation.php:349
+#: core/admin.php:480 vendor/class-tgm-plugin-activation.php:349
 #, php-format
 msgid "The following required plugin is currently inactive: %1$s."
 msgid_plural "The following required plugins are currently inactive: %1$s."
@@ -335,7 +426,7 @@ msgstr[0] "Необходимо активировать плагин %1$s."
 msgstr[1] "Необходимо активировать плагины: %1$s."
 msgstr[2] "Необходимо активировать плагины: %1$s."
 
-#: core/admin.php:471 vendor/class-tgm-plugin-activation.php:355
+#: core/admin.php:484 vendor/class-tgm-plugin-activation.php:355
 #, php-format
 msgid "The following recommended plugin is currently inactive: %1$s."
 msgid_plural "The following recommended plugins are currently inactive: %1$s."
@@ -343,47 +434,47 @@ msgstr[0] "Рекомендуется активировать плагин %1$s
 msgstr[1] "Рекомендуется активировать плагины: %1$s."
 msgstr[2] "Рекомендуется активировать плагины: %1$s."
 
-#: core/admin.php:474 vendor/class-tgm-plugin-activation.php:360
+#: core/admin.php:487 vendor/class-tgm-plugin-activation.php:360
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
 msgstr[0] "Установить плагин"
 msgstr[1] "Установить плагины"
 msgstr[2] "Установить плагин"
 
-#: core/admin.php:475 vendor/class-tgm-plugin-activation.php:365
+#: core/admin.php:488 vendor/class-tgm-plugin-activation.php:365
 msgid "Begin updating plugin"
 msgid_plural "Begin updating plugins"
 msgstr[0] "Обновить плагин"
 msgstr[1] "Обновить плагины"
 msgstr[2] "Обновить плагин"
 
-#: core/admin.php:476 vendor/class-tgm-plugin-activation.php:370
+#: core/admin.php:489 vendor/class-tgm-plugin-activation.php:370
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
 msgstr[0] "Активировать плагин"
 msgstr[1] "Активировать плагины"
 msgstr[2] "Активировать плагин"
 
-#: core/admin.php:477 vendor/class-tgm-plugin-activation.php:374
+#: core/admin.php:490 vendor/class-tgm-plugin-activation.php:374
 msgid "Return to Required Plugins Installer"
 msgstr "На страницу установки требуемых плагинов"
 
-#: core/admin.php:478 vendor/class-tgm-plugin-activation.php:376
+#: core/admin.php:491 vendor/class-tgm-plugin-activation.php:376
 #: vendor/class-tgm-plugin-activation.php:3148
 msgid "Plugin activated successfully."
 msgstr "Плагин активирован."
 
-#: core/admin.php:479 vendor/class-tgm-plugin-activation.php:377
+#: core/admin.php:492 vendor/class-tgm-plugin-activation.php:377
 #: vendor/class-tgm-plugin-activation.php:2941
 msgid "The following plugin was activated successfully:"
 msgstr "Плагин успешно активирован:"
 
-#: core/admin.php:481 vendor/class-tgm-plugin-activation.php:379
+#: core/admin.php:494 vendor/class-tgm-plugin-activation.php:379
 #, php-format
 msgid "No action taken. Plugin %1$s was already active."
 msgstr "Плагин %1$s уже активирован."
 
-#: core/admin.php:484 vendor/class-tgm-plugin-activation.php:381
+#: core/admin.php:497 vendor/class-tgm-plugin-activation.php:381
 #, php-format
 msgid ""
 "Plugin not activated. A higher version of %s is needed for this theme. "
@@ -392,38 +483,38 @@ msgstr ""
 "Плагин не активирован – тема требует более высокой версии %s. Пожалуйста, "
 "обновите плагин."
 
-#: core/admin.php:487 vendor/class-tgm-plugin-activation.php:383
+#: core/admin.php:500 vendor/class-tgm-plugin-activation.php:383
 #, php-format
 msgid "All plugins installed and activated successfully. %1$s"
 msgstr "Все плагины установлены и активированы. %1$s"
 
-#: core/admin.php:488 vendor/class-tgm-plugin-activation.php:384
+#: core/admin.php:501 vendor/class-tgm-plugin-activation.php:384
 msgid "Dismiss this notice"
 msgstr "Закрыть уведомление"
 
-#: core/admin.php:490 vendor/class-tgm-plugin-activation.php:385
+#: core/admin.php:503 vendor/class-tgm-plugin-activation.php:385
 msgid ""
 "There are one or more required or recommended plugins to install, update or "
 "activate."
 msgstr "Некоторые плагины необходимо установить, обновить или активировать."
 
-#: core/admin.php:492 vendor/class-tgm-plugin-activation.php:386
+#: core/admin.php:505 vendor/class-tgm-plugin-activation.php:386
 msgid "Please contact the administrator of this site for help."
 msgstr "Пожалуйста, свяжитесь с администрацией сайта."
 
-#: core/admin.php:509
+#: core/admin.php:522
 msgid "Action failed. Please refresh the page and retry."
 msgstr "Операция завершилась с ошибкой. Пожалуйста, перезагрузите страницу."
 
-#: core/admin.php:513
+#: core/admin.php:526
 msgid "Action failed."
 msgstr "Операция завершилась с ошибкой."
 
-#: core/admin.php:666
+#: core/admin.php:679
 msgid "Kandinsky — useful links"
 msgstr "Кандинский – полезные ссылки"
 
-#: core/admin.php:767
+#: core/admin.php:780
 #, php-format
 msgid ""
 "ATTENTION! You thumbnail image is too small. It should be at least %s px"
@@ -943,11 +1034,11 @@ msgstr "Работает на Кандинском"
 msgid "Primary menu"
 msgstr "﻿Главное меню"
 
-#: functions.php:109
+#: functions.php:110
 msgid "Teplitsa"
 msgstr "Теплица социальных технологий"
 
-#: functions.php:110
+#: functions.php:111
 msgid "The beautiful design and useful features for nonprofit website"
 msgstr "Красивый дизайн и полезные функции для сайта НКО"
 
@@ -1740,13 +1831,6 @@ msgstr "Отложено"
 #: vendor/envato_setup/envato_setup.php:913
 msgid "Installing..."
 msgstr "Установка..."
-
-#: vendor/envato_setup/envato_setup.php:860
-#: vendor/envato_setup/envato_setup.php:887
-#: vendor/envato_setup/envato_setup.php:905
-#: vendor/envato_setup/envato_setup.php:914
-msgid "Success!"
-msgstr "Успех!"
 
 #: vendor/envato_setup/envato_setup.php:884
 msgid "Insert default website settings as seen in the demo."

@@ -223,7 +223,8 @@ li[id^="customize-control-widget_knd_cta-"] {
 }
 
 #adminmenu {
-    .toplevel_page_remove-kandinsky-theme {
+    .toplevel_page_remove-kandinsky-theme, 
+    .toplevel_page_update-kandinsky-theme {
         display:none;
     }
 }
@@ -267,4 +268,13 @@ li#wp-admin-bar-remove-theme {
     input.button-primary {
         margin-right: 20px;
     }
+}
+
+.knd-remove-my-content-control {
+    padding-bottom: 20px;
+}
+
+.knd-updated-successfully {
+    font-weight: bold;
+    font-size: 1.5em;
 }

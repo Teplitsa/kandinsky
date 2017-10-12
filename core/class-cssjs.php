@@ -5,7 +5,7 @@
 if ( ! defined( 'WPINC' ) )
 	die();
 
-class FRL_CssJs {
+class KND_CssJs {
 
 	private static $_instance = null;
 
@@ -180,4 +180,4 @@ class FRL_CssJs {
 	
 } // class
 
-FRL_CssJs::get_instance();
+KND_CssJs::get_instance();
