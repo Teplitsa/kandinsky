@@ -1,7 +1,13 @@
 <?php
-require get_template_directory().'/modules/org/widgets.php';
-require get_template_directory().'/modules/org/hooks.php';
-require get_template_directory().'/modules/org/tax.php';
+
+if ( ! defined( 'WPINC' ) )
+	die();
+
+get_template_part('/modules/org/hooks');
+
+get_template_part('/modules/org/widgets');
+
+get_template_directory('/modules/org/tax');
 
 class KND_Org {
     public static function setup_starter_data() {
@@ -9,4 +15,3 @@ class KND_Org {
         knd_import_posts_from_csv($input_file, 'org', 'org_cat');
     }
 }
-
