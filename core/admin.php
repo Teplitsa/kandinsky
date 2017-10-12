@@ -744,19 +744,10 @@ function knd_custom_links_dashboard_screen( $items = array(), $is_initial_call =
 /**
  * Doc link in footer text *
  */
-add_filter( 'admin_footer_text', 'knd_admin_fotter_text' );
+add_filter( 'admin_footer_text', 'knd_admin_footer_text' );
 
-function knd_admin_fotter_text( $text ) {
-	$doc = defined( 'TST_DOC_URL' ) ? TST_DOC_URL : '';
-	
-	if ( empty( $doc ) )
-		return $text;
-	
-	if ( ! empty( $doc ) )
-		$doc = str_replace( '<a', '<a target="_blank" ', make_clickable( $doc ) );
-	
-	$text = '<span id="footer-thankyou">Краткое руководство по работе с сайтом - ' . $doc . '</span>';
-	return $text;
+function knd_admin_footer_text( $text ) {
+	return '<span id="footer-thankyou">Краткое руководство по работе с сайтом - ' . str_replace( '<a', '<a target="_blank" ', make_clickable( KND_DOC_URL ) ) . '</span>';
 }
 
 /**

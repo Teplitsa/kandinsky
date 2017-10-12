@@ -9,11 +9,14 @@ if ( ! defined( 'WPINC' ) )
 	die();
 
 define('KND_VERSION', '0.2');
-define('TST_DOC_URL', 'https://github.com/Teplitsa/kandinsky/wiki');
 define('KND_DOC_URL', 'https://github.com/Teplitsa/kandinsky/wiki/');
-define('KND_OFFICIAL_WEBSITE_URL', 'https://github.com/Teplitsa/kandinsky/');
+define('KND_OFFICIAL_WEBSITE_URL', 'https://knd.te-st.ru/');
+define('KND_SOURCES_PAGE_URL', 'https://github.com/Teplitsa/kandinsky/');
+define('KND_SOURCES_ISSUES_PAGE_URL', 'https://github.com/Teplitsa/kandinsky/issues/');
 define('TST_OFFICIAL_WEBSITE_URL', 'https://te-st.ru/');
+define('TST_PASEKA_OFFICIAL_WEBSITE_URL', 'https://paseka.te-st.ru/');
 define('KND_SUPPORT_EMAIL', 'support@te-st.ru');
+define('KND_SUPPORT_TELEGRAM', 'https://t.me/joinchat/AAAAAENN3prSrvAs7KwWrg');
 define('KND_SETUP_WIZARD_URL', admin_url('themes.php?page=knd-setup-wizard'));
 
 if( !isset($content_width) ) {
@@ -41,6 +44,15 @@ function knd_setup() {
 
 	// Editor style
     add_editor_style(array('assets/css/editor.css'));
+
+    // Support automatic feed links
+	global $wp_version;
+	if ( version_compare( $wp_version, '3.0', '>=' ) ) {
+		add_theme_support( 'automatic-feed-links' );
+	} else {
+		automatic_feed_links();
+	}
+
 }
 add_action( 'after_setup_theme', 'knd_setup', 9 ); // Theme wizard initialize at 10, this init should occur befure it
 

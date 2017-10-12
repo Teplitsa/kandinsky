@@ -1195,7 +1195,7 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 
                 <p><?php _e( 'Please add your organization main logo below. The recommended size is <strong>315 x 66 px</strong> (for "Image only" mode) and <strong>66 x 66 px</strong> (for "Image with site name" mode). The logo can be changed at any time from the Appearance > Customize area in your website dashboard.', 'knd' ); ?></p>
 
-                <p><?php printf(esc_html__('Try our %sPaseka program%s if you need a new logo designed.', 'knd'), '<a href="https://paseka.te-st.ru/" target="_blank">', '</a>'); ?></p>
+                <p><?php printf(esc_html__('Try our %sPaseka program%s if you need a new logo designed.', 'knd'), '<a href="'.TST_PASEKA_OFFICIAL_WEBSITE_URL.'" target="_blank">', '</a>'); ?></p>
                 <table>
                     <tr>
                         <td>
@@ -1256,7 +1256,7 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 
                 <p><?php _e( 'Please add your site icon below. The recommended size is <strong>64 x 64 px</strong>. The site icon can be changed at any time from the Appearance > Customize area in your website dashboard.', 'knd' ); ?></p>
 
-                <p><?php printf(esc_html__('Try our %sPaseka program%s if you need a new site icon designed.', 'knd'), '<a href="https://paseka.te-st.ru/" target="_blank">', '</a>'); ?></p>
+                <p><?php printf(esc_html__('Try our %sPaseka program%s if you need a new site icon designed.', 'knd'), '<a href="'.TST_PASEKA_OFFICIAL_WEBSITE_URL.'" target="_blank">', '</a>'); ?></p>
                 <table>
                     <tr>
                         <td>
@@ -1337,11 +1337,11 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
             </p>
             <p><?php esc_html_e('In case you encounter any questions or issues, we recommend you the following links:', 'knd'); ?></p>
             <ul class="knd-wizard-support-variants">
-                <li><?php _e('Documentation and FAQ — <a href="https://github.com/Teplitsa/kandinsky/wiki/" target="_blank">GitHub Wiki</a>', 'knd'); ?></li>
-                <li><?php _e('Source code — <a href="https://github.com/Teplitsa/kandinsky/" target="_blank">GitHub</a>', 'knd'); ?></li>
-                <li><?php _e('Developers’ <a href="https://t.me/joinchat/AAAAAENN3prSrvAs7KwWrg">Telegram-channel</a> (in Russian)', 'knd'); ?></li>
+                <li><?php echo sprintf( __('Documentation and FAQ — <a href="%s" target="_blank">GitHub Wiki</a>', 'knd'), esc_url( KND_DOC_URL ) ); ?></li>
+                <li><?php echo sprintf( __('Source code — <a href="%s" target="_blank">GitHub</a>', 'knd'), esc_url( KND_SOURCES_PAGE_URL ) ); ?></li>
+                <li><?php echo sprintf( __('Developers’ <a href="%s">Telegram-channel</a> (in Russian)', 'knd'), esc_url( KND_SUPPORT_TELEGRAM ) ); ?></li>
             </ul>
-            <p><?php _e('If you need personalized (free during the testing period) consultations from the theme developers, please feel free to write at <a href="mailto:support@te-st.ru" target="_blank">support@te-st.ru</a> or <a href="https://github.com/Teplitsa/kandinsky/issues/" target="_blank">leave a ticket at GitHub</a>.', 'knd'); ?></p>
+            <p><?php echo sprintf( __('If you need personalized (free during the testing period) consultations from the theme developers, please feel free to write at <a href="mailto:%s" target="_blank">%s</a> or <a href="%s" target="_blank">leave a ticket at GitHub</a>.', 'knd'), KND_SUPPORT_EMAIL, KND_SUPPORT_EMAIL, KND_SOURCES_ISSUES_PAGE_URL ); ?></p>
 
             <p class="envato-setup-actions step">
                 <a href="<?php echo esc_url($this->get_next_step_link()); ?>" class="button-primary button button-large button-next"><?php esc_html_e("OK, I've got it!", 'knd'); ?></a>
@@ -1378,7 +1378,8 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
                     </ul>
                 </div>
                 <div class="envato-setup-next-steps-last">
-                    <img src="https://media.giphy.com/media/XreQmk7ETCak0/giphy.gif" alt="<?php esc_attr_e('#success', 'knd'); ?>">
+                    <?php $funny_gif_url = 'https://media.giphy.com/media/XreQmk7ETCak0/giphy.gif';?>
+                    <img src="<?php echo $funny_gif_url;?>" alt="<?php esc_attr_e('#success', 'knd'); ?>">
                 </div>
             </div>
             <?php
@@ -1412,7 +1413,7 @@ function knd_display_wizard_error(Exception $ex) {
     if($message) {
         echo '<span class="error-begin">'.__('Error:', 'knd').'</span><span class="error-text">'.lcfirst($message).($error_number ? " (#$error_number)" : '').'.</span><div class="wizard-error-support-text">'.sprintf(__("Please, send a report about it to the <a href='mailto:%s' target='_blank'>theme technical support</a>.", 'knd'), KND_SUPPORT_EMAIL).'</div>';
     } else {
-        echo sprintf(__("We're sorry, but some error occured during to this wizard step :( <div class='wizard-error-support-text'>Please, send a report about it to the <a href='mailto:%s' target='_blank'>theme technical support</a>.", 'knd'), KND_SUPPORT_EMAIL);
+        echo sprintf( __("We're sorry, but some error occured during to this wizard step :( <div class='wizard-error-support-text'>Please, send a report about it to the <a href='mailto:%s' target='_blank'>theme technical support</a>.", 'knd' ), KND_SUPPORT_EMAIL );
     }
 
     echo '<p class="envato-setup-actions error step">

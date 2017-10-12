@@ -15,13 +15,13 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 		public function render_content() {
 			$important_links = array( 
 				'theme-info' => array( 
-					'link' => esc_url( 'https://te-st.ru/' ), 
+					'link' => esc_url( TST_OFFICIAL_WEBSITE_URL ),
 					'text' => esc_html__( 'Theme Info', 'knd' ) ), 
 				'support' => array( 
-					'link' => esc_url( 'mailto:support@te-st.ru' ), 
+					'link' => esc_url( KND_SUPPORT_EMAIL ),
 					'text' => esc_html__( 'Support', 'knd' ) ), 
 				'documentation' => array( 
-					'link' => esc_url( 'https://drive.google.com/drive/folders/0B5-GQ-OMsbzrRzVmQnNzUm9RVGc' ), 
+					'link' => esc_url( KND_DOC_URL ),
 					'text' => esc_html__( 'Documentation', 'knd' ) ) );
 			foreach ( $important_links as $important_link ) {
 				echo '<p><a target="_blank" href="' . $important_link['link'] . '" >' . esc_attr( 
