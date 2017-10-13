@@ -5,20 +5,20 @@ function knd_project_custom_content() {
 
     register_post_type('project', array(
         'labels' => array(
-            'name'               => 'Программы',
-            'singular_name'      => 'Программа',
-            'menu_name'          => 'Программы',
-            'name_admin_bar'     => 'Добавить программу',
+            'name'               => 'Проекты',
+            'singular_name'      => 'Проект',
+            'menu_name'          => 'Проекты',
+            'name_admin_bar'     => 'Добавить проект',
             'add_new'            => 'Добавить новую',
-            'add_new_item'       => 'Добавить программу',
+            'add_new_item'       => 'Добавить проект',
             'new_item'           => 'Новая программа',
-            'edit_item'          => 'Редактировать программу',
+            'edit_item'          => 'Редактировать проект',
             'view_item'          => 'Просмотр программ',
-            'all_items'          => 'Все программы',
-            'search_items'       => 'Искать программы',
+            'all_items'          => 'Все проекты',
+            'search_items'       => 'Искать проекты',
             'parent_item_colon'  => 'Родительская программа:',
-            'not_found'          => 'Программы не найдены',
-            'not_found_in_trash' => 'В Корзине программы не найдены'
+            'not_found'          => 'Проекты не найдены',
+            'not_found_in_trash' => 'В Корзине проекты не найдены'
         ),
         'public'              => true,
         'exclude_from_search' => false,

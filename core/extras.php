@@ -354,7 +354,13 @@ function knd_add_tags_to_leyka_campaign() {
 	register_taxonomy_for_object_type('post_tag', 'leyka_campaign');
 }
 
-function knd_sanitize_text($text) {
-    $text = strip_tags($text);
-    return trim($text);
+// change hidden metaboxes
+add_filter('default_hidden_meta_boxes', 'knd_change_hidden_meta_boxes', 10, 2);
+function knd_change_hidden_meta_boxes($hidden, $screen) {
+	
+	if(($key = array_search('postexcerpt', $hidden)) !== false) {
+		unset($hidden[$key]);
+	}
+	
+	return $hidden;
 }
