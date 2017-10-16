@@ -357,11 +357,15 @@ class KND_Import_Git_Content {
         }
 
         WP_Filesystem();
+
+        /** @var WP_Filesystem_Base $wp_filesystem*/
+        global $wp_filesystem;
+
         $destination = wp_upload_dir();
         $unzipped_dir = "{$destination['path']}/kandinsky-text-{$this->plot_name}-master";
 
-        if(is_dir($unzipped_dir)) {
-            knd_rmdir($unzipped_dir);
+        if( !$wp_filesystem->rmdir($unzipped_dir, true) ) {
+            throw new Exception(sprintf(__('Old import files cleanup FAILED: %s.', 'knd'), $destination["path"]));
         }
 
         $unzipfile = unzip_file( $this->zip_fpath, $destination['path'] );
