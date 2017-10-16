@@ -94,23 +94,23 @@ function knd_get_temp_dir() {
 //	}
 //}
 
-function knd_rmdir( $dirPath ) {
-	if ( ! is_dir( $dirPath ) ) {
-		return;
-	}
-	
-	$dirPath = rtrim( $dirPath, '\/' ) . '/';
-	$files = glob( $dirPath . '*', GLOB_MARK );
-	foreach ( $files as $file ) {
-		if ( is_dir( $file ) ) {
-			knd_rmdir( $file );
-		} else {
-			unlink( $file );
-		}
-	}
-	
-	@rmdir( $dirPath ); // Sometimes hidden system files doesn't allow to remove a directory
-}
+//function knd_rmdir( $dirPath ) {
+//	if ( ! is_dir( $dirPath ) ) {
+//		return;
+//	}
+//
+//	$dirPath = rtrim( $dirPath, '\/' ) . '/';
+//	$files = glob( $dirPath . '*', GLOB_MARK );
+//	foreach ( $files as $file ) {
+//		if ( is_dir( $file ) ) {
+//			knd_rmdir( $file );
+//		} else {
+//			unlink( $file );
+//		}
+//	}
+//
+//	@rmdir( $dirPath ); // Sometimes hidden system files doesn't allow to remove a directory
+//}
 
 function knd_build_imported_url( $url ) {
 	$res_url = home_url();
