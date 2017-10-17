@@ -57,18 +57,7 @@ function kndDoUpdateThemeAction(action) {
     });
 }
 
-$('#knd-update-theme').click(function(){
-//    $(this).prop('disabled', true);
-    $(this).parent().prepend('<button disabled="true" class="button knd-spinner-update-button">' + kndGetAdminSpinner() + '</button>');
-    $(this).hide();
-    return true;
-});
-
 } );
-
-function kndGetAdminSpinner() {
-    return '<img src="' + kndAdminUpdateTheme['site_url'] + '/wp-admin/images/spinner-2x.gif" />';
-}
 
 function kndGetUpdateResultIcon(status, message) {
     var iconClass;

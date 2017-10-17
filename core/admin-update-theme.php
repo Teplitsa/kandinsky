@@ -92,7 +92,6 @@ function knd_update_theme_ajax_data(){
 		$knd_admin_js_vars = array(
 			'ajax_url' => admin_url('admin-ajax.php'),
 			'home_url' => home_url('/'),
-			'site_url' => site_url('/'),
 			'theme_update_steps' => knd_theme_update_get_steps(),
 			'lang_are_you_sure_may_remove_your_content' => esc_html__('Are you sure you want to delete your content?', 'knd'),
 			'lang_doing_knd_unzip_theme_update' => esc_html__('Unzipping theme archive...', 'knd'),
