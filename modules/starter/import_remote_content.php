@@ -359,8 +359,9 @@ class KND_Import_Git_Content {
         $destination = wp_upload_dir();
         $unzipped_dir = "{$destination['path']}/kandinsky-text-{$this->plot_name}-master";
 
-        if( is_dir($unzipped_dir) && !rmdir($unzipped_dir) ) {
-            throw new Exception(sprintf(__('Old import files cleanup FAILED: %s.', 'knd'), $destination["path"]));
+        if( is_dir($unzipped_dir) ) {
+            knd_rmdir($unzipped_dir);
+//            throw new Exception(sprintf(__('Old import files cleanup FAILED: %s.', 'knd'), $destination["path"]));
         }
 
         WP_Filesystem(); // Required for unzip_file() to work
