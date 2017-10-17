@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-10-12 01:52+0200\n"
-"PO-Revision-Date: 2017-10-12 02:02+0200\n"
+"PO-Revision-Date: 2017-10-17 21:26+0200\n"
 "Last-Translator: ahaenor <ahaenor@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -80,7 +80,7 @@ msgstr "Отмена"
 
 #: core/admin-update-theme.php:96
 msgid "Are you sure you want to delete your content?"
-msgstr ""
+msgstr "Вы уверены, что хотите удалить весь добавленный вами контент?"
 
 #: core/admin-update-theme.php:97
 msgid "Unzipping theme archive..."
@@ -1167,7 +1167,7 @@ msgstr "Галерея карточек людей - например, кома�
 
 #: modules/person/widgets.php:60
 msgid "Number of persons to output"
-msgstr ""
+msgstr "Число человек для показа"
 
 #: modules/person/widgets.php:65
 msgid "Category"

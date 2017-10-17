@@ -451,16 +451,6 @@ class KND_Plot_Data_Builder {
                 $this->remove_sidebars($plot_config);
                 
         }
-        
-        $themes = wp_get_themes();
-        foreach($themes as $theme) {
-        	if($theme->template != 'kandinsky') {
-        		switch_theme($theme->template);
-        		break;
-        	}
-        }
-        
-        set_transient( '_knd_activation_redirect_done', false );
     }
     
     public function remove_sidebars($plot_config) {
