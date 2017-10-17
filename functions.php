@@ -18,6 +18,7 @@ define('TST_PASEKA_OFFICIAL_WEBSITE_URL', 'https://paseka.te-st.ru/');
 define('KND_SUPPORT_EMAIL', 'support@te-st.ru');
 define('KND_SUPPORT_TELEGRAM', 'https://t.me/joinchat/AAAAAENN3prSrvAs7KwWrg');
 define('KND_SETUP_WIZARD_URL', admin_url('themes.php?page=knd-setup-wizard'));
+define('KND_DISTR_ARCHIVE_URL', 'https://github.com/Teplitsa/kandinsky/archive/master.zip');
 
 if( !isset($content_width) ) {
 	$content_width = 800; /* pixels */

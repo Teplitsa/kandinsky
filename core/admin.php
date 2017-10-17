@@ -138,6 +138,12 @@ function knd_get_admin_menu_items( $place = '' ) {
 				        'text' => esc_html__( 'Report of an error', 'knd' ),
 				        'link' => esc_url( 'https://github.com/Teplitsa/kandinsky/issues/new' )
 			        ),
+		        	'update-theme' => array(
+		        		'class' => 'knd-update-theme',
+		        		'icon' => 'dashicons-controls-repeat',
+		        		'text' => esc_html__( 'Update theme', 'knd' ),
+		        		'link' => admin_url( 'admin.php?page=update-kandinsky-theme' )
+		        	),
 		        )
             ),
         ),

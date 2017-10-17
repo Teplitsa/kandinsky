@@ -31,14 +31,14 @@ function kndDoUpdateThemeAction(action) {
     .done(function(json){
         
         if(json.status === 'ok') {
-            $('.knd-updating-theme-steps p:last').append('<p>' + kndAdminUpdateTheme.lang_success + '</p>');
+            $('.knd-updating-theme-steps p:last').append(kndGetUpdateResultIcon('ok', kndAdminUpdateTheme.lang_success));
         }
         else {
             if(json.message) {
-                $('.knd-updating-theme-steps').append('<p>' + json.message + '</p>');
+                $('.knd-updating-theme-steps p:last').append(kndGetUpdateResultIcon('error', json.message));
             }
             else {
-                $('.knd-updating-theme-steps p:last').append('<p>' + kndAdminUpdateTheme.lang_failed + '</p>');
+                $('.knd-updating-theme-steps p:last').append(kndGetUpdateResultIcon('error', kndAdminUpdateTheme.lang_failed));
             }
         }
         
@@ -57,4 +57,27 @@ function kndDoUpdateThemeAction(action) {
     });
 }
 
+$('#knd-update-theme').click(function(){
+//    $(this).prop('disabled', true);
+    $(this).parent().prepend('<button disabled="true" class="button knd-spinner-update-button">' + kndGetAdminSpinner() + '</button>');
+    $(this).hide();
+    return true;
+});
+
 } );
+
+function kndGetAdminSpinner() {
+    return '<img src="' + kndAdminUpdateTheme['site_url'] + '/wp-admin/images/spinner-2x.gif" />';
+}
+
+function kndGetUpdateResultIcon(status, message) {
+    var iconClass;
+    if(status == 'error') {
+        iconClass = 'dashicons-warning';
+    }
+    else {
+        iconClass = 'dashicons-yes';
+    }
+        
+    return '<span class="dashicons '+iconClass+'" title="'+message+'"></span>';
+}

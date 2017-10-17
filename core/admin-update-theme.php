@@ -92,6 +92,7 @@ function knd_update_theme_ajax_data(){
 		$knd_admin_js_vars = array(
 			'ajax_url' => admin_url('admin-ajax.php'),
 			'home_url' => home_url('/'),
+			'site_url' => site_url('/'),
 			'theme_update_steps' => knd_theme_update_get_steps(),
 			'lang_are_you_sure_may_remove_your_content' => esc_html__('Are you sure you want to delete your content?', 'knd'),
 			'lang_doing_knd_unzip_theme_update' => esc_html__('Unzipping theme archive...', 'knd'),
@@ -138,7 +139,8 @@ function knd_do_update_theme_action() {
 		if(wp_verify_nonce( $nonce, 'knd-update-action-nonce' )) {
 			
 			try {
-				$json_response = call_user_func($action);
+				$json_response = array( 'status' => 'ok', 'message' => esc_html__('Success', 'knd') );
+// 				$json_response = call_user_func($action);
 			}
 			catch(Exception $ex) {
 				error_log("KND_ERROR: $ex");
@@ -172,7 +174,7 @@ function knd_get_current_plot_pbd() {
 
 function knd_download_theme_archive() {
 	global $wp_filesystem;
-	$knd_theme_archive_url = 'https://github.com/Teplitsa/kandinsky/archive/master.zip';
+	$knd_theme_archive_url = KND_DISTR_ARCHIVE_URL;
 	
 	$upload_dir = wp_upload_dir();
 	$filename = trailingslashit($upload_dir['path']).'master.zip';
@@ -188,7 +190,11 @@ function knd_download_theme_archive() {
 	else {
 		try {
 			unzip_file($downloaded_theme_fpath, get_theme_root());
-// 			copy_dir(get_theme_root() . '/kandinsky-master', get_template_directory());
+			$template_dir = get_template_directory();
+			if(!preg_match('/\/kandinsky-master$/', $template_dir)) {
+// 				copy_dir(get_theme_root() . '/kandinsky-master', get_template_directory());
+				rmdir(get_theme_root() . '/kandinsky-master');
+			}
 			
 			$json_response = array( 'status' => 'ok' );
 		}
