@@ -27,7 +27,7 @@
 			
 			<?php $header_text = get_theme_mod('text_in_header'); ?>
 			<div class="site-details site-panel-cell">
-				<div class="site-details-cell"><?php echo apply_filters('knd_the_content', $header_text); ?></div>
+				<div class="site-details-cell"><h1>Update in HEADER</h1><?php echo apply_filters('knd_the_content', $header_text); ?></div>
 			</div>									
 			
 			<div class="trigger-button donate site-panel-cell hide-upto-medium">
