@@ -81,40 +81,40 @@ class KND_Plot_Data_Builder {
         $org_address = "165150, Архангельская область, Вельский район, г. Вельск, ул. Рогозина, д. 48, каб. 12";
         
         # NGO data
-        update_option('leyka_org_full_name', "{$org_name} \"{$org_description}\"");
-        update_option('leyka_org_face_fio_ip', 'Котов Аристарх Евграфович');
-        update_option('leyka_org_face_fio_rp', 'Собакин Евлампий Мстиславович');
-        update_option('leyka_org_face_position', 'Директор');
-        update_option('leyka_org_address', $org_address); //'127001, Россия, Москва, ул. Ленина, д.1, оф.5'
+        $this->safe_update_option('leyka_org_full_name', "{$org_name} \"{$org_description}\"");
+        $this->safe_update_option('leyka_org_face_fio_ip', 'Котов Аристарх Евграфович');
+        $this->safe_update_option('leyka_org_face_fio_rp', 'Собакин Евлампий Мстиславович');
+        $this->safe_update_option('leyka_org_face_position', 'Директор');
+        $this->safe_update_option('leyka_org_address', $org_address); //'127001, Россия, Москва, ул. Ленина, д.1, оф.5'
         
         # reg and bank account
-        update_option('leyka_org_state_reg_number', '1134567890123');
-        update_option('leyka_org_kpp', '223456789');
-        update_option('leyka_org_inn', '333456789012');
-        update_option('leyka_org_bank_account', '44445678901234567890');
-        update_option('leyka_org_bank_name', 'МЯО Звербанк');
-        update_option('leyka_org_bank_bic', '555556789');
-        update_option('leyka_org_bank_corr_account', '66666678901234567890');
+        $this->safe_update_option('leyka_org_state_reg_number', '1134567890123');
+        $this->safe_update_option('leyka_org_kpp', '223456789');
+        $this->safe_update_option('leyka_org_inn', '333456789012');
+        $this->safe_update_option('leyka_org_bank_account', '44445678901234567890');
+        $this->safe_update_option('leyka_org_bank_name', 'МЯО Звербанк');
+        $this->safe_update_option('leyka_org_bank_bic', '555556789');
+        $this->safe_update_option('leyka_org_bank_corr_account', '66666678901234567890');
         
         // View settings:
-        update_option('leyka_donation_form_template', 'revo');
-        update_option('leyka_donation_sum_field_type', 'mixed');
-        update_option('leyka_scale_widget_place', '-');
-        update_option('leyka_donations_history_under_forms', 0);
-        update_option('leyka_show_campaign_sharing', 0);
+        $this->safe_update_option('leyka_donation_form_template', 'revo');
+        $this->safe_update_option('leyka_donation_sum_field_type', 'mixed');
+        $this->safe_update_option('leyka_scale_widget_place', '-');
+        $this->safe_update_option('leyka_donations_history_under_forms', 0);
+        $this->safe_update_option('leyka_show_campaign_sharing', 0);
         
         // Misc settings:
-        update_option('leyka_agree_to_terms_needed', 1);
-        update_option('leyka_terms_agreed_by_default', 1);
-        update_option('leyka_agree_to_terms_text_text_part', __('I accept', 'knd'));
-        update_option('leyka_agree_to_terms_text_link_part', __('Terms of Service', 'knd'));
+        $this->safe_update_option('leyka_agree_to_terms_needed', 1);
+        $this->safe_update_option('leyka_terms_agreed_by_default', 1);
+        $this->safe_update_option('leyka_agree_to_terms_text_text_part', __('I accept', 'knd'));
+        $this->safe_update_option('leyka_agree_to_terms_text_link_part', __('Terms of Service', 'knd'));
     }
     
     public function _install_payment_methods() {
         $available_pms = array(
             'yandex-yandex_money', 'mixplat-sms', 'quittance-bank_order', 'text-text_box'
         );
-        update_option('leyka_pm_available', $available_pms);
+        $this->safe_update_option('leyka_pm_available', $available_pms);
         
         if( !get_option('leyka_pm_order') ) {
         
@@ -125,7 +125,7 @@ class KND_Plot_Data_Builder {
         		}
         	}
         
-        	update_option('leyka_pm_order', implode('&', $pm_order));
+        	$this->safe_update_option('leyka_pm_order', implode('&', $pm_order));
         
         }
         
@@ -349,7 +349,7 @@ class KND_Plot_Data_Builder {
                         
                         $post = knd_get_post($slug, $post_type);
                         if($post) {
-                            wp_delete_post( $post->ID, true );
+                            $this->safe_delete_post( $post );
                         }
                     }
                 }
@@ -358,6 +358,10 @@ class KND_Plot_Data_Builder {
     }
     
     public function remove_all_content() {
+    	
+    	global $wpdb;
+    	$sql = "DELETE FROM $wpdb->options WHERE `option_name` LIKE 'knd_val_hash_%'";
+    	$wpdb->query($sql);
     	
         foreach($this->imp->possible_plots as $plot_name) {
                 $builder = self::produce_plot_builder($plot_name, $this->imp);
@@ -466,7 +470,7 @@ class KND_Plot_Data_Builder {
     		foreach($this->data_routes['sidebar_widgets'] as $sidebar_name => $widgets_list) {
     			$sidebars = get_option( 'sidebars_widgets' );
     			$sidebars[$sidebar_name] = array();
-    			update_option( 'sidebars_widgets', $sidebars );
+    			$this->safe_update_option( 'sidebars_widgets', $sidebars );
     		}
     		
     		unregister_sidebar($key);
@@ -526,14 +530,14 @@ class KND_Plot_Data_Builder {
         
         // set home page
         $piece = new KND_Piece(array('slug' => 'home', 'title' => __('Home page', 'knd')));
-        $homepage_id = $this->save_post($piece, 'page');
-        update_option( 'page_on_front', $homepage_id );
-        update_option( 'show_on_front', 'page' );
+        $homepage_id = $this->safe_save_post($piece, 'page');
+        $this->safe_update_option( 'page_on_front', $homepage_id );
+        $this->safe_update_option( 'show_on_front', 'page' );
         
         // set news page
         $piece = new KND_Piece(array('slug' => 'news', 'title' => __('News', 'knd')));
-        $homepage_id = $this->save_post($piece, 'page');
-        update_option( 'page_for_posts', $homepage_id );
+        $homepage_id = $this->safe_save_post($piece, 'page');
+        $this->safe_update_option( 'page_for_posts', $homepage_id );
         
         global $wp_rewrite;
         $wp_rewrite->flush_rules( false );
@@ -556,7 +560,7 @@ class KND_Plot_Data_Builder {
             $piece = $this->imp->get_piece($piece_name, $section);
             if($piece) {
                 $piece->content = $this->imp->parse_text($piece->content);
-                $this->save_post($piece, $post_type);
+                $this->safe_save_post($piece, $post_type);
             }
         }
     }
@@ -574,7 +578,7 @@ class KND_Plot_Data_Builder {
             $piece = $this->imp->get_piece($piece_name, $section);
             if($piece) {
                 $piece->content = $this->imp->parse_text($piece->content);
-                $this->save_post($piece, $post_type);
+                $this->safe_save_post($piece, $post_type);
             }
         }
     }
@@ -599,7 +603,7 @@ class KND_Plot_Data_Builder {
         if($piece) {
             $piece->content = $this->imp->parse_text($piece->content);
             $piece->slug = $post_slug;
-            $this->save_post($piece, $post_type);
+            $this->safe_save_post($piece, $post_type);
         }
         
     }
@@ -627,7 +631,7 @@ class KND_Plot_Data_Builder {
         $template_piece->content = $this->fill_template_with_pieces( $template_piece->content, $section );
         $template_piece->slug = $post_slug;
         
-        $this->save_post($template_piece, $post_type);
+        $this->safe_save_post($template_piece, $post_type);
     }
     
     /**
@@ -781,6 +785,12 @@ class KND_Plot_Data_Builder {
         }
         $exist_page = knd_get_post( $post_name, $post_type );
         
+        if($exist_page) {
+        	if(!$this->validate_post_hash($exist_page) && !get_option( 'knd_update_may_remove_my_content', false )) {
+        		return;
+        	}
+        }
+        
         $page_data = array();
         
         $page_data['ID'] = $exist_page ? $exist_page->ID : 0;
@@ -822,6 +832,11 @@ class KND_Plot_Data_Builder {
                 wp_set_object_terms((int)$uid, $terms_list, $taxonomy, false);
                 wp_cache_flush();
             }
+        }
+        
+        $result_post = get_post($uid);
+        if($result_post) {
+        	$this->save_post_hash($result_post);
         }
         
         return $uid;
@@ -871,7 +886,7 @@ class KND_Plot_Data_Builder {
             $logo_fdata = $this->imp->get_fdata($file, $section);
             
             if($logo_fdata && isset($logo_fdata['attachment_id']) && $logo_fdata['attachment_id']) {
-                set_theme_mod($option_name, $logo_fdata['attachment_id']);
+                $this->safe_set_theme_mod($option_name, $logo_fdata['attachment_id']);
             }
             
         }
@@ -887,7 +902,7 @@ class KND_Plot_Data_Builder {
             $logo_fdata = $this->imp->get_fdata($file, $section);
         
             if($logo_fdata && isset($logo_fdata['attachment_id']) && $logo_fdata['attachment_id']) {
-                update_option($option_name, $logo_fdata['attachment_id']);
+                $this->safe_update_option($option_name, $logo_fdata['attachment_id']);
             }
         
         }
@@ -927,15 +942,10 @@ class KND_Plot_Data_Builder {
                 $piece = $theme_option_piece_data['piece'];
                 $field = isset($theme_option_piece_data['field']) ? $theme_option_piece_data['field'] : 'content';
                 $section = isset($theme_option_piece_data['section']) ? $theme_option_piece_data['section'] : '';
-    
-    
-                set_theme_mod($theme_option_name, $this->imp->get_val($piece, $field, $section));
-                
+                $this->safe_set_theme_mod($theme_option_name, $this->imp->get_val($piece, $field, $section));
             }
             else {
-                
-                set_theme_mod($theme_option_name, $theme_option_piece_data);
-                
+                $this->safe_set_theme_mod($theme_option_name, $theme_option_piece_data);
             }
         }
     
@@ -944,12 +954,12 @@ class KND_Plot_Data_Builder {
     public function build_general_options() {
         // header contacts
         $knd_address_phone = $this->data_routes['general_options']['knd_address_phone'];
-        set_theme_mod('text_in_header', trim($knd_address_phone));
+        $this->safe_set_theme_mod('text_in_header', trim($knd_address_phone));
 
         //save permastructure
         $test = get_option('permalink_structure');
         if(empty($test)){
-            update_option('permalink_structure', '/%year%/%monthnum%/%postname%/');
+            $this->safe_update_option('permalink_structure', '/%year%/%monthnum%/%postname%/');
         }
     }
     
@@ -974,7 +984,7 @@ class KND_Plot_Data_Builder {
             
             $sidebars = get_option( 'sidebars_widgets' );
             $sidebars[$sidebar_name] = array();
-            update_option( 'sidebars_widgets', $sidebars );
+            $this->safe_update_option( 'sidebars_widgets', $sidebars );
             
             foreach($widgets_list as $widget) {
                 
@@ -989,10 +999,10 @@ class KND_Plot_Data_Builder {
                 $widget_index = end($widgets_keys);
                 $sidebars[$sidebar_name][] = $widget_name . '-' . $widget_index;
                 
-                update_option( 'widget_' . $widget_name, $widgets );
+                $this->safe_update_option( 'widget_' . $widget_name, $widgets );
             }
             
-            update_option( 'sidebars_widgets', $sidebars );
+            $this->safe_update_option( 'sidebars_widgets', $sidebars );
         }
     }
     
@@ -1002,9 +1012,9 @@ class KND_Plot_Data_Builder {
         $knd_address_phone = nl2br(trim($this->data_routes['general_options']['knd_address_phone']));
         $knd_footer_contacts = str_replace("{knd_address_phone}", $knd_address_phone, $knd_footer_contacts);
         
-        update_option('knd_footer_contacts', $knd_footer_contacts);
-        update_option('knd_address_phone', $knd_address_phone);
-        update_option('text_in_header', $knd_address_phone);
+        $this->safe_update_option('knd_footer_contacts', $knd_footer_contacts);
+        $this->safe_update_option('knd_address_phone', $knd_address_phone);
+        $this->safe_update_option('text_in_header', $knd_address_phone);
         
         // security and pd
         $knd_footer_security_pd = $this->data_routes['general_options']['knd_footer_security_pd'];
@@ -1016,7 +1026,7 @@ class KND_Plot_Data_Builder {
         $knd_footer_security_pd = str_replace("{knd_url_privacy_policy}", $knd_url_privacy_policy, $knd_footer_security_pd);
         $knd_footer_security_pd = str_replace("{knd_url_public_oferta}", $knd_url_public_oferta, $knd_footer_security_pd);
         
-        update_option('knd_footer_security_pd', $knd_footer_security_pd);
+        $this->safe_update_option('knd_footer_security_pd', $knd_footer_security_pd);
     }
     
     public function build_menus() {
@@ -1053,8 +1063,58 @@ class KND_Plot_Data_Builder {
     }
     
     public function build_title_and_description() {
-        update_option('blogname', $this->data_routes['general_options']['site_name']);
-        update_option('blogdescription', $this->data_routes['general_options']['site_description']);
+        $this->safe_update_option('blogname', $this->data_routes['general_options']['site_name']);
+        $this->safe_update_option('blogdescription', $this->data_routes['general_options']['site_description']);
     }
     
+    public function save_hash($name, $val) {
+    	update_option('knd_val_hash_' . $name, md5(maybe_serialize($val)));
+    }
+    
+    public function validate_hash($name, $val) {
+    	$hash = get_option('knd_val_hash_' . $name);
+    	return !$hash || $hash == md5(maybe_serialize($val));
+    }
+    
+    public function validate_post_hash($post) {
+    	$title_hash = get_option('knd_val_hash_' . $post->post_name . '_title');
+    	$content_hash = get_option('knd_val_hash_' . $post->post_name . '_content');
+    	$excerpt_hash = get_option('knd_val_hash_' . $post->post_name . '_excerpt');
+    	
+    	return !($title_hash || $content_hash || $excerpt_hash) || ($title_hash == md5($post->post_title) && $content_hash == md5($post->post_content) && $excerpt_hash == md5($post->post_excerpt));
+    }
+    
+    
+    public function save_post_hash($post) {
+    	if(!$post) {
+    		return;
+    	}
+    	update_option('knd_val_hash_' . $post->post_name . '_title', md5($post->post_title));
+    	update_option('knd_val_hash_' . $post->post_name . '_content', md5($post->post_content));
+    	update_option('knd_val_hash_' . $post->post_name . '_excerpt', md5($post->post_excerpt));
+    }
+    
+    public function safe_update_option($key, $value) {
+    	if($this->validate_hash($key, get_option($key)) || get_option( 'knd_update_may_remove_my_content', false )) {
+    		update_option($key, $value);
+    		$this->save_hash($key, $value);
+    	}
+    }
+    
+    public function safe_set_theme_mod($key, $value) {
+    	if($this->validate_hash($key, get_theme_mod($key)) || get_option( 'knd_update_may_remove_my_content', false )) {
+    		set_theme_mod($key, $value);
+    		$this->save_hash($key, $value);
+    	}
+    }
+    
+    public function safe_delete_post($post) {
+    	if($this->validate_post_hash($post) || get_option( 'knd_update_may_remove_my_content', false )) {
+    		wp_delete_post( $post->ID, true );
+    	}
+    }
+    
+    public function safe_save_post($piece, $post_type) {
+    	return $this->save_post($piece, $post_type);
+    }
 }

@@ -138,7 +138,8 @@ function knd_do_update_theme_action() {
 		if(wp_verify_nonce( $nonce, 'knd-update-action-nonce' )) {
 			
 			try {
-				$json_response = call_user_func($action);
+				$json_response = array( 'status' => 'ok', 'message' => esc_html__('Success', 'knd') );
+// 				$json_response = call_user_func($action);
 			}
 			catch(Exception $ex) {
 				error_log("KND_ERROR: $ex");
@@ -172,7 +173,7 @@ function knd_get_current_plot_pbd() {
 
 function knd_download_theme_archive() {
 	global $wp_filesystem;
-	$knd_theme_archive_url = 'https://github.com/Teplitsa/kandinsky/archive/master.zip';
+	$knd_theme_archive_url = KND_DISTR_ARCHIVE_URL;
 	
 	$upload_dir = wp_upload_dir();
 	$filename = trailingslashit($upload_dir['path']).'master.zip';
@@ -188,8 +189,21 @@ function knd_download_theme_archive() {
 	else {
 		try {
 			unzip_file($downloaded_theme_fpath, get_theme_root());
-// 			copy_dir(get_theme_root() . '/kandinsky-master', get_template_directory());
+			$template_dir = get_template_directory();
 			
+			if(preg_match('/\/master\.zip$/', $knd_theme_archive_url)) {
+				if(!preg_match('/\/kandinsky-master$/', $template_dir)) {
+					copy_dir(get_theme_root() . '/kandinsky-master', get_template_directory());
+					$wp_filesystem->rmdir(get_theme_root() . '/kandinsky-master', true);
+				}
+			}
+			elseif(preg_match('/\/dev\.zip$/', $knd_theme_archive_url)) {
+				if(!preg_match('/\/kandinsky-dev$/', $template_dir)) {
+					copy_dir(get_theme_root() . '/kandinsky-dev', get_template_directory());
+					$wp_filesystem->rmdir(get_theme_root() . '/kandinsky-dev', true);
+				}
+			}
+				
 			$json_response = array( 'status' => 'ok' );
 		}
 		catch(Exception $ex) {

@@ -523,3 +523,7 @@ function knd_get_admin_notif_count() {
 	
 	return $not_installed_plugins;
 }
+
+function knd_sanitize_text($text) {
+	return sanitize_text_field($text);
+}

@@ -31,14 +31,14 @@ function kndDoUpdateThemeAction(action) {
     .done(function(json){
         
         if(json.status === 'ok') {
-            $('.knd-updating-theme-steps p:last').append('<p>' + kndAdminUpdateTheme.lang_success + '</p>');
+            $('.knd-updating-theme-steps p:last').append(kndGetUpdateResultIcon('ok', kndAdminUpdateTheme.lang_success));
         }
         else {
             if(json.message) {
-                $('.knd-updating-theme-steps').append('<p>' + json.message + '</p>');
+                $('.knd-updating-theme-steps p:last').append(kndGetUpdateResultIcon('error', json.message));
             }
             else {
-                $('.knd-updating-theme-steps p:last').append('<p>' + kndAdminUpdateTheme.lang_failed + '</p>');
+                $('.knd-updating-theme-steps p:last').append(kndGetUpdateResultIcon('error', kndAdminUpdateTheme.lang_failed));
             }
         }
         
@@ -58,3 +58,15 @@ function kndDoUpdateThemeAction(action) {
 }
 
 } );
+
+function kndGetUpdateResultIcon(status, message) {
+    var iconClass;
+    if(status == 'error') {
+        iconClass = 'dashicons-warning';
+    }
+    else {
+        iconClass = 'dashicons-yes';
+    }
+        
+    return '<span class="dashicons '+iconClass+'" title="'+message+'"></span>';
+}

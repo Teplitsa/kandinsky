@@ -278,3 +278,42 @@ li#wp-admin-bar-remove-theme {
     font-weight: bold;
     font-size: 1.5em;
 }
+
+#knd-update-theme {
+    width: 280px;
+    display:inline-block;
+    text-align:center;
+} 
+
+.knd-spinner-update-button {
+    
+    @extend #knd-update-theme;
+    
+    padding-top: 3px;
+    
+    img {
+        height: 18px;
+    }
+}
+
+.knd-updating-theme-steps {
+    
+    p {
+        float:none;
+        clear:both;
+        width: 400px;
+    }
+    
+    .dashicons {
+        margin-left: 20px;
+        float:right;
+    }
+    
+    .dashicons-warning {
+        color: #ff3333;
+    }
+    
+    .dashicons-yes {
+        color: #47d147;
+    }
+}
