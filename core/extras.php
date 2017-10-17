@@ -321,46 +321,29 @@ function knd_after_theme_activation() {
 add_action( 'init', 'knd_remove_scenario_unzipped_dir' );
 
 function knd_remove_scenario_unzipped_dir() {
-
+	
 	// Attempt to remove a scenario unzipped folder only if user is going from wizard to some other page:
 	if ( ! is_main_query() || wp_doing_ajax() || stripos( knd_current_url(), 'themes.php' ) !== false ||
-		 stripos( knd_current_url(), 'knd-setup-wizard' ) !== false ) {
+		 stripos( knd_current_url(), 'knd-setup-wizard' ) !== false ||
+		 stripos( wp_get_referer(), 'knd-setup-wizard' ) === false ) {
 		return;
 	}
-
+	
 	$scenario_name = get_theme_mod( 'knd_site_scenario' );
 	
 	if ( ! $scenario_name ) {
 		return;
 	}
-
+	
 	$scenario_name = knd_get_wizard_plot_names( $scenario_name );
-
+	
 	if ( is_string( $scenario_name ) ) {
-
-        $destination = wp_upload_dir();
-        $unzipped_dir = "{$destination['path']}/kandinsky-text-" . $scenario_name . "-master";
-
-        $url = knd_current_url();
-        $fields = array_keys($_POST); // Extra fields to pass to WP_Filesystem.
-
-        if(false === ($credentials = request_filesystem_credentials(esc_url_raw($url), '', false, false, $fields))) {
-            return; // Stop the normal page form from displaying, credential request form will be shown.
-        }
-
-        // Now we have some credentials, setup WP_Filesystem
-        if( !WP_Filesystem($credentials) ) { // Our credentials were no good, ask the user for them again
-
-            request_filesystem_credentials(esc_url_raw($url), '', true, false, $fields);
-            return;
-
-        }
-
-        /** @var WP_Filesystem_Base $wp_filesystem */
-        global $wp_filesystem;
-
-		if ( !$wp_filesystem->rmdir($unzipped_dir, true) ) {
-            throw new Exception(sprintf(__('Old import files cleanup FAILED: %s.', 'knd'), $destination["path"]));
+		
+		$destination = wp_upload_dir();
+		$unzipped_dir = "{$destination['path']}/kandinsky-text-" . $scenario_name . "-master";
+		
+		if ( is_dir( $unzipped_dir ) ) {
+			knd_rmdir( $unzipped_dir );
 		}
 	}
 }

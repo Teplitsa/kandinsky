@@ -508,32 +508,11 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 
         public function step_intro_view() {
 
-            $url = wp_nonce_url(KND_SETUP_WIZARD_URL, 'knd-setup-wizard');
-
-            $fields = array_keys($_POST); // Extra fields to pass to WP_Filesystem.
-
-            if(false === ($credentials = request_filesystem_credentials(esc_url_raw($url), '', false, false, $fields))) {
-                return; // Stop the normal page form from displaying, credential request form will be shown.
-            }
-
-            // Now we have some credentials, setup WP_Filesystem
-            if( !WP_Filesystem($credentials)) { // Our credentials were no good, ask the user for them again
-
-                request_filesystem_credentials(esc_url_raw($url), '', true, false, $fields);
-                return;
-
-            }
-
-            // Remove the old scenario import data:
             $destination = wp_upload_dir();
-            $unzipped_dir = "{$destination['path']}/kandinsky-text-"
-                .knd_get_wizard_plot_names(get_theme_mod('knd_site_scenario')).'-master';
+            $unzipped_dir = "{$destination['path']}/kandinsky-text-".get_theme_mod('knd_site_scenario')."-master";
 
-            /** @var $wp_filesystem WP_Filesystem_Base */
-            global $wp_filesystem;
-
-            if($wp_filesystem->is_dir($unzipped_dir)) {
-                $wp_filesystem->rmdir($unzipped_dir, true);
+            if(is_dir($unzipped_dir)) {
+                knd_rmdir($unzipped_dir);
             }?>
 
             <h1><?php printf(esc_html__('Welcome to the %s setup wizard', 'knd'), wp_get_theme()); ?></h1>
@@ -587,23 +566,23 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
             if( !class_exists('TGM_Plugin_Activation') || !isset($GLOBALS['tgmpa'])) {
                 die(__('Failed to find TGM plugin', 'knd'));
             }
-//            $url = wp_nonce_url(add_query_arg(array('plugins' => 'go')), 'envato-setup');
-//
-//            $method = ''; // Leave blank so WP_Filesystem can populate it as necessary.
-//            $fields = array_keys($_POST); // Extra fields to pass to WP_Filesystem.
-//
-//            if(false === ($creds = request_filesystem_credentials(esc_url_raw($url), $method, false, false, $fields))) {
-//                return true; // Stop the normal page form from displaying, credential request form will be shown.
-//            }
-//
-//            // Now we have some credentials, setup WP_Filesystem
-//            if( !WP_Filesystem($creds)) { // Our credentials were no good, ask the user for them again
-//
-//                request_filesystem_credentials(esc_url_raw($url), $method, true, false, $fields);
-//
-//                return true;
-//
-//            } ?>
+            $url = wp_nonce_url(add_query_arg(array('plugins' => 'go')), 'envato-setup');
+
+            $method = ''; // Leave blank so WP_Filesystem can populate it as necessary.
+            $fields = array_keys($_POST); // Extra fields to pass to WP_Filesystem.
+
+            if(false === ($creds = request_filesystem_credentials(esc_url_raw($url), $method, false, false, $fields))) {
+                return true; // Stop the normal page form from displaying, credential request form will be shown.
+            }
+
+            // Now we have some credentials, setup WP_Filesystem
+            if( !WP_Filesystem($creds)) { // Our credentials were no good, ask the user for them again
+
+                request_filesystem_credentials(esc_url_raw($url), $method, true, false, $fields);
+
+                return true;
+
+            } ?>
 
             <h1><?php esc_html_e('Default Plugins', 'knd'); ?></h1>
             <form method="post">
