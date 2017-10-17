@@ -191,11 +191,20 @@ function knd_download_theme_archive() {
 		try {
 			unzip_file($downloaded_theme_fpath, get_theme_root());
 			$template_dir = get_template_directory();
-			if(!preg_match('/\/kandinsky-master$/', $template_dir)) {
-// 				copy_dir(get_theme_root() . '/kandinsky-master', get_template_directory());
-				rmdir(get_theme_root() . '/kandinsky-master');
-			}
 			
+			if(preg_match('/\/master\.zip$/', $knd_theme_archive_url)) {
+				if(!preg_match('/\/kandinsky-master$/', $template_dir)) {
+					copy_dir(get_theme_root() . '/kandinsky-master', get_template_directory());
+					$wp_filesystem->rmdir(get_theme_root() . '/kandinsky-master', true);
+				}
+			}
+			elseif(preg_match('/\/dev\.zip$/', $knd_theme_archive_url)) {
+				if(!preg_match('/\/kandinsky-dev$/', $template_dir)) {
+					copy_dir(get_theme_root() . '/kandinsky-dev', get_template_directory());
+					$wp_filesystem->rmdir(get_theme_root() . '/kandinsky-dev', true);
+				}
+			}
+				
 			$json_response = array( 'status' => 'ok' );
 		}
 		catch(Exception $ex) {
