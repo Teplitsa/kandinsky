@@ -321,11 +321,10 @@ function knd_after_theme_activation() {
 add_action( 'init', 'knd_remove_scenario_unzipped_dir' );
 
 function knd_remove_scenario_unzipped_dir() {
-	
+
 	// Attempt to remove a scenario unzipped folder only if user is going from wizard to some other page:
 	if ( ! is_main_query() || wp_doing_ajax() || stripos( knd_current_url(), 'themes.php' ) !== false ||
-		 stripos( knd_current_url(), 'knd-setup-wizard' ) !== false ||
-		 stripos( wp_get_referer(), 'knd-setup-wizard' ) === false ) {
+		 stripos( knd_current_url(), 'knd-setup-wizard' ) !== false ) {
 		return;
 	}
 
@@ -334,7 +333,7 @@ function knd_remove_scenario_unzipped_dir() {
 	if ( ! $scenario_name ) {
 		return;
 	}
-	
+
 	$scenario_name = knd_get_wizard_plot_names( $scenario_name );
 
 	if ( is_string( $scenario_name ) ) {
@@ -353,7 +352,6 @@ function knd_remove_scenario_unzipped_dir() {
         if( !WP_Filesystem($credentials) ) { // Our credentials were no good, ask the user for them again
 
             request_filesystem_credentials(esc_url_raw($url), '', true, false, $fields);
-
             return;
 
         }
