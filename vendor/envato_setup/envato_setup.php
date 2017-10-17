@@ -513,21 +513,21 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
             $fields = array_keys($_POST); // Extra fields to pass to WP_Filesystem.
 
             if(false === ($credentials = request_filesystem_credentials(esc_url_raw($url), '', false, false, $fields))) {
-                return true; // Stop the normal page form from displaying, credential request form will be shown.
+                return; // Stop the normal page form from displaying, credential request form will be shown.
             }
 
             // Now we have some credentials, setup WP_Filesystem
             if( !WP_Filesystem($credentials)) { // Our credentials were no good, ask the user for them again
 
                 request_filesystem_credentials(esc_url_raw($url), '', true, false, $fields);
-
-                return true;
+                return;
 
             }
 
             // Remove the old scenario import data:
             $destination = wp_upload_dir();
-            $unzipped_dir = "{$destination['path']}/kandinsky-text-".get_theme_mod('knd_site_scenario')."-master";
+            $unzipped_dir = "{$destination['path']}/kandinsky-text-"
+                .knd_get_wizard_plot_names(get_theme_mod('knd_site_scenario')).'-master';
 
             /** @var $wp_filesystem WP_Filesystem_Base */
             global $wp_filesystem;

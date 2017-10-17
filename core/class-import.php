@@ -18,8 +18,14 @@ class TST_Import {
 			array( 'regexp' => '/[^\/]*(\d{4})[^\/]*\.\w+$/i', 'pattern' => '%Y' ) ) );
 
 	private static $_instance = null;
+    private $filesystem = NULL;
 
 	private function __construct() {
+        WP_Filesystem();
+
+        /** @var WP_Filesystem_Base $wp_filesystem*/
+        global $wp_filesystem;
+        $this->filesystem = $wp_filesystem;
 	}
 
 	public static function get_instance() {
@@ -111,7 +117,7 @@ class TST_Import {
 	public function import_big_file( $url ) {
 		$tmp_dir = knd_get_temp_dir();
 		
-		if ( ! is_dir( $tmp_dir ) && ! mkdir( $tmp_dir ) ) {
+		if ( ! $this->filesystem->is_dir( $tmp_dir ) && ! $this->filesystem->mkdir( $tmp_dir ) ) {
 			throw new Exception( sprintf( esc_html__( "Can't create a download temporary directory: %s", 'knd' ), $tmp_dir ) );
 		}
 		
@@ -190,7 +196,7 @@ class TST_Import {
 			return false;
 		
 		$attachment_id = false;
-		$file = file_get_contents( $path );
+		$file = $this->filesystem->get_contents( $path );
 		
 		if ( $file ) {
 			
@@ -273,11 +279,11 @@ class TST_Import {
 		
 		if ( $localpdf ) {
 			$localpdf_file = preg_replace( '/\/$/', '', $localpdf ) . '/' . $new_file_base_name;
-			if ( file_exists( $localpdf_file ) ) {
-				copy( $localpdf_file, $new_file_no_prefix );
+			if ( $this->filesystem->exists( $localpdf_file ) ) {
+                $this->filesystem->copy( $localpdf_file, $new_file_no_prefix );
 			}
 		} else {
-			TST_Convert2PDF::get_instance()->doc2pdf( $original_file, $new_file );
+//			TST_Convert2PDF::get_instance()->doc2pdf( $original_file, $new_file );
 		}
 		
 		if ( $localpdf && file_exists( $new_file_no_prefix ) ) {
@@ -305,7 +311,7 @@ class TST_Import {
 			}
 			
 			unlink( $new_file_no_prefix );
-		} elseif ( file_exists( $new_file ) ) {
+		} elseif ( $this->filesystem->exists( $new_file ) ) {
 			$this->copy_to_localpdf( $new_file, $new_file_base_name );
 			unlink( $new_file );
 		}
@@ -321,8 +327,8 @@ class TST_Import {
 		}
 		
 		$localpdf_file = $pdf_dirname . '/' . $new_file_base_name;
-		if ( ! file_exists( $localpdf_file ) ) {
-			copy( $new_file, $localpdf_file );
+		if ( ! $this->filesystem->exists( $localpdf_file ) ) {
+            $this->filesystem->copy( $new_file, $localpdf_file );
 		}
 	}
 
@@ -340,8 +346,7 @@ class TST_Import {
 	}
 
 	public function get_file_name( $url, $content ) {
-		$title = '';
-		
+
 		$matches = array();
 		preg_match( '/<a[^>]*' . preg_quote( $url, '/' ) . '.*?>(.*?)<\/a>/i', $content, $matches );
 		$title = isset( $matches[1] ) ? $matches[1] : '';
@@ -586,19 +591,11 @@ class TST_Import {
 
 	public function maybe_import( $external_file_url ) {
 		$exist_attachment = $this->get_attachment_by_old_url( $external_file_url );
-		$attachment_id = 0;
 		
 		if ( $exist_attachment ) {
-			$file_id = $exist_attachment->ID;
-			$file_url = wp_get_attachment_url( $file_id );
 			$attachment_id = $exist_attachment->ID;
 		} else {
 			$attachment_id = $this->import_big_file( $external_file_url );
-			
-			if ( $attachment_id ) {
-				$file_id = $attachment_id;
-				$file_url = wp_get_attachment_url( $attachment_id );
-			}
 		}
 		unset( $exist_attachment );
 		
@@ -612,4 +609,3 @@ class TST_Import {
 		return $thumbnail_id;
 	}
 } //class TST_Import
-

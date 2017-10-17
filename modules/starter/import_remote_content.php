@@ -29,6 +29,7 @@ class KND_Import_Remote_Content {
     private $content_importer = NULL; // remote content imported (depends on content source), only KND_Import_Git_Content supported
     private $plot_data = NULL; // array with data, represented as array and KND_Piece
     private $plot_name = NULL; // color-line, withyou, dubrovino
+    private $filesystem = NULL;
 
     function __construct($plot_name) {
 
@@ -38,6 +39,12 @@ class KND_Import_Remote_Content {
             $this->content_importer = new KND_Import_Git_Content($this->plot_name);
 
         }
+
+        WP_Filesystem();
+
+        /** @var WP_Filesystem_Base $wp_filesystem*/
+        global $wp_filesystem;
+        $this->filesystem = $wp_filesystem;
 
         $this->parsedown = new Parsedown();
 
@@ -270,6 +277,7 @@ class KND_Import_Git_Content {
     private $content_files = array();
     private $piece_parser = NULL;
     private $distr_attachment_id = NULL;
+    private $filesystem = NULL;
 
     function __construct($plot_name) {
 
@@ -287,6 +295,12 @@ class KND_Import_Git_Content {
             default:
                 throw new Exception(sprintf(__('Plot name is unknown or not given: %s', 'knd'), $plot_name));
         }
+
+        WP_Filesystem();
+
+        /** @var WP_Filesystem_Base $wp_filesystem*/
+        global $wp_filesystem;
+        $this->filesystem = $wp_filesystem;
 
         $this->piece_parser = new KND_Git_Piece_Parser();
 
@@ -356,15 +370,10 @@ class KND_Import_Git_Content {
             throw new Exception(sprintf(__('Zip file not found: %s', 'knd'), $this->zip_fpath));
         }
 
-        WP_Filesystem();
-
-        /** @var WP_Filesystem_Base $wp_filesystem*/
-        global $wp_filesystem;
-
         $destination = wp_upload_dir();
         $unzipped_dir = "{$destination['path']}/kandinsky-text-{$this->plot_name}-master";
 
-        if( !$wp_filesystem->rmdir($unzipped_dir, true) ) {
+        if( !$this->filesystem->rmdir($unzipped_dir, true) ) {
             throw new Exception(sprintf(__('Old import files cleanup FAILED: %s.', 'knd'), $destination["path"]));
         }
 
@@ -398,13 +407,13 @@ class KND_Import_Git_Content {
             throw new Exception(__('No git content dir!', 'knd'));
         }
 
-        if( !is_dir($this->import_content_files_dir) ) {
+        if( !$this->filesystem->is_dir($this->import_content_files_dir) ) {
             throw new Exception(sprintf(__('Unzipped dir not found: %s', 'knd'), $this->import_content_files_dir));
         }
 
         $plot_dir = $this->import_content_files_dir;
 
-        if(!is_dir($plot_dir)) {
+        if( !$this->filesystem->is_dir($plot_dir) ) {
             throw new Exception(sprintf(__('Plot dir not found: %s', 'knd'), $plot_dir));
         }
 
@@ -425,14 +434,14 @@ class KND_Import_Git_Content {
         
         $plot_dir_listing = scandir($plot_dir);
         $inner_content_files = array();
-        
+
         foreach ($plot_dir_listing as $key => $value) {
-        
+
             if (!in_array($value,array(".", "..", "README.md"))) {
-                
+
                 $fpath = $plot_dir . DIRECTORY_SEPARATOR . $value;
-                
-                if(is_dir($fpath)) {
+
+                if($this->filesystem->is_dir($fpath)) {
                     $inner_content_files[$value] = $this->scan_content_dir($fpath, $value);
                 }
                 else {
@@ -442,7 +451,7 @@ class KND_Import_Git_Content {
                     
                     if(preg_match("/.*\.md$/", $value)) {
                         
-                        if(is_file($fpath)) {
+                        if($this->filesystem->is_file($fpath)) {
                             $piece_data = $this->piece_parser->parse_post( $fpath );
                             $piece_data['piece_name'] = $piece_name;
                             $piece_data['piece_section'] = $section;
@@ -472,8 +481,18 @@ class KND_Import_Git_Content {
  *
  */
 class KND_Git_Piece_Parser {
+
+    private $filesystem;
     
     function __construct() {
+
+        WP_Filesystem();
+
+        /** @var WP_Filesystem_Base $wp_filesystem*/
+        global $wp_filesystem;
+        $this->filesystem = $wp_filesystem;
+
+        $this->parsedown = new Parsedown();
     }
 
     /**
@@ -484,7 +503,7 @@ class KND_Git_Piece_Parser {
      */
     function parse_post( $fpath ) {
         
-        $content = file_get_contents($fpath);
+        $content = $this->filesystem->get_contents($fpath);
         $content_parts = explode("+++", $content);
         $text = trim(end($content_parts));
         
