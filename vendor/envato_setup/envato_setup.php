@@ -508,21 +508,21 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 
         public function step_intro_view() {
 
-            $url = wp_nonce_url(KND_SETUP_WIZARD_URL, 'knd-setup-wizard');
-
-            $fields = array_keys($_POST); // Extra fields to pass to WP_Filesystem.
-
-            if(false === ($credentials = request_filesystem_credentials(esc_url_raw($url), '', false, false, $fields))) {
-                return; // Stop the normal page form from displaying, credential request form will be shown.
-            }
-
-            // Now we have some credentials, setup WP_Filesystem
-            if( !WP_Filesystem($credentials)) { // Our credentials were no good, ask the user for them again
-
-                request_filesystem_credentials(esc_url_raw($url), '', true, false, $fields);
-                return;
-
-            }
+//            $url = wp_nonce_url(KND_SETUP_WIZARD_URL, 'knd-setup-wizard');
+//
+//            $fields = array_keys($_POST); // Extra fields to pass to WP_Filesystem.
+//
+//            if(false === ($credentials = request_filesystem_credentials(esc_url_raw($url), '', false, false, $fields))) {
+//                return; // Stop the normal page form from displaying, credential request form will be shown.
+//            }
+//
+//            // Now we have some credentials, setup WP_Filesystem
+//            if( !WP_Filesystem($credentials)) { // Our credentials were no good, ask the user for them again
+//
+//                request_filesystem_credentials(esc_url_raw($url), '', true, false, $fields);
+//                return;
+//
+//            }
 
             // Remove the old scenario import data:
             $destination = wp_upload_dir();
@@ -530,10 +530,10 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
                 .knd_get_wizard_plot_names(get_theme_mod('knd_site_scenario')).'-master';
 
             /** @var $wp_filesystem WP_Filesystem_Base */
-            global $wp_filesystem;
+//            global $wp_filesystem;
 
-            if($wp_filesystem->is_dir($unzipped_dir)) {
-                $wp_filesystem->rmdir($unzipped_dir, true);
+            if(Knd_Filesystem::get_instance()->is_dir($unzipped_dir)) {
+                Knd_Filesystem::get_instance()->rmdir($unzipped_dir, true);
             }?>
 
             <h1><?php printf(esc_html__('Welcome to the %s setup wizard', 'knd'), wp_get_theme()); ?></h1>
