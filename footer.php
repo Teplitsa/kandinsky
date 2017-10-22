@@ -17,8 +17,8 @@ $footer_text = get_theme_mod('footer_text');
 <div id="bottom_bar" class="bottom-bar">
     <div class="container">
         <div class="flex-row align-bottom bottom-branding">
-
             <div class="flex-cell flex-md-5">
+                <h1>Update in FOOTER</h1>
                 <h1 class="logo-name"><?php bloginfo('name');?></h1>
                 <h2 class="logo-name"><?php bloginfo('description');?></h2>
             </div>

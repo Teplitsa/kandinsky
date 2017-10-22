@@ -15,19 +15,11 @@ class TST_Media {
 
 	private $upload_dir = null;
 
-	private $wp_filesystem = null;
-
 	/* Construct */
 	private function __construct() {
 		if ( defined( 'TST_DEVMODE' ) && TST_DEVMODE ) {
 			add_action( 'tst_before_display_attachment', array( $this, 'regenerate_attachment' ), 2, 2 );
 		}
-
-        WP_Filesystem();
-
-        /** @var WP_Filesystem_Base $wp_filesystem*/
-        global $wp_filesystem;
-        $this->filesystem = $wp_filesystem;
 	}
 
 	public static function get_instance() {
@@ -139,11 +131,11 @@ class TST_Media {
 		$orig_file = wp_basename( wp_get_attachment_url( $att_id ) );
 		$side_load_path = $uploads['basedir'] . '/sideload/' . $orig_file;
 		
-		if ( $this->filesystem->exists( $side_load_path ) ) { // exists - move it
+		if ( file_exists( $side_load_path ) ) { // exists - move it
 			$path = str_replace( $base_url, $uploads['basedir'], $local_url );
 			
-			if ( ! $this->filesystem->exists( dirname( $path ) ) ) {
-                $this->filesystem->mkdir( dirname( $path ), 0775, true );
+			if ( ! file_exists( dirname( $path ) ) ) {
+				mkdir( dirname( $path ), 0775, true );
 			}
 			
 			// move
@@ -159,8 +151,8 @@ class TST_Media {
 					 false !== strpos( $image['headers']['content-type'], 'image' ) ) {
 					$path = str_replace( $uploads['baseurl'], $uploads['basedir'], $local_url );
 					
-					if ( ! $this->filesystem->exists( dirname( $path ) ) ) {
-                        $this->filesystem->mkdir( dirname( $path ), 0775, true );
+					if ( ! file_exists( dirname( $path ) ) ) {
+						mkdir( dirname( $path ), 0775, true );
 					}
 					
 					$r = file_put_contents( $path, $image['body'] );
@@ -175,14 +167,14 @@ class TST_Media {
 		$image_fullpath = get_attached_file( $att_id );
 		
 		// test for correct type
-		if ( $this->filesystem->exists( $image_fullpath ) && class_exists( 'finfo' ) ) {
+		if ( file_exists( $image_fullpath ) && class_exists( 'finfo' ) ) {
 			$file_info = new finfo( FILEINFO_MIME );
-			$mime_type = $file_info->buffer( $this->filesystem->get_contents( $image_fullpath ) ); // e.g. gives "image/jpeg"
+			$mime_type = $file_info->buffer( file_get_contents( $image_fullpath ) ); // e.g. gives "image/jpeg"
 			
 			if ( false !== strpos( $mime_type, 'image' ) ) {
 				return true;
 			} else {
-                $this->filesystem->delete( $image_fullpath );
+				unlink( $image_fullpath );
 			}
 		}
 		
@@ -372,7 +364,7 @@ class TST_Media {
 		
 		$attachment_id = false;
 		
-		$file = $this->filesystem->get_contents( $path );
+		$file = file_get_contents( $path );
 		
 		if ( $file ) {
 			$filename = basename( $path );
@@ -406,7 +398,7 @@ class TST_Media {
 	function upload_file_from_path( $path ) {
 		$attachment_id = 0;
 		
-		if ( ! $this->filesystem->exists( $path ) ) {
+		if ( ! file_exists( $path ) ) {
 			return $attachment_id;
 		}
 		
@@ -416,11 +408,11 @@ class TST_Media {
 		$mime_type = mime_content_type( $path );
 		
 		$tmp_dir = get_temp_dir();
-		if ( ! $this->filesystem->is_dir( $tmp_dir ) ) {
-            $this->filesystem->mkdir( $tmp_dir, 0777, true );
+		if ( ! is_dir( $tmp_dir ) ) {
+			mkdir( $tmp_dir, 0777, true );
 		}
 		$tmp_path = $tmp_dir . 'knd-' . $filename;
-        $this->filesystem->copy( $path, $tmp_path );
+		copy( $path, $tmp_path );
 		
 		$fake_FILE = array( 
 			'name' => $filename, 

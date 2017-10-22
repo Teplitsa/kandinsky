@@ -221,18 +221,53 @@ function knd_cancel_remove_theme() {
 add_action( 'admin_init', 'knd_cancel_remove_theme' );
 
 function knd_remove_theme() {
+	
+	global $wp_filesystem;
+	global $wpdb;
+	
 	$is_theme_data_removed = false;
 	
 	if(isset($_POST['knd-remove-theme'])) {
+		
+		$url = admin_url('admin.php?page=remove-kandinsky-theme');
+		$method = '';
+		$fields = array_keys($_POST);
+		
+		if(false === ($creds = request_filesystem_credentials(esc_url_raw($url), $method, false, false, $fields))) {
+			return true;
+		}
+		
+		if( !WP_Filesystem($creds)) {
+			request_filesystem_credentials(esc_url_raw($url), $method, true, false, $fields);
+		}
+		
 		$nonce = $_REQUEST['_wpnonce'];
 		if(wp_verify_nonce( $nonce, 'knd-remove-theme' )) {
 			
-			get_theme_mod('knd_site_scenario');
+			$knd_site_scenario = get_theme_mod('knd_site_scenario');
+			$current_template_dir = get_template_directory();
 			
-			$imp = new KND_Import_Remote_Content(get_theme_mod('knd_site_scenario'));
+			if($knd_site_scenario) {
+				$imp = new KND_Import_Remote_Content($knd_site_scenario);
+				$pdb = KND_Plot_Data_Builder::produce_builder($imp);
+				$pdb->remove_all_content();
+			}
+			else {
+				$sql = "DELETE FROM $wpdb->options WHERE `option_name` LIKE 'knd_val_hash_%'";
+				$wpdb->query($sql);
+			}
 			
-			$pdb = KND_Plot_Data_Builder::produce_builder($imp);
-			$pdb->remove_all_content();
+			$themes = wp_get_themes();
+			foreach($themes as $theme) {
+				if(strtolower($theme->Name) != 'kandinsky') {
+					switch_theme($theme->template);
+					break;
+				}
+			}
+			
+			set_transient( '_knd_activation_redirect_done', false );
+				
+			$wp_filesystem->rmdir($current_template_dir, true);
 				
 			$is_theme_data_removed = true;
 		}
