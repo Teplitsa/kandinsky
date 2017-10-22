@@ -128,6 +128,9 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
          */
         private static $instance = null;
 
+        public $logs = array();
+        public $errors = array();
+
         /**
          * @since 1.1.3
          * @return Envato_Theme_Setup_Wizard
@@ -154,6 +157,15 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
             $this->init_globals();
             $this->init_actions();
 
+        }
+
+        public function log($message) {
+
+            $this->logs[] = $message;
+        }
+
+        public function error($message) {
+            $this->logs[] = 'ERROR: '.$message;
         }
 
         /**
@@ -222,14 +234,11 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 
             if(apply_filters($this->theme_name.'_enable_setup_wizard', true) && current_user_can('manage_options')) {
 
-//                add_action('after_switch_theme', array($this, 'switch_theme'));
-
                 if(class_exists('TGM_Plugin_Activation') && isset($GLOBALS['tgmpa'])) {
                     add_action('init', array($this, 'get_tgmpa_instanse'), 30);
                     add_action('init', array($this, 'set_tgmpa_url'), 40);
                 }
 
-//				add_action( 'admin_menu', array( $this, 'admin_menus' ) );
                 add_action('admin_enqueue_scripts', array($this, 'enqueue_scripts'));
                 add_action('admin_init', array($this, 'admin_redirects'), 30);
                 add_action('admin_init', array($this, 'init_wizard_steps'), 30);
@@ -241,24 +250,6 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 
             }
         }
-
-        /**
-         * After a theme update we clear the setup_complete option. This prompts the user to visit the update page again.
-         *
-         * @since 1.1.8
-         * @access public
-         */
-//		public function upgrader_post_install( $return, $theme ) {
-//			if ( is_wp_error( $return ) ) {
-//				return $return;
-//			}
-//			if ( $theme != get_stylesheet() ) {
-//				return $return;
-//			}
-//			update_option( 'knd_setup_complete', false );
-//
-//			return $return;
-//		}
 
         /**
          * Check if the theme default content already installed.
@@ -508,32 +499,16 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 
         public function step_intro_view() {
 
-//            $url = wp_nonce_url(KND_SETUP_WIZARD_URL, 'knd-setup-wizard');
-//
-//            $fields = array_keys($_POST); // Extra fields to pass to WP_Filesystem.
-//
-//            if(false === ($credentials = request_filesystem_credentials(esc_url_raw($url), '', false, false, $fields))) {
-//                return; // Stop the normal page form from displaying, credential request form will be shown.
-//            }
-//
-//            // Now we have some credentials, setup WP_Filesystem
-//            if( !WP_Filesystem($credentials)) { // Our credentials were no good, ask the user for them again
-//
-//                request_filesystem_credentials(esc_url_raw($url), '', true, false, $fields);
-//                return;
-//
-//            }
-
             // Remove the old scenario import data:
-            $destination = wp_upload_dir();
-            $unzipped_dir = "{$destination['path']}/kandinsky-text-"
-                .knd_get_wizard_plot_names(get_theme_mod('knd_site_scenario')).'-master';
+            $current_site_scenario = get_theme_mod('knd_site_scenario');
+            if($current_site_scenario) {
+                $destination = wp_upload_dir();
+                $unzipped_dir = "{$destination['path']}/kandinsky-text-"
+                    .knd_get_wizard_plot_names().'-master';
 
-            /** @var $wp_filesystem WP_Filesystem_Base */
-//            global $wp_filesystem;
-
-            if(Knd_Filesystem::get_instance()->is_dir($unzipped_dir)) {
-                Knd_Filesystem::get_instance()->rmdir($unzipped_dir, true);
+                if(Knd_Filesystem::get_instance()->is_dir($unzipped_dir)) {
+                    Knd_Filesystem::get_instance()->rmdir($unzipped_dir, true);
+                }
             }?>
 
             <h1><?php printf(esc_html__('Welcome to the %s setup wizard', 'knd'), wp_get_theme()); ?></h1>
@@ -586,24 +561,7 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
             tgmpa_load_bulk_installer();
             if( !class_exists('TGM_Plugin_Activation') || !isset($GLOBALS['tgmpa'])) {
                 die(__('Failed to find TGM plugin', 'knd'));
-            }
-//            $url = wp_nonce_url(add_query_arg(array('plugins' => 'go')), 'envato-setup');
-//
-//            $method = ''; // Leave blank so WP_Filesystem can populate it as necessary.
-//            $fields = array_keys($_POST); // Extra fields to pass to WP_Filesystem.
-//
-//            if(false === ($creds = request_filesystem_credentials(esc_url_raw($url), $method, false, false, $fields))) {
-//                return true; // Stop the normal page form from displaying, credential request form will be shown.
-//            }
-//
-//            // Now we have some credentials, setup WP_Filesystem
-//            if( !WP_Filesystem($creds)) { // Our credentials were no good, ask the user for them again
-//
-//                request_filesystem_credentials(esc_url_raw($url), $method, true, false, $fields);
-//
-//                return true;
-//
-//            } ?>
+            }?>
 
             <h1><?php esc_html_e('Default Plugins', 'knd'); ?></h1>
             <form method="post">
@@ -642,7 +600,7 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
                             }
 
                             echo $plugin_status; ?>
-                            </span>
+                                    </span>
                                     <div class="spinner"></div>
 
                                     <div class="knd-plugin-description"><?php echo $plugin['description'] ?></div>
@@ -1077,45 +1035,7 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 
         // return the difference in length between two strings
         public function cmpr_strlen($a, $b) {
-
             return strlen($b) - strlen($a);
-        }
-
-        public function _get_json($file) {
-
-            $theme_style = __DIR__.'/content/'.basename(get_theme_mod('dtbwp_site_scenario', $this->get_default_site_scenario_id())).'/';
-            if(is_file($theme_style.basename($file))) {
-                WP_Filesystem();
-                global $wp_filesystem;
-                $file_name = $theme_style.basename($file);
-                if(file_exists($file_name)) {
-                    return json_decode($wp_filesystem->get_contents($file_name), true);
-                }
-            }
-            // backwards compat:
-            if(is_file(__DIR__.'/content/'.basename($file))) {
-                WP_Filesystem();
-                global $wp_filesystem;
-                $file_name = __DIR__.'/content/'.basename($file);
-                if(file_exists($file_name)) {
-                    return json_decode($wp_filesystem->get_contents($file_name), true);
-                }
-            }
-
-            return array();
-        }
-
-        public $logs = array();
-
-        public function log($message) {
-
-            $this->logs[] = $message;
-        }
-
-        public $errors = array();
-
-        public function error($message) {
-            $this->logs[] = 'ERROR: '.$message;
         }
 
         public function step_scenario_view() { ?>

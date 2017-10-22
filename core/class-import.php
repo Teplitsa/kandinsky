@@ -18,14 +18,8 @@ class TST_Import {
 			array( 'regexp' => '/[^\/]*(\d{4})[^\/]*\.\w+$/i', 'pattern' => '%Y' ) ) );
 
 	private static $_instance = null;
-    private $filesystem = NULL;
 
 	private function __construct() {
-        WP_Filesystem();
-
-        /** @var WP_Filesystem_Base $wp_filesystem*/
-        global $wp_filesystem;
-        $this->filesystem = $wp_filesystem;
 	}
 
 	public static function get_instance() {
@@ -117,7 +111,7 @@ class TST_Import {
 	public function import_big_file( $url ) {
 		$tmp_dir = knd_get_temp_dir();
 		
-		if ( ! $this->filesystem->is_dir( $tmp_dir ) && ! $this->filesystem->mkdir( $tmp_dir ) ) {
+		if ( ! Knd_Filesystem::get_instance()->is_dir( $tmp_dir ) && ! Knd_Filesystem::get_instance()->mkdir( $tmp_dir ) ) {
 			throw new Exception( sprintf( esc_html__( "Can't create a download temporary directory: %s", 'knd' ), $tmp_dir ) );
 		}
 		
@@ -196,7 +190,7 @@ class TST_Import {
 			return false;
 		
 		$attachment_id = false;
-		$file = $this->filesystem->get_contents( $path );
+		$file = Knd_Filesystem::get_instance()->get_contents( $path );
 		
 		if ( $file ) {
 			
@@ -279,8 +273,8 @@ class TST_Import {
 		
 		if ( $localpdf ) {
 			$localpdf_file = preg_replace( '/\/$/', '', $localpdf ) . '/' . $new_file_base_name;
-			if ( $this->filesystem->exists( $localpdf_file ) ) {
-                $this->filesystem->copy( $localpdf_file, $new_file_no_prefix );
+			if ( Knd_Filesystem::get_instance()->exists( $localpdf_file ) ) {
+                Knd_Filesystem::get_instance()->copy( $localpdf_file, $new_file_no_prefix );
 			}
 		} else {
 //			TST_Convert2PDF::get_instance()->doc2pdf( $original_file, $new_file );
@@ -311,7 +305,7 @@ class TST_Import {
 			}
 			
 			unlink( $new_file_no_prefix );
-		} elseif ( $this->filesystem->exists( $new_file ) ) {
+		} elseif ( Knd_Filesystem::get_instance()->exists( $new_file ) ) {
 			$this->copy_to_localpdf( $new_file, $new_file_base_name );
 			unlink( $new_file );
 		}
@@ -327,8 +321,8 @@ class TST_Import {
 		}
 		
 		$localpdf_file = $pdf_dirname . '/' . $new_file_base_name;
-		if ( ! $this->filesystem->exists( $localpdf_file ) ) {
-            $this->filesystem->copy( $new_file, $localpdf_file );
+		if ( ! Knd_Filesystem::get_instance()->exists( $localpdf_file ) ) {
+            Knd_Filesystem::get_instance()->copy( $new_file, $localpdf_file );
 		}
 	}
 
