@@ -138,6 +138,12 @@ function knd_get_admin_menu_items( $place = '' ) {
 				        'text' => esc_html__( 'Report of an error', 'knd' ),
 				        'link' => esc_url( 'https://github.com/Teplitsa/kandinsky/issues/new' )
 			        ),
+		        	'theme-version' => array(
+		        		'class' => '',
+		        		'icon' => 'dashicons-tag',
+		        		'text' => sprintf( esc_html__( 'Version %s', 'knd' ), KND_VERSION),
+		        		'link' => KND_SOURCES_PAGE_URL
+		        	),
 		        	'update-theme' => array(
 		        		'class' => 'knd-update-theme',
 		        		'icon' => 'dashicons-controls-repeat',
@@ -176,6 +182,12 @@ function knd_get_admin_menu_items( $place = '' ) {
                         'text' => esc_html__( 'Email to the tech support', 'knd' ),
                         'link' => 'mailto:' . KND_SUPPORT_EMAIL
                     ),
+                	'theme-version' => array(
+                		'class' => '',
+                		'icon' => 'dashicons-tag',
+                		'text' => sprintf( esc_html__( 'Version %s', 'knd' ), KND_VERSION),
+                		'link' => KND_SOURCES_PAGE_URL
+                	),
                 	'update-theme' => array(
                 		'class' => 'knd-update-theme',
                 		'icon' => 'dashicons-controls-repeat',
