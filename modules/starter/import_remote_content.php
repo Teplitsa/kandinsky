@@ -359,12 +359,10 @@ class KND_Import_Git_Content {
         $destination = wp_upload_dir();
         $unzipped_dir = "{$destination['path']}/kandinsky-text-{$this->plot_name}-master";
 
-        if( is_dir($unzipped_dir) ) {
-            knd_rmdir($unzipped_dir);
-//            throw new Exception(sprintf(__('Old import files cleanup FAILED: %s.', 'knd'), $destination["path"]));
+        if( ! Knd_Filesystem::get_instance()->rmdir($unzipped_dir, true) ) {
+            throw new Exception(sprintf(__('Old import files cleanup FAILED: %s.', 'knd'), $destination["path"]));
         }
 
-        WP_Filesystem(); // Required for unzip_file() to work
         $unzipfile = unzip_file( $this->zip_fpath, $destination['path'] );
 
         if( !is_wp_error($unzipfile) ) {
@@ -395,13 +393,13 @@ class KND_Import_Git_Content {
             throw new Exception(__('No git content dir!', 'knd'));
         }
 
-        if( !is_dir($this->import_content_files_dir) ) {
+        if( !Knd_Filesystem::get_instance()->is_dir($this->import_content_files_dir) ) {
             throw new Exception(sprintf(__('Unzipped dir not found: %s', 'knd'), $this->import_content_files_dir));
         }
 
         $plot_dir = $this->import_content_files_dir;
 
-        if(!is_dir($plot_dir)) {
+        if( !Knd_Filesystem::get_instance()->is_dir($plot_dir) ) {
             throw new Exception(sprintf(__('Plot dir not found: %s', 'knd'), $plot_dir));
         }
 
@@ -422,14 +420,14 @@ class KND_Import_Git_Content {
         
         $plot_dir_listing = scandir($plot_dir);
         $inner_content_files = array();
-        
+
         foreach ($plot_dir_listing as $key => $value) {
-        
+
             if (!in_array($value,array(".", "..", "README.md"))) {
-                
+
                 $fpath = $plot_dir . DIRECTORY_SEPARATOR . $value;
-                
-                if(is_dir($fpath)) {
+
+                if(Knd_Filesystem::get_instance()->is_dir($fpath)) {
                     $inner_content_files[$value] = $this->scan_content_dir($fpath, $value);
                 }
                 else {
@@ -439,7 +437,7 @@ class KND_Import_Git_Content {
                     
                     if(preg_match("/.*\.md$/", $value)) {
                         
-                        if(is_file($fpath)) {
+                        if(Knd_Filesystem::get_instance()->is_file($fpath)) {
                             $piece_data = $this->piece_parser->parse_post( $fpath );
                             $piece_data['piece_name'] = $piece_name;
                             $piece_data['piece_section'] = $section;
@@ -471,6 +469,7 @@ class KND_Import_Git_Content {
 class KND_Git_Piece_Parser {
     
     function __construct() {
+        $this->parsedown = new Parsedown();
     }
 
     /**
@@ -481,7 +480,7 @@ class KND_Git_Piece_Parser {
      */
     function parse_post( $fpath ) {
         
-        $content = file_get_contents($fpath);
+        $content = Knd_Filesystem::get_instance()->get_contents($fpath);
         $content_parts = explode("+++", $content);
         $text = trim(end($content_parts));
         
