@@ -501,13 +501,19 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
         	?>
             <?php 
             // Remove the old scenario import data:
+            $is_show_hello = true;
             $current_site_scenario = get_theme_mod('knd_site_scenario');
             if($current_site_scenario) {
+                $is_show_hello = false;
+                
                 $destination = wp_upload_dir();
                 $unzipped_dir = "{$destination['path']}/kandinsky-text-"
                     .knd_get_wizard_plot_names($current_site_scenario).'-master';
 
                 $knd_fs = Knd_Filesystem::get_instance();
+                if($knd_fs) {
+                    $is_show_hello = true;
+                }
                 if($knd_fs && $knd_fs->is_dir($unzipped_dir)) {
                 	$knd_fs->rmdir($unzipped_dir, true);
                 }
@@ -515,7 +521,7 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
             }
             ?>
             
-            <?php if($knd_fs):?>
+            <?php if($is_show_hello):?>
             
             <h1><?php printf(esc_html__('Welcome to the %s setup wizard', 'knd'), wp_get_theme()); ?></h1>
             <p><?php printf(esc_html__("Hello! Let's set up your organization website together. With few simple steps we will configure minimal necessary settings, like installing of required plugins, setting up default website content and the logo. It should only take 5 minutes. You can always change any of these settings later on, in the Plugins admin folder.", 'knd')); ?></p>
