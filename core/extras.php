@@ -324,7 +324,11 @@ function knd_remove_scenario_unzipped_dir() {
 
 	// Attempt to remove a scenario unzipped folder only if user is going from wizard to some other page:
 	if ( ! is_main_query() || wp_doing_ajax() || stripos( knd_current_url(), 'themes.php' ) !== false ||
-		 stripos( knd_current_url(), 'knd-setup-wizard' ) !== false ) {
+		 stripos( knd_current_url(), 'knd-setup-wizard' ) !== false || !is_admin() || !current_user_can('administrator') ) {
+		return;
+	}
+	
+	if(!function_exists('submit_button')) {
 		return;
 	}
 
@@ -374,7 +378,7 @@ class Knd_Filesystem {
 
         $url = knd_current_url();
         $fields = array_keys($_POST); // Extra fields to pass to WP_Filesystem
-
+        
         if(false === ($credentials = request_filesystem_credentials(esc_url_raw($url), '', false, false, $fields))) {
             return; // Stop the normal page form from displaying, credential request form will be shown.
         }
