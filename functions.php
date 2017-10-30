@@ -109,7 +109,7 @@ foreach (glob(get_template_directory() . '/modules/*') as $module_file) {
 if(is_admin() || current_user_can('manage_options')) {
     get_template_part('/core/admin-update-theme');
     get_template_part('/core/admin');
-    get_template_part('/vendor/class/tgm-plugin-activation');
+    get_template_part('/vendor/class-tgm-plugin-activation');
 }
 
 if((is_admin() && !empty($_GET['page']) && $_GET['page'] == 'knd-setup-wizard' ) || wp_doing_ajax()) {
