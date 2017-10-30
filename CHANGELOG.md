@@ -21,6 +21,6 @@ All notable changes to this project will be documented in this file.
 ## [1.0.0] - 2017-09-27
 ### First official release!
 
-[Unreleased]: https://github.com/olivierlacan/keep-a-changelog/compare/v1.2.0...HEAD
-[1.2.0]: https://github.com/olivierlacan/keep-a-changelog/compare/v1.1.0...v1.2.0
-[1.1.0]: https://github.com/olivierlacan/keep-a-changelog/compare/v1.0.0...v1.1.0
+[Unreleased]: https://github.com/Teplitsa/kandinsky/compare/v1.2.0...HEAD
+[1.2.0]: https://github.com/Teplitsa/kandinsky/compare/v1.1.0...v1.2.0
+[1.1.0]: https://github.com/Teplitsa/kandinsky/compare/v1.0.0...v1.1.0
