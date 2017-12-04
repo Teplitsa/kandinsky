@@ -109,33 +109,8 @@ class TST_Import {
 	}
 
 	public function import_big_file( $url ) {
-		$tmp_dir = knd_get_temp_dir();
 		
-		if ( ! Knd_Filesystem::get_instance()->is_dir( $tmp_dir ) && ! Knd_Filesystem::get_instance()->mkdir( $tmp_dir ) ) {
-			throw new Exception( sprintf( esc_html__( "Can't create a download temporary directory: %s", 'knd' ), $tmp_dir ) );
-		}
-		
-		$tmp_file = tempnam( $tmp_dir, 'kandinsky_' );
-		set_time_limit( 0 );
-		$fp = fopen( $tmp_file, 'w+' );
-		if ( ! $fp ) {
-			throw new Exception( sprintf( esc_html__( "Can't create a download temporary file: %s", 'knd' ), $tmp_file ) );
-		}
-		
-		$ch = curl_init();
-		curl_setopt( $ch, CURLOPT_URL, $url );
-		curl_setopt( $ch, CURLOPT_TIMEOUT, 300 );
-		curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, true );
-		
-		// Fix for the old local SSL certs issue:
-		curl_setopt( $ch, CURLOPT_CAINFO, get_template_directory() . '/vendor/cacert.pem' );
-		
-		curl_setopt( $ch, CURLOPT_FILE, $fp );
-		if ( curl_exec( $ch ) === false ) {
-			throw new Exception( sprintf( esc_html__( 'CURL error: %s', 'knd' ), curl_error( $ch ) ) );
-		}
-		curl_close( $ch );
-		fclose( $fp );
+		$tmp_file = download_url($url);
 		
 		$filename_no_ext = pathinfo( $url, PATHINFO_FILENAME );
 		$extension = pathinfo( $url, PATHINFO_EXTENSION );
