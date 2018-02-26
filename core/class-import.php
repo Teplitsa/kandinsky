@@ -109,33 +109,8 @@ class TST_Import {
 	}
 
 	public function import_big_file( $url ) {
-		$tmp_dir = knd_get_temp_dir();
 		
-		if ( ! is_dir( $tmp_dir ) && ! mkdir( $tmp_dir ) ) {
-			throw new Exception( sprintf( esc_html__( "Can't create a download temporary directory: %s", 'knd' ), $tmp_dir ) );
-		}
-		
-		$tmp_file = tempnam( $tmp_dir, 'kandinsky_' );
-		set_time_limit( 0 );
-		$fp = fopen( $tmp_file, 'w+' );
-		if ( ! $fp ) {
-			throw new Exception( sprintf( esc_html__( "Can't create a download temporary file: %s", 'knd' ), $tmp_file ) );
-		}
-		
-		$ch = curl_init();
-		curl_setopt( $ch, CURLOPT_URL, $url );
-		curl_setopt( $ch, CURLOPT_TIMEOUT, 300 );
-		curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, true );
-		
-		// Fix for the old local SSL certs issue:
-		curl_setopt( $ch, CURLOPT_CAINFO, get_template_directory() . '/vendor/cacert.pem' );
-		
-		curl_setopt( $ch, CURLOPT_FILE, $fp );
-		if ( curl_exec( $ch ) === false ) {
-			throw new Exception( sprintf( esc_html__( 'CURL error: %s', 'knd' ), curl_error( $ch ) ) );
-		}
-		curl_close( $ch );
-		fclose( $fp );
+		$tmp_file = download_url($url);
 		
 		$filename_no_ext = pathinfo( $url, PATHINFO_FILENAME );
 		$extension = pathinfo( $url, PATHINFO_EXTENSION );
@@ -190,7 +165,7 @@ class TST_Import {
 			return false;
 		
 		$attachment_id = false;
-		$file = file_get_contents( $path );
+		$file = Knd_Filesystem::get_instance()->get_contents( $path );
 		
 		if ( $file ) {
 			
@@ -273,11 +248,11 @@ class TST_Import {
 		
 		if ( $localpdf ) {
 			$localpdf_file = preg_replace( '/\/$/', '', $localpdf ) . '/' . $new_file_base_name;
-			if ( file_exists( $localpdf_file ) ) {
-				copy( $localpdf_file, $new_file_no_prefix );
+			if ( Knd_Filesystem::get_instance()->exists( $localpdf_file ) ) {
+                Knd_Filesystem::get_instance()->copy( $localpdf_file, $new_file_no_prefix );
 			}
 		} else {
-			TST_Convert2PDF::get_instance()->doc2pdf( $original_file, $new_file );
+//			TST_Convert2PDF::get_instance()->doc2pdf( $original_file, $new_file );
 		}
 		
 		if ( $localpdf && file_exists( $new_file_no_prefix ) ) {
@@ -305,7 +280,7 @@ class TST_Import {
 			}
 			
 			unlink( $new_file_no_prefix );
-		} elseif ( file_exists( $new_file ) ) {
+		} elseif ( Knd_Filesystem::get_instance()->exists( $new_file ) ) {
 			$this->copy_to_localpdf( $new_file, $new_file_base_name );
 			unlink( $new_file );
 		}
@@ -321,8 +296,8 @@ class TST_Import {
 		}
 		
 		$localpdf_file = $pdf_dirname . '/' . $new_file_base_name;
-		if ( ! file_exists( $localpdf_file ) ) {
-			copy( $new_file, $localpdf_file );
+		if ( ! Knd_Filesystem::get_instance()->exists( $localpdf_file ) ) {
+            Knd_Filesystem::get_instance()->copy( $new_file, $localpdf_file );
 		}
 	}
 
@@ -340,13 +315,12 @@ class TST_Import {
 	}
 
 	public function get_file_name( $url, $content ) {
-		$title = '';
-		
+
 		$matches = array();
 		preg_match( '/<a[^>]*' . preg_quote( $url, '/' ) . '.*?>(.*?)<\/a>/i', $content, $matches );
 		$title = isset( $matches[1] ) ? $matches[1] : '';
 		$title = $this->clean_string( $title );
-
+		
 		return $title;
 	}
 
@@ -362,7 +336,7 @@ class TST_Import {
 
 	public function get_date_from_url( $url, $parse_rules ) {
 		$file_date = '';
-
+		
 		foreach ( $parse_rules as $k => $v ) {
 			if ( preg_match( $v['regexp'], $url, $matches ) ) {
 				if ( isset( $matches[1] ) ) {
@@ -377,13 +351,13 @@ class TST_Import {
 				break;
 			}
 		}
-
+		
 		return $file_date;
 	}
 
 	public function get_exact_date_from_url( $url, $parse_rules ) {
 		$file_date = '';
-
+		
 		foreach ( $parse_rules as $k => $v ) {
 			if ( preg_match( $v['regexp'], $url, $matches ) ) {
 				if ( isset( $matches[1] ) ) {
@@ -399,7 +373,7 @@ class TST_Import {
 				break;
 			}
 		}
-
+		
 		return $file_date;
 	}
 
@@ -408,11 +382,11 @@ class TST_Import {
 		if ( $tag_slug && isset( self::$date_from_url[$tag_slug] ) ) {
 			$date_parse_rules[$tag_slug] = self::$date_from_url[$tag_slug];
 		}
-
+		
 		if ( ! count( $date_parse_rules ) ) {
 			$date_parse_rules = self::$date_from_url;
 		}
-
+		
 		foreach ( $date_parse_rules as $tag_slug => $parse_rules ) {
 			$file_date = TST_Import::get_instance()->get_date_from_url( $url, $parse_rules );
 			if ( $file_date ) {
@@ -424,30 +398,30 @@ class TST_Import {
 
 	function get_attachment_guid_by_url( $url ) {
 		$parsed_url = explode( parse_url( WP_CONTENT_URL, PHP_URL_PATH ), $url );
-
+		
 		$this_host = str_ireplace( 'www.', '', parse_url( home_url(), PHP_URL_HOST ) );
 		$file_host = str_ireplace( 'www.', '', parse_url( $url, PHP_URL_HOST ) );
-
+		
 		if ( ! isset( $parsed_url[1] ) || empty( $parsed_url[1] ) || ( $this_host != $file_host ) ) {
 			return;
 		}
-
+		
 		return WP_CONTENT_URL . $parsed_url[1];
 	}
 
 	function get_attachment_id_by_url( $url ) {
 		$parsed_url = explode( parse_url( WP_CONTENT_URL, PHP_URL_PATH ), $url );
-
+		
 		$this_host = str_ireplace( 'www.', '', parse_url( home_url(), PHP_URL_HOST ) );
 		$file_host = str_ireplace( 'www.', '', parse_url( $url, PHP_URL_HOST ) );
-
+		
 		if ( ! isset( $parsed_url[1] ) || empty( $parsed_url[1] ) || ( $this_host != $file_host ) ) {
 			return;
 		}
 		global $wpdb;
-		$attachment = $wpdb->get_col(
+		$attachment = $wpdb->get_col( 
 			$wpdb->prepare( "SELECT ID FROM {$wpdb->prefix}posts WHERE guid LIKE %s;", '%' . $parsed_url[1] ) );
-
+		
 		return count( $attachment ) ? $attachment[0] : 0;
 	}
 
@@ -456,23 +430,23 @@ class TST_Import {
 			 isset( $section['xpath']['title'] ) ) {
 			$section["clean_content_xpath"] = array();
 		}
-
+		
 		if ( isset( $section['xpath']['title'] ) ) {
 			if ( ! is_array( $section['xpath']['title'] ) ) {
 				$section["clean_content_xpath"][] = $section['xpath']['title'];
 			}
 		}
-
+		
 		if ( is_array( $section["clean_content_xpath"] ) ) {
 			$dom = new DOMDocument( '1.0', 'UTF-8' );
-
-			$dom->loadHTML(
-				'<meta http-equiv="Content-Type" content="text/html; charset=utf-8">' . $content,
+			
+			$dom->loadHTML( 
+				'<meta http-equiv="Content-Type" content="text/html; charset=utf-8">' . $content, 
 				LIBXML_NOWARNING | LIBXML_NOERROR );
-
+			
 			$nodes2delete = array();
 			$xpath = new DomXPath( $dom );
-
+			
 			foreach ( $section["clean_content_xpath"] as $v ) {
 				if ( ! $v ) {
 					continue;
@@ -483,7 +457,7 @@ class TST_Import {
 					$nodes2delete[] = $node;
 				}
 			}
-
+			
 			foreach ( $nodes2delete as $element ) {
 				try {
 					if ( $element->parentNode ) {
@@ -492,17 +466,17 @@ class TST_Import {
 				} catch ( Exception $ex ) {
 				}
 			}
-
+			
 			$xpath = new DomXPath( $dom );
 			$body = $xpath->query( './/body' );
 			$body = $body ? $body->item( 0 ) : NULL;
 			$content = $body ? $this->get_inner_html( $body ) : '';
-
+			
 			unset( $body );
 			unset( $xpath );
 			unset( $nodes2delete );
 		}
-
+		
 		return $content;
 	}
 
@@ -518,20 +492,20 @@ class TST_Import {
 				$content = preg_replace( $regexp, "", $content, $limit );
 			}
 		}
-
+		
 		return $content;
 	}
 
 	public function get_inner_html( DOMNode $element ) {
 		$innerHTML = "";
 		$children = $element->childNodes;
-
+		
 		if ( $children ) {
 			foreach ( $children as $child ) {
 				$innerHTML .= $element->ownerDocument->saveHTML( $child );
 			}
 		}
-
+		
 		return $innerHTML;
 	}
 
@@ -544,25 +518,25 @@ class TST_Import {
 		$content = $this->remove_script( $content );
 		$content = $this->clean_content_regexp( $content, $section );
 		$content = $this->clean_content_xpath( $content, $section );
-
+		
 		return $content;
 	}
 
 	function urls_rel2abs( $content, $base_url, $dront_site_url ) {
-		$content = preg_replace(
-			'/(src|href)\s*=\s*(["\'])\s*(\/(?!\/)[^\"\' ]+)/',
-			'\1=\2' . $dront_site_url . '\3',
+		$content = preg_replace( 
+			'/(src|href)\s*=\s*(["\'])\s*(\/(?!\/)[^\"\' ]+)/', 
+			'\1=\2' . $dront_site_url . '\3', 
 			$content );
-		$content = preg_replace(
-			'/(src|href)\s*=\s*(["\'])\s*((?!https?:\/\/)[^\"\' ]+)/',
-			'\1=\2' . $base_url . '/\3',
+		$content = preg_replace( 
+			'/(src|href)\s*=\s*(["\'])\s*((?!https?:\/\/)[^\"\' ]+)/', 
+			'\1=\2' . $base_url . '/\3', 
 			$content );
 		return $content;
 	}
 
 	function get_headers_from_curl_response( $header_text ) {
 		$headers = array();
-
+		
 		foreach ( explode( "\r\n", $header_text ) as $i => $line ) {
 			if ( $i === 0 ) {
 				$headers['STATUS'] = $line;
@@ -575,7 +549,7 @@ class TST_Import {
 				}
 			}
 		}
-
+		
 		return $headers;
 	}
 
@@ -586,19 +560,11 @@ class TST_Import {
 
 	public function maybe_import( $external_file_url ) {
 		$exist_attachment = $this->get_attachment_by_old_url( $external_file_url );
-		$attachment_id = 0;
-
+		
 		if ( $exist_attachment ) {
-			$file_id = $exist_attachment->ID;
-			$file_url = wp_get_attachment_url( $file_id );
 			$attachment_id = $exist_attachment->ID;
 		} else {
 			$attachment_id = $this->import_big_file( $external_file_url );
-
-			if ( $attachment_id ) {
-				$file_id = $attachment_id;
-				$file_url = wp_get_attachment_url( $attachment_id );
-			}
 		}
 		unset( $exist_attachment );
 		
