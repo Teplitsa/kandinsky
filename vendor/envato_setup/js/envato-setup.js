@@ -1,3 +1,5 @@
+var stopLoadingAnimation = null;
+
 var EnvatoWizard = (function( $ ) {
 
 	var t,
@@ -9,6 +11,10 @@ var EnvatoWizard = (function( $ ) {
 			installContent: function( btn ) {
 				var content = new ContentManager();
 				content.init( btn );
+			},
+			kndDownloadPlotStep: function( btn ) {
+				var tstDownloadStepManager = new KndDownloadPlotStepManager();
+				tstDownloadStepManager.init( btn );
 			}
 		};
 
@@ -22,9 +28,12 @@ var EnvatoWizard = (function( $ ) {
 		// Init button clicks:
 		$( '.button-next' ).on( 'click', function( e ) {
 
-			if ( ! dtbakerLoadingButton( this ) ) {
+			stopLoadingAnimation = dtbakerLoadingButton( this );
+			
+			if ( !stopLoadingAnimation  ) {
 				return false;
 			}
+			
 			if (
 				$( this ).data( 'callback' ) &&
 				typeof callbacks[ $( this ).data( 'callback' ) ] !== 'undefined'
@@ -303,12 +312,13 @@ var EnvatoWizard = (function( $ ) {
 	function dtbakerLoadingButton( btn ) {
 
 		var $button = jQuery( btn ),
-			existingText = $button.text(),
 			existingWidth = $button.outerWidth(),
 			loadingText = '⡀⡀⡀⡀⡀⡀⡀⡀⡀⡀⠄⠂⠁⠁⠂⠄',
 			completed = false,
 			_modifier = $button.is( 'input' ) || $button.is( 'button' ) ? 'val' : 'text',
 			animIndex = [ 0, 1, 2 ];
+			
+		var existingText = $button.is( 'input' ) || $button.is( 'button' ) ? $button.val() : $button.text();
 
 		if ( 'yes' === $button.data( 'done-loading' ) ) {
 			return false;
@@ -340,11 +350,14 @@ var EnvatoWizard = (function( $ ) {
 		moo();
 
 		return {
-			done: function() {
+			done: function(unsetDone=false) {
 				completed = true;
 				$button[ _modifier ]( existingText );
 				$button.removeClass( 'dtbaker_loading_button_current' );
 				$button.attr( 'disabled', false );
+				if(unsetDone) {
+					$button.data( 'done-loading', '' );
+				}
 			}
 		};
 
@@ -364,3 +377,87 @@ var EnvatoWizard = (function( $ ) {
 })( jQuery );
 
 EnvatoWizard.init();
+
+var KndDownloadPlotStepManager = function() {
+	
+	this.init = function(btn) {
+		$(btn).parent().find('.knd-download-plot-skip').hide();
+		
+		this.doStep();
+	}
+	
+	this.doStep = function(step=0){
+		
+		var $error = $('#knd-download-plot-error');
+		var self = this;
+		var $stepExplanations = $('#knd-download-status-explain');
+		$stepExplanations.show();
+		
+		$.post(envatoSetupParams.ajaxurl, {
+			
+			action: 'knd_wizard_download_plot_step',
+			new_scenario_id: $('#new_scenario_id').val(),
+			save_step: '...',
+			knd_download_step: step,
+			_wpnonce: $('input#_wpnonce').val(),
+			_wp_http_referer: $('input[name=_wp_http_referer]').val(),
+
+		}, null, 'json')
+		.done(function(json){
+			
+			if(json.status == 'ok') {
+				
+				if(json.status_explain) {
+					$stepExplanations.text(json.status_explain);
+				}
+				
+				if(json.knd_download_step >= 5) {
+					$('input#_wpnonce').val(json.nonce);
+					
+					if(stopLoadingAnimation) {
+						stopLoadingAnimation.done(true);
+					}
+					
+					var $submitButton = $('#knd-install-scenario');
+					$submitButton.data('callback', '');
+					$submitButton.click();
+				}
+				else {
+					self.doStep(step + 1);
+				}
+				
+			}
+			else {
+				$error.show();
+				if(json.status == 'error') {
+					
+					if(json.no_scenario_id) {
+						$error.find('.error-text').html(json.error);
+						$error.find('.wizard-error-support-text').hide();
+						$error.find('.envato-setup-actions').hide();
+						
+						if(stopLoadingAnimation) {
+							stopLoadingAnimation.done(true);
+						}
+						
+						$error.parent().find('.button-large').show();
+					}
+					else {
+						$error.find('.wizard-error-support-text').show();
+						$error.find('.envato-setup-actions').show();
+						$error.find('.wizard-error-support-text').html(json.error);
+					}
+				}
+			}
+			
+		})
+		.fail(function(){
+			$error.find('.wizard-error-support-text').show();
+			$error.find('.envato-setup-actions').show();
+			$error.find('.wizard-error-support-text').html('');
+			$error.show();
+		});
+		
+	}
+	
+}

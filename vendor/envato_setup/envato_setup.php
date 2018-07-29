@@ -247,6 +247,7 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
                 add_action('wp_ajax_knd_wizard_setup_plugins', array($this, 'ajax_plugins'));
                 add_action('wp_ajax_knd_wizard_setup_content', array($this, 'ajax_content'));
                 add_action('wp_ajax_knd_wizard_update_settings', array($this, 'ajax_settings'));
+                add_action('wp_ajax_knd_wizard_download_plot_step', array($this, 'ajax_download_plot_step'));
 
             }
         }
@@ -501,7 +502,7 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
         	
             // Remove the old scenario import data:
             $is_show_hello = true;
-            $current_site_scenario = get_theme_mod('knd_site_scenario');
+            $current_site_scenario = knd_get_theme_mod('knd_site_scenario');
             if($current_site_scenario) {
                 $is_show_hello = false;
                 
@@ -747,7 +748,7 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 
         public function _content_install_site_title_desc() {
 
-            $imp = new KND_Import_Remote_Content(get_theme_mod('knd_site_scenario'));
+            $imp = new KND_Import_Remote_Content(knd_get_theme_mod('knd_site_scenario'));
             $imp->import_downloaded_content();
 
             $pdb = KND_Plot_Data_Builder::produce_builder($imp);
@@ -759,7 +760,7 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 
         public function _content_install_posts() {
 
-            $imp = new KND_Import_Remote_Content(get_theme_mod('knd_site_scenario'));
+            $imp = new KND_Import_Remote_Content(knd_get_theme_mod('knd_site_scenario'));
             $imp->import_downloaded_content();
 
             $pdb = KND_Plot_Data_Builder::produce_builder($imp);
@@ -771,7 +772,7 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 
         public function _content_install_pages() {
 
-            $imp = new KND_Import_Remote_Content(get_theme_mod('knd_site_scenario'));
+            $imp = new KND_Import_Remote_Content(knd_get_theme_mod('knd_site_scenario'));
             $imp->import_downloaded_content();
 
             $pdb = KND_Plot_Data_Builder::produce_builder($imp);
@@ -783,7 +784,7 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 
         public function _content_install_settings() {
 
-            $imp = new KND_Import_Remote_Content(get_theme_mod('knd_site_scenario'));
+            $imp = new KND_Import_Remote_Content(knd_get_theme_mod('knd_site_scenario'));
             $imp->import_downloaded_content();
 
             $pdb = KND_Plot_Data_Builder::produce_builder($imp);
@@ -797,7 +798,7 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 
         public function _content_install_menu() {
 
-            $imp = new KND_Import_Remote_Content(get_theme_mod('knd_site_scenario'));
+            $imp = new KND_Import_Remote_Content(knd_get_theme_mod('knd_site_scenario'));
             $imp->import_downloaded_content();
 
             $pdb = KND_Plot_Data_Builder::produce_builder($imp);
@@ -810,7 +811,7 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 
         public function _content_install_content() {
 
-            $imp = new KND_Import_Remote_Content(get_theme_mod('knd_site_scenario'));
+            $imp = new KND_Import_Remote_Content(knd_get_theme_mod('knd_site_scenario'));
             $imp->import_downloaded_content();
 
             $pdb = KND_Plot_Data_Builder::produce_builder($imp);
@@ -838,7 +839,7 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 
             return true;
         }
-
+        
         private function _content_default_get() {
 
             $content = array();
@@ -1054,11 +1055,22 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 
             <h1><?php esc_html_e('Choose website template', 'knd'); ?></h1>
             <form method="post">
-                <p><?php esc_html_e('For your convenience, we’ve created several templates for NGOs. Select the one that you fits you best. You will be able to change colours, content (text and images).', 'knd'); ?></p>
+                
+                <div class="wizard-error" id="knd-download-plot-error" style="display: none;">
+                    <span class="error-begin"><?php esc_html_e('Error:', 'knd')?></span>
+                    <span class="error-text"><?php esc_html_e('Downloading theme file failed!', 'knd')?></span>
+                    <div class="wizard-error-support-text"></div>
+                    <p class="envato-setup-actions error step">
+                        <a href="<?php echo admin_url()?>" class="button button-large button-error"><?php esc_html_e('Back to the Dashboard', 'knd')?></a>
+                        <a href="mailto:<?php echo KND_SUPPORT_EMAIL?>" class="button button-error button-large button-primary"><?php esc_html_e('Email to the theme support', 'knd')?></a>
+                    </p>
+                </div>
 
+                <p><?php esc_html_e('For your convenience, we’ve created several templates for NGOs. Select the one that you fits you best. You will be able to change colours, content (text and images).', 'knd'); ?></p>
+                
                 <div class="theme-presets">
                     <ul>
-                        <?php $current_scenario_id = get_theme_mod('knd_site_scenario', $this->get_default_site_scenario_id());
+                        <?php $current_scenario_id = knd_get_theme_mod('knd_site_scenario', $this->get_default_site_scenario_id());
 
                         if(empty($this->site_scenarios)) {
                             throw new Exception(__('No scenarios detected', 'knd'), 1);
@@ -1083,10 +1095,11 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
                 <input type="hidden" name="new_scenario_id" id="new_scenario_id" value="<?php echo $current_scenario_id ? $current_scenario_id : ''; ?>">
 
                 <p class="envato-setup-actions step">
-                    <input type="submit" class="button-primary button button-large button-next" value="<?php esc_attr_e('Continue', 'knd'); ?>" name="save_step">
-                    <a href="<?php echo esc_url($this->get_next_step_link()); ?>" class="button button-large button-next">
+                    <input type="submit" class="button-primary button button-large button-next" id="knd-install-scenario" data-callback="kndDownloadPlotStep" value="<?php esc_attr_e('Continue', 'knd'); ?>" name="save_step">
+                    <a href="<?php echo esc_url($this->get_next_step_link()); ?>" class="button button-large button-next knd-download-plot-skip">
                         <?php esc_html_e('Skip this step', 'knd'); ?>
                     </a>
+                    <span id="knd-download-status-explain" style="display: none;"><?php esc_html_e('Downloading template archive...', 'knd')?></span>
                     <?php wp_nonce_field('knd-setup'); ?>
                 </p>
             </form>
@@ -1096,6 +1109,95 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
         /**
          * Save logo & design options
          */
+        public function ajax_download_plot_step() {
+            
+            $scenario_download_status_explain = array(
+                0 => esc_html__('Downloading template archive...', 'knd'),
+                1 => esc_html__('Extracting template content...', 'knd'),
+                2 => esc_html__('Importing template content...', 'knd'),
+                3 => esc_html__('Building template files...', 'knd'),
+                4 => esc_html__('Building template options...', 'knd'),
+                5 => esc_html__('Building template colors...', 'knd'),
+            );
+            
+            check_admin_referer('knd-setup');
+            
+            if(empty($_POST['new_scenario_id'])) {
+                
+                wp_send_json(array(
+                    'status' => 'error',
+                    'no_scenario_id' => true,
+                    'error' => esc_html__('Please select the scenario', 'knd'),
+                ));
+                
+            }
+            elseif($_POST['new_scenario_id']) {
+
+                $plot_name = trim($_POST['new_scenario_id']);
+
+                set_theme_mod('knd_site_scenario', $plot_name);
+
+                if($plot_name) {
+
+                    try {
+                        
+                        $download_step = isset($_POST['knd_download_step']) ? (int) $_POST['knd_download_step'] : 0;
+                        
+                        $imp = new KND_Import_Remote_Content($plot_name);
+
+                        if($download_step == 0) {
+                            $imp->download_content();
+                        }
+                        elseif($download_step == 1) {
+                            $imp->extract_downloaded_file();
+                        }
+                        elseif($download_step == 2) {
+                            $imp->import_downloaded_content();
+                        }
+                        else {
+                            
+                            $pdb = KND_Plot_Data_Builder::produce_builder($imp);
+                            
+                            if( !$pdb) { // Show some user-friendly error
+                                throw new Exception(sprintf(__('Plot data builder was not produced for plot: %s', 'knd'), $plot_name));
+                            }
+                            
+                            if($download_step == 3) {
+                                $pdb->build_theme_files();
+                            }
+                            elseif($download_step == 4) {
+                                $pdb->build_option_files();
+                            }
+                            elseif($download_step == 5) {
+                                $pdb->build_theme_colors();
+                            }
+                        }
+                        
+                        wp_send_json(array(
+                            'status' => 'ok',
+                            'knd_download_step' => $download_step,
+                            'status_explain' => $scenario_download_status_explain[$download_step + 1],
+                            'nonce' => wp_create_nonce('knd-setup'),
+                        ));
+                        
+                    } catch(Exception $ex) {
+
+                        set_theme_mod('knd_site_scenario', false);
+                        
+                        wp_send_json(array(
+                            'status' => 'error',
+                            'error' => $ex->getMessage(),
+                            'error_code' => $ex->getCode(),
+                        ));
+
+                        die();
+
+                    }
+                    
+                }                        
+            }    
+        }
+
         public function step_scenario_handler() {
 
             check_admin_referer('knd-setup');
@@ -1110,21 +1212,24 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 
                     try {
 
-                        $imp = new KND_Import_Remote_Content($plot_name);
-                        $imp->import_content();
-
-                        $pdb = KND_Plot_Data_Builder::produce_builder($imp);
-                        if( !$pdb) { // Show some user-friendly error
-                            throw new Exception(sprintf(__('Plot data builder was not produced for plot: %s', 'knd'), $plot_name));
-                        }
-                        $pdb->build_theme_files();
-                        $pdb->build_option_files();
-                        $pdb->build_theme_colors();
-
-                        update_option('knd_setup_install_leyka', false);
-
+                        //$imp = new KND_Import_Remote_Content($plot_name);
+                        //$imp->import_content();
+                        
+                        //$pdb = KND_Plot_Data_Builder::produce_builder($imp);
+                        //if( !$pdb) { // Show some user-friendly error
+                        //    throw new Exception(sprintf(__('Plot data builder was not produced for plot: %s', 'knd'), $plot_name));
+                        //}
+                        //$pdb->build_theme_files();
+                        //$pdb->build_option_files();
+                        //$pdb->build_theme_colors();
+                        //
+                        //update_option('knd_setup_install_leyka', false);
+                        //
+                        //wp_redirect(esc_url_raw($this->get_next_step_link()));
+                        //exit;
+                        
                         wp_redirect(esc_url_raw($this->get_next_step_link()));
-                        exit;
+                        exit();
 
                     } catch(Exception $ex) {
 
