@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-29 14:20+0200\n"
-"PO-Revision-Date: 2018-07-29 14:43+0200\n"
+"PO-Revision-Date: 2018-07-29 15:41+0200\n"
 "Last-Translator: ahaenor <ahaenor@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -1051,7 +1051,7 @@ msgstr "Идет распаковка архива темы..."
 
 #: functions.php:27
 msgid "Importing template content..."
-msgstr "Импорт содержимого..."
+msgstr "Идет импорт содержимого. Операция может занять несколько минут..."
 
 #: functions.php:28
 msgid "Building template files..."
