@@ -25,13 +25,13 @@
         
 			<div class="site-branding site-panel-cell"><?php knd_logo_markup();?></div>
 			
-			<?php $header_text = get_theme_mod('text_in_header'); ?>
+			<?php $header_text = knd_get_theme_mod('text_in_header'); ?>
 			<div class="site-details site-panel-cell">
 				<div class="site-details-cell"><?php echo apply_filters('knd_the_content', $header_text); ?></div>
 			</div>									
 			
 			<div class="trigger-button donate site-panel-cell hide-upto-medium">
-				<a id="trigger_donate"  href="<?php echo get_theme_mod('knd_hero_image_support_url') ?>"><?php echo get_theme_mod('knd_hero_image_support_button_caption'); ?></a>
+				<a id="trigger_donate"  href="<?php echo knd_get_theme_mod('knd_hero_image_support_url') ?>"><?php echo knd_get_theme_mod('knd_hero_image_support_button_caption'); ?></a>
 			</div>
 			
 			<div class="trigger-button menu site-panel-cell">

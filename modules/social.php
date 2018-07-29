@@ -12,7 +12,7 @@ function knd_social_links($atts = array(), $echo = true) {
     $social_links = array();
     foreach(knd_get_social_media_supported() as $id => $data) {
 
-        $link = esc_url(get_theme_mod('knd_social_links_'.$id));
+        $link = esc_url(knd_get_theme_mod('knd_social_links_'.$id));
         if($link) {
             $social_links[$id] = array('label' => $data['label'], 'link' => $link);
         }

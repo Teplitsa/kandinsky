@@ -161,7 +161,7 @@ function knd_theme_update_get_steps() {
 }
 
 function knd_get_current_plot_pbd() {
-	$plot = get_theme_mod('knd_site_scenario');
+	$plot = knd_get_theme_mod('knd_site_scenario');
 	
 	$imp = new KND_Import_Remote_Content($plot);
 	$imp->import_downloaded_content();
@@ -216,7 +216,7 @@ function knd_download_theme_archive() {
 }
 
 function knd_download_theme_update() {
-	$plot = get_theme_mod('knd_site_scenario');
+	$plot = knd_get_theme_mod('knd_site_scenario');
 	
 	$json_response = array( 'status' => 'ok' );
 	
@@ -224,14 +224,14 @@ function knd_download_theme_update() {
 }
 
 function knd_unzip_theme_update() {
-	$plot = get_theme_mod('knd_site_scenario');
+	$plot = knd_get_theme_mod('knd_site_scenario');
 	
 	$json_response = array( 'status' => 'ok' );
 	return $json_response;
 }
 
 function knd_update_import_content() {
-	$plot = get_theme_mod('knd_site_scenario');
+	$plot = knd_get_theme_mod('knd_site_scenario');
 	$imp = new KND_Import_Remote_Content($plot);
 	$imp->import_content();
 

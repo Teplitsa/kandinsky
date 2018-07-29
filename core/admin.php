@@ -256,7 +256,7 @@ function knd_remove_theme() {
 		$nonce = $_REQUEST['_wpnonce'];
 		if(wp_verify_nonce( $nonce, 'knd-remove-theme' )) {
 			
-			$knd_site_scenario = get_theme_mod('knd_site_scenario');
+			$knd_site_scenario = knd_get_theme_mod('knd_site_scenario');
 			$current_template_dir = get_template_directory();
 			
 			if($knd_site_scenario) {
@@ -482,7 +482,7 @@ function knd_register_required_plugins() {
 			'name' => esc_html__( 'Leyka', 'knd' ),
 			'slug' => 'leyka', 
 			'is_callable' => 'leyka', 
-			'required' => get_option( 'knd_setup_install_leyka' ),  // get_theme_mod('knd_site_scenario') ==
+			'required' => get_option( 'knd_setup_install_leyka' ),  // knd_get_theme_mod('knd_site_scenario') ==
 			                                                        // 'fundraising-org',
 			'description' => esc_html__( 'This plugin will add means for donations collection to your website.', 'knd' ) ) );
 	

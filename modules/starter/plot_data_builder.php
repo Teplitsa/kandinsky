@@ -1092,7 +1092,7 @@ class KND_Plot_Data_Builder {
     }
     
     public function safe_set_theme_mod($key, $value) {
-    	if($this->validate_hash($key, get_theme_mod($key)) || get_option( 'knd_update_may_remove_my_content', false )) {
+    	if($this->validate_hash($key, knd_get_theme_mod($key)) || knd_get_theme_mod( 'knd_update_may_remove_my_content', false )) {
     		set_theme_mod($key, $value);
     		$this->save_hash($key, $value);
     	}

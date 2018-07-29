@@ -10,7 +10,7 @@
 $cc_link = '<a href="http://creativecommons.org/licenses/by-sa/3.0/" target="_blank">Creative Commons СС-BY-SA 3.0</a>';
 
 
-$footer_text = get_theme_mod('footer_text');
+$footer_text = knd_get_theme_mod('footer_text');
 ?>
 </div><!--  #site_content -->
 
