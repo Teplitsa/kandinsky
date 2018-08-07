@@ -1156,6 +1156,8 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
                         }
                         else {
                             
+                            $imp->import_downloaded_content();
+                            
                             $pdb = KND_Plot_Data_Builder::produce_builder($imp);
                             
                             if( !$pdb) { // Show some user-friendly error

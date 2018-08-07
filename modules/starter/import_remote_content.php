@@ -367,6 +367,7 @@ class KND_Import_Git_Content {
         $this->distr_attachment_id = TST_Import::get_instance()->import_big_file($this->content_archive_url);
         $this->zip_fpath = get_attached_file($this->distr_attachment_id);
         
+        $destination = wp_upload_dir();
         $this->import_content_files_dir = "{$destination['path']}/kandinsky-text-{$this->plot_name}-master";
         update_post_meta( $this->distr_attachment_id, 'kandinsky_zip_fpath', wp_slash($this->zip_fpath) );
         update_post_meta( $this->distr_attachment_id, 'kandinsky_import_content_files_dir', wp_slash($this->import_content_files_dir) );
