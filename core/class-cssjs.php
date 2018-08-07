@@ -149,7 +149,9 @@ class KND_CssJs {
 			null, 
 			true );
 		
-		wp_localize_script( 'frl-front', 'frontend', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
+		wp_localize_script( 'frl-front', 'frontend', array(
+														   'ajaxurl' => admin_url( 'admin-ajax.php' ),
+														   'langContinue' => esc_html__('Continue', 'knd')) );
 	}
 
 	/** disable emojji **/
@@ -175,6 +177,7 @@ class KND_CssJs {
 			array( 'jquery' ), 
 			null );
 		wp_enqueue_style( 'knd-admin', $url . '/assets/rev/' . $this->get_rev_filename( 'admin.css' ), array(), null );
+		
 	}
 
 	

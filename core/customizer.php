@@ -62,7 +62,7 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 		'text_in_header',
 		array(
 			'sanitize_callback' => 'knd_sanitize_text',
-			'default' => '',
+			'default' => knd_get_theme_mod('text_in_header', ''),
 		)
 	);
 	
@@ -103,41 +103,41 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 	
 	$wp_customize->add_setting( 
 		'knd_main_color', 
-		array( 'default' => knd_get_deault_main_color(), 'sanitize_callback' => 'sanitize_hex_color' ) );
+		array( 'default' => knd_get_theme_color('knd_main_color'), 'sanitize_callback' => 'sanitize_hex_color' ) );
 	
 	$wp_customize->add_setting( 
 		'knd_color_second', 
-		array( 'default' => knd_get_deault_main_color(), 'sanitize_callback' => 'sanitize_hex_color' ) );
+		array( 'default' => knd_get_theme_color('knd_color_second'), 'sanitize_callback' => 'sanitize_hex_color' ) );
 	
 	$wp_customize->add_setting( 
 		'knd_color_third', 
-		array( 'default' => knd_get_deault_main_color(), 'sanitize_callback' => 'sanitize_hex_color' ) );
+		array( 'default' => knd_get_theme_color('knd_color_third'), 'sanitize_callback' => 'sanitize_hex_color' ) );
 	
 	$wp_customize->add_setting( 
 		'knd_text1_color', 
-		array( 'default' => '#000000', 'sanitize_callback' => 'sanitize_hex_color' ) );
+		array( 'default' => knd_get_theme_mod('knd_text1_color', '#000000'), 'sanitize_callback' => 'sanitize_hex_color' ) );
 	
 	$wp_customize->add_setting( 
 		'knd_text2_color', 
-		array( 'default' => '#000000', 'sanitize_callback' => 'sanitize_hex_color' ) );
+		array( 'default' => knd_get_theme_mod('knd_text2_color', '#000000'), 'sanitize_callback' => 'sanitize_hex_color' ) );
 	
 	$wp_customize->add_setting( 
 		'knd_text3_color', 
-		array( 'default' => '#000000', 'sanitize_callback' => 'sanitize_hex_color' ) );
+		array( 'default' => knd_get_theme_mod('knd_text3_color', '#000000'), 'sanitize_callback' => 'sanitize_hex_color' ) );
 	
 	$wp_customize->add_setting( 
 		'knd_page_bg_color', 
-		array( 'default' => '#ffffff', 'sanitize_callback' => 'sanitize_hex_color' ) );
+		array( 'default' => knd_get_theme_mod('knd_page_bg_color', '#ffffff'), 'sanitize_callback' => 'sanitize_hex_color' ) );
 	
 	$wp_customize->add_setting( 
 		'knd_page_text_color', 
-		array( 'default' => '#000000', 'sanitize_callback' => 'sanitize_hex_color' ) );
+		array( 'default' => knd_get_theme_mod('knd_page_text_color', '#000000'), 'sanitize_callback' => 'sanitize_hex_color' ) );
 	
 	$wp_customize->add_setting( 
 		'knd_custom_logo', 
-		array( 'default' => '', 'sanitize_callback' => 'absint' ) );
+		array( 'default' => knd_get_theme_mod('knd_custom_logo', ''), 'sanitize_callback' => 'absint' ) );
 	
-	$wp_customize->add_setting( 'knd_custom_logo_mod', array( 'sanitize_callback' => 'knd_sanitize_text', 'default' => 'image_only' ) );
+	$wp_customize->add_setting( 'knd_custom_logo_mod', array( 'sanitize_callback' => 'knd_sanitize_text', 'default' => knd_get_theme_mod('knd_custom_logo_mod', 'image_only' ) ) );
 	
 
 	//color controlls
@@ -289,15 +289,15 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 	// hero image
 	$wp_customize->add_setting( 
 		'knd_hero_image', 
-		array( 'default' => '', 'sanitize_callback' => 'absint' ) );
+		array( 'default' => knd_get_theme_mod('knd_hero_image', ''), 'sanitize_callback' => 'absint' ) );
 	
-	$wp_customize->add_setting( 'knd_hero_image_support_text', array( 'sanitize_callback' => 'knd_sanitize_text', 'default' => '' ) );
+	$wp_customize->add_setting( 'knd_hero_image_support_text', array( 'sanitize_callback' => 'knd_sanitize_text', 'default' => knd_get_theme_mod('knd_hero_image_support_text', '') ) );
 	
-	$wp_customize->add_setting( 'knd_hero_image_support_title', array( 'sanitize_callback' => 'knd_sanitize_text', 'default' => '' ) );
+	$wp_customize->add_setting( 'knd_hero_image_support_title', array( 'sanitize_callback' => 'knd_sanitize_text', 'default' => knd_get_theme_mod('knd_hero_image_support_title', '') ) );
 	
-	$wp_customize->add_setting( 'knd_hero_image_support_url', array( 'sanitize_callback' => 'esc_url', 'default' => '' ) );
+	$wp_customize->add_setting( 'knd_hero_image_support_url', array( 'sanitize_callback' => 'esc_url', 'default' => knd_get_theme_mod('knd_hero_image_support_url', '') ) );
 	
-	$wp_customize->add_setting( 'knd_hero_image_support_button_caption', array( 'sanitize_callback' => 'knd_sanitize_text', 'default' => '' ) );
+	$wp_customize->add_setting( 'knd_hero_image_support_button_caption', array( 'sanitize_callback' => 'knd_sanitize_text', 'default' => knd_get_theme_mod('knd_hero_image_support_button_caption', '') ) );
 	
 	$wp_customize->add_control( 
 		new WP_Customize_Cropped_Image_Control( 
@@ -309,7 +309,8 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 				'section' => 'knd_homepage_hero', 
 				'settings' => 'knd_hero_image', 
 				'flex_width' => true, 
-				'flex_height' => false, 
+				'flex_height' => false,
+				//'default' => knd_get_theme_mod('knd_hero_image', ''),
 				'width' => 1600, 
 				'height' => 663, 
 				'priority' => 40 ) ) );
@@ -359,19 +360,19 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 		
 		$wp_customize->add_setting( 
 			'home-subtitle-col' . $i . '-title', 
-			array( 'sanitize_callback' => 'knd_sanitize_text', 'default' => '' ) );
+			array( 'sanitize_callback' => 'knd_sanitize_text', 'default' => knd_get_theme_mod('home-subtitle-col' . $i . '-title', '') ) );
 		
 		$wp_customize->add_setting( 
 			'home-subtitle-col' . $i . '-content', 
-			array( 'sanitize_callback' => 'knd_sanitize_text', 'default' => '' ) );
+			array( 'sanitize_callback' => 'knd_sanitize_text', 'default' => knd_get_theme_mod('home-subtitle-col' . $i . '-content', '') ) );
 		
 		$wp_customize->add_setting( 
 			'home-subtitle-col' . $i . '-link-text', 
-			array( 'sanitize_callback' => 'knd_sanitize_text', 'default' => '' ) );
+			array( 'sanitize_callback' => 'knd_sanitize_text', 'default' => knd_get_theme_mod('home-subtitle-col' . $i . '-link-text', '') ) );
 		
 		$wp_customize->add_setting( 
 			'home-subtitle-col' . $i . '-link-url', 
-			array( 'sanitize_callback' => 'esc_url', 'default' => '' ) );
+			array( 'sanitize_callback' => 'esc_url', 'default' => knd_get_theme_mod('home-subtitle-col' . $i . '-link-url', '') ) );
 		
 		$wp_customize->add_control( 
 			'home-subtitle-col' . $i . '-title', 
@@ -415,13 +416,13 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 		'knd_cta_block_settings', 
 		array( 'priority' => 40, 'title' => esc_html__( 'CTA block settings', 'knd' ) ) );
 	
-	$wp_customize->add_setting( 'cta-title', array( 'sanitize_callback' => 'knd_sanitize_text', 'default' => '' ) );
+	$wp_customize->add_setting( 'cta-title', array( 'sanitize_callback' => 'knd_sanitize_text', 'default' => knd_get_theme_mod('cta-title', '') ) );
 	
-	$wp_customize->add_setting( 'cta-description', array( 'sanitize_callback' => 'knd_sanitize_text', 'default' => '' ) );
+	$wp_customize->add_setting( 'cta-description', array( 'sanitize_callback' => 'knd_sanitize_text', 'default' => knd_get_theme_mod('cta-description', '') ) );
 	
-	$wp_customize->add_setting( 'cta-button-caption', array( 'sanitize_callback' => 'knd_sanitize_text', 'default' => '' ) );
+	$wp_customize->add_setting( 'cta-button-caption', array( 'sanitize_callback' => 'knd_sanitize_text', 'default' => knd_get_theme_mod('cta-button-caption', '' ) ) );
 	
-	$wp_customize->add_setting( 'cta-url', array( 'sanitize_callback' => 'esc_url', 'default' => '' ) );
+	$wp_customize->add_setting( 'cta-url', array( 'sanitize_callback' => 'esc_url', 'default' => knd_get_theme_mod('cta-url', '') ) );
 	
 	$wp_customize->add_control( 
 		'cta-title', 
@@ -468,7 +469,7 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 		
 		$wp_customize->add_setting( 
 			'knd_social_links_' . $id, 
-			array( 'sanitize_callback' => 'esc_url', 'capability' => 'edit_theme_options' ) );
+			array( 'sanitize_callback' => 'esc_url', 'capability' => 'edit_theme_options', 'default' => knd_get_theme_mod('knd_social_links_' . $id, '') ) );
 		
 		$wp_customize->add_control( 
 			'knd_social_links_' . $id, 

@@ -66,10 +66,17 @@ class KND_Import_Remote_Content {
 
         $this->download_content();
         $this->extract_content();
-
+        
+        return $this->parse_plot_data();
+    }
+    
+    /**
+     * Store parsed content in plot_data
+     *
+     */
+    function parse_plot_data() {
         $this->plot_data = $this->parse_content($this->plot_name);
         return $this->plot_data;
-
     }
 
     /**
@@ -105,6 +112,10 @@ class KND_Import_Remote_Content {
 
     function parse_exist_content() {
         return $this->content_importer->parse_exist_content($this->plot_name);
+    }
+    
+    function extract_downloaded_file() {
+        return $this->content_importer->extract_downloaded_file($this->plot_name);
     }
 
     /**
@@ -281,7 +292,8 @@ class KND_Import_Git_Content {
             case 'color-line':
             case 'withyou':
             case 'dubrovino':
-                $this->content_archive_url = "https://github.com/Teplitsa/kandinsky-text-$plot_name/archive/master.zip";
+                #$this->content_archive_url = "https://github.com/Teplitsa/kandinsky-text-" . $plot_name . "/archive/master.zip";
+                $this->content_archive_url = "https://knd.te-st.ru/wp-content/uploads/knd/kandinsky-text-" . $plot_name . "-master.zip";
                 $this->plot_name = $plot_name;
                 break;
             default:
@@ -306,6 +318,21 @@ class KND_Import_Git_Content {
      */
     public function extract() {
         $this->unzip_git_zip();
+    }
+    
+    public function extract_downloaded_file($plot_name) {
+
+        $exist_attachment = TST_Import::get_instance()->get_attachment_by_old_url( $this->content_archive_url );
+        if( $exist_attachment ) {
+
+            $this->distr_attachment_id = $exist_attachment->ID;
+            $this->zip_fpath = get_post_meta( $this->distr_attachment_id, 'kandinsky_zip_fpath', true );
+            $this->import_content_files_dir = get_post_meta($this->distr_attachment_id, 'kandinsky_import_content_files_dir', true);
+            
+        }
+
+        return $this->unzip_git_zip();
+
     }
     
     /**
@@ -339,6 +366,11 @@ class KND_Import_Git_Content {
 
         $this->distr_attachment_id = TST_Import::get_instance()->import_big_file($this->content_archive_url);
         $this->zip_fpath = get_attached_file($this->distr_attachment_id);
+        
+        $destination = wp_upload_dir();
+        $this->import_content_files_dir = "{$destination['path']}/kandinsky-text-{$this->plot_name}-master";
+        update_post_meta( $this->distr_attachment_id, 'kandinsky_zip_fpath', wp_slash($this->zip_fpath) );
+        update_post_meta( $this->distr_attachment_id, 'kandinsky_import_content_files_dir', wp_slash($this->import_content_files_dir) );
 
     }
     

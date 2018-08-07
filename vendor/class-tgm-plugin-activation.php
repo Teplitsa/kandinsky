@@ -548,7 +548,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 				require_once ABSPATH . 'wp-admin/includes/plugin-install.php';
 
 				wp_enqueue_style( 'plugin-install' );
-
+				
 				global $tab, $body_id;
 				$body_id = 'plugin-information';
 				// @codingStandardsIgnoreStart

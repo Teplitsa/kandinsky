@@ -81,18 +81,18 @@ add_shortcode( 'knd_cta_section', 'knd_cta_section_shortcode' );
 
 function knd_cta_section_shortcode( $atts, $content = null ) {
 	$atts = shortcode_atts( 
-		array( 'subtitle' => '', 'link' => '', 'button' => '' ), 
+		array( 'subtitle' => '', 'link' => '', 'is_external' => '', 'button' => '' ),
 		$atts );
 	
 	if ( empty( $content ) || empty( $atts['subtitle'] ) ) {
 		return '';
 	}
-	
+
 	if ( isset( $atts['link'] ) ) {
-		$atts['link'] = knd_build_imported_url( $atts['link'] );
+		$atts['link'] = !!$atts['is_external'] ? trim($atts['link']) : knd_build_imported_url( $atts['link'] );
 	}
 	$target = ( false === strpos( $atts['link'], home_url() ) ) ? 'target="_blank"' : '';
-	
+
 	ob_start();
 	?>
 <div class="knd-intext-cta">

@@ -178,9 +178,9 @@ function knd_body_classes( $classes ) {
 		$classes[] = 'slug-' . $qo->post_name;
 	}
 	
-	$classes[] = 'plot-' . get_theme_mod( 'knd_site_scenario' );
+	$classes[] = 'plot-' . knd_get_theme_mod( 'knd_site_scenario' );
 	
-	$mod = get_theme_mod( 'knd_custom_logo_mod', 'image_only' );
+	$mod = knd_get_theme_mod( 'knd_custom_logo_mod', 'image_only' );
 	$classes[] = 'logomod-' . $mod;
 	
 	return $classes;
@@ -332,7 +332,7 @@ function knd_remove_scenario_unzipped_dir() {
 		return;
 	}
 
-	$scenario_name = get_theme_mod( 'knd_site_scenario' );
+	$scenario_name = knd_get_theme_mod( 'knd_site_scenario' );
 	
 	if ( ! $scenario_name ) {
 		return;
@@ -404,4 +404,17 @@ class Knd_Filesystem {
 
         return self::$_instance->_filesystem; //self::$_instance;
     }
+}
+
+
+function knd_get_theme_mod($name, $default = false) {
+	$option_val = get_theme_mod($name, $default);
+	
+	if($option_val === $default) {
+		$mods = get_option( "theme_mods_kandinsky-master");
+		if (!empty($mods) && isset($mods[$name])) {
+			$option_val = $mods[$name];
+		}		
+	}
+	return $option_val;
 }

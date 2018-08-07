@@ -228,7 +228,7 @@ function knd_section_title() {
 		$title = single_term_title( '', false );
 		$css = 'archive';
 	} elseif ( is_home() ) {
-		$title = get_theme_mod( 'knd_news_archive_title' );
+		$title = knd_get_theme_mod( 'knd_news_archive_title' );
 		if($title === false) {
 			$p = get_post( get_option( 'page_for_posts' ) );
 			$title = get_the_title( $p );
@@ -238,19 +238,19 @@ function knd_section_title() {
 		$title = esc_html__( 'Donations history', 'knd' );
 		$css = 'archive';
 	} elseif ( is_post_type_archive( 'project' ) ) {
-		$title = get_theme_mod( 'knd_projects_archive_title' );
+		$title = knd_get_theme_mod( 'knd_projects_archive_title' );
 		if($title === false) {
 			$title = esc_html__( 'Our projects', 'knd' );
 		}
 		$css = 'archive';
 	} elseif ( is_post_type_archive( 'leyka_campaign' ) ) {
 		if ( isset( $wp_query->query_vars['completed'] ) && $wp_query->query_vars['completed'] == 'true' ) {
-			$title = get_theme_mod( 'knd_completed_campaigns_archive_title' );
+			$title = knd_get_theme_mod( 'knd_completed_campaigns_archive_title' );
 			if($title === false) {
 				$title = esc_html__( 'They alredy got help', 'knd' );
 			}
 		} else {
-			$title = get_theme_mod( 'knd_active_campaigns_archive_title' );
+			$title = knd_get_theme_mod( 'knd_active_campaigns_archive_title' );
 			if($title === false) {
 				$title = esc_html__( 'They need help', 'knd' );
 			}
@@ -400,7 +400,7 @@ function knd_get_help_now_cta( $cpost = null, $label = '' ) {
 	
 	if ( ! $cpost ) {
 		
-		$help_id = get_theme_mod( 'help_campaign_id' );
+		$help_id = knd_get_theme_mod( 'help_campaign_id' );
 		if ( ! $help_id )
 			return '';
 		
@@ -492,13 +492,13 @@ function knd_get_site_icon_img_url() {
 		return wp_get_attachment_image_url( $logo_id, 'full', false );
 	} else {
 		
-		$site_scenario = get_theme_mod( 'knd_site_scenario' );
+		$site_scenario = knd_get_theme_mod( 'knd_site_scenario' );
 		return $site_scenario ? get_template_directory_uri() . "/vendor/envato_setup/images/$site_scenario/favicon.png" : '';
 	}
 }
 
 function knd_get_logo_img_id() {
-	$logo_id = get_theme_mod( 'knd_custom_logo' );
+	$logo_id = knd_get_theme_mod( 'knd_custom_logo' );
 	
 	return $logo_id ? (int) $logo_id : false;
 }
@@ -509,7 +509,7 @@ function knd_get_logo_img_url() {
 		return wp_get_attachment_image_url( $logo_id, 'full', false );
 	} else {
 		
-		$site_scenario = get_theme_mod( 'knd_site_scenario' );
+		$site_scenario = knd_get_theme_mod( 'knd_site_scenario' );
 		return $site_scenario ? get_template_directory_uri() . "/vendor/envato_setup/images/$site_scenario/logo.svg" : '';
 	}
 }
@@ -521,7 +521,7 @@ function knd_get_logo_img() {
 		'full', 
 		false, 
 		array( 'alt' => get_bloginfo( 'name' ), 'class' => 'site-logo-img' ) ) : '<img class="site-logo-img" src="' .
-		 get_template_directory_uri() . '/vendor/envato_setup/images/' . get_theme_mod( 'knd_site_scenario' ) .
+		 get_template_directory_uri() . '/vendor/envato_setup/images/' . knd_get_theme_mod( 'knd_site_scenario' ) .
 		 '/logo.svg" width="315" height="66" alt="' . get_bloginfo( 'name' ) . '">';
 }
 
@@ -532,7 +532,7 @@ function knd_get_content_image_markup( $attachment_id ) {
 function knd_logo_markup() {
 	
 	/** @todo logo sizes may depends on test content */
-	$mod = get_theme_mod( 'knd_custom_logo_mod', 'image_only' );
+	$mod = knd_get_theme_mod( 'knd_custom_logo_mod', 'image_only' );
 	if ( $mod == 'nothing' ) {
 		return;
 	}
@@ -562,7 +562,7 @@ function knd_logo_markup() {
 
 function knd_hero_image_markup() {
 
-	$hero = get_theme_mod( 'knd_hero_image' );
+	$hero = knd_get_theme_mod( 'knd_hero_image' );
 	$hero_img = '';
 	
 	if ( $hero ) {
@@ -573,10 +573,10 @@ function knd_hero_image_markup() {
 	}
 	
 	if ( $hero_img ) {
-		$knd_hero_image_support_title = get_theme_mod( 'knd_hero_image_support_title' );
-		$knd_hero_image_support_url = get_theme_mod( 'knd_hero_image_support_url' );
-		$knd_hero_image_support_text = get_theme_mod( 'knd_hero_image_support_text' );
-		$knd_hero_image_support_button_caption = get_theme_mod( 'knd_hero_image_support_button_caption' );
+		$knd_hero_image_support_title = knd_get_theme_mod( 'knd_hero_image_support_title' );
+		$knd_hero_image_support_url = knd_get_theme_mod( 'knd_hero_image_support_url' );
+		$knd_hero_image_support_text = knd_get_theme_mod( 'knd_hero_image_support_text' );
+		$knd_hero_image_support_button_caption = knd_get_theme_mod( 'knd_hero_image_support_button_caption' );
 ?>
 <div class="hero-section" style="background-image: url(<?php echo $hero_img;?>)">
 	<div class="container">
@@ -620,18 +620,18 @@ function knd_show_cta_block() {
 
     <div class="container widget">
 
-        <h2><?php echo get_theme_mod('cta-title') ?></h2>
+        <h2><?php echo knd_get_theme_mod('cta-title') ?></h2>
 
         <div class="flex-row knd-whoweare-headlike-text-wrapper">
 
             <p class="knd-whoweare-headlike-text flex-mf-12 flex-sm-10">
-                <?php echo get_theme_mod('cta-description') ?>
+                <?php echo knd_get_theme_mod('cta-description') ?>
                 </p>
 
         </div>
 
         <div class="knd-cta-wrapper-wide">
-            <a class="cta" href="<?php echo get_theme_mod('cta-url') ?>"><?php echo get_theme_mod('cta-button-caption') ?></a>
+            <a class="cta" href="<?php echo knd_get_theme_mod('cta-url') ?>"><?php echo knd_get_theme_mod('cta-button-caption') ?></a>
         </div>
 
     </div>

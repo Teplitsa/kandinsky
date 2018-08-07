@@ -23,7 +23,7 @@ function knd_empty_icons(){
 }
 
 function knd_activate_leyka() {
-    $imp = new KND_Import_Remote_Content(get_theme_mod('knd_site_scenario'));
+    $imp = new KND_Import_Remote_Content(knd_get_theme_mod('knd_site_scenario'));
     $imp->import_downloaded_content();
     
     $pdb = KND_Plot_Data_Builder::produce_builder($imp);
@@ -179,7 +179,7 @@ $is_finished = get_post_meta($campaign->ID, 'is_finished', true);
         </div>
         <?php if(!$is_finished):?>
         <div class="leyka-scale-button-alone">
-            <a href="<?php echo $url;?>"><?php echo get_theme_mod('knd_hero_image_support_button_caption'); ?></a>
+            <a href="<?php echo $url;?>"><?php echo knd_get_theme_mod('knd_hero_image_support_button_caption'); ?></a>
         </div>
         <?php endif?>
 
@@ -312,7 +312,7 @@ function knd_leyka_age_metabox_display_callback($post) {
 }
 
 function knd_leyka_add_metabox() {
-	$plot = get_theme_mod('knd_site_scenario');
+	$plot = knd_get_theme_mod('knd_site_scenario');
 	if($plot == 'fundraising-org') {
 		add_meta_box( 'knd-leyka-kid-age', esc_html__( 'Kid age', 'knd' ), 'knd_leyka_age_metabox_display_callback', 'leyka_campaign' );
 	}
