@@ -49,6 +49,7 @@ body {
 }
 .envato-setup-content p.envato-setup-actions {
     margin: 0;
+    padding-bottom: 2px;
 }
 
 .envato-setup-content p.envato-setup-actions.error {
