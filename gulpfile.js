@@ -64,7 +64,7 @@ gulp.task( 'build-css', function() {
 	//mdl = path('./node_modules/material-design-lite/src');
 	//paths.push(mdl);
 
-	paths.push( basePaths.bower + 'modular-scale/stylesheets' );
+	paths.push( basePaths.npm + 'modularscale-sass/stylesheets' );
 
 	var vendorFiles = gulp.src( [] ), // Components
 		appFiles = gulp.src( basePaths.src + 'sass/front-main.scss' ) // Main file with @import-s
