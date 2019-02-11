@@ -393,11 +393,21 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
             echo '<div class="envato-setup-content">';
             try {
 
-                if( !empty($_REQUEST['save_step']) && isset($this->steps[ $this->step ]['handler'])) {
-                    $show_content = call_user_func($this->steps[ $this->step ]['handler']);
+                if( !defined('PHP_VERSION') || version_compare(PHP_VERSION, KND_MIN_PHP_VERSION, '<') ) {
+                    echo '<div class="wizard-error">';
+                    echo '<span class="error-begin">'.__('Error:', 'knd').'</span><span class="error-text">'.KND_PHP_VERSION_ERROR_MESSAGE.'.</span><div class="wizard-error-support-text"></div>';
+                    echo '<p class="envato-setup-actions error step">
+                        <a href="'.admin_url().'" class="button button-large button-error">'.__('Back to the Dashboard', 'knd').'</a>
+                        </p>';
+                    echo '</div>';
                 }
-                if($show_content) {
-                    $this->display_wizard_current_step_content();
+                else {
+                    if( !empty($_REQUEST['save_step']) && isset($this->steps[ $this->step ]['handler'])) {
+                        $show_content = call_user_func($this->steps[ $this->step ]['handler']);
+                    }
+                    if($show_content) {
+                        $this->display_wizard_current_step_content();
+                    }
                 }
 
             } catch(Exception $ex) {
