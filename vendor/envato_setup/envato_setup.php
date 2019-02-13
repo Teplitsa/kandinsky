@@ -1188,7 +1188,7 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
                         wp_send_json(array(
                             'status' => 'ok',
                             'knd_download_step' => $download_step,
-                            'status_explain' => $scenario_download_status_explain[$download_step + 1],
+                            'status_explain' => isset($scenario_download_status_explain[$download_step + 1]) ? $scenario_download_status_explain[$download_step + 1] : '',
                             'nonce' => wp_create_nonce('knd-setup'),
                         ));
                         
