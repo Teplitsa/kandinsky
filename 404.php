@@ -1,5 +1,5 @@
 <?php
-/** Error **/
+/** Error 404 **/
 
 
 $er_text = __('Unfortunately this page has been removed or never exists. Please, use the search field to find the information you need or visit the homepage.', 'knd');

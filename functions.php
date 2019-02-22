@@ -8,7 +8,7 @@
 if ( ! defined( 'WPINC' ) )
 	die();
 
-define('KND_VERSION', '1.3.0');
+define('KND_VERSION', '1.3.1');
 define('KND_DOC_URL', 'https://github.com/Teplitsa/kandinsky/wiki/');
 define('KND_OFFICIAL_WEBSITE_URL', 'https://knd.te-st.ru/');
 define('KND_SOURCES_PAGE_URL', 'https://github.com/Teplitsa/kandinsky/');
@@ -20,6 +20,20 @@ define('KND_SUPPORT_TELEGRAM', 'https://t.me/joinchat/AAAAAENN3prSrvAs7KwWrg');
 define('KND_SETUP_WIZARD_URL', admin_url('themes.php?page=knd-setup-wizard'));
 define('KND_DISTR_ARCHIVE_URL', 'https://github.com/Teplitsa/kandinsky/archive/master.zip');
 #define('KND_DISTR_ARCHIVE_URL', 'https://github.com/Teplitsa/kandinsky/archive/dev.zip');
+define('KND_MIN_PHP_VERSION', '5.6.0');
+define('KND_PHP_VERSION_ERROR_MESSAGE', '<strong>Внимание:</strong> версия PHP ниже <strong>5.6.0</strong>. Кандинский нуждается в PHP хотя бы <strong>версии 5.6.0</strong>, чтобы работать корректно.<br /><br />Пожалуйста, направьте вашему хостинг-провайдеру запрос на повышение версии PHP для этого сайта.');
+
+if( !defined('PHP_VERSION') || version_compare(PHP_VERSION, KND_MIN_PHP_VERSION, '<') ) {
+
+  function sample_admin_notice__success() {
+    ?>
+    <div class="notice notice-error">
+        <p><?php echo KND_PHP_VERSION_ERROR_MESSAGE;?></p>
+    </div>
+    <?php
+  }
+  add_action( 'admin_notices', 'sample_admin_notice__success' );
+}
 
 if( !isset($content_width) ) {
 	$content_width = 800; /* pixels */
