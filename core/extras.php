@@ -38,7 +38,7 @@ add_filter( 'knd_entry_the_content', 'wp_make_content_images_responsive' );
 add_filter( 'knd_entry_the_content', 'wp_kses_post', 7 );
 
 /* jpeg compression */
-add_filter( 'jpeg_quality', create_function( '', 'return 95;' ) );
+add_filter('jpeg_quality', function(){ return 95; });
 
 /* temp fix for wpautop in posts */
 function knd_entry_wpautop( $content ) {
