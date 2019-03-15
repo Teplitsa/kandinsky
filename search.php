@@ -12,16 +12,16 @@ if(!empty($s_query) && $posts > 0){
 }
 
 
- 
+
 get_header();
 ?>
 <header class="page-header">
     <div class="container">
     	<div class="text-column">
-    		<h1 class="page-title"><?php esc_html_e('Search', 'knd');?></h1>
-        
+    		<h2 class="page-title"><?php esc_html_e('Search', 'knd');?></h2>
+
     	</div>
-    	
+
     </div>
     <div class="widget-full widget_search search-holder">
     	<?php get_search_form();?>
@@ -33,11 +33,11 @@ get_header();
 	<?php
 		if(empty($s_query)){
 			$l = __('Enter terms for search in the form and hit Enter', 'knd');
-			echo "<article class='tpl-search'><div class='entry-summary'><p>{$l }</p></div></article>";							
+			echo "<article class='tpl-search'><div class='entry-summary'><p>{$l }</p></div></article>";
 		}
 		elseif($num == 0){
 			$l = __('Nothing found under your request', 'knd');
-			echo "<article class='tpl-search'><div class='entry-summary'><p>{$l}</p></div></article>";				
+			echo "<article class='tpl-search'><div class='entry-summary'><p>{$l}</p></div></article>";
 		}
 		else {
 		    foreach($posts as $p){

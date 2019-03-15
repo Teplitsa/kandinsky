@@ -14,7 +14,7 @@ get_header();
                 <?php if($cpost->post_parent > 0) {?>
                     <div class="page-crumb"><a href="<?php echo get_permalink($cpost->post_parent);?>"><?php echo get_the_title($cpost->post_parent);?></a></div>
                 <?php }?>
-                <h1 class="page-title"><?php echo get_the_title($cpost);?></h1>
+                <h2 class="page-title"><?php echo get_the_title($cpost);?></h2>
                 <?php if($cpost->post_excerpt) {?>
                     <div class="page-intro"><?php echo apply_filters('knd_the_title', $cpost->post_excerpt);?></div>
                 <?php } ?>
