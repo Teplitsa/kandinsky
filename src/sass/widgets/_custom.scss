@@ -60,7 +60,6 @@
 
 // News widget 
 .knd-news-widget {
-    
     padding-top: 54px;
     background: $color-gray-light;
     
@@ -76,6 +75,10 @@
     .cards-row {
         padding-top: $gut;
     }
+
+    a {
+        overflow: auto;
+    }    
     
 }
 
