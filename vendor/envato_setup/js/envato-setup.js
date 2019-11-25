@@ -381,6 +381,7 @@ EnvatoWizard.init();
 var KndDownloadPlotStepManager = function() {
 	
 	this.init = function(btn) {
+		var $ = jQuery;
 		var self = this;
 		
 		$(btn).parent().find('.knd-download-plot-skip').hide();
@@ -390,6 +391,7 @@ var KndDownloadPlotStepManager = function() {
 	}
 	
 	this.doStep = function(step=0){
+		var $ = jQuery;
 		var self = this;
 		
 		var $error = $('#knd-download-plot-error');

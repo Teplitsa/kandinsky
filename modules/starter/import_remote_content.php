@@ -292,8 +292,8 @@ class KND_Import_Git_Content {
             case 'color-line':
             case 'withyou':
             case 'dubrovino':
-                $this->content_archive_url = "https://github.com/Teplitsa/kandinsky-text-" . $plot_name . "/archive/master.zip";
-                #$this->content_archive_url = "https://knd.te-st.ru/wp-content/uploads/knd/kandinsky-text-" . $plot_name . "-master.zip";
+                # $this->content_archive_url = "https://github.com/Teplitsa/kandinsky-text-" . $plot_name . "/archive/master.zip";
+                $this->content_archive_url = "https://knd.te-st.ru/wp-content/uploads/knd/kandinsky-text-" . $plot_name . "-master.zip";
                 $this->plot_name = $plot_name;
                 break;
             default:
