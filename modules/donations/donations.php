@@ -117,7 +117,7 @@ $campaign_age = get_post_meta($campaign->ID, 'campaign_age', true);
 $is_finished = get_post_meta($campaign->ID, 'is_finished', true);
 
 ?>
-<article <?php post_class('tpl-post card flex-cell flex-md-6'); ?>>
+<article <?php post_class('tpl-post card flex-cell flex-md-6', $campaign); ?>>
     <div class="<?php echo esc_attr($css_class);?>">
         <?php if(has_post_thumbnail($campaign->ID)) {?>
             <div class="lk-thumbnail">
