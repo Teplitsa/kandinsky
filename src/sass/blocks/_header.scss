@@ -147,7 +147,11 @@
     align-items: center;
 
     @include upto(medium-screens){
-        .text { display: none; } 
+        .text { 
+        	h2.logo-name {
+        		display: none;
+        	}
+        } 
     }
 
     .logo {

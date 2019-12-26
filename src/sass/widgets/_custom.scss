@@ -357,6 +357,11 @@
             @include button();
             @include knd-button-bigcaption-text();
             padding: 16px 50px;
+
+            @include upto(small-screens){
+                max-width: 100%;
+                overflow: hidden;                
+            }
         }
     }
 }

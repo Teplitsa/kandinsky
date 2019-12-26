@@ -37,14 +37,29 @@
         width: 100%;
 
         @include for(small-screens) { 
-            padding-bottom: 10vh;
-            width: 75%;
+            padding-bottom: 5vh;
+
+            .hero-text {
+                margin-top: 5vh;
+            }
+
+            .hero-button {
+                margin-top: 5vh;
+            }
         }
 
         @include for(medium-screens) {
             width: 60%;
             padding-bottom: 10vh;
             height: calc(100vh - 101px);
+
+            .hero-text {
+                margin-top: $gut/2;
+            }
+
+            .hero-button {
+                margin-top: $gut;
+            }
         }
 
         @include for(large-screens) {
