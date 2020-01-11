@@ -3,23 +3,18 @@ msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-29 14:20+0200\n"
-"PO-Revision-Date: 2019-03-15 07:59+0200\n"
+"PO-Revision-Date: 2020-01-11 16:32+0200\n"
 "Last-Translator: ahaenor <ahaenor@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10 >= 2 && n"
-"%10<=4 &&(n%100<10||n%100 >= 20)? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10 >= 2 && n%10<=4 &&(n%100<10||n%100 >= 20)? 1 : 2);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Generator: Poedit 2.0.5\n"
 "X-Poedit-Basepath: ..\n"
-"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
-"__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
-"_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
-"esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
-"esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
+"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
 "X-Loco-Target-Locale: ru_RU\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: bower_components\n"
@@ -27,12 +22,8 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-2: assets\n"
 
 #: 404.php:5
-msgid ""
-"Unfortunately this page has been removed or never exists. Please, use the "
-"search field to find the information you need or visit the homepage."
-msgstr ""
-"К сожалению, запрошенная страница удалена или никогда не существовала. "
-"Пожалуйста, воспользуйтесь поиском или перейдите на Главную."
+msgid "Unfortunately this page has been removed or never exists. Please, use the search field to find the information you need or visit the homepage."
+msgstr "К сожалению, запрошенная страница удалена или никогда не существовала. Пожалуйста, воспользуйтесь поиском или перейдите на Главную."
 
 #: 404.php:13
 msgid "Error 404"
@@ -302,13 +293,8 @@ msgstr "Скрыть"
 
 #: core/admin.php:417
 #, php-format
-msgid ""
-"Welcome! Thank you for choosing Kandinsky! To fully take advantage of the "
-"best our theme can offer please make sure you configured %snecessary theme "
-"settings%s."
-msgstr ""
-"Здравствуйте! Благодарим вас за выбор темы «Кандинский»! Чтобы использовать "
-"все её возможности, пожалуйста, выполните %sвсе необходимые настройки%s."
+msgid "Welcome! Thank you for choosing Kandinsky! To fully take advantage of the best our theme can offer please make sure you configured %snecessary theme settings%s."
+msgstr "Здравствуйте! Благодарим вас за выбор темы «Кандинский»! Чтобы использовать все её возможности, пожалуйста, выполните %sвсе необходимые настройки%s."
 
 #: core/admin.php:421
 msgid "Open the theme setup wizard"
@@ -324,41 +310,31 @@ msgstr "Yoast SEO"
 
 #: core/admin.php:460
 msgid "A great tool to boost your website SEO positions."
-msgstr ""
-"Прекрасный плагин, помогающий улучшить позиции сайта в поисковых системах."
+msgstr "Прекрасный плагин, помогающий улучшить позиции сайта в поисковых системах."
 
 #: core/admin.php:462
 msgid "Cyr to Lat enhanced"
 msgstr "Cyr to Lat enhanced"
 
 #: core/admin.php:466
-msgid ""
-"Small helper to seamlessly convert cyrillic pages slugs into latin ones."
-msgstr ""
-"Небольшой плагин для автоматического перевода символов в адресах страниц из "
-"кириллицы в латиницу."
+msgid "Small helper to seamlessly convert cyrillic pages slugs into latin ones."
+msgstr "Небольшой плагин для автоматического перевода символов в адресах страниц из кириллицы в латиницу."
 
 #: core/admin.php:468
 msgid "Disable Comments"
 msgstr "Disable Comments"
 
 #: core/admin.php:472
-msgid ""
-"Comments on the website may be harmful, so this small plugin turns them off."
-msgstr ""
-"Плагин отключает комментарии, встроенные в WordPress по умолчанию. "
-"Комментарии можно включить в любой момент."
+msgid "Comments on the website may be harmful, so this small plugin turns them off."
+msgstr "Плагин отключает комментарии, встроенные в WordPress по умолчанию. Комментарии можно включить в любой момент."
 
 #: core/admin.php:474
 msgid "Shortcake (Shortcodes UI)"
 msgstr "Shortcake (Shortcodes UI)"
 
 #: core/admin.php:479
-msgid ""
-"A visual editing for shortcodes to enrich your content management experience."
-msgstr ""
-"Возможности визуального редактирования шорткодов, чтобы сделать процесс "
-"редактирования страниц более современным."
+msgid "A visual editing for shortcodes to enrich your content management experience."
+msgstr "Возможности визуального редактирования шорткодов, чтобы сделать процесс редактирования страниц более современным."
 
 #: core/admin.php:482
 msgid "Leyka"
@@ -366,8 +342,7 @@ msgstr "Лейка"
 
 #: core/admin.php:487
 msgid "This plugin will add means for donations collection to your website."
-msgstr ""
-"Этот плагин добавит на сайт возможности сбора и управления пожертвованиями."
+msgstr "Этот плагин добавит на сайт возможности сбора и управления пожертвованиями."
 
 #: core/admin.php:509 vendor/class-tgm-plugin-activation.php:327
 msgid "Install Required Plugins"
@@ -409,12 +384,8 @@ msgstr[2] "Рекомендуется установить плагины: %1$s.
 
 #: core/admin.php:525 vendor/class-tgm-plugin-activation.php:337
 #, php-format
-msgid ""
-"The following plugin needs to be updated to its latest version to ensure "
-"maximum compatibility with this theme: %1$s."
-msgid_plural ""
-"The following plugins need to be updated to their latest version to ensure "
-"maximum compatibility with this theme: %1$s."
+msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s."
+msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s."
 msgstr[0] "Необходимо обновить плагин %1$s."
 msgstr[1] "Необходимо обновить плагины: %1$s."
 msgstr[2] "Необходимо обновить плагины: %1$s."
@@ -490,12 +461,8 @@ msgstr "Плагин %1$s уже активирован."
 
 #: core/admin.php:550 vendor/class-tgm-plugin-activation.php:381
 #, php-format
-msgid ""
-"Plugin not activated. A higher version of %s is needed for this theme. "
-"Please update the plugin."
-msgstr ""
-"Плагин не активирован – тема требует более высокой версии %s. Пожалуйста, "
-"обновите плагин."
+msgid "Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin."
+msgstr "Плагин не активирован – тема требует более высокой версии %s. Пожалуйста, обновите плагин."
 
 #: core/admin.php:553 vendor/class-tgm-plugin-activation.php:383
 #, php-format
@@ -507,9 +474,7 @@ msgid "Dismiss this notice"
 msgstr "Закрыть уведомление"
 
 #: core/admin.php:556 vendor/class-tgm-plugin-activation.php:385
-msgid ""
-"There are one or more required or recommended plugins to install, update or "
-"activate."
+msgid "There are one or more required or recommended plugins to install, update or activate."
 msgstr "Некоторые плагины необходимо установить, обновить или активировать."
 
 #: core/admin.php:558 vendor/class-tgm-plugin-activation.php:386
@@ -530,8 +495,7 @@ msgstr "Кандинский – полезные ссылки"
 
 #: core/admin.php:824
 #, php-format
-msgid ""
-"ATTENTION! You thumbnail image is too small. It should be at least %s px"
+msgid "ATTENTION! You thumbnail image is too small. It should be at least %s px"
 msgstr ""
 
 #: core/author.php:31
@@ -665,12 +629,8 @@ msgid "Do not show"
 msgstr "Не показывать"
 
 #: core/customizer.php:251
-msgid ""
-"Recommended size 315x66px for Image only mode and 66x66px for Image with "
-"site name"
-msgstr ""
-"Рекомендуемые размеры 315x66px для режима «Только изображение» и 66x66px для "
-"режима «Изображение и название» сайта"
+msgid "Recommended size 315x66px for Image only mode and 66x66px for Image with site name"
+msgstr "Рекомендуемые размеры 315x66px для режима «Только изображение» и 66x66px для режима «Изображение и название» сайта"
 
 #: core/customizer.php:269
 msgid "Homepage settings"
@@ -1018,15 +978,8 @@ msgid "Footer - Columns"
 msgstr "Подвал - Колонки"
 
 #: core/widgets.php:45
-msgid ""
-"Footer columns area accepts 4 widgets. Does not accept wide widgets, like "
-"News, Partners, Projects, Donations or CTA. You should place here widgets "
-"like Custom HTML, Custom Menu, Text etc."
-msgstr ""
-"Колонки в подвале сайта. Область принимает 4 виджета. Сюда вы можете "
-"добавить такие виджеты, как HTML-код, Произвольное меню или Текст. Здесь не "
-"поддерживаются большие виджеты, такие как Новости, Партнеры, Проекты, "
-"Пожертвования или Блок призыва к действию."
+msgid "Footer columns area accepts 4 widgets. Does not accept wide widgets, like News, Partners, Projects, Donations or CTA. You should place here widgets like Custom HTML, Custom Menu, Text etc."
+msgstr "Колонки в подвале сайта. Область принимает 4 виджета. Сюда вы можете добавить такие виджеты, как HTML-код, Произвольное меню или Текст. Здесь не поддерживаются большие виджеты, такие как Новости, Партнеры, Проекты, Пожертвования или Блок призыва к действию."
 
 #: footer.php:50
 #, php-format
@@ -1116,12 +1069,8 @@ msgid "Thumbnail for - %s"
 msgstr ""
 
 #: modules/donations/donations.php:144
-msgid ""
-"Thank you for you support. This campaign is finished and help is going to be "
-"provided. Please follow the updates."
-msgstr ""
-"Спасибо за вашу поддержку. Сбор средств завершен и помощь будет оказана. "
-"Следите за обновлениями и отчетами. Благодарим вас за участие!"
+msgid "Thank you for you support. This campaign is finished and help is going to be provided. Please follow the updates."
+msgstr "Спасибо за вашу поддержку. Сбор средств завершен и помощь будет оказана. Следите за обновлениями и отчетами. Благодарим вас за участие!"
 
 #: modules/donations/donations.php:167
 msgid "Collected"
@@ -1350,22 +1299,16 @@ msgid "Update Required"
 msgstr ""
 
 #: vendor/class-tgm-plugin-activation.php:923
-msgid ""
-"The remote plugin package does not contain a folder with the desired slug "
-"and renaming did not work."
+msgid "The remote plugin package does not contain a folder with the desired slug and renaming did not work."
 msgstr ""
 
 #: vendor/class-tgm-plugin-activation.php:923
 #: vendor/class-tgm-plugin-activation.php:926
-msgid ""
-"Please contact the plugin provider and ask them to package their plugin "
-"according to the WordPress guidelines."
+msgid "Please contact the plugin provider and ask them to package their plugin according to the WordPress guidelines."
 msgstr ""
 
 #: vendor/class-tgm-plugin-activation.php:926
-msgid ""
-"The remote plugin package consists of more than one file, but the files are "
-"not packaged in a folder."
+msgid "The remote plugin package consists of more than one file, but the files are not packaged in a folder."
 msgstr ""
 
 #: vendor/class-tgm-plugin-activation.php:1110
@@ -1582,9 +1525,7 @@ msgid "The installation of %1$s failed."
 msgstr ""
 
 #: vendor/class-tgm-plugin-activation.php:3496
-msgid ""
-"The installation and activation process is starting. This process may take a "
-"while on some hosts, so please be patient."
+msgid "The installation and activation process is starting. This process may take a while on some hosts, so please be patient."
 msgstr ""
 
 #: vendor/class-tgm-plugin-activation.php:3498
@@ -1612,9 +1553,7 @@ msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
 #: vendor/class-tgm-plugin-activation.php:3504
-msgid ""
-"The installation process is starting. This process may take a while on some "
-"hosts, so please be patient."
+msgid "The installation process is starting. This process may take a while on some hosts, so please be patient."
 msgstr ""
 
 #: vendor/class-tgm-plugin-activation.php:3506
@@ -1640,12 +1579,8 @@ msgid "We help people with alcoholic addiction"
 msgstr "Помогаем людям с алкогольной зависимостью"
 
 #: vendor/envato_setup/envato_setup.php:196
-msgid ""
-"Landing page for a typical non-profit. The template has legal information, "
-"projects, news, organization’s staff, partners."
-msgstr ""
-"Сайт некоммерческой организации c возможностью публикации отчетов информации "
-"о проектах, новостях. Возможен сбор пожертвований."
+msgid "Landing page for a typical non-profit. The template has legal information, projects, news, organization’s staff, partners."
+msgstr "Сайт некоммерческой организации c возможностью публикации отчетов информации о проектах, новостях. Возможен сбор пожертвований."
 
 #: vendor/envato_setup/envato_setup.php:199
 msgid "Template – We Are With You"
@@ -1656,14 +1591,8 @@ msgid "Charity foundation helping children from low-income families"
 msgstr "Благотворительный фонд, помогающий детям из малоимущих семей"
 
 #: vendor/envato_setup/envato_setup.php:201
-msgid ""
-"Charity foundation website that is mostly focused on fundraising. Aside from "
-"basic information it includes integration with payment systems (Leyka "
-"plugin)."
-msgstr ""
-"Сайт благотворительного фонда адресной помощи. Позволяет публиковать "
-"информацию об организации, программах, кампаниях по сбору пожертвований, "
-"содержит интеграцию с платежными системами."
+msgid "Charity foundation website that is mostly focused on fundraising. Aside from basic information it includes integration with payment systems (Leyka plugin)."
+msgstr "Сайт благотворительного фонда адресной помощи. Позволяет публиковать информацию об организации, программах, кампаниях по сбору пожертвований, содержит интеграцию с платежными системами."
 
 #: vendor/envato_setup/envato_setup.php:204
 msgid "Template – Protect Dubrovino! Campaign"
@@ -1674,12 +1603,8 @@ msgid "City protection initiative"
 msgstr "Градозащитная инициатива"
 
 #: vendor/envato_setup/envato_setup.php:206
-msgid ""
-"Urban activism campaign – it includes information on campaign (e.g. a "
-"campaign in defence of a local park), documents, call to sign a petition."
-msgstr ""
-"Сайта градозащитной кампании – позволят публиковать информацию о ходе "
-"кампании, акциях, новости, призыв к подписанию петиции."
+msgid "Urban activism campaign – it includes information on campaign (e.g. a campaign in defence of a local park), documents, call to sign a petition."
+msgstr "Сайта градозащитной кампании – позволят публиковать информацию о ходе кампании, акциях, новости, призыв к подписанию петиции."
 
 #: vendor/envato_setup/envato_setup.php:303
 msgid "Introduction"
@@ -1733,16 +1658,8 @@ msgid "Welcome to the %s setup wizard"
 msgstr "Добро пожаловать в мастер настройки темы %s"
 
 #: vendor/envato_setup/envato_setup.php:527
-msgid ""
-"Hello! Let's set up your organization website together. With few simple "
-"steps we will configure minimal necessary settings, like installing of "
-"required plugins, setting up default website content and the logo. It should "
-"only take 5 minutes. You can always change any of these settings later on, "
-"in the Plugins admin folder."
-msgstr ""
-"Здравствуйте! Давайте настроим сайт вашей организации вместе. За несколько "
-"простых шагов вы сможете выполнить необходимые минимальные настройки. В "
-"дальнейшем вы сможете их отредактировать в административной панели сайта."
+msgid "Hello! Let's set up your organization website together. With few simple steps we will configure minimal necessary settings, like installing of required plugins, setting up default website content and the logo. It should only take 5 minutes. You can always change any of these settings later on, in the Plugins admin folder."
+msgstr "Здравствуйте! Давайте настроим сайт вашей организации вместе. За несколько простых шагов вы сможете выполнить необходимые минимальные настройки. В дальнейшем вы сможете их отредактировать в административной панели сайта."
 
 #: vendor/envato_setup/envato_setup.php:530
 msgid "Let's go!"
@@ -1761,18 +1678,12 @@ msgid "Default Plugins"
 msgstr "Плагины"
 
 #: vendor/envato_setup/envato_setup.php:597
-msgid ""
-"Your website needs a few essential plugins. The following plugins will be "
-"installed or updated:"
-msgstr ""
-"Вашему сайту понадобится несколько плагинов. Мы установим или обновим "
-"следующие плагины:"
+msgid "Your website needs a few essential plugins. The following plugins will be installed or updated:"
+msgstr "Вашему сайту понадобится несколько плагинов. Мы установим или обновим следующие плагины:"
 
 #: vendor/envato_setup/envato_setup.php:598
 msgid "You can add and remove plugins later on, in the Plugins admin folder."
-msgstr ""
-"Вы можете добавить или удалить плагины и дальше, в разделе «Плагины» "
-"административной панели сайта."
+msgstr "Вы можете добавить или удалить плагины и дальше, в разделе «Плагины» административной панели сайта."
 
 #: vendor/envato_setup/envato_setup.php:607
 msgid "Installation required"
@@ -1803,12 +1714,8 @@ msgid "Update and activate"
 msgstr "Обновить и активировать"
 
 #: vendor/envato_setup/envato_setup.php:665
-msgid ""
-"Good news! All plugins are already installed and up to date. Let's proceed "
-"further."
-msgstr ""
-"Хорошие новости! Все нужные плагины уже установлены и обновлены. Давайте "
-"пойдем дальше."
+msgid "Good news! All plugins are already installed and up to date. Let's proceed further."
+msgstr "Хорошие новости! Все нужные плагины уже установлены и обновлены. Давайте пойдем дальше."
 
 #: vendor/envato_setup/envato_setup.php:673
 #: vendor/envato_setup/envato_setup.php:958
@@ -1873,25 +1780,12 @@ msgid "Theme default content"
 msgstr "Демонстрационный контент сайта"
 
 #: vendor/envato_setup/envato_setup.php:920
-msgid ""
-"It looks like you already have content installed on this website. If you "
-"would like to install the default demo content as well you can select it "
-"below. Otherwise just choose the upgrade option to ensure everything is up "
-"to date."
-msgstr ""
-"Кажется, на сайте уже есть контент. Если вы хотите также добавить и "
-"демонстрационный контент, выберите нужные вам фрагменты ниже."
+msgid "It looks like you already have content installed on this website. If you would like to install the default demo content as well you can select it below. Otherwise just choose the upgrade option to ensure everything is up to date."
+msgstr "Кажется, на сайте уже есть контент. Если вы хотите также добавить и демонстрационный контент, выберите нужные вам фрагменты ниже."
 
 #: vendor/envato_setup/envato_setup.php:922
-msgid ""
-"It's time to insert some default content for your new WordPress website. "
-"Choose what you would like inserted below and click Install. We recommend to "
-"select everything. Once inserted, this content can be managed from the "
-"WordPress admin dashboard."
-msgstr ""
-"На этом шаге вы можете добавить на сайт демонстрационное содержание. "
-"Выберите нужные пункты ниже (мы советуем выбрать все) и нажмите «Настроить». "
-"Позже вы сможете изменить или удалить добавленный контент."
+msgid "It's time to insert some default content for your new WordPress website. Choose what you would like inserted below and click Install. We recommend to select everything. Once inserted, this content can be managed from the WordPress admin dashboard."
+msgstr "На этом шаге вы можете добавить на сайт демонстрационное содержание. Выберите нужные пункты ниже (мы советуем выбрать все) и нажмите «Настроить». Позже вы сможете изменить или удалить добавленный контент."
 
 #: vendor/envato_setup/envato_setup.php:928
 msgid "Item"
@@ -1929,14 +1823,8 @@ msgid "Email to the theme support"
 msgstr "Написать тех.службе"
 
 #: vendor/envato_setup/envato_setup.php:1069
-msgid ""
-"For your convenience, we’ve created several templates for NGOs. Select the "
-"one that you fits you best. You will be able to change colours, content "
-"(text and images)."
-msgstr ""
-"Для вашего удобства мы сделали несколько шаблонов сайтов НКО. Выберите тот, "
-"который лучше всего вам подходит. Палитру цветов, содержание, текст и "
-"фотографии вы можете сменить сейчас или сделать это позднее."
+msgid "For your convenience, we’ve created several templates for NGOs. Select the one that you fits you best. You will be able to change colours, content (text and images)."
+msgstr "Для вашего удобства мы сделали несколько шаблонов сайтов НКО. Выберите тот, который лучше всего вам подходит. Палитру цветов, содержание, текст и фотографии вы можете сменить сейчас или сделать это позднее."
 
 #: vendor/envato_setup/envato_setup.php:1076
 msgid "No scenarios detected"
@@ -1952,23 +1840,13 @@ msgid "Plot data builder was not produced for plot: %s"
 msgstr "Конструктор сценариев не обнаружен для сценария: %s"
 
 #: vendor/envato_setup/envato_setup.php:1245
-msgid ""
-"Please add your organization main logo below. The recommended size is "
-"<strong>315 x 66 px</strong> (for \"Image only\" mode) and <strong>66 x 66 "
-"px</strong> (for \"Image with site name\" mode). The logo can be changed at "
-"any time from the Appearance > Customize area in your website dashboard."
-msgstr ""
-"Добавьте логотип вашей организации. Рекомедуемые размеры логотипа – "
-"<strong>315 x 66 пикселей</strong> (для режима «только изображение») и "
-"<strong>66 x 66 пикселей</strong> (для режима «изображение и название "
-"сайта»)."
+msgid "Please add your organization main logo below. The recommended size is <strong>315 x 66 px</strong> (for \"Image only\" mode) and <strong>66 x 66 px</strong> (for \"Image with site name\" mode). The logo can be changed at any time from the Appearance > Customize area in your website dashboard."
+msgstr "Добавьте логотип вашей организации. Рекомедуемые размеры логотипа – <strong>315 x 66 пикселей</strong> (для режима «только изображение») и <strong>66 x 66 пикселей</strong> (для режима «изображение и название сайта»)."
 
 #: vendor/envato_setup/envato_setup.php:1247
 #, php-format
 msgid "Try our %sPaseka program%s if you need a new logo designed."
-msgstr ""
-"Если вам нужен новый дизайн логотипа и фирменного стиля, вы можете найти "
-"исполнителя с помощью нашей %sпрограммы «Пасека»%s."
+msgstr "Если вам нужен новый дизайн логотипа и фирменного стиля, вы можете найти исполнителя с помощью нашей %sпрограммы «Пасека»%s."
 
 #: vendor/envato_setup/envato_setup.php:1254
 msgid "Upload new logo"
@@ -1987,21 +1865,13 @@ msgid "The website description"
 msgstr "Описание сайта"
 
 #: vendor/envato_setup/envato_setup.php:1306
-msgid ""
-"Please add your site icon below. The recommended size is <strong>64 x 64 px</"
-"strong>. The site icon can be changed at any time from the Appearance > "
-"Customize area in your website dashboard."
-msgstr ""
-"Пожалуйста, добавьте фавикон для вашего сайта. Рекомендуемый размер – "
-"<strong>64 x 64 пикселя</strong>. В будущем вы сможете изменить фавикон в "
-"административном разделе сайта, на странице «Внешний вид > Настроить»."
+msgid "Please add your site icon below. The recommended size is <strong>64 x 64 px</strong>. The site icon can be changed at any time from the Appearance > Customize area in your website dashboard."
+msgstr "Пожалуйста, добавьте фавикон для вашего сайта. Рекомендуемый размер – <strong>64 x 64 пикселя</strong>. В будущем вы сможете изменить фавикон в административном разделе сайта, на странице «Внешний вид > Настроить»."
 
 #: vendor/envato_setup/envato_setup.php:1308
 #, php-format
 msgid "Try our %sPaseka program%s if you need a new site icon designed."
-msgstr ""
-"Если вам нужен новый дизайн фавикона, вы можете найти исполнителя с помощью "
-"нашей %sпрограммы «Пасека»%s."
+msgstr "Если вам нужен новый дизайн фавикона, вы можете найти исполнителя с помощью нашей %sпрограммы «Пасека»%s."
 
 #: vendor/envato_setup/envato_setup.php:1320
 msgid "Upload new site icon"
@@ -2013,49 +1883,32 @@ msgstr "Помощь и поддержка"
 
 #: vendor/envato_setup/envato_setup.php:1385
 #, php-format
-msgid ""
-"Thank you for using “Kandinsky” theme on your website.<br>“Kandinsky” — is a "
-"free and open-source project supported by <a href=\"%s\" target=\"_blank"
-"\">Teplitsa. Technologies for Social Good</a> together with the community of "
-"independent developers."
-msgstr ""
-"Спасибо за использование темы «Кандинский» на вашем сайте!<br />Тема "
-"«Кандинский» – бесплатный и открытый програмный продукт, который "
-"поддерживается <a href=\"%s\" target=\"_blank\">Теплицей социальных "
-"технологий</a> и сообществом независимых разработчиков."
+msgid "Thank you for using “Kandinsky” theme on your website.<br>“Kandinsky” — is a free and open-source project supported by <a href=\"%s\" target=\"_blank\">Teplitsa. Technologies for Social Good</a> together with the community of independent developers."
+msgstr "Спасибо за использование темы «Кандинский» на вашем сайте!<br />Тема «Кандинский» – бесплатный и открытый програмный продукт, который поддерживается <a href=\"%s\" target=\"_blank\">Теплицей социальных технологий</a> и сообществом независимых разработчиков."
 
 #: vendor/envato_setup/envato_setup.php:1387
-msgid ""
-"In case you encounter any questions or issues, we recommend you the "
-"following links:"
-msgstr ""
-"Если вы столкнулись с какими-либо проблемами или вопросами, мы рекомендуем "
-"следующие ссылки:"
+msgid "In case you encounter any questions or issues, we recommend you the following links:"
+msgstr "Если вы столкнулись с какими-либо проблемами или вопросами, мы рекомендуем следующие ссылки:"
 
 #: vendor/envato_setup/envato_setup.php:1389
 #, php-format
-msgid ""
-"Documentation and FAQ — <a href=\"%s\" target=\"_blank\">GitHub Wiki</a>"
-msgstr ""
+msgid "Documentation and FAQ — <a href=\"%s\" target=\"_blank\">GitHub Wiki</a>"
+msgstr "Документация и ответы на вопросы — <a href=\"%s\" target=\"_blank\">GitHub Wiki</a>"
 
 #: vendor/envato_setup/envato_setup.php:1390
 #, php-format
 msgid "Source code — <a href=\"%s\" target=\"_blank\">GitHub</a>"
-msgstr ""
+msgstr "Исходный код — <a href=\"%s\" target=\"_blank\">GitHub</a>"
 
 #: vendor/envato_setup/envato_setup.php:1391
 #, php-format
 msgid "Developers’ <a href=\"%s\">Telegram-channel</a> (in Russian)"
-msgstr ""
+msgstr "<a href=\"%s\">Telegram-канал</a> разработчиков (на русском)"
 
 #: vendor/envato_setup/envato_setup.php:1393
 #, php-format
-msgid ""
-"If you need personalized (free during the testing period) consultations from "
-"the theme developers, please feel free to write at <a href=\"mailto:%s\" "
-"target=\"_blank\">%s</a> or <a href=\"%s\" target=\"_blank\">leave a ticket "
-"at GitHub</a>."
-msgstr ""
+msgid "If you need personalized (free during the testing period) consultations from the theme developers, please feel free to write at <a href=\"mailto:%s\" target=\"_blank\">%s</a> or <a href=\"%s\" target=\"_blank\">leave a ticket at GitHub</a>."
+msgstr "Если вам нужны персонализированные (бесплатные в течение периода тестирования) консультации разработчиков темы, пишите на <a href=\"mailto:%s\" target=\"_blank\">%s</a> или <a href=\"%s\" target=\"_blank\">оставляйте заявку на GitHub</a>."
 
 #: vendor/envato_setup/envato_setup.php:1396
 msgid "OK, I've got it!"
@@ -2066,33 +1919,16 @@ msgid "Yay! Your website is ready!"
 msgstr "Ура! Ваш сайт готов!"
 
 #: vendor/envato_setup/envato_setup.php:1410
-msgid ""
-"Congratulations! You’re doing really good #success! You’ve successfully "
-"installed and set up your Kandinsky theme. You need, however, to do a little "
-"bit more."
-msgstr ""
-"Поздравляем! Вам все удалось! Вы установили и частично настроили ваш новый "
-"сайт! Но на этом работа не заканчивается."
+msgid "Congratulations! You’re doing really good #success! You’ve successfully installed and set up your Kandinsky theme. You need, however, to do a little bit more."
+msgstr "Поздравляем! Вам все удалось! Вы установили и частично настроили ваш новый сайт! Но на этом работа не заканчивается."
 
 #: vendor/envato_setup/envato_setup.php:1411
-msgid ""
-"As a part of the installation process, we’ve added some test content of an "
-"imaginary organization that you will need to edit (we’ve provided the "
-"recommendations on how to make great content)."
-msgstr ""
-"В рамках установки мы добавили демонстрационный контент – фото и тексты о "
-"вымышленной организации, которые теперь нужно отредактировать под ваши "
-"задачи и нужды. В тексте даны наши рекомендации по написанию ключевой "
-"информации."
+msgid "As a part of the installation process, we’ve added some test content of an imaginary organization that you will need to edit (we’ve provided the recommendations on how to make great content)."
+msgstr "В рамках установки мы добавили демонстрационный контент – фото и тексты о вымышленной организации, которые теперь нужно отредактировать под ваши задачи и нужды. В тексте даны наши рекомендации по написанию ключевой информации."
 
 #: vendor/envato_setup/envato_setup.php:1412
-msgid ""
-"Moreover, you need to set up few additional plug-ins for the optimal work of "
-"your site (don’t worry, our recommendations will help you)."
-msgstr ""
-"Кроме того, для оптимальной работы, необходимо настроить ряд плагинов. Не "
-"волнуйтесь, мы вам поможем подробными пошаговыми инструкциями по ходу "
-"установки."
+msgid "Moreover, you need to set up few additional plug-ins for the optimal work of your site (don’t worry, our recommendations will help you)."
+msgstr "Кроме того, для оптимальной работы, необходимо настроить ряд плагинов. Не волнуйтесь, мы вам поможем подробными пошаговыми инструкциями по ходу установки."
 
 #: vendor/envato_setup/envato_setup.php:1419
 msgid "Continue the set-up"
@@ -2108,23 +1944,13 @@ msgstr "#успех"
 
 #: vendor/envato_setup/envato_setup.php:1463
 #, php-format
-msgid ""
-"Please, send a report about it to the <a href='mailto:%s' "
-"target='_blank'>theme technical support</a>."
-msgstr ""
-"Пожалуйста, напишите об этой ошибке <a href='mailto:%s' "
-"target='_blank'>нашей службе тех.поддержки</a>."
+msgid "Please, send a report about it to the <a href='mailto:%s' target='_blank'>theme technical support</a>."
+msgstr "Пожалуйста, напишите об этой ошибке <a href='mailto:%s' target='_blank'>нашей службе тех.поддержки</a>."
 
 #: vendor/envato_setup/envato_setup.php:1465
 #, php-format
-msgid ""
-"We're sorry, but some error occured during to this wizard step :( <div "
-"class='wizard-error-support-text'>Please, send a report about it to the <a "
-"href='mailto:%s' target='_blank'>theme technical support</a>."
-msgstr ""
-"К сожалению, что-то произошло во время работы мастера установки темы :( <div "
-"class='wizard-error-support-text'>Пожалуйста, напишите об этом <a "
-"href='mailto:%s' target='_blank'>нашей службе тех.поддержки</a>."
+msgid "We're sorry, but some error occured during to this wizard step :( <div class='wizard-error-support-text'>Please, send a report about it to the <a href='mailto:%s' target='_blank'>theme technical support</a>."
+msgstr "К сожалению, что-то произошло во время работы мастера установки темы :( <div class='wizard-error-support-text'>Пожалуйста, напишите об этом <a href='mailto:%s' target='_blank'>нашей службе тех.поддержки</a>."
 
 #~ msgid "Can't create a download temporary directory: %s"
 #~ msgstr "Невозможно создать временную директорию при загрузке: %s"
