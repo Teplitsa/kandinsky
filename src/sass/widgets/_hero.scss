@@ -32,6 +32,7 @@
         //set height for whole block
         padding-bottom: $gut;
         height: calc(100vh - 77px);
+        min-height: 240px;
 
         //set width
         width: 100%;
