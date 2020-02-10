@@ -112,6 +112,10 @@ class TST_Import {
 		
 		$tmp_file = download_url($url);
 		
+		if( is_wp_error($tmp_file) ) {
+			throw new Exception( sprintf( esc_html__( "File wasn't uploaded: %s", 'knd' ), $tmp_file->get_error_message() ) );
+		}
+		
 		$filename_no_ext = pathinfo( $url, PATHINFO_FILENAME );
 		$extension = pathinfo( $url, PATHINFO_EXTENSION );
 		$filedir = dirname( $tmp_file );
