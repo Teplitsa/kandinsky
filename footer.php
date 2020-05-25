@@ -7,7 +7,7 @@
  * @package Kandinsky
  */
 
-$cc_link = '<a href="http://creativecommons.org/licenses/by-sa/3.0/" target="_blank">' . esc_html__( 'Creative Commons СС-BY-SA 3.0', 'knd' ) . '</a>';
+$cc_link = '<a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank">' . esc_html__( 'Creative Commons СС-BY-SA 3.0', 'knd' ) . '</a>';
 
 $footer_text = knd_get_theme_mod('footer_text');
 
