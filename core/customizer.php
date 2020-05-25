@@ -51,30 +51,35 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 				'section' => 'knd_important_links', 
 				'settings' => 'knd_important_links' ) ) );
 	// Theme Important Links Ended
-	
-	// titles and captions
+
+	// titles and captions.
 	$wp_customize->add_section(
 		'knd_titles_and_captions',
-		array( 'priority' => 160, 'title' => esc_html__( 'Titles and captions', 'knd' ) ) );
-	
-	// Common settings
+		array(
+			'priority' => 160,
+			'title'    => esc_html__( 'Titles and captions', 'knd' ),
+		)
+	);
+
+	// Common settings.
 	$wp_customize->add_setting(
 		'text_in_header',
 		array(
-			'sanitize_callback' => 'knd_sanitize_text',
-			'default' => knd_get_theme_mod('text_in_header', ''),
+			'sanitize_callback' => 'wp_kses_post',
+			'default'           => knd_get_theme_mod('text_in_header', ''),
 		)
 	);
-	
-	$wp_customize->add_control( 
-		'text_in_header', 
-		array( 
-			'type' => 'textarea', 
-			'label' => esc_html__( 'Header text', 'knd' ), 
-			'section' => 'title_tagline', 
-			'settings' => 'text_in_header', 
-			'priority' => 30 ) );
-	
+
+	$wp_customize->add_control(
+		'text_in_header',
+		array(
+			'type'     => 'textarea',
+			'label'    => esc_html__( 'Header text', 'knd' ),
+			'section'  => 'title_tagline',
+			'settings' => 'text_in_header',
+			'priority' => 30,
+		)
+	);
 
 	// Design section
 	$wp_customize->add_panel( 
