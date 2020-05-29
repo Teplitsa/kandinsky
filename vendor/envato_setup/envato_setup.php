@@ -849,20 +849,20 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 
             return true;
         }
-        
-        private function _content_default_get() {
 
-            $content = array();
+		private function _content_default_get() {
 
-            $content['site_title_desc'] = array(
-                'title' => esc_html__('Website title and description', 'knd'),
-                'description' => esc_html__('Insert default website title and description as seen in the demo.', 'knd'),
-                'pending' => esc_html__('Pending', 'knd'),
-                'installing' => esc_html__('Installing...', 'knd'),
-                'success' => esc_html__('Success!', 'knd'),
-                'install_callback' => array($this, '_content_install_site_title_desc'),
-                'checked' => $this->is_default_content_installed(),
-            );
+			$content = array();
+
+			$content['site_title_desc'] = array(
+				'title'            => esc_html__( 'Website title and description', 'knd' ),
+				'description'      => esc_html__( 'Insert default website title and description as seen in the demo.', 'knd' ),
+				'pending'          => esc_html__( 'Pending', 'knd' ),
+				'installing'       => esc_html__( 'Installing...', 'knd' ),
+				'success'          => esc_html__( 'Success!', 'knd' ),
+				'install_callback' => array( $this, '_content_install_site_title_desc' ),
+				'checked'          => true, //$this->is_default_content_installed(),
+			);
 //             $content['pages'] = array(
 //                 'title' => esc_html__('Pages', 'knd'),
 //                 'description' => esc_html__('Insert default website pages as seen in the demo.', 'knd'),
@@ -881,15 +881,15 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 //                 'install_callback' => array($this, '_content_install_posts'),
 //                 'checked' => $this->is_default_content_installed(),
 //             );
-            $content['settings'] = array(
-                'title' => esc_html__('Settings', 'knd'),
-                'description' => esc_html__('Insert default website settings as seen in the demo.', 'knd'),
-                'pending' => esc_html__('Pending', 'knd'),
-                'installing' => esc_html__('Installing...', 'knd'),
-                'success' => esc_html__('Success!', 'knd'),
-                'install_callback' => array($this, '_content_install_settings'),
-                'checked' => $this->is_default_content_installed(),
-            );
+				$content['settings'] = array(
+					'title'            => esc_html__( 'Settings', 'knd' ),
+					'description'      => esc_html__( 'Insert default website settings as seen in the demo.', 'knd' ),
+					'pending'          => esc_html__( 'Pending', 'knd' ),
+					'installing'       => esc_html__( 'Installing...', 'knd' ),
+					'success'          => esc_html__( 'Success!', 'knd' ),
+					'install_callback' => array( $this, '_content_install_settings' ),
+					'checked'          => true, //$this->is_default_content_installed(),
+				);
 //             $content['menu'] = array(
 //                 'title' => esc_html__('Menu', 'knd'),
 //                 'description' => esc_html__('Insert default website menu as seen in the demo.', 'knd'),
@@ -899,28 +899,28 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 //                 'install_callback' => array($this, '_content_install_menu'),
 //                 'checked' => $this->is_default_content_installed(),
 //             );
-            $content['content'] = array(
-                'title' => esc_html__('Content', 'knd'),
-                'description' => esc_html__('Install default website posts, pages and menus.', 'knd'),
-                'pending' => esc_html__('Pending', 'knd'),
-                'installing' => esc_html__('Installing...', 'knd'),
-                'success' => esc_html__('Success!', 'knd'),
-                'install_callback' => array($this, '_content_install_content'),
-                'checked' => $this->is_default_content_installed(),
-            );
-            $content['donations'] = array(
-                'title' => esc_html__('Donations', 'knd'),
-                'description' => esc_html__('Install donations components.', 'knd'),
-                'pending' => esc_html__('Pending', 'knd'),
-                'installing' => esc_html__('Installing...', 'knd'),
-                'success' => esc_html__('Success!', 'knd'),
-                'install_callback' => array($this, '_content_install_donations'),
-                'checked' => $this->is_default_content_installed(),
-            );
+				$content['content'] = array(
+					'title'            => esc_html__( 'Content', 'knd' ),
+					'description'      => esc_html__( 'Install default website posts, pages and menus.', 'knd' ),
+					'pending'          => esc_html__( 'Pending', 'knd' ),
+					'installing'       => esc_html__( 'Installing...', 'knd' ),
+					'success'          => esc_html__( 'Success!', 'knd' ),
+					'install_callback' => array( $this, '_content_install_content' ),
+					'checked'          => true, //$this->is_default_content_installed(),
+				);
+				$content['donations'] = array(
+					'title'            => esc_html__( 'Donations', 'knd' ),
+					'description'      => esc_html__( 'Install donations components.', 'knd' ),
+					'pending'          => esc_html__( 'Pending', 'knd' ),
+					'installing'       => esc_html__( 'Installing...', 'knd' ),
+					'success'          => esc_html__( 'Success!', 'knd' ),
+					'install_callback' => array( $this, '_content_install_donations' ),
+					'checked'          => true, //$this->is_default_content_installed(),
+				);
 
-            return apply_filters($this->theme_name.'_theme_setup_wizard_content', $content);
+			return apply_filters($this->theme_name.'_theme_setup_wizard_content', $content);
 
-        }
+		}
 
         public function step_content_view() { ?>
 

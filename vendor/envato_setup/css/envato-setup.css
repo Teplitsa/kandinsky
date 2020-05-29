@@ -48,7 +48,7 @@ body {
     margin: 0 0 12px
 }
 .envato-setup-content p.envato-setup-actions {
-    margin: 0;
+    margin: 15px 0 0;
     padding-bottom: 2px;
 }
 
@@ -419,10 +419,7 @@ body {
 .envato-setup .envato-setup-actions .button {
     float: right;
     font-size: 1.25em;
-    padding: .5em 1em;
-    line-height: 1em;
     margin-right: .5em;
-    height: auto
 }
 
 .envato-setup .envato-setup-actions .button-primary {
