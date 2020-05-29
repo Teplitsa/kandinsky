@@ -1,9 +1,10 @@
-<?php /**
+<?php
+/**
  * Custom template tags for this theme.
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package bb
+ * @package Kandinsky
  */
 
 if ( ! defined( 'WPINC' ) )
@@ -12,22 +13,22 @@ if ( ! defined( 'WPINC' ) )
 function knd_has_authors() {
 	if ( defined( 'TST_HAS_AUTHORS' ) && TST_HAS_AUTHORS && function_exists( 'get_term_meta' ) )
 		return true;
-	
+
 	return false;
 }
 
 /* Custom conditions */
 function is_about() {
-	
+
 	if ( is_page_branch( 2 ) )
 		return true;
-	
+
 	if ( is_post_type_archive( 'org' ) )
 		return true;
-	
+
 	if ( is_post_type_archive( 'org' ) )
 		return true;
-	
+
 	return false;
 }
 
@@ -53,10 +54,10 @@ function is_page_branch( $pageID ) {
 	} else {
 		$test_id = (int) $pageID;
 	}
-	
+
 	if ( in_array( $test_id, $parents ) )
 		return true;
-	
+
 	return false;
 }
 
@@ -529,35 +530,38 @@ function knd_get_content_image_markup( $attachment_id ) {
 	return wp_get_attachment_image( $attachment_id, 'medium', false, array( 'alt' => "" ) );
 }
 
+/**
+ * Logo Markup
+ */
 function knd_logo_markup() {
-	
+
 	/** @todo logo sizes may depends on test content */
 	$mod = knd_get_theme_mod( 'knd_custom_logo_mod', 'image_only' );
-	if ( $mod == 'nothing' ) {
+	if ( 'nothing' == $mod ) {
 		return;
 	}
 	?>
 
-<a href="<?php echo esc_url(home_url('/'));?>" rel="home"
-    class="site-logo">
-<?php if($mod == 'image_only') {?>
-    <div class="logo-image-only"><?php echo knd_get_logo_img();?></div>
-<?php } elseif($mod == 'text_only') {?>
-    <div class="logo-text-only">
-        <h1 class="logo-name"><?php bloginfo('name');?></h1>
-        <h2 class="logo-name"><?php bloginfo('description');?></h2>
-    </div>
-<?php } else {?>
-    <div class="logo-complex">
-        <div class="logo"><?php echo knd_get_logo_img();?></div>
-        <div class="text">
-            <h1 class="logo-name"><?php bloginfo('name');?></h1>
-            <h2 class="logo-name"><?php bloginfo('description');?></h2>
-        </div>
-    </div>
-<?php }?>
-</a>
-<?php
+	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="site-logo">
+		<?php if ( 'image_only' == $mod ) { ?>
+			<div class="logo-image-only"><?php echo knd_get_logo_img(); ?></div>
+		<?php } elseif ( 'text_only' == $mod ) { ?>
+		<div class="logo-text-only">
+			<span class="logo-name"><?php bloginfo( 'name' ); ?></span>
+			<span class="logo-desc"><?php bloginfo( 'description' ); ?></span>
+		</div>
+	<?php } else { ?>
+		<div class="logo-complex">
+			<div class="logo"><?php echo knd_get_logo_img(); ?></div>
+			<div class="text">
+				<span class="logo-name"><?php bloginfo( 'name' ); ?></span>
+				<span class="logo-desc"><?php bloginfo( 'description' ); ?></span>
+			</div>
+		</div>
+	<?php } ?>
+	</a>
+
+	<?php
 }
 
 function knd_hero_image_markup() {

@@ -17,7 +17,7 @@
 	@include upto(small-screens) { display: none;}
 }
 .hide-upto-medium {
-	@include upto(medium-screens) { display: none;}
+	@include upto(medium-screens) { display: none !important;}
 }
 .hide-upto-large {
 	@include upto(large-screens) { display: none;}

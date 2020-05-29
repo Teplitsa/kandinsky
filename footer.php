@@ -9,7 +9,7 @@
 
 $cc_link = '<a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank">' . esc_html__( 'Creative Commons СС-BY-SA 3.0', 'knd' ) . '</a>';
 
-$footer_text = knd_get_theme_mod('footer_text');
+$footer_text = knd_get_theme_mod( 'footer_text' );
 
 ?>
 </div><!--  #site_content -->
@@ -18,8 +18,8 @@ $footer_text = knd_get_theme_mod('footer_text');
 	<div class="container">
 		<div class="flex-row align-bottom bottom-branding">
 			<div class="flex-cell flex-md-5">
-				<h1 class="logo-name"><?php bloginfo( 'name' );?></h1>
-				<h2 class="logo-name"><?php bloginfo( 'description' );?></h2>
+				<span class="logo-name"><?php bloginfo( 'name' ); ?></span>
+				<span class="logo-desc"><?php bloginfo( 'description' ); ?></span>
 			</div>
 
 			<div class="flex-cell flex-md-7 links-right">
@@ -38,7 +38,7 @@ $footer_text = knd_get_theme_mod('footer_text');
 <footer class="site-footer">
 	<div class="container">
 
-		<div class="widget-area"><?php dynamic_sidebar( 'knd-footer-sidebar' );?></div>
+		<div class="widget-area"><?php dynamic_sidebar( 'knd-footer-sidebar' ); ?></div>
 
 		<div class="hr"></div>
 
