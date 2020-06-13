@@ -42,7 +42,7 @@ class KND_Ourorg_Widget extends WP_Widget {
     
         <?php for($i = 1; $i <= 3; $i++): ?>
         <div class="whoweare-item flex-cell flex-mf-12 flex-sm-6 flex-md-4">
-            <h3><?php echo knd_get_theme_mod("home-subtitle-col{$i}-title") ?></h3>
+            <h2><?php echo knd_get_theme_mod("home-subtitle-col{$i}-title") ?></h2>
             <p>
             <?php echo knd_get_theme_mod("home-subtitle-col{$i}-content") ?>
             </p>

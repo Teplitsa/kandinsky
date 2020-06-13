@@ -203,7 +203,7 @@
             min-height: none;
         }
         
-        h3 {
+        h2 {
             @include knd-head-main-text();
             
             body.plot-fundraising-org & {
@@ -267,6 +267,7 @@
     
     .whoweare-item:last-of-type {
     
+        h2,
         h3 {
         
             body.plot-public-campaign & {

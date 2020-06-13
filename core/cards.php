@@ -1,4 +1,7 @@
 <?php
+/**
+ * Cards
+ */
 
 if ( ! defined( 'WPINC' ) )
 	die();
@@ -8,14 +11,14 @@ function knd_post_card( WP_Post $cpost ) {
 	$pl = get_permalink( $cpost );
 	?>
 <article <?php post_class('flex-cell flex-md-6 flex-lg-4 tpl-post card', $cpost);?>>
-    <a href="<?php echo $pl; ?>" class="thumbnail-link">
-        <div class="entry-preview"><?php echo knd_post_thumbnail($cpost->ID, 'post-thumbnail');?></div>
-        <div class="entry-data">
-            <h4 class="entry-title"><?php echo get_the_title($cpost);?></h4>
-        </div>
+	<a href="<?php echo $pl; ?>" class="thumbnail-link">
+		<div class="entry-preview"><?php echo knd_post_thumbnail($cpost->ID, 'post-thumbnail');?></div>
+		<div class="entry-data">
+			<h2 class="entry-title"><?php echo get_the_title($cpost);?></h2>
+		</div>
 
-        <div class="entry-meta"><?php echo strip_tags(knd_posted_on($cpost), '<span>');?></div>
-    </a>
+		<div class="entry-meta"><?php echo strip_tags(knd_posted_on($cpost), '<span>');?></div>
+	</a>
 </article>
 <?php
 }
@@ -24,15 +27,15 @@ function knd_related_post_card( WP_Post $cpost ) {
 	$pl = get_permalink( $cpost );?>
 
 <article <?php post_class('flex-cell flex-md-6 tpl-related-post card', $cpost);?>>
-    <a href="<?php echo $pl; ?>" class="entry-link">
-        <div class="entry-preview"><?php echo knd_post_thumbnail($cpost->ID, 'post-thumbnail');?></div>
-        <div class="entry-data">
-            <h4 class="entry-title"><?php echo get_the_title($cpost);?></h4>
-        </div>
-    <?php if('project' != $cpost->post_type) { ?>
-    <div class="entry-meta"><?php echo strip_tags(knd_posted_on($cpost), '<span>');?></div>
-    <?php } ?>
-    
+	<a href="<?php echo $pl; ?>" class="entry-link">
+		<div class="entry-preview"><?php echo knd_post_thumbnail($cpost->ID, 'post-thumbnail');?></div>
+		<div class="entry-data">
+			<h2 class="entry-title"><?php echo get_the_title($cpost);?></h2>
+		</div>
+	<?php if('project' != $cpost->post_type) { ?>
+	<div class="entry-meta"><?php echo strip_tags(knd_posted_on($cpost), '<span>');?></div>
+	<?php } ?>
+	
 </a>
 </article>
 <?php
@@ -50,12 +53,12 @@ function knd_project_card( WP_Post $cpost ) {
 	$pl = get_permalink( $cpost );?>
 
 <article <?php post_class('flex-cell flex-md-4 tpl-project card', $cpost);?>>
-    <a href="<?php echo $pl; ?>" class="entry-link">
-        <div class="entry-preview"><?php echo knd_post_thumbnail($cpost->ID, 'post-thumbnail');?></div>
-        <h4 class="entry-title">
-            <span><?php echo get_the_title($cpost);?></span>
-        </h4>
-    </a>
+	<a href="<?php echo $pl; ?>" class="entry-link">
+		<div class="entry-preview"><?php echo knd_post_thumbnail($cpost->ID, 'post-thumbnail');?></div>
+		<h2 class="entry-title">
+			<span><?php echo get_the_title($cpost);?></span>
+		</h2>
+	</a>
 </article>
 <?php
 }
@@ -76,11 +79,11 @@ function knd_search_card( WP_Post $cpost ) {
 	$ex = apply_filters( 'knd_the_title', knd_get_post_excerpt( $cpost, 40, true ) );
 	?>
 <article class="tpl-search">
-    <a href="<?php echo $pl; ?>" class="entry-link">
-        <h4 class="entry-title"><?php echo get_the_title($cpost);?></h4>
-        <div class="entry-meta"><?php echo $pl ;?></div>
-        <div class="entry-summary"><?php echo $ex;?></div>
-    </a>
+	<a href="<?php echo $pl; ?>" class="entry-link">
+		<h2 class="entry-title"><?php echo get_the_title($cpost);?></h2>
+		<div class="entry-meta"><?php echo $pl ;?></div>
+		<div class="entry-summary"><?php echo $ex;?></div>
+	</a>
 </article>
 <?php
 }
@@ -137,9 +140,9 @@ function knd_single_post_thumbnail( $post_id, $size = 'post-thumbnail', $post_fo
 	} elseif ( $post_format == 'introimg' ) {
 		?>
 <figure class="introimg-figure">
-    <div class="introimg">
-        <div class="tpl-pictured-bg" style="background-image: url(<?php echo get_the_post_thumbnail_url($post_id, $size);?>);" ></div>
-    </div>
+	<div class="introimg">
+		<div class="tpl-pictured-bg" style="background-image: url(<?php echo get_the_post_thumbnail_url($post_id, $size);?>);" ></div>
+	</div>
 		<?php if(!empty($cap)) { ?>
 			<figcaption class="wp-caption-text"><?php echo apply_filters('knd_the_title', $cap);?></figcaption>
 		<?php } ?>
