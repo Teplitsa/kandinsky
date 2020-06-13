@@ -5,45 +5,45 @@
 
 function knd_social_links($atts = array(), $echo = true) {
 
-    $atts['class'] = empty($atts['class']) ? '' : esc_attr($atts['class']);
+	$atts['class'] = empty($atts['class']) ? '' : esc_attr($atts['class']);
 
-    ob_start();
+	ob_start();
 
-    $social_links = array();
-    foreach(knd_get_social_media_supported() as $id => $data) {
+	$social_links = array();
+	foreach(knd_get_social_media_supported() as $id => $data) {
 
-        $link = esc_url(knd_get_theme_mod('knd_social_links_'.$id));
-        if($link) {
-            $social_links[$id] = array('label' => $data['label'], 'link' => $link);
-        }
+		$link = esc_url(knd_get_theme_mod('knd_social_links_'.$id));
+		if($link) {
+			$social_links[$id] = array('label' => $data['label'], 'link' => $link);
+		}
 
-    }
+	}
 
-    if($social_links) {?>
+	if($social_links) {?>
 
-    <ul class="knd-social-links <?php echo $atts['class'];?>">
-    <?php foreach($social_links as $id => $data) {?>
+	<ul class="knd-social-links <?php echo $atts['class'];?>">
+	<?php foreach($social_links as $id => $data) {?>
 
-        <li class="<?php echo esc_attr($id);?>">
-            <a href="<?php echo esc_url($data['link']);?>">
-                <svg class="svg-icon"><use xlink:href="#<?php echo 'icon-'.$id;?>"></svg>
-                <span><?php echo esc_html($data['label']);?></span>
-            </a>
-        </li>
+		<li class="<?php echo esc_attr($id);?>">
+			<a href="<?php echo esc_url($data['link']);?>">
+				<svg class="svg-icon"><use xlink:href="#<?php echo 'icon-'.$id;?>"/></svg>
+				<span><?php echo esc_html($data['label']);?></span>
+			</a>
+		</li>
 
-    <?php }?>
-    </ul>
+	<?php }?>
+	</ul>
 
-    <?php }
+	<?php }
 
-    $out = ob_get_contents();
-    ob_end_clean();
+	$out = ob_get_contents();
+	ob_end_clean();
 
-    if( !!$echo ) {
-        echo $out;
-    } else {
-        return $out;
-    }
+	if( !!$echo ) {
+		echo $out;
+	} else {
+		return $out;
+	}
 
 }
 
@@ -51,7 +51,7 @@ function knd_social_links($atts = array(), $echo = true) {
 
 /** Social buttons **/
 function knd_social_share_no_js() {
-	
+
 	$title = (class_exists('WPSEO_Frontend')) ? WPSEO_Frontend::get_instance()->title( '' ) : '';
 	$link = knd_current_url();
 	$text = $title.' '.$link;
