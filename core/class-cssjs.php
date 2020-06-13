@@ -56,26 +56,13 @@ class KND_CssJs {
 		return $filename;
 	}
 
-	/* load css */
-	function load_styles() {
+	/** Load css */
+	public function load_styles() {
 		$url = get_template_directory_uri();
 		$style_dependencies = array();
-		
-		// fonts
-		wp_enqueue_style( 
-			'rdc-fonts', 
-			'//fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,700,700italic|Roboto+Condensed:400,700&subset=latin,cyrillic', 
-			$style_dependencies, 
-			null );
-		$style_dependencies[] = 'rdc-fonts';
-		
-		// design
-		wp_enqueue_style( 
-			'frl-design', 
-			$url . '/assets/rev/' . $this->get_rev_filename( 'bundle.css' ), 
-			$style_dependencies, 
-			null );
-		
+
+		// design.
+		wp_enqueue_style( 'frl-design', $url . '/assets/rev/' . $this->get_rev_filename( 'bundle.css' ), $style_dependencies, null );
 		wp_dequeue_style( 'leyka-plugin-styles' );
 	}
 
