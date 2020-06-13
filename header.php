@@ -20,8 +20,6 @@
 
 <?php include_once get_template_directory() . '/assets/svg/svg.svg'; // all svgs. ?>
 
-<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'knd' ); ?></a>
-
 	<?php get_template_part( 'template-parts/header' ); ?>
 
-	<div id="site_content" class="site-content"><a name="#content"></a>
+	<div id="site_content" class="site-content">
