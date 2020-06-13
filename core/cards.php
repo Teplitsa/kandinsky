@@ -63,20 +63,17 @@ function knd_project_card( WP_Post $cpost ) {
 /* Orgs */
 function knd_org_card( WP_Post $cpost ) {
 	?>
-<article <?php post_class('tpl-org logo', $cpost);?>>
-    <a href="<?php echo esc_url($cpost->post_excerpt);?>"
-        class="logo-link logo-frame" target="_blank"
-        title="<?php echo esc_attr($cpost->post_title);?>"> <span><?php echo get_the_post_thumbnail($cpost, 'post-thumbnail');?></span>
-    </a>
-</article>
-<?php
+	<div <?php post_class('tpl-org logo', $cpost);?>>
+		<a href="<?php echo esc_url($cpost->post_excerpt);?>" class="logo-link logo-frame" target="_blank" title="<?php echo esc_attr( $cpost->post_title ); ?>"> <span><?php echo get_the_post_thumbnail( $cpost, 'post-thumbnail'); ?></span>
+		</a>
+	</div>
+	<?php
 }
 
 /** search **/
 function knd_search_card( WP_Post $cpost ) {
 	$pl = get_permalink( $cpost );
 	$ex = apply_filters( 'knd_the_title', knd_get_post_excerpt( $cpost, 40, true ) );
-	
 	?>
 <article class="tpl-search">
     <a href="<?php echo $pl; ?>" class="entry-link">
