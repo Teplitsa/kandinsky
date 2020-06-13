@@ -26,11 +26,11 @@ define('KND_PHP_VERSION_ERROR_MESSAGE', '<strong>Внимание:</strong> ве
 if( !defined('PHP_VERSION') || version_compare(PHP_VERSION, KND_MIN_PHP_VERSION, '<') ) {
 
   function sample_admin_notice__success() {
-    ?>
-    <div class="notice notice-error">
-        <p><?php echo KND_PHP_VERSION_ERROR_MESSAGE;?></p>
-    </div>
-    <?php
+	?>
+	<div class="notice notice-error">
+		<p><?php echo KND_PHP_VERSION_ERROR_MESSAGE;?></p>
+	</div>
+	<?php
   }
   add_action( 'admin_notices', 'sample_admin_notice__success' );
 }
@@ -45,9 +45,23 @@ function knd_setup() {
 	load_theme_textdomain('knd', get_template_directory().'/lang');
 	//add_theme_support( 'automatic-feed-links' );	
 	add_theme_support('title-tag');
-	add_theme_support('html5', array('search-form', 'comment-form', 'comment-list', 'gallery', 'caption',));
 
-	
+	/**
+	 * Switch default core markup for search form, comment form, and comments
+	 * to output valid HTML5.
+	 */
+	add_theme_support(
+		'html5',
+		array(
+			'search-form',
+			'comment-form',
+			'comment-list',
+			'gallery',
+			'caption',
+			'script',
+			'style',
+		)
+	);
 
 	// Menus
 	$menus = array(
@@ -59,9 +73,9 @@ function knd_setup() {
 	register_nav_menus($menus);
 
 	// Editor style
-    add_editor_style(array('assets/css/editor.css'));
+	add_editor_style(array('assets/css/editor.css'));
 
-    // Support automatic feed links
+	// Support automatic feed links
 	add_theme_support( 'automatic-feed-links' );
 
 }
@@ -69,7 +83,7 @@ add_action( 'after_setup_theme', 'knd_setup', 9 ); // Theme wizard initialize at
 
 /* Function for init setting that should be runned at init hook */
 function knd_content_init() {
-    add_post_type_support('page', 'excerpt');
+	add_post_type_support('page', 'excerpt');
 }
 add_action( 'init', 'knd_content_init', 30 );
 
@@ -108,26 +122,26 @@ get_template_part('/core/import'); // import files into site media lib
 
 // Include modules
 foreach (glob(get_template_directory() . '/modules/*') as $module_file) {
-    if(is_dir($module_file)) {
-        $php_filename = basename($module_file) . '.php';
-        $php_file = $module_file . '/' . $php_filename;
-    } else {
-        $php_file = $module_file;
-    }
+	if(is_dir($module_file)) {
+		$php_filename = basename($module_file) . '.php';
+		$php_file = $module_file . '/' . $php_filename;
+	} else {
+		$php_file = $module_file;
+	}
 
-    if(is_file($php_file) && preg_match('/.*\.php$/', $php_file)) {
-        require( $php_file );
-    }
+	if(is_file($php_file) && preg_match('/.*\.php$/', $php_file)) {
+		require( $php_file );
+	}
 }
 
 if(is_admin() || current_user_can('manage_options')) {
-    get_template_part('/core/admin-update-theme');
-    get_template_part('/core/admin');
-    get_template_part('/vendor/class-tgm-plugin-activation');
+	get_template_part('/core/admin-update-theme');
+	get_template_part('/core/admin');
+	get_template_part('/vendor/class-tgm-plugin-activation');
 }
 
 if((is_admin() && !empty($_GET['page']) && $_GET['page'] == 'knd-setup-wizard' ) || wp_doing_ajax()) {
-    get_template_part('/vendor/envato_setup/envato_setup'); // Run the wizard after all modules included
+	get_template_part('/vendor/envato_setup/envato_setup'); // Run the wizard after all modules included
 }
 
 // Service lines (to localize):
