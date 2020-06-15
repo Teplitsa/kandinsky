@@ -418,3 +418,44 @@ function knd_get_theme_mod($name, $default = false) {
 	}
 	return $option_val;
 }
+
+/**
+ * Allow SVG file upload
+ *
+ * @param array $mimes Mime types.
+ */
+function knd_svg_upload_mimes( $mimes ) {
+	$mimes['svg'] = 'image/svg+xml';
+	return $mimes;
+}
+add_action( 'upload_mimes', 'knd_svg_upload_mimes' );
+
+/**
+ * Display SVG in attachment
+ *
+ * @param array $response Response.
+ * @param array $attachment Attachment.
+ */
+function knd_svgs_response_for_svg( $response, $attachment ) {
+
+	if ( $response['mime'] == 'image/svg+xml' && empty( $response['sizes'] ) ) {
+
+		$svg_path = get_attached_file( $attachment->ID );
+
+		if ( ! file_exists( $svg_path ) ) {
+			// If SVG is external, use the URL instead of the path.
+			$svg_path = $response['url'];
+		}
+
+		$response['sizes'] = array(
+			'full' => array(
+				'url' => $response['url'],
+			),
+		);
+
+	}
+
+	return $response;
+
+}
+add_filter( 'wp_prepare_attachment_for_js', 'knd_svgs_response_for_svg', 10, 2 );

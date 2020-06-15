@@ -245,24 +245,23 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 				'image_text' => esc_html__( 'Image with site name', 'knd' ), 
 				'text_only' => esc_html__( 'Site name only', 'knd' ), 
 				'nothing' => esc_html__( 'Do not show', 'knd' ) ) ) );
-	
-	$wp_customize->add_control( 
-		new WP_Customize_Cropped_Image_Control( 
-			$wp_customize, 
-			'knd_custom_logo', 
-			array( 
-				'label' => esc_html__( 'Logo', 'knd' ), 
-				'description' => esc_html__( 
-					'Recommended size 315x66px for Image only mode and 66x66px for Image with site name', 
-					'knd' ), 
-				'section' => 'knd_decoration_logo', 
-				'settings' => 'knd_custom_logo', 
-				'flex_width' => true, 
-				'flex_height' => false, 
-				'width' => 315, 
-				'height' => 66, 
-				'priority' => 30 ) ) );
-	
+
+	// Logo image
+	$wp_customize->add_control(
+		new WP_Customize_Media_Control(
+			$wp_customize,
+			'knd_custom_logo',
+			array(
+				'label'       => esc_html__( 'Logo', 'knd' ),
+				'description' => esc_html__( 'Recommended size 315x66px for Image only mode and 66x66px for Image with site name', 'knd' ),
+				'section'     => 'knd_decoration_logo',
+				'settings'    => 'knd_custom_logo',
+				'mime_type'   => 'image',
+				'priority'    => 30,
+			)
+		)
+	);
+
 	/* homepage */
 	
 	$wp_customize->add_panel( 

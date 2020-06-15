@@ -1295,16 +1295,19 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
             check_admin_referer('knd-setup-design');
 
             $_POST['new_logo_id'] = (int)$_POST['new_logo_id'];
-            if($_POST['new_logo_id']) {
+            if ( $_POST['new_logo_id'] ) {
 
+                /* Deprecate code, this code preven load svg image, must be removed in future,
                 $attr = wp_get_attachment_image_src($_POST['new_logo_id'], 'full');
                 if($attr && !empty($attr[1]) && !empty($attr[2])) {
                     set_theme_mod('knd_custom_logo', $_POST['new_logo_id']);
                 }
+                */
+                set_theme_mod( 'knd_custom_logo', $_POST['new_logo_id'] );
 
             }
 
-            wp_redirect(esc_url_raw($this->get_next_step_link()));
+            wp_redirect( esc_url_raw( $this->get_next_step_link() ) );
             exit;
 
         }
