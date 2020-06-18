@@ -37,6 +37,26 @@ add_filter( 'knd_entry_the_content', 'wp_make_content_images_responsive' );
 //add_filter( 'knd_entry_the_content', 'do_shortcode', 11 );
 add_filter( 'knd_entry_the_content', 'wp_kses_post', 7 );
 
+/**
+ * Add allowed html iframe
+ *
+ * @param array $allowed_html Allowed HTML elements.
+ */
+function knd_kses_allowed_html( $allowed_html ) {
+	$allowed_html['iframe'] = array(
+		'src'             => true,
+		'width'           => true,
+		'height'          => true,
+		'class'           => true,
+		'id'              => true,
+		'frameborder'     => true,
+		'allowfullscreen' => true,
+		'style'           => true,
+	);
+	return $allowed_html;
+}
+add_filter( 'wp_kses_allowed_html', 'knd_kses_allowed_html' );
+
 /* jpeg compression */
 add_filter('jpeg_quality', function(){ return 95; });
 
