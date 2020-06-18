@@ -59,12 +59,6 @@ class KND_Org_Widget extends WP_Widget {
 
     public function get_orgs($num, $category = '') {
 
-	    if($num <= 0) {
-	        $num = 4;
-	    } elseif($num > 10) {
-	        $num = 10;
-	    }
-
         $params = array(
             'post_type' => 'org',
             'posts_per_page' => $num,
