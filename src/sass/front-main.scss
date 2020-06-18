@@ -24,6 +24,9 @@
 @import 'blocks/footer';
 @import 'blocks/social';
 
+// wp blocks
+@import 'wp-blocks/embed';
+
 //content types
 @import 'types/posts';
 @import 'types/single';

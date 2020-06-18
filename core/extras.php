@@ -479,3 +479,17 @@ function knd_svgs_response_for_svg( $response, $attachment ) {
 
 }
 add_filter( 'wp_prepare_attachment_for_js', 'knd_svgs_response_for_svg', 10, 2 );
+
+/**
+ * Resposive embed
+ *
+ * @param string $html embed html.
+ */
+function custom_oembed_filter( $html ) {
+	$return = $html;
+	if ( strpos( $html, 'youtube.com') !== false || strpos( $html, 'youtu.be') !== false ) {
+		$return = '<div class="wp-block-embed-responsive">' . $html . '</div>';
+	}
+	return $return;
+}
+add_filter( 'embed_oembed_html', 'custom_oembed_filter' );
