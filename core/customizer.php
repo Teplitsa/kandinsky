@@ -15,10 +15,10 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 		public function render_content() {
 			$important_links = array( 
 				'theme-info' => array( 
-					'link' => esc_url( TST_OFFICIAL_WEBSITE_URL ),
+					'link' => esc_url( KND_OFFICIAL_WEBSITE_URL ),
 					'text' => esc_html__( 'Theme Info', 'knd' ) ), 
 				'support' => array( 
-					'link' => esc_url( KND_SUPPORT_EMAIL ),
+					'link' => esc_url( KND_SUPPORT_URL ),
 					'text' => esc_html__( 'Support', 'knd' ) ), 
 				'documentation' => array( 
 					'link' => esc_url( KND_DOC_URL ),
