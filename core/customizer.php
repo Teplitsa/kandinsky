@@ -246,14 +246,14 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 				'text_only' => esc_html__( 'Site name only', 'knd' ), 
 				'nothing' => esc_html__( 'Do not show', 'knd' ) ) ) );
 
-	// Logo image
+	// Logo image.
 	$wp_customize->add_control(
 		new WP_Customize_Media_Control(
 			$wp_customize,
 			'knd_custom_logo',
 			array(
 				'label'       => esc_html__( 'Logo', 'knd' ),
-				'description' => esc_html__( 'Recommended size 315x66px for Image only mode and 66x66px for Image with site name', 'knd' ),
+				'description' => 'Мы рекомендуем загружать логотипы в формате .svg (векторная графика). Если изображения растровое, то мы советуем закачивать изображения в размере 630x132 px для режима "Только изображение" и 132x132 px для режима "Изображение и название".',//esc_html__( 'Recommended size 315x66px for Image only mode and 66x66px for Image with site name', 'knd' ),
 				'section'     => 'knd_decoration_logo',
 				'settings'    => 'knd_custom_logo',
 				'mime_type'   => 'image',
