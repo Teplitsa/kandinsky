@@ -2,19 +2,24 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-29 14:20+0200\n"
-"PO-Revision-Date: 2020-01-11 16:32+0200\n"
+"POT-Creation-Date: 2020-06-18 17:38+0300\n"
+"PO-Revision-Date: 2020-06-18 17:39+0300\n"
 "Last-Translator: ahaenor <ahaenor@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10 >= 2 && n%10<=4 &&(n%100<10||n%100 >= 20)? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10 >= 2 && n"
+"%10<=4 &&(n%100<10||n%100 >= 20)? 1 : 2);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 2.0.5\n"
+"X-Generator: Poedit 1.8.8\n"
 "X-Poedit-Basepath: ..\n"
-"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
+"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
+"__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
+"_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
+"esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
+"esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
 "X-Loco-Target-Locale: ru_RU\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: bower_components\n"
@@ -22,8 +27,12 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-2: assets\n"
 
 #: 404.php:5
-msgid "Unfortunately this page has been removed or never exists. Please, use the search field to find the information you need or visit the homepage."
-msgstr "К сожалению, запрошенная страница удалена или никогда не существовала. Пожалуйста, воспользуйтесь поиском или перейдите на Главную."
+msgid ""
+"Unfortunately this page has been removed or never exists. Please, use the "
+"search field to find the information you need or visit the homepage."
+msgstr ""
+"К сожалению, запрошенная страница удалена или никогда не существовала. "
+"Пожалуйста, воспользуйтесь поиском или перейдите на Главную."
 
 #: 404.php:13
 msgid "Error 404"
@@ -101,10 +110,10 @@ msgstr "Обновление пожертвований..."
 msgid "Kandinsky theme updated successfully."
 msgstr "Кандинский успешно обновлен."
 
-#: core/admin-update-theme.php:104 vendor/envato_setup/envato_setup.php:852
-#: vendor/envato_setup/envato_setup.php:879
-#: vendor/envato_setup/envato_setup.php:897
-#: vendor/envato_setup/envato_setup.php:906
+#: core/admin-update-theme.php:104 vendor/envato_setup/envato_setup.php:862
+#: vendor/envato_setup/envato_setup.php:889
+#: vendor/envato_setup/envato_setup.php:907
+#: vendor/envato_setup/envato_setup.php:916
 msgid "Success!"
 msgstr "Успех!"
 
@@ -120,7 +129,7 @@ msgstr "Перейти на сайт"
 msgid "Unknown update action"
 msgstr "Неизвестное действие при обновлении."
 
-#: core/admin-update-theme.php:141 vendor/envato_setup/envato_setup.php:743
+#: core/admin-update-theme.php:141 vendor/envato_setup/envato_setup.php:753
 msgid "Success"
 msgstr "Успех"
 
@@ -132,7 +141,7 @@ msgstr "Внутренняя ошибка Кандинского!"
 msgid "Security check failed while updating theme"
 msgstr "Ошибка при проверке безопасности!"
 
-#: core/admin-update-theme.php:187 vendor/envato_setup/envato_setup.php:1061
+#: core/admin-update-theme.php:187 vendor/envato_setup/envato_setup.php:1071
 msgid "Downloading theme file failed!"
 msgstr "При скачивании темы произошла ошибка!"
 
@@ -148,7 +157,7 @@ msgstr "Настройки темы"
 msgid "Site title"
 msgstr "Название сайта"
 
-#: core/admin.php:24 core/customizer.php:86
+#: core/admin.php:24 core/customizer.php:91
 msgid "Decoration"
 msgstr "Оформление"
 
@@ -165,7 +174,7 @@ msgid "Change the site template"
 msgstr "Сменить шаблон сайта"
 
 #: core/admin.php:48 vendor/envato_setup/envato_setup.php:314
-#: vendor/envato_setup/envato_setup.php:893
+#: vendor/envato_setup/envato_setup.php:903
 msgid "Content"
 msgstr "Контент"
 
@@ -210,7 +219,7 @@ msgid "SEO"
 msgstr "SEO"
 
 #: core/admin.php:108 modules/donations/widgets.php:7
-#: vendor/envato_setup/envato_setup.php:902
+#: vendor/envato_setup/envato_setup.php:912
 msgid "Donations"
 msgstr "Пожертвования"
 
@@ -279,7 +288,7 @@ msgstr "Да, удалить тему"
 msgid "Kandinsky settings"
 msgstr "«Кандинский» – настройки"
 
-#: core/admin.php:321 core/admin.php:372 functions.php:129
+#: core/admin.php:321 core/admin.php:372 functions.php:149
 msgid "Kandinsky"
 msgstr "Кандинский"
 
@@ -293,8 +302,13 @@ msgstr "Скрыть"
 
 #: core/admin.php:417
 #, php-format
-msgid "Welcome! Thank you for choosing Kandinsky! To fully take advantage of the best our theme can offer please make sure you configured %snecessary theme settings%s."
-msgstr "Здравствуйте! Благодарим вас за выбор темы «Кандинский»! Чтобы использовать все её возможности, пожалуйста, выполните %sвсе необходимые настройки%s."
+msgid ""
+"Welcome! Thank you for choosing Kandinsky! To fully take advantage of the "
+"best our theme can offer please make sure you configured %snecessary theme "
+"settings%s."
+msgstr ""
+"Здравствуйте! Благодарим вас за выбор темы «Кандинский»! Чтобы использовать "
+"все её возможности, пожалуйста, выполните %sвсе необходимые настройки%s."
 
 #: core/admin.php:421
 msgid "Open the theme setup wizard"
@@ -310,31 +324,41 @@ msgstr "Yoast SEO"
 
 #: core/admin.php:460
 msgid "A great tool to boost your website SEO positions."
-msgstr "Прекрасный плагин, помогающий улучшить позиции сайта в поисковых системах."
+msgstr ""
+"Прекрасный плагин, помогающий улучшить позиции сайта в поисковых системах."
 
 #: core/admin.php:462
 msgid "Cyr to Lat enhanced"
 msgstr "Cyr to Lat enhanced"
 
 #: core/admin.php:466
-msgid "Small helper to seamlessly convert cyrillic pages slugs into latin ones."
-msgstr "Небольшой плагин для автоматического перевода символов в адресах страниц из кириллицы в латиницу."
+msgid ""
+"Small helper to seamlessly convert cyrillic pages slugs into latin ones."
+msgstr ""
+"Небольшой плагин для автоматического перевода символов в адресах страниц из "
+"кириллицы в латиницу."
 
 #: core/admin.php:468
 msgid "Disable Comments"
 msgstr "Disable Comments"
 
 #: core/admin.php:472
-msgid "Comments on the website may be harmful, so this small plugin turns them off."
-msgstr "Плагин отключает комментарии, встроенные в WordPress по умолчанию. Комментарии можно включить в любой момент."
+msgid ""
+"Comments on the website may be harmful, so this small plugin turns them off."
+msgstr ""
+"Плагин отключает комментарии, встроенные в WordPress по умолчанию. "
+"Комментарии можно включить в любой момент."
 
 #: core/admin.php:474
 msgid "Shortcake (Shortcodes UI)"
 msgstr "Shortcake (Shortcodes UI)"
 
 #: core/admin.php:479
-msgid "A visual editing for shortcodes to enrich your content management experience."
-msgstr "Возможности визуального редактирования шорткодов, чтобы сделать процесс редактирования страниц более современным."
+msgid ""
+"A visual editing for shortcodes to enrich your content management experience."
+msgstr ""
+"Возможности визуального редактирования шорткодов, чтобы сделать процесс "
+"редактирования страниц более современным."
 
 #: core/admin.php:482
 msgid "Leyka"
@@ -342,7 +366,8 @@ msgstr "Лейка"
 
 #: core/admin.php:487
 msgid "This plugin will add means for donations collection to your website."
-msgstr "Этот плагин добавит на сайт возможности сбора и управления пожертвованиями."
+msgstr ""
+"Этот плагин добавит на сайт возможности сбора и управления пожертвованиями."
 
 #: core/admin.php:509 vendor/class-tgm-plugin-activation.php:327
 msgid "Install Required Plugins"
@@ -384,8 +409,12 @@ msgstr[2] "Рекомендуется установить плагины: %1$s.
 
 #: core/admin.php:525 vendor/class-tgm-plugin-activation.php:337
 #, php-format
-msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s."
-msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s."
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
 msgstr[0] "Необходимо обновить плагин %1$s."
 msgstr[1] "Необходимо обновить плагины: %1$s."
 msgstr[2] "Необходимо обновить плагины: %1$s."
@@ -447,12 +476,8 @@ msgstr "Плагин активирован."
 #: core/admin.php:545 vendor/class-tgm-plugin-activation.php:377
 #: vendor/class-tgm-plugin-activation.php:2941
 #, fuzzy
-#| msgid "The following plugin was activated successfully:"
 msgid "The following plugin was activated successfully:"
-msgid_plural "The following plugins were activated successfully:"
-msgstr[0] "Плагин успешно активирован:"
-msgstr[1] "Плагин успешно активирован:"
-msgstr[2] "Плагин успешно активирован:"
+msgstr "Плагин успешно активирован:"
 
 #: core/admin.php:547 vendor/class-tgm-plugin-activation.php:379
 #, php-format
@@ -461,8 +486,12 @@ msgstr "Плагин %1$s уже активирован."
 
 #: core/admin.php:550 vendor/class-tgm-plugin-activation.php:381
 #, php-format
-msgid "Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin."
-msgstr "Плагин не активирован – тема требует более высокой версии %s. Пожалуйста, обновите плагин."
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+"Плагин не активирован – тема требует более высокой версии %s. Пожалуйста, "
+"обновите плагин."
 
 #: core/admin.php:553 vendor/class-tgm-plugin-activation.php:383
 #, php-format
@@ -474,7 +503,9 @@ msgid "Dismiss this notice"
 msgstr "Закрыть уведомление"
 
 #: core/admin.php:556 vendor/class-tgm-plugin-activation.php:385
-msgid "There are one or more required or recommended plugins to install, update or activate."
+msgid ""
+"There are one or more required or recommended plugins to install, update or "
+"activate."
 msgstr "Некоторые плагины необходимо установить, обновить или активировать."
 
 #: core/admin.php:558 vendor/class-tgm-plugin-activation.php:386
@@ -495,44 +526,45 @@ msgstr "Кандинский – полезные ссылки"
 
 #: core/admin.php:824
 #, php-format
-msgid "ATTENTION! You thumbnail image is too small. It should be at least %s px"
+msgid ""
+"ATTENTION! You thumbnail image is too small. It should be at least %s px"
 msgstr ""
 
 #: core/author.php:31
 msgid "Author"
 msgstr ""
 
-#: core/class-cssjs.php:154 vendor/envato_setup/envato_setup.php:670
-#: vendor/envato_setup/envato_setup.php:1098
-#: vendor/envato_setup/envato_setup.php:1262
-#: vendor/envato_setup/envato_setup.php:1329
+#: core/class-cssjs.php:142 vendor/envato_setup/envato_setup.php:680
+#: vendor/envato_setup/envato_setup.php:1108
+#: vendor/envato_setup/envato_setup.php:1283
+#: vendor/envato_setup/envato_setup.php:1353
 msgid "Continue"
 msgstr "Продолжить"
 
-#: core/class-import.php:121
+#: core/class-import.php:116 core/class-import.php:151
+#, php-format
+msgid "File wasn't uploaded: %s"
+msgstr "Файл не был загружен: %s"
+
+#: core/class-import.php:125
 #, php-format
 msgid "%s - temporary download file doesn't exist"
 msgstr "%s - временный файл загрузки не найден"
 
-#: core/class-import.php:125
+#: core/class-import.php:129
 #, php-format
 msgid "%s - a downloaded file already exists and can't be deleted"
 msgstr "%s - загружаемый файл уже найден (и не может быть удалён)"
 
-#: core/class-import.php:129
+#: core/class-import.php:133
 #, php-format
 msgid "%s - a downloaded file isn't writable and can't be made so"
 msgstr "%s - нет прав на запись во временный файл загрузки"
 
-#: core/class-import.php:133
+#: core/class-import.php:137
 #, php-format
 msgid "Can't rename downloaded file: from %s to %s"
 msgstr "Невозможно переименовать загружаемый файл: из %s в %s"
-
-#: core/class-import.php:147
-#, php-format
-msgid "File wasn't uploaded: %s"
-msgstr "Файл не был загружен: %s"
 
 #: core/customizer.php:19
 msgid "Theme Info"
@@ -546,157 +578,165 @@ msgstr "Служба поддержки"
 msgid "Important Links"
 msgstr "Важные ссылки"
 
-#: core/customizer.php:58
+#: core/customizer.php:60
 msgid "Titles and captions"
 msgstr "Заголовки и надписи"
 
-#: core/customizer.php:73
+#: core/customizer.php:77
 msgid "Header text"
 msgstr "Текст заголовка"
 
-#: core/customizer.php:91
+#: core/customizer.php:96
 msgid "Color scheme"
 msgstr "Цветовая схема"
 
-#: core/customizer.php:99 core/customizer.php:249
+#: core/customizer.php:104 core/customizer.php:255
 #: vendor/envato_setup/envato_setup.php:319
-#: vendor/envato_setup/envato_setup.php:1242
+#: vendor/envato_setup/envato_setup.php:1263
 msgid "Logo"
 msgstr "Логотип"
 
-#: core/customizer.php:149
+#: core/customizer.php:154
 msgid "Action Color"
 msgstr "Основной цвет схемы"
 
-#: core/customizer.php:159
+#: core/customizer.php:164
 msgid "Complimentary Color"
 msgstr "Дополнительный цвет"
 
-#: core/customizer.php:169
+#: core/customizer.php:174
 msgid "Dark Color"
 msgstr "Темный цвет"
 
-#: core/customizer.php:179
+#: core/customizer.php:184
 msgid "Page Background Color"
 msgstr "Основной цвет фона страниц"
 
-#: core/customizer.php:180 core/customizer.php:202
+#: core/customizer.php:185 core/customizer.php:207
 msgid "Recommended - white"
 msgstr "Рекомендуется - белый"
 
-#: core/customizer.php:190
+#: core/customizer.php:195
 msgid "Main Text Color"
 msgstr "Цвет основного текста"
 
-#: core/customizer.php:191
+#: core/customizer.php:196
 msgid "Recommended - black"
 msgstr "Рекомендуется - черный"
 
-#: core/customizer.php:201
+#: core/customizer.php:206
 msgid "Inverse Text Color"
 msgstr "Цвет текста - инверсия"
 
-#: core/customizer.php:212
+#: core/customizer.php:217
 msgid "Accent Text Color - 1"
 msgstr "Акцентный цвет текста - 1"
 
-#: core/customizer.php:213 core/customizer.php:224
+#: core/customizer.php:218 core/customizer.php:229
 msgid "Applicable only for Dubrovino template"
 msgstr "Применяется только в шаблоне «Дубровино»"
 
-#: core/customizer.php:223
+#: core/customizer.php:228
 msgid "Accent Text Color - 2"
 msgstr "Акцентный цвет текста - 2"
 
-#: core/customizer.php:234
+#: core/customizer.php:239
 msgid "Logo mode"
 msgstr "Режим отображения логотипа"
 
-#: core/customizer.php:239
+#: core/customizer.php:244
 msgid "Image only"
 msgstr "Только изображение"
 
-#: core/customizer.php:240
+#: core/customizer.php:245
 msgid "Image with site name"
 msgstr "Изображение и название сайта"
 
-#: core/customizer.php:241
+#: core/customizer.php:246
 msgid "Site name only"
 msgstr "Только название сайта"
 
-#: core/customizer.php:242
+#: core/customizer.php:247
 msgid "Do not show"
 msgstr "Не показывать"
 
-#: core/customizer.php:251
-msgid "Recommended size 315x66px for Image only mode and 66x66px for Image with site name"
-msgstr "Рекомендуемые размеры 315x66px для режима «Только изображение» и 66x66px для режима «Изображение и название» сайта"
+#: core/customizer.php:256
+msgid ""
+"We recommend to use logos in the .svg format (vector graphics). If your logo "
+"is in rastre format, we recommend to upload pictures with the dimensions of "
+"630x132 px for the option \"Only Image\" or 132x13px for the option \"Image "
+"and Title\"."
+msgstr ""
+"Мы рекомендуем загружать логотипы в формате .svg (векторная графика). Если "
+"изображения растровое, то мы советуем закачивать изображения в размере "
+"630x132 px для режима \"Только изображение\" и 132x132 px для режима "
+"\"Изображение и название\"."
 
-#: core/customizer.php:269
+#: core/customizer.php:274
 msgid "Homepage settings"
 msgstr "Главная страница"
 
-#: core/customizer.php:270
+#: core/customizer.php:275
 msgid "Homepage settings and blocks"
 msgstr ""
 
-#: core/customizer.php:275 core/customizer.php:307
+#: core/customizer.php:280 core/customizer.php:312
 msgid "Hero Image"
 msgstr "Главное изображение"
 
-#: core/customizer.php:281
+#: core/customizer.php:286
 msgid "Static page settings"
 msgstr "Статичная страница"
 
-#: core/customizer.php:308
+#: core/customizer.php:313
 msgid "Recommended size 1600x663px"
 msgstr "Рекомендованный размер: 1600 x 663 пикс."
 
-#: core/customizer.php:322 core/customizer.php:431
+#: core/customizer.php:327 core/customizer.php:436
 msgid "Call to action title"
 msgstr "Заголовок «призыва к действию» (CTA)"
 
-#: core/customizer.php:331 core/customizer.php:440
+#: core/customizer.php:336 core/customizer.php:445
 msgid "Call to action URL"
 msgstr "Ссылка на действие"
 
-#: core/customizer.php:340 core/customizer.php:449
+#: core/customizer.php:345 core/customizer.php:454
 msgid "Call to action text"
 msgstr "Текст «призыва к действию» (CTA)"
 
-#: core/customizer.php:349 core/customizer.php:458
+#: core/customizer.php:354 core/customizer.php:463
 msgid "Action button caption"
 msgstr "Текст на кнопке действия"
 
-#: core/customizer.php:357
+#: core/customizer.php:362
 msgid "Our organization columns settings"
 msgstr "Колонки с информацией об организации"
 
-#: core/customizer.php:381
+#: core/customizer.php:386
 msgid "Column title"
 msgstr "Заголовок колонки"
 
-#: core/customizer.php:390
+#: core/customizer.php:395
 msgid "Column content"
 msgstr "Текст колонки"
 
-#: core/customizer.php:399
+#: core/customizer.php:404
 msgid "Column link caption"
 msgstr "Текст ссылки"
 
-#: core/customizer.php:408
+#: core/customizer.php:413
 msgid "Column link URL"
 msgstr "URL ссылки"
 
-#: core/customizer.php:417
+#: core/customizer.php:422
 msgid "CTA block settings"
 msgstr "Блок призыва к действию"
 
-#: core/customizer.php:466
+#: core/customizer.php:471
 msgid "Social networks links"
 msgstr "Ссылки на социальные сети"
 
-#: core/customizer.php:494
+#: core/customizer.php:499
 msgid "Recommended plugins to install"
 msgstr "Рекомендуем установить плагины"
 
@@ -760,7 +800,7 @@ msgstr "YouTube"
 msgid "E.g., https://youtube.com/channel/your-organization-channel"
 msgstr "Например, https://www.youtube.com/user/teplitsast"
 
-#: core/extras.php:349 modules/starter/import_remote_content.php:394
+#: core/extras.php:349 modules/starter/import_remote_content.php:396
 #, php-format
 msgid "Old import files cleanup FAILED: %s."
 msgstr ""
@@ -793,7 +833,7 @@ msgstr "Подзаголовок"
 msgid "Image section"
 msgstr "Секция с изображением"
 
-#: core/shortcodes-ui.php:51 vendor/envato_setup/envato_setup.php:929
+#: core/shortcodes-ui.php:51 vendor/envato_setup/envato_setup.php:939
 msgid "Description"
 msgstr "Описание"
 
@@ -897,55 +937,55 @@ msgstr "CSS-класс для секции"
 msgid "Recommendations:"
 msgstr "Рекомендации:"
 
-#: core/template-tags.php:159
+#: core/template-tags.php:160
 msgid "Page"
 msgstr "Страница"
 
-#: core/template-tags.php:238
+#: core/template-tags.php:239
 msgid "Donations history"
 msgstr "История пожертвований"
 
-#: core/template-tags.php:243 core/template-tags.php:350
+#: core/template-tags.php:244 core/template-tags.php:351
 #: modules/project/project.php:25
 msgid "Our projects"
 msgstr "Наши проекты"
 
-#: core/template-tags.php:250 modules/donations/donations.php:375
+#: core/template-tags.php:251 modules/donations/donations.php:375
 #: single-leyka_campaign.php:24 single-leyka_campaign.php:44
 msgid "They alredy got help"
 msgstr "Уже получили помощь"
 
-#: core/template-tags.php:255 modules/donations/donations.php:363
+#: core/template-tags.php:256 modules/donations/donations.php:363
 #: modules/starter/plot_config.php:730 single-leyka_campaign.php:28
 #: single-leyka_campaign.php:43
 msgid "They need help"
 msgstr "Им нужна помощь"
 
-#: core/template-tags.php:260
+#: core/template-tags.php:261
 msgid "Search results"
 msgstr "Результаты поиска"
 
-#: core/template-tags.php:263
+#: core/template-tags.php:264
 msgid "404: Page not found"
 msgstr "Ошибка 404: Страница не найдена"
 
-#: core/template-tags.php:349
+#: core/template-tags.php:350
 msgid "More projects"
 msgstr "Еще проекты"
 
-#: core/template-tags.php:352
+#: core/template-tags.php:353
 msgid "More news"
 msgstr "Еще новости"
 
-#: core/template-tags.php:353
+#: core/template-tags.php:354
 msgid "Latest news"
 msgstr "Последние новости"
 
-#: core/template-tags.php:380
+#: core/template-tags.php:381
 msgid "Related project"
 msgstr ""
 
-#: core/template-tags.php:398
+#: core/template-tags.php:399
 msgid "Help now"
 msgstr ""
 
@@ -978,66 +1018,44 @@ msgid "Footer - Columns"
 msgstr "Подвал - Колонки"
 
 #: core/widgets.php:45
-msgid "Footer columns area accepts 4 widgets. Does not accept wide widgets, like News, Partners, Projects, Donations or CTA. You should place here widgets like Custom HTML, Custom Menu, Text etc."
-msgstr "Колонки в подвале сайта. Область принимает 4 виджета. Сюда вы можете добавить такие виджеты, как HTML-код, Произвольное меню или Текст. Здесь не поддерживаются большие виджеты, такие как Новости, Партнеры, Проекты, Пожертвования или Блок призыва к действию."
+msgid ""
+"Footer columns area accepts 4 widgets. Does not accept wide widgets, like "
+"News, Partners, Projects, Donations or CTA. You should place here widgets "
+"like Custom HTML, Custom Menu, Text etc."
+msgstr ""
+"Колонки в подвале сайта. Область принимает 4 виджета. Сюда вы можете "
+"добавить такие виджеты, как HTML-код, Произвольное меню или Текст. Здесь не "
+"поддерживаются большие виджеты, такие как Новости, Партнеры, Проекты, "
+"Пожертвования или Блок призыва к действию."
 
-#: footer.php:50
+#: footer.php:10
+msgid "Creative Commons СС-BY-SA 3.0"
+msgstr ""
+
+#: footer.php:51
 #, php-format
 msgid "All materials of the site are avaliabe under license %s"
 msgstr "Все материалы сайта доступны по лицензии %s"
 
-#: footer.php:57
+#: footer.php:58
 msgid "Project Kandinsky"
 msgstr "Проект Кандинский"
 
-#: footer.php:58
+#: footer.php:59
 msgid "Powered by Kandinsky"
 msgstr "Работает на Кандинском"
 
-#: functions.php:25
-msgid "Downloading template archive..."
-msgstr "Идет скачивание архива темы..."
-
-#: functions.php:26
-msgid "Extracting template content..."
-msgstr "Идет распаковка архива темы..."
-
-#: functions.php:27
-msgid "Importing template content..."
-msgstr "Идет импорт содержимого. Операция может занять несколько минут..."
-
-#: functions.php:28
-msgid "Building template files..."
-msgstr "Подготовка файлов..."
-
-#: functions.php:29
-msgid "Building template options..."
-msgstr "Подготовка настроек..."
-
-#: functions.php:30
-msgid "Building template colors..."
-msgstr "Подготовка цветов..."
-
-#: functions.php:49
+#: functions.php:69
 msgid "Primary menu"
 msgstr "﻿Главное меню"
 
-#: functions.php:130
+#: functions.php:150
 msgid "Teplitsa"
 msgstr "Теплица социальных технологий"
 
-#: functions.php:131
+#: functions.php:151
 msgid "The beautiful design and useful features for nonprofit website"
 msgstr "Красивый дизайн и полезные функции для сайта НКО"
-
-#: header.php:18
-msgid "Skip to content"
-msgstr "Перейти к содержанию"
-
-#: header.php:61 modules/starter/plot_config.php:201
-#: modules/starter/plot_config.php:457 modules/starter/plot_config.php:698
-msgid "Main menu"
-msgstr "Главное меню"
 
 #: modules/cta.php:6
 msgid "Call To Action block"
@@ -1069,8 +1087,12 @@ msgid "Thumbnail for - %s"
 msgstr ""
 
 #: modules/donations/donations.php:144
-msgid "Thank you for you support. This campaign is finished and help is going to be provided. Please follow the updates."
-msgstr "Спасибо за вашу поддержку. Сбор средств завершен и помощь будет оказана. Следите за обновлениями и отчетами. Благодарим вас за участие!"
+msgid ""
+"Thank you for you support. This campaign is finished and help is going to be "
+"provided. Please follow the updates."
+msgstr ""
+"Спасибо за вашу поддержку. Сбор средств завершен и помощь будет оказана. "
+"Следите за обновлениями и отчетами. Благодарим вас за участие!"
 
 #: modules/donations/donations.php:167
 msgid "Collected"
@@ -1174,38 +1196,43 @@ msgstr "Блоки проектов"
 msgid "Kandinsky projects block menu"
 msgstr "Ссылки в блоке проектов"
 
-#: modules/starter/import_remote_content.php:300
+#: modules/starter/import_remote_content.php:301
 #, php-format
 msgid "Plot name is unknown or not given: %s"
 msgstr "Нет названия сценария: %s"
 
-#: modules/starter/import_remote_content.php:383
+#: modules/starter/import_remote_content.php:385
 msgid "No zip file"
 msgstr "ZIP-файл не найден"
 
-#: modules/starter/import_remote_content.php:387
+#: modules/starter/import_remote_content.php:389
 #, php-format
 msgid "Zip file not found: %s"
 msgstr ".zip-файл не найден: %s"
 
-#: modules/starter/import_remote_content.php:411
+#: modules/starter/import_remote_content.php:413
 #, php-format
 msgid "Unzip FAILED: %s to %s. Error: %s"
 msgstr "Процесс разархивирования НЕ УДАЛСЯ: %s – %s. Ошибка: %s"
 
-#: modules/starter/import_remote_content.php:424
+#: modules/starter/import_remote_content.php:426
 msgid "No git content dir!"
 msgstr "Git-директория не найдена!"
 
-#: modules/starter/import_remote_content.php:428
+#: modules/starter/import_remote_content.php:430
 #, php-format
 msgid "Unzipped dir not found: %s"
 msgstr "Разархивированная директория не найдена: %s"
 
-#: modules/starter/import_remote_content.php:434
+#: modules/starter/import_remote_content.php:436
 #, php-format
 msgid "Plot dir not found: %s"
 msgstr "Директория сценария не найдена: %s"
+
+#: modules/starter/plot_config.php:201 modules/starter/plot_config.php:457
+#: modules/starter/plot_config.php:698 template-parts/header.php:53
+msgid "Main menu"
+msgstr "Главное меню"
 
 #: modules/starter/plot_config.php:212 modules/starter/plot_config.php:467
 #: modules/starter/plot_config.php:709 modules/starter/sidebars.php:13
@@ -1286,7 +1313,7 @@ msgstr "Познакомьтесь с другими проектами"
 #: vendor/class-tgm-plugin-activation.php:816
 #: vendor/class-tgm-plugin-activation.php:2522
 #: vendor/class-tgm-plugin-activation.php:3569
-#: vendor/envato_setup/envato_setup.php:455
+#: vendor/envato_setup/envato_setup.php:465
 msgid "Return to the Dashboard"
 msgstr "Вернуться в админку"
 
@@ -1299,16 +1326,22 @@ msgid "Update Required"
 msgstr ""
 
 #: vendor/class-tgm-plugin-activation.php:923
-msgid "The remote plugin package does not contain a folder with the desired slug and renaming did not work."
+msgid ""
+"The remote plugin package does not contain a folder with the desired slug "
+"and renaming did not work."
 msgstr ""
 
 #: vendor/class-tgm-plugin-activation.php:923
 #: vendor/class-tgm-plugin-activation.php:926
-msgid "Please contact the plugin provider and ask them to package their plugin according to the WordPress guidelines."
+msgid ""
+"Please contact the plugin provider and ask them to package their plugin "
+"according to the WordPress guidelines."
 msgstr ""
 
 #: vendor/class-tgm-plugin-activation.php:926
-msgid "The remote plugin package consists of more than one file, but the files are not packaged in a folder."
+msgid ""
+"The remote plugin package consists of more than one file, but the files are "
+"not packaged in a folder."
 msgstr ""
 
 #: vendor/class-tgm-plugin-activation.php:1110
@@ -1443,7 +1476,7 @@ msgid "Version"
 msgstr "Версия"
 
 #: vendor/class-tgm-plugin-activation.php:2543
-#: vendor/envato_setup/envato_setup.php:930
+#: vendor/envato_setup/envato_setup.php:940
 msgid "Status"
 msgstr "Статус"
 
@@ -1467,17 +1500,17 @@ msgid "Upgrade message from the plugin author:"
 msgstr ""
 
 #: vendor/class-tgm-plugin-activation.php:2706
-#: vendor/envato_setup/envato_setup.php:640
+#: vendor/envato_setup/envato_setup.php:650
 msgid "Install"
 msgstr "Установить"
 
 #: vendor/class-tgm-plugin-activation.php:2712
-#: vendor/envato_setup/envato_setup.php:643
+#: vendor/envato_setup/envato_setup.php:653
 msgid "Update"
 msgstr "Обновить"
 
 #: vendor/class-tgm-plugin-activation.php:2715
-#: vendor/envato_setup/envato_setup.php:645
+#: vendor/envato_setup/envato_setup.php:655
 msgid "Activate"
 msgstr "Активировать"
 
@@ -1525,7 +1558,9 @@ msgid "The installation of %1$s failed."
 msgstr ""
 
 #: vendor/class-tgm-plugin-activation.php:3496
-msgid "The installation and activation process is starting. This process may take a while on some hosts, so please be patient."
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
 msgstr ""
 
 #: vendor/class-tgm-plugin-activation.php:3498
@@ -1553,7 +1588,9 @@ msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
 #: vendor/class-tgm-plugin-activation.php:3504
-msgid "The installation process is starting. This process may take a while on some hosts, so please be patient."
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
 msgstr ""
 
 #: vendor/class-tgm-plugin-activation.php:3506
@@ -1579,8 +1616,12 @@ msgid "We help people with alcoholic addiction"
 msgstr "Помогаем людям с алкогольной зависимостью"
 
 #: vendor/envato_setup/envato_setup.php:196
-msgid "Landing page for a typical non-profit. The template has legal information, projects, news, organization’s staff, partners."
-msgstr "Сайт некоммерческой организации c возможностью публикации отчетов информации о проектах, новостях. Возможен сбор пожертвований."
+msgid ""
+"Landing page for a typical non-profit. The template has legal information, "
+"projects, news, organization’s staff, partners."
+msgstr ""
+"Сайт некоммерческой организации c возможностью публикации отчетов информации "
+"о проектах, новостях. Возможен сбор пожертвований."
 
 #: vendor/envato_setup/envato_setup.php:199
 msgid "Template – We Are With You"
@@ -1591,8 +1632,14 @@ msgid "Charity foundation helping children from low-income families"
 msgstr "Благотворительный фонд, помогающий детям из малоимущих семей"
 
 #: vendor/envato_setup/envato_setup.php:201
-msgid "Charity foundation website that is mostly focused on fundraising. Aside from basic information it includes integration with payment systems (Leyka plugin)."
-msgstr "Сайт благотворительного фонда адресной помощи. Позволяет публиковать информацию об организации, программах, кампаниях по сбору пожертвований, содержит интеграцию с платежными системами."
+msgid ""
+"Charity foundation website that is mostly focused on fundraising. Aside from "
+"basic information it includes integration with payment systems (Leyka "
+"plugin)."
+msgstr ""
+"Сайт благотворительного фонда адресной помощи. Позволяет публиковать "
+"информацию об организации, программах, кампаниях по сбору пожертвований, "
+"содержит интеграцию с платежными системами."
 
 #: vendor/envato_setup/envato_setup.php:204
 msgid "Template – Protect Dubrovino! Campaign"
@@ -1603,8 +1650,12 @@ msgid "City protection initiative"
 msgstr "Градозащитная инициатива"
 
 #: vendor/envato_setup/envato_setup.php:206
-msgid "Urban activism campaign – it includes information on campaign (e.g. a campaign in defence of a local park), documents, call to sign a petition."
-msgstr "Сайта градозащитной кампании – позволят публиковать информацию о ходе кампании, акциях, новости, призыв к подписанию петиции."
+msgid ""
+"Urban activism campaign – it includes information on campaign (e.g. a "
+"campaign in defence of a local park), documents, call to sign a petition."
+msgstr ""
+"Сайта градозащитной кампании – позволят публиковать информацию о ходе "
+"кампании, акциях, новости, призыв к подписанию петиции."
 
 #: vendor/envato_setup/envato_setup.php:303
 msgid "Introduction"
@@ -1615,7 +1666,7 @@ msgid "Template"
 msgstr "Шаблон"
 
 #: vendor/envato_setup/envato_setup.php:324
-#: vendor/envato_setup/envato_setup.php:875
+#: vendor/envato_setup/envato_setup.php:885
 msgid "Settings"
 msgstr "Параметры"
 
@@ -1644,313 +1695,455 @@ msgstr "Загрузить логотип"
 msgid "Select Logo"
 msgstr "Выбрать логотип"
 
-#: vendor/envato_setup/envato_setup.php:434
+#: vendor/envato_setup/envato_setup.php:398
+#: vendor/envato_setup/envato_setup.php:1070
+#: vendor/envato_setup/envato_setup.php:1487
+msgid "Error:"
+msgstr "Ошибка:"
+
+#: vendor/envato_setup/envato_setup.php:400
+#: vendor/envato_setup/envato_setup.php:1074
+#: vendor/envato_setup/envato_setup.php:1493
+msgid "Back to the Dashboard"
+msgstr "Вернуться в административный раздел сайта"
+
+#: vendor/envato_setup/envato_setup.php:444
 msgid "Kandinsky - setup wizard"
 msgstr "«Кандинский» – мастер настройки"
 
-#: vendor/envato_setup/envato_setup.php:443
+#: vendor/envato_setup/envato_setup.php:453
 msgid "Kandinsky theme setup wizard"
 msgstr "Мастер настройки темы"
 
-#: vendor/envato_setup/envato_setup.php:526
+#: vendor/envato_setup/envato_setup.php:536
 #, php-format
 msgid "Welcome to the %s setup wizard"
 msgstr "Добро пожаловать в мастер настройки темы %s"
 
-#: vendor/envato_setup/envato_setup.php:527
-msgid "Hello! Let's set up your organization website together. With few simple steps we will configure minimal necessary settings, like installing of required plugins, setting up default website content and the logo. It should only take 5 minutes. You can always change any of these settings later on, in the Plugins admin folder."
-msgstr "Здравствуйте! Давайте настроим сайт вашей организации вместе. За несколько простых шагов вы сможете выполнить необходимые минимальные настройки. В дальнейшем вы сможете их отредактировать в административной панели сайта."
+#: vendor/envato_setup/envato_setup.php:537
+msgid ""
+"Hello! Let's set up your organization website together. With few simple "
+"steps we will configure minimal necessary settings, like installing of "
+"required plugins, setting up default website content and the logo. It should "
+"only take 5 minutes. You can always change any of these settings later on, "
+"in the Plugins admin folder."
+msgstr ""
+"Здравствуйте! Давайте настроим сайт вашей организации вместе. За несколько "
+"простых шагов вы сможете выполнить необходимые минимальные настройки. В "
+"дальнейшем вы сможете их отредактировать в административной панели сайта."
 
-#: vendor/envato_setup/envato_setup.php:530
+#: vendor/envato_setup/envato_setup.php:540
 msgid "Let's go!"
 msgstr "Поехали!"
 
-#: vendor/envato_setup/envato_setup.php:531
+#: vendor/envato_setup/envato_setup.php:541
 msgid "Not right now"
 msgstr "Не сейчас"
 
-#: vendor/envato_setup/envato_setup.php:576
+#: vendor/envato_setup/envato_setup.php:586
 msgid "Failed to find TGM plugin"
 msgstr "Плагин TGMPA не найден"
 
-#: vendor/envato_setup/envato_setup.php:579
+#: vendor/envato_setup/envato_setup.php:589
 msgid "Default Plugins"
 msgstr "Плагины"
 
-#: vendor/envato_setup/envato_setup.php:597
-msgid "Your website needs a few essential plugins. The following plugins will be installed or updated:"
-msgstr "Вашему сайту понадобится несколько плагинов. Мы установим или обновим следующие плагины:"
-
-#: vendor/envato_setup/envato_setup.php:598
-msgid "You can add and remove plugins later on, in the Plugins admin folder."
-msgstr "Вы можете добавить или удалить плагины и дальше, в разделе «Плагины» административной панели сайта."
-
 #: vendor/envato_setup/envato_setup.php:607
+msgid ""
+"Your website needs a few essential plugins. The following plugins will be "
+"installed or updated:"
+msgstr ""
+"Вашему сайту понадобится несколько плагинов. Мы установим или обновим "
+"следующие плагины:"
+
+#: vendor/envato_setup/envato_setup.php:608
+msgid "You can add and remove plugins later on, in the Plugins admin folder."
+msgstr ""
+"Вы можете добавить или удалить плагины и дальше, в разделе «Плагины» "
+"административной панели сайта."
+
+#: vendor/envato_setup/envato_setup.php:617
 msgid "Installation required"
 msgstr "Необходима установка"
 
-#: vendor/envato_setup/envato_setup.php:610
+#: vendor/envato_setup/envato_setup.php:620
 msgid "Update and activation required"
 msgstr "Необходимо обновление и активация"
 
-#: vendor/envato_setup/envato_setup.php:610
+#: vendor/envato_setup/envato_setup.php:620
 msgid "Update required"
 msgstr "Необходимо обновление"
 
-#: vendor/envato_setup/envato_setup.php:612
+#: vendor/envato_setup/envato_setup.php:622
 msgid "Activation required"
 msgstr "Необходима активация"
 
-#: vendor/envato_setup/envato_setup.php:628
+#: vendor/envato_setup/envato_setup.php:638
 msgid "We also recommend to add several more:"
 msgstr "Мы также рекомендуем добавить на сайт следующие плагины:"
 
-#: vendor/envato_setup/envato_setup.php:630
+#: vendor/envato_setup/envato_setup.php:640
 msgid "We recommend to add or update the following plugins:"
 msgstr "Мы рекомендуем добавить или обновить следующие плагины:"
 
-#: vendor/envato_setup/envato_setup.php:643
+#: vendor/envato_setup/envato_setup.php:653
 msgid "Update and activate"
 msgstr "Обновить и активировать"
 
-#: vendor/envato_setup/envato_setup.php:665
-msgid "Good news! All plugins are already installed and up to date. Let's proceed further."
-msgstr "Хорошие новости! Все нужные плагины уже установлены и обновлены. Давайте пойдем дальше."
+#: vendor/envato_setup/envato_setup.php:675
+msgid ""
+"Good news! All plugins are already installed and up to date. Let's proceed "
+"further."
+msgstr ""
+"Хорошие новости! Все нужные плагины уже установлены и обновлены. Давайте "
+"пойдем дальше."
 
-#: vendor/envato_setup/envato_setup.php:673
-#: vendor/envato_setup/envato_setup.php:958
-#: vendor/envato_setup/envato_setup.php:1100
-#: vendor/envato_setup/envato_setup.php:1264
-#: vendor/envato_setup/envato_setup.php:1331
+#: vendor/envato_setup/envato_setup.php:683
+#: vendor/envato_setup/envato_setup.php:968
+#: vendor/envato_setup/envato_setup.php:1110
+#: vendor/envato_setup/envato_setup.php:1285
+#: vendor/envato_setup/envato_setup.php:1355
 msgid "Skip this step"
 msgstr "Пропустить шаг"
 
-#: vendor/envato_setup/envato_setup.php:684
+#: vendor/envato_setup/envato_setup.php:694
 msgid "No slug found"
 msgstr "Плагин не найден"
 
-#: vendor/envato_setup/envato_setup.php:703
+#: vendor/envato_setup/envato_setup.php:713
 msgid "Activating Plugin"
 msgstr "Активация"
 
-#: vendor/envato_setup/envato_setup.php:717
+#: vendor/envato_setup/envato_setup.php:727
 msgid "Updating Plugin"
 msgstr "Обновление плагина"
 
-#: vendor/envato_setup/envato_setup.php:731
+#: vendor/envato_setup/envato_setup.php:741
 msgid "Installing Plugin"
 msgstr "Установка плагина"
 
-#: vendor/envato_setup/envato_setup.php:848
+#: vendor/envato_setup/envato_setup.php:858
 msgid "Website title and description"
 msgstr "Название и описание сайта"
 
-#: vendor/envato_setup/envato_setup.php:849
+#: vendor/envato_setup/envato_setup.php:859
 msgid "Insert default website title and description as seen in the demo."
 msgstr "Укажите название и напишите краткое описание сайта."
 
-#: vendor/envato_setup/envato_setup.php:850
-#: vendor/envato_setup/envato_setup.php:877
-#: vendor/envato_setup/envato_setup.php:895
-#: vendor/envato_setup/envato_setup.php:904
+#: vendor/envato_setup/envato_setup.php:860
+#: vendor/envato_setup/envato_setup.php:887
+#: vendor/envato_setup/envato_setup.php:905
+#: vendor/envato_setup/envato_setup.php:914
 msgid "Pending"
 msgstr "Отложено"
 
-#: vendor/envato_setup/envato_setup.php:851
-#: vendor/envato_setup/envato_setup.php:878
-#: vendor/envato_setup/envato_setup.php:896
-#: vendor/envato_setup/envato_setup.php:905
+#: vendor/envato_setup/envato_setup.php:861
+#: vendor/envato_setup/envato_setup.php:888
+#: vendor/envato_setup/envato_setup.php:906
+#: vendor/envato_setup/envato_setup.php:915
 msgid "Installing..."
 msgstr "Установка..."
 
-#: vendor/envato_setup/envato_setup.php:876
+#: vendor/envato_setup/envato_setup.php:886
 msgid "Insert default website settings as seen in the demo."
 msgstr "Набор демонстрационных значений параметров сайта."
 
-#: vendor/envato_setup/envato_setup.php:894
+#: vendor/envato_setup/envato_setup.php:904
 msgid "Install default website posts, pages and menus."
 msgstr "Установить записи, страницы и меню."
 
-#: vendor/envato_setup/envato_setup.php:903
+#: vendor/envato_setup/envato_setup.php:913
 msgid "Install donations components."
 msgstr "Установить модуль для сбора пожертвований."
 
-#: vendor/envato_setup/envato_setup.php:917
+#: vendor/envato_setup/envato_setup.php:927
 msgid "Theme default content"
 msgstr "Демонстрационный контент сайта"
 
-#: vendor/envato_setup/envato_setup.php:920
-msgid "It looks like you already have content installed on this website. If you would like to install the default demo content as well you can select it below. Otherwise just choose the upgrade option to ensure everything is up to date."
-msgstr "Кажется, на сайте уже есть контент. Если вы хотите также добавить и демонстрационный контент, выберите нужные вам фрагменты ниже."
+#: vendor/envato_setup/envato_setup.php:930
+msgid ""
+"It looks like you already have content installed on this website. If you "
+"would like to install the default demo content as well you can select it "
+"below. Otherwise just choose the upgrade option to ensure everything is up "
+"to date."
+msgstr ""
+"Кажется, на сайте уже есть контент. Если вы хотите также добавить и "
+"демонстрационный контент, выберите нужные вам фрагменты ниже."
 
-#: vendor/envato_setup/envato_setup.php:922
-msgid "It's time to insert some default content for your new WordPress website. Choose what you would like inserted below and click Install. We recommend to select everything. Once inserted, this content can be managed from the WordPress admin dashboard."
-msgstr "На этом шаге вы можете добавить на сайт демонстрационное содержание. Выберите нужные пункты ниже (мы советуем выбрать все) и нажмите «Настроить». Позже вы сможете изменить или удалить добавленный контент."
+#: vendor/envato_setup/envato_setup.php:932
+msgid ""
+"It's time to insert some default content for your new WordPress website. "
+"Choose what you would like inserted below and click Install. We recommend to "
+"select everything. Once inserted, this content can be managed from the "
+"WordPress admin dashboard."
+msgstr ""
+"На этом шаге вы можете добавить на сайт демонстрационное содержание. "
+"Выберите нужные пункты ниже (мы советуем выбрать все) и нажмите «Настроить». "
+"Позже вы сможете изменить или удалить добавленный контент."
 
-#: vendor/envato_setup/envato_setup.php:928
+#: vendor/envato_setup/envato_setup.php:938
 msgid "Item"
 msgstr "Тип"
 
-#: vendor/envato_setup/envato_setup.php:955
+#: vendor/envato_setup/envato_setup.php:965
 msgid "Set up"
 msgstr "Настроить"
 
-#: vendor/envato_setup/envato_setup.php:974
+#: vendor/envato_setup/envato_setup.php:984
 msgid "No content Found"
 msgstr "Контент не найден"
 
-#: vendor/envato_setup/envato_setup.php:1039
+#: vendor/envato_setup/envato_setup.php:1049
 msgid "Error"
 msgstr "Ошибка"
 
-#: vendor/envato_setup/envato_setup.php:1056
+#: vendor/envato_setup/envato_setup.php:1066
 msgid "Choose website template"
 msgstr "Выберите шаблон сайта"
 
-#: vendor/envato_setup/envato_setup.php:1060
-#: vendor/envato_setup/envato_setup.php:1463
-msgid "Error:"
-msgstr "Ошибка:"
-
-#: vendor/envato_setup/envato_setup.php:1064
-#: vendor/envato_setup/envato_setup.php:1469
-msgid "Back to the Dashboard"
-msgstr "Вернуться в административный раздел сайта"
-
-#: vendor/envato_setup/envato_setup.php:1065
-#: vendor/envato_setup/envato_setup.php:1470
+#: vendor/envato_setup/envato_setup.php:1075
+#: vendor/envato_setup/envato_setup.php:1494
 msgid "Email to the theme support"
 msgstr "Написать тех.службе"
 
-#: vendor/envato_setup/envato_setup.php:1069
-msgid "For your convenience, we’ve created several templates for NGOs. Select the one that you fits you best. You will be able to change colours, content (text and images)."
-msgstr "Для вашего удобства мы сделали несколько шаблонов сайтов НКО. Выберите тот, который лучше всего вам подходит. Палитру цветов, содержание, текст и фотографии вы можете сменить сейчас или сделать это позднее."
+#: vendor/envato_setup/envato_setup.php:1079
+msgid ""
+"For your convenience, we’ve created several templates for NGOs. Select the "
+"one that you fits you best. You will be able to change colours, content "
+"(text and images)."
+msgstr ""
+"Для вашего удобства мы сделали несколько шаблонов сайтов НКО. Выберите тот, "
+"который лучше всего вам подходит. Палитру цветов, содержание, текст и "
+"фотографии вы можете сменить сейчас или сделать это позднее."
 
-#: vendor/envato_setup/envato_setup.php:1076
+#: vendor/envato_setup/envato_setup.php:1086
 msgid "No scenarios detected"
 msgstr "Сценариев не обнаружено"
 
-#: vendor/envato_setup/envato_setup.php:1121
+#: vendor/envato_setup/envato_setup.php:1112
+#: vendor/envato_setup/envato_setup.php:1125
+msgid "Downloading template archive..."
+msgstr "Идет скачивание архива темы..."
+
+#: vendor/envato_setup/envato_setup.php:1126
+msgid "Extracting template content..."
+msgstr "Идет распаковка архива темы..."
+
+#: vendor/envato_setup/envato_setup.php:1127
+msgid "Importing template content..."
+msgstr "Идет импорт содержимого. Операция может занять несколько минут..."
+
+#: vendor/envato_setup/envato_setup.php:1128
+msgid "Building template files..."
+msgstr "Подготовка файлов..."
+
+#: vendor/envato_setup/envato_setup.php:1129
+msgid "Building template options..."
+msgstr "Подготовка настроек..."
+
+#: vendor/envato_setup/envato_setup.php:1130
+msgid "Building template colors..."
+msgstr "Подготовка цветов..."
+
+#: vendor/envato_setup/envato_setup.php:1140
 msgid "Please select the scenario"
 msgstr "Пожалуйста выберите шаблон"
 
-#: vendor/envato_setup/envato_setup.php:1153
+#: vendor/envato_setup/envato_setup.php:1174
 #, php-format
 msgid "Plot data builder was not produced for plot: %s"
 msgstr "Конструктор сценариев не обнаружен для сценария: %s"
 
-#: vendor/envato_setup/envato_setup.php:1245
-msgid "Please add your organization main logo below. The recommended size is <strong>315 x 66 px</strong> (for \"Image only\" mode) and <strong>66 x 66 px</strong> (for \"Image with site name\" mode). The logo can be changed at any time from the Appearance > Customize area in your website dashboard."
-msgstr "Добавьте логотип вашей организации. Рекомедуемые размеры логотипа – <strong>315 x 66 пикселей</strong> (для режима «только изображение») и <strong>66 x 66 пикселей</strong> (для режима «изображение и название сайта»)."
+#: vendor/envato_setup/envato_setup.php:1266
+msgid ""
+"Please add your organization main logo below. The recommended size is "
+"<strong>315 x 66 px</strong> (for \"Image only\" mode) and <strong>66 x 66 "
+"px</strong> (for \"Image with site name\" mode). The logo can be changed at "
+"any time from the Appearance > Customize area in your website dashboard."
+msgstr ""
+"Добавьте логотип вашей организации. Рекомедуемые размеры логотипа – "
+"<strong>315 x 66 пикселей</strong> (для режима «только изображение») и "
+"<strong>66 x 66 пикселей</strong> (для режима «изображение и название "
+"сайта»)."
 
-#: vendor/envato_setup/envato_setup.php:1247
+#: vendor/envato_setup/envato_setup.php:1268
 #, php-format
 msgid "Try our %sPaseka program%s if you need a new logo designed."
-msgstr "Если вам нужен новый дизайн логотипа и фирменного стиля, вы можете найти исполнителя с помощью нашей %sпрограммы «Пасека»%s."
+msgstr ""
+"Если вам нужен новый дизайн логотипа и фирменного стиля, вы можете найти "
+"исполнителя с помощью нашей %sпрограммы «Пасека»%s."
 
-#: vendor/envato_setup/envato_setup.php:1254
+#: vendor/envato_setup/envato_setup.php:1275
 msgid "Upload new logo"
 msgstr "Загрузить логотип"
 
-#: vendor/envato_setup/envato_setup.php:1293
+#: vendor/envato_setup/envato_setup.php:1317
 msgid "NGO settings"
 msgstr "Настройки организации"
 
-#: vendor/envato_setup/envato_setup.php:1298
+#: vendor/envato_setup/envato_setup.php:1322
 msgid "The website title"
 msgstr "Название сайта"
 
-#: vendor/envato_setup/envato_setup.php:1303
+#: vendor/envato_setup/envato_setup.php:1327
 msgid "The website description"
 msgstr "Описание сайта"
 
-#: vendor/envato_setup/envato_setup.php:1306
-msgid "Please add your site icon below. The recommended size is <strong>64 x 64 px</strong>. The site icon can be changed at any time from the Appearance > Customize area in your website dashboard."
-msgstr "Пожалуйста, добавьте фавикон для вашего сайта. Рекомендуемый размер – <strong>64 x 64 пикселя</strong>. В будущем вы сможете изменить фавикон в административном разделе сайта, на странице «Внешний вид > Настроить»."
+#: vendor/envato_setup/envato_setup.php:1330
+msgid ""
+"Please add your site icon below. The recommended size is <strong>64 x 64 px</"
+"strong>. The site icon can be changed at any time from the Appearance > "
+"Customize area in your website dashboard."
+msgstr ""
+"Пожалуйста, добавьте фавикон для вашего сайта. Рекомендуемый размер – "
+"<strong>64 x 64 пикселя</strong>. В будущем вы сможете изменить фавикон в "
+"административном разделе сайта, на странице «Внешний вид > Настроить»."
 
-#: vendor/envato_setup/envato_setup.php:1308
+#: vendor/envato_setup/envato_setup.php:1332
 #, php-format
 msgid "Try our %sPaseka program%s if you need a new site icon designed."
-msgstr "Если вам нужен новый дизайн фавикона, вы можете найти исполнителя с помощью нашей %sпрограммы «Пасека»%s."
+msgstr ""
+"Если вам нужен новый дизайн фавикона, вы можете найти исполнителя с помощью "
+"нашей %sпрограммы «Пасека»%s."
 
-#: vendor/envato_setup/envato_setup.php:1320
+#: vendor/envato_setup/envato_setup.php:1344
 msgid "Upload new site icon"
 msgstr "Загрузить favicon"
 
-#: vendor/envato_setup/envato_setup.php:1382
+#: vendor/envato_setup/envato_setup.php:1406
 msgid "Help and support"
 msgstr "Помощь и поддержка"
 
-#: vendor/envato_setup/envato_setup.php:1385
+#: vendor/envato_setup/envato_setup.php:1409
 #, php-format
-msgid "Thank you for using “Kandinsky” theme on your website.<br>“Kandinsky” — is a free and open-source project supported by <a href=\"%s\" target=\"_blank\">Teplitsa. Technologies for Social Good</a> together with the community of independent developers."
-msgstr "Спасибо за использование темы «Кандинский» на вашем сайте!<br />Тема «Кандинский» – бесплатный и открытый програмный продукт, который поддерживается <a href=\"%s\" target=\"_blank\">Теплицей социальных технологий</a> и сообществом независимых разработчиков."
+msgid ""
+"Thank you for using “Kandinsky” theme on your website.<br>“Kandinsky” — is a "
+"free and open-source project supported by <a href=\"%s\" target=\"_blank"
+"\">Teplitsa. Technologies for Social Good</a> together with the community of "
+"independent developers."
+msgstr ""
+"Спасибо за использование темы «Кандинский» на вашем сайте!<br />Тема "
+"«Кандинский» – бесплатный и открытый програмный продукт, который "
+"поддерживается <a href=\"%s\" target=\"_blank\">Теплицей социальных "
+"технологий</a> и сообществом независимых разработчиков."
 
-#: vendor/envato_setup/envato_setup.php:1387
-msgid "In case you encounter any questions or issues, we recommend you the following links:"
-msgstr "Если вы столкнулись с какими-либо проблемами или вопросами, мы рекомендуем следующие ссылки:"
+#: vendor/envato_setup/envato_setup.php:1411
+msgid ""
+"In case you encounter any questions or issues, we recommend you the "
+"following links:"
+msgstr ""
+"Если вы столкнулись с какими-либо проблемами или вопросами, мы рекомендуем "
+"следующие ссылки:"
 
-#: vendor/envato_setup/envato_setup.php:1389
+#: vendor/envato_setup/envato_setup.php:1413
 #, php-format
-msgid "Documentation and FAQ — <a href=\"%s\" target=\"_blank\">GitHub Wiki</a>"
-msgstr "Документация и ответы на вопросы — <a href=\"%s\" target=\"_blank\">GitHub Wiki</a>"
+msgid ""
+"Documentation and FAQ — <a href=\"%s\" target=\"_blank\">GitHub Wiki</a>"
+msgstr ""
+"Документация и ответы на вопросы — <a href=\"%s\" target=\"_blank\">GitHub "
+"Wiki</a>"
 
-#: vendor/envato_setup/envato_setup.php:1390
+#: vendor/envato_setup/envato_setup.php:1414
 #, php-format
 msgid "Source code — <a href=\"%s\" target=\"_blank\">GitHub</a>"
 msgstr "Исходный код — <a href=\"%s\" target=\"_blank\">GitHub</a>"
 
-#: vendor/envato_setup/envato_setup.php:1391
+#: vendor/envato_setup/envato_setup.php:1415
 #, php-format
 msgid "Developers’ <a href=\"%s\">Telegram-channel</a> (in Russian)"
 msgstr "<a href=\"%s\">Telegram-канал</a> разработчиков (на русском)"
 
-#: vendor/envato_setup/envato_setup.php:1393
+#: vendor/envato_setup/envato_setup.php:1417
 #, php-format
-msgid "If you need personalized (free during the testing period) consultations from the theme developers, please feel free to write at <a href=\"mailto:%s\" target=\"_blank\">%s</a> or <a href=\"%s\" target=\"_blank\">leave a ticket at GitHub</a>."
-msgstr "Если вам нужны персонализированные (бесплатные в течение периода тестирования) консультации разработчиков темы, пишите на <a href=\"mailto:%s\" target=\"_blank\">%s</a> или <a href=\"%s\" target=\"_blank\">оставляйте заявку на GitHub</a>."
+msgid ""
+"If you need personalized (free during the testing period) consultations from "
+"the theme developers, please feel free to write at <a href=\"mailto:%s\" "
+"target=\"_blank\">%s</a> or <a href=\"%s\" target=\"_blank\">leave a ticket "
+"at GitHub</a>."
+msgstr ""
+"Если вам нужны персонализированные (бесплатные в течение периода "
+"тестирования) консультации разработчиков темы, пишите на <a href=\"mailto:%s"
+"\" target=\"_blank\">%s</a> или <a href=\"%s\" target=\"_blank\">оставляйте "
+"заявку на GitHub</a>."
 
-#: vendor/envato_setup/envato_setup.php:1396
+#: vendor/envato_setup/envato_setup.php:1420
 msgid "OK, I've got it!"
 msgstr "Понятно!"
 
-#: vendor/envato_setup/envato_setup.php:1408
+#: vendor/envato_setup/envato_setup.php:1432
 msgid "Yay! Your website is ready!"
 msgstr "Ура! Ваш сайт готов!"
 
-#: vendor/envato_setup/envato_setup.php:1410
-msgid "Congratulations! You’re doing really good #success! You’ve successfully installed and set up your Kandinsky theme. You need, however, to do a little bit more."
-msgstr "Поздравляем! Вам все удалось! Вы установили и частично настроили ваш новый сайт! Но на этом работа не заканчивается."
+#: vendor/envato_setup/envato_setup.php:1434
+msgid ""
+"Congratulations! You’re doing really good #success! You’ve successfully "
+"installed and set up your Kandinsky theme. You need, however, to do a little "
+"bit more."
+msgstr ""
+"Поздравляем! Вам все удалось! Вы установили и частично настроили ваш новый "
+"сайт! Но на этом работа не заканчивается."
 
-#: vendor/envato_setup/envato_setup.php:1411
-msgid "As a part of the installation process, we’ve added some test content of an imaginary organization that you will need to edit (we’ve provided the recommendations on how to make great content)."
-msgstr "В рамках установки мы добавили демонстрационный контент – фото и тексты о вымышленной организации, которые теперь нужно отредактировать под ваши задачи и нужды. В тексте даны наши рекомендации по написанию ключевой информации."
+#: vendor/envato_setup/envato_setup.php:1435
+msgid ""
+"As a part of the installation process, we’ve added some test content of an "
+"imaginary organization that you will need to edit (we’ve provided the "
+"recommendations on how to make great content)."
+msgstr ""
+"В рамках установки мы добавили демонстрационный контент – фото и тексты о "
+"вымышленной организации, которые теперь нужно отредактировать под ваши "
+"задачи и нужды. В тексте даны наши рекомендации по написанию ключевой "
+"информации."
 
-#: vendor/envato_setup/envato_setup.php:1412
-msgid "Moreover, you need to set up few additional plug-ins for the optimal work of your site (don’t worry, our recommendations will help you)."
-msgstr "Кроме того, для оптимальной работы, необходимо настроить ряд плагинов. Не волнуйтесь, мы вам поможем подробными пошаговыми инструкциями по ходу установки."
+#: vendor/envato_setup/envato_setup.php:1436
+msgid ""
+"Moreover, you need to set up few additional plug-ins for the optimal work of "
+"your site (don’t worry, our recommendations will help you)."
+msgstr ""
+"Кроме того, для оптимальной работы, необходимо настроить ряд плагинов. Не "
+"волнуйтесь, мы вам поможем подробными пошаговыми инструкциями по ходу "
+"установки."
 
-#: vendor/envato_setup/envato_setup.php:1419
+#: vendor/envato_setup/envato_setup.php:1443
 msgid "Continue the set-up"
 msgstr "Перейти к подробной настройке"
 
-#: vendor/envato_setup/envato_setup.php:1424
+#: vendor/envato_setup/envato_setup.php:1448
 msgid "View your new website!"
 msgstr "Посмотреть на новый сайт!"
 
-#: vendor/envato_setup/envato_setup.php:1431
+#: vendor/envato_setup/envato_setup.php:1455
 msgid "#success"
 msgstr "#успех"
 
-#: vendor/envato_setup/envato_setup.php:1463
+#: vendor/envato_setup/envato_setup.php:1487
 #, php-format
-msgid "Please, send a report about it to the <a href='mailto:%s' target='_blank'>theme technical support</a>."
-msgstr "Пожалуйста, напишите об этой ошибке <a href='mailto:%s' target='_blank'>нашей службе тех.поддержки</a>."
+msgid ""
+"Please, send a report about it to the <a href='mailto:%s' "
+"target='_blank'>theme technical support</a>."
+msgstr ""
+"Пожалуйста, напишите об этой ошибке <a href='mailto:%s' "
+"target='_blank'>нашей службе тех.поддержки</a>."
 
-#: vendor/envato_setup/envato_setup.php:1465
+#: vendor/envato_setup/envato_setup.php:1489
 #, php-format
-msgid "We're sorry, but some error occured during to this wizard step :( <div class='wizard-error-support-text'>Please, send a report about it to the <a href='mailto:%s' target='_blank'>theme technical support</a>."
-msgstr "К сожалению, что-то произошло во время работы мастера установки темы :( <div class='wizard-error-support-text'>Пожалуйста, напишите об этом <a href='mailto:%s' target='_blank'>нашей службе тех.поддержки</a>."
+msgid ""
+"We're sorry, but some error occured during to this wizard step :( <div "
+"class='wizard-error-support-text'>Please, send a report about it to the <a "
+"href='mailto:%s' target='_blank'>theme technical support</a>."
+msgstr ""
+"К сожалению, что-то произошло во время работы мастера установки темы :( <div "
+"class='wizard-error-support-text'>Пожалуйста, напишите об этом <a "
+"href='mailto:%s' target='_blank'>нашей службе тех.поддержки</a>."
+
+#~ msgid ""
+#~ "Recommended size 315x66px for Image only mode and 66x66px for Image with "
+#~ "site name"
+#~ msgstr ""
+#~ "Рекомендуемые размеры 315x66px для режима «Только изображение» и 66x66px "
+#~ "для режима «Изображение и название» сайта"
+
+#~ msgid "Skip to content"
+#~ msgstr "Перейти к содержанию"
 
 #~ msgid "Can't create a download temporary directory: %s"
 #~ msgstr "Невозможно создать временную директорию при загрузке: %s"
