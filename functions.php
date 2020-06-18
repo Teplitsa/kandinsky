@@ -97,6 +97,16 @@ require_once( ABSPATH . 'wp-admin/includes/file.php' );
 require_once( ABSPATH . 'wp-admin/includes/image.php' );
 require_once( ABSPATH . 'wp-admin/includes/media.php' );
 
+/**
+ * Template functions
+ */
+require_once get_theme_file_path( '/core/template-functions.php' );
+
+/**
+ * Customizer
+ */
+require_once get_theme_file_path( '/core/customizer/customizer.php' );
+
 // enqueue CSS and JS and compose inline CSS to set vars from settings
 
 get_template_part('/core/class-cssjs');

@@ -1,4 +1,9 @@
-<?php /** Customizer options **/
+<?php
+/**
+ * Customizer options
+ *
+ * @package Kandinsky
+ */
 
 if ( ! defined( 'WPINC' ) )
 	die();
@@ -253,7 +258,7 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 			'knd_custom_logo',
 			array(
 				'label'       => esc_html__( 'Logo', 'knd' ),
-				'description' => 'Мы рекомендуем загружать логотипы в формате .svg (векторная графика). Если изображения растровое, то мы советуем закачивать изображения в размере 630x132 px для режима "Только изображение" и 132x132 px для режима "Изображение и название".',//esc_html__( 'Recommended size 315x66px for Image only mode and 66x66px for Image with site name', 'knd' ),
+				'description' => esc_html__( 'We recommend to use logos in the .svg format (vector graphics). If your logo is in rastre format, we recommend to upload pictures with the dimensions of 630x132 px for the option "Only Image" or 132x13px for the option "Image and Title".', 'knd' ),
 				'section'     => 'knd_decoration_logo',
 				'settings'    => 'knd_custom_logo',
 				'mime_type'   => 'image',
