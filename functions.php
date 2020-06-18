@@ -123,7 +123,6 @@ get_template_part('/core/shortcodes-ui'); // shortcodes layout
 get_template_part('/core/template-tags'); // independent pages parts layout
 
 get_template_part('/core/widgets'); // setup widgets
-get_template_part('/core/customizer'); // WP theme customizer setup
 
 // import data utils
 get_template_part('/core/class-mediamnt'); // tools for work with files
