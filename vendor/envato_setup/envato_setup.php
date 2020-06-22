@@ -1406,7 +1406,10 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
             <h1><?php esc_html_e('Help and support', 'knd'); ?></h1>
 
             <p>
-                <?php printf(__('Thank you for using “Kandinsky” theme on your website.<br>“Kandinsky” — is a free and open-source project supported by <a href="%s" target="_blank">Teplitsa. Technologies for Social Good</a> together with the community of independent developers.', 'knd'), TST_OFFICIAL_WEBSITE_URL); ?>
+                <?php esc_html_e('Thank you for using “Kandinsky” theme on your website!','knd'); ?>
+            </p>
+            <p>
+                <?php printf(__('“Kandinsky” — is a free and open-source project supported by <a href="%s" target="_blank">Teplitsa. Technologies for Social Good</a> together with the community of independent developers.', 'knd'), TST_OFFICIAL_WEBSITE_URL); ?>
             </p>
             <p><?php esc_html_e('In case you encounter any questions or issues, we recommend you the following links:', 'knd'); ?></p>
             <ul class="knd-wizard-support-variants">
