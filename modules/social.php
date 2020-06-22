@@ -52,7 +52,8 @@ function knd_social_links($atts = array(), $echo = true) {
 /** Social buttons **/
 function knd_social_share_no_js() {
 
-	$title = (class_exists('WPSEO_Frontend')) ? WPSEO_Frontend::get_instance()->title( '' ) : '';
+	global $post;
+	$title = esc_html( get_the_title( $post ) );
 	$link = knd_current_url();
 	$text = $title.' '.$link;
 
