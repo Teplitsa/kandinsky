@@ -134,15 +134,23 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_setting( 
 		'knd_text3_color', 
 		array( 'default' => knd_get_theme_mod('knd_text3_color', '#000000'), 'sanitize_callback' => 'sanitize_hex_color' ) );
-	
-	$wp_customize->add_setting( 
-		'knd_page_bg_color', 
-		array( 'default' => knd_get_theme_mod('knd_page_bg_color', '#ffffff'), 'sanitize_callback' => 'sanitize_hex_color' ) );
-	
-	$wp_customize->add_setting( 
-		'knd_page_text_color', 
-		array( 'default' => knd_get_theme_mod('knd_page_text_color', '#000000'), 'sanitize_callback' => 'sanitize_hex_color' ) );
-	
+
+	$wp_customize->add_setting(
+		'knd_page_bg_color',
+		array(
+			'default'           => knd_get_theme_mod('knd_page_bg_color', '#ffffff'),
+			'sanitize_callback' => 'sanitize_hex_color',
+		)
+	);
+
+	$wp_customize->add_setting(
+		'knd_page_text_color',
+		array(
+			'default'           => knd_get_theme_mod('knd_page_text_color', '#000000'),
+			'sanitize_callback' => 'sanitize_hex_color',
+		)
+	);
+
 	$wp_customize->add_setting( 
 		'knd_custom_logo', 
 		array( 'default' => knd_get_theme_mod('knd_custom_logo', ''), 'sanitize_callback' => 'absint' ) );
