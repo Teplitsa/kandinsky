@@ -15,14 +15,18 @@
 
 			<div class="site-branding site-panel-cell"><?php knd_logo_markup(); ?></div>
 
-			<?php $header_text = knd_get_theme_mod('text_in_header'); ?>
-			<div class="site-details site-panel-cell">
-				<div class="site-details-cell"><?php echo apply_filters( 'knd_the_content', $header_text ); ?></div>
-			</div>
+			<?php $header_text = knd_get_theme_mod( 'text_in_header' ); ?>
+			<?php if ( $header_text ) { ?>
+				<div class="site-details site-panel-cell">
+					<div class="site-details-cell"><?php echo wp_kses_post( $header_text ); ?></div>
+				</div>
+			<?php } ?>
 
-			<div class="trigger-button donate site-panel-cell hide-upto-medium">
-				<a id="trigger_donate"  href="<?php echo knd_get_theme_mod( 'knd_hero_image_support_url' ) ?>"><?php echo knd_get_theme_mod('knd_hero_image_support_button_caption'); ?></a>
-			</div>
+			<?php if ( knd_get_theme_mod('knd_hero_image_support_button_caption') ) { ?>
+				<div class="trigger-button donate site-panel-cell hide-upto-medium">
+					<a id="trigger_donate" href="<?php echo esc_url( knd_get_theme_mod( 'knd_hero_image_support_url' ) ); ?>"><?php echo esc_html( knd_get_theme_mod('knd_hero_image_support_button_caption') ); ?></a>
+				</div>
+			<?php } ?>
 
 			<div class="trigger-button menu site-panel-cell">
 				<a id="trigger_menu" href="<?php echo esc_url( home_url( 'sitemap' ) ); ?>">
