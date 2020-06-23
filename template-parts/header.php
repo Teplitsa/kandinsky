@@ -18,7 +18,7 @@
 			<?php $header_text = knd_get_theme_mod( 'text_in_header' ); ?>
 			<?php if ( $header_text ) { ?>
 				<div class="site-details site-panel-cell">
-					<div class="site-details-cell"><?php echo wp_kses_post( $header_text ); ?></div>
+					<div class="site-details-cell"><?php echo wp_kses_post( wpautop( $header_text ) ); ?></div>
 				</div>
 			<?php } ?>
 
