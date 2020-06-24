@@ -137,7 +137,7 @@
 	padding-left: $gut/(2*1.33);
 
 	.logo-name {
-		font-family: $heading;
+		font-family: var(--knd-font-family-logo);
 		@include knd-head-main-text();
 	}
 

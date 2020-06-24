@@ -2,8 +2,8 @@
 // Support for some core widgets in general widget area and in footer
 
 //Fonts
-$body:		"SourceSansPro", Arial, sans-serif !default;
-$heading:	"Exo2", Arial, sans-serif !default;
+$body:		var(--knd-font-family-base);
+$heading:	var(--knd-font-family-headings);
 $mono:		"Lucida Sans Typewriter", "Lucida Console", Monaco, monospace !default;
 
 

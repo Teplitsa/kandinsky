@@ -107,6 +107,11 @@ require_once get_theme_file_path( '/core/template-functions.php' );
  */
 require_once get_theme_file_path( '/core/customizer/customizer.php' );
 
+/**
+ * Typography and Colors
+ */
+require_once get_theme_file_path( '/core/typography.php' );
+
 // enqueue CSS and JS and compose inline CSS to set vars from settings
 
 get_template_part('/core/class-cssjs');
