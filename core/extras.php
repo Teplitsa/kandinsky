@@ -439,6 +439,50 @@ function knd_get_theme_mod($name, $default = false) {
 	return $option_val;
 }
 
+function knd_show_notification_bubble( $menu ) {
+	$notif_count = knd_get_admin_notif_count();
+
+	if ( $notif_count > 0 ) {
+		foreach ( $menu as $menu_key => $menu_data ) {
+			if ( $menu_data[2] == 'knd-setup-wizard' ) {
+				$menu[$menu_key][0] .= " <span class='update-plugins' title='" . esc_attr__( 'Recommended plugins to install', 'knd' ) . "'><span class='plugin-count'>" . esc_html( $notif_count ) . '</span></span>';
+			}
+		}
+	}
+
+	return $menu;
+}
+add_filter( 'add_menu_classes', 'knd_show_notification_bubble' );
+
+function knd_get_admin_notif_count() {
+	$not_installed_plugins = 0;
+
+	if ( is_admin() ) {
+
+		if ( ! is_plugin_active( 'leyka/leyka.php' ) ) {
+			$not_installed_plugins += 1;
+		}
+
+		if ( ! is_plugin_active( 'wordpress-seo/wp-seo.php' ) ) {
+			$not_installed_plugins += 1;
+		}
+
+		if ( ! is_plugin_active( 'cyr3lat/cyr-to-lat.php' ) ) {
+			$not_installed_plugins += 1;
+		}
+
+		if ( ! is_plugin_active( 'disable-comments/disable-comments.php' ) ) {
+			$not_installed_plugins += 1;
+		}
+	}
+
+	return $not_installed_plugins;
+}
+
+function knd_sanitize_text($text) {
+	return sanitize_text_field($text);
+}
+
 /**
  * Allow SVG file upload
  *

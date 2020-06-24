@@ -5,14 +5,18 @@
  * @package Kandinsky
  */
 
-if ( ! defined( 'WPINC' ) )
+if ( ! defined( 'WPINC' ) ) {
 	die();
+}
 
-add_action( 'customize_register', 'knd_customize_register', 15 );
+/**
+ * Customizer
+ *
+ * @param object $wp_customize Customizser.
+ */
+function knd_customize_register( $wp_customize ) {
 
-function knd_customize_register( WP_Customize_Manager $wp_customize ) {
-	
-	// Theme important links started
+	// Theme important links started.
 	class Knd_Important_Links extends WP_Customize_Control {
 
 		public $type = "knd-important-links";
@@ -56,15 +60,6 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 				'section' => 'knd_important_links', 
 				'settings' => 'knd_important_links' ) ) );
 	// Theme Important Links Ended
-
-	// titles and captions.
-	$wp_customize->add_section(
-		'knd_titles_and_captions',
-		array(
-			'priority' => 160,
-			'title'    => esc_html__( 'Titles and captions', 'knd' ),
-		)
-	);
 
 	// Common settings.
 	$wp_customize->add_setting(
@@ -496,52 +491,85 @@ function knd_customize_register( WP_Customize_Manager $wp_customize ) {
 				'type' => 'url', 
 				'section' => 'knd_social_links' ) );
 	}
-	// Social links ended
-}
 
-add_filter( 'add_menu_classes', 'knd_show_notification_bubble' );
+	/**
+	 * Section titles and captions
+	 */
+	$wp_customize->add_section(
+		'knd_titles_and_captions',
+		array(
+			'priority' => 160,
+			'title'    => esc_html__( 'Titles and captions', 'knd' ),
+		)
+	);
 
-function knd_show_notification_bubble( $menu ) {
-	$notif_count = knd_get_admin_notif_count();
-	
-	if ( $notif_count > 0 ) {
-		foreach ( $menu as $menu_key => $menu_data ) {
-			if ( $menu_data[2] == 'knd-setup-wizard' ) {
-				$menu[$menu_key][0] .= " <span class='update-plugins' title='" .
-                    esc_html__( 'Recommended plugins to install', 'knd' ) . "'><span class='plugin-count'>" . $notif_count .
-					 '</span></span>';
-			}
-		}
+	$wp_customize->add_setting(
+		'knd_news_archive_title',
+		array(
+			'default' => esc_html__('News', 'knd'),
+		)
+	);
+
+	$wp_customize->add_control(
+		'knd_news_archive_title',
+		array(
+			'label'   => esc_html__('News archive title', 'knd'),
+			'type'    => 'text',
+			'section' => 'knd_titles_and_captions',
+		)
+	);
+
+	$wp_customize->add_setting(
+		'knd_projects_archive_title',
+		array(
+			'default' => esc_html__( 'Our projects', 'knd' ),
+		)
+	);
+
+	$wp_customize->add_control(
+		'knd_projects_archive_title',
+		array(
+			'label'   => esc_html__('Projects archive title', 'knd'),
+			'type'    => 'text',
+			'section' => 'knd_titles_and_captions',
+		)
+	);
+
+	// Register controls if plugin leyka is active.
+	if ( defined( 'LEYKA_VERSION' ) ) {
+
+		$wp_customize->add_setting(
+			'knd_active_campaigns_archive_title',
+			array(
+				'default' => esc_html__( 'They need help', 'knd' ),
+			)
+		);
+
+		$wp_customize->add_control(
+			'knd_active_campaigns_archive_title',
+			array(
+				'label'   => esc_html__('Active campaigns archive title', 'knd'),
+				'type'    => 'text',
+				'section' => 'knd_titles_and_captions',
+			)
+		);
+
+		$wp_customize->add_setting(
+			'knd_completed_campaigns_archive_title',
+			array(
+				'default' => esc_html__( 'They alredy got help', 'knd' ),
+			)
+		);
+
+		$wp_customize->add_control(
+			'knd_completed_campaigns_archive_title',
+			array(
+				'label'   => esc_html__('Completed campaigns archive title', 'knd'),
+				'type'    => 'text',
+				'section' => 'knd_titles_and_captions',
+			)
+		);
 	}
-	
-	return $menu;
-}
 
-function knd_get_admin_notif_count() {
-	$not_installed_plugins = 0;
-	
-	if ( is_admin() ) {
-		
-		if ( ! is_plugin_active( 'leyka/leyka.php' ) ) {
-			$not_installed_plugins += 1;
-		}
-		
-		if ( ! is_plugin_active( 'wordpress-seo/wp-seo.php' ) ) {
-			$not_installed_plugins += 1;
-		}
-		
-		if ( ! is_plugin_active( 'cyr3lat/cyr-to-lat.php' ) ) {
-			$not_installed_plugins += 1;
-		}
-		
-		if ( ! is_plugin_active( 'disable-comments/disable-comments.php' ) ) {
-			$not_installed_plugins += 1;
-		}
-	}
-	
-	return $not_installed_plugins;
 }
-
-function knd_sanitize_text($text) {
-	return sanitize_text_field($text);
-}
+add_action( 'customize_register', 'knd_customize_register' );
