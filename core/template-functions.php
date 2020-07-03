@@ -84,8 +84,6 @@ function knd_cyrillic_fonts() {
 		'Literata',
 		'Lobster',
 		'Lora',
-		'M PLUS 1p',
-		'M PLUS Rounded 1c',
 		'Manrope',
 		'Marck Script',
 		'Marmelad',
