@@ -8,9 +8,8 @@ html {
 
 body {
 	background: $color-page-bg;
-    color: $color-text;
-
-	text-rendering: optimizeLegibility;	
+	color: $color-text;
+	text-rendering: optimizeLegibility;
 	@include knd-body-text();
 	
 	& > svg { display: none; }	

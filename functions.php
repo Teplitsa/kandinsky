@@ -40,10 +40,14 @@ if( !isset($content_width) ) {
 	$content_width = 800; /* pixels */
 }
 
+function knd_load_theme_textdomain() {
+	load_theme_textdomain( 'knd', get_template_directory() . '/lang' );
+}
+
 function knd_setup() {
 
 	// Inits
-	load_theme_textdomain('knd', get_template_directory().'/lang');
+	knd_load_theme_textdomain();
 	//add_theme_support( 'automatic-feed-links' );	
 	add_theme_support('title-tag');
 
@@ -82,6 +86,11 @@ function knd_setup() {
 }
 add_action( 'after_setup_theme', 'knd_setup', 9 ); // Theme wizard initialize at 10, this init should occur befure it
 
+/* Fix translate customizer */
+if ( is_customize_preview() ) {
+	knd_load_theme_textdomain();
+}
+
 /* Function for init setting that should be runned at init hook */
 function knd_content_init() {
 	add_post_type_support('page', 'excerpt');
@@ -96,6 +105,8 @@ add_action( 'init', 'knd_content_init', 30 );
 require_once( ABSPATH . 'wp-admin/includes/file.php' );
 require_once( ABSPATH . 'wp-admin/includes/image.php' );
 require_once( ABSPATH . 'wp-admin/includes/media.php' );
+
+get_template_part('/core/extras'); // default WP behavior customization
 
 /**
  * Template functions
@@ -119,8 +130,6 @@ get_template_part('/core/class-cssjs');
 get_template_part('/core/media'); // customize media behavior and add images sizes
 
 get_template_part('/core/cards'); // layout of cards, list items etc.
-
-get_template_part('/core/extras'); // default WP behavior customization
 
 get_template_part('/core/shortcodes'); // shortcodes core
 get_template_part('/core/shortcodes-ui'); // shortcodes layout

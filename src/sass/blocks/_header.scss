@@ -113,9 +113,12 @@
 	display: block;
 	text-transform: uppercase;
 	line-height: 1;
-	color: $color-text;
-
-	@include knd-head-main-text();
+	font-family: var(--knd-font-family-logo);
+	font-weight: var(--knd-font-weight-logo);
+	font-style: var(--knd-font-style-logo);
+	color: var(--knd-color-logo);
+	line-height: 1.2;
+	letter-spacing: .03em;
 
 	body.plot-public-campaign & {
 		color: $color-text-contrast;
@@ -126,7 +129,7 @@
 	display: block;
 	padding-top: 4px;
 	text-transform: uppercase;
-	color: $color-text;
+	color: var(--knd-color-logo);
 
 	@include knd-subhead-text();
 }
@@ -137,14 +140,13 @@
 	padding-left: $gut/(2*1.33);
 
 	.logo-name {
-		font-family: var(--knd-font-family-logo);
-		@include knd-head-main-text();
+		@include ms-respond(font-size, 2);
 	}
 
 	.logo-desc {
 		display: block;
 		padding-top: 4px;
-		color: $color-text;
+		color: var(--knd-color-logo);
 		text-transform: uppercase;
 		@include knd-subhead-text();
 	}
@@ -441,7 +443,7 @@
 	.snt-cell {
 		display: flex;
 		flex-flow: column nowrap;
-		justify-content: center;				
+		justify-content: center;
 		height: $logo_small_h + $height_gap;
 		max-width: 196px;
 		padding-left: $gut/2;
@@ -491,7 +493,7 @@
 	}
 }
 
-.main-menu {	
+.main-menu {
 	li {
 		border-bottom: 1px solid $color-page-bg-dark;
 		position: relative;

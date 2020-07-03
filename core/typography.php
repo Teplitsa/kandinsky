@@ -38,11 +38,48 @@ function knd_inline_style() {
 	$knd_page_text_color       = knd_get_theme_mod( 'knd_page_text_color', '#000000' );
 	//knd_get_theme_color( 'knd_page_text_color' );
 	$knd_page_text_color_light = knd_color_luminance( $knd_page_text_color, 2 );
-
-
+	$knd_color_base = $knd_page_text_color;
 
 	$knd_font_family_base     = '"SourceSansPro", Arial, sans-serif';
 	$knd_font_family_headings = '"Exo2", Arial, sans-serif';
+	$knd_font_family_logo     = $knd_font_family_headings;
+
+	// Base typography
+	if ( get_theme_mod( 'font_base' ) && class_exists( 'Kirki' ) ) {
+		$knd_page_text_color  = knd_typography( 'font_base', 'color', '#000000' );
+		$knd_font_family_base = '"' . knd_typography( 'font_base', 'font-family', 'Source Sans Pro' ) . '"';
+		$knd_font_weight_base = knd_typography( 'font_base', 'variant', '400' );
+		$knd_font_size_base   = knd_typography( 'font_base', 'font-size', '16px' );
+	} else {
+		$knd_page_text_color       = '#000000';
+		$knd_font_weight_base = '400';
+		$knd_font_size_base   = '16px';
+	}
+	$knd_font_style_base = knd_typography( 'font_base', 'font-style', 'normal' );
+
+	// Heading typography.
+	if ( get_theme_mod( 'font_headings' ) && class_exists( 'Kirki' ) ) {
+		$knd_headings_color       = knd_typography( 'font_headings', 'color', '#000000' );
+		$knd_font_family_headings = '"' . knd_typography( 'font_headings', 'font-family', 'Exo 2' ) . '"';
+		$knd_font_weight_headings = knd_typography( 'font_headings', 'variant', '800' );
+        $knd_font_family_logo     = $knd_font_family_headings;
+	} else {
+		$knd_headings_color = '#000000';
+		$knd_font_weight_headings = 800;
+	}
+	$knd_font_style_headings = knd_typography( 'font_headings', 'font-style', 'normal' );
+
+	// Logo Typography.
+	$knd_font_weight_logo = 800;
+    $knd_font_style_logo  = 'normal';
+	if ( get_theme_mod( 'font_logo' ) && class_exists( 'Kirki' ) ) {
+		if ( true !== get_theme_mod( 'font_logo_default' ) ) {
+			$knd_font_family_logo = '"' . knd_typography( 'font_logo', 'font-family', 'Exo 2' ) . '"';
+			$knd_font_weight_logo = knd_typography( 'font_logo', 'variant', '800' );
+            $knd_font_style_logo  = knd_typography( 'font_logo', 'font-style', 'normal' );
+		}
+	}
+	$knd_logo_color      = get_theme_mod( 'font_logo_color', 'var(--knd-page-text-color)' );
 
 	$custom_css = ':root {
 	--knd-color-main:         ' . $main_color . ';
@@ -67,23 +104,24 @@ function knd_inline_style() {
 	--knd-page-text-color:       ' . $knd_page_text_color . ';
 	--knd-page-text-color-light:  ' . $knd_page_text_color_light . ';
 
-	--knd-color-base: #585858;
+	--knd-color-base:       ' . $knd_color_base . ';
 	--knd-font-family-base: ' . $knd_font_family_base . ';
-	--knd-font-weight-base: regular;
-	--knd-font-size-base: 20px;
-	
-	--knd-color-headings: #000000;
+	--knd-font-weight-base: ' . $knd_font_weight_base . ';
+	--knd-font-size-base:   ' . $knd_font_size_base . ';
+	--knd-font-style-base:  ' . $knd_font_style_base . ';
+
+	--knd-color-headings:       ' . $knd_headings_color . ';
 	--knd-font-family-headings: ' . $knd_font_family_headings . ';
-	--knd-font-weight-headings: regular;
-	
-	--knd-color-logo: #81d742;
-	--knd-font-family-logo: var(--knd-font-family-headings);
-	--knd-font-weight-logo: 900;
+	--knd-font-weight-headings: ' . $knd_font_weight_headings . ';
+	--knd-font-style-headings:  ' . $knd_font_style_headings . ';
+
+	--knd-color-logo:       ' . $knd_logo_color . ';
+	--knd-font-family-logo: ' . $knd_font_family_logo . ';
+	--knd-font-weight-logo: ' . $knd_font_weight_logo . ';
+	--knd-font-style-logo:  ' . $knd_font_style_logo . ';
+
 }';
 
 	wp_add_inline_style( 'frl-design', $custom_css );
 }
 add_action( 'wp_enqueue_scripts', 'knd_inline_style', 40 );
-
-
-

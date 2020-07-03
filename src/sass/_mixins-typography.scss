@@ -116,10 +116,10 @@ $modularscale: (
 
 // Body texts
 @mixin knd-body-text() {
-    @include ms-respond(font-size, 1);
-    font-family: $body;
     line-height: 1.55;
     font-weight: 400;
+    font-style: var(--knd-font-style-base);
+    font-family: var(--knd-font-family-base);
 }
 
 @mixin knd-card-text() {

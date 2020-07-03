@@ -477,7 +477,16 @@ function knd_register_required_plugins() {
 			'required' => true, 
 			'description' => esc_html__(
 				'A visual editing for shortcodes to enrich your content management experience.', 
-				'knd' ) ), 
+				'knd' ) ),
+		array(
+			'name'        => esc_html__( 'Kirki Customizer Framework', 'knd' ),
+			'slug'        => 'kirki',
+			'is_callable' => '',
+			'required'    => true,
+			'description' => esc_html__(
+				'The Ultimate WordPress Customizer Framework.',
+				'knd' ),
+		),
 		array( 
 			'name' => esc_html__( 'Leyka', 'knd' ),
 			'slug' => 'leyka', 

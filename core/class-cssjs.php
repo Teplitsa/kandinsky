@@ -105,14 +105,18 @@ class KND_CssJs {
 	/* admin styles - moved to news system also */
 	public function load_admin_scripts() {
 		$url = get_template_directory_uri();
-		
-		wp_enqueue_script( 
-			'knd-admin', 
-			$url . '/assets/rev/' . $this->get_rev_filename( 'admin.js' ), 
-			array( 'jquery' ), 
-			null );
+
+		wp_enqueue_script( 'knd-admin', $url . '/assets/rev/' . $this->get_rev_filename( 'admin.js' ), array( 'jquery' ), null );
 		wp_enqueue_style( 'knd-admin', $url . '/assets/rev/' . $this->get_rev_filename( 'admin.css' ), array(), null );
-		
+
+		/* Translatable string */
+		wp_localize_script('knd-admin', 'knd',
+			array(
+				'ajaxurl' => admin_url( 'admin-ajax.php' ),
+				'nonce'   => wp_create_nonce( 'knd-nonce' ),
+			)
+		);
+
 	}
 
 	public function inline_styles_for_teplitsa_plugins(){

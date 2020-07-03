@@ -48,7 +48,53 @@ body:not(#tinymce) ::selection {
 	text-shadow : none; 
 }
 
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--knd-font-family-headings);
+	font-weight: var(--knd-font-weight-headings);
+	font-style: var(--knd-font-style-headings);
+	line-height: 1.2;
+}
 
+h1 {
+	font-size: 44px;
+}
+h2 {
+	font-size: 37px;
+}
+h3 {
+	font-size: 31px;
+}
+h4 {
+	font-size: 26px;
+}
+h5 {
+	font-size: 22px;
+}
+h6 {
+	font-size: 18px;
+}
+
+.the-content {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		color: var(--knd-color-headings);
+	}
+}
+
+.the-content {
+	color: var(--knd-color-base);
+	font-size: var(--knd-font-size-base);
+}
 
 /** Post content elements  **/
 
@@ -67,29 +113,8 @@ body:not(#tinymce) ::selection {
 		&:first-child { margin-top: 0; }
 		&:last-child { margin-bottom: 0; }
 
-		color: $color-text;
 		strong, b { font-weight: normal; }
 	}
-
-	h2, h3 {
-		@include knd-head-exlarge-text();
-		color: $color-text;
-	}
-
-	h4 {
-		@include knd-body-title-text();
-		color: $color-text;
-	}
-
-	h5 {
-		@include knd-head-tiny-text();
-	}
-
-	h6 {
-		font-size: 1.2rem;
-		font-weight: 600; 
-	}
-
 
 	strong, b {
 		color: $color-text;
@@ -184,24 +209,24 @@ body:not(#tinymce) ::selection {
 	ol + p { margin-top:  $inpage-margin-base }
 
 	blockquote {
-	    font-style: italic;
-	    position: relative;
-	    padding-left: 34px;
-	    margin-top: $inpage-margin-base*2;
+		font-style: italic;
+		position: relative;
+		padding-left: 34px;
+		margin-top: $inpage-margin-base*2;
 
-	    &:before {
-	        content: '“';
-	        display: inline-block;
-	        font-size: 70px;
-	        line-height: 1;
-	        position: absolute;
-	        left: -12px;
-	        top: -12px;
-	        color: $color-main;
-	    }
+		&:before {
+			content: '“';
+			display: inline-block;
+			font-size: 70px;
+			line-height: 1;
+			position: absolute;
+			left: -12px;
+			top: -12px;
+			color: $color-main;
+		}
 
-	    &:first-child { margin-top: 0; }
-	    &:last-child { margin-bottom: 0; }
+		&:first-child { margin-top: 0; }
+		&:last-child { margin-bottom: 0; }
 	}
 
 	pre {
