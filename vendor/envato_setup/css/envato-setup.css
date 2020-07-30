@@ -428,6 +428,10 @@ body {
     opacity: 1;
 }
 
+.envato-setup .envato-setup-actions .button-wizard-back {
+    float: left;
+}
+
 .wc-return-to-dashboard {
     font-size: .85em;
     color: #b5b5b5;

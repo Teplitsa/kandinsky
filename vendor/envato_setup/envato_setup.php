@@ -37,7 +37,7 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
          * @access private
          * @var string
          */
-        protected $version = '1.3.0';
+        protected $version = '1.3.1';
 
         /** @var string Current theme name, used as namespace in actions. */
         protected $theme_name = '';
@@ -432,6 +432,14 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 
         }
 
+        public function get_prev_step_link() {
+
+            $keys = array_keys($this->steps);
+
+            return add_query_arg('step', $keys[ array_search($this->step, array_keys($this->steps)) - 1 ], remove_query_arg('translation_updated'));
+
+        }
+
         public function display_wizard_header() {?>
 
             <!DOCTYPE html>
@@ -682,6 +690,7 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
                 } ?>
 
                 <p class="envato-setup-actions step">
+                    <a href="<?php echo esc_url($this->get_prev_step_link()); ?>" class="button-wizard-back button button-large"><?php esc_html_e( 'Back', 'knd' ); ?></a>
                     <a href="<?php echo esc_url($this->get_next_step_link()); ?>" class="button-primary button button-large button-next" data-callback="installPlugins">
                         <?php esc_html_e('Continue', 'knd'); ?>
                     </a>
@@ -967,6 +976,7 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
                 </table>
 
                 <p class="envato-setup-actions step">
+                    <a href="<?php echo esc_url($this->get_prev_step_link()); ?>" class="button-wizard-back button button-large"><?php esc_html_e( 'Back', 'knd' ); ?></a>
                     <a href="<?php echo esc_url($this->get_next_step_link()); ?>" class="button-primary button button-large button-next" data-callback="installContent">
                         <?php esc_html_e('Set up', 'knd'); ?>
                     </a>
@@ -1111,6 +1121,9 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
                 <input type="hidden" name="new_scenario_id" id="new_scenario_id" value="<?php echo $current_scenario_id ? $current_scenario_id : ''; ?>">
 
                 <p class="envato-setup-actions step">
+                    <a class="button button-large button-wizard-back" href="<?php echo esc_url( admin_url() ); ?>">
+                        <?php esc_html_e( 'Exit', 'knd'); ?>
+                    </a>
                     <input type="submit" class="button-primary button button-large button-next" id="knd-install-scenario" data-callback="kndDownloadPlotStep" value="<?php esc_attr_e('Continue', 'knd'); ?>" name="save_step">
                     <a href="<?php echo esc_url($this->get_next_step_link()); ?>" class="button button-large button-next knd-download-plot-skip">
                         <?php esc_html_e('Skip this step', 'knd'); ?>
@@ -1286,6 +1299,7 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
                 <input type="hidden" name="new_logo_id" id="new_logo_id" value="">
 
                 <p class="envato-setup-actions step">
+                    <a href="<?php echo esc_url($this->get_prev_step_link()); ?>" class="button-wizard-back button button-large"><?php esc_html_e( 'Back', 'knd' ); ?></a>
                     <input type="submit" class="button-primary button button-large button-next" value="<?php esc_attr_e('Continue', 'knd'); ?>" name="save_step">
                     <a href="<?php echo esc_url($this->get_next_step_link()); ?>" class="button button-large button-next">
                         <?php esc_html_e('Skip this step', 'knd'); ?>
@@ -1356,6 +1370,7 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 
 
                 <p class="envato-setup-actions step">
+                    <a href="<?php echo esc_url($this->get_prev_step_link()); ?>" class="button-wizard-back button button-large"><?php esc_html_e( 'Back', 'knd' ); ?></a>
                     <input type="submit" class="button-primary button button-large button-next" value="<?php esc_attr_e('Continue', 'knd'); ?>" name="save_step">
                     <a href="<?php echo esc_url($this->get_next_step_link()); ?>" class="button button-large button-next">
                         <?php esc_html_e('Skip this step', 'knd'); ?>
@@ -1428,6 +1443,7 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
             <p><?php echo sprintf( __('If you need personalized (free during the testing period) consultations from the theme developers, please feel free to write at <a href="mailto:%s" target="_blank">%s</a> or <a href="%s" target="_blank">leave a ticket at GitHub</a>.', 'knd'), KND_SUPPORT_EMAIL, KND_SUPPORT_EMAIL, KND_SOURCES_ISSUES_PAGE_URL ); ?></p>
 
             <p class="envato-setup-actions step">
+                <a href="<?php echo esc_url($this->get_prev_step_link()); ?>" class="button-wizard-back button button-large"><?php esc_html_e( 'Back', 'knd' ); ?></a>
                 <a href="<?php echo esc_url($this->get_next_step_link()); ?>" class="button-primary button button-large button-next"><?php esc_html_e("OK, I've got it!", 'knd'); ?></a>
             </p>
 
@@ -1458,6 +1474,9 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
                             <a class="button button-next button-large" href="<?php echo home_url(); ?>">
                                 <?php esc_html_e('View your new website!', 'knd'); ?>
                             </a>
+                        </li>
+                        <li class="setup-product">
+                            <a href="<?php echo esc_url($this->get_prev_step_link()); ?>" class="button button-link"><?php esc_html_e( 'Back', 'knd' ); ?></a>
                         </li>
                     </ul>
                 </div>
