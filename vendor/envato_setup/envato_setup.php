@@ -584,7 +584,13 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
             tgmpa_load_bulk_installer();
             if( !class_exists('TGM_Plugin_Activation') || !isset($GLOBALS['tgmpa'])) {
                 die(__('Failed to find TGM plugin', 'knd'));
-            }?>
+            }
+
+            // Prevent start Leyka wizard if is activated via Theme wizard.
+            if ( ! get_option( 'leyka_last_ver' ) ) {
+                update_option( 'leyka_last_ver', '3.10');
+            }
+            ?>
 
             <h1><?php esc_html_e('Default Plugins', 'knd'); ?></h1>
             <form method="post">
@@ -1397,6 +1403,8 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
                 if(is_plugin_active('leyka/leyka.php')) {
                     knd_activate_leyka();
                     update_option('knd_setup_install_leyka', false);
+                    // Add current Leyka version.
+                    update_option( 'leyka_last_ver', LEYKA_VERSION );
                 }
 
             }

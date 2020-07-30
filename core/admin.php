@@ -491,7 +491,7 @@ function knd_register_required_plugins() {
 			'name' => esc_html__( 'Leyka', 'knd' ),
 			'slug' => 'leyka', 
 			'is_callable' => 'leyka', 
-			'required' => get_option( 'knd_setup_install_leyka' ),  // knd_get_theme_mod('knd_site_scenario') ==
+			'required' => get_option( 'knd_setup_install_leyka', true ),  // knd_get_theme_mod('knd_site_scenario') ==
 			                                                        // 'fundraising-org',
 			'description' => esc_html__( 'This plugin will add means for donations collection to your website.', 'knd' ) ) );
 	
