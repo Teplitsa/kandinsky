@@ -296,7 +296,7 @@ Kirki::add_section(
 Kirki::add_field( 'knd_theme_mod', [
 	'type'      => 'custom',
 	'settings'  => 'analitics_desc',
-	'default'     => '<p>' . esc_html__( 'Здесь вы можете вставить код для систем аналитики пользователей, Google Analytics или Яндекс.Метрика. Ниже приведены 3 области сайта, куда вы, в зависимости, от требований устанавливаемых систем, можете вставить код. Просто скопируйте его сюда.', 'knd' ) . '</p>',
+	'default'     => '<p>' . esc_html__( 'Here you can insert the code for user analytics systems, Google Analytics or Yandex.Metrica. Below are 3 areas of the site where you can paste the code, depending on the requirements of the systems being installed. Just copy it here.', 'knd' ) . '</p>',
 	'section'   => 'analitics',
 ] );
 

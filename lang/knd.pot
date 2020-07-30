@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Kandinsky\n"
-"POT-Creation-Date: 2020-07-03 06:39+0300\n"
+"POT-Creation-Date: 2020-07-31 01:22+0300\n"
 "PO-Revision-Date: 2020-06-22 06:53+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -281,7 +281,7 @@ msgid "Kandinsky settings"
 msgstr ""
 
 #. Theme Name of the plugin/theme
-#: core/admin.php:321 core/admin.php:372 functions.php:172
+#: core/admin.php:321 core/admin.php:372 functions.php:181
 msgid "Kandinsky"
 msgstr ""
 
@@ -1265,17 +1265,17 @@ msgstr ""
 msgid "Powered by Kandinsky"
 msgstr ""
 
-#: functions.php:73
+#: functions.php:85
 msgid "Primary menu"
 msgstr ""
 
 #. Author of the plugin/theme
-#: functions.php:173
+#: functions.php:182
 msgid "Teplitsa"
 msgstr ""
 
 #. Description of the plugin/theme
-#: functions.php:174
+#: functions.php:183
 msgid "The beautiful design and useful features for nonprofit website"
 msgstr ""
 

@@ -591,7 +591,7 @@ function knd_kirki_admin_notices() {
 			<p><?php esc_html_e('In order to make Kandinsky work full speed, you will need few plugins. WordPress will install or update the following plugins:', 'knd');?></p>
 			<ul>
 				<li><strong>Kirki Customizer Framework</strong><br>
-					<i><?php esc_html_e('Plugin that allows web-font customisation.', 'knd');?></i>
+					<i><?php esc_html_e('Plugin that allows web-font customization.', 'knd');?></i>
 				</li>
 			</ul>
 			<p>
