@@ -153,7 +153,7 @@ if ( defined( 'LEYKA_VERSION' ) ) {
 		if ( ! $camp )
 			return '';
 		
-		return do_shortcode( '[leyka_inline_campaign id="' . $camp->ID . '" template="revo"]' );
+		return do_shortcode( '[leyka_inline_campaign id="' . $camp->ID . '" template="star"]' );
 	}
 } else {
  // fallback for Leyka shortcode

@@ -97,7 +97,7 @@ class KND_Plot_Data_Builder {
         $this->safe_update_option('leyka_org_bank_corr_account', '66666678901234567890');
         
         // View settings:
-        $this->safe_update_option('leyka_donation_form_template', 'revo');
+        $this->safe_update_option('leyka_donation_form_template', 'star');
         $this->safe_update_option('leyka_donation_sum_field_type', 'mixed');
         $this->safe_update_option('leyka_scale_widget_place', '-');
         $this->safe_update_option('leyka_donations_history_under_forms', 0);
@@ -219,7 +219,7 @@ class KND_Plot_Data_Builder {
                 
                 update_post_meta($campaign_id, 'campaign_target', $campaign_data['target']);
                 update_post_meta($campaign_id, 'campaign_age', $campaign_data['age']);
-                update_post_meta($campaign_id, 'campaign_template', 'revo');
+                update_post_meta($campaign_id, 'campaign_template', 'star');
                 $campaign = new Leyka_Campaign($campaign_id);
                 
                 $this->_install_campaign_donations($campaign);
