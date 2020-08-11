@@ -1,6 +1,8 @@
 <?php
 /**
  * Template Name: Homepage
+ *
+ * @package Kandinsky
  **/
 
 get_header();
@@ -12,10 +14,13 @@ get_header();
 
 </div>
 
-<div class="knd-homepage-sidebar">
+<?php if ( is_active_sidebar( 'knd-homepage-sidebar' ) ) : ?>
 
-<?php dynamic_sidebar( 'knd-homepage-sidebar' );?>
-    
-</div>
+	<div class="knd-homepage-sidebar">
+		<?php dynamic_sidebar( 'knd-homepage-sidebar' ); ?>
+	</div>
 
-<?php get_footer();
+<?php endif; ?>
+
+<?php
+get_footer();
