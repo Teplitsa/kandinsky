@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-31 01:28+0300\n"
-"PO-Revision-Date: 2020-07-31 01:31+0300\n"
+"PO-Revision-Date: 2020-08-11 07:50+0300\n"
 "Last-Translator: ahaenor <ahaenor@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -1615,11 +1615,11 @@ msgstr ""
 
 #: vendor/class-tgm-plugin-activation.php:2262
 msgid "Required"
-msgstr ""
+msgstr "Обязательный"
 
 #: vendor/class-tgm-plugin-activation.php:2265
 msgid "Recommended"
-msgstr ""
+msgstr "Рекомендуемый"
 
 #: vendor/class-tgm-plugin-activation.php:2281
 msgid "WordPress Repository"
@@ -1635,7 +1635,7 @@ msgstr ""
 
 #: vendor/class-tgm-plugin-activation.php:2304
 msgid "Not Installed"
-msgstr ""
+msgstr "Не установлен"
 
 #: vendor/class-tgm-plugin-activation.php:2308
 msgid "Installed But Not Activated"
