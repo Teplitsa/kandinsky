@@ -33,7 +33,7 @@ add_filter( 'knd_entry_the_content', 'knd_entry_wpautop' );
 add_filter( 'knd_entry_the_content', 'shortcode_unautop' );
 add_filter( 'knd_entry_the_content', 'prepend_attachment' );
 add_filter( 'knd_entry_the_content', 'knd_force_https' );
-add_filter( 'knd_entry_the_content', 'wp_make_content_images_responsive' );
+//add_filter( 'knd_entry_the_content', 'wp_make_content_images_responsive' );
 //add_filter( 'knd_entry_the_content', 'do_shortcode', 11 );
 add_filter( 'knd_entry_the_content', 'wp_kses_post', 7 );
 
