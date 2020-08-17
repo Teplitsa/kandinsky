@@ -53,3 +53,42 @@
 #customize-control-font_logo_header {
 	margin-bottom: 0;
 }
+
+/* Header Select */
+#customize-control-header_type label {
+	display: block;
+	width: 100%;
+}
+#customize-control-header_type label > img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+#customize-control-header_type label:not(:last-child) {
+	margin-bottom: 10px;
+}
+.customize-control-kirki-radio-image input:checked + label {
+	box-shadow: 0 0 0 2px #00a0d2;
+}
+.customize-control-kirki-radio-image input:checked + label img {
+	border: 0;
+	box-shadow: none;
+}
+
+/* Divider */
+.knd-customizer-divider {
+	border-bottom: 1px dashed #838e97;
+	margin: 8px -12px 0;
+}
+.knd-customizer-heading {
+	display: block;
+	color: #555d66;
+	background-color: #fff;
+	border-bottom: 1px solid #ddd;
+	border-top: 1px solid #ddd;
+	font-size: 14px;
+	padding: 10px 10px 11px 14px;
+	margin: 8px -12px 0;
+	line-height: 1.55;
+	font-weight: 600;
+}

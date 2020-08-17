@@ -53,68 +53,12 @@ Kirki::add_field( 'knd_theme_mod', [
 	'settings'    => 'knd_custom_logo',
 	'label'       => esc_html__( 'Logo', 'knd' ),
 	'section'     => 'title_tagline',
-	'description' => 'We recommend to use logos in the .svg format (vector graphics). If your logo is in rastre format, we recommend to upload pictures with the dimensions of 630x132 px for the option "Only Image" or 132x13px for the option "Image and Title".',
+	'description' => esc_html__( 'We recommend to use logos in the .svg format (vector graphics). If your logo is in rastre format, we recommend to upload pictures with the dimensions of 630x132 px for the option "Only Image" or 132x13px for the option "Image and Title".', 'knd' ),
 	'priority'    => 11,
 	'choices'     => [
 		'save_as' => 'id',
 	],
 ] );
-
-Kirki::add_field( 'knd_theme_mod', [
-	'type'     => 'custom',
-	'settings' => 'font_logo_header',
-	'section'  => 'title_tagline',
-	'default'  => '<span class="customize-control-title">' . esc_html__( 'Font For Logo', 'knd' ) . '</span>',
-	'priority' => 20,
-] );
-
-Kirki::add_field( 'knd_theme_mod', array(
-	'type'     => 'checkbox',
-	'settings' => 'font_logo_default',
-	'label'    => esc_html__( 'Use Default Font', 'knd' ),
-	'section'  => 'title_tagline',
-	'default'  => true,
-	'priority' => 20,
-) );
-
-Kirki::add_field( 'knd_theme_mod', array(
-	'type'            => 'typography',
-	'settings'        => 'font_logo',
-	'section'         => 'title_tagline',
-	'default'         => array(
-		'font-family' => 'Exo 2',
-		'variant'     => '800',
-	),
-	'choices'         => array(
-		'fonts' => array(
-			'google' => knd_cyrillic_fonts(),
-		),
-	),
-	'priority'        => 20,
-	'active_callback' => array(
-		array(
-			'setting'  => 'font_logo_default',
-			'operator' => '==',
-			'value'    => false,
-		),
-	),
-) );
-
-Kirki::add_field( 'knd_theme_mod', array(
-	'type'      => 'color',
-	'settings'  => 'font_logo_color',
-	'label'     => esc_html__( 'Logo Color', 'knd' ),
-	'section'   => 'title_tagline',
-	'default'   => '#000000',
-	'transport' => 'auto',
-	'priority'  => 20,
-	'output'    => array(
-		array(
-			'element'  => ':root',
-			'property' => '--knd-color-logo',
-		),
-	),
-) );
 
 /* Fonts and Colors Section */
 Kirki::add_section(

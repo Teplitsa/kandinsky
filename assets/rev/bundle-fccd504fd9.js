@@ -962,7 +962,7 @@ jQuery( document ).ready(function( $ ) {
 	/** Window width **/
 	var windowWidth = $( '#top' ).width(),
 		$adminbar = $( '#wpadminbar' ),
-		$siteHeader = $( '#site_header' ),
+		$siteHeader = $( '#site_header, .knd-header' ),
 		breakPointSmall = 480, // Small screens break point
 		breakPointMedium = 767; // Medium screen break point
 
@@ -980,7 +980,7 @@ jQuery( document ).ready(function( $ ) {
 	/** Header states **/
 
 	/** Drawer **/
-	$( '#trigger_menu' ).on( 'click', function( e ) {
+	$( '#trigger_menu, .knd-offcanvas-toggle' ).on( 'click', function( e ) {
 
 		// Close newsletter if any
 		if ( $siteHeader.hasClass( 'newsletter-open' ) ) {

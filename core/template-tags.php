@@ -284,7 +284,7 @@ function knd_paging_nav( WP_Query $query = null ) {
 	if ( $p ) {
 		?>
 <nav class="paging-navigation" role="navigation">
-    <div class="container"><?php echo $p; ?></div>
+	<div class="container"><?php echo $p; ?></div>
 </nav>
 <?php
 	}
@@ -358,9 +358,9 @@ function knd_more_section( $posts, $title = '', $type = 'news', $css = '' ) {
 	?>
 <section class="<?php echo esc_attr($css);?>">
 
-    <h3 class="related-title"><?php echo $title; ?></h3>
+	<h3 class="related-title"><?php echo $title; ?></h3>
 
-    <div class="related-cards-loop">
+	<div class="related-cards-loop">
 	<?php
 	foreach ( $posts as $p ) {
 		knd_related_post_link( $p );
@@ -378,17 +378,17 @@ function knd_related_project( WP_Post $cpost ) {
 	$ex = apply_filters( 'knd_the_title', knd_get_post_excerpt( $cpost, 25, true ) );
 	?>
 <div class="related-widget widget">
-    <h3 class="widget-title"><?php esc_html_e('Related project', 'knd');?></h3>
-    <a href="<?php echo $pl;?>" class="entry-link">
-        <div class="rw-preview">
+	<h3 class="widget-title"><?php esc_html_e('Related project', 'knd');?></h3>
+	<a href="<?php echo $pl;?>" class="entry-link">
+		<div class="rw-preview">
 			<?php echo knd_post_thumbnail($cpost->ID, 'post-thumbnail');?>
 		</div>
-        <div class="rw-content">
-            <h4 class="entry-title"><?php echo get_the_title($cpost);?></h4>
-            <div class="entry-summary"><?php echo $ex;?></div>
-        </div>
-    </a>
-    <div class="help-cta">
+		<div class="rw-content">
+			<h4 class="entry-title"><?php echo get_the_title($cpost);?></h4>
+			<div class="entry-summary"><?php echo $ex;?></div>
+		</div>
+	</a>
+	<div class="help-cta">
 		<?php echo knd_get_help_now_cta();?>
 	</div>
 </div>
@@ -476,11 +476,11 @@ function knd_related_reports( TST_Event $event, $css = '' ) {
 	if ( ! empty( $related ) ) {
 ?>
 <div class="expired-notice <?php echo esc_attr($css);?>">
-    <h6>Читать отчет</h6>
+	<h6>Читать отчет</h6>
 	<?php foreach ( $related as $r ): ?>
-    <p>
-        <a href="<?php echo get_permalink($r);?>"><?php echo get_the_title($r);?></a>
-    </p>
+	<p>
+		<a href="<?php echo get_permalink($r);?>"><?php echo get_the_title($r);?></a>
+	</p>
 	<?php endforeach; ?>
 	</div>
 <?php
@@ -547,15 +547,15 @@ function knd_logo_markup() {
 			<div class="logo-image-only"><?php echo knd_get_logo_img(); ?></div>
 		<?php } elseif ( 'text_only' == $mod ) { ?>
 		<div class="logo-text-only">
-			<span class="logo-name"><?php bloginfo( 'name' ); ?></span>
-			<span class="logo-desc"><?php bloginfo( 'description' ); ?></span>
+			<span class="logo-name"><?php echo wp_kses_post( nl2br( get_theme_mod( 'header_logo_title', get_bloginfo( 'name' ) ) ) ); ?></span>
+			<span class="logo-desc"><?php echo wp_kses_post( nl2br( get_theme_mod( 'header_logo_text', get_bloginfo( 'description' ) ) ) ); ?></span>
 		</div>
 	<?php } else { ?>
 		<div class="logo-complex">
 			<div class="logo"><?php echo knd_get_logo_img(); ?></div>
 			<div class="text">
-				<span class="logo-name"><?php bloginfo( 'name' ); ?></span>
-				<span class="logo-desc"><?php bloginfo( 'description' ); ?></span>
+				<span class="logo-name"><?php echo wp_kses_post( nl2br( get_theme_mod( 'header_logo_title', get_bloginfo( 'name' ) ) ) ); ?></span>
+				<span class="logo-desc"><?php echo wp_kses_post( nl2br( get_theme_mod( 'header_logo_text', get_bloginfo( 'description' ) ) ) ); ?></span>
 			</div>
 		</div>
 	<?php } ?>
@@ -613,11 +613,11 @@ function knd_hero_image_markup() {
 function knd_show_post_terms( $post_id ) {
 	?>
 <div class="tags-line">
-    <?php $terms_list = wp_get_object_terms( $post_id, 'post_tag'); ?>
-        <?php foreach($terms_list as $term):?>
-        <a href="<?php get_term_link( $term->term_id, 'post_tag' ) ?>">#<?php echo $term->name?></a>
-    <?php endforeach;?>
-    </div>
+	<?php $terms_list = wp_get_object_terms( $post_id, 'post_tag'); ?>
+		<?php foreach($terms_list as $term):?>
+		<a href="<?php get_term_link( $term->term_id, 'post_tag' ) ?>">#<?php echo $term->name?></a>
+	<?php endforeach;?>
+	</div>
 
 <?php
 }
@@ -626,23 +626,23 @@ function knd_show_cta_block() {
 	?>
 <div class="knd-joinus-widget">
 
-    <div class="container widget">
+	<div class="container widget">
 
-        <h2><?php echo knd_get_theme_mod('cta-title') ?></h2>
+		<h2><?php echo knd_get_theme_mod('cta-title') ?></h2>
 
-        <div class="flex-row knd-whoweare-headlike-text-wrapper">
+		<div class="flex-row knd-whoweare-headlike-text-wrapper">
 
-            <p class="knd-whoweare-headlike-text flex-mf-12 flex-sm-10">
-                <?php echo knd_get_theme_mod('cta-description') ?>
-                </p>
+			<p class="knd-whoweare-headlike-text flex-mf-12 flex-sm-10">
+				<?php echo knd_get_theme_mod('cta-description') ?>
+				</p>
 
-        </div>
+		</div>
 
-        <div class="knd-cta-wrapper-wide">
-            <a class="cta" href="<?php echo knd_get_theme_mod('cta-url') ?>"><?php echo knd_get_theme_mod('cta-button-caption') ?></a>
-        </div>
+		<div class="knd-cta-wrapper-wide">
+			<a class="cta" href="<?php echo knd_get_theme_mod('cta-url') ?>"><?php echo knd_get_theme_mod('cta-button-caption') ?></a>
+		</div>
 
-    </div>
+	</div>
 
 </div>
 <?php
@@ -653,16 +653,16 @@ function knd_show_posts_shortlist( $posts, $title, $links ) {
 <div class="knd-shortlist-widget"><div class="container">
 
 	<div class="knd-widget-head">
-        <h2 class="section-title"><?php echo $title; ?></h2>
+		<h2 class="section-title"><?php echo $title; ?></h2>
 
-        <div class="section-links">
-	    	<?php foreach( $links as $link ){ ?>
-	    		<a href="<?php echo $link['url']; ?>"><?php echo $link['title']; ?></a>
-	    	<?php } ?>
+		<div class="section-links">
+			<?php foreach( $links as $link ){ ?>
+				<a href="<?php echo $link['url']; ?>"><?php echo $link['title']; ?></a>
+			<?php } ?>
 		</div>
 	</div>
 
-    <div class="flex-row start cards-row">
+	<div class="flex-row start cards-row">
 	<?php
 		if ( ! empty( $posts ) ) {
 			foreach ( $posts as $p ) {
@@ -674,4 +674,234 @@ function knd_show_posts_shortlist( $posts, $title, $links ) {
 
 </div></div>
 <?php
+}
+
+/**
+ * Header Logo
+ */
+function knd_header_logo() {
+	?>
+	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="knd-header-logo">
+		<div class="knd-header-logo__inner">
+			<?php
+			$logo_id = get_theme_mod( 'header_logo_image', get_theme_mod( 'knd_custom_logo' ) );
+
+			$logo_url = wp_get_attachment_image_url( $logo_id, 'full', false );
+
+			if ( $logo_url ) {
+				?>
+
+				<div class="logo">
+					<?php echo wp_get_attachment_image( $logo_id, 'full', false, array( 'alt' => get_bloginfo( 'name' ) ) ); ?>
+				</div>
+			<?php } ?>
+			<div class="text">
+				<?php if ( get_theme_mod( 'header_logo_title', get_bloginfo( 'name' ) ) ) { ?>
+					<span class="logo-name"><?php echo wp_kses_post( nl2br( get_theme_mod( 'header_logo_title', get_bloginfo( 'name' ) ) ) ); ?></span>
+				<?php } ?>
+				<?php if ( get_theme_mod( 'header_logo_text', get_bloginfo( 'description' ) ) ) { ?>
+					<span class="logo-desc"><?php echo wp_kses_post( nl2br( get_theme_mod( 'header_logo_text', get_bloginfo( 'description' ) ) ) ); ?></span>
+				<?php } ?>
+			</div>
+		</div>
+	</a>
+	<?php
+}
+
+/**
+ * Site Search Toggle
+ */
+function knd_search_toggle() {
+	if ( get_theme_mod( 'header_search', true ) ) {
+	?>
+		<span class="knd-search-toggle">
+			<svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M2 8.5C2 5.191 4.691 2.5 8 2.5C11.309 2.5 14 5.191 14 8.5C14 11.809 11.309 14.5 8 14.5C4.691 14.5 2 11.809 2 8.5ZM17.707 16.793L14.312 13.397C15.365 12.043 16 10.346 16 8.5C16 4.089 12.411 0.5 8 0.5C3.589 0.5 0 4.089 0 8.5C0 12.911 3.589 16.5 8 16.5C9.846 16.5 11.543 15.865 12.897 14.812L16.293 18.207C16.488 18.402 16.744 18.5 17 18.5C17.256 18.5 17.512 18.402 17.707 18.207C18.098 17.816 18.098 17.184 17.707 16.793Z" fill="currentColor"/>
+			</svg>
+		</span>
+	<?php
+	}
+}
+
+/**
+ * Site Search
+ */
+function knd_header_search(){
+	if ( get_theme_mod( 'header_search', true ) ) {
+	?>
+	<div class="knd-search">
+		<div class="knd-search__inner">
+			<div class="knd-container">
+				<form role="search" method="get" class="knd-search__form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+					<input class="knd-search__input" type="search" value="<?php the_search_query(); ?>" name="s" placeholder="<?php esc_attr_e( 'Search ...', 'knd' ); ?>">
+					<button class="knd-search__submit" type="submit">
+						<svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M2 8.5C2 5.191 4.691 2.5 8 2.5C11.309 2.5 14 5.191 14 8.5C14 11.809 11.309 14.5 8 14.5C4.691 14.5 2 11.809 2 8.5ZM17.707 16.793L14.312 13.397C15.365 12.043 16 10.346 16 8.5C16 4.089 12.411 0.5 8 0.5C3.589 0.5 0 4.089 0 8.5C0 12.911 3.589 16.5 8 16.5C9.846 16.5 11.543 15.865 12.897 14.812L16.293 18.207C16.488 18.402 16.744 18.5 17 18.5C17.256 18.5 17.512 18.402 17.707 18.207C18.098 17.816 18.098 17.184 17.707 16.793Z" fill="currentColor"/>
+						</svg>
+					</button>
+				</form>   
+			</div>
+		</div>
+		<span class="knd-search-close"></span>
+	</div>
+	<?php
+	}
+}
+
+/**
+ * Header Off-Canvas Toggle
+ */
+function knd_offcanvas_toggle(){
+	if ( get_theme_mod( 'header_offcanvas', true ) ) {
+	?>
+	 <span class="knd-offcanvas-toggle" id="trigger_menu">
+		<span></span>
+		<span></span>
+		<span></span>
+	</span>
+	<?php
+	}
+}
+
+/**
+ * Header Button Markup
+ */
+function knd_header_button_markup() {
+	$link = get_theme_mod( 'header_button_link', get_theme_mod( 'knd_hero_image_support_url' ) );
+	$text = get_theme_mod( 'header_button_text', get_theme_mod( 'knd_hero_image_support_button_caption' ) );
+	if ( $text ) {
+		?>
+		<a href="<?php echo esc_url( $link ); ?>" class="knd-button knd-button-sm">
+			<?php echo esc_html( $text ); ?>
+		</a>
+		<?php
+	}
+}
+
+/**
+ * Header Button
+ */
+function knd_header_button(){
+	if ( get_theme_mod( 'header_button', true ) ) {
+		knd_header_button_markup();
+	}
+}
+
+/**
+ * Off-Canvas Button
+ */
+function knd_offcanvas_button(){
+	if ( get_theme_mod( 'offcanvas_button', true ) ) {
+		?>
+		<div class="knd-offcanvas-section knd-offcanvas-button">
+			<?php knd_header_button_markup(); ?>
+		</div>
+		<?php
+	}
+}
+
+/**
+ * Header Additional Button Markup
+ */
+function knd_header_additional_button_markup(){
+	$link = get_theme_mod( 'header_additional_button_link' );
+	$text = get_theme_mod( 'header_additional_button_text' );
+	if ( $text ) {
+		?>
+		<a href="<?php echo esc_url( $link ); ?>" class="knd-button knd-button-outline knd-button-sm">
+			<?php echo esc_html( $text ); ?>
+		</a>
+		<?php
+	}
+}
+
+/**
+ * Header Additional Button
+ */
+function knd_header_additional_button(){
+	if ( get_theme_mod( 'header_additional_button', true ) ) {
+		knd_header_additional_button_markup();
+	}
+}
+
+/**
+ * Off-Canvas Additional Button
+ */
+function knd_offcanvas_additional_button(){
+	if ( get_theme_mod( 'offcanvas_additional_button', true ) ) {
+		?>
+		<div class="knd-offcanvas-section knd-offcanvas-button">
+			<?php knd_header_additional_button_markup(); ?>
+		</div>
+		<?php
+	}
+}
+
+/**
+ * Header Off-Canvas Toggle
+ */
+function knd_offcanvas_mobile_toggle() {
+	?>
+	<span class="knd-offcanvas-toggle">
+		<span></span>
+		<span></span>
+		<span></span>
+	</span>
+	<?php
+}
+
+/**
+ * Header Off-Canvas Toggle
+ */
+function knd_header_mobile_logo() {
+	?>
+	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="knd-header-mobile-logo">
+	<?php
+	$logo_id  = get_theme_mod( 'header_logo_image', get_theme_mod( 'knd_custom_logo' ) );
+	$logo_url = wp_get_attachment_image_url( $logo_id, 'full', false );
+
+	if ( $logo_url ) {
+		echo wp_get_attachment_image( $logo_id, 'full', false, array( 'alt' => get_bloginfo( 'name' ) ) );
+	} elseif ( get_theme_mod( 'header_logo_title' ) ) {
+		echo wp_kses_post( get_theme_mod( 'header_logo_title' ) );
+	} else {
+		bloginfo();
+	}
+	?>
+	</a>
+	<?php
+}
+
+/**
+ * Header Mobile Button
+ */
+function knd_header_mobile_button(){
+	$link = get_theme_mod( 'header_button_link', get_theme_mod( 'knd_hero_image_support_url' ) );
+	$text = get_theme_mod( 'header_button_text', get_theme_mod( 'knd_hero_image_support_button_caption' ) );
+	if ( $text ) {
+		?>
+		<a href="<?php echo esc_url( $link ); ?>" class="knd-button knd-button-xs">
+			<?php echo esc_html( $text ); ?>
+		</a>
+		<?php
+	}
+}
+
+/**
+ * Header Nav Menu
+ */
+function knd_header_nav_menu() {
+	if ( get_theme_mod( 'header_menu', true ) ) {
+		if ( has_nav_menu( 'primary' ) ) {
+			wp_nav_menu(
+				array(
+					'theme_location'  => 'primary',
+					'container'       => 'nav',
+					'container_class' => 'knd-header-nav',
+					'depth'           => 7,
+					'menu_class'      => 'menu knd-nav-menu',
+				)
+			);
+		}
+	}
 }

@@ -148,3 +148,22 @@ function knd_cyrillic_fonts() {
 	);
 	return $fonts;
 }
+
+/**
+ * Get header type
+ */
+function knd_get_header_type() {
+	$header_type = get_theme_mod( 'header_type', '0' );
+	return apply_filters( 'knd_get_header_type', $header_type );
+}
+
+/**
+ * Custom Body class
+ */
+function knd_body_class( $classes ) {
+	if( is_customize_preview() ) {
+		$classes[] = 'is-customize-preview';
+	}
+	return $classes;
+}
+add_filter( 'body_class', 'knd_body_class' );

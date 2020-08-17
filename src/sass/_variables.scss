@@ -81,6 +81,11 @@ $color-gray-light:      #eeeeee; // light gray for backgrounds and shadows
 $color-error:           #ED1C24; // error messages
 $color-ok :             #1DB318; // ok messages
 
+:root {
+	--knd-header-height: 124px;
+	--knd-font-family-button: var(--knd-font-family-base);
+}
+
 
 
 
