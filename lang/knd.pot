@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Kandinsky\n"
-"POT-Creation-Date: 2020-07-31 01:22+0300\n"
+"POT-Creation-Date: 2020-08-17 18:40+0300\n"
 "PO-Revision-Date: 2020-06-22 06:53+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3.1\n"
+"X-Generator: Poedit 2.4.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -173,12 +173,14 @@ msgstr ""
 msgid "Static pages"
 msgstr ""
 
-#: core/admin.php:60 core/customizer/theme-mods/menu.php:12
+#: core/admin.php:60 core/customizer/theme-mods/header.php:222
+#: core/customizer/theme-mods/header.php:346
+#: core/customizer/theme-mods/menu.php:12
 msgid "Menu"
 msgstr ""
 
 #: core/admin.php:66 core/customizer/customizer-deprecated.php:508
-#: core/customizer/theme-mods/global.php:354 modules/news.php:8
+#: core/customizer/theme-mods/global.php:298 modules/news.php:8
 #: modules/starter/plot_config.php:205 modules/starter/plot_config.php:219
 #: modules/starter/plot_config.php:234 modules/starter/plot_config.php:462
 #: modules/starter/plot_config.php:475 modules/starter/plot_config.php:702
@@ -219,7 +221,7 @@ msgid "Other"
 msgstr ""
 
 #: core/admin.php:120 core/customizer/customizer-deprecated.php:34
-#: core/customizer/theme-mods/global.php:407
+#: core/customizer/theme-mods/global.php:351
 msgid "Documentation"
 msgstr ""
 
@@ -281,7 +283,7 @@ msgid "Kandinsky settings"
 msgstr ""
 
 #. Theme Name of the plugin/theme
-#: core/admin.php:321 core/admin.php:372 functions.php:181
+#: core/admin.php:321 core/admin.php:372 functions.php:184
 msgid "Kandinsky"
 msgstr ""
 
@@ -545,18 +547,18 @@ msgid "Can't rename downloaded file: from %s to %s"
 msgstr ""
 
 #: core/customizer/customizer-deprecated.php:28
-#: core/customizer/theme-mods/global.php:399
+#: core/customizer/theme-mods/global.php:343
 msgid "Theme Info"
 msgstr ""
 
 #: core/customizer/customizer-deprecated.php:31
-#: core/customizer/theme-mods/global.php:403
+#: core/customizer/theme-mods/global.php:347
 msgid "Support"
 msgstr ""
 
 #: core/customizer/customizer-deprecated.php:44
 #: core/customizer/customizer-deprecated.php:59
-#: core/customizer/theme-mods/global.php:390
+#: core/customizer/theme-mods/global.php:334
 msgid "Important Links"
 msgstr ""
 
@@ -572,6 +574,7 @@ msgstr ""
 #: core/customizer/customizer-deprecated.php:104
 #: core/customizer/customizer-deprecated.php:262
 #: core/customizer/theme-mods/global.php:54
+#: core/customizer/theme-mods/header.php:43
 msgid "Logo"
 msgstr ""
 
@@ -580,7 +583,7 @@ msgid "Action Color"
 msgstr ""
 
 #: core/customizer/customizer-deprecated.php:171
-#: core/customizer/theme-mods/global.php:226
+#: core/customizer/theme-mods/global.php:170
 msgid "Complimentary Color"
 msgstr ""
 
@@ -594,40 +597,40 @@ msgstr ""
 
 #: core/customizer/customizer-deprecated.php:192
 #: core/customizer/customizer-deprecated.php:214
-#: core/customizer/theme-mods/global.php:196
-#: core/customizer/theme-mods/global.php:242
+#: core/customizer/theme-mods/global.php:140
+#: core/customizer/theme-mods/global.php:186
 msgid "Recommended - white"
 msgstr ""
 
 #: core/customizer/customizer-deprecated.php:202
-#: core/customizer/theme-mods/global.php:179
+#: core/customizer/theme-mods/global.php:123
 msgid "Main Text Color"
 msgstr ""
 
 #: core/customizer/customizer-deprecated.php:203
-#: core/customizer/theme-mods/global.php:180
+#: core/customizer/theme-mods/global.php:124
 msgid "Recommended - black"
 msgstr ""
 
 #: core/customizer/customizer-deprecated.php:213
-#: core/customizer/theme-mods/global.php:241
+#: core/customizer/theme-mods/global.php:185
 msgid "Inverse Text Color"
 msgstr ""
 
 #: core/customizer/customizer-deprecated.php:224
-#: core/customizer/theme-mods/global.php:257
+#: core/customizer/theme-mods/global.php:201
 msgid "Accent Text Color - 1"
 msgstr ""
 
 #: core/customizer/customizer-deprecated.php:225
 #: core/customizer/customizer-deprecated.php:236
-#: core/customizer/theme-mods/global.php:258
-#: core/customizer/theme-mods/global.php:274
+#: core/customizer/theme-mods/global.php:202
+#: core/customizer/theme-mods/global.php:218
 msgid "Applicable only for Dubrovino template"
 msgstr ""
 
 #: core/customizer/customizer-deprecated.php:235
-#: core/customizer/theme-mods/global.php:273
+#: core/customizer/theme-mods/global.php:217
 msgid "Accent Text Color - 2"
 msgstr ""
 
@@ -657,6 +660,7 @@ msgid "Do not show"
 msgstr ""
 
 #: core/customizer/customizer-deprecated.php:263
+#: core/customizer/theme-mods/global.php:56
 msgid ""
 "We recommend to use logos in the .svg format (vector graphics). If your logo "
 "is in rastre format, we recommend to upload pictures with the dimensions of "
@@ -749,50 +753,51 @@ msgstr ""
 
 #: core/customizer/customizer-deprecated.php:477
 #: core/customizer/theme-mods/footer.php:49
+#: core/customizer/theme-mods/header.php:412
 msgid "Social networks links"
 msgstr ""
 
 #: core/customizer/customizer-deprecated.php:501
-#: core/customizer/theme-mods/global.php:343
+#: core/customizer/theme-mods/global.php:287
 msgid "Titles and captions"
 msgstr ""
 
 #: core/customizer/customizer-deprecated.php:515
-#: core/customizer/theme-mods/global.php:352
+#: core/customizer/theme-mods/global.php:296
 msgid "News archive title"
 msgstr ""
 
 #: core/customizer/customizer-deprecated.php:524
-#: core/customizer/theme-mods/global.php:362 core/template-tags.php:244
+#: core/customizer/theme-mods/global.php:306 core/template-tags.php:244
 #: core/template-tags.php:351
 msgid "Our projects"
 msgstr ""
 
 #: core/customizer/customizer-deprecated.php:531
-#: core/customizer/theme-mods/global.php:360
+#: core/customizer/theme-mods/global.php:304
 msgid "Projects archive title"
 msgstr ""
 
 #: core/customizer/customizer-deprecated.php:543
-#: core/customizer/theme-mods/global.php:373 core/template-tags.php:256
+#: core/customizer/theme-mods/global.php:317 core/template-tags.php:256
 #: modules/starter/plot_config.php:730 single-leyka_campaign.php:28
 #: single-leyka_campaign.php:43
 msgid "They need help"
 msgstr ""
 
 #: core/customizer/customizer-deprecated.php:550
-#: core/customizer/theme-mods/global.php:371
+#: core/customizer/theme-mods/global.php:315
 msgid "Active campaigns archive title"
 msgstr ""
 
 #: core/customizer/customizer-deprecated.php:559
-#: core/customizer/theme-mods/global.php:381 core/template-tags.php:251
+#: core/customizer/theme-mods/global.php:325 core/template-tags.php:251
 #: single-leyka_campaign.php:24 single-leyka_campaign.php:44
 msgid "They alredy got help"
 msgstr ""
 
 #: core/customizer/customizer-deprecated.php:566
-#: core/customizer/theme-mods/global.php:379
+#: core/customizer/theme-mods/global.php:323
 msgid "Completed campaigns archive title"
 msgstr ""
 
@@ -803,7 +808,7 @@ msgid ""
 msgstr ""
 
 #: core/customizer/customizer-deprecated.php:594
-msgid "Plugin that allows web-font customisation."
+msgid "Plugin that allows web-font customization."
 msgstr ""
 
 #: core/customizer/customizer-deprecated.php:599
@@ -847,7 +852,6 @@ msgid "Go to the menu \"In the footer\""
 msgstr ""
 
 #: core/customizer/theme-mods/footer.php:30
-#: core/customizer/theme-mods/header.php:22
 msgid "Go to Menu"
 msgstr ""
 
@@ -864,68 +868,56 @@ msgid "Site Properties"
 msgstr ""
 
 #: core/customizer/theme-mods/global.php:67
-msgid "Font For Logo"
-msgstr ""
-
-#: core/customizer/theme-mods/global.php:74
-msgid "Use Default Font"
-msgstr ""
-
-#: core/customizer/theme-mods/global.php:106
-msgid "Logo Color"
-msgstr ""
-
-#: core/customizer/theme-mods/global.php:123
 msgid "Fonts and colors"
 msgstr ""
 
-#: core/customizer/theme-mods/global.php:132
+#: core/customizer/theme-mods/global.php:76
 msgid "Main text"
 msgstr ""
 
-#: core/customizer/theme-mods/global.php:150
+#: core/customizer/theme-mods/global.php:94
 msgid "Headings"
 msgstr ""
 
-#: core/customizer/theme-mods/global.php:195
+#: core/customizer/theme-mods/global.php:139
 msgid "Page Background color"
 msgstr ""
 
-#: core/customizer/theme-mods/global.php:211
+#: core/customizer/theme-mods/global.php:155
 msgid "Buttons and links color"
 msgstr ""
 
-#: core/customizer/theme-mods/global.php:290
+#: core/customizer/theme-mods/global.php:234
 msgid "Analytics"
 msgstr ""
 
-#: core/customizer/theme-mods/global.php:299
+#: core/customizer/theme-mods/global.php:243
 msgid ""
-"Здесь вы можете вставить код для систем аналитики пользователей, Google "
-"Analytics или Яндекс.Метрика. Ниже приведены 3 области сайта, куда вы, в "
-"зависимости, от требований устанавливаемых систем, можете вставить код. "
-"Просто скопируйте его сюда."
+"Here you can insert the code for user analytics systems, Google Analytics or "
+"Yandex.Metrica. Below are 3 areas of the site where you can paste the code, "
+"depending on the requirements of the systems being installed. Just copy it "
+"here."
 msgstr ""
 
-#: core/customizer/theme-mods/global.php:306
+#: core/customizer/theme-mods/global.php:250
 msgid "Before </head>"
 msgstr ""
 
-#: core/customizer/theme-mods/global.php:309
-#: core/customizer/theme-mods/global.php:321
-#: core/customizer/theme-mods/global.php:333
+#: core/customizer/theme-mods/global.php:253
+#: core/customizer/theme-mods/global.php:265
+#: core/customizer/theme-mods/global.php:277
 msgid "Code can be copied here."
 msgstr ""
 
-#: core/customizer/theme-mods/global.php:318
+#: core/customizer/theme-mods/global.php:262
 msgid "At the beginning of <body>"
 msgstr ""
 
-#: core/customizer/theme-mods/global.php:330
+#: core/customizer/theme-mods/global.php:274
 msgid "Before </body>"
 msgstr ""
 
-#: core/customizer/theme-mods/global.php:430
+#: core/customizer/theme-mods/global.php:374
 msgid "Additional CSS"
 msgstr ""
 
@@ -934,7 +926,90 @@ msgid "Header"
 msgstr ""
 
 #: core/customizer/theme-mods/header.php:20
+msgid "Select header template"
+msgstr ""
+
+#: core/customizer/theme-mods/header.php:54
+msgid "Name"
+msgstr ""
+
+#: core/customizer/theme-mods/header.php:63 core/shortcodes-ui.php:51
+msgid "Description"
+msgstr ""
+
+#: core/customizer/theme-mods/header.php:72
+msgid "Custom Text"
+msgstr ""
+
+#: core/customizer/theme-mods/header.php:88
+msgid "Font For Logo"
+msgstr ""
+
+#: core/customizer/theme-mods/header.php:94
+msgid "Use Default Font"
+msgstr ""
+
+#: core/customizer/theme-mods/header.php:124
+msgid "Logo Color"
+msgstr ""
+
+#: core/customizer/theme-mods/header.php:146
+msgid "Email"
+msgstr ""
+
+#: core/customizer/theme-mods/header.php:161
+msgid "Phone"
+msgstr ""
+
+#: core/customizer/theme-mods/header.php:176
+msgid "Address"
+msgstr ""
+
+#: core/customizer/theme-mods/header.php:192
+#: core/customizer/theme-mods/header.php:361 search.php:21
+msgid "Search"
+msgstr ""
+
+#: core/customizer/theme-mods/header.php:207
+#: core/customizer/theme-mods/header.php:396
+msgid "Social networks"
+msgstr ""
+
+#: core/customizer/theme-mods/header.php:223
 msgid "Go to the menu \"In the header\""
+msgstr ""
+
+#: core/customizer/theme-mods/header.php:238
+#: core/customizer/theme-mods/header.php:376
+msgid "Button"
+msgstr ""
+
+#: core/customizer/theme-mods/header.php:246
+msgid "Button Text"
+msgstr ""
+
+#: core/customizer/theme-mods/header.php:262
+msgid "Button Link"
+msgstr ""
+
+#: core/customizer/theme-mods/header.php:277
+msgid "Additional Button"
+msgstr ""
+
+#: core/customizer/theme-mods/header.php:292
+msgid "Additional Button Text"
+msgstr ""
+
+#: core/customizer/theme-mods/header.php:312
+msgid "Additional Button Link"
+msgstr ""
+
+#: core/customizer/theme-mods/header.php:332
+msgid "Off-Canvas"
+msgstr ""
+
+#: core/customizer/theme-mods/header.php:338
+msgid "Display Off-Canvas"
 msgstr ""
 
 #: core/customizer/theme-mods/homepage.php:12
@@ -1081,10 +1156,6 @@ msgstr ""
 msgid "Image section"
 msgstr ""
 
-#: core/shortcodes-ui.php:51
-msgid "Description"
-msgstr ""
-
 #: core/shortcodes-ui.php:55 modules/person/widgets.php:55
 msgid "Title"
 msgstr ""
@@ -1221,6 +1292,10 @@ msgstr ""
 msgid "Help now"
 msgstr ""
 
+#: core/template-tags.php:736
+msgid "Search ..."
+msgstr ""
+
 #: core/widgets.php:15
 msgid "Homepage custom content area"
 msgstr ""
@@ -1270,12 +1345,12 @@ msgid "Primary menu"
 msgstr ""
 
 #. Author of the plugin/theme
-#: functions.php:182
+#: functions.php:185
 msgid "Teplitsa"
 msgstr ""
 
 #. Description of the plugin/theme
-#: functions.php:183
+#: functions.php:186
 msgid "The beautiful design and useful features for nonprofit website"
 msgstr ""
 
@@ -1434,7 +1509,8 @@ msgid "Plot dir not found: %s"
 msgstr ""
 
 #: modules/starter/plot_config.php:201 modules/starter/plot_config.php:457
-#: modules/starter/plot_config.php:698 template-parts/header.php:57
+#: modules/starter/plot_config.php:698 template-parts/headers/header-0.php:57
+#: template-parts/offcanvas.php:28
 msgid "Main menu"
 msgstr ""
 
@@ -1475,10 +1551,6 @@ msgstr ""
 
 #: modules/starter/sidebars.php:48
 msgid "Security policy"
-msgstr ""
-
-#: search.php:21
-msgid "Search"
 msgstr ""
 
 #: search.php:28
