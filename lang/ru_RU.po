@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-17 18:41+0300\n"
-"PO-Revision-Date: 2020-08-17 18:48+0300\n"
+"POT-Creation-Date: 2020-09-02 23:06+0300\n"
+"PO-Revision-Date: 2020-09-02 23:07+0300\n"
 "Last-Translator: ahaenor <ahaenor@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -189,7 +189,7 @@ msgid "Menu"
 msgstr "Меню"
 
 #: core/admin.php:66 core/customizer/customizer-deprecated.php:508
-#: core/customizer/theme-mods/global.php:298 modules/news.php:8
+#: core/customizer/theme-mods/global.php:307 modules/news.php:8
 #: modules/starter/plot_config.php:205 modules/starter/plot_config.php:219
 #: modules/starter/plot_config.php:234 modules/starter/plot_config.php:462
 #: modules/starter/plot_config.php:475 modules/starter/plot_config.php:702
@@ -231,7 +231,7 @@ msgid "Other"
 msgstr "Другое"
 
 #: core/admin.php:120 core/customizer/customizer-deprecated.php:34
-#: core/customizer/theme-mods/global.php:351
+#: core/customizer/theme-mods/global.php:360
 msgid "Documentation"
 msgstr "Документация"
 
@@ -486,12 +486,8 @@ msgid "Plugin activated successfully."
 msgstr "Плагин активирован."
 
 #: core/admin.php:554 vendor/class-tgm-plugin-activation.php:377
-#: vendor/class-tgm-plugin-activation.php:2941
 msgid "The following plugin was activated successfully:"
-msgid_plural "The following plugins were activated successfully:"
-msgstr[0] "Плагин успешно активирован:"
-msgstr[1] "Плагины успешно активированы:"
-msgstr[2] "Плагин успешно активирован:"
+msgstr "Плагин успешно активирован:"
 
 #: core/admin.php:556 vendor/class-tgm-plugin-activation.php:379
 #, php-format
@@ -583,18 +579,18 @@ msgid "Can't rename downloaded file: from %s to %s"
 msgstr "Невозможно переименовать загружаемый файл: из %s в %s"
 
 #: core/customizer/customizer-deprecated.php:28
-#: core/customizer/theme-mods/global.php:343
+#: core/customizer/theme-mods/global.php:352
 msgid "Theme Info"
 msgstr "О теме"
 
 #: core/customizer/customizer-deprecated.php:31
-#: core/customizer/theme-mods/global.php:347
+#: core/customizer/theme-mods/global.php:356
 msgid "Support"
 msgstr "Служба поддержки"
 
 #: core/customizer/customizer-deprecated.php:44
 #: core/customizer/customizer-deprecated.php:59
-#: core/customizer/theme-mods/global.php:334
+#: core/customizer/theme-mods/global.php:343
 msgid "Important Links"
 msgstr "Важные ссылки"
 
@@ -621,7 +617,7 @@ msgid "Action Color"
 msgstr "Основной цвет схемы"
 
 #: core/customizer/customizer-deprecated.php:171
-#: core/customizer/theme-mods/global.php:170
+#: core/customizer/theme-mods/global.php:179
 msgid "Complimentary Color"
 msgstr "Дополнительный цвет"
 
@@ -635,40 +631,40 @@ msgstr "Основной цвет фона страниц"
 
 #: core/customizer/customizer-deprecated.php:192
 #: core/customizer/customizer-deprecated.php:214
-#: core/customizer/theme-mods/global.php:140
-#: core/customizer/theme-mods/global.php:186
+#: core/customizer/theme-mods/global.php:149
+#: core/customizer/theme-mods/global.php:195
 msgid "Recommended - white"
 msgstr "Рекомендуется - белый"
 
 #: core/customizer/customizer-deprecated.php:202
-#: core/customizer/theme-mods/global.php:123
+#: core/customizer/theme-mods/global.php:132
 msgid "Main Text Color"
 msgstr "Цвет основного текста"
 
 #: core/customizer/customizer-deprecated.php:203
-#: core/customizer/theme-mods/global.php:124
+#: core/customizer/theme-mods/global.php:133
 msgid "Recommended - black"
 msgstr "Рекомендуется - черный"
 
 #: core/customizer/customizer-deprecated.php:213
-#: core/customizer/theme-mods/global.php:185
+#: core/customizer/theme-mods/global.php:194
 msgid "Inverse Text Color"
 msgstr "Цвет текста - инверсия"
 
 #: core/customizer/customizer-deprecated.php:224
-#: core/customizer/theme-mods/global.php:201
+#: core/customizer/theme-mods/global.php:210
 msgid "Accent Text Color - 1"
 msgstr "Акцентный цвет текста - 1"
 
 #: core/customizer/customizer-deprecated.php:225
 #: core/customizer/customizer-deprecated.php:236
-#: core/customizer/theme-mods/global.php:202
-#: core/customizer/theme-mods/global.php:218
+#: core/customizer/theme-mods/global.php:211
+#: core/customizer/theme-mods/global.php:227
 msgid "Applicable only for Dubrovino template"
 msgstr "Применяется только в шаблоне «Дубровино»"
 
 #: core/customizer/customizer-deprecated.php:235
-#: core/customizer/theme-mods/global.php:217
+#: core/customizer/theme-mods/global.php:226
 msgid "Accent Text Color - 2"
 msgstr "Акцентный цвет текста - 2"
 
@@ -726,7 +722,7 @@ msgid "Hero Image"
 msgstr "Главное изображение"
 
 #: core/customizer/customizer-deprecated.php:292
-#: core/customizer/theme-mods/homepage.php:182
+#: core/customizer/theme-mods/homepage.php:229
 msgid "Static page settings"
 msgstr "Статичная страница"
 
@@ -738,58 +734,58 @@ msgstr "Рекомендованный размер: 1600 x 663 пикс"
 #: core/customizer/customizer-deprecated.php:333
 #: core/customizer/customizer-deprecated.php:442
 #: core/customizer/theme-mods/homepage.php:42
-#: core/customizer/theme-mods/homepage.php:138
+#: core/customizer/theme-mods/homepage.php:185
 msgid "Call to action title"
 msgstr "Заголовок «призыва к действию» (CTA)"
 
 #: core/customizer/customizer-deprecated.php:342
 #: core/customizer/customizer-deprecated.php:451
 #: core/customizer/theme-mods/homepage.php:50
-#: core/customizer/theme-mods/homepage.php:146
+#: core/customizer/theme-mods/homepage.php:193
 msgid "Call to action URL"
 msgstr "Ссылка на действие"
 
 #: core/customizer/customizer-deprecated.php:351
 #: core/customizer/customizer-deprecated.php:460
 #: core/customizer/theme-mods/homepage.php:58
-#: core/customizer/theme-mods/homepage.php:154
+#: core/customizer/theme-mods/homepage.php:201
 msgid "Call to action text"
 msgstr "Текст «призыва к действию» (CTA)"
 
 #: core/customizer/customizer-deprecated.php:360
 #: core/customizer/customizer-deprecated.php:469
 #: core/customizer/theme-mods/homepage.php:66
-#: core/customizer/theme-mods/homepage.php:162
+#: core/customizer/theme-mods/homepage.php:209
 msgid "Action button caption"
 msgstr "Текст на кнопке действия"
 
 #: core/customizer/customizer-deprecated.php:368
-#: core/customizer/theme-mods/homepage.php:76
+#: core/customizer/theme-mods/homepage.php:123
 msgid "Our organization columns settings"
 msgstr "Колонки с информацией об организации"
 
 #: core/customizer/customizer-deprecated.php:392
-#: core/customizer/theme-mods/homepage.php:94
+#: core/customizer/theme-mods/homepage.php:141
 msgid "Column title"
 msgstr "Заголовок колонки"
 
 #: core/customizer/customizer-deprecated.php:401
-#: core/customizer/theme-mods/homepage.php:102
+#: core/customizer/theme-mods/homepage.php:149
 msgid "Column content"
 msgstr "Текст колонки"
 
 #: core/customizer/customizer-deprecated.php:410
-#: core/customizer/theme-mods/homepage.php:110
+#: core/customizer/theme-mods/homepage.php:157
 msgid "Column link caption"
 msgstr "Текст ссылки"
 
 #: core/customizer/customizer-deprecated.php:419
-#: core/customizer/theme-mods/homepage.php:118
+#: core/customizer/theme-mods/homepage.php:165
 msgid "Column link URL"
 msgstr "URL ссылки"
 
 #: core/customizer/customizer-deprecated.php:428
-#: core/customizer/theme-mods/homepage.php:130
+#: core/customizer/theme-mods/homepage.php:177
 msgid "CTA block settings"
 msgstr "Блок призыва к действию"
 
@@ -800,46 +796,46 @@ msgid "Social networks links"
 msgstr "Ссылки на социальные сети"
 
 #: core/customizer/customizer-deprecated.php:501
-#: core/customizer/theme-mods/global.php:287
+#: core/customizer/theme-mods/global.php:296
 msgid "Titles and captions"
 msgstr "Заголовки и надписи"
 
 #: core/customizer/customizer-deprecated.php:515
-#: core/customizer/theme-mods/global.php:296
+#: core/customizer/theme-mods/global.php:305
 msgid "News archive title"
 msgstr "Заголовок страницы новостей"
 
 #: core/customizer/customizer-deprecated.php:524
-#: core/customizer/theme-mods/global.php:306 core/template-tags.php:244
+#: core/customizer/theme-mods/global.php:315 core/template-tags.php:244
 #: core/template-tags.php:351
 msgid "Our projects"
 msgstr "Наши проекты"
 
 #: core/customizer/customizer-deprecated.php:531
-#: core/customizer/theme-mods/global.php:304
+#: core/customizer/theme-mods/global.php:313
 msgid "Projects archive title"
 msgstr "Заголовок страницы проектов"
 
 #: core/customizer/customizer-deprecated.php:543
-#: core/customizer/theme-mods/global.php:317 core/template-tags.php:256
+#: core/customizer/theme-mods/global.php:326 core/template-tags.php:256
 #: modules/starter/plot_config.php:730 single-leyka_campaign.php:28
 #: single-leyka_campaign.php:43
 msgid "They need help"
 msgstr "Им нужна помощь"
 
 #: core/customizer/customizer-deprecated.php:550
-#: core/customizer/theme-mods/global.php:315
+#: core/customizer/theme-mods/global.php:324
 msgid "Active campaigns archive title"
 msgstr "Заголовок страницы активных кампаний"
 
 #: core/customizer/customizer-deprecated.php:559
-#: core/customizer/theme-mods/global.php:325 core/template-tags.php:251
+#: core/customizer/theme-mods/global.php:334 core/template-tags.php:251
 #: single-leyka_campaign.php:24 single-leyka_campaign.php:44
 msgid "They alredy got help"
 msgstr "Уже получили помощь"
 
 #: core/customizer/customizer-deprecated.php:566
-#: core/customizer/theme-mods/global.php:323
+#: core/customizer/theme-mods/global.php:332
 msgid "Completed campaigns archive title"
 msgstr "Заголовок страницы завершенных кампаний"
 
@@ -921,23 +917,23 @@ msgstr "Шрифты и цвета"
 msgid "Main text"
 msgstr "Основной текст"
 
-#: core/customizer/theme-mods/global.php:94
+#: core/customizer/theme-mods/global.php:103
 msgid "Headings"
 msgstr "Заголовки"
 
-#: core/customizer/theme-mods/global.php:139
+#: core/customizer/theme-mods/global.php:148
 msgid "Page Background color"
 msgstr "Фон страницы"
 
-#: core/customizer/theme-mods/global.php:155
+#: core/customizer/theme-mods/global.php:164
 msgid "Buttons and links color"
 msgstr "Цвет кнопок и ссылок"
 
-#: core/customizer/theme-mods/global.php:234
+#: core/customizer/theme-mods/global.php:243
 msgid "Analytics"
 msgstr "Аналитика"
 
-#: core/customizer/theme-mods/global.php:243
+#: core/customizer/theme-mods/global.php:252
 msgid ""
 "Here you can insert the code for user analytics systems, Google Analytics or "
 "Yandex.Metrica. Below are 3 areas of the site where you can paste the code, "
@@ -949,25 +945,25 @@ msgstr ""
 "зависимости, от требований устанавливаемых систем, можете вставить код. "
 "Просто скопируйте его сюда."
 
-#: core/customizer/theme-mods/global.php:250
+#: core/customizer/theme-mods/global.php:259
 msgid "Before </head>"
 msgstr "Перед </head>"
 
-#: core/customizer/theme-mods/global.php:253
-#: core/customizer/theme-mods/global.php:265
-#: core/customizer/theme-mods/global.php:277
+#: core/customizer/theme-mods/global.php:262
+#: core/customizer/theme-mods/global.php:274
+#: core/customizer/theme-mods/global.php:286
 msgid "Code can be copied here."
 msgstr "Код можно скопировать сюда."
 
-#: core/customizer/theme-mods/global.php:262
+#: core/customizer/theme-mods/global.php:271
 msgid "At the beginning of <body>"
 msgstr "В начале <body>"
 
-#: core/customizer/theme-mods/global.php:274
+#: core/customizer/theme-mods/global.php:283
 msgid "Before </body>"
 msgstr "Перед </body>"
 
-#: core/customizer/theme-mods/global.php:374
+#: core/customizer/theme-mods/global.php:383
 msgid "Additional CSS"
 msgstr "Дополнительные стили"
 
@@ -1057,21 +1053,33 @@ msgstr "Ссылка дополнительной кнопке"
 
 #: core/customizer/theme-mods/header.php:332
 msgid "Off-Canvas"
-msgstr "Off-Canvas"
+msgstr "Боковая панель"
 
 #: core/customizer/theme-mods/header.php:338
 msgid "Display Off-Canvas"
-msgstr "Отображать Off-Canvas"
+msgstr "Отображать Боковую панель"
 
 #: core/customizer/theme-mods/homepage.php:12
 msgid "Main page"
 msgstr "Главная страница"
 
-#: core/customizer/theme-mods/homepage.php:87
+#: core/customizer/theme-mods/homepage.php:81
+msgid "Overlay Gradient Start Color"
+msgstr "Начальный цвет наложения градиента"
+
+#: core/customizer/theme-mods/homepage.php:92
+msgid "Overlay Gradient End Color"
+msgstr "Конечный цвет наложения градиента"
+
+#: core/customizer/theme-mods/homepage.php:103
+msgid "Text Color"
+msgstr "Цвет текста"
+
+#: core/customizer/theme-mods/homepage.php:134
 msgid "Column "
 msgstr "Колонка "
 
-#: core/customizer/theme-mods/homepage.php:172 core/widgets.php:13
+#: core/customizer/theme-mods/homepage.php:219 core/widgets.php:13
 msgid "Homepage - Content"
 msgstr "Главная - Контент"
 
@@ -1344,10 +1352,8 @@ msgid "Help now"
 msgstr "Помочь сейчас"
 
 #: core/template-tags.php:736
-#, fuzzy
-#| msgid "Search"
 msgid "Search ..."
-msgstr "Поиск"
+msgstr "Поиск ..."
 
 #: core/widgets.php:15
 msgid "Homepage custom content area"
@@ -1470,14 +1476,18 @@ msgstr "Краткий список жертвователей"
 msgid "Latest news list"
 msgstr "Список последних новостей"
 
-#: modules/org/widgets.php:8
-msgid "Partner organization banners list"
-msgstr "Список баннеров партнерских организаций"
-
-#: modules/org/widgets.php:47 modules/ourorg.php:70
+#: modules/news.php:67 modules/org/widgets.php:47 modules/ourorg.php:70
 #: modules/project/widgets.php:47
 msgid "Title:"
 msgstr "Заголовок:"
+
+#: modules/news.php:75
+msgid "Qty:"
+msgstr "Кол.-во:"
+
+#: modules/org/widgets.php:8
+msgid "Partner organization banners list"
+msgstr "Список баннеров партнерских организаций"
 
 #: modules/org/widgets.php:52 modules/project/widgets.php:52
 msgid "Number:"
@@ -1865,6 +1875,16 @@ msgstr ""
 #: vendor/class-tgm-plugin-activation.php:2923
 msgid "No plugins are available to be activated at this time."
 msgstr ""
+
+#: vendor/class-tgm-plugin-activation.php:2941
+#, fuzzy
+#| msgid "The following plugin was activated successfully:"
+#| msgid_plural "The following plugins were activated successfully:"
+msgid "The plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] "Плагин успешно активирован:"
+msgstr[1] "Плагины успешно активированы:"
+msgstr[2] "Плагин успешно активирован:"
 
 #: vendor/class-tgm-plugin-activation.php:3147
 msgid "Plugin activation failed."
