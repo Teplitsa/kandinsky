@@ -959,6 +959,42 @@ jQuery( document ).ready(function( $ ) {
 	/** Has js **/
 	$( 'html' ).removeClass( 'no-js' ).addClass( 'js' );
 
+	/**
+	 * Add class body on load
+	 */
+	$(window).on('load', function(){
+		$('body').addClass('dom-loaded');
+	});
+	
+	/**
+	 * Search toggle 
+	 */
+	$('.knd-search-toggle').on('click', function(e){
+		e.preventDefault();
+		$('.knd-search').fadeIn();
+	});
+	
+	$('.knd-search-close').on('click', function(e){
+		e.preventDefault();
+		$('.knd-search').fadeOut();
+	});
+
+	/**
+	 * Keeping sub menu inside screen
+	 */
+	$(window).on('load resize', function(){
+		var subMenus = $('.knd-header-nav .menu-item-has-children > .sub-menu');
+		subMenus.each(function( index ) {
+			var subMenuLeft = $(this).offset().left;
+			if ( subMenuLeft + $(this).outerWidth() > $(window).width()) {
+				$(this).addClass('sub-menu-left');
+			}
+		});
+	});
+
+	/** Has js **/
+	$( 'html' ).removeClass( 'no-js' ).addClass( 'js' );
+
 	/** Window width **/
 	var windowWidth = $( '#top' ).width(),
 		$adminbar = $( '#wpadminbar' ),
