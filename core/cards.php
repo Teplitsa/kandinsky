@@ -11,8 +11,8 @@ function knd_post_card( WP_Post $cpost ) {
 	$pl = get_permalink( $cpost );
 	?>
 <article <?php post_class('flex-cell flex-md-6 flex-lg-4 tpl-post card', $cpost);?>>
-	<a href="<?php echo $pl; ?>" class="thumbnail-link">
-		<div class="entry-preview"><?php echo knd_post_thumbnail($cpost->ID, 'post-thumbnail');?></div>
+	<a href="<?php echo esc_url( $pl ); ?>" class="thumbnail-link">
+		<div class="entry-preview"><?php echo knd_post_thumbnail( $cpost->ID, 'post-thumbnail' );?></div>
 		<div class="entry-data">
 			<h2 class="entry-title"><?php echo get_the_title($cpost);?></h2>
 		</div>
@@ -27,16 +27,15 @@ function knd_related_post_card( WP_Post $cpost ) {
 	$pl = get_permalink( $cpost );?>
 
 <article <?php post_class('flex-cell flex-md-6 tpl-related-post card', $cpost);?>>
-	<a href="<?php echo $pl; ?>" class="entry-link">
-		<div class="entry-preview"><?php echo knd_post_thumbnail($cpost->ID, 'post-thumbnail');?></div>
+	<a href="<?php echo esc_url( $pl ); ?>" class="entry-link">
+		<div class="entry-preview"><?php echo knd_post_thumbnail( $cpost->ID, 'post-thumbnail' );?></div>
 		<div class="entry-data">
 			<h2 class="entry-title"><?php echo get_the_title($cpost);?></h2>
 		</div>
 	<?php if('project' != $cpost->post_type) { ?>
 	<div class="entry-meta"><?php echo strip_tags(knd_posted_on($cpost), '<span>');?></div>
 	<?php } ?>
-	
-</a>
+	</a>
 </article>
 <?php
 }

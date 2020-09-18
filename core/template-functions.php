@@ -117,6 +117,7 @@ function knd_cyrillic_fonts() {
 		'Prata',
 		'Press Start 2P',
 		'Prosto One',
+		'Raleway',
 		'Roboto',
 		'Roboto Condensed',
 		'Roboto Mono',
@@ -167,3 +168,77 @@ function knd_body_class( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', 'knd_body_class' );
+
+/**
+ * Detect color scheme.
+ *
+ * @param mixed $color Color.
+ * @param int   $level Detect level.
+ */
+function knd_detect_color_scheme( $color, $level = 190 ) {
+	// Set alpha channel.
+	$alpha = 1;
+
+	$rgba = array( 255, 255, 255 );
+
+	// Trim color.
+	$color = trim( $color );
+
+	// If HEX format.
+	if ( isset( $color[0] ) && '#' === $color[0] ) {
+		// Remove '#' from start.
+		$color = str_replace( '#', '', trim( $color ) );
+
+		if ( 3 === strlen( $color ) ) {
+			$color = $color[0] . $color[0] . $color[1] . $color[1] . $color[2] . $color[2];
+		}
+
+		$rgba[0] = hexdec( substr( $color, 0, 2 ) );
+		$rgba[1] = hexdec( substr( $color, 2, 2 ) );
+		$rgba[2] = hexdec( substr( $color, 4, 2 ) );
+
+	} elseif ( preg_match_all( '#\((([^()]+|(?R))*)\)#', $color, $color_reg ) ) {
+		// Convert RGB or RGBA.
+		$rgba = explode( ',', implode( ' ', $color_reg[1] ) );
+
+		if ( array_key_exists( '3', $rgba ) ) {
+			$alpha = (float) $rgba['3'];
+		}
+	}
+
+	// Apply alpha channel.
+	foreach ( $rgba as $key => $channel ) {
+		$rgba[ $key ] = str_pad( $channel + ceil( ( 255 - $channel ) * ( 1 - $alpha ) ), 2, '0', STR_PAD_LEFT );
+	}
+
+	// Set default scheme.
+	$scheme = 'default';
+
+	// Get brightness.
+	$brightness = ( ( $rgba[0] * 299 ) + ( $rgba[1] * 587 ) + ( $rgba[2] * 114 ) ) / 1000;
+
+	// If color gray.
+	if ( $brightness < $level ) {
+		$scheme = 'inverse';
+	}
+
+	return $scheme;
+}
+
+/**
+ * Create scheme css class.
+ *
+ * @param mixed $color Color.
+ * @param int   $echo display or return.
+ */
+function knd_scheme_class( $color = '', $echo = true ) {
+	$scheme = knd_detect_color_scheme( $color );
+	if ( 'inverse' === $scheme ) {
+		$scheme_class = 'knd-scheme-' . $scheme;
+		if ( true === $echo ) {
+			echo esc_attr( $scheme_class );
+		} else {
+			return $scheme_class;
+		}
+	}
+}

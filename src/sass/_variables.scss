@@ -43,7 +43,7 @@ $mobile_height : $logo_small_h + $height_gap; //full header height on mobile
 $full_height   : $logo_full_h + $height_gap; //full header height on desktop
 
 
-/** Colors **/
+// Colors
 
 //Color sheme
 //uses CSS variables from theme settings
@@ -84,6 +84,8 @@ $color-ok :             #1DB318; // ok messages
 :root {
 	--knd-header-height: 124px;
 	--knd-font-family-button: var(--knd-font-family-base);
+	--knd-button-border-radius: .5em;
+	--knd-image-border-radius: 8px;
 }
 
 

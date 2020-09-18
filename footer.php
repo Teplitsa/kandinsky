@@ -55,7 +55,7 @@ $footer_text = knd_get_theme_mod( 'footer_text' );
 
 			<div class="flex-cell flex-mf-4 flex-md-6">
 				<div class="knd-brand">
-					<a title="<?php esc_attr_e( 'Project Kandinsky', 'knd');?>" href="<?php echo esc_attr( KND_OFFICIAL_WEBSITE_URL ); ?>" target="_blank">
+					<a title="<?php esc_attr_e( 'Project Kandinsky', 'knd' ) ;?>" href="<?php echo esc_attr( KND_OFFICIAL_WEBSITE_URL ); ?>" target="_blank">
 						<div class="support"><?php esc_html_e( 'Powered by Kandinsky', 'knd' ); ?></div>
 						<div class="knd-banner"><svg class="knd-icon pic-knd"><use xlink:href="#pic-knd" /></svg></div>
 					</a>

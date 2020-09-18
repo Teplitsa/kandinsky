@@ -8,35 +8,35 @@
 }	
 
 .tpl-pictured-bg {
-    width: 100%;
-    height: 100%;
-    background-color: $color-page-bg-dark;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center top;
+	width: 100%;
+	height: 100%;
+	background-color: $color-page-bg-dark;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center top;
 }
 
 .knd-homepage-sidebar {
-    padding-top: $gut;
-    position: relative;
-    
-    @include for(medium-screens) {
-        padding-top: $gut * 1.8;
-    }
-    
-    body.home.plot-public-campaign & {
-        background: $color-main;
-        color: $color-text-contrast;
-    }
-    
+	padding-top: $gut;
+	position: relative;
+	
+	@include for(medium-screens) {
+		padding-top: $gut * 1.8;
+	}
+	
+	body.home.plot-public-campaign & {
+		background: $color-main;
+		color: $color-text-contrast;
+	}
+	
 }
 
 .knd-archive-sidebar {
-    @extend .knd-homepage-sidebar;
-    position: relative;
-    background: $color-gray-light;
-    
-    padding-top: $gut * 1.2;
+	@extend .knd-homepage-sidebar;
+	position: relative;
+	background: $color-gray-light;
+	
+	padding-top: $gut * 1.2;
 }
 
 
@@ -44,498 +44,548 @@
 // Recommendations 
 .the-content .knd-recommend,
 .knd-recommend {
-    font-family: Arial, serif !important;
-    font-style: italic;
-    font-weight: normal !important;
-    letter-spacing: normal !important;
-    font-size: 14px;
-    line-height: 1.45;
-    color: #000;
-    padding: $base*.5 $base*.75;
-    background-color: #f7f7af;
-    margin: $base 0;
-    text-align: left !important;
+	font-family: Arial, serif !important;
+	font-style: italic;
+	font-weight: normal !important;
+	letter-spacing: normal !important;
+	font-size: 14px;
+	line-height: 1.45;
+	color: #000;
+	padding: $base*.5 $base*.75;
+	background-color: #f7f7af;
+	margin: $base 0;
+	text-align: left !important;
 }
 
 
 // News widget 
 .knd-news-widget {
-    padding-top: 54px;
-    background: $color-gray-light;
-    
-    body.plot-public-campaign & {
-        background: $color-third;
-    }
-    
-    h2.section-title {
-        @include knd-head-section-text();
-        color: $color-text;
-    }
-    
-    .cards-row {
-        padding-top: $gut;
-    }
+	padding-top: 54px;
+	background: $color-gray-light;
+	
+	body.plot-public-campaign & {
+		background: $color-third;
+	}
+	
+	h2.section-title {
+		@include knd-head-section-text();
+		color: $color-text;
+		font-size: 26px;
+		font-family: var(--knd-font-family-headings);
+	}
+	
+	.cards-row {
+		padding-top: 30px;
+	}
 
-    a {
-        overflow: auto;
-    }    
-    
 }
 
 // Projects
 .knd-shortlist-widget {
 
-    @extend .knd-news-widget;
-    background: $color-third;
-    
-    body.plot-public-campaign & {
-        background: $color-third;
-    }
-    
-    h2.section-title {
-        color: $color-text-contrast;
-        @include for(medium-screens) {
-            width: 50%;
-        }
-    }
-    
-    .knd-widget-head {
-        @include for(medium-screens) {
-            display: flex;
-            flex-flow: row nowrap;
-            justify-content: space-between;
-            align-items: flex-end;
+	@extend .knd-news-widget;
+	background: $color-third;
+	
+	body.plot-public-campaign & {
+		background: $color-third;
+	}
+	
+	h2.section-title {
+		color: $color-text-contrast;
+		@include for(medium-screens) {
+			width: 50%;
+		}
+		font-size: 26px;
+		font-family: var(--knd-font-family-headings);
+	}
+	
+	.knd-widget-head {
+		@include for(medium-screens) {
+			display: flex;
+			flex-flow: row nowrap;
+			justify-content: space-between;
+			align-items: flex-end;
 
-            padding-bottom: 13px;
-            border-bottom: 1px solid $color-white;
-        }
-    }
+			padding-bottom: 13px;
+			border-bottom: 1px solid $color-white;
+		}
+	}
 
-    .section-links {
-        padding-top: 8px;
-        
-        @include for(medium-screens) {
-            text-align: right;
-            width: 50%;
-            padding-top: 0;
-        }
+	.section-links {
+		padding-top: 8px;
+		font-weight: 500;
+		@include for(medium-screens) {
+			text-align: right;
+			width: 50%;
+			padding-top: 0;
+		}
 
-        a {
-            @include knd-link-section-text();
-            color: $color-main-dark;
-            margin-right: 20px;
+		a {
+			@include knd-link-section-text();
+			color: $color-main-dark;
+			margin-right: 20px;
 
-            @include for(medium-screens) {
-                margin-left: 44px;
-                margin-right: 0px;
-            }
-            
-            &:hover, &:focus, &:active {
-                color: $color-main;
-            }
-            
-            body.plot-fundraising-org & {
-                color: $color-text-contrast;
-            }
-            
-        }
-        
-    }
+			@include for(medium-screens) {
+				margin-left: 44px;
+				margin-right: 0px;
+			}
+			
+			&:hover, &:focus, &:active {
+				color: $color-main;
+			}
+			
+			body.plot-fundraising-org & {
+				color: $color-text-contrast;
+			}
+			
+		}
+		
+	}
 }
 
 
 
 // About organization widget at homepage
 .knd-ourorg-widget {
-    display:none;
-    @include for(medium-screens) {
-        display:block;
-    }
-    
-    text-align:center;
-    padding-bottom: $gut * 1.55;
-    
-    h2 {
-        @include knd-head-tiny-text();
-        
-        body.plot-public-campaign & {
-            color: $color-text-accent1;
-        }
-        
-        body.plot-fundraising-org & {
-            color: $color-third;
-        }
-    }
-    
-    .knd-whoweare-headlike-text-wrapper {
-        padding-top: $gut / (1.33 * 2);
+	display:none;
+	@include for(medium-screens) {
+		display:block;
+	}
+	
+	text-align:center;
+	padding-bottom: $gut * 1.55;
+	
+	h2 {
+		@include knd-head-tiny-text();
+		
+		body.plot-public-campaign & {
+			color: $color-text-accent1;
+		}
+		
+		body.plot-fundraising-org & {
+			color: $color-third;
+		}
 
-        .knd-whoweare-headlike-text {
-            @include knd-head-exlarge-text();
-            hyphens: none;
-            
-        }
-    }
+		.knd-sample-problem-org & {
+			color: var(--knd-color-main);
+			font-size: 14px;
+		}
+	}
+	
+	.knd-whoweare-headlike-text-wrapper {
+		padding-top: $gut / (1.33 * 2);
+
+		.knd-whoweare-headlike-text {
+			@include knd-head-exlarge-text();
+			hyphens: none;
+			
+		}
+	}
 }
 
 
 // Who we are
 .knd-whoweare-section {
-    
-    padding-bottom: 0px;
+	
+	padding-bottom: 0px;
 
-    @include for(medium-screens) {
-        padding-bottom: $gut*2;
-    }
-    
-    .whoweare-item {
-    
-        position:relative;
-        margin-bottom: 0px;
-        padding-bottom: $gut * 1.2;
+	@include for(medium-screens) {
+		padding-bottom: $gut*2;
+	}
+	
+	.whoweare-item {
+	
+		position:relative;
+		margin-bottom: 0px;
+		padding-bottom: $gut * 1.2;
 
-        @include upto(medium-screens) {
-            margin-bottom: $gut;
-        }
-    
-        @include for(medium-screens) {
-            text-align:left;
-            min-height: none;
-        }
-        
-        h2 {
-            @include knd-head-main-text();
-            
-            body.plot-fundraising-org & {
-                color: $color-third;
-            }
-        }
-        
-        p {
-            padding-top: 15px;
-            min-height: 76px;
-            
-            @include for(medium-screens) {
-                min-height: 200px;
-            }
-            
-            @include for(large-screens) {
-                min-height: 146px;
-            }
-        }
-        
-        a {
-            @include knd-link-lonely-text();
-            display:inline-block;
-            color: $color-text;
-            border-bottom: 4px solid $color-main;
-            padding: 0px 0px 4px 0px;
-            text-decoration:none;
-            position:absolute;
-            bottom:0px;
-            left: 1px;
-            
-            &:hover {
-                text-decoration:none;
-                border-color: $color-main-dark;
-            }
-            
-            body.plot-public-campaign & {
-            
-                color: $color-text-accent1;
-                border-color: $color-text-accent1;
-                
-                &:hover {
-                    color: $color-text-accent1-dark;
-                    border-color: $color-text-accent1-dark;
-                }
-            }
-            
-            body.plot-fundraising-org & {
-            
-                color: $color-third;
-                border-color: $color-third;
-                
-                &:hover {
-                    color: $color-third-dark;
-                    border-color: $color-third-dark;
-                }
-            }
-            
-        }
-    }
-    
-    .whoweare-item:last-of-type {
-    
-        h2,
-        h3 {
-        
-            body.plot-public-campaign & {
-                color: $color-text-accent2;
-            }
-            
-            body.plot-fundraising-org & {
-                color: $color-main;
-            }
-        }
-    
-        a {
-            border-color: $color-second;
-            &:hover {
-                border-color: $color-second-dark;
-            }
-            
-            body.plot-public-campaign & {
-            
-                color: $color-text-accent2;
-                border-color: $color-text-accent2;
-                
-                &:hover {
-                    color: $color-text-accent2-dark;
-                    border-color: $color-text-accent2-dark;
-                }
-            }
-            
-            body.plot-fundraising-org & {
-            
-                color: $color-main;
-                border-color: $color-main;
-                
-                &:hover {
-                    color: $color-main-dark;
-                    border-color: $color-main-dark;
-                }
-            }
-        }
-    }
+		@include upto(medium-screens) {
+			margin-bottom: $gut;
+		}
+	
+		@include for(medium-screens) {
+			text-align:left;
+			min-height: none;
+		}
+		
+		h2 {
+			@include knd-head-main-text();
+			
+			margin-bottom: 20px;
+
+			body.plot-fundraising-org & {
+				color: $color-third;
+			}
+		}
+		
+		p {
+			min-height: 76px;
+			font-size: 18px;
+			@include for(medium-screens) {
+				min-height: 200px;
+			}
+			
+			@include for(large-screens) {
+				min-height: 120px;
+			}
+		}
+		
+		a {
+			@include knd-link-lonely-text();
+			display:inline-block;
+			color: $color-text;
+			border-bottom: 4px solid $color-main;
+			padding: 0px 0px 4px 0px;
+			text-decoration:none;
+			position:absolute;
+			bottom:0px;
+			left: 1px;
+			
+			&:hover {
+				text-decoration:none;
+				border-color: $color-main-dark;
+			}
+			
+			body.plot-public-campaign & {
+			
+				color: $color-text-accent1;
+				border-color: $color-text-accent1;
+				
+				&:hover {
+					color: $color-text-accent1-dark;
+					border-color: $color-text-accent1-dark;
+				}
+			}
+			
+			body.plot-fundraising-org & {
+			
+				color: $color-third;
+				border-color: $color-third;
+				
+				&:hover {
+					color: $color-third-dark;
+					border-color: $color-third-dark;
+				}
+			}
+			
+		}
+	}
+	
+	.whoweare-item:last-of-type {
+	
+		h2,
+		h3 {
+		
+			body.plot-public-campaign & {
+				color: $color-text-accent2;
+			}
+			
+			body.plot-fundraising-org & {
+				color: $color-main;
+			}
+		}
+	
+		a {
+			border-color: $color-second;
+			&:hover {
+				border-color: $color-second-dark;
+			}
+			
+			body.plot-public-campaign & {
+			
+				color: $color-text-accent2;
+				border-color: $color-text-accent2;
+				
+				&:hover {
+					color: $color-text-accent2-dark;
+					border-color: $color-text-accent2-dark;
+				}
+			}
+			
+			body.plot-fundraising-org & {
+			
+				color: $color-main;
+				border-color: $color-main;
+				
+				&:hover {
+					color: $color-main-dark;
+					border-color: $color-main-dark;
+				}
+			}
+		}
+	}
 }
 
 // join us bar 
 .knd-joinus-widget {
-    
-    display:block;
-    
-    @extend .knd-ourorg-widget;
-    background: $color-second;
-    padding-top: $gut * 1.22;
-    padding-bottom: $gut * 1.35;
-    color: $color-text;
-     
-    h2 {
-        letter-spacing: 0.1em;
-        
-        body.plot-public-campaign & {
-            color: $color-text-contrast;
-        }
-        
-        body.plot-fundraising-org & {
-            color: $color-text-contrast;
-        }
-    }
-    
-    .knd-whoweare-headlike-text-wrapper {
-        justify-content: center;
-        
-        .knd-whoweare-headlike-text {
-            line-height: 1.33;
-            hyphens: none;
-            
-            body.plot-public-campaign & {
-                color: $color-text-contrast;
-            }
-            
-            body.plot-fundraising-org & {
-                color: $color-text-contrast;
-            }
-            
-        }
-    }
-    
-    .knd-cta-wrapper-wide {
-        padding-top: 24px;
-        
-        a.cta {
-            @include button();
-            @include knd-button-bigcaption-text();
-            padding: 16px 50px;
+	
+	display:block;
+	
+	@extend .knd-ourorg-widget;
+	background: $color-second;
+	padding-top: $gut * 1.22;
+	padding-bottom: $gut * 1.35;
+	color: $color-text;
+	 
+	h2 {
+		letter-spacing: 0.1em;
+		
+		body.plot-public-campaign & {
+			color: $color-text-contrast;
+		}
+		
+		body.plot-fundraising-org & {
+			color: $color-text-contrast;
+		}
 
-            @include upto(small-screens){
-                max-width: 100%;
-                overflow: hidden;                
-            }
-        }
-    }
+		.knd-sample-problem-org & {
+			color: var(--knd-color-main);
+			font-size: 14px;
+		}
+	}
+	
+	.knd-whoweare-headlike-text-wrapper {
+		justify-content: center;
+		
+		.knd-whoweare-headlike-text {
+			line-height: 1.33;
+			hyphens: none;
+			font-size: 26px;
+			
+			body.plot-public-campaign & {
+				color: $color-text-contrast;
+			}
+			
+			body.plot-fundraising-org & {
+				color: $color-text-contrast;
+			}
+			
+		}
+	}
+	
+	.knd-cta-wrapper-wide {
+		padding-top: 24px;
+		
+		a.cta {
+			@include button();
+			@include knd-button-bigcaption-text();
+			padding: 16px 50px;
+
+			@include upto(small-screens){
+				max-width: 100%;
+				overflow: hidden;                
+			}
+		}
+	}
+
+	.container {
+		display: flex;
+		align-items: center;
+	}
+
+	.knd-joinus-widget .container > div:first-child {
+		flex: 0 0 35%;
+	}
+
 }
 
+@media (max-width: 991px) {
+	.knd-joinus-widget .container {
+		flex-direction: column;
+	}
+}
+
+/* Custom Style by Sample */
+.knd-sample-problem-org .knd-shortlist-widget,
+.knd-sample-problem-org .knd-news-widget {
+	background-color: #edf6fe;
+}
+.knd-sample-problem-org .knd-shortlist-widget h2.section-title {
+	color: #1e2c49;
+}
+.knd-sample-problem-org .tpl-project a {
+	color: #1e2c49;
+}
+.knd-sample-problem-org .knd-whoweare-section .whoweare-item:last-of-type a {
+	border-color: var(--knd-color-main);
+}
+.knd-sample-problem-org .knd-whoweare-section .whoweare-item:last-of-type a:hover {
+	border-color: var(--knd-color-main-dark);
+}
 
 //  Partners 
 .knd-partners-widget {
-    @extend .knd-news-widget;
-    padding-top: 56px;
-    
-    //background: $color-white;
-    background: $color-page-bg;
-    
-    body.plot-public-campaign & {
-        background: $color-white;
-        
-        h2.section-title {
-            color: $color-third;
-        }
-    }
-    
-    h2.section-title {
-        color: $color-text;
-    }
-    
-    .knd-news-widget-body {
-        padding-top: 33px;
-    }
+	@extend .knd-news-widget;
+	padding-top: 56px;
+	
+	//background: $color-white;
+	background: $color-page-bg;
 
-    .tpl-org img {
-        max-width: 180px;
-        
-        @include for(medium-screens) {
-            max-width: 100%;
-        }
-    }
-    
+	.knd-sample-problem-org & {
+		background: $color-page-bg;
+	}
+	
+	body.plot-public-campaign & {
+		background: $color-white;
+		
+		h2.section-title {
+			color: $color-third;
+		}
+	}
+	
+	h2.section-title {
+		color: $color-text;
+		font-size: 26px;
+		font-family: var(--knd-font-family-headings);
+	}
+	
+	.knd-news-widget-body {
+		padding-top: 33px;
+	}
+
+	.tpl-org img {
+		max-width: 180px;
+		
+		@include for(medium-screens) {
+			max-width: 100%;
+		}
+	}
+	
 }
-
-
 
 //  Team widget and shortcode 
 .widget-full.widget_knd_team {
-    max-width: $full_cont;
-    padding-bottom: 0;
+	max-width: $full_cont;
+	padding-bottom: 0;
 }
 
 .knd-people-title {
-    @include knd-head-exlarge-text();
-    color: $color-text;
-    margin-bottom: $inpage-margin-base;
-    text-align: center;
+	@include knd-head-exlarge-text();
+	color: $color-text;
+	margin-bottom: $inpage-margin-base;
+	text-align: center;
 }
 
 .knd-people-gallery {
-    margin-left: -24px;
-    margin-right: -24px;
+	margin-left: -24px;
+	margin-right: -24px;
 
-    .tpl-person {
-        a {
-            display: block;
-            color: $color-text;
-        }
+	.tpl-person {
+		a {
+			display: block;
+			color: $color-text;
+		}
 
-        margin-bottom: 0;
+		margin-bottom: 0;
 
-        .entry-data {
-            text-align: left;
-            padding: 24px 0 0;
-        }
-    }
+		.entry-data {
+			text-align: left;
+			padding: 24px 0 0;
+		}
+	}
 }
 
 
 // Donations 
 .knd-donations-widget {
-    @extend .knd-news-widget;
-    background: $color-page-bg; 
-    
-    .widget-full-title {
-        text-align:center;
-    }
-     
-    padding-top: $gut*.7;
-    padding-bottom: $gut*.3;
+	@extend .knd-news-widget;
+	background: $color-page-bg; 
+	
+	.widget-full-title {
+		text-align:center;
+	}
+	 
+	padding-top: $gut*.7;
+	padding-bottom: $gut*.3;
 }
 
 .leyka-loop {
-    .tpl-post {
-        border: 1px solid $color-page-bg-dark;
-        padding: $gut*.5 $gut*.54 $gut/2;
-        
-        @include for(small-screens) {
-            padding: $gut * 1.08 $gut $gut/2;
-        }
+	.tpl-post {
+		border: 1px solid $color-page-bg-dark;
+		padding: $gut*.5 $gut*.54 $gut/2;
+		
+		@include for(small-screens) {
+			padding: $gut * 1.08 $gut $gut/2;
+		}
 
-        @include for(medium-screens) {
-            padding: $gut*.5 $gut*.54 $gut/2;
-        }
+		@include for(medium-screens) {
+			padding: $gut*.5 $gut*.54 $gut/2;
+		}
 
-        @include for(large-screens) {
-            padding: $gut * 1.08 $gut $gut/2;
-        }
-        
-        .help-purpose {
-            @include knd-link-donation-purpose();
-            color: $color-main-dark;
-            padding-top: $gut / 2;
-        }
-        
-        .lk-title {
-            @include knd-head-main-text();
-            padding-top: $gut / 2.1;
-            padding-bottom: 7px;
-        }
-        
-        p {
-            @include knd-card-text();
-            padding-bottom: $gut;
-        }
-        
-        .leyka-scale-scale {
-            width: 100%;
-            height: 7px;
-            
-            .target {
-                height: inherit;
-                background: $color-gray-light;
-                
-                .collected {
-                    height: inherit;
-                    background: $color-main;
-                }
-            }
-        }
-        
-        .leyka-scale-label {
-            @include knd-link-related-text();
-            color: $color-text-light;
-            
-            .caption {
-                @include knd-link-donation-purpose();
-                padding-top: $gut / 3.8;
-            }
-            
-            .sum {
-                color: $color-main;
-            }
-            
-            .knd-campaign-needed .sum {
-                color: $color-text;
-            }
-            
-        }
-        
-        .leyka-scale-button-alone {
-            text-align:right;
-        }
-        
-        .leyka-scale-button-alone {
-            a {
-                @include button();
-                @include knd-leyka-button-caption-text();
-                margin-top:$gut / 1.4;
-                padding: 10px 30px;
+		@include for(large-screens) {
+			padding: $gut * 1.08 $gut $gut/2;
+		}
+		
+		.help-purpose {
+			@include knd-link-donation-purpose();
+			color: $color-main-dark;
+			padding-top: $gut / 2;
+		}
+		
+		.lk-title {
+			@include knd-head-main-text();
+			padding-top: $gut / 2.1;
+			padding-bottom: 7px;
+		}
+		
+		p {
+			@include knd-card-text();
+			padding-bottom: $gut;
+		}
+		
+		.leyka-scale-scale {
+			width: 100%;
+			height: 7px;
+			
+			.target {
+				height: inherit;
+				background: $color-gray-light;
+				
+				.collected {
+					height: inherit;
+					background: $color-main;
+				}
+			}
+		}
+		
+		.leyka-scale-label {
+			@include knd-link-related-text();
+			color: $color-text-light;
+			
+			.caption {
+				@include knd-link-donation-purpose();
+				padding-top: $gut / 3.8;
+			}
+			
+			.sum {
+				color: $color-main;
+			}
+			
+			.knd-campaign-needed .sum {
+				color: $color-text;
+			}
+			
+		}
+		
+		.leyka-scale-button-alone {
+			text-align:right;
+		}
+		
+		.leyka-scale-button-alone {
+			a {
+				@include button();
+				@include knd-leyka-button-caption-text();
+				margin-top:$gut / 1.4;
+				padding: 10px 30px;
 
-                @include for(small-screens) {
-                    padding: 12px 33px;
-                }
-            }
-        }
-        
-    }
-    
+				@include for(small-screens) {
+					padding: 12px 33px;
+				}
+			}
+		}
+		
+	}
+	
 }
+
 

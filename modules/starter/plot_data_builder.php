@@ -938,7 +938,7 @@ class KND_Plot_Data_Builder {
                 $this->safe_set_theme_mod($theme_option_name, $theme_option_piece_data);
             }
         }
-    
+
     }
 
     public function build_general_options() {
@@ -1047,7 +1047,19 @@ class KND_Plot_Data_Builder {
             }
             
         }
-        
+
+        if ( term_exists( 'Primary Menu', 'nav_menu' ) ) {
+            $nav_menu_locations = array();
+            $menu = get_term_by( 'name', 'Primary Menu', 'nav_menu' );
+            if ( ! empty( $menu ) && ! is_wp_error( $menu ) ) {
+                $menu_id                       = $menu->term_id;
+                $nav_menu_locations['primary'] = $menu_id;
+            }
+            if ( $nav_menu_locations ) {
+                set_theme_mod( 'nav_menu_locations', $nav_menu_locations );
+            }
+        }
+
         global $wp_rewrite;
         $wp_rewrite->flush_rules( false );
     }

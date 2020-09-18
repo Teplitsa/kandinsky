@@ -33,7 +33,7 @@ add_filter( 'knd_entry_the_content', 'knd_entry_wpautop' );
 add_filter( 'knd_entry_the_content', 'shortcode_unautop' );
 add_filter( 'knd_entry_the_content', 'prepend_attachment' );
 add_filter( 'knd_entry_the_content', 'knd_force_https' );
-//add_filter( 'knd_entry_the_content', 'wp_make_content_images_responsive' );
+//add_filter( 'knd_entry_the_content', 'wp_make_content_images_responsive' ); // deprecated 5.5
 //add_filter( 'knd_entry_the_content', 'do_shortcode', 11 );
 add_filter( 'knd_entry_the_content', 'wp_kses_post', 7 );
 
@@ -197,9 +197,11 @@ function knd_body_classes( $classes ) {
 		$qo = get_queried_object();
 		$classes[] = 'slug-' . $qo->post_name;
 	}
-	
+
 	$classes[] = 'plot-' . knd_get_theme_mod( 'knd_site_scenario' );
-	
+
+	$classes[] = 'knd-sample-' . knd_get_theme_mod( 'knd_site_scenario' );
+
 	$mod = knd_get_theme_mod( 'knd_custom_logo_mod', 'image_only' );
 	$classes[] = 'logomod-' . $mod;
 	

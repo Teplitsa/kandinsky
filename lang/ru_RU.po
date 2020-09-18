@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-02 23:06+0300\n"
-"PO-Revision-Date: 2020-09-02 23:07+0300\n"
+"POT-Creation-Date: 2020-09-17 05:34+0300\n"
+"PO-Revision-Date: 2020-09-17 05:36+0300\n"
 "Last-Translator: ahaenor <ahaenor@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -190,9 +190,9 @@ msgstr "Меню"
 
 #: core/admin.php:66 core/customizer/customizer-deprecated.php:508
 #: core/customizer/theme-mods/global.php:307 modules/news.php:8
-#: modules/starter/plot_config.php:205 modules/starter/plot_config.php:219
-#: modules/starter/plot_config.php:234 modules/starter/plot_config.php:462
-#: modules/starter/plot_config.php:475 modules/starter/plot_config.php:702
+#: modules/starter/plot_config.php:262 modules/starter/plot_config.php:276
+#: modules/starter/plot_config.php:291 modules/starter/plot_config.php:519
+#: modules/starter/plot_config.php:532 modules/starter/plot_config.php:759
 #: modules/starter/plot_data_builder.php:528 modules/starter/sidebars.php:40
 msgid "News"
 msgstr "Новости"
@@ -717,12 +717,11 @@ msgstr "Настройки и блоки главной страницы"
 #: core/customizer/customizer-deprecated.php:286
 #: core/customizer/customizer-deprecated.php:318
 #: core/customizer/theme-mods/homepage.php:22
-#: core/customizer/theme-mods/homepage.php:30
 msgid "Hero Image"
 msgstr "Главное изображение"
 
 #: core/customizer/customizer-deprecated.php:292
-#: core/customizer/theme-mods/homepage.php:229
+#: core/customizer/theme-mods/homepage.php:272
 msgid "Static page settings"
 msgstr "Статичная страница"
 
@@ -734,58 +733,58 @@ msgstr "Рекомендованный размер: 1600 x 663 пикс"
 #: core/customizer/customizer-deprecated.php:333
 #: core/customizer/customizer-deprecated.php:442
 #: core/customizer/theme-mods/homepage.php:42
-#: core/customizer/theme-mods/homepage.php:185
+#: core/customizer/theme-mods/homepage.php:198
 msgid "Call to action title"
 msgstr "Заголовок «призыва к действию» (CTA)"
 
 #: core/customizer/customizer-deprecated.php:342
 #: core/customizer/customizer-deprecated.php:451
 #: core/customizer/theme-mods/homepage.php:50
-#: core/customizer/theme-mods/homepage.php:193
+#: core/customizer/theme-mods/homepage.php:206
 msgid "Call to action URL"
 msgstr "Ссылка на действие"
 
 #: core/customizer/customizer-deprecated.php:351
 #: core/customizer/customizer-deprecated.php:460
 #: core/customizer/theme-mods/homepage.php:58
-#: core/customizer/theme-mods/homepage.php:201
+#: core/customizer/theme-mods/homepage.php:214
 msgid "Call to action text"
 msgstr "Текст «призыва к действию» (CTA)"
 
 #: core/customizer/customizer-deprecated.php:360
 #: core/customizer/customizer-deprecated.php:469
 #: core/customizer/theme-mods/homepage.php:66
-#: core/customizer/theme-mods/homepage.php:209
+#: core/customizer/theme-mods/homepage.php:222
 msgid "Action button caption"
 msgstr "Текст на кнопке действия"
 
 #: core/customizer/customizer-deprecated.php:368
-#: core/customizer/theme-mods/homepage.php:123
+#: core/customizer/theme-mods/homepage.php:136
 msgid "Our organization columns settings"
 msgstr "Колонки с информацией об организации"
 
 #: core/customizer/customizer-deprecated.php:392
-#: core/customizer/theme-mods/homepage.php:141
+#: core/customizer/theme-mods/homepage.php:154
 msgid "Column title"
 msgstr "Заголовок колонки"
 
 #: core/customizer/customizer-deprecated.php:401
-#: core/customizer/theme-mods/homepage.php:149
+#: core/customizer/theme-mods/homepage.php:162
 msgid "Column content"
 msgstr "Текст колонки"
 
 #: core/customizer/customizer-deprecated.php:410
-#: core/customizer/theme-mods/homepage.php:157
+#: core/customizer/theme-mods/homepage.php:170
 msgid "Column link caption"
 msgstr "Текст ссылки"
 
 #: core/customizer/customizer-deprecated.php:419
-#: core/customizer/theme-mods/homepage.php:165
+#: core/customizer/theme-mods/homepage.php:178
 msgid "Column link URL"
 msgstr "URL ссылки"
 
 #: core/customizer/customizer-deprecated.php:428
-#: core/customizer/theme-mods/homepage.php:177
+#: core/customizer/theme-mods/homepage.php:190
 msgid "CTA block settings"
 msgstr "Блок призыва к действию"
 
@@ -818,7 +817,7 @@ msgstr "Заголовок страницы проектов"
 
 #: core/customizer/customizer-deprecated.php:543
 #: core/customizer/theme-mods/global.php:326 core/template-tags.php:256
-#: modules/starter/plot_config.php:730 single-leyka_campaign.php:28
+#: modules/starter/plot_config.php:787 single-leyka_campaign.php:28
 #: single-leyka_campaign.php:43
 msgid "They need help"
 msgstr "Им нужна помощь"
@@ -1063,23 +1062,45 @@ msgstr "Отображать Боковую панель"
 msgid "Main page"
 msgstr "Главная страница"
 
-#: core/customizer/theme-mods/homepage.php:81
+#: core/customizer/theme-mods/homepage.php:30
+msgid "Hero Background Image"
+msgstr "Главный Фоновое Изображение"
+
+#: core/customizer/theme-mods/homepage.php:67 core/template-tags.php:399
+#: template-parts/headers/header-0.php:27
+msgid "Help now"
+msgstr "Помочь сейчас"
+
+#: core/customizer/theme-mods/homepage.php:75
+#: core/customizer/theme-mods/homepage.php:230
+msgid "Call to action Image"
+msgstr "Изображение Призыв к действию"
+
+#: core/customizer/theme-mods/homepage.php:77
+msgid "Displayed on the right side of the Call to action text"
+msgstr "Отображается на правой стороне текста Призыв к действию"
+
+#: core/customizer/theme-mods/homepage.php:94
 msgid "Overlay Gradient Start Color"
 msgstr "Начальный цвет наложения градиента"
 
-#: core/customizer/theme-mods/homepage.php:92
+#: core/customizer/theme-mods/homepage.php:105
 msgid "Overlay Gradient End Color"
 msgstr "Конечный цвет наложения градиента"
 
-#: core/customizer/theme-mods/homepage.php:103
+#: core/customizer/theme-mods/homepage.php:116
 msgid "Text Color"
 msgstr "Цвет текста"
 
-#: core/customizer/theme-mods/homepage.php:134
+#: core/customizer/theme-mods/homepage.php:147
 msgid "Column "
 msgstr "Колонка "
 
-#: core/customizer/theme-mods/homepage.php:219 core/widgets.php:13
+#: core/customizer/theme-mods/homepage.php:241
+msgid "Background Color"
+msgstr "Цвет фона"
+
+#: core/customizer/theme-mods/homepage.php:262 core/widgets.php:13
 msgid "Homepage - Content"
 msgstr "Главная - Контент"
 
@@ -1122,68 +1143,68 @@ msgstr ""
 msgid "More"
 msgstr "Еще"
 
-#: core/extras.php:305
+#: core/extras.php:307
 msgid "VKontakte"
 msgstr "ВКонтакте"
 
-#: core/extras.php:306
+#: core/extras.php:308
 msgid "E.g., https://vk.com/club0123456789"
 msgstr "Например, https://vk.com/teplitsast"
 
-#: core/extras.php:308
+#: core/extras.php:310
 msgid "Odnoklassniki"
 msgstr "Одноклассники"
 
-#: core/extras.php:309
+#: core/extras.php:311
 msgid "E.g., https://ok.ru/profile/0123456789"
 msgstr "Например, https://ok.ru/profile/0123456789"
 
-#: core/extras.php:311
+#: core/extras.php:313
 msgid "Facebook"
 msgstr "Facebook"
 
-#: core/extras.php:312
+#: core/extras.php:314
 msgid "E.g., https://www.facebook.com/your-organization-page"
 msgstr "Например, https://www.facebook.com/TeplitsaST"
 
-#: core/extras.php:314
+#: core/extras.php:316
 msgid "Instagram"
 msgstr "Instagram"
 
-#: core/extras.php:315
+#: core/extras.php:317
 msgid "E.g., https://www.instagram.com/your-organization-page"
 msgstr "Например, https://www.instagram.com/your-organization-page"
 
-#: core/extras.php:317
+#: core/extras.php:319
 msgid "Twitter"
 msgstr "Twitter"
 
-#: core/extras.php:318
+#: core/extras.php:320
 msgid "E.g., https://twitter.com/your-organization-page"
 msgstr "Например, https://twitter.com/TeplitsaST"
 
-#: core/extras.php:320
+#: core/extras.php:322
 msgid "Telegram"
 msgstr "Telegram"
 
-#: core/extras.php:321
+#: core/extras.php:323
 msgid "E.g., https://tlgrm.ru/channels/@your-organization-page"
 msgstr "Например, https://telegram.me/TeplitsaPRO"
 
-#: core/extras.php:323
+#: core/extras.php:325
 msgid "YouTube"
 msgstr "YouTube"
 
-#: core/extras.php:324
+#: core/extras.php:326
 msgid "E.g., https://youtube.com/channel/your-organization-channel"
 msgstr "Например, https://www.youtube.com/user/teplitsast"
 
-#: core/extras.php:369 modules/starter/import_remote_content.php:396
+#: core/extras.php:371 modules/starter/import_remote_content.php:401
 #, php-format
 msgid "Old import files cleanup FAILED: %s."
 msgstr ""
 
-#: core/extras.php:448
+#: core/extras.php:450
 msgid "Recommended plugins to install"
 msgstr "Рекомендуем установить плагины"
 
@@ -1347,11 +1368,7 @@ msgstr "Последние новости"
 msgid "Related project"
 msgstr ""
 
-#: core/template-tags.php:399
-msgid "Help now"
-msgstr "Помочь сейчас"
-
-#: core/template-tags.php:736
+#: core/template-tags.php:752
 msgid "Search ..."
 msgstr "Поиск ..."
 
@@ -1476,12 +1493,12 @@ msgstr "Краткий список жертвователей"
 msgid "Latest news list"
 msgstr "Список последних новостей"
 
-#: modules/news.php:67 modules/org/widgets.php:47 modules/ourorg.php:70
+#: modules/news.php:70 modules/org/widgets.php:47 modules/ourorg.php:70
 #: modules/project/widgets.php:47
 msgid "Title:"
 msgstr "Заголовок:"
 
-#: modules/news.php:75
+#: modules/news.php:78
 msgid "Qty:"
 msgstr "Кол.-во:"
 
@@ -1537,62 +1554,62 @@ msgstr "Выберите категорию"
 msgid "Projects short list"
 msgstr "Блоки проектов"
 
-#: modules/project/widgets.php:66 modules/starter/plot_config.php:224
-#: modules/starter/plot_config.php:479 modules/starter/plot_config.php:720
+#: modules/project/widgets.php:66 modules/starter/plot_config.php:281
+#: modules/starter/plot_config.php:536 modules/starter/plot_config.php:777
 msgid "Kandinsky projects block menu"
 msgstr "Ссылки в блоке проектов"
 
-#: modules/starter/import_remote_content.php:301
+#: modules/starter/import_remote_content.php:306
 #, php-format
 msgid "Plot name is unknown or not given: %s"
 msgstr "Нет названия сценария: %s"
 
-#: modules/starter/import_remote_content.php:385
+#: modules/starter/import_remote_content.php:390
 msgid "No zip file"
 msgstr "ZIP-файл не найден"
 
-#: modules/starter/import_remote_content.php:389
+#: modules/starter/import_remote_content.php:394
 #, php-format
 msgid "Zip file not found: %s"
 msgstr ".zip-файл не найден: %s"
 
-#: modules/starter/import_remote_content.php:413
+#: modules/starter/import_remote_content.php:418
 #, php-format
 msgid "Unzip FAILED: %s to %s. Error: %s"
 msgstr "Процесс разархивирования НЕ УДАЛСЯ: %s – %s. Ошибка: %s"
 
-#: modules/starter/import_remote_content.php:426
+#: modules/starter/import_remote_content.php:431
 msgid "No git content dir!"
 msgstr "Git-директория не найдена!"
 
-#: modules/starter/import_remote_content.php:430
+#: modules/starter/import_remote_content.php:435
 #, php-format
 msgid "Unzipped dir not found: %s"
 msgstr "Разархивированная директория не найдена: %s"
 
-#: modules/starter/import_remote_content.php:436
+#: modules/starter/import_remote_content.php:441
 #, php-format
 msgid "Plot dir not found: %s"
 msgstr "Директория сценария не найдена: %s"
 
-#: modules/starter/plot_config.php:201 modules/starter/plot_config.php:457
-#: modules/starter/plot_config.php:698 template-parts/headers/header-0.php:57
+#: modules/starter/plot_config.php:258 modules/starter/plot_config.php:514
+#: modules/starter/plot_config.php:755 template-parts/headers/header-0.php:57
 #: template-parts/offcanvas.php:28
 msgid "Main menu"
 msgstr "Главное меню"
 
-#: modules/starter/plot_config.php:212 modules/starter/plot_config.php:467
-#: modules/starter/plot_config.php:709 modules/starter/sidebars.php:13
+#: modules/starter/plot_config.php:269 modules/starter/plot_config.php:524
+#: modules/starter/plot_config.php:766 modules/starter/sidebars.php:13
 msgid "Kandinsky our work footer menu"
 msgstr "Меню «Наша работа» в подвале"
 
-#: modules/starter/plot_config.php:218 modules/starter/plot_config.php:473
-#: modules/starter/plot_config.php:714 modules/starter/sidebars.php:16
+#: modules/starter/plot_config.php:275 modules/starter/plot_config.php:530
+#: modules/starter/plot_config.php:771 modules/starter/sidebars.php:16
 msgid "Kandinsky news footer menu"
 msgstr "Меню «Новости» в подвале"
 
-#: modules/starter/plot_config.php:461 modules/starter/plot_config.php:474
-#: modules/starter/plot_config.php:480
+#: modules/starter/plot_config.php:518 modules/starter/plot_config.php:531
+#: modules/starter/plot_config.php:537
 msgid "Extertise"
 msgstr "Экспертиза"
 

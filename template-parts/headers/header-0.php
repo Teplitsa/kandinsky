@@ -24,7 +24,7 @@
 
 			<?php if ( get_theme_mod( 'header_button', true ) ) { ?>
 				<div class="trigger-button donate site-panel-cell hide-upto-medium">
-					<a id="trigger_donate" href="<?php echo esc_url( get_theme_mod( 'header_button_link', get_theme_mod( 'knd_hero_image_support_url' ) ) ); ?>"><?php echo esc_html( get_theme_mod( 'header_button_text', get_theme_mod('knd_hero_image_support_button_caption') ) ); ?></a>
+					<a id="trigger_donate" href="<?php echo esc_url( get_theme_mod( 'header_button_link', get_theme_mod( 'knd_hero_image_support_url' ) ) ); ?>"><?php echo esc_html( get_theme_mod( 'header_button_text', get_theme_mod( 'knd_hero_image_support_button_caption', esc_html__( 'Help now', 'knd' ) ) ) ); ?></a>
 				</div>
 			<?php } ?>
 

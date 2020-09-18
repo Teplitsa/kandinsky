@@ -9,7 +9,7 @@ if ( ! defined( 'WPINC' ) ) {
 	die();
 }
 
-define('KND_VERSION', '1.4.0');
+define('KND_VERSION', '1.4.2');
 define('KND_DOC_URL', 'https://github.com/Teplitsa/kandinsky/wiki/');
 define('KND_OFFICIAL_WEBSITE_URL', 'https://knd.te-st.ru/');
 define('KND_SOURCES_PAGE_URL', 'https://github.com/Teplitsa/kandinsky/');
@@ -82,7 +82,7 @@ function knd_setup() {
 
 	// Menus.
 	$menus = array(
-		'primary'   => esc_html__( 'Primary menu', 'knd' ),
+		'primary' => esc_html__( 'Primary menu', 'knd' ),
 	);
 
 	register_nav_menus( $menus );
@@ -184,3 +184,15 @@ if ( ( is_admin() && ! empty( $_GET['page'] ) && $_GET['page'] == 'knd-setup-wiz
 esc_html__('Kandinsky', 'knd');
 esc_html__('Teplitsa', 'knd');
 esc_html__('The beautiful design and useful features for nonprofit website', 'knd');
+
+
+
+
+function widgets_scripts( $hook ) {
+    if ( 'widgets.php' != $hook ) {
+        return;
+    }
+    wp_enqueue_style( 'wp-color-picker' );        
+    wp_enqueue_script( 'wp-color-picker' ); 
+}
+add_action( 'admin_enqueue_scripts', 'widgets_scripts' );

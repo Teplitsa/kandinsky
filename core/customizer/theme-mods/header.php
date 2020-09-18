@@ -103,6 +103,7 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'default'         => array(
 		'font-family' => 'Exo 2',
 		'variant'     => '800',
+		'font-size'   => '22px',
 	),
 	'choices'         => array(
 		'fonts' => array(

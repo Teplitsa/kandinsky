@@ -127,11 +127,13 @@
     display: inline-block;
     color: $color-white;
     background: $color-main;
-    border: 1px solid $color-main;    
+    border: 1px solid $color-main;
     transition: all 0.3;
     text-align:center;
     
     padding: 6px 16px;
+    border-radius: var(--knd-button-border-radius);
+
     @include for(small-screens) {
         padding: 12px 35px;
     }

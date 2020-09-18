@@ -2938,7 +2938,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 
 					printf( // WPCS: xss ok.
 						'<div id="message" class="updated"><p>%1$s %2$s.</p></div>',
-						esc_html( _n( 'The following plugin was activated successfully:', 'The following plugins were activated successfully:', $count, 'knd' ) ),
+						esc_html( _n( 'The plugin was activated successfully:', 'The following plugins were activated successfully:', $count, 'knd' ) ),
 						$imploded
 					);
 

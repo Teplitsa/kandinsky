@@ -3,12 +3,12 @@
 
 /** Commons **/
 .thumbnail-link { 
-    display: block;
-    overflow: auto;
+	display: block;
+	overflow: auto;
 }
 
 .sep { 
-    padding: 0 4px; 
+	padding: 0 4px; 
 }
 
 .fixed-top {
@@ -18,7 +18,7 @@
 
 .fixed-bottom {
 	position: absolute;
-	bottom: 0;				
+	bottom: 0;
 }
 
 
@@ -26,61 +26,62 @@
 
 // Post meta elemnts - wrappen in mixin
 @mixin post-meta() {
-	@include knd-nav-caps-text();
+	font-size: 11px;
+	font-family: $body;
+	font-weight: 500;
+	line-height: 1.5;
+	text-transform: uppercase;
 	color: $color-main-dark;
 
-    display: inline-block;
-	padding: 4px 8px;
-
-    span.category {
-        body.plot-public-campaign & {
-            @include knd-link-lonely-text();
-        }
-        
-        body.plot-fundraising-org & {
-            @include knd-link-lonely-text();
-            color: $color-third;
-        }
-        
-    }
+	span.category {
+		body.plot-public-campaign & {
+			@include knd-link-lonely-text();
+		}
+		
+		body.plot-fundraising-org & {
+			@include knd-link-lonely-text();
+			color: $color-third;
+		}
+		
+	}
 
 	a {
 		color: inherit;
 		&:hover { text-decoration: underline; }
 	}
 	
-    .date {
-        color: $color-text;
-      
-        body.plot-public-campaign & {
-            color: $color-text-contrast;
-        }
-        
-        body.plot-public-campaign.single & {
-            color: $color-text;
-        }
-        
-    }
-    
-    .sep {
-        display:inline-block;
-        width: 5px;
-        height: 5px;
-        border: solid 1px $color-page-bg-dark;
-        
-        body.plot-public-campaign & {
-            border-color: $color-text-contrast;
-        }
-        
-        body.plot-public-campaign.single & {
-            border-color: $color-text;
-        }
-        
-        border-radius: 5px;
-        padding:0px;
-        vertical-align:baseline;
-        margin:1px 7px 2px 7px;
-    }
+	.date {
+		color: $color-text;
+	  
+		body.plot-public-campaign & {
+			color: $color-text-contrast;
+		}
+		
+		body.plot-public-campaign.single & {
+			color: $color-text;
+		}
+		
+	}
+	
+	.sep {
+		display:inline-block;
+		width: 5px;
+		height: 5px;
+		border: solid 1px $color-page-bg-dark;
+		
+		body.plot-public-campaign & {
+			border-color: $color-text-contrast;
+		}
+		
+		body.plot-public-campaign.single & {
+			border-color: $color-text;
+		}
+		
+		border-radius: 5px;
+		padding:0px;
+		vertical-align:baseline;
+		margin:1px 7px 2px 7px;
+	}
 	
 }
 
@@ -88,17 +89,15 @@
 /* Post */
 // Post card template
 .tpl-post {
-	background: $color-white;
 	transition: all 0.3s;
 	
 	&:hover {
-		background: transparentize($color-white, .3);
 		.entry-preview:after { background: rgba(0,0,0, 0.25); }
 	}
 	
-    body.plot-public-campaign & {
-        background: $color-second-dark;
-    }
+	/*body.plot-public-campaign & {
+		background: $color-second-dark;
+	}*/
 	
 	a {
 		display: block;
@@ -113,30 +112,27 @@
 	}
 	
 	.entry-data {
-		padding: 11px $base 0px 23px;
+		padding-top: 20px;
 		position: relative;
-		margin-bottom:$gut * 2;
 	}
 	
 	.entry-preview {
 		@include shadowed-preview();
 		
+		overflow: hidden;
+		border-radius: var(--knd-image-border-radius);
 		img {
 		  margin-bottom:0px;
 		}
 	}
 	
 	.entry-meta {
-		@include post-meta();		
-		position: absolute;
-		bottom: 13px;
-		left: 16px;
-		z-index: 100;
+		@include post-meta();
 	}
 	
 	.entry-title {
 		@include knd-head-card-text();
-		margin-bottom: $base*0.75;				
+		margin-bottom: $base*0.75;
 		padding-top: 0px;
 		hyphens: auto;
 	}
@@ -150,25 +146,25 @@
 
 // Related section variants
 .related-card-holder {
-    margin-top: $gut;
-    
+	margin-top: $gut;
+	
 	.related-title {
 		@include knd-head-section-text();
 	}
 	
 	a {
-	   @include knd-link-related-text();
-	   color: $color-main-dark;
-	   margin-bottom: 16px;
+		@include knd-link-related-text();
+		color: $color-main-dark;
+		margin-bottom: 16px;
 	}	
 }
 
 
 .related-cards-loop {
-    margin-top: $gut / 2;
-    a {
-        display:block;
-    }
+	margin-top: $gut / 2;
+	a {
+		display:block;
+	}
 }
 
 .tpl-related-post {
@@ -179,16 +175,16 @@
 	}
 	
 	.entry-data {
-        padding: 21px 33px 0px 33px;
-        position: relative;
-        margin-bottom: $gut * 1.6;
+		padding: 21px 33px 0px 33px;
+		position: relative;
+		margin-bottom: $gut * 1.6;
 	}
 	
 	.entry-meta {
-        background:none;
-        bottom: 13px;
-        left: 26px;
-        z-index: 100;
+		background:none;
+		bottom: 13px;
+		left: 26px;
+		z-index: 100;
 	}
 	
 	.entry-title {
@@ -205,33 +201,35 @@
 
 /** Programms **/
 .tpl-project {
-    transition: all 0.3s;
-    
-    &:hover {
-        .entry-preview:after { background: rgba(0,0,0, 0.3); }
-    }   
-    
-    a {
-        display: block;
-        color: $color-text-contrast;
-        position:relative;
-        height: 100%;
-    }
-    
-    .entry-preview {
-        @include shadowed-preview();
-        
-        img {
-          margin-bottom:0px;
-        }
-    }
-    
-    .entry-title {
-        @include knd-head-card-text();
-        margin-bottom: $base*0.75;
-        padding: 24px 0px 0px 0px;
-        hyphens: auto;
-    }
+	transition: all 0.3s;
+	
+	&:hover {
+		.entry-preview:after { background: rgba(0,0,0, 0.3); }
+	} 
+	
+	a {
+		display: block;
+		color: $color-text-contrast;
+		position:relative;
+		height: 100%;
+	}
+	
+	.entry-preview {
+		@include shadowed-preview();
+		
+		overflow: hidden;
+		border-radius: var(--knd-image-border-radius);
+		img {
+			margin-bottom:0px;
+		}
+	}
+	
+	.entry-title {
+		@include knd-head-card-text();
+		margin-bottom: $base*0.75;
+		padding: 24px 0px 0px 0px;
+		hyphens: auto;
+	}
 }
 
 
@@ -259,7 +257,7 @@
 		@include knd-subhead-text();
 		line-height: 1.4;
 		text-transform: none;
-        color: $color-text-light;
+		color: $color-text-light;
 		
 		a[href *= "tel"] {
 			color: $color-text;
@@ -329,41 +327,41 @@
 
 /* Search card */
 .tpl-search {
-    margin-bottom: $gut;
+	margin-bottom: $gut;
 
-    a {
-        color: $color-text;
-    }
+	a {
+		color: $color-text;
+	}
 
-    .entry-title {
-        @include knd-body-title-text();             
-        padding-top: 0px;
-        hyphens: auto;
-        color: $color-text;
-        margin-bottom: 0;
-    }
+	.entry-title {
+		@include knd-body-title-text();             
+		padding-top: 0px;
+		hyphens: auto;
+		color: $color-text;
+		margin-bottom: 0;
+	}
 
-    .entry-meta {
-        font-size: .85em;
-        color: $color-third;
-        margin-top: 2px;
-        margin-bottom: 1em;
-    }
-    
-    .entry-summary {
-        @include knd-body-text();
-        color: $color-text;
-    }
+	.entry-meta {
+		font-size: .85em;
+		color: $color-third;
+		margin-top: 2px;
+		margin-bottom: 1em;
+	}
+	
+	.entry-summary {
+		@include knd-body-text();
+		color: $color-text;
+	}
 }
 
 
 /*  Archive layouts */
 .cards-holder.archive-post-list {
-    padding-top:0px;
-    
-    &.next-page {
-        padding-top: $gut;
-    }
+	padding-top:0px;
+	
+	&.next-page {
+		padding-top: $gut;
+	}
 }
 
 .listing-bg {
@@ -371,37 +369,37 @@
 }
 
 .featured-post {
-    
+	
    margin-top: 70px;
    margin-bottom: -70px;
    
    .cards-loop {
-       transform: translateY(-70px);
+	   transform: translateY(-70px);
    } 
 }
 
 // paging 
 .paging {
-    @include knd-link-paging-text();
-    padding: $base/1.5 0 $base * 3.2 0;
-    text-align: center;
-    
-    .page-numbers {
-        display: inline-block;
-        color: $color-text;
-        padding: 0px 10px;
-        transition: all 0.3;
-        
-        &:hover, &:focus, &:active {
-            color: $color-page-bg;
-            background: $color-main;
-        }
-        &.current {
-            color: $color-page-bg;
-            background: $color-main;
-        }
-    }
-    
-    &:empty { display: none; }
+	@include knd-link-paging-text();
+	padding: $base/1.5 0 $base * 3.2 0;
+	text-align: center;
+	
+	.page-numbers {
+		display: inline-block;
+		color: $color-text;
+		padding: 0px 10px;
+		transition: all 0.3;
+		
+		&:hover, &:focus, &:active {
+			color: $color-page-bg;
+			background: $color-main;
+		}
+		&.current {
+			color: $color-page-bg;
+			background: $color-main;
+		}
+	}
+	
+	&:empty { display: none; }
 }
 

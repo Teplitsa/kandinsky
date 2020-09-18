@@ -2,101 +2,151 @@
 // Hero image seaction at homepage
 
 .hero-section {
-    background-color: $color-page-bg-dark;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
+	background-color: #585858;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
 
-    position: relative;
+	position: relative;
 
-    &:after {
-        content: '';
-        display: block;
-        width: 100%;
-        height: 100%;
-        z-index: 3;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background: -moz-linear-gradient(top, rgba(0,0,0,0) 10%, rgba(0,0,0,.8) 100%); 
-        background: -webkit-linear-gradient(top, rgba(0,0,0,0) 10%,rgba(0,0,0,.8) 100%); 
-        background: linear-gradient(to bottom, rgba(0,0,0,0) 10%,rgba(0,0,0,.8) 100%); 
-    }
+	&:after {
+		content: '';
+		display: block;
+		width: 100%;
+		height: 100%;
+		z-index: 3;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: -webkit-linear-gradient(top, rgba(0,0,0,0) 10%,rgba(0,0,0,.8) 100%);
+		background: linear-gradient(to bottom, rgba(0,0,0,0) 10%,rgba(0,0,0,.8) 100%);
+	}
 
-    .container {
-        position: relative;
-        z-index: 10;
-    }
+	.container {
+		position: relative;
+		z-index: 10;
+		display: flex;
+	}
 
-    .hero-content {
-        //set height for whole block
-        padding-bottom: $gut;
-        height: calc(100vh - 77px);
-        min-height: 240px;
+	.hero-content {
 
-        //set width
-        width: 100%;
+		//set height for whole block
+		min-height: calc(100vh - 77px);
 
-        @include for(small-screens) { 
-            padding-bottom: 5vh;
+		//set width
+		width: 100%;
 
-            .hero-text {
-                margin-top: 5vh;
-            }
+		padding-top: 40px;
+		padding-bottom: 40px;
 
-            .hero-button {
-                margin-top: 5vh;
-            }
-        }
+		@include for(small-screens) { 
+			padding-bottom: 5vh;
 
-        @include for(medium-screens) {
-            width: 60%;
-            padding-bottom: 10vh;
-            height: calc(100vh - 101px);
+			.hero-text {
+				margin-top: 5vh;
+			}
 
-            .hero-text {
-                margin-top: $gut/2;
-            }
+			.hero-button {
+				margin-top: 5vh;
+			}
+		}
 
-            .hero-button {
-                margin-top: $gut;
-            }
-        }
+		@include for(medium-screens) {
+			width: 60%;
+			min-height: calc(100vh - 101px);
 
-        @include for(large-screens) {
-            width: 50%;
-            padding-bottom: 15vh;
-        }
+			.hero-text {
+				margin-top: $gut/2;
+			}
 
-        @media screen and (min-width: $three) and (min-height: 950px){ 
-            height: 580px;
-            padding-bottom: 100px;
-        }
+			.hero-button {
+				margin-top: $gut;
+			}
+		}
 
-        //push elements to bottom
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: flex-end;
-        align-items: flex-start;
-    }
+		@include for(large-screens) {
+			width: 50%;
+		}
+
+		//push elements to bottom
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: center;
+		align-items: flex-start;
+	}
+
+	.hero-content-image {
+		display: flex;
+		align-items: center;
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+	.hero-content-image > img {
+		display: block;
+		margin: 0 auto;
+		max-width: 100%;
+		width: auto;
+	}
 
 }
 
 
 .hero-title {
-    @include knd-head-large-text();
-    color: $color-white;
+	@include knd-head-large-text();
+	color: $color-white;
 }
 
 .hero-text {
-    @include knd-card-text();
-    color: $color-white;
-    margin-top: $gut/2;
+	@include knd-body-text();
+	color: $color-white;
+	margin-top: $gut/2;
 }
 
 .hero-button {
-    @include button();
-    margin-top: $gut;
+	@include button();
+	margin-top: $gut;
 }
 
+@media (min-width: 800px) {
+	.hero-section .hero-content {
+		flex: 0 0 50%;
+	}
+}
+@media (min-width: 1024px) {
+	.hero-title {
+		font-size: 37px;
+	}
+	.hero-text {
+		font-size: 18px;
+	}
+}
+@media (max-width: 799px) {
+	.hero-section .container {
+		flex-direction: column;
+	}
+	.hero-section .hero-content {
+		order: 2;
+		padding-top: 25px;
+		min-height: auto;
+	}
+	.hero-content-image {
+		padding-bottom: 0;
+	}
+	.hero-content-image > img {
+		max-height: 50vw;
+	}
+}
+@media screen and (max-width: 480px) {
+	.hero-title {
+		font-size: 22px;
+	}
+	.hero-text {
+		font-size: 14px;
+	}
+	.hero-button {
+		margin-top: 25px;
+	}
+}
 
