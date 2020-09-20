@@ -119,7 +119,7 @@ function knd_social_share_no_js() {
 		),
 		'ok' => array(
 			'label' => 'Поделиться ссылкой в Одноклассниках',
-			'url' => 'http://connect.ok.ru/dk?st.cmd=WidgetSharePreview&service=odnoklassniki&st.shareUrl='.$link,
+			'url' => 'https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&service=odnoklassniki&st.shareUrl='.$link,
 			'txt' => 'Одноклассники',
 			'icon' => 'icon-ok',
 			'show_mobile' => false
