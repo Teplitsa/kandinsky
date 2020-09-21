@@ -106,32 +106,30 @@ function knd_custom_excerpt_more( $output ) {
 	return $output;
 }
 
-/** Current URL  **/
+/** Current URL */
 if ( ! function_exists( 'knd_current_url' ) ) {
 
 	function knd_current_url() {
-		$pageURL = 'http';
-		
-		if ( isset( $_SERVER["HTTPS"] ) && ( $_SERVER["HTTPS"] == "on" ) ) {
-			$pageURL .= "s";
-		}
-		$pageURL .= "://";
+		$page_url = 'http';
 
-		if(isset($_SERVER["SERVER_NAME"])) {
-			$pageURL .= $_SERVER["SERVER_NAME"];
+		if ( isset( $_SERVER['HTTPS'] ) && ( $_SERVER['HTTPS'] == 'on' || $_SERVER['HTTPS'] == 'On' ) ) {
+			$page_url .= 's';
 		}
-			
-		if ( isset($_SERVER["SERVER_PORT"]) && $_SERVER["SERVER_PORT"] != "80" ) {
-			
-			$pageURL .= ":" . $_SERVER["SERVER_PORT"];
-			
+		$page_url .= '://';
+
+		if ( isset( $_SERVER['SERVER_NAME'] ) ) {
+			$page_url .= $_SERVER['SERVER_NAME'];
 		}
-		
-		if(isset($_SERVER["REQUEST_URI"])) {
-			$pageURL .= $_SERVER["REQUEST_URI"];
+
+		if ( isset( $_SERVER['SERVER_PORT']) && $_SERVER['SERVER_PORT'] != '80' ) {
+			$page_url .= ':' . $_SERVER['SERVER_PORT'];
 		}
-		
-		return $pageURL;
+
+		if ( isset( $_SERVER['REQUEST_URI'] ) ) {
+			$page_url .= $_SERVER['REQUEST_URI'];
+		}
+
+		return $page_url;
 	}
 }
 
