@@ -157,11 +157,12 @@ for ( $i = 1; $i <= 3; $i++ ) {
 	) );
 
 	Kirki::add_field( 'knd_theme_mod', array(
-		'type'     => 'textarea',
-		'settings' => 'home-subtitle-col' . $i . '-content',
-		'label'    => esc_html__( 'Column content', 'knd' ),
-		'section'  => 'knd_ourorg_columns_settings',
-		'priority' => 1,
+		'type'              => 'textarea',
+		'settings'          => 'home-subtitle-col' . $i . '-content',
+		'label'             => esc_html__( 'Column content', 'knd' ),
+		'section'           => 'knd_ourorg_columns_settings',
+		'priority'          => 1,
+		'sanitize_callback' => 'wp_kses_post',
 	) );
 
 	Kirki::add_field( 'knd_theme_mod', array(
