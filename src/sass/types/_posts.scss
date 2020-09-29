@@ -174,9 +174,8 @@
 	}
 	
 	.entry-data {
-		padding: 21px 33px 0px 33px;
+		padding-top: 20px;
 		position: relative;
-		margin-bottom: $gut * 1.6;
 	}
 	
 	.entry-meta {
@@ -191,10 +190,7 @@
 		line-height: 1.1;
 		margin-top: 0 !important;
 	}
-	
-	a {
-	   overflow: auto;
-	}
+
 }
 
 
