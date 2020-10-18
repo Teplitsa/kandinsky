@@ -93,3 +93,8 @@ function kndGetUpdateResultIcon(status, message) {
 		
 	return '<span class="dashicons '+iconClass+'" title="'+message+'"></span>';
 }
+
+/* Prevent error from plugin shortcode-ui */
+if ( typeof wpActiveEditor === 'undefined' ) {
+	window.wpActiveEditor = null;
+}

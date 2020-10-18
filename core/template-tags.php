@@ -581,6 +581,7 @@ function knd_hero_image_markup() {
 
 	$call_to_action_image = wp_get_attachment_image( get_theme_mod( 'knd_hero_cta_image' ), 'full' );
 
+	$hero_background = '';
 	if ( $hero_img ) {
 		$hero_background = ' style="background-image: url(' . esc_attr( $hero_img ) . ')"';
 	}
@@ -602,9 +603,12 @@ function knd_hero_image_markup() {
 				<?php } ?>
 
 				<?php if ( $knd_hero_image_support_url && $knd_hero_image_support_button_caption ) { ?>
-				<a href="<?php echo esc_url( $knd_hero_image_support_url ); ?>" class="hero-button">
-					<?php echo esc_html( $knd_hero_image_support_button_caption ); ?>
-				</a>
+					<div class="hero-actions">
+						<a href="<?php echo esc_url( $knd_hero_image_support_url ); ?>" class="hero-button">
+							<?php echo esc_html( $knd_hero_image_support_button_caption ); ?>
+						</a>
+						<?php do_action( 'knd_hero_content_after' ); ?>
+					</div>
 				<?php } ?>
 
 				<?php do_action( 'knd_hero_content_after' ); ?>

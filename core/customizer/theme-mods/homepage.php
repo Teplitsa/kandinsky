@@ -37,17 +37,21 @@ Kirki::add_field( 'knd_theme_mod', array(
 ) );
 
 Kirki::add_field( 'knd_theme_mod', array(
-	'type'     => 'text',
-	'settings' => 'knd_hero_image_support_title',
-	'label'    => esc_html__( 'Call to action title', 'knd' ),
-	'section'  => 'knd_homepage_hero',
-	'priority' => 2,
+	'type'        => 'image',
+	'settings'    => 'knd_hero_cta_image',
+	'label'       => esc_html__( 'Call to action Image', 'knd' ),
+	'section'     => 'knd_homepage_hero',
+	'description' => esc_html__( 'Displayed on the right side of the Call to action text', 'knd' ),
+	'priority'    => 2,
+	'choices'     => array(
+		'save_as' => 'id',
+	),
 ) );
 
 Kirki::add_field( 'knd_theme_mod', array(
 	'type'     => 'text',
-	'settings' => 'knd_hero_image_support_url',
-	'label'    => esc_html__( 'Call to action URL', 'knd' ),
+	'settings' => 'knd_hero_image_support_title',
+	'label'    => esc_html__( 'Call to action title', 'knd' ),
 	'section'  => 'knd_homepage_hero',
 	'priority' => 3,
 ) );
@@ -70,15 +74,11 @@ Kirki::add_field( 'knd_theme_mod', array(
 ) );
 
 Kirki::add_field( 'knd_theme_mod', array(
-	'type'        => 'image',
-	'settings'    => 'knd_hero_cta_image',
-	'label'       => esc_html__( 'Call to action Image', 'knd' ),
-	'section'     => 'knd_homepage_hero',
-	'description' => esc_html__( 'Displayed on the right side of the Call to action text', 'knd' ),
-	'priority'    => 1,
-	'choices'     => array(
-		'save_as' => 'id',
-	),
+	'type'     => 'text',
+	'settings' => 'knd_hero_image_support_url',
+	'label'    => esc_html__( 'Call to action URL', 'knd' ),
+	'section'  => 'knd_homepage_hero',
+	'priority' => 6,
 ) );
 
 Kirki::add_field( 'knd_theme_mod', array(
