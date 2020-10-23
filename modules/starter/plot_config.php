@@ -427,7 +427,6 @@ class KND_Dubrovino_Data_Builder extends KND_Plot_Data_Builder {
 
 			'knd_hero_image_support_title' => array('section' => 'homepage', 'piece' => 'hero_heading'),
 			'knd_hero_image_support_text' => array('section' => 'homepage', 'piece' => 'hero_description'),
-			'knd_hero_image_support_button_caption' => 'Начать защищать',
 
 			'subtitle_slogan' => array('section' => 'homepage', 'piece' => 'subtitle_slogan'),
 			'subtitle_org' => array('section' => 'homepage', 'piece' => 'subtitle_org'),
@@ -477,7 +476,7 @@ class KND_Dubrovino_Data_Builder extends KND_Plot_Data_Builder {
 
 		$this->data_routes['general_options'] = array(
 			'site_name'           => esc_html__( 'Save Dubrovino Park', 'knd' ),
-			'site_description'    => esc_html( 'Initiative group', 'knd' ),
+			'site_description'    => esc_html__( 'Initiative group', 'knd' ),
 			'knd_footer_contacts' => '<p>' . esc_html__( 'Let\'s stop deforestation together!', 'knd' ) . '
 </p>
 <p>
@@ -498,6 +497,7 @@ which is located', 'knd' ) . ' <a href="{knd_url_public_oferta}">' . esc_html__(
 </p>',
 		);
 
+		$this->data_routes['theme_options']['knd_hero_image_support_button_caption'] = esc_html__( 'Start protecting', 'knd' );
 		$this->data_routes['theme_options']['knd_hero_image_support_url'] = home_url('howtohelp');
 		$this->data_routes['theme_options']['knd_url_pd_policy'] = home_url('legal');
 		$this->data_routes['theme_options']['knd_url_privacy_policy'] = home_url('legal');

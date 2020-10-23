@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-23 08:10+0300\n"
-"PO-Revision-Date: 2020-10-23 08:35+0300\n"
+"POT-Creation-Date: 2020-10-23 09:16+0300\n"
+"PO-Revision-Date: 2020-10-23 09:22+0300\n"
 "Last-Translator: ahaenor <ahaenor@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -1850,7 +1850,7 @@ msgstr ""
 "Москва, 7-я улица Строителей, 17, оф.: 211-217\n"
 "+7 (495) 787-87-23"
 
-#: modules/starter/plot_config.php:230 modules/starter/plot_config.php:491
+#: modules/starter/plot_config.php:230 modules/starter/plot_config.php:490
 #: modules/starter/plot_config.php:749
 msgid ""
 "By making a donation, the user concludes a donation agreement by accepting a "
@@ -1861,17 +1861,17 @@ msgstr ""
 "акцепта публичной оферты,\n"
 "\vкоторый находится"
 
-#: modules/starter/plot_config.php:231 modules/starter/plot_config.php:492
+#: modules/starter/plot_config.php:231 modules/starter/plot_config.php:491
 #: modules/starter/plot_config.php:750
 msgid "here"
 msgstr "здесь"
 
-#: modules/starter/plot_config.php:234 modules/starter/plot_config.php:495
+#: modules/starter/plot_config.php:234 modules/starter/plot_config.php:494
 #: modules/starter/plot_config.php:753
 msgid "Personal data processing policy"
 msgstr "Политика обработки персональных данных"
 
-#: modules/starter/plot_config.php:236 modules/starter/plot_config.php:497
+#: modules/starter/plot_config.php:236 modules/starter/plot_config.php:496
 #: modules/starter/plot_config.php:755
 msgid "Privacy policy"
 msgstr "Политика конфиденциальности"
@@ -1927,13 +1927,21 @@ msgstr "Меню «Новости» в подвале"
 msgid "Our partners"
 msgstr "Наши партнеры"
 
-#: modules/starter/plot_config.php:479
+#: modules/starter/plot_config.php:478
 msgid "Save Dubrovino Park"
 msgstr "Защитим Дубровино"
 
-#: modules/starter/plot_config.php:481
+#: modules/starter/plot_config.php:479
+msgid "Initiative group"
+msgstr "Градозащитная инициатива"
+
+#: modules/starter/plot_config.php:480
 msgid "Let's stop deforestation together!"
 msgstr "Вместе остановим уничтожение леса!"
+
+#: modules/starter/plot_config.php:500
+msgid "Start protecting"
+msgstr "Начать защищать"
 
 #: modules/starter/plot_config.php:511 modules/starter/plot_config.php:524
 #: modules/starter/plot_config.php:530
