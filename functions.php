@@ -9,7 +9,7 @@ if ( ! defined( 'WPINC' ) ) {
 	die();
 }
 
-define('KND_VERSION', '1.4.3');
+define('KND_VERSION', '1.4.4');
 define('KND_DOC_URL', 'https://github.com/Teplitsa/kandinsky/wiki/');
 define('KND_OFFICIAL_WEBSITE_URL', 'https://knd.te-st.ru/');
 define('KND_SOURCES_PAGE_URL', 'https://github.com/Teplitsa/kandinsky/');
