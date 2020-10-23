@@ -14,15 +14,15 @@ Kirki::add_section(
 	)
 );
 
-$other_pages_desc = '<p>' . sprintf( __( 'Если вам нужно создать новую страницу – кликните на кнопку ниже. Страницы управляются в разделе «<a href="%s">Меню > Страницы</a>». Вы можете редактировать содержимое страниц, создавать и удалять страницы.', 'knd' ), admin_url( 'edit.php?post_type=page' ) ) . '</p>
+$other_pages_desc = '<p>' . sprintf( esc_html__( 'If you need to add new page click to a button below. You can manage pages in the «<a href="%s">Menu > Pages</a>» section. You can edit, add and delete pages.', 'knd' ), admin_url( 'edit.php?post_type=page' ) ) . '</p>
 
 <p><a href="' . admin_url( 'post-new.php?post_type=page' ) . '" class="button">' . esc_html__( 'Add new page', 'knd' ) . '</a></p>
 
-<p>' . __( 'Помимо страниц в WordPress используются «Записи» – используйте их для создания новостей.', 'knd' ) . '</p>
+<p>' . esc_html__( 'Besides pages, there are Posts in WordPress, use them to add news.', 'knd' ) . '</p>
 
 <p><a href="' . get_admin_url( null, 'post-new.php?post_type=page' ) . '" class="button">' . esc_html__( 'Go to posts page', 'knd' ) . '</a></p>
 
-<p>' . __( 'Если же вам нужно создать совершенно новые сущности (Например, «Заявки» или «Мероприятия») вы можете создать т.н. custom post type (пользовательский тип записи), например, с помощью плагина Custom Post Type UI <a href="https://ru.wordpress.org/plugins/custom-post-type-ui/" target="_blank">https://ru.wordpress.org/plugins/custom-post-type-ui/</a>', 'knd' ) . '</p>
+<p>' . esc_html__( 'If you need new entities (for example "Requests" or "Events"), you can add custom post types using plugin such as Custom Post Type UI. <a href="https://wordpress.org/plugins/custom-post-type-ui/" target="_blank">https://wordpress.org/plugins/custom-post-type-ui/</a>', 'knd' ) . '</p>
 
 ';
 

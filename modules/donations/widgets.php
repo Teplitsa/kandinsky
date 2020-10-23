@@ -122,17 +122,17 @@ class KND_Donations_Widget extends WP_Widget {
 		$instance = wp_parse_args((array)$instance, $defaults);		
 	?>
 		<p>
-			<label for="<?php echo $this->get_field_id('title');?>">Заголовок:</label>
+			<label for="<?php echo $this->get_field_id('title');?>"><?php esc_html_e( 'Heading', 'knd' ); ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title');?>" type="text" value="<?php echo esc_attr($instance['title']);?>">
 		</p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id('num');?>">Кол.-во:</label>
+			<label for="<?php echo $this->get_field_id('num');?>"><?php esc_html_e( 'Qty:', 'knd' ); ?></label>
 			<input id="<?php echo $this->get_field_id('num'); ?>" name="<?php echo $this->get_field_name('num');?>" type="text" value="<?php echo intval($instance['num']);?>">
 		</p>
 
         <p>
-            <label for="<?php echo $this->get_field_id('exclude');?>">Исключать кампании:</label>
+            <label for="<?php echo $this->get_field_id('exclude');?>"><?php esc_html_e( 'Exclude campaigns:', 'knd' ); ?></label>
             <input id="<?php echo $this->get_field_id('exclude'); ?>" name="<?php echo $this->get_field_name('exclude');?>" type="text" value="<?php echo esc_attr($instance['exclude']);?>">
         </p>
 	<?php

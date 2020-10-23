@@ -599,16 +599,16 @@ function knd_common_columns_names( $columns, $post_type ) {
 	if ( in_array( $post_type, array( 'post', 'project', 'org', 'person', 'event' ) ) ) {
 		
 		if ( in_array( $post_type, array( 'event', 'programm' ) ) )
-			$columns['menu_order'] = 'Порядок';
+			$columns['menu_order'] = esc_html__( 'Order', 'knd' );
 		
 		if ( in_array( $post_type, array( 'event' ) ) )
-			$columns['event_start'] = 'Начало';
+			$columns['event_start'] = esc_html__( 'Start', 'knd' );
 		
 		if ( ! in_array( $post_type, array( 'attachment' ) ) )
-			$columns['thumbnail'] = 'Миниат.';
+			$columns['thumbnail'] = esc_html__( 'Thumb.', 'knd' );
 		
 		if ( isset( $columns['author'] ) ) {
-			$columns['author'] = 'Создал';
+			$columns['author'] = esc_html__( 'Created', 'knd' );
 		}
 		
 		$columns['id'] = 'ID';
@@ -706,12 +706,11 @@ add_filter( 'wpseo_use_page_analysis', '__return_false' );
 add_filter( 'tiny_mce_before_init', 'knd_format_TinyMCE' );
 
 function knd_format_TinyMCE( $in ) {
-	$in['block_formats'] = "Абзац=p; Выделенный=pre; Заголовок 3=h3; Заголовок 4=h4; Заголовок 5=h5; Заголовок 6=h6";
+	$in['block_formats'] = 'Paragraph=p; Pre=pre; Heading 3=h3; Heading 4=h4; Heading 5=h5; Heading 6=h6';
 	$in['toolbar1'] = 'bold,italic,strikethrough,bullist,numlist,blockquote,hr,alignleft,aligncenter,alignright,link,unlink,wp_fullscreen,wp_adv ';
 	$in['toolbar2'] = 'formatselect,underline,pastetext,removeformat,charmap,outdent,indent,undo,redo,wp_help ';
 	$in['toolbar3'] = '';
 	$in['toolbar4'] = '';
-	
 	return $in;
 }
 
@@ -760,11 +759,10 @@ function knd_custom_links_dashboard_screen( $items = array(), $is_initial_call =
         </a>
     </div>
     <p>
-        Хотите быть в курсе всех возможностей темы?<br>Найдите
-        информацию на <a href="<?php echo KND_OFFICIAL_WEBSITE_URL;?>"
-            target="_blank">её официальном сайте</a>.
+        <?php esc_html_e( 'Do you want to know all the features of the theme?', 'knd' ); ?><br>
+        <?php esc_html_e( 'Find information on', 'knd' ); ?> <a href="<?php echo KND_OFFICIAL_WEBSITE_URL;?>"
+            target="_blank"><?php esc_html_e( 'official website', 'knd' ); ?></a>.
     </p>
-
     <?php
 	}
 	
@@ -809,7 +807,7 @@ function knd_custom_links_dashboard_screen( $items = array(), $is_initial_call =
 add_filter( 'admin_footer_text', 'knd_admin_footer_text' );
 
 function knd_admin_footer_text( $text ) {
-	return '<span id="footer-thankyou">Краткое руководство по работе с сайтом - ' . str_replace( '<a', '<a target="_blank" ', make_clickable( KND_DOC_URL ) ) . '</span>';
+	return '<span id="footer-thankyou">' . esc_html__( 'A quick guide to working with the site - ', 'knd' ) . str_replace( '<a', '<a target="_blank" ', make_clickable( KND_DOC_URL ) ) . '</span>';
 }
 
 /**

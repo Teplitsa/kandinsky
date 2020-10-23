@@ -65,9 +65,9 @@ function knd_add_shortcodes_ui() {
 					'attr' => 'text_place', 
 					'type' => 'select', 
 					'options' => array( 
-						array( 'value' => 'ontop', 'label' => 'Поверх изображения' ), 
-						array( 'value' => 'under', 'label' => 'Под изображением' ), 
-						array( 'value' => 'color', 'label' => 'Цветной блок поверх изображения' ) ) ) ) ) );
+						array( 'value' => 'ontop', 'label' => esc_html__( 'Over image', 'knd' ) ), 
+						array( 'value' => 'under', 'label' => esc_html__( 'Under image', 'knd' ) ), 
+						array( 'value' => 'color', 'label' => esc_html__( 'Colored block over image', 'knd' ) ) ) ) ) ) );
 	
 	shortcode_ui_register_for_shortcode( 
 		'knd_cta_section', 

@@ -100,38 +100,37 @@ function knd_social_share_no_js() {
 	global $post;
 	$title = esc_html( get_the_title( $post ) );
 	$link = knd_current_url();
-	$text = $title.' '.$link;
+	$text = $title . ' ' . $link;
 
 	$data = array(
 		'vk' => array(
-			'label' => 'Поделиться во Вконтакте',
+			'label' => esc_html__( 'Share on VK', 'knd' ),
 			'url' => 'https://vk.com/share.php?url='.$link.'&title='.$title,
-			'txt' => 'Вконтакте',
+			'txt' => esc_html__( 'VKontakte', 'knd' ),
 			'icon' => 'icon-vk',
 			'show_mobile' => true
-		),			
+		),
 		'twitter' => array(
-			'label' => 'Поделиться ссылкой в Твиттере',
+			'label' => esc_html__( 'Share on Twitter', 'knd' ),
 			'url' => 'https://twitter.com/intent/tweet?url='.$link.'&text='.$title,
-			'txt' => 'Twitter',
+			'txt' => esc_html__( 'Twitter', 'knd' ),
 			'icon' => 'icon-twitter',
-			'show_mobile' => false		
+			'show_mobile' => false,
 		),
 		'ok' => array(
-			'label' => 'Поделиться ссылкой в Одноклассниках',
+			'label' => esc_html__( 'Share on OK', 'knd' ),
 			'url' => 'https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&service=odnoklassniki&st.shareUrl='.$link,
-			'txt' => 'Одноклассники',
+			'txt' => esc_html__( 'Odnoklassniki', 'knd' ),
 			'icon' => 'icon-ok',
-			'show_mobile' => false
-			
+			'show_mobile' => false,
 		),
 		'facebook' => array(
-			'label' => 'Поделиться на Фейсбуке',
+			'label' => esc_html__( 'Share on Facebook', 'knd' ),
 			'url' => 'https://www.facebook.com/sharer/sharer.php?u='.$link,
-			'txt' => 'Facebook',
+			'txt' => esc_html__( 'Facebook', 'knd' ),
 			'icon' => 'icon-facebook',
-			'show_mobile' => true
-		),	
+			'show_mobile' => true,
+		),
 	);
 	
 ?>
@@ -147,46 +146,39 @@ foreach($data as $key => $obj){
 			<svg class="svg-icon"><use xlink:href="#<?php echo $obj['icon'];?>" /></svg><span class="sh-text"><?php echo $obj['txt'];?></span>
 		</a>
 	</div>
-<?php 
+<?php
 	}
-	
+
 } //foreach
 
-	$text = $title.' '.$link;
-	
+	$text = $title . ' ' . $link;
+
 	$mobile = array(
-		//'twitter' => array(
-		//	'label' => 'Поделиться ссылкой в Твиттере',
-		//	'url' => 'twitter://post?message='.$text,
-		//	'txt' => 'Twitter',
-		//	'icon' => 'icon-twitter',
-		//	'show_desktop' => false		
-		//),
 		'whatsapp' => array(
-			'label' => 'Поделиться ссылкой в WhatsApp',
-			'url' => 'whatsapp://send?text='.$text,
+			'label' => esc_html__( 'Share on WhatsApp', 'knd' ),
+			'url' => 'whatsapp://send?text=' . $text,
 			'txt' => 'WhatsApp',
 			'icon' => 'icon-whatsup',
 			'show_desktop' => false
 		),
 		'telegram' => array(
-			'label' => 'Поделиться ссылкой в Telegram',
-			'url' => 'tg://msg?text='.$text,
+			'label' => esc_html__( 'Share on Telegram', 'knd' ),
+			'url' => 'tg://msg?text=' . $text,
 			'txt' => 'Telegram',
 			'icon' => 'icon-telegram',
 			'show_desktop' => false
 		),
 		'viber' => array(
-			'label' => 'Поделиться ссылкой в Viber',
-			'url' => 'viber://forward?text='.$text,
+			'label' => esc_html__( 'Share on Viber', 'knd' ),
+			'url' => 'viber://forward?text=' . $text,
 			'txt' => 'Viber',
 			'icon' => 'icon-viber',
 			'show_desktop' => false
 		),
 	);
-		
+
 	foreach($mobile as $key => $obj) {
-		
+
 		if((!knd_is_mobile_user_agent() && $obj['show_desktop']) || knd_is_mobile_user_agent()) {
 ?>
 	<div title="<?php echo esc_attr($obj['label']);?>" class="social-likes__widget social-likes__widget_<?php echo $key;?>">

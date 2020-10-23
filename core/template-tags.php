@@ -464,7 +464,7 @@ function knd_save_post_event_actions( $post_ID, $post ) {
 
 /* remove forms from expired events */
 function knd_remove_unused_form( $the_content ) {
-	$msg = "<div class='tst-notice'>Регистрация закрыта</div>";
+	$msg = "<div class='tst-notice'>" . esc_html__( 'Registration is closed', 'knd' ) . "</div>";
 	$the_content = preg_replace( '/\[formidable(.+)\]/', $msg, $the_content );
 	
 	return $the_content;

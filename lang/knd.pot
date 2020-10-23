@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Kandinsky\n"
-"POT-Creation-Date: 2020-09-02 21:02+0300\n"
+"POT-Creation-Date: 2020-10-23 08:10+0300\n"
 "PO-Revision-Date: 2020-06-22 06:53+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -173,30 +173,35 @@ msgstr ""
 msgid "Static pages"
 msgstr ""
 
-#: core/admin.php:60 core/customizer/theme-mods/header.php:222
-#: core/customizer/theme-mods/header.php:346
+#: core/admin.php:60 core/customizer/theme-mods/header.php:223
+#: core/customizer/theme-mods/header.php:347
 #: core/customizer/theme-mods/menu.php:12
 msgid "Menu"
 msgstr ""
 
 #: core/admin.php:66 core/customizer/customizer-deprecated.php:508
 #: core/customizer/theme-mods/global.php:307 modules/news.php:8
-#: modules/starter/plot_config.php:205 modules/starter/plot_config.php:219
-#: modules/starter/plot_config.php:234 modules/starter/plot_config.php:462
-#: modules/starter/plot_config.php:475 modules/starter/plot_config.php:702
+#: modules/starter/plot_config.php:256 modules/starter/plot_config.php:276
+#: modules/starter/plot_config.php:291 modules/starter/plot_config.php:512
+#: modules/starter/plot_config.php:525 modules/starter/plot_config.php:770
 #: modules/starter/plot_data_builder.php:528 modules/starter/sidebars.php:40
 msgid "News"
 msgstr ""
 
-#: core/admin.php:72 modules/project/widgets.php:7
+#: core/admin.php:72 modules/project/hooks.php:8 modules/project/hooks.php:10
+#: modules/project/widgets.php:7 modules/starter/plot_config.php:259
+#: modules/starter/plot_config.php:267 modules/starter/plot_config.php:277
+#: modules/starter/plot_config.php:293 modules/starter/plot_config.php:298
+#: modules/starter/plot_config.php:772
 msgid "Projects"
 msgstr ""
 
-#: core/admin.php:78 modules/person/hooks.php:80 modules/person/tax.php:7
+#: core/admin.php:78 modules/person/hooks.php:68 modules/person/tax.php:7
 msgid "Team"
 msgstr ""
 
-#: core/admin.php:84 modules/org/tax.php:6 modules/org/widgets.php:7
+#: core/admin.php:84 modules/org/hooks.php:29 modules/org/hooks.php:31
+#: modules/org/tax.php:6 modules/org/widgets.php:7
 msgid "Partners"
 msgstr ""
 
@@ -503,11 +508,43 @@ msgstr ""
 msgid "Action failed."
 msgstr ""
 
-#: core/admin.php:741
+#: core/admin.php:602
+msgid "Order"
+msgstr ""
+
+#: core/admin.php:605
+msgid "Start"
+msgstr ""
+
+#: core/admin.php:608
+msgid "Thumb."
+msgstr ""
+
+#: core/admin.php:611
+msgid "Created"
+msgstr ""
+
+#: core/admin.php:740
 msgid "Kandinsky — useful links"
 msgstr ""
 
-#: core/admin.php:833
+#: core/admin.php:762
+msgid "Do you want to know all the features of the theme?"
+msgstr ""
+
+#: core/admin.php:763
+msgid "Find information on"
+msgstr ""
+
+#: core/admin.php:764
+msgid "official website"
+msgstr ""
+
+#: core/admin.php:810
+msgid "A quick guide to working with the site - "
+msgstr ""
+
+#: core/admin.php:831
 #, php-format
 msgid ""
 "ATTENTION! You thumbnail image is too small. It should be at least %s px"
@@ -679,12 +716,11 @@ msgstr ""
 #: core/customizer/customizer-deprecated.php:286
 #: core/customizer/customizer-deprecated.php:318
 #: core/customizer/theme-mods/homepage.php:22
-#: core/customizer/theme-mods/homepage.php:30
 msgid "Hero Image"
 msgstr ""
 
 #: core/customizer/customizer-deprecated.php:292
-#: core/customizer/theme-mods/homepage.php:229
+#: core/customizer/theme-mods/homepage.php:273
 msgid "Static page settings"
 msgstr ""
 
@@ -695,65 +731,65 @@ msgstr ""
 
 #: core/customizer/customizer-deprecated.php:333
 #: core/customizer/customizer-deprecated.php:442
-#: core/customizer/theme-mods/homepage.php:42
-#: core/customizer/theme-mods/homepage.php:185
+#: core/customizer/theme-mods/homepage.php:54
+#: core/customizer/theme-mods/homepage.php:199
 msgid "Call to action title"
 msgstr ""
 
 #: core/customizer/customizer-deprecated.php:342
 #: core/customizer/customizer-deprecated.php:451
-#: core/customizer/theme-mods/homepage.php:50
-#: core/customizer/theme-mods/homepage.php:193
+#: core/customizer/theme-mods/homepage.php:79
+#: core/customizer/theme-mods/homepage.php:207
 msgid "Call to action URL"
 msgstr ""
 
 #: core/customizer/customizer-deprecated.php:351
 #: core/customizer/customizer-deprecated.php:460
-#: core/customizer/theme-mods/homepage.php:58
-#: core/customizer/theme-mods/homepage.php:201
+#: core/customizer/theme-mods/homepage.php:62
+#: core/customizer/theme-mods/homepage.php:215
 msgid "Call to action text"
 msgstr ""
 
 #: core/customizer/customizer-deprecated.php:360
 #: core/customizer/customizer-deprecated.php:469
-#: core/customizer/theme-mods/homepage.php:66
-#: core/customizer/theme-mods/homepage.php:209
+#: core/customizer/theme-mods/homepage.php:70
+#: core/customizer/theme-mods/homepage.php:223
 msgid "Action button caption"
 msgstr ""
 
 #: core/customizer/customizer-deprecated.php:368
-#: core/customizer/theme-mods/homepage.php:123
+#: core/customizer/theme-mods/homepage.php:136
 msgid "Our organization columns settings"
 msgstr ""
 
 #: core/customizer/customizer-deprecated.php:392
-#: core/customizer/theme-mods/homepage.php:141
+#: core/customizer/theme-mods/homepage.php:154
 msgid "Column title"
 msgstr ""
 
 #: core/customizer/customizer-deprecated.php:401
-#: core/customizer/theme-mods/homepage.php:149
+#: core/customizer/theme-mods/homepage.php:162
 msgid "Column content"
 msgstr ""
 
 #: core/customizer/customizer-deprecated.php:410
-#: core/customizer/theme-mods/homepage.php:157
+#: core/customizer/theme-mods/homepage.php:171
 msgid "Column link caption"
 msgstr ""
 
 #: core/customizer/customizer-deprecated.php:419
-#: core/customizer/theme-mods/homepage.php:165
+#: core/customizer/theme-mods/homepage.php:179
 msgid "Column link URL"
 msgstr ""
 
 #: core/customizer/customizer-deprecated.php:428
-#: core/customizer/theme-mods/homepage.php:177
+#: core/customizer/theme-mods/homepage.php:191
 msgid "CTA block settings"
 msgstr ""
 
 #: core/customizer/customizer-deprecated.php:477
 #: core/customizer/theme-mods/footer.php:49
-#: core/customizer/theme-mods/header.php:412
+#: core/customizer/theme-mods/header.php:413
 msgid "Social networks links"
 msgstr ""
 
@@ -769,7 +805,8 @@ msgstr ""
 
 #: core/customizer/customizer-deprecated.php:524
 #: core/customizer/theme-mods/global.php:315 core/template-tags.php:244
-#: core/template-tags.php:351
+#: core/template-tags.php:351 modules/starter/plot_config.php:801
+#: modules/starter/plot_config.php:806
 msgid "Our projects"
 msgstr ""
 
@@ -780,8 +817,8 @@ msgstr ""
 
 #: core/customizer/customizer-deprecated.php:543
 #: core/customizer/theme-mods/global.php:326 core/template-tags.php:256
-#: modules/starter/plot_config.php:730 single-leyka_campaign.php:28
-#: single-leyka_campaign.php:43
+#: modules/starter/plot_config.php:785 modules/starter/plot_config.php:798
+#: single-leyka_campaign.php:28 single-leyka_campaign.php:43
 msgid "They need help"
 msgstr ""
 
@@ -949,66 +986,66 @@ msgstr ""
 msgid "Use Default Font"
 msgstr ""
 
-#: core/customizer/theme-mods/header.php:124
+#: core/customizer/theme-mods/header.php:125
 msgid "Logo Color"
 msgstr ""
 
-#: core/customizer/theme-mods/header.php:146
+#: core/customizer/theme-mods/header.php:147
 msgid "Email"
 msgstr ""
 
-#: core/customizer/theme-mods/header.php:161
+#: core/customizer/theme-mods/header.php:162
 msgid "Phone"
 msgstr ""
 
-#: core/customizer/theme-mods/header.php:176
+#: core/customizer/theme-mods/header.php:177
 msgid "Address"
 msgstr ""
 
-#: core/customizer/theme-mods/header.php:192
-#: core/customizer/theme-mods/header.php:361 search.php:21
+#: core/customizer/theme-mods/header.php:193
+#: core/customizer/theme-mods/header.php:362 search.php:21
 msgid "Search"
 msgstr ""
 
-#: core/customizer/theme-mods/header.php:207
-#: core/customizer/theme-mods/header.php:396
+#: core/customizer/theme-mods/header.php:208
+#: core/customizer/theme-mods/header.php:397
 msgid "Social networks"
 msgstr ""
 
-#: core/customizer/theme-mods/header.php:223
+#: core/customizer/theme-mods/header.php:224
 msgid "Go to the menu \"In the header\""
 msgstr ""
 
-#: core/customizer/theme-mods/header.php:238
-#: core/customizer/theme-mods/header.php:376
+#: core/customizer/theme-mods/header.php:239
+#: core/customizer/theme-mods/header.php:377
 msgid "Button"
 msgstr ""
 
-#: core/customizer/theme-mods/header.php:246
+#: core/customizer/theme-mods/header.php:247
 msgid "Button Text"
 msgstr ""
 
-#: core/customizer/theme-mods/header.php:262
+#: core/customizer/theme-mods/header.php:263
 msgid "Button Link"
 msgstr ""
 
-#: core/customizer/theme-mods/header.php:277
+#: core/customizer/theme-mods/header.php:278
 msgid "Additional Button"
 msgstr ""
 
-#: core/customizer/theme-mods/header.php:292
+#: core/customizer/theme-mods/header.php:293
 msgid "Additional Button Text"
 msgstr ""
 
-#: core/customizer/theme-mods/header.php:312
+#: core/customizer/theme-mods/header.php:313
 msgid "Additional Button Link"
 msgstr ""
 
-#: core/customizer/theme-mods/header.php:332
+#: core/customizer/theme-mods/header.php:333
 msgid "Off-Canvas"
 msgstr ""
 
-#: core/customizer/theme-mods/header.php:338
+#: core/customizer/theme-mods/header.php:339
 msgid "Display Off-Canvas"
 msgstr ""
 
@@ -1016,23 +1053,46 @@ msgstr ""
 msgid "Main page"
 msgstr ""
 
-#: core/customizer/theme-mods/homepage.php:81
+#: core/customizer/theme-mods/homepage.php:30
+msgid "Hero Background Image"
+msgstr ""
+
+#: core/customizer/theme-mods/homepage.php:42
+#: core/customizer/theme-mods/homepage.php:231
+msgid "Call to action Image"
+msgstr ""
+
+#: core/customizer/theme-mods/homepage.php:44
+msgid "Displayed on the right side of the Call to action text"
+msgstr ""
+
+#: core/customizer/theme-mods/homepage.php:71 core/template-tags.php:399
+#: modules/starter/plot_config.php:242 modules/starter/plot_config.php:759
+#: template-parts/headers/header-0.php:27
+msgid "Help now"
+msgstr ""
+
+#: core/customizer/theme-mods/homepage.php:94
 msgid "Overlay Gradient Start Color"
 msgstr ""
 
-#: core/customizer/theme-mods/homepage.php:92
+#: core/customizer/theme-mods/homepage.php:105
 msgid "Overlay Gradient End Color"
 msgstr ""
 
-#: core/customizer/theme-mods/homepage.php:103
+#: core/customizer/theme-mods/homepage.php:116
 msgid "Text Color"
 msgstr ""
 
-#: core/customizer/theme-mods/homepage.php:134
+#: core/customizer/theme-mods/homepage.php:147
 msgid "Column "
 msgstr ""
 
-#: core/customizer/theme-mods/homepage.php:219 core/widgets.php:13
+#: core/customizer/theme-mods/homepage.php:242
+msgid "Background Color"
+msgstr ""
+
+#: core/customizer/theme-mods/homepage.php:263 core/widgets.php:13
 msgid "Homepage - Content"
 msgstr ""
 
@@ -1043,9 +1103,9 @@ msgstr ""
 #: core/customizer/theme-mods/other-pages.php:17
 #, php-format
 msgid ""
-"Если вам нужно создать новую страницу – кликните на кнопку ниже. Страницы "
-"управляются в разделе «<a href=\"%s\">Меню > Страницы</a>». Вы можете "
-"редактировать содержимое страниц, создавать и удалять страницы."
+"If you need to add new page click to a button below. You can manage pages in "
+"the «<a href=\"%s\">Menu > Pages</a>» section. You can edit, add and delete "
+"pages."
 msgstr ""
 
 #: core/customizer/theme-mods/other-pages.php:19
@@ -1053,9 +1113,7 @@ msgid "Add new page"
 msgstr ""
 
 #: core/customizer/theme-mods/other-pages.php:21
-msgid ""
-"Помимо страниц в WordPress используются «Записи» – используйте их для "
-"создания новостей."
+msgid "Besides pages, there are Posts in WordPress, use them to add news."
 msgstr ""
 
 #: core/customizer/theme-mods/other-pages.php:23
@@ -1064,18 +1122,17 @@ msgstr ""
 
 #: core/customizer/theme-mods/other-pages.php:25
 msgid ""
-"Если же вам нужно создать совершенно новые сущности (Например, «Заявки» или "
-"«Мероприятия») вы можете создать т.н. custom post type (пользовательский тип "
-"записи), например, с помощью плагина Custom Post Type UI <a href=\"https://"
-"ru.wordpress.org/plugins/custom-post-type-ui/\" target=\"_blank\">https://ru."
-"wordpress.org/plugins/custom-post-type-ui/</a>"
+"If you need new entities (for example \"Requests\" or \"Events\"), you can "
+"add custom post types using plugin such as Custom Post Type UI. <a href="
+"\"https://wordpress.org/plugins/custom-post-type-ui/\" target=\"_blank"
+"\">https://wordpress.org/plugins/custom-post-type-ui/</a>"
 msgstr ""
 
 #: core/extras.php:81
 msgid "More"
 msgstr ""
 
-#: core/extras.php:305
+#: core/extras.php:305 modules/social.php:109
 msgid "VKontakte"
 msgstr ""
 
@@ -1083,7 +1140,7 @@ msgstr ""
 msgid "E.g., https://vk.com/club0123456789"
 msgstr ""
 
-#: core/extras.php:308
+#: core/extras.php:308 modules/social.php:123
 msgid "Odnoklassniki"
 msgstr ""
 
@@ -1091,7 +1148,7 @@ msgstr ""
 msgid "E.g., https://ok.ru/profile/0123456789"
 msgstr ""
 
-#: core/extras.php:311
+#: core/extras.php:311 modules/social.php:130
 msgid "Facebook"
 msgstr ""
 
@@ -1107,7 +1164,7 @@ msgstr ""
 msgid "E.g., https://www.instagram.com/your-organization-page"
 msgstr ""
 
-#: core/extras.php:317
+#: core/extras.php:317 modules/social.php:116
 msgid "Twitter"
 msgstr ""
 
@@ -1131,7 +1188,7 @@ msgstr ""
 msgid "E.g., https://youtube.com/channel/your-organization-channel"
 msgstr ""
 
-#: core/extras.php:369 modules/starter/import_remote_content.php:396
+#: core/extras.php:369 modules/starter/import_remote_content.php:400
 #, php-format
 msgid "Old import files cleanup FAILED: %s."
 msgstr ""
@@ -1186,6 +1243,18 @@ msgstr ""
 
 #: core/shortcodes-ui.php:64
 msgid "Text placement"
+msgstr ""
+
+#: core/shortcodes-ui.php:68
+msgid "Over image"
+msgstr ""
+
+#: core/shortcodes-ui.php:69
+msgid "Under image"
+msgstr ""
+
+#: core/shortcodes-ui.php:70
+msgid "Colored block over image"
 msgstr ""
 
 #: core/shortcodes-ui.php:75 modules/cta.php:10
@@ -1292,7 +1361,8 @@ msgstr ""
 msgid "More news"
 msgstr ""
 
-#: core/template-tags.php:354
+#: core/template-tags.php:354 modules/starter/plot_config.php:303
+#: modules/starter/plot_config.php:799 modules/starter/plot_config.php:811
 msgid "Latest news"
 msgstr ""
 
@@ -1300,11 +1370,11 @@ msgstr ""
 msgid "Related project"
 msgstr ""
 
-#: core/template-tags.php:399
-msgid "Help now"
+#: core/template-tags.php:467
+msgid "Registration is closed"
 msgstr ""
 
-#: core/template-tags.php:736
+#: core/template-tags.php:759
 msgid "Search ..."
 msgstr ""
 
@@ -1421,17 +1491,91 @@ msgstr ""
 msgid "Donations short list"
 msgstr ""
 
+#: modules/donations/widgets.php:125
+msgid "Heading"
+msgstr ""
+
+#: modules/donations/widgets.php:130 modules/news.php:78
+msgid "Qty:"
+msgstr ""
+
+#: modules/donations/widgets.php:135
+msgid "Exclude campaigns:"
+msgstr ""
+
 #: modules/news.php:9
 msgid "Latest news list"
 msgstr ""
 
-#: modules/org/widgets.php:8
-msgid "Partner organization banners list"
-msgstr ""
-
-#: modules/org/widgets.php:47 modules/ourorg.php:70
+#: modules/news.php:70 modules/org/widgets.php:47 modules/ourorg.php:69
 #: modules/project/widgets.php:47
 msgid "Title:"
+msgstr ""
+
+#: modules/org/hooks.php:8
+msgid "Parter Categories"
+msgstr ""
+
+#: modules/org/hooks.php:9 modules/person/hooks.php:9
+#: modules/person/widgets.php:65
+msgid "Category"
+msgstr ""
+
+#: modules/org/hooks.php:10 modules/person/hooks.php:10
+msgid "Categories"
+msgstr ""
+
+#: modules/org/hooks.php:11
+msgid "All Categories"
+msgstr ""
+
+#: modules/org/hooks.php:12 modules/person/hooks.php:12
+msgid "Edit category"
+msgstr ""
+
+#: modules/org/hooks.php:13 modules/org/hooks.php:37
+msgid "Preview"
+msgstr ""
+
+#: modules/org/hooks.php:14 modules/person/hooks.php:14
+msgid "Update category"
+msgstr ""
+
+#: modules/org/hooks.php:15 modules/person/hooks.php:15
+msgid "Add new category"
+msgstr ""
+
+#: modules/org/hooks.php:16 modules/person/hooks.php:16
+msgid "New category name"
+msgstr ""
+
+#: modules/org/hooks.php:30
+msgid "Partner"
+msgstr ""
+
+#: modules/org/hooks.php:32 modules/org/hooks.php:34
+msgid "Add partner"
+msgstr ""
+
+#: modules/org/hooks.php:33 modules/person/hooks.php:33
+#: modules/project/hooks.php:12
+msgid "Add new"
+msgstr ""
+
+#: modules/org/hooks.php:35
+msgid "New partner"
+msgstr ""
+
+#: modules/org/hooks.php:36
+msgid "Edit partner"
+msgstr ""
+
+#: modules/org/hooks.php:38
+msgid "All partners"
+msgstr ""
+
+#: modules/org/widgets.php:8
+msgid "Partner organization banners list"
 msgstr ""
 
 #: modules/org/widgets.php:52 modules/project/widgets.php:52
@@ -1446,15 +1590,63 @@ msgstr ""
 msgid "Our organization"
 msgstr ""
 
-#: modules/ourorg.php:74
+#: modules/ourorg.php:73
 msgid "Content:"
 msgstr ""
 
-#: modules/person/hooks.php:76 modules/person/tax.php:6
+#: modules/person/hooks.php:8
+msgid "Persons categories"
+msgstr ""
+
+#: modules/person/hooks.php:11
+msgid "All categories"
+msgstr ""
+
+#: modules/person/hooks.php:13
+msgid "Preview category"
+msgstr ""
+
+#: modules/person/hooks.php:29
+msgid "People's profiles"
+msgstr ""
+
+#: modules/person/hooks.php:30
+msgid "Profile"
+msgstr ""
+
+#: modules/person/hooks.php:31 modules/person/hooks.php:32
+msgid "People"
+msgstr ""
+
+#: modules/person/hooks.php:34
+msgid "Add new profile"
+msgstr ""
+
+#: modules/person/hooks.php:35
+msgid "New profile"
+msgstr ""
+
+#: modules/person/hooks.php:36
+msgid "Edit profile"
+msgstr ""
+
+#: modules/person/hooks.php:37
+msgid "Preview profile"
+msgstr ""
+
+#: modules/person/hooks.php:38
+msgid "All profiles"
+msgstr ""
+
+#: modules/person/hooks.php:39
+msgid "Search profile"
+msgstr ""
+
+#: modules/person/hooks.php:64 modules/person/tax.php:6
 msgid "Volonteers"
 msgstr ""
 
-#: modules/person/hooks.php:84
+#: modules/person/hooks.php:72
 msgid "Board"
 msgstr ""
 
@@ -1470,75 +1662,258 @@ msgstr ""
 msgid "Number of persons to output"
 msgstr ""
 
-#: modules/person/widgets.php:65
-msgid "Category"
-msgstr ""
-
 #: modules/person/widgets.php:67
 msgid "Select a category"
+msgstr ""
+
+#: modules/project/hooks.php:9
+msgid "Project"
+msgstr ""
+
+#: modules/project/hooks.php:11 modules/project/hooks.php:13
+msgid "Add project"
+msgstr ""
+
+#: modules/project/hooks.php:14
+msgid "New project"
+msgstr ""
+
+#: modules/project/hooks.php:15
+msgid "Edit project"
+msgstr ""
+
+#: modules/project/hooks.php:16
+msgid "Preview project"
+msgstr ""
+
+#: modules/project/hooks.php:17 modules/starter/plot_config.php:282
+#: modules/starter/plot_config.php:784 modules/starter/plot_config.php:789
+msgid "All projects"
+msgstr ""
+
+#: modules/project/hooks.php:18
+msgid "Search projects"
 msgstr ""
 
 #: modules/project/widgets.php:8
 msgid "Projects short list"
 msgstr ""
 
-#: modules/project/widgets.php:66 modules/starter/plot_config.php:224
-#: modules/starter/plot_config.php:479 modules/starter/plot_config.php:720
+#: modules/project/widgets.php:66 modules/starter/plot_config.php:281
+#: modules/starter/plot_config.php:529 modules/starter/plot_config.php:788
 msgid "Kandinsky projects block menu"
 msgstr ""
 
-#: modules/starter/import_remote_content.php:301
+#: modules/social.php:107
+msgid "Share on VK"
+msgstr ""
+
+#: modules/social.php:114
+msgid "Share on Twitter"
+msgstr ""
+
+#: modules/social.php:121
+msgid "Share on OK"
+msgstr ""
+
+#: modules/social.php:128
+msgid "Share on Facebook"
+msgstr ""
+
+#: modules/social.php:158
+msgid "Share on WhatsApp"
+msgstr ""
+
+#: modules/social.php:165
+msgid "Share on Telegram"
+msgstr ""
+
+#: modules/social.php:172
+msgid "Share on Viber"
+msgstr ""
+
+#: modules/starter/import_remote_content.php:305
 #, php-format
 msgid "Plot name is unknown or not given: %s"
 msgstr ""
 
-#: modules/starter/import_remote_content.php:385
+#: modules/starter/import_remote_content.php:389
 msgid "No zip file"
 msgstr ""
 
-#: modules/starter/import_remote_content.php:389
+#: modules/starter/import_remote_content.php:393
 #, php-format
 msgid "Zip file not found: %s"
 msgstr ""
 
-#: modules/starter/import_remote_content.php:413
+#: modules/starter/import_remote_content.php:417
 #, php-format
 msgid "Unzip FAILED: %s to %s. Error: %s"
 msgstr ""
 
-#: modules/starter/import_remote_content.php:426
+#: modules/starter/import_remote_content.php:430
 msgid "No git content dir!"
 msgstr ""
 
-#: modules/starter/import_remote_content.php:430
+#: modules/starter/import_remote_content.php:434
 #, php-format
 msgid "Unzipped dir not found: %s"
 msgstr ""
 
-#: modules/starter/import_remote_content.php:436
+#: modules/starter/import_remote_content.php:440
 #, php-format
 msgid "Plot dir not found: %s"
 msgstr ""
 
-#: modules/starter/plot_config.php:201 modules/starter/plot_config.php:457
-#: modules/starter/plot_config.php:698 template-parts/headers/header-0.php:57
+#: modules/starter/plot_config.php:217
+msgid "Line of Color"
+msgstr ""
+
+#: modules/starter/plot_config.php:218 modules/starter/plot_config.php:240
+msgid "We help people to fight alcohol addiction"
+msgstr ""
+
+#: modules/starter/plot_config.php:220
+msgid ""
+"Our office, training rooms and support group rooms are open daily from 9:00 "
+"am to 10:00 pm."
+msgstr ""
+
+#: modules/starter/plot_config.php:228
+msgid ""
+"Moscow, 7th Stroiteley Street, 17, office: 211-217\n"
+"+7 (495) 787-87-23"
+msgstr ""
+
+#: modules/starter/plot_config.php:230 modules/starter/plot_config.php:491
+#: modules/starter/plot_config.php:749
+msgid ""
+"By making a donation, the user concludes a donation agreement by accepting a "
+"public offer,\n"
+"which is located"
+msgstr ""
+
+#: modules/starter/plot_config.php:231 modules/starter/plot_config.php:492
+#: modules/starter/plot_config.php:750
+msgid "here"
+msgstr ""
+
+#: modules/starter/plot_config.php:234 modules/starter/plot_config.php:495
+#: modules/starter/plot_config.php:753
+msgid "Personal data processing policy"
+msgstr ""
+
+#: modules/starter/plot_config.php:236 modules/starter/plot_config.php:497
+#: modules/starter/plot_config.php:755
+msgid "Privacy policy"
+msgstr ""
+
+#: modules/starter/plot_config.php:241
+msgid ""
+"There are 877 people in our region who suffer from alcohol addiction. Your "
+"support will help organize a rehabilitation program for them."
+msgstr ""
+
+#: modules/starter/plot_config.php:243
+msgid "Charitable organization \"Line of Color\""
+msgstr ""
+
+#: modules/starter/plot_config.php:244
+msgid ""
+"For more than 10 years we have been helping people with alcoholism, "
+"organizing rehabilitation programs and groups"
+msgstr ""
+
+#: modules/starter/plot_config.php:252 modules/starter/plot_config.php:507
+#: modules/starter/plot_config.php:766 template-parts/headers/header-0.php:57
 #: template-parts/offcanvas.php:28
 msgid "Main menu"
 msgstr ""
 
-#: modules/starter/plot_config.php:212 modules/starter/plot_config.php:467
-#: modules/starter/plot_config.php:709 modules/starter/sidebars.php:13
+#: modules/starter/plot_config.php:253 modules/starter/plot_config.php:508
+#: modules/starter/plot_config.php:767
+msgid "Home"
+msgstr ""
+
+#: modules/starter/plot_config.php:263
+msgid "Primary Menu"
+msgstr ""
+
+#: modules/starter/plot_config.php:269 modules/starter/plot_config.php:517
+#: modules/starter/plot_config.php:777 modules/starter/sidebars.php:13
 msgid "Kandinsky our work footer menu"
 msgstr ""
 
-#: modules/starter/plot_config.php:218 modules/starter/plot_config.php:473
-#: modules/starter/plot_config.php:714 modules/starter/sidebars.php:16
+#: modules/starter/plot_config.php:275 modules/starter/plot_config.php:523
+#: modules/starter/plot_config.php:782 modules/starter/sidebars.php:16
 msgid "Kandinsky news footer menu"
 msgstr ""
 
-#: modules/starter/plot_config.php:461 modules/starter/plot_config.php:474
-#: modules/starter/plot_config.php:480
+#: modules/starter/plot_config.php:294 modules/starter/plot_config.php:299
+#: modules/starter/plot_config.php:304 modules/starter/plot_config.php:802
+#: modules/starter/plot_config.php:807 modules/starter/plot_config.php:812
+msgid "Our partners"
+msgstr ""
+
+#: modules/starter/plot_config.php:479
+msgid "Save Dubrovino Park"
+msgstr ""
+
+#: modules/starter/plot_config.php:481
+msgid "Let's stop deforestation together!"
+msgstr ""
+
+#: modules/starter/plot_config.php:511 modules/starter/plot_config.php:524
+#: modules/starter/plot_config.php:530
 msgid "Extertise"
+msgstr ""
+
+#: modules/starter/plot_config.php:539 modules/starter/plot_config.php:551
+msgid "Latest News"
+msgstr ""
+
+#: modules/starter/plot_config.php:541 modules/starter/plot_config.php:546
+msgid "Expertise"
+msgstr ""
+
+#: modules/starter/plot_config.php:542 modules/starter/plot_config.php:547
+#: modules/starter/plot_config.php:552
+msgid "Media about us"
+msgstr ""
+
+#: modules/starter/plot_config.php:741
+msgid "Charitable foundation to help children from low-income families"
+msgstr ""
+
+#: modules/starter/plot_config.php:747
+msgid ""
+"Arkhangelsk region, Velsky district, Velsk, st. Rogozin, 48, office. 12,"
+msgstr ""
+
+#: modules/starter/plot_config.php:786
+msgid "You helped"
+msgstr ""
+
+#: modules/starter/plot_data_builder.php:81
+msgid ""
+"165150, Arkhangelsk region, Velsky district, Velsk, st. Rogozin, 48, office. "
+"12"
+msgstr ""
+
+#: modules/starter/plot_data_builder.php:85
+msgid "Kotov Aristarkh Evgraphovich"
+msgstr ""
+
+#: modules/starter/plot_data_builder.php:86
+msgid "Sobakin Yevlampy Mstislavovich"
+msgstr ""
+
+#: modules/starter/plot_data_builder.php:87
+msgid "Director"
+msgstr ""
+
+#: modules/starter/plot_data_builder.php:95
+msgid "MEOW Zoobank"
 msgstr ""
 
 #: modules/starter/plot_data_builder.php:109
@@ -1547,6 +1922,39 @@ msgstr ""
 
 #: modules/starter/plot_data_builder.php:110
 msgid "Terms of Service"
+msgstr ""
+
+#: modules/starter/plot_data_builder.php:256
+#: modules/starter/plot_data_builder.php:264
+#: modules/starter/plot_data_builder.php:268
+#: modules/starter/plot_data_builder.php:272
+#: modules/starter/plot_data_builder.php:276
+#: modules/starter/plot_data_builder.php:280
+msgid "Martynov Semyon Semyonovich"
+msgstr ""
+
+#: modules/starter/plot_data_builder.php:257
+#: modules/starter/plot_data_builder.php:265
+#: modules/starter/plot_data_builder.php:269
+#: modules/starter/plot_data_builder.php:273
+#: modules/starter/plot_data_builder.php:277
+msgid "Korovin Ostap Rudolfovich"
+msgstr ""
+
+#: modules/starter/plot_data_builder.php:258
+#: modules/starter/plot_data_builder.php:266
+#: modules/starter/plot_data_builder.php:270
+#: modules/starter/plot_data_builder.php:274
+#: modules/starter/plot_data_builder.php:278
+msgid "Bykov Ivan Ivanovich"
+msgstr ""
+
+#: modules/starter/plot_data_builder.php:259
+#: modules/starter/plot_data_builder.php:267
+#: modules/starter/plot_data_builder.php:271
+#: modules/starter/plot_data_builder.php:275
+#: modules/starter/plot_data_builder.php:279
+msgid "Moose Veniamin Robertovich"
 msgstr ""
 
 #: modules/starter/plot_data_builder.php:522
