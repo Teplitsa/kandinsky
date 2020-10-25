@@ -29,7 +29,7 @@
 			<?php } ?>
 
 			<div class="trigger-button menu site-panel-cell">
-				<a id="trigger_menu" href="<?php echo esc_url( home_url( 'sitemap' ) ); ?>">
+				<a id="trigger_menu" href="#">
 					<?php knd_svg_icon( 'icon-menu' ); ?>
 				</a>
 			</div>
