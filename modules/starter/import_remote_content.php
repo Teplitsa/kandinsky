@@ -295,7 +295,14 @@ class KND_Import_Git_Content {
 
 				// $this->content_archive_url = "https://github.com/Teplitsa/kandinsky-text-" . $plot_name . "/archive/master.zip";
 				// $this->content_archive_url = "https://knd.te-st.ru/wp-content/uploads/knd/kandinsky-text-" . $plot_name . "-master.zip";
-				$content_archive_url = 'https://knd.s3.eu-central-1.amazonaws.com/kandinsky-text-' . $plot_name . '-master.zip';
+
+				$locale = get_locale();
+
+				if ( 'ru_RU' === $locale ) {
+					$content_archive_url = 'https://knd.s3.eu-central-1.amazonaws.com/kandinsky-text-' . $plot_name . '-master.zip';
+				} else {
+					$content_archive_url = 'https://knd.bootwp.com/kandinsky-text-' . $plot_name . '-en.zip';
+				}
 
 				$this->content_archive_url = $content_archive_url;
 
