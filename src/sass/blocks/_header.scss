@@ -132,6 +132,10 @@
 	color: var(--knd-color-logo);
 
 	@include knd-subhead-text();
+
+	body.plot-public-campaign & {
+		color: $color-text-contrast;
+	}
 }
 
 .site-logo {
