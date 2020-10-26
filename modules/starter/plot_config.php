@@ -215,7 +215,7 @@ class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
 
 		$this->data_routes['general_options'] = array(
 			'site_name'           => esc_html__( 'Line of Color', 'knd' ),
-			'site_description'    => esc_html__( 'We help people to fight alcohol addiction', 'knk' ),
+			'site_description'    => esc_html__( 'We help people to fight alcohol addiction', 'knd' ),
 			'knd_footer_contacts' => '<p>
 ' . esc_html__( 'Our office, training rooms and support group rooms are open daily from 9:00 am to 10:00 pm.', 'knd' ) . '
 </p>

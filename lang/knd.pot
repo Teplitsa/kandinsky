@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Kandinsky\n"
-"POT-Creation-Date: 2020-10-23 08:10+0300\n"
+"POT-Creation-Date: 2020-10-26 19:10+0300\n"
 "PO-Revision-Date: 2020-06-22 06:53+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -1188,7 +1188,7 @@ msgstr ""
 msgid "E.g., https://youtube.com/channel/your-organization-channel"
 msgstr ""
 
-#: core/extras.php:369 modules/starter/import_remote_content.php:400
+#: core/extras.php:369 modules/starter/import_remote_content.php:407
 #, php-format
 msgid "Old import files cleanup FAILED: %s."
 msgstr ""
@@ -1732,35 +1732,35 @@ msgstr ""
 msgid "Share on Viber"
 msgstr ""
 
-#: modules/starter/import_remote_content.php:305
+#: modules/starter/import_remote_content.php:312
 #, php-format
 msgid "Plot name is unknown or not given: %s"
 msgstr ""
 
-#: modules/starter/import_remote_content.php:389
+#: modules/starter/import_remote_content.php:396
 msgid "No zip file"
 msgstr ""
 
-#: modules/starter/import_remote_content.php:393
+#: modules/starter/import_remote_content.php:400
 #, php-format
 msgid "Zip file not found: %s"
 msgstr ""
 
-#: modules/starter/import_remote_content.php:417
+#: modules/starter/import_remote_content.php:424
 #, php-format
 msgid "Unzip FAILED: %s to %s. Error: %s"
 msgstr ""
 
-#: modules/starter/import_remote_content.php:430
+#: modules/starter/import_remote_content.php:437
 msgid "No git content dir!"
 msgstr ""
 
-#: modules/starter/import_remote_content.php:434
+#: modules/starter/import_remote_content.php:441
 #, php-format
 msgid "Unzipped dir not found: %s"
 msgstr ""
 
-#: modules/starter/import_remote_content.php:440
+#: modules/starter/import_remote_content.php:447
 #, php-format
 msgid "Plot dir not found: %s"
 msgstr ""
@@ -1785,7 +1785,7 @@ msgid ""
 "+7 (495) 787-87-23"
 msgstr ""
 
-#: modules/starter/plot_config.php:230 modules/starter/plot_config.php:491
+#: modules/starter/plot_config.php:230 modules/starter/plot_config.php:490
 #: modules/starter/plot_config.php:749
 msgid ""
 "By making a donation, the user concludes a donation agreement by accepting a "
@@ -1793,17 +1793,17 @@ msgid ""
 "which is located"
 msgstr ""
 
-#: modules/starter/plot_config.php:231 modules/starter/plot_config.php:492
+#: modules/starter/plot_config.php:231 modules/starter/plot_config.php:491
 #: modules/starter/plot_config.php:750
 msgid "here"
 msgstr ""
 
-#: modules/starter/plot_config.php:234 modules/starter/plot_config.php:495
+#: modules/starter/plot_config.php:234 modules/starter/plot_config.php:494
 #: modules/starter/plot_config.php:753
 msgid "Personal data processing policy"
 msgstr ""
 
-#: modules/starter/plot_config.php:236 modules/starter/plot_config.php:497
+#: modules/starter/plot_config.php:236 modules/starter/plot_config.php:496
 #: modules/starter/plot_config.php:755
 msgid "Privacy policy"
 msgstr ""
@@ -1855,12 +1855,20 @@ msgstr ""
 msgid "Our partners"
 msgstr ""
 
-#: modules/starter/plot_config.php:479
+#: modules/starter/plot_config.php:478
 msgid "Save Dubrovino Park"
 msgstr ""
 
-#: modules/starter/plot_config.php:481
+#: modules/starter/plot_config.php:479
+msgid "Initiative group"
+msgstr ""
+
+#: modules/starter/plot_config.php:480
 msgid "Let's stop deforestation together!"
+msgstr ""
+
+#: modules/starter/plot_config.php:500
+msgid "Start protecting"
 msgstr ""
 
 #: modules/starter/plot_config.php:511 modules/starter/plot_config.php:524
