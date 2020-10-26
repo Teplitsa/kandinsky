@@ -63,17 +63,21 @@
 	padding-top: 54px;
 	background: $color-gray-light;
 	
-	body.plot-public-campaign & {
-		background: $color-third;
-	}
-	
 	h2.section-title {
 		@include knd-head-section-text();
 		color: $color-text;
 		font-size: 26px;
 		font-family: var(--knd-font-family-headings);
 	}
-	
+
+	body.plot-public-campaign & {
+		background: $color-third;
+
+		h2.section-title {
+			--knd-page-text-color: #000;
+		}
+	}
+
 	.cards-row {
 		padding-top: 30px;
 	}
@@ -381,6 +385,7 @@
 	.container {
 		display: flex;
 		align-items: center;
+		justify-content: center;
 	}
 
 	.knd-joinus-widget .container > div:first-child {
