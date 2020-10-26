@@ -420,7 +420,7 @@ class KND_Dubrovino_Data_Builder extends KND_Plot_Data_Builder {
 			'knd_text3_color' => '#362cf0',
 			'knd_page_bg_color' => '#ffffff',
 			'knd_page_text_color' => '#000000',
-			'knd_custom_logo_mod' => 'image_only',
+			'knd_custom_logo_mod' => 'image_text',
 		),
 
 		'theme_options' => array(
