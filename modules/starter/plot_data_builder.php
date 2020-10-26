@@ -1048,9 +1048,9 @@ class KND_Plot_Data_Builder {
 			
 		}
 
-		if ( term_exists( 'Primary Menu', 'nav_menu' ) ) {
+		if ( term_exists( esc_html__( 'Primary Menu', 'knd' ), 'nav_menu' ) ) {
 			$nav_menu_locations = array();
-			$menu = get_term_by( 'name', 'Primary Menu', 'nav_menu' );
+			$menu = get_term_by( 'name', esc_html__( 'Primary Menu', 'knd' ), 'nav_menu' );
 			if ( ! empty( $menu ) && ! is_wp_error( $menu ) ) {
 				$menu_id                       = $menu->term_id;
 				$nav_menu_locations['primary'] = $menu_id;
