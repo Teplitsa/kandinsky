@@ -301,7 +301,7 @@ class KND_Import_Git_Content {
 				if ( 'ru_RU' === $locale ) {
 					$content_archive_url = 'https://knd.s3.eu-central-1.amazonaws.com/kandinsky-text-' . $plot_name . '-master.zip';
 				} else {
-					$content_archive_url = 'https://knd.bootwp.com/kandinsky-text-' . $plot_name . '-en.zip';
+					$content_archive_url = 'https://knd.s3.eu-central-1.amazonaws.com/kandinsky-text-' . $plot_name . '-en.zip';
 				}
 
 				$this->content_archive_url = $content_archive_url;
