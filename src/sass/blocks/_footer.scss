@@ -1,34 +1,79 @@
 /** == Footers (_footer.scss) == */
 // Global footer styling
 
-
 /** Bottom branding pannel with social links **/
-.bottom-bar {    
+.bottom-bar {
 	background: $color-gray-light;
 	padding: $base*2.2 0 0;
 	color: $color-black;
 	
 	body.plot-public-campaign & {
-	   color: $color-text-contrast;
-	   background: $color-third;
+		color: $color-text-contrast;
+		background: $color-third;
 	}
 
-	.knd-social-links  {
-	   
+	.knd-social-links {
 		li a {
 			.svg-icon {
-			   fill: $color-black;
-			   
-			   body.plot-public-campaign & {
-				   fill: $color-text-contrast;
-			   }
-		   } 
+				fill: $color-black;
+
+				body.plot-public-campaign & {
+					fill: $color-text-contrast;
+				}
+			}
+		}
+	}
+
+	.knd-footer-logo {
+
+		&__image {
+			max-height: 66px;
+			flex: 0 1 auto;
+			display: flex;
+			margin-right: 15px;
+
+			img {
+				max-height: 66px;
+				width: auto;
+				display: block;
+			}
+		}
+
+		&__inner {
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+		}
+
+		&__text {
+			flex: 1 1 auto;
 		}
 	}
 
 	.logo-name {
-		padding-top: 8px;
 		font-size: 22px;
+	}
+
+	.logo-desc {
+		font-size: 11px;
+	}
+
+}
+
+@media (max-width: 575px) {
+	.bottom-bar {
+		.knd-footer-logo {
+			&__inner {
+				flex-wrap: wrap;
+			}
+			&__image {
+				margin-right: 0;
+				width: 100%;
+				&:not(:last-child) {
+					margin-bottom: 10px;
+				}
+			}
+		}
 	}
 }
 
@@ -36,8 +81,6 @@
 	padding-bottom: $gut/2;
 	.flex-cell { margin-bottom: $gut/2; }
 }
-
-
 
 /** Footer **/
 .site-footer {
@@ -159,9 +202,17 @@
 /** Footer credits block */
 .footer-credits {
 	padding-top: $gut/3;
+	justify-content: center;
+
+	> .flex-cell:first-child:last-child {
+		> .copy {
+			text-align: center;
+			max-width: initial;
+		}
+	}
 }
 
-.knd-brand {    
+.knd-brand {
 	position: relative;
 	@include cf;
 
@@ -214,5 +265,3 @@
 		}
 	}
 }
-
-
