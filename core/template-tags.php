@@ -732,6 +732,37 @@ function knd_header_logo() {
 }
 
 /**
+ * Bottom Bar Logo
+ */
+function knd_footer_logo() {
+
+	if ( get_theme_mod( 'footer_logo', true ) ) {
+
+		$logo_id = get_theme_mod( 'footer_logo_image', get_theme_mod( 'header_logo_image', get_theme_mod( 'knd_custom_logo' ) ) );
+
+		$logo_url = wp_get_attachment_image_url( $logo_id, 'full', false );
+		?>
+
+		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="knd-footer-logo">
+			<span class="knd-footer-logo__inner">
+				<?php if ( $logo_url ) { ?>
+					<span class="knd-footer-logo__image">
+						<?php echo wp_get_attachment_image( $logo_id, 'full', false, array( 'alt' => get_bloginfo( 'name' ) ) ); ?>
+					</span>
+				<?php } ?>
+
+				<span class="knd-footer-logo__text">
+					<span class="logo-name"><?php echo wp_kses_post( nl2br( get_theme_mod( 'footer_logo_title', get_theme_mod( 'header_logo_title', get_bloginfo( 'name' ) ) ) ) ); ?></span>
+					<span class="logo-desc"><?php echo wp_kses_post( nl2br( get_theme_mod( 'footer_logo_text', get_theme_mod( 'header_logo_text', get_bloginfo( 'description' ) ) ) ) ); ?></span>
+				</span>
+			</span>
+		</a>
+
+		<?php
+	}
+}
+
+/**
  * Site Search Toggle
  */
 function knd_search_toggle() {
