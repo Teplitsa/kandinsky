@@ -1,9 +1,10 @@
-<?php /**
+<?php
+/**
  * Custom functions that act independently of the theme templates
  *
  * Eventually, some of the functionality here could be replaced by core features
  *
- * @package bb
+ * @package Kandinsky
  */
 
 if ( ! defined( 'WPINC' ) )
@@ -22,20 +23,6 @@ add_filter( 'knd_the_content', 'wp_kses_post', 5 );
 add_filter( 'knd_the_title', 'wptexturize' );
 add_filter( 'knd_the_title', 'convert_chars' );
 add_filter( 'knd_the_title', 'trim' );
-
-global $wp_embed;
-add_filter( 'knd_entry_the_content', array( $wp_embed, 'run_shortcode' ), 8 );
-add_filter( 'knd_entry_the_content', array( $wp_embed, 'autoembed' ), 8 );
-add_filter( 'knd_entry_the_content', 'wptexturize' );
-add_filter( 'knd_entry_the_content', 'convert_smilies' );
-add_filter( 'knd_entry_the_content', 'convert_chars' );
-add_filter( 'knd_entry_the_content', 'knd_entry_wpautop' );
-add_filter( 'knd_entry_the_content', 'shortcode_unautop' );
-add_filter( 'knd_entry_the_content', 'prepend_attachment' );
-add_filter( 'knd_entry_the_content', 'knd_force_https' );
-//add_filter( 'knd_entry_the_content', 'wp_make_content_images_responsive' ); // deprecated 5.5
-//add_filter( 'knd_entry_the_content', 'do_shortcode', 11 );
-add_filter( 'knd_entry_the_content', 'wp_kses_post', 7 );
 
 /**
  * Add allowed html iframe
