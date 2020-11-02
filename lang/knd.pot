@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Kandinsky\n"
-"POT-Creation-Date: 2020-10-26 19:10+0300\n"
+"POT-Creation-Date: 2020-11-02 20:57+0300\n"
 "PO-Revision-Date: 2020-06-22 06:53+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -23,18 +23,18 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-1: vendor\n"
 "X-Poedit-SearchPathExcluded-2: node_modules\n"
 
-#: 404.php:5
-msgid ""
-"Unfortunately this page has been removed or never exists. Please, use the "
-"search field to find the information you need or visit the homepage."
-msgstr ""
-
 #: 404.php:13
 msgid "Error 404"
 msgstr ""
 
 #: 404.php:14
 msgid "Page not found"
+msgstr ""
+
+#: 404.php:21
+msgid ""
+"Unfortunately this page has been removed or never exists. Please, use the "
+"search field to find the information you need or visit the homepage."
 msgstr ""
 
 #: archive-leyka_campaign.php:27 index.php:18
@@ -610,6 +610,7 @@ msgstr ""
 
 #: core/customizer/customizer-deprecated.php:104
 #: core/customizer/customizer-deprecated.php:262
+#: core/customizer/theme-mods/footer.php:47
 #: core/customizer/theme-mods/global.php:54
 #: core/customizer/theme-mods/header.php:43
 msgid "Logo"
@@ -788,7 +789,7 @@ msgid "CTA block settings"
 msgstr ""
 
 #: core/customizer/customizer-deprecated.php:477
-#: core/customizer/theme-mods/footer.php:49
+#: core/customizer/theme-mods/footer.php:111
 #: core/customizer/theme-mods/header.php:413
 msgid "Social networks links"
 msgstr ""
@@ -818,7 +819,7 @@ msgstr ""
 #: core/customizer/customizer-deprecated.php:543
 #: core/customizer/theme-mods/global.php:326 core/template-tags.php:256
 #: modules/starter/plot_config.php:785 modules/starter/plot_config.php:798
-#: single-leyka_campaign.php:28 single-leyka_campaign.php:43
+#: single-leyka_campaign.php:29 single-leyka_campaign.php:43
 msgid "They need help"
 msgstr ""
 
@@ -829,7 +830,7 @@ msgstr ""
 
 #: core/customizer/customizer-deprecated.php:559
 #: core/customizer/theme-mods/global.php:334 core/template-tags.php:251
-#: single-leyka_campaign.php:24 single-leyka_campaign.php:44
+#: single-leyka_campaign.php:25 single-leyka_campaign.php:44
 msgid "They alredy got help"
 msgstr ""
 
@@ -892,8 +893,49 @@ msgstr ""
 msgid "Go to Menu"
 msgstr ""
 
-#: core/customizer/theme-mods/footer.php:39 core/widgets.php:43
+#: core/customizer/theme-mods/footer.php:39
+msgid "Logo and social networks"
+msgstr ""
+
+#: core/customizer/theme-mods/footer.php:72
+#: core/customizer/theme-mods/header.php:54
+msgid "Name"
+msgstr ""
+
+#: core/customizer/theme-mods/footer.php:88
+#: core/customizer/theme-mods/header.php:63 core/shortcodes-ui.php:51
+msgid "Description"
+msgstr ""
+
+#: core/customizer/theme-mods/footer.php:139 core/widgets.php:43
 msgid "Footer - Columns"
+msgstr ""
+
+#: core/customizer/theme-mods/footer.php:148
+msgid "Copyright, license, etc."
+msgstr ""
+
+#: core/customizer/theme-mods/footer.php:155
+msgid "License information"
+msgstr ""
+
+#: core/customizer/theme-mods/footer.php:160 footer.php:10
+#, php-format
+msgid "All materials of the site are avaliabe under license %s"
+msgstr ""
+
+#: core/customizer/theme-mods/footer.php:160 footer.php:10
+msgid "Creative Commons СС-BY-SA 3.0"
+msgstr ""
+
+#: core/customizer/theme-mods/footer.php:181
+msgid ""
+"The creators of the constructor will be grateful if you leave the "
+"information about Kandinsky included."
+msgstr ""
+
+#: core/customizer/theme-mods/footer.php:187
+msgid "Show the Kandinsky logo"
 msgstr ""
 
 #: core/customizer/theme-mods/global.php:12
@@ -964,14 +1006,6 @@ msgstr ""
 
 #: core/customizer/theme-mods/header.php:20
 msgid "Select header template"
-msgstr ""
-
-#: core/customizer/theme-mods/header.php:54
-msgid "Name"
-msgstr ""
-
-#: core/customizer/theme-mods/header.php:63 core/shortcodes-ui.php:51
-msgid "Description"
 msgstr ""
 
 #: core/customizer/theme-mods/header.php:72
@@ -1128,72 +1162,72 @@ msgid ""
 "\">https://wordpress.org/plugins/custom-post-type-ui/</a>"
 msgstr ""
 
-#: core/extras.php:81
+#: core/extras.php:68
 msgid "More"
 msgstr ""
 
-#: core/extras.php:305 modules/social.php:109
+#: core/extras.php:292 modules/social.php:109
 msgid "VKontakte"
 msgstr ""
 
-#: core/extras.php:306
+#: core/extras.php:293
 msgid "E.g., https://vk.com/club0123456789"
 msgstr ""
 
-#: core/extras.php:308 modules/social.php:123
+#: core/extras.php:295 modules/social.php:123
 msgid "Odnoklassniki"
 msgstr ""
 
-#: core/extras.php:309
+#: core/extras.php:296
 msgid "E.g., https://ok.ru/profile/0123456789"
 msgstr ""
 
-#: core/extras.php:311 modules/social.php:130
+#: core/extras.php:298 modules/social.php:130
 msgid "Facebook"
 msgstr ""
 
-#: core/extras.php:312
+#: core/extras.php:299
 msgid "E.g., https://www.facebook.com/your-organization-page"
 msgstr ""
 
-#: core/extras.php:314
+#: core/extras.php:301
 msgid "Instagram"
 msgstr ""
 
-#: core/extras.php:315
+#: core/extras.php:302
 msgid "E.g., https://www.instagram.com/your-organization-page"
 msgstr ""
 
-#: core/extras.php:317 modules/social.php:116
+#: core/extras.php:304 modules/social.php:116
 msgid "Twitter"
 msgstr ""
 
-#: core/extras.php:318
+#: core/extras.php:305
 msgid "E.g., https://twitter.com/your-organization-page"
 msgstr ""
 
-#: core/extras.php:320
+#: core/extras.php:307
 msgid "Telegram"
 msgstr ""
 
-#: core/extras.php:321
+#: core/extras.php:308
 msgid "E.g., https://tlgrm.ru/channels/@your-organization-page"
 msgstr ""
 
-#: core/extras.php:323
+#: core/extras.php:310
 msgid "YouTube"
 msgstr ""
 
-#: core/extras.php:324
+#: core/extras.php:311
 msgid "E.g., https://youtube.com/channel/your-organization-channel"
 msgstr ""
 
-#: core/extras.php:369 modules/starter/import_remote_content.php:407
+#: core/extras.php:356 modules/starter/import_remote_content.php:407
 #, php-format
 msgid "Old import files cleanup FAILED: %s."
 msgstr ""
 
-#: core/extras.php:448
+#: core/extras.php:435
 msgid "Recommended plugins to install"
 msgstr ""
 
@@ -1374,7 +1408,7 @@ msgstr ""
 msgid "Registration is closed"
 msgstr ""
 
-#: core/template-tags.php:759
+#: core/template-tags.php:815
 msgid "Search ..."
 msgstr ""
 
@@ -1403,15 +1437,6 @@ msgid ""
 "Footer columns area accepts 4 widgets. Does not accept wide widgets, like "
 "News, Partners, Projects, Donations or CTA. You should place here widgets "
 "like Custom HTML, Custom Menu, Text etc."
-msgstr ""
-
-#: footer.php:10
-msgid "Creative Commons СС-BY-SA 3.0"
-msgstr ""
-
-#: footer.php:51
-#, php-format
-msgid "All materials of the site are avaliabe under license %s"
 msgstr ""
 
 #: footer.php:58
@@ -1836,6 +1861,8 @@ msgid "Home"
 msgstr ""
 
 #: modules/starter/plot_config.php:263
+#: modules/starter/plot_data_builder.php:1051
+#: modules/starter/plot_data_builder.php:1053
 msgid "Primary Menu"
 msgstr ""
 
@@ -2004,11 +2031,11 @@ msgstr ""
 msgid "Press Enter"
 msgstr ""
 
-#: single.php:91
+#: single.php:93
 msgid "Related items"
 msgstr ""
 
-#: single.php:103
+#: single.php:106
 msgid "Related projects"
 msgstr ""
 
