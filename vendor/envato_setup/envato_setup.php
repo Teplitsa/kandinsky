@@ -1103,7 +1103,13 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 							throw new Exception(__('No scenarios detected', 'knd'), 1);
 						}
 
-						foreach($this->site_scenarios as $scenario_id => $data) { ?>
+						$locale = get_locale();
+
+						if ( 'ru_RU' !== $locale ) {
+							unset( $this->site_scenarios['fundraising-org'] );
+						}
+						foreach( $this->site_scenarios as $scenario_id => $data) {
+							?>
 							<li <?php echo $scenario_id == $current_scenario_id ? 'class="current" ' : ''; ?>>
 								<a href="#" data-scenario-id="<?php echo esc_attr($scenario_id); ?>">
 									<img src="<?php echo esc_url(get_template_directory_uri().'/vendor/envato_setup/images/'.$scenario_id.'/style.png'); ?>">
