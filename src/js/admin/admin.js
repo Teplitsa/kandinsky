@@ -80,6 +80,10 @@ jQuery( document ).ready( function( $ ) {
 
 	});
 
+	$( document ).on( 'wp-theme-update-success', function( event, response ) {
+		$('.knd-update-notice').fadeOut();
+	} );
+
 } );
 
 function kndGetUpdateResultIcon(status, message) {
