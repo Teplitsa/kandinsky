@@ -20,7 +20,8 @@ define('KND_SUPPORT_EMAIL', 'support@te-st.ru');
 define('KND_SUPPORT_URL', 'https://pd.te-st.ru/forms/contacts/');
 define('KND_SUPPORT_TELEGRAM', 'https://t.me/joinchat/AAAAAENN3prSrvAs7KwWrg');
 define('KND_SETUP_WIZARD_URL', admin_url('themes.php?page=knd-setup-wizard'));
-define('KND_DISTR_ARCHIVE_URL', 'https://github.com/Teplitsa/kandinsky/archive/master.zip');
+//define('KND_DISTR_ARCHIVE_URL', 'https://github.com/Teplitsa/kandinsky/archive/master.zip');
+define('KND_DISTR_ARCHIVE_URL', 'https://github.com/Teplitsa/kandinsky/raw/master/update/master.zip');
 /** define('KND_DISTR_ARCHIVE_URL', 'https://github.com/Teplitsa/kandinsky/archive/dev.zip'); */
 define('KND_MIN_PHP_VERSION', '5.6.0');
 define('KND_PHP_VERSION_ERROR_MESSAGE', '<strong>Внимание:</strong> версия PHP ниже <strong>5.6.0</strong>. Кандинский нуждается в PHP хотя бы <strong>версии 5.6.0</strong>, чтобы работать корректно.<br /><br />Пожалуйста, направьте вашему хостинг-провайдеру запрос на повышение версии PHP для этого сайта.');
@@ -58,10 +59,25 @@ function knd_setup() {
 	// Inits.
 	knd_load_theme_textdomain();
 
-	// Support automatic feed links.
+	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
-	add_theme_support('title-tag');
+	/*
+	 * Let WordPress manage the document title.
+	 * By adding theme support, we declare that this theme does not use a
+	 * hard-coded <title> tag in the document head, and expect WordPress to
+	 * provide it for us.
+	 */
+	add_theme_support( 'title-tag' );
+
+	/**
+	 * Register Nav Menus locations.
+	 */
+	register_nav_menus(
+		array(
+			'primary' => esc_html__( 'Primary menu', 'knd' ),
+		)
+	);
 
 	/**
 	 * Switch default core markup for search form, comment form, and comments
@@ -80,18 +96,16 @@ function knd_setup() {
 		)
 	);
 
-	// Menus.
-	$menus = array(
-		'primary' => esc_html__( 'Primary menu', 'knd' ),
-	);
-
-	register_nav_menus( $menus );
-
-	// Editor style.
-	add_editor_style( array( 'assets/css/editor.css' ) );
+	// Add support for responsive embeds.
+	add_theme_support( 'responsive-embeds' );
 
 	// Add support for full and wide align images.
 	add_theme_support( 'align-wide' );
+
+	//add_theme_support( 'wp-block-styles' );
+
+	// Editor style.
+	add_editor_style( array( 'assets/css/editor.css' ) );
 
 }
 add_action( 'after_setup_theme', 'knd_setup', 9 ); // Theme wizard initialize at 10, this init should occur befure it.
@@ -171,6 +185,11 @@ foreach ( glob( get_template_directory() . '/modules/*' ) as $module_file ) {
 }
 
 if ( is_admin() || current_user_can( 'manage_options' ) ) {
+	/**
+	* Theme Update checker
+	*/
+	require get_template_directory() . '/core/theme-update/theme-update-checker.php';
+
 	get_template_part( '/core/admin-update-theme' );
 	get_template_part( '/core/admin' );
 	get_template_part( '/vendor/class-tgm-plugin-activation' );
@@ -185,14 +204,11 @@ esc_html__('Kandinsky', 'knd');
 esc_html__('Teplitsa', 'knd');
 esc_html__('The beautiful design and useful features for nonprofit website', 'knd');
 
-
-
-
 function widgets_scripts( $hook ) {
-    if ( 'widgets.php' != $hook ) {
-        return;
-    }
-    wp_enqueue_style( 'wp-color-picker' );        
-    wp_enqueue_script( 'wp-color-picker' ); 
+	if ( 'widgets.php' != $hook ) {
+		return;
+	}
+	wp_enqueue_style( 'wp-color-picker' );
+	wp_enqueue_script( 'wp-color-picker' );
 }
 add_action( 'admin_enqueue_scripts', 'widgets_scripts' );
