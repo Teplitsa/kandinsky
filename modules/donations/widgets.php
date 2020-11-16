@@ -118,7 +118,7 @@ class KND_Donations_Widget extends WP_Widget {
 	function form($instance) {
 
 		/* Set up some default widget settings */
-		$defaults = array('title' => '', 'num' => 4, 'exclude' => '');
+		$defaults = array('title' => '', 'num' => 3, 'exclude' => '');
 		$instance = wp_parse_args((array)$instance, $defaults);		
 	?>
 		<p>
