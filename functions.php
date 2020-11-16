@@ -21,7 +21,8 @@ define('KND_SUPPORT_URL', 'https://pd.te-st.ru/forms/contacts/');
 define('KND_SUPPORT_TELEGRAM', 'https://t.me/joinchat/AAAAAENN3prSrvAs7KwWrg');
 define('KND_SETUP_WIZARD_URL', admin_url('themes.php?page=knd-setup-wizard'));
 //define('KND_DISTR_ARCHIVE_URL', 'https://github.com/Teplitsa/kandinsky/archive/master.zip');
-define('KND_DISTR_ARCHIVE_URL', 'https://github.com/Teplitsa/kandinsky/raw/master/update/master.zip');
+define('KND_DISTR_ARCHIVE_URL', 'https://github.com/Teplitsa/kandinsky-theme/raw/master/update/master.zip');
+define('KND_UPDATE_INFO_URL', 'https://raw.githubusercontent.com/Teplitsa/kandinsky-theme/master/update/info.json');
 /** define('KND_DISTR_ARCHIVE_URL', 'https://github.com/Teplitsa/kandinsky/archive/dev.zip'); */
 define('KND_MIN_PHP_VERSION', '5.6.0');
 define('KND_PHP_VERSION_ERROR_MESSAGE', '<strong>Внимание:</strong> версия PHP ниже <strong>5.6.0</strong>. Кандинский нуждается в PHP хотя бы <strong>версии 5.6.0</strong>, чтобы работать корректно.<br /><br />Пожалуйста, направьте вашему хостинг-провайдеру запрос на повышение версии PHP для этого сайта.');

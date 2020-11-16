@@ -322,7 +322,7 @@ endif;
 $template = get_template();
 $berserk_update_checker = new ThemeUpdateChecker(
 	$template,
-	'https://raw.githubusercontent.com/Teplitsa/kandinsky/master/update/info.json?v=' . current_time( 'timestamp' )
+	KND_UPDATE_INFO_URL . '?v=' . current_time( 'timestamp' )
 );
 
 $update_info = (array) get_option( 'external_theme_updates-' . get_template() );
