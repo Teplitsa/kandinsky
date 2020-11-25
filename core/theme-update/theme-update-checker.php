@@ -347,7 +347,7 @@ if ( $update_info && isset( $update_info['update'] ) ) {
 			<p><?php echo sprintf( __( 'There is a new version of theme <strong>%1$s</strong> available. <a href="%2$s">Update to version %3$s</a>.', 'knd' ),
 					$theme_name,
 					$theme_url,
-					$new_version,
+					$new_version
 				); ?></p>
 		</div>
 		<?php
