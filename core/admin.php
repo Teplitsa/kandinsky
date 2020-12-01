@@ -144,12 +144,6 @@ function knd_get_admin_menu_items( $place = '' ) {
 		        		'text' => sprintf( esc_html__( 'Version %s', 'knd' ), KND_VERSION),
 		        		'link' => KND_SOURCES_PAGE_URL
 		        	),
-		        	'update-theme' => array(
-		        		'class' => 'knd-update-theme',
-		        		'icon' => 'dashicons-controls-repeat',
-		        		'text' => esc_html__( 'Update theme', 'knd' ),
-		        		'link' => admin_url( 'admin.php?page=update-kandinsky-theme' )
-		        	),
 		        )
             ),
         ),
@@ -188,18 +182,6 @@ function knd_get_admin_menu_items( $place = '' ) {
                 		'text' => sprintf( esc_html__( 'Version %s', 'knd' ), KND_VERSION),
                 		'link' => KND_SOURCES_PAGE_URL
                 	),
-                	'update-theme' => array(
-                		'class' => 'knd-update-theme',
-                		'icon' => 'dashicons-controls-repeat',
-                		'text' => esc_html__( 'Update theme', 'knd' ),
-                		'link' => admin_url( 'admin.php?page=update-kandinsky-theme' )
-                	),
-                    'remove-theme' => array(
-                        'class' => 'knd-remove-theme',
-                        'icon' => 'dashicons-no',
-                        'text' => esc_html__( 'Remove theme', 'knd' ),
-                        'link' => admin_url( 'admin.php?page=remove-kandinsky-theme' )
-                    ),
                 ),
             ),
         ),
@@ -225,94 +207,6 @@ function knd_get_admin_menu_items( $place = '' ) {
 	return $items;
 }
 
-function knd_cancel_remove_theme() {
-	if(isset($_POST['knd-cancel-remove-theme'])) {
-		wp_redirect( admin_url( '/index.php' ) );
-	}
-}
-add_action( 'admin_init', 'knd_cancel_remove_theme' );
-
-function knd_remove_theme() {
-	
-	global $wp_filesystem;
-	global $wpdb;
-	
-	$is_theme_data_removed = false;
-	
-	if(isset($_POST['knd-remove-theme'])) {
-		
-		$url = admin_url('admin.php?page=remove-kandinsky-theme');
-		$method = '';
-		$fields = array_keys($_POST);
-		
-		if(false === ($creds = request_filesystem_credentials(esc_url_raw($url), $method, false, false, $fields))) {
-			return true;
-		}
-		
-		if( !WP_Filesystem($creds)) {
-			request_filesystem_credentials(esc_url_raw($url), $method, true, false, $fields);
-		}
-		
-		$nonce = $_REQUEST['_wpnonce'];
-		if(wp_verify_nonce( $nonce, 'knd-remove-theme' )) {
-			
-			$knd_site_scenario = knd_get_theme_mod('knd_site_scenario');
-			$current_template_dir = get_template_directory();
-			
-			if($knd_site_scenario) {
-				$imp = new KND_Import_Remote_Content($knd_site_scenario);
-				$pdb = KND_Plot_Data_Builder::produce_builder($imp);
-				$pdb->remove_all_content();
-			}
-			else {
-				$sql = "DELETE FROM $wpdb->options WHERE `option_name` LIKE 'knd_val_hash_%'";
-				$wpdb->query($sql);
-			}
-			
-			$themes = wp_get_themes();
-			foreach($themes as $theme) {
-				if(strtolower($theme->Name) != 'kandinsky') {
-					switch_theme($theme->template);
-					break;
-				}
-			}
-			
-			set_transient( '_knd_activation_redirect_done', false );
-				
-			$wp_filesystem->rmdir($current_template_dir, true);
-				
-			$is_theme_data_removed = true;
-		}
-	}
-	
-?>
-<div class="wrap">
-	<h2><?php echo get_admin_page_title() ?></h2>
-
-<?php if($is_theme_data_removed): ?>
-        <div class="notice notice-success is-dismissible">
-          <p><?php esc_html_e( 'Kandinsky theme removed', 'knd' ); ?></p>
-        </div>
-<?php else:?>
-
-	<form action="" method="POST" class="knd-confirm-remove-theme">
-		<?php
-			wp_nonce_field('knd-remove-theme');
-			?>
-            <h2><?php esc_html_e("Are you sure you want to remove Kandinsky theme?", 'knd'); ?></h2>
-            <p>
-            <?php
-			submit_button(__("Yes, remove Kandinsky theme", 'knd'), 'primary', 'knd-remove-theme', false);
-			submit_button(__("Cancel", 'knd'), 'secondary', 'knd-cancel-remove-theme', false, array('class' => 'knd-cancel-remove-theme-button'));
-		?>
-            </p>
-	</form>
-    
-</div>
-<?php
-	endif;
-}
-
 function knd_add_admin_pages( $items = array(), $is_inital_call = true ) {
 	$items = empty( $items ) || ! is_array( $items ) ? knd_get_admin_menu_items('adminMenu') : $items;
 
@@ -326,21 +220,6 @@ function knd_add_admin_pages( $items = array(), $is_inital_call = true ) {
 			'manage_options', 
 			'knd-setup-wizard', 
 			'envato_theme_setup_wizard' );
-		
-		add_menu_page(
-			esc_html__( 'Update theme', 'knd' ),
-			esc_html__( 'Update theme', 'knd' ),
-			'manage_options',
-			'update-kandinsky-theme',
-			'knd_update_theme' );
-
-		add_menu_page(
-			esc_html__( 'Remove theme', 'knd' ),
-			esc_html__( 'Remove theme', 'knd' ),
-			'manage_options',
-			'remove-kandinsky-theme',
-			'knd_remove_theme' );
-					
 	}
 	
 	foreach ( $items as $key => $item ) {
