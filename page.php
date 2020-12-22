@@ -33,7 +33,12 @@ get_header();
 
 <div class="page-content container">
 	<div class="the-content text-column">
-		<?php the_content(); ?>
+		<?php
+		while ( have_posts() ) :
+			the_post();
+			the_content();
+		endwhile;
+		?>
 	</div>
 </div>
 

@@ -51,7 +51,12 @@ get_header();
 			<?php } ?>
 
 			<div class="entry-content the-content">
-				<?php the_content(); ?>
+				<?php
+				while ( have_posts() ) :
+					the_post();
+					the_content();
+				endwhile;
+				?>
 			</div>
 
 			<?php
