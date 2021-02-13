@@ -32,6 +32,15 @@ get_header();
 </header>
 
 <div class="page-content container">
+
+	<?php if ( has_post_thumbnail() ) { ?>
+		<div class="flex-row entry-preview-single centered">
+			<div class="flex-cell flex-md-10">
+				<?php knd_single_post_thumbnail( get_the_ID(), 'full', 'introimg' ); ?>
+			</div>
+		</div>
+	<?php } ?>
+
 	<div class="the-content text-column">
 		<?php
 		while ( have_posts() ) :
@@ -40,6 +49,7 @@ get_header();
 		endwhile;
 		?>
 	</div>
+
 </div>
 
 <?php
