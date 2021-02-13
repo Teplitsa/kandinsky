@@ -5,7 +5,17 @@
  * @package Kandinsky
  */
 
-$cpost = get_queried_object(); 
+$cpost = get_queried_object();
+
+$cpost_type = $cpost->post_type;
+$tags_term  = null;
+if ( 'post' === $cpost_type ) {
+	$tags_term = 'post_tag';
+} elseif ( 'project' === $cpost_type ) {
+	$tags_term = 'project_tag';
+} else {
+	$tags_term = null;
+}
 
 get_header();
 ?>
@@ -62,7 +72,7 @@ get_header();
 			<?php
 			echo get_the_term_list(
 				$cpost->ID,
-				'post_tag',
+				$tags_term,
 				'<div class="single-post-terms tags-line">',
 				', ',
 				'</div>'
