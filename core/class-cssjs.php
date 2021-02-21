@@ -13,7 +13,7 @@ class KND_CssJs {
 
 	private function __construct() {
 		add_action( 'wp_enqueue_scripts', array( $this, 'load_styles' ), 30 );
-		add_action( 'wp_enqueue_scripts', array( $this, 'load_scripts' ), 30 );
+		add_action( 'wp_enqueue_scripts', array( $this, 'load_scripts' ) );
 		add_action( 'init', array( $this, 'disable_wp_emojicons' ) );
 
 		add_action( 'admin_enqueue_scripts', array( $this, 'load_admin_scripts' ), 30 );
@@ -71,15 +71,18 @@ class KND_CssJs {
 		$url = get_template_directory_uri();
 
 		// jQuery.
-		$script_dependencies[] = 'jquery'; // adjust gulp if we want it in footer.
+		$script_dependencies = array(
+			'jquery',
+			'imagesloaded',
+		);
 
-		// front
 		wp_enqueue_script(
 			'frl-front',
 			$url . '/assets/rev/' . $this->get_rev_filename( 'bundle.js' ),
 			$script_dependencies,
 			null,
-			true );
+			true
+		);
 
 		wp_localize_script( 'frl-front', 'frontend',
 			array(

@@ -42,7 +42,6 @@
     "run-sequence": "^1.2.2"
   },
   "dependencies": {
-    "animate.css": "^3.7.2",
-    "imagesloaded": "^3.2.0"
+    "animate.css": "^3.7.2"
   }
 }

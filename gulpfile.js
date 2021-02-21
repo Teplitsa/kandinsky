@@ -29,7 +29,7 @@ if ( true === gutil.env.prod ) {
 //js
 gulp.task( 'build-js', function() {
 	var vendorFiles = [
-		basePaths.npm + 'imagesloaded/imagesloaded.pkgd.js'
+		//basePaths.npm + 'imagesloaded/imagesloaded.pkgd.js'
 	], appFiles = [ basePaths.src + 'js/*', basePaths.src + 'js/front/*' ]; //our own JS files
 
 	return gulp.src( vendorFiles.concat( appFiles ) ) //join them
