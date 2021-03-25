@@ -34,13 +34,13 @@ get_header();
 
 	</header>
 
-	<div class="flex-row entry-preview-single centered">
-
-		<div class="flex-cell flex-md-10">
-			<?php knd_single_post_thumbnail( $cpost->ID, 'full', 'introimg' ); ?>
+	<?php if ( has_post_thumbnail() ) { ?>
+		<div class="flex-row entry-preview-single centered">
+			<div class="flex-cell flex-md-10">
+				<?php knd_single_post_thumbnail( $cpost->ID, 'full', 'standard' ); ?>
+			</div>
 		</div>
-
-	</div>
+	<?php } ?>
 
 	<div class="flex-row entry-content-single">
 

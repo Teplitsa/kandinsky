@@ -36,7 +36,7 @@ get_header();
 	<?php if ( has_post_thumbnail() ) { ?>
 		<div class="flex-row entry-preview-single centered">
 			<div class="flex-cell flex-md-10">
-				<?php knd_single_post_thumbnail( get_the_ID(), 'full', 'introimg' ); ?>
+				<?php knd_single_post_thumbnail( get_the_ID(), 'full', 'standard' ); ?>
 			</div>
 		</div>
 	<?php } ?>
