@@ -29,7 +29,9 @@ get_header();
 		<div class="flex-cell flex-md-8">
 			<div class="entry-meta"><?php echo knd_posted_on( $cpost ); ?></div>
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-			<div class="mobile-sharing hide-on-medium"><?php echo knd_social_share_no_js(); ?></div>
+			<?php if ( get_theme_mod( 'post_social_shares', true ) ) { ?>
+				<div class="mobile-sharing hide-on-medium"><?php echo knd_social_share_no_js(); ?></div>
+			<?php } ?>
 		</div>
 
 	</header>
@@ -47,9 +49,11 @@ get_header();
 		<div class="flex-cell flex-md-1 hide-upto-medium"></div>
 
 		<div class="flex-cell flex-md-1 single-sharing-col hide-upto-medium">
-			<div id="knd_sharing" class="regular-sharing">
-				<?php echo knd_social_share_no_js();?>
-			</div>
+			<?php if ( get_theme_mod( 'post_social_shares', true ) ) { ?>
+				<div id="knd_sharing" class="regular-sharing">
+					<?php echo knd_social_share_no_js();?>
+				</div>
+			<?php } ?>
 		</div>
 
 		<main class="flex-cell flex-md-8">

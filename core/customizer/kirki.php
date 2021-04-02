@@ -41,6 +41,7 @@ require_once get_theme_file_path( '/core/customizer/theme-mods/global.php' );
 require_once get_theme_file_path( '/core/customizer/theme-mods/menu.php' );
 require_once get_theme_file_path( '/core/customizer/theme-mods/header.php' );
 require_once get_theme_file_path( '/core/customizer/theme-mods/homepage.php' );
+require_once get_theme_file_path( '/core/customizer/theme-mods/post-settings.php' );
 require_once get_theme_file_path( '/core/customizer/theme-mods/other-pages.php' );
 require_once get_theme_file_path( '/core/customizer/theme-mods/footer.php' );
 

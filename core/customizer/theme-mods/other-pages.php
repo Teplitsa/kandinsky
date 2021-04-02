@@ -10,7 +10,7 @@ Kirki::add_section(
 	'other_pages',
 	array(
 		'title'    => esc_html__( 'Create other pages', 'knd' ),
-		'priority' => 5,
+		'priority' => 7,
 	)
 );
 

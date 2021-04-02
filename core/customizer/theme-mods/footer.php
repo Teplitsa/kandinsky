@@ -10,7 +10,7 @@ Kirki::add_section(
 	'footer',
 	array(
 		'title'    => esc_html__( 'Footer', 'knd' ),
-		'priority' => 6,
+		'priority' => 7,
 	)
 );
 
