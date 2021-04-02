@@ -62,7 +62,42 @@
 .knd-news-widget {
 	padding-top: 54px;
 	background: $color-gray-light;
-	
+
+	.section-heading {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		flex-wrap: wrap;
+
+		.section-links {
+			font-weight: 500;
+			font-size: 18px;
+			font-family: var(--knd-font-family-base);
+			a {
+				color: var(--knd-color-main-dark);
+				text-decoration: none;
+				line-height: 1.33;
+				letter-spacing: .03em;
+
+				display: flex;
+				align-items: center;
+
+				svg {
+					margin-left: 5px;
+					position: relative;
+					right: 0;
+					transition: right .1s;
+				}
+
+				&:hover {
+					svg {
+						right: -2px;
+					}
+				}
+			}
+		}
+	}
+
 	h2.section-title {
 		@include knd-head-section-text();
 		color: $color-text;
