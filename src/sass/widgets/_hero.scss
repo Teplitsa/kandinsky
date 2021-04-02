@@ -61,8 +61,8 @@
 				margin-top: $gut/2;
 			}
 
-			.hero-button {
-				margin-top: $gut;
+			.hero-actions {
+				margin-top: $gut/2;
 			}
 		}
 
@@ -107,6 +107,16 @@
 .hero-button {
 	@include button();
 	margin-top: $gut;
+
+	&.hero-button-outline:not(:hover) {
+		background: #fff;
+		color: var(--knd-color-main-dark);
+		border-color: var(--knd-color-main-dark);
+
+		&hover {
+
+		}
+	}
 }
 
 @media (min-width: 800px) {

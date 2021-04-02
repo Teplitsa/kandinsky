@@ -589,6 +589,8 @@ function knd_hero_image_markup() {
 	$knd_hero_image_support_url            = knd_get_theme_mod( 'knd_hero_image_support_url' );
 	$knd_hero_image_support_text           = knd_get_theme_mod( 'knd_hero_image_support_text' );
 	$knd_hero_image_support_button_caption = knd_get_theme_mod( 'knd_hero_image_support_button_caption' );
+	$knd_hero_additional_button_text       = knd_get_theme_mod( 'knd_hero_additional_button_text' );
+	$knd_hero_additional_button_url        = knd_get_theme_mod( 'knd_hero_additional_button_url' );
 	?>
 	<div class="hero-section"<?php echo wp_kses_post( $hero_background ); ?>>
 		<div class="container">
@@ -602,11 +604,18 @@ function knd_hero_image_markup() {
 					<div class="hero-text"><?php echo esc_html( $knd_hero_image_support_text ); ?></div>
 				<?php } ?>
 
-				<?php if ( $knd_hero_image_support_url && $knd_hero_image_support_button_caption ) { ?>
+				<?php if ( $knd_hero_image_support_button_caption || $knd_hero_additional_button_text ) { ?>
 					<div class="hero-actions">
-						<a href="<?php echo esc_url( $knd_hero_image_support_url ); ?>" class="hero-button">
-							<?php echo esc_html( $knd_hero_image_support_button_caption ); ?>
-						</a>
+						<?php if ( $knd_hero_image_support_button_caption ) { ?>
+							<a href="<?php echo esc_url( $knd_hero_image_support_url ); ?>" class="hero-button">
+								<?php echo esc_html( $knd_hero_image_support_button_caption ); ?>
+							</a>
+						<?php } ?>
+						<?php if ( $knd_hero_additional_button_text ) { ?>
+							<a href="<?php echo esc_url( $knd_hero_additional_button_url ); ?>" class="hero-button hero-button-outline">
+								<?php echo esc_html( $knd_hero_additional_button_text ); ?>
+							</a>
+						<?php } ?>
 						<?php do_action( 'knd_hero_content_after' ); ?>
 					</div>
 				<?php } ?>
