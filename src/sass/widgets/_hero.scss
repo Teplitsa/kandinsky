@@ -141,6 +141,9 @@
 		padding-top: 25px;
 		min-height: auto;
 	}
+	.hero-section .hero-content:first-child:last-child {
+		min-height: 52vw;
+	}
 	.hero-content-image {
 		padding-bottom: 0;
 	}
