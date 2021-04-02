@@ -148,24 +148,19 @@
 }
 
 
-
 // About organization widget at homepage
 .knd-ourorg-widget {
-	display:none;
-	@include for(medium-screens) {
-		display:block;
-	}
 	
 	text-align:center;
 	padding-bottom: $gut * 1.55;
 	
 	h2 {
 		@include knd-head-tiny-text();
-		
+
 		body.plot-public-campaign & {
 			color: $color-text-accent1;
 		}
-		
+
 		body.plot-fundraising-org & {
 			color: $color-third;
 		}
@@ -186,7 +181,6 @@
 		}
 	}
 }
-
 
 // Who we are
 .knd-whoweare-section {
