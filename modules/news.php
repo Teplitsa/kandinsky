@@ -75,7 +75,12 @@ class KND_News_Widget extends WP_Widget {
 	function form( $instance ) {
 
 		/* Set up some default widget settings */
-		$defaults = array( 'title' => '', 'num' => 3 );
+		$defaults = array(
+			'title'     => '',
+			'num'       => 3,
+			'more_text' => '',
+			'more_url'  => '',
+		);
 		$instance = wp_parse_args( (array) $instance, $defaults );
 		?>
 <p>
