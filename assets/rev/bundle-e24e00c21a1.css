@@ -656,12 +656,11 @@ h6 {
 }
 
 .the-content .wp-caption-text {
-  color: var(--knd-page-text-color-light);
   font-size: 12px;
   font-family: var(--knd-font-family-base);
   font-weight: 400;
   line-height: 1.55;
-  margin-top: 12px;
+  margin-top: 0.5em;
 }
 
 @media (min-width: 440px) and (max-width: 768px) {
@@ -787,6 +786,22 @@ h6 {
   align-items: flex-start;
 }
 
+.widget-full.widget_media_gallery {
+  padding-left: 6px;
+  padding-right: 6px;
+}
+.widget-full.widget_media_gallery > .gallery {
+  max-width: 1104px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+}
+.widget-full.widget_media_gallery .widget-full-title {
+    max-width: 1088px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .the-content .gallery .gallery-item,
 .gallery .gallery-item {
   padding: 6px;
@@ -798,6 +813,8 @@ h6 {
 .the-content .gallery .gallery-item .wp-caption-text,
 .gallery .gallery-item .wp-caption-text {
   text-align: center;
+  margin-top: 0.5em;
+  font-size: 16px;
 }
 
 .the-content .gallery .gallery-item a,
@@ -3335,21 +3352,21 @@ body.plot-public-campaign.single .tpl-post .entry-meta .date, body.plot-public-c
 
 .tpl-post .entry-meta .sep, .tpl-related-post .entry-meta .sep {
   display: inline-block;
-  width: 5px;
-  height: 5px;
-  border: solid 1px var(--knd-page-bg-color-dark);
-  border-radius: 5px;
+  width: 1px;
+  height: 8px;
+  background-color: var(--knd-page-bg-color-dark);
+  border-radius: 1px;
   padding: 0px;
   vertical-align: baseline;
-  margin: 1px 7px 2px 7px;
+  margin: 0 9px 0 10px;
 }
 
 body.plot-public-campaign .tpl-post .entry-meta .sep, body.plot-public-campaign .tpl-related-post .entry-meta .sep {
-  border-color: var(--knd-text1-color);
+  background-color: var(--knd-text1-color);
 }
 
 body.plot-public-campaign.single .tpl-post .entry-meta .sep, body.plot-public-campaign.single .tpl-related-post .entry-meta .sep {
-  border-color: var(--knd-page-text-color);
+  background-color: var(--knd-page-text-color);
 }
 
 .tpl-post .entry-title, .tpl-related-post .entry-title {
@@ -3861,7 +3878,7 @@ body.plot-public-campaign.single .tpl-post .entry-meta .sep, body.plot-public-ca
   line-height: 1.5;
   text-transform: uppercase;
   color: var(--knd-color-main-dark);
-  padding: 4px 0px 13px 0px;
+  margin-bottom: 19px;
 }
 
 body.plot-public-campaign .entry-header-single .entry-meta span.category {
@@ -3941,21 +3958,21 @@ body.plot-public-campaign.single .entry-header-single .entry-meta .date {
 
 .entry-header-single .entry-meta .sep {
   display: inline-block;
-  width: 5px;
-  height: 5px;
-  border: solid 1px var(--knd-page-bg-color-dark);
-  border-radius: 5px;
+  width: 1px;
+  height: 8px;
+  background-color: var(--knd-page-bg-color-dark);
+  border-radius: 1px;
   padding: 0px;
   vertical-align: baseline;
-  margin: 1px 7px 2px 7px;
+  margin: 0 9px 0 10px;
 }
 
 body.plot-public-campaign .entry-header-single .entry-meta .sep {
-  border-color: var(--knd-text1-color);
+  background-color: var(--knd-text1-color);
 }
 
 body.plot-public-campaign.single .entry-header-single .entry-meta .sep {
-  border-color: var(--knd-page-text-color);
+  background-color: var(--knd-page-text-color);
 }
 
 .entry-header-single .mobile-sharing {
@@ -5230,7 +5247,6 @@ div[id*="leyka-pf-"] .inpage-card__thumb {
 }
 
 .widget-full.widget_text .textwidget .wp-caption-text {
-  color: var(--knd-page-text-color-light);
   font-size: 12px;
   font-family: var(--knd-font-family-base);
   font-weight: 400;
@@ -6138,15 +6154,36 @@ body.plot-fundraising-org .knd-joinus-widget .knd-whoweare-headlike-text-wrapper
   justify-content: center;
 }
 
-.knd-joinus-widget .knd-joinus-widget .container > div:first-child {
-  -ms-flex: 0 0 35%;
-  flex: 0 0 35%;
+.knd-joinus-widget .knd-joinus-widget-figure {
+  flex: 0 0 auto;
+  width: 40%;
+  margin-right: 30px;
+}
+
+.knd-joinus-widget .knd-joinus-widget-figure img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  max-height: 350px;
+  width: auto;
+  height: auto;
+}
+
+.knd-joinus-widget .knd-joinus-widget-content {
+  text-align: center;
+  flex: 1;
+  max-width: 700px;
 }
 
 @media (max-width: 991px) {
   .knd-joinus-widget .container {
     -ms-flex-direction: column;
     flex-direction: column;
+  }
+  .knd-joinus-widget .knd-joinus-widget-figure {
+    margin-right: auto;
+    margin-bottom: 30px;
+    width: 100%;
   }
 }
 
@@ -6744,6 +6781,82 @@ body.plot-public-campaign .knd-partners-widget h2.section-title {
   }
   .hero-button {
     margin-top: 25px;
+  }
+}
+
+/* Breadcrumbs */
+.knd-breadcrumbs {
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 500;
+  margin-bottom: 18px;
+}
+.knd-breadcrumbs .knd-separator {
+  margin: 0 7px;
+  width: 1px;
+  height: 9px;
+  background-color: #c1c1c1;
+  display: inline-block;
+  transform: rotate(30deg);
+}
+.knd-breadcrumbs a {
+  color: #989898;
+  text-decoration: none;
+}
+.knd-breadcrumbs a:hover {
+  color: var(--knd-page-text-color);
+}
+
+/* Gallery */
+.gallery {
+    
+}
+.wp-block-gallery {
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+.wp-block-gallery ul li:before {
+    content: none !important;
+}
+.wp-block-gallery ul li:before {
+    content: none !important;
+}
+.wp-block-gallery ul {
+    margin: 0 !important;
+}
+.wp-block-gallery .blocks-gallery-item {
+    padding-left: 0;
+}
+.wp-block-gallery .blocks-gallery-item:last-child {
+    margin-bottom: 1em;
+}
+.wp-block-gallery.is-cropped .blocks-gallery-item a,
+.wp-block-gallery.is-cropped .blocks-gallery-item img {
+    height: 100%;
+    flex: 1;
+    object-fit: cover;
+}
+.wp-block-gallery .blocks-gallery-item img,
+.gallery .gallery-item img {
+    transition: opacity 0.3s;
+}
+.wp-block-gallery .blocks-gallery-item a {
+    border-bottom: 0;
+}
+.wp-block-gallery .blocks-gallery-item a:hover img,
+.gallery .gallery-item a:hover img {
+    opacity: .8;
+}
+@media (min-width: 768px){
+  .the-content .wp-block-gallery.alignfull {
+    margin-left: calc( ( ( 100vw - var(--knd-content-width) ) / 2 ) * -1 );
+    margin-right: calc( ( ( 100vw - var(--knd-content-width) ) / 2 ) * -1 );
+  }
+}
+@media (min-width: 1200px){
+  .the-content .wp-block-gallery.alignwide {
+    margin-left: calc( ( ( var(--knd-medium-content-width) - var(--knd-content-width) ) / 2 ) * -1 );
+    margin-right: calc( ( ( var(--knd-medium-content-width) - var(--knd-content-width) ) / 2 ) * -1 );
   }
 }
 

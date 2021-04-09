@@ -797,7 +797,7 @@ h6 {
 
 .the-content .gallery .gallery-item .wp-caption-text,
 .gallery .gallery-item .wp-caption-text {
-  display: none;
+  text-align: center;
 }
 
 .the-content .gallery .gallery-item a,
