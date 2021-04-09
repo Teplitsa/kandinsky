@@ -26,7 +26,8 @@ get_header();
 
 	<header class="flex-row entry-header-single centered">
 
-		<div class="flex-cell flex-md-8">
+		<div class="flex-cell flex-md-10">
+			<?php do_action( 'knd_entry_header' ); ?>
 			<div class="entry-meta"><?php echo knd_posted_on( $cpost ); ?></div>
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 			<?php if ( get_theme_mod( 'post_social_shares', true ) ) { ?>

@@ -150,6 +150,11 @@ require_once get_theme_file_path( '/core/customizer/customizer.php' );
  */
 require_once get_theme_file_path( '/core/typography.php' );
 
+/**
+ * Plugins
+ */
+require_once get_theme_file_path( '/core/plugins.php' );
+
 // enqueue CSS and JS and compose inline CSS to set vars from settings.
 
 get_template_part( '/core/class-cssjs' );

@@ -1,0 +1,26 @@
+/* Breadcrumbs */
+.knd-breadcrumbs {
+	text-transform: uppercase;
+	font-size: 11px;
+	font-weight: 500;
+	margin-bottom: 18px;
+
+	.knd-separator {
+		display: inline-block;
+		margin: 0 7px;
+		width: 1px;
+		height: 9px;
+		background-color: #c1c1c1;
+		transform: rotate(30deg);
+	}
+
+	a {
+		color: #989898;
+		text-decoration: none;
+
+		&:hover {
+			color: var(--knd-page-text-color);
+			text-decoration: none;
+		}
+	}
+}

@@ -968,3 +968,15 @@ function knd_header_nav_menu() {
 		}
 	}
 }
+
+if ( ! function_exists( 'knd_breadcrumbs' ) ) {
+	/**
+	 * Breadcrumbs
+	 */
+	function knd_breadcrumbs() {
+		if ( function_exists('yoast_breadcrumb') ) {
+			yoast_breadcrumb( '<div class="knd-breadcrumbs">', '</div>' );
+		}
+	}
+}
+add_action( 'knd_entry_header', 'knd_breadcrumbs' );
