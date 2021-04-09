@@ -651,28 +651,28 @@ function knd_show_cta_block() {
 
 	<div class="container widget">
 		<?php if ( get_theme_mod( 'knd_cta_image' ) ) { ?>
-			<div>
+			<div class="knd-joinus-widget-figure">
 				<?php echo wp_kses_post( wp_get_attachment_image( get_theme_mod( 'knd_cta_image' ), 'full' ) ); ?>
 			</div>
 		<?php } ?>
 
-		<div>
+		<div class="knd-joinus-widget-content">
 
-		<h2><?php echo knd_get_theme_mod('cta-title') ?></h2>
+			<h2><?php echo knd_get_theme_mod('cta-title') ?></h2>
 
-		<div class="flex-row knd-whoweare-headlike-text-wrapper">
+			<div class="flex-row knd-whoweare-headlike-text-wrapper">
 
-			<p class="knd-whoweare-headlike-text flex-mf-12 flex-sm-10">
-				<?php echo knd_get_theme_mod('cta-description') ?>
-				</p>
+				<p class="knd-whoweare-headlike-text flex-mf-12 flex-sm-10">
+					<?php echo knd_get_theme_mod('cta-description') ?>
+					</p>
+
+			</div>
+
+			<div class="knd-cta-wrapper-wide">
+				<a class="cta" href="<?php echo knd_get_theme_mod('cta-url') ?>"><?php echo knd_get_theme_mod('cta-button-caption') ?></a>
+			</div>
 
 		</div>
-
-		<div class="knd-cta-wrapper-wide">
-			<a class="cta" href="<?php echo knd_get_theme_mod('cta-url') ?>"><?php echo knd_get_theme_mod('cta-button-caption') ?></a>
-		</div>
-
-	</div>
 
 	</div>
 

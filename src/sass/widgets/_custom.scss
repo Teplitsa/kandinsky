@@ -417,8 +417,24 @@
 		justify-content: center;
 	}
 
-	.knd-joinus-widget .container > div:first-child {
-		flex: 0 0 35%;
+	.knd-joinus-widget-figure {
+		flex: 0 0 auto;
+		width: 40%;
+		margin-right: 30px;
+
+		img {
+			display: block;
+			margin: 0 auto;
+			max-width: 100%;
+			max-height: 350px;
+			width: auto;
+			height: auto;
+		}
+	}
+
+	.knd-joinus-widget-content {
+		text-align: center;
+		flex: 1;
 	}
 
 }
@@ -426,6 +442,11 @@
 @media (max-width: 991px) {
 	.knd-joinus-widget .container {
 		flex-direction: column;
+	}
+	.knd-joinus-widget .knd-joinus-widget-figure {
+		margin-right: auto;
+		margin-bottom: 30px;
+		width: 100%;
 	}
 }
 

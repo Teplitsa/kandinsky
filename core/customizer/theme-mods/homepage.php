@@ -245,6 +245,7 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'type'     => 'image',
 	'settings' => 'knd_cta_image',
 	'label'    => esc_html__( 'Call to action Image', 'knd' ),
+	'description' => esc_html__( 'Displayed on the left side of the Call to action text. Recommended size 450x300px.', 'knd' ),
 	'section'  => 'knd_cta_block_settings',
 	'priority' => 5,
 	'choices'  => array(
