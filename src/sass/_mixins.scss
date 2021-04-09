@@ -107,7 +107,6 @@
 }
 
 @mixin caption-text {
-    color: $color-text-light;
     @include knd-footer-text();
 
     .svg-icon {

@@ -276,7 +276,7 @@ h6 {
 
 	.wp-caption-text {
 		@include caption-text();
-		margin-top: $gut/4;
+		margin-top: 0.5em;
 	}
 
 	p+video-caption {
@@ -373,7 +373,11 @@ h6 {
 		margin: 0;
 		flex: 1 1 auto;
 
-		.wp-caption-text { display: none; }
+		.wp-caption-text {
+			text-align: center;
+			margin-top: 0.5em;
+			font-size: 16px;
+		}
 
 		a {
 			display: block;
@@ -387,6 +391,22 @@ h6 {
 			height: auto;
 		}
 	}
+}
+
+.widget-full.widget_media_gallery {
+	padding-left: 6px;
+	padding-right: 6px;
+}
+.widget-full.widget_media_gallery > .gallery {
+	max-width: 1104px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0;
+}
+.widget-full.widget_media_gallery .widget-full-title {
+    max-width: 1088px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 @for $i from 1 through 9 {
