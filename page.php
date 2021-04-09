@@ -31,7 +31,7 @@ get_header();
 	</div>
 </header>
 
-<div class="page-content container">
+<div class="entry-content page-content container">
 
 	<?php if ( has_post_thumbnail() ) { ?>
 		<div class="flex-row entry-preview-single centered">

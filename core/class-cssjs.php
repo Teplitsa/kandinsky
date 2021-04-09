@@ -59,7 +59,10 @@ class KND_CssJs {
 	/** Load css */
 	public function load_styles() {
 		$url = get_template_directory_uri();
-		$style_dependencies = array();
+		$style_dependencies = array( 'fancybox' );
+
+		// FancyBox.
+		wp_register_style( 'fancybox', $url . '/assets/css/jquery.fancybox.min.css', array(), '3.5.7' );
 
 		// design.
 		wp_enqueue_style( 'frl-design', $url . '/assets/rev/' . $this->get_rev_filename( 'bundle.css' ), $style_dependencies, null );
@@ -74,7 +77,11 @@ class KND_CssJs {
 		$script_dependencies = array(
 			'jquery',
 			'imagesloaded',
+			'fancybox',
 		);
+
+		// Register theme scripts.
+		wp_register_script( 'fancybox', get_template_directory_uri() . '/assets/js/jquery.fancybox.min.js', array( 'jquery' ), '3.5.7', true );
 
 		wp_enqueue_script(
 			'frl-front',
