@@ -580,20 +580,6 @@ function knd_clear_seo_columns( $columns ) {
 add_filter( 'wpseo_use_page_analysis', '__return_false' );
 
 /**
- * Visual editor *
- */
-add_filter( 'tiny_mce_before_init', 'knd_format_TinyMCE' );
-
-function knd_format_TinyMCE( $in ) {
-	$in['block_formats'] = 'Paragraph=p; Pre=pre; Heading 3=h3; Heading 4=h4; Heading 5=h5; Heading 6=h6';
-	$in['toolbar1'] = 'bold,italic,strikethrough,bullist,numlist,blockquote,hr,alignleft,aligncenter,alignright,link,unlink,wp_fullscreen,wp_adv ';
-	$in['toolbar2'] = 'formatselect,underline,pastetext,removeformat,charmap,outdent,indent,undo,redo,wp_help ';
-	$in['toolbar3'] = '';
-	$in['toolbar4'] = '';
-	return $in;
-}
-
-/**
  * Remove leyka metabox for embedable iframe
  */
 add_action( 'add_meta_boxes', 'knd_remove_leyka_wrong_metaboxes', 20 );
