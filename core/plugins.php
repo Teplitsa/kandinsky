@@ -35,6 +35,6 @@ add_action( 'activated_plugin', 'knd_activated_plugin' );
  * Hook into after_switch_theme action.
  */
 function knd_activated_theme() {
-	csco_plugin_set_options( 'wp-seo' );
+	knd_plugin_set_options( 'wp-seo' );
 }
 add_action( 'after_switch_theme', 'knd_activated_theme' );
