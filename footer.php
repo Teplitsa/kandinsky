@@ -21,9 +21,11 @@ $copyright = sprintf( __( 'All materials of the site are avaliabe under license 
 
 			<div class="flex-cell flex-md-6 links-right">
 				<?php
-				$social_icons = knd_social_links( array(), false );
-				if ( $social_icons ) {
-					echo $social_icons;
+				if ( get_theme_mod( 'footer_social', true ) ) {
+					$social_icons = knd_social_links( array(), false );
+					if ( $social_icons ) {
+						echo $social_icons;
+					}
 				}
 				?>
 			</div>
