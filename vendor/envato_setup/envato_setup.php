@@ -541,7 +541,7 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 			
 			if($is_show_hello):?>
 			
-			<h1><?php printf(esc_html__('Welcome to the %s setup wizard', 'knd'), wp_get_theme()); ?></h1>
+			<h1><?php printf(esc_html__('Welcome to the %s setup wizard', 'knd' ), wp_get_theme()); ?></h1>
 			<p><?php printf(esc_html__("Hello! Let's set up your organization website together. With few simple steps we will configure minimal necessary settings, like installing of required plugins, setting up default website content and the logo. It should only take 5 minutes. You can always change any of these settings later on, in the Plugins admin folder.", 'knd')); ?></p>
 
 			<p class="envato-setup-actions step">
