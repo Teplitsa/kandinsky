@@ -308,7 +308,7 @@ function knd_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'knd_hero_image_support_url', array( 'sanitize_callback' => 'esc_url', 'default' => knd_get_theme_mod('knd_hero_image_support_url', '') ) );
 
-	$wp_customize->add_setting( 'knd_hero_image_support_button_caption', array( 'sanitize_callback' => 'knd_sanitize_text', 'default' => knd_get_theme_mod('knd_hero_image_support_button_caption', '') ) );
+	$wp_customize->add_setting( 'knd_hero_image_support_button_caption', array( 'sanitize_callback' => 'knd_sanitize_text', 'default' => knd_get_theme_mod('knd_hero_image_support_button_caption', esc_html__( 'Help now', 'knd' ) ) ) );
 
 	$wp_customize->add_control( 
 		new WP_Customize_Cropped_Image_Control( 
