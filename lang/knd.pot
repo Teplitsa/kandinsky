@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Kandinsky\n"
-"POT-Creation-Date: 2021-04-13 08:35+0300\n"
+"POT-Creation-Date: 2021-04-15 06:39+0300\n"
 "PO-Revision-Date: 2020-06-22 06:53+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -176,8 +176,8 @@ msgstr ""
 msgid "Static pages"
 msgstr ""
 
-#: core/admin.php:60 core/customizer/theme-mods/header.php:223
-#: core/customizer/theme-mods/header.php:347
+#: core/admin.php:60 core/customizer/theme-mods/header.php:224
+#: core/customizer/theme-mods/header.php:348
 #: core/customizer/theme-mods/menu.php:12
 msgid "Menu"
 msgstr ""
@@ -720,6 +720,13 @@ msgstr ""
 msgid "Static page settings"
 msgstr ""
 
+#: core/customizer/customizer-deprecated.php:311
+#: core/customizer/theme-mods/homepage.php:74 core/template-tags.php:399
+#: modules/starter/plot_config.php:242 modules/starter/plot_config.php:759
+#: template-parts/headers/header-0.php:27
+msgid "Help now"
+msgstr ""
+
 #: core/customizer/customizer-deprecated.php:319
 #: core/customizer/theme-mods/homepage.php:32
 msgid "Recommended size 1600x663px"
@@ -785,7 +792,7 @@ msgstr ""
 
 #: core/customizer/customizer-deprecated.php:477
 #: core/customizer/theme-mods/footer.php:111
-#: core/customizer/theme-mods/header.php:413
+#: core/customizer/theme-mods/header.php:414
 msgid "Social networks links"
 msgstr ""
 
@@ -895,12 +902,12 @@ msgid "Logo and social networks"
 msgstr ""
 
 #: core/customizer/theme-mods/footer.php:72
-#: core/customizer/theme-mods/header.php:54
+#: core/customizer/theme-mods/header.php:55
 msgid "Name"
 msgstr ""
 
 #: core/customizer/theme-mods/footer.php:88
-#: core/customizer/theme-mods/header.php:63 core/shortcodes-ui.php:51
+#: core/customizer/theme-mods/header.php:64 core/shortcodes-ui.php:51
 #: vendor/envato_setup/envato_setup.php:955
 msgid "Description"
 msgstr ""
@@ -1006,78 +1013,84 @@ msgstr ""
 msgid "Select header template"
 msgstr ""
 
-#: core/customizer/theme-mods/header.php:72
+#: core/customizer/theme-mods/header.php:44
+msgid ""
+"If only an image is used as a logo, then we recommend uploading an image "
+"with the dimensions of 630x132, or 132x13px for use along with the text."
+msgstr ""
+
+#: core/customizer/theme-mods/header.php:73
 msgid "Custom Text"
 msgstr ""
 
-#: core/customizer/theme-mods/header.php:88
+#: core/customizer/theme-mods/header.php:89
 msgid "Font For Logo"
 msgstr ""
 
-#: core/customizer/theme-mods/header.php:94
+#: core/customizer/theme-mods/header.php:95
 msgid "Use Default Font"
 msgstr ""
 
-#: core/customizer/theme-mods/header.php:125
+#: core/customizer/theme-mods/header.php:126
 msgid "Logo Color"
 msgstr ""
 
-#: core/customizer/theme-mods/header.php:147
+#: core/customizer/theme-mods/header.php:148
 msgid "Email"
 msgstr ""
 
-#: core/customizer/theme-mods/header.php:162
+#: core/customizer/theme-mods/header.php:163
 msgid "Phone"
 msgstr ""
 
-#: core/customizer/theme-mods/header.php:177
+#: core/customizer/theme-mods/header.php:178
 msgid "Address"
 msgstr ""
 
-#: core/customizer/theme-mods/header.php:193
-#: core/customizer/theme-mods/header.php:362 search.php:21
+#: core/customizer/theme-mods/header.php:194
+#: core/customizer/theme-mods/header.php:363 search.php:21
 msgid "Search"
 msgstr ""
 
-#: core/customizer/theme-mods/header.php:208
-#: core/customizer/theme-mods/header.php:397
+#: core/customizer/theme-mods/header.php:209
+#: core/customizer/theme-mods/header.php:398
 msgid "Social networks"
 msgstr ""
 
-#: core/customizer/theme-mods/header.php:224
+#: core/customizer/theme-mods/header.php:225
 msgid "Go to the menu \"In the header\""
 msgstr ""
 
-#: core/customizer/theme-mods/header.php:239
-#: core/customizer/theme-mods/header.php:377
+#: core/customizer/theme-mods/header.php:240
+#: core/customizer/theme-mods/header.php:378
 msgid "Button"
 msgstr ""
 
-#: core/customizer/theme-mods/header.php:247
+#: core/customizer/theme-mods/header.php:248
 msgid "Button Text"
 msgstr ""
 
-#: core/customizer/theme-mods/header.php:263
+#: core/customizer/theme-mods/header.php:264
 msgid "Button Link"
 msgstr ""
 
-#: core/customizer/theme-mods/header.php:278
+#: core/customizer/theme-mods/header.php:279
 msgid "Additional Button"
 msgstr ""
 
-#: core/customizer/theme-mods/header.php:293
+#: core/customizer/theme-mods/header.php:294
 msgid "Additional Button Text"
 msgstr ""
 
-#: core/customizer/theme-mods/header.php:313
+#: core/customizer/theme-mods/header.php:314
 msgid "Additional Button Link"
 msgstr ""
 
-#: core/customizer/theme-mods/header.php:333
+#: core/customizer/theme-mods/header.php:334
 msgid "Off-Canvas"
 msgstr ""
 
-#: core/customizer/theme-mods/header.php:339
+#: core/customizer/theme-mods/header.php:340
 msgid "Display Off-Canvas"
 msgstr ""
 
@@ -1096,12 +1109,6 @@ msgstr ""
 
 #: core/customizer/theme-mods/homepage.php:43
 msgid "Displayed on the right side of the Call to action text"
-msgstr ""
-
-#: core/customizer/theme-mods/homepage.php:74 core/template-tags.php:399
-#: modules/starter/plot_config.php:242 modules/starter/plot_config.php:759
-#: template-parts/headers/header-0.php:27
-msgid "Help now"
 msgstr ""
 
 #: core/customizer/theme-mods/homepage.php:88

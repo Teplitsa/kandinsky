@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-13 08:35+0300\n"
-"PO-Revision-Date: 2021-04-13 08:40+0300\n"
+"POT-Creation-Date: 2021-04-15 06:39+0300\n"
+"PO-Revision-Date: 2021-04-15 06:44+0300\n"
 "Last-Translator: ahaenor <ahaenor@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -182,8 +182,8 @@ msgstr "Контент"
 msgid "Static pages"
 msgstr "Страницы"
 
-#: core/admin.php:60 core/customizer/theme-mods/header.php:223
-#: core/customizer/theme-mods/header.php:347
+#: core/admin.php:60 core/customizer/theme-mods/header.php:224
+#: core/customizer/theme-mods/header.php:348
 #: core/customizer/theme-mods/menu.php:12
 msgid "Menu"
 msgstr "Меню"
@@ -753,6 +753,13 @@ msgstr "Главное изображение"
 msgid "Static page settings"
 msgstr "Статичная страница"
 
+#: core/customizer/customizer-deprecated.php:311
+#: core/customizer/theme-mods/homepage.php:74 core/template-tags.php:399
+#: modules/starter/plot_config.php:242 modules/starter/plot_config.php:759
+#: template-parts/headers/header-0.php:27
+msgid "Help now"
+msgstr "Помочь сейчас"
+
 #: core/customizer/customizer-deprecated.php:319
 #: core/customizer/theme-mods/homepage.php:32
 msgid "Recommended size 1600x663px"
@@ -818,7 +825,7 @@ msgstr "Блок призыва к действию"
 
 #: core/customizer/customizer-deprecated.php:477
 #: core/customizer/theme-mods/footer.php:111
-#: core/customizer/theme-mods/header.php:413
+#: core/customizer/theme-mods/header.php:414
 msgid "Social networks links"
 msgstr "Ссылки на социальные сети"
 
@@ -930,12 +937,12 @@ msgid "Logo and social networks"
 msgstr "Логотип и социальные сети"
 
 #: core/customizer/theme-mods/footer.php:72
-#: core/customizer/theme-mods/header.php:54
+#: core/customizer/theme-mods/header.php:55
 msgid "Name"
 msgstr "Название"
 
 #: core/customizer/theme-mods/footer.php:88
-#: core/customizer/theme-mods/header.php:63 core/shortcodes-ui.php:51
+#: core/customizer/theme-mods/header.php:64 core/shortcodes-ui.php:51
 #: vendor/envato_setup/envato_setup.php:955
 msgid "Description"
 msgstr "Описание"
@@ -1047,78 +1054,87 @@ msgstr "Шапка"
 msgid "Select header template"
 msgstr "Выберите шаблон шапки"
 
-#: core/customizer/theme-mods/header.php:72
+#: core/customizer/theme-mods/header.php:44
+msgid ""
+"If only an image is used as a logo, then we recommend uploading an image "
+"with the dimensions of 630x132, or 132x13px for use along with the text."
+msgstr ""
+"Если в качестве логотипа используется только изображение, мы рекомендуем "
+"загрузить изображение размером 630x132 пикселей или 132x13 пикселей для "
+"использования вместе с текстом."
+
+#: core/customizer/theme-mods/header.php:73
 msgid "Custom Text"
 msgstr "Произвольный текст"
 
-#: core/customizer/theme-mods/header.php:88
+#: core/customizer/theme-mods/header.php:89
 msgid "Font For Logo"
 msgstr "Шрифт для лого"
 
-#: core/customizer/theme-mods/header.php:94
+#: core/customizer/theme-mods/header.php:95
 msgid "Use Default Font"
 msgstr "Использовать шрифт по умолчанию"
 
-#: core/customizer/theme-mods/header.php:125
+#: core/customizer/theme-mods/header.php:126
 msgid "Logo Color"
 msgstr "Цвет для лого"
 
-#: core/customizer/theme-mods/header.php:147
+#: core/customizer/theme-mods/header.php:148
 msgid "Email"
 msgstr "Email"
 
-#: core/customizer/theme-mods/header.php:162
+#: core/customizer/theme-mods/header.php:163
 msgid "Phone"
 msgstr "Телефон"
 
-#: core/customizer/theme-mods/header.php:177
+#: core/customizer/theme-mods/header.php:178
 msgid "Address"
 msgstr "Адрес"
 
-#: core/customizer/theme-mods/header.php:193
-#: core/customizer/theme-mods/header.php:362 search.php:21
+#: core/customizer/theme-mods/header.php:194
+#: core/customizer/theme-mods/header.php:363 search.php:21
 msgid "Search"
 msgstr "Поиск"
 
-#: core/customizer/theme-mods/header.php:208
-#: core/customizer/theme-mods/header.php:397
+#: core/customizer/theme-mods/header.php:209
+#: core/customizer/theme-mods/header.php:398
 msgid "Social networks"
 msgstr "Социальные сети"
 
-#: core/customizer/theme-mods/header.php:224
+#: core/customizer/theme-mods/header.php:225
 msgid "Go to the menu \"In the header\""
 msgstr "Переход в раздел Меню \"В шапке\""
 
-#: core/customizer/theme-mods/header.php:239
-#: core/customizer/theme-mods/header.php:377
+#: core/customizer/theme-mods/header.php:240
+#: core/customizer/theme-mods/header.php:378
 msgid "Button"
 msgstr "Кнопка"
 
-#: core/customizer/theme-mods/header.php:247
+#: core/customizer/theme-mods/header.php:248
 msgid "Button Text"
 msgstr "Текст кнопки"
 
-#: core/customizer/theme-mods/header.php:263
+#: core/customizer/theme-mods/header.php:264
 msgid "Button Link"
 msgstr "Ссылка кнопки"
 
-#: core/customizer/theme-mods/header.php:278
+#: core/customizer/theme-mods/header.php:279
 msgid "Additional Button"
 msgstr "Дополнительная кнопка"
 
-#: core/customizer/theme-mods/header.php:293
+#: core/customizer/theme-mods/header.php:294
 msgid "Additional Button Text"
 msgstr "Текст дополнительный кнопки"
 
-#: core/customizer/theme-mods/header.php:313
+#: core/customizer/theme-mods/header.php:314
 msgid "Additional Button Link"
 msgstr "Ссылка дополнительной кнопке"
 
-#: core/customizer/theme-mods/header.php:333
+#: core/customizer/theme-mods/header.php:334
 msgid "Off-Canvas"
 msgstr "Боковая панель"
 
-#: core/customizer/theme-mods/header.php:339
+#: core/customizer/theme-mods/header.php:340
 msgid "Display Off-Canvas"
 msgstr "Отображать Боковую панель"
 
@@ -1138,12 +1154,6 @@ msgstr "Изображение Призыв к действию"
 #: core/customizer/theme-mods/homepage.php:43
 msgid "Displayed on the right side of the Call to action text"
 msgstr "Отображается на правой стороне текста Призыв к действию"
-
-#: core/customizer/theme-mods/homepage.php:74 core/template-tags.php:399
-#: modules/starter/plot_config.php:242 modules/starter/plot_config.php:759
-#: template-parts/headers/header-0.php:27
-msgid "Help now"
-msgstr "Помочь сейчас"
 
 #: core/customizer/theme-mods/homepage.php:88
 #, fuzzy
@@ -1830,22 +1840,20 @@ msgstr "Искать проекты"
 #: modules/project/hooks.php:58
 msgctxt "taxonomy general name"
 msgid "Tags"
-msgstr ""
+msgstr "Теги"
 
 #: modules/project/hooks.php:59
 msgctxt "taxonomy singular name"
 msgid "Tag"
-msgstr ""
+msgstr "Тег"
 
 #: modules/project/hooks.php:60
-#, fuzzy
-#| msgid "Search"
 msgid "Search Tags"
-msgstr "Поиск"
+msgstr "Поиск Тегов"
 
 #: modules/project/hooks.php:61
 msgid "Popular Tags"
-msgstr ""
+msgstr "Популярные теги"
 
 #: modules/project/hooks.php:62
 msgid "All Tags"
@@ -1864,10 +1872,8 @@ msgid "Add New Tag"
 msgstr "Добавить новый тег"
 
 #: modules/project/hooks.php:68
-#, fuzzy
-#| msgid "New category name"
 msgid "New Tag Name"
-msgstr "Название новой категории"
+msgstr "Название нового тега"
 
 #: modules/project/hooks.php:69
 msgid "Separate tags with commas"
@@ -1883,7 +1889,7 @@ msgstr ""
 
 #: modules/project/hooks.php:72
 msgid "Tags"
-msgstr ""
+msgstr "Теги"
 
 #: modules/project/widgets.php:8
 msgid "Projects short list"
@@ -3102,8 +3108,6 @@ msgid "https://te-st.ru/"
 msgstr "https://te-st.ru/"
 
 #. Template Name of the plugin/theme
-#, fuzzy
-#| msgid "Home page"
 msgid "Homepage"
 msgstr "Главная"
 
