@@ -24,42 +24,6 @@ Kirki::add_section(
 	)
 );
 
-Kirki::add_field( 'knd_theme_mod', [
-	'type'     => 'radio',
-	'settings' => 'knd_custom_logo_mod',
-	'label'    => esc_html__( 'Logo mode', 'knd' ),
-	'section'  => 'title_tagline',
-	'default'  => 'text_only',
-	'priority' => 1,
-	'choices'  => array( 
-		'image_only' => esc_html__( 'Image only', 'knd' ), 
-		'image_text' => esc_html__( 'Image with site name', 'knd' ), 
-		'text_only'  => esc_html__( 'Site name only', 'knd' ), 
-		'nothing'    => esc_html__( 'Do not show', 'knd' ),
-	)
-] );
-
-Kirki::add_field( 'knd_theme_mod', [
-	'type'              => 'textarea',
-	'settings'          => 'text_in_header',
-	'label'             => esc_html__( 'Header text', 'knd' ),
-	'section'           => 'title_tagline',
-	'sanitize_callback' => 'wp_kses_post',
-	'priority'          => 10,
-] );
-
-Kirki::add_field( 'knd_theme_mod', [
-	'type'        => 'image',
-	'settings'    => 'knd_custom_logo',
-	'label'       => esc_html__( 'Logo', 'knd' ),
-	'section'     => 'title_tagline',
-	'description' => esc_html__( 'We recommend to use logos in the .svg format (vector graphics). If your logo is in rastre format, we recommend to upload pictures with the dimensions of 630x132 px for the option "Only Image" or 132x13px for the option "Image and Title".', 'knd' ),
-	'priority'    => 11,
-	'choices'     => [
-		'save_as' => 'id',
-	],
-] );
-
 /* Fonts and Colors Section */
 Kirki::add_section(
 	'fonts_colors',
