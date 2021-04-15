@@ -5675,8 +5675,12 @@ body.plot-public-campaign .knd-news-widget, body.plot-public-campaign .knd-short
   background: var(--knd-color-third);
 }
 
-body.plot-public-campaign .knd-news-widget h2.section-title, body.plot-public-campaign .knd-shortlist-widget h2.section-title, body.plot-public-campaign .knd-partners-widget h2.section-title, body.plot-public-campaign .knd-donations-widget h2.section-title {
+body.plot-public-campaign .knd-shortlist-widget h2.section-title, body.plot-public-campaign .knd-partners-widget h2.section-title, body.plot-public-campaign .knd-donations-widget h2.section-title {
   --knd-page-text-color: #000;
+}
+
+body.plot-public-campaign .knd-news-widget h2.section-title {
+  --knd-page-text-color: var(--knd-text1-color);
 }
 
 .knd-news-widget .cards-row, .knd-shortlist-widget .cards-row, .knd-partners-widget .cards-row, .knd-donations-widget .cards-row {
