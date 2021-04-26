@@ -5,6 +5,12 @@
   --knd-font-family-button: var(--knd-font-family-base);
   --knd-button-border-radius: .5em;
   --knd-image-border-radius: 8px;
+  --knd-content-width: 720px;
+  --knd-medium-content-width: 1200px; /* 1080px; */
+}
+
+.site-content {
+  overflow: hidden;
 }
 
 /** == Mixins (_mixins.scss) == **/
