@@ -15,7 +15,7 @@
 
 			<div class="site-branding site-panel-cell"><?php knd_logo_markup(); ?></div>
 
-			<?php $header_text = knd_get_theme_mod( 'text_in_header' ); ?>
+			<?php $header_text = get_theme_mod( 'header_address', knd_get_theme_mod( 'text_in_header' ) ); ?>
 			<?php if ( $header_text ) { ?>
 				<div class="site-details site-panel-cell">
 					<div class="site-details-cell"><?php echo wp_kses_post( wpautop( $header_text ) ); ?></div>
