@@ -10,7 +10,7 @@ jQuery( document ).ready(function( $ ) {
 	$(window).on('load', function(){
 		$('body').addClass('dom-loaded');
 	});
-	
+
 	/**
 	 * Search toggle 
 	 */
@@ -23,6 +23,7 @@ jQuery( document ).ready(function( $ ) {
 		e.preventDefault();
 		$('.knd-search').fadeOut();
 	});
+
 
 	/**
 	 * Keeping sub menu inside screen

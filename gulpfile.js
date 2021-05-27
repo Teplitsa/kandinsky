@@ -16,8 +16,7 @@ var basePaths = { // Paths for source and bundled parts of app
 	sourceMap = true, // Wheter to build source maps
 	isProduction = false, // Mode flag
 	changeEvent = function( evt ) { // Log
-		gutil.log( 'File', gutil.colors.cyan( evt.path.replace( new RegExp( '/.*(?=/' + basePaths.src +
-																			')/' ), '' ) ), 'was', 		gutil.colors.magenta( evt.type ) );
+		gutil.log( 'File', gutil.colors.cyan( evt.path.replace( new RegExp( '/.*(?=/' + basePaths.src + ')/' ), '' ) ), 'was', gutil.colors.magenta( evt.type ) );
 	};
 
 if ( true === gutil.env.prod ) {
@@ -61,12 +60,10 @@ gulp.task( 'build-css', function() {
 
 	// Paths for mdl and bourbon
 	var paths = require( 'node-bourbon' ).includePaths;
-	//mdl = path('./node_modules/material-design-lite/src');
-	//paths.push(mdl);
 
 	paths.push( basePaths.npm + 'modularscale-sass/stylesheets' );
 
-	var vendorFiles = gulp.src( [] ), // Components
+	var vendorFiles = gulp.src('.', {allowEmpty: true}),//gulp.src( [] ), // Components
 		appFiles = gulp.src( basePaths.src + 'sass/front-main.scss' ) // Main file with @import-s
 			.pipe( ! isProduction ? plugins.sourcemaps.init() : gutil.noop() )  // Process the
 																				// original sources
@@ -92,8 +89,9 @@ gulp.task( 'build-css', function() {
 
 gulp.task( 'build-editor-css', function() {
 
-	var paths = require( 'node-bourbon' ).includePaths, vendorFiles = gulp.src( [] ),
-		appFiles = gulp.src( basePaths.src + 'sass/editor-main.scss' ).
+	var paths = require( 'node-bourbon' ).includePaths, vendorFiles = gulp.src('.', {allowEmpty: true});
+	paths.push( basePaths.npm + 'modularscale-sass/stylesheets' );
+	var appFiles = gulp.src( basePaths.src + 'sass/editor-main.scss' ).
 			pipe( ! isProduction ? plugins.sourcemaps.init() : gutil.noop() )  // Process the
 																			   // original sources
 																			   // for sourcemap
@@ -157,19 +155,6 @@ gulp.task( 'revision', function() {
 		.on( 'error', console.log ); // Log
 });
 
-// Builds
-gulp.task( 'full-build', function( callback ) {
-	runSequence( 'build-css', 'build-editor-css', 'build-admin-css', 'build-js', 'svg-opt', 'revision-clean', 'revision', callback );
-});
-
-gulp.task( 'full-build-css', function( callback ) {
-	runSequence( 'build-css', 'build-editor-css', 'build-admin-css', 'revision-clean', 'revision', callback );
-});
-
-gulp.task( 'full-build-js', function( callback ) {
-	runSequence( 'build-js', 'build-admin-js', 'revision-clean', 'revision', callback );
-});
-
 // Svg - combine and clear svg assets
 gulp.task( 'svg-opt', function() {
 
@@ -204,19 +189,30 @@ gulp.task( 'svg-opt', function() {
 		.pipe( gulp.dest( basePaths.dest + 'svg' ) );
 });
 
+// Builds
+gulp.task( 'full-build',
+	gulp.series( 'build-css', 'build-editor-css', 'build-admin-css', 'build-js', 'svg-opt', 'revision-clean', 'revision' )
+);
+
+gulp.task( 'full-build-css',
+	gulp.series( 'build-css', 'build-editor-css', 'build-admin-css', 'revision-clean', 'revision' )
+);
+
+gulp.task( 'full-build-js',
+	gulp.series( 'build-js', 'build-admin-js', 'revision-clean', 'revision' )
+);
+
 // Watchers
-gulp.task( 'watch', function() {
-	gulp.watch( [
-		basePaths.src + 'sass/*.scss', basePaths.src + 'sass/**/*.scss'
-	], [ 'full-build-css' ] ).on( 'change', function( evt ) {
-		changeEvent( evt );
-	});
-	gulp.watch( [
-		basePaths.src + 'js/*.js', basePaths.src + 'js/front/*.js', basePaths.src + 'js/admin/*.js'
-	], [ 'full-build-js' ] ).on( 'change', function( evt ) {
-		changeEvent( evt );
-	});
+gulp.task( 'watch', () => {
+	gulp.watch(
+		[ basePaths.src + 'js/*.js', basePaths.src + 'js/front/*.js', basePaths.src + 'js/admin/*.js' ],
+		gulp.series( [ 'full-build-js' ] )
+	);
+	gulp.watch(
+		[ basePaths.src + 'sass/*.scss', basePaths.src + 'sass/**/*.scss' ],
+		gulp.series([ 'full-build-css' ] )
+	);
 });
 
 // Default
-gulp.task( 'default', [ 'full-build', 'watch' ] );
+gulp.task( 'default', gulp.series( 'full-build', 'watch' ) );

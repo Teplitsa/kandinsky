@@ -6,8 +6,8 @@ function is_email( email ) {
 //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isInteger
 Number.isInteger = Number.isInteger || function( value ) {
 	return typeof value === 'number' &&
-		   isFinite( value ) &&
-		   Math.floor( value ) === value;
+	       isFinite( value ) &&
+	       Math.floor( value ) === value;
 };
 
 /* Scripts */
@@ -22,7 +22,7 @@ jQuery( document ).ready(function( $ ) {
 	$(window).on('load', function(){
 		$('body').addClass('dom-loaded');
 	});
-	
+
 	/**
 	 * Search toggle 
 	 */
@@ -35,6 +35,7 @@ jQuery( document ).ready(function( $ ) {
 		e.preventDefault();
 		$('.knd-search').fadeOut();
 	});
+
 
 	/**
 	 * Keeping sub menu inside screen
@@ -172,17 +173,17 @@ jQuery( document ).ready(function( $ ) {
 			return true;
 		}
 		
-		//stick header
-		if (scroll < position) { //upword
-			$siteHeader.removeClass('invisible').addClass('fixed-header');
-		}
-		else if(scroll >= scrollTopLimit) {
-			$siteHeader.removeClass('fixed-header').addClass('invisible');
-		}
-		else {
-			$siteHeader.removeClass('fixed-header').removeClass('invisible');
-		}
-		
+        //stick header
+        if (scroll < position) { //upword
+            $siteHeader.removeClass('invisible').addClass('fixed-header');
+        }
+        else if(scroll >= scrollTopLimit) {
+            $siteHeader.removeClass('fixed-header').addClass('invisible');
+        }
+        else {
+            $siteHeader.removeClass('fixed-header').removeClass('invisible');
+        }
+        
 		//sticky sharing
 		if ( winW >= breakPointMedium && $( '#knd_sharing' ).length > 0 ) {
 			stickInParent( '#knd_sharing .social-likes-wrapper', '#knd_sharing', position, fixedTopPosition );
@@ -286,25 +287,6 @@ jQuery( document ).ready(function( $ ) {
 			$( 'html, body' ).animate( { scrollTop: target.top - 50 }, 900 );
 		}
 
-	});
-	
-	/* FancyBox Init */
-	var fancyBoxSelectors = 'a[href*=".jpg"], a[href*=".jpeg"], a[href*=".png"], a[href*=".gif"]';
-	var galleryId = '';
-	$( '.entry-content' ).find( fancyBoxSelectors ).each(function() {
-		galleryId = '';
-		if ( $(this).parents('.wp-block-gallery').length ) {
-			galleryId = 'gallery-' + $(this).parents('.wp-block-gallery').index();
-		}
-		if ( $(this).parents('.gallery').length ) {
-			galleryId = $(this).parents('.gallery').attr('id');
-		}
-		$(this).attr( 'data-fancybox', galleryId );
-	});
-	
-	$( '.knd-homepage-sidebar .gallery' ).each( function() {
-		galleryId = $(this).attr('id');
-		$(this).find( fancyBoxSelectors ).attr( 'data-fancybox', galleryId );
 	});
 
 }); //jQuery
