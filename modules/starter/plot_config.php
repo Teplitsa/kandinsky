@@ -737,7 +737,7 @@ class KND_Withyou_Data_Builder extends KND_Plot_Data_Builder {
 		);
 
 		$this->data_routes['general_options'] = array(
-			'site_name'        => esc_html( 'We are with you', 'knd' ),
+			'site_name'        => esc_html__( 'We are with you', 'knd' ),
 			'site_description' => esc_html__( 'Charitable foundation to help children from low-income families', 'knd' ),
 			'knd_footer_contacts' => '<p>
 {knd_address_phone}
