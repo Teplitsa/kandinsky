@@ -635,7 +635,7 @@ msgstr ""
 
 #: core/customizer/customizer-deprecated.php:202
 #: core/customizer/theme-mods/global.php:96
-msgid "Main Text Color"
+msgid "Content Text Color"
 msgstr ""
 
 #: core/customizer/customizer-deprecated.php:203
