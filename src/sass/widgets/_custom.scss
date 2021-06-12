@@ -109,7 +109,7 @@
 		background: $color-third;
 
 		h2.section-title {
-			--knd-page-text-color: $color-text-contrast;
+			--knd-page-text-color: #{$color-text-contrast};
 		}
 	}
 
@@ -144,9 +144,6 @@
 			flex-flow: row nowrap;
 			justify-content: space-between;
 			align-items: flex-end;
-
-			padding-bottom: 13px;
-			border-bottom: 1px solid $color-white;
 		}
 	}
 
@@ -516,7 +513,7 @@
 
 .knd-people-title {
 	@include knd-head-exlarge-text();
-	color: $color-text;
+	color: var(--knd-color-headings);
 	margin-bottom: $inpage-margin-base;
 	text-align: center;
 }

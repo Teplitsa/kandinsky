@@ -10,11 +10,13 @@
 
 .page-title {
 	@include knd-head-page();
+	color: var(--knd-color-headings);
 }
 
 .page-intro {
 	margin-top: $gut/2;
 	@include knd-head-large-text(); 
+	color: var(--knd-color-headings);
 }
 
 .page-content {
@@ -156,7 +158,7 @@ background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.1) 27%,rgba
 	.kng-img-mark { margin-top: $base; }
 
 	.mark-title { 
-		color: $color-text;
+		color: var(--knd-color-headings);
 	}
 
 	.mark-text { 

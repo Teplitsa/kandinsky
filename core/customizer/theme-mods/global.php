@@ -93,7 +93,7 @@ Kirki::add_field( 'knd_theme_mod', [
 Kirki::add_field( 'knd_theme_mod', [
 	'type'        => 'color',
 	'settings'    => 'knd_page_text_color',
-	'label'       => esc_html__( 'Main Text Color', 'knd' ),
+	'label'       => esc_html__( 'Content Text Color', 'knd' ),
 	'description' => esc_html__( 'Recommended - black', 'knd' ), 
 	'section'     => 'fonts_colors',
 	'default'     => '#000000',

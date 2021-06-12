@@ -52,14 +52,11 @@
 	.date {
 		color: $color-text;
 
-		body.plot-public-campaign & {
+		body.plot-public-campaign .knd-archive-sidebar &,
+		body.plot-public-campaign .knd-homepage-sidebar & {
 			color: $color-text-contrast;
 		}
-		
-		body.plot-public-campaign.single & {
-			color: $color-text;
-		}
-		
+
 	}
 	.sep {
 		display:inline-block;
@@ -70,11 +67,7 @@
 		body.plot-public-campaign & {
 			border-color: $color-text-contrast;
 		}
-		
-		body.plot-public-campaign.single & {
-			border-color: $color-text;
-		}
-		
+
 		border-radius: 5px;
 		padding:0px;
 		vertical-align:baseline;
@@ -104,8 +97,12 @@
 		position:relative;
 		height: 100%;
 		
-		body.plot-public-campaign & {
-		  color: $color-text-contrast;
+		body.plot-public-campaign &:not(.entry-link) {
+			color: $color-text-contrast;
+		}
+
+		body.plot-public-campaign .archive-post-list & {
+			color: var(--knd-page-text-color);
 		}
 	}
 	
@@ -148,6 +145,7 @@
 	
 	.related-title {
 		@include knd-head-section-text();
+		color: var(--knd-color-headings);
 	}
 	
 	a {
@@ -236,11 +234,12 @@
 	&.linked:hover {
 
 	}
-	
-	.entry-title {		
+
+	.entry-title {
 		@include knd-head-card-text();
 		line-height: 1.2;
-		margin-bottom: 12px; 
+		margin-bottom: 12px;
+		margin-top: 0;
 	}
 	
 	.entry-preview {

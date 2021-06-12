@@ -199,7 +199,7 @@ function knd_customize_register( $wp_customize ) {
 			$wp_customize, 
 			'knd_page_text_color', 
 			array( 
-				'label' => esc_html__( 'Main Text Color', 'knd' ),
+				'label' => esc_html__( 'Content Text Color', 'knd' ),
 				'description' => __('Recommended - black', 'knd'),  
 				'section' => 'knd_decoration_colors', 
 				'settings' => 'knd_page_text_color', 

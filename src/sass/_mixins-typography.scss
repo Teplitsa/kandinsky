@@ -78,7 +78,7 @@ $modularscale: (
 @mixin knd-head-section-text() {
     //@include ms-respond(font-size, 2);
     font-size: 26px;
-    font-family: $body;
+    font-family: var(--knd-font-family-headings);
     //text-transform: uppercase;
     line-height: 1.2;
     font-weight: bold;
