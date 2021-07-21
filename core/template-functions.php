@@ -242,3 +242,15 @@ function knd_scheme_class( $color = '', $echo = true ) {
 		}
 	}
 }
+
+/**
+ * Get theme version
+ */
+function knd_get_version(){
+	$theme = wp_get_theme('kandinsky');
+	if ( ! $theme->get( 'Version' ) ) {
+		$theme = wp_get_theme('kandinsky-master');
+	}
+	$version = $theme->get( 'Version' );
+	return $version;
+}
