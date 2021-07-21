@@ -537,31 +537,66 @@ function knd_logo_markup() {
 
 	/** @todo logo sizes may depends on test content */
 	$mod = knd_get_theme_mod( 'knd_custom_logo_mod', 'image_only' );
-	if ( 'nothing' == $mod ) {
-		return;
-	}
-	?>
 
-	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="site-logo">
-		<?php if ( 'image_only' == $mod ) { ?>
-			<div class="logo-image-only"><?php echo knd_get_logo_img(); ?></div>
-		<?php } elseif ( 'text_only' == $mod ) { ?>
-		<div class="logo-text-only">
-			<span class="logo-name"><?php echo wp_kses_post( nl2br( get_theme_mod( 'header_logo_title', get_bloginfo( 'name' ) ) ) ); ?></span>
-			<span class="logo-desc"><?php echo wp_kses_post( nl2br( get_theme_mod( 'header_logo_text', get_bloginfo( 'description' ) ) ) ); ?></span>
-		</div>
-	<?php } else { ?>
-		<div class="logo-complex">
-			<div class="logo"><?php echo knd_get_logo_img(); ?></div>
-			<div class="text">
+	if ( version_compare( knd_get_version(), '1.4.9', '>' ) ) {
+		?>
+
+		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="site-logo">
+			<?php
+			$logo_id = get_theme_mod( 'header_logo_image', get_theme_mod( 'knd_custom_logo' ) );
+			$logo_url = wp_get_attachment_image_url( $logo_id, 'full', false );
+			?>
+			<div class="logo-complex">
+				<?php
+					$logo_id = get_theme_mod( 'header_logo_image', get_theme_mod( 'knd_custom_logo' ) );
+
+					$logo_url = wp_get_attachment_image_url( $logo_id, 'full', false );
+
+					if ( $logo_url ) {
+					?>
+					<div class="logo">
+						<?php echo wp_get_attachment_image( $logo_id, 'full', false, array( 'alt' => get_bloginfo( 'name' ) ) ); ?>
+					</div>
+					<?php }
+				?>
+
+				<?php if ( get_theme_mod( 'header_logo_title', get_bloginfo( 'name' ) ) || get_theme_mod( 'header_logo_text', get_bloginfo( 'description' ) ) ) { ?>
+					<div class="text">
+						<?php if ( get_theme_mod( 'header_logo_title', get_bloginfo( 'name' ) ) ) { ?>
+							<span class="logo-name"><?php echo wp_kses_post( nl2br( get_theme_mod( 'header_logo_title', get_bloginfo( 'name' ) ) ) ); ?></span>
+						<?php } ?>
+						<?php if ( get_theme_mod( 'header_logo_text', get_bloginfo( 'description' ) ) ) { ?>
+							<span class="logo-desc"><?php echo wp_kses_post( nl2br( get_theme_mod( 'header_logo_text', get_bloginfo( 'description' ) ) ) ); ?></span>
+						<?php } ?>
+					</div>
+				<?php } ?>
+			</div>
+		</a>
+
+		<?php
+	} else {
+		?>
+		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="site-logo">
+			<?php if ( 'image_only' == $mod ) { ?>
+				<div class="logo-image-only"><?php echo knd_get_logo_img(); ?></div>
+			<?php } elseif ( 'text_only' == $mod ) { ?>
+			<div class="logo-text-only">
 				<span class="logo-name"><?php echo wp_kses_post( nl2br( get_theme_mod( 'header_logo_title', get_bloginfo( 'name' ) ) ) ); ?></span>
 				<span class="logo-desc"><?php echo wp_kses_post( nl2br( get_theme_mod( 'header_logo_text', get_bloginfo( 'description' ) ) ) ); ?></span>
 			</div>
-		</div>
-	<?php } ?>
-	</a>
+		<?php } else { ?>
+			<div class="logo-complex">
+				<div class="logo"><?php echo knd_get_logo_img(); ?></div>
+				<div class="text">
+					<span class="logo-name"><?php echo wp_kses_post( nl2br( get_theme_mod( 'header_logo_title', get_bloginfo( 'name' ) ) ) ); ?></span>
+					<span class="logo-desc"><?php echo wp_kses_post( nl2br( get_theme_mod( 'header_logo_text', get_bloginfo( 'description' ) ) ) ); ?></span>
+				</div>
+			</div>
+		<?php } ?>
+		</a>
+		<?php
+	}
 
-	<?php
 }
 
 /**
