@@ -97,6 +97,9 @@ function knd_setup() {
 		)
 	);
 
+	// Restoring the classic Widgets Editor.
+	remove_theme_support( 'widgets-block-editor' );
+
 	// Add support for responsive embeds.
 	add_theme_support( 'responsive-embeds' );
 
