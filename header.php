@@ -17,6 +17,7 @@
 </head>
 
 <body id="top" <?php body_class(); ?>>
+<?php wp_body_open(); ?>
 
 <?php include_once get_template_directory() . '/assets/svg/svg.svg'; // all svgs. ?>
 
