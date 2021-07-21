@@ -37,9 +37,11 @@ $copyright = sprintf( __( 'All materials of the site are avaliabe under license 
 <footer class="site-footer">
 	<div class="container">
 
-		<div class="widget-area">
-			<?php dynamic_sidebar( 'knd-footer-sidebar' ); ?>
-		</div>
+		<?php if ( is_active_sidebar( 'knd-footer-sidebar' ) ) { ?>
+			<div class="widget-area">
+				<?php dynamic_sidebar( 'knd-footer-sidebar' ); ?>
+			</div>
+		<?php } ?>
 
 		<?php if ( get_theme_mod( 'footer_copyright', true ) && get_theme_mod( 'footer_copyright', true ) ) { ?>
 			<div class="hr"></div>
