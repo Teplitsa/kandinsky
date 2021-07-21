@@ -5,8 +5,6 @@
 if ( ! defined( 'WPINC' ) )
 	die();
 
-add_action( 'init', 'knd_sidebars_init', 25 );
-
 function knd_sidebars_init() {
 	register_sidebar( 
 		array( 
@@ -16,8 +14,9 @@ function knd_sidebars_init() {
 			'before_widget' => '<div id="%1$s" class="widget-full %2$s">', 
 			'after_widget' => '</div>', 
 			'before_title' => '<h3 class="widget-full-title">', 
-			'after_title' => '</h3>' ) );
-	
+			'after_title' => '</h3>'
+		),
+	);
 	register_sidebar( 
 		array( 
 			'name' => esc_html__( 'News - bottom panel', 'knd' ),
@@ -26,8 +25,9 @@ function knd_sidebars_init() {
 			'before_widget' => '', 
 			'after_widget' => '', 
 			'before_title' => '<h3 class="widget-full-title">', 
-			'after_title' => '</h3>' ) );
-	
+			'after_title' => '</h3>'
+		),
+	);
 	register_sidebar( 
 		array( 
 			'name' => esc_html__( 'Archives - bottom panel', 'knd' ),
@@ -36,7 +36,9 @@ function knd_sidebars_init() {
 			'before_widget' => '', 
 			'after_widget' => '', 
 			'before_title' => '<h3 class="widget-full-title">', 
-			'after_title' => '</h3>' ) );
+			'after_title' => '</h3>'
+		),
+	);
 	
 	register_sidebar( 
 		array( 
@@ -46,10 +48,11 @@ function knd_sidebars_init() {
 			'before_widget' => '<div id="%1$s" class="widget-bottom %2$s">', 
 			'after_widget' => '</div>', 
 			'before_title' => '<h3 class="widget-title">', 
-			'after_title' => '</h3>' ) );
+			'after_title' => '</h3>',
+		)
+	);
 }
-
-add_action( 'widgets_init', 'knd_custom_widgets', 20 );
+add_action( 'widgets_init', 'knd_sidebars_init' );
 
 function knd_custom_widgets() {
 	unregister_widget( 'WP_Widget_Pages' );
@@ -66,3 +69,4 @@ function knd_custom_widgets() {
 	unregister_widget( 'Leyka_Campaign_Card_Widget' );
 	unregister_widget( 'Leyka_Campaigns_List_Widget' );
 }
+add_action( 'widgets_init', 'knd_custom_widgets', 20 );
