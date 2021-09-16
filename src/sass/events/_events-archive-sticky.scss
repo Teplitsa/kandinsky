@@ -1,0 +1,118 @@
+// Archive Events Sticky
+// & = .knd-event
+
+&__sticky {
+
+	$sticky: &;
+
+	background-color: var(--knd-color-main);
+	border-radius: var(--knd-button-border-radius);
+	overflow: hidden;
+	position: relative;
+
+	& + & {
+		margin-top: 30px;
+	}
+
+	&-inner {
+		padding: 60px 20px;
+		display: flex;
+		align-items: flex-end;
+
+		#{$sticky}-image + & {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+		}
+
+		@media (max-width: 767px) {
+			padding-top: 30px;
+			padding-bottom: 30px;
+		}
+	}
+
+	&-content {
+		max-width: 960px;
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+		display: flex;
+		align-items: center;
+
+		h2 {
+			font-size: 37px;
+			flex: 1;
+
+			@media (max-width: 767px) {
+				font-size: 24px;
+			}
+		}
+
+		a {
+			color: #fff;
+			text-decoration: none;
+			background-image: linear-gradient(to right, currentColor 0%, currentColor 100%);
+			background-repeat: no-repeat;
+			background-size: 0px 2px;
+			background-position: 0 95%;
+			transition: 0.25s;
+
+			&:hover {
+				background-size: 100% 2px;
+			}
+		}
+	}
+
+	&-dates {
+		flex: 0 0 auto;
+		width: 60px;
+		margin-right: 25px;
+		display: flex;
+		flex-direction: column;
+		background-color: #fff;
+		border-radius: 5px;
+		text-align: center;
+		padding: 15px 5px;
+		line-height: 1.2;
+		margin-top: 7px;
+		align-self: flex-start;
+	}
+
+	&-date {
+		font-weight: bold;
+		font-size: 22px;
+		color: var(--knd-color-main);
+	}
+
+	&-month {
+		font-size: 16px;
+		text-transform: lowercase;
+		color: #4d606a;
+	}
+
+	&-icon {
+		width: 0.8em;
+		height: 0.8em;
+		border-radius: 50%;
+		border: 0.07em solid #fff;
+		background-color: var(--knd-color-main);
+		display: inline-flex;
+		vertical-align: middle;
+		justify-content: center;
+		align-items: center;
+		margin-top: -0.1em;
+
+		svg {
+			display: block;
+			fill: currentColor;
+			width: 65%;
+			height: 40%;
+		}
+	}
+
+	.wp-post-image {
+		width: 100%;
+	}
+}

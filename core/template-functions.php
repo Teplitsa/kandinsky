@@ -17,7 +17,7 @@ if ( ! function_exists( 'knd_typography' ) ) {
 		$value       = $default;
 		$field_value = get_theme_mod( $field );
 		if ( is_array( $field_value ) && $field_value ) {
-			if ( isset( $field_value[ $type ] ) ) {
+			if ( isset( $field_value[ $type ] ) && $field_value[ $type ] ) {
 				$value = $field_value[ $type ];
 				if ( 'variant' === $type ) {
 					// Get font-weight from variant.
@@ -154,7 +154,7 @@ function knd_cyrillic_fonts() {
  * Get header type
  */
 function knd_get_header_type() {
-	$header_type = get_theme_mod( 'header_type', '0' );
+	$header_type = get_theme_mod( 'header_type', '1' );
 	return apply_filters( 'knd_get_header_type', $header_type );
 }
 
@@ -164,6 +164,13 @@ function knd_get_header_type() {
 function knd_body_class( $classes ) {
 	if( is_customize_preview() ) {
 		$classes[] = 'is-customize-preview';
+	}
+	if ( is_singular() ) {
+		$is_enabled = 'enabled';
+		if ( ! knd_is_page_title() ) {
+			$is_enabled = 'disabled';
+		}
+		$classes[] = 'knd-page-title-' . $is_enabled;
 	}
 	return $classes;
 }
@@ -244,13 +251,32 @@ function knd_scheme_class( $color = '', $echo = true ) {
 }
 
 /**
- * Get theme version
+ * Get theme data.
+ *
+ * @param object $data Data.
  */
-function knd_get_version(){
-	$theme = wp_get_theme('kandinsky');
-	if ( ! $theme->get( 'Version' ) ) {
-		$theme = wp_get_theme('kandinsky-master');
-	}
-	$version = $theme->get( 'Version' );
-	return $version;
+function knd_get_theme_data( $data ) {
+	$theme = wp_get_theme( get_template() );
+
+	return $theme->get( $data );
 }
+
+/**
+ * Get theme version.
+ */
+function knd_get_theme_version() {
+	$theme = wp_get_theme( get_template() );
+
+	return knd_get_theme_data( 'Version' );
+}
+
+/**
+ * All SVG images in one.
+ */
+function knd_include_svg(){
+	global $hook_suffix;
+	include_once get_template_directory() . '/assets/svg/svg.svg';
+}
+add_action( 'admin_footer-post.php', 'knd_include_svg' );
+add_action( 'admin_footer-post-new.php', 'knd_include_svg' );
+add_action( 'wp_body_open', 'knd_include_svg' );

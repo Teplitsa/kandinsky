@@ -1,0 +1,54 @@
+// Login
+// & = .knd-event
+
+&__login {
+	margin-top: 15px;
+	font-size: var(--knd-font-size-base);
+
+	&-toggle {
+		text-align: center;
+
+		a {
+			color: var(--knd-color-main);
+		}
+	}
+
+	&-form {
+		display: none;
+		padding-top: 15px;
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 400px;
+
+		.input {
+			display: block;
+			width: 100%;
+			border-radius: 5px;
+			border: 1px solid #8599A4;
+			padding: 12px;
+			font-weight: bold;
+
+			&:focus {
+				border-color: #183343;
+			}
+		}
+
+		label[for] {
+			display: block;
+			margin-bottom: 8px;
+		}
+
+		[name="loginform"] > p:not(:last-child) {
+			margin-bottom: 20px;
+		}
+	}
+
+	[name="wp-submit"] {
+		@extend .knd-button;
+	}
+
+	& + .clear {
+		display: none;
+	}
+}
+

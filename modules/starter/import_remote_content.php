@@ -178,7 +178,7 @@ class KND_Import_Remote_Content {
 	 * Return piece property by name and section.
 	 *
 	 * @param string    $piece_name    The name of the piece.
-	 * @param string    $key           Piece property name. Possible keys: title, tags, cat, lead, content, thumb, slug.
+	 * @param string    $key           Piece property name. Possible keys: title, tags, cat, lead, replace_images, content, thumb, slug.
 	 * @param string    $section       The name of the section.
 	 * @return string|int|NULL
 	*/
@@ -288,29 +288,28 @@ class KND_Import_Git_Content {
 			define('FS_METHOD', 'direct');
 		}
 
-		switch($plot_name) {
-			case 'color-line':
-			case 'withyou':
-			case 'dubrovino':
+		$plot_name = 'color-line';
 
-				// $this->content_archive_url = "https://github.com/Teplitsa/kandinsky-text-" . $plot_name . "/archive/master.zip";
-				// $this->content_archive_url = "https://knd.te-st.ru/wp-content/uploads/knd/kandinsky-text-" . $plot_name . "-master.zip";
+		$locale = get_locale();
 
-				$locale = get_locale();
+		$lang = 'en';
 
-				if ( 'ru_RU' === $locale ) {
-					$content_archive_url = 'https://knd.s3.eu-central-1.amazonaws.com/kandinsky-text-' . $plot_name . '-master.zip';
-				} else {
-					$content_archive_url = 'https://knd.s3.eu-central-1.amazonaws.com/kandinsky-text-' . $plot_name . '-en.zip';
-				}
+		//$plot_name = 'color-line'; //withyou, dubrovino
+		// https://knd.s3.eu-central-1.amazonaws.com/kandinsky-text-color-line-master.zip
+		// https://knd.s3.eu-central-1.amazonaws.com/kandinsky-text-color-line-en.zip
 
-				$this->content_archive_url = $content_archive_url;
+		//$content_archive_url = 'http://kandinsky.loc/import/kandinsky-import-ru.zip';
+		//$content_archive_url = 'https://knd.bootwp.com/import/kandinsky-import-' . $lang . '.zip';
 
-				$this->plot_name = $plot_name;
-				break;
-			default:
-				throw new Exception(sprintf(__('Plot name is unknown or not given: %s', 'knd'), $plot_name));
+		if ( 'ru_RU' === $locale ) {
+			$lang = 'ru';
 		}
+
+		$content_archive_url = 'https://knd.te-st.ru/import/kandinsky-import-' . $lang . '.zip';
+
+		$this->content_archive_url = $content_archive_url;
+
+		$this->plot_name = $plot_name;
 
 		$this->piece_parser = new KND_Git_Piece_Parser();
 
@@ -585,9 +584,12 @@ class KND_Piece {
 	public $cat = "";
 	public $thumb = "";
 	public $lead = "";
+	public $replace_images = "";
 	public $content = "";
 	public $slug = "";
 	public $url = "";
+
+	public $metas = array();
 	
 	public $tags_list = array();
 	public $cats_list = array();

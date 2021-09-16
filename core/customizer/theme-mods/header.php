@@ -19,14 +19,41 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'settings' => 'header_type',
 	'label'    => esc_html__( 'Select header template', 'knd' ),
 	'section'  => 'header',
-	'default'  => '0',
-	'priority' => 10,
+	'default'  => '1',
 	'choices'  => array(
-		'0' => get_template_directory_uri() . '/core/customizer/images/header-0.png',
 		'1' => get_template_directory_uri() . '/core/customizer/images/header-1.png',
 		'2' => get_template_directory_uri() . '/core/customizer/images/header-2.png',
 		'3' => get_template_directory_uri() . '/core/customizer/images/header-3.png',
-		'4' => get_template_directory_uri() . '/core/customizer/images/header-4.png',
+	),
+) );
+
+Kirki::add_field( 'knd_theme_mod', array(
+	'type'     => 'dimension',
+	'settings' => 'header_height',
+	'label'    => esc_html__( 'Header Height', 'knd' ),
+	'section'  => 'header',
+	'default'  => '124px',
+	'transport' => 'auto',
+	'output'   => array(
+		array(
+			'element'  => ':root',
+			'property' => '--knd-header-height',
+		),
+	),
+) );
+
+Kirki::add_field( 'knd_theme_mod', array(
+	'type'      => 'color',
+	'settings'  => 'header_background',
+	'label'     => esc_html__( 'Header Background', 'knd' ),
+	'section'   => 'header',
+	'default'   => '#ffffff',
+	'transport' => 'auto',
+	'output'    => array(
+		array(
+			'element'  => '.knd-header',
+			'property' => '--knd-header-background',
+		),
 	),
 ) );
 
@@ -122,15 +149,135 @@ Kirki::add_field( 'knd_theme_mod', array(
 
 Kirki::add_field( 'knd_theme_mod', array(
 	'type'      => 'color',
-	'settings'  => 'font_logo_color',
+	'settings'  => 'header_logo_color',
 	'label'     => esc_html__( 'Logo Color', 'knd' ),
 	'section'   => 'header',
 	'default'   => '#000000',
 	'transport' => 'auto',
 	'output'    => array(
 		array(
-			'element'  => ':root',
+			'element'  => '.knd-header-logo',
 			'property' => '--knd-color-logo',
+		),
+	),
+) );
+
+Kirki::add_field( 'knd_theme_mod', array(
+	'type'      => 'color',
+	'settings'  => 'header_logo_desc_color',
+	'label'     => esc_html__( 'Logo Description Color', 'knd' ),
+	'section'   => 'header',
+	'default'   => '#1e2c49',
+	'transport' => 'auto',
+	'output'    => array(
+		array(
+			'element'  => '.knd-header-logo',
+			'property' => '--knd-color-logo-desc',
+		),
+	),
+) );
+
+// Menu
+Kirki::add_field( 'knd_theme_mod', array(
+	'type'     => 'custom',
+	'settings' => 'header_' . wp_unique_id( 'divider_' ),
+	'section'  => 'header',
+	'default'  => '<div class="knd-customizer-divider"></div>',
+	'active_callback' => array(
+		array(
+			'setting'  => 'header_type',
+			'operator' => 'in',
+			'value'    => array( '2', '3', '4' ),
+		),
+	),
+) );
+
+Kirki::add_field( 'knd_theme_mod', array(
+	'type'            => 'toggle',
+	'settings'        => 'header_menu',
+	'label'           => esc_html__( 'Menu', 'knd' ),
+	'description'     => '<a href="#" class="knd-customize-focus" data-toggle="panel" data-focus="nav_menus">' . esc_html__( 'Go to the menu &quot;In the header&quot;', 'knd' ) . '</a>',
+	'section'         => 'header',
+	'default'         => true,
+	'active_callback' => array(
+		array(
+			'setting'  => 'header_type',
+			'operator' => 'in',
+			'value'    => array( '2', '3', '4' ),
+		),
+	),
+) );
+
+Kirki::add_field( 'theme_config_id', [
+	'type'        => 'dimension',
+	'settings'    => 'header_menu_size',
+	'label'       => esc_html__( 'Menu Font Size', 'knd' ),
+	'section'     => 'header',
+	'default'     => '16px',
+	'active_callback' => array(
+		array(
+			'setting'  => 'header_type',
+			'operator' => 'in',
+			'value'    => array( '2', '3', '4' ),
+		),
+		array(
+			'setting'  => 'header_menu',
+			'operator' => '==',
+			'value'    => true,
+		),
+	),
+] );
+
+Kirki::add_field( 'knd_theme_mod', array(
+	'type'      => 'color',
+	'settings'  => 'header_menu_color',
+	'label'     => esc_html__( 'Menu Links Color', 'knd' ),
+	'section'   => 'header',
+	'default'   => '#585858',
+	'transport' => 'auto',
+	'output'    => array(
+		array(
+			'element'  => '.knd-header-nav',
+			'property' => '--knd-color-menu',
+		),
+	),
+	'active_callback' => array(
+		array(
+			'setting'  => 'header_type',
+			'operator' => 'in',
+			'value'    => array( '2', '3', '4' ),
+		),
+		array(
+			'setting'  => 'header_menu',
+			'operator' => '==',
+			'value'    => true,
+		),
+	),
+) );
+
+Kirki::add_field( 'knd_theme_mod', array(
+	'type'      => 'color',
+	'settings'  => 'header_menu_color_hover',
+	'label'     => esc_html__( 'Menu Links Color Hover', 'knd' ),
+	'section'   => 'header',
+	'default'   => '#f43724',
+	'transport' => 'auto',
+	'output'    => array(
+		array(
+			'element'  => '.knd-header-nav',
+			'property' => '--knd-color-menu-hover',
+		),
+	),
+	'active_callback' => array(
+		array(
+			'setting'  => 'header_type',
+			'operator' => 'in',
+			'value'    => array( '2', '3', '4' ),
+		),
+		array(
+			'setting'  => 'header_menu',
+			'operator' => '==',
+			'value'    => true,
 		),
 	),
 ) );
@@ -177,13 +324,12 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'settings'          => 'header_address',
 	'label'             => esc_html__( 'Address', 'knd' ),
 	'section'           => 'header',
-	'default'           => get_theme_mod( 'text_in_header' ),
 	'sanitize_callback' => 'wp_kses_post',
 	'active_callback'   => array(
 		array(
 			'setting'  => 'header_type',
 			'operator' => 'in',
-			'value'    => array( '0', '1' ),
+			'value'    => array( '1' ),
 		),
 	),
 ) );
@@ -207,31 +353,9 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'type'            => 'toggle',
 	'settings'        => 'header_social',
 	'label'           => esc_html__( 'Social networks', 'knd' ),
+	'description'     => '<a href="#" class="knd-customize-focus" data-toggle="section" data-focus="socials">' . esc_html__( 'Manage social networks', 'knd' ) . '</a>.',
 	'section'         => 'header',
-	'default'         => '1',
-	'active_callback' => array(
-		array(
-			'setting'  => 'header_type',
-			'operator' => '==',
-			'value'    => '3',
-		),
-	),
-) );
-
-Kirki::add_field( 'knd_theme_mod', array(
-	'type'            => 'toggle',
-	'settings'        => 'header_menu',
-	'label'           => esc_html__( 'Menu', 'knd' ),
-	'description'     => '<a href="#" class="knd-customize-focus" data-toggle="panel" data-focus="nav_menus">' . esc_html__( 'Go to the menu "In the header"', 'knd' ) . '</a>',
-	'section'         => 'header',
-	'default'         => '1',
-	'active_callback' => array(
-		array(
-			'setting'  => 'header_type',
-			'operator' => 'in',
-			'value'    => array( '2', '3', '4' ),
-		),
-	),
+	'default'         => false,
 ) );
 
 Kirki::add_field( 'knd_theme_mod', array(
@@ -247,7 +371,7 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'settings'          => 'header_button_text',
 	'label'             => esc_html__( 'Button Text', 'knd' ),
 	'section'           => 'header',
-	'default'           => get_theme_mod( 'knd_hero_image_support_button_caption' ),
+	'default'           => esc_html__( 'Help now', 'knd' ),
 	'sanitize_callback' => 'wp_kses_post',
 	'active_callback'   => array(
 		array(
@@ -263,7 +387,7 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'settings'        => 'header_button_link',
 	'label'           => esc_html__( 'Button Link', 'knd' ),
 	'section'         => 'header',
-	'default'         => get_theme_mod( 'knd_hero_image_support_url' ),
+	'default'         => '',
 	'active_callback' => array(
 		array(
 			'setting'  => 'header_button',
@@ -278,7 +402,7 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'settings'        => 'header_additional_button',
 	'label'           => esc_html__( 'Additional Button', 'knd' ),
 	'section'         => 'header',
-	'default'         => '1',
+	'default'         => false,
 	'active_callback' => array(
 		array(
 			'setting'  => 'header_type',
@@ -298,7 +422,7 @@ Kirki::add_field( 'knd_theme_mod', array(
 		array(
 			'setting'  => 'header_additional_button',
 			'operator' => '==',
-			'value'    => '1',
+			'value'    => true,
 		),
 		array(
 			'setting'  => 'header_type',
@@ -317,7 +441,7 @@ Kirki::add_field( 'knd_theme_mod', array(
 		array(
 			'setting'  => 'header_additional_button',
 			'operator' => '==',
-			'value'    => '1',
+			'value'    => true,
 		),
 		array(
 			'setting'  => 'header_type',
@@ -339,7 +463,7 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'settings' => 'header_offcanvas',
 	'label'    => esc_html__( 'Display Off-Canvas', 'knd' ),
 	'section'  => 'header',
-	'default'  => '1',
+	'default'  => true,
 ) );
 
 Kirki::add_field( 'knd_theme_mod', array(
@@ -347,12 +471,12 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'settings'        => 'offcanvas_menu',
 	'label'           => esc_html__( 'Menu', 'knd' ),
 	'section'         => 'header',
-	'default'         => '1',
+	'default'         => true,
 	'active_callback' => array(
 		array(
 			'setting'  => 'header_offcanvas',
 			'operator' => '==',
-			'value'    => '1',
+			'value'    => true,
 		),
 	),
 ) );
@@ -362,12 +486,12 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'settings'        => 'offcanvas_search',
 	'label'           => esc_html__( 'Search', 'knd' ),
 	'section'         => 'header',
-	'default'         => '1',
+	'default'         => true,
 	'active_callback' => array(
 		array(
 			'setting'  => 'header_offcanvas',
 			'operator' => '==',
-			'value'    => '1',
+			'value'    => true,
 		),
 	),
 ) );
@@ -377,17 +501,43 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'settings'        => 'offcanvas_button',
 	'label'           => esc_html__( 'Button', 'knd' ),
 	'section'         => 'header',
-	'default'         => '1',
+	'default'         => true,
 	'active_callback' => array(
 		array(
 			'setting'  => 'header_offcanvas',
 			'operator' => '==',
-			'value'    => '1',
+			'value'    => true,
 		),
+	),
+) );
+
+Kirki::add_field( 'knd_theme_mod', array(
+	'type'              => 'text',
+	'settings'          => 'offcanvas_button_text',
+	'label'             => esc_html__( 'Button Text', 'knd' ),
+	'section'           => 'header',
+	'default'           => esc_html__( 'Help now', 'knd' ),
+	'sanitize_callback' => 'wp_kses_post',
+	'active_callback'   => array(
 		array(
-			'setting'  => 'header_button',
+			'setting'  => 'offcanvas_button',
 			'operator' => '==',
-			'value'    => '1',
+			'value'    => true,
+		),
+	),
+) );
+
+Kirki::add_field( 'knd_theme_mod', array(
+	'type'            => 'link',
+	'settings'        => 'offcanvas_button_link',
+	'label'           => esc_html__( 'Button Link', 'knd' ),
+	'section'         => 'header',
+	'default'         => '',
+	'active_callback' => array(
+		array(
+			'setting'  => 'offcanvas_button',
+			'operator' => '==',
+			'value'    => true,
 		),
 	),
 ) );
@@ -397,30 +547,12 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'settings'        => 'offcanvas_social',
 	'label'           => esc_html__( 'Social networks', 'knd' ),
 	'section'         => 'header',
-	'default'         => '1',
+	'default'         => false,
 	'active_callback' => array(
 		array(
 			'setting'  => 'header_offcanvas',
 			'operator' => '==',
-			'value'    => '1',
+			'value'    => true,
 		),
 	),
 ) );
-
-Kirki::add_field( 'knd_theme_mod', array(
-	'type'     => 'custom',
-	'settings' => 'header_' . wp_unique_id( 'divider_' ),
-	'section'  => 'header',
-	'default'  => '<div class="knd-customizer-heading">' . esc_html__( 'Social networks links', 'knd' ) . '</div>',
-) );
-
-foreach ( knd_get_social_media_supported() as $id => $data ) {
-
-	Kirki::add_field( 'knd_theme_mod', array(
-		'type'     => 'url',
-		'settings' => 'knd_header_social_' . esc_attr( $id ),
-		'label'    => esc_html( $data['label'] ),
-		'section'  => 'header',
-	) );
-
-}

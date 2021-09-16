@@ -22,10 +22,10 @@
 
 
 /* selections */
-a:link {
+/*a:link {
 	-webkit-tap-highlight-color: $color-main-dark;
 	-webkit-tap-highlight-color : $color-main-dark; 
-}
+}*/
 
 body:not(#tinymce) ::-webkit-selection {
 	opacity: 1;
@@ -342,7 +342,6 @@ h6 {
 	//pre
 	pre, code {
 		@include knd-body-text();
-		color: $color-text;
 	}
 }
 

@@ -22,8 +22,8 @@
 			</div>
 			<div class="knd-header__col knd-col-right">
 				<div class="knd-header-contacts">
-					<?php if ( get_theme_mod( 'header_address', get_theme_mod( 'text_in_header' ) ) ) { ?>
-						<div class="knd-header-address"><?php echo wp_kses_post( nl2br( get_theme_mod( 'header_address', get_theme_mod( 'text_in_header' ) ) ) ); ?></div>
+					<?php if ( get_theme_mod( 'header_address' ) ) { ?>
+						<div class="knd-header-address"><?php echo wp_kses_post( nl2br( get_theme_mod( 'header_address' ) ) ); ?></div>
 					<?php } ?>
 					<?php if ( get_theme_mod( 'header_email' ) ) { ?>
 						<a href="mailto:<?php echo esc_attr( get_theme_mod( 'header_email' ) ); ?>" class="knd-header-email"><?php echo esc_html( get_theme_mod( 'header_email' ) ); ?></a>
@@ -33,6 +33,9 @@
 					<?php } ?>
 				</div>
 				<?php
+					if ( get_theme_mod( 'header_social' ) ) {
+						knd_social_links();
+					}
 					knd_header_button();
 					knd_offcanvas_toggle();
 				?>

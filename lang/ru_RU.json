@@ -1,0 +1,627 @@
+{
+    "translation-revision-date": "2021-06-13 22:14+0300",
+    "generator": "WP-CLI\/2.4.0",
+    "source": "assets\/rev\/gutenberg-1f53454955.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "ru_RU",
+                "plural-forms": "nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10 >= 2 && n%10<=4 &&(n%100<10||n%100 >= 20)? 1 : 2);"
+            },
+           "Default": [
+                "\u041f\u043e \u0443\u043c\u043e\u043b\u0447\u0430\u043d\u0438\u044e"
+            ],
+            "None": [
+                ""
+            ],
+            "Page Options": [
+                "\u041f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u044b \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u044b"
+            ],
+            "Hide the page title": [
+                "\u0421\u043a\u0440\u044b\u0442\u044c \u0437\u0430\u0433\u043e\u043b\u043e\u0432\u043e\u043a \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u044b"
+            ],
+             "Background Color": [
+                "\u0426\u0432\u0435\u0442 \u0444\u043e\u043d\u0430"
+            ],
+            "Heading": [
+                "\u0417\u0430\u0433\u043e\u043b\u043e\u0432\u043e\u043a"
+            ],
+            "112 volunteers are helping Line of Color at the moment": [
+                "112 \u0432\u043e\u043b\u043e\u043d\u0442\u0435\u0440\u043e\u0432 \u043f\u043e\u043c\u043e\u0433\u0430\u044e\u0442 \u00ab\u041b\u0438\u043d\u0438\u0438 \u0446\u0432\u0435\u0442\u0430\u00bb \u0432 \u043d\u0430\u0441\u0442\u043e\u044f\u0449\u0438\u0439 \u043c\u043e\u043c\u0435\u043d\u0442"
+            ],
+            "Join a team of volunteers and consultants in our projects": [
+                "\u041f\u0440\u0438\u0441\u043e\u0435\u0434\u0438\u043d\u044f\u0439\u0442\u0435\u0441\u044c \u043a \u043a\u043e\u043c\u0430\u043d\u0434\u0435 \u0432\u043e\u043b\u043e\u043d\u0442\u0435\u0440\u043e\u0432 \u0438 \u043a\u043e\u043d\u0441\u0443\u043b\u044c\u0442\u0430\u043d\u0442\u043e\u0432 \u0432 \u043d\u0430\u0448\u0438\u0445 \u043f\u0440\u043e\u0435\u043a\u0442\u0430\u0445"
+            ],
+            "Title": [
+                "\u0417\u0430\u0433\u043e\u043b\u043e\u0432\u043e\u043a"
+            ],
+            "Text": [
+                "\u0422\u0435\u043a\u0441\u0442"
+            ],
+            "Title Color": [
+                "\u0426\u0432\u0435\u0442 \u0437\u0430\u0433\u043e\u043b\u043e\u0432\u043a\u0430"
+            ],
+            "Info Columns": [
+                "\u0418\u043d\u0444\u043e \u043a\u043e\u043b\u043e\u043d\u043a\u0438"
+            ],
+            "info": [
+                "info"
+            ],
+            "columns": [
+                "columns"
+            ],
+            "Column 1": [
+                "\u041a\u043e\u043b\u043e\u043d\u043a\u0430 1"
+            ],
+            "Link Text": [
+                "\u0422\u0435\u043a\u0441\u0442 \u0441\u0441\u044b\u043b\u043a\u0438"
+            ],
+            "Link Url": [
+                "\u0410\u0434\u0440\u0435\u0441 \u0441\u0441\u044b\u043b\u043a\u0438"
+            ],
+            "Column 2": [
+                "\u041a\u043e\u043b\u043e\u043d\u043a\u0430 2"
+            ],
+            "Column 3": [
+                "\u041a\u043e\u043b\u043e\u043d\u043a\u0430 3"
+            ],
+            "Background Color": [
+                "\u0426\u0432\u0435\u0442 \u0444\u043e\u043d\u0430"
+            ],
+            "Column Heading Color": [
+                "\u0426\u0432\u0435\u0442 \u0437\u0430\u0433\u043e\u043b\u043e\u0432\u043a\u0430 \u043a\u043e\u043b\u043e\u043d\u043a\u0438"
+            ],
+            "Column Text Color": [
+                "\u0426\u0432\u0435\u0442 \u0442\u0435\u043a\u0441\u0442\u0430 \u043a\u043e\u043b\u043e\u043d\u043a\u0438"
+            ],
+            "Column Link Color": [
+                "\u0426\u0432\u0435\u0442 \u0441\u0441\u044b\u043b\u043a\u0438 \u043a\u043e\u043b\u043e\u043d\u043a\u0438"
+            ],
+            "Column Link Color Hover": [
+                "\u0426\u0432\u0435\u0442 \u0441\u0441\u044b\u043b\u043a\u0438 \u043a\u043e\u043b\u043e\u043d\u043a\u0438 \u043f\u0440\u0438 \u043d\u0430\u0432\u0435\u0434\u0435\u043d\u0438\u0438"
+            ],
+            "Column Link Underline Color": [
+                "\u0426\u0432\u0435\u0442 \u043f\u043e\u0434\u0447\u0435\u0440\u043a\u0438\u0432\u0430\u043d\u0438\u0435 \u0441\u0441\u044b\u043b\u043a\u0438 \u043a\u043e\u043b\u043e\u043d\u043a\u0438"
+            ],
+            "Columns": [
+                "\u041a\u043e\u043b\u043e\u043d\u043a\u0438"
+            ],
+            "People": [
+                "\u041b\u044e\u0434\u0438"
+            ],
+            "People Block": [
+                "\u0413\u0430\u043b\u0435\u0440\u0435\u044f \u043b\u044e\u0434\u0435\u0439"
+            ],
+            "people": [
+                "people"
+            ],
+            "user": [
+                "user"
+            ],
+            "team": [
+                "team"
+            ],
+            "profile": [
+                "profile"
+            ],
+            "Our Team": [
+                "\u041a\u043e\u043c\u0430\u043d\u0434\u0430"
+            ],
+            "Squared": [
+                "\u041a\u0432\u0430\u0434\u0440\u0430\u0442\u043d\u044b\u0439"
+            ],
+            "Rounded": [
+                "\u0421\u043a\u0440\u0443\u0433\u043b\u0435\u043d\u043d\u044b\u0439"
+            ],
+             "Name Color": [
+                "\u0426\u0432\u0435\u0442 \u0438\u043c\u0435\u043d\u0438"
+            ],
+            "Description Color": [
+                "\u0426\u0432\u0435\u0442 \u043e\u043f\u0438\u0441\u0430\u043d\u0438\u044f"
+            ],
+            "People Settings": [
+                "\u041d\u0430\u0441\u0442\u0440\u043e\u0439\u043a\u0438"
+            ],
+            "People to show": [
+                "\u0421\u043a\u043e\u043b\u044c\u043a\u043e \u043b\u044e\u0434\u0435\u0439 \u043f\u043e\u043a\u0430\u0437\u044b\u0432\u0430\u0442\u044c"
+            ],
+            "Campaign": [
+                "\u041a\u0430\u043c\u043f\u0430\u043d\u0438\u044f"
+            ],
+            "Leyka Campaign": [
+                "\u041a\u0430\u043c\u043f\u0430\u043d\u0438\u044f"
+            ],
+            "campaing": [
+                "\u043a\u0430\u043c\u043f\u0430\u043d\u0438\u044f"
+            ],
+            "leyka": [
+                "\u043b\u0435\u0439\u043a\u0430"
+            ],
+            "Campaign Settings": [
+                "\u041d\u0430\u0441\u0442\u0440\u043e\u0439\u043a\u0438 \u043a\u0430\u043c\u043f\u0430\u043d\u0438\u0438"
+            ],
+            "Background Color": [
+                "\u0426\u0432\u0435\u0442 \u0444\u043e\u043d\u0430"
+            ],
+             "Default": [
+                "\u041f\u043e \u0443\u043c\u043e\u043b\u0447\u0430\u043d\u0438\u044e"
+            ],
+            "None": [
+                ""
+            ],
+             "Recommendation": [
+                "\u0420\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0430\u0446\u0438\u0438"
+            ],
+            "Text Color": [
+                "\u0426\u0432\u0435\u0442 \u0442\u0435\u043a\u0441\u0442\u0430"
+            ],
+            "Text": [
+                "\u0422\u0435\u043a\u0441\u0442"
+            ],
+            "Recommend": [
+                "\u0420\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0443\u0435\u043c\u044b\u0439"
+            ],
+            "quote": [
+                "quote"
+            ],
+            "recommend": [
+                "recommend"
+            ],
+            "We, the citizens of Pervomaisky District together with members of municipal administration, are against this renovation decision.": [
+                ""
+            ],
+            "Background Color": [
+                "\u0426\u0432\u0435\u0442 \u0444\u043e\u043d\u0430"
+            ],
+            "News": [
+                "\u041d\u043e\u0432\u043e\u0441\u0442\u0438"
+            ],
+            "news": [
+                "news"
+            ],
+            "posts": [
+                "posts"
+            ],
+            "articles": [
+                "articles"
+            ],
+            "Posts to show": [
+                "\u0421\u043a\u043e\u043b\u044c\u043a\u043e \u043f\u043e\u0441\u0442\u043e\u0432 \u043f\u043e\u043a\u0430\u0437\u044b\u0432\u0430\u0442\u044c"
+            ],
+            "Heading Links": [
+                "\u0421\u0441\u044b\u043b\u043a\u0438 \u0432 \u0448\u0430\u043f\u043a\u0435"
+            ],
+            "Heading Link Title": [
+                "\u0422\u0435\u043a\u0441\u0442 \u0441\u0441\u044b\u043b\u043a\u0438 \u0432 \u0448\u0430\u043f\u043a\u0435"
+            ],
+            "Heading Link Url": [
+                "\u0410\u0434\u0440\u0435\u0441 \u0441\u0441\u044b\u043b\u043a\u0438 \u0432 \u0448\u0430\u043f\u043a\u0435"
+            ],
+            "Heading Color": [
+                "\u0426\u0432\u0435\u0442 \u0437\u0430\u0433\u043e\u043b\u043e\u0432\u043a\u0430"
+            ],
+            "Second Heading Color": [
+                "\u0426\u0432\u0435\u0442 \u0432\u0442\u043e\u0440\u043e\u0433\u043e \u0437\u0430\u0433\u043e\u043b\u043e\u0432\u043a\u0430"
+            ],
+            "Post Title Color": [
+                "\u0426\u0432\u0435\u0442 \u043d\u0430\u0437\u0432\u0430\u043d\u0438\u044f \u043f\u043e\u0441\u0442\u0430"
+            ],
+            "Links Color": [
+                "\u0426\u0432\u0435\u0442 \u0441\u0441\u044b\u043b\u043e\u043a"
+            ],
+            "Date Color": [
+                "\u0426\u0432\u0435\u0442 \u0434\u0430\u0442\u044b"
+            ],
+            "Background Color": [
+                "\u0426\u0432\u0435\u0442 \u0444\u043e\u043d\u0430"
+            ],
+            "Text Color": [
+                "\u0426\u0432\u0435\u0442 \u0442\u0435\u043a\u0441\u0442\u0430"
+            ],
+            "Call To Action": [
+                "\u041f\u0440\u0438\u0437\u044b\u0432 \u043a \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u044e"
+            ],
+            "call": [
+                "call"
+            ],
+            "cta": [
+                "cta"
+            ],
+            "action": [
+                "action"
+            ],
+            "Become a volunteer": [
+                "\u0421\u0442\u0430\u0442\u044c \u0432\u043e\u043b\u043e\u043d\u0442\u0435\u0440\u043e\u043c"
+            ],
+            "Title": [
+                "\u0417\u0430\u0433\u043e\u043b\u043e\u0432\u043e\u043a"
+            ],
+            "Text": [
+                "\u0422\u0435\u043a\u0441\u0442"
+            ],
+            "Call to action Image": [
+                "\u0418\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u0435 \u043f\u0440\u0438\u0437\u044b\u0432\u0430 \u043a \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u044e"
+            ],
+            "Remove Image": [
+                "\u0423\u0434\u0430\u043b\u0438\u0442\u044c \u0438\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u0435"
+            ],
+            "Add Image": [
+                "\u0414\u043e\u0431\u0430\u0432\u0438\u0442\u044c \u0438\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u0435"
+            ],
+            "Title Color": [
+                "\u0426\u0432\u0435\u0442 \u0437\u0430\u0433\u043e\u043b\u043e\u0432\u043a\u0430"
+            ],
+            "Button": [
+                "\u041a\u043d\u043e\u043f\u043a\u0430"
+            ],
+            "Button text": [
+                "\u0422\u0435\u043a\u0441\u0442 \u043a\u043d\u043e\u043f\u043a\u0438"
+            ],
+            "Button url": [
+                "\u0421\u0441\u044b\u043b\u043a\u0430 \u043a\u043d\u043e\u043f\u043a\u0438"
+            ],
+            "Button Background": [
+                "\u0426\u0432\u0435\u0442 \u0444\u043e\u043d\u0430 \u043a\u043d\u043e\u043f\u043a\u0438"
+            ],
+            "Button Color": [
+                "\u0426\u0432\u0435\u0442 \u0442\u0435\u043a\u0441\u0442\u0430 \u043a\u043d\u043e\u043f\u043a\u0438"
+            ],
+            "Button Hover Background": [
+                "\u0426\u0432\u0435\u0442 \u0444\u043e\u043d\u0430 \u043a\u043d\u043e\u043f\u043a\u0438 \u043f\u0440\u0438 \u043d\u0430\u0432\u0435\u0434\u0435\u043d\u0438\u0438"
+            ],
+            "Button Hover Color": [
+                "\u0426\u0432\u0435\u0442 \u0442\u0435\u043a\u0441\u0442\u0430 \u043a\u043d\u043e\u043f\u043a\u0438 \u043f\u0440\u0438 \u043d\u0430\u0432\u0435\u0434\u0435\u043d\u0438\u0438"
+            ],
+            "Partners": [
+                "\u041f\u0430\u0440\u0442\u043d\u0435\u0440\u044b"
+            ],
+            "Partners Block": [
+                "\u041f\u0430\u0440\u0442\u043d\u0435\u0440\u044b"
+            ],
+            "partners": [
+                "partners"
+            ],
+            "logos": [
+                "logos"
+            ],
+            "Our Partners": [
+                "\u041d\u0430\u0448\u0438 \u043f\u0430\u0440\u0442\u043d\u0435\u0440\u044b"
+            ],
+            "Settings": [
+                "\u041f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u044b"
+            ],
+            "Partners to show": [
+                "\u0421\u043a\u043e\u043b\u044c\u043a\u043e \u043f\u0430\u0440\u0442\u043d\u0435\u0440\u043e\u0432 \u043f\u043e\u043a\u0430\u0437\u044b\u0432\u0430\u0442\u044c"
+            ],
+            "Edit partners": [
+                "\u0420\u0435\u0434\u0430\u043a\u0442\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u043f\u0430\u0440\u0442\u043d\u0435\u0440\u043e\u0432"
+            ],
+            "Columns": [
+                "\u041a\u043e\u043b\u043e\u043d\u043a\u0438"
+            ],
+            "Cover": [
+                "\u041e\u0431\u043b\u043e\u0436\u043a\u0430"
+            ],
+            "image": [
+                "image"
+            ],
+            "cover": [
+                "cover"
+            ],
+            "We believe": [
+                ""
+            ],
+            "Your mission should be to summarize everything you do. In a short phrase, put the whole point of your organization and your projects.": [
+                "\u0412\u0430\u0448\u0430 \u043c\u0438\u0441\u0441\u0438\u044f \u0434\u043e\u043b\u0436\u043d\u0430 \u043e\u0431\u043e\u0431\u0449\u0430\u0442\u044c \u0432\u0441\u0435 \u0447\u0442\u043e \u0432\u044b \u0434\u0435\u043b\u0430\u0435\u0442\u0435. \u0412 \u043a\u0440\u0430\u0442\u043a\u043e\u0439 \u0444\u0440\u0430\u0437\u0435 \u0437\u0430\u043b\u043e\u0436\u0438\u0442\u0435 \u0432\u0435\u0441\u044c \u0441\u043c\u044b\u0441\u043b \u0432\u0430\u0448\u0435\u0439 \u043e\u0440\u0433\u0430\u043d\u0438\u0437\u0430\u0446\u0438\u0438 \u0438 \u0432\u0430\u0448\u0438\u0445 \u043f\u0440\u043e\u0435\u043a\u0442\u043e\u0432."
+            ],
+            "Recommendations": [
+                "\u0420\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0430\u0446\u0438\u0438"
+            ],
+            "Default": [
+                "\u041f\u043e \u0443\u043c\u043e\u043b\u0447\u0430\u043d\u0438\u044e"
+            ],
+            "Bottom": [
+                "\u041d\u0438\u0436\u043d\u0438\u0439"
+            ],
+            "Heading": [
+                "\u0417\u0430\u0433\u043e\u043b\u043e\u0432\u043e\u043a"
+            ],
+            "Content": [
+                "\u041a\u043e\u043d\u0442\u0435\u043d\u0442"
+            ],
+            "Recommendation Color": [
+                "\u0426\u0432\u0435\u0442 \u0442\u0435\u043a\u0441\u0442\u0430 \u0440\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0430\u0446\u0438\u0438"
+            ],
+            "Recommendation Background Color": [
+                "\u0426\u0432\u0435\u0442 \u0444\u043e\u043d\u0430 \u0440\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0430\u0446\u0438\u0438"
+            ],
+            "Recommendation": [
+                "\u0420\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0430\u0446\u0438\u0438"
+            ],
+            "Text Color": [
+                "\u0426\u0432\u0435\u0442 \u0442\u0435\u043a\u0441\u0442\u0430"
+            ],
+            "Content Background Color": [
+                "\u0426\u0432\u0435\u0442 \u0444\u043e\u043d\u0430 \u043a\u043e\u043d\u0442\u0435\u043d\u0442\u0430"
+            ],
+            "Background": [
+                "\u0424\u043e\u043d"
+            ],
+            "Background Image": [
+                "\u0424\u043e\u043d\u043e\u0432\u043e\u0435 \u0438\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u0435"
+            ],
+            "Remove Background Image": [
+                "\u0423\u0434\u0430\u043b\u0438\u0442\u044c \u0444\u043e\u0440\u043e\u0432\u0443\u044e \u043a\u0430\u0440\u0442\u0438\u043d\u043a\u0443"
+            ],
+            "Add Background Image": [
+                "\u0414\u043e\u0431\u0430\u0432\u0438\u0442\u044c \u0444\u043e\u043d\u043e\u0432\u043e\u0435 \u0438\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u0435"
+            ],
+             "news": [
+                "news"
+            ],
+            "posts": [
+                "posts"
+            ],
+            "articles": [
+                "articles"
+            ],
+            "Projects": [
+                "\u041f\u0440\u043e\u0435\u043a\u0442\u044b"
+            ],
+            "Projects Block": [
+                "\u041f\u0440\u043e\u0435\u043a\u0442\u044b"
+            ],
+            "Projects Settings": [
+                "\u041d\u0430\u0441\u0442\u0440\u043e\u0439\u043a\u0438"
+            ],
+            "Projects to show": [
+                "\u0421\u043a\u043e\u043b\u044c\u043a\u043e \u043f\u0440\u043e\u0435\u043a\u0442\u043e\u0432 \u043f\u043e\u043a\u0430\u0437\u044b\u0432\u0430\u0442\u044c"
+            ],
+            "leyka": [
+                "\u043b\u0435\u0439\u043a\u0430"
+            ],
+            "Campaign Settings": [
+                "\u041d\u0430\u0441\u0442\u0440\u043e\u0439\u043a\u0438 \u043a\u0430\u043c\u043f\u0430\u043d\u0438\u0438"
+            ],
+            "Background Color": [
+                "\u0426\u0432\u0435\u0442 \u0444\u043e\u043d\u0430"
+            ],
+            "Heading": [
+                "\u0417\u0430\u0433\u043e\u043b\u043e\u0432\u043e\u043a"
+            ],
+            "Leyka Donations": [
+                "\u041f\u043e\u0436\u0435\u0440\u0442\u0432\u043e\u0432\u0430\u043d\u0438\u044f"
+            ],
+            "donation": [
+                "\u043f\u043e\u0436\u0435\u0440\u0442\u0432\u043e\u0432\u0430\u043d\u0438\u044f"
+            ],
+            "donate": [
+                "donate"
+            ],
+            "Qty": [
+                "\u041a\u043e\u043b.-\u0432\u043e"
+            ],
+            "Exclude campaigns": [
+                "\u0418\u0441\u043a\u043b\u044e\u0447\u0438\u0442\u044c \u043a\u0430\u043c\u043f\u0430\u043d\u0438\u0438"
+            ],
+             "Text Color": [
+                "\u0426\u0432\u0435\u0442 \u0442\u0435\u043a\u0441\u0442\u0430"
+            ],
+            "Call to action Image": [
+                "\u0418\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u0435 \u043f\u0440\u0438\u0437\u044b\u0432\u0430 \u043a \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u044e"
+            ],
+            "Remove Image": [
+                "\u0423\u0434\u0430\u043b\u0438\u0442\u044c \u0438\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u0435"
+            ],
+            "Add Image": [
+                "\u0414\u043e\u0431\u0430\u0432\u0438\u0442\u044c \u0438\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u0435"
+            ],
+            "Button text": [
+                "\u0422\u0435\u043a\u0441\u0442 \u043a\u043d\u043e\u043f\u043a\u0438"
+            ],
+            "Button url": [
+                "\u0421\u0441\u044b\u043b\u043a\u0430 \u043a\u043d\u043e\u043f\u043a\u0438"
+            ],
+            "Button Background": [
+                "\u0426\u0432\u0435\u0442 \u0444\u043e\u043d\u0430 \u043a\u043d\u043e\u043f\u043a\u0438"
+            ],
+            "Button Color": [
+                "\u0426\u0432\u0435\u0442 \u0442\u0435\u043a\u0441\u0442\u0430 \u043a\u043d\u043e\u043f\u043a\u0438"
+            ],
+            "Button Hover Background": [
+                "\u0426\u0432\u0435\u0442 \u0444\u043e\u043d\u0430 \u043a\u043d\u043e\u043f\u043a\u0438 \u043f\u0440\u0438 \u043d\u0430\u0432\u0435\u0434\u0435\u043d\u0438\u0438"
+            ],
+            "Button Hover Color": [
+                "\u0426\u0432\u0435\u0442 \u0442\u0435\u043a\u0441\u0442\u0430 \u043a\u043d\u043e\u043f\u043a\u0438 \u043f\u0440\u0438 \u043d\u0430\u0432\u0435\u0434\u0435\u043d\u0438\u0438"
+            ],
+            "Hero": [
+                "\u0425\u0435\u0440\u043e"
+            ],
+            "We help people to fight alcohol addiction": [
+                "\u041f\u043e\u043c\u043e\u0433\u0430\u0435\u043c \u043b\u044e\u0434\u044f\u043c \u0441 \u0430\u043b\u043a\u043e\u0433\u043e\u043b\u044c\u043d\u043e\u0439 \u0437\u0430\u0432\u0438\u0441\u0438\u043c\u043e\u0441\u0442\u044c\u044e"
+            ],
+            "There are 877 people in our region who suffer from alcohol addiction. Your support will help organize a rehabilitation program for them.": [
+                "\u0412 \u041d\u0430\u0448\u0435\u0439 \u043e\u0431\u043b\u0430\u0441\u0442\u0438 877 \u0447\u0435\u043b\u043e\u0432\u0435\u043a, \u043a\u043e\u0442\u043e\u0440\u044b\u0435 \u0441\u0442\u0440\u0430\u0434\u0430\u044e\u0442 \u043e\u0442 \u0430\u043b\u043a\u043e\u0433\u043e\u043b\u044c\u043d\u043e\u0439 \u0437\u0430\u0432\u0438\u0441\u0438\u043c\u043e\u0441\u0442\u0438. \u0412\u0430\u0448\u0430 \u043f\u043e\u0434\u0434\u0435\u0440\u0436\u043a\u0430 \u043f\u043e\u043c\u043e\u0436\u0435\u0442 \u043e\u0440\u0433\u0430\u043d\u0438\u0437\u043e\u0432\u0430\u0442\u044c \u0434\u043b\u044f \u043d\u0438\u0445 \u0440\u0435\u0430\u0431\u0438\u043b\u0438\u0442\u0430\u0446\u0438\u043e\u043d\u043d\u0443\u044e \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0443."
+            ],
+            "Help Now": [
+                "\u041f\u043e\u043c\u043e\u0447\u044c \u0441\u0435\u0439\u0447\u0430\u0441"
+            ],
+            "Call to action title": [
+                "\u0417\u0430\u0433\u043e\u043b\u043e\u0432\u043e\u043a \u00ab\u043f\u0440\u0438\u0437\u044b\u0432\u0430 \u043a \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u044e\u00bb (CTA)"
+            ],
+            "Call to action text": [
+                "\u0422\u0435\u043a\u0441\u0442 \u00ab\u043f\u0440\u0438\u0437\u044b\u0432\u0430 \u043a \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u044e\u00bb (CTA)"
+            ],
+            "Displayed on the right side of the Call to action text": [
+                "\u041e\u0442\u043e\u0431\u0440\u0430\u0436\u0430\u0435\u0442\u0441\u044f \u043d\u0430 \u043f\u0440\u0430\u0432\u043e\u0439 \u0441\u0442\u043e\u0440\u043e\u043d\u0435 \u0442\u0435\u043a\u0441\u0442\u0430 \u041f\u0440\u0438\u0437\u044b\u0432 \u043a \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u044e"
+            ],
+            "Buttons": [
+                "\u041a\u043d\u043e\u043f\u043a\u0438"
+            ],
+            "Additional Button text": [
+                "\u0422\u0435\u043a\u0441\u0442 \u0434\u043e\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u044c\u043d\u044b\u0439 \u043a\u043d\u043e\u043f\u043a\u0438"
+            ],
+            "Additional Button url": [
+                "\u0421\u0441\u044b\u043b\u043a\u0430 \u0434\u043e\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0439 \u043a\u043d\u043e\u043f\u043a\u0438"
+            ],
+            "Overlay": [
+                "\u041d\u0430\u043b\u043e\u0436\u0435\u043d\u0438\u0435"
+            ],
+            "Overlay Gradient Start Color": [
+                "\u0426\u0432\u0435\u0442\u0430 \u043d\u0430\u0447\u0430\u043b\u0430 \u0433\u0440\u0430\u0434\u0438\u0435\u043d\u0442\u0430"
+            ],
+            "Overlay Gradient End Color": [
+                "\u0426\u0432\u0435\u0442 \u043e\u043a\u043e\u043d\u0447\u0430\u043d\u0438\u044f \u0433\u0440\u0430\u0434\u0438\u0435\u043d\u0442\u0430"
+            ],
+            "Recommended size 1600x663px": [
+                "\u0420\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0443\u0435\u043c\u044b\u0439 \u0440\u0430\u0437\u043c\u0435\u0440 1600x663px"
+            ],
+            "Min Height": [
+                "\u041c\u0438\u043d\u0438\u043c\u0430\u043b\u044c\u043d\u0430\u044f \u0432\u044b\u0441\u043e\u0442\u0430"
+            ],
+             "Colors": [
+                "\u0426\u0432\u0435\u0442\u0430"
+            ],
+            "We believe": [
+                "\u041c\u044b \u0432\u0435\u0440\u0438\u043c"
+            ],
+            "People are created to love and be loved; People need support and help; Your life and your story are important; Better days and a bright life are close; Hope and help are real.": [
+                "\u0427\u0442\u043e \u043b\u044e\u0434\u0438 \u0441\u043e\u0437\u0434\u0430\u043d\u044b \u043b\u044e\u0431\u0438\u0442\u044c \u0438 \u0431\u044b\u0442\u044c \u043b\u044e\u0431\u0438\u043c\u044b\u043c\u0438; \u041b\u044e\u0434\u044f\u043c \u043d\u0443\u0436\u043d\u0430 \u043f\u043e\u0434\u0434\u0435\u0440\u0436\u043a\u0430 \u0438 \u043f\u043e\u043c\u043e\u0449\u044c; \u0412\u0430\u0448\u0430 \u0436\u0438\u0437\u043d\u044c \u0438 \u0432\u0430\u0448\u0430 \u0438\u0441\u0442\u043e\u0440\u0438\u044f \u0432\u0430\u0436\u043d\u044b; \u041b\u0443\u0447\u0448\u0438\u0435 \u0434\u043d\u0438 \u0438 \u044f\u0440\u043a\u0430\u044f \u0436\u0438\u0437\u043d\u044c \u0437\u0434\u0435\u0441\u044c \u0440\u044f\u0434\u043e\u043c; \u041d\u0430\u0434\u0435\u0436\u0434\u0430 \u0438 \u043f\u043e\u043c\u043e\u0449\u044c \u0440\u0435\u0430\u043b\u044c\u043d\u044b."
+            ],
+           "Edit projects": [
+                "\u0420\u0435\u0434\u0430\u043a\u0442\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u043f\u0440\u043e\u0435\u043a\u0442\u044b"
+            ],
+            "Link Title": [
+                "\u0422\u0435\u043a\u0441\u0442 \u0441\u0441\u044b\u043b\u043a\u0438"
+            ],
+            "Remove Link": [
+                "\u0423\u0434\u0430\u043b\u0438\u0442\u044c \u0441\u0441\u044b\u043b\u043a\u0443"
+            ],
+             "Add Link": [
+                "\u0414\u043e\u0431\u0430\u0432\u0438\u0442\u044c \u0441\u0441\u044b\u043b\u043a\u0443"
+            ],
+             "Collecting donations": [
+                "\u0421\u0431\u043e\u0440 \u043f\u043e\u0436\u0435\u0440\u0442\u0432\u043e\u0432\u0430\u043d\u0438\u0439"
+            ],
+            "Donation form.": [
+                "\u0424\u043e\u0440\u043c\u0430 \u0434\u043b\u044f \u0441\u0431\u043e\u0440\u0430 \u043f\u043e\u0436\u0435\u0440\u0442\u0432\u043e\u0432\u0430\u043d\u0438\u0439."
+            ],
+            "Text over image.": [
+                "\u0422\u0435\u043a\u0441\u0442 \u043f\u043e\u0432\u0435\u0440\u0445 \u0438\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u044f."
+            ],
+             "Title, Subtitle, Description, Button, and Image.": [
+                "\u0417\u0430\u0433\u043e\u043b\u043e\u0432\u043e\u043a, \u043f\u043e\u0434\u0437\u0430\u0433\u043e\u043b\u043e\u0432\u043e\u043a, \u043e\u043f\u0438\u0441\u0430\u043d\u0438\u0435, \u043a\u043d\u043e\u043f\u043a\u0430 \u0438 \u0438\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u0435."
+            ],
+            "Main Block": [
+                "\u0413\u043b\u0430\u0432\u043d\u044b\u0439 \u0431\u043b\u043e\u043a"
+            ],
+            "Title, description, button, and background image.": [
+                "\u0417\u0430\u0433\u043e\u043b\u043e\u0432\u043e\u043a, \u043e\u043f\u0438\u0441\u0430\u043d\u0438\u0435, \u043a\u043d\u043e\u043f\u043a\u0430 \u0438 \u0444\u043e\u043d\u043e\u0432\u043e\u0435 \u0438\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u0435."
+            ],
+            "About Project": [
+                "\u041e \u043f\u0440\u043e\u0435\u043a\u0442\u0435"
+            ],
+            "Subheading, heading and three columns.": [
+                "\u041f\u043e\u0434\u0437\u0430\u0433\u043e\u043b\u043e\u0432\u043e\u043a, \u0437\u0430\u0433\u043e\u043b\u043e\u0432\u043e\u043a \u0438 \u0442\u0440\u0438 \u043a\u043e\u043b\u043e\u043d\u043a\u0438."
+            ],
+            "News tile in three column.": [
+                "\u041f\u043b\u0438\u0442\u043a\u0430 \u043d\u043e\u0432\u043e\u0441\u0442\u0435\u0439 \u0432 \u0442\u0440\u0438 \u043a\u043e\u043b\u043e\u043d\u043a\u0438."
+            ],
+            "Projects tile in three column.": [
+                "\u041f\u043b\u0438\u0442\u043a\u0430 \u043f\u0440\u043e\u0435\u043a\u0442\u043e\u0432 \u0432 \u0442\u0440\u0438 \u043a\u043e\u043b\u043e\u043d\u043a\u0438."
+            ],
+            "Image tile in four columns.": [
+                "\u041f\u043b\u0438\u0442\u043a\u0430 \u0441 \u0438\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u044f\u043c\u0438 \u0432 \u0447\u0435\u0442\u044b\u0440\u0435 \u043a\u043e\u043b\u043e\u043d\u043a\u0438."
+            ],
+            "Team": [
+                "\u041a\u043e\u043c\u0430\u043d\u0434\u0430"
+            ],
+            "Tile with photos, names and short descriptions in 3-8 columns.": [
+                "\u041f\u043b\u0438\u0442\u043a\u0430 \u0441 \u0444\u043e\u0442\u043e\u0433\u0440\u0430\u0444\u0438\u044f\u043c\u0438, \u0438\u043c\u0435\u043d\u0430\u043c\u0438 \u0438 \u043a\u0440\u0430\u0442\u043a\u0438\u043c\u0438 \u043e\u043f\u0438\u0441\u0430\u043d\u0438\u044f\u043c\u0438 \u0432 3\u20148 \u043a\u043e\u043b\u043e\u043d\u043e\u043a."
+            ],
+            "Edit team": [
+                "\u0420\u0435\u0434\u0430\u043a\u0442\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u043a\u043e\u043c\u0430\u043d\u0434\u0443"
+            ],
+            "Key phrase": [
+                "\u041a\u043b\u044e\u0447\u0435\u0432\u0430\u044f \u0444\u0440\u0430\u0437\u0430"
+            ],
+            "Text on a colored plate.": [
+                "\u0422\u0435\u043a\u0441\u0442 \u043d\u0430 \u0446\u0432\u0435\u0442\u043d\u043e\u0439 \u043f\u043b\u0430\u0448\u043a\u0435."
+            ],
+            "Who we are?": [
+                "\u041a\u0442\u043e \u043c\u044b?"
+            ],
+             "What we do?": [
+                "\u0427\u0442\u043e \u043c\u044b \u0434\u0435\u043b\u0430\u0435\u043c?"
+            ],
+            "Stop drinking?": [
+                "\u0411\u0440\u043e\u0441\u0438\u0442\u044c \u043f\u0438\u0442\u044c?"
+            ],
+            "The charitable organization &#34;Line of Color&#34; helps to overcome alcohol addiction and return to a fulfilling life.": [
+                "\u0411\u043b\u0430\u0433\u043e\u0442\u0432\u043e\u0440\u0438\u0442\u0435\u043b\u044c\u043d\u0430\u044f \u043e\u0440\u0433\u0430\u043d\u0438\u0437\u0430\u0446\u0438\u044f &#34;\u041b\u0438\u043d\u0438\u044f \u0426\u0432\u0435\u0442\u0430&#34; \u043f\u043e\u043c\u043e\u0433\u0430\u0435\u0442 \u043f\u0440\u0435\u043e\u0434\u043e\u043b\u0435\u0442\u044c \u0430\u043b\u043a\u043e\u0433\u043e\u043b\u044c\u043d\u0443\u044e \u0437\u0430\u0432\u0438\u0441\u0438\u043c\u043e\u0441\u0442\u044c \u0438 \u0432\u0435\u0440\u043d\u0443\u0442\u044c\u0441\u044f \u043a \u043f\u043e\u043b\u043d\u043e\u0446\u0435\u043d\u043d\u043e\u0439 \u0436\u0438\u0437\u043d\u0438."
+            ],
+            "We organize rehabilitation programs, inform and help those who are ready to give up their addiction and return their lives.": [
+                "\u041e\u0440\u0433\u0430\u043d\u0438\u0437\u0443\u0435\u043c \u0440\u0435\u0430\u0431\u0438\u043b\u0438\u0442\u0430\u0446\u0438\u043e\u043d\u043d\u044b\u0435 \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u044b, \u0438\u043d\u0444\u043e\u0440\u043c\u0438\u0440\u0443\u0435\u043c, \u043f\u043e\u043c\u043e\u0433\u0430\u0435\u043c \u0442\u0435\u043c, \u043a\u0442\u043e \u0433\u043e\u0442\u043e\u0432 \u043e\u0442\u043a\u0430\u0437\u0430\u0442\u044c\u0441\u044f \u043e\u0442 \u043f\u0430\u0433\u0443\u0431\u043d\u043e\u0439 \u043f\u0440\u0438\u0432\u044b\u0447\u043a\u0438 \u0438 \u0432\u0435\u0440\u043d\u0443\u0442\u044c \u0441\u0432\u043e\u044e \u0436\u0438\u0437\u043d\u044c."
+            ],
+            "Fill out the anonymous form on the website, choose a convenient time for an individual consultation, or sign up for a support group.": [
+                "\u0417\u0430\u043f\u043e\u043b\u043d\u0438\u0442\u0435 \u0430\u043d\u043e\u043d\u0438\u043c\u043d\u0443\u044e \u0444\u043e\u0440\u043c\u0443 \u043d\u0430 \u0441\u0430\u0439\u0442\u0435, \u0432\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0443\u0434\u043e\u0431\u043d\u043e\u0435 \u0432\u0430\u043c \u0432\u0440\u0435\u043c\u044f \u0434\u043b\u044f \u0438\u043d\u0434\u0438\u0432\u0438\u0434\u0443\u0430\u043b\u044c\u043d\u043e\u0439 \u043a\u043e\u043d\u0441\u0443\u043b\u044c\u0442\u0430\u0446\u0438\u0438 \u0438\u043b\u0438 \u0437\u0430\u043f\u0438\u0448\u0438\u0442\u0435\u0441\u044c \u0432 \u0433\u0440\u0443\u043f\u043f\u0443 \u043f\u043e\u0434\u0434\u0435\u0440\u0436\u043a\u0438."
+            ],
+            "Learn about our work": [
+                "\u0423\u0437\u043d\u0430\u0439\u0442\u0435 \u043e \u043d\u0430\u0448\u0435\u0439 \u0440\u0430\u0431\u043e\u0442\u0435"
+            ],
+            "View projects": [
+                "\u041f\u043e\u0441\u043c\u043e\u0442\u0440\u0435\u0442\u044c \u043f\u0440\u043e\u0435\u043a\u0442\u044b"
+            ],
+            "Get help": [
+                "\u041f\u043e\u043b\u0443\u0447\u0438\u0442\u044c \u043f\u043e\u043c\u043e\u0449\u044c"
+            ],
+             "Remove time": [
+                "\u0423\u0434\u0430\u043b\u0438\u0442\u044c \u0432\u0440\u0435\u043c\u044f"
+            ],
+            "Delete schedule": [
+                "\u0423\u0434\u0430\u043b\u0438\u0442\u044c \u0440\u0430\u0441\u043f\u0438\u0441\u0430\u043d\u0438\u0435"
+            ],
+            "Add time": [
+                "\u0414\u043e\u0431\u0430\u0432\u0438\u0442\u044c \u0432\u0440\u0435\u043c\u044f"
+            ],
+            "Label": [
+                "\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435"
+            ],
+            "slug": [
+                "\u0441\u043b\u0430\u0433"
+            ],
+            "Delete": [
+                "\u0423\u0434\u0430\u043b\u0438\u0442\u044c"
+            ],
+            "Events": [
+                "\u041c\u0435\u0440\u043e\u043f\u0440\u0438\u044f\u0442\u0438\u044f"
+            ],
+            "Events Manager": [
+                "\u041c\u0435\u043d\u0435\u0434\u0436\u0435\u0440 \u043f\u043e \u043c\u0435\u0440\u043e\u043f\u0440\u0438\u044f\u0442\u0438\u044f\u043c"
+            ],
+            "events": [
+                "\u043c\u0435\u0440\u043e\u043f\u0440\u0438\u044f\u0442\u0438\u044f"
+            ],
+            "Schedule of events": [
+                "\u0420\u0430\u0441\u043f\u0438\u0441\u0430\u043d\u0438\u0435 \u043c\u0435\u0440\u043e\u043f\u0440\u0438\u044f\u0442\u0438\u0439"
+            ],
+            "List": [
+                "\u0421\u043f\u0438\u0441\u043e\u043a"
+            ],
+            "Grid": [
+                "\u041f\u043b\u0438\u0442\u043a\u0430"
+            ],
+            "Edit events": [
+                "\u0420\u0435\u0434\u0430\u043a\u0442\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u043c\u0435\u0440\u043e\u043f\u0440\u0438\u044f\u0442\u0438\u044f"
+            ],
+            "Events to show": [
+                "\u0421\u043a\u043e\u043b\u044c\u043a\u043e \u043c\u0435\u0440\u043e\u043f\u0440\u0438\u044f\u0442\u0438\u0439 \u043f\u043e\u043a\u0430\u0437\u044b\u0432\u0430\u0442\u044c"
+            ],
+            "Category": [
+                "\u041a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f"
+            ],
+        }
+    }
+}

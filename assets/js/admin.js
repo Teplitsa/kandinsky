@@ -1,5 +1,7 @@
 jQuery( document ).ready( function( $ ) {
 
+	const { __, _x, _n, _nx } = wp.i18n;
+
 	// allow remove content checkbox behaviour
 	$('.knd-may-remove-my-content').prop('checked', false);
 	$('.knd-may-remove-my-content').change(function(e){
@@ -84,6 +86,84 @@ jQuery( document ).ready( function( $ ) {
 		$('.knd-update-notice').fadeOut();
 	} );
 
+	/** Events */
+	$(document).on('click', '.knd-event-remove-item', function(e){
+		e.preventDefault();
+		$(this).parents('.knd-event-admin-schedule-item').remove();
+	});
+
+	$(document).on('click','.knd-event-remove-group', function(e){
+		e.preventDefault();
+		$(this).parents('.knd-event-admin-schedule-group').remove();
+	});
+
+	$(document).on('click','.knd-event-add-time', function(e){
+		e.preventDefault();
+
+		var itemKey = 0;
+		var itemId = 0;
+
+		var scheduleGroup = $(this).parents('.knd-event-admin-schedule-group');
+
+		var scheduleList = scheduleGroup.find( '.knd-event-admin-schedule-list' );
+
+		var itemKey = scheduleGroup.prevAll().length;
+		var itemId = scheduleList.find( '.knd-event-admin-schedule-item').length;
+
+		var scheduleItemHtml = '<div class="knd-event-admin-schedule-item">' +
+		'<div class="knd-event-admin-schedule-times">' +
+		'<input type="text" name="_schedule[' + itemKey + '][list][' + itemId + '][hour_start]" class="em-time-input ui-em_timepicker-input" maxlength="8" size="8" value="0:00" autocomplete="off">' +
+		'<input type="text" name="_schedule[' + itemKey + '][list][' + itemId + '][hour_end]" class="em-time-input ui-em_timepicker-input" maxlength="8" size="8" value="0:00" autocomplete="off">' +
+		'<a href="#" class="button button-link button-link-delete button-small knd-event-remove-item">' + __( 'Remove time', 'knd' )  + '</a>' +
+				'</div>' +
+			'<textarea class="large-text" name="_schedule[' + itemKey + '][list][' + itemId + '][desc]" cols="2"></textarea>' +
+		'</div>';
+
+		scheduleList.append( scheduleItemHtml );
+		em_setup_timepicker('body');
+
+	});
+
+	$(document).on('click','.knd-event-add-schedule', function(e){
+		e.preventDefault();
+
+		var itemKey = $('.knd-event-admin-schedule-group').length;
+
+		var scheduleItemHtml = '<div class="knd-event-admin-schedule-group">' +
+			'<div class="knd-event-admin-schedule-name"><input type="text" name="_schedule[' + itemKey + '][title]" value="" class="regular-text"><a href="#" class="button button-link button-link-delete knd-event-remove-group">' + __( 'Delete schedule', 'knd' ) + '</a></div>' +
+				'<div class="knd-event-admin-schedule-list">' + 
+				'</div>' +
+				'<a href="#" class="button button-secondary knd-event-add-time">' + __( 'Add time', 'knd' )  + '</a>' +
+			'</div>';
+
+		$('.knd-event-admin-schedule').append( scheduleItemHtml );
+	});
+
+	$(document).on('click', '.knd-booking-fields-remove', function(e){
+		e.preventDefault();
+		$(this).parents('.dbem-kookings-fields-group').remove();
+		var fieldsGroup = $('.dbem-kookings-fields').find('.dbem-kookings-fields-group');
+		fieldsGroup.each(function( index ) {
+			$(this).find('input:nth-child(1)').attr('name', 'dbem_bookings_custom_fields[' + index + '][label]');
+			$(this).find('input:nth-child(2)').attr('name', 'dbem_bookings_custom_fields[' + index + '][slug]');
+		});
+	});
+
+	$(document).on('click','.knd-booking-add-field', function(e){
+		e.preventDefault();
+
+		var itemKey = $('.dbem-kookings-fields .dbem-kookings-fields-group').length;
+
+		var fieldHtml = '<div class="dbem-kookings-fields-group">' +
+			'<input name="dbem_bookings_custom_fields[' + itemKey + '][label]" type="text" value="" placeholder="' + __( 'Label', 'knd' ) + '">' +
+			'<input name="dbem_bookings_custom_fields[' + itemKey + '][slug]" type="text" value="" placeholder="' + __( 'slug', 'knd' ) + '">' +
+			'<a href="#" class="button button-link button-link-delete knd-booking-fields-remove">' + __( 'Delete', 'knd' ) + '</a>' + 
+		'</div>';
+
+		$('.dbem-kookings-fields').append( fieldHtml );
+	});
+
+
 } );
 
 function kndGetUpdateResultIcon(status, message) {
@@ -96,9 +176,4 @@ function kndGetUpdateResultIcon(status, message) {
 	}
 		
 	return '<span class="dashicons '+iconClass+'" title="'+message+'"></span>';
-}
-
-/* Prevent error from plugin shortcode-ui */
-if ( typeof wpActiveEditor === 'undefined' ) {
-	window.wpActiveEditor = null;
 }

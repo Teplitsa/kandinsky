@@ -6,7 +6,8 @@
  */
 
 get_header();
-?>
+
+if ( knd_is_page_title() ) { ?>
 <header class="page-header">
 	<div class="container">
 		<div class="text-column">
@@ -30,10 +31,11 @@ get_header();
 		</div>
 	</div>
 </header>
+<?php } ?>
 
-<div class="entry-content page-content container">
+<div class="page-content container">
 
-	<?php if ( has_post_thumbnail() ) { ?>
+	<?php if ( has_post_thumbnail() && knd_is_page_title() ) { ?>
 		<div class="flex-row entry-preview-single centered">
 			<div class="flex-cell flex-md-10">
 				<?php knd_single_post_thumbnail( get_the_ID(), 'full', 'standard' ); ?>
@@ -41,7 +43,7 @@ get_header();
 		</div>
 	<?php } ?>
 
-	<div class="the-content text-column">
+	<div class="entry-content the-content text-column">
 		<?php
 		while ( have_posts() ) :
 			the_post();

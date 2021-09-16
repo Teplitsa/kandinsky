@@ -1,0 +1,38 @@
+/* Pagination */
+.knd-pagination {
+	display: flex;
+	justify-content: center;
+	margin-top: 15px;
+	margin-bottom: 40px;
+
+	.nav-links {
+		display: flex;
+
+		.page-numbers {
+			height: 40px;
+			min-width: 40px;
+			line-height: 40px;
+			text-align: center;
+			padding-left: 10px;
+			padding-right: 10px;
+			border-radius: 50rem;
+			background-color: #f7f8f8;
+			color: #183343;
+			border: 0;
+
+			&:hover {
+				background-color: #e6e6e6;
+			}
+
+			&.current {
+				background-color: var(--knd-color-main);
+				color: #fff;
+			}
+
+			& + .page-numbers {
+				margin-left: 5px;
+			}
+
+		}
+	}
+}

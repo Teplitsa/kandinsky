@@ -32,18 +32,6 @@
 	text-transform: uppercase;
 	color: $color-main-dark;
 
-	span.category {
-		body.plot-public-campaign & {
-			@include knd-link-lonely-text();
-		}
-		
-		body.plot-fundraising-org & {
-			@include knd-link-lonely-text();
-			color: $color-third;
-		}
-		
-	}
-
 	a {
 		color: inherit;
 		&:hover { text-decoration: underline; }
@@ -51,22 +39,12 @@
 	
 	.date {
 		color: $color-text;
-
-		body.plot-public-campaign .knd-archive-sidebar &,
-		body.plot-public-campaign .knd-homepage-sidebar & {
-			color: $color-text-contrast;
-		}
-
 	}
 	.sep {
 		display:inline-block;
 		width: 5px;
 		height: 5px;
 		border: solid 1px $color-page-bg-dark;
-		
-		body.plot-public-campaign & {
-			border-color: $color-text-contrast;
-		}
 
 		border-radius: 5px;
 		padding:0px;
@@ -86,24 +64,12 @@
 		.entry-preview:after { background: rgba(0,0,0, 0.25); }
 	}
 	
-	/*body.plot-public-campaign & {
-		background: $color-second-dark;
-	}*/
-	
 	a {
 		display: block;
 		//color: $color-text;
 		color: $color-text;
 		position:relative;
 		height: 100%;
-		
-		body.plot-public-campaign &:not(.entry-link) {
-			color: $color-text-contrast;
-		}
-
-		body.plot-public-campaign .archive-post-list & {
-			color: var(--knd-page-text-color);
-		}
 	}
 	
 	.entry-data {
@@ -138,59 +104,6 @@
 	}
 }
 
-
-// Related section variants
-.related-card-holder {
-	margin-top: $gut;
-	
-	.related-title {
-		@include knd-head-section-text();
-		color: var(--knd-color-headings);
-	}
-	
-	a {
-		@include knd-link-related-text();
-		color: $color-main-dark;
-		margin-bottom: 16px;
-	}	
-}
-
-
-.related-cards-loop {
-	margin-top: $gut / 2;
-	a {
-		display:block;
-	}
-}
-
-.tpl-related-post {
-	@extend .tpl-post;
-	
-	&:hover {
-				
-	}
-	
-	.entry-data {
-		padding-top: 20px;
-		position: relative;
-	}
-	
-	.entry-meta {
-		background:none;
-		bottom: 13px;
-		left: 26px;
-		z-index: 100;
-	}
-	
-	.entry-title {
-		font-size: 1.5em;
-		line-height: 1.1;
-		margin-top: 0 !important;
-	}
-
-}
-
-
 /** Programms **/
 .tpl-project {
 	transition: all 0.3s;
@@ -201,7 +114,6 @@
 	
 	a {
 		display: block;
-		color: $color-text-contrast;
 		position:relative;
 		height: 100%;
 	}
@@ -234,12 +146,11 @@
 	&.linked:hover {
 
 	}
-
-	.entry-title {
+	
+	.entry-title {		
 		@include knd-head-card-text();
 		line-height: 1.2;
-		margin-bottom: 12px;
-		margin-top: 0;
+		margin-bottom: 12px; 
 	}
 	
 	.entry-preview {
@@ -336,7 +247,6 @@
 
 	.entry-meta {
 		font-size: .85em;
-		color: $color-third;
 		margin-top: 2px;
 		margin-bottom: 1em;
 	}
@@ -349,32 +259,34 @@
 
 
 /*  Archive layouts */
-.cards-holder.archive-post-list {
-	padding-top:0px;
-	
-	&.next-page {
-		padding-top: $gut;
+.archive-post-list {
+	padding-bottom: 70px;
+
+	&.cards-holder {
+		padding-top:0px;
+
+		&.next-page {
+			padding-top: $gut;
+		}
 	}
 }
 
 .listing-bg {
-   background: $color-gray-light;
+	background: $color-gray-light;
 }
 
 .featured-post {
-	
-   margin-top: 70px;
-   margin-bottom: -70px;
-   
-   .cards-loop {
-	   transform: translateY(-70px);
-   } 
+	margin-top: 70px;
+	margin-bottom: -70px;
+	.cards-loop {
+		transform: translateY(-70px);
+	}
 }
 
 // paging 
 .paging {
 	@include knd-link-paging-text();
-	padding: $base/1.5 0 $base * 3.2 0;
+	padding: $base/2 0 $base/2;
 	text-align: center;
 	
 	.page-numbers {

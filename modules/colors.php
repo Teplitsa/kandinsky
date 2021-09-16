@@ -2,7 +2,7 @@
 
 /** Colors managemnt for theme **/
 function knd_get_deault_main_color() {
-	return '#4494BB'; // may depends on test content set somehow
+	return '#f43724'; // may depends on test content set somehow
 }
 
 function knd_get_main_color() {

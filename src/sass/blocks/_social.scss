@@ -74,10 +74,10 @@ $social_color: (
 
 /**  Sharing **/
 .social-likes {
-	@include cf;	
+	@include cf;
 }
 
-.social-likes__widget  {			
+.social-likes__widget {
 	cursor: pointer;
 		
 	a {

@@ -1,0 +1,21 @@
+/**
+ * Recommend Block
+ */
+:root {
+	--knd-block-recommend-color: #000;
+    --knd-block-recommend-background: #f7f7af;
+}
+
+.knd-block-recommend {
+    font-style: italic;
+    font-weight: normal;
+    letter-spacing: normal;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--knd-block-recommend-color);
+    padding: 15px 20px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    background-color: var(--knd-block-recommend-background);
+    text-align: left;
+}

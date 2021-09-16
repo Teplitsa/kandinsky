@@ -60,7 +60,6 @@
 }
 
 .entry-content-single {
-	
 	.entry-lead {
 		@include knd-lead-text();
 		margin-bottom: $gut / 1.33;
@@ -82,6 +81,7 @@
 // sharing
 .single-sharing-col {
 	position:relative;
+	z-index: 0;
 }
 
 .regular-sharing {

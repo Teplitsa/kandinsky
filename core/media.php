@@ -10,7 +10,7 @@ if ( ! defined( 'WPINC' ) )
 add_action( 'after_setup_theme', 'knd_thumbnails_sizes', 15 );
 
 function knd_thumbnails_sizes() {
-	
+
 	// Thumbnails:
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 640, 395, true ); // regular thumbnails,

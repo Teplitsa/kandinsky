@@ -1,0 +1,27 @@
+// Events Form
+// & = .knd-event
+
+$em: &;
+
+&-calendar {
+
+	$calendar: &;
+
+	border-collapse: collapse;
+	width: 100%;
+
+	&-wrapper {
+		#{$calendar} td {
+			padding: 6px 12px;
+		}
+
+		#{$em}-calnav {
+			border-bottom: none;
+		}
+	}
+
+	&-wrapper & td {
+		padding: 6px 12px;
+	}
+}
+

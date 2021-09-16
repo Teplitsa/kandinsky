@@ -9,7 +9,11 @@ if ( ! defined( 'WPINC' ) ) {
 	die();
 }
 
-define('KND_VERSION', '1.4.12');
+if( WP_DEBUG && WP_DEBUG_DISPLAY && (defined('DOING_AJAX') && DOING_AJAX) ){
+	@ ini_set( 'display_errors', 1 );
+}
+
+define('KND_VERSION', '2.0.0');
 define('KND_DOC_URL', 'https://github.com/Teplitsa/kandinsky/wiki/');
 define('KND_OFFICIAL_WEBSITE_URL', 'https://knd.te-st.ru/');
 define('KND_SOURCES_PAGE_URL', 'https://github.com/Teplitsa/kandinsky/');
@@ -20,10 +24,9 @@ define('KND_SUPPORT_EMAIL', 'support@te-st.ru');
 define('KND_SUPPORT_URL', 'https://pd.te-st.ru/forms/contacts/');
 define('KND_SUPPORT_TELEGRAM', 'https://t.me/joinchat/AAAAAENN3prSrvAs7KwWrg');
 define('KND_SETUP_WIZARD_URL', admin_url('themes.php?page=knd-setup-wizard'));
-//define('KND_DISTR_ARCHIVE_URL', 'https://github.com/Teplitsa/kandinsky/archive/master.zip');
-define('KND_DISTR_ARCHIVE_URL', 'https://github.com/Teplitsa/kandinsky-theme/raw/main/update/master.zip');
-define('KND_UPDATE_INFO_URL', 'https://raw.githubusercontent.com/Teplitsa/kandinsky-theme/main/update/info.json');
-/** define('KND_DISTR_ARCHIVE_URL', 'https://github.com/Teplitsa/kandinsky/archive/dev.zip'); */
+define('KND_DISTR_ARCHIVE_URL', 'https://knd.te-st.ru/kandinsky.zip');
+define('KND_UPDATE_INFO_URL', 'https://knd.te-st.ru/kandinsky.json');
+
 define('KND_MIN_PHP_VERSION', '5.6.0');
 define('KND_PHP_VERSION_ERROR_MESSAGE', '<strong>Внимание:</strong> версия PHP ниже <strong>5.6.0</strong>. Кандинский нуждается в PHP хотя бы <strong>версии 5.6.0</strong>, чтобы работать корректно.<br /><br />Пожалуйста, направьте вашему хостинг-провайдеру запрос на повышение версии PHP для этого сайта.');
 
@@ -50,6 +53,7 @@ if ( ! isset( $content_width ) ) {
  */
 function knd_load_theme_textdomain() {
 	load_theme_textdomain( 'knd', get_template_directory() . '/lang' );
+	do_action( 'knd_load_textdomain' );
 }
 
 /**
@@ -94,17 +98,18 @@ function knd_setup() {
 			'caption',
 			'script',
 			'style',
+			'navigation-widgets',
 		)
 	);
-
-	// Restoring the classic Widgets Editor.
-	remove_theme_support( 'widgets-block-editor' );
 
 	// Add support for responsive embeds.
 	add_theme_support( 'responsive-embeds' );
 
 	// Add support for full and wide align images.
 	add_theme_support( 'align-wide' );
+
+	// Add theme support for selective refresh for widgets.
+	add_theme_support( 'customize-selective-refresh-widgets' );
 
 	//add_theme_support( 'wp-block-styles' );
 
@@ -138,10 +143,27 @@ require_once ABSPATH . 'wp-admin/includes/media.php';
 
 get_template_part( '/core/extras' ); // default WP behavior customization.
 
+// enqueue CSS and JS and compose inline CSS to set vars from settings.
+
+/**
+ * Theme Init.
+ */
+require get_template_directory() . '/inc/init.php';
+
+/**
+* Assets.
+*/
+require get_template_directory() . '/core/assets.php';
+
 /**
  * Template functions
  */
 require_once get_theme_file_path( '/core/template-functions.php' );
+
+/**
+ * Nav Menu
+ */
+require_once get_theme_file_path( '/core/nav-menu.php' );
 
 /**
  * Customizer
@@ -154,20 +176,20 @@ require_once get_theme_file_path( '/core/customizer/customizer.php' );
 require_once get_theme_file_path( '/core/typography.php' );
 
 /**
+ * Post type person
+ */
+require_once get_template_directory() . '/core/person.php';
+
+/**
  * Plugins
  */
 require_once get_theme_file_path( '/core/plugins.php' );
-
-// enqueue CSS and JS and compose inline CSS to set vars from settings.
-
-get_template_part( '/core/class-cssjs' );
 
 get_template_part( '/core/media' ); // customize media behavior and add images sizes.
 
 get_template_part(  '/core/cards' ); // layout of cards, list items etc.
 
 get_template_part( '/core/shortcodes' ); // shortcodes core.
-get_template_part( '/core/shortcodes-ui' ); // shortcodes layout.
 
 get_template_part( '/core/template-tags' ); // independent pages parts layout.
 
@@ -221,3 +243,8 @@ function widgets_scripts( $hook ) {
 	wp_enqueue_script( 'wp-color-picker' );
 }
 add_action( 'admin_enqueue_scripts', 'widgets_scripts' );
+
+/**
+ * Editor
+ */
+require_once get_template_directory() . '/core/editor/editor.php';

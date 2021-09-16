@@ -3,28 +3,84 @@
 
 /** Bottom branding pannel with social links **/
 .bottom-bar {
-	background: $color-gray-light;
-	padding: $base*2.2 0 0;
-	color: $color-black;
-	
-	body.plot-public-campaign & {
-		color: $color-text-contrast;
-		background: $color-third;
-	}
+
+	padding: 0 0 $base;
 
 	.knd-social-links {
-		li a {
-			.svg-icon {
-				fill: $color-black;
+		a {
+			color: var(--knd-social-color,#000);
 
-				body.plot-public-campaign & {
-					fill: $color-text-contrast;
-				}
+			&:hover {
+				color: var(--knd-social-color-hover,#000);
+			}
+
+			.svg-icon {
+				fill: currentColor;
 			}
 		}
 	}
 
+	.logo-name {
+		font-size: var(--knd-font-size-logo,22px);
+	}
+
+	.logo-desc {
+		font-weight: 600;
+	}
+
+	.flex-cell {
+		margin-bottom: $gut/2;
+	}
+
+}
+
+@media (max-width: 575px) {
+	.bottom-bar {
+		.knd-footer-logo {
+			&__inner {
+				flex-wrap: wrap;
+			}
+			&__image {
+				margin-right: 0;
+				width: 100%;
+				&:not(:last-child) {
+					margin-bottom: 10px;
+				}
+			}
+		}
+	}
+}
+
+/** Footer **/
+.knd-footer {
+
+	@include knd-footer-text();
+	padding: $base*2 0px 30px 0px;
+	background: var(--knd-footer-background, #eeeeee);
+	color: var(--knd-footer-color, #000);
+
+	a {
+		color: var(--knd-footer-link-color, #f43724);
+
+		&:hover, &:focus, &:active {
+			text-decoration: underline;
+			color: var(--knd-footer-link-color-hover, #db3120);
+		}
+
+	}
+	
+	p {
+		hyphens: none;
+		margin-bottom: $base/2;
+		&:last-child { margin-bottom: 0; }
+	}
+
 	.knd-footer-logo {
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: none;
+		}
 
 		&__image {
 			max-height: 66px;
@@ -50,146 +106,96 @@
 		}
 	}
 
-	.logo-name {
-		font-size: 22px;
-	}
-
-	.logo-desc {
-		font-size: 11px;
-	}
-
-}
-
-@media (max-width: 575px) {
-	.bottom-bar {
-		.knd-footer-logo {
-			&__inner {
-				flex-wrap: wrap;
-			}
-			&__image {
-				margin-right: 0;
-				width: 100%;
-				&:not(:last-child) {
-					margin-bottom: 10px;
-				}
-			}
-		}
-	}
-}
-
-.bottom-branding {
-	padding-bottom: $gut/2;
-	.flex-cell { margin-bottom: $gut/2; }
-}
-
-/** Footer **/
-.site-footer {
-	
-	@include knd-footer-text();
-	padding: 10px 0px 30px 0px;
-	background: $color-gray-light;
-	color: $color-black;
-	
-	body.plot-public-campaign & {
-		color: $color-text-contrast;
-		background: $color-third;
-	}
-	
-	a {
-		color: $color-main-dark;
-
-		&:hover, &:focus, &:active {
-			text-decoration: underline;
-			color: $color-main;
-		}
-		
-		body.plot-fundraising-org & {
-			color: $color-third;
-			
-			&:hover, &:focus, &:active {
-				color: $color-third-dark;
-			}
-		}
-		
-	}
-	
-	p {
-		hyphens: none;
-		margin-bottom: $base/2;
-		&:last-child { margin-bottom: 0; }
-	}
-	
 	.copy {
 		@include knd-supersmall-text();
-		color: $color-black;
 		max-width: 300px;
 		opacity: .75;
 
 		a { 
 			white-space: nowrap;
-			color: $color-black;
-		}
-
-	
-		body.plot-public-campaign & {
-			color: $color-text-contrast;
-			a { color: $color-text-contrast; }
-
-			opacity: .5;
+			color: var(--knd-footer-color, #000);
 		}
 	}
 	
 	//layout
 	.widget-area {
 		display: flex;
-		flex-flow: row wrap;
+		flex-wrap: wrap;
 		justify-content: space-between;
+		margin-left: -20px;
+		margin-right: -20px;
 	}
-	
+
 	.widget-bottom {
-		flex: 0 0 auto;
-		width: calc(100% - 24px);
+		flex: 1;
 		padding-bottom: $gut;
-		
-		@include for(small-screens){            
-			width: calc(50% - 24px);
+		padding-left: 20px;
+		padding-right: 20px;
+		max-width: 60%;
+
+		@media (max-width: 1199px ) {
+			max-width: 100%;
 		}
-		
-		@include for(medium-screens){
-			&:nth-of-type(2),
-			&:nth-of-type(3) {              
-				width: calc(25% - 24px);
-			}           
-		}
-		
-		@include for(large-screens){            
-			width: calc(33.3% - 24px);
-			
-			&.widget_nav_menu {             
-				width: calc(17% - 24px);            
-			}
-			
-			&:nth-of-type(2),
-			&:nth-of-type(3) {
-				width: calc(15% - 24px);
-			}
-			
-			&:nth-of-type(2) {
-				//padding-left:$gut;
+
+		&-about {
+			order: 1;
+
+			@media (max-width: 767px ) {
+				max-width: 100%;
+				flex: 0 0 auto;
+				width: 100%;
 			}
 		}
+
+		&-policy {
+			order: 4;
+
+			@media (max-width: 1199px ) {
+				max-width: 100%;
+				flex: 0 0 auto;
+				width: 100%;
+			}
+
+			@media (max-width: 767px ) {
+				order: 2;
+			}
+		}
+
+		&-menu {
+			max-width: 190px;
+			order: 3;
+
+			@media (max-width: 767px ) {
+				max-width: 50%;
+			}
+
+			@media (max-width: 575px ) {
+				max-width: 100%;
+				flex: 0 0 auto;
+				width: 100%;
+			}
+
+			.menu {
+
+				li {
+					margin-bottom: .5em;
+				}
+
+				a {
+					@include knd-footer-text();
+					text-transform: uppercase;
+				}
+			}
+		}
+
 	}
-	
+
 	.hr {
 		margin: 0;
-		color: transparent;
 		display: block;
-		border-bottom: 1px solid rgba(0,0,0, 0.2);
-		
-		body.plot-public-campaign & {
-		   border-bottom: 1px solid $color-second;
-		}
-		
+		border-bottom: 1px solid currentColor;
+		opacity: .2;
+
 		@include for(xxlarge-screens) {
 			margin-left: 0;
 			margin-right: 0;
@@ -197,12 +203,15 @@
 	}
 }
 
-
-
 /** Footer credits block */
 .footer-credits {
 	padding-top: $gut/3;
 	justify-content: center;
+
+	&.flex-row {
+		margin-left: -20px;
+		margin-right: -20px;
+	}
 
 	> .flex-cell:first-child:last-child {
 		> .copy {
@@ -231,9 +240,11 @@
 		align-items: center;
 		text-align: right;
 		text-decoration: none;
+		color: var(--knd-footer-color,#000);
 
 		&:hover {
 			text-decoration: none;
+			color: var(--knd-footer-color,#000);
 		}
 	}
 
@@ -247,7 +258,6 @@
 	.support {
 		@include knd-supersmall-text();
 		line-height: 16px;
-		color: $color-text;
 		padding-right: 20px;
 		width: 104px;
 		text-align: right;
@@ -259,9 +269,5 @@
 
 		opacity: .75;
 
-		body.plot-public-campaign & {
-			color: $color-text-contrast;
-			opacity: .5;
-		}
 	}
 }

@@ -60,7 +60,7 @@ class KND_Plot_Data_Builder {
 		$this->build_theme_options();
 		$this->build_general_options();
 		$this->build_menus();
-		$this->build_sidebars();
+		//$this->build_sidebars();
 	}
 
 	public function build_leyka_capmaigns() {
@@ -134,38 +134,40 @@ class KND_Plot_Data_Builder {
 	public function _remove_all_section_campaigns_with_donations() {
 		
 		foreach($this->imp->possible_plots as $plot_name) {
-		
-			if($plot_name != $this->imp->plot_name) {
-		
+
+			if ( $plot_name != $this->imp->plot_name) {
+
 				$builder = self::produce_plot_builder($plot_name, $this->imp);
-				$plot_config = $builder->data_routes;
-		
-				foreach($plot_config['leyka_campaigns'] as $section => $section_data) {
-		
-					$post_type = Leyka_Campaign_Management::$post_type;
-					$post_pieces_name = $section_data;
-		
-					foreach($post_pieces_name as $piece_name) {
-		
-						$piece = new KND_Piece(array('piece_name' => $piece_name, 'piece_section' => $section));
-						$slug = $piece->get_post_slug();
-		
-						$campaign = knd_get_post($slug, $post_type);
-						if($campaign) {
-							$leyka_campaign = new Leyka_Campaign($campaign);
-							
-							$donations = $leyka_campaign->get_donations();
-							foreach($donations as $donation) {
-								$donation->delete(True);
+
+				if ( isset( $builder->data_routes ) ) {
+					$plot_config = $builder->data_routes;
+
+					foreach($plot_config['leyka_campaigns'] as $section => $section_data) {
+
+						$post_type = Leyka_Campaign_Management::$post_type;
+						$post_pieces_name = $section_data;
+
+						foreach($post_pieces_name as $piece_name) {
+
+							$piece = new KND_Piece(array('piece_name' => $piece_name, 'piece_section' => $section));
+							$slug = $piece->get_post_slug();
+
+							$campaign = knd_get_post($slug, $post_type);
+							if($campaign) {
+								$leyka_campaign = new Leyka_Campaign($campaign);
+								
+								$donations = $leyka_campaign->get_donations();
+								foreach($donations as $donation) {
+									$donation->delete(True);
+								}
+								
+								$leyka_campaign->delete(True);
 							}
-							
-							$leyka_campaign->delete(True);
 						}
 					}
 				}
 			}
 		}
-		
 	}
 	
 	public function _install_campaigns_with_donations() {
@@ -332,24 +334,27 @@ class KND_Plot_Data_Builder {
 	public function remove_all_other_plots_posts() {
 		foreach($this->imp->possible_plots as $plot_name) {
 			
-			if($plot_name != $this->imp->plot_name) {
-				
-				$builder = self::produce_plot_builder($plot_name, $this->imp);
-				$plot_config = $builder->data_routes;
-				
-				foreach($plot_config['posts'] as $section => $section_data) {
-					
-					$post_type = isset($section_data['post_type']) ? $section_data['post_type'] : 'post';
-					$post_pieces_name = $section_data['pieces'];
-					
-					foreach($post_pieces_name as $piece_name) {
+			if( $plot_name != $this->imp->plot_name ) {
+
+				$builder = self::produce_plot_builder( $plot_name, $this->imp );
+
+				if ( isset( $builder->data_routes ) ) {
+					$plot_config = $builder->data_routes;
+
+					foreach($plot_config['posts'] as $section => $section_data) {
 						
-						$piece = new KND_Piece(array('piece_name' => $piece_name, 'piece_section' => $section));
-						$slug = $piece->get_post_slug();
+						$post_type = isset($section_data['post_type']) ? $section_data['post_type'] : 'post';
+						$post_pieces_name = $section_data['pieces'];
 						
-						$post = knd_get_post($slug, $post_type);
-						if($post) {
-							$this->safe_delete_post( $post );
+						foreach($post_pieces_name as $piece_name) {
+							
+							$piece = new KND_Piece(array('piece_name' => $piece_name, 'piece_section' => $section));
+							$slug = $piece->get_post_slug();
+							
+							$post = knd_get_post($slug, $post_type);
+							if($post) {
+								$this->safe_delete_post( $post );
+							}
 						}
 					}
 				}
@@ -500,11 +505,25 @@ class KND_Plot_Data_Builder {
 	 *
 	 */
 	public function build_pages() {
-		
+
+		$homepage_content = '';
+		$replace_images   = '';
+
 		foreach($this->data_routes['pages'] as $section => $page_options) {
-			
+
 			if(isset($page_options['pieces'])) {
 				$this->build_section_pages($section);
+
+				foreach( $page_options['pieces'] as $piece_name ) {
+					if ( 'home' === $piece_name ) {
+						$piece = $this->imp->get_piece($piece_name, $section);
+						if($piece) {
+							$homepage_content = $this->imp->parse_text($piece->content);
+							$replace_images = $piece->replace_images;
+						}
+					}
+				}
+
 			}
 			else {
 				$this->build_section_simple_page($page_options);
@@ -517,9 +536,40 @@ class KND_Plot_Data_Builder {
 				$this->build_section_template_page($section, $page_options);
 			}
 		}
-		
+
+		$homepage_content = trim( $homepage_content );
+
+		// Find and replace image in demo content.
+		if ( $replace_images ) {
+			$find_images = array();
+			$replace_urls = array();
+			$replace_images = explode( ',', $replace_images );
+			foreach ( $replace_images as $key => $image_slug ) {
+
+				$attachment = get_page_by_title( $image_slug,  OBJECT, 'attachment' );
+				if ( $attachment ) {
+					$image_url = wp_get_attachment_image_url( $attachment->ID, 'large' );
+					$key = $key+1;
+					$find_images[] = '%img' . $key;
+					$replace_urls[] = $image_url;
+				}
+
+			}
+
+			$homepage_content = str_replace( $find_images, $replace_urls, $homepage_content );
+		}
+
+		$homepage_content = str_replace( '{{home_url}}', home_url(), $homepage_content );
+
 		// set home page
-		$piece = new KND_Piece(array('slug' => 'home', 'title' => __('Home page', 'knd')));
+		$piece = new KND_Piece( array(
+			'slug'    => 'home',
+			'title'   => __('Home page', 'knd'),
+			'content' => $homepage_content,
+			'metas'   => array(
+				'_knd_is_page_title' => true,
+			),
+		) );
 		$homepage_id = $this->safe_save_post($piece, 'page');
 		$this->safe_update_option( 'page_on_front', $homepage_id );
 		$this->safe_update_option( 'show_on_front', 'page' );
@@ -781,8 +831,32 @@ class KND_Plot_Data_Builder {
 			}
 		}
 		
+		$post_content = trim( $piece->content );
+
+		// Find and replace image in demo content.
+		if ( isset( $piece->replace_images ) ) {
+			$find_images = array();
+			$replace_urls = array();
+			$replace_images = explode( ',', $piece->replace_images );
+			foreach ( $replace_images as $key => $image_slug ) {
+
+				$attachment = get_page_by_title( $image_slug,  OBJECT, 'attachment' );
+				if ( $attachment ) {
+					$image_url = wp_get_attachment_image_url( $attachment->ID, 'large' );
+					$key = $key+1;
+					$find_images[] = '%img' . $key;
+					$replace_urls[] = $image_url;
+				}
+
+			}
+
+			$post_content = str_replace( $find_images, $replace_urls, $post_content );
+		}
+
+		$post_content = str_replace( '{{home_url}}', home_url(), $post_content );
+
 		$page_data = array();
-		
+
 		$page_data['ID'] = $exist_page ? $exist_page->ID : 0;
 		$page_data['post_type'] = $post_type;
 		$page_data['post_status'] = 'publish';
@@ -791,7 +865,7 @@ class KND_Plot_Data_Builder {
 		$page_data['post_title'] = $post_title;
 		$page_data['post_name'] = $post_name;
 		$page_data['menu_order'] = 0;
-		$page_data['post_content'] = trim($piece->content);
+		$page_data['post_content'] = $post_content;
 		$page_data['post_parent'] = 0;
 		
 		//thumbnail
@@ -799,6 +873,12 @@ class KND_Plot_Data_Builder {
 		
 		if($thumb_id){
 			$page_data['meta_input']['_thumbnail_id'] = (int)$thumb_id;
+		}
+
+		if( isset( $piece->metas ) && is_array( $piece->metas ) ) {
+			foreach( $piece->metas as $meta_name => $meta_value ) {
+				$page_data['meta_input'][ $meta_name ] = $meta_value;
+			}
 		}
 		
 		$uid = wp_insert_post($page_data);
@@ -817,7 +897,7 @@ class KND_Plot_Data_Builder {
 		if(count($piece->cats_list)) {
 			$taxonomy = ($post_type == 'person') ? 'person_cat' : 'category';
 			$terms_list = $this->get_terms_list($piece->cats_list, $taxonomy);
-		
+
 			if($terms_list) {
 				wp_set_object_terms((int)$uid, $terms_list, $taxonomy, false);
 				wp_cache_flush();
@@ -943,8 +1023,8 @@ class KND_Plot_Data_Builder {
 
 	public function build_general_options() {
 		// header contacts
-		$knd_address_phone = $this->data_routes['general_options']['knd_address_phone'];
-		$this->safe_set_theme_mod('text_in_header', trim($knd_address_phone));
+		//$knd_address_phone = $this->data_routes['general_options']['knd_address_phone'];
+		//$this->safe_set_theme_mod('text_in_header', trim($knd_address_phone));
 
 		//save permastructure
 		$test = get_option('permalink_structure');
@@ -953,70 +1033,70 @@ class KND_Plot_Data_Builder {
 		}
 	}
 	
-	public function build_sidebars() {
+	// public function build_sidebars() {
 		
-		$this->build_footer_sidebar();
-		$this->build_configured_sidebar();
+	// 	//$this->build_footer_sidebar();
+	// 	//$this->build_configured_sidebar();
 		
-		KND_StarterSidebars::setup_footer_sidebar();
+	// 	//KND_StarterSidebars::setup_footer_sidebar();
 		
-		global $wp_rewrite;
-		$wp_rewrite->flush_rules( false );
-	}
+	// 	global $wp_rewrite;
+	// 	$wp_rewrite->flush_rules( false );
+	// }
 	
-	public function build_configured_sidebar() {
+	// public function build_configured_sidebar() {
 		
-		if(!isset($this->data_routes['sidebar_widgets'])) {
-			return;
-		}
+	// 	if(!isset($this->data_routes['sidebar_widgets'])) {
+	// 		return;
+	// 	}
 		
-		foreach($this->data_routes['sidebar_widgets'] as $sidebar_name => $widgets_list) {
+	// 	foreach($this->data_routes['sidebar_widgets'] as $sidebar_name => $widgets_list) {
 			
-			$sidebars = get_option( 'sidebars_widgets' );
-			$sidebars[$sidebar_name] = array();
-			$this->safe_update_option( 'sidebars_widgets', $sidebars );
+	// 		$sidebars = get_option( 'sidebars_widgets' );
+	// 		$sidebars[$sidebar_name] = array();
+	// 		$this->safe_update_option( 'sidebars_widgets', $sidebars );
 			
-			foreach($widgets_list as $widget) {
+	// 		foreach($widgets_list as $widget) {
 				
-				$widget_options = $widget['options'];
-				$widget_name = $widget['slug'];
+	// 			$widget_options = $widget['options'];
+	// 			$widget_name = $widget['slug'];
 				
-				// add text on home
-				$widgets = get_option('widget_' . $widget_name);
+	// 			// add text on home
+	// 			$widgets = get_option('widget_' . $widget_name);
 				
-				$widgets[] = $widget_options;
-				$widgets_keys = array_keys($widgets);
-				$widget_index = end($widgets_keys);
-				$sidebars[$sidebar_name][] = $widget_name . '-' . $widget_index;
+	// 			$widgets[] = $widget_options;
+	// 			$widgets_keys = array_keys($widgets);
+	// 			$widget_index = end($widgets_keys);
+	// 			$sidebars[$sidebar_name][] = $widget_name . '-' . $widget_index;
 				
-				$this->safe_update_option( 'widget_' . $widget_name, $widgets );
-			}
+	// 			$this->safe_update_option( 'widget_' . $widget_name, $widgets );
+	// 		}
 			
-			$this->safe_update_option( 'sidebars_widgets', $sidebars );
-		}
-	}
+	// 		$this->safe_update_option( 'sidebars_widgets', $sidebars );
+	// 	}
+	// }
 	
 	public function build_footer_sidebar() {
 		// footer contacts
-		$knd_footer_contacts = $this->data_routes['general_options']['knd_footer_contacts'];
-		$knd_address_phone = nl2br(trim($this->data_routes['general_options']['knd_address_phone']));
-		$knd_footer_contacts = str_replace("{knd_address_phone}", $knd_address_phone, $knd_footer_contacts);
+		// $knd_footer_contacts = $this->data_routes['general_options']['knd_footer_contacts'];
+		// $knd_address_phone = nl2br(trim($this->data_routes['general_options']['knd_address_phone']));
+		// $knd_footer_contacts = str_replace("{knd_address_phone}", $knd_address_phone, $knd_footer_contacts);
 		
-		$this->safe_update_option('knd_footer_contacts', $knd_footer_contacts);
-		$this->safe_update_option('knd_address_phone', $knd_address_phone);
-		$this->safe_update_option('text_in_header', $knd_address_phone);
+		// $this->safe_update_option('knd_footer_contacts', $knd_footer_contacts);
+		// $this->safe_update_option('knd_address_phone', $knd_address_phone);
+		// $this->safe_update_option('text_in_header', $knd_address_phone);
 		
-		// security and pd
-		$knd_footer_security_pd = $this->data_routes['general_options']['knd_footer_security_pd'];
-		$knd_url_pd_policy = $this->data_routes['theme_options']['knd_url_pd_policy'];
-		$knd_url_privacy_policy = $this->data_routes['theme_options']['knd_url_privacy_policy'];
-		$knd_url_public_oferta = $this->data_routes['theme_options']['knd_url_public_oferta'];
+		// // security and pd
+		// $knd_footer_security_pd = $this->data_routes['general_options']['knd_footer_security_pd'];
+		// $knd_url_pd_policy = $this->data_routes['theme_options']['knd_url_pd_policy'];
+		// $knd_url_privacy_policy = $this->data_routes['theme_options']['knd_url_privacy_policy'];
+		// $knd_url_public_oferta = $this->data_routes['theme_options']['knd_url_public_oferta'];
 		
-		$knd_footer_security_pd = str_replace("{knd_url_pd_policy}", $knd_url_pd_policy, $knd_footer_security_pd);
-		$knd_footer_security_pd = str_replace("{knd_url_privacy_policy}", $knd_url_privacy_policy, $knd_footer_security_pd);
-		$knd_footer_security_pd = str_replace("{knd_url_public_oferta}", $knd_url_public_oferta, $knd_footer_security_pd);
+		// $knd_footer_security_pd = str_replace("{knd_url_pd_policy}", $knd_url_pd_policy, $knd_footer_security_pd);
+		// $knd_footer_security_pd = str_replace("{knd_url_privacy_policy}", $knd_url_privacy_policy, $knd_footer_security_pd);
+		// $knd_footer_security_pd = str_replace("{knd_url_public_oferta}", $knd_url_public_oferta, $knd_footer_security_pd);
 		
-		$this->safe_update_option('knd_footer_security_pd', $knd_footer_security_pd);
+		// $this->safe_update_option('knd_footer_security_pd', $knd_footer_security_pd);
 	}
 	
 	public function build_menus() {

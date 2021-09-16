@@ -253,7 +253,7 @@ class TST_Import {
 		if ( $localpdf ) {
 			$localpdf_file = preg_replace( '/\/$/', '', $localpdf ) . '/' . $new_file_base_name;
 			if ( Knd_Filesystem::get_instance()->exists( $localpdf_file ) ) {
-                Knd_Filesystem::get_instance()->copy( $localpdf_file, $new_file_no_prefix );
+				Knd_Filesystem::get_instance()->copy( $localpdf_file, $new_file_no_prefix );
 			}
 		} else {
 //			TST_Convert2PDF::get_instance()->doc2pdf( $original_file, $new_file );
@@ -301,7 +301,7 @@ class TST_Import {
 		
 		$localpdf_file = $pdf_dirname . '/' . $new_file_base_name;
 		if ( ! Knd_Filesystem::get_instance()->exists( $localpdf_file ) ) {
-            Knd_Filesystem::get_instance()->copy( $new_file, $localpdf_file );
+			Knd_Filesystem::get_instance()->copy( $new_file, $localpdf_file );
 		}
 	}
 

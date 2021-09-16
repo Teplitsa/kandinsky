@@ -19,6 +19,7 @@ $page_cont:				720px !default;
 $col:					48px !default;
 $gut:					48px !default;
 
+
 //Baseline
 $base:					26px !default;
 $inpage-margin-base:	26px !default; 
@@ -48,29 +49,13 @@ $full_height   : $logo_full_h + $height_gap; //full header height on desktop
 //uses CSS variables from theme settings
 
 $color-main:                var(--knd-color-main) !default; //main accent color
-$color-main-dark:           var(--knd-color-main-dark) !default; //darker variant
-
-$color-second:              var(--knd-color-second) !default; //complimentary color
-$color-second-dark:         var(--knd-color-second-dark) !default; //darker variant
-
-$color-third: 		        var(--knd-color-third) !default; //dark color in theme
-$color-third-dark: 	        var(--knd-color-third-dark) !default; //darker variant
+$color-main-dark:           var(--knd-color-main-active) !default; //darker variant
 
 $color-page-bg:             var(--knd-page-bg-color) !default; //main bg color
 $color-page-bg-dark:        var(--knd-page-bg-color-dark) !default; //for borders
 
-$color-text:                var(--knd-page-text-color) !default; //main page text
+$color-text:                var(--knd-color-base) !default; //main page text
 $color-text-light:          var(--knd-page-text-color-light) !default; //text lighter than main one
-
-$color-text-contrast:       var(--knd-text1-color) !default; //contast text for inverse situations
-
-$color-text-accent1:        var(--knd-text2-color) !default; //color accent for Dubrovino
-$color-text-accent1-dark:   var(--knd-text2-color-dark) !default;
-
-$color-text-accent2:        var(--knd-text3-color) !default; //color accent for Dubrovino
-$color-text-accent2-dark:   var(--knd-text3-color-dark) !default;
-
-
 
 //Scheme independent colors
 $color-white:           #ffffff; // intentionally white
@@ -86,15 +71,3 @@ $color-ok :             #1DB318; // ok messages
 	--knd-button-border-radius: .5em;
 	--knd-image-border-radius: 8px;
 }
-
-
-
-
-
-
-
-
-
-
-
-

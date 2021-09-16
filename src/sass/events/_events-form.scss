@@ -1,0 +1,71 @@
+// Events Form
+// & = .knd-event
+
+&__booking {
+	border-radius: 20px;
+	background-color: #edf6fe;
+	padding: 50px;
+
+	&-header {
+		text-align: center;
+		margin-bottom: 20px;
+
+		h5 {
+			margin-bottom: 10px;
+		}
+
+		p {
+			font-size: var(--knd-font-size-base);
+		}
+	}
+
+	.em-booking {
+		max-width: 530px;
+		margin: 0 auto;
+
+		&-form-details {
+			padding: 0;
+			width: 100%;
+
+			p {
+				margin-bottom: 20px;
+
+				label {
+					font-size: var(--knd-font-size-base);
+				}
+
+				label[for] {
+					display: block;
+					width: 100%;
+					margin-bottom: 8px;
+				}
+			}
+
+			input.input,
+			textarea,
+			select {
+				border-radius: 5px;
+				border: 1px solid #8599A4;
+				padding: 12px;
+				font-weight: bold;
+				font-family: inherit;
+
+				&:focus {
+					border-color: #183343;
+				}
+			}
+
+			input.input,
+			textarea {
+				width: 100%;
+			}
+
+			.em-booking-submit {
+				@extend .knd-button;
+			}
+
+		}
+	}
+}
+
+

@@ -1,0 +1,84 @@
+/** Events */
+.knd-event-admin-schedule {
+	// background: #f0f0f1;
+	// padding: 20px;
+	// border: 1px solid #c3c4c7;
+	// border-radius: 2px;
+}
+.knd-event-admin {
+
+	&-schedule {
+
+		&:not(:empty) {
+			margin-bottom: 20px;
+		}
+
+		&-group {
+			background: #f0f0f1;
+			padding: 20px;
+			border: 1px solid #c3c4c7;
+			border-radius: 2px;
+
+			& + & {
+				margin-top: 20px;
+			}
+		}
+
+		&-default {
+			display: none;
+		}
+
+		&-name {
+			margin-bottom: 15px;
+		}
+
+		&-list {
+			margin-bottom: 15px;
+		}
+
+		&-item {
+			background-color: #fff;
+			border-radius: 3px;
+			padding: 10px;
+			margin-left: -10px;
+			margin-right: -10px;
+
+			& + & {
+				margin-top: 10px;
+			}
+		}
+
+		&-times {
+			margin-bottom: 10px;
+		}
+
+		.button-link-delete {
+			float: right;
+		}
+
+	}
+
+}
+
+.dbem-kookings-fields {
+	margin-bottom: 10px;
+
+	&:empty {
+		margin-bottom: 0;
+	}
+}
+
+.dbem-kookings-fields-group {
+	display: flex;
+
+	#em-options-form & input[type="text"] {
+		width: auto;
+		min-width: 300px;
+		margin-right: 5px;
+	}
+
+	& + & {
+		margin-top: 10px;
+	}
+
+}

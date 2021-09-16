@@ -344,11 +344,10 @@ if ( $update_info && isset( $update_info['update'] ) ) {
 
 		?>
 		<div class="notice notice-warning knd-update-notice notice-alt is-dismissible">
-			<p><?php echo sprintf( __( 'There is a new version of theme <strong>%1$s</strong> available. <a href="%2$s">Update to version %3$s</a>.', 'knd' ),
-					$theme_name,
-					$theme_url,
-					$new_version
-				); ?></p>
+			<p>
+				<?php echo sprintf( __( 'There is a new version of theme <strong>%s</strong> available.', 'knd' ), $theme_name ); ?>
+				<?php echo sprintf( '<a href="%s">' . __( 'Update to version %s', 'knd' ) . '</a>.', $theme_url, $new_version ); ?>
+			</p>
 		</div>
 		<?php
 	}

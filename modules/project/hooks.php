@@ -4,6 +4,12 @@
  */
 function knd_register_post_type_project() {
 
+	// get blog page id.
+	$archive_slug = 'projects';
+	if ( get_option( 'page_for_projects' ) && get_post_status( get_option( 'page_for_projects' ) ) ) {
+		$archive_slug = get_post_field( 'post_name', get_option( 'page_for_projects' ) );
+	}
+
 	register_post_type( 'project', array(
 		'labels' => array(
 			'name'               => esc_html__( 'Projects', 'knd' ),
@@ -22,11 +28,11 @@ function knd_register_post_type_project() {
 		'exclude_from_search' => false,
 		'publicly_queryable'  => true,
 		'show_ui'             => true,
-		'show_in_nav_menus'   => true,
+		'show_in_nav_menus'   => false,
 		'show_in_menu'        => true,
 		'show_in_admin_bar'   => true,
 		'capability_type'     => 'post',
-		'has_archive'         => 'projects',
+		'has_archive'         => $archive_slug,//'projects',// get_option( 'page_for_projects' )
 		'rewrite'             => array(
 			'slug'       => 'project',
 			'with_front' => false,
@@ -34,6 +40,7 @@ function knd_register_post_type_project() {
 		'hierarchical'        => false,
 		'menu_position'       => 5,
 		'menu_icon'           => 'dashicons-category',
+		'show_in_rest'        => true,
 		'supports'            => array(
 			'title',
 			'excerpt',
@@ -44,11 +51,6 @@ function knd_register_post_type_project() {
 
 }
 add_action( 'init', 'knd_register_post_type_project' );
-
-/**
- * Setup Starter Data Project
- */
-add_action( 'knd_save_demo_content', array( 'KND_Project', 'setup_starter_data' ) );
 
 /**
  * Register taxonomy project tag
@@ -78,9 +80,15 @@ function knd_register_project_tag_taxonomy() {
 		'show_ui'               => true,
 		'update_count_callback' => '_update_post_term_count',
 		'query_var'             => true,
+		'show_in_rest'          => true,
 		'rewrite'               => array(
 			'slug' => 'project-tag',
 		),
 	));
 }
 add_action( 'init', 'knd_register_project_tag_taxonomy' );
+
+/**
+ * Setup Starter Data Project
+ */
+add_action( 'knd_save_demo_content', array( 'KND_Project', 'setup_starter_data' ) );

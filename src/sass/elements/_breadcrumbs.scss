@@ -5,6 +5,15 @@
 	font-weight: 500;
 	margin-bottom: 18px;
 
+	.knd-container > &:first-child {
+		margin-top: 32px;
+
+		@media (min-width: 1200px){
+			margin-left: -20px;
+			margin-right: -20px;
+		}
+	}
+
 	.knd-separator {
 		display: inline-block;
 		margin: 0 7px;
@@ -19,7 +28,7 @@
 		text-decoration: none;
 
 		&:hover {
-			color: var(--knd-page-text-color);
+			color: var(--knd-color-base);
 			text-decoration: none;
 		}
 	}

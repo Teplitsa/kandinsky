@@ -302,14 +302,14 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 				'introduction' => array(
 					'name' => esc_attr__('Introduction', 'knd'),
 					'view' => array($this, 'step_intro_view'),
-					'handler' => '',
+					'handler' => array($this, 'step_scenario_handler'),
 				),
 			);
-			$this->steps['scenario'] = array(
+			/*$this->steps['scenario'] = array(
 				'name' => esc_attr__('Template', 'knd'),
 				'view' => array($this, 'step_scenario_view'),
-				'handler' => array($this, 'step_scenario_handler'),
-			);
+				//'handler' => array($this, 'step_scenario_handler'),
+			);*/
 			$this->steps['default_content'] = array(
 				'name' => esc_attr__('Content', 'knd'),
 				'view' => array($this, 'step_content_view'),
@@ -455,9 +455,9 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 				<?php do_action('admin_print_scripts'); ?>
 				<?php do_action('admin_head'); ?>
 			</head>
-			<body class="envato-setup wp-core-ui">
+			<body class="envato-setup wp-core-ui knd-wizard">
 			<h1 id="wc-logo">
-				<a href="<?php echo KND_OFFICIAL_WEBSITE_URL; ?>" target="_blank">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" target="_blank">
 					<?php echo '<img class="wizard-header-logo" src="'.get_template_directory_uri().'/knd-logo.svg" alt="'.__('Kandinsky theme setup wizard', 'knd').'" style="width:100%; height:auto;">'; ?>
 				</a>
 			</h1>
@@ -486,7 +486,7 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 		public function display_wizard_steps() {
 
 			$ouput_steps = $this->steps;
-			array_shift($ouput_steps); ?>
+			//array_shift($ouput_steps); ?>
 
 			<ol class="envato-setup-steps">
 				<?php foreach($ouput_steps as $step_key => $step) : ?>
@@ -514,42 +514,6 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 		/** * Output the content for the current step */
 		public function display_wizard_current_step_content() {
 			isset($this->steps[ $this->step ]) ? call_user_func($this->steps[ $this->step ]['view']) : false;
-		}
-
-		public function step_intro_view() {
-			
-			// Remove the old scenario import data:
-			$is_show_hello = true;
-			$current_site_scenario = knd_get_theme_mod('knd_site_scenario');
-			if($current_site_scenario) {
-				$is_show_hello = false;
-				
-				$destination = wp_upload_dir();
-				$unzipped_dir = "{$destination['path']}/kandinsky-text-"
-					.knd_get_wizard_plot_names($current_site_scenario).'-master';
-
-				$knd_fs = Knd_Filesystem::get_instance();
-				if($knd_fs) {
-					$is_show_hello = true;
-				}
-				if($knd_fs && $knd_fs->is_dir($unzipped_dir)) {
-					$knd_fs->rmdir($unzipped_dir, true);
-				}
-				
-			}
-			
-			
-			if($is_show_hello):?>
-			
-			<h1><?php printf(esc_html__('Welcome to the %s setup wizard', 'knd' ), wp_get_theme()); ?></h1>
-			<p><?php printf(esc_html__("Hello! Let's set up your organization website together. With few simple steps we will configure minimal necessary settings, like installing of required plugins, setting up default website content and the logo. It should only take 5 minutes. You can always change any of these settings later on, in the Plugins admin folder.", 'knd')); ?></p>
-
-			<p class="envato-setup-actions step">
-				<a href="<?php echo esc_url($this->get_next_step_link()); ?>" class="button-primary button button-large button-next"><?php esc_html_e("Let's go!", 'knd'); ?></a>
-				<a href="<?php echo esc_url(wp_get_referer() && !strpos(wp_get_referer(), 'update.php') ? wp_get_referer() : admin_url('')); ?>" class="button button-large"><?php esc_html_e('Not right now', 'knd'); ?></a>
-			</p>
-			
-			<?php endif;
 		}
 
 		private function _get_plugins() {
@@ -585,122 +549,6 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 
 			return $plugins;
 
-		}
-
-		public function step_default_plugins_view() {
-
-			tgmpa_load_bulk_installer();
-			if( !class_exists('TGM_Plugin_Activation') || !isset($GLOBALS['tgmpa'])) {
-				die(__('Failed to find TGM plugin', 'knd'));
-			}
-
-			// Prevent start Leyka wizard if is activated via Theme wizard.
-			if ( ! get_option( 'leyka_last_ver' ) ) {
-				update_option( 'leyka_last_ver', '3.10');
-			}
-			?>
-
-			<h1><?php esc_html_e('Default Plugins', 'knd'); ?></h1>
-			<form method="post">
-
-				<?php $plugins = $this->_get_plugins();
-				if($plugins['all']) {
-
-					$plugins_required = $plugins_recommended = array();
-
-					foreach($plugins['all'] as $slug => $plugin) {
-						if(empty($plugin['required'])) {
-							$plugins_recommended[ $slug ] = $plugin;
-						} else {
-							$plugins_required[ $slug ] = $plugin;
-						}
-					}
-
-					if($plugins_required) { ?>
-
-						<p><?php esc_html_e('Your website needs a few essential plugins. The following plugins will be installed or updated:', 'knd'); ?></p>
-						<p><?php esc_html_e('You can add and remove plugins later on, in the Plugins admin folder.', 'knd'); ?></p>
-
-						<ul class="envato-wizard-plugins">
-							<?php foreach($plugins_required as $slug => $plugin) { ?>
-								<li data-slug="<?php echo esc_attr($slug); ?>"><?php echo esc_html($plugin['name']); ?>
-									<span>
-							<?php $plugin_status = '';
-
-							if(isset($plugins['install'][ $slug ])) {
-								$plugin_status = __('Installation required', 'knd');
-							} else if(isset($plugins['update'][ $slug ])) {
-								$plugin_status = isset($plugins['activate'][ $slug ]) ?
-									__('Update and activation required', 'knd') : __('Update required', 'knd');
-							} else if(isset($plugins['activate'][ $slug ])) {
-								$plugin_status = __('Activation required', 'knd');
-							}
-
-							echo $plugin_status; ?>
-									</span>
-									<div class="spinner"></div>
-
-									<div class="knd-plugin-description"><?php echo $plugin['description'] ?></div>
-								</li>
-							<?php } ?>
-						</ul>
-					<?php }
-
-					if($plugins_recommended) {
-
-						if($plugins_required) { ?>
-							<p><?php esc_html_e('We also recommend to add several more:', 'knd'); ?></p>
-						<?php } else { ?>
-							<p><?php esc_html_e('We recommend to add or update the following plugins:', 'knd'); ?></p>
-						<?php } ?>
-
-						<ul class="envato-wizard-plugins-recommended">
-							<?php foreach($plugins_recommended as $slug => $plugin) { ?>
-								<li data-slug="<?php echo esc_attr($slug); ?>"><?php echo esc_html($plugin['name']); ?><span>
-
-						<?php $plugin_status = '';
-
-						if(isset($plugins['install'][ $slug ])) {
-							$plugin_status = __('Install', 'knd');
-						} else if(isset($plugins['update'][ $slug ])) {
-							$plugin_status = isset($plugins['activate'][ $slug ]) ?
-								__('Update and activate', 'knd') : __('Update', 'knd');
-						} else if(isset($plugins['activate'][ $slug ])) {
-							$plugin_status = __('Activate', 'knd');
-						} ?>
-
-										<label>
-							<input type="checkbox" class="plugin-accepted" name="knd-recommended-plugin-<?php echo $slug; ?>">
-											<?php echo $plugin_status; ?>
-						</label>
-
-					</span>
-									<div class="spinner"></div>
-
-									<div class="knd-plugin-description"><?php echo $plugin['description'] ?></div>
-
-								</li>
-							<?php } ?>
-						</ul>
-
-					<?php }
-
-				} else {
-					echo '<p><strong>'.esc_html_e("Good news! All plugins are already installed and up to date. Let's proceed further.", 'knd').'</strong></p>';
-				} ?>
-
-				<p class="envato-setup-actions step">
-					<a href="<?php echo esc_url($this->get_prev_step_link()); ?>" class="button-wizard-back button button-large"><?php esc_html_e( 'Back', 'knd' ); ?></a>
-					<a href="<?php echo esc_url($this->get_next_step_link()); ?>" class="button-primary button button-large button-next" data-callback="installPlugins">
-						<?php esc_html_e('Continue', 'knd'); ?>
-					</a>
-					<a href="<?php echo esc_url($this->get_next_step_link()); ?>" class="button button-large button-next">
-						<?php esc_html_e('Skip this step', 'knd'); ?>
-					</a>
-					<?php wp_nonce_field('envato-setup'); ?>
-				</p>
-			</form>
-			<?php return true;
 		}
 
 		public function ajax_plugins() {
@@ -828,7 +676,7 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 
 			$pdb = KND_Plot_Data_Builder::produce_builder($imp);
 			$pdb->build_menus();
-			$pdb->build_sidebars();
+			//$pdb->build_sidebars();
 
 			return true;
 
@@ -847,7 +695,7 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 			$pdb->build_theme_options();
 
 			$pdb->build_menus();
-			$pdb->build_sidebars();
+			//$pdb->build_sidebars();
 
 			return true;
 
@@ -876,118 +724,74 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 				'installing'       => esc_html__( 'Installing...', 'knd' ),
 				'success'          => esc_html__( 'Success!', 'knd' ),
 				'install_callback' => array( $this, '_content_install_site_title_desc' ),
-				'checked'          => true, //$this->is_default_content_installed(),
+				'checked'          => true,
 			);
-//             $content['pages'] = array(
-//                 'title' => esc_html__('Pages', 'knd'),
-//                 'description' => esc_html__('Insert default website pages as seen in the demo.', 'knd'),
-//                 'pending' => esc_html__('Pending', 'knd'),
-//                 'installing' => esc_html__('Installing...', 'knd'),
-//                 'success' => esc_html__('Success!', 'knd'),
-//                 'install_callback' => array($this, '_content_install_pages'),
-//                 'checked' => $this->is_default_content_installed(),
-//             );
-//             $content['posts'] = array(
-//                 'title' => esc_html__('Posts', 'knd'),
-//                 'description' => esc_html__('Insert default website posts as seen in the demo.', 'knd'),
-//                 'pending' => esc_html__('Pending', 'knd'),
-//                 'installing' => esc_html__('Installing...', 'knd'),
-//                 'success' => esc_html__('Success!', 'knd'),
-//                 'install_callback' => array($this, '_content_install_posts'),
-//                 'checked' => $this->is_default_content_installed(),
-//             );
-				$content['settings'] = array(
-					'title'            => esc_html__( 'Settings', 'knd' ),
-					'description'      => esc_html__( 'Insert default website settings as seen in the demo.', 'knd' ),
-					'pending'          => esc_html__( 'Pending', 'knd' ),
-					'installing'       => esc_html__( 'Installing...', 'knd' ),
-					'success'          => esc_html__( 'Success!', 'knd' ),
-					'install_callback' => array( $this, '_content_install_settings' ),
-					'checked'          => true, //$this->is_default_content_installed(),
-				);
-//             $content['menu'] = array(
-//                 'title' => esc_html__('Menu', 'knd'),
-//                 'description' => esc_html__('Insert default website menu as seen in the demo.', 'knd'),
-//                 'pending' => esc_html__('Pending', 'knd'),
-//                 'installing' => esc_html__('Installing...', 'knd'),
-//                 'success' => esc_html__('Success!', 'knd'),
-//                 'install_callback' => array($this, '_content_install_menu'),
-//                 'checked' => $this->is_default_content_installed(),
-//             );
-				$content['content'] = array(
-					'title'            => esc_html__( 'Content', 'knd' ),
-					'description'      => esc_html__( 'Install default website posts, pages and menus.', 'knd' ),
-					'pending'          => esc_html__( 'Pending', 'knd' ),
-					'installing'       => esc_html__( 'Installing...', 'knd' ),
-					'success'          => esc_html__( 'Success!', 'knd' ),
-					'install_callback' => array( $this, '_content_install_content' ),
-					'checked'          => true, //$this->is_default_content_installed(),
-				);
-				$content['donations'] = array(
-					'title'            => esc_html__( 'Donations', 'knd' ),
-					'description'      => esc_html__( 'Install donations components.', 'knd' ),
-					'pending'          => esc_html__( 'Pending', 'knd' ),
-					'installing'       => esc_html__( 'Installing...', 'knd' ),
-					'success'          => esc_html__( 'Success!', 'knd' ),
-					'install_callback' => array( $this, '_content_install_donations' ),
-					'checked'          => true, //$this->is_default_content_installed(),
-				);
+			$content['settings'] = array(
+				'title'            => esc_html__( 'Settings', 'knd' ),
+				'description'      => esc_html__( 'Insert default website settings as seen in the demo.', 'knd' ),
+				'pending'          => esc_html__( 'Pending', 'knd' ),
+				'installing'       => esc_html__( 'Installing...', 'knd' ),
+				'success'          => esc_html__( 'Success!', 'knd' ),
+				'install_callback' => array( $this, '_content_install_settings' ),
+				'checked'          => true,
+			);
+			$content['content'] = array(
+				'title'            => esc_html__( 'Content', 'knd' ),
+				'description'      => esc_html__( 'Install default website posts, pages and menus.', 'knd' ),
+				'pending'          => esc_html__( 'Pending', 'knd' ),
+				'installing'       => esc_html__( 'Installing...', 'knd' ),
+				'success'          => esc_html__( 'Success!', 'knd' ),
+				'install_callback' => array( $this, '_content_install_content' ),
+				'checked'          => true,
+			);
+			$content['donations'] = array(
+				'title'            => esc_html__( 'Donations', 'knd' ),
+				'description'      => esc_html__( 'Install donations components.', 'knd' ),
+				'pending'          => esc_html__( 'Pending', 'knd' ),
+				'installing'       => esc_html__( 'Installing...', 'knd' ),
+				'success'          => esc_html__( 'Success!', 'knd' ),
+				'install_callback' => array( $this, '_content_install_donations' ),
+				'checked'          => true,
+			);
 
 			return apply_filters($this->theme_name.'_theme_setup_wizard_content', $content);
 
 		}
 
-		public function step_content_view() { 
-			?>
+		/**
+		 * Steps View Template
+		 */
+		public function step_intro_view() {
+			require get_template_directory() . '/vendor/envato_setup/steps/intro.php';
+		}
 
-			<h1><?php esc_html_e('Theme default content', 'knd'); ?></h1>
-			<form method="post">
-				<?php if($this->is_default_content_installed()) { ?>
-					<p><?php esc_html_e('It looks like you already have content installed on this website. If you would like to install the default demo content as well you can select it below. Otherwise just choose the upgrade option to ensure everything is up to date.', 'knd'); ?></p>
-				<?php } else { ?>
-					<p><?php esc_html_e("It's time to insert some default content for your new WordPress website. Choose what you would like inserted below and click Install. We recommend to select everything. Once inserted, this content can be managed from the WordPress admin dashboard.", 'knd'); ?></p>
-				<?php } ?>
-				<table class="envato-setup-pages" cellspacing="0">
-					<thead>
-					<tr>
-						<td class="check"></td>
-						<th class="item"><?php esc_html_e('Item', 'knd'); ?></th>
-						<th class="description"><?php esc_html_e('Description', 'knd'); ?></th>
-						<th class="status"><?php esc_html_e('Status', 'knd'); ?></th>
-					</tr>
-					</thead>
-					<tbody>
-					<?php foreach($this->_content_default_get() as $slug => $default) { ?>
-						<tr class="envato_default_content" data-content="<?php echo esc_attr($slug); ?>">
-							<td>
-								<input type="checkbox" name="default_content[<?php echo esc_attr($slug); ?>]" class="envato_default_content" id="default_content_<?php echo esc_attr($slug); ?>" value="1" <?php echo !isset($default['checked']) || $default['checked'] ? 'checked="checked"' : ''; ?>>
-							</td>
-							<td>
-								<label for="default_content_<?php echo esc_attr($slug); ?>">
-									<?php echo esc_html($default['title']); ?>
-								</label>
-							</td>
-							<td class="description"><?php echo esc_html($default['description']); ?></td>
-							<td class="status"><span><?php echo esc_html($default['pending']); ?></span>
-								<div class="spinner"></div>
-							</td>
-						</tr>
-					<?php } ?>
-					</tbody>
-				</table>
+		public function step_scenario_view() {
+			require get_template_directory() . '/vendor/envato_setup/steps/scenario.php';
+		}
 
-				<p class="envato-setup-actions step">
-					<a href="<?php echo esc_url($this->get_prev_step_link()); ?>" class="button-wizard-back button button-large"><?php esc_html_e( 'Back', 'knd' ); ?></a>
-					<a href="<?php echo esc_url($this->get_next_step_link()); ?>" class="button-primary button button-large button-next" data-callback="installContent">
-						<?php esc_html_e('Set up', 'knd'); ?>
-					</a>
-					<a href="<?php echo esc_url($this->get_next_step_link()); ?>" class="button button-large button-next">
-						<?php esc_html_e('Skip this step', 'knd'); ?>
-					</a>
-					<?php wp_nonce_field('knd-setup-content'); ?>
-				</p>
-			</form>
-			<?php
+		public function step_content_view() {
+			require get_template_directory() . '/vendor/envato_setup/steps/content.php';
+		}
+
+		public function step_logo_design_view() {
+			require get_template_directory() . '/vendor/envato_setup/steps/design.php';
+		}
+
+		public function step_settings_view() {
+			require get_template_directory() . '/vendor/envato_setup/steps/settings.php';
+		}
+
+		public function step_default_plugins_view() {
+			require get_template_directory() . '/vendor/envato_setup/steps/plugins.php';
+			return true;
+		}
+
+		public function step_support_view() {
+			require get_template_directory() . '/vendor/envato_setup/steps/support.php';
+		}
+
+		public function step_ready_view() {
+			require get_template_directory() . '/vendor/envato_setup/steps/ready.php';
 		}
 
 		public function ajax_content() {
@@ -1076,70 +880,6 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 		// return the difference in length between two strings
 		public function cmpr_strlen($a, $b) {
 			return strlen($b) - strlen($a);
-		}
-
-		public function step_scenario_view() { ?>
-
-			<h1><?php esc_html_e('Choose website template', 'knd'); ?></h1>
-			<form method="post">
-				
-				<div class="wizard-error" id="knd-download-plot-error" style="display: none;">
-					<span class="error-begin"><?php esc_html_e('Error:', 'knd')?></span>
-					<span class="error-text"><?php esc_html_e('Downloading theme file failed!', 'knd')?></span>
-					<div class="wizard-error-support-text"></div>
-					<p class="envato-setup-actions error step">
-						<a href="<?php echo admin_url()?>" class="button button-large button-error"><?php esc_html_e('Back to the Dashboard', 'knd')?></a>
-						<a href="mailto:<?php echo KND_SUPPORT_EMAIL?>" class="button button-error button-large button-primary"><?php esc_html_e('Email to the theme support', 'knd')?></a>
-					</p>
-				</div>
-
-				<p><?php esc_html_e('For your convenience, we’ve created several templates for NGOs. Select the one that you fits you best. You will be able to change colours, content (text and images).', 'knd'); ?></p>
-				
-				<div class="theme-presets">
-					<ul>
-						<?php $current_scenario_id = knd_get_theme_mod('knd_site_scenario', $this->get_default_site_scenario_id());
-
-						if(empty($this->site_scenarios)) {
-							throw new Exception(__('No scenarios detected', 'knd'), 1);
-						}
-
-						$locale = get_locale();
-
-						if ( 'ru_RU' !== $locale ) {
-							unset( $this->site_scenarios['fundraising-org'] );
-						}
-						foreach( $this->site_scenarios as $scenario_id => $data) {
-							?>
-							<li <?php echo $scenario_id == $current_scenario_id ? 'class="current" ' : ''; ?>>
-								<a href="#" data-scenario-id="<?php echo esc_attr($scenario_id); ?>">
-									<img src="<?php echo esc_url(get_template_directory_uri().'/vendor/envato_setup/images/'.$scenario_id.'/style.png'); ?>">
-									<span class="plot-data">
-									<h3 class="plot-title"><?php echo $data['name']; ?></h3>
-									<div class="plot-info">
-										<?php echo empty($data['description']) ? '' : $data['description']; ?>
-									</div>
-								</span>
-								</a>
-							</li>
-						<?php } ?>
-					</ul>
-				</div>
-
-				<input type="hidden" name="new_scenario_id" id="new_scenario_id" value="<?php echo $current_scenario_id ? $current_scenario_id : ''; ?>">
-
-				<p class="envato-setup-actions step">
-					<a class="button button-large button-wizard-back" href="<?php echo esc_url( admin_url() ); ?>">
-						<?php esc_html_e( 'Exit', 'knd'); ?>
-					</a>
-					<input type="submit" class="button-primary button button-large button-next" id="knd-install-scenario" data-callback="kndDownloadPlotStep" value="<?php esc_attr_e('Continue', 'knd'); ?>" name="save_step">
-					<a href="<?php echo esc_url($this->get_next_step_link()); ?>" class="button button-large button-next knd-download-plot-skip">
-						<?php esc_html_e('Skip this step', 'knd'); ?>
-					</a>
-					<span id="knd-download-status-explain" style="display: none;"><?php esc_html_e('Downloading template archive...', 'knd')?></span>
-					<?php wp_nonce_field('knd-setup'); ?>
-				</p>
-			</form>
-			<?php
 		}
 
 		/**
@@ -1284,54 +1024,15 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 
 		}
 
-		public function step_logo_design_view() { ?>
-
-			<h1><?php esc_html_e( 'Logo', 'knd' ); ?></h1>
-			<form method="post">
-
-				<p><?php _e( 'Please add your organization main logo below. The recommended size is <strong>315 x 66 px</strong> (for "Image only" mode) and <strong>66 x 66 px</strong> (for "Image with site name" mode). The logo can be changed at any time from the Appearance > Customize area in your website dashboard.', 'knd' ); ?></p>
-
-				<p><?php printf(esc_html__('Try our %sPaseka program%s if you need a new logo designed.', 'knd'), '<a href="'.TST_PASEKA_OFFICIAL_WEBSITE_URL.'" target="_blank">', '</a>'); ?></p>
-				<table>
-					<tr>
-						<td>
-							<div id="current-logo"><?php echo knd_get_logo_img(); ?></div>
-						</td>
-						<td>
-							<a href="#" class="button button-upload"><?php esc_html_e('Upload new logo', 'knd'); ?></a>
-						</td>
-					</tr>
-				</table>
-
-				<input type="hidden" name="new_logo_id" id="new_logo_id" value="">
-
-				<p class="envato-setup-actions step">
-					<a href="<?php echo esc_url($this->get_prev_step_link()); ?>" class="button-wizard-back button button-large"><?php esc_html_e( 'Back', 'knd' ); ?></a>
-					<input type="submit" class="button-primary button button-large button-next" value="<?php esc_attr_e('Continue', 'knd'); ?>" name="save_step">
-					<a href="<?php echo esc_url($this->get_next_step_link()); ?>" class="button button-large button-next">
-						<?php esc_html_e('Skip this step', 'knd'); ?>
-					</a>
-					<?php wp_nonce_field('knd-setup-design'); ?>
-				</p>
-			</form>
-			<?php
-		}
+		// here
 
 		public function step_logo_design_handler() {
 
-			check_admin_referer('knd-setup-design');
+			check_admin_referer( 'knd-setup-design' );
 
 			$_POST['new_logo_id'] = (int)$_POST['new_logo_id'];
 			if ( $_POST['new_logo_id'] ) {
-
-				/* Deprecate code, this code preven load svg image, must be removed in future,
-				$attr = wp_get_attachment_image_src($_POST['new_logo_id'], 'full');
-				if($attr && !empty($attr[1]) && !empty($attr[2])) {
-					set_theme_mod('knd_custom_logo', $_POST['new_logo_id']);
-				}
-				*/
 				set_theme_mod( 'knd_custom_logo', $_POST['new_logo_id'] );
-
 			}
 
 			wp_redirect( esc_url_raw( $this->get_next_step_link() ) );
@@ -1339,79 +1040,7 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 
 		}
 
-		public function step_settings_view() {
-
-			if ( 'problem-org' === get_theme_mod( 'knd_site_scenario' ) ) {
-				$font_base     = array(
-					'font-family' => 'Jost',
-					'variant'     => 'regular',
-					'color'       => '#081d47',
-					'font-size'   => '18px',
-					'font-backup' => '',
-					'font-weight' => 400,
-					'font-style'  => 'normal',
-				);
-				$font_headings = array(
-					'font-family' => 'Jost',
-					'variant'     => '600',
-					'color'       => '#081d47',
-					'font-backup' => '',
-					'font-weight' => 600,
-					'font-style'  => 'normal',
-				);
-				set_theme_mod( 'font_base', $font_base );
-				set_theme_mod( 'font_headings', $font_headings );
-			}
-
-			?>
-
-			<h1><?php esc_html_e( 'NGO settings', 'knd' ); ?></h1>
-
-			<form method="post" class="knd-wizard-step settings-step">
-				<p>
-					<input type="text" name="knd_org_name" id="knd-org-name" value="<?php echo get_option('blogname'); ?>" class="knd-setup-wizard-control">
-					<label for="knd-org-name"><?php esc_html_e('The website title', 'knd'); ?></label>
-				</p>
-
-				<p>
-					<input type="text" name="knd_org_description" id="knd-org-description" value="<?php echo get_option('blogdescription'); ?>" class="knd-setup-wizard-control">
-					<label for="knd-org-description"><?php esc_html_e('The website description', 'knd'); ?></label>
-				</p>
-
-				<p><?php _e( 'Please add your site icon below. The recommended size is <strong>64 x 64 px</strong>. The site icon can be changed at any time from the Appearance > Customize area in your website dashboard.', 'knd' ); ?></p>
-
-				<p><?php printf(esc_html__('Try our %sPaseka program%s if you need a new site icon designed.', 'knd'), '<a href="'.TST_PASEKA_OFFICIAL_WEBSITE_URL.'" target="_blank">', '</a>'); ?></p>
-				<table>
-					<tr>
-						<td>
-							<div id="current-site-icon">
-								<?php $image_url = knd_get_site_icon_img_url();
-								if($image_url) {
-									printf('<img class="site-logo-img" src="%s" style="width: 32px; height: auto;">', $image_url);
-								} ?>
-							</div>
-						</td>
-						<td>
-							<a href="#" class="button button-upload"><?php esc_html_e('Upload new site icon', 'knd'); ?></a>
-						</td>
-					</tr>
-				</table>
-
-				<input type="hidden" name="new_logo_id" id="new_logo_id" value="">
-
-
-				<p class="envato-setup-actions step">
-					<a href="<?php echo esc_url($this->get_prev_step_link()); ?>" class="button-wizard-back button button-large"><?php esc_html_e( 'Back', 'knd' ); ?></a>
-					<input type="submit" class="button-primary button button-large button-next" value="<?php esc_attr_e('Continue', 'knd'); ?>" name="save_step">
-					<a href="<?php echo esc_url($this->get_next_step_link()); ?>" class="button button-large button-next">
-						<?php esc_html_e('Skip this step', 'knd'); ?>
-					</a>
-					<?php wp_nonce_field('knd-setup-settings'); ?>
-				</p>
-			</form>
-
-			<?php
-		}
+		
 
 		public function step_settings_handler() {
 
@@ -1440,83 +1069,6 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 			wp_redirect(esc_url_raw($this->get_next_step_link()));
 			exit;
 
-		}
-
-		public function step_support_view() {
-
-			if(defined('LEYKA_VERSION') && get_option('knd_setup_install_leyka')) {
-
-				if(is_plugin_active('leyka/leyka.php')) {
-					knd_activate_leyka();
-					update_option('knd_setup_install_leyka', false);
-					// Add current Leyka version.
-					update_option( 'leyka_last_ver', LEYKA_VERSION );
-				}
-
-			}
-
-		?>
-
-			<h1><?php esc_html_e('Help and support', 'knd'); ?></h1>
-
-			<p>
-				<?php esc_html_e('Thank you for using “Kandinsky” theme on your website!','knd'); ?>
-			</p>
-			<p>
-				<?php printf(__('“Kandinsky” — is a free and open-source project supported by <a href="%s" target="_blank">Teplitsa. Technologies for Social Good</a> together with the community of independent developers.', 'knd'), TST_OFFICIAL_WEBSITE_URL); ?>
-			</p>
-			<p><?php esc_html_e('In case you encounter any questions or issues, we recommend you the following links:', 'knd'); ?></p>
-			<ul class="knd-wizard-support-variants">
-				<li><?php echo sprintf( __('Documentation and FAQ — <a href="%s" target="_blank">GitHub Wiki</a>', 'knd'), esc_url( KND_DOC_URL ) ); ?></li>
-				<li><?php echo sprintf( __('Source code — <a href="%s" target="_blank">GitHub</a>', 'knd'), esc_url( KND_SOURCES_PAGE_URL ) ); ?></li>
-				<li><?php echo sprintf( __('Developers’ <a href="%s">Telegram-channel</a> (in Russian)', 'knd'), esc_url( KND_SUPPORT_TELEGRAM ) ); ?></li>
-			</ul>
-			<p><?php echo sprintf( __('If you need personalized (free during the testing period) consultations from the theme developers, please feel free to write at <a href="mailto:%s" target="_blank">%s</a> or <a href="%s" target="_blank">leave a ticket at GitHub</a>.', 'knd'), KND_SUPPORT_EMAIL, KND_SUPPORT_EMAIL, KND_SOURCES_ISSUES_PAGE_URL ); ?></p>
-
-			<p class="envato-setup-actions step">
-				<a href="<?php echo esc_url($this->get_prev_step_link()); ?>" class="button-wizard-back button button-large"><?php esc_html_e( 'Back', 'knd' ); ?></a>
-				<a href="<?php echo esc_url($this->get_next_step_link()); ?>" class="button-primary button button-large button-next"><?php esc_html_e("OK, I've got it!", 'knd'); ?></a>
-			</p>
-
-			<?php
-		}
-
-		public function step_ready_view() {
-
-			update_option('knd_setup_complete', time());
-
-		?>
-
-			<h1><?php esc_html_e('Yay! Your website is ready!', 'knd'); ?></h1>
-
-			<p><?php esc_html_e('Congratulations! You’re doing really good #success! You’ve successfully installed and set up your Kandinsky theme. You need, however, to do a little bit more.', 'knd'); ?></p>
-			<p><?php esc_html_e('As a part of the installation process, we’ve added some test content of an imaginary organization that you will need to edit (we’ve provided the recommendations on how to make great content).', 'knd'); ?></p>
-			<p><?php esc_html_e('Moreover, you need to set up few additional plug-ins for the optimal work of your site (don’t worry, our recommendations will help you).', 'knd'); ?></p>
-
-			<div class="envato-setup-next-steps">
-				<div class="envato-setup-next-steps-first">
-					<ul>
-						<li class="setup-product">
-							<a class="button button-primary button-large" href="<?php echo admin_url(); ?>">
-								<?php esc_html_e('Continue the set-up', 'knd'); ?>
-							</a>
-						</li>
-						<li class="setup-product">
-							<a class="button button-next button-large" href="<?php echo home_url(); ?>">
-								<?php esc_html_e('View your new website!', 'knd'); ?>
-							</a>
-						</li>
-						<li class="setup-product">
-							<a href="<?php echo esc_url($this->get_prev_step_link()); ?>" class="button button-link"><?php esc_html_e( 'Back', 'knd' ); ?></a>
-						</li>
-					</ul>
-				</div>
-				<div class="envato-setup-next-steps-last">
-					<?php $funny_gif_url = 'https://media.giphy.com/media/XreQmk7ETCak0/giphy.gif';?>
-					<img src="<?php echo $funny_gif_url;?>" alt="<?php esc_attr_e('#success', 'knd'); ?>">
-				</div>
-			</div>
-			<?php
 		}
 
 		public static function cleanFilePath($path) {

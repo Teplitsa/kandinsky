@@ -1,0 +1,26 @@
+/**
+ * Leyka Campaing Block
+ */
+
+.knd-block-campaign {
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+.knd-block-campaign.has-background {
+	padding-top: 1px;
+	padding-bottom: 30px;
+}
+.knd-block-campaing.has-background.alignfull {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+.the-content .knd-block-campaign.alignfull {
+	margin-left: calc( ( ( 100vw - var(--knd-content-width) ) / 2 ) * -1 );
+	margin-right: calc( ( ( 100vw - var(--knd-content-width) ) / 2 ) * -1 );
+}
+@media (min-width: 1200px){
+	.the-content .knd-block-campaign.alignwide {
+		margin-left: calc( ( ( var(--knd-medium-content-width) - var(--knd-content-width) ) / 2 ) * -1 );
+		margin-right: calc( ( ( var(--knd-medium-content-width) - var(--knd-content-width) ) / 2 ) * -1 );
+	}
+}

@@ -1,0 +1,48 @@
+/**
+ * Related
+ */
+
+.related-card-holder {
+	margin-top: $gut;
+	
+	.related-title {
+		@include knd-head-section-text();
+		color: var(--knd-color-headings);
+	}
+	
+	a {
+		@include knd-link-related-text();
+		color: $color-main-dark;
+		margin-bottom: 16px;
+	}
+}
+
+.related-cards-loop {
+	margin-top: $gut / 2;
+	a {
+		display:block;
+	}
+}
+
+.tpl-related-post {
+	@extend .tpl-post;
+
+	.entry-data {
+		padding-top: 20px;
+		position: relative;
+	}
+
+	.entry-meta {
+		background:none;
+		bottom: 13px;
+		left: 26px;
+		z-index: 100;
+	}
+
+	.entry-title {
+		font-size: 1.5em;
+		line-height: 1.1;
+		margin-top: 0 !important;
+	}
+
+}

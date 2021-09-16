@@ -16,6 +16,9 @@
 			<div class="knd-header__col knd-col-right">
 				<?php
 					knd_header_nav_menu();
+					if ( get_theme_mod( 'header_social' ) ) {
+						knd_social_links();
+					}
 					knd_search_toggle();
 					knd_header_additional_button();
 					knd_header_button();

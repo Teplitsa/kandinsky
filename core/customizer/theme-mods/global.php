@@ -81,124 +81,126 @@ Kirki::add_field( 'knd_theme_mod', [
 				'.the-content h5',
 				'.the-content h6',
 			),
+			// 'property' => '--knd-color-headings',
+			// 'choice'   => 'color',
 		),
 	),
 	'choices'  => array(
-		'fonts' => array(
+		'fonts'   => array(
 			'google' => knd_cyrillic_fonts(),
+		),
+		'variant' => array(
+			'300',
+			'regular',
+			'italic',
+			'500',
+			'800',
+			'800italic',
 		),
 	),
 ] );
 
-Kirki::add_field( 'knd_theme_mod', [
-	'type'        => 'color',
-	'settings'    => 'knd_page_text_color',
-	'label'       => esc_html__( 'Content Text Color', 'knd' ),
-	'description' => esc_html__( 'Recommended - black', 'knd' ), 
-	'section'     => 'fonts_colors',
-	'default'     => '#000000',
-	'transport'   => 'auto',
-	'output'      => [
-		[
-			'element' => ':root',
-			'property' => '--knd-color-base',
-		],
-	],
-] );
-
-Kirki::add_field( 'knd_theme_mod', [
+Kirki::add_field( 'knd_theme_mod', array(
 	'type'        => 'color',
 	'settings'    => 'knd_page_bg_color',
 	'label'       => esc_html__( 'Page Background color', 'knd' ),
-	'description' => esc_html__( 'Recommended - white', 'knd' ), 
+	'description' => esc_html__( 'Recommended - white', 'knd' ),
 	'section'     => 'fonts_colors',
 	'default'     => '#ffffff',
 	'transport'   => 'auto',
-	'output'      => [
-		[
+	'output'      => array(
+		array(
 			'element' => ':root',
 			'property' => '--knd-page-bg-color',
-		],
-	],
-] );
+		),
+	),
+) );
 
-Kirki::add_field( 'knd_theme_mod', [
+Kirki::add_field( 'knd_theme_mod', array(
 	'type'        => 'color',
 	'settings'    => 'knd_main_color',
 	'label'       => esc_html__( 'Buttons and links color', 'knd' ),
+	'description' => esc_html__( 'Also used in other decorative elements', 'knd' ),
 	'section'     => 'fonts_colors',
-	'default'     => '#52b9d1',
+	'default'     => '#f43724',
 	'transport'   => 'auto',
-	'output'      => [
-		[
+	'output'      => array(
+		array(
 			'element' => ':root',
 			'property' => '--knd-color-main',
-		],
-	],
-] );
+		),
+	),
+) );
 
-Kirki::add_field( 'knd_theme_mod', [
+Kirki::add_field( 'knd_theme_mod', array(
 	'type'        => 'color',
-	'settings'    => 'knd_color_second',
-	'label'       => esc_html__( 'Complimentary Color', 'knd' ), 
+	'settings'    => 'knd_main_color_active',
+	'label'       => esc_html__( 'Buttons and links color hover', 'knd' ),
+	'description' => esc_html__( 'Also used in other active elements', 'knd' ), 
 	'section'     => 'fonts_colors',
-	'default'     => '#4494bb',
+	'default'     => '#db3120',
 	'transport'   => 'auto',
-	'output'      => [
-		[
+	'output'      => array(
+		array(
 			'element' => ':root',
-			'property' => '--knd-color-second',
-		],
-	],
-] );
+			'property' => '--knd-color-main-active',
+		),
+	),
+) );
 
-Kirki::add_field( 'knd_theme_mod', [
-	'type'        => 'color',
-	'settings'    => 'knd_text1_color',
-	'label'       => esc_html__( 'Inverse Text Color', 'knd' ),
-	'description' => esc_html__( 'Recommended - white', 'knd' ), 
-	'section'     => 'fonts_colors',
-	'default'     => '#000000',
-	'transport'   => 'auto',
-	'output'      => [
-		[
-			'element' => ':root',
-			'property' => '--knd-text1-color',
-		],
-	],
-] );
+/* Social networks links Section */
+Kirki::add_section(
+	'socials',
+	array(
+		'title'    => esc_html__( 'Social networks', 'knd' ),
+		'panel'    => 'global',
+		'priority' => 3,
+	)
+);
 
-Kirki::add_field( 'knd_theme_mod', [
-	'type'        => 'color',
-	'settings'    => 'knd_text2_color',
-	'label'       => esc_html__( 'Accent Text Color - 1', 'knd' ), 
-	'description' => esc_html__( 'Applicable only for Dubrovino template', 'knd' ), 
-	'section'     => 'fonts_colors',
-	'default'     => '#000000',
-	'transport'   => 'auto',
-	'output'      => [
-		[
-			'element' => ':root',
-			'property' => '--knd-text2-color',
-		],
-	],
-] );
+foreach ( knd_get_social_media_supported() as $id => $data ) {
 
-Kirki::add_field( 'knd_theme_mod', [
-	'type'        => 'color',
-	'settings'    => 'knd_text3_color',
-	'label'       => esc_html__( 'Accent Text Color - 2', 'knd' ), 
-	'description' => esc_html__( 'Applicable only for Dubrovino template', 'knd' ), 
-	'section'     => 'fonts_colors',
-	'default'     => '#000000',
-	'transport'   => 'auto',
-	'output'      => [
-		[
-			'element' => ':root',
-			'property' => '--knd-text3-color',
-		],
-	],
-] );
+	Kirki::add_field( 'knd_theme_mod', array(
+		'type'     => 'url',
+		'settings' => 'knd_social_' . esc_attr( $id ),
+		'label'    => esc_html( $data['label'] ),
+		'section'  => 'socials',
+	) );
+
+}
+
+// Kirki::add_field( 'knd_theme_mod', array(
+// 	'type'     => 'custom',
+// 	'settings' => 'fonts_colors_' . wp_unique_id( 'divider_' ),
+// 	'section'  => 'fonts_colors',
+// 	'default'  => '<div class="knd-customizer-heading">' . esc_html__( 'Лейка', 'knd' ) . '</div>',
+// ) );
+
+// Kirki::add_field( 'knd_theme_mod', array(
+// 	'type'        => 'color',
+// 	'settings'    => 'knd_leyka_color_main',
+// 	'label'       => esc_html__( 'Цвет фона активных кнопок и переключателей', 'knd' ),
+// 	'section'     => 'fonts_colors',
+// 	'default'     => '#ff510d',
+// 	'transport'   => 'auto',
+// 	'output'      => array(
+// 		array(
+// 			'element' => ':root',
+// 			'property' => '--leyka-color-main',
+// 			'context'  => array( 'editor', 'front' ),
+// 		),
+// 	),
+// ) );
+
+/* Nav Menus */
+/*Kirki::add_panel(
+	'nav_menus',
+	array(
+		'title'    => esc_html__( 'Menus' ),
+		'panel'    => 'global',
+		'priority' => 10,
+	)
+);*/
 
 /* Analitics Section */
 Kirki::add_section(
@@ -253,53 +255,6 @@ Kirki::add_field( 'knd_theme_mod', [
 	'sanitize_callback' => 'knd_kses_metrics',
 ] );
 
-/* Titles and captions Section */
-Kirki::add_section(
-	'knd_titles_and_captions',
-	array(
-		'title'    => esc_html__( 'Titles and captions', 'knd' ),
-		'panel'    => 'global',
-		'priority' => 4,
-	)
-);
-
-Kirki::add_field( 'knd_theme_mod', [
-	'type'     => 'text',
-	'settings' => 'knd_news_archive_title',
-	'label'    => esc_html__( 'News archive title', 'knd' ),
-	'section'  => 'knd_titles_and_captions',
-	'default'  => esc_html__('News', 'knd')
-] );
-
-Kirki::add_field( 'knd_theme_mod', [
-	'type'     => 'text',
-	'settings' => 'knd_projects_archive_title',
-	'label'    => esc_html__( 'Projects archive title', 'knd' ),
-	'section'  => 'knd_titles_and_captions',
-	'default'  => esc_html__( 'Our projects', 'knd' )
-] );
-
-// Register controls if plugin leyka is active.
-if ( defined( 'LEYKA_VERSION' ) ) {
-
-	Kirki::add_field( 'knd_theme_mod', [
-		'type'     => 'text',
-		'settings' => 'knd_active_campaigns_archive_title',
-		'label'    => esc_html__( 'Active campaigns archive title', 'knd' ),
-		'section'  => 'knd_titles_and_captions',
-		'default'  => esc_html__( 'They need help', 'knd' ),
-	] );
-
-	Kirki::add_field( 'knd_theme_mod', [
-		'type'     => 'text',
-		'settings' => 'knd_completed_campaigns_archive_title',
-		'label'    => esc_html__( 'Completed campaigns archive title', 'knd' ),
-		'section'  => 'knd_titles_and_captions',
-		'default'  => esc_html__( 'They alredy got help', 'knd' ),
-	] );
-
-}
-
 /* Important Links Section */
 Kirki::add_section(
 	'knd_important_links',
@@ -339,6 +294,16 @@ Kirki::add_field( 'knd_theme_mod', [
 	'default'  => wp_kses_post( $important_links ),
 	'priority' => 1,
 ] );
+
+/* Yoast SEO Breadcrumbs */
+Kirki::add_section(
+	'wpseo_breadcrumbs_customizer_section',
+	array(
+		'title'    => esc_html__( 'Yoast SEO Breadcrumbs', 'knd' ),
+		'panel'    => 'global',
+		'priority' => 10,
+	)
+);
 
 /* Custom CSS Section */
 Kirki::add_section(

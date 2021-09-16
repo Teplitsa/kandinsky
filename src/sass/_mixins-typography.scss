@@ -2,255 +2,249 @@
 // Typography settings and mixins - don't set font styling directly in elements
 
 $modularscale: (
-    base: 12px,
-    ratio: 1.333,
+	base: 12px,
+	ratio: 1.333,
 
-    440px: (
-        base: 12px,
-    ),
-    768px: (
-        base: 13px,
-    ),
-    1024px: (
-        base: 14px,
-    ),
+	440px: (
+		base: 12px,
+	),
+	768px: (
+		base: 13px,
+	),
+	1024px: (
+		base: 14px,
+	),
 );
 
 
 //Heading styles
 @mixin knd-head-main-text() {
-    @include ms-respond(font-size, 2);
-    font-family: $heading;
-    line-height: 1.2;
-    letter-spacing: .03em;
-    font-weight: 800;
+	@include ms-respond(font-size, 2);
+	font-family: $heading;
+	line-height: 1.2;
+	letter-spacing: .03em;
+	font-weight: 800;
 }
 
 @mixin knd-head-large-text() {
-    @include ms-respond(font-size, 3);
-    font-family: $heading;
-    line-height: 1.11;
-    letter-spacing: .03em;
-    font-weight: 800;
+	@include ms-respond(font-size, 3);
+	font-family: $heading;
+	line-height: 1.11;
+	letter-spacing: .03em;
+	font-weight: 800;
 }
 
 @mixin knd-head-exlarge-text() {
-    @include ms-respond(font-size, 3);
-    @include for(small-screens) {
-        font-size: 36px;
-    }
-    font-family: $heading;
-    line-height: 1.11;
-    letter-spacing: .03em;
-    font-weight: 800;
+	@include ms-respond(font-size, 3);
+	@include for(small-screens) {
+		font-size: 36px;
+	}
+	font-family: $heading;
+	line-height: 1.11;
+	letter-spacing: .03em;
+	font-weight: 800;
 }
 
 @mixin knd-head-exlarge-single-text() {
-    @include ms-respond(font-size, 4);
-    font-family: $heading;
-    line-height: 1;
-    letter-spacing: .03em;
-    font-weight: 800;
+	@include ms-respond(font-size, 4);
+	font-family: $heading;
+	line-height: 1;
+	letter-spacing: .03em;
+	font-weight: 800;
 }
 
 @mixin knd-head-exlarge-arhive-text() {
-    @include knd-head-exlarge-single-text();
-    font-weight: 600;
+	@include knd-head-exlarge-single-text();
+	font-weight: 600;
 }
 
 @mixin knd-head-exlarge-intro-text() {
-    @include ms-respond(font-size, 5);
-    font-family: $heading;
-    line-height: 1;
-    letter-spacing: .03em;
-    font-weight: 800;
+	@include ms-respond(font-size, 5);
+	font-family: $heading;
+	line-height: 1;
+	letter-spacing: .03em;
+	font-weight: 800;
 }
 
 @mixin knd-head-tiny-text() {
-    font-size: 16px;
-    font-family: $body;
-    line-height: 1;
-    letter-spacing: 0.15em;
-    font-weight: 400;
-    text-transform: uppercase;
+	font-size: 16px;
+	font-family: $body;
+	line-height: 1;
+	letter-spacing: 0.15em;
+	font-weight: 400;
+	text-transform: uppercase;
 }
 
 @mixin knd-head-section-text() {
-    //@include ms-respond(font-size, 2);
-    font-size: 26px;
-    font-family: var(--knd-font-family-headings);
-    //text-transform: uppercase;
-    line-height: 1.2;
-    font-weight: bold;
+	//@include ms-respond(font-size, 2);
+	font-size: 26px;
+	font-family: var(--knd-font-family-headings);
+	//text-transform: uppercase;
+	line-height: 1.2;
+	font-weight: bold;
 }
 
 @mixin knd-head-card-text() {
-    @include ms-respond(font-size, 1);
-    font-family: $heading;
-    line-height: 1.25;
-    letter-spacing: .01em;
-    font-weight: 600;
+	@include ms-respond(font-size, 1);
+	font-family: $heading;
+	line-height: 1.25;
+	letter-spacing: .01em;
+	font-weight: 600;
 }
 
 @mixin knd-head-cardnoimage-text() {
-    @include knd-head-card-text();
-    @include ms-respond(font-size, 2);
+	@include knd-head-card-text();
+	@include ms-respond(font-size, 2);
 }
 
 @mixin knd-head-page(){
-    @include ms-respond(font-size, 5);
-    font-family: $body;
-    line-height: 1.05;
-    font-weight: 600;
-    letter-spacing: .001em;
-    text-transform: uppercase;
+	@include ms-respond(font-size, 5);
+	font-family: $heading;
+	line-height: 1.05;
+	font-weight: 600;
+	letter-spacing: .001em;
+	text-transform: uppercase;
 }
 
 @mixin knd-subhead-text() {
-    @include ms-respond(font-size, 0);
-    font-family: $body;
-    font-weight: 400;
-    line-height: 1.5;
+	@include ms-respond(font-size, 0);
+	font-family: $body;
+	font-weight: 400;
+	line-height: 1.5;
 }
 
 
 
 // Body texts
 @mixin knd-body-text() {
-    line-height: 1.55;
-    font-weight: 400;
-    font-style: var(--knd-font-style-base);
-    font-family: var(--knd-font-family-base);
+	line-height: 1.55;
+	font-weight: 400;
+	font-style: var(--knd-font-style-base);
+	font-family: var(--knd-font-family-base);
 }
 
 @mixin knd-card-text() {
-    @include knd-body-text();
-    line-height: 1.33;
+	@include knd-body-text();
+	line-height: 1.33;
 }
 
 @mixin knd-body-title-text() {
-    font-size: 1.2em;
-    font-family: $body;
-    line-height: 1.44;
-    font-weight: 600;
+	font-size: 1.2em;
+	font-family: $body;
+	line-height: 1.44;
+	font-weight: 600;
 }
 
 @mixin knd-footer-text() {
-    @include ms-respond(font-size, 0);
-    font-family: $body;
-    font-weight: 400;
-    line-height: 1.55;
+	@include ms-respond(font-size, 0);
+	font-family: $body;
+	font-weight: 400;
+	line-height: 1.55;
 }
 
 @mixin knd-supersmall-text() {
-    font-family: $body;
-    font-size: 12px;
-    font-weight: 400;
+	font-size: 12px;
+	font-weight: 400;
 }
 
 @mixin knd-nav-text() {
-    @include ms-respond(font-size, 0);
-    font-family: $body;
-    font-weight: 400;
-    line-height: 1.5;
+	@include ms-respond(font-size, 0);
+	font-family: $body;
+	font-weight: 400;
+	line-height: 1.5;
 }
 
 @mixin knd-nav-caps-text() {
-    @include ms-respond(font-size, 0);
-    font-family: $body;
-    font-weight: 400;
-    line-height: 1.5;
-    text-transform: uppercase
+	@include ms-respond(font-size, 0);
+	font-weight: 400;
+	line-height: 1.5;
+	text-transform: uppercase
 }
 
 @mixin knd-lead-text() {
-    @include ms-respond(font-size, 2);
-    font-family: $body;
-    font-weight: 400;
-    line-height: 1.4;
+	@include ms-respond(font-size, 2);
+	font-family: $body;
+	font-weight: 400;
+	line-height: 1.4;
 }
 
 
 
 // Captions and links
 @mixin knd-button-caption-text() {
-    @include ms-respond(font-size, 1);
-    font-family: $body;
-    text-transform: uppercase;
-    line-height: 1.33;
-    letter-spacing: .03em;
-    font-weight: 400;
+	@include ms-respond(font-size, 1);
+	font-family: $body;
+	text-transform: uppercase;
+	line-height: 1.33;
+	letter-spacing: .03em;
+	font-weight: 400;
 }
 
 @mixin knd-button-bigcaption-text() {
-    @include ms-respond(font-size, 2);
-    font-family: $body;
-    text-transform: uppercase;
-    font-weight: 600;
+	@include ms-respond(font-size, 2);
+	font-family: $body;
+	text-transform: uppercase;
+	font-weight: 600;
 }
 
 @mixin knd-leyka-button-caption-text() {
-    //@include ms-respond(font-size, 2);
-    
-    @include for(small-screens) {
-        //font-size: 22px;
-    }
-    
-    font-family: $body;
-    text-transform: uppercase;
-    font-weight: 600;
+	//@include ms-respond(font-size, 2);
+	
+	@include for(small-screens) {
+		//font-size: 22px;
+	}
+	
+	font-family: $body;
+	text-transform: uppercase;
+	font-weight: 600;
 }
 
 @mixin knd-link-lonely-text() {
-    @include ms-respond(font-size, 0);
-    font-family: $body;
-    text-transform: uppercase;
-    line-height: 1.33;
-    letter-spacing: .03em;
-    font-weight: 600;
+	@include ms-respond(font-size, 0);
+	font-family: $body;
+	text-transform: uppercase;
+	line-height: 1.33;
+	letter-spacing: .03em;
+	font-weight: 600;
 }
 
 @mixin knd-link-section-text() {
-    @include ms-respond(font-size, 1);
-    font-family: $body;
-    line-height: 1.33;
-    letter-spacing: .03em;
+	@include ms-respond(font-size, 1);
+	font-family: $body;
+	line-height: 1.33;
+	letter-spacing: .03em;
 }
 
 @mixin knd-link-footerblack-text() {
-    @include ms-respond(font-size, 0);
-    font-family: $body;
-    font-weight:600;
+	@include ms-respond(font-size, 0);
+	font-weight:600;
 }
 
 @mixin knd-link-related-text() {
-    @include ms-respond(font-size, 1);
-    font-family: $body;
-    line-height: 1.33; 
-    font-weight:400;
+	@include ms-respond(font-size, 1);
+	font-family: $body;
+	line-height: 1.33; 
+	font-weight:400;
 }
 
 @mixin knd-link-terms-text() {
-    @include ms-respond(font-size, 0);
-    font-family: $body;
-    line-height: 1.33;
-    font-weight:600;
+	@include ms-respond(font-size, 0);
+	font-family: $body;
+	line-height: 1.33;
+	font-weight:600;
 }
 
 @mixin knd-link-paging-text() {
-    @include ms-respond(font-size, 2);
-    font-family: $body;
-    text-transform: uppercase;
-    font-weight: 600;
-    letter-spacing: -0.10em;
-    line-height: 1.33;
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 1.3;
 }
 
 @mixin knd-link-donation-purpose() {
-    @include ms-respond(font-size, 0);
-    font-family: $body;
-    text-transform: uppercase;
-    letter-spacing: .03em;
-    font-weight: 400;
+	@include ms-respond(font-size, 0);
+	font-family: $body;
+	text-transform: uppercase;
+	letter-spacing: .03em;
+	font-weight: 400;
 }
 

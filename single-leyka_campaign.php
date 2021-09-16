@@ -22,11 +22,11 @@ get_header();
 			<div class="entry-meta">
 			<?php if ( $is_finished ) { ?>
 				<a href="<?php echo site_url( '/campaign/completed/' ); ?>" class="entry-link">
-					<?php echo esc_html( get_theme_mod( 'knd_completed_campaigns_archive_title', __( 'They alredy got help', 'knd') ) ); ?>
+					<?php echo esc_html( get_theme_mod( 'knd_completed_campaigns_archive_title', __( 'They alredy got help', 'knd' ) ) ); ?>
 				</a> 
 			<?php } else { ?>
 				<a href="<?php echo site_url( '/campaign/active/' ); ?>" class="entry-link">
-					<?php echo esc_html( get_theme_mod( 'knd_active_campaigns_archive_title', __( 'They need help', 'knd') ) ); ?>
+					<?php echo esc_html( get_theme_mod( 'knd_active_campaigns_archive_title', __( 'They need help', 'knd' ) ) ); ?>
 				</a> 
 			<?php } ?>
 			</div>
@@ -40,8 +40,12 @@ get_header();
 			</div>
 
 			<div class="related-campaigns">
-				<a href="<?php echo site_url( '/campaign/active/' ); ?>" class="entry-link"><?php esc_html_e('They need help', 'knd') ?></a>
-				<a href="<?php echo site_url( '/campaign/completed/' ); ?>" class="entry-link"><?php esc_html_e('They alredy got help', 'knd') ?></a>
+				<a href="<?php echo site_url( '/campaign/active/' ); ?>" class="entry-link">
+					<?php echo esc_html( get_theme_mod( 'knd_active_campaigns_archive_title', __( 'They need help', 'knd' ) ) ); ?>
+				</a>
+				<a href="<?php echo site_url( '/campaign/completed/' ); ?>" class="entry-link">
+					<?php echo esc_html( get_theme_mod( 'knd_completed_campaigns_archive_title', __( 'They alredy got help', 'knd' ) ) ); ?>
+				</a>
 			</div>
 
 		</main>

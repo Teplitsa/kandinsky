@@ -3,226 +3,189 @@
 
 /* General large styles */
 .widget-full {
-    
-    .widget-full-title  {
-        @include knd-head-exlarge-text();
-        padding-bottom: $gut*.7;
-    }
+	
+	.widget-full-title  {
+		@include knd-head-exlarge-text();
+		padding-bottom: $gut*.7;
+	}
 
-    &.widget_knd_team,
-    &.widget_nav_menu,
-    &.widget_search,
-    &.widget_media_image,
-    &.widget_media_audio,
-    &.widget_media_video,
-    &.widget_text {
-        text-align: center; 
-        padding: $gut/2 0 $gut;
-        @include container-base();
-    }
+	&.widget_nav_menu,
+	&.widget_search,
+	&.widget_media_image,
+	&.widget_media_audio,
+	&.widget_media_video,
+	&.widget_text {
+		text-align: center; 
+		padding: $gut/2 0 $gut;
+		@include container-base();
+	}
 }
 
 .widget-bottom {
-    .widget-title {
-        @include knd-link-footerblack-text();
-        margin-bottom: 1.5em;
-        text-transform: uppercase;
-    }
+	.widget-title {
+		@include knd-link-footerblack-text();
+		margin-bottom: 1.5em;
+		text-transform: uppercase;
+	}
 }
 
 
-// Nav menu 
-.widget-full.widget_nav_menu {
 
-    li {
-        display: inline-block;
-        padding: 8px;
-    }
-
-    a {
-        @include knd-link-section-text();
-        text-transform: uppercase;
-        color: $color-main;
-        border-bottom: 1px solid;
-
-        &:hover {
-            color: $color-main-dark;
-        }
-    }
-}
-
-.widget-bottom.widget_nav_menu {
-
-    li {
-        margin-bottom: .5em;
-    }
-
-    a {
-        @include knd-footer-text();
-        text-transform: uppercase;
-        color: $color-main;
-
-        &:hover {
-            color: $color-main-dark;
-        }
-    }
-}
 
 
 // Text
 .widget-full.widget_text {
-    max-width: $full_cont;
+	max-width: $full_cont;
 
-    .textwidget {
-        max-width: $page_cont;
-        text-align: left;
-        @include the-content();
-        margin-left: auto;
-        margin-right: auto;
-    }
+	.textwidget {
+		max-width: $page_cont;
+		text-align: left;
+		@include the-content();
+		margin-left: auto;
+		margin-right: auto;
+	}
 
-    &.widget_custom_html {
-        .textwidget { max-width: none; }
-    }
+	&.widget_custom_html {
+		.textwidget { max-width: none; }
+	}
 }
 
 
 // Image
 .widget-full.widget_media_image {
-    text-align: center;
-    
-    .heading + img {
-        max-width: $full_cont;
-        height: auto;
-    }
+	text-align: center;
+	
+	.heading + img {
+		max-width: $full_cont;
+		height: auto;
+	}
 }
 
 
 // Video and audio
 .widget-full.widget_media_video,
 .widget-full.widget_media_audio {
-    max-width: $page_cont;
+	max-width: $page_cont;
 }
 
 
 // Search
 .widget-full.widget_search {
-    max-width: $page_cont;
-    position: relative;
-    z-index: 1;
+	max-width: $page_cont;
+	position: relative;
+	z-index: 1;
 
 
-    .searchform {
-        position: relative;
-    }
+	.searchform {
+		position: relative;
+	}
 
-    .icon-search {
-        width: 26px;
-        height: 26px;
-        position: absolute;
-        top: 17px;
-        left: 17px;
-        fill: $color-main;
-        z-index: 5;
-    }
+	.icon-search {
+		width: 26px;
+		height: 26px;
+		position: absolute;
+		top: 17px;
+		left: 17px;
+		fill: $color-main;
+		z-index: 5;
+	}
 
-    .search-field {
-        position: relative;
-        z-index: 10;
-        background: transparent;
-        border: 2px solid $color-main;
-        padding-left: 54px;
-        
-        &::placeholder {
-            color: transparent;
-        }
+	.search-field {
+		position: relative;
+		z-index: 10;
+		background: transparent;
+		border: 2px solid $color-main;
+		padding-left: 54px;
+		
+		&::placeholder {
+			color: transparent;
+		}
 
-        &:focus, &:active {
-            border-color: $color-main-dark;
-            background: $color-white;
-            padding-left: 24px;
+		&:focus, &:active {
+			border-color: $color-main-dark;
+			background: $color-white;
+			padding-left: 24px;
 
-            &::placeholder {
-                color: $color-text;
-            }
-        }
+			&::placeholder {
+				color: $color-text;
+			}
+		}
 
-        @include for(medium-screens) {
-            padding-right: 90px;
-        }
-    }
+		@include for(medium-screens) {
+			padding-right: 90px;
+		}
+	}
 
-    .action {
-        @include for(medium-screens) {
-            display: inline-block;
-            position: absolute;
-            right: 15px;
-            @include knd-link-terms-text();
-            font-weight: 400;
-            text-transform: uppercase;
-            letter-spacing: normal;
-            color: $color-text-light;
-            top: 20px;
-        }
-    }
+	.action {
+		@include for(medium-screens) {
+			display: inline-block;
+			position: absolute;
+			right: 15px;
+			@include knd-link-terms-text();
+			font-weight: 400;
+			text-transform: uppercase;
+			letter-spacing: normal;
+			top: 20px;
+		}
+	}
 
-    .sr-num {
-        font-size: .85em;
-        color: $color-text-light;
-        text-align: left;
-        margin-top: 8px;
-    }
+	.sr-num {
+		font-size: .85em;
+		color: $color-text-light;
+		text-align: left;
+		margin-top: 8px;
+	}
 
-    &.search-holder {
-        padding-bottom: 0;
-    }
+	&.search-holder {
+		padding-bottom: 0;
+	}
 }
 
 
 .widget-bottom.widget_search {
-    .searchform {
-        position: relative;
-    }
+	.searchform {
+		position: relative;
+	}
 
-    .icon-search {
-        width: 20px;
-        height: 20px;
-        position: absolute;
-        top: 14px;
-        left: 10px;
-        fill: $color-text;
-    }
+	.icon-search {
+		width: 20px;
+		height: 20px;
+		position: absolute;
+		top: 14px;
+		left: 10px;
+		fill: $color-text;
+	}
 
-    .search-field {
-        border: 1px solid $color-text;
-        background: transparent;
-        padding: 12px 12px 12px 44px;
+	.search-field {
+		border: 1px solid $color-text;
+		background: transparent;
+		padding: 12px 12px 12px 44px;
 
-        &:focus, &:active {
-            background: $color-white;
-        }
-    }
+		&:focus, &:active {
+			background: $color-white;
+		}
+	}
 
-    
-    .action {
-        display: none;
-    }
+	
+	.action {
+		display: none;
+	}
 
 }
 
 
 // Leyka defaut donations list
 .leyka_donations_list {
-    .widget-full-title {
-        text-align: center;
-    }
-    
-    &.widget-full {
-        padding-top: $gut/2;
-        padding-bottom: $gut;
-        max-width: $page_cont;
-        margin-left: auto;
-        margin-right: auto;
-    }
+	.widget-full-title {
+		text-align: center;
+	}
+	
+	&.widget-full {
+		padding-top: $gut/2;
+		padding-bottom: $gut;
+		max-width: $page_cont;
+		margin-left: auto;
+		margin-right: auto;
+	}
 
 }

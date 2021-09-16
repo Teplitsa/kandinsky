@@ -1,0 +1,110 @@
+/**
+ * Gutenberg
+ */
+.editor-styles-wrapper {
+	font-family: var(--knd-font-family-base);
+	line-height: 1.55;
+	font-weight: 400;
+	background-color: var(--knd-page-bg-color);
+}
+
+.editor-styles-wrapper .block-editor-writing-flow {
+	color: var(--knd-color-base);
+}
+
+.editor-styles-wrapper .editor-post-title,
+.editor-styles-wrapper h1,
+.editor-styles-wrapper h2,
+.editor-styles-wrapper h3,
+.editor-styles-wrapper h4,
+.editor-styles-wrapper h5,
+.editor-styles-wrapper h6 {
+	color: var(--knd-color-headings);
+	font-family: var(--knd-font-family-headings);
+	font-weight: var(--knd-font-weight-headings);
+}
+
+.editor-styles-wrapper .wp-block[data-align=full] {
+	margin-left: -8px;
+	margin-right: -8px;
+}
+
+.editor-styles-wrapper p a {
+	text-decoration: none;
+	outline: none;
+	color: var(--knd-color-main);
+	border-bottom: 1px solid var(--knd-color-main);
+	transition: all .35s;
+}
+
+.editor-styles-wrapper p a :hover {
+	color: var(--knd-color-main-active);
+	text-decoration: none;
+	border-bottom-color: transparent;
+}
+
+.knd-components-heading__help {
+	margin-bottom: 8px;
+}
+
+.knd-components-heading__label {
+	font-size: 12px;
+	color: #757575;
+	margin-bottom: 8px;
+}
+
+.knd-components-heading__label + .knd-components-heading__help {
+	margin-top: -5px;
+}
+
+.knd-components .components-color-picker__inputs-toggle-wrapper {
+	-ms-flex-item-align: center;
+	align-self: center;
+}
+
+.knd-editor-block-card__description {
+	padding: 0 16px 16px 60px;
+	margin-top: -12px;
+}
+
+.knd-editor-block-card__description-alt {
+	padding-left: 16px;
+}
+
+.knd-editor-block-card__description .dashicons {
+	font-size: inherit;
+	width: auto;
+	height: auto;
+	line-height: inherit;
+	vertical-align: baseline;
+}
+
+.knd-components-panel__body:not(.is-opened) .components-base-control {
+	display: none;
+}
+
+.component-heading-links {
+	border-bottom: 1px solid #e0e0e0;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: column;
+	flex-direction: column;
+}
+
+.component-heading-links:last-of-type {
+	margin-bottom: 15px;
+}
+
+.component-heading-links + .component-heading-links {
+	padding-top: 15px;
+}
+
+.block-editor-block-inspector .component-heading-links .components-base-control {
+	margin-bottom: 0;
+}
+
+.component-heading-links .components-button {
+	margin-left: auto;
+	margin-bottom: 10px;
+	padding: 0;
+}

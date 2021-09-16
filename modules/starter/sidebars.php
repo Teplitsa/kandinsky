@@ -6,7 +6,7 @@ class KND_StarterSidebars {
         
         $sidebars = get_option( 'sidebars_widgets' );
         
-        // empty sidebar
+        /*// empty sidebar
         $sidebars['knd-footer-sidebar'] = array();
         update_option( 'sidebars_widgets', $sidebars );
         
@@ -55,6 +55,7 @@ class KND_StarterSidebars {
             update_option( 'widget_text', $text_widgets );
             update_option( 'sidebars_widgets', $sidebars );
         }
+        */
         
     }
     

@@ -24,8 +24,9 @@
 @import 'blocks/footer';
 @import 'blocks/social';
 
-// wp blocks
-@import 'wp-blocks/embed';
+//elements
+@import 'elements/breadcrumbs';
+@import 'elements/pagination';
 
 //content types
 @import 'types/posts';
@@ -33,10 +34,12 @@
 @import 'types/pages';
 @import 'types/donations';
 
+//entry
+@import 'entry/entry';
+
 //widgets
 @import 'widgets/builtin';
 @import 'widgets/custom';
-@import 'widgets/hero';
 
-//elements
-@import 'elements/breadcrumbs';
+//events
+@import 'events/events';

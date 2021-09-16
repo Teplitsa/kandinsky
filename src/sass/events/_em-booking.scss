@@ -1,0 +1,31 @@
+// Events Booking
+// & = .knd-event
+
+.em-booking {
+	> p {
+		text-align: center;
+
+		a {
+			color: var(--knd-color-main);
+		}
+	}
+	&-form {
+		&:before,
+		&:after {
+			content: '';
+			display: table;
+			clear: both;
+		}
+	}
+
+	.knd-event__booking &-login {
+		border-left: 0;
+		margin: 50px auto 0;
+		padding: 0;
+		max-width: 400px;
+	}
+}
+
+.knd-event__booking {
+	margin-bottom: 60px;
+}

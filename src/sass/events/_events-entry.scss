@@ -1,0 +1,162 @@
+// Entry
+// & = .knd-entry-event
+
+& {
+	.container {
+		max-width: 960px;
+	}
+}
+
+&__header {
+	margin-top: 30px;
+
+	.entry-title {
+		margin-bottom: 25px;
+	}
+}
+
+&__image {
+	border-radius: var(--knd-button-border-radius);
+	overflow: hidden;
+
+	.wp-post-image {
+		width: 100%;
+	}
+}
+
+&__info {
+	margin-top: 20px;
+	padding: 20px 25px;
+	background-color: #f7f8f8;
+	border-radius: var(--knd-button-border-radius);
+
+	.knd-event {
+
+		&__content-inner {
+			align-items: stretch;
+			margin-bottom: 0;
+			flex-wrap: wrap;
+
+			@media (max-width: 991px) {
+				align-items: flex-start;
+			}
+		}
+
+		&__details-item {
+			padding-top: 6px;
+			padding-bottom: 6px;
+			margin-bottom: 0;
+
+			+ .knd-event__details-item {
+				border-top: 1px solid #e6e6e6;
+			}
+		}
+
+		&__dates {
+			padding: 15px 5px;
+			justify-content: center;
+		}
+
+		&__details {
+			flex: 1;
+		}
+
+		&__cta {
+			display: flex;
+			align-items: center;
+			padding-left: 25px;
+			margin-left: 25px;
+			border-left: 1px solid #e6e6e6;
+
+			@media (max-width: 991px) {
+				width: 100%;
+				border-left: 0;
+				border-top: 1px solid #e6e6e6;
+				padding-top: 10px;
+				padding-left: 0;
+				margin-left: 85px;
+			}
+		}
+
+	}
+
+}
+
+&__sharing {
+	.social-likes__widget {
+		a {
+			border-radius: 50rem;
+			border: 1px solid #e6e6e6;
+			background-color: #fff;
+			width: 40px;
+			height: 40px;
+			padding: 7px 0;
+
+			&:hover {
+				background-color: #e6e6e6;
+			}
+
+			.svg-icon {
+				fill: #4d606a;
+				width: 18px;
+				height: 18px;
+			}
+		}
+
+		+ .social-likes__widget {
+			margin-top: 15px;
+		}
+	}
+}
+
+&__main {
+	margin-top: 30px;
+}
+
+&__content {
+	> *:first-child {
+		margin-top: 0;
+		padding-top: 0;
+	}
+
+}
+
+&__speakers {
+	clear: both;
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 35px;
+	margin-bottom: 25px;
+	margin-left: -20px;
+	margin-right: -20px;
+}
+
+&__speaker-col {
+	padding: 0 20px 30px;
+	flex: 0 0 auto;
+	width: 33.33333333%;
+}
+
+&__speaker-image {
+	border-radius: var(--knd-button-border-radius);
+	overflow: hidden;
+	display: block;
+	border-bottom: 0 !important;
+	transition: 0.3s;
+
+	&:hover {
+		filter: grayscale(60%);
+	}
+}
+
+&__speaker-name {
+	font-size: 18px;
+	font-weight: bold;
+	margin: 15px 0 8px;
+}
+
+&__speaker-desc {
+	font-size: 14px;
+	font-weight: 600;
+}
+

@@ -19,8 +19,8 @@
 			</div>
 			<div class="knd-header__col knd-col-right">
 				<?php
-				if ( get_theme_mod( 'header_social', true ) ) {
-					knd_header_social();
+				if ( get_theme_mod( 'header_social' ) ) {
+					knd_social_links();
 				}
 				knd_header_button();
 				knd_offcanvas_toggle();

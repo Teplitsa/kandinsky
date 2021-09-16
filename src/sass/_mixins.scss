@@ -4,195 +4,195 @@
 
 /** Utilities **/
 @mixin hidden { //Hide for both screenreaders and browsers
-    display: none;
-    visibility: hidden; 
+	display: none;
+	visibility: hidden; 
 }
 
 @mixin visuallyhidden { //Hide only visually, but have it available for screenreaders
-    position : absolute;
-    clip : rect(0 0 0 0); 
-    overflow : hidden;
-    margin: -1px;
-    padding : 0;
-    height : 1px;      
-    width : 1px;
-    border : 0; 
+	position : absolute;
+	clip : rect(0 0 0 0); 
+	overflow : hidden;
+	margin: -1px;
+	padding : 0;
+	height : 1px;      
+	width : 1px;
+	border : 0; 
 }
 
 @mixin image-replace {
-    font: 0/0 a;
-    text-shadow: none;
-    color: transparent;
-    text-decoration: none;
+	font: 0/0 a;
+	text-shadow: none;
+	color: transparent;
+	text-decoration: none;
 }
 
 @mixin screen-reader {
-    position: absolute;
-    height: 1px;
-    width: 1px;
-    overflow: hidden;
-    clip: rect(1px, 1px, 1px, 1px);
+	position: absolute;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
 }
 
 @mixin no-select {
-    -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+		-ms-user-select: none;
+			user-select: none;
 }
 
 @mixin cf {
-    &:after {
-        content:" ";
-        display:table;
-        clear:both;
-    }
+	&:after {
+		content:" ";
+		display:table;
+		clear:both;
+	}
 }
 
 
 /* Media queries */
 @mixin for($media) {
-    @if $media == small-screens {
-        @media screen and (min-width: $one) { @content; }
-    }
-    @else if $media == medium-screens {
-        @media screen and (min-width: $two) { @content; }
-    }
-    @else if $media == large-screens {
-        @media screen and (min-width: $three) { @content; }
-    }
+	@if $media == small-screens {
+		@media screen and (min-width: $one) { @content; }
+	}
+	@else if $media == medium-screens {
+		@media screen and (min-width: $two) { @content; }
+	}
+	@else if $media == large-screens {
+		@media screen and (min-width: $three) { @content; }
+	}
 }
 
 @mixin upto($media) {
-    @if $media == small-screens {
-        @media screen and (max-width: $one - 1) { @content; }
-    }
-    @else if $media == medium-screens {
-        @media screen and (max-width: $two - 1) { @content; }
-    }
-    @else if $media == large-screens {
-        @media screen and (max-width: $three - 1) { @content; }
-    }
+	@if $media == small-screens {
+		@media screen and (max-width: $one - 1) { @content; }
+	}
+	@else if $media == medium-screens {
+		@media screen and (max-width: $two - 1) { @content; }
+	}
+	@else if $media == large-screens {
+		@media screen and (max-width: $three - 1) { @content; }
+	}
 }
 
 
 /** Global layout presets **/
 @mixin container-base {
-    position: relative;
-    width: calc(100% - 54px);
-    margin-left: auto; 
-    margin-right: auto; 
+	position: relative;
+	width: calc(100% - 54px);
+	margin-left: auto; 
+	margin-right: auto; 
 
-    @media screen and (min-width: 400px) { 
-        width: calc(100% - 80px);
-    }
+	@media screen and (min-width: 400px) { 
+		width: calc(100% - 80px);
+	}
 
-    @include for(large-screens) {
-        width: 92%;
-    }
+	@include for(large-screens) {
+		width: 92%;
+	}
 }
 
 
 /** Post content elements **/
 @mixin link-in-content {
-    color: $color-main-dark;
-    //display: inline-block;
-    border-bottom: 1px solid $color-main;
-    transition: all .35s;
+	color: var(--knd-color-main);
+	//display: inline-block;
+	border-bottom: 1px solid var(--knd-color-main);
+	transition: all .35s;
 
-    &:hover, &:focus, &:active {
-        color: $color-main-dark;
-        border-bottom-color: $color-main-dark;
-    }
+	&:hover, &:focus, &:active {
+		color: var(--knd-color-main-active);
+		border-bottom-color: var(--knd-color-main-active);
+	}
 }
 
 @mixin caption-text {
-    @include knd-footer-text();
+	@include knd-footer-text();
 
-    .svg-icon {
-        fill: $color-text-light;
-        width: 15px;
-        height: 19px;
-        margin-right: 8px; 
-        vertical-align: bottom;
-    }
+	.svg-icon {
+		fill: $color-text-light;
+		width: 15px;
+		height: 19px;
+		margin-right: 8px; 
+		vertical-align: bottom;
+	}
 }
 
 
 /* Elements */
 @mixin button($mod: default){
-    @include knd-button-caption-text();
-    
-    display: inline-block;
-    color: $color-white;
-    background: $color-main;
-    border: 1px solid $color-main;
-    transition: all 0.3;
-    text-align:center;
-    
-    padding: 6px 16px;
-    border-radius: var(--knd-button-border-radius);
+	@include knd-button-caption-text();
+	
+	display: inline-block;
+	color: $color-white;
+	background: $color-main;
+	border: 1px solid $color-main;
+	transition: all 0.3;
+	text-align:center;
+	
+	padding: 6px 16px;
+	border-radius: var(--knd-button-border-radius);
 
-    @include for(small-screens) {
-        padding: 12px 35px;
-    }
-    
-    &:visited {
-        color: $color-white;
-    }
-    &:hover, &:focus, &:active {
-        //background: darken($color-main, 10%);
-        background: $color-main-dark;
-        color: $color-white;
-        border-color: $color-main-dark;
-    }
-    
-    @if $mod == white {
-        background: $color-white;
-        border: 1px solid $color-white;
-        color: $color-main;
-        &:visited { color: $color-main; }
-        
-        &:hover, &:focus, &:active {            
-            background: $color-main-dark;
-            color: $color-white;
-            border-color: $color-main-dark;
-        }
-    }
-    @else if $mod == leyka {
-        background: $color-ok;
-        border: 1px solid $color-ok;
-        
-        &:hover, &:focus, &:active {            
-            background: darken($color-ok, 10%);
-            border-color: darken($color-ok, 10%);            
-        }
-    }
+	@include for(small-screens) {
+		padding: 12px 35px;
+	}
+	
+	&:visited {
+		color: $color-white;
+	}
+	&:hover, &:focus, &:active {
+		//background: darken($color-main, 10%);
+		background: $color-main-dark;
+		color: $color-white;
+		border-color: $color-main-dark;
+	}
+	
+	@if $mod == white {
+		background: $color-white;
+		border: 1px solid $color-white;
+		color: $color-main;
+		&:visited { color: $color-main; }
+		
+		&:hover, &:focus, &:active {            
+			background: $color-main-dark;
+			color: $color-white;
+			border-color: $color-main-dark;
+		}
+	}
+	@else if $mod == leyka {
+		background: $color-ok;
+		border: 1px solid $color-ok;
+		
+		&:hover, &:focus, &:active {            
+			background: darken($color-ok, 10%);
+			border-color: darken($color-ok, 10%);            
+		}
+	}
 }
 
 
 // thumbnail with shadow
 @mixin shadowed-preview {
-    width: 100%;
-    position: relative;
-    z-index: 1;
-    
-    img {
-        position: relative;
-        width: 100%;
-        z-index: 2;
-    }
-    
-    &:after {
-        content: '';
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0,0,0, 0);
-        z-index: 10;
-        transition: all 0.35s;
-    }   
+	width: 100%;
+	position: relative;
+	z-index: 1;
+	
+	img {
+		position: relative;
+		width: 100%;
+		z-index: 2;
+	}
+	
+	&:after {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0,0,0, 0);
+		z-index: 10;
+		transition: all 0.35s;
+	}   
 }

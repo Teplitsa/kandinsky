@@ -174,25 +174,6 @@ function knd_feed_link() {
 		 esc_url( get_feed_link() ) . "\" />\n";
 }
 
-/** Adds custom classes to the array of body classes **/
-add_filter( 'body_class', 'knd_body_classes' );
-
-function knd_body_classes( $classes ) {
-	if ( is_page() ) {
-		$qo = get_queried_object();
-		$classes[] = 'slug-' . $qo->post_name;
-	}
-
-	$classes[] = 'plot-' . knd_get_theme_mod( 'knd_site_scenario' );
-
-	$classes[] = 'knd-sample-' . knd_get_theme_mod( 'knd_site_scenario' );
-
-	$mod = knd_get_theme_mod( 'knd_custom_logo_mod', 'image_only' );
-	$classes[] = 'logomod-' . $mod;
-	
-	return $classes;
-}
-
 /** Admin bar **/
 add_action( 'wp_head', 'knd_adminbar_corrections' );
 add_action( 'admin_head', 'knd_adminbar_corrections' );
@@ -315,12 +296,18 @@ add_action( 'after_switch_theme', 'knd_after_theme_activation' );
 
 function knd_after_theme_activation() {
 	flush_rewrite_rules( false );
-	
+
+	// Disable wizard on activate theme version 2 after version 1.
+	// Deprecated. Must be deleted in future.
+	if ( get_option( 'theme_mods_kandinsky-master' ) ) {
+		set_transient( '_knd_activation_redirect_done', true );
+	}
+
 	if ( ! get_transient( '_knd_activation_redirect_done' ) ) {
-		
+
 		set_transient( '_knd_activation_redirect_done', true );
 		wp_safe_redirect( KND_SETUP_WIZARD_URL );
-		
+
 		exit();
 	}
 }

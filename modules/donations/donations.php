@@ -1,7 +1,7 @@
 <?php
 
 if(!class_exists('Leyka_Payment_Method'))
-    return;
+	return;
 
 get_template_part('/modules/donations/widgets');
 
@@ -23,11 +23,11 @@ function knd_empty_icons(){
 }
 
 function knd_activate_leyka() {
-    $imp = new KND_Import_Remote_Content(knd_get_theme_mod('knd_site_scenario'));
-    $imp->import_downloaded_content();
-    
-    $pdb = KND_Plot_Data_Builder::produce_builder($imp);
-    $pdb->build_leyka_capmaigns();
+	$imp = new KND_Import_Remote_Content(knd_get_theme_mod('knd_site_scenario'));
+	$imp->import_downloaded_content();
+	
+	$pdb = KND_Plot_Data_Builder::produce_builder($imp);
+	$pdb->build_leyka_capmaigns();
 }
 register_activation_hook( 'leyka/leyka.php', 'knd_activate_leyka' );
 
@@ -84,13 +84,13 @@ function knd_donation_card(WP_Post $campaign){
 
 
 if($campaign->post_type != Leyka_Campaign_Management::$post_type) { // Wrong campaign data
-    return;
+	return;
 }
 
 $thumbnail_size = apply_filters('leyka_campaign_card_thumbnail_size', 'post-thumbnail', $campaign);
 $css_class = apply_filters('leyka_campaign_card_class', 'leyka-campaign-card', $campaign);
 if(has_post_thumbnail($campaign->ID)) {
-    $css_class .= ' has-thumb';
+	$css_class .= ' has-thumb';
 }
 
 $url = trailingslashit(get_permalink($campaign->ID)).'#leyka-payment-form';
@@ -102,12 +102,12 @@ $curr_label = leyka_get_currency_label('rur');
 $collected = $leyka_campaign->get_collected_amount();
 
 if($target <= 0) {
-    return;
+	return;
 }
 
 $percentage = round(($collected/$target)*100);
 if($percentage > 100) {
-    $percentage = 100;
+	$percentage = 100;
 }
 
 $target_f = number_format($target, 0, '.', ' ');
@@ -118,72 +118,71 @@ $is_finished = get_post_meta($campaign->ID, 'is_finished', true);
 
 ?>
 <article <?php post_class('tpl-post card flex-cell flex-md-6', $campaign); ?>>
-    <div class="<?php echo esc_attr($css_class);?>">
-        <?php if(has_post_thumbnail($campaign->ID)) {?>
-            <div class="lk-thumbnail">
-                <a href="<?php echo get_permalink($campaign);?>">
-                    <?php echo get_the_post_thumbnail(
-                        $campaign->ID,
-                        $thumbnail_size,
-                        array('alt' => esc_attr(sprintf(__('Thumbnail for - %s', 'knd'), $campaign->post_title)),)
-                    );?>
-                </a>
-            </div>
-        <?php }?>
+	<div class="<?php echo esc_attr($css_class);?>">
+		<?php if(has_post_thumbnail($campaign->ID)) {?>
+			<div class="lk-thumbnail">
+				<a href="<?php echo get_permalink($campaign);?>">
+					<?php echo get_the_post_thumbnail(
+						$campaign->ID,
+						$thumbnail_size,
+						array('alt' => esc_attr(sprintf(__('Thumbnail for - %s', 'knd'), $campaign->post_title)),)
+					);?>
+				</a>
+			</div>
+		<?php }?>
 
-        <div class="lk-info">
-        
-            <div class="help-purpose"><?php echo knd_leyka_help_purpose($campaign);?></div>
-        
-            <h4 class="lk-title"><a href="<?php echo get_permalink($campaign);?>">
-                <?php echo get_the_title($campaign);?><?php if($campaign_age): echo ", {$campaign_age}"; endif;?>
-            </a></h4>
+		<div class="lk-info">
+		
+			<div class="help-purpose"><?php echo knd_leyka_help_purpose($campaign);?></div>
+		
+			<h4 class="lk-title"><a href="<?php echo get_permalink($campaign);?>">
+				<?php echo get_the_title($campaign);?><?php if($campaign_age): echo ", {$campaign_age}"; endif;?>
+			</a></h4>
 
-            <?php
-                if($is_finished){
-                    $ex = __('Thank you for you support. This campaign is finished and help is going to be provided. Please follow the updates.', 'knd');
-                    $css = 'closed';
-                }
-                else {
-                    $ex = knd_get_post_excerpt($campaign, 28, false);
-                    $css = 'regular';
-                }
-            ?>
-            <p class='<?php echo $css;?>'><?php echo apply_filters('the_title', $ex, $campaign);?></p>
+			<?php
+				if ( $is_finished ){
+					$exerpt = esc_html__( 'Thank you for you support. This campaign is finished and help is going to be provided. Please follow the updates.', 'knd' );
+					$css = 'closed';
+				} else {
+					$exerpt = knd_get_post_excerpt( $campaign, 28, false );
+					$css = 'regular';
+				}
+			?>
+			<p class="<?php echo esc_attr( $css ); ?>"><?php echo esc_html( $exerpt ); ?></p>
 
-        </div>
+		</div>
 
-        <div class="leyka-scale-compact">
-            
-            <div class="leyka-scale-scale">
-                <div class="target">
-                    <div style="width:<?php echo $percentage;?>%" class="collected">&nbsp;</div>
-                </div>
-            </div>
-            
-            <div class="flex-row leyka-scale-label">
-            
-                <div class="flex-cell flex-sm-6">
-                    <div class="caption"><?php esc_html_e('Collected', 'knd')?></div>
-                    <div class="sum"><?php echo $collected_f?> <?php echo $curr_label?></div>
-                </div>
-                
-                <?php if(!$is_finished):?>
-                <div class="flex-cell flex-sm-6 knd-campaign-needed">
-                    <div class="caption"><?php esc_html_e('Needed', 'knd')?></div>
-                    <div class="sum"><?php echo $target_f?> <?php echo $curr_label?></div>
-                </div>
-                <?php endif?>
-                
-            </div>
-        </div>
-        <?php if(!$is_finished):?>
-        <div class="leyka-scale-button-alone">
-            <a href="<?php echo $url;?>"><?php echo knd_get_theme_mod('knd_hero_image_support_button_caption'); ?></a>
-        </div>
-        <?php endif?>
+		<div class="leyka-scale-compact">
+			
+			<div class="leyka-scale-scale">
+				<div class="target">
+					<div style="width:<?php echo $percentage;?>%" class="collected">&nbsp;</div>
+				</div>
+			</div>
+			
+			<div class="flex-row leyka-scale-label">
+			
+				<div class="flex-cell flex-sm-6">
+					<div class="caption"><?php esc_html_e('Collected', 'knd')?></div>
+					<div class="sum"><?php echo $collected_f?> <?php echo $curr_label?></div>
+				</div>
+				
+				<?php if(!$is_finished):?>
+				<div class="flex-cell flex-sm-6 knd-campaign-needed">
+					<div class="caption"><?php esc_html_e('Needed', 'knd')?></div>
+					<div class="sum"><?php echo $target_f?> <?php echo $curr_label?></div>
+				</div>
+				<?php endif?>
+				
+			</div>
+		</div>
+		<?php if(!$is_finished):?>
+		<div class="leyka-scale-button-alone">
+			<a href="<?php echo $url;?>"><?php esc_html_e( 'Help now', 'knd' ); ?></a>
+		</div>
+		<?php endif?>
 
-    </div>
+	</div>
 </article>
 <?php
 }
@@ -193,101 +192,101 @@ remove_action( 'wp_head', 'leyka_inline_scripts');
 
 add_action('wp_head', 'knd_leyka_inline_scripts');
 function knd_leyka_inline_scripts(){
-    
-    $main_color = knd_get_main_color();
-    $dark_color = knd_color_luminance($main_color, -0.1);
-    $light_color = knd_color_luminance($main_color, 0.2);
-    
-    $colors = array($main_color, $dark_color, $light_color); // Leyka green
+	
+	$main_color = knd_get_main_color();
+	$dark_color = knd_color_luminance($main_color, -0.1);
+	$light_color = knd_color_luminance($main_color, 0.2);
+	
+	$colors = array($main_color, $dark_color, $light_color); // Leyka green
 
 // detect if we have JS at all... ?>
 
-    <script>
-        document.documentElement.classList.add("leyka-js");
-    </script>
-    <style>
-        :root {
-            --color-main: 		<?php echo $colors[0];?>;
-            --color-main-dark: 	<?php echo $colors[1];?>;
-            --color-main-light: <?php echo $colors[2];?>;
-        }
-    </style>
-    <?php
+	<script>
+		document.documentElement.classList.add("leyka-js");
+	</script>
+	<style>
+		:root {
+			--color-main: 		<?php echo $colors[0];?>;
+			--color-main-dark: 	<?php echo $colors[1];?>;
+			--color-main-light: <?php echo $colors[2];?>;
+		}
+	</style>
+	<?php
 }
 
 
 add_action('parse_query', 'knd_leyka_request_corrected');
 function knd_leyka_request_corrected(WP_Query $query) {
 
-    if(is_admin()) {
-        return;
-    }
-    
-    if(is_post_type_archive( Leyka_Campaign_Management::$post_type ) && $query->is_main_query()) {
-        $meta_query = $query->get( 'meta_query' );
-        if(!$meta_query) {
-            $meta_query = array();
-        }
-        
-        $meta_query[] = array(
-            'key'     => 'campaign_target',
-            'value'   => '1',
-            'compare' => '>'
-        );
-        
-        if(isset($query->query_vars['completed']) && $query->query_vars['completed'] == 'true') {
-            $meta_query[] = array(
-                'key' => 'is_finished',
-                'value' => 1,
-            );
-        }
-        elseif(isset($query->query_vars['active']) && $query->query_vars['active'] == 'true') {
-            $meta_query[] = array(
-                'key' => 'is_finished',
-                'value' => 0,
-            );
-        }
-        
-        $query->set( 'meta_query', $meta_query );
-    }
+	if(is_admin()) {
+		return;
+	}
+	
+	if(is_post_type_archive( Leyka_Campaign_Management::$post_type ) && $query->is_main_query()) {
+		$meta_query = $query->get( 'meta_query' );
+		if(!$meta_query) {
+			$meta_query = array();
+		}
+		
+		$meta_query[] = array(
+			'key'     => 'campaign_target',
+			'value'   => '1',
+			'compare' => '>'
+		);
+		
+		if(isset($query->query_vars['completed']) && $query->query_vars['completed'] == 'true') {
+			$meta_query[] = array(
+				'key' => 'is_finished',
+				'value' => 1,
+			);
+		}
+		elseif(isset($query->query_vars['active']) && $query->query_vars['active'] == 'true') {
+			$meta_query[] = array(
+				'key' => 'is_finished',
+				'value' => 0,
+			);
+		}
+		
+		$query->set( 'meta_query', $meta_query );
+	}
 
 }
 
 add_action('init', 'knd_leyka_rewrite_rules');
 function knd_leyka_rewrite_rules(){
-    
-    add_rewrite_rule(
-        '^campaign/completed/page/(\d+)/?$',
-        'index.php?post_type=' . Leyka_Campaign_Management::$post_type . '&completed=true&paged=$matches[1]',
-        'top'
-    );
-    
-    add_rewrite_rule(
-        '^campaign/completed/?$',
-        'index.php?post_type=' . Leyka_Campaign_Management::$post_type . '&completed=true',
-        'top'
-    );
-    
-    
-    add_rewrite_rule(
-        '^campaign/active/page/(\d+)/?$',
-        'index.php?post_type=' . Leyka_Campaign_Management::$post_type . '&active=true&paged=$matches[1]',
-        'top'
-    );
-    
-    add_rewrite_rule(
-        '^campaign/active/?$',
-        'index.php?post_type=' . Leyka_Campaign_Management::$post_type . '&active=true',
-        'top'
-    );
-    
-    flush_rewrite_rules();
+	
+	add_rewrite_rule(
+		'^campaign/completed/page/(\d+)/?$',
+		'index.php?post_type=' . Leyka_Campaign_Management::$post_type . '&completed=true&paged=$matches[1]',
+		'top'
+	);
+	
+	add_rewrite_rule(
+		'^campaign/completed/?$',
+		'index.php?post_type=' . Leyka_Campaign_Management::$post_type . '&completed=true',
+		'top'
+	);
+	
+	
+	add_rewrite_rule(
+		'^campaign/active/page/(\d+)/?$',
+		'index.php?post_type=' . Leyka_Campaign_Management::$post_type . '&active=true&paged=$matches[1]',
+		'top'
+	);
+	
+	add_rewrite_rule(
+		'^campaign/active/?$',
+		'index.php?post_type=' . Leyka_Campaign_Management::$post_type . '&active=true',
+		'top'
+	);
+	
+	flush_rewrite_rules();
 }
 
 function knd_leyka_add_query_vars_filter( $vars ){
-    $vars[] = "completed";
-    $vars[] = "active";
-    return $vars;
+	$vars[] = "completed";
+	$vars[] = "active";
+	return $vars;
 }
 add_filter( 'query_vars', 'knd_leyka_add_query_vars_filter' );
 
@@ -303,9 +302,9 @@ function knd_leyka_age_metabox_display_callback($post) {
 	$kid_age = get_post_meta($post->ID, 'campaign_age', true);
 ?>
 	<div class='inside'>
-	    <p>
-	        <input type="text" name="knd-leyka-kid-age" value="<?php echo esc_html($kid_age); ?>" /> 
-	    </p>
+		<p>
+			<input type="text" name="knd-leyka-kid-age" value="<?php echo esc_html($kid_age); ?>" /> 
+		</p>
 	</div>
 <?php 
 	wp_nonce_field( 'knd_leyka_kid_age_nonce_action', 'knd-leyka-save-kid-age' );
@@ -355,4 +354,7 @@ function knd_leyka_save_kid_age_metabox( $post_id, $post ) {
 }
 add_action( 'save_post', 'knd_leyka_save_kid_age_metabox', 10, 2 );
 
-
+function knd_clear_donation_transients(){
+	delete_transient('knd_default_campaigns');
+}
+add_action('knd_save_demo_content', 'knd_clear_donation_transients');

@@ -25,7 +25,7 @@ Kirki::add_field( 'knd_theme_mod', array(
 Kirki::add_field( 'knd_theme_mod', array(
 	'type'     => 'custom',
 	'settings' => 'footer_desc',
-	'label'    => esc_html__( 'Go to the menu "In the footer"', 'knd' ),
+	'label'    => esc_html__( 'Go to the menu &quot;In the footer&quot;', 'knd' ),
 	'section'  => 'footer',
 	'default'  => '<a href="#" class="knd-customize-focus button" data-toggle="panel" data-focus="nav_menus">' . esc_html__( 'Go to Menu', 'knd' ) . '</a>',
 	'priority' => 1,
@@ -36,7 +36,7 @@ Kirki::add_section(
 	'footer_logo',
 	array(
 		'section'  => 'footer',
-		'title'    => esc_html__( 'Logo and social networks', 'knd' ),
+		'title'    => esc_html__( 'Logo', 'knd' ),
 		'priority' => 2,
 	)
 );
@@ -46,7 +46,7 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'settings' => 'footer_logo',
 	'label'    => esc_html__( 'Logo', 'knd' ),
 	'section'  => 'footer_logo',
-	'default'  => '1',
+	'default'  => true,
 ) );
 
 Kirki::add_field( 'knd_theme_mod', array(
@@ -61,7 +61,7 @@ Kirki::add_field( 'knd_theme_mod', array(
 		array(
 			'setting'  => 'footer_logo',
 			'operator' => '==',
-			'value'    => '1',
+			'value'    => true,
 		),
 	),
 ) );
@@ -73,11 +73,11 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'section'           => 'footer_logo',
 	'default'           => get_theme_mod( 'header_logo_title', get_bloginfo( 'name' ) ),
 	'sanitize_callback' => 'wp_kses_post',
-	'active_callback'   => array(
+	'active_callback' => array(
 		array(
 			'setting'  => 'footer_logo',
 			'operator' => '==',
-			'value'    => '1',
+			'value'    => true,
 		),
 	),
 ) );
@@ -89,47 +89,101 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'section'           => 'footer_logo',
 	'default'           => get_theme_mod( 'header_logo_text', get_bloginfo( 'description' ) ),
 	'sanitize_callback' => 'wp_kses_post',
-	'active_callback'   => array(
+	'active_callback' => array(
 		array(
 			'setting'  => 'footer_logo',
 			'operator' => '==',
-			'value'    => '1',
+			'value'    => true,
 		),
 	),
 ) );
 
 Kirki::add_field( 'knd_theme_mod', array(
-	'type'     => 'custom',
-	'settings' => 'footer_' . wp_unique_id( 'divider_' ),
+	'type'     => 'checkbox',
+	'settings' => 'font_footer_logo_default',
+	'label'    => esc_html__( 'Use Default Font', 'knd' ),
 	'section'  => 'footer_logo',
-	'default'  => '<div class="knd-customizer-divider"></div>',
+	'default'  => true,
+	'active_callback' => array(
+		array(
+			'setting'  => 'footer_logo',
+			'operator' => '==',
+			'value'    => true,
+		),
+	),
 ) );
 
 Kirki::add_field( 'knd_theme_mod', array(
-	'type'     => 'toggle',
-	'settings' => 'footer_social',
-	'label'    => esc_html__( 'Social networks links', 'knd' ),
-	'section'  => 'footer_logo',
-	'default'  => '1',
+	'type'            => 'typography',
+	'settings'        => 'font_footer_logo',
+	'section'         => 'footer_logo',
+	'default'         => array(
+		'font-family' => 'Exo 2',
+		'variant'     => '800',
+		'font-size'   => '22px',
+	),
+	'choices'         => array(
+		'fonts' => array(
+			'google' => knd_cyrillic_fonts(),
+		),
+	),
+	'active_callback' => array(
+		array(
+			'setting'  => 'font_footer_logo_default',
+			'operator' => '==',
+			'value'    => false,
+		),
+		array(
+			'setting'  => 'footer_logo',
+			'operator' => '==',
+			'value'    => true,
+		),
+	),
 ) );
 
-foreach ( knd_get_social_media_supported() as $id => $data ) {
-
-	Kirki::add_field( 'knd_theme_mod', array(
-		'type'            => 'url',
-		'settings'        => 'knd_social_links_' . $id,
-		'label'           => $data['label'],
-		'section'         => 'footer_logo',
-		'active_callback' => array(
-			array(
-				'setting'  => 'footer_social',
-				'operator' => '==',
-				'value'    => '1',
-			),
+Kirki::add_field( 'knd_theme_mod', array(
+	'type'      => 'color',
+	'settings'  => 'footer_logo_color',
+	'label'     => esc_html__( 'Logo Color', 'knd' ),
+	'section'   => 'footer_logo',
+	'default'   => '#000000',
+	'transport' => 'auto',
+	'output'    => array(
+		array(
+			'element'  => '.knd-footer-logo',
+			'property' => '--knd-color-logo',
 		),
-	) );
+	),
+	'active_callback' => array(
+		array(
+			'setting'  => 'footer_logo',
+			'operator' => '==',
+			'value'    => true,
+		),
+	),
+) );
 
-}
+Kirki::add_field( 'knd_theme_mod', array(
+	'type'      => 'color',
+	'settings'  => 'footer_logo_desc_color',
+	'label'     => esc_html__( 'Logo Description Color', 'knd' ),
+	'section'   => 'footer_logo',
+	'default'   => '#1e2c49',
+	'transport' => 'auto',
+	'output'    => array(
+		array(
+			'element'  => '.knd-footer-logo',
+			'property' => '--knd-color-logo-desc',
+		),
+	),
+	'active_callback' => array(
+		array(
+			'setting'  => 'footer_logo',
+			'operator' => '==',
+			'value'    => true,
+		),
+	),
+) );
 
 /* Footer widgets */
 Kirki::add_section(
@@ -139,6 +193,103 @@ Kirki::add_section(
 		'title'    => esc_html__( 'Footer - Columns', 'knd' ),
 	)
 );
+
+/* Footer Columns */
+Kirki::add_section(
+	'footer_columns',
+	array(
+		'section'  => 'footer',
+		'title'    => esc_html__( 'Footer - Columns', 'knd' ),
+	)
+);
+
+// Footer about.
+Kirki::add_field( 'knd_theme_mod', array(
+	'type'     => 'custom',
+	'settings' => 'footer_' . wp_unique_id( 'divider_' ),
+	'section'  => 'footer_columns',
+	'default'  => '<div class="knd-customizer-heading">' . esc_html__( 'About Us', 'knd' ) . '</div>',
+) );
+
+Kirki::add_field( 'knd_theme_mod', array(
+	'type'              => 'text',
+	'settings'          => 'footer_about_title',
+	'section'           => 'footer_columns',
+	'sanitize_callback' => 'wp_kses_post',
+) );
+
+Kirki::add_field( 'knd_theme_mod', array(
+	'type'              => 'editor',
+	'settings'          => 'footer_about',
+	'section'           => 'footer_columns',
+	'sanitize_callback' => 'knd_kses',
+) );
+
+// Footer menu our work.
+Kirki::add_field( 'knd_theme_mod', array(
+	'type'     => 'custom',
+	'settings' => 'footer_' . wp_unique_id( 'divider_' ),
+	'section'  => 'footer_columns',
+	'default'  => '<div class="knd-customizer-heading">' . esc_html__( 'Menu our work', 'knd' ) . '</div>',
+) );
+
+Kirki::add_field( 'knd_theme_mod', array(
+	'type'              => 'text',
+	'settings'          => 'footer_menu_ourwork_title',
+	'section'           => 'footer_columns',
+) );
+
+Kirki::add_field( 'knd_theme_mod', array(
+	'type'        => 'select',
+	'settings'    => 'footer_menu_ourwork',
+	'section'     => 'footer_columns',
+	'default'     => '0',
+	'choices'     => knd_get_menus_option(),
+) );
+
+// Footer menu news.
+Kirki::add_field( 'knd_theme_mod', array(
+	'type'     => 'custom',
+	'settings' => 'footer_' . wp_unique_id( 'divider_' ),
+	'section'  => 'footer_columns',
+	'default'  => '<div class="knd-customizer-heading">' . esc_html__( 'Menu news', 'knd' ) . '</div>',
+) );
+
+Kirki::add_field( 'knd_theme_mod', array(
+	'type'              => 'text',
+	'settings'          => 'footer_menu_news_title',
+	'section'           => 'footer_columns',
+) );
+
+Kirki::add_field( 'knd_theme_mod', array(
+	'type'        => 'select',
+	'settings'    => 'footer_menu_news',
+	'section'     => 'footer_columns',
+	'default'     => '0',
+	'choices'     => knd_get_menus_option(),
+) );
+
+// Footer policy.
+Kirki::add_field( 'knd_theme_mod', array(
+	'type'     => 'custom',
+	'settings' => 'footer_' . wp_unique_id( 'divider_' ),
+	'section'  => 'footer_columns',
+	'default'  => '<div class="knd-customizer-heading">' . esc_html__( 'Security policy', 'knd' ) . '</div>',
+) );
+
+Kirki::add_field( 'knd_theme_mod', array(
+	'type'              => 'text',
+	'settings'          => 'footer_policy_title',
+	'section'           => 'footer_columns',
+	'sanitize_callback' => 'wp_kses_post',
+) );
+
+Kirki::add_field( 'knd_theme_mod', array(
+	'type'              => 'editor',
+	'settings'          => 'footer_policy',
+	'section'           => 'footer_columns',
+	'sanitize_callback' => 'knd_kses',
+) );
 
 /* Footer copyright */
 Kirki::add_section(
@@ -154,7 +305,7 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'settings' => 'footer_copyright',
 	'label'    => esc_html__( 'License information', 'knd' ),
 	'section'  => 'footer_copyright',
-	'default'  => '1',
+	'default'  => true,
 ) );
 
 $copyright = sprintf( __( 'All materials of the site are avaliabe under license %s', 'knd' ), '<a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank">' . esc_html__( 'Creative Commons СС-BY-SA 3.0', 'knd' ) . '</a>' );
@@ -164,12 +315,12 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'settings'          => 'footer_copyright_text',
 	'section'           => 'footer_copyright',
 	'default'           => $copyright,
-	'sanitize_callback' => 'wp_kses_post',
+	'sanitize_callback' => 'knd_kses',
 	'active_callback'   => array(
 		array(
 			'setting'  => 'footer_copyright',
 			'operator' => '==',
-			'value'    => '1',
+			'value'    => true,
 		),
 	),
 ) );
@@ -179,6 +330,13 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'settings' => 'footer_' . wp_unique_id( 'divider_' ),
 	'section'  => 'footer_copyright',
 	'default'  => esc_html__( 'The creators of the constructor will be grateful if you leave the information about Kandinsky included.', 'knd' ),
+	'active_callback'   => array(
+		array(
+			'setting'  => 'footer_copyright',
+			'operator' => '==',
+			'value'    => true,
+		),
+	),
 ) );
 
 Kirki::add_field( 'knd_theme_mod', array(
@@ -186,5 +344,135 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'settings' => 'footer_creator',
 	'label'    => esc_html__( 'Display the Kandinsky logo', 'knd' ),
 	'section'  => 'footer_copyright',
-	'default'  => '1',
+	'default'  => true,
+	'active_callback'   => array(
+		array(
+			'setting'  => 'footer_copyright',
+			'operator' => '==',
+			'value'    => true,
+		),
+	),
+) );
+
+Kirki::add_field( 'knd_theme_mod', array(
+	'type'      => 'color',
+	'settings'  => 'footer_background',
+	'label'     => esc_html__( 'Footer Background', 'knd' ),
+	'section'   => 'footer',
+	'default'   => '#eeeeee',
+	'transport' => 'auto',
+	'output'    => array(
+		array(
+			'element'  => '.knd-footer',
+			'property' => '--knd-footer-background',
+		),
+	),
+) );
+
+Kirki::add_field( 'knd_theme_mod', array(
+	'type'      => 'color',
+	'settings'  => 'footer_color',
+	'label'     => esc_html__( 'Footer Text Color', 'knd' ),
+	'section'   => 'footer',
+	'default'   => '#000000',
+	'transport' => 'auto',
+	'output'    => array(
+		array(
+			'element'  => ':root',
+			'property' => '--knd-footer-color',
+		),
+	),
+) );
+
+Kirki::add_field( 'knd_theme_mod', array(
+	'type'      => 'color',
+	'settings'  => 'footer_color_link',
+	'label'     => esc_html__( 'Footer Links Color', 'knd' ),
+	'section'   => 'footer',
+	'default'   => '#f43724',
+	'transport' => 'auto',
+	'output'    => array(
+		array(
+			'element'  => ':root',
+			'property' => '--knd-footer-link-color',
+		),
+	),
+) );
+
+Kirki::add_field( 'knd_theme_mod', array(
+	'type'      => 'color',
+	'settings'  => 'footer_color_link_hover',
+	'label'     => esc_html__( 'Footer Links Color Hover', 'knd' ),
+	'section'   => 'footer',
+	'default'   => '#db3120',
+	'transport' => 'auto',
+	'output'    => array(
+		array(
+			'element'  => ':root',
+			'property' => '--knd-footer-link-color-hover',
+		),
+	),
+) );
+
+/**
+ * Social Networks
+ */
+Kirki::add_field( 'knd_theme_mod', array(
+	'type'     => 'custom',
+	'settings' => 'footer_' . wp_unique_id( 'divider_' ),
+	'section'  => 'footer',
+	'default'  => '<div class="knd-customizer-divider"></div>',
+) );
+
+Kirki::add_field( 'knd_theme_mod', array(
+	'type'        => 'toggle',
+	'settings'    => 'footer_social',
+	'label'       => esc_html__( 'Social networks', 'knd' ),
+	'description' => '<a href="#" class="knd-customize-focus" data-toggle="section" data-focus="socials">' . esc_html__( 'Manage social networks', 'knd' ) . '</a>.',
+	'section'     => 'footer',
+	'default'     => true,
+) );
+
+Kirki::add_field( 'knd_theme_mod', array(
+	'type'      => 'color',
+	'settings'  => 'footer_color_social',
+	'label'     => esc_html__( 'Footer Social Color', 'knd' ),
+	'section'   => 'footer',
+	'default'   => '#000000',
+	'transport' => 'auto',
+	'output'    => array(
+		array(
+			'element'  => '.knd-footer',
+			'property' => '--knd-social-color',
+		),
+	),
+	'active_callback' => array(
+		array(
+			'setting'  => 'footer_social',
+			'operator' => '==',
+			'value'    => true,
+		),
+	),
+) );
+
+Kirki::add_field( 'knd_theme_mod', array(
+	'type'      => 'color',
+	'settings'  => 'footer_color_social_hover',
+	'label'     => esc_html__( 'Footer Social Color Hover', 'knd' ),
+	'section'   => 'footer',
+	'default'   => '#333333',
+	'transport' => 'auto',
+	'output'    => array(
+		array(
+			'element'  => '.knd-footer',
+			'property' => '--knd-social-color-hover',
+		),
+	),
+	'active_callback' => array(
+		array(
+			'setting'  => 'footer_social',
+			'operator' => '==',
+			'value'    => true,
+		),
+	),
 ) );

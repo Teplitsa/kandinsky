@@ -1,0 +1,19 @@
+// Events Form
+// & = .knd-event
+
+.css-events-list,
+.css-my-bookings {
+
+	table.events-table,
+	#dbem-bookings-table {
+		width: 100%;
+		border-collapse: collapse;
+
+		th,
+		td {
+			border: 1px solid;
+			padding: 8px 15px;
+			vertical-align: middle;
+		}
+	}
+}

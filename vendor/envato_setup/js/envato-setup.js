@@ -55,7 +55,7 @@ var EnvatoWizard = (function( $ ) {
 			renderMediaUploader();
 
 		});
-		$( '.theme-presets a' ).on( 'click', function( e ) {
+		/*$( '.theme-presets a' ).on( 'click', function( e ) {
 
 			e.preventDefault();
 
@@ -66,7 +66,7 @@ var EnvatoWizard = (function( $ ) {
 
 			return false;
 
-		});
+		});*/
 	}
 
 	function loadingContent() {

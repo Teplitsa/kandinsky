@@ -1,0 +1,110 @@
+/** Events */
+
+
+
+// Archive
+
+.knd {
+
+	&-event {
+
+		$event: &;
+
+		&s {
+
+			@import 'events-archive';
+
+		}
+
+		@import 'events-archive-sticky';
+
+		@import 'events-archive-main';
+
+		@import 'events-form';
+
+		@import 'events-login';
+
+		&__related {
+			border-top: 1px solid #E6E6E6;
+			padding-top: 60px;
+			margin-bottom: 40px;
+
+			&-heading {
+				text-align: center;
+				margin-bottom: 30px;
+			}
+
+			#{$event}__booking + & {
+				margin-top: 60px;
+			}
+		}
+
+		&__schedule {
+
+			&-title {
+				margin-bottom: 35px;
+			}
+
+			&-item {
+				display: flex;
+				align-items: flex-start;
+				padding-top: 10px;
+				padding-bottom: 10px;
+				& + & {
+					border-top: 1px solid #e6e6e6;
+				}
+
+				@media(max-width:575px) {
+					flex-direction: column;
+				}
+			}
+
+			&-hours {
+				color: #f43724;
+				font-weight: bold;
+				background-color: #f7f8f8;
+				white-space: nowrap;
+				padding: 10px;
+				margin-right: 30px;
+				line-height: 1.4;
+
+				@media(max-width:575px) {
+					margin-bottom: 5px;
+				}
+			}
+
+			&-text {
+				min-height: 42px;
+				display: flex;
+				align-items: center;
+			}
+			
+		}
+
+		&__question-header {
+			margin-top: 65px;
+		}
+
+	}
+
+	&-entry-event {
+
+		@import 'events-entry';
+
+	}
+}
+
+.em {
+
+	@import 'em-calendar';
+
+	&-pagination {
+		@extend .knd-pagination !optional;
+	}
+
+}
+
+@import 'em-events-list';
+
+@import 'em-booking';
+

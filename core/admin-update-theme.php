@@ -275,7 +275,7 @@ function knd_update_theme_content() {
 		$pdb->build_pages();
 		$pdb->build_theme_options();
 		$pdb->build_menus();
-		$pdb->build_sidebars();
+		//$pdb->build_sidebars();
 	}
 	
 	$json_response = array( 'status' => 'ok' );

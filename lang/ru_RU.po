@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-12 20:24+0300\n"
-"PO-Revision-Date: 2021-06-12 20:25+0300\n"
+"POT-Creation-Date: 2021-08-05 09:00+0300\n"
+"PO-Revision-Date: 2021-08-05 09:01+0300\n"
 "Last-Translator: ahaenor <ahaenor@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10 >= 2 && n"
 "%10<=4 &&(n%100<10||n%100 >= 20)? 1 : 2);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 2.4.3\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
 "__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
@@ -46,13 +46,779 @@ msgstr ""
 msgid "Unfortunately, nothing found"
 msgstr "К сожалению, ничего не найдено"
 
-#: archive-leyka_donation.php:20
+#: archive-leyka_donation.php:20 assets/js/blocks.js:194
+#: src/js/blocks/campaign.js:110
 msgid "Campaign"
 msgstr "Кампания"
 
 #: archive-leyka_donation.php:38
 msgid "Anonymous"
 msgstr "Анонимный"
+
+#: assets/js/admin.js:117 inc/events/events-metabox.php:148
+#: src/js/admin/admin.js:117
+msgid "Remove time"
+msgstr "Удалить время"
+
+#: assets/js/admin.js:133 src/js/admin/admin.js:133
+msgid "Delete schedule"
+msgstr "Удалить расписание"
+
+#: assets/js/admin.js:136 inc/events/events-metabox.php:158
+#: src/js/admin/admin.js:136
+msgid "Add time"
+msgstr "Добавить время"
+
+#: assets/js/admin.js:158 inc/events/events-functions.php:288
+#: src/js/admin/admin.js:158
+msgid "Label"
+msgstr "Название"
+
+#: assets/js/admin.js:159 inc/events/events-functions.php:289
+#: src/js/admin/admin.js:159
+msgid "slug"
+msgstr "слаг"
+
+#: assets/js/admin.js:160 inc/events/events-functions.php:290
+#: src/js/admin/admin.js:160
+msgid "Delete"
+msgstr "Удалить"
+
+#: assets/js/blocks.js:133 src/js/blocks/campaign.js:49
+msgid "Collecting donations"
+msgstr "Сбор пожертвований"
+
+#: assets/js/blocks.js:134 src/js/blocks/campaign.js:50
+msgid "Donation form."
+msgstr "Форма для сбора пожертвований."
+
+#: assets/js/blocks.js:137 src/js/blocks/campaign.js:53
+msgid "campaing"
+msgstr "кампания"
+
+#: assets/js/blocks.js:137 src/experimental/donations.js:50
+#: src/js/blocks/campaign.js:53
+msgid "leyka"
+msgstr "лейка"
+
+#: assets/js/blocks.js:190 assets/js/blocks.js:433 assets/js/blocks.js:776
+#: assets/js/blocks.js:1125 assets/js/blocks.js:1386 assets/js/blocks.js:1953
+#: assets/js/blocks.js:2445 assets/js/blocks.js:2692 assets/js/blocks.js:2945
+#: assets/js/blocks.js:3351 src/js/blocks/campaign.js:106
+#: src/js/blocks/cover.js:154 src/js/blocks/cta.js:137
+#: src/js/blocks/events.js:113 src/js/blocks/hero.js:181
+#: src/js/blocks/info.js:161 src/js/blocks/news.js:237
+#: src/js/blocks/partners.js:124 src/js/blocks/people.js:162
+#: src/js/blocks/projects.js:285 vendor/envato_setup/envato_setup.php:324
+#: vendor/envato_setup/envato_setup.php:730
+msgid "Settings"
+msgstr "Параметры"
+
+#: assets/js/blocks.js:206 assets/js/blocks.js:550 assets/js/blocks.js:874
+#: assets/js/blocks.js:1152 assets/js/blocks.js:2091 assets/js/blocks.js:2483
+#: assets/js/blocks.js:2729 assets/js/blocks.js:2993 assets/js/blocks.js:3387
+#: src/js/blocks/campaign.js:122 src/js/blocks/cover.js:271
+#: src/js/blocks/cta.js:235 src/js/blocks/events.js:140
+#: src/js/blocks/info.js:299 src/js/blocks/news.js:275
+#: src/js/blocks/partners.js:161 src/js/blocks/people.js:210
+#: src/js/blocks/projects.js:321
+msgid "Colors"
+msgstr "Цвета"
+
+#: assets/js/blocks.js:211 assets/js/blocks.js:556 assets/js/blocks.js:880
+#: assets/js/blocks.js:1158 assets/js/blocks.js:1683 assets/js/blocks.js:2097
+#: assets/js/blocks.js:2489 assets/js/blocks.js:2735 assets/js/blocks.js:2999
+#: assets/js/blocks.js:3393 assets/js/blocks.js:3574
+#: src/experimental/donations.js:120 src/js/blocks/campaign.js:127
+#: src/js/blocks/cover.js:277 src/js/blocks/cta.js:241
+#: src/js/blocks/events.js:146 src/js/blocks/hero.js:478
+#: src/js/blocks/info.js:305 src/js/blocks/news.js:281
+#: src/js/blocks/partners.js:167 src/js/blocks/people.js:216
+#: src/js/blocks/projects.js:327 src/js/blocks/recommend.js:112
+msgid "Background Color"
+msgstr "Цвет фона"
+
+#: assets/js/blocks.js:342 src/js/blocks/cover.js:63
+msgid "Cover"
+msgstr "Обложка"
+
+#: assets/js/blocks.js:343 src/js/blocks/cover.js:64
+msgid "Text over image."
+msgstr "Текст поверх изображения."
+
+#: assets/js/blocks.js:346 src/js/blocks/cover.js:67
+msgid "image"
+msgstr "image"
+
+#: assets/js/blocks.js:346 src/js/blocks/cover.js:67
+msgid "cover"
+msgstr "cover"
+
+#: assets/js/blocks.js:361 core/editor/blocks/cover.php:26
+#: src/js/blocks/cover.js:82
+msgid "We believe"
+msgstr "Мы верим"
+
+#: assets/js/blocks.js:365 core/editor/blocks/cover.php:30
+#: src/js/blocks/cover.js:86
+msgid ""
+"People are created to love and be loved; People need support and help; Your "
+"life and your story are important; Better days and a bright life are close; "
+"Hope and help are real."
+msgstr ""
+"Что люди созданы любить и быть любимыми; Людям нужна поддержка и помощь; "
+"Ваша жизнь и ваша история важны; Лучшие дни и яркая жизнь здесь рядом; "
+"Надежда и помощь реальны."
+
+#: assets/js/blocks.js:369 core/editor/blocks/cover.php:34
+#: src/js/blocks/cover.js:90
+msgid "Recommendations"
+msgstr "Рекомендации"
+
+#: assets/js/blocks.js:409 src/experimental/gutenberg-experimental.js:98
+#: src/js/blocks/cover.js:130
+msgid "Default"
+msgstr "По умолчанию"
+
+#: assets/js/blocks.js:414 src/js/blocks/cover.js:135
+msgid "Bottom"
+msgstr "Нижний"
+
+#: assets/js/blocks.js:436 assets/js/blocks.js:1128 assets/js/blocks.js:1979
+#: assets/js/blocks.js:2018 assets/js/blocks.js:2057 assets/js/blocks.js:2449
+#: assets/js/blocks.js:2695 assets/js/blocks.js:2948 assets/js/blocks.js:3354
+#: modules/donations/widgets.php:125 src/experimental/donations.js:95
+#: src/js/blocks/cover.js:157 src/js/blocks/events.js:116
+#: src/js/blocks/info.js:187 src/js/blocks/info.js:226
+#: src/js/blocks/info.js:265 src/js/blocks/news.js:241
+#: src/js/blocks/partners.js:127 src/js/blocks/people.js:165
+#: src/js/blocks/projects.js:288
+msgid "Heading"
+msgstr "Заголовок"
+
+#: assets/js/blocks.js:444 core/admin.php:48 src/js/blocks/cover.js:165
+#: vendor/envato_setup/envato_setup.php:314
+#: vendor/envato_setup/envato_setup.php:739
+msgid "Content"
+msgstr "Контент"
+
+#: assets/js/blocks.js:452 assets/js/blocks.js:3550 src/js/blocks/cover.js:173
+#: src/js/blocks/recommend.js:88
+msgid "Recommendation"
+msgstr "Рекомендации"
+
+#: assets/js/blocks.js:469 assets/js/blocks.js:1608 src/js/blocks/cover.js:190
+#: src/js/blocks/hero.js:403
+msgid "Background Image"
+msgstr "Фоновое изображение"
+
+#: assets/js/blocks.js:514 assets/js/blocks.js:1659 src/js/blocks/cover.js:235
+#: src/js/blocks/hero.js:454
+msgid "Remove Background Image"
+msgstr "Удалить форовую картинку"
+
+#: assets/js/blocks.js:526 assets/js/blocks.js:1671 src/js/blocks/cover.js:247
+#: src/js/blocks/hero.js:466
+msgid "Add Background Image"
+msgstr "Добавить фоновое изображение"
+
+#: assets/js/blocks.js:538 src/js/blocks/cover.js:259
+msgid "Min Height"
+msgstr "Минимальная высота"
+
+#: assets/js/blocks.js:567 assets/js/blocks.js:902 assets/js/blocks.js:1490
+#: assets/js/blocks.js:3563 src/js/blocks/cover.js:288 src/js/blocks/cta.js:263
+#: src/js/blocks/hero.js:285 src/js/blocks/recommend.js:101
+msgid "Text Color"
+msgstr "Цвет текста"
+
+#: assets/js/blocks.js:578 src/js/blocks/cover.js:299
+msgid "Content Background Color"
+msgstr "Цвет фона контента"
+
+#: assets/js/blocks.js:589 src/js/blocks/cover.js:310
+msgid "Recommendation Color"
+msgstr "Цвет текста рекомендации"
+
+#: assets/js/blocks.js:600 src/js/blocks/cover.js:321
+msgid "Recommendation Background Color"
+msgstr "Цвет фона рекомендации"
+
+#: assets/js/blocks.js:685 core/editor/pattern.php:33 src/js/blocks/cta.js:46
+msgid "Call To Action"
+msgstr "Призыв к действию"
+
+#: assets/js/blocks.js:686 core/editor/pattern.php:36 src/js/blocks/cta.js:47
+msgid "Title, Subtitle, Description, Button, and Image."
+msgstr "Заголовок, подзаголовок, описание, кнопка и изображение."
+
+#: assets/js/blocks.js:689 src/js/blocks/cta.js:50
+msgid "call"
+msgstr "call"
+
+#: assets/js/blocks.js:689 src/js/blocks/cta.js:50
+msgid "cta"
+msgstr "cta"
+
+#: assets/js/blocks.js:689 src/js/blocks/cta.js:50
+msgid "action"
+msgstr "action"
+
+#: assets/js/blocks.js:710 assets/js/blocks.js:751 assets/js/blocks.js:1861
+#: core/editor/blocks/cta.php:26 core/editor/blocks/info.php:26
+#: core/editor/content.php:17 src/js/blocks/cta.js:71 src/js/blocks/cta.js:112
+#: src/js/blocks/info.js:69
+msgid "112 volunteers are helping Line of Color at the moment"
+msgstr "112 волонтеров помогают «Линии цвета» в настоящий момент"
+
+#: assets/js/blocks.js:714 assets/js/blocks.js:752 assets/js/blocks.js:1865
+#: core/editor/blocks/cta.php:30 core/editor/blocks/info.php:30
+#: core/editor/content.php:17 src/js/blocks/cta.js:75 src/js/blocks/cta.js:113
+#: src/js/blocks/info.js:73
+msgid "Join a team of volunteers and consultants in our projects"
+msgstr "Присоединяйтесь к команде волонтеров и консультантов в наших проектах"
+
+#: assets/js/blocks.js:718 assets/js/blocks.js:753
+#: core/editor/blocks/cta.php:34 src/js/blocks/cta.js:79
+#: src/js/blocks/cta.js:114
+msgid "Become a volunteer"
+msgstr "Стать волонтером"
+
+#: assets/js/blocks.js:779 assets/js/blocks.js:1956 src/js/blocks/cta.js:140
+#: src/js/blocks/info.js:164
+msgid "Title"
+msgstr "Заголовок"
+
+#: assets/js/blocks.js:787 assets/js/blocks.js:1964 assets/js/blocks.js:1987
+#: assets/js/blocks.js:2026 assets/js/blocks.js:2065 assets/js/blocks.js:3554
+#: src/js/blocks/cta.js:148 src/js/blocks/info.js:172 src/js/blocks/info.js:195
+#: src/js/blocks/info.js:234 src/js/blocks/info.js:273
+#: src/js/blocks/recommend.js:92
+msgid "Text"
+msgstr "Текст"
+
+#: assets/js/blocks.js:804 assets/js/blocks.js:1415 src/js/blocks/cta.js:165
+#: src/js/blocks/hero.js:210
+msgid "Call to action Image"
+msgstr "Изображение призыва к действию"
+
+#: assets/js/blocks.js:847 assets/js/blocks.js:1466 src/js/blocks/cta.js:208
+#: src/js/blocks/hero.js:261
+msgid "Remove Image"
+msgstr "Удалить изображение"
+
+#: assets/js/blocks.js:859 assets/js/blocks.js:1478 src/js/blocks/cta.js:220
+#: src/js/blocks/hero.js:273
+msgid "Add Image"
+msgstr "Добавить изображение"
+
+#: assets/js/blocks.js:891 src/js/blocks/cta.js:252
+msgid "Title Color"
+msgstr "Цвет заголовка"
+
+#: assets/js/blocks.js:916 core/customizer/theme-mods/header.php:371
+#: core/customizer/theme-mods/header.php:509 src/js/blocks/cta.js:277
+msgid "Button"
+msgstr "Кнопка"
+
+#: assets/js/blocks.js:921 assets/js/blocks.js:1510 src/js/blocks/cta.js:282
+#: src/js/blocks/hero.js:305
+msgid "Button text"
+msgstr "Текст кнопки"
+
+#: assets/js/blocks.js:929 assets/js/blocks.js:1518 src/js/blocks/cta.js:290
+#: src/js/blocks/hero.js:313
+msgid "Button url"
+msgstr "Ссылка кнопки"
+
+#: assets/js/blocks.js:938 assets/js/blocks.js:1543 src/js/blocks/cta.js:299
+#: src/js/blocks/hero.js:338
+msgid "Button Background"
+msgstr "Цвет фона кнопки"
+
+#: assets/js/blocks.js:950 assets/js/blocks.js:1555 src/js/blocks/cta.js:311
+#: src/js/blocks/hero.js:350
+msgid "Button Color"
+msgstr "Цвет текста кнопки"
+
+#: assets/js/blocks.js:962 assets/js/blocks.js:1567 src/js/blocks/cta.js:323
+#: src/js/blocks/hero.js:362
+msgid "Button Hover Background"
+msgstr "Цвет фона кнопки при наведении"
+
+#: assets/js/blocks.js:974 assets/js/blocks.js:1579 src/js/blocks/cta.js:335
+#: src/js/blocks/hero.js:374
+msgid "Button Hover Color"
+msgstr "Цвет текста кнопки при наведении"
+
+#: assets/js/blocks.js:1041 page-events.php:136 src/js/blocks/events.js:29
+msgid "Events"
+msgstr "Мероприятия"
+
+#: assets/js/blocks.js:1044 core/admin.php:356 src/js/blocks/events.js:32
+msgid "Events Manager"
+msgstr "Менеджер по мероприятиям"
+
+#: assets/js/blocks.js:1046 src/js/blocks/events.js:34
+msgid "events"
+msgstr "мероприятия"
+
+#: assets/js/blocks.js:1055 core/editor/blocks/events.php:18 page-events.php:19
+#: src/js/blocks/events.js:43
+msgid "Schedule of events"
+msgstr "Расписание мероприятий"
+
+#: assets/js/blocks.js:1087 src/js/blocks/events.js:75
+msgid "List"
+msgstr "Список"
+
+#: assets/js/blocks.js:1092 src/js/blocks/events.js:80
+msgid "Grid"
+msgstr "Плитка"
+
+#: assets/js/blocks.js:1113 src/js/blocks/events.js:101
+msgid "Edit events"
+msgstr "Редактировать мероприятия"
+
+#: assets/js/blocks.js:1137 src/js/blocks/events.js:125
+msgid "Events to show"
+msgstr "Сколько мероприятий показывать"
+
+#: assets/js/blocks.js:1169 assets/js/blocks.js:2108 assets/js/blocks.js:2500
+#: assets/js/blocks.js:2746 assets/js/blocks.js:3010 assets/js/blocks.js:3404
+#: src/js/blocks/events.js:157 src/js/blocks/info.js:316
+#: src/js/blocks/news.js:292 src/js/blocks/partners.js:178
+#: src/js/blocks/people.js:227 src/js/blocks/projects.js:338
+msgid "Heading Color"
+msgstr "Цвет заголовка"
+
+#: assets/js/blocks.js:1263 src/js/blocks/hero.js:58
+msgid "Main Block"
+msgstr "Главный блок"
+
+#: assets/js/blocks.js:1264 src/js/blocks/hero.js:59
+msgid "Title, description, button, and background image."
+msgstr "Заголовок, описание, кнопка и фоновое изображение."
+
+#: assets/js/blocks.js:1277 assets/js/blocks.js:1348
+#: core/editor/blocks/hero.php:18 modules/starter/plot_config.php:127
+#: src/js/blocks/hero.js:72 src/js/blocks/hero.js:143
+msgid "We help people to fight alcohol addiction"
+msgstr "Помогаем людям с алкогольной зависимостью"
+
+#: assets/js/blocks.js:1281 assets/js/blocks.js:1349
+#: core/editor/blocks/hero.php:22 src/js/blocks/hero.js:76
+#: src/js/blocks/hero.js:144
+msgid ""
+"There are 877 people in our region who suffer from alcohol addiction. Your "
+"support will help organize a rehabilitation program for them."
+msgstr ""
+"В Нашей области 877 человек, которые страдают от алкогольной зависимости. "
+"Ваша поддержка поможет организовать для них реабилитационную программу."
+
+#: assets/js/blocks.js:1333 assets/js/blocks.js:1350
+#: core/editor/blocks/hero.php:26 src/js/blocks/hero.js:128
+#: src/js/blocks/hero.js:145
+msgid "Help Now"
+msgstr "Помочь сейчас"
+
+#: assets/js/blocks.js:1390 src/js/blocks/hero.js:185
+msgid "Call to action title"
+msgstr "Заголовок «призыва к действию» (CTA)"
+
+#: assets/js/blocks.js:1398 src/js/blocks/hero.js:193
+msgid "Call to action text"
+msgstr "Текст «призыва к действию» (CTA)"
+
+#: assets/js/blocks.js:1421 src/js/blocks/hero.js:216
+msgid "Displayed on the right side of the Call to action text"
+msgstr "Отображается на правой стороне текста Призыв к действию"
+
+#: assets/js/blocks.js:1505 src/js/blocks/hero.js:300
+msgid "Buttons"
+msgstr "Кнопки"
+
+#: assets/js/blocks.js:1526 src/js/blocks/hero.js:321
+msgid "Additional Button text"
+msgstr "Текст дополнительной кнопки"
+
+#: assets/js/blocks.js:1534 src/js/blocks/hero.js:329
+msgid "Additional Button url"
+msgstr "Ссылка дополнительной кнопки"
+
+#: assets/js/blocks.js:1594 src/js/blocks/hero.js:389
+msgid "Background"
+msgstr "Фон"
+
+#: assets/js/blocks.js:1614 src/js/blocks/hero.js:409
+msgid "Recommended size 1600x663px"
+msgstr "Рекомендуемый размер 1600x663px"
+
+#: assets/js/blocks.js:1698 src/js/blocks/hero.js:493
+msgid "Overlay"
+msgstr "Наложение"
+
+#: assets/js/blocks.js:1714 src/js/blocks/hero.js:509
+msgid "Overlay Gradient Start Color"
+msgstr "Цвета начала градиента"
+
+#: assets/js/blocks.js:1745 src/js/blocks/hero.js:540
+msgid "Overlay Gradient End Color"
+msgstr "Цвет окончания градиента"
+
+#: assets/js/blocks.js:1844 core/editor/pattern.php:45 src/js/blocks/info.js:52
+msgid "About Project"
+msgstr "О проекте"
+
+#: assets/js/blocks.js:1847 src/js/blocks/info.js:55
+msgid "info"
+msgstr "info"
+
+#: assets/js/blocks.js:1847 src/js/blocks/info.js:55
+msgid "columns"
+msgstr "columns"
+
+#: assets/js/blocks.js:1847 src/js/blocks/info.js:55
+msgid "about"
+msgstr "about"
+
+#: assets/js/blocks.js:1848 core/editor/pattern.php:48 src/js/blocks/info.js:56
+msgid "Subheading, heading and three columns."
+msgstr "Подзаголовок, заголовок и три колонки."
+
+#: assets/js/blocks.js:1869 core/editor/blocks/info.php:34
+#: core/editor/content.php:14 src/js/blocks/info.js:77
+msgid "Who we are?"
+msgstr "Кто мы?"
+
+#: assets/js/blocks.js:1873 core/editor/blocks/info.php:38
+#: core/editor/content.php:14 src/js/blocks/info.js:81
+msgid "What we do?"
+msgstr "Что мы делаем?"
+
+#: assets/js/blocks.js:1877 core/editor/blocks/info.php:42
+#: core/editor/content.php:14 src/js/blocks/info.js:85
+msgid "Stop drinking?"
+msgstr "Бросить пить?"
+
+#: assets/js/blocks.js:1881 core/editor/blocks/info.php:46
+#: core/editor/content.php:14 src/js/blocks/info.js:89
+msgid ""
+"The charitable organization &#34;Line of Color&#34; helps to overcome "
+"alcohol addiction and return to a fulfilling life."
+msgstr ""
+"Благотворительная организация &#34;Линия Цвета&#34; помогает преодолеть "
+"алкогольную зависимость и вернуться к полноценной жизни."
+
+#: assets/js/blocks.js:1885 core/editor/blocks/info.php:50
+#: core/editor/content.php:14 src/js/blocks/info.js:93
+msgid ""
+"We organize rehabilitation programs, inform and help those who are ready to "
+"give up their addiction and return their lives."
+msgstr ""
+"Организуем реабилитационные программы, информируем, помогаем тем, кто готов "
+"отказаться от пагубной привычки и вернуть свою жизнь."
+
+#: assets/js/blocks.js:1889 core/editor/blocks/info.php:54
+#: core/editor/content.php:14 src/js/blocks/info.js:97
+msgid ""
+"Fill out the anonymous form on the website, choose a convenient time for an "
+"individual consultation, or sign up for a support group."
+msgstr ""
+"Заполните анонимную форму на сайте, выберите удобное вам время для "
+"индивидуальной консультации или запишитесь в группу поддержки."
+
+#: assets/js/blocks.js:1893 core/editor/blocks/info.php:58
+#: core/editor/content.php:14 src/js/blocks/info.js:101
+msgid "Learn about our work"
+msgstr "Узнайте о нашей работе"
+
+#: assets/js/blocks.js:1897 core/editor/blocks/info.php:62
+#: core/editor/content.php:14 src/js/blocks/info.js:105
+msgid "View projects"
+msgstr "Посмотреть проекты"
+
+#: assets/js/blocks.js:1901 core/editor/blocks/info.php:66
+#: core/editor/content.php:14 src/js/blocks/info.js:109
+msgid "Get help"
+msgstr "Получить помощь"
+
+#: assets/js/blocks.js:1974 src/js/blocks/info.js:182
+msgid "Column 1"
+msgstr "Колонка 1"
+
+#: assets/js/blocks.js:1995 assets/js/blocks.js:2034 assets/js/blocks.js:2073
+#: src/js/blocks/info.js:203 src/js/blocks/info.js:242
+#: src/js/blocks/info.js:281
+msgid "Link Text"
+msgstr "Текст ссылки"
+
+#: assets/js/blocks.js:2003 assets/js/blocks.js:2042 assets/js/blocks.js:2081
+#: assets/js/blocks.js:2368 assets/js/blocks.js:3274 src/js/blocks/info.js:211
+#: src/js/blocks/info.js:250 src/js/blocks/info.js:289
+#: src/js/blocks/news.js:160 src/js/blocks/projects.js:208
+msgid "Link Url"
+msgstr "Адрес ссылки"
+
+#: assets/js/blocks.js:2013 src/js/blocks/info.js:221
+msgid "Column 2"
+msgstr "Колонка 2"
+
+#: assets/js/blocks.js:2052 src/js/blocks/info.js:260
+msgid "Column 3"
+msgstr "Колонка 3"
+
+#: assets/js/blocks.js:2119 src/js/blocks/info.js:327
+msgid "Second Heading Color"
+msgstr "Цвет второго заголовка"
+
+#: assets/js/blocks.js:2130 src/js/blocks/info.js:338
+msgid "Column Heading Color"
+msgstr "Цвет заголовка колонки"
+
+#: assets/js/blocks.js:2141 src/js/blocks/info.js:349
+msgid "Column Text Color"
+msgstr "Цвет текста колонки"
+
+#: assets/js/blocks.js:2152 src/js/blocks/info.js:360
+msgid "Column Link Color"
+msgstr "Цвет ссылки колонки"
+
+#: assets/js/blocks.js:2163 src/js/blocks/info.js:371
+msgid "Column Link Color Hover"
+msgstr "Цвет ссылки колонки при наведении"
+
+#: assets/js/blocks.js:2174 src/js/blocks/info.js:382
+msgid "Column Link Underline Color"
+msgstr "Цвет подчеркивание ссылки колонки"
+
+#: assets/js/blocks.js:2251 assets/js/blocks.js:2263 core/admin.php:66
+#: core/editor/blocks/news.php:18 footer.php:76
+#: modules/starter/plot_config.php:150 modules/starter/plot_config.php:231
+#: modules/starter/plot_config.php:257
+#: modules/starter/plot_data_builder.php:578 src/js/blocks/news.js:43
+#: src/js/blocks/news.js:55
+msgid "News"
+msgstr "Новости"
+
+#: assets/js/blocks.js:2254 assets/js/blocks.js:3160 src/js/blocks/news.js:46
+#: src/js/blocks/projects.js:94
+msgid "news"
+msgstr "news"
+
+#: assets/js/blocks.js:2254 assets/js/blocks.js:3161 src/js/blocks/news.js:46
+#: src/js/blocks/projects.js:95
+msgid "posts"
+msgstr "posts"
+
+#: assets/js/blocks.js:2254 assets/js/blocks.js:3162 src/js/blocks/news.js:46
+#: src/js/blocks/projects.js:96
+msgid "articles"
+msgstr "articles"
+
+#: assets/js/blocks.js:2255 src/js/blocks/news.js:47
+msgid "News tile in three column."
+msgstr "Плитка новостей в три колонки."
+
+#: assets/js/blocks.js:2357 assets/js/blocks.js:3263 src/js/blocks/news.js:149
+#: src/js/blocks/projects.js:197
+msgid "Link Title"
+msgstr "Текст ссылки"
+
+#: assets/js/blocks.js:2381 assets/js/blocks.js:3287 src/js/blocks/news.js:173
+#: src/js/blocks/projects.js:221
+msgid "Remove Link"
+msgstr "Удалить ссылку"
+
+#: assets/js/blocks.js:2405 assets/js/blocks.js:3311 src/js/blocks/news.js:197
+#: src/js/blocks/projects.js:245
+msgid "Add Link"
+msgstr "Добавить ссылку"
+
+#: assets/js/blocks.js:2433 src/js/blocks/news.js:225
+msgid "Edit news"
+msgstr "Редактировать новости"
+
+#: assets/js/blocks.js:2458 src/js/blocks/news.js:250
+msgid "Posts to show"
+msgstr "Сколько постов показывать"
+
+#: assets/js/blocks.js:2473 assets/js/blocks.js:3377 src/js/blocks/news.js:265
+#: src/js/blocks/projects.js:311
+msgid "Heading Links"
+msgstr "Ссылки в шапке"
+
+#: assets/js/blocks.js:2511 assets/js/blocks.js:3415 src/js/blocks/news.js:303
+#: src/js/blocks/projects.js:349
+msgid "Post Title Color"
+msgstr "Цвет названия поста"
+
+#: assets/js/blocks.js:2522 assets/js/blocks.js:3426 src/js/blocks/news.js:314
+#: src/js/blocks/projects.js:360
+msgid "Links Color"
+msgstr "Цвет ссылок"
+
+#: assets/js/blocks.js:2533 src/js/blocks/news.js:325
+msgid "Date Color"
+msgstr "Цвет даты"
+
+#: assets/js/blocks.js:2623 core/admin.php:84 modules/org/hooks.php:30
+#: modules/org/hooks.php:32 modules/org/tax.php:6 src/js/blocks/partners.js:55
+msgid "Partners"
+msgstr "Партнеры"
+
+#: assets/js/blocks.js:2626 src/js/blocks/partners.js:58
+msgid "partners"
+msgstr "partners"
+
+#: assets/js/blocks.js:2626 src/js/blocks/partners.js:58
+msgid "logos"
+msgstr "logos"
+
+#: assets/js/blocks.js:2627 src/js/blocks/partners.js:59
+msgid "Image tile in four columns."
+msgstr "Плитка с изображениями в четыре колонки."
+
+#: assets/js/blocks.js:2635 core/editor/blocks/partners.php:18
+#: src/js/blocks/partners.js:67
+msgid "Our Partners"
+msgstr "Наши партнеры"
+
+#: assets/js/blocks.js:2680 src/js/blocks/partners.js:112
+msgid "Edit partners"
+msgstr "Редактировать партнеров"
+
+#: assets/js/blocks.js:2703 src/js/blocks/partners.js:135
+msgid "Partners to show"
+msgstr "Сколько партнеров показывать"
+
+#: assets/js/blocks.js:2715 assets/js/blocks.js:2968
+#: src/js/blocks/partners.js:147 src/js/blocks/people.js:185
+msgid "Columns"
+msgstr "Колонки"
+
+#: assets/js/blocks.js:2843 core/admin.php:78 src/js/blocks/people.js:60
+msgid "Team"
+msgstr "Команда"
+
+#: assets/js/blocks.js:2846 src/js/blocks/people.js:63
+msgid "people"
+msgstr "people"
+
+#: assets/js/blocks.js:2846 src/js/blocks/people.js:63
+msgid "user"
+msgstr "user"
+
+#: assets/js/blocks.js:2846 src/js/blocks/people.js:63
+msgid "team"
+msgstr "team"
+
+#: assets/js/blocks.js:2846 src/js/blocks/people.js:63
+msgid "profile"
+msgstr "profile"
+
+#: assets/js/blocks.js:2847 src/js/blocks/people.js:64
+msgid "Tile with photos, names and short descriptions in 3-8 columns."
+msgstr "Плитка с фотографиями, именами и краткими описаниями в 3—8 колонок."
+
+#: assets/js/blocks.js:2855 core/editor/blocks/people.php:18
+#: src/js/blocks/people.js:72
+msgid "Our Team"
+msgstr "Команда"
+
+#: assets/js/blocks.js:2900 src/js/blocks/people.js:117
+msgid "Squared"
+msgstr "Квадратный"
+
+#: assets/js/blocks.js:2905 src/js/blocks/people.js:122
+msgid "Rounded"
+msgstr "Скругленный"
+
+#: assets/js/blocks.js:2933 src/js/blocks/people.js:150
+msgid "Edit team"
+msgstr "Редактировать команду"
+
+#: assets/js/blocks.js:2956 src/js/blocks/people.js:173
+msgid "People to show"
+msgstr "Сколько людей показывать"
+
+#: assets/js/blocks.js:2981 core/person.php:8 modules/org/hooks.php:9
+#: src/js/blocks/people.js:198
+msgid "Category"
+msgstr "Категория"
+
+#: assets/js/blocks.js:3021 src/js/blocks/people.js:238
+msgid "Name Color"
+msgstr "Цвет имени"
+
+#: assets/js/blocks.js:3032 src/js/blocks/people.js:249
+msgid "Description Color"
+msgstr "Цвет описания"
+
+#: assets/js/blocks.js:3155 assets/js/blocks.js:3172 core/admin.php:72
+#: core/editor/blocks/projects.php:18 modules/project/hooks.php:15
+#: modules/project/hooks.php:17 modules/starter/plot_config.php:141
+#: modules/starter/plot_config.php:151 src/js/blocks/projects.js:89
+#: src/js/blocks/projects.js:106
+msgid "Projects"
+msgstr "Проекты"
+
+#: assets/js/blocks.js:3158 src/js/blocks/projects.js:92
+msgid "Projects tile in three column."
+msgstr "Плитка проектов в три колонки."
+
+#: assets/js/blocks.js:3163 src/js/blocks/projects.js:97
+msgid "projects"
+msgstr "projects"
+
+#: assets/js/blocks.js:3339 src/js/blocks/projects.js:273
+msgid "Edit projects"
+msgstr "Редактировать проекты"
+
+#: assets/js/blocks.js:3363 src/js/blocks/projects.js:297
+msgid "Projects to show"
+msgstr "Сколько проектов показывать"
+
+#: assets/js/blocks.js:3497 core/editor/blocks/recommend.php:18
+#: src/js/blocks/recommend.js:35
+msgid ""
+"Your mission should be to summarize everything you do. In a short phrase, "
+"put the whole point of your organization and your projects."
+msgstr ""
+"Ваша миссия должна обобщать все что вы делаете. В краткой фразе заложите "
+"весь смысл вашей организации и ваших проектов."
+
+#: assets/js/blocks.js:3500 src/js/blocks/recommend.js:38
+msgid "Key phrase"
+msgstr "Ключевая фраза"
+
+#: assets/js/blocks.js:3503 src/js/blocks/recommend.js:41
+msgid "Text on a colored plate."
+msgstr "Текст на цветной плашке."
+
+#: assets/js/blocks.js:3505 src/js/blocks/recommend.js:43
+msgid "quote"
+msgstr "quote"
+
+#: assets/js/blocks.js:3506 src/js/blocks/recommend.js:44
+msgid "recommend"
+msgstr "recommend"
+
+#: assets/js/blocks.js:3507 src/js/blocks/recommend.js:45
+msgid "key"
+msgstr "key"
+
+#: assets/js/blocks.js:3508 src/js/blocks/recommend.js:46
+msgid "phrase"
+msgstr "phrase"
+
+#: assets/js/gutenberg.js:77
+msgid "Hide the page title"
+msgstr "Скрыть заголовок страницы"
+
+#: assets/js/gutenberg.js:94 src/experimental/gutenberg-experimental.js:115
+msgid "Page Options"
+msgstr "Параметры страницы"
 
 #: core/admin-update-theme.php:50
 msgid "Updating Kandisky theme is in progress..."
@@ -110,10 +876,10 @@ msgstr "Обновление пожертвований..."
 msgid "Kandinsky theme updated successfully."
 msgstr "Кандинский успешно обновлен."
 
-#: core/admin-update-theme.php:104 vendor/envato_setup/envato_setup.php:877
-#: vendor/envato_setup/envato_setup.php:904
-#: vendor/envato_setup/envato_setup.php:922
-#: vendor/envato_setup/envato_setup.php:931
+#: core/admin-update-theme.php:104 vendor/envato_setup/envato_setup.php:725
+#: vendor/envato_setup/envato_setup.php:734
+#: vendor/envato_setup/envato_setup.php:743
+#: vendor/envato_setup/envato_setup.php:752
 msgid "Success!"
 msgstr "Успех!"
 
@@ -129,7 +895,7 @@ msgstr "Перейти на сайт"
 msgid "Unknown update action"
 msgstr "Неизвестное действие при обновлении"
 
-#: core/admin-update-theme.php:141 vendor/envato_setup/envato_setup.php:768
+#: core/admin-update-theme.php:141 vendor/envato_setup/envato_setup.php:616
 msgid "Success"
 msgstr "Успех"
 
@@ -141,7 +907,7 @@ msgstr "Внутренняя ошибка Кандинского"
 msgid "Security check failed while updating theme"
 msgstr "Ошибка при проверке безопасности"
 
-#: core/admin-update-theme.php:187 vendor/envato_setup/envato_setup.php:1088
+#: core/admin-update-theme.php:187 vendor/envato_setup/steps/intro.php:45
 msgid "Downloading theme file failed!"
 msgstr "При скачивании темы произошла ошибка!"
 
@@ -162,7 +928,7 @@ msgid "Decoration"
 msgstr "Оформление"
 
 #: core/admin.php:30
-msgid "\"Call to action\" button"
+msgid "Call to action button"
 msgstr "Кнопка призыва к действию"
 
 #: core/admin.php:36
@@ -173,46 +939,15 @@ msgstr "Ссылки на соц.сети"
 msgid "Change the site template"
 msgstr "Сменить шаблон сайта"
 
-#: core/admin.php:48 vendor/envato_setup/envato_setup.php:314
-#: vendor/envato_setup/envato_setup.php:918
-msgid "Content"
-msgstr "Контент"
-
 #: core/admin.php:54
 msgid "Static pages"
 msgstr "Страницы"
 
-#: core/admin.php:60 core/customizer/theme-mods/header.php:224
-#: core/customizer/theme-mods/header.php:348
+#: core/admin.php:60 core/customizer/theme-mods/header.php:198
+#: core/customizer/theme-mods/header.php:479
 #: core/customizer/theme-mods/menu.php:12
 msgid "Menu"
 msgstr "Меню"
-
-#: core/admin.php:66 core/customizer/customizer-deprecated.php:508
-#: core/customizer/theme-mods/global.php:271 modules/news.php:8
-#: modules/starter/plot_config.php:256 modules/starter/plot_config.php:276
-#: modules/starter/plot_config.php:291 modules/starter/plot_config.php:512
-#: modules/starter/plot_config.php:525 modules/starter/plot_config.php:770
-#: modules/starter/plot_data_builder.php:528 modules/starter/sidebars.php:40
-msgid "News"
-msgstr "Новости"
-
-#: core/admin.php:72 modules/project/hooks.php:9 modules/project/hooks.php:11
-#: modules/project/widgets.php:7 modules/starter/plot_config.php:259
-#: modules/starter/plot_config.php:267 modules/starter/plot_config.php:277
-#: modules/starter/plot_config.php:293 modules/starter/plot_config.php:298
-#: modules/starter/plot_config.php:772
-msgid "Projects"
-msgstr "Проекты"
-
-#: core/admin.php:78 modules/person/hooks.php:68 modules/person/tax.php:7
-msgid "Team"
-msgstr "Команда"
-
-#: core/admin.php:84 modules/org/hooks.php:29 modules/org/hooks.php:31
-#: modules/org/tax.php:6 modules/org/widgets.php:7
-msgid "Partners"
-msgstr "Партнеры"
 
 #: core/admin.php:90
 msgid "Site footer"
@@ -226,8 +961,8 @@ msgstr "Плагины"
 msgid "SEO"
 msgstr "SEO"
 
-#: core/admin.php:108 modules/donations/widgets.php:7
-#: vendor/envato_setup/envato_setup.php:927
+#: core/admin.php:108 core/shortcodes.php:59 modules/donations/widgets.php:7
+#: vendor/envato_setup/envato_setup.php:748
 msgid "Donations"
 msgstr "Пожертвования"
 
@@ -236,7 +971,7 @@ msgid "Other"
 msgstr "Другое"
 
 #: core/admin.php:120 core/customizer/customizer-deprecated.php:34
-#: core/customizer/theme-mods/global.php:324
+#: core/customizer/theme-mods/global.php:279
 msgid "Documentation"
 msgstr "Документация"
 
@@ -277,8 +1012,10 @@ msgstr "Тех.поддержка"
 msgid "Kandinsky settings"
 msgstr "«Кандинский» – настройки"
 
-#: core/admin.php:215 core/admin.php:251
-#: core/theme-update/theme-update-checker.php:342 functions.php:209
+#. Theme Name of the plugin/theme
+#: core/admin.php:215 core/admin.php:251 core/editor/category.php:20
+#: core/editor/pattern.php:20 core/theme-update/theme-update-checker.php:342
+#: functions.php:234
 msgid "Kandinsky"
 msgstr "Кандинский"
 
@@ -317,44 +1054,42 @@ msgid "A great tool to boost your website SEO positions."
 msgstr ""
 "Прекрасный плагин, помогающий улучшить позиции сайта в поисковых системах."
 
-#: core/admin.php:341
+#: core/admin.php:342
 msgid "Cyr to Lat enhanced"
 msgstr "Cyr to Lat enhanced"
 
-#: core/admin.php:345
+#: core/admin.php:346
 msgid ""
 "Small helper to seamlessly convert cyrillic pages slugs into latin ones."
 msgstr ""
 "Небольшой плагин для автоматического перевода символов в адресах страниц из "
 "кириллицы в латиницу."
 
-#: core/admin.php:347
+#: core/admin.php:349
 msgid "Disable Comments"
 msgstr "Disable Comments"
 
-#: core/admin.php:351
+#: core/admin.php:353
 msgid ""
 "Comments on the website may be harmful, so this small plugin turns them off."
 msgstr ""
 "Плагин отключает комментарии, встроенные в WordPress по умолчанию. "
 "Комментарии можно включить в любой момент."
 
-#: core/admin.php:353
-msgid "Shortcake (Shortcodes UI)"
-msgstr "Shortcake (Shortcodes UI)"
-
-#: core/admin.php:358
+#: core/admin.php:360
 msgid ""
-"A visual editing for shortcodes to enrich your content management experience."
+"Events Manager is a full-featured event registration plugin for WordPress "
+"based on the principles of flexibility, reliability and powerful features!"
 msgstr ""
-"Возможности визуального редактирования шорткодов, чтобы сделать процесс "
-"редактирования страниц более современным."
+"Events Manager (Мероприятия)- это полнофункциональный плагин регистрации "
+"мероприятий для WordPress, основанный на принципах гибкости, надежности и "
+"мощных функций!"
 
-#: core/admin.php:361
+#: core/admin.php:363
 msgid "Kirki Customizer Framework"
 msgstr "Kirki Customizer Framework"
 
-#: core/admin.php:366
+#: core/admin.php:367
 msgid "The Ultimate WordPress Customizer Framework."
 msgstr "The Ultimate WordPress Customizer Framework."
 
@@ -362,34 +1097,36 @@ msgstr "The Ultimate WordPress Customizer Framework."
 msgid "Leyka"
 msgstr "Лейка"
 
-#: core/admin.php:375
+#: core/admin.php:374
 msgid "This plugin will add means for donations collection to your website."
 msgstr ""
 "Этот плагин добавит на сайт возможности сбора и управления пожертвованиями."
 
-#: core/admin.php:397 vendor/class-tgm-plugin-activation.php:327
+#: core/admin.php:398 vendor/class-tgm-plugin-activation.php:327
 msgid "Install Required Plugins"
 msgstr "Установить требуемые плагины"
 
-#: core/admin.php:398 vendor/class-tgm-plugin-activation.php:328
+#: core/admin.php:399 vendor/class-tgm-plugin-activation.php:328
 msgid "Install Plugins"
 msgstr "Установить плагины"
 
-#: core/admin.php:400 vendor/class-tgm-plugin-activation.php:330
+#. translators: %s: plugin name.
+#: core/admin.php:401 vendor/class-tgm-plugin-activation.php:330
 #, php-format
 msgid "Installing Plugin: %s"
 msgstr "Установка плагина: %s"
 
-#: core/admin.php:402 vendor/class-tgm-plugin-activation.php:332
+#. translators: %s: plugin name.
+#: core/admin.php:403 vendor/class-tgm-plugin-activation.php:332
 #, php-format
 msgid "Updating Plugin: %s"
 msgstr "Обновление плагина: %s"
 
-#: core/admin.php:403 vendor/class-tgm-plugin-activation.php:333
+#: core/admin.php:404 vendor/class-tgm-plugin-activation.php:333
 msgid "Something went wrong with the plugin API."
 msgstr "Ошибка при работе с API плагина."
 
-#: core/admin.php:405 vendor/class-tgm-plugin-activation.php:334
+#: core/admin.php:406 vendor/class-tgm-plugin-activation.php:334
 #, php-format
 msgid "This theme requires the following plugin: %1$s."
 msgid_plural "This theme requires the following plugins: %1$s."
@@ -397,7 +1134,7 @@ msgstr[0] "Необходимо установить плагин %1$s."
 msgstr[1] "Необходимо установить плагины: %1$s."
 msgstr[2] "Необходимо установить плагины: %1$s."
 
-#: core/admin.php:409 vendor/class-tgm-plugin-activation.php:335
+#: core/admin.php:410 vendor/class-tgm-plugin-activation.php:335
 #, php-format
 msgid "This theme recommends the following plugin: %1$s."
 msgid_plural "This theme recommends the following plugins: %1$s."
@@ -405,7 +1142,7 @@ msgstr[0] "Рекомендуется установить плагин %1$s."
 msgstr[1] "Рекомендуется установить плагины: %1$s."
 msgstr[2] "Рекомендуется установить плагины: %1$s."
 
-#: core/admin.php:413 vendor/class-tgm-plugin-activation.php:337
+#: core/admin.php:414 vendor/class-tgm-plugin-activation.php:337
 #, php-format
 msgid ""
 "The following plugin needs to be updated to its latest version to ensure "
@@ -417,7 +1154,8 @@ msgstr[0] "Необходимо обновить плагин %1$s."
 msgstr[1] "Необходимо обновить плагины: %1$s."
 msgstr[2] "Необходимо обновить плагины: %1$s."
 
-#: core/admin.php:417 vendor/class-tgm-plugin-activation.php:343
+#. translators: 1: plugin name(s).
+#: core/admin.php:418 vendor/class-tgm-plugin-activation.php:343
 #, php-format
 msgid "There is an update available for: %1$s."
 msgid_plural "There are updates available for the following plugins: %1$s."
@@ -425,7 +1163,8 @@ msgstr[0] "%1$s: доступно обновление."
 msgstr[1] "%1$s: доступно обновление."
 msgstr[2] "%1$s: доступно обновление."
 
-#: core/admin.php:421 vendor/class-tgm-plugin-activation.php:349
+#. translators: 1: plugin name(s).
+#: core/admin.php:422 vendor/class-tgm-plugin-activation.php:349
 #, php-format
 msgid "The following required plugin is currently inactive: %1$s."
 msgid_plural "The following required plugins are currently inactive: %1$s."
@@ -433,7 +1172,8 @@ msgstr[0] "Необходимо активировать плагин %1$s."
 msgstr[1] "Необходимо активировать плагины: %1$s."
 msgstr[2] "Необходимо активировать плагины: %1$s."
 
-#: core/admin.php:425 vendor/class-tgm-plugin-activation.php:355
+#. translators: 1: plugin name(s).
+#: core/admin.php:426 vendor/class-tgm-plugin-activation.php:355
 #, php-format
 msgid "The following recommended plugin is currently inactive: %1$s."
 msgid_plural "The following recommended plugins are currently inactive: %1$s."
@@ -441,46 +1181,48 @@ msgstr[0] "Рекомендуется активировать плагин %1$s
 msgstr[1] "Рекомендуется активировать плагины: %1$s."
 msgstr[2] "Рекомендуется активировать плагины: %1$s."
 
-#: core/admin.php:428 vendor/class-tgm-plugin-activation.php:360
+#: core/admin.php:429 vendor/class-tgm-plugin-activation.php:360
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
 msgstr[0] "Установить плагин"
 msgstr[1] "Установить плагины"
 msgstr[2] "Установить плагин"
 
-#: core/admin.php:429 vendor/class-tgm-plugin-activation.php:365
+#: core/admin.php:430 vendor/class-tgm-plugin-activation.php:365
 msgid "Begin updating plugin"
 msgid_plural "Begin updating plugins"
 msgstr[0] "Обновить плагин"
 msgstr[1] "Обновить плагины"
 msgstr[2] "Обновить плагин"
 
-#: core/admin.php:430 vendor/class-tgm-plugin-activation.php:370
+#: core/admin.php:431 vendor/class-tgm-plugin-activation.php:370
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
 msgstr[0] "Активировать плагин"
 msgstr[1] "Активировать плагины"
 msgstr[2] "Активировать плагин"
 
-#: core/admin.php:431 vendor/class-tgm-plugin-activation.php:374
+#: core/admin.php:432 vendor/class-tgm-plugin-activation.php:374
 msgid "Return to Required Plugins Installer"
 msgstr "На страницу установки требуемых плагинов"
 
-#: core/admin.php:432 vendor/class-tgm-plugin-activation.php:376
+#: core/admin.php:433 vendor/class-tgm-plugin-activation.php:376
 #: vendor/class-tgm-plugin-activation.php:3148
 msgid "Plugin activated successfully."
 msgstr "Плагин активирован."
 
-#: core/admin.php:433 vendor/class-tgm-plugin-activation.php:377
+#: core/admin.php:434 vendor/class-tgm-plugin-activation.php:377
 msgid "The following plugin was activated successfully:"
 msgstr "Плагин успешно активирован:"
 
-#: core/admin.php:435 vendor/class-tgm-plugin-activation.php:379
+#. translators: 1: plugin name.
+#: core/admin.php:436 vendor/class-tgm-plugin-activation.php:379
 #, php-format
 msgid "No action taken. Plugin %1$s was already active."
 msgstr "Плагин %1$s уже активирован."
 
-#: core/admin.php:438 vendor/class-tgm-plugin-activation.php:381
+#. translators: 1: plugin name.
+#: core/admin.php:439 vendor/class-tgm-plugin-activation.php:381
 #, php-format
 msgid ""
 "Plugin not activated. A higher version of %s is needed for this theme. "
@@ -489,87 +1231,79 @@ msgstr ""
 "Плагин не активирован – тема требует более высокой версии %s. Пожалуйста, "
 "обновите плагин."
 
-#: core/admin.php:441 vendor/class-tgm-plugin-activation.php:383
+#. translators: 1: dashboard link.
+#: core/admin.php:442 vendor/class-tgm-plugin-activation.php:383
 #, php-format
 msgid "All plugins installed and activated successfully. %1$s"
 msgstr "Все плагины установлены и активированы. %1$s"
 
-#: core/admin.php:442 vendor/class-tgm-plugin-activation.php:384
+#: core/admin.php:443 vendor/class-tgm-plugin-activation.php:384
 msgid "Dismiss this notice"
 msgstr "Закрыть уведомление"
 
-#: core/admin.php:444 vendor/class-tgm-plugin-activation.php:385
+#: core/admin.php:445 vendor/class-tgm-plugin-activation.php:385
 msgid ""
 "There are one or more required or recommended plugins to install, update or "
 "activate."
 msgstr "Некоторые плагины необходимо установить, обновить или активировать."
 
-#: core/admin.php:446 vendor/class-tgm-plugin-activation.php:386
+#: core/admin.php:447 vendor/class-tgm-plugin-activation.php:386
 msgid "Please contact the administrator of this site for help."
 msgstr "Пожалуйста, свяжитесь с администрацией сайта."
 
-#: core/admin.php:463
+#: core/admin.php:464
 msgid "Action failed. Please refresh the page and retry."
 msgstr "Операция завершилась с ошибкой. Пожалуйста, перезагрузите страницу."
 
-#: core/admin.php:467
+#: core/admin.php:468
 msgid "Action failed."
 msgstr "Операция завершилась с ошибкой."
 
-#: core/admin.php:481
+#: core/admin.php:482
 msgid "Order"
 msgstr "Порядок"
 
-#: core/admin.php:484
+#: core/admin.php:485
 msgid "Start"
 msgstr "Начало"
 
-#: core/admin.php:487
+#: core/admin.php:488
 msgid "Thumb."
 msgstr "Миниат."
 
-#: core/admin.php:490
+#: core/admin.php:491
 msgid "Created"
 msgstr "Создано"
 
-#: core/admin.php:605
+#: core/admin.php:606
 msgid "Kandinsky — useful links"
 msgstr "Кандинский – полезные ссылки"
 
-#: core/admin.php:627
+#: core/admin.php:628
 msgid "Do you want to know all the features of the theme?"
 msgstr "Хотите быть в курсе всех возможностей темы?"
 
-#: core/admin.php:628
+#: core/admin.php:629
 msgid "Find information on"
 msgstr "Найдите информацию на"
 
-#: core/admin.php:629
+#: core/admin.php:630
 msgid "official website"
 msgstr "её официальном сайте"
 
-#: core/admin.php:675
+#: core/admin.php:674
 msgid "A quick guide to working with the site - "
 msgstr "Краткое руководство по работе с сайтом - "
 
-#: core/admin.php:696
-#, php-format
-msgid ""
-"ATTENTION! You thumbnail image is too small. It should be at least %s px"
-msgstr ""
-"ВНИМАНИЕ! Выбранное изображение слишком маленькое. Допустимый размер не "
-"менее %s px"
+#: core/assets.php:73 vendor/envato_setup/steps/design.php:28
+#: vendor/envato_setup/steps/plugins.php:110
+#: vendor/envato_setup/steps/settings.php:46
+msgid "Continue"
+msgstr "Продолжить"
 
 #: core/author.php:31
 msgid "Author"
 msgstr "Автор"
-
-#: core/class-cssjs.php:97 vendor/envato_setup/envato_setup.php:695
-#: vendor/envato_setup/envato_setup.php:1134
-#: vendor/envato_setup/envato_setup.php:1310
-#: vendor/envato_setup/envato_setup.php:1405
-msgid "Continue"
-msgstr "Продолжить"
 
 #: core/class-import.php:116 core/class-import.php:151
 #, php-format
@@ -597,267 +1331,113 @@ msgid "Can't rename downloaded file: from %s to %s"
 msgstr "Невозможно переименовать загружаемый файл: из %s в %s"
 
 #: core/customizer/customizer-deprecated.php:28
-#: core/customizer/theme-mods/global.php:316
+#: core/customizer/theme-mods/global.php:271
 msgid "Theme Info"
 msgstr "О теме"
 
 #: core/customizer/customizer-deprecated.php:31
-#: core/customizer/theme-mods/global.php:320
+#: core/customizer/theme-mods/global.php:275
 msgid "Support"
 msgstr "Служба поддержки"
 
 #: core/customizer/customizer-deprecated.php:44
 #: core/customizer/customizer-deprecated.php:59
-#: core/customizer/theme-mods/global.php:307
+#: core/customizer/theme-mods/global.php:262
 msgid "Important Links"
 msgstr "Важные ссылки"
-
-#: core/customizer/customizer-deprecated.php:77
-msgid "Header text"
-msgstr "Текст заголовка"
 
 #: core/customizer/customizer-deprecated.php:96
 msgid "Color scheme"
 msgstr "Цветовая схема"
 
 #: core/customizer/customizer-deprecated.php:104
-#: core/customizer/customizer-deprecated.php:262
+#: core/customizer/customizer-deprecated.php:149
+#: core/customizer/theme-mods/footer.php:39
 #: core/customizer/theme-mods/footer.php:47
-#: core/customizer/theme-mods/header.php:43
+#: core/customizer/theme-mods/header.php:70
 #: vendor/envato_setup/envato_setup.php:319
-#: vendor/envato_setup/envato_setup.php:1289
+#: vendor/envato_setup/steps/design.php:7
 msgid "Logo"
 msgstr "Логотип"
 
-#: core/customizer/customizer-deprecated.php:161
+#: core/customizer/customizer-deprecated.php:125
 msgid "Action Color"
 msgstr "Основной цвет схемы"
 
-#: core/customizer/customizer-deprecated.php:171
-#: core/customizer/theme-mods/global.php:143
-msgid "Complimentary Color"
-msgstr "Дополнительный цвет"
-
-#: core/customizer/customizer-deprecated.php:181
-msgid "Dark Color"
-msgstr "Темный цвет"
-
-#: core/customizer/customizer-deprecated.php:191
+#: core/customizer/customizer-deprecated.php:137
 msgid "Page Background Color"
 msgstr "Основной цвет фона страниц"
 
-#: core/customizer/customizer-deprecated.php:192
-#: core/customizer/customizer-deprecated.php:214
-#: core/customizer/theme-mods/global.php:113
-#: core/customizer/theme-mods/global.php:159
+#: core/customizer/customizer-deprecated.php:138
+#: core/customizer/theme-mods/global.php:107
 msgid "Recommended - white"
 msgstr "Рекомендуется - белый"
 
-#: core/customizer/customizer-deprecated.php:202
-#: core/customizer/theme-mods/global.php:96
-msgid "Content Text Color"
-msgstr "Цвет текста контента"
-
-#: core/customizer/customizer-deprecated.php:203
-#: core/customizer/theme-mods/global.php:97
-msgid "Recommended - black"
-msgstr "Рекомендуется - черный"
-
-#: core/customizer/customizer-deprecated.php:213
-#: core/customizer/theme-mods/global.php:158
-msgid "Inverse Text Color"
-msgstr "Цвет текста - инверсия"
-
-#: core/customizer/customizer-deprecated.php:224
-#: core/customizer/theme-mods/global.php:174
-msgid "Accent Text Color - 1"
-msgstr "Акцентный цвет текста - 1"
-
-#: core/customizer/customizer-deprecated.php:225
-#: core/customizer/customizer-deprecated.php:236
-#: core/customizer/theme-mods/global.php:175
-#: core/customizer/theme-mods/global.php:191
-msgid "Applicable only for Dubrovino template"
-msgstr "Применяется только в шаблоне «Дубровино»"
-
-#: core/customizer/customizer-deprecated.php:235
-#: core/customizer/theme-mods/global.php:190
-msgid "Accent Text Color - 2"
-msgstr "Акцентный цвет текста - 2"
-
-#: core/customizer/customizer-deprecated.php:246
-msgid "Logo mode"
-msgstr "Режим отображения логотипа"
-
-#: core/customizer/customizer-deprecated.php:251
-msgid "Image only"
-msgstr "Только изображение"
-
-#: core/customizer/customizer-deprecated.php:252
-msgid "Image with site name"
-msgstr "Изображение и название сайта"
-
-#: core/customizer/customizer-deprecated.php:253
-msgid "Site name only"
-msgstr "Только название сайта"
-
-#: core/customizer/customizer-deprecated.php:254
-msgid "Do not show"
-msgstr "Не показывать"
-
-#: core/customizer/customizer-deprecated.php:263
+#: core/customizer/customizer-deprecated.php:150
 msgid ""
 "We recommend to use logos in the .svg format (vector graphics). If your logo "
 "is in rastre format, we recommend to upload pictures with the dimensions of "
-"630x132 px for the option \"Only Image\" or 132x13px for the option \"Image "
-"and Title\"."
+"630x132 px for the option &quot;Only Image&quot; or 132x13px for the option "
+"&quot;Image and Title&quot;."
 msgstr ""
 "Мы рекомендуем загружать логотипы в формате .svg (векторная графика). Если "
 "изображения растровое, то мы советуем закачивать изображения в размере "
-"630x132 px для режима \"Только изображение\" и 132x132 px для режима "
-"\"Изображение и название\"."
+"630x132 px для режима &quot;Только изображение&quot; и 132x132 px для режима "
+"&quot;Изображение и название&quot;."
 
-#: core/customizer/customizer-deprecated.php:280
+#: core/customizer/customizer-deprecated.php:167
 msgid "Homepage settings"
 msgstr "Главная страница"
 
-#: core/customizer/customizer-deprecated.php:281
+#: core/customizer/customizer-deprecated.php:168
 msgid "Homepage settings and blocks"
 msgstr "Настройки и блоки главной страницы"
 
-#: core/customizer/customizer-deprecated.php:286
-#: core/customizer/customizer-deprecated.php:318
-#: core/customizer/theme-mods/homepage.php:22
-msgid "Hero Image"
-msgstr "Главное изображение"
-
-#: core/customizer/customizer-deprecated.php:292
-#: core/customizer/theme-mods/homepage.php:290
+#: core/customizer/customizer-deprecated.php:171
 msgid "Static page settings"
 msgstr "Статичная страница"
 
-#: core/customizer/customizer-deprecated.php:311
-#: core/customizer/theme-mods/homepage.php:74 core/template-tags.php:399
-#: modules/starter/plot_config.php:242 modules/starter/plot_config.php:759
-#: template-parts/headers/header-0.php:27
-msgid "Help now"
-msgstr "Помочь сейчас"
-
-#: core/customizer/customizer-deprecated.php:319
-#: core/customizer/theme-mods/homepage.php:32
-msgid "Recommended size 1600x663px"
-msgstr "Рекомендованный размер: 1600 x 663 пикс"
-
-#: core/customizer/customizer-deprecated.php:333
-#: core/customizer/customizer-deprecated.php:442
-#: core/customizer/theme-mods/homepage.php:52
-#: core/customizer/theme-mods/homepage.php:215
-msgid "Call to action title"
-msgstr "Заголовок «призыва к действию» (CTA)"
-
-#: core/customizer/customizer-deprecated.php:342
-#: core/customizer/customizer-deprecated.php:451
-#: core/customizer/theme-mods/homepage.php:81
-#: core/customizer/theme-mods/homepage.php:223
-msgid "Call to action URL"
-msgstr "Ссылка на действие"
-
-#: core/customizer/customizer-deprecated.php:351
-#: core/customizer/customizer-deprecated.php:460
-#: core/customizer/theme-mods/homepage.php:59
-#: core/customizer/theme-mods/homepage.php:231
-msgid "Call to action text"
-msgstr "Текст «призыва к действию» (CTA)"
-
-#: core/customizer/customizer-deprecated.php:360
-#: core/customizer/customizer-deprecated.php:469
-#: core/customizer/theme-mods/homepage.php:73
-#: core/customizer/theme-mods/homepage.php:239
-msgid "Action button caption"
-msgstr "Текст на кнопке действия"
-
-#: core/customizer/customizer-deprecated.php:368
-#: core/customizer/theme-mods/homepage.php:152
-msgid "Our organization columns settings"
-msgstr "Колонки с информацией об организации"
-
-#: core/customizer/customizer-deprecated.php:392
-#: core/customizer/theme-mods/homepage.php:170
-msgid "Column title"
-msgstr "Заголовок колонки"
-
-#: core/customizer/customizer-deprecated.php:401
-#: core/customizer/theme-mods/homepage.php:178
-msgid "Column content"
-msgstr "Текст колонки"
-
-#: core/customizer/customizer-deprecated.php:410
-#: core/customizer/theme-mods/homepage.php:187
-msgid "Column link caption"
-msgstr "Текст ссылки"
-
-#: core/customizer/customizer-deprecated.php:419
-#: core/customizer/theme-mods/homepage.php:195
-msgid "Column link URL"
-msgstr "URL ссылки"
-
-#: core/customizer/customizer-deprecated.php:428
-#: core/customizer/theme-mods/homepage.php:207
-msgid "CTA block settings"
-msgstr "Блок призыва к действию"
-
-#: core/customizer/customizer-deprecated.php:477
-#: core/customizer/theme-mods/footer.php:111
-#: core/customizer/theme-mods/header.php:414
-msgid "Social networks links"
-msgstr "Ссылки на социальные сети"
-
-#: core/customizer/customizer-deprecated.php:501
-#: core/customizer/theme-mods/global.php:260
+#: core/customizer/customizer-deprecated.php:186
 msgid "Titles and captions"
 msgstr "Заголовки и надписи"
 
-#: core/customizer/customizer-deprecated.php:515
-#: core/customizer/theme-mods/global.php:269
-msgid "News archive title"
-msgstr "Заголовок страницы новостей"
-
-#: core/customizer/customizer-deprecated.php:524
-#: core/customizer/theme-mods/global.php:279 core/template-tags.php:244
-#: core/template-tags.php:351 modules/starter/plot_config.php:801
-#: modules/starter/plot_config.php:806
+#: core/customizer/customizer-deprecated.php:193
+#: core/customizer/theme-mods/archive-settings.php:47
+#: core/template-tags.php:240 core/template-tags.php:347
+#: modules/starter/plot_config.php:232
 msgid "Our projects"
 msgstr "Наши проекты"
 
-#: core/customizer/customizer-deprecated.php:531
-#: core/customizer/theme-mods/global.php:277
+#: core/customizer/customizer-deprecated.php:200
+#: core/customizer/theme-mods/archive-settings.php:45
 msgid "Projects archive title"
 msgstr "Заголовок страницы проектов"
 
-#: core/customizer/customizer-deprecated.php:543
-#: core/customizer/theme-mods/global.php:290 core/template-tags.php:256
-#: modules/starter/plot_config.php:785 modules/starter/plot_config.php:798
-#: single-leyka_campaign.php:29 single-leyka_campaign.php:43
+#: core/customizer/customizer-deprecated.php:212
+#: core/customizer/theme-mods/archive-settings.php:74
+#: core/template-tags.php:252 single-leyka_campaign.php:29
+#: single-leyka_campaign.php:43
 msgid "They need help"
 msgstr "Им нужна помощь"
 
-#: core/customizer/customizer-deprecated.php:550
-#: core/customizer/theme-mods/global.php:288
+#: core/customizer/customizer-deprecated.php:219
+#: core/customizer/theme-mods/archive-settings.php:72
 msgid "Active campaigns archive title"
 msgstr "Заголовок страницы активных кампаний"
 
-#: core/customizer/customizer-deprecated.php:559
-#: core/customizer/theme-mods/global.php:298 core/template-tags.php:251
-#: single-leyka_campaign.php:25 single-leyka_campaign.php:44
+#: core/customizer/customizer-deprecated.php:228
+#: core/customizer/theme-mods/archive-settings.php:82
+#: core/template-tags.php:247 single-leyka_campaign.php:25
+#: single-leyka_campaign.php:44
 msgid "They alredy got help"
 msgstr "Уже получили помощь"
 
-#: core/customizer/customizer-deprecated.php:566
-#: core/customizer/theme-mods/global.php:296
+#: core/customizer/customizer-deprecated.php:235
+#: core/customizer/theme-mods/archive-settings.php:80
 msgid "Completed campaigns archive title"
 msgstr "Заголовок страницы завершенных кампаний"
 
-#: core/customizer/customizer-deprecated.php:591
+#: core/customizer/customizer-deprecated.php:260
 msgid ""
 "In order to make Kandinsky work full speed, you will need few plugins. "
 "WordPress will install or update the following plugins:"
@@ -865,93 +1445,158 @@ msgstr ""
 "Для корректной работы темы Кандинский понадобится несколько плагинов. Мы "
 "установим или обновим следующие плагины:"
 
-#: core/customizer/customizer-deprecated.php:594
+#: core/customizer/customizer-deprecated.php:263
 msgid "Plugin that allows web-font customization."
 msgstr "Плагин, позволяющий редактировать шрифты сайта."
 
-#: core/customizer/customizer-deprecated.php:599
+#: core/customizer/customizer-deprecated.php:268
 #: vendor/class-tgm-plugin-activation.php:2706
-#: vendor/envato_setup/envato_setup.php:664
+#: vendor/envato_setup/steps/plugins.php:79
 msgid "Install"
 msgstr "Установить"
 
-#: core/customizer/customizer-deprecated.php:602
+#: core/customizer/customizer-deprecated.php:271
 msgid "No, I’ll do it some other time"
 msgstr "Не устанавливать"
 
-#: core/customizer/kirki.php:85
+#: core/customizer/kirki.php:95
 msgid "Font Family"
 msgstr "Шрифт"
 
-#: core/customizer/kirki.php:88
+#: core/customizer/kirki.php:98
 msgid "Variant"
 msgstr "Насыщенность"
 
-#: core/customizer/kirki.php:91
+#: core/customizer/kirki.php:101
 msgid "Color"
 msgstr "Цвет"
 
-#: core/customizer/kirki.php:94
+#: core/customizer/kirki.php:104
 msgid "Font Size"
 msgstr "Базовый размер, px"
 
-#: core/customizer/kirki.php:97
+#: core/customizer/kirki.php:107
 msgid "No image selected"
 msgstr "Изображение не выбрано"
 
-#: core/customizer/kirki.php:100
+#: core/customizer/kirki.php:110
 msgid "Remove"
 msgstr "Удалить"
+
+#: core/customizer/kirki.php:113
+msgid "Select image"
+msgstr "Выбрать изображение"
+
+#: core/customizer/kirki.php:116
+msgid "No File Selected"
+msgstr "Изображение не выбрано"
+
+#: core/customizer/kirki.php:174 core/customizer/kirki.php:193
+#: src/experimental/gutenberg-experimental.js:102
+msgid "None"
+msgstr "Нет"
+
+#: core/customizer/theme-mods/archive-settings.php:13
+msgid "Archive Settings"
+msgstr "Страница архива"
+
+#: core/customizer/theme-mods/archive-settings.php:21
+msgid "Posts archive title"
+msgstr "Заголовок страницы архива"
+
+#: core/customizer/theme-mods/archive-settings.php:23
+#: core/template-tags.php:232
+msgid "Blog"
+msgstr "Блог"
+
+#: core/customizer/theme-mods/archive-settings.php:29
+msgid "Posts Page Bottom Blocks"
+msgstr "Блоки внизу страниц архива"
+
+#: core/customizer/theme-mods/archive-settings.php:53
+msgid "Projects Page Bottom Blocks"
+msgstr "Блоки внизу страниц проектов"
 
 #: core/customizer/theme-mods/footer.php:12
 msgid "Footer"
 msgstr "Подвал"
 
 #: core/customizer/theme-mods/footer.php:28
-msgid "Go to the menu \"In the footer\""
-msgstr "Переход в раздел Меню \"В подвале\""
+msgid "Go to the menu &quot;In the footer&quot;"
+msgstr "Переход в раздел Меню &quot;В подвале&quot;"
 
 #: core/customizer/theme-mods/footer.php:30
+#: core/customizer/theme-mods/migrate.php:25
 msgid "Go to Menu"
 msgstr "Переход в раздел Меню"
 
-#: core/customizer/theme-mods/footer.php:39
-msgid "Logo and social networks"
-msgstr "Логотип и социальные сети"
-
 #: core/customizer/theme-mods/footer.php:72
-#: core/customizer/theme-mods/header.php:55
+#: core/customizer/theme-mods/header.php:82
 msgid "Name"
 msgstr "Название"
 
 #: core/customizer/theme-mods/footer.php:88
-#: core/customizer/theme-mods/header.php:64 core/shortcodes-ui.php:51
-#: vendor/envato_setup/envato_setup.php:955
+#: core/customizer/theme-mods/header.php:91
+#: vendor/envato_setup/steps/content.php:19
 msgid "Description"
 msgstr "Описание"
 
-#: core/customizer/theme-mods/footer.php:139 core/widgets.php:43
+#: core/customizer/theme-mods/footer.php:104
+#: core/customizer/theme-mods/header.php:122
+msgid "Use Default Font"
+msgstr "Использовать шрифт по умолчанию"
+
+#: core/customizer/theme-mods/footer.php:147
+#: core/customizer/theme-mods/header.php:153
+msgid "Logo Color"
+msgstr "Цвет для лого"
+
+#: core/customizer/theme-mods/footer.php:169
+#: core/customizer/theme-mods/header.php:168
+msgid "Logo Description Color"
+msgstr "Цвет описания лого"
+
+#: core/customizer/theme-mods/footer.php:193
+#: core/customizer/theme-mods/footer.php:202
 msgid "Footer - Columns"
 msgstr "Подвал - Колонки"
 
-#: core/customizer/theme-mods/footer.php:148
+#: core/customizer/theme-mods/footer.php:211 footer.php:46
+#: modules/starter/plot_config.php:249
+msgid "About Us"
+msgstr "О нас"
+
+#: core/customizer/theme-mods/footer.php:233
+msgid "Menu our work"
+msgstr "Меню наша работа"
+
+#: core/customizer/theme-mods/footer.php:255
+msgid "Menu news"
+msgstr "Меню новости"
+
+#: core/customizer/theme-mods/footer.php:277 footer.php:93
+#: modules/starter/plot_config.php:252
+msgid "Security policy"
+msgstr "Политика безопасности"
+
+#: core/customizer/theme-mods/footer.php:299
 msgid "Copyright, license, etc."
 msgstr "Копирайт, лицензия и др."
 
-#: core/customizer/theme-mods/footer.php:155
+#: core/customizer/theme-mods/footer.php:306
 msgid "License information"
 msgstr "Информация о лицензии"
 
-#: core/customizer/theme-mods/footer.php:160 footer.php:10
+#: core/customizer/theme-mods/footer.php:311 footer.php:10
 #, php-format
 msgid "All materials of the site are avaliabe under license %s"
 msgstr "Все материалы сайта доступны по лицензии %s"
 
-#: core/customizer/theme-mods/footer.php:160 footer.php:10
+#: core/customizer/theme-mods/footer.php:311 footer.php:10
 msgid "Creative Commons СС-BY-SA 3.0"
 msgstr "Creative Commons-BY-SA 3.0"
 
-#: core/customizer/theme-mods/footer.php:181
+#: core/customizer/theme-mods/footer.php:332
 msgid ""
 "The creators of the constructor will be grateful if you leave the "
 "information about Kandinsky included."
@@ -959,9 +1604,45 @@ msgstr ""
 "Создатели конструктора будут благодарны, если вы оставите информацию о "
 "Кандинском включенной."
 
-#: core/customizer/theme-mods/footer.php:187
+#: core/customizer/theme-mods/footer.php:345
 msgid "Display the Kandinsky logo"
 msgstr "Показывать логотип «Кандинского»"
+
+#: core/customizer/theme-mods/footer.php:360
+msgid "Footer Background"
+msgstr "Фон подвала"
+
+#: core/customizer/theme-mods/footer.php:375
+msgid "Footer Text Color"
+msgstr "Цвет текста в подвале"
+
+#: core/customizer/theme-mods/footer.php:390
+msgid "Footer Links Color"
+msgstr "Цвет ссылок в подвале"
+
+#: core/customizer/theme-mods/footer.php:405
+msgid "Footer Links Color Hover"
+msgstr "Цвет ссылок в подвале при наведении"
+
+#: core/customizer/theme-mods/footer.php:430
+#: core/customizer/theme-mods/global.php:155
+#: core/customizer/theme-mods/header.php:355
+#: core/customizer/theme-mods/header.php:555
+msgid "Social networks"
+msgstr "Социальные сети"
+
+#: core/customizer/theme-mods/footer.php:431
+#: core/customizer/theme-mods/header.php:356
+msgid "Manage social networks"
+msgstr "Редактировать социальные ссылки"
+
+#: core/customizer/theme-mods/footer.php:439
+msgid "Footer Social Color"
+msgstr "Цвет социальных иконок"
+
+#: core/customizer/theme-mods/footer.php:461
+msgid "Footer Social Color Hover"
+msgstr "Цвет социальных иконок при наведении"
 
 #: core/customizer/theme-mods/global.php:12
 msgid "Global"
@@ -983,19 +1664,31 @@ msgstr "Основной текст"
 msgid "Headings"
 msgstr "Заголовки"
 
-#: core/customizer/theme-mods/global.php:112
+#: core/customizer/theme-mods/global.php:106
 msgid "Page Background color"
 msgstr "Фон страницы"
 
-#: core/customizer/theme-mods/global.php:128
+#: core/customizer/theme-mods/global.php:122
 msgid "Buttons and links color"
 msgstr "Цвет кнопок и ссылок"
 
-#: core/customizer/theme-mods/global.php:207
+#: core/customizer/theme-mods/global.php:123
+msgid "Also used in other decorative elements"
+msgstr "Также используется в других декоративных элементах"
+
+#: core/customizer/theme-mods/global.php:138
+msgid "Buttons and links color hover"
+msgstr "Цвет кнопок и ссылок при наведении"
+
+#: core/customizer/theme-mods/global.php:139
+msgid "Also used in other active elements"
+msgstr "Также используется в других активных элементах"
+
+#: core/customizer/theme-mods/global.php:209
 msgid "Analytics"
 msgstr "Аналитика"
 
-#: core/customizer/theme-mods/global.php:216
+#: core/customizer/theme-mods/global.php:218
 msgid ""
 "Here you can insert the code for user analytics systems, Google Analytics or "
 "Yandex.Metrica. Below are 3 areas of the site where you can paste the code, "
@@ -1007,25 +1700,29 @@ msgstr ""
 "зависимости, от требований устанавливаемых систем, можете вставить код. "
 "Просто скопируйте его сюда."
 
-#: core/customizer/theme-mods/global.php:223
+#: core/customizer/theme-mods/global.php:225
 msgid "Before </head>"
 msgstr "Перед </head>"
 
-#: core/customizer/theme-mods/global.php:226
-#: core/customizer/theme-mods/global.php:238
-#: core/customizer/theme-mods/global.php:250
+#: core/customizer/theme-mods/global.php:228
+#: core/customizer/theme-mods/global.php:240
+#: core/customizer/theme-mods/global.php:252
 msgid "Code can be copied here."
 msgstr "Код можно скопировать сюда."
 
-#: core/customizer/theme-mods/global.php:235
+#: core/customizer/theme-mods/global.php:237
 msgid "At the beginning of <body>"
 msgstr "В начале <body>"
 
-#: core/customizer/theme-mods/global.php:247
+#: core/customizer/theme-mods/global.php:249
 msgid "Before </body>"
 msgstr "Перед </body>"
 
-#: core/customizer/theme-mods/global.php:347
+#: core/customizer/theme-mods/global.php:302
+msgid "Yoast SEO Breadcrumbs"
+msgstr "Цепочки навигации Yoast SEO"
+
+#: core/customizer/theme-mods/global.php:312
 msgid "Additional CSS"
 msgstr "Дополнительные стили"
 
@@ -1037,7 +1734,15 @@ msgstr "Шапка"
 msgid "Select header template"
 msgstr "Выберите шаблон шапки"
 
-#: core/customizer/theme-mods/header.php:44
+#: core/customizer/theme-mods/header.php:33
+msgid "Header Height"
+msgstr "Высота шапки"
+
+#: core/customizer/theme-mods/header.php:48
+msgid "Header Background"
+msgstr "Фон шапки"
+
+#: core/customizer/theme-mods/header.php:71
 msgid ""
 "If only an image is used as a logo, then we recommend uploading an image "
 "with the dimensions of 630x132, or 132x13px for use along with the text."
@@ -1046,258 +1751,295 @@ msgstr ""
 "загрузить изображение размером 630x132 пикселей или 132x13 пикселей для "
 "использования вместе с текстом."
 
-#: core/customizer/theme-mods/header.php:73
+#: core/customizer/theme-mods/header.php:100
 msgid "Custom Text"
 msgstr "Произвольный текст"
 
-#: core/customizer/theme-mods/header.php:89
+#: core/customizer/theme-mods/header.php:116
 msgid "Font For Logo"
 msgstr "Шрифт для лого"
 
-#: core/customizer/theme-mods/header.php:95
-msgid "Use Default Font"
-msgstr "Использовать шрифт по умолчанию"
+#: core/customizer/theme-mods/header.php:199
+msgid "Go to the menu &quot;In the header&quot;"
+msgstr "Переход в раздел Меню &quot;В шапке&quot;"
 
-#: core/customizer/theme-mods/header.php:126
-msgid "Logo Color"
-msgstr "Цвет для лого"
+#: core/customizer/theme-mods/header.php:214
+msgid "Menu Font Size"
+msgstr "Размер шрифта меню"
 
-#: core/customizer/theme-mods/header.php:148
+#: core/customizer/theme-mods/header.php:234
+msgid "Menu Links Color"
+msgstr "Цвет ссылок в меню"
+
+#: core/customizer/theme-mods/header.php:261
+msgid "Menu Links Color Hover"
+msgstr "Цвет ссылки в меню при наведении"
+
+#: core/customizer/theme-mods/header.php:295
 msgid "Email"
 msgstr "Email"
 
-#: core/customizer/theme-mods/header.php:163
+#: core/customizer/theme-mods/header.php:310
 msgid "Phone"
 msgstr "Телефон"
 
-#: core/customizer/theme-mods/header.php:178
+#: core/customizer/theme-mods/header.php:325
 msgid "Address"
 msgstr "Адрес"
 
-#: core/customizer/theme-mods/header.php:194
-#: core/customizer/theme-mods/header.php:363 search.php:21
+#: core/customizer/theme-mods/header.php:340
+#: core/customizer/theme-mods/header.php:494 search.php:19
 msgid "Search"
 msgstr "Поиск"
 
-#: core/customizer/theme-mods/header.php:209
-#: core/customizer/theme-mods/header.php:398
-msgid "Social networks"
-msgstr "Социальные сети"
-
-#: core/customizer/theme-mods/header.php:225
-msgid "Go to the menu \"In the header\""
-msgstr "Переход в раздел Меню \"В шапке\""
-
-#: core/customizer/theme-mods/header.php:240
-#: core/customizer/theme-mods/header.php:378
-msgid "Button"
-msgstr "Кнопка"
-
-#: core/customizer/theme-mods/header.php:248
+#: core/customizer/theme-mods/header.php:379
+#: core/customizer/theme-mods/header.php:524
 msgid "Button Text"
 msgstr "Текст кнопки"
 
-#: core/customizer/theme-mods/header.php:264
+#: core/customizer/theme-mods/header.php:381
+#: core/customizer/theme-mods/header.php:526 core/template-tags.php:395
+#: core/template-tags.php:682 core/template-tags.php:710
+#: core/template-tags.php:801 modules/donations/donations.php:182
+#: modules/starter/plot_config.php:194 modules/starter/plot_config.php:210
+#: modules/starter/plot_config.php:219
+msgid "Help now"
+msgstr "Помочь сейчас"
+
+#: core/customizer/theme-mods/header.php:395
+#: core/customizer/theme-mods/header.php:540
 msgid "Button Link"
 msgstr "Ссылка кнопки"
 
-#: core/customizer/theme-mods/header.php:279
+#: core/customizer/theme-mods/header.php:410
 msgid "Additional Button"
 msgstr "Дополнительная кнопка"
 
-#: core/customizer/theme-mods/header.php:294
+#: core/customizer/theme-mods/header.php:425
 msgid "Additional Button Text"
 msgstr "Текст дополнительный кнопки"
 
-#: core/customizer/theme-mods/header.php:314
+#: core/customizer/theme-mods/header.php:445
 msgid "Additional Button Link"
 msgstr "Ссылка дополнительной кнопке"
 
-#: core/customizer/theme-mods/header.php:334
+#: core/customizer/theme-mods/header.php:465
 msgid "Off-Canvas"
 msgstr "Боковая панель"
 
-#: core/customizer/theme-mods/header.php:340
+#: core/customizer/theme-mods/header.php:471
 msgid "Display Off-Canvas"
 msgstr "Отображать Боковую панель"
 
-#: core/customizer/theme-mods/homepage.php:12
+#: core/customizer/theme-mods/homepage.php:13
 msgid "Main page"
 msgstr "Главная страница"
 
-#: core/customizer/theme-mods/homepage.php:30
-msgid "Hero Background Image"
-msgstr "Главный Фоновое Изображение"
-
-#: core/customizer/theme-mods/homepage.php:41
-#: core/customizer/theme-mods/homepage.php:247
-msgid "Call to action Image"
-msgstr "Изображение Призыв к действию"
-
-#: core/customizer/theme-mods/homepage.php:43
-msgid "Displayed on the right side of the Call to action text"
-msgstr "Отображается на правой стороне текста Призыв к действию"
-
-#: core/customizer/theme-mods/homepage.php:88
+#: core/customizer/theme-mods/migrate.php:12
 #, fuzzy
-#| msgid "Action button caption"
-msgid "Additional action button caption"
-msgstr "Текст на кнопке действия"
+#| msgid "Kandinsky"
+msgid "Kandinsky Migrate"
+msgstr "Кандинский"
 
-#: core/customizer/theme-mods/homepage.php:96
-#, fuzzy
-#| msgid "Call to action URL"
-msgid "Additional call to action URL"
-msgstr "Ссылка на действие"
-
-#: core/customizer/theme-mods/homepage.php:110
-msgid "Overlay Gradient Start Color"
-msgstr "Начальный цвет наложения градиента"
-
-#: core/customizer/theme-mods/homepage.php:121
-msgid "Overlay Gradient End Color"
-msgstr "Конечный цвет наложения градиента"
-
-#: core/customizer/theme-mods/homepage.php:132
-msgid "Text Color"
-msgstr "Цвет текста"
-
-#: core/customizer/theme-mods/homepage.php:163
-msgid "Column "
-msgstr "Колонка "
-
-#: core/customizer/theme-mods/homepage.php:248
-#, fuzzy
-#| msgid "Displayed on the right side of the Call to action text"
-msgid ""
-"Displayed on the left side of the Call to action text. Recommended size "
-"450x300px."
-msgstr "Отображается на правой стороне текста Призыв к действию"
-
-#: core/customizer/theme-mods/homepage.php:259
-msgid "Background Color"
-msgstr "Цвет фона"
-
-#: core/customizer/theme-mods/homepage.php:280 core/widgets.php:13
-msgid "Homepage - Content"
-msgstr "Главная - Контент"
-
-#: core/customizer/theme-mods/other-pages.php:12
-msgid "Create other pages"
-msgstr "Создание других страниц"
-
-#: core/customizer/theme-mods/other-pages.php:17
-#, php-format
-msgid ""
-"If you need to add new page click to a button below. You can manage pages in "
-"the «<a href=\"%s\">Menu > Pages</a>» section. You can edit, add and delete "
-"pages."
+#: core/customizer/theme-mods/migrate.php:23
+msgid "Import customization settings for old theme."
 msgstr ""
-"Если вам нужно создать новую страницу – кликните на кнопку ниже. Страницы "
-"управляются в разделе «<a href=\"%s\">Меню > Страницы</a>». Вы можете "
-"редактировать содержимое страниц, создавать и удалять страницы."
 
-#: core/customizer/theme-mods/other-pages.php:19
-msgid "Add new page"
-msgstr "Добавить новую страницу"
+#: core/customizer/theme-mods/pages.php:12
+msgid "Pages"
+msgstr "Страницы"
 
-#: core/customizer/theme-mods/other-pages.php:21
-msgid "Besides pages, there are Posts in WordPress, use them to add news."
-msgstr ""
-"Помимо страниц в WordPress используются «Записи» – используйте их для "
-"создания новостей."
-
-#: core/customizer/theme-mods/other-pages.php:23
-msgid "Go to posts page"
-msgstr "Перейти на страницу записей"
-
-#: core/customizer/theme-mods/other-pages.php:25
-msgid ""
-"If you need new entities (for example \"Requests\" or \"Events\"), you can "
-"add custom post types using plugin such as Custom Post Type UI. <a href="
-"\"https://wordpress.org/plugins/custom-post-type-ui/\" target=\"_blank"
-"\">https://wordpress.org/plugins/custom-post-type-ui/</a>"
-msgstr ""
-"Если же вам нужно создать совершенно новые сущности (Например, «Заявки» или "
-"«Мероприятия») вы можете создать т.н. custom post type (пользовательский тип "
-"записи), например, с помощью плагина Custom Post Type UI. <a href=\"https://"
-"wordpress.org/plugins/custom-post-type-ui/\" target=\"_blank\">https://"
-"wordpress.org/plugins/custom-post-type-ui/</a>"
-
-#: core/customizer/theme-mods/post-settings.php:12
+#: core/customizer/theme-mods/post-settings.php:13
 msgid "Post Settings"
 msgstr "Страница поста"
 
-#: core/customizer/theme-mods/post-settings.php:20
+#: core/customizer/theme-mods/post-settings.php:21
+#: core/customizer/theme-mods/project-settings.php:21
 msgid "Social Shares"
 msgstr "Социальные сети"
+
+#: core/customizer/theme-mods/post-settings.php:29
+#: core/customizer/theme-mods/project-settings.php:29
+#: modules/project/hooks.php:74
+msgid "Tags"
+msgstr "Теги"
+
+#: core/customizer/theme-mods/post-settings.php:37
+msgid "Related Posts"
+msgstr "Похожие статьи"
+
+#: core/customizer/theme-mods/post-settings.php:45
+msgid "Related Posts Title"
+msgstr "Заголовок похожих статей"
+
+#: core/customizer/theme-mods/post-settings.php:47 core/template-tags.php:906
+msgid "Related posts"
+msgstr "Познакомьтесь с другими проектами"
+
+#: core/customizer/theme-mods/post-settings.php:60
+#: core/customizer/theme-mods/project-settings.php:60
+msgid "Bottom Blocks"
+msgstr "Нижние блоки"
+
+#: core/customizer/theme-mods/project-settings.php:13
+msgid "Project Settings"
+msgstr "Страница проекта"
+
+#: core/customizer/theme-mods/project-settings.php:37
+msgid "Related Projects"
+msgstr "Познакомьтесь с другими проектами"
+
+#: core/customizer/theme-mods/project-settings.php:45
+msgid "Related Projects Title"
+msgstr "Заголовок похожие проекты"
+
+#: core/customizer/theme-mods/project-settings.php:47
+#: core/template-tags.php:919 modules/starter/plot_config.php:234
+msgid "Related projects"
+msgstr "Познакомьтесь с другими проектами"
+
+#: core/editor/assets.php:53
+msgid "Select campaing"
+msgstr "Выбрать компанию"
+
+#: core/editor/assets.php:84
+msgid "All"
+msgstr "Все"
+
+#: core/editor/blocks/events.php:190 page-events.php:143
+msgid "No events"
+msgstr "Нет мероприятий"
+
+#: core/editor/content.php:14
+msgid "Charitable organization &#34;Line of Color&#34;"
+msgstr "Благотворительная организация &#34;Линия Цвета&#34;"
+
+#: core/editor/content.php:14
+msgid ""
+"For more than 10 years we have been helping people with alcoholism, "
+"organizing rehabilitation programs and groups"
+msgstr ""
+"Более 10 лет мы помогаем людям, страдающим алкоголизмом,  организуем "
+"реабилитационные программы и группы"
+
+#: core/editor/functions.php:53
+msgid "White"
+msgstr "Белый"
+
+#: core/editor/functions.php:58
+msgid "Black"
+msgstr "Черный"
+
+#: core/editor/functions.php:63
+msgid "Cyan bluish gray"
+msgstr "Cyan bluish gray"
+
+#: core/editor/functions.php:68
+msgid "Pale Pink"
+msgstr "Cyan bluish gray"
+
+#: core/editor/functions.php:73
+msgid "Vivid Red"
+msgstr "Vivid Red"
+
+#: core/editor/functions.php:78
+msgid "Luminous vivid orange"
+msgstr "Luminous vivid orange"
+
+#: core/editor/functions.php:83
+msgid "Luminous vivid amber"
+msgstr "Luminous vivid amber"
+
+#: core/editor/functions.php:88
+msgid "Light green cyan"
+msgstr "Light green cyan"
+
+#: core/editor/functions.php:93
+msgid "Vivid green cyan"
+msgstr "Vivid green cyan"
+
+#: core/editor/functions.php:98
+msgid "Pale cyan blue"
+msgstr "Vivid green cyan"
+
+#: core/editor/functions.php:103
+msgid "Vivid cyan blue"
+msgstr "Vivid cyan blue"
+
+#: core/editor/functions.php:108
+msgid "Vivid purple"
+msgstr "Vivid purple"
+
+#: core/editor/setup.php:46
+msgid "Blocks"
+msgstr "Блоки"
 
 #: core/extras.php:68
 msgid "More"
 msgstr "Еще"
 
-#: core/extras.php:292 modules/social.php:109
+#: core/extras.php:273 modules/social.php:60
 msgid "VKontakte"
 msgstr "ВКонтакте"
 
-#: core/extras.php:293
+#: core/extras.php:274
 msgid "E.g., https://vk.com/club0123456789"
 msgstr "Например, https://vk.com/teplitsast"
 
-#: core/extras.php:295 modules/social.php:123
+#: core/extras.php:276 modules/social.php:74
 msgid "Odnoklassniki"
 msgstr "Одноклассники"
 
-#: core/extras.php:296
+#: core/extras.php:277
 msgid "E.g., https://ok.ru/profile/0123456789"
 msgstr "Например, https://ok.ru/profile/0123456789"
 
-#: core/extras.php:298 modules/social.php:130
+#: core/extras.php:279 modules/social.php:81
 msgid "Facebook"
 msgstr "Facebook"
 
-#: core/extras.php:299
+#: core/extras.php:280
 msgid "E.g., https://www.facebook.com/your-organization-page"
 msgstr "Например, https://www.facebook.com/TeplitsaST"
 
-#: core/extras.php:301
+#: core/extras.php:282
 msgid "Instagram"
 msgstr "Instagram"
 
-#: core/extras.php:302
+#: core/extras.php:283
 msgid "E.g., https://www.instagram.com/your-organization-page"
 msgstr "Например, https://www.instagram.com/your-organization-page"
 
-#: core/extras.php:304 modules/social.php:116
+#: core/extras.php:285 modules/social.php:67
 msgid "Twitter"
 msgstr "Twitter"
 
-#: core/extras.php:305
+#: core/extras.php:286
 msgid "E.g., https://twitter.com/your-organization-page"
 msgstr "Например, https://twitter.com/TeplitsaST"
 
-#: core/extras.php:307
+#: core/extras.php:288
 msgid "Telegram"
 msgstr "Telegram"
 
-#: core/extras.php:308
+#: core/extras.php:289
 msgid "E.g., https://tlgrm.ru/channels/@your-organization-page"
 msgstr "Например, https://telegram.me/TeplitsaPRO"
 
-#: core/extras.php:310
+#: core/extras.php:291
 msgid "YouTube"
 msgstr "YouTube"
 
-#: core/extras.php:311
+#: core/extras.php:292
 msgid "E.g., https://youtube.com/channel/your-organization-channel"
 msgstr "Например, https://www.youtube.com/user/teplitsast"
 
-#: core/extras.php:356 modules/starter/import_remote_content.php:407
+#: core/extras.php:343 modules/starter/import_remote_content.php:406
 #, php-format
 msgid "Old import files cleanup FAILED: %s."
 msgstr "Очистка старых импортных файлов FAILED: %s."
 
-#: core/extras.php:435
+#: core/extras.php:422
 msgid "Recommended plugins to install"
 msgstr "Рекомендуем установить плагины"
 
@@ -1313,249 +2055,294 @@ msgstr "Стандартная миниатюра"
 msgid "Fixed for embed"
 msgstr "Фиксированный"
 
+#: core/person.php:7
+msgid "Persons categories"
+msgstr "Категории людей"
+
+#: core/person.php:9 modules/org/hooks.php:10
+msgid "Categories"
+msgstr "Категории"
+
+#: core/person.php:10
+msgid "All categories"
+msgstr "Все категории"
+
+#: core/person.php:11 modules/org/hooks.php:12
+msgid "Edit category"
+msgstr "Редактировать категорию"
+
+#: core/person.php:12
+msgid "Preview category"
+msgstr "Предпросмотр"
+
+#: core/person.php:13 modules/org/hooks.php:14
+msgid "Update category"
+msgstr "Обновить категорию"
+
+#: core/person.php:14 modules/org/hooks.php:15
+msgid "Add new category"
+msgstr "Добавить новую страницу"
+
+#: core/person.php:15 modules/org/hooks.php:16
+msgid "New category name"
+msgstr "Название новой категории"
+
+#: core/person.php:29
+msgid "People's profiles"
+msgstr "Профили людей"
+
+#: core/person.php:30
+msgid "Profile"
+msgstr "Профиль"
+
+#: core/person.php:31 core/person.php:32
+msgid "People"
+msgstr "Люди"
+
+#: core/person.php:33 modules/org/hooks.php:34 modules/project/hooks.php:19
+msgid "Add new"
+msgstr "Добавить новый"
+
+#: core/person.php:34
+msgid "Add new profile"
+msgstr "Добавление нового профиля"
+
+#: core/person.php:35
+msgid "New profile"
+msgstr "Новый профиль"
+
+#: core/person.php:36
+msgid "Edit profile"
+msgstr "Редактировать профиль"
+
+#: core/person.php:37
+msgid "Preview profile"
+msgstr "Предпросмотр"
+
+#: core/person.php:38
+msgid "All profiles"
+msgstr "Все профили"
+
+#: core/person.php:39
+msgid "Search profile"
+msgstr "Поиск"
+
 #: core/plugins.php:15
 msgctxt "Yoast SEO"
 msgid "Home"
 msgstr "Главная"
 
-#: core/shortcodes-ui.php:25
-msgid "Key phrase"
-msgstr "Ключевая фраза"
-
-#: core/shortcodes-ui.php:31
-msgid "Phrase text"
-msgstr "Текст фразы"
-
-#: core/shortcodes-ui.php:36 core/shortcodes-ui.php:86
-msgid "Subtitle"
-msgstr "Подзаголовок"
-
-#: core/shortcodes-ui.php:45
-msgid "Image section"
-msgstr "Секция с изображением"
-
-#: core/shortcodes-ui.php:55 modules/person/widgets.php:55
-msgid "Title"
-msgstr "Заголовок"
-
-#: core/shortcodes-ui.php:57
-msgid "Image"
-msgstr "Изображение"
-
-#: core/shortcodes-ui.php:61
-msgid "Select image"
-msgstr "Выбрать изображение"
-
-#: core/shortcodes-ui.php:62
-msgid "Select section image"
-msgstr "Выберите изображение раздела"
-
-#: core/shortcodes-ui.php:64
-msgid "Text placement"
-msgstr "Расположение текста"
-
-#: core/shortcodes-ui.php:68
-msgid "Over image"
-msgstr "Над изображением"
-
-#: core/shortcodes-ui.php:69
-msgid "Under image"
-msgstr "Под изображением"
-
-#: core/shortcodes-ui.php:70
-msgid "Colored block over image"
-msgstr "Цветной блок поверх изображения"
-
-#: core/shortcodes-ui.php:75 modules/cta.php:10
-msgid "CTA block"
-msgstr "Призыв к действию"
-
-#: core/shortcodes-ui.php:81
-msgid "CTA text"
-msgstr "Призыв к действию"
-
-#: core/shortcodes-ui.php:92
-msgid "Link"
-msgstr "Ссылка"
-
-#: core/shortcodes-ui.php:98
-msgid "Button label"
-msgstr "Надпись на кнопке"
-
-#: core/shortcodes-ui.php:107
-msgid "Video caption"
-msgstr "Подпись к видео"
-
-#: core/shortcodes-ui.php:109
-msgid "A caption text"
-msgstr "Текст подписи"
-
-#: core/shortcodes-ui.php:114
-msgid "A list of people"
-msgstr "Список людей"
-
-#: core/shortcodes-ui.php:124 core/shortcodes-ui.php:163
-msgid "List title"
-msgstr "Заголовок списка"
-
-#: core/shortcodes-ui.php:128
-msgid "E.g., \"Our team\""
-msgstr "Например, «Наша команда»"
-
-#: core/shortcodes-ui.php:129
-msgid "Nubmer"
-msgstr "Номер"
-
-#: core/shortcodes-ui.php:131
-msgid "Person categories"
-msgstr "Категории людей"
-
-#: core/shortcodes-ui.php:137
-msgid "Only particular people in the list"
-msgstr "Конкретные люди в списке"
-
-#: core/shortcodes-ui.php:143
-msgid "Custom CSS class"
-msgstr "CSS класс"
-
-#: core/shortcodes-ui.php:148 core/shortcodes-ui.php:186
-msgid "An additional CSS class (or several) for the section"
-msgstr "Дополнительный класс (или несколько) для секции"
-
-#: core/shortcodes-ui.php:153
-msgid "A list of organizations"
-msgstr "Список организаций"
-
-#: core/shortcodes-ui.php:167
-msgid "E.g., \"Our partners\""
-msgstr "Например, «Наши партнеры»"
-
-#: core/shortcodes-ui.php:169
-msgid "Organization categories"
-msgstr "Категории организаций"
-
-#: core/shortcodes-ui.php:175
-msgid "Only particular organizations in the list"
-msgstr "Выводить в списке только указанные организации"
-
-#: core/shortcodes-ui.php:181
-msgid "Section CSS class"
-msgstr "CSS-класс для секции"
-
-#: core/shortcodes.php:261
-msgid "Recommendations:"
-msgstr "Рекомендации:"
-
-#: core/template-tags.php:160
+#: core/template-tags.php:160 page-events.php:21
 msgid "Page"
 msgstr "Страница"
 
-#: core/template-tags.php:239
+#: core/template-tags.php:235
 msgid "Donations history"
 msgstr "История пожертвований"
 
-#: core/template-tags.php:261
+#: core/template-tags.php:257
 msgid "Search results"
 msgstr "Результаты поиска"
 
-#: core/template-tags.php:264
+#: core/template-tags.php:260
 msgid "404: Page not found"
 msgstr "Ошибка 404: Страница не найдена"
 
-#: core/template-tags.php:350
+#: core/template-tags.php:346
 msgid "More projects"
 msgstr "Еще проекты"
 
-#: core/template-tags.php:353
+#: core/template-tags.php:349
 msgid "More news"
 msgstr "Еще новости"
 
-#: core/template-tags.php:354 modules/starter/plot_config.php:303
-#: modules/starter/plot_config.php:799 modules/starter/plot_config.php:811
+#: core/template-tags.php:350
 msgid "Latest news"
 msgstr "Последние новости"
 
-#: core/template-tags.php:381
+#: core/template-tags.php:377
 msgid "Related project"
 msgstr "Похожие проекты"
 
-#: core/template-tags.php:467
-msgid "Registration is closed"
-msgstr "Регистрация закрыта"
-
-#: core/template-tags.php:799
+#: core/template-tags.php:647
 msgid "Search ..."
 msgstr "Поиск ..."
 
-#: core/theme-update/theme-update-checker.php:347
+#: core/theme-update/theme-update-checker.php:348
 #, php-format
-msgid ""
-"There is a new version of theme <strong>%1$s</strong> available. <a href="
-"\"%2$s\">Update to version %3$s</a>."
-msgstr ""
+msgid "There is a new version of theme <strong>%s</strong> available."
+msgstr "Доступна новая версия темы <strong>% s </strong>."
 
-#: core/widgets.php:15
-msgid "Homepage custom content area"
-msgstr "Область контента на главной"
+#: core/theme-update/theme-update-checker.php:349
+#, php-format
+msgid "Update to version %s"
+msgstr "Обновить до версии %s"
 
-#: core/widgets.php:23
-msgid "News - bottom panel"
-msgstr "Новости - Нижняя панель"
+#: footer.php:58 modules/starter/plot_config.php:255
+msgid "Our Work"
+msgstr "Наша работа"
 
-#: core/widgets.php:25
-msgid "Bottom blocks for news archive page"
-msgstr "Блоки внизу страницы архива новостей"
-
-#: core/widgets.php:33
-msgid "Archives - bottom panel"
-msgstr "Архивы - Нижняя панель"
-
-#: core/widgets.php:35
-msgid "Bottom blocks for archive and search pages"
-msgstr "Блоки внизу страницы архивов и страницы поиска"
-
-#: core/widgets.php:45
-msgid ""
-"Footer columns area accepts 4 widgets. Does not accept wide widgets, like "
-"News, Partners, Projects, Donations or CTA. You should place here widgets "
-"like Custom HTML, Custom Menu, Text etc."
-msgstr ""
-"Колонки в подвале сайта. Область принимает 4 виджета. Сюда вы можете "
-"добавить такие виджеты, как HTML-код, Произвольное меню или Текст. Здесь не "
-"поддерживаются большие виджеты, такие как Новости, Партнеры, Проекты, "
-"Пожертвования или Блок призыва к действию."
-
-#: footer.php:60
+#: footer.php:120
 msgid "Project Kandinsky"
 msgstr "Проект Кандинский"
 
-#: footer.php:61
+#: footer.php:121
 msgid "Powered by Kandinsky"
 msgstr "Работает на Кандинском"
 
-#: functions.php:79
+#: functions.php:83
 msgid "Primary menu"
 msgstr "﻿Главное меню"
 
-#: functions.php:210
+#. Author of the plugin/theme
+#: functions.php:235
 msgid "Teplitsa"
 msgstr "Теплица социальных технологий"
 
-#: functions.php:211
+#. Description of the plugin/theme
+#: functions.php:236
 msgid "The beautiful design and useful features for nonprofit website"
 msgstr "Красивый дизайн и полезные функции для сайта НКО"
 
-#: modules/cta.php:6
-msgid "Call To Action block"
-msgstr "Блока призыва к действию"
+#: inc/events/events-functions.php:85
+#, php-format
+msgid "%s before registration closes"
+msgstr "%s до закрытия регистрации"
 
-#: modules/cta.php:23
-msgid "You can change CTA text and link in "
-msgstr "Поменять содержимое блока можно в разделе "
+#: inc/events/events-functions.php:87
+msgid "Registration is closed"
+msgstr "Регистрация закрыта"
 
-#: modules/cta.php:24
-msgid "Appearence / Customize / CTA block settings"
-msgstr "Внешний вид / Настроить / Блок призыва к действию"
+#: inc/events/events-functions.php:101
+msgid "online"
+msgstr "онлайн"
+
+#: inc/events/events-functions.php:232
+msgid "Custom Settings"
+msgstr "Пользовательские настройки"
+
+#: inc/events/events-functions.php:244
+msgid "Additional settings for the single event page"
+msgstr "Дополнительные настройки для страницы мероприятия"
+
+#: inc/events/events-functions.php:250
+msgid "Schedule heading"
+msgstr "Заголовок расписания"
+
+#: inc/events/events-functions.php:251
+msgid "Question heading"
+msgstr "Заголовок вопроса"
+
+#: inc/events/events-functions.php:252
+msgid "Question content"
+msgstr "Содержание вопроса"
+
+#: inc/events/events-functions.php:253
+msgid "Related heading"
+msgstr "Заголовок похожих мероприятий"
+
+#: inc/events/events-functions.php:272
+msgid "Custom Fields"
+msgstr "Настраиваемые поля"
+
+#: inc/events/events-functions.php:296
+msgid "Add new field"
+msgstr "Добавить новое поле"
+
+#: inc/events/events-functions.php:354
+msgid "<strong>ERROR</strong>: Invalid"
+msgstr "<strong>ОШИБКА</strong>: Недействительный"
+
+#: inc/events/events-login-form.php:9
+#, php-format
+msgid "%sLog in%s if you already have an account with us."
+msgstr "%sВойдите%s, если у вас уже есть учетная запись на нашем сайте."
+
+#: inc/events/events-login-form.php:14
+msgid "Username"
+msgstr "Имя пользователя"
+
+#: inc/events/events-login-form.php:15
+msgid "Password"
+msgstr "Пароль"
+
+#: inc/events/events-metabox.php:33
+msgid "Additional settings"
+msgstr "Дополнительные настройки"
+
+#: inc/events/events-metabox.php:54
+msgid "Seat reservation"
+msgstr "Бронирование места"
+
+#: inc/events/events-metabox.php:61
+msgid "Sticky on top"
+msgstr "Прикрепить наверх"
+
+#: inc/events/events-metabox.php:63
+msgid "Sticky"
+msgstr "Прикрепить"
+
+#: inc/events/events-metabox.php:68
+msgid "Booking form header"
+msgstr "Заголовок формы бронирования"
+
+#: inc/events/events-metabox.php:75
+msgid "Booking form description"
+msgstr "Описание формы бронирования"
+
+#: inc/events/events-metabox.php:82
+msgid "Speakers"
+msgstr "Спикеры"
+
+#: inc/events/events-metabox.php:99
+msgid "Manage speakers."
+msgstr "Управление спикерами."
+
+#: inc/events/events-metabox.php:102
+msgid "There are no speakers on the site."
+msgstr "На сайте нет ни одного спикера."
+
+#: inc/events/events-metabox.php:103
+msgid "Add a new speaker."
+msgstr "Добавить нового спикера."
+
+#: inc/events/events-metabox.php:117 inc/events/events-options.php:37
+#: inc/events/events-tags.php:160
+msgid "Schedule"
+msgstr "Расписание"
+
+#: inc/events/events-metabox.php:131
+msgid "Remove schedule"
+msgstr "Удалить расписание"
+
+#: inc/events/events-metabox.php:166
+msgid "Add schedule"
+msgstr "Добавить расписание"
+
+#: inc/events/events-options.php:24 single-event.php:62
+msgid "Book Now"
+msgstr "Забронировать"
+
+#: inc/events/events-options.php:38 inc/events/events-tags.php:211
+msgid "Still have questions?"
+msgstr "Остались вопросы?"
+
+#: inc/events/events-options.php:39
+msgid ""
+"Write to Alisa Tsvetkova in Telegram @itisalise or email alisetsvetkova@te-"
+"st.ru"
+msgstr ""
+"Пишите Алисе Цветковой в Telegram @itisalise или на почту alisetsvetkova@te-"
+"st.ru"
+
+#: inc/events/events-options.php:40
+#: template-parts/entry/entry-event-related.php:12
+msgid "More events"
+msgstr "Еще мероприятия"
+
+#: inc/events/events-tags.php:123
+msgid "Msk"
+msgstr "Мск"
 
 #: modules/donations/donations.php:60
 msgid "Please, specify your donation amount"
@@ -1602,11 +2389,7 @@ msgstr "Возраст"
 msgid "Donations short list"
 msgstr "Краткий список жертвователей"
 
-#: modules/donations/widgets.php:125
-msgid "Heading"
-msgstr "Заголовок"
-
-#: modules/donations/widgets.php:130 modules/news.php:95
+#: modules/donations/widgets.php:130
 msgid "Qty:"
 msgstr "Кол.-во:"
 
@@ -1614,339 +2397,191 @@ msgstr "Кол.-во:"
 msgid "Exclude campaigns:"
 msgstr "Исключить кампании:"
 
-#: modules/news.php:9
-msgid "Latest news list"
-msgstr "Список последних новостей"
-
-#: modules/news.php:87 modules/org/widgets.php:47 modules/ourorg.php:69
-#: modules/project/widgets.php:47
-msgid "Title:"
-msgstr "Заголовок:"
-
-#: modules/news.php:102
-msgid "More Text:"
-msgstr "Текст ссылки:"
-
-#: modules/news.php:110
-msgid "More Url:"
-msgstr "URL ссылки:"
-
 #: modules/org/hooks.php:8
-msgid "Parter Categories"
-msgstr "Категории людей"
-
-#: modules/org/hooks.php:9 modules/person/hooks.php:9
-#: modules/person/widgets.php:65
-msgid "Category"
-msgstr "Категория"
-
-#: modules/org/hooks.php:10 modules/person/hooks.php:10
-msgid "Categories"
-msgstr "Категории"
+msgid "Partner Categories"
+msgstr "Категория партнеров"
 
 #: modules/org/hooks.php:11
 msgid "All Categories"
 msgstr "Все категории"
 
-#: modules/org/hooks.php:12 modules/person/hooks.php:12
-msgid "Edit category"
-msgstr "Редактировать категорию"
-
-#: modules/org/hooks.php:13 modules/org/hooks.php:37
+#: modules/org/hooks.php:13 modules/org/hooks.php:38
 msgid "Preview"
 msgstr "Предпросмотр"
 
-#: modules/org/hooks.php:14 modules/person/hooks.php:14
-msgid "Update category"
-msgstr "Обновить категорию"
-
-#: modules/org/hooks.php:15 modules/person/hooks.php:15
-msgid "Add new category"
-msgstr "Добавить новую страницу"
-
-#: modules/org/hooks.php:16 modules/person/hooks.php:16
-msgid "New category name"
-msgstr "Название новой категории"
-
-#: modules/org/hooks.php:30
+#: modules/org/hooks.php:31
 msgid "Partner"
 msgstr "Партнер"
 
-#: modules/org/hooks.php:32 modules/org/hooks.php:34
+#: modules/org/hooks.php:33 modules/org/hooks.php:35
 msgid "Add partner"
 msgstr "Добавление партнера"
 
-#: modules/org/hooks.php:33 modules/person/hooks.php:33
-#: modules/project/hooks.php:13
-msgid "Add new"
-msgstr "Добавить новый"
-
-#: modules/org/hooks.php:35
+#: modules/org/hooks.php:36
 msgid "New partner"
 msgstr "Новый партнер"
 
-#: modules/org/hooks.php:36
+#: modules/org/hooks.php:37
 msgid "Edit partner"
 msgstr "Редактировать партнера"
 
-#: modules/org/hooks.php:38
+#: modules/org/hooks.php:39
 msgid "All partners"
 msgstr "Все партнеры"
 
-#: modules/org/widgets.php:8
-msgid "Partner organization banners list"
-msgstr "Список баннеров партнерских организаций"
-
-#: modules/org/widgets.php:52 modules/project/widgets.php:52
-msgid "Number:"
-msgstr "Количество:"
-
-#: modules/ourorg.php:8
-msgid "Our organization description on main page"
-msgstr "Описание организации на главной странице"
-
-#: modules/ourorg.php:17
-msgid "Our organization"
-msgstr "Наша организация"
-
-#: modules/ourorg.php:73
-msgid "Content:"
-msgstr "Контент:"
-
-#: modules/person/hooks.php:8
-msgid "Persons categories"
-msgstr "Категории людей"
-
-#: modules/person/hooks.php:11
-msgid "All categories"
-msgstr "Все категории"
-
-#: modules/person/hooks.php:13
-msgid "Preview category"
-msgstr "Предпросмотр"
-
-#: modules/person/hooks.php:29
-msgid "People's profiles"
-msgstr "Профили людей"
-
-#: modules/person/hooks.php:30
-msgid "Profile"
-msgstr "Профиль"
-
-#: modules/person/hooks.php:31 modules/person/hooks.php:32
-msgid "People"
-msgstr "Люди"
-
-#: modules/person/hooks.php:34
-msgid "Add new profile"
-msgstr "Добавление нового профиля"
-
-#: modules/person/hooks.php:35
-msgid "New profile"
-msgstr "Новый профиль"
-
-#: modules/person/hooks.php:36
-msgid "Edit profile"
-msgstr "Редактировать профиль"
-
-#: modules/person/hooks.php:37
-msgid "Preview profile"
-msgstr "Предпросмотр"
-
-#: modules/person/hooks.php:38
-msgid "All profiles"
-msgstr "Все профили"
-
-#: modules/person/hooks.php:39
-msgid "Search profile"
-msgstr "Поиск"
-
-#: modules/person/hooks.php:64 modules/person/tax.php:6
-msgid "Volonteers"
-msgstr "Волонтеры"
-
-#: modules/person/hooks.php:72
-msgid "Board"
-msgstr "Руководство"
-
-#: modules/person/widgets.php:7
-msgid "People list"
-msgstr "Галерея людей"
-
-#: modules/person/widgets.php:8
-msgid "Gallery of people - eg. team"
-msgstr "Галерея карточек людей - например, команда"
-
-#: modules/person/widgets.php:60
-msgid "Number of persons to output"
-msgstr "Число человек для показа"
-
-#: modules/person/widgets.php:67
-msgid "Select a category"
-msgstr "Выберите категорию"
-
-#: modules/project/hooks.php:10
+#: modules/project/hooks.php:16
 msgid "Project"
 msgstr "Проект"
 
-#: modules/project/hooks.php:12 modules/project/hooks.php:14
+#: modules/project/hooks.php:18 modules/project/hooks.php:20
 msgid "Add project"
 msgstr "Добавить проект"
 
-#: modules/project/hooks.php:15
+#: modules/project/hooks.php:21
 msgid "New project"
 msgstr "Новый проект"
 
-#: modules/project/hooks.php:16
+#: modules/project/hooks.php:22
 msgid "Edit project"
 msgstr "Редактировать проект"
 
-#: modules/project/hooks.php:17
+#: modules/project/hooks.php:23
 msgid "Preview project"
 msgstr "Предпросмотр"
 
-#: modules/project/hooks.php:18 modules/starter/plot_config.php:282
-#: modules/starter/plot_config.php:784 modules/starter/plot_config.php:789
+#: modules/project/hooks.php:24
 msgid "All projects"
 msgstr "Все проекты"
 
-#: modules/project/hooks.php:19
+#: modules/project/hooks.php:25
 msgid "Search projects"
 msgstr "Искать проекты"
 
-#: modules/project/hooks.php:58
+#: modules/project/hooks.php:60
 msgctxt "taxonomy general name"
 msgid "Tags"
 msgstr "Теги"
 
-#: modules/project/hooks.php:59
+#: modules/project/hooks.php:61
 msgctxt "taxonomy singular name"
 msgid "Tag"
 msgstr "Тег"
 
-#: modules/project/hooks.php:60
+#: modules/project/hooks.php:62
 msgid "Search Tags"
 msgstr "Поиск Тегов"
 
-#: modules/project/hooks.php:61
+#: modules/project/hooks.php:63
 msgid "Popular Tags"
 msgstr "Популярные теги"
 
-#: modules/project/hooks.php:62
+#: modules/project/hooks.php:64
 msgid "All Tags"
 msgstr "Все теги"
 
-#: modules/project/hooks.php:65
+#: modules/project/hooks.php:67
 msgid "Edit Tag"
 msgstr "Редактировать тег"
 
-#: modules/project/hooks.php:66
+#: modules/project/hooks.php:68
 msgid "Update Tag"
 msgstr "Обновить"
 
-#: modules/project/hooks.php:67
+#: modules/project/hooks.php:69
 msgid "Add New Tag"
 msgstr "Добавить новый тег"
 
-#: modules/project/hooks.php:68
+#: modules/project/hooks.php:70
 msgid "New Tag Name"
 msgstr "Название нового тега"
 
-#: modules/project/hooks.php:69
-msgid "Separate tags with commas"
-msgstr ""
-
-#: modules/project/hooks.php:70
-msgid "Add or remove tags"
-msgstr ""
-
 #: modules/project/hooks.php:71
-msgid "Choose from the most used tags"
-msgstr ""
+msgid "Separate tags with commas"
+msgstr "Разделить теги запятой"
 
 #: modules/project/hooks.php:72
-msgid "Tags"
-msgstr "Теги"
+msgid "Add or remove tags"
+msgstr "Добавить или удалить теги"
 
-#: modules/project/widgets.php:8
-msgid "Projects short list"
-msgstr "Блоки проектов"
+#: modules/project/hooks.php:73
+msgid "Choose from the most used tags"
+msgstr "Выбрать из часто используемые"
 
-#: modules/project/widgets.php:66 modules/starter/plot_config.php:281
-#: modules/starter/plot_config.php:529 modules/starter/plot_config.php:788
-msgid "Kandinsky projects block menu"
-msgstr "Ссылки в блоке проектов"
-
-#: modules/social.php:107
+#: modules/social.php:58
 msgid "Share on VK"
 msgstr "Поделиться ВКонтакте"
 
-#: modules/social.php:114
+#: modules/social.php:65
 msgid "Share on Twitter"
 msgstr "Поделиться в Twitter"
 
-#: modules/social.php:121
+#: modules/social.php:72
 msgid "Share on OK"
 msgstr "Поделиться в Одноклассниках"
 
-#: modules/social.php:128
+#: modules/social.php:79
 msgid "Share on Facebook"
 msgstr "Поделиться в Facebook"
 
-#: modules/social.php:158
+#: modules/social.php:108
 msgid "Share on WhatsApp"
 msgstr "Поделиться в WhatsApp"
 
-#: modules/social.php:165
+#: modules/social.php:115
 msgid "Share on Telegram"
 msgstr "Поделиться в Telegram"
 
-#: modules/social.php:172
+#: modules/social.php:122
 msgid "Share on Viber"
 msgstr "Поделиться на Viber"
 
-#: modules/starter/import_remote_content.php:312
-#, php-format
-msgid "Plot name is unknown or not given: %s"
-msgstr "Нет названия сценария: %s"
-
-#: modules/starter/import_remote_content.php:396
+#: modules/starter/import_remote_content.php:395
 msgid "No zip file"
 msgstr "ZIP-файл не найден"
 
-#: modules/starter/import_remote_content.php:400
+#: modules/starter/import_remote_content.php:399
 #, php-format
 msgid "Zip file not found: %s"
 msgstr ".zip-файл не найден: %s"
 
-#: modules/starter/import_remote_content.php:424
+#: modules/starter/import_remote_content.php:423
 #, php-format
 msgid "Unzip FAILED: %s to %s. Error: %s"
 msgstr "Процесс разархивирования НЕ УДАЛСЯ: %s – %s. Ошибка: %s"
 
-#: modules/starter/import_remote_content.php:437
+#: modules/starter/import_remote_content.php:436
 msgid "No git content dir!"
 msgstr "Git-директория не найдена!"
 
-#: modules/starter/import_remote_content.php:441
+#: modules/starter/import_remote_content.php:440
 #, php-format
 msgid "Unzipped dir not found: %s"
 msgstr "Разархивированная директория не найдена: %s"
 
-#: modules/starter/import_remote_content.php:447
+#: modules/starter/import_remote_content.php:446
 #, php-format
 msgid "Plot dir not found: %s"
 msgstr "Директория сценария не найдена: %s"
 
-#: modules/starter/plot_config.php:217
+#: modules/starter/plot_config.php:126
 msgid "Line of Color"
 msgstr "Линия Цвета"
 
-#: modules/starter/plot_config.php:218 modules/starter/plot_config.php:240
-msgid "We help people to fight alcohol addiction"
-msgstr "Помогаем людям с алкогольной зависимостью"
+#: modules/starter/plot_config.php:137
+#: modules/starter/plot_data_builder.php:1131
+#: modules/starter/plot_data_builder.php:1133
+msgid "Primary Menu"
+msgstr "Главное меню"
 
-#: modules/starter/plot_config.php:220
+#: modules/starter/plot_config.php:143
+msgid "Kandinsky our work footer menu"
+msgstr "Меню «Наша работа» в подвале"
+
+#: modules/starter/plot_config.php:149
+msgid "Kandinsky news footer menu"
+msgstr "Меню «Новости» в подвале"
+
+#: modules/starter/plot_config.php:176
 msgid ""
 "Our office, training rooms and support group rooms are open daily from 9:00 "
 "am to 10:00 pm."
@@ -1954,7 +2589,7 @@ msgstr ""
 "Наш офис, учебные залы и помещения групп поддержки открыты ежедневно с 9:00 "
 "до 22:00 часов."
 
-#: modules/starter/plot_config.php:228
+#: modules/starter/plot_config.php:177
 msgid ""
 "Moscow, 7th Stroiteley Street, 17, office: 211-217\n"
 "+7 (495) 787-87-23"
@@ -1962,137 +2597,34 @@ msgstr ""
 "Москва, 7-я улица Строителей, 17, оф.: 211-217\n"
 "+7 (495) 787-87-23"
 
-#: modules/starter/plot_config.php:230 modules/starter/plot_config.php:490
-#: modules/starter/plot_config.php:749
+#: modules/starter/plot_config.php:182
+#, php-format
 msgid ""
 "By making a donation, the user concludes a donation agreement by accepting a "
-"public offer,\n"
-"which is located"
+"public offer, which is located %shere%s."
 msgstr ""
 "Совершая пожертвование, пользователь заключает договор пожертвования путем "
-"акцепта публичной оферты,\n"
-"\vкоторый находится"
+"акцепта публичной оферты, которая находится %sздесь%s."
 
-#: modules/starter/plot_config.php:231 modules/starter/plot_config.php:491
-#: modules/starter/plot_config.php:750
-msgid "here"
-msgstr "здесь"
-
-#: modules/starter/plot_config.php:234 modules/starter/plot_config.php:494
-#: modules/starter/plot_config.php:753
+#: modules/starter/plot_config.php:183
 msgid "Personal data processing policy"
 msgstr "Политика обработки персональных данных"
 
-#: modules/starter/plot_config.php:236 modules/starter/plot_config.php:496
-#: modules/starter/plot_config.php:755
+#: modules/starter/plot_config.php:184
 msgid "Privacy policy"
 msgstr "Политика конфиденциальности"
 
-#: modules/starter/plot_config.php:241
-msgid ""
-"There are 877 people in our region who suffer from alcohol addiction. Your "
-"support will help organize a rehabilitation program for them."
-msgstr ""
-"В Нашей области 877 человек, которые страдают от алкогольной зависимости. "
-"Ваша поддержка поможет организовать для них реабилитационную программу."
+#: modules/starter/plot_config.php:233
+msgid "Related items"
+msgstr "Еще по теме"
 
-#: modules/starter/plot_config.php:243
-msgid "Charitable organization \"Line of Color\""
-msgstr "Благотворительная организация  «Линия Цвета»"
+#: modules/starter/plot_config.php:256
+msgid "kandinsky-our-work-footer-menu"
+msgstr "menyu-nasha-rabota-v-podvale"
 
-#: modules/starter/plot_config.php:244
-msgid ""
-"For more than 10 years we have been helping people with alcoholism, "
-"organizing rehabilitation programs and groups"
-msgstr ""
-"Более 10 лет мы помогаем людям, страдающим алкоголизмом,  организуем "
-"реабилитационные программы и группы"
-
-#: modules/starter/plot_config.php:252 modules/starter/plot_config.php:507
-#: modules/starter/plot_config.php:766 template-parts/headers/header-0.php:57
-#: template-parts/offcanvas.php:28
-msgid "Main menu"
-msgstr "Главное меню"
-
-#: modules/starter/plot_config.php:253 modules/starter/plot_config.php:508
-#: modules/starter/plot_config.php:767
-msgid "Home"
-msgstr "Главная"
-
-#: modules/starter/plot_config.php:263
-#: modules/starter/plot_data_builder.php:1051
-#: modules/starter/plot_data_builder.php:1053
-msgid "Primary Menu"
-msgstr "Главное меню"
-
-#: modules/starter/plot_config.php:269 modules/starter/plot_config.php:517
-#: modules/starter/plot_config.php:777 modules/starter/sidebars.php:13
-msgid "Kandinsky our work footer menu"
-msgstr "Меню «Наша работа» в подвале"
-
-#: modules/starter/plot_config.php:275 modules/starter/plot_config.php:523
-#: modules/starter/plot_config.php:782 modules/starter/sidebars.php:16
-msgid "Kandinsky news footer menu"
-msgstr "Меню «Новости» в подвале"
-
-#: modules/starter/plot_config.php:294 modules/starter/plot_config.php:299
-#: modules/starter/plot_config.php:304 modules/starter/plot_config.php:802
-#: modules/starter/plot_config.php:807 modules/starter/plot_config.php:812
-msgid "Our partners"
-msgstr "Наши партнеры"
-
-#: modules/starter/plot_config.php:478
-msgid "Save Dubrovino Park"
-msgstr "Защитим Дубровино"
-
-#: modules/starter/plot_config.php:479
-msgid "Initiative group"
-msgstr "Градозащитная инициатива"
-
-#: modules/starter/plot_config.php:480
-msgid "Let's stop deforestation together!"
-msgstr "Вместе остановим уничтожение леса!"
-
-#: modules/starter/plot_config.php:500
-msgid "Start protecting"
-msgstr "Начать защищать"
-
-#: modules/starter/plot_config.php:511 modules/starter/plot_config.php:524
-#: modules/starter/plot_config.php:530
-msgid "Extertise"
-msgstr "Экспертиза"
-
-#: modules/starter/plot_config.php:539 modules/starter/plot_config.php:551
-msgid "Latest News"
-msgstr "Последние новости"
-
-#: modules/starter/plot_config.php:541 modules/starter/plot_config.php:546
-msgid "Expertise"
-msgstr "Экспертиза"
-
-#: modules/starter/plot_config.php:542 modules/starter/plot_config.php:547
-#: modules/starter/plot_config.php:552
-msgid "Media about us"
-msgstr "О нас пишут"
-
-#: modules/starter/plot_config.php:740
-msgid "We are with you"
-msgstr "Мы с тобой"
-
-#: modules/starter/plot_config.php:741
-msgid "Charitable foundation to help children from low-income families"
-msgstr "Благотворительный фонд помощи детям из малоимущих семей"
-
-#: modules/starter/plot_config.php:747
-msgid ""
-"Arkhangelsk region, Velsky district, Velsk, st. Rogozin, 48, office. 12,"
-msgstr ""
-"Архангельская область, Вельский район, г. Вельск, ул. Рогозина, д. 48, каб. "
-"12,"
-
-#: modules/starter/plot_config.php:786
-msgid "You helped"
-msgstr "Вы помогли"
+#: modules/starter/plot_config.php:258
+msgid "kandinsky-news-footer-menu"
+msgstr "menyu-novosti-v-podvale"
 
 #: modules/starter/plot_data_builder.php:81
 msgid ""
@@ -2126,56 +2658,44 @@ msgstr "Я принимаю"
 msgid "Terms of Service"
 msgstr "Условия договора оферты"
 
-#: modules/starter/plot_data_builder.php:256
-#: modules/starter/plot_data_builder.php:264
-#: modules/starter/plot_data_builder.php:268
-#: modules/starter/plot_data_builder.php:272
-#: modules/starter/plot_data_builder.php:276
-#: modules/starter/plot_data_builder.php:280
-msgid "Martynov Semyon Semyonovich"
-msgstr "Мартынов Семен Семенович"
-
-#: modules/starter/plot_data_builder.php:257
-#: modules/starter/plot_data_builder.php:265
-#: modules/starter/plot_data_builder.php:269
-#: modules/starter/plot_data_builder.php:273
-#: modules/starter/plot_data_builder.php:277
-msgid "Korovin Ostap Rudolfovich"
-msgstr "Коровин Остап Рудольфович"
-
 #: modules/starter/plot_data_builder.php:258
 #: modules/starter/plot_data_builder.php:266
 #: modules/starter/plot_data_builder.php:270
 #: modules/starter/plot_data_builder.php:274
 #: modules/starter/plot_data_builder.php:278
-msgid "Bykov Ivan Ivanovich"
-msgstr "Быков Иван Иванович"
+#: modules/starter/plot_data_builder.php:282
+msgid "Martynov Semyon Semyonovich"
+msgstr "Мартынов Семен Семенович"
 
 #: modules/starter/plot_data_builder.php:259
 #: modules/starter/plot_data_builder.php:267
 #: modules/starter/plot_data_builder.php:271
 #: modules/starter/plot_data_builder.php:275
 #: modules/starter/plot_data_builder.php:279
+msgid "Korovin Ostap Rudolfovich"
+msgstr "Коровин Остап Рудольфович"
+
+#: modules/starter/plot_data_builder.php:260
+#: modules/starter/plot_data_builder.php:268
+#: modules/starter/plot_data_builder.php:272
+#: modules/starter/plot_data_builder.php:276
+#: modules/starter/plot_data_builder.php:280
+msgid "Bykov Ivan Ivanovich"
+msgstr "Быков Иван Иванович"
+
+#: modules/starter/plot_data_builder.php:261
+#: modules/starter/plot_data_builder.php:269
+#: modules/starter/plot_data_builder.php:273
+#: modules/starter/plot_data_builder.php:277
+#: modules/starter/plot_data_builder.php:281
 msgid "Moose Veniamin Robertovich"
 msgstr "Лось Вениамин Робертович"
 
-#: modules/starter/plot_data_builder.php:522
+#: modules/starter/plot_data_builder.php:567
 msgid "Home page"
 msgstr "Главная"
 
-#: modules/starter/sidebars.php:25
-msgid "About Us"
-msgstr "О нас"
-
-#: modules/starter/sidebars.php:33
-msgid "Our Work"
-msgstr "Наша работа"
-
-#: modules/starter/sidebars.php:48
-msgid "Security policy"
-msgstr "Политика безопасности"
-
-#: search.php:28
+#: search.php:24
 #, php-format
 msgid "%s result"
 msgid_plural "%s results"
@@ -2183,11 +2703,11 @@ msgstr[0] "%s результат"
 msgstr[1] "%s результата"
 msgstr[2] "%s результатов"
 
-#: search.php:35
+#: search.php:32
 msgid "Enter terms for search in the form and hit Enter"
 msgstr "Укажите слова для поиска в форме и нажмите Enter"
 
-#: search.php:39
+#: search.php:36
 msgid "Nothing found under your request"
 msgstr "По вашему запросу ничего не найдено"
 
@@ -2199,13 +2719,33 @@ msgstr "Найти"
 msgid "Press Enter"
 msgstr "Нажмите Enter"
 
-#: single.php:113
-msgid "Related items"
-msgstr "Еще по теме"
+#: src/experimental/donations.js:47
+msgid "Leyka Donations"
+msgstr "Пожертвования"
 
-#: single.php:126
-msgid "Related projects"
-msgstr "Познакомьтесь с другими проектами"
+#: src/experimental/donations.js:50
+msgid "donation"
+msgstr "пожертвования"
+
+#: src/experimental/donations.js:50
+msgid "donate"
+msgstr "donate"
+
+#: src/experimental/donations.js:91
+msgid "Campaign Settings"
+msgstr "Настройки кампании"
+
+#: src/experimental/donations.js:103
+msgid "Qty"
+msgstr "Кол.-во"
+
+#: src/experimental/donations.js:111
+msgid "Exclude campaigns"
+msgstr "Исключить кампании"
+
+#: template-parts/offcanvas.php:28
+msgid "Main menu"
+msgstr "Главное меню"
 
 #: vendor/class-tgm-plugin-activation.php:375
 #: vendor/class-tgm-plugin-activation.php:816
@@ -2255,6 +2795,7 @@ msgctxt "plugin A *and* plugin B"
 msgid "and"
 msgstr "и"
 
+#. translators: %s: version number
 #: vendor/class-tgm-plugin-activation.php:1971
 #, php-format
 msgid "TGMPA v%s"
@@ -2304,12 +2845,14 @@ msgstr "Требуется обновление"
 msgid "Update recommended"
 msgstr "Рекомендуется обновление"
 
+#. translators: 1: install status, 2: update status
 #: vendor/class-tgm-plugin-activation.php:2331
 #, php-format
 msgctxt "Install/Update Status"
 msgid "%1$s, %2$s"
 msgstr "%1$s, %2$s"
 
+#. translators: 1: number of plugins.
 #: vendor/class-tgm-plugin-activation.php:2377
 #, php-format
 msgctxt "plugins"
@@ -2319,6 +2862,7 @@ msgstr[0] "Все <span class=\"count\">(%s)</span>"
 msgstr[1] "Все <span class=\"count\">(%s)</span>"
 msgstr[2] "Все <span class=\"count\">(%s)</span>"
 
+#. translators: 1: number of plugins.
 #: vendor/class-tgm-plugin-activation.php:2381
 #, php-format
 msgid "To Install <span class=\"count\">(%s)</span>"
@@ -2327,6 +2871,7 @@ msgstr[0] "Для установки <span class=\"count\">(%s)</span>"
 msgstr[1] "Для установки <span class=\"count\">(%s)</span>"
 msgstr[2] "Для установки <span class=\"count\">(%s)</span>"
 
+#. translators: 1: number of plugins.
 #: vendor/class-tgm-plugin-activation.php:2385
 #, php-format
 msgid "Update Available <span class=\"count\">(%s)</span>"
@@ -2335,6 +2880,7 @@ msgstr[0] "Доступно обновление <span class=\"count\">(%s)</spa
 msgstr[1] "Доступно обновление <span class=\"count\">(%s)</span>"
 msgstr[2] "Доступно Обновление <span class=\"count\">(%s)</span>"
 
+#. translators: 1: number of plugins.
 #: vendor/class-tgm-plugin-activation.php:2389
 #, php-format
 msgid "To Activate <span class=\"count\">(%s)</span>"
@@ -2381,20 +2927,23 @@ msgid "Version"
 msgstr "Версия"
 
 #: vendor/class-tgm-plugin-activation.php:2543
-#: vendor/envato_setup/envato_setup.php:956
+#: vendor/envato_setup/steps/content.php:20
 msgid "Status"
 msgstr "Статус"
 
+#. translators: %2$s: plugin name in screen reader markup
 #: vendor/class-tgm-plugin-activation.php:2592
 #, php-format
 msgid "Install %2$s"
 msgstr "Установить %2$s"
 
+#. translators: %2$s: plugin name in screen reader markup
 #: vendor/class-tgm-plugin-activation.php:2597
 #, php-format
 msgid "Update %2$s"
 msgstr "Обновить %2$s"
 
+#. translators: %2$s: plugin name in screen reader markup
 #: vendor/class-tgm-plugin-activation.php:2603
 #, php-format
 msgid "Activate %2$s"
@@ -2405,12 +2954,12 @@ msgid "Upgrade message from the plugin author:"
 msgstr "Обновить сообщение от автора плагина:"
 
 #: vendor/class-tgm-plugin-activation.php:2712
-#: vendor/envato_setup/envato_setup.php:667
+#: vendor/envato_setup/steps/plugins.php:82
 msgid "Update"
 msgstr "Обновить"
 
 #: vendor/class-tgm-plugin-activation.php:2715
-#: vendor/envato_setup/envato_setup.php:669
+#: vendor/envato_setup/steps/plugins.php:84
 msgid "Activate"
 msgstr "Активировать"
 
@@ -2452,16 +3001,19 @@ msgstr[2] "Плагин успешно активирован:"
 msgid "Plugin activation failed."
 msgstr "Активация плагина не удалась."
 
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
 #: vendor/class-tgm-plugin-activation.php:3487
 #, php-format
 msgid "Updating Plugin %1$s (%2$d/%3$d)"
 msgstr "Обновление плагина %1$s (%2$d/%3$d)"
 
+#. translators: 1: plugin name, 2: error message.
 #: vendor/class-tgm-plugin-activation.php:3490
 #, php-format
 msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
 msgstr "Произошла ошибка при установке %1$s: <strong>%2$s</strong>."
 
+#. translators: 1: plugin name.
 #: vendor/class-tgm-plugin-activation.php:3492
 #, php-format
 msgid "The installation of %1$s failed."
@@ -2475,6 +3027,7 @@ msgstr ""
 "Запускается процесс установки и активации. Этот процесс может занять "
 "некоторое время на некоторых хостах, поэтому, пожалуйста, будьте терпеливы."
 
+#. translators: 1: plugin name.
 #: vendor/class-tgm-plugin-activation.php:3498
 #, php-format
 msgid "%1$s installed and activated successfully."
@@ -2494,6 +3047,7 @@ msgstr "Скрыть детали"
 msgid "All installations and activations have been completed."
 msgstr "Все установки и активации завершены."
 
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
 #: vendor/class-tgm-plugin-activation.php:3501
 #, php-format
 msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
@@ -2507,6 +3061,7 @@ msgstr ""
 "Процесс установки начинается. Этот процесс может занять некоторое время на "
 "некоторых хостах, поэтому, пожалуйста, будьте терпеливы."
 
+#. translators: 1: plugin name.
 #: vendor/class-tgm-plugin-activation.php:3506
 #, php-format
 msgid "%1$s installed successfully."
@@ -2516,6 +3071,7 @@ msgstr "%1$s успешно установлен."
 msgid "All installations have been completed."
 msgstr "Все установки завершены."
 
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
 #: vendor/class-tgm-plugin-activation.php:3509
 #, php-format
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
@@ -2575,15 +3131,6 @@ msgstr ""
 msgid "Introduction"
 msgstr "Начало"
 
-#: vendor/envato_setup/envato_setup.php:309
-msgid "Template"
-msgstr "Шаблон"
-
-#: vendor/envato_setup/envato_setup.php:324
-#: vendor/envato_setup/envato_setup.php:900
-msgid "Settings"
-msgstr "Параметры"
-
 #: vendor/envato_setup/envato_setup.php:336
 msgctxt "One word \"support service\" variant"
 msgid "Support"
@@ -2610,14 +3157,14 @@ msgid "Select Logo"
 msgstr "Выбрать логотип"
 
 #: vendor/envato_setup/envato_setup.php:398
-#: vendor/envato_setup/envato_setup.php:1087
-#: vendor/envato_setup/envato_setup.php:1548
+#: vendor/envato_setup/envato_setup.php:1100
+#: vendor/envato_setup/steps/intro.php:44
 msgid "Error:"
 msgstr "Ошибка:"
 
 #: vendor/envato_setup/envato_setup.php:400
-#: vendor/envato_setup/envato_setup.php:1091
-#: vendor/envato_setup/envato_setup.php:1554
+#: vendor/envato_setup/envato_setup.php:1106
+#: vendor/envato_setup/steps/intro.php:48
 msgid "Back to the Dashboard"
 msgstr "Вернуться в административный раздел сайта"
 
@@ -2629,161 +3176,128 @@ msgstr "«Кандинский» – мастер настройки"
 msgid "Kandinsky theme setup wizard"
 msgstr "Мастер настройки темы"
 
-#: vendor/envato_setup/envato_setup.php:544
-#, php-format
-msgid "Welcome to the %s setup wizard"
-msgstr "Добро пожаловать в мастер настройки темы %s"
-
-#: vendor/envato_setup/envato_setup.php:545
-msgid ""
-"Hello! Let's set up your organization website together. With few simple "
-"steps we will configure minimal necessary settings, like installing of "
-"required plugins, setting up default website content and the logo. It should "
-"only take 5 minutes. You can always change any of these settings later on, "
-"in the Plugins admin folder."
-msgstr ""
-"Здравствуйте! Давайте настроим сайт вашей организации вместе. За несколько "
-"простых шагов вы сможете выполнить необходимые минимальные настройки. В "
-"дальнейшем вы сможете их отредактировать в административной панели сайта."
-
-#: vendor/envato_setup/envato_setup.php:548
-msgid "Let's go!"
-msgstr "Поехали!"
-
-#: vendor/envato_setup/envato_setup.php:549
-msgid "Not right now"
-msgstr "Не сейчас"
-
-#: vendor/envato_setup/envato_setup.php:594
-msgid "Failed to find TGM plugin"
-msgstr "Плагин TGMPA не найден"
-
-#: vendor/envato_setup/envato_setup.php:603
-msgid "Default Plugins"
-msgstr "Плагины"
-
-#: vendor/envato_setup/envato_setup.php:621
-msgid ""
-"Your website needs a few essential plugins. The following plugins will be "
-"installed or updated:"
-msgstr ""
-"Вашему сайту понадобится несколько плагинов. Мы установим или обновим "
-"следующие плагины:"
-
-#: vendor/envato_setup/envato_setup.php:622
-msgid "You can add and remove plugins later on, in the Plugins admin folder."
-msgstr ""
-"Вы можете добавить или удалить плагины и дальше, в разделе «Плагины» "
-"административной панели сайта."
-
-#: vendor/envato_setup/envato_setup.php:631
-msgid "Installation required"
-msgstr "Необходима установка"
-
-#: vendor/envato_setup/envato_setup.php:634
-msgid "Update and activation required"
-msgstr "Необходимо обновление и активация"
-
-#: vendor/envato_setup/envato_setup.php:634
-msgid "Update required"
-msgstr "Необходимо обновление"
-
-#: vendor/envato_setup/envato_setup.php:636
-msgid "Activation required"
-msgstr "Необходима активация"
-
-#: vendor/envato_setup/envato_setup.php:652
-msgid "We also recommend to add several more:"
-msgstr "Мы также рекомендуем добавить на сайт следующие плагины:"
-
-#: vendor/envato_setup/envato_setup.php:654
-msgid "We recommend to add or update the following plugins:"
-msgstr "Мы рекомендуем добавить или обновить следующие плагины:"
-
-#: vendor/envato_setup/envato_setup.php:667
-msgid "Update and activate"
-msgstr "Обновить и активировать"
-
-#: vendor/envato_setup/envato_setup.php:689
-msgid ""
-"Good news! All plugins are already installed and up to date. Let's proceed "
-"further."
-msgstr ""
-"Хорошие новости! Все нужные плагины уже установлены и обновлены. Давайте "
-"пойдем дальше."
-
-#: vendor/envato_setup/envato_setup.php:693
-#: vendor/envato_setup/envato_setup.php:980
-#: vendor/envato_setup/envato_setup.php:1309
-#: vendor/envato_setup/envato_setup.php:1404
-#: vendor/envato_setup/envato_setup.php:1477
-#: vendor/envato_setup/envato_setup.php:1510
-msgid "Back"
-msgstr "Шаг назад"
-
-#: vendor/envato_setup/envato_setup.php:698
-#: vendor/envato_setup/envato_setup.php:985
-#: vendor/envato_setup/envato_setup.php:1136
-#: vendor/envato_setup/envato_setup.php:1312
-#: vendor/envato_setup/envato_setup.php:1407
-msgid "Skip this step"
-msgstr "Пропустить шаг"
-
-#: vendor/envato_setup/envato_setup.php:709
+#: vendor/envato_setup/envato_setup.php:557
 msgid "No slug found"
 msgstr "Плагин не найден"
 
-#: vendor/envato_setup/envato_setup.php:728
+#: vendor/envato_setup/envato_setup.php:576
 msgid "Activating Plugin"
 msgstr "Активация"
 
-#: vendor/envato_setup/envato_setup.php:742
+#: vendor/envato_setup/envato_setup.php:590
 msgid "Updating Plugin"
 msgstr "Обновление плагина"
 
-#: vendor/envato_setup/envato_setup.php:756
+#: vendor/envato_setup/envato_setup.php:604
 msgid "Installing Plugin"
 msgstr "Установка плагина"
 
-#: vendor/envato_setup/envato_setup.php:873
+#: vendor/envato_setup/envato_setup.php:721
 msgid "Website title and description"
 msgstr "Название и описание сайта"
 
-#: vendor/envato_setup/envato_setup.php:874
+#: vendor/envato_setup/envato_setup.php:722
 msgid "Insert default website title and description as seen in the demo."
 msgstr "Укажите название и напишите краткое описание сайта."
 
-#: vendor/envato_setup/envato_setup.php:875
-#: vendor/envato_setup/envato_setup.php:902
-#: vendor/envato_setup/envato_setup.php:920
-#: vendor/envato_setup/envato_setup.php:929
+#: vendor/envato_setup/envato_setup.php:723
+#: vendor/envato_setup/envato_setup.php:732
+#: vendor/envato_setup/envato_setup.php:741
+#: vendor/envato_setup/envato_setup.php:750
 msgid "Pending"
 msgstr "Отложено"
 
-#: vendor/envato_setup/envato_setup.php:876
-#: vendor/envato_setup/envato_setup.php:903
-#: vendor/envato_setup/envato_setup.php:921
-#: vendor/envato_setup/envato_setup.php:930
+#: vendor/envato_setup/envato_setup.php:724
+#: vendor/envato_setup/envato_setup.php:733
+#: vendor/envato_setup/envato_setup.php:742
+#: vendor/envato_setup/envato_setup.php:751
 msgid "Installing..."
 msgstr "Установка..."
 
-#: vendor/envato_setup/envato_setup.php:901
+#: vendor/envato_setup/envato_setup.php:731
 msgid "Insert default website settings as seen in the demo."
 msgstr "Набор демонстрационных значений параметров сайта."
 
-#: vendor/envato_setup/envato_setup.php:919
+#: vendor/envato_setup/envato_setup.php:740
 msgid "Install default website posts, pages and menus."
 msgstr "Установить записи, страницы и меню."
 
-#: vendor/envato_setup/envato_setup.php:928
+#: vendor/envato_setup/envato_setup.php:749
 msgid "Install donations components."
 msgstr "Установить модуль для сбора пожертвований."
 
-#: vendor/envato_setup/envato_setup.php:943
+#: vendor/envato_setup/envato_setup.php:805
+msgid "No content Found"
+msgstr "Контент не найден"
+
+#: vendor/envato_setup/envato_setup.php:870
+msgid "Error"
+msgstr "Ошибка"
+
+#: vendor/envato_setup/envato_setup.php:891
+#: vendor/envato_setup/steps/intro.php:61
+msgid "Downloading template archive..."
+msgstr "Идет скачивание архива темы..."
+
+#: vendor/envato_setup/envato_setup.php:892
+msgid "Extracting template content..."
+msgstr "Идет распаковка архива темы..."
+
+#: vendor/envato_setup/envato_setup.php:893
+msgid "Importing template content..."
+msgstr "Идет импорт содержимого. Операция может занять несколько минут..."
+
+#: vendor/envato_setup/envato_setup.php:894
+msgid "Building template files..."
+msgstr "Подготовка файлов..."
+
+#: vendor/envato_setup/envato_setup.php:895
+msgid "Building template options..."
+msgstr "Подготовка настроек..."
+
+#: vendor/envato_setup/envato_setup.php:896
+msgid "Building template colors..."
+msgstr "Подготовка цветов..."
+
+#: vendor/envato_setup/envato_setup.php:906
+msgid "Please select the scenario"
+msgstr "Пожалуйста выберите шаблон"
+
+#: vendor/envato_setup/envato_setup.php:940
+#, php-format
+msgid "Plot data builder was not produced for plot: %s"
+msgstr "Конструктор сценариев не обнаружен для сценария: %s"
+
+#: vendor/envato_setup/envato_setup.php:1100
+#, php-format
+msgid ""
+"Please, send a report about it to the <a href='mailto:%s' "
+"target='_blank'>theme technical support</a>."
+msgstr ""
+"Пожалуйста, напишите об этой ошибке <a href='mailto:%s' "
+"target='_blank'>нашей службе тех.поддержки</a>."
+
+#: vendor/envato_setup/envato_setup.php:1102
+#, php-format
+msgid ""
+"We're sorry, but some error occured during to this wizard step :( <div "
+"class='wizard-error-support-text'>Please, send a report about it to the <a "
+"href='mailto:%s' target='_blank'>theme technical support</a>."
+msgstr ""
+"К сожалению, что-то произошло во время работы мастера установки темы :( <div "
+"class='wizard-error-support-text'>Пожалуйста, напишите об этом <a "
+"href='mailto:%s' target='_blank'>нашей службе тех.поддержки</a>."
+
+#: vendor/envato_setup/envato_setup.php:1107
+#: vendor/envato_setup/steps/intro.php:49
+msgid "Email to the theme support"
+msgstr "Написать тех.службе"
+
+#: vendor/envato_setup/steps/content.php:7
 msgid "Theme default content"
 msgstr "Демонстрационный контент сайта"
 
-#: vendor/envato_setup/envato_setup.php:946
+#: vendor/envato_setup/steps/content.php:10
 msgid ""
 "It looks like you already have content installed on this website. If you "
 "would like to install the default demo content as well you can select it "
@@ -2793,7 +3307,7 @@ msgstr ""
 "Кажется, на сайте уже есть контент. Если вы хотите также добавить и "
 "демонстрационный контент, выберите нужные вам фрагменты ниже."
 
-#: vendor/envato_setup/envato_setup.php:948
+#: vendor/envato_setup/steps/content.php:12
 msgid ""
 "It's time to insert some default content for your new WordPress website. "
 "Choose what you would like inserted below and click Install. We recommend to "
@@ -2804,84 +3318,32 @@ msgstr ""
 "Выберите нужные пункты ниже (мы советуем выбрать все) и нажмите «Настроить». "
 "Позже вы сможете изменить или удалить добавленный контент."
 
-#: vendor/envato_setup/envato_setup.php:954
+#: vendor/envato_setup/steps/content.php:18
 msgid "Item"
 msgstr "Тип"
 
-#: vendor/envato_setup/envato_setup.php:982
+#: vendor/envato_setup/steps/content.php:44
+#: vendor/envato_setup/steps/design.php:27
+#: vendor/envato_setup/steps/plugins.php:108
+#: vendor/envato_setup/steps/ready.php:30
+#: vendor/envato_setup/steps/settings.php:45
+#: vendor/envato_setup/steps/support.php:40
+msgid "Back"
+msgstr "Шаг назад"
+
+#: vendor/envato_setup/steps/content.php:46
 msgid "Set up"
 msgstr "Настроить"
 
-#: vendor/envato_setup/envato_setup.php:1001
-msgid "No content Found"
-msgstr "Контент не найден"
+#: vendor/envato_setup/steps/content.php:49
+#: vendor/envato_setup/steps/design.php:30
+#: vendor/envato_setup/steps/intro.php:59
+#: vendor/envato_setup/steps/plugins.php:113
+#: vendor/envato_setup/steps/settings.php:48
+msgid "Skip this step"
+msgstr "Пропустить шаг"
 
-#: vendor/envato_setup/envato_setup.php:1066
-msgid "Error"
-msgstr "Ошибка"
-
-#: vendor/envato_setup/envato_setup.php:1083
-msgid "Choose website template"
-msgstr "Выберите шаблон сайта"
-
-#: vendor/envato_setup/envato_setup.php:1092
-#: vendor/envato_setup/envato_setup.php:1555
-msgid "Email to the theme support"
-msgstr "Написать тех.службе"
-
-#: vendor/envato_setup/envato_setup.php:1096
-msgid ""
-"For your convenience, we’ve created several templates for NGOs. Select the "
-"one that you fits you best. You will be able to change colours, content "
-"(text and images)."
-msgstr ""
-"Для вашего удобства мы сделали несколько шаблонов сайтов НКО. Выберите тот, "
-"который лучше всего вам подходит. Палитру цветов, содержание, текст и "
-"фотографии вы можете сменить сейчас или сделать это позднее."
-
-#: vendor/envato_setup/envato_setup.php:1103
-msgid "No scenarios detected"
-msgstr "Сценариев не обнаружено"
-
-#: vendor/envato_setup/envato_setup.php:1132
-msgid "Exit"
-msgstr "Выход"
-
-#: vendor/envato_setup/envato_setup.php:1138
-#: vendor/envato_setup/envato_setup.php:1151
-msgid "Downloading template archive..."
-msgstr "Идет скачивание архива темы..."
-
-#: vendor/envato_setup/envato_setup.php:1152
-msgid "Extracting template content..."
-msgstr "Идет распаковка архива темы..."
-
-#: vendor/envato_setup/envato_setup.php:1153
-msgid "Importing template content..."
-msgstr "Идет импорт содержимого. Операция может занять несколько минут..."
-
-#: vendor/envato_setup/envato_setup.php:1154
-msgid "Building template files..."
-msgstr "Подготовка файлов..."
-
-#: vendor/envato_setup/envato_setup.php:1155
-msgid "Building template options..."
-msgstr "Подготовка настроек..."
-
-#: vendor/envato_setup/envato_setup.php:1156
-msgid "Building template colors..."
-msgstr "Подготовка цветов..."
-
-#: vendor/envato_setup/envato_setup.php:1166
-msgid "Please select the scenario"
-msgstr "Пожалуйста выберите шаблон"
-
-#: vendor/envato_setup/envato_setup.php:1200
-#, php-format
-msgid "Plot data builder was not produced for plot: %s"
-msgstr "Конструктор сценариев не обнаружен для сценария: %s"
-
-#: vendor/envato_setup/envato_setup.php:1292
+#: vendor/envato_setup/steps/design.php:10
 msgid ""
 "Please add your organization main logo below. The recommended size is "
 "<strong>315 x 66 px</strong> (for \"Image only\" mode) and <strong>66 x 66 "
@@ -2893,30 +3355,171 @@ msgstr ""
 "<strong>66 x 66 пикселей</strong> (для режима «изображение и название "
 "сайта»)."
 
-#: vendor/envato_setup/envato_setup.php:1294
+#: vendor/envato_setup/steps/design.php:12
 #, php-format
 msgid "Try our %sPaseka program%s if you need a new logo designed."
 msgstr ""
 "Если вам нужен новый дизайн логотипа и фирменного стиля, вы можете найти "
 "исполнителя с помощью нашей %sпрограммы «Пасека»%s."
 
-#: vendor/envato_setup/envato_setup.php:1301
+#: vendor/envato_setup/steps/design.php:19
 msgid "Upload new logo"
 msgstr "Загрузить логотип"
 
-#: vendor/envato_setup/envato_setup.php:1368
+#: vendor/envato_setup/steps/intro.php:28
+msgid "Kandinsky Configuration Wizard"
+msgstr "Мастер настройки Кандинского"
+
+#: vendor/envato_setup/steps/intro.php:33
+msgid ""
+"You have installed the Kandinsky theme. This is how your default website "
+"design will look like:"
+msgstr ""
+"Вы установили тему Кандинский. Вот так будет выглядеть дизайн вашего сайта "
+"по умолчанию:"
+
+#: vendor/envato_setup/steps/intro.php:39
+msgid ""
+"Now you can make basic settings - upload a logo, set the site structure, "
+"install the necessary add-ons. This will take a couple of minutes. And you "
+"can change the text, pictures, colors and fonts later."
+msgstr ""
+"Сейчас вы можете выполнить базовые настройки — загрузить логотип, задать "
+"структуру сайта, установить необходимые дополнения. Это займёт пару минут. А "
+"текст, картинки, цвета и шрифты вы сможете поменять позже."
+
+#: vendor/envato_setup/steps/intro.php:41
+msgid ""
+"If you want to skip the setup, click «Not right now». You can customize the "
+"theme yourself at any time from the admin panel."
+msgstr ""
+"Если вы хотите пропустить настройку, нажмите «Не сейчас». Вы в любой момент "
+"сможете настроить тему самостоятельно из панели администратора."
+
+#: vendor/envato_setup/steps/intro.php:55
+msgid "Not right now"
+msgstr "Не сейчас"
+
+#: vendor/envato_setup/steps/intro.php:57
+msgid "Let's go!"
+msgstr "Поехали!"
+
+#: vendor/envato_setup/steps/plugins.php:8
+msgid "Failed to find TGM plugin"
+msgstr "Плагин TGMPA не найден"
+
+#: vendor/envato_setup/steps/plugins.php:17
+msgid "Default Plugins"
+msgstr "Плагины"
+
+#: vendor/envato_setup/steps/plugins.php:35
+msgid ""
+"Your website needs a few essential plugins. The following plugins will be "
+"installed or updated:"
+msgstr ""
+"Вашему сайту понадобится несколько плагинов. Мы установим или обновим "
+"следующие плагины:"
+
+#: vendor/envato_setup/steps/plugins.php:36
+msgid "You can add and remove plugins later on, in the Plugins admin folder."
+msgstr ""
+"Вы можете добавить или удалить плагины и дальше, в разделе «Плагины» "
+"административной панели сайта."
+
+#: vendor/envato_setup/steps/plugins.php:45
+msgid "Installation required"
+msgstr "Необходима установка"
+
+#: vendor/envato_setup/steps/plugins.php:48
+msgid "Update and activation required"
+msgstr "Необходимо обновление и активация"
+
+#: vendor/envato_setup/steps/plugins.php:48
+msgid "Update required"
+msgstr "Необходимо обновление"
+
+#: vendor/envato_setup/steps/plugins.php:50
+msgid "Activation required"
+msgstr "Необходима активация"
+
+#: vendor/envato_setup/steps/plugins.php:66
+msgid "We also recommend to add several more:"
+msgstr "Мы также рекомендуем добавить на сайт следующие плагины:"
+
+#: vendor/envato_setup/steps/plugins.php:68
+msgid "We recommend to add or update the following plugins:"
+msgstr "Мы рекомендуем добавить или обновить следующие плагины:"
+
+#: vendor/envato_setup/steps/plugins.php:82
+msgid "Update and activate"
+msgstr "Обновить и активировать"
+
+#: vendor/envato_setup/steps/plugins.php:104
+msgid ""
+"Good news! All plugins are already installed and up to date. Let's proceed "
+"further."
+msgstr ""
+"Хорошие новости! Все нужные плагины уже установлены и обновлены. Давайте "
+"пойдем дальше."
+
+#: vendor/envato_setup/steps/ready.php:10
+msgid "Yay! Your website is ready!"
+msgstr "Ура! Ваш сайт готов!"
+
+#: vendor/envato_setup/steps/ready.php:12
+msgid ""
+"Congratulations! You’re doing really good #success! You’ve successfully "
+"installed and set up your Kandinsky theme. You need, however, to do a little "
+"bit more."
+msgstr ""
+"Поздравляем! Вам все удалось! Вы установили и частично настроили ваш новый "
+"сайт! Но на этом работа не заканчивается."
+
+#: vendor/envato_setup/steps/ready.php:13
+msgid ""
+"As a part of the installation process, we’ve added some test content of an "
+"imaginary organization that you will need to edit (we’ve provided the "
+"recommendations on how to make great content)."
+msgstr ""
+"В рамках установки мы добавили демонстрационный контент – фото и тексты о "
+"вымышленной организации, которые теперь нужно отредактировать под ваши "
+"задачи и нужды. В тексте даны наши рекомендации по написанию ключевой "
+"информации."
+
+#: vendor/envato_setup/steps/ready.php:14
+msgid ""
+"Moreover, you need to set up few additional plug-ins for the optimal work of "
+"your site (don’t worry, our recommendations will help you)."
+msgstr ""
+"Кроме того, для оптимальной работы, необходимо настроить ряд плагинов. Не "
+"волнуйтесь, мы вам поможем подробными пошаговыми инструкциями по ходу "
+"установки."
+
+#: vendor/envato_setup/steps/ready.php:21
+msgid "Continue the set-up"
+msgstr "Перейти к подробной настройке"
+
+#: vendor/envato_setup/steps/ready.php:26
+msgid "View your new website!"
+msgstr "Посмотреть на новый сайт!"
+
+#: vendor/envato_setup/steps/ready.php:36
+msgid "#success"
+msgstr "#успех"
+
+#: vendor/envato_setup/steps/settings.php:7
 msgid "NGO settings"
 msgstr "Настройки организации"
 
-#: vendor/envato_setup/envato_setup.php:1373
+#: vendor/envato_setup/steps/settings.php:11
 msgid "The website title"
 msgstr "Название сайта"
 
-#: vendor/envato_setup/envato_setup.php:1378
+#: vendor/envato_setup/steps/settings.php:17
 msgid "The website description"
 msgstr "Описание сайта"
 
-#: vendor/envato_setup/envato_setup.php:1381
+#: vendor/envato_setup/steps/settings.php:22
 msgid ""
 "Please add your site icon below. The recommended size is <strong>64 x 64 px</"
 "strong>. The site icon can be changed at any time from the Appearance > "
@@ -2926,26 +3529,26 @@ msgstr ""
 "<strong>64 x 64 пикселя</strong>. В будущем вы сможете изменить фавикон в "
 "административном разделе сайта, на странице «Внешний вид > Настроить»."
 
-#: vendor/envato_setup/envato_setup.php:1383
+#: vendor/envato_setup/steps/settings.php:24
 #, php-format
 msgid "Try our %sPaseka program%s if you need a new site icon designed."
 msgstr ""
 "Если вам нужен новый дизайн фавикона, вы можете найти исполнителя с помощью "
 "нашей %sпрограммы «Пасека»%s."
 
-#: vendor/envato_setup/envato_setup.php:1395
+#: vendor/envato_setup/steps/settings.php:36
 msgid "Upload new site icon"
 msgstr "Загрузить favicon"
 
-#: vendor/envato_setup/envato_setup.php:1460
+#: vendor/envato_setup/steps/support.php:23
 msgid "Help and support"
 msgstr "Помощь и поддержка"
 
-#: vendor/envato_setup/envato_setup.php:1463
+#: vendor/envato_setup/steps/support.php:26
 msgid "Thank you for using “Kandinsky” theme on your website!"
 msgstr "Спасибо за использование темы «Кандинский» на вашем сайте!"
 
-#: vendor/envato_setup/envato_setup.php:1466
+#: vendor/envato_setup/steps/support.php:29
 #, php-format
 msgid ""
 "“Kandinsky” — is a free and open-source project supported by <a href=\"%s\" "
@@ -2956,7 +3559,7 @@ msgstr ""
 "поддерживается <a href=\"%s\" target=\"_blank\">Теплицей социальных "
 "технологий</a> и сообществом независимых разработчиков."
 
-#: vendor/envato_setup/envato_setup.php:1468
+#: vendor/envato_setup/steps/support.php:31
 msgid ""
 "In case you encounter any questions or issues, we recommend you the "
 "following links:"
@@ -2964,7 +3567,7 @@ msgstr ""
 "Если вы столкнулись с какими-либо проблемами или вопросами, мы рекомендуем "
 "следующие ссылки:"
 
-#: vendor/envato_setup/envato_setup.php:1470
+#: vendor/envato_setup/steps/support.php:33
 #, php-format
 msgid ""
 "Documentation and FAQ — <a href=\"%s\" target=\"_blank\">GitHub Wiki</a>"
@@ -2972,17 +3575,17 @@ msgstr ""
 "Документация и ответы на вопросы — <a href=\"%s\" target=\"_blank\">GitHub "
 "Wiki</a>"
 
-#: vendor/envato_setup/envato_setup.php:1471
+#: vendor/envato_setup/steps/support.php:34
 #, php-format
 msgid "Source code — <a href=\"%s\" target=\"_blank\">GitHub</a>"
 msgstr "Исходный код — <a href=\"%s\" target=\"_blank\">GitHub</a>"
 
-#: vendor/envato_setup/envato_setup.php:1472
+#: vendor/envato_setup/steps/support.php:35
 #, php-format
 msgid "Developers’ <a href=\"%s\">Telegram-channel</a> (in Russian)"
 msgstr "<a href=\"%s\">Telegram-канал</a> разработчиков (на русском)"
 
-#: vendor/envato_setup/envato_setup.php:1474
+#: vendor/envato_setup/steps/support.php:37
 #, php-format
 msgid ""
 "If you need personalized (free during the testing period) consultations from "
@@ -2995,151 +3598,418 @@ msgstr ""
 "\" target=\"_blank\">%s</a> или <a href=\"%s\" target=\"_blank\">оставляйте "
 "заявку на GitHub</a>."
 
-#: vendor/envato_setup/envato_setup.php:1478
+#: vendor/envato_setup/steps/support.php:41
 msgid "OK, I've got it!"
 msgstr "Понятно!"
 
-#: vendor/envato_setup/envato_setup.php:1490
-msgid "Yay! Your website is ready!"
-msgstr "Ура! Ваш сайт готов!"
+#. Theme URI of the plugin/theme
+msgid "https://github.com/Teplitsa/Kandinsky"
+msgstr "https://te-st.ru/"
 
-#: vendor/envato_setup/envato_setup.php:1492
-msgid ""
-"Congratulations! You’re doing really good #success! You’ve successfully "
-"installed and set up your Kandinsky theme. You need, however, to do a little "
-"bit more."
-msgstr ""
-"Поздравляем! Вам все удалось! Вы установили и частично настроили ваш новый "
-"сайт! Но на этом работа не заканчивается."
+#. Author URI of the plugin/theme
+msgid "https://te-st.ru/"
+msgstr "https://te-st.ru/"
 
-#: vendor/envato_setup/envato_setup.php:1493
-msgid ""
-"As a part of the installation process, we’ve added some test content of an "
-"imaginary organization that you will need to edit (we’ve provided the "
-"recommendations on how to make great content)."
-msgstr ""
-"В рамках установки мы добавили демонстрационный контент – фото и тексты о "
-"вымышленной организации, которые теперь нужно отредактировать под ваши "
-"задачи и нужды. В тексте даны наши рекомендации по написанию ключевой "
-"информации."
+#, fuzzy
+#~| msgid "Preview category"
+#~ msgid "People Category"
+#~ msgstr "Предпросмотр"
 
-#: vendor/envato_setup/envato_setup.php:1494
-msgid ""
-"Moreover, you need to set up few additional plug-ins for the optimal work of "
-"your site (don’t worry, our recommendations will help you)."
-msgstr ""
-"Кроме того, для оптимальной работы, необходимо настроить ряд плагинов. Не "
-"волнуйтесь, мы вам поможем подробными пошаговыми инструкциями по ходу "
-"установки."
-
-#: vendor/envato_setup/envato_setup.php:1501
-msgid "Continue the set-up"
-msgstr "Перейти к подробной настройке"
-
-#: vendor/envato_setup/envato_setup.php:1506
-msgid "View your new website!"
-msgstr "Посмотреть на новый сайт!"
-
-#: vendor/envato_setup/envato_setup.php:1516
-msgid "#success"
-msgstr "#успех"
-
-#: vendor/envato_setup/envato_setup.php:1548
 #, php-format
-msgid ""
-"Please, send a report about it to the <a href='mailto:%s' "
-"target='_blank'>theme technical support</a>."
-msgstr ""
-"Пожалуйста, напишите об этой ошибке <a href='mailto:%s' "
-"target='_blank'>нашей службе тех.поддержки</a>."
+#~ msgid ""
+#~ "ATTENTION! You thumbnail image is too small. It should be at least %s px"
+#~ msgstr ""
+#~ "ВНИМАНИЕ! Выбранное изображение слишком маленькое. Допустимый размер не "
+#~ "менее %s px"
 
-#: vendor/envato_setup/envato_setup.php:1550
 #, php-format
-msgid ""
-"We're sorry, but some error occured during to this wizard step :( <div "
-"class='wizard-error-support-text'>Please, send a report about it to the <a "
-"href='mailto:%s' target='_blank'>theme technical support</a>."
-msgstr ""
-"К сожалению, что-то произошло во время работы мастера установки темы :( <div "
-"class='wizard-error-support-text'>Пожалуйста, напишите об этом <a "
-"href='mailto:%s' target='_blank'>нашей службе тех.поддержки</a>."
+#~ msgid "%s before start"
+#~ msgstr "%s до начало"
 
-#~ msgid "https://te-st.ru/"
-#~ msgstr "https://te-st.ru/"
+#, fuzzy
+#~| msgid "Custom Text"
+#~ msgid "Custom"
+#~ msgstr "Произвольный текст"
 
-#~ msgid "Homepage"
+#, fuzzy
+#~| msgid "Text Color"
+#~ msgid "Text Control"
+#~ msgstr "Цвет текста"
+
+#~ msgid "Home"
 #~ msgstr "Главная"
 
-#~ msgid "Update theme"
-#~ msgstr "Обновление темы"
+#~ msgid ""
+#~ "Footer columns area accepts 4 widgets. Does not accept wide widgets, like "
+#~ "News, Partners, Projects, Donations or CTA. You should place here widgets "
+#~ "like Custom HTML, Custom Menu, Text etc."
+#~ msgstr ""
+#~ "Колонки в подвале сайта. Область принимает 4 виджета. Сюда вы можете "
+#~ "добавить такие виджеты, как HTML-код, Произвольное меню или Текст. Здесь "
+#~ "не поддерживаются большие виджеты, такие как Новости, Партнеры, Проекты, "
+#~ "Пожертвования или Блок призыва к действию."
 
-#~ msgid "Remove theme"
-#~ msgstr "Удалить тему"
+#~ msgid "Header text"
+#~ msgstr "Текст заголовка"
 
-#~ msgid "Kandinsky theme removed"
-#~ msgstr "Тема удалена"
+#~ msgid "here"
+#~ msgstr "здесь"
 
-#~ msgid "Are you sure you want to remove Kandinsky theme?"
-#~ msgstr "Вы уверены, что хотите удалить тему \"Кандинский\"?"
+#~ msgid "Social networks links"
+#~ msgstr "Ссылки на социальные сети"
 
-#~ msgid "Yes, remove Kandinsky theme"
-#~ msgstr "Да, удалить тему"
+#~ msgid "Page Header Type"
+#~ msgstr "Тип шапки страницы"
 
-#~ msgid "Logo font"
-#~ msgstr "Шрифт для лого"
+#~ msgid "Template"
+#~ msgstr "Шаблон"
+
+#~ msgid "Kandinsky projects block menu"
+#~ msgstr "Ссылки в блоке проектов"
+
+#, php-format
+#~ msgid "Welcome to the %s setup wizard"
+#~ msgstr "Добро пожаловать в мастер настройки темы %s"
 
 #~ msgid ""
-#~ "Recommended size 315x66px for Image only mode and 66x66px for Image with "
-#~ "site name"
+#~ "Hello! Let's set up your organization website together. With few simple "
+#~ "steps we will configure minimal necessary settings, like installing of "
+#~ "required plugins, setting up default website content and the logo. It "
+#~ "should only take 5 minutes. You can always change any of these settings "
+#~ "later on, in the Plugins admin folder."
 #~ msgstr ""
-#~ "Рекомендуемые размеры 315x66px для режима «Только изображение» и 66x66px "
-#~ "для режима «Изображение и название» сайта"
+#~ "Здравствуйте! Давайте настроим сайт вашей организации вместе. За "
+#~ "несколько простых шагов вы сможете выполнить необходимые минимальные "
+#~ "настройки. В дальнейшем вы сможете их отредактировать в административной "
+#~ "панели сайта."
 
-#~ msgid "Skip to content"
-#~ msgstr "Перейти к содержанию"
-
-#~ msgid "Can't create a download temporary directory: %s"
-#~ msgstr "Невозможно создать временную директорию при загрузке: %s"
-
-#~ msgid "Can't create a download temporary file: %s"
-#~ msgstr "Невозможно создать временный файл при загрузке: %s"
-
-#~ msgid "CURL error: %s"
-#~ msgstr "Ошибка cURL: %s"
+#~ msgid "Choose website template"
+#~ msgstr "Выберите шаблон сайта"
 
 #~ msgid ""
-#~ "Documentation and FAQ — <a href=\"https://github.com/Teplitsa/kandinsky/"
-#~ "wiki/\" target=\"_blank\">GitHub Wiki</a>"
+#~ "For your convenience, we’ve created several templates for NGOs. Select "
+#~ "the one that you fits you best. You will be able to change colours, "
+#~ "content (text and images)."
 #~ msgstr ""
-#~ "Документация и FAQ темы — <a href=\"https://github.com/Teplitsa/kandinsky/"
-#~ "wiki/\" target=\"_blank\">GitHub Wiki</a>"
+#~ "Для вашего удобства мы сделали несколько шаблонов сайтов НКО. Выберите "
+#~ "тот, который лучше всего вам подходит. Палитру цветов, содержание, текст "
+#~ "и фотографии вы можете сменить сейчас или сделать это позднее."
+
+#~ msgid "No scenarios detected"
+#~ msgstr "Сценариев не обнаружено"
+
+#~ msgid "Exit"
+#~ msgstr "Выход"
+
+#~ msgid "Block Settings"
+#~ msgstr "Настройки блока"
+
+#~ msgid "Create other pages"
+#~ msgstr "Создание других страниц"
+
+#, php-format
+#~ msgid ""
+#~ "If you need to add new page click to a button below. You can manage pages "
+#~ "in the «<a %s>Menu > Pages</a>» section. You can edit, add and delete "
+#~ "pages."
+#~ msgstr ""
+#~ "Если вам нужно создать новую страницу – кликните на кнопку ниже. Страницы "
+#~ "управляются в разделе «<a %s>Меню > Страницы</a>». Вы можете "
+#~ "редактировать содержимое страниц, создавать и удалять страницы."
+
+#~ msgid "Besides pages, there are Posts in WordPress, use them to add news."
+#~ msgstr ""
+#~ "Помимо страниц в WordPress используются «Записи» – используйте их для "
+#~ "создания новостей."
+
+#~ msgid "Go to posts page"
+#~ msgstr "Перейти на страницу записей"
+
+#, php-format
+#~ msgid ""
+#~ "If you need new entities (for example Requests or Events), you can add "
+#~ "custom post types using plugin such as Custom Post Type UI. %s"
+#~ msgstr ""
+#~ "Если же вам нужно создать совершенно новые сущности (Например, «Заявки» "
+#~ "или «Мероприятия») вы можете создать т.н. custom post type "
+#~ "(пользовательский тип записи), например, с помощью плагина Custom Post "
+#~ "Type UI. %s"
+
+#~ msgid "Leyka Campaign"
+#~ msgstr "Кампания"
+
+#, fuzzy
+#~| msgid "Title, description, button, and background image."
+#~ msgctxt "knd"
+#~ msgid "Title, Subtitle, Description, Button, and Image."
+#~ msgstr "Заголовок, описание, кнопка и фоновое изображение."
 
 #~ msgid ""
-#~ "Source code — <a href=\"https://github.com/Teplitsa/kandinsky/\" target="
-#~ "\"_blank\">GitHub</a>"
+#~ "The charitable organization Line of Color helps to overcome alcohol "
+#~ "addiction and return to a fulfilling life."
 #~ msgstr ""
-#~ "Исходный код темы – <a href=\"https://github.com/Teplitsa/kandinsky/\" "
-#~ "target=\"_blank\">GitHub</a>"
+#~ "Благотворительная организация &#34;Линия Цвета&#34; помогает преодолеть "
+#~ "алкогольную зависимость и вернуться к полноценной жизни."
+
+#~ msgid "Hero"
+#~ msgstr "Херо"
+
+#~ msgid "Info Columns"
+#~ msgstr "Инфо колонки"
+
+#~ msgid "Edit people"
+#~ msgstr "Редактировать людей"
+
+#~ msgid "Recommend"
+#~ msgstr "Рекомендуемый"
+
+#~ msgid "Heading Link Title"
+#~ msgstr "Текст ссылки в шапке"
+
+#~ msgid "Heading Link Url"
+#~ msgstr "Адрес ссылки в шапке"
+
+#, php-format
+#~ msgid "Plot name is unknown or not given: %s"
+#~ msgstr "Нет названия сценария: %s"
+
+#~ msgid "Save Dubrovino Park"
+#~ msgstr "Защитим Дубровино"
+
+#~ msgid "Initiative group"
+#~ msgstr "Градозащитная инициатива"
+
+#~ msgid "Let's stop deforestation together!"
+#~ msgstr "Вместе остановим уничтожение леса!"
+
+#~ msgid "Extertise"
+#~ msgstr "Экспертиза"
+
+#~ msgid "We are with you"
+#~ msgstr "Мы с тобой"
+
+#~ msgid "Charitable foundation to help children from low-income families"
+#~ msgstr "Благотворительный фонд помощи детям из малоимущих семей"
 
 #~ msgid ""
-#~ "Developers’ <a href=\"https://t.me/joinchat/AAAAAENN3prSrvAs7KwWrg"
-#~ "\">Telegram-channel</a> (in Russian)"
+#~ "Arkhangelsk region, Velsky district, Velsk, st. Rogozin, 48, office. 12,"
 #~ msgstr ""
-#~ "<a href=\"https://t.me/joinchat/AAAAAENN3prSrvAs7KwWrg\">Telegram-канал</"
-#~ "a> разработчиков темы"
+#~ "Архангельская область, Вельский район, г. Вельск, ул. Рогозина, д. 48, "
+#~ "каб. 12,"
+
+#~ msgid "You helped"
+#~ msgstr "Вы помогли"
+
+#~ msgid "Complimentary Color"
+#~ msgstr "Дополнительный цвет"
+
+#~ msgid "Dark Color"
+#~ msgstr "Темный цвет"
+
+#~ msgid "Recommended - black"
+#~ msgstr "Рекомендуется - черный"
+
+#~ msgid "Logo mode"
+#~ msgstr "Режим отображения логотипа"
+
+#~ msgid "Image only"
+#~ msgstr "Только изображение"
+
+#~ msgid "Image with site name"
+#~ msgstr "Изображение и название сайта"
+
+#~ msgid "Site name only"
+#~ msgstr "Только название сайта"
+
+#~ msgid "Do not show"
+#~ msgstr "Не показывать"
+
+#~ msgid "Hero Image"
+#~ msgstr "Главное изображение"
+
+#~ msgid "Call to action URL"
+#~ msgstr "Ссылка на действие"
+
+#~ msgid "Action button caption"
+#~ msgstr "Текст на кнопке действия"
+
+#~ msgid "Our organization columns settings"
+#~ msgstr "Колонки с информацией об организации"
+
+#~ msgid "Column title"
+#~ msgstr "Заголовок колонки"
+
+#~ msgid "Column link caption"
+#~ msgstr "Текст ссылки"
+
+#~ msgid "Column link URL"
+#~ msgstr "URL ссылки"
+
+#~ msgid "CTA block settings"
+#~ msgstr "Блок призыва к действию"
+
+#~ msgid "News archive title"
+#~ msgstr "Заголовок страницы новостей"
+
+#, fuzzy
+#~ msgid ""
+#~ "Displayed on the left side of the Call to action text. Recommended size "
+#~ "450x300px."
+#~ msgstr "Отображается на правой стороне текста Призыв к действию"
+
+#~ msgid "Recommendations:"
+#~ msgstr "Рекомендации:"
+
+#~ msgid "News - bottom panel"
+#~ msgstr "Новости - Нижняя панель"
+
+#~ msgid "Bottom blocks for news archive page"
+#~ msgstr "Блоки внизу страницы архива новостей"
+
+#~ msgid "Archives - bottom panel"
+#~ msgstr "Архивы - Нижняя панель"
+
+#~ msgid "Bottom blocks for archive and search pages"
+#~ msgstr "Блоки внизу страницы архивов и страницы поиска"
+
+#~ msgid "Call To Action block"
+#~ msgstr "Блока призыва к действию"
+
+#~ msgid "CTA block"
+#~ msgstr "Призыв к действию"
+
+#~ msgid "You can change CTA text and link in "
+#~ msgstr "Поменять содержимое блока можно в разделе "
+
+#~ msgid "Appearence / Customize / CTA block settings"
+#~ msgstr "Внешний вид / Настроить / Блок призыва к действию"
+
+#~ msgid "Latest news list"
+#~ msgstr "Список последних новостей"
+
+#~ msgid "Title:"
+#~ msgstr "Заголовок:"
+
+#~ msgid "More Text:"
+#~ msgstr "Текст ссылки:"
+
+#~ msgid "More Url:"
+#~ msgstr "URL ссылки:"
+
+#~ msgid "Partner organization banners list"
+#~ msgstr "Список баннеров партнерских организаций"
+
+#~ msgid "Number:"
+#~ msgstr "Количество:"
+
+#~ msgid "Our organization description on main page"
+#~ msgstr "Описание организации на главной странице"
+
+#~ msgid "Our organization"
+#~ msgstr "Наша организация"
+
+#~ msgid "Content:"
+#~ msgstr "Контент:"
+
+#~ msgid "Volonteers"
+#~ msgstr "Волонтеры"
+
+#~ msgid "Board"
+#~ msgstr "Руководство"
+
+#~ msgid "People list"
+#~ msgstr "Галерея людей"
+
+#~ msgid "Gallery of people - eg. team"
+#~ msgstr "Галерея карточек людей - например, команда"
+
+#~ msgid "Number of persons to output"
+#~ msgstr "Число человек для показа"
+
+#~ msgid "Select a category"
+#~ msgstr "Выберите категорию"
+
+#~ msgid "Projects short list"
+#~ msgstr "Блоки проектов"
+
+#~ msgid "Our partners"
+#~ msgstr "Наши партнеры"
+
+#~ msgid "Start protecting"
+#~ msgstr "Начать защищать"
+
+#~ msgid "Expertise"
+#~ msgstr "Экспертиза"
+
+#~ msgid "Media about us"
+#~ msgstr "О нас пишут"
+
+#~ msgid "Latest News"
+#~ msgstr "Последние новости"
 
 #~ msgid ""
-#~ "If you need personalized (free during the testing period) consultations "
-#~ "from the theme developers, please feel free to write at <a href=\"mailto:"
-#~ "support@te-st.ru\" target=\"_blank\">support@te-st.ru</a> or <a href="
-#~ "\"https://github.com/Teplitsa/kandinsky/issues/\" target=\"_blank\">leave "
-#~ "a ticket at GitHub</a>."
+#~ "We, the citizens of Pervomaisky District together with members of "
+#~ "municipal administration, are against this renovation decision.The "
+#~ "construction of the stadium demands the annihilation of 40000 square "
+#~ "meters of the forest and over 300 trees. It’s a severe blow to the "
+#~ "ecological environment of the area."
 #~ msgstr ""
-#~ "Если вам нужна персональная (бесплатная) консультация от разработчиков "
-#~ "темы, пожалуйста, напишите нам на <a href=\"mailto:support@te-st.ru\" "
-#~ "target=\"_blank\">support@te-st.ru</a> или <a href=\"https://github.com/"
-#~ "Teplitsa/kandinsky/issues/\" target=\"_blank\">добавьте тикет на GitHub</"
-#~ "a>."
+#~ "Что люди созданы любить и быть любимыми;\n"
+#~ "Людям нужна поддержка и помощь;\n"
+#~ "Ваша жизнь и ваша история важны;\n"
+#~ "Лучшие дни и яркая жизнь здесь рядом;\n"
+#~ "Надежда и помощь реальны."
 
-#~ msgid "Category:"
-#~ msgstr "Категория:"
+#~ msgid "Inverse Text Color"
+#~ msgstr "Цвет текста - инверсия"
+
+#~ msgid "Accent Text Color - 1"
+#~ msgstr "Акцентный цвет текста - 1"
+
+#~ msgid "Applicable only for Dubrovino template"
+#~ msgstr "Применяется только в шаблоне «Дубровино»"
+
+#~ msgid "Accent Text Color - 2"
+#~ msgstr "Акцентный цвет текста - 2"
+
+#, fuzzy
+#~| msgid "Heading"
+#~ msgid "Block Heading"
+#~ msgstr "Заголовок"
+
+#~ msgid "Block Title"
+#~ msgstr "Заголовок"
+
+#~ msgid "Cover Settings"
+#~ msgstr "Настройки обложки"
+
+#~ msgid "Call To Action Block"
+#~ msgstr "Блока призыва к действию"
+
+#~ msgid "CTA Settings"
+#~ msgstr "Параметры"
+
+#~ msgid "Info Settings"
+#~ msgstr "Настройки"
+
+#, fuzzy
+#~| msgid "People list"
+#~ msgid "People Block"
+#~ msgstr "Галерея людей"
+
+#~ msgid "People Settings"
+#~ msgstr "Настройки"
+
+#~ msgid "Partners Settings"
+#~ msgstr "Настройки партнеров"
+
+#~ msgid "Hero Block"
+#~ msgstr "Херо блок"
+
+#~ msgid "News Block"
+#~ msgstr "Блок новостей"
+
+#, fuzzy
+#~| msgid "CTA block"
+#~ msgid "Cover Block"
+#~ msgstr "Призыв к действию"

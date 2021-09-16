@@ -1,18 +1,13 @@
 /** == General (_general.scss) == */
 // Frontend styles that don't belong other places
 
-html {
-	//font-size: 62.5%; //10px
-	background-color: $color-white;	
-}
-
 body {
-	background: $color-page-bg;
-	color: $color-text;
+	background: var(--knd-page-bg-color);
+	color: var(--knd-color-base,#000000);
 	text-rendering: optimizeLegibility;
 	@include knd-body-text();
-	
-	& > svg { display: none; }	
+
+	& > svg { display: none; }
 }
 
 
@@ -28,16 +23,25 @@ a {
 
 //global page elements
 .main-content {
-    overflow:hidden;
-    min-height: 60vh;
+	overflow:hidden;
+	min-height: 60vh;
 } 
 
 .heading {
-    h1 {
-        padding: $gut / 1.2 0px $gut / 1.7 0px;
-    }
+	h1 {
+		padding: $gut / 1.2 0px $gut / 1.7 0px;
+	}
 }
 
 .section-title {
 	@include knd-head-exlarge-single-text();
+}
+
+.knd-main {
+	overflow: hidden;
+	padding-top: $logo_small_h + $height_gap + 1px;
+
+	@include for(medium-screens) {
+		padding-top: $logo_full_h + $height_gap + 1px;
+	}
 }

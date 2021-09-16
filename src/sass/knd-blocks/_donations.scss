@@ -1,0 +1,104 @@
+/**
+ * Leyka Donations Block
+ */
+.knd-block-donations {
+	margin-top: 25px;
+	margin-bottom: 25px;
+
+	.tpl-post:first-child:last-child {
+		width: 100%;
+		max-width: 660px;
+	}
+
+	&.has-background {
+		padding-top: 1px;
+		padding-bottom: 30px;
+
+		&.alignfull {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+	}
+
+	.the-content & {
+		a {
+			border-bottom: none;
+		}
+
+		.knd-donations-widget {
+			background: transparent;
+		}
+
+		.widgettitle {
+			font-size: 36px;
+			text-align: center;
+			font-family: var(--knd-font-family-headings);
+			line-height: 1.11;
+			letter-spacing: .03em;
+			font-weight: 800;
+			margin-bottom: 30px;
+		}
+
+		.lk-title {
+			margin: 0;
+		}
+
+		&.alignfull {
+			@media (min-width: 768px){
+				margin-left: calc( ( ( 100vw - var(--knd-content-width) ) / 2 ) * -1 );
+				margin-right: calc( ( ( 100vw - var(--knd-content-width) ) / 2 ) * -1 );
+			}
+		}
+
+		&.alignwide {
+			@media (min-width: 1200px){
+				margin-left: calc( ( ( var(--knd-medium-content-width) - var(--knd-content-width) ) / 2 ) * -1 );
+				margin-right: calc( ( ( var(--knd-medium-content-width) - var(--knd-content-width) ) / 2 ) * -1 );
+			}
+		}
+	}
+}
+
+.the-content .knd-block-donations .knd-donations-widget {
+	background: transparent;
+}
+.the-content .knd-block-donations a {
+	border-bottom: none;
+}
+.the-content .knd-block-donations .widgettitle {
+	font-size: 36px;
+	text-align: center;
+	font-family: var(--knd-font-family-headings);
+	line-height: 1.11;
+	letter-spacing: .03em;
+	font-weight: 800;
+	margin-bottom: 30px;
+}
+.the-content .knd-block-donations .lk-title {
+	margin: 0;
+}
+.knd-block-donations.has-background {
+	padding-top: 1px;
+	padding-bottom: 30px;
+}
+.knd-block-donations.has-background.alignfull {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+@media (min-width: 768px){
+	.the-content .knd-block-donations.alignfull {
+		margin-left: calc( ( ( 100vw - var(--knd-content-width) ) / 2 ) * -1 );
+		margin-right: calc( ( ( 100vw - var(--knd-content-width) ) / 2 ) * -1 );
+	}
+}
+@media (min-width: 1200px){
+	.the-content .knd-block-donations.alignwide {
+		margin-left: calc( ( ( var(--knd-medium-content-width) - var(--knd-content-width) ) / 2 ) * -1 );
+		margin-right: calc( ( ( var(--knd-medium-content-width) - var(--knd-content-width) ) / 2 ) * -1 );
+	}
+}
+
+.knd-block-donations .tpl-post:first-child:last-child {
+	width: 100%;
+	max-width: 660px;
+}

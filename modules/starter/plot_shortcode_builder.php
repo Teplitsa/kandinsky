@@ -145,11 +145,7 @@ class KND_Shortcode_Builder {
     private function __pack_shortcode_attrs($attributes) {
         $attr_str_list = array();
         foreach($attributes as $name => $value) {
-        
-            if($name == 'cta-url') {
-                $encoded_value = $this->data_builder->get_cta_url($value);
-            }
-            else {
+            if($name != 'cta-url') {
                 $encoded_value = str_replace("\"", "", $value);
             }
         

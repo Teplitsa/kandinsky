@@ -1,0 +1,49 @@
+/**
+ * Common Blocks Style
+ */
+
+:root {
+	--knd-content-width: 720px;
+	--knd-medium-content-width: 1200px; /* 1080px; */
+	--knd-image-border-radius: 8px;
+	--knd-button-border-radius: .5em;
+	--knd-header-height: 124px;
+}
+
+.knd-container {
+	max-width: 1080px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 20px;
+	padding-right: 20px;
+
+	&-fluid {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	@media (min-width: 1200px) {
+		max-width: var(--knd-medium-content-width);
+	}
+}
+
+.knd-row {
+	display: flex;
+	flex-wrap: wrap;
+	margin-right: -20px;
+	margin-left: -20px;
+}
+
+.knd-col {
+	width: 100%;
+	padding-right: 20px;
+	padding-left: 20px;
+}
+
+.knd-container-md {
+	max-width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 20px;
+	padding-right: 20px;
+}

@@ -1,0 +1,57 @@
+/**
+ * Buttons
+ */
+
+.knd-button {
+	font-family: var(--knd-font-family-base);
+	display: inline-block;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 17px;
+	padding: 12px 20px;
+	color: #fff;
+	background: var(--knd-color-main);
+	border: 2px solid var(--knd-color-main);
+	border-radius: var(--knd-button-border-radius);
+	text-transform: uppercase;
+	line-height: 1;
+	transition: all .3s;
+	white-space: nowrap;
+
+	:hover {
+		background: var(--knd-color-main-active);
+		border-color: var(--knd-color-main-active);
+	}
+
+	&-outline {
+		background-color: #fff;
+		color: var(--knd-color-main);
+
+		&:hover {
+			background-color: #fff;
+			color: var(--knd-color-main-active);
+			border-color: 2px solid var(--knd-color-main-active);
+		}
+	}
+
+	&-xs {
+		padding: 8px 10px;
+		font-size: 12px;
+	}
+
+	&-sm {
+		padding: 12px 16px;
+		font-size: 14px;
+	}
+
+	&-lg {
+		font-size: 26px;
+		padding: 12px 22px;
+	}
+
+	&-xl {
+		font-size: 31px;
+		padding: 16px 30px;
+	}
+}
+

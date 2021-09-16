@@ -1,0 +1,148 @@
+/**
+ * Blocks
+ */
+
+// knd blocks
+@import 'knd-blocks/common';
+
+// wp blocks
+@import 'wp-blocks/common';
+@import 'wp-blocks/embed';
+
+// knd blocks
+@import 'knd-blocks/buttons';
+
+@import 'knd-blocks/hero';
+@import 'knd-blocks/news';
+@import 'knd-blocks/projects';
+@import 'knd-blocks/partners';
+@import 'knd-blocks/people';
+@import 'knd-blocks/cta';
+@import 'knd-blocks/info';
+@import 'knd-blocks/cover';
+@import 'knd-blocks/recommend';
+@import 'knd-blocks/donations';
+@import 'knd-blocks/campaign';
+@import 'knd-blocks/events';
+
+//events
+@import 'events/events';
+
+.knd-page-title-disabled .page-content.container {
+	padding-bottom: 0;
+}
+
+@media (min-width: 400px) {
+	.page-content.container {
+		width: initial;
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+}
+
+.wp-block-image:not(.alignfull):not(.is-style-rounded) img {
+	border-radius: var(--knd-image-border-radius);
+}
+
+/* Block Align */
+@media (min-width: 768px){
+	.the-content .knd-block.alignfull,
+	.knd-block-image.alignfull {
+		margin-left: calc( ( ( 100vw - var(--knd-content-width) ) / 2 ) * -1 );
+		margin-right: calc( ( ( 100vw - var(--knd-content-width) ) / 2 ) * -1 );
+	}
+}
+@media (min-width: 1200px){
+	.the-content .knd-block.alignwide,
+	.wp-block-image.alignwide {
+		margin-left: calc( ( ( var(--knd-medium-content-width) - var(--knd-content-width) ) / 2 ) * -1 );
+		margin-right: calc( ( ( var(--knd-medium-content-width) - var(--knd-content-width) ) / 2 ) * -1 );
+	}
+}
+@media (max-width: 767px){
+	.the-content .knd-block.alignfull {
+		margin-left: -30px;
+		margin-right: -30px;
+	}
+}
+
+/* Main column width */
+.wp-block {
+	max-width: var(--knd-content-width);
+}
+ 
+/* Width of "wide" blocks */
+.wp-block[data-align="wide"] {
+	max-width: var(--knd-medium-content-width);
+}
+ 
+/* Width of "full-wide" blocks */
+.wp-block[data-align="full"] {
+	max-width: none;
+}
+
+/* Content */
+.the-content p strong a + a {
+	margin-left: 1em;
+}
+
+.d-none {
+	display: none !important;
+}
+
+/* Gallery */
+.gallery {
+}
+.wp-block-gallery {
+	margin-top: 32px;
+	margin-bottom: 32px;
+}
+.wp-block-gallery ul li:before {
+	content: none !important;
+}
+.wp-block-gallery ul li:before {
+	content: none !important;
+}
+.wp-block-gallery ul {
+	margin: 0 !important;
+}
+.wp-block-gallery .blocks-gallery-item {
+	padding-left: 0;
+}
+.wp-block-gallery .blocks-gallery-item:last-child {
+	margin-bottom: 1em;
+}
+.wp-block-gallery.is-cropped .blocks-gallery-item a,
+.wp-block-gallery.is-cropped .blocks-gallery-item img {
+	height: 100%;
+	flex: 1;
+	object-fit: cover;
+}
+.wp-block-gallery .blocks-gallery-item img {
+	transition: opacity 0.3s;
+}
+.wp-block-gallery .blocks-gallery-item a {
+	border-bottom: 0;
+}
+.wp-block-gallery .blocks-gallery-item a:hover img {
+	opacity: .8;
+}
+@media (min-width: 768px){
+	.the-content .wp-block-gallery.alignfull {
+		margin-left: calc( ( ( 100vw - var(--knd-content-width) ) / 2 ) * -1 );
+		margin-right: calc( ( ( 100vw - var(--knd-content-width) ) / 2 ) * -1 );
+	}
+}
+@media (min-width: 1200px){
+	.the-content .wp-block-gallery.alignwide {
+		margin-left: calc( ( ( var(--knd-medium-content-width) - var(--knd-content-width) ) / 2 ) * -1 );
+		margin-right: calc( ( ( var(--knd-medium-content-width) - var(--knd-content-width) ) / 2 ) * -1 );
+	}
+}
+
+/* BlockQuote */
+.wp-block-quote {
+	border-left: 0;
+}
+
+

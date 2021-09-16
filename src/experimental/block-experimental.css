@@ -1,0 +1,22 @@
+/**
+ * Block Hero
+ */
+
+:root {
+    --knd-block-hero-background: #e6e6e6;
+    --knd-block-hero-overlay-start: rgba(0, 0, 0, 0);
+    --knd-block-hero-overlay-end: rgba(0, 0, 0, 0.8);
+    --knd-block-hero-color: #081d47;
+}
+.knd-block-hero-experimental.knd-block-hero:after {
+    --knd-block-hero-overlay-start: rgba(255,255,255, 0.7);
+    --knd-block-hero-overlay-end: rgba(255,255,255, 0.8);
+}
+.knd-block-hero-experimental .knd-block-hero__title {
+    background: transparent;
+    line-height: 1.4;
+}
+.knd-block-hero-experimental .knd-block-hero__title:focus {
+    outlin: none;
+    border: 0;
+}

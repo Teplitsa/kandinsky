@@ -13,16 +13,16 @@
 
 
 body {
-    background-color: transparent;
-    text-rendering: optimizeLegibility;
-    color: $color-text;
-    @include knd-body-text();
+	background-color: transparent;
+	text-rendering: optimizeLegibility;
+	color: var(--knd-color-base);
+	@include knd-body-text();
 }
 
 #tinymce {
-    margin: 10px 12px; 
-    @include the-content();
-    .gallery-caption {
-        display: none;
-    }
+	margin: 10px 12px; 
+	@include the-content();
+	.gallery-caption {
+		display: none;
+	}
 }

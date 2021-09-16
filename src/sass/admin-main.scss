@@ -84,11 +84,6 @@
 	width: 100%;
 }
 
-
-#wpadminbar #wp-admin-bar-wp-logo .ab-icon::before {
-	color: #01E21A;
-}
-
 .tst-error {
 	border: 1px solid #DD3D36;
 	border-left-width: 5px;
@@ -136,29 +131,29 @@ div [id *="ninja_forms_metabox"] .item-edit.metabox-item-edit {
 }
 
 .knd-message {
-  overflow: hidden;
-  position: relative;
-  border-left-color: #2ea2cc !important;
+	overflow: hidden;
+	position: relative;
+	border-left-color: #2ea2cc !important;
 }
 .knd-message a.button-primary,
 .knd-message a.button-secondary {
-  text-decoration: none !important;
+	text-decoration: none !important;
 }
 .knd-message a.knd-message-close {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 10px 15px 10px 21px;
-  font-size: 13px;
-  line-height: 1.23076923;
-  text-decoration: none;
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 10px 15px 10px 21px;
+	font-size: 13px;
+	line-height: 1.23076923;
+	text-decoration: none;
 }
 .knd-message a.knd-message-close:before {
-  position: absolute;
-  top: 8px;
-  left: 0;
-  -webkit-transition: all .1s ease-in-out;
-  transition: all .1s ease-in-out;
+	position: absolute;
+	top: 8px;
+	left: 0;
+	-webkit-transition: all .1s ease-in-out;
+	transition: all .1s ease-in-out;
 }
 
 .knd-dashboard {
@@ -174,6 +169,7 @@ div [id *="ninja_forms_metabox"] .item-edit.metabox-item-edit {
 		margin: 16px 0;
 		flex-grow: 0;
 		align-items: center;
+		text-decoration: none;
 
 		.dashicons {
 			margin-right: 4px;
@@ -322,3 +318,13 @@ table.media .column-title .media-icon img[src*='.svg']{
 .knd-kirki-notice {
 	position: relative;
 }
+
+/* Admin Footer */
+.knd-admin-footer {
+	font-style: italic;
+	&:not(:first-child) {
+		padding-left: 10px;
+	}
+}
+
+@import 'admin/em-admin';

@@ -1,73 +1,24 @@
 <?php if( !defined('WPINC') ) die;
 /**
  * Socila links and sharing
- **/
-
-function knd_social_links($atts = array(), $echo = true) {
-
-	$atts['class'] = empty($atts['class']) ? '' : esc_attr($atts['class']);
-
-	ob_start();
-
-	$social_links = array();
-	foreach(knd_get_social_media_supported() as $id => $data) {
-
-		$link = esc_url(knd_get_theme_mod('knd_social_links_'.$id));
-		if($link) {
-			$social_links[$id] = array('label' => $data['label'], 'link' => $link);
-		}
-
-	}
-
-	if($social_links) {?>
-
-	<ul class="knd-social-links <?php echo $atts['class'];?>">
-	<?php foreach($social_links as $id => $data) {?>
-
-		<li class="<?php echo esc_attr($id);?>">
-			<a href="<?php echo esc_url($data['link']);?>">
-				<svg class="svg-icon"><use xlink:href="#<?php echo 'icon-'.$id;?>"/></svg>
-				<span><?php echo esc_html($data['label']);?></span>
-			</a>
-		</li>
-
-	<?php }?>
-	</ul>
-
-	<?php }
-
-	$out = ob_get_contents();
-	ob_end_clean();
-
-	if( !!$echo ) {
-		echo $out;
-	} else {
-		return $out;
-	}
-
-}
-
-/**
- * Social Header links
  */
-function knd_header_social($atts = array(), $echo = true) {
+function knd_social_links( $atts = array(), $echo = true ) {
 
 	$atts['class'] = empty($atts['class']) ? '' : esc_attr($atts['class']);
 
 	ob_start();
 
 	$social_links = array();
-	foreach(knd_get_social_media_supported() as $id => $data) {
+	foreach( knd_get_social_media_supported() as $id => $data ) {
 
-		$link = esc_url(knd_get_theme_mod('knd_header_social_'.$id));
-		if($link) {
-			$social_links[$id] = array('label' => $data['label'], 'link' => $link);
+		$link = esc_url( knd_get_theme_mod( 'knd_social_'.$id ) );
+		if( $link ) {
+			$social_links[ $id ] = array( 'label' => $data['label'], 'link' => $link );
 		}
 
 	}
 
-	if($social_links) {?>
-
+	if( $social_links ) { ?>
 	<ul class="knd-social-links <?php echo $atts['class'];?>">
 	<?php foreach($social_links as $id => $data) {?>
 
@@ -132,7 +83,6 @@ function knd_social_share_no_js() {
 			'show_mobile' => true,
 		),
 	);
-	
 ?>
 <div class="social-likes-wrapper">
 <div class="social-likes social-likes_visible social-likes_ready">

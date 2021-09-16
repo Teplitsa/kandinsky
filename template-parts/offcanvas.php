@@ -45,7 +45,7 @@
 	knd_offcanvas_button();
 
 	if ( get_theme_mod( 'offcanvas_social', true ) ) {
-		knd_header_social();
+		knd_social_links();
 	}
 	?>
 
