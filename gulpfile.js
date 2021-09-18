@@ -5,6 +5,8 @@ var basePaths = { // Paths for source and bundled parts of app
 	es = require( 'event-stream' ),
 	zip = require('gulp-zip');
 	gutil = require( 'gulp-util' ),
+	babel = require('gulp-babel'),
+	prettier = require('gulp-prettier'),
 	bourbon = require( 'node-bourbon' ),
 	path = require( 'relative-path' ),
 	runSequence = require( 'run-sequence' ),
@@ -76,17 +78,39 @@ gulp.task( 'build-blocks-js', function() {
 		.pipe( gulp.dest( basePaths.dest + 'js' ) ); //write results into file
 });
 
-/*
-gulp.task('build-blocks-js', function() {
-	return gulp.src('src/js/blocks/blocks.js')
-		.pipe(concat('blocks.js'))
-		.pipe(jsImport({
-			hideConsole: true,
-			importStack: true
-		}))
-		.pipe(gulp.dest('assets/js/'));
+
+gulp.task( 'jsx', function () {
+	return gulp
+	.src( './src/jsx/**/*.jsx' )
+	.pipe(babel({
+		presets: [
+			[
+				"@babel/preset-env", // https://babeljs.io/docs/en/babel-preset-env
+				{
+					"targets": {
+						"chrome": "80",
+					}
+				}
+			],
+			[
+				"@babel/preset-react",
+				{
+					"pragma": "el", // default pragma is React.createElement (only in classic runtime)
+				}
+			]
+		]
+	}))
+
+	.pipe( prettier({ // Prettier docs https://prettier.io/docs/en/options.html
+		singleQuote: false,
+		useTabs: true,
+		bracketSpacing: true,
+		printWidth: 40,
+		//proseWrap: 'never',
+	}))
+
+	.pipe( gulp.dest( './assets/js/' ));
 });
-*/
 
 // Sass
 gulp.task( 'build-css', function() {
