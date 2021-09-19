@@ -26,7 +26,7 @@ function knd_inline_style() {
 	// Base typography.
 	if ( get_theme_mod( 'font_base', true ) && class_exists( 'Kirki' ) ) {
 		$knd_color_base       = knd_typography( 'font_base', 'color', '#000000' );
-		$knd_font_family_base = knd_typography( 'font_base', 'font-family', 'Jost' );
+		$knd_font_family_base = '"' . knd_typography( 'font_base', 'font-family', 'Jost' ) . '"';
 		$knd_font_weight_base = knd_typography( 'font_base', 'variant', '400' );
 		$knd_font_size_base   = knd_typography( 'font_base', 'font-size', '16px' );
 	} else {
