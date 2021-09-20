@@ -1,3 +1,6 @@
+var path = require('path');
+var name = path.basename(__dirname);
+
 var basePaths = { // Paths for source and bundled parts of app
 		src: 'src/', dest: 'assets/', npm: 'node_modules/'
 	},
@@ -335,14 +338,11 @@ gulp.task('zip', function(){
 		'!CHANGELOG.md',
 		'!package.json',
 		'!package-lock.json',
-		'!theme_test.json'
+		'!theme_test.json',
+		'!**.zip'
 	];
 
 	return gulp.src( distFiles, { base: '../' } )
-		.pipe( zip( 'kandinsky.zip' ) )
+		.pipe( zip( name + '.zip' ) )
 		.pipe( gulp.dest( './' ) )
 });
-
-// gulp.task('zip', function(){
-// 	return run('npm run archive').exec();
-// });
