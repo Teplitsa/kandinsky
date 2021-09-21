@@ -158,10 +158,13 @@ function knd_block_people_render_callback( $attr ) {
 			$excerpt = $this_post->post_excerpt;
 
 			$html .= '<article class="knd-block-item">
-				<div class="entry-preview">' . get_the_post_thumbnail( null, 'square' ) . '</div>
-				<div class="entry-data">
-					<h4 class="entry-title">' . get_the_title() . '</h4>
-					<div class="entry-meta">' . esc_html( $excerpt ) . '</div>
+				<div class="knd-block-item__inner">
+					<div class="entry-preview">' . get_the_post_thumbnail( null, 'square' ) . '</div>
+					<div class="entry-data">
+						<h4 class="entry-title">' . get_the_title() . '</h4>
+						<div class="entry-meta">' . esc_html( $excerpt ) . '</div>
+					</div>
+					<a href="' . get_permalink() . '" class="knd-block-item-link"></a>
 				</div>
 			</article>';
 
