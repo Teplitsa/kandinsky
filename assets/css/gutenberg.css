@@ -12,6 +12,10 @@
 	color: var(--knd-color-base);
 }
 
+.editor-styles-wrapper .editor-post-title__input {
+	font-weight: inherit;
+}
+
 .editor-styles-wrapper .editor-post-title,
 .editor-styles-wrapper h1,
 .editor-styles-wrapper h2,
