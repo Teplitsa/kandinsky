@@ -119,6 +119,9 @@ function knd_block_events_render_callback( $attr ) {
 		while ( $query->have_posts() ) :
 			$query->the_post();
 
+			global $post;
+			$post_id = $post->ID;
+
 			$this_event = knd_init_event_metas( get_the_ID() );
 
 			$thumbnail_img = '';
@@ -144,7 +147,7 @@ function knd_block_events_render_callback( $attr ) {
 				<div class="knd-event__col">
 					<article class="knd-event__item">
 						<div class="knd-event__image">
-							<a href="' . get_the_permalink() . '" class="knd-event__image-inner">
+							<a href="' . get_the_permalink( $post_id ) . '" class="knd-event__image-inner">
 								' . $thumbnail_img . '
 							</a>
 						</div>
@@ -155,7 +158,7 @@ function knd_block_events_render_callback( $attr ) {
 									<span class="knd-event__month">' . knd_get_event_meta( '#M' ) . '</span>
 								</div>
 								<div class="knd-event__details">
-									<h5><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></h5>
+									<h5><a href="' . get_the_permalink( $post_id ) . '">' . get_the_title() . '</a></h5>
 									<div class="knd-event__details-list">
 										' . $event_rsvp . '
 										<div class="knd-event__details-item knd-event__details-dates">
@@ -171,7 +174,7 @@ function knd_block_events_render_callback( $attr ) {
 									' . knd_get_event_speakers() . '
 								</div>
 								<div class="knd-event__footer-link">
-									<a href="' . get_the_permalink() . '">
+									<a href="' . get_the_permalink( $post_id ) . '">
 										' . knd_svg_icon( 'icon-arrow-right', false ) . '
 									</a>
 								</div>
