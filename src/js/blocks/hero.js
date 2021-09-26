@@ -161,8 +161,6 @@
 			// Pull out the props we'll use
 			const { attributes, className, setAttributes, clientId } = props;
 
-			console.log(props);
-
 			// Pull out specific attributes for clarity below
 			const { backgroundImage, featuredImage } = attributes;
 
