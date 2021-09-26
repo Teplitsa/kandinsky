@@ -189,7 +189,7 @@
 						a,
 						el( Button,
 							{
-								isDefault: true,
+								isSecondary: true,
 								variant: 'primary',
 								isSmall: true,
 								onClick: t.bind(this)
