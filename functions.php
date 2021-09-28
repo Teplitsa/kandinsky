@@ -13,7 +13,7 @@ if( WP_DEBUG && WP_DEBUG_DISPLAY && (defined('DOING_AJAX') && DOING_AJAX) ){
 	@ ini_set( 'display_errors', 1 );
 }
 
-define('KND_VERSION', '2.0.0');
+define('KND_VERSION', '2.0.0.2');
 define('KND_DOC_URL', 'https://github.com/Teplitsa/kandinsky/wiki/');
 define('KND_OFFICIAL_WEBSITE_URL', 'https://knd.te-st.ru/');
 define('KND_SOURCES_PAGE_URL', 'https://github.com/Teplitsa/kandinsky/');
