@@ -21,6 +21,7 @@ function knd_enqueue_block_editor_assets() {
 		'wp-data',
 		'wp-core-data',
 		'wp-compose',
+		'wp-hooks',
 		'wp-server-side-render',
 		'wp-i18n'
 	);
@@ -28,8 +29,7 @@ function knd_enqueue_block_editor_assets() {
 	wp_enqueue_script( 'knd-gutenberg', get_template_directory_uri() . '/assets/js/gutenberg.js', $dependencies );
 	wp_enqueue_script( 'knd-blocks', get_template_directory_uri() . '/assets/js/blocks.js', array( 'knd-gutenberg' ), filemtime( get_template_directory() . '/assets/js/blocks.js' ) );
 
-	wp_enqueue_style( 'knd-gutenberg', get_template_directory_uri() . '/assets/css/gutenberg.css', array(), filemtime( get_template_directory() .'/assets/css/gutenberg.css' )
-	);
+	wp_enqueue_style( 'knd-gutenberg', get_template_directory_uri() . '/assets/css/gutenberg.css', filemtime( get_template_directory() .'/assets/css/gutenberg.css' ) );
 
 	$kndBlock = array();
 
@@ -117,11 +117,20 @@ function knd_enqueue_block_assets() {
 
 	$dependencies = array(
 		'wp-block-library',
+		'flickity'
 	);
 
 	if ( is_admin() ) {
 		$dependencies[] = 'wp-edit-blocks';
 	}
+
+	wp_register_script( 'flickity', get_template_directory_uri() . '/assets/js/flickity.pkgd.min.js', array( 'jquery' ), '2.2.2' );
+
+	// Scripts.
+	wp_enqueue_script( 'knd', get_template_directory_uri() . '/assets/js/scripts.js', array('jquery', 'flickity'), knd_get_theme_version(), true );
+
+	// Register Flickity style.
+	wp_register_style( 'flickity', get_template_directory_uri() . '/assets/css/flickity.min.css', array(), '2.2.2' );
 
 	$file_uri = '/assets/blocks.css';
 	wp_enqueue_style( 'knd-blocks', get_template_directory_uri() . '/assets/css/blocks.css', $dependencies, filemtime( get_template_directory() . '/assets/css/blocks.css' ) );

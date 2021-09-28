@@ -58,8 +58,12 @@ class KND_CssJs {
 		$dependencies = array(
 			'jquery',
 			'imagesloaded',
+			'flickity',
 			'fancybox',
 		);
+
+		// Register Flickity script.
+		wp_register_script( 'flickity', get_template_directory_uri() . '/assets/js/flickity.pkgd.min.js', array( 'jquery' ), '2.2.2', true );
 
 		// Register theme scripts.
 		wp_register_script( 'fancybox', get_template_directory_uri() . '/assets/js/jquery.fancybox.min.js', array( 'jquery' ), '3.5.7', true );
@@ -85,7 +89,7 @@ class KND_CssJs {
 		wp_enqueue_script( 'knd-admin', get_template_directory_uri() . '/assets/js/admin.js', array( 'jquery', 'wp-i18n' ), knd_get_theme_version() );
 
 		/* Translatable string */
-		wp_localize_script('knd-admin', 'knd',
+		wp_localize_script('knd-admin', '_knd',
 			array(
 				'ajaxurl' => admin_url( 'admin-ajax.php' ),
 				'nonce'   => wp_create_nonce( 'knd-nonce' ),
@@ -127,7 +131,6 @@ class KND_CssJs {
 } // class
 
 KND_CssJs::get_instance();
-
 
 /**
  * Disable emojji.
