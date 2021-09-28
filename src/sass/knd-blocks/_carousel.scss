@@ -1,0 +1,53 @@
+/**
+ * Carousel
+ */
+
+.knd-block-carousel {
+
+	.flickity {
+		&-button {
+			background: #fff;
+
+			&-icon {
+				fill: var(--knd-color-main);
+			}
+		}
+
+		&-button:hover {  
+			background: #E6E6E6;
+		}
+
+		&-prev-next-button {
+			width: 42px;
+			height: 42px;
+			border: 2px solid #E6E6E6;
+
+			@media (min-width: 1250px) {
+				&.previous {
+					left: -30px;
+				}
+
+				&.next {
+					right: -30px;
+				}
+			}
+		}
+	}
+
+	&.flickity-buttons-top {
+		.flickity-prev-next-button {
+			&.previous {
+				left: auto;
+				right: 75px;
+				top: -40px;
+			}
+
+			&.next {
+				right: 20px;
+				top: -40px;
+			}
+
+		}
+
+	}
+}

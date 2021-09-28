@@ -2,7 +2,7 @@
  * Partners Block
  */
 
-( function( blocks, editor, blockEditor, element, components, compose, i18n, serverSideRender ) {
+( function( blocks, editor, blockEditor, element, components, compose, i18n, serverSideRender, hooks ) {
 
 	const ServerSideRender = serverSideRender;
 
@@ -16,6 +16,8 @@
 	const { Fragment } = element;
 
 	const { withState } = compose;
+
+	const { doAction } = hooks;
 
 	const { __ } = i18n;
 
@@ -50,6 +52,21 @@
 			}
 		)
 	);
+
+	let autoPlayToggleControl = ( props ) => {
+
+		if ( props.attributes.layout !== 'carousel' ) {
+			return;
+		}
+
+		return el( ToggleControl, {
+			label: __( 'Auto Play', 'knd' ),
+			checked: props.attributes.autoplay,
+			onChange: val => {
+				props.setAttributes( { autoplay: ! props.attributes.autoplay } );
+			},
+		});
+	};
 
 	registerBlockType( 'knd/partners', {
 		title: __( 'Partners', 'knd' ),
@@ -86,14 +103,33 @@
 			},
 			headingColor: {
 				type: 'string',
-			}
+			},
+			layout: {
+				type: 'string',
+				default: 'grid',
+			},
+			autoplay: {
+				type: 'boolean',
+				default: false,
+			},
+			preview: {
+				type: 'boolean',
+				default: false,
+			},
 		},
 
 		example: {
+			attributes: {
+				postsToShow: 4,
+				preview : true
+			},
 			viewportWidth: 720
 		},
 
 		edit: function( props ) {
+
+			doAction( 'knd.block.edit', props );
+
 			return (
 				el( Fragment, {},
 
@@ -130,6 +166,29 @@
 									props.setAttributes( { heading: val } );
 								},
 							}),
+
+							el ( SelectControl,
+								{
+									//multiple: true,
+									label: __( 'Layout', 'knd' ),
+									onChange: ( val ) => {
+										props.setAttributes( { layout: val } );
+									},
+									value: props.attributes.layout,
+									options: [
+										{
+											label: __( 'Grid', 'knd' ),
+											value: 'grid'
+										},
+										{
+											label: __( 'Carousel', 'knd' ),
+											value: 'carousel'
+										},
+									],
+
+								}
+							),
+
 							el( RangeControl,
 								{
 									label: __( 'Partners to show', 'knd' ),
@@ -154,6 +213,9 @@
 									}
 								}
 							),
+
+							autoPlayToggleControl( props ),
+
 						),
 
 						el( PanelBody,
@@ -187,20 +249,22 @@
 						),
 					),
 
-					el(	Disabled,
+					el( Disabled,
 						null,
 						el( ServerSideRender, {
 							block: 'knd/partners',
 							attributes: props.attributes,
+							className: 'knd-block-server-side-rendered',
 						} ),
 					)
 				)
 			);
 		},
- 
+
 		save: function() {
+			return null;
 		}
-		
+
 	} );
 }(
 	window.wp.blocks,
@@ -211,4 +275,5 @@
 	window.wp.compose,
 	window.wp.i18n,
 	window.wp.serverSideRender,
+	window.wp.hooks,
 ) );

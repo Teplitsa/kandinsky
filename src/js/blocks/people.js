@@ -2,21 +2,23 @@
  * People Block
  */
 
-( function( blocks, editor, blockEditor, element, components, compose, i18n, serverSideRender ) {
+( function( blocks, editor, blockEditor, element, components, i18n, serverSideRender, hooks, data ) {
 
 	const ServerSideRender = serverSideRender;
 
 	const el = element.createElement;
 
-	const { TextControl, SelectControl, RangeControl, ColorPalette, PanelBody, Dashicon, ToggleControl, Disabled } = components;
+	const { TextControl, SelectControl, RangeControl, ColorPalette, PanelBody, Dashicon, ToggleControl, Disabled, Spinner, Placeholder } = components;
 
 	const { registerBlockType, withColors, PanelColorSettings, getColorClassName, useBlockProps } = blocks;
 
 	const { InspectorControls, ColorPaletteControl } = blockEditor;
 
-	const { Fragment } = element;
+	const { Fragment, Component, useEffect, useState } = element;
 
-	const { withState } = compose;
+	const { subscribe, select, dispatch, withSelect, withDispatch, useSelect, useDispatch } = data;
+
+	const { doAction } = hooks;
 
 	const { __ } = i18n;
 
@@ -56,8 +58,23 @@
 
 	);
 
+	let autoPlayToggleControl = ( props ) => {
+
+		if ( props.attributes.layout !== 'carousel' ) {
+			return;
+		}
+
+		return el( ToggleControl, {
+			label: __( 'Auto Play', 'knd' ),
+			checked: props.attributes.autoplay,
+			onChange: val => {
+				props.setAttributes( { autoplay: ! props.attributes.autoplay } );
+			},
+		});
+	};
+
 	registerBlockType( 'knd/people', {
-		title: __( 'Team', 'knd' ), // Команда
+		title: __( 'Team', 'knd' ),
 		icon: icon,
 		category: 'kandinsky',
 		keywords: [ __( 'people', 'knd' ), __( 'user', 'knd' ), __( 'team', 'knd' ), __( 'profile', 'knd' ) ],
@@ -100,12 +117,25 @@
 			},
 			category: {
 				type: 'string',
-			}
+			},
+			layout: {
+				type: 'string',
+				default: 'grid',
+			},
+			autoplay: {
+				type: 'boolean',
+				default: false,
+			},
+			preview: {
+				type: 'boolean',
+				default: false,
+			},
 		},
 
 		example: {
 			attributes: {
 				postsToShow: 4,
+				preview : true
 			},
 			viewportWidth: 720
 		},
@@ -131,6 +161,8 @@
 			Object.keys(peopleCats).forEach(function (key) {
 				peopleCatsOptions.push({value: key, label: peopleCats[key]})
 			});
+
+			doAction( 'knd.block.edit', props );
 
 			return (
 				el( Fragment, {},
@@ -161,13 +193,38 @@
 							{
 								title: __( 'Settings', 'knd' )
 							},
-							el( TextControl, {
-								label: __( 'Heading', 'knd' ),
-								value: props.attributes.heading,
-								onChange: ( val ) => {
-									props.setAttributes( { heading: val } );
-								},
-							}),
+							el( TextControl,
+								{
+									label: __( 'Heading', 'knd' ),
+									value: props.attributes.heading,
+									onChange: ( val ) => {
+										props.setAttributes( { heading: val } );
+									},
+								}
+							),
+
+							el ( SelectControl,
+								{
+									//multiple: true,
+									label: __( 'Layout', 'knd' ),
+									onChange: ( val ) => {
+										props.setAttributes( { layout: val } );
+									},
+									value: props.attributes.layout,
+									options: [
+										{
+											label: __( 'Grid', 'knd' ),
+											value: 'grid'
+										},
+										{
+											label: __( 'Carousel', 'knd' ),
+											value: 'carousel'
+										},
+									],
+
+								}
+							),
+
 							el( RangeControl,
 								{
 									label: __( 'People to show', 'knd' ),
@@ -188,10 +245,13 @@
 									min: 3,
 									max: 8,
 									onChange: function( val ) {
-										props.setAttributes({ columns: val })
+										props.setAttributes({ columns: val });
 									}
 								}
 							),
+
+							autoPlayToggleControl( props ),
+
 							el ( SelectControl,
 								{
 									//multiple: true,
@@ -258,25 +318,35 @@
 						),
 					),
 
-					el( Disabled,
-						null,
-						el( ServerSideRender, {
-							block: 'knd/people',
-							attributes: props.attributes,
-						} ),
+					el( Disabled, null,
+
+						el( ServerSideRender,
+							{
+								block: 'knd/people',
+								attributes: props.attributes,
+								className: 'knd-block-server-side-rendered',
+							}
+						),
+
 					)
 				)
-			);
+			)
 		},
 
+		save: function() {
+			return null;
+		}
+
 	} );
+
 }(
 	window.wp.blocks,
 	window.wp.editor,
 	window.wp.blockEditor,
 	window.wp.element,
 	window.wp.components,
-	window.wp.compose,
 	window.wp.i18n,
 	window.wp.serverSideRender,
+	window.wp.hooks,
+	window.wp.data
 ) );

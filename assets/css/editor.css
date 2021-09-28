@@ -599,12 +599,12 @@ h6 {
 @media screen and (min-width: 480px) {
 	.the-content .wp-caption.alignleft {
 		float: left;
-		margin: 0 48px 10px 0;
+		margin: 0 40px 10px 0;
 		max-width: 50%;
 	}
 	.the-content .wp-caption.alignright {
 		float: right;
-		margin: 0 0 10px 48px;
+		margin: 0 0 10px 40px;
 		max-width: 50%;
 	}
 }
@@ -695,7 +695,7 @@ h6 {
 @media screen and (min-width: 480px) {
 	.the-content a[href].alignleft {
 		float: left;
-		margin: 0 48px 10px 0;
+		margin: 0 40px 10px 0;
 		max-width: 50%;
 	}
 }
@@ -713,7 +713,7 @@ h6 {
 @media screen and (min-width: 480px) {
 	.the-content a[href].alignright {
 		float: right;
-		margin: 0 0 10px 48px;
+		margin: 0 0 10px 40px;
 		max-width: 50%;
 	}
 }
@@ -733,7 +733,7 @@ h6 {
 	.the-content img.alignleft,
 	.the-content img[align="left"] {
 		float: left;
-		margin: 0 48px 10px 0;
+		margin: 0 40px 10px 0;
 		max-width: 50%;
 		height: auto;
 	}
@@ -749,7 +749,7 @@ h6 {
 	.the-content img.alignright,
 	.the-content img[align="right"] {
 		float: right;
-		margin: 0 0 10px 48px;
+		margin: 0 0 10px 40px;
 		max-width: 50%;
 		height: auto;
 	}
@@ -1076,12 +1076,12 @@ body {
 @media screen and (min-width: 480px) {
 	#tinymce .wp-caption.alignleft {
 		float: left;
-		margin: 0 48px 10px 0;
+		margin: 0 40px 10px 0;
 		max-width: 50%;
 	}
 	#tinymce .wp-caption.alignright {
 		float: right;
-		margin: 0 0 10px 48px;
+		margin: 0 0 10px 40px;
 		max-width: 50%;
 	}
 }
@@ -1172,7 +1172,7 @@ body {
 @media screen and (min-width: 480px) {
 	#tinymce a[href].alignleft {
 		float: left;
-		margin: 0 48px 10px 0;
+		margin: 0 40px 10px 0;
 		max-width: 50%;
 	}
 }
@@ -1190,7 +1190,7 @@ body {
 @media screen and (min-width: 480px) {
 	#tinymce a[href].alignright {
 		float: right;
-		margin: 0 0 10px 48px;
+		margin: 0 0 10px 40px;
 		max-width: 50%;
 	}
 }
@@ -1210,7 +1210,7 @@ body {
 	#tinymce img.alignleft,
 	#tinymce img[align="left"] {
 		float: left;
-		margin: 0 48px 10px 0;
+		margin: 0 40px 10px 0;
 		max-width: 50%;
 		height: auto;
 	}
@@ -1226,7 +1226,7 @@ body {
 	#tinymce img.alignright,
 	#tinymce img[align="right"] {
 		float: right;
-		margin: 0 0 10px 48px;
+		margin: 0 0 10px 40px;
 		max-width: 50%;
 		height: auto;
 	}

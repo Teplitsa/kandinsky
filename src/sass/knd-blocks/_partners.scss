@@ -32,13 +32,19 @@
 .wp-block-knd-partners.has-background:not(.alignfull) {
 	border-radius: var(--knd-image-border-radius);
 }
-.wp-block-knd-partners .knd-block-items {
-	display: flex;
-	margin-left: -20px;
-	margin-right: -20px;
-	flex-wrap: wrap;
-	align-items: center;
+
+.wp-block-knd-partners {
+	.knd-block-items {
+		&:not(.knd-block-carousel) {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+		margin-left: -20px;
+		margin-right: -20px;
+	}
 }
+
 .wp-block-knd-partners .knd-block-item {
 	flex: 0 0 25%;
 	max-width: 25%;
@@ -62,22 +68,27 @@
 .wp-block-knd-partners.knd-block-col-4 .knd-block-item {
 	flex: 0 0 calc( 100% / 4 );
 	max-width: calc( 100% / 4 );
+	width: calc( 100% / 4 );
 }
 .wp-block-knd-partners.knd-block-col-5 .knd-block-item {
 	flex: 0 0 calc( 100% / 5 );
 	max-width: calc( 100% / 5 );
+	width: calc( 100% / 5 );
 }
 .wp-block-knd-partners.knd-block-col-6 .knd-block-item {
 	flex: 0 0 calc( 100% / 6 );
 	max-width: calc( 100% / 6 );
+	width: calc( 100% / 6 );
 }
 .wp-block-knd-partners.knd-block-col-7 .knd-block-item {
 	flex: 0 0 calc( 100% / 7 );
 	max-width: calc( 100% / 7 );
+	width: calc( 100% / 7 );
 }
 .wp-block-knd-partners.knd-block-col-8 .knd-block-item {
 	flex: 0 0 calc( 100% / 8 );
 	max-width: calc( 100% / 8 );
+	width: calc( 100% / 8 );
 }
 .the-content .wp-block-knd-partners.alignfull {
 	margin-left: -30px;

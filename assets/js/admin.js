@@ -73,10 +73,10 @@ jQuery( document ).ready( function( $ ) {
 
 		var data = {
 			action: 'knd_dismiss_notice',
-			nonce: knd.nonce,
+			nonce: _knd.nonce,
 		};
 
-		$.post( knd.ajaxurl, data, function( response ) {
+		$.post( _knd.ajaxurl, data, function( response ) {
 			// do nothing.
 		});
 

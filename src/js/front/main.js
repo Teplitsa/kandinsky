@@ -318,4 +318,8 @@
 		$('.knd-event__login-form').slideToggle();
 	});
 
+	$(window).on('load resize scroll', function () {
+		jQuery( '.knd-block-carousel' ).flickity( 'resize' );
+	});
+
 })( jQuery );
