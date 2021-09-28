@@ -145,7 +145,7 @@ function knd_block_events_render_callback( $attr ) {
 
 			$html .= '
 				<div class="knd-event__col">
-					<article class="knd-event__item">
+					<article class="' . esc_attr( implode( ' ', get_post_class( 'knd-event__item', $post_id ) ) ) . '">
 						<div class="knd-event__image">
 							<a href="' . get_the_permalink( $post_id ) . '" class="knd-event__image-inner">
 								' . $thumbnail_img . '
