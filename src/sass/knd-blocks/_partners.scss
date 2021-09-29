@@ -50,21 +50,27 @@
 	max-width: 25%;
 	padding: 0 20px 40px;
 }
-.wp-block-knd-partners .partner-link {
-	display: block;
-	border: 0;
+.wp-block-knd-partners {
+	.partner-link {
+		display: block;
+		border: 0;
+
+		img {
+			display: block;
+			max-height: 160px;
+			width: auto;
+			margin-left: auto;
+			margin-right: auto;
+			transition: all .3s;
+		}
+
+		&:hover img {
+			filter: grayscale(100%);
+		}
+	}
 }
-.wp-block-knd-partners .partner-link img {
-	display: block;
-	max-height: 160px;
-	width: auto;
-	margin-left: auto;
-	margin-right: auto;
-	transition: all .3s;
-}
-.wp-block-knd-partners .partner-link:hover img {
-	filter: grayscale(100%);
-}
+
+
 .wp-block-knd-partners.knd-block-col-4 .knd-block-item {
 	flex: 0 0 calc( 100% / 4 );
 	max-width: calc( 100% / 4 );

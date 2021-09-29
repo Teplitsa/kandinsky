@@ -1007,7 +1007,7 @@
 	}
 }
 
-.wp-block-knd-people .knd-block-item:hover {
+.wp-block-knd-people .knd-block-item.is-active-link:hover {
 	opacity: .8;
 }
 

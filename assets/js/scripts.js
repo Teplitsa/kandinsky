@@ -318,7 +318,7 @@
 		$('.knd-event__login-form').slideToggle();
 	});
 
-	$(window).on('load resize scroll', function () {
+	$(window).on('load resize', function () {
 		jQuery( '.knd-block-carousel' ).flickity( 'resize' );
 	});
 

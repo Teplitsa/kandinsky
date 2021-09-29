@@ -112,6 +112,10 @@
 				type: 'boolean',
 				default: false,
 			},
+			isLink: {
+				type: 'boolean',
+				default: true,
+			},
 			preview: {
 				type: 'boolean',
 				default: false,
@@ -211,6 +215,16 @@
 									onChange: function( val ) {
 										props.setAttributes({ columns: val })
 									}
+								}
+							),
+
+							el( ToggleControl,
+								{
+									label: __( 'Enable link', 'knd' ),
+									checked: props.attributes.isLink,
+									onChange: val => {
+										props.setAttributes( { isLink: ! props.attributes.isLink } );
+									},
 								}
 							),
 
