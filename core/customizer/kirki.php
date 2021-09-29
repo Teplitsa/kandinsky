@@ -53,7 +53,6 @@ require_once get_theme_file_path( '/core/customizer/theme-mods/archive-settings.
 require_once get_theme_file_path( '/core/customizer/theme-mods/post-settings.php' );
 require_once get_theme_file_path( '/core/customizer/theme-mods/project-settings.php' );
 require_once get_theme_file_path( '/core/customizer/theme-mods/footer.php' );
-//require_once get_theme_file_path( '/core/customizer/theme-mods/migrate.php' );
 
 /**
  * Customizer Controls Scripts
