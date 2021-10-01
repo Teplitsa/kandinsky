@@ -1515,6 +1515,11 @@
 	margin-right: -50px;
 }
 
+.knd-block-cover.has-background.alignfull {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
 .knd-block-cover-inner {
 	width: var(--knd-content-width);
 	max-width: 100%;
