@@ -108,10 +108,6 @@ if ( ! function_exists( 'knd_current_url' ) ) {
 			$page_url .= $_SERVER['SERVER_NAME'];
 		}
 
-		if ( isset( $_SERVER['SERVER_PORT']) && $_SERVER['SERVER_PORT'] != '80' ) {
-			$page_url .= ':' . $_SERVER['SERVER_PORT'];
-		}
-
 		if ( isset( $_SERVER['REQUEST_URI'] ) ) {
 			$page_url .= $_SERVER['REQUEST_URI'];
 		}
