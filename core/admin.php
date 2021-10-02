@@ -230,9 +230,10 @@ function knd_add_admin_pages( $items = array(), $is_inital_call = true ) {
 				knd_add_admin_pages( $item['items'], false );
 			}
 		} else {
-			
-			global $submenu;
-			$submenu['customize.php'][] = array( $item['text'], 'manage_options', $item['link'] );
+			if ( current_user_can( 'manage_options' ) ) {
+				global $submenu;
+				$submenu['customize.php'][] = array( $item['text'], 'manage_options', $item['link'] );
+			}
 		}
 	}
 }

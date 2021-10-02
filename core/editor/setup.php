@@ -38,14 +38,12 @@ function knd_gutenberg_setup() {
 add_action( 'after_setup_theme', 'knd_gutenberg_setup' );
 
 
-add_action( 'admin_menu', 'change_menu' );
-function change_menu() {
+function knd_admin_menu_blocks() {
 	$url_edit = 'edit.php?post_type=wp_block';
 
 	if ( $url_edit ) {
-		add_menu_page( esc_html__( 'Blocks', 'knd' ), esc_html__( 'Blocks', 'knd' ), 'edit_posts', $url_edit, null, 'dashicons-screenoptions', 20 );
+		add_menu_page( esc_html__( 'Blocks', 'knd' ), esc_html__( 'Blocks', 'knd' ), 'edit_pages', $url_edit, null, 'dashicons-screenoptions', 20 );
 	}
 
 }
-
-
+add_action( 'admin_menu', 'knd_admin_menu_blocks' );

@@ -31,7 +31,7 @@ function knd_register_post_type_project() {
 		'show_in_nav_menus'   => false,
 		'show_in_menu'        => true,
 		'show_in_admin_bar'   => true,
-		'capability_type'     => 'post',
+		'capability_type'     => 'page',
 		'has_archive'         => $archive_slug,//'projects',// get_option( 'page_for_projects' )
 		'rewrite'             => array(
 			'slug'       => 'project',

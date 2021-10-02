@@ -45,7 +45,7 @@ function knd_person_custom_content() {
 		'show_in_nav_menus'   => false,
 		'show_in_menu'        => true,
 		'show_in_admin_bar'   => true,
-		'capability_type'     => 'post',
+		'capability_type'     => 'page',
 		'has_archive'         => false,
 		'rewrite'             => array('slug' => 'profile', 'with_front' => false),
 		'hierarchical'        => false,
