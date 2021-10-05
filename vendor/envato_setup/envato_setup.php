@@ -37,7 +37,7 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 		 * @access private
 		 * @var string
 		 */
-		protected $version = '1.3.1';
+		protected $version = '2.0.0';
 
 		/** @var string Current theme name, used as namespace in actions. */
 		protected $theme_name = '';
