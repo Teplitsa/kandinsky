@@ -1,0 +1,45 @@
+/**
+ * Section Links
+ */
+
+.knd-block {
+	.section-links {
+		font-weight: 500;
+		font-size: 18px;
+		font-family: var(--knd-font-family-base);
+		display: flex;
+
+		a {
+			color: var(--knd-block-link-color);
+			border-bottom: none;
+			text-decoration: none;
+			line-height: 1.33;
+			letter-spacing: .03em;
+			display: flex;
+			align-items: center;
+
+			svg {
+				margin-left: 5px;
+				position: relative;
+				right: 0;
+				transition: right .1s;
+			}
+
+			&:hover {
+				border-bottom: transparent;
+				text-decoration: none;
+				color: var(--knd-block-link-color);
+				opacity: .7;
+
+				svg {
+					right: -2px;
+				}
+			}
+
+			& + a {
+				margin-left: 30px;
+			}
+
+		}
+	}
+}

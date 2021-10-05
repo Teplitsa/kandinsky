@@ -110,7 +110,7 @@ function knd_block_news_render_callback( $attr ) {
 
 	// Links Color
 	if ( isset( $attr['linkColor'] ) && $attr['linkColor'] ) {
-		$style .= '--knd-block-news-link-color:' . $attr['linkColor'] . ';';
+		$style .= '--knd-block-link-color:' . $attr['linkColor'] . ';';
 	}
 
 	// Meta Color

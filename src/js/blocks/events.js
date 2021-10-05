@@ -25,6 +25,14 @@
 
 	const { __ } = i18n;
 
+	function r(e) {
+		if (Array.isArray(e)) {
+			for (var t = 0, n = Array(e.length); t < e.length; t++) n[t] = e[t];
+			return n
+		}
+		return Array.from(e)
+	};
+
 	registerBlockType( 'knd/events', {
 		title: __( 'Events', 'knd' ),
 		icon: 'calendar',
@@ -58,6 +66,16 @@
 			headingColor: {
 				type: 'string',
 			},
+			linkColor: {
+				type: 'string',
+			},
+			headingLinks: {
+				type: "array",
+				default: []
+			},
+			hiddenReload: {
+				type: 'string',
+			}
 		},
 
 		example: {
@@ -82,6 +100,114 @@
 		],
 
 		edit: function( props ) {
+
+			var t = function() {
+				var t = [].concat(r( props.attributes.headingLinks));
+				t.push({
+					linkTitle: '',
+					linkUrl: ''
+				}),
+				props.setAttributes({
+					headingLinks: t
+				})
+			};
+			var n = function(t) {
+				var n = [].concat(r( props.attributes.headingLinks));
+				n.splice(t, 1), props.setAttributes({
+					headingLinks: n
+				})
+			};
+			var o = function(t, n) {
+				var o = [].concat(r(props.attributes.headingLinks));
+				o[n].linkTitle = t;
+				props.setAttributes({
+					headingLinks: o,
+					hiddenReload: t
+				})
+			};
+			var oo = function(t, n) {
+				var oo = [].concat(r(props.attributes.headingLinks));
+				oo[n].linkUrl = t;
+				props.setAttributes({
+					headingLinks: oo
+				});
+			};
+			var a = '';
+			var c = void 0;
+
+			function headingFields() {
+				return props.attributes.headingLinks.length && ( a = props.attributes.headingLinks.map( function( t, r ) {
+					return el( 'div',
+						{
+							key: r,
+						},
+						el( 'div',
+							{
+								className: 'component-heading-links',
+							},
+
+							el( TextControl,
+								{
+									label: __( 'Link Title', 'knd' ),
+									placeholder: '',
+									value: props.attributes.headingLinks[r].linkTitle,
+									onChange: function(e) {
+										return o(e, r)
+									}
+								}
+							),
+
+							el( TextControl,
+								{
+									label: __( 'Link Url', 'knd' ),
+									placeholder: '',
+									value: props.attributes.headingLinks[r].linkUrl,
+									onChange: function(e) {
+										return oo(e, r)
+									}
+								}
+							),
+
+							el( Button,
+								{
+									className: 'is-link',
+									isSmall: true,
+									text: __('Remove Link', 'knd' ),
+									isDestructive: true,
+									onClick: function() {
+										return n(r)
+									}
+								},
+							),
+
+						) )
+					} )
+				),
+
+				el( 'div', {
+					className: 'components-base-control',
+				},
+					[
+						a,
+						el( Button,
+							{
+								isSecondary: true,
+								variant: 'primary',
+								isSmall: true,
+								onClick: t.bind(this)
+							},
+							__('Add Link', 'knd' )
+						),
+						el( TextControl, {
+							type: 'hidden',
+							value: props.attributes.hiddenReload,
+							onChange: ( val ) => {
+								props.setAttributes( { hiddenReload: val } );
+							},
+						}),
+					]
+				)
+			};
 
 			return (
 				el( Fragment, {},
@@ -137,6 +263,16 @@
 
 						el( PanelBody,
 							{
+								title: __( 'Heading Links', 'knd' ),
+								className: 'knd-components-panel__body',
+							},
+
+							headingFields
+
+						),
+
+						el( PanelBody,
+							{
 								title: __( 'Colors', 'knd' ),
 								initialOpen: false
 							},
@@ -159,6 +295,17 @@
 									value: props.attributes.headingColor,
 									onChange: ( val ) => {
 										props.setAttributes( { headingColor: val } );
+									}
+								}
+							),
+
+							el( ColorPaletteControl,
+								{
+									label: __( 'Links Color', 'knd' ),
+									colors: kndBlockColors,
+									value: props.attributes.linkColor,
+									onChange: ( val ) => {
+										props.setAttributes( { linkColor: val } );
 									}
 								}
 							),

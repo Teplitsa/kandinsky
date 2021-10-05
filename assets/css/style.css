@@ -328,11 +328,6 @@ textarea {
 	text-align: center;
 }
 
-/* selections */
-/*a:link {
-	-webkit-tap-highlight-color: $color-main-dark;
-	-webkit-tap-highlight-color : $color-main-dark; 
-}*/
 body:not(#tinymce) ::-webkit-selection {
 	opacity: 1;
 	background: var(--knd-color-main-active);

@@ -5,7 +5,6 @@
 :root {
 	--knd-block-projects-background: transparent;
 	--knd-block-projects-title-color: var(--knd-color-headings);
-	--knd-block-projects-link-color: var(--knd-color-main-active);
 }
 .wp-block-knd-projects {
 	padding-top: 30px;
@@ -123,37 +122,4 @@
 	align-items: flex-end;
 	flex-wrap: wrap;
 	margin-bottom: 10px;
-}
-.wp-block-knd-projects .section-links {
-	font-weight: 500;
-	font-size: 18px;
-	font-family: var(--knd-font-family-base);
-	display: flex;
-}
-.wp-block-knd-projects .section-links a {
-	color: var(--knd-block-projects-link-color);
-	border-bottom: none;
-	text-decoration: none;
-	line-height: 1.33;
-	letter-spacing: .03em;
-	display: flex;
-	align-items: center;
-}
-.wp-block-knd-projects .section-links a + a {
-	margin-left: 30px;
-}
-.wp-block-knd-projects .section-links a:hover {
-	border-bottom: transparent;
-	text-decoration: none;
-	color: var(--knd-block-projects-link-color);
-	opacity: .7;
-}
-.wp-block-knd-projects .section-links a svg {
-	margin-left: 5px;
-	position: relative;
-	right: 0;
-	transition: right .1s;
-}
-.wp-block-knd-projects .section-links a:hover svg {
-	right: -2px;
 }
