@@ -40,7 +40,7 @@
 			</tbody>
 		</table>
 
-		<p class="envato-setup-actions step">
+		<div class="envato-setup-actions knd-wizard-actions step">
 			<a href="<?php echo esc_url($this->get_prev_step_link()); ?>" class="button-wizard-back button button-large"><?php esc_html_e( 'Back', 'knd' ); ?></a>
 			<a href="<?php echo esc_url($this->get_next_step_link()); ?>" class="button-primary button button-large button-next" data-callback="installContent">
 				<?php esc_html_e('Set up', 'knd'); ?>
@@ -49,5 +49,5 @@
 				<?php esc_html_e('Skip this step', 'knd'); ?>
 			</a>
 			<?php wp_nonce_field('knd-setup-content'); ?>
-		</p>
+		</div>
 	</form>

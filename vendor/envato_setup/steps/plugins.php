@@ -104,7 +104,7 @@ if ( ! get_option( 'leyka_last_ver' ) ) {
 		echo '<p><strong>'.esc_html_e("Good news! All plugins are already installed and up to date. Let's proceed further.", 'knd').'</strong></p>';
 	} ?>
 
-	<p class="envato-setup-actions step">
+	<div class="envato-setup-actions knd-wizard-actions step">
 		<a href="<?php echo esc_url($this->get_prev_step_link()); ?>" class="button-wizard-back button button-large"><?php esc_html_e( 'Back', 'knd' ); ?></a>
 		<a href="<?php echo esc_url($this->get_next_step_link()); ?>" class="button-primary button button-large button-next" data-callback="installPlugins">
 			<?php esc_html_e('Continue', 'knd'); ?>
@@ -113,5 +113,5 @@ if ( ! get_option( 'leyka_last_ver' ) ) {
 			<?php esc_html_e('Skip this step', 'knd'); ?>
 		</a>
 		<?php wp_nonce_field('envato-setup'); ?>
-	</p>
+	</div>
 </form>

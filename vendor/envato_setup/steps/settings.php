@@ -40,13 +40,12 @@
 
 	<input type="hidden" name="new_logo_id" id="new_logo_id" value="">
 
-
-	<p class="envato-setup-actions step">
+	<div class="envato-setup-actions knd-wizard-actions step">
 		<a href="<?php echo esc_url($this->get_prev_step_link()); ?>" class="button-wizard-back button button-large"><?php esc_html_e( 'Back', 'knd' ); ?></a>
 		<input type="submit" class="button-primary button button-large button-next" value="<?php esc_attr_e('Continue', 'knd'); ?>" name="save_step">
 		<a href="<?php echo esc_url($this->get_next_step_link()); ?>" class="button button-large button-next">
 			<?php esc_html_e('Skip this step', 'knd'); ?>
 		</a>
 		<?php wp_nonce_field('knd-setup-settings'); ?>
-	</p>
+	</div>
 </form>

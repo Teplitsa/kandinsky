@@ -50,7 +50,7 @@ if( $is_show_hello) : ?>
 		</p>
 	</div>
 
-	<p class="envato-setup-actions knd-wizard-actions step">
+	<div class="envato-setup-actions knd-wizard-actions step">
 		<a class="button button-large button-wizard-back" href="<?php echo esc_url( admin_url() ); ?>">
 			<?php esc_html_e('Not right now', 'knd'); ?>
 		</a>
@@ -60,7 +60,7 @@ if( $is_show_hello) : ?>
 		</a>
 		<span id="knd-download-status-explain" style="display: none;"><?php esc_html_e('Downloading template archive...', 'knd')?></span>
 		<?php wp_nonce_field('knd-setup'); ?>
-	</p>
+	</div>
 </form>
 
 <?php
