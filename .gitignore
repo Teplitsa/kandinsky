@@ -18,3 +18,7 @@ _temp
 debug.log
 
 package-lock.json
+
+src/js/blocks/
+src/jsx
+es5.js
