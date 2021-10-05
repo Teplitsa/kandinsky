@@ -300,9 +300,10 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 
 			$this->steps = array(
 				'introduction' => array(
-					'name' => esc_attr__('Introduction', 'knd'),
-					'view' => array($this, 'step_intro_view'),
+					'name'    => esc_attr__('Introduction', 'knd'),
+					'view'    => array($this, 'step_intro_view'),
 					'handler' => array($this, 'step_scenario_handler'),
+					'icon'    => 'controls-play',
 				),
 			);
 			/*$this->steps['scenario'] = array(
@@ -311,36 +312,42 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 				//'handler' => array($this, 'step_scenario_handler'),
 			);*/
 			$this->steps['default_content'] = array(
-				'name' => esc_attr__('Content', 'knd'),
-				'view' => array($this, 'step_content_view'),
+				'name'    => esc_attr__('Content', 'knd'),
+				'view'    => array($this, 'step_content_view'),
 				'handler' => '',
+				'icon'    => 'text',
 			);
 			$this->steps['design'] = array(
-				'name' => esc_attr__('Logo', 'knd'),
-				'view' => array($this, 'step_logo_design_view'),
+				'name'    => esc_attr__('Logo', 'knd'),
+				'view'    => array($this, 'step_logo_design_view'),
 				'handler' => array($this, 'step_logo_design_handler'),
+				'icon'    => 'wordpress',
 			);
 			$this->steps['settings'] = array(
-				'name' => esc_attr__('Settings', 'knd'),
-				'view' => array($this, 'step_settings_view'),
+				'name'    => esc_attr__('Settings', 'knd'),
+				'view'    => array($this, 'step_settings_view'),
 				'handler' => array($this, 'step_settings_handler'),
+				'icon'    => 'admin-settings',
 			);
 			if(class_exists('TGM_Plugin_Activation') && isset($GLOBALS['tgmpa'])) {
 				$this->steps['default_plugins'] = array(
-					'name' => esc_attr__('Plugins', 'knd'),
-					'view' => array($this, 'step_default_plugins_view'),
+					'name'    => esc_attr__('Plugins', 'knd'),
+					'view'    => array($this, 'step_default_plugins_view'),
 					'handler' => '',
+					'icon'    => 'admin-plugins',
 				);
 			}
 			$this->steps['support'] = array(
-				'name' => esc_attr_x('Support', 'One word "support service" variant', 'knd'),
-				'view' => array($this, 'step_support_view'),
+				'name'    => esc_attr_x('Support', 'One word "support service" variant', 'knd'),
+				'view'    => array($this, 'step_support_view'),
 				'handler' => '', //array($this, 'step_support_handler'),
+				'icon'    => 'editor-help',
 			);
 			$this->steps['next_steps'] = array(
-				'name' => esc_attr__('Ready!', 'knd'),
-				'view' => array($this, 'step_ready_view'),
+				'name'    => esc_attr__('Ready!', 'knd'),
+				'view'    => array($this, 'step_ready_view'),
 				'handler' => '',
+				'icon'    => 'flag',
 			);
 
 			$this->steps = apply_filters($this->theme_name.'_theme_setup_wizard_steps', $this->steps);
@@ -500,10 +507,18 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 					?>"><?php
 						if($show_link) {
 							?>
-							<a href="<?php echo esc_url($this->get_step_link($step_key)); ?>"><?php echo esc_html($step['name']); ?></a>
+							<a href="<?php echo esc_url( $this->get_step_link( $step_key ) ); ?>">
+								<span class="dashicons dashicons-<?php echo esc_html( $step['icon'] ); ?>"></span>
+								<span class="step-name"><?php echo esc_html( $step['name'] ); ?></span>
+								
+							</a>
 							<?php
 						} else {
-							echo esc_html($step['name']);
+							?>
+							<span class="dashicons dashicons-<?php echo esc_html( $step['icon'] ); ?>"></span>
+							<span class="step-name"><?php echo esc_html( $step['name'] ); ?></span>
+							
+							<?php
 						}
 						?></li>
 				<?php endforeach; ?>

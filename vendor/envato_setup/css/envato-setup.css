@@ -14,6 +14,7 @@ body {
 	height: auto;
 	min-height: 100%;
 	box-sizing: border-box;
+	cursor: auto;
 }
 
 #wc-logo {
@@ -276,14 +277,43 @@ body {
 	box-sizing: border-box
 }
 
+.envato-setup-next-steps-first .button {
+	white-space: normal;
+}
+
 .envato-setup-content .envato-setup-next-steps .envato-setup-next-steps-last {
 	float: right;
 	width: 50%;
 	box-sizing: border-box
 }
 
+.envato-setup-next-steps-first {
+	padding-right: 2em;
+}
+
+@media (max-width: 575px) {
+	.envato-setup-next-steps-last {
+		display: none;
+	}
+	.envato-setup-content .envato-setup-next-steps .envato-setup-next-steps-first {
+		padding-right: 0;
+		float: none;
+		padding:  0;
+		width:  auto;
+		max-width: 320px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+.envato-setup-next-steps-last img {
+	display: block;
+	height: auto;
+	max-width: 100%;
+}
+
 .envato-setup-content .envato-setup-next-steps ul {
-	padding: 0 2em 0 0;
+	padding: 0;
 	list-style: none;
 	margin: 0 0 -.75em
 }
@@ -420,6 +450,16 @@ body {
 	background: #0091cd
 }
 
+.envato-setup-steps .step-name {
+	display: block;
+}
+
+@media (max-width: 575px) {
+	.envato-setup-steps .step-name {
+		display: none;
+	}
+}
+
 .envato-setup .envato-setup-actions .button {
 	float: right;
 	margin-right: .5em;
@@ -433,6 +473,22 @@ body {
 
 .envato-setup .envato-setup-actions .button-wizard-back {
 	float: left;
+}
+
+.envato-setup .envato-setup-actions .button-skip {
+	display: flex;
+	align-items: center;
+}
+
+@media (min-width: 783px ) {
+	.envato-setup .envato-setup-actions .button .dashicons {
+		display: none;
+	}
+}
+@media (max-width: 782px ) {
+	.envato-setup .envato-setup-actions .button .button-text {
+		display: none;
+	}
 }
 
 .wc-return-to-dashboard {

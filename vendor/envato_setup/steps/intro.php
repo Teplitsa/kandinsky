@@ -55,8 +55,9 @@ if( $is_show_hello) : ?>
 			<?php esc_html_e('Not right now', 'knd'); ?>
 		</a>
 		<input type="submit" class="button-primary button button-large button-next" id="knd-install-scenario" data-callback="kndDownloadPlotStep" value="<?php esc_attr_e("Let's go!", 'knd'); ?>" name="save_step">
-		<a href="<?php echo esc_url($this->get_next_step_link()); ?>" class="button button-large button-next knd-download-plot-skip">
-			<?php esc_html_e('Skip this step', 'knd'); ?>
+		<a href="<?php echo esc_url($this->get_next_step_link()); ?>" class="button button-large button-next button-skip knd-download-plot-skip">
+			<span class="button-text"><?php esc_html_e('Skip this step', 'knd'); ?></span>
+			<span class="dashicons dashicons-controls-skipforward"></span>
 		</a>
 		<span id="knd-download-status-explain" style="display: none;"><?php esc_html_e('Downloading template archive...', 'knd')?></span>
 		<?php wp_nonce_field('knd-setup'); ?>

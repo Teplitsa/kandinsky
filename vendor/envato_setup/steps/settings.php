@@ -43,8 +43,9 @@
 	<div class="envato-setup-actions knd-wizard-actions step">
 		<a href="<?php echo esc_url($this->get_prev_step_link()); ?>" class="button-wizard-back button button-large"><?php esc_html_e( 'Back', 'knd' ); ?></a>
 		<input type="submit" class="button-primary button button-large button-next" value="<?php esc_attr_e('Continue', 'knd'); ?>" name="save_step">
-		<a href="<?php echo esc_url($this->get_next_step_link()); ?>" class="button button-large button-next">
-			<?php esc_html_e('Skip this step', 'knd'); ?>
+		<a href="<?php echo esc_url($this->get_next_step_link()); ?>" class="button button-large button-next button-skip">
+			<span class="button-text"><?php esc_html_e('Skip this step', 'knd'); ?></span>
+			<span class="dashicons dashicons-controls-skipforward"></span>
 		</a>
 		<?php wp_nonce_field('knd-setup-settings'); ?>
 	</div>
