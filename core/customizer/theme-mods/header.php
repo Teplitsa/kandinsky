@@ -68,7 +68,7 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'type'     => 'image',
 	'settings' => 'header_logo_image',
 	'label'    => esc_html__( 'Logo', 'knd' ),
-	'description' => esc_html__( 'If only an image is used as a logo, then we recommend uploading an image with the dimensions of 630x132, or 132x13px for use along with the text.', 'knd' ),
+	'description' => esc_html__( 'If only an image is used as a logo, then we recommend uploading an image with the dimensions of 315 x 66 px, or 66 x 66 px for use along with the text.', 'knd' ),
 	'section'  => 'header',
 	'default'  => get_theme_mod( 'knd_custom_logo' ),
 	'choices'  => array(
