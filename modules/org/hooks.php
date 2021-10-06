@@ -52,7 +52,7 @@ function knd_org_custom_content() {
 		'menu_position'       => 20,
 		'menu_icon'           => 'dashicons-networking',
 		'show_in_rest'        => true,
-		'supports'            => array('title', 'excerpt', 'editor', 'thumbnail'),
+		'supports'            => array('title', 'excerpt', 'editor', 'thumbnail', 'custom-fields'),
 	));
 
 }

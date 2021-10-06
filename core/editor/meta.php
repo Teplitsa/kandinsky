@@ -10,26 +10,34 @@
  */
 function knd_gutenberg_panels_register_meta() {
 
-	$post_types = array(
+	/** Register meta field for page */
+	register_post_meta(
 		'page',
-		//'post
+		'_knd_is_page_title',
+		array(
+			'show_in_rest'  => true,
+			'type'          => 'boolean',
+			'single'        => true,
+			'auth_callback' => function () {
+				return current_user_can( 'edit_posts' );
+			},
+		)
 	);
 
-	foreach ( $post_types as $post_type ) {
+	/** Register meta field for post type org */
+	register_post_meta(
+		'org',
+		'_knd_org_url',
+		array(
+			'show_in_rest' => true,
+			'single' => true,
+			'type' => 'string',
+			'sanitize_callback' => 'esc_url',
+			'auth_callback' => function () {
+				return current_user_can( 'edit_posts' );
+			},
+		)
+	);
 
-		register_post_meta(
-			$post_type,
-			'_knd_is_page_title',
-			array(
-				'show_in_rest'  => true,
-				'type'          => 'boolean',
-				'single'        => true,
-				'auth_callback' => function () {
-					return current_user_can( 'edit_posts' );
-				},
-			)
-		);
-
-	}
 }
 add_action( 'init', 'knd_gutenberg_panels_register_meta' );

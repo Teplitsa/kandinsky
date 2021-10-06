@@ -10,11 +10,15 @@ const { __ } = wp.i18n;
 const { registerPlugin } = wp.plugins;
 const { PluginSidebar, PluginDocumentSettingPanel } = wp.editPost;
 const { compose, withState } = wp.compose;
-const { select, withSelect, withDispatch, useSelect, useDispatch } = wp.data;
+const { select, dispatch, withSelect, withDispatch, useSelect, useDispatch } = wp.data;
 const { TextControl, SelectControl, IconButton, ColorPalette, ToggleControl } = wp.components;
 const { useState, useEffect } = wp.element;
 
 const { addFilter, addAction } = wp.hooks;
+
+/**
+ * https://developer.wordpress.org/block-editor/how-to-guides/plugin-sidebar-0/plugin-sidebar-4-initialize-input/
+ */
 
 /* Is Page Title */
 var kndIsPageTitle = compose( [ withSelect( function ( select, props ) {
@@ -74,6 +78,64 @@ if( window.pagenow == 'page' ) {
 		render: kndRegisterPageOptions
 	} );
 }
+
+/** Partner Url Post Meta */
+var kndOrgUrl = function ( props ) {
+
+	var metaFieldValue = useSelect( function ( select ) {
+		var getCurrentPostId = select( 'core/editor' ).getCurrentPostId();
+		var urlValue = select( 'core/editor' ).getEditedPostAttribute( 'meta' )[ '_knd_org_url' ];
+		var getExcerpt = select('core/editor').getEditedPostAttribute('excerpt')
+
+		if ( ! urlValue ) {
+			urlValue = getExcerpt;
+		}
+
+		return urlValue;
+	}, [] );
+
+	var editPost = useDispatch( 'core/editor' ).editPost;
+
+	return el( TextControl, {
+		label: __( 'Partner Url', 'knd' ),
+		value: metaFieldValue,
+		onChange: function ( val ) {
+			console.log('val');
+			editPost( {
+				meta: { _knd_org_url: val },
+				excerpt: '',
+			} );
+		},
+	} );
+};
+
+/* Render page options */
+var kndRegisterOrgOptions = function() {
+	return el( PluginDocumentSettingPanel,
+		{
+			name: 'knd-org-options-panel',
+			className: 'knd-page-options-panel',
+			title: __( 'Page Options', 'knd' ),
+		},
+		el( 'div',
+			{ className: 'knd-org-options-url' },
+			el( kndOrgUrl )
+		)
+	);
+}
+
+/* Register Page Options Fields */
+if( window.pagenow == 'org' ) {
+	registerPlugin( 'knd-org-options-panel', {
+		icon: null,
+		render: kndRegisterOrgOptions
+	} );
+}
+
+/* Remove editor panel post-excerpt */
+dispatch('core/edit-post').removeEditorPanel( 'post-excerpt' );
+
+//
 
 /**
  * Reinit Filickity
