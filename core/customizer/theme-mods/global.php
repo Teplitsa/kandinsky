@@ -160,47 +160,20 @@ Kirki::add_section(
 
 foreach ( knd_get_social_media_supported() as $id => $data ) {
 
+	$social_label       = isset( $data['label'] ) ? $data['label'] : '';
+	$social_placeholder = isset( $data['placeholder'] ) ? $data['placeholder'] : '';
+
 	Kirki::add_field( 'knd_theme_mod', array(
-		'type'     => 'url',
-		'settings' => 'knd_social_' . esc_attr( $id ),
-		'label'    => esc_html( $data['label'] ),
-		'section'  => 'socials',
+		'type'        => 'url',
+		'settings'    => 'knd_social_' . esc_attr( $id ),
+		'label'       => esc_html( $social_label ),
+		'section'     => 'socials',
+		'input_attrs' => array(
+			'placeholder' => esc_attr( $social_placeholder ),
+		),
 	) );
 
 }
-
-// Kirki::add_field( 'knd_theme_mod', array(
-// 	'type'     => 'custom',
-// 	'settings' => 'fonts_colors_' . wp_unique_id( 'divider_' ),
-// 	'section'  => 'fonts_colors',
-// 	'default'  => '<div class="knd-customizer-heading">' . esc_html__( 'Лейка', 'knd' ) . '</div>',
-// ) );
-
-// Kirki::add_field( 'knd_theme_mod', array(
-// 	'type'        => 'color',
-// 	'settings'    => 'knd_leyka_color_main',
-// 	'label'       => esc_html__( 'Цвет фона активных кнопок и переключателей', 'knd' ),
-// 	'section'     => 'fonts_colors',
-// 	'default'     => '#ff510d',
-// 	'transport'   => 'auto',
-// 	'output'      => array(
-// 		array(
-// 			'element' => ':root',
-// 			'property' => '--leyka-color-main',
-// 			'context'  => array( 'editor', 'front' ),
-// 		),
-// 	),
-// ) );
-
-/* Nav Menus */
-/*Kirki::add_panel(
-	'nav_menus',
-	array(
-		'title'    => esc_html__( 'Menus' ),
-		'panel'    => 'global',
-		'priority' => 10,
-	)
-);*/
 
 /* Analitics Section */
 Kirki::add_section(
