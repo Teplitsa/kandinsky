@@ -36,7 +36,10 @@
 		margin-right: -8px;
 	}
 
-	p {
+	p,
+	ol li,
+	ul li,
+	td {
 		a {
 			text-decoration: none;
 			outline: none;
