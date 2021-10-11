@@ -130,7 +130,7 @@ function knd_enqueue_block_assets() {
 		$css_dependencies[] = 'wp-edit-blocks';
 	}
 
-	//wp_register_script( 'flickity', get_template_directory_uri() . '/assets/js/flickity.pkgd.min.js', array( 'jquery' ), '2.2.2' );
+	wp_enqueue_script( 'flickity', get_template_directory_uri() . '/assets/js/flickity.pkgd.min.js', array( 'jquery' ), '2.2.2' );
 
 	// Scripts.
 	wp_enqueue_script( 'knd', get_template_directory_uri() . '/assets/js/scripts.js', $js_dependencies, knd_get_theme_version(), true );

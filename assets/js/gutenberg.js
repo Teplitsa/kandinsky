@@ -130,10 +130,12 @@ if( window.pagenow == 'org' ) {
 		icon: null,
 		render: kndRegisterOrgOptions
 	} );
+
+	/* Remove editor panel post-excerpt */
+	dispatch('core/edit-post').removeEditorPanel( 'post-excerpt' );
 }
 
-/* Remove editor panel post-excerpt */
-dispatch('core/edit-post').removeEditorPanel( 'post-excerpt' );
+
 
 //
 
