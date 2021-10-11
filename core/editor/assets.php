@@ -115,25 +115,31 @@ add_action( 'enqueue_block_editor_assets', 'knd_inline_style' );
  */
 function knd_enqueue_block_assets() {
 
-	$dependencies = array(
+	$css_dependencies = array(
 		'wp-block-library',
 		'flickity'
 	);
 
+	$js_dependencies = array(
+		'jquery',
+		'flickity',
+		'fancybox',
+	);
+
 	if ( is_admin() ) {
-		$dependencies[] = 'wp-edit-blocks';
+		$css_dependencies[] = 'wp-edit-blocks';
 	}
 
-	wp_register_script( 'flickity', get_template_directory_uri() . '/assets/js/flickity.pkgd.min.js', array( 'jquery' ), '2.2.2' );
+	//wp_register_script( 'flickity', get_template_directory_uri() . '/assets/js/flickity.pkgd.min.js', array( 'jquery' ), '2.2.2' );
 
 	// Scripts.
-	wp_enqueue_script( 'knd', get_template_directory_uri() . '/assets/js/scripts.js', array('jquery', 'flickity'), knd_get_theme_version(), true );
+	wp_enqueue_script( 'knd', get_template_directory_uri() . '/assets/js/scripts.js', $js_dependencies, knd_get_theme_version(), true );
 
 	// Register Flickity style.
 	wp_register_style( 'flickity', get_template_directory_uri() . '/assets/css/flickity.min.css', array(), '2.2.2' );
 
 	$file_uri = '/assets/blocks.css';
-	wp_enqueue_style( 'knd-blocks', get_template_directory_uri() . '/assets/css/blocks.css', $dependencies, filemtime( get_template_directory() . '/assets/css/blocks.css' ) );
+	wp_enqueue_style( 'knd-blocks', get_template_directory_uri() . '/assets/css/blocks.css', $css_dependencies, filemtime( get_template_directory() . '/assets/css/blocks.css' ) );
 	
 	if ( defined( 'LEYKA_VERSION' ) ) {
 		wp_enqueue_style( 'leyka-revo-plugin-styles', LEYKA_PLUGIN_BASE_URL . 'assets/css/public.css', array(), LEYKA_VERSION );
