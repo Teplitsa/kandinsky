@@ -212,8 +212,6 @@ if( window.pagenow == 'person' ) {
 		wrapPostFeaturedImage
 	);
 
-	/* Remove editor panel post-excerpt */
-	dispatch('core/edit-post').removeEditorPanel( 'post-excerpt' );
 }
 
 
