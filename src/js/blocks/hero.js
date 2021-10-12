@@ -20,8 +20,8 @@
 
 	const icon = el('svg',
 		{
-			width: 24, 
-			height: 24 
+			width: 24,
+			height: 24
 		},
 		el( 'path',
 			{
@@ -281,7 +281,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Text Color', 'knd' ),
-									colors: kndBlockColors,
 									disableAlpha: false,
 									value: props.attributes.textColor,
 									
@@ -334,7 +333,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Button Background', 'knd' ),
-									colors: kndBlockColors,
 									disableAlpha: false,
 									value: props.attributes.buttonBackground,
 									onChange: function( val ) {
@@ -346,7 +344,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Button Color', 'knd' ),
-									colors: kndBlockColors,
 									disableAlpha: false,
 									value: props.attributes.buttonColor,
 									onChange: function( val ) {
@@ -358,7 +355,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Button Hover Background', 'knd' ),
-									colors: kndBlockColors,
 									disableAlpha: false,
 									value: props.attributes.buttonBackgroundHover,
 									onChange: function( val ) {
@@ -370,7 +366,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Button Hover Color', 'knd' ),
-									colors: kndBlockColors,
 									disableAlpha: false,
 									value: props.attributes.buttonColorHover,
 									onChange: function( val ) {
@@ -474,7 +469,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Background Color', 'knd' ),
-									colors: kndBlockColors,
 									disableAlpha: false,
 									value: props.attributes.backgroundColor,
 									
@@ -567,8 +561,9 @@
 			);
 		},
 
-		save: function( attributes ) {
-		},
+		save: function() {
+			return null;
+		}
 
 	} );
 

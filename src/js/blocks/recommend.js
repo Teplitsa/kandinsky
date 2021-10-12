@@ -67,7 +67,6 @@
 			attributes: {
 				text: defaultContent
 			},
-			//viewportWidth: 720
 		},
 
 		edit: function( props ) {
@@ -99,7 +98,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Text Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.textColor,
 									onChange: function( val ) {
 										props.setAttributes({ textColor: val });
@@ -110,7 +108,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Background Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.backgroundColor,
 									onChange: function( val ) {
 										props.setAttributes({ backgroundColor: val });
@@ -130,6 +127,10 @@
 				)
 			);
 		},
+
+		save: function() {
+			return null;
+		}
 
 	} );
 }(

@@ -275,7 +275,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Background Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.backgroundColor,
 									onChange: function( val ) {
 										props.setAttributes({ backgroundColor: val });
@@ -286,7 +285,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Text Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.textColor,
 									onChange: function( val ) {
 										props.setAttributes({ textColor: val });
@@ -297,7 +295,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Content Background Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.contentColor,
 									onChange: function( val ) {
 										props.setAttributes({ contentColor: val });
@@ -308,7 +305,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Recommendation Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.recommendColor,
 									onChange: function( val ) {
 										props.setAttributes({ recommendColor: val });
@@ -319,7 +315,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Recommendation Background Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.recommendBgColor,
 									onChange: function( val ) {
 										props.setAttributes({ recommendBgColor: val });
@@ -341,11 +336,11 @@
 				)
 			);
 		},
- 
+
 		save: function() {
+			return null;
 		}
- 
-		
+
 	} );
 }(
 	window.wp.blocks,

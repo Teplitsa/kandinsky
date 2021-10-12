@@ -21,23 +21,23 @@
 
 	const { __ } = i18n;
 
-	const icon = el('svg', 
-		{ 
-			width: 24, 
-			height: 24 
+	const icon = el('svg',
+		{
+			width: 24,
+			height: 24
 		},
 		el( 'path',
-			{ 
+			{
 				d: "M8.12856 10.2708L18.5611 15.5274L15.5534 17.6556L18.1031 21.259L14.8702 23.5466L12.3205 19.9431L9.22532 22.1332L8.12856 10.2708ZM9.87144 12.8287L10.4798 19.4081L12.6785 17.8523L15.2282 21.4557L16.0122 20.901L13.4625 17.2976L15.6578 15.7442L9.87144 12.8287Z",
-								'fill-rule': "evenodd",
-								'clip-rule': "evenodd"
+				'fill-rule': "evenodd",
+				'clip-rule': "evenodd"
 			}
 		),
-				el( 'path',
-			{ 
+		el( 'path',
+			{
 				d: "M2.25 8.841C2.25 7.87451 3.0335 7.091 4 7.091H20C20.9665 7.091 21.75 7.8745 21.75 8.841V16.841C21.75 17.8075 20.9665 18.591 20 18.591H15.3686V17.091H20C20.1381 17.091 20.25 16.9791 20.25 16.841V8.841C20.25 8.70293 20.1381 8.591 20 8.591H4C3.86193 8.591 3.75 8.70293 3.75 8.841V16.841C3.75 16.9791 3.86193 17.091 4 17.091H9.42868V18.591H4C3.0335 18.591 2.25 17.8075 2.25 16.841V8.841Z",
-								'fill-rule': "evenodd",
-								'clip-rule': "evenodd"
+				'fill-rule': "evenodd",
+				'clip-rule': "evenodd"
 			}
 		)
 	);
@@ -239,7 +239,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Background Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.backgroundColor,
 									onChange: ( val ) => {
 										props.setAttributes({ backgroundColor: val });
@@ -250,7 +249,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Title Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.titleColor,
 									onChange: ( val ) => {
 										props.setAttributes({ titleColor: val });
@@ -261,7 +259,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Text Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.textColor,
 									onChange: ( val ) => {
 										props.setAttributes({ textColor: val });
@@ -285,8 +282,8 @@
 									props.setAttributes( { buttonText: val } );
 								},
 							}),
-													 
-													 el( TextControl, {
+
+							el( TextControl, {
 								label: __( 'Button url', 'knd' ),
 								value: props.attributes.buttonUrl,
 								onChange: ( val ) => {
@@ -297,7 +294,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Button Background', 'knd' ),
-									colors: kndBlockColors,
 									disableAlpha: false,
 									value: props.attributes.buttonBackground,
 									onChange: function( val ) {
@@ -309,7 +305,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Button Color', 'knd' ),
-									colors: kndBlockColors,
 									disableAlpha: false,
 									value: props.attributes.buttonColor,
 									onChange: function( val ) {
@@ -321,7 +316,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Button Hover Background', 'knd' ),
-									colors: kndBlockColors,
 									disableAlpha: false,
 									value: props.attributes.buttonBackgroundHover,
 									onChange: function( val ) {
@@ -333,7 +327,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Button Hover Color', 'knd' ),
-									colors: kndBlockColors,
 									disableAlpha: false,
 									value: props.attributes.buttonColorHover,
 									onChange: function( val ) {
@@ -355,11 +348,13 @@
 				)
 			);
 		},
- 
+
 		save: function() {
+			return null;
 		}
-		
+
 	} );
+
 }(
 	window.wp.blocks,
 	window.wp.editor,

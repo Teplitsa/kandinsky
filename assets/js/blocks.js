@@ -408,7 +408,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Background Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.backgroundColor,
 									onChange: function( val ) {
 										props.setAttributes({ backgroundColor: val });
@@ -419,7 +418,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Text Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.textColor,
 									onChange: function( val ) {
 										props.setAttributes({ textColor: val });
@@ -430,7 +428,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Content Background Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.contentColor,
 									onChange: function( val ) {
 										props.setAttributes({ contentColor: val });
@@ -441,7 +438,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Recommendation Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.recommendColor,
 									onChange: function( val ) {
 										props.setAttributes({ recommendColor: val });
@@ -452,7 +448,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Recommendation Background Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.recommendBgColor,
 									onChange: function( val ) {
 										props.setAttributes({ recommendBgColor: val });
@@ -474,11 +469,11 @@
 				)
 			);
 		},
- 
+
 		save: function() {
+			return null;
 		}
- 
-		
+
 	} );
 }(
 	window.wp.blocks,
@@ -514,23 +509,23 @@
 
 	const { __ } = i18n;
 
-	const icon = el('svg', 
-		{ 
-			width: 24, 
-			height: 24 
+	const icon = el('svg',
+		{
+			width: 24,
+			height: 24
 		},
 		el( 'path',
-			{ 
+			{
 				d: "M8.12856 10.2708L18.5611 15.5274L15.5534 17.6556L18.1031 21.259L14.8702 23.5466L12.3205 19.9431L9.22532 22.1332L8.12856 10.2708ZM9.87144 12.8287L10.4798 19.4081L12.6785 17.8523L15.2282 21.4557L16.0122 20.901L13.4625 17.2976L15.6578 15.7442L9.87144 12.8287Z",
-								'fill-rule': "evenodd",
-								'clip-rule': "evenodd"
+				'fill-rule': "evenodd",
+				'clip-rule': "evenodd"
 			}
 		),
-				el( 'path',
-			{ 
+		el( 'path',
+			{
 				d: "M2.25 8.841C2.25 7.87451 3.0335 7.091 4 7.091H20C20.9665 7.091 21.75 7.8745 21.75 8.841V16.841C21.75 17.8075 20.9665 18.591 20 18.591H15.3686V17.091H20C20.1381 17.091 20.25 16.9791 20.25 16.841V8.841C20.25 8.70293 20.1381 8.591 20 8.591H4C3.86193 8.591 3.75 8.70293 3.75 8.841V16.841C3.75 16.9791 3.86193 17.091 4 17.091H9.42868V18.591H4C3.0335 18.591 2.25 17.8075 2.25 16.841V8.841Z",
-								'fill-rule': "evenodd",
-								'clip-rule': "evenodd"
+				'fill-rule': "evenodd",
+				'clip-rule': "evenodd"
 			}
 		)
 	);
@@ -732,7 +727,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Background Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.backgroundColor,
 									onChange: ( val ) => {
 										props.setAttributes({ backgroundColor: val });
@@ -743,7 +737,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Title Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.titleColor,
 									onChange: ( val ) => {
 										props.setAttributes({ titleColor: val });
@@ -754,7 +747,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Text Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.textColor,
 									onChange: ( val ) => {
 										props.setAttributes({ textColor: val });
@@ -778,8 +770,8 @@
 									props.setAttributes( { buttonText: val } );
 								},
 							}),
-													 
-													 el( TextControl, {
+
+							el( TextControl, {
 								label: __( 'Button url', 'knd' ),
 								value: props.attributes.buttonUrl,
 								onChange: ( val ) => {
@@ -790,7 +782,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Button Background', 'knd' ),
-									colors: kndBlockColors,
 									disableAlpha: false,
 									value: props.attributes.buttonBackground,
 									onChange: function( val ) {
@@ -802,7 +793,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Button Color', 'knd' ),
-									colors: kndBlockColors,
 									disableAlpha: false,
 									value: props.attributes.buttonColor,
 									onChange: function( val ) {
@@ -814,7 +804,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Button Hover Background', 'knd' ),
-									colors: kndBlockColors,
 									disableAlpha: false,
 									value: props.attributes.buttonBackgroundHover,
 									onChange: function( val ) {
@@ -826,7 +815,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Button Hover Color', 'knd' ),
-									colors: kndBlockColors,
 									disableAlpha: false,
 									value: props.attributes.buttonColorHover,
 									onChange: function( val ) {
@@ -848,11 +836,13 @@
 				)
 			);
 		},
- 
+
 		save: function() {
+			return null;
 		}
-		
+
 	} );
+
 }(
 	window.wp.blocks,
 	window.wp.editor,
@@ -1146,7 +1136,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Background Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.backgroundColor,
 									onChange: ( val ) => {
 										props.setAttributes( { backgroundColor: val } );
@@ -1157,7 +1146,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Heading Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.headingColor,
 									onChange: ( val ) => {
 										props.setAttributes( { headingColor: val } );
@@ -1168,7 +1156,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Links Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.linkColor,
 									onChange: ( val ) => {
 										props.setAttributes( { linkColor: val } );
@@ -1191,7 +1178,12 @@
 			);
 		},
 
+		save: function() {
+			return null;
+		}
+
 	} );
+
 }(
 	window.wp.blocks,
 	window.wp.editor,
@@ -1226,8 +1218,8 @@
 
 	const icon = el('svg',
 		{
-			width: 24, 
-			height: 24 
+			width: 24,
+			height: 24
 		},
 		el( 'path',
 			{
@@ -1487,7 +1479,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Text Color', 'knd' ),
-									colors: kndBlockColors,
 									disableAlpha: false,
 									value: props.attributes.textColor,
 									
@@ -1540,7 +1531,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Button Background', 'knd' ),
-									colors: kndBlockColors,
 									disableAlpha: false,
 									value: props.attributes.buttonBackground,
 									onChange: function( val ) {
@@ -1552,7 +1542,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Button Color', 'knd' ),
-									colors: kndBlockColors,
 									disableAlpha: false,
 									value: props.attributes.buttonColor,
 									onChange: function( val ) {
@@ -1564,7 +1553,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Button Hover Background', 'knd' ),
-									colors: kndBlockColors,
 									disableAlpha: false,
 									value: props.attributes.buttonBackgroundHover,
 									onChange: function( val ) {
@@ -1576,7 +1564,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Button Hover Color', 'knd' ),
-									colors: kndBlockColors,
 									disableAlpha: false,
 									value: props.attributes.buttonColorHover,
 									onChange: function( val ) {
@@ -1680,7 +1667,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Background Color', 'knd' ),
-									colors: kndBlockColors,
 									disableAlpha: false,
 									value: props.attributes.backgroundColor,
 									
@@ -1773,8 +1759,9 @@
 			);
 		},
 
-		save: function( attributes ) {
-		},
+		save: function() {
+			return null;
+		}
 
 	} );
 
@@ -1811,10 +1798,10 @@
 
 	const { __ } = i18n;
 
-	const icon = el('svg', 
-		{ 
-			width: 24, 
-			height: 24 
+	const icon = el('svg',
+		{
+			width: 24,
+			height: 24
 		},
 		el( 'path',
 			{ 
@@ -2094,7 +2081,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Background Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.backgroundColor,
 									onChange: ( val ) => {
 										props.setAttributes({ backgroundColor: val });
@@ -2105,7 +2091,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Heading Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.headingColor,
 									onChange: ( val ) => {
 										props.setAttributes({ headingColor: val });
@@ -2116,7 +2101,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Second Heading Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.titleColor,
 									onChange: ( val ) => {
 										props.setAttributes({ titleColor: val });
@@ -2127,7 +2111,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Column Heading Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.headingsColor,
 									onChange: ( val ) => {
 										props.setAttributes({ headingsColor: val });
@@ -2138,7 +2121,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Column Text Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.textColor,
 									onChange: ( val ) => {
 										props.setAttributes({ textColor: val });
@@ -2149,7 +2131,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Column Link Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.linkColor,
 									onChange: ( val ) => {
 										props.setAttributes({ linkColor: val });
@@ -2160,7 +2141,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Column Link Color Hover', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.linkHoverColor,
 									onChange: ( val ) => {
 										props.setAttributes({ linkHoverColor: val });
@@ -2171,7 +2151,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Column Link Underline Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.underlineColor,
 									onChange: ( val ) => {
 										props.setAttributes({ underlineColor: val });
@@ -2193,6 +2172,10 @@
 			);
 		},
 
+		save: function() {
+			return null;
+		}
+
 	} );
 }(
 	window.wp.blocks,
@@ -2213,7 +2196,7 @@
 
 	const ServerSideRender = serverSideRender;
 
-	const el = element.createElement; // PanelRow
+	const el = element.createElement;
 
 	const { TextControl, SelectControl, RangeControl, ColorPalette, Dashicon, PanelBody, ToggleControl, Button, IconButton, Disabled } = components;
 
@@ -2226,10 +2209,10 @@
 
 	const { __ } = i18n;
 
-	const icon = el('svg', 
+	const icon = el('svg',
 		{ 
-			width: 24, 
-			height: 24 
+			width: 24,
+			height: 24
 		},
 		el( 'path',
 			{ 
@@ -2486,7 +2469,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Background Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.backgroundColor,
 									onChange: ( val ) => {
 										props.setAttributes( { backgroundColor: val } );
@@ -2497,7 +2479,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Heading Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.headingColor,
 									onChange: ( val ) => {
 										props.setAttributes( { headingColor: val } );
@@ -2508,7 +2489,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Post Title Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.titleColor,
 									onChange: ( val ) => {
 										props.setAttributes( { titleColor: val } );
@@ -2519,7 +2499,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Links Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.linkColor,
 									onChange: ( val ) => {
 										props.setAttributes( { linkColor: val } );
@@ -2530,7 +2509,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Date Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.metaColor,
 									onChange: ( val ) => {
 										props.setAttributes( { metaColor: val } );
@@ -2552,6 +2530,10 @@
 				)
 			);
 		},
+
+		save: function() {
+			return null;
+		}
 
 	} );
 }(
@@ -2588,33 +2570,33 @@
 
 	const { __ } = i18n;
 
-	const icon = el('svg', 
+	const icon = el('svg',
 		{ 
 			width: 24, 
 			height: 24 
 		},
 		el( 'path',
-			{ 
+			{
 				d: "M9.77379 5.28551L10.2305 6.71429L10.0497 6.77176C9.93479 6.80819 9.77017 6.86019 9.57113 6.92256C9.17324 7.04725 8.63683 7.21371 8.0841 7.38035C7.53251 7.54665 6.95967 7.71464 6.49058 7.84162C6.25669 7.90493 6.042 7.95984 5.86561 7.99949C5.71886 8.03247 5.51783 8.07467 5.35803 8.07467C5.04919 8.07467 4.27546 7.9846 3.64887 7.90659C3.51148 7.88949 3.37691 7.8724 3.25 7.85606V14.3715C3.30472 14.3778 3.36109 14.3851 3.41857 14.3933C3.66246 14.4281 3.94486 14.483 4.21373 14.5727C4.4697 14.658 4.78517 14.7978 5.03033 15.0429C5.03033 15.0429 5.03144 15.044 5.03395 15.0464L5.04529 15.0569C5.05529 15.066 5.06859 15.0777 5.08561 15.0924C5.11985 15.1219 5.16443 15.1591 5.21967 15.204C5.33011 15.2939 5.47431 15.4076 5.6465 15.5409C5.99045 15.8073 6.43519 16.1435 6.9224 16.5079C7.89621 17.2362 9.02997 18.0696 9.84527 18.6666C10.1309 18.8756 10.5318 18.8217 10.7533 18.5408C10.9877 18.2434 10.9266 17.8106 10.619 17.5899L10.3075 17.3663L11.182 16.1476L11.4935 16.3712C12.4958 17.0904 12.6951 18.5008 11.9312 19.4695C11.212 20.3816 9.89943 20.5652 8.95918 19.8769C8.14263 19.279 7.00401 18.442 6.02403 17.7091C5.53435 17.3429 5.08185 17.0009 4.72809 16.7269C4.39487 16.4689 4.10056 16.2345 3.96967 16.1036V16.1036C3.96967 16.1036 3.95517 16.0902 3.91493 16.0686C3.87291 16.0459 3.81489 16.0209 3.73939 15.9957C3.58639 15.9447 3.40004 15.9059 3.20643 15.8782C3.01583 15.851 2.83597 15.837 2.70277 15.83C2.63674 15.8265 2.58358 15.8248 2.54799 15.824L2.50873 15.8233L2.50031 15.8233L2.49929 15.8232H1.75V6.13967L2.6023 6.25702L2.7031 6.27076C2.768 6.27957 2.86141 6.29216 2.97512 6.30728C3.20269 6.33754 3.51087 6.37784 3.83416 6.41808C4.50017 6.50099 5.14478 6.57223 5.34797 6.57461L5.34631 6.57436C5.34631 6.57436 5.39924 6.56689 5.53667 6.536C5.68262 6.5032 5.87372 6.45461 6.09866 6.39372C6.54722 6.2723 7.10417 6.1091 7.65112 5.9442C8.19692 5.77965 8.7278 5.61491 9.12257 5.4912C9.31986 5.42938 9.48291 5.37787 9.59654 5.34186L9.77379 5.28551ZM5.35803 6.57467C5.35481 6.57467 5.35146 6.57465 5.34797 6.57461Z" 
 			}
 		),
 		el( 'path',
-			{ 
+			{
 				d: "M11.745 6.28573C12.122 6.30472 12.5361 6.3654 12.9199 6.43861C13.7033 6.58807 14.4666 6.85379 15.2904 7.14121C15.8466 7.33524 16.5086 7.56106 17.0732 7.73907C17.3547 7.82783 17.6194 7.90703 17.8379 7.96479C18.0189 8.01264 18.2684 8.07467 18.4608 8.07467C18.7697 8.07467 19.5434 7.98459 20.17 7.90659C20.3074 7.88949 20.442 7.8724 20.5689 7.85606V13.691C20.4148 13.6837 20.2476 13.6783 20.0757 13.6769C19.7301 13.6741 19.3414 13.6871 18.9916 13.7407C18.8166 13.7675 18.6322 13.8073 18.4592 13.8693C18.2937 13.9286 18.0869 14.0264 17.915 14.1983L18.9756 15.259C18.9529 15.2817 18.9357 15.2927 18.9309 15.2956C18.9345 15.2937 18.9452 15.2885 18.9655 15.2813C19.0179 15.2625 19.101 15.2414 19.2188 15.2234C19.4548 15.1872 19.7531 15.1743 20.0635 15.1768C20.3691 15.1793 20.6634 15.1964 20.883 15.2132C20.9922 15.2216 21.0815 15.2298 21.1429 15.2358C21.1736 15.2388 21.1972 15.2412 21.2126 15.2429L21.2297 15.2447L21.2333 15.2451L22.0689 15.3406V6.13967L21.2166 6.25702L21.1158 6.27076C21.0509 6.27956 20.9575 6.29216 20.8438 6.30728C20.6162 6.33754 20.308 6.37784 19.9847 6.41808C19.3131 6.50169 18.6632 6.57344 18.4658 6.57465C18.4769 6.57455 18.4736 6.57387 18.4515 6.56933C18.4192 6.5627 18.347 6.54784 18.2212 6.5146C18.0357 6.46556 17.7965 6.39432 17.5242 6.30848C16.9813 6.1373 16.336 5.91732 15.7846 5.72493L15.7463 5.71157C14.9524 5.43456 14.0972 5.13616 13.2009 4.96518C12.7801 4.88489 12.292 4.81137 11.8204 4.78763C11.3667 4.76478 10.849 4.78287 10.4119 4.94023C9.95034 5.10639 9.47311 5.49707 9.07909 5.86588C8.65991 6.25824 8.23702 6.72151 7.87836 7.13803C6.99843 8.15991 7.18504 9.6516 8.15802 10.4961C9.08905 11.3042 10.4727 11.3044 11.404 10.4966L13.9451 8.29222L12.9622 7.15913L10.4211 9.3635C10.0539 9.68202 9.50834 9.68194 9.14126 9.36332C8.74626 9.02047 8.71297 8.46758 9.01502 8.1168C9.35692 7.71976 9.74044 7.30142 10.1041 6.96099C10.493 6.59701 10.7751 6.40371 10.92 6.35156C11.0729 6.29651 11.3501 6.26585 11.745 6.28573ZM18.9295 15.2963L18.9309 15.2956Z" 
 			}
 		),
 		el( 'path',
-			{ 
+			{
 				d: "M9.70284 16.8948C9.16537 16.4659 8.64898 16.0438 8.46344 15.8453L9.55917 14.8209C9.6503 14.9184 10.0542 15.2562 10.6385 15.7224C11.1948 16.1664 11.8528 16.6788 12.3928 17.0964C12.6258 17.2765 12.9647 17.227 13.1378 16.9801C13.268 16.7944 13.2651 16.5463 13.1305 16.3638L12.9412 16.107L14.1487 15.217L14.338 15.4738C14.8548 16.175 14.8661 17.128 14.366 17.8412C13.7055 18.7832 12.391 18.991 11.4753 18.283C10.9332 17.8639 10.2682 17.346 9.70284 16.8948Z" 
 			}
 		),
 		el( 'path',
-			{ 
+			{
 				d: "M14.4343 12.2867C14.9506 12.7274 15.5611 13.2341 16.0636 13.6478C16.9294 14.3606 17.02 15.6588 16.2516 16.482C15.5605 17.2226 14.4152 17.3092 13.6217 16.6753C13.0545 16.2222 12.304 15.6216 11.6816 15.1194C11.3706 14.8686 11.0901 14.6412 10.8801 14.4687C10.7754 14.3827 10.6861 14.3087 10.6185 14.2515L10.6145 14.2481C10.5667 14.2077 10.4859 14.1393 10.4354 14.0849L11.5353 13.065C11.5258 13.0547 11.5196 13.0483 11.5196 13.0483C11.5196 13.0483 11.5376 13.0643 11.5873 13.1063C11.6466 13.1565 11.7293 13.2251 11.832 13.3095C12.0369 13.4777 12.3133 13.7019 12.6234 13.9519C13.2429 14.4518 13.9912 15.0506 14.5579 15.5033C14.7371 15.6464 14.9968 15.6281 15.155 15.4586C15.33 15.2711 15.3117 14.9717 15.1102 14.8058C14.6054 14.3902 13.9869 13.8769 13.4606 13.4277C13.1977 13.2034 12.9546 12.9924 12.7589 12.8162C12.5765 12.6519 12.3988 12.4858 12.2955 12.3644L13.4381 11.3926C13.4659 11.4253 13.5679 11.5261 13.7626 11.7015C13.9441 11.8649 14.1758 12.0662 14.4343 12.2867Z" 
 			}
 		),
 		el( 'path',
-			{ 
+			{
 				d: "M13.2217 7.60857L18.7421 12.2719C19.6529 13.0413 19.7441 14.4126 18.9432 15.2958C18.3522 15.9476 17.3803 16.1921 16.5405 15.7702C16.3189 15.6589 16.0773 15.5297 15.8582 15.3944C15.6519 15.267 15.4149 15.1039 15.2408 14.9177L16.3365 13.8933C16.3692 13.9283 16.4656 14.0065 16.6463 14.1181C16.8143 14.2218 17.0135 14.3293 17.2138 14.4298C17.3988 14.5228 17.6527 14.486 17.832 14.2882C18.0626 14.034 18.0363 13.6392 17.7742 13.4178L12.2537 8.75444L13.2217 7.60857Z" 
 			}
 		)
@@ -2808,7 +2790,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Background Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.backgroundColor,
 									onChange: ( val ) => {
 										props.setAttributes( { backgroundColor: val } );
@@ -2819,7 +2800,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Heading Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.headingColor,
 									onChange: ( val ) => {
 										props.setAttributes( { headingColor: val } );
@@ -3245,55 +3225,55 @@
 
 	const { __ } = i18n;
 
-	const icon = el('svg', 
+	const icon = el('svg',
 		{ 
-			width: 24, 
-			height: 24 
+			width: 24,
+			height: 24
 		},
 		el( 'path',
-			{ 
+			{
 				d: "M6.99204 11.3995C6.56978 11.551 5.79387 11.8525 5.01186 12.2749C4.47005 12.5675 3.94838 12.9059 3.54336 13.2763C3.4414 13.3696 3.35003 13.4619 3.26914 13.5531C3.59415 13.5005 3.96907 13.4297 4.35873 13.3502C5.30776 13.1566 6.29766 12.9218 6.76186 12.8095L7.06909 12.2685C7.23077 11.9838 7.19058 11.6383 6.99204 11.3995ZM7.47539 10.1236C8.43067 10.7039 8.75148 11.9385 8.19951 12.9104L7.76915 13.6682C7.68874 13.8098 7.54156 13.9566 7.31751 14.0119C7.11667 14.0615 5.83832 14.3752 4.61851 14.624C4.0121 14.7476 3.40155 14.8592 2.94114 14.9122C2.71902 14.9378 2.4916 14.9549 2.30743 14.9412C2.22834 14.9354 2.07587 14.9197 1.92745 14.8446C1.84699 14.8039 1.72214 14.7229 1.63178 14.5718C1.53128 14.4036 1.51533 14.219 1.55044 14.0617C1.7064 13.3628 2.15927 12.7805 2.66604 12.317C3.17904 11.8479 3.80154 11.4511 4.39409 11.131C5.58019 10.4904 6.73875 10.1088 6.90433 10.0555C7.12514 9.98443 7.33145 10.0361 7.47539 10.1236Z",
 				'fill-rule': "evenodd",
 				'clip-rule': "evenodd"
 			}
 		),
 		el( 'path',
-			{ 
+			{
 				d: "M12.8181 17.2111C12.6738 17.6345 12.3855 18.4175 11.9819 19.212C11.7019 19.763 11.3777 20.2968 11.0228 20.7156C10.9657 20.7831 10.9089 20.8461 10.8527 20.9047C10.9017 20.6048 10.9636 20.2687 11.0318 19.9214C11.2196 18.9655 11.4466 17.9693 11.5529 17.5118L12.0857 17.1756C12.3199 17.0279 12.6123 17.0515 12.8181 17.2111ZM14.0963 16.7311C13.5409 15.7892 12.317 15.4928 11.3922 16.0761L10.657 16.5398C10.5262 16.6223 10.3929 16.7659 10.3427 16.978C10.2979 17.1673 9.99648 18.4478 9.7562 19.6707C9.63671 20.2789 9.52879 20.8903 9.47689 21.3499C9.45182 21.5718 9.43503 21.7969 9.44708 21.9775C9.45216 22.0537 9.46603 22.2046 9.53754 22.3517C9.57587 22.4306 9.65681 22.5627 9.8154 22.6568C9.99502 22.7633 10.1905 22.772 10.3501 22.7288C11.0227 22.5468 11.577 22.0725 12.0146 21.5561C12.4595 21.031 12.8365 20.3999 13.1408 19.8008C13.7502 18.6015 14.1137 17.4402 14.1621 17.2824C14.2254 17.0754 14.1824 16.8771 14.0963 16.7311Z",
 				'fill-rule': "evenodd",
 				'clip-rule': "evenodd"
 			}
 		),
 		el( 'path',
-			{ 
+			{
 				d: "M7.97098 8.67134C10.7018 5.19342 14.9742 1.73175 20.8664 2.48554L21.4295 2.55758L21.5131 3.11909C22.355 8.77693 18.9534 13.1068 15.5394 15.9412C13.8191 17.3694 12.0541 18.455 10.7226 19.1827C10.0557 19.5472 9.49472 19.8235 9.09852 20.0095C8.90036 20.1025 8.74322 20.173 8.63446 20.2208C8.58007 20.2446 8.53776 20.2628 8.50844 20.2753L8.47431 20.2897L8.46477 20.2937L8.46192 20.2949L8.46097 20.2953C8.46064 20.2954 8.46035 20.2955 8.17429 19.6022L8.46097 20.2953L8.00193 20.4847L3.74097 16.2938L3.90407 15.8416L4.60958 16.0961C3.90408 15.8416 3.90395 15.842 3.90407 15.8416L3.90467 15.84L3.90574 15.837L3.9093 15.8273L3.92215 15.7926C3.93327 15.7629 3.94948 15.72 3.97082 15.665C4.01349 15.555 4.07667 15.3961 4.16057 15.1958C4.3283 14.7952 4.57917 14.2281 4.91477 13.5535C5.58475 12.2068 6.59849 10.4193 7.97098 8.67134ZM5.48872 15.9088C5.50591 15.8669 5.52438 15.8224 5.54414 15.7752C5.70105 15.4005 5.93852 14.8634 6.25776 14.2217C6.89745 12.9358 7.85936 11.2424 9.15077 9.59767C11.6492 6.41562 15.2688 3.5445 20.0987 3.91433C20.524 8.51473 17.7275 12.1751 14.5812 14.7871C12.9565 16.136 11.2785 17.1694 10.0032 17.8665C9.3667 18.2144 8.8334 18.4769 8.46114 18.6516C8.41729 18.6722 8.37568 18.6916 8.33642 18.7097L5.48872 15.9088Z",
 				'fill-rule': "evenodd",
 				'clip-rule': "evenodd"
 			}
 		),
 		el( 'path',
-			{ 
+			{
 				d: "M13.4731 10.6496C13.8669 11.0369 14.5 11.0317 14.8873 10.6379C15.2745 10.2442 15.2693 9.61103 14.8755 9.22376C14.4818 8.83648 13.8487 8.84173 13.4614 9.23548C13.0741 9.62923 13.0794 10.2624 13.4731 10.6496ZM12.4213 11.7191C13.4056 12.6872 14.9885 12.6741 15.9567 11.6898C16.9249 10.7054 16.9117 9.12252 15.9274 8.15434C14.943 7.18616 13.3601 7.19928 12.392 8.18365C11.4238 9.16802 11.4369 10.7509 12.4213 11.7191Z",
 				'fill-rule': "evenodd",
 				'clip-rule': "evenodd"
 			}
 		),
 		el( 'path',
-			{ 
+			{
 				d: "M8.35398 14.7004C8.02623 15.1562 7.33111 16.1346 6.688 17.1151C6.41624 17.5294 6.15831 17.9373 5.94279 18.3024C6.3044 18.081 6.70808 17.8166 7.11799 17.5382C8.08804 16.8794 9.05506 16.1687 9.50555 15.8336C9.43213 15.2367 8.95198 14.7642 8.35398 14.7004ZM7.993 13.4025C9.58282 13.2674 10.9186 14.5819 10.8091 16.1737C10.7972 16.3462 10.7189 16.5486 10.5295 16.6912C10.3562 16.8217 9.108 17.7582 7.84836 18.6136C7.22109 19.0396 6.57553 19.4562 6.05301 19.743C5.79573 19.8843 5.54181 20.0089 5.32226 20.0839C5.21529 20.1204 5.08136 20.1576 4.94084 20.1659C4.81991 20.1731 4.54541 20.1675 4.3229 19.9486C4.1004 19.7296 4.09043 19.4552 4.09564 19.3342C4.10168 19.1936 4.13673 19.0591 4.17154 18.9515C4.24297 18.7308 4.36352 18.4749 4.5006 18.2154C4.77902 17.6883 5.1851 17.0361 5.60096 16.4021C6.43607 15.1289 7.35235 13.8658 7.48003 13.6904C7.61957 13.4987 7.82075 13.4172 7.993 13.4025Z",
 				'fill-rule': "evenodd",
 				'clip-rule': "evenodd"
 			}
 		),
 		el( 'path',
-			{ 
+			{
 				d: "M15.1422 3.91875C15.1422 3.91837 15.1422 3.918 15.8922 3.91179C16.6422 3.90557 16.6422 3.90521 16.6422 3.90485L16.6422 3.90289L16.6421 3.90069L16.6421 3.89777C16.6422 3.90016 16.6425 3.90731 16.6434 3.9192C16.6452 3.94299 16.6492 3.98494 16.6579 4.04244C16.6753 4.15758 16.7114 4.33389 16.7858 4.55111C16.9338 4.98295 17.2352 5.58332 17.8557 6.19368C18.4763 6.80404 19.0816 7.09546 19.5158 7.23621C19.7342 7.30701 19.9111 7.3402 20.0265 7.35571C20.0842 7.36346 20.1262 7.36676 20.15 7.36815C20.1619 7.36884 20.1692 7.36906 20.1716 7.36911C20.1728 7.36914 20.1729 7.36912 20.1716 7.36911L20.1685 7.36911L20.1663 7.36912L20.1651 7.36912C20.1647 7.36913 20.1637 7.36913 20.1699 8.11911C20.1761 8.86908 20.1757 8.86909 20.1753 8.86909L20.1729 8.8691L20.1692 8.86911L20.1601 8.86908L20.1357 8.86868C20.1167 8.86823 20.0922 8.86732 20.0626 8.8656C20.0036 8.86215 19.9239 8.85541 19.8267 8.84234C19.6324 8.81623 19.3666 8.76469 19.0533 8.66312C18.424 8.45913 17.6092 8.05518 16.8039 7.2631C15.9986 6.47102 15.5812 5.66309 15.3668 5.03723C15.26 4.72561 15.2041 4.46073 15.1748 4.26688C15.1601 4.16989 15.152 4.0904 15.1476 4.03138C15.1454 4.00186 15.1441 3.97741 15.1433 3.9584L15.1425 3.934L15.1423 3.92494L15.1423 3.9212L15.1422 3.91875Z",
 				'fill-rule': "evenodd",
 				'clip-rule': "evenodd"
 			}
 		),
 		el( 'path',
-			{ 
+			{
 				d: "M7.59281 10.3214C7.59246 10.3213 7.59211 10.3212 7.47506 11.0621C7.35802 11.8029 7.35768 11.8028 7.35735 11.8028L7.35559 11.8025L7.35376 11.8022L7.3519 11.8019C7.35146 11.8018 7.35291 11.802 7.35559 11.8025C7.36095 11.8035 7.37215 11.8058 7.3895 11.8096C7.42418 11.8173 7.48214 11.8313 7.56073 11.8544C7.71789 11.9004 7.95753 11.9825 8.25865 12.1221C8.85969 12.4006 9.71095 12.9105 10.6437 13.8279C11.5765 14.7454 12.1004 15.5881 12.3889 16.1844C12.5334 16.4832 12.6195 16.7214 12.6681 16.8778C12.6925 16.956 12.7075 17.0137 12.7157 17.0483C12.7199 17.0655 12.7223 17.077 12.7234 17.0824L12.7232 17.0809C12.7232 17.0806 12.723 17.0796 13.4618 16.9503C14.2005 16.821 14.2005 16.8207 14.2004 16.8203L14.2 16.818L14.1993 16.8143L14.1976 16.8051L14.1925 16.7793C14.1883 16.7588 14.1824 16.732 14.1745 16.6991C14.1588 16.6333 14.135 16.5433 14.1004 16.432C14.0311 16.2094 13.9183 15.9014 13.7392 15.5312C13.3805 14.7897 12.7584 13.8039 11.6956 12.7585C10.6328 11.7132 9.63673 11.1075 8.88937 10.7611C8.5163 10.5882 8.20647 10.4805 7.9827 10.415C7.87082 10.3822 7.78046 10.3599 7.71443 10.3452C7.68142 10.3379 7.65449 10.3325 7.63399 10.3286L7.6081 10.3239L7.59885 10.3223L7.59516 10.3217L7.59281 10.3214ZM12.7234 17.0824C12.7238 17.0843 12.7241 17.0855 12.7241 17.0857C12.7241 17.0858 12.7241 17.0859 12.7241 17.0857L12.7238 17.0839L12.7234 17.0824Z",
 				'fill-rule': "evenodd",
 				'clip-rule': "evenodd"
@@ -3312,7 +3292,7 @@
 	registerBlockType( 'knd/projects', {
 		title: __( 'Projects', 'knd' ),
 		icon: icon,
-		category: 'kandinsky', //
+		category: 'kandinsky',
 		description: __( 'Projects tile in three column.', 'knd' ),
 		keywords: [
 			__( 'news', 'knd' ),
@@ -3549,7 +3529,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Background Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.backgroundColor,
 									onChange: ( val ) => {
 										props.setAttributes( { backgroundColor: val } );
@@ -3560,7 +3539,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Heading Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.headingColor,
 									onChange: ( val ) => {
 										props.setAttributes( { headingColor: val } );
@@ -3571,7 +3549,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Post Title Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.titleColor,
 									onChange: ( val ) => {
 										props.setAttributes( { titleColor: val } );
@@ -3582,7 +3559,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Links Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.linkColor,
 									onChange: ( val ) => {
 										props.setAttributes( { linkColor: val } );
@@ -3604,6 +3580,10 @@
 				)
 			);
 		},
+
+		save: function() {
+			return null;
+		}
 
 	} );
 }(
@@ -3687,7 +3667,6 @@
 			attributes: {
 				text: defaultContent
 			},
-			//viewportWidth: 720
 		},
 
 		edit: function( props ) {
@@ -3719,7 +3698,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Text Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.textColor,
 									onChange: function( val ) {
 										props.setAttributes({ textColor: val });
@@ -3730,7 +3708,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Background Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.backgroundColor,
 									onChange: function( val ) {
 										props.setAttributes({ backgroundColor: val });
@@ -3750,6 +3727,10 @@
 				)
 			);
 		},
+
+		save: function() {
+			return null;
+		}
 
 	} );
 }(

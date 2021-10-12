@@ -20,10 +20,10 @@
 
 	const { __ } = i18n;
 
-	const icon = el('svg', 
-		{ 
-			width: 24, 
-			height: 24 
+	const icon = el('svg',
+		{
+			width: 24,
+			height: 24
 		},
 		el( 'path',
 			{ 
@@ -303,7 +303,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Background Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.backgroundColor,
 									onChange: ( val ) => {
 										props.setAttributes({ backgroundColor: val });
@@ -314,7 +313,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Heading Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.headingColor,
 									onChange: ( val ) => {
 										props.setAttributes({ headingColor: val });
@@ -325,7 +323,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Second Heading Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.titleColor,
 									onChange: ( val ) => {
 										props.setAttributes({ titleColor: val });
@@ -336,7 +333,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Column Heading Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.headingsColor,
 									onChange: ( val ) => {
 										props.setAttributes({ headingsColor: val });
@@ -347,7 +343,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Column Text Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.textColor,
 									onChange: ( val ) => {
 										props.setAttributes({ textColor: val });
@@ -358,7 +353,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Column Link Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.linkColor,
 									onChange: ( val ) => {
 										props.setAttributes({ linkColor: val });
@@ -369,7 +363,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Column Link Color Hover', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.linkHoverColor,
 									onChange: ( val ) => {
 										props.setAttributes({ linkHoverColor: val });
@@ -380,7 +373,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Column Link Underline Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.underlineColor,
 									onChange: ( val ) => {
 										props.setAttributes({ underlineColor: val });
@@ -401,6 +393,10 @@
 				)
 			);
 		},
+
+		save: function() {
+			return null;
+		}
 
 	} );
 }(

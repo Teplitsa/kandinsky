@@ -6,7 +6,7 @@
 
 	const ServerSideRender = serverSideRender;
 
-	const el = element.createElement; // PanelRow
+	const el = element.createElement;
 
 	const { TextControl, SelectControl, RangeControl, ColorPalette, Dashicon, PanelBody, ToggleControl, Button, IconButton, Disabled } = components;
 
@@ -19,10 +19,10 @@
 
 	const { __ } = i18n;
 
-	const icon = el('svg', 
+	const icon = el('svg',
 		{ 
-			width: 24, 
-			height: 24 
+			width: 24,
+			height: 24
 		},
 		el( 'path',
 			{ 
@@ -279,7 +279,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Background Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.backgroundColor,
 									onChange: ( val ) => {
 										props.setAttributes( { backgroundColor: val } );
@@ -290,7 +289,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Heading Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.headingColor,
 									onChange: ( val ) => {
 										props.setAttributes( { headingColor: val } );
@@ -301,7 +299,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Post Title Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.titleColor,
 									onChange: ( val ) => {
 										props.setAttributes( { titleColor: val } );
@@ -312,7 +309,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Links Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.linkColor,
 									onChange: ( val ) => {
 										props.setAttributes( { linkColor: val } );
@@ -323,7 +319,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Date Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.metaColor,
 									onChange: ( val ) => {
 										props.setAttributes( { metaColor: val } );
@@ -345,6 +340,10 @@
 				)
 			);
 		},
+
+		save: function() {
+			return null;
+		}
 
 	} );
 }(

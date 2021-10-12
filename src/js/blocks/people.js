@@ -288,7 +288,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Background Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.backgroundColor,
 									onChange: ( val ) => {
 										props.setAttributes( { backgroundColor: val } );
@@ -299,7 +298,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Heading Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.headingColor,
 									onChange: ( val ) => {
 										props.setAttributes( { headingColor: val } );
@@ -310,7 +308,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Name Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.nameColor,
 									onChange: ( val ) => {
 										props.setAttributes( { nameColor: val } );
@@ -321,7 +318,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Description Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.metaColor,
 									onChange: ( val ) => {
 										props.setAttributes( { metaColor: val } );

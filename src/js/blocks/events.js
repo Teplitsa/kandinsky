@@ -280,7 +280,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Background Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.backgroundColor,
 									onChange: ( val ) => {
 										props.setAttributes( { backgroundColor: val } );
@@ -291,7 +290,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Heading Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.headingColor,
 									onChange: ( val ) => {
 										props.setAttributes( { headingColor: val } );
@@ -302,7 +300,6 @@
 							el( ColorPaletteControl,
 								{
 									label: __( 'Links Color', 'knd' ),
-									colors: kndBlockColors,
 									value: props.attributes.linkColor,
 									onChange: ( val ) => {
 										props.setAttributes( { linkColor: val } );
@@ -325,7 +322,12 @@
 			);
 		},
 
+		save: function() {
+			return null;
+		}
+
 	} );
+
 }(
 	window.wp.blocks,
 	window.wp.editor,
