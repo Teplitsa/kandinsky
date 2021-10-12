@@ -13,7 +13,7 @@ if ( ! function_exists( 'knd_typography' ) ) {
 	 * @param string $type    The type of typography.
 	 * @param string $default The default value.
 	 */
-	function knd_typography( $field, $type, $default ) {
+	function knd_typography( $field, $type, $default = '' ) {
 		$value       = $default;
 		$field_value = get_theme_mod( $field );
 		if ( is_array( $field_value ) && $field_value ) {

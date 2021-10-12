@@ -48,67 +48,40 @@ if ( ! function_exists( 'knd_is_page_title' ) ) {
 }
 
 function knd_color_palette() {
+
 	$colors = array(
-	array(
+		'white' => array(
 			'name'  => esc_html__( 'White', 'knd' ),
 			'slug'  => 'white',
 			'color' => '#ffffff',
 		),
-		array(
+		'black' => array(
 			'name'  => esc_html__( 'Black', 'knd' ),
 			'slug'  => 'black',
 			'color' => '#000000',
 		),
-		array(
-			'name'  => esc_html__( 'Cyan bluish gray', 'knd' ),
-			'slug'  => 'cyan-bluish-gray',
-			'color' => '#afb8c1',
+		'grey' => array(
+			'name'  => esc_html__( 'Grey', 'knd' ),
+			'slug'  => 'grey',
+			'color' => '#eeeeee',
 		),
-		array(
-			'name'  => esc_html__( 'Pale Pink', 'knd' ),
-			'slug'  => 'pale-pink',
-			'color' => '#dd96a7',
+		'light-blue' => array(
+			'name'  => esc_html( 'Light Blue', 'knd' ),
+			'slug'  => 'light-blue',
+			'color' => '#edf6fe',
 		),
-		array(
-			'name'  => esc_html__( 'Vivid Red', 'knd' ),
-			'slug'  => 'vivid-red',
-			'color' => '#b1463d',
+		'main' => array(
+			'name'  => esc_html( 'Main', 'knd' ),
+			'slug'  => 'main',
+			'color' => get_theme_mod( 'knd_main_color', '#f43724' ),
 		),
-		array(
-			'name'  => esc_html__( 'Luminous vivid orange', 'knd' ),
-			'slug'  => 'luminous-vivid-orange',
-			'color' => '#df7740',
+		'base' => array(
+			'name' => esc_html( 'Base', 'knd' ),
+			'slug' => 'base',
+			'color' => ( '#000000' != knd_typography( 'font_base', 'color' ) ? knd_typography( 'font_base', 'color' ) : '#081d47' ),
 		),
-		array(
-			'name'  => esc_html__( 'Luminous vivid amber', 'knd' ),
-			'slug'  => 'luminous-vivid-amber',
-			'color' => '#ebbc58',
-		),
-		array(
-			'name'  => esc_html__( 'Light green cyan', 'knd' ),
-			'slug'  => 'light-green-cyan',
-			'color' => '#a2d8b9',
-		),
-		array(
-			'name'  => esc_html__( 'Vivid green cyan', 'knd' ),
-			'slug'  => 'vivid-green-cyan',
-			'color' => '#7bc990',
-		),
-		array(
-			'name'  => esc_html__( 'Pale cyan blue', 'knd' ),
-			'slug'  => 'pale-cyan-blue',
-			'color' => '#a6cff4',
-		),
-		array(
-			'name'  => esc_html__( 'Vivid cyan blue', 'knd' ),
-			'slug'  => 'vivid-cyan-blue',
-			'color' => '#5492d7',
-		),
-		array(
-			'name'  => esc_html__( 'Vivid purple', 'knd' ),
-			'slug'  => 'vivid-purple',
-			'color' => '#885Fd1',
-		),
+
 	);
-	return $colors;
+
+	return apply_filters( 'knd_color_palette', $colors );
 }
