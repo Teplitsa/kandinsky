@@ -1035,12 +1035,23 @@
 }
 
 .wp-block-knd-people .entry-preview {
+	position: relative;
 	overflow: hidden;
 	border-radius: var(--knd-image-border-radius);
 }
 
+.wp-block-knd-people .entry-preview:after {
+	content: '';
+	display: block;
+	padding-top: 100%;
+}
+
 .wp-block-knd-people .entry-preview img {
 	display: block;
+	position: absolute;
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
 }
 
 .wp-block-knd-people.is-style-rounded .entry-preview {

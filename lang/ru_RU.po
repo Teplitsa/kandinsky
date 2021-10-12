@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-12 03:41+0300\n"
-"PO-Revision-Date: 2021-10-12 03:41+0300\n"
+"POT-Creation-Date: 2021-10-12 04:03+0300\n"
+"PO-Revision-Date: 2021-10-12 04:05+0300\n"
 "Last-Translator: ahaenor <ahaenor@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -861,6 +861,14 @@ msgid ""
 msgstr ""
 "Рекомендуется использовать изображение логотипа с прозрачным фоном и с "
 "расширениями .PNG или .SVG"
+
+#: assets/js/gutenberg.js:197
+msgid ""
+"It is recommended to add a square image for a person and a width of at least "
+"920px."
+msgstr ""
+"Рекомендуется добавить квадратное изображение человека шириной не менее 920 "
+"пикселей."
 
 #: core/admin-update-theme.php:50
 msgid "Updating Kandisky theme is in progress..."
@@ -2163,6 +2171,22 @@ msgstr "Все профили"
 #: core/person.php:39
 msgid "Search profile"
 msgstr "Поиск"
+
+#: core/person.php:40
+msgid "Person photo"
+msgstr "Фото человека"
+
+#: core/person.php:41
+msgid "Set person photo"
+msgstr "Добавить фото человека"
+
+#: core/person.php:42
+msgid "Remove person photo"
+msgstr "Удалить фото человека"
+
+#: core/person.php:43
+msgid "Use as person photo"
+msgstr "Использовать как фото человека"
 
 #: core/plugins.php:15
 msgctxt "Yoast SEO"

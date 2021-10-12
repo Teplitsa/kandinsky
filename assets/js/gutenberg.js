@@ -172,6 +172,50 @@ if( window.pagenow == 'org' ) {
 	dispatch('core/edit-post').removeEditorPanel( 'post-excerpt' );
 }
 
+/* Filters for editor page person */
+if( window.pagenow == 'person' ) {
+
+	var withImageSize = function () {
+		return 'medium_large';
+	};
+
+	wp.hooks.addFilter(
+		'editor.PostFeaturedImage.imageSize',
+		'knd/change-image-size',
+		withImageSize
+	);
+
+	function wrapPostFeaturedImage( OriginalComponent ) { 
+		return function( props ) {
+			return (
+				el( Fragment,
+					{},
+					el ( PanelRow,
+						{},
+						el( 'p',
+							{},
+							__( 'It is recommended to add a square image for a person and a width of at least 920px.', 'knd' )
+						)
+					),
+					el(
+						OriginalComponent,
+						props
+					)
+				)
+			);
+		}
+	}
+
+	wp.hooks.addFilter( 
+		'editor.PostFeaturedImage', 
+		'knd/wrap-post-featured-image',
+		wrapPostFeaturedImage
+	);
+
+	/* Remove editor panel post-excerpt */
+	dispatch('core/edit-post').removeEditorPanel( 'post-excerpt' );
+}
+
 
 
 //

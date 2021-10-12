@@ -118,6 +118,7 @@
 	margin-bottom: 10px;
 	padding: 0;
 }
+
 .editor-post-featured-image .components-responsive-wrapper__content[src$=".svg"] {
 	position: relative;
 }

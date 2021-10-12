@@ -130,11 +130,21 @@
 	}
 
 	.entry-preview {
+		position: relative;
 		overflow: hidden;
 		border-radius: var(--knd-image-border-radius);
 
+		&:after {
+			content: '';
+			display: block;
+			padding-top: 100%;
+		}
 		img {
 			display: block;
+			position: absolute;
+			object-fit: cover;
+			width: 100%;
+			height: 100%;
 		}
 	}
 
