@@ -11,8 +11,8 @@ const { registerPlugin } = wp.plugins;
 const { PluginSidebar, PluginDocumentSettingPanel } = wp.editPost;
 const { compose, withState } = wp.compose;
 const { select, dispatch, withSelect, withDispatch, useSelect, useDispatch } = wp.data;
-const { TextControl, SelectControl, IconButton, ColorPalette, ToggleControl } = wp.components;
-const { useState, useEffect } = wp.element;
+const { TextControl, SelectControl, IconButton, ColorPalette, ToggleControl, PanelRow } = wp.components;
+const { useState, useEffect, Fragment } = wp.element;
 
 const { addFilter, addAction } = wp.hooks;
 
@@ -130,6 +130,43 @@ if( window.pagenow == 'org' ) {
 		icon: null,
 		render: kndRegisterOrgOptions
 	} );
+
+	var withImageSize = function () {
+		return 'medium_large';
+	};
+
+	wp.hooks.addFilter(
+		'editor.PostFeaturedImage.imageSize',
+		'knd/change-image-size',
+		withImageSize
+	);
+
+	function wrapPostFeaturedImage( OriginalComponent ) { 
+		return function( props ) {
+			return (
+				el( Fragment,
+					{},
+					el ( PanelRow,
+						{},
+						el( 'p',
+							{},
+							__( 'It is recommended to use image of logo with a transparent background and with extensions .PNG or .SVG', 'knd' )
+						)
+					),
+					el(
+						OriginalComponent,
+						props
+					)
+				)
+			);
+		}
+	}
+
+	wp.hooks.addFilter( 
+		'editor.PostFeaturedImage', 
+		'knd/wrap-post-featured-image',
+		wrapPostFeaturedImage
+	);
 
 	/* Remove editor panel post-excerpt */
 	dispatch('core/edit-post').removeEditorPanel( 'post-excerpt' );

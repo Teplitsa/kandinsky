@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Kandinsky\n"
-"POT-Creation-Date: 2021-10-06 21:16+0300\n"
+"POT-Creation-Date: 2021-10-12 03:41+0300\n"
 "PO-Revision-Date: 2020-06-22 06:53+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -826,13 +826,19 @@ msgstr ""
 msgid "Hide the page title"
 msgstr ""
 
-#: assets/js/gutenberg.js:63 assets/js/gutenberg.js:130
+#: assets/js/gutenberg.js:63 assets/js/gutenberg.js:118
 #: src/experimental/gutenberg-experimental.js:115
 msgid "Page Options"
 msgstr ""
 
-#: assets/js/gutenberg.js:112
+#: assets/js/gutenberg.js:100
 msgid "Partner Url"
+msgstr ""
+
+#: assets/js/gutenberg.js:153
+msgid ""
+"It is recommended to use image of logo with a transparent background and "
+"with extensions .PNG or .SVG"
 msgstr ""
 
 #: core/admin-update-theme.php:50
@@ -2394,6 +2400,22 @@ msgstr ""
 
 #: modules/org/hooks.php:39
 msgid "All partners"
+msgstr ""
+
+#: modules/org/hooks.php:40
+msgid "Partner logo"
+msgstr ""
+
+#: modules/org/hooks.php:41
+msgid "Set partner logo"
+msgstr ""
+
+#: modules/org/hooks.php:42
+msgid "Remove partner logo"
+msgstr ""
+
+#: modules/org/hooks.php:43
+msgid "Use as partner logo"
 msgstr ""
 
 #: modules/project/hooks.php:16

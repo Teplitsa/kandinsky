@@ -32,6 +32,11 @@
 				}
 			}
 		}
+
+		&-slider {
+			display: flex;
+			align-items: center;
+		}
 	}
 
 	&.flickity-buttons-top {

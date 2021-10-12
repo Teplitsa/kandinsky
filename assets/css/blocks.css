@@ -178,6 +178,13 @@
 	}
 }
 
+.knd-block-carousel .flickity-slider {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
 .knd-block-carousel.flickity-buttons-top .flickity-prev-next-button.previous {
 	left: auto;
 	right: 75px;
@@ -798,6 +805,8 @@
 	flex-wrap: wrap;
 	-ms-flex-pack: center;
 	justify-content: center;
+	-ms-flex-align: center;
+	align-items: center;
 }
 
 .wp-block-knd-partners .knd-block-item {

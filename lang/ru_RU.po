@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-06 21:16+0300\n"
-"PO-Revision-Date: 2021-10-06 21:18+0300\n"
+"POT-Creation-Date: 2021-10-12 03:41+0300\n"
+"PO-Revision-Date: 2021-10-12 03:41+0300\n"
 "Last-Translator: ahaenor <ahaenor@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -845,14 +845,22 @@ msgstr "phrase"
 msgid "Hide the page title"
 msgstr "Скрыть заголовок страницы"
 
-#: assets/js/gutenberg.js:63 assets/js/gutenberg.js:130
+#: assets/js/gutenberg.js:63 assets/js/gutenberg.js:118
 #: src/experimental/gutenberg-experimental.js:115
 msgid "Page Options"
 msgstr "Параметры страницы"
 
-#: assets/js/gutenberg.js:112
+#: assets/js/gutenberg.js:100
 msgid "Partner Url"
 msgstr "URL-адрес партнера"
+
+#: assets/js/gutenberg.js:153
+msgid ""
+"It is recommended to use image of logo with a transparent background and "
+"with extensions .PNG or .SVG"
+msgstr ""
+"Рекомендуется использовать изображение логотипа с прозрачным фоном и с "
+"расширениями .PNG или .SVG"
 
 #: core/admin-update-theme.php:50
 msgid "Updating Kandisky theme is in progress..."
@@ -2457,6 +2465,22 @@ msgstr "Редактировать партнера"
 #: modules/org/hooks.php:39
 msgid "All partners"
 msgstr "Все партнеры"
+
+#: modules/org/hooks.php:40
+msgid "Partner logo"
+msgstr "Лого партнера"
+
+#: modules/org/hooks.php:41
+msgid "Set partner logo"
+msgstr "Добавить лого партнера"
+
+#: modules/org/hooks.php:42
+msgid "Remove partner logo"
+msgstr "Удалить лого партнера"
+
+#: modules/org/hooks.php:43
+msgid "Use as partner logo"
+msgstr "Использовать как лого партнера"
 
 #: modules/project/hooks.php:16
 msgid "Project"
