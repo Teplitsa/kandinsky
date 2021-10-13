@@ -1,0 +1,26 @@
+/* Cover */
+.wp-block-cover {
+
+	&:not(.alignfull) {
+		margin-top: 25px;
+		margin-bottom: 25px;
+	}
+
+	.the-content &.alignwide {
+		@media (min-width: 1200px){
+			width: auto;
+			margin-left: calc( ( ( var(--knd-medium-content-width) - var(--knd-content-width) ) / 2 ) * -1 );
+			margin-right: calc( ( ( var(--knd-medium-content-width) - var(--knd-content-width) ) / 2 ) * -1 );
+		}
+
+	}
+
+	.the-content &.alignfull {
+		@media (min-width: 768px){
+			width: auto;
+			margin-left: calc( ( ( 100vw - var(--knd-content-width) ) / 2 ) * -1 );
+			margin-right: calc( ( ( 100vw - var(--knd-content-width) ) / 2 ) * -1 );
+		}
+	}
+
+}

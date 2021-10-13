@@ -92,6 +92,28 @@
 	height: 100%;
 }
 
+/* Cover */
+.wp-block-cover:not(.alignfull) {
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+
+@media (min-width: 1200px) {
+	.the-content .wp-block-cover.alignwide {
+		width: auto;
+		margin-left: calc( ( ( var(--knd-medium-content-width) - var(--knd-content-width) ) / 2 ) * -1);
+		margin-right: calc( ( ( var(--knd-medium-content-width) - var(--knd-content-width) ) / 2 ) * -1);
+	}
+}
+
+@media (min-width: 768px) {
+	.the-content .wp-block-cover.alignfull {
+		width: auto;
+		margin-left: calc( ( ( 100vw - var(--knd-content-width) ) / 2 ) * -1);
+		margin-right: calc( ( ( 100vw - var(--knd-content-width) ) / 2 ) * -1);
+	}
+}
+
 /**
  * Buttons
  */
