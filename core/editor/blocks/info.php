@@ -191,10 +191,15 @@ function knd_block_info_render_callback( $attr ) {
 		$text = '<h2 class="knd-block-info__text">' . $attr['text'] . '</h2>';
 	}
 
-	$heading = '';
+	$title = '';
 	if ( isset( $attr['heading'] ) && $attr['heading'] ) {
+		$title = '<div class="knd-block-info__title">' . $attr['heading'] . '</div>';
+	}
+
+	$heading = '';
+	if ( $text || $title ) {
 		$heading = '<div class="knd-block-info__heading">
-				<div class="knd-block-info__title">' . $attr['heading'] . '</div>
+				' . $title . '
 				' . $text . '
 		</div>';
 	}
