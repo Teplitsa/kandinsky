@@ -933,7 +933,11 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 /** Off Canvas */
 .knd-offcanvas-button {
 	text-align: center;
-	padding: 15px 15px 0;
+	padding: 20px 20px 0;
+
+	&:last-child {
+		padding-bottom: 20px;
+	}
 }
 
 .knd-header .knd-social-links li {
