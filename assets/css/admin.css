@@ -9,11 +9,18 @@
 	height: auto;
 }
 
+.admin-tmb img[src$=".svg"] {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
 .wp-list-table .column-author,
 .wp-list-table .column-id,
 .wp-list-table .column-thumbnail,
 .wp-list-table .column-menu_order {
 	width: 6%;
+	vertical-align: middle;
 }
 
 .wp-list-table .column-attack_date,

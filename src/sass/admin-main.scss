@@ -7,10 +7,17 @@
 .admin-tmb {
 	width: 90%;
 	max-width: 54px;
-	
+
 	img {
-	max-width: 100%;
-	height: auto; }
+		max-width: 100%;
+		height: auto;
+
+		&[src$=".svg"] {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+	}
 }
 
 .wp-list-table .column-author,
@@ -18,6 +25,7 @@
 .wp-list-table .column-thumbnail,
 .wp-list-table .column-menu_order{
 	width: 6%;
+	vertical-align: middle;
 }
 
 .wp-list-table .column-attack_date,
