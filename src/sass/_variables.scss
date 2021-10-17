@@ -70,4 +70,11 @@ $color-ok :             #1DB318; // ok messages
 	--knd-font-family-button: var(--knd-font-family-base);
 	--knd-button-border-radius: .5em;
 	--knd-image-border-radius: 8px;
+	--knd-adminbar-height: #{$adminbar_large_screen};
+}
+
+@media (max-width: 765px){
+	body {
+		--knd-adminbar-height: #{$adminbar_small_screen};
+	}
 }

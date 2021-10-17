@@ -5,6 +5,13 @@
 	--knd-font-family-button: var(--knd-font-family-base);
 	--knd-button-border-radius: .5em;
 	--knd-image-border-radius: 8px;
+	--knd-adminbar-height: 32px;
+}
+
+@media (max-width: 765px) {
+	body {
+		--knd-adminbar-height: 46px;
+	}
 }
 
 /** == Mixins (_mixins.scss) == **/

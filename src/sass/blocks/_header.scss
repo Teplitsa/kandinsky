@@ -273,15 +273,15 @@
 	background: $color-page-bg;
 	overflow-y: scroll;
 	transition: all 0.4s;
-	
+
 	@include for(medium-screens){
 		right: -310px;
 		width: 310px;
 	}
 	
 	.admin-bar & {
-		@media screen and (min-width: 600px) { top: $adminbar_small_screen; }
-		@media screen and (min-width: 783px) { top: $adminbar_large_screen; }		
+		top: var(--knd-adminbar-height);
+		height: calc( 100% - var(--knd-adminbar-height) );
 	}
 	
 	.menu-open & {
@@ -365,11 +365,10 @@
 	li {
 		border-bottom: 1px solid $color-page-bg-dark;
 		position: relative;
-		
+
 		& > a {
 			display: block;
 			padding: 19px $gut/2;
-			margin-right: 21px + 19px + 19px;
 			transition: all 0.3s;
 
 			@include knd-nav-caps-text();
@@ -382,10 +381,16 @@
 			}
 		}
 				
-		.submenu-trigger { display: none; }		
+		.submenu-trigger {
+			display: none;
+		}
 	}
-	
+
 	.menu-item-has-children {
+
+		> a {
+			margin-right: 21px + 19px + 19px;
+		}
 
 		.submenu-trigger {
 			display: block;
@@ -398,7 +403,7 @@
 			text-align: center;
 			
 			width: 21px + 19px + 19px;
-			height: 21px + 19px + 19px;
+			height: 21px + 19px + 19px -1px;
 			padding: (21px + 19px + 19px - 14px)/2;
 
 			.svg-icon {
@@ -422,7 +427,20 @@
 		
 		ul.sub-menu .submenu-trigger { display: none; }
 	}
-	
+
+	> .menu-item-has-children {
+
+		> a:after {
+			content: '';
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: 58px;
+			width: 1px;
+			background-color: $color-page-bg-dark;
+		}
+	}
+
 	ul.sub-menu {
 		display: none;
 		background: $color-main;
