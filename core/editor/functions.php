@@ -60,9 +60,9 @@ function knd_color_palette() {
 			'slug'  => 'black',
 			'color' => '#000000',
 		),
-		'grey' => array(
-			'name'  => esc_html__( 'Grey', 'knd' ),
-			'slug'  => 'grey',
+		'light-grey' => array(
+			'name'  => esc_html__( 'Light Grey', 'knd' ),
+			'slug'  => 'light-grey',
 			'color' => '#eeeeee',
 		),
 		'light-blue' => array(
