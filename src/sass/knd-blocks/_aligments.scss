@@ -1,0 +1,14 @@
+
+.entry-content {
+	.alignfull {
+		margin-left: calc( ( ( 100vw - var(--knd-content-width) ) / 2 ) * -1 );
+		margin-right: calc( ( ( 100vw - var(--knd-content-width) ) / 2 ) * -1 );
+	}
+
+	.alignwide {
+		@media (min-width: 1200px){
+			margin-left: calc( ( ( var(--knd-medium-content-width) - var(--knd-content-width) ) / 2 ) * -1 );
+			margin-right: calc( ( ( var(--knd-medium-content-width) - var(--knd-content-width) ) / 2 ) * -1 );
+		}
+	}
+}

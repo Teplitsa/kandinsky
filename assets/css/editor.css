@@ -417,7 +417,8 @@ h6 {
 }
 
 .the-content h2, .the-content h3, .the-content h4, .the-content h5, .the-content h6 {
-	margin: 31.2px 0 16.9px;
+	margin-top: 32px;
+	margin-bottom: 26px;
 }
 
 > .the-content h2:first-child, > .the-content h3:first-child, > .the-content h4:first-child, > .the-content h5:first-child, > .the-content h6:first-child {
@@ -894,7 +895,8 @@ body {
 }
 
 #tinymce h2, #tinymce h3, #tinymce h4, #tinymce h5, #tinymce h6 {
-	margin: 31.2px 0 16.9px;
+	margin-top: 32px;
+	margin-bottom: 26px;
 }
 
 > #tinymce h2:first-child, > #tinymce h3:first-child, > #tinymce h4:first-child, > #tinymce h5:first-child, > #tinymce h6:first-child {

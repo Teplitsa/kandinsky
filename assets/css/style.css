@@ -417,7 +417,8 @@ h6 {
 }
 
 .the-content h2, .the-content h3, .the-content h4, .the-content h5, .the-content h6 {
-	margin: 31.2px 0 16.9px;
+	margin-top: 32px;
+	margin-bottom: 26px;
 }
 
 > .the-content h2:first-child, > .the-content h3:first-child, > .the-content h4:first-child, > .the-content h5:first-child, > .the-content h6:first-child {
@@ -4261,7 +4262,8 @@ div[id*="leyka-pf-"] .inpage-card__thumb {
 }
 
 .widget-full.widget_text .textwidget h2, .widget-full.widget_text .textwidget h3, .widget-full.widget_text .textwidget h4, .widget-full.widget_text .textwidget h5, .widget-full.widget_text .textwidget h6 {
-	margin: 31.2px 0 16.9px;
+	margin-top: 32px;
+	margin-bottom: 26px;
 }
 
 > .widget-full.widget_text .textwidget h2:first-child, > .widget-full.widget_text .textwidget h3:first-child, > .widget-full.widget_text .textwidget h4:first-child, > .widget-full.widget_text .textwidget h5:first-child, > .widget-full.widget_text .textwidget h6:first-child {

@@ -101,7 +101,8 @@ h6 {
 
 	//headings
 	h2, h3, h4, h5, h6 {
-		margin: $inpage-margin-base*1.2 0 $inpage-margin-base*.65;
+		margin-top: 32px;
+		margin-bottom: 26px;
 
 		>&:first-child { margin-top: 0; }
 		>&:last-child { margin-bottom: 0; }
