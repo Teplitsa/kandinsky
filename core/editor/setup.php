@@ -26,7 +26,7 @@ function knd_gutenberg_setup() {
 	// Disable Custom Colors
 	//add_theme_support( 'disable-custom-colors' );
 
-	add_theme_support('experimental-link-color');
+	//add_theme_support('experimental-link-color');
 	add_theme_support('link-color');
 
 	add_theme_support( 'custom-line-height' );
