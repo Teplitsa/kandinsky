@@ -1,0 +1,18 @@
+
+$color-palette:
+	"white" #ffffff,
+	"black" #000000,
+	"light-grey" var(--knd-color-light-grey),
+	"light-blue" var(--knd-color-light-blue),
+	"main" var(--knd-color-main),
+	"base" var(--knd-color-base);
+
+@each $name, $color in $color-palette {
+	.has-#{$name}-color {
+		color: $color;
+	}
+	.has-#{$name}-background-color {
+		background-color: $color;
+	}
+}
+

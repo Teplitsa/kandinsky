@@ -103,7 +103,7 @@
 
 		&:focus, &:active {
 			border-color: $color-main-dark;
-			background: $color-white;
+			background: var(--knd-color-white);
 			padding-left: 24px;
 
 			&::placeholder {
@@ -162,7 +162,7 @@
 		padding: 12px 12px 12px 44px;
 
 		&:focus, &:active {
-			background: $color-white;
+			background: var(--knd-color-white);
 		}
 	}
 

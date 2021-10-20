@@ -124,7 +124,7 @@
 	@include knd-button-caption-text();
 	
 	display: inline-block;
-	color: $color-white;
+	color: var(--knd-color-white);
 	background: $color-main;
 	border: 1px solid $color-main;
 	transition: all 0.3;
@@ -138,24 +138,24 @@
 	}
 	
 	&:visited {
-		color: $color-white;
+		color: var(--knd-color-white);
 	}
 	&:hover, &:focus, &:active {
 		//background: darken($color-main, 10%);
 		background: $color-main-dark;
-		color: $color-white;
+		color: var(--knd-color-white);
 		border-color: $color-main-dark;
 	}
 	
 	@if $mod == white {
-		background: $color-white;
-		border: 1px solid $color-white;
+		background: var(--knd-color-white);
+		border: 1px solid var(--knd-color-white);
 		color: $color-main;
 		&:visited { color: $color-main; }
 		
 		&:hover, &:focus, &:active {            
 			background: $color-main-dark;
-			color: $color-white;
+			color: var(--knd-color-white);
 			border-color: $color-main-dark;
 		}
 	}

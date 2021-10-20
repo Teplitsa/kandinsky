@@ -253,8 +253,8 @@
 		
 		&:focus {
 			box-shadow: inset 0px 1px 2px rgba(50,50,50, 0.08);
-			background: $color-white;
-			color: $color-black;
+			background: var(--knd-color-white);
+			color: var(--knd-color-black);
 			padding-bottom: 17px;			
 			border-bottom: 2px solid $color-main;
 			//border-bottom: 2px solid $color-text;
@@ -348,7 +348,7 @@
 		.svg-icon {
 			width: 18px;
 			height: 18px;
-			fill: $color-white;
+			fill: var(--knd-color-white);
 		}
 		
 		&:hover {
@@ -377,7 +377,7 @@
 
 			&:hover, &:focus, &:active {
 				background: $color-main;
-				color: $color-white;
+				color: var(--knd-color-white);
 			}
 		}
 				
@@ -417,7 +417,7 @@
 			&:hover {
 				background: $color-main;
 				border-left-color: $color-main;
-				.svg-icon  { fill: $color-white; }
+				.svg-icon  { fill: var(--knd-color-white); }
 			}
 			
 			.icon-up { 
@@ -444,13 +444,13 @@
 	ul.sub-menu {
 		display: none;
 		background: $color-main;
-		color: $color-white;
+		color: var(--knd-color-white);
 		
 		li { border: none; }
 		
 		a {
 			background: $color-main;
-			color: $color-white;
+			color: var(--knd-color-white);
 			margin-right: 0;
 			transition: all .35s;
 			
@@ -470,7 +470,7 @@
 			}
 			.icon-up {
 				display: block;
-				fill: $color-white;
+				fill: var(--knd-color-white);
 			}
 		}
 

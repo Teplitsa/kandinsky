@@ -57,7 +57,6 @@
 //variables
 $input-top-gut: 24px;
 $input-color-active: $color-main;
-$input-color-error: $color-error;
 $input-border-color: lighten($color-page-bg-dark, 3%);
 $label-text-color: $color-text;	
 
@@ -138,7 +137,7 @@ $label-text-color: $color-text;
 	border: 1px solid darken($color-page-bg-dark, 7%);
 	border-top: 4px solid $color-main;
 	box-shadow: 1px 1px 3px rgba(150, 150, 150, 0.3);	
-	background: $color-white;
+	background: var(--knd-color-white);
 }
 
 .frm_required {
@@ -292,7 +291,7 @@ $label-text-color: $color-text;
 			width: 16px;
 			height: 16px;
 			border-radius: 2px;
-			background: $color-white;
+			background: var(--knd-color-white);
 			border: 2px solid $color-text;
 			position: absolute;
 			top: 1px;
@@ -334,7 +333,7 @@ $label-text-color: $color-text;
 		@include checkbox-text(18px);
 		display: inline-block;
 		position: relative;
-		line-height: 18px;		
+		line-height: 18px;
 		
 		&:before {
 			content: '';
@@ -342,8 +341,8 @@ $label-text-color: $color-text;
 			width: 16px;
 			height: 16px;
 			border-radius: 50%;
-			background: $color-white;
-			border: 2px solid $color-text;			
+			background: var(--knd-color-white);
+			border: 2px solid $color-text;
 			position: absolute;
 			top: 1px;
 			left: -26px;
@@ -354,7 +353,7 @@ $label-text-color: $color-text;
 	.rdc-radio__button:checked + .rdc-radio__label {
 		&:before {
 			background-color: $input-color-active;
-			border-color: $input-color-active;			
+			border-color: $input-color-active;
 	background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2ZyB3aWR0aD0iMTJweCIgaGVpZ2h0PSIxMnB4IiB2aWV3Qm94PSIwIDAgMTIgMTIiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sbnM6c2tldGNoPSJodHRwOi8vd3d3LmJvaGVtaWFuY29kaW5nLmNvbS9za2V0Y2gvbnMiPiAgICAgICAgPHRpdGxlPk92YWwgMTwvdGl0bGU+ICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPiAgICA8ZGVmcz48L2RlZnM+ICAgIDxnIGlkPSJQYWdlLTEiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHNrZXRjaDp0eXBlPSJNU1BhZ2UiPiAgICAgICAgPHBhdGggZD0iTTYsMTIgQzkuMzEzNzA4NSwxMiAxMiw5LjMxMzcwODUgMTIsNiBDMTIsMi42ODYyOTE1IDkuMzEzNzA4NSwwIDYsMCBDMi42ODYyOTE1LDAgMCwyLjY4NjI5MTUgMCw2IEMwLDkuMzEzNzA4NSAyLjY4NjI5MTUsMTIgNiwxMiBaIE02LDEwIEM4LjIwOTEzOSwxMCAxMCw4LjIwOTEzOSAxMCw2IEMxMCwzLjc5MDg2MSA4LjIwOTEzOSwyIDYsMiBDMy43OTA4NjEsMiAyLDMuNzkwODYxIDIsNiBDMiw4LjIwOTEzOSAzLjc5MDg2MSwxMCA2LDEwIFoiIGlkPSJPdmFsLTEiIGZpbGw9IiNGRkZGRkYiIHNrZXRjaDp0eXBlPSJNU1NoYXBlR3JvdXAiPjwvcGF0aD4gICAgPC9nPjwvc3ZnPg==);
 			background-repeat: no-repeat;
 			background-size: 12px 12px;
@@ -438,7 +437,7 @@ $label-text-color: $color-text;
 		line-height: 24px;
 		background: $input-color-active;
 		padding: 6px 20px;
-		color: $color-white;
+		color: var(--knd-color-white);
 		transition: background 0.2s;
 		&:hover {
 			background: $color-main-dark;		

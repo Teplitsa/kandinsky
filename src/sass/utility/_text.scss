@@ -23,21 +23,21 @@
 body:not(#tinymce) ::-webkit-selection {
 	opacity: 1;
 	background : $color-main-dark;
-	color : $color-white;
+	color : var(--knd-color-white);
 	text-shadow : none; 
 }
 
 body:not(#tinymce) ::-moz-selection {
 	opacity: 1;
 	background : $color-main-dark;
-	color : $color-white;
+	color : var(--knd-color-white);
 	text-shadow : none; 
 }
 
 body:not(#tinymce) ::selection {
 	opacity: 1;
 	background : $color-main-dark;
-	color : $color-white;
+	color : var(--knd-color-white);
 	text-shadow : none; 
 }
 

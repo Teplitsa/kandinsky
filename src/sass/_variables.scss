@@ -58,14 +58,14 @@ $color-text:                var(--knd-color-base) !default; //main page text
 $color-text-light:          var(--knd-page-text-color-light) !default; //text lighter than main one
 
 //Scheme independent colors
-$color-white:           #ffffff; // intentionally white
-$color-black:           #000000; // intentionally black
-$color-gray-light:      #eeeeee; // light gray for backgrounds and shadows
-
-$color-error:           #ED1C24; // error messages
-$color-ok :             #1DB318; // ok messages
+$color-ok :             #1db318; // ok messages
 
 :root {
+	--knd-color-white: #ffffff;
+	--knd-color-black: #000000;
+	--knd-color-light-grey: #eeeeee;
+	--knd-color-light-blue: #edf6fe;
+
 	--knd-header-height: 124px;
 	--knd-font-family-button: var(--knd-font-family-base);
 	--knd-button-border-radius: .5em;

@@ -1,6 +1,10 @@
 @charset "UTF-8";
 /** == Kandinsky-specific widgets (_widgetsn.scss) == */
 :root {
+	--knd-color-white: #ffffff;
+	--knd-color-black: #000000;
+	--knd-color-light-grey: #eeeeee;
+	--knd-color-light-blue: #edf6fe;
 	--knd-header-height: 124px;
 	--knd-font-family-button: var(--knd-font-family-base);
 	--knd-button-border-radius: .5em;
@@ -338,14 +342,14 @@ textarea {
 body:not(#tinymce) ::-webkit-selection {
 	opacity: 1;
 	background: var(--knd-color-main-active);
-	color: #ffffff;
+	color: var(--knd-color-white);
 	text-shadow: none;
 }
 
 body:not(#tinymce) ::selection {
 	opacity: 1;
 	background: var(--knd-color-main-active);
-	color: #ffffff;
+	color: var(--knd-color-white);
 	text-shadow: none;
 }
 
@@ -1528,7 +1532,7 @@ a {
 	letter-spacing: .03em;
 	font-weight: 400;
 	display: inline-block;
-	color: #ffffff;
+	color: var(--knd-color-white);
 	background: var(--knd-color-main);
 	border: 1px solid var(--knd-color-main);
 	transition: all 0.3;
@@ -1563,12 +1567,12 @@ a {
 }
 
 .trigger-button.donate a:visited {
-	color: #ffffff;
+	color: var(--knd-color-white);
 }
 
 .trigger-button.donate a:hover, .trigger-button.donate a:focus, .trigger-button.donate a:active {
 	background: var(--knd-color-main-active);
-	color: #ffffff;
+	color: var(--knd-color-white);
 	border-color: var(--knd-color-main-active);
 }
 
@@ -1657,8 +1661,8 @@ a {
 
 .searchform input:focus {
 	box-shadow: inset 0px 1px 2px rgba(50, 50, 50, 0.08);
-	background: #ffffff;
-	color: #000000;
+	background: var(--knd-color-white);
+	color: var(--knd-color-black);
 	padding-bottom: 17px;
 	border-bottom: 2px solid var(--knd-color-main);
 }
@@ -1761,7 +1765,7 @@ a {
 .site-nav-title .close .svg-icon {
 	width: 18px;
 	height: 18px;
-	fill: #ffffff;
+	fill: var(--knd-color-white);
 }
 
 .site-nav-title .close:hover {
@@ -1811,7 +1815,7 @@ a {
 
 .main-menu li > a:hover, .main-menu li > a:focus, .main-menu li > a:active {
 	background: var(--knd-color-main);
-	color: #ffffff;
+	color: var(--knd-color-white);
 }
 
 .main-menu li .submenu-trigger {
@@ -1850,7 +1854,7 @@ a {
 }
 
 .main-menu .menu-item-has-children .submenu-trigger:hover .svg-icon {
-	fill: #ffffff;
+	fill: var(--knd-color-white);
 }
 
 .main-menu .menu-item-has-children .submenu-trigger .icon-up {
@@ -1874,7 +1878,7 @@ a {
 .main-menu ul.sub-menu {
 	display: none;
 	background: var(--knd-color-main);
-	color: #ffffff;
+	color: var(--knd-color-white);
 }
 
 .main-menu ul.sub-menu li {
@@ -1883,7 +1887,7 @@ a {
 
 .main-menu ul.sub-menu a {
 	background: var(--knd-color-main);
-	color: #ffffff;
+	color: var(--knd-color-white);
 	margin-right: 0;
 	transition: all .35s;
 }
@@ -1903,7 +1907,7 @@ a {
 
 .main-menu li.open .submenu-trigger .icon-up {
 	display: block;
-	fill: #ffffff;
+	fill: var(--knd-color-white);
 }
 
 .main-menu li.open ul.sub-menu {
@@ -3522,7 +3526,7 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 }
 
 .listing-bg {
-	background: #eeeeee;
+	background: var(--knd-color-light-gray);
 }
 
 .featured-post {
@@ -4664,7 +4668,7 @@ div[id*="leyka-pf-"] .inpage-card__thumb {
 
 .widget-full.widget_search .search-field:focus, .widget-full.widget_search .search-field:active {
 	border-color: var(--knd-color-main-active);
-	background: #ffffff;
+	background: var(--knd-color-white);
 	padding-left: 24px;
 }
 
@@ -4747,7 +4751,7 @@ div[id*="leyka-pf-"] .inpage-card__thumb {
 }
 
 .widget-bottom.widget_search .search-field:focus, .widget-bottom.widget_search .search-field:active {
-	background: #ffffff;
+	background: var(--knd-color-white);
 }
 
 .widget-bottom.widget_search .action {
@@ -4775,7 +4779,7 @@ div[id*="leyka-pf-"] .inpage-card__thumb {
 	letter-spacing: .03em;
 	font-weight: 400;
 	display: inline-block;
-	color: #ffffff;
+	color: var(--knd-color-white);
 	background: var(--knd-color-main);
 	border: 1px solid var(--knd-color-main);
 	transition: all 0.3;
@@ -4809,12 +4813,12 @@ div[id*="leyka-pf-"] .inpage-card__thumb {
 }
 
 .button:visited {
-	color: #ffffff;
+	color: var(--knd-color-white);
 }
 
 .button:hover, .button:focus, .button:active {
 	background: var(--knd-color-main-active);
-	color: #ffffff;
+	color: var(--knd-color-white);
 	border-color: var(--knd-color-main-active);
 }
 
@@ -4936,7 +4940,7 @@ div[id*="leyka-pf-"] .inpage-card__thumb {
 
 .leyka-loop .tpl-post .leyka-scale-scale .target, .leyka-loop .tpl-related-post .leyka-scale-scale .target {
 	height: inherit;
-	background: #eeeeee;
+	background: var(--knd-color-light-gray);
 }
 
 .leyka-loop .tpl-post .leyka-scale-scale .target .collected, .leyka-loop .tpl-related-post .leyka-scale-scale .target .collected {
@@ -5017,7 +5021,7 @@ div[id*="leyka-pf-"] .inpage-card__thumb {
 	letter-spacing: .03em;
 	font-weight: 400;
 	display: inline-block;
-	color: #ffffff;
+	color: var(--knd-color-white);
 	background: var(--knd-color-main);
 	border: 1px solid var(--knd-color-main);
 	transition: all 0.3;
@@ -5056,12 +5060,12 @@ div[id*="leyka-pf-"] .inpage-card__thumb {
 }
 
 .leyka-loop .tpl-post .leyka-scale-button-alone a:visited, .leyka-loop .tpl-related-post .leyka-scale-button-alone a:visited {
-	color: #ffffff;
+	color: var(--knd-color-white);
 }
 
 .leyka-loop .tpl-post .leyka-scale-button-alone a:hover, .leyka-loop .tpl-related-post .leyka-scale-button-alone a:hover, .leyka-loop .tpl-post .leyka-scale-button-alone a:focus, .leyka-loop .tpl-related-post .leyka-scale-button-alone a:focus, .leyka-loop .tpl-post .leyka-scale-button-alone a:active, .leyka-loop .tpl-related-post .leyka-scale-button-alone a:active {
 	background: var(--knd-color-main-active);
-	color: #ffffff;
+	color: var(--knd-color-white);
 	border-color: var(--knd-color-main-active);
 }
 

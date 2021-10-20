@@ -73,7 +73,7 @@
 			
 			.target {
 				height: inherit;
-				background: $color-gray-light;
+				background: var(--knd-color-light-gray);
 				
 				.collected {
 					height: inherit;

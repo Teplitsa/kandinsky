@@ -1,6 +1,10 @@
 @charset "UTF-8";
 /** == Kandinsky-specific widgets (_widgetsn.scss) == */
 :root {
+	--knd-color-white: #ffffff;
+	--knd-color-black: #000000;
+	--knd-color-light-grey: #eeeeee;
+	--knd-color-light-blue: #edf6fe;
 	--knd-header-height: 124px;
 	--knd-font-family-button: var(--knd-font-family-base);
 	--knd-button-border-radius: .5em;
@@ -338,14 +342,14 @@ textarea {
 body:not(#tinymce) ::-webkit-selection {
 	opacity: 1;
 	background: var(--knd-color-main-active);
-	color: #ffffff;
+	color: var(--knd-color-white);
 	text-shadow: none;
 }
 
 body:not(#tinymce) ::selection {
 	opacity: 1;
 	background: var(--knd-color-main-active);
-	color: #ffffff;
+	color: var(--knd-color-white);
 	text-shadow: none;
 }
 
