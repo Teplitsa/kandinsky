@@ -24,7 +24,7 @@ function knd_social_links( $atts = array(), $echo = true ) {
 		<ul class="knd-social-links <?php echo esc_attr( $classes ); ?>">
 			<?php foreach( $social_links as $id => $data ) { ?>
 				<li class="<?php echo esc_attr( $id );?>">
-					<a href="<?php echo esc_url( $data['link'] );?>" target="_blank">
+					<a href="<?php echo esc_url( $data['link'] );?>" target="_blank" aria-label="<?php echo esc_attr( $data['label'] );?>">
 						<svg class="svg-icon">
 							<title><?php echo esc_html( $data['label'] );?></title>
 							<use xlink:href="#icon-<?php echo esc_attr( $id );?>" />
