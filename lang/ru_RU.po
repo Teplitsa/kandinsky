@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-12 04:03+0300\n"
-"PO-Revision-Date: 2021-10-12 04:05+0300\n"
+"PO-Revision-Date: 2021-10-25 07:40+0300\n"
 "Last-Translator: ahaenor <ahaenor@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -2253,7 +2253,7 @@ msgstr "Работает на Кандинском"
 
 #: functions.php:83
 msgid "Primary menu"
-msgstr "﻿Главное меню"
+msgstr "Главное меню"
 
 #. Author of the plugin/theme
 #: functions.php:235
