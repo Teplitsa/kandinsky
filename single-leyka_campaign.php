@@ -18,7 +18,7 @@ get_header();
 <article class="main-content leyka-campaign">
 	<div class="container">
 
-		<header class="entry-header-single container-text">
+		<div class="entry-header-single container-text">
 			<div class="entry-meta">
 			<?php if ( $is_finished ) { ?>
 				<a href="<?php echo site_url( '/campaign/completed/' ); ?>" class="entry-link">
@@ -31,7 +31,7 @@ get_header();
 			<?php } ?>
 			</div>
 			<?php the_title( '<h1 class="entry-title">', $age . '</h1>' ); ?>
-		</header>
+		</div>
 
 		<main class="container-text">
 

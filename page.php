@@ -8,7 +8,7 @@
 get_header();
 
 if ( knd_is_page_title() ) { ?>
-<header class="page-header">
+<div class="page-header">
 	<div class="container">
 		<div class="text-column">
 
@@ -30,7 +30,7 @@ if ( knd_is_page_title() ) { ?>
 
 		</div>
 	</div>
-</header>
+</div>
 <?php } ?>
 
 <div class="page-content container">

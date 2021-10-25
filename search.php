@@ -13,7 +13,7 @@ if(!empty($s_query) && $posts > 0){
 
 get_header();
 ?>
-<header class="page-header">
+<div class="page-header">
 	<div class="container">
 		<div class="text-column">
 			<h1 class="page-title"><?php esc_html_e( 'Search', 'knd' );?></h1>
@@ -23,7 +23,7 @@ get_header();
 		<?php get_search_form();?>
 		<div class="sr-num"><?php printf( _n( '%s result', '%s results', $num, 'knd' ), $num );?></div>
 	</div>
-</header>
+</div>
 
 <div class="main-content container search-loop">
 	<div class="text-column">

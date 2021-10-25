@@ -19,7 +19,7 @@ while ( have_posts() ) :
 
 		<div class="container">
 
-			<header class="knd-entry-event__header">
+			<div class="knd-entry-event__header">
 				<?php do_action( 'knd_entry_header' ); ?>
 				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 				<?php if ( get_theme_mod( 'post_social_shares', true ) ) { ?>
@@ -32,7 +32,7 @@ while ( have_posts() ) :
 					</div>
 				<?php } ?>
 
-			</header>
+			</div>
 
 			<div class="knd-entry-event__info">
 				<div class="knd-event__content-inner">

@@ -14,7 +14,7 @@ get_header();
 
 <div class="container">
 
-	<header class="flex-row entry-header-single centered">
+	<div class="flex-row entry-header-single centered">
 
 		<div class="flex-cell flex-md-10">
 			<?php do_action( 'knd_entry_header' ); ?>
@@ -25,7 +25,7 @@ get_header();
 			<?php } ?>
 		</div>
 
-	</header>
+	</div>
 
 	<?php if ( has_post_thumbnail() ) { ?>
 		<div class="flex-row entry-preview-single centered">

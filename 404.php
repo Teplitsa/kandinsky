@@ -8,12 +8,12 @@
 get_header();
 ?>
 
-<header class="page-header">
+<div class="page-header">
 	<div class="container"><div class="text-column">
 		<h1 class="page-title"><?php esc_html_e( 'Error 404', 'knd'); ?></h1>
 		<div class="page-intro"><?php esc_html_e( 'Page not found', 'knd' ); ?></div>
 	</div></div>
-</header>
+</div>
 
 <div class="page-content err404-content">
 	<div class="container">

@@ -13,14 +13,14 @@ if($campaign_slug) {
 
 get_header();
 ?>
-<header class="heading">
+<div class="heading">
 	<div class="container-text">
 		<?php knd_section_title(); ?>
 		<?php if($campaign){ ?>
 		<h4><?php esc_html_e('Campaign', 'knd');?>: <a href="<?php echo get_permalink($campaign);?>"><?php echo get_the_title($campaign);?></a></h4>
 		<?php } ?>
 	</div>
-</header>
+</div>
 
 <div class="container-text main-content">
 <section class="donations-history-results donation_history">
