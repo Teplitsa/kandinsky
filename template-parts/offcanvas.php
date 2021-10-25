@@ -29,6 +29,7 @@
 				'theme_location' => 'primary',
 				'container'      => false,
 				'menu_class'     => 'main-menu',
+				'items_wrap'     => '<ul id="%1$s" class="%2$s" aria-label="' . esc_attr__( 'Primary menu', 'knd' ) . '">%3$s</ul>',
 				'after'          => $after,
 			)
 		);

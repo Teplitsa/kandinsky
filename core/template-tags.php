@@ -816,16 +816,29 @@ function knd_header_nav_menu() {
 		if ( has_nav_menu( 'primary' ) ) {
 			wp_nav_menu(
 				array(
-					'theme_location'  => 'primary',
-					'container'       => 'nav',
-					'container_class' => 'knd-header-nav',
-					'depth'           => 7,
-					'menu_class'      => 'menu knd-nav-menu',
+					'theme_location'       => 'primary',
+					'container'            => 'nav',
+					'container_class'      => 'knd-header-nav',
+					'container_aria_label' => esc_attr__( 'Primary menu', 'knd' ),
+					'depth'                => 7,
+					'menu_class'           => 'menu knd-nav-menu',
 				)
 			);
 		}
 	}
 }
+
+/**
+ * Add role attribute to container nav menu.
+ */
+function knd_header_nav_menu_add_role_attr( $nav_menu, $args ) {
+	if ( 'primary' === $args->theme_location && $args->container ) {
+		$nav_menu = str_replace( 'aria-label', 'role="navigation" aria-label', $nav_menu );
+	}
+	return $nav_menu;
+}
+add_filter( 'wp_nav_menu', 'knd_header_nav_menu_add_role_attr', 10, 2 );
+
 
 if ( ! function_exists( 'knd_breadcrumbs' ) ) {
 	/**
