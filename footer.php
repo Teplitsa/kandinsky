@@ -10,7 +10,7 @@
 $copyright = sprintf( __( 'All materials of the site are avaliabe under license %s', 'knd' ), '<a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank">' . esc_html__( 'Creative Commons СС-BY-SA 3.0', 'knd' ) . '</a>' );
 
 ?>
-</div><!--  .knd-main -->
+</main><!--  .knd-main -->
 
 <footer class="knd-footer">
 
