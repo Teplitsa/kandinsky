@@ -7,7 +7,7 @@
 
 ?>
 
-<header class="knd-header">
+<header class="knd-header" role="banner">
 	<div class="knd-container-fluid">
 		<div class="knd-header__inner knd-header__inner-desktop">
 			<div class="knd-header__col knd-col-left">
@@ -23,7 +23,7 @@
 					knd_social_links();
 				}
 				knd_header_button();
-				knd_offcanvas_toggle();
+				knd_offcanvas_toggle( get_theme_mod( 'header_offcanvas', true ) );
 				?>
 			</div>
 		</div>
