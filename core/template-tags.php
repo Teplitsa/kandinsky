@@ -506,43 +506,6 @@ function knd_get_content_image_markup( $attachment_id ) {
 	return wp_get_attachment_image( $attachment_id, 'medium', false, array( 'alt' => "" ) );
 }
 
-/**
- * Logo Markup
- * 
- * @info Deprecated in version 2
- */
-function knd_logo_markup() {
-
-	/** @todo logo sizes may depends on test content */
-	$mod = knd_get_theme_mod( 'knd_custom_logo_mod', 'image_only' );
-	if ( 'nothing' == $mod ) {
-		return;
-	}
-	?>
-
-	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="site-logo">
-		<?php if ( 'image_only' == $mod ) { ?>
-			<div class="logo-image-only"><?php echo knd_get_logo_img(); ?></div>
-		<?php } elseif ( 'text_only' == $mod ) { ?>
-		<div class="logo-text-only">
-			<span class="logo-name"><?php echo wp_kses_post( nl2br( get_theme_mod( 'header_logo_title', get_bloginfo( 'name' ) ) ) ); ?></span>
-			<span class="logo-desc"><?php echo wp_kses_post( nl2br( get_theme_mod( 'header_logo_text', get_bloginfo( 'description' ) ) ) ); ?></span>
-		</div>
-	<?php } else { ?>
-		<div class="logo-complex">
-			<div class="logo"><?php echo knd_get_logo_img(); ?></div>
-			<div class="text">
-				<span class="logo-name"><?php echo wp_kses_post( nl2br( get_theme_mod( 'header_logo_title', get_bloginfo( 'name' ) ) ) ); ?></span>
-				<span class="logo-desc"><?php echo wp_kses_post( nl2br( get_theme_mod( 'header_logo_text', get_bloginfo( 'description' ) ) ) ); ?></span>
-			</div>
-		</div>
-	<?php } ?>
-	</a>
-
-	<?php
-}
-
-
 
 function knd_show_post_terms( $post_id ) {
 	?>
@@ -570,8 +533,7 @@ function knd_header_logo() {
 
 			if ( $logo_url ) {
 				?>
-
-				<div class="logo">
+				<div class="logo" aria-hidden="true">
 					<?php echo wp_get_attachment_image( $logo_id, 'full', false, array( 'alt' => get_bloginfo( 'name' ) ) ); ?>
 				</div>
 			<?php } ?>
@@ -625,11 +587,11 @@ function knd_footer_logo() {
 function knd_search_toggle() {
 	if ( get_theme_mod( 'header_search', true ) ) {
 	?>
-		<span class="knd-search-toggle">
+		<button class="knd-search-toggle" type="button" aria-label="<?php esc_attr_e( 'Open search', 'knd' ); ?>">
 			<svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<path fill-rule="evenodd" clip-rule="evenodd" d="M2 8.5C2 5.191 4.691 2.5 8 2.5C11.309 2.5 14 5.191 14 8.5C14 11.809 11.309 14.5 8 14.5C4.691 14.5 2 11.809 2 8.5ZM17.707 16.793L14.312 13.397C15.365 12.043 16 10.346 16 8.5C16 4.089 12.411 0.5 8 0.5C3.589 0.5 0 4.089 0 8.5C0 12.911 3.589 16.5 8 16.5C9.846 16.5 11.543 15.865 12.897 14.812L16.293 18.207C16.488 18.402 16.744 18.5 17 18.5C17.256 18.5 17.512 18.402 17.707 18.207C18.098 17.816 18.098 17.184 17.707 16.793Z" fill="currentColor"/>
 			</svg>
-		</span>
+		</button>
 	<?php
 	}
 }
@@ -639,39 +601,53 @@ function knd_search_toggle() {
  */
 function knd_header_search(){
 	if ( get_theme_mod( 'header_search', true ) ) {
+
 	?>
-	<div class="knd-search">
+	<div class="knd-search" tabindex="-1" aria-hidden="true" role="dialog" aria-label="<?php esc_attr_e( 'Search opened', 'knd' ); ?>">
 		<div class="knd-search__inner">
 			<div class="knd-container">
 				<form role="search" method="get" class="knd-search__form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-					<input class="knd-search__input" type="search" value="<?php the_search_query(); ?>" name="s" placeholder="<?php esc_attr_e( 'Search ...', 'knd' ); ?>">
-					<button class="knd-search__submit" type="submit">
+					<input class="knd-search__input" type="search" value="<?php the_search_query(); ?>" name="s" placeholder="<?php esc_attr_e( 'Enter text to search ...', 'knd' ); ?>" aria-label="<?php esc_html_e( 'Search', 'knd' ); ?>" autocomplete="off">
+					<button class="knd-search__submit" type="submit" aria-label="<?php esc_attr_e( 'Start search', 'knd' ); ?>">
 						<svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path fill-rule="evenodd" clip-rule="evenodd" d="M2 8.5C2 5.191 4.691 2.5 8 2.5C11.309 2.5 14 5.191 14 8.5C14 11.809 11.309 14.5 8 14.5C4.691 14.5 2 11.809 2 8.5ZM17.707 16.793L14.312 13.397C15.365 12.043 16 10.346 16 8.5C16 4.089 12.411 0.5 8 0.5C3.589 0.5 0 4.089 0 8.5C0 12.911 3.589 16.5 8 16.5C9.846 16.5 11.543 15.865 12.897 14.812L16.293 18.207C16.488 18.402 16.744 18.5 17 18.5C17.256 18.5 17.512 18.402 17.707 18.207C18.098 17.816 18.098 17.184 17.707 16.793Z" fill="currentColor"/>
 						</svg>
 					</button>
-				</form>   
+				</form>
 			</div>
 		</div>
-		<span class="knd-search-close"></span>
+		<button class="knd-search-close" aria-label="<?php esc_attr_e( 'Close search', 'knd' ); ?>"></button>
 	</div>
 	<?php
 	}
 }
 
 /**
- * Header Off-Canvas Toggle
+ * Off-Canvas Toggle
  */
-function knd_offcanvas_toggle(){
-	if ( get_theme_mod( 'header_offcanvas', true ) ) {
-	?>
-	 <span class="knd-offcanvas-toggle" id="trigger_menu">
-		<span></span>
-		<span></span>
-		<span></span>
-	</span>
-	<?php
+function knd_offcanvas_toggle( $is_active = true ){
+	if ( ! $is_active ) {
+		return;
 	}
+
+	?>
+	<button class="knd-offcanvas-toggle" aria-label="<?php esc_attr_e( 'Open Off-Canvas', 'knd' ); ?>">
+		<span></span>
+		<span></span>
+		<span></span>
+	</button>
+	<?php
+}
+
+/**
+ * Off-Canvas Close
+ */
+function knd_offcanvas_close(){
+	?>
+	<button id="trigger_menu_close" class="trigger-button close" aria-label="<?php esc_attr_e( 'Close Off-Canvas', 'knd' ); ?>">
+		<?php knd_svg_icon( 'icon-close' ); ?>
+	</button>
+	<?php
 }
 
 /**
@@ -682,7 +658,7 @@ function knd_header_button_markup() {
 	$text = get_theme_mod( 'header_button_text', esc_html__( 'Help now', 'knd' ) );
 	if ( $text ) {
 		?>
-		<a href="<?php echo esc_url( $link ); ?>" class="knd-button knd-button-sm">
+		<a href="<?php echo esc_url( $link ); ?>" role="button" class="knd-button knd-button-sm">
 			<?php echo esc_html( $text ); ?>
 		</a>
 		<?php
@@ -710,7 +686,7 @@ function knd_offcanvas_button(){
 			$text = get_theme_mod( 'offcanvas_button_text', esc_html__( 'Help now', 'knd' ) );
 			if ( $text ) {
 				?>
-				<a href="<?php echo esc_url( $link ); ?>" class="knd-button knd-button-sm">
+				<a href="<?php echo esc_url( $link ); ?>" role="button" class="knd-button knd-button-sm">
 					<?php echo esc_html( $text ); ?>
 				</a>
 				<?php
@@ -756,19 +732,6 @@ function knd_offcanvas_additional_button(){
 		</div>
 		<?php
 	}
-}
-
-/**
- * Header Off-Canvas Toggle
- */
-function knd_offcanvas_mobile_toggle() {
-	?>
-	<span class="knd-offcanvas-toggle">
-		<span></span>
-		<span></span>
-		<span></span>
-	</span>
-	<?php
 }
 
 /**
