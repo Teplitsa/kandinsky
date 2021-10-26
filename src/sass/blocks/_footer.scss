@@ -87,11 +87,13 @@
 			flex: 0 1 auto;
 			display: flex;
 			margin-right: 15px;
+			align-items: center;
 
 			img {
 				max-height: 66px;
 				width: auto;
 				display: block;
+				align-self: center;
 			}
 		}
 
