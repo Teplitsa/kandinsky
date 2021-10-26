@@ -15,6 +15,6 @@
 		<?php knd_header_mobile_logo(); ?>
 	</div>
 	<div class="knd-header__col knd-col-right">
-		<?php knd_offcanvas_mobile_toggle(); ?>
+		<?php knd_offcanvas_toggle(); ?>
 	</div>
 </div>
