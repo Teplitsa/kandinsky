@@ -9,15 +9,17 @@
 
 <div class="nav-overlay"></div>
 
-<nav id="site_nav" class="site-nav">
-	<div class="site-nav-title">
+<div id="site_nav" class="site-nav" tabindex="-1" aria-hidden="true" aria-label="<?php esc_attr_e( 'Off-Canvas is open', 'knd' ); ?>">
 
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="snt-cell">
+	<span class="screen-reader-text" tabindex="0" aria-hidden="true" aria-label="<?php esc_attr_e( 'Off-Canvas is open', 'knd' ); ?>"></span>
+
+	<div class="site-nav-title">
+		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="snt-cell" aria-hidden="true">
 			<span class="logo-name"><?php echo wp_kses_post( nl2br( get_theme_mod( 'header_logo_title', get_bloginfo( 'name' ) ) ) ); ?></span>
 			<span class="logo-desc hide-upto-medium"><?php echo wp_kses_post( nl2br( get_theme_mod( 'header_logo_text', get_bloginfo( 'description' ) ) ) ); ?></span>
 		</a>
 
-		<div id="trigger_menu_close" class="trigger-button close"><?php knd_svg_icon( 'icon-close' ); ?></div>
+		<?php knd_offcanvas_close(); ?>
 	</div>
 
 	<?php
@@ -29,7 +31,7 @@
 				'theme_location' => 'primary',
 				'container'      => false,
 				'menu_class'     => 'main-menu',
-				'items_wrap'     => '<ul id="%1$s" class="%2$s" aria-label="' . esc_attr__( 'Primary menu', 'knd' ) . '">%3$s</ul>',
+				'items_wrap'     => '<ul id="%1$s" tabindex="-1" class="%2$s" aria-label="' . esc_attr__( 'Primary menu', 'knd' ) . '">%3$s</ul>',
 				'after'          => $after,
 			)
 		);
@@ -50,4 +52,4 @@
 	}
 	?>
 
-</nav>
+</div>

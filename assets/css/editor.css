@@ -157,6 +157,14 @@ a:active {
 	outline: none;
 }
 
+a:-webkit-any-link:focus-visible {
+	outline-offset: 1px;
+}
+
+:focus-visible {
+	outline: -webkit-focus-ring-color auto 1px;
+}
+
 article,
 aside,
 details,
@@ -811,7 +819,6 @@ h6 {
 .gallery .gallery-item a {
 	display: block;
 	border: none;
-	outline: none;
 	text-decoration: none;
 }
 
