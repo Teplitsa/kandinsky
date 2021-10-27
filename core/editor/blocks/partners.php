@@ -166,6 +166,10 @@ function knd_block_partners_render_callback( $attr ) {
 
 			$url = $this_post->post_excerpt;
 
+			if ( ! $url ) {
+				$url = get_post_meta( get_the_ID(), '_knd_org_url', true );
+			}
+
 			$html .= '<article class="knd-block-item">';
 
 				if ( isset( $attr['isLink'] ) && $attr['isLink'] ) {
