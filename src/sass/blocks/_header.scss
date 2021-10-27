@@ -782,10 +782,21 @@ position: relative;
 	font-size: var(--cs-font-submenu-size);
 	font-weight: normal;
 }
-.knd-header-nav .sub-menu .menu-item-has-children .sub-menu-left {
-	left: auto;
-	right: 100%;
+
+.knd-header-nav > .menu {
+	.menu-item-has-children {
+		.sub-menu-left {
+			left: auto;
+			right: 100%;
+		}
+	}
+	> .menu-item-has-children {
+		> .sub-menu-left {
+			right: -20px;
+		}
+	}
 }
+
 body:not(.dom-loaded) .knd-header-nav .sub-menu {
 	display: none;
 }
