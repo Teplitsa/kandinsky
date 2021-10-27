@@ -784,14 +784,15 @@ position: relative;
 }
 
 .knd-header-nav > .menu {
-	.menu-item-has-children {
+	li.menu-item-has-children {
 		.sub-menu-left {
 			left: auto;
 			right: 100%;
 		}
 	}
-	> .menu-item-has-children {
+	> li.menu-item-has-children {
 		> .sub-menu-left {
+			left: auto;
 			right: -20px;
 		}
 	}
