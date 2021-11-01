@@ -2245,6 +2245,12 @@ a {
 	transform: translate3d(0, 0, 0);
 }
 
+.knd-header-nav .sub-menu {
+	max-width: 300px;
+	width: -webkit-max-content;
+	width: max-content;
+}
+
 .knd-header-nav .sub-menu > li a {
 	display: -ms-flexbox;
 	display: flex;
@@ -2259,6 +2265,7 @@ a {
 	transition: 0.25s;
 	font-size: var(--cs-font-submenu-size);
 	font-weight: normal;
+	white-space: normal;
 }
 
 .knd-header-nav > .menu li.menu-item-has-children .sub-menu-left {
