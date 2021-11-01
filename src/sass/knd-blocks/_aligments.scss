@@ -1,8 +1,15 @@
 
 .entry-content {
 	.alignfull {
-		margin-left: calc( ( ( 100vw - var(--knd-content-width) ) / 2 ) * -1 );
-		margin-right: calc( ( ( 100vw - var(--knd-content-width) ) / 2 ) * -1 );
+		@media (min-width: 768px){
+			margin-left: calc( ( ( 100vw - var(--knd-content-width) ) / 2 ) * -1 );
+			margin-right: calc( ( ( 100vw - var(--knd-content-width) ) / 2 ) * -1 );
+
+			.alignfull {
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
 	}
 
 	.alignwide {
@@ -10,5 +17,17 @@
 			margin-left: calc( ( ( var(--knd-medium-content-width) - var(--knd-content-width) ) / 2 ) * -1 );
 			margin-right: calc( ( ( var(--knd-medium-content-width) - var(--knd-content-width) ) / 2 ) * -1 );
 		}
+	}
+}
+
+
+@media (min-width: 1200px){
+	.the-content .wp-block-knd-projects.alignwide {
+		margin-left: calc( ( ( var(--knd-medium-content-width) - var(--knd-content-width) ) / 2 ) * -1 );
+		margin-right: calc( ( ( var(--knd-medium-content-width) - var(--knd-content-width) ) / 2 ) * -1 );
+	}
+	.wp-block-knd-projects.has-background:not(.alignfull):not(.alignwide) {
+		margin-left: -20px;
+		margin-right: -20px;
 	}
 }
