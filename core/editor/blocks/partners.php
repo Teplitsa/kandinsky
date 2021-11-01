@@ -170,7 +170,7 @@ function knd_block_partners_render_callback( $attr ) {
 				$url = get_post_meta( get_the_ID(), '_knd_org_url', true );
 			}
 
-			$html .= '<article class="knd-block-item">';
+			$html .= '<div class="knd-block-item">';
 
 				if ( isset( $attr['isLink'] ) && $attr['isLink'] ) {
 					$html .= '<a href="' . esc_url( $url ) . '" class="partner-link" target="_blank" title="' . get_the_title() . '">' . get_the_post_thumbnail( null, 'medium_large' ) . '</a>';
@@ -178,7 +178,7 @@ function knd_block_partners_render_callback( $attr ) {
 					$html .= '<div class="partner-link">' . get_the_post_thumbnail( null, 'medium_large' ) . '</div>';
 				}
 
-			$html .= '</article>';
+			$html .= '</div>';
 
 		endwhile;
 
