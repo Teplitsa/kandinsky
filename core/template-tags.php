@@ -368,57 +368,6 @@ function knd_more_section( $posts, $title = '', $type = 'news', $css = '' ) {
 <?php
 }
 
-/** Related project on single page **/
-function knd_related_project( WP_Post $cpost ) {
-	$pl = get_permalink( $cpost );
-	$ex = apply_filters( 'knd_the_title', knd_get_post_excerpt( $cpost, 25, true ) );
-	?>
-<div class="related-widget widget">
-	<h3 class="widget-title"><?php esc_html_e('Related project', 'knd');?></h3>
-	<a href="<?php echo $pl;?>" class="entry-link">
-		<div class="rw-preview">
-			<?php echo knd_post_thumbnail($cpost->ID, 'post-thumbnail');?>
-		</div>
-		<div class="rw-content">
-			<h4 class="entry-title"><?php echo get_the_title($cpost);?></h4>
-			<div class="entry-summary"><?php echo $ex;?></div>
-		</div>
-	</a>
-	<div class="help-cta">
-		<?php echo knd_get_help_now_cta();?>
-	</div>
-</div>
-<?php
-}
-
-function knd_get_help_now_cta( $cpost = null, $label = '' ) {
-	$label = ( empty( $label ) ) ? esc_html__( 'Help now', 'knd' ) : $label;
-	$cta = '';
-	
-	if ( ! $cpost ) {
-		
-		$help_id = knd_get_theme_mod( 'help_campaign_id' );
-		if ( ! $help_id )
-			return '';
-		
-		$cta = "<a href='" . get_permalink( $help_id ) . "' class='help-button'>{$label}</a>";
-	} else {
-		$url = get_post_meta( $cpost->ID, 'cta_link', true );
-		$txt = get_post_meta( $cpost->ID, 'cta_text', true );
-		
-		if ( empty( $url ) )
-			return '';
-		
-		if ( empty( $txt ) )
-			$txt = $label;
-		
-		$css = ( false !== strpos( $url, '#' ) ) ? 'help-button local-scroll' : 'help-button';
-		$cta = "<a href='{$url}' class='{$css}'>{$txt}</a>";
-	}
-	
-	return $cta;
-}
-
 /** == Orgs functions == **/
 function knd_orgs_gallery( $category_ids = '', $org_ids = '' ) {
 	$args = array( 'post_type' => 'org', 'posts_per_page' => - 1 );
