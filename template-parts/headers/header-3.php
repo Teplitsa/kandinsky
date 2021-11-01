@@ -7,7 +7,7 @@
 
 ?>
 
-<header class="knd-header" role="banner">
+<header class="knd-header">
 	<div class="knd-container-fluid">
 		<div class="knd-header__inner knd-header__inner-desktop">
 			<div class="knd-header__col knd-col-left">
