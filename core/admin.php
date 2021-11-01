@@ -21,14 +21,8 @@ function knd_get_admin_menu_items( $place = '' ) {
 					'decoration' => array(
 						'class' => '',
 						'icon' => 'dashicons-admin-appearance',
-						'text' => esc_attr__( 'Decoration', 'knd' ),
-						'link' => admin_url( '/customize.php?autofocus[panel]=knd_decoration' )
-					),
-					'cta-block' => array(
-						'class' => '',
-						'icon' => 'dashicons-thumbs-up',
-						'text' => esc_attr__( 'Call to action button', 'knd' ),
-						'link' => admin_url( '/customize.php?autofocus[section]=knd_cta_block_settings' )
+						'text' => esc_attr__( 'Fonts and colors', 'knd' ),
+						'link' => admin_url( '/customize.php?autofocus[panel]=fonts_colors' )
 					),
 					'social-media-links' => array(
 						'class' => '',
@@ -39,7 +33,7 @@ function knd_get_admin_menu_items( $place = '' ) {
 					'site-template-change' => array(
 						'class' => '',
 						'icon' => 'dashicons-admin-generic',
-						'text' => esc_attr__( 'Change the site template', 'knd' ),
+						'text' => esc_attr__( 'Theme setup wizard', 'knd' ),
 						'link' => KND_SETUP_WIZARD_URL
 					),
 				),
@@ -84,11 +78,17 @@ function knd_get_admin_menu_items( $place = '' ) {
 						'text' => esc_attr__( 'Partners', 'knd' ),
 						'link' => admin_url( '/edit.php?post_type=org' )
 					),
+					'header' => array(
+						'class' => '',
+						'icon' => 'dashicons-upload',
+						'text' => esc_attr__( 'Site header', 'knd' ),
+						'link' => admin_url( '/customize.php?autofocus[section]=header' )
+					),
 					'footer' => array(
 						'class' => '',
 						'icon' => 'dashicons-download',
 						'text' => esc_attr__( 'Site footer', 'knd' ),
-						'link' => admin_url( '/customize.php?autofocus[section]=sidebar-widgets-knd-footer-sidebar' )
+						'link' => admin_url( '/customize.php?autofocus[section]=footer' )
 					),
 				)
 			),
