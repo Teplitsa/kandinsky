@@ -18,4 +18,4 @@
 
 	<?php get_template_part( 'template-parts/header' ); ?>
 
-	<main class="knd-main" role="main">
+	<main class="knd-main">
