@@ -740,18 +740,6 @@ function knd_header_nav_menu() {
 	}
 }
 
-/**
- * Add role attribute to container nav menu.
- */
-function knd_header_nav_menu_add_role_attr( $nav_menu, $args ) {
-	if ( 'primary' === $args->theme_location && $args->container ) {
-		$nav_menu = str_replace( 'aria-label', 'role="navigation" aria-label', $nav_menu );
-	}
-	return $nav_menu;
-}
-add_filter( 'wp_nav_menu', 'knd_header_nav_menu_add_role_attr', 10, 2 );
-
-
 if ( ! function_exists( 'knd_breadcrumbs' ) ) {
 	/**
 	 * Breadcrumbs
