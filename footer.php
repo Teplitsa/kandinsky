@@ -12,7 +12,7 @@ $copyright = sprintf( __( 'All materials of the site are avaliabe under license 
 ?>
 </main><!--  .knd-main -->
 
-<footer class="knd-footer" role="contentinfo">
+<footer class="knd-footer">
 
 	<?php if ( get_theme_mod( 'footer_social', true ) || get_theme_mod( 'footer_logo', true ) ) { ?>
 		<div id="bottom_bar" class="bottom-bar">
