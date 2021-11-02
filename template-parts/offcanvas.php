@@ -9,12 +9,10 @@
 
 <div class="nav-overlay"></div>
 
-<div id="site_nav" class="site-nav" tabindex="-1" aria-hidden="true" aria-label="<?php esc_attr_e( 'Off-Canvas is open', 'knd' ); ?>">
-
-	<span class="screen-reader-text" tabindex="0" aria-hidden="true" aria-label="<?php esc_attr_e( 'Off-Canvas is open', 'knd' ); ?>"></span>
+<div id="site_nav" class="site-nav" tabindex="-1">
 
 	<div class="site-nav-title">
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="snt-cell" aria-hidden="true">
+		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="snt-cell" aria-hidden="true" tabindex="-1">
 			<span class="logo-name"><?php echo wp_kses_post( nl2br( get_theme_mod( 'header_logo_title', get_bloginfo( 'name' ) ) ) ); ?></span>
 			<span class="logo-desc hide-upto-medium"><?php echo wp_kses_post( nl2br( get_theme_mod( 'header_logo_text', get_bloginfo( 'description' ) ) ) ); ?></span>
 		</a>

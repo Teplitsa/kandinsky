@@ -550,9 +550,8 @@ function knd_search_toggle() {
  */
 function knd_header_search(){
 	if ( get_theme_mod( 'header_search', true ) ) {
-
 	?>
-	<div class="knd-search" tabindex="-1" aria-hidden="true" role="dialog" aria-label="<?php esc_attr_e( 'Search opened', 'knd' ); ?>">
+	<div class="knd-search" tabindex="-1" aria-hidden="true" role="dialog">
 		<div class="knd-search__inner">
 			<div class="knd-container">
 				<form role="search" method="get" class="knd-search__form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
@@ -580,7 +579,7 @@ function knd_offcanvas_toggle( $is_active = true ){
 	}
 
 	?>
-	<button class="knd-offcanvas-toggle" aria-label="<?php esc_attr_e( 'Open Off-Canvas', 'knd' ); ?>">
+	<button class="knd-offcanvas-toggle" aria-label="<?php esc_attr_e( 'Open Off-Canvas', 'knd' ); ?>" data-label="<?php esc_attr_e( 'Off-Canvas is open', 'knd' ); ?>">
 		<span></span>
 		<span></span>
 		<span></span>
