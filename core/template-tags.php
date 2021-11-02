@@ -654,7 +654,7 @@ function knd_header_additional_button_markup(){
 	$text = get_theme_mod( 'header_additional_button_text' );
 	if ( $text ) {
 		?>
-		<a href="<?php echo esc_url( $link ); ?>" class="knd-button knd-button-outline knd-button-sm">
+		<a href="<?php echo esc_url( $link ); ?>" role="button" class="knd-button knd-button-outline knd-button-sm">
 			<?php echo esc_html( $text ); ?>
 		</a>
 		<?php
@@ -713,7 +713,7 @@ function knd_header_mobile_button(){
 	$text = get_theme_mod( 'header_button_text', esc_html__( 'Help now', 'knd' ) );
 	if ( $text ) {
 		?>
-		<a href="<?php echo esc_url( $link ); ?>" class="knd-button knd-button-xs">
+		<a href="<?php echo esc_url( $link ); ?>" role="button" class="knd-button knd-button-xs">
 			<?php echo esc_html( $text ); ?>
 		</a>
 		<?php
