@@ -351,6 +351,8 @@
 	padding-top: 10px;
 	display: -ms-flexbox;
 	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
 }
 
 .knd-block-hero__actions .knd-button, .knd-block-hero__actions .knd-event__booking .em-booking-form-details .em-booking-submit, .knd-event__booking .em-booking-form-details .knd-block-hero__actions .em-booking-submit, .knd-block-hero__actions .knd-event__login [name="wp-submit"], .knd-event__login .knd-block-hero__actions [name="wp-submit"] {
