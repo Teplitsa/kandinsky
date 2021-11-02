@@ -25,12 +25,13 @@
 		$after = '<span class="submenu-trigger">' . knd_svg_icon( 'icon-up', false ) . knd_svg_icon( 'icon-down', false ) . '</span>';
 		wp_nav_menu(
 			array(
-				'menu'           => esc_html__('Main menu', 'knd'),
-				'theme_location' => 'primary',
-				'container'      => false,
-				'menu_class'     => 'main-menu',
-				'items_wrap'     => '<ul id="%1$s" tabindex="-1" class="%2$s" aria-label="' . esc_attr__( 'Primary menu', 'knd' ) . '">%3$s</ul>',
-				'after'          => $after,
+				'menu'                 => esc_html__('Main menu', 'knd'),
+				'theme_location'       => 'primary',
+				'container'            => 'nav',
+				'container_class'      => 'nav-main-menu',
+				'container_aria_label' => esc_attr__('Primary menu', 'knd'),
+				'menu_class'           => 'main-menu',
+				'after'                => $after,
 			)
 		);
 	}
