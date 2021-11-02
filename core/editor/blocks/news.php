@@ -189,7 +189,7 @@ function knd_block_news_render_callback( $attr ) {
 					' . get_the_post_thumbnail( null, 'post-thumbnail' ) . '
 				</div>
 				' . the_title( '<h3 class="entry-title">', '</h3>', false ) . '
-				<div class="entry-meta">' . strip_tags( knd_posted_on( $this_post ), '<span>') . '</div>
+				<div class="entry-meta">' . strip_tags( knd_posted_on( $this_post ), '<span><time>') . '</div>
 			</a>
 		</article>';
 
