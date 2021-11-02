@@ -150,6 +150,21 @@ html {
 	-ms-text-size-adjust: 100%;
 }
 
+a {
+	text-decoration: none;
+}
+
+a:focus,
+button:focus {
+	text-decoration: none;
+	outline: 2px solid var(--knd-color-main);
+}
+
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible) {
+	outline: 0;
+}
+
 article,
 aside,
 details,

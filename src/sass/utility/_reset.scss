@@ -42,11 +42,36 @@ html {  //  normalisation for font size and position on page
 }
 
 // Focus states
+// a:focus,
+// a:hover,
+// a:active {
+// 	outline: 0;
+// 	outline: none;
+// }
+
+// a:-webkit-any-link:focus-visible {
+// 	outline-offset: 1px;
+// }
+
+// :focus-visible {
+// 	outline: -webkit-focus-ring-color auto 1px;
+// }
+
+a {
+	text-decoration: none;
+	//outline: none;#081d47
+
+}
+
 a:focus,
-a:hover,
-a:active {
+button:focus {
+	text-decoration: none;
+	outline: 2px solid var(--knd-color-main);
+}
+
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible) {
 	outline: 0;
-	outline: none;
 }
 
 // HTML5
@@ -204,4 +229,3 @@ textarea {
 	vertical-align: top; // Improves readability and alignment in all browsers 
 	width: 100%;
 }
-

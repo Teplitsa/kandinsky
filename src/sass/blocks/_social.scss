@@ -58,7 +58,8 @@ $social_color: (
 		text-align: center;
 		
 		a {
-			@include social-button-link(46px, 22px);			
+			border-radius: 50%;
+			@include social-button-link(46px, 22px);
 			span { display: none; }
 		}
 
