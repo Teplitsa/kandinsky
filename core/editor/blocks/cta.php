@@ -168,7 +168,7 @@ function knd_block_cta_render_callback( $attr ) {
 	$action = '';
 	if ( isset( $attr['buttonText'] ) && $attr['buttonText'] ) {
 		 $action .= '<div class="knd-block-cta__action">
-				<a href="' . $attr['buttonUrl'] . '" class="knd-button knd-button-lg">' . $attr['buttonText'] . '</a>
+				<a href="' . $attr['buttonUrl'] . '" role="button" class="knd-button knd-button-lg">' . $attr['buttonText'] . '</a>
 		</div>';
 	}
 	
