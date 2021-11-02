@@ -18,8 +18,9 @@
 	function kndUpdateScreenReaderAlert( e ){
 		if ( $(e.currentTarget).data('label').length ) {
 			let content = $(e.currentTarget).data('label');
-			document.querySelector('.knd-screen-reader-alert').textContent = '';
-			document.querySelector('.knd-screen-reader-alert').textContent = content;
+			$('.knd-screen-reader-alert').html( ' ' );
+			$('.knd-screen-reader-alert').html( content );
+			console.log('este');
 		}
 	}
 
@@ -28,11 +29,8 @@
 	 */
 	$('.knd-search-toggle').on('click', function(e){
 		e.preventDefault();
-		//kndUpdateScreenReaderAlert( e );
 		$('.knd-search')
 			.fadeIn()
-			.removeAttr('aria-hidden')
-			.attr('aria-modal', 'true' )
 			.find('.knd-search__input').focus();
 		$('body').addClass('knd-search-open');
 	});
@@ -64,8 +62,6 @@
 		}
 	});
 
-	
-
 	/** Header states **/
 
 	/** Off-Canvas **/
@@ -80,18 +76,73 @@
 			$siteHeader.removeClass( 'newsletter-open' );
 		}
 
-		$siteHeader.addClass( 'menu-open' )
-			.find( '.site-nav')
-			.removeAttr('aria-hidden')
-			.attr('aria-modal', 'true' )
-			
-			.find('.main-menu > li:first-child > a:first-child').focus();
-			//.find(' > span:first-child').focus();
-			//.find('> [aria-label]').focus();
-
+		$siteHeader.addClass( 'menu-open' );
 		
+		setTimeout(function(){
+			kndUpdateScreenReaderAlert(e);
+		},400);
 
 	});
+
+	$(document).on('keydown', '.site-nav :tabbable:not([readonly])', function(e) {
+
+		// Tab key only (code 9)
+		if (e.keyCode != 9)
+			return;
+
+		if ( ! $('.knd-header').hasClass('menu-open') )
+			return;
+
+		// Get the loop element
+		var loop = $(this).closest('.site-nav');
+
+		// Get the first and last tabbable element
+		var firstTabbable = loop.find(':tabbable:not([readonly])').first();
+		var lastTabbable = loop.find(':tabbable:not([readonly])').last();
+
+		// Leaving the first element with Tab : focus the last one
+		if (firstTabbable.is(e.target) && e.shiftKey == true) {
+		  e.preventDefault();
+		  lastTabbable.focus();
+		}
+
+		// Leaving the last element with Tab : focus the first one
+		if (lastTabbable.is(e.target) && e.shiftKey == false) {
+			e.preventDefault();
+			firstTabbable.focus();
+		}
+	});
+
+
+	$(document).on('keydown', '.knd-search :tabbable:not([readonly])', function(e) {
+
+		// Tab key only (code 9)
+		if (e.keyCode != 9)
+			return;
+
+		if ( ! $('body').hasClass('knd-search-open') )
+			return;
+
+		// Get the loop element
+		var loop = $(this).closest('.knd-search');
+
+		// Get the first and last tabbable element
+		var firstTabbable = loop.find(':tabbable:not([readonly])').first();
+		var lastTabbable = loop.find(':tabbable:not([readonly])').last();
+
+		// Leaving the first element with Tab : focus the last one
+		if (firstTabbable.is(e.target) && e.shiftKey == true) {
+		  e.preventDefault();
+		  lastTabbable.focus();
+		}
+
+		// Leaving the last element with Tab : focus the first one
+		if (lastTabbable.is(e.target) && e.shiftKey == false) {
+			e.preventDefault();
+			firstTabbable.focus();
+		}
+	});
+
 
 	$( '#trigger_menu_close' ).on( 'click', function( e ) {
 
@@ -99,11 +150,8 @@
 		e.stopPropagation();
 		e.preventDefault();
 
-		$siteHeader.removeClass( 'menu-open' )
-			.find( '.site-nav')
-			.removeAttr('aria-modal')
-			.attr('aria-hidden', 'true' );
-		$('.knd-offcanvas-toggle').focus();
+		$siteHeader.removeClass( 'menu-open' ).find( '.site-nav');
+		$('.knd-header__inner-desktop .knd-offcanvas-toggle').focus();
 
 	});
 
