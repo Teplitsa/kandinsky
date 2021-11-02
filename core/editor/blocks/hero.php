@@ -114,9 +114,9 @@ function knd_block_hero_render_callback( $attr ) {
 	$actions = '';
 	if ( isset( $attr['button'] ) && $attr['button'] ) {
 		$actions .= '<div class="knd-block-hero__actions">';
-		$actions .= '<a href="' . $attr['buttonUrl'] . '" class="knd-button">' . $attr['button'] . '</a>';
+		$actions .= '<a href="' . $attr['buttonUrl'] . '" role="button" class="knd-button">' . $attr['button'] . '</a>';
 		if ( isset( $attr['buttonAdditional'] ) && $attr['buttonAdditional'] ) {
-			$actions .= '<a href="' . $attr['buttonAdditionalUrl'] . '" class="knd-button knd-button-outline">' . $attr['buttonAdditional'] . '</a>';
+			$actions .= '<a href="' . $attr['buttonAdditionalUrl'] . '" role="button" class="knd-button knd-button-outline">' . $attr['buttonAdditional'] . '</a>';
 		}
 		$actions .= '</div>';
 	}
