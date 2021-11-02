@@ -158,7 +158,7 @@
 	/** Submenu toggle  **/
 	$( '.submenu-trigger' ).on( 'click', function( e ) {
 
-		var li = $( this ).parents( '.menu-item-has-children' );
+		var li = $( this ).parent( '.menu-item-has-children' );
 		if ( li.hasClass( 'open' ) ) {
 			li.find( '.sub-menu' ).slideUp( 300, function() {
 				li.removeClass( 'open' );
@@ -425,5 +425,87 @@
 	$(window).on('load resize', function () {
 		jQuery( '.knd-block-carousel' ).flickity( 'resize' );
 	});
+
+
+
+
+		function focusMenuWithChildren() {
+			// Get all the link elements within the primary menu.
+			var links, i, len,
+				menu = document.querySelector( '.knd-header-nav' );
+
+			if ( ! menu ) {
+				return false;
+			}
+
+			links = menu.getElementsByTagName( 'a' );
+
+			// Each time a menu link is focused or blurred, toggle focus.
+			for ( i = 0, len = links.length; i < len; i++ ) {
+				links[i].addEventListener( 'focus', toggleFocus, true );
+				links[i].addEventListener( 'blur', toggleFocus, true );
+			}
+
+			//Sets or removes the .focus class on an element.
+			function toggleFocus() {
+				var self = this;
+
+				// Move up through the ancestors of the current link until we hit .primary-menu.
+				while ( -1 === self.className.indexOf( 'knd-nav-menu' ) ) {
+					// On li elements toggle the class .focus.
+					if ( 'li' === self.tagName.toLowerCase() ) {
+						if ( -1 !== self.className.indexOf( 'focus' ) ) {
+							self.className = self.className.replace( ' focus', '' );
+						} else {
+							self.className += ' focus';
+						}
+					}
+					self = self.parentElement;
+				}
+			}
+		}
+
+
+	focusMenuWithChildren();          // Primary Menu.
+
+
+	function focusMenuWithChildren2() {
+			// Get all the link elements within the primary menu.
+			var links, i, len,
+				menu = document.querySelector( '.nav-main-menu' );
+
+			if ( ! menu ) {
+				return false;
+			}
+
+			links = menu.getElementsByTagName( 'a' );
+
+			// Each time a menu link is focused or blurred, toggle focus.
+			for ( i = 0, len = links.length; i < len; i++ ) {
+				links[i].addEventListener( 'focus', toggleFocus, true );
+				links[i].addEventListener( 'blur', toggleFocus, true );
+			}
+
+			//Sets or removes the .focus class on an element.
+			function toggleFocus() {
+				var self = this;
+
+				// Move up through the ancestors of the current link until we hit .primary-menu.
+				while ( -1 === self.className.indexOf( 'main-menu' ) ) {
+					// On li elements toggle the class .focus.
+					if ( 'li' === self.tagName.toLowerCase() ) {
+						if ( -1 !== self.className.indexOf( 'focus' ) ) {
+							self.className = self.className.replace( ' focus', '' );
+						} else {
+							self.className += ' focus';
+						}
+					}
+					self = self.parentElement;
+				}
+			}
+		}
+
+
+		focusMenuWithChildren2(); 
 
 })( jQuery );
