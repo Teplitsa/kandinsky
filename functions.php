@@ -13,7 +13,7 @@ if ( ! defined( 'WPINC' ) ) {
 // 	@ ini_set( 'display_errors', 1 );
 // }
 
-define('KND_VERSION', '2.0.0.9');
+define('KND_VERSION', '2.0.0.10');
 define('KND_DOC_URL', 'https://knd.te-st.ru/docs/');
 define('KND_OFFICIAL_WEBSITE_URL', 'https://knd.te-st.ru/');
 define('KND_SOURCES_PAGE_URL', 'https://github.com/Teplitsa/kandinsky/');
