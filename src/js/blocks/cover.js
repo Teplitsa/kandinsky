@@ -67,6 +67,7 @@
 		keywords: [ __( 'image', 'knd' ), __( 'cover', 'knd' ) ],
 		supports: {
 			align: [ 'wide', 'full' ],
+			anchor: true,
 		},
 
 		attributes: {
@@ -75,6 +76,9 @@
 				default: 'wide'
 			},
 			className: {
+				type: 'string',
+			},
+			anchor: {
 				type: 'string',
 			},
 			heading: {

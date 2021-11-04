@@ -46,6 +46,10 @@
 			__( 'phrase', 'knd' ),
 		],
 
+		supports: {
+			anchor: true,
+		},
+
 		attributes: {
 			text: {
 				type: 'string',
@@ -59,6 +63,9 @@
 				default: '',
 			},
 			className: {
+				type: 'string',
+			},
+			anchor: {
 				type: 'string',
 			}
 		},

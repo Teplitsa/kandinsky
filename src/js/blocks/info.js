@@ -56,10 +56,10 @@
 		description: __( 'Subheading, heading and three columns.', 'knd' ),
 		supports: {
 			align: [ 'wide', 'full' ],
+			anchor: true,
 		},
 
 		attributes: {
-			
 			align: {
 				type: 'string',
 				default: 'full'
@@ -118,6 +118,9 @@
 				type: 'string',
 			},
 			className: {
+				type: 'string',
+			},
+			anchor: {
 				type: 'string',
 			},
 			backgroundColor: {

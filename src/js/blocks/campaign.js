@@ -53,6 +53,7 @@
 		keywords: [ __( 'campaing', 'knd' ), __( 'leyka', 'knd' ) ],
 		supports: {
 			align: [ 'wide', 'full' ],
+			anchor: true,
 		},
 
 		attributes: {
@@ -63,6 +64,9 @@
 				type: 'string',
 			},
 			className: {
+				type: 'string',
+			},
+			anchor: {
 				type: 'string',
 			},
 			preview: {

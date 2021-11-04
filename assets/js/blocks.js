@@ -54,6 +54,7 @@
 		keywords: [ __( 'campaing', 'knd' ), __( 'leyka', 'knd' ) ],
 		supports: {
 			align: [ 'wide', 'full' ],
+			anchor: true,
 		},
 
 		attributes: {
@@ -64,6 +65,9 @@
 				type: 'string',
 			},
 			className: {
+				type: 'string',
+			},
+			anchor: {
 				type: 'string',
 			},
 			preview: {
@@ -200,6 +204,7 @@
 		keywords: [ __( 'image', 'knd' ), __( 'cover', 'knd' ) ],
 		supports: {
 			align: [ 'wide', 'full' ],
+			anchor: true,
 		},
 
 		attributes: {
@@ -208,6 +213,9 @@
 				default: 'wide'
 			},
 			className: {
+				type: 'string',
+			},
+			anchor: {
 				type: 'string',
 			},
 			heading: {
@@ -538,6 +546,7 @@
 		keywords: [ __( 'call', 'knd' ), __( 'cta', 'knd' ), __( 'action', 'knd' )],
 		supports: {
 			align: [ 'wide', 'full' ],
+			anchor: true,
 		},
 
 		attributes: {
@@ -552,6 +561,9 @@
 				default: 'full',
 			},
 			className: {
+				type: 'string',
+			},
+			anchor: {
 				type: 'string',
 			},
 			heading: {
@@ -899,6 +911,7 @@
 		],
 		supports: {
 			align: [ 'wide', 'full' ],
+			anchor: true,
 		},
 
 		attributes: {
@@ -914,6 +927,9 @@
 				type: 'string',
 			},
 			className: {
+				type: 'string',
+			},
+			anchor: {
 				type: 'string',
 			},
 			backgroundColor: {
@@ -1261,7 +1277,7 @@
 
 		supports: {
 			align: [ 'wide', 'full' ],
-			className: true
+			anchor: true,
 		},
 
 		attributes: {
@@ -1316,6 +1332,9 @@
 				default: 'full',
 			},
 			className: {
+				type: 'string',
+			},
+			anchor: {
 				type: 'string',
 			},
 			blockId: {
@@ -1834,10 +1853,10 @@
 		description: __( 'Subheading, heading and three columns.', 'knd' ),
 		supports: {
 			align: [ 'wide', 'full' ],
+			anchor: true,
 		},
 
 		attributes: {
-			
 			align: {
 				type: 'string',
 				default: 'full'
@@ -1896,6 +1915,9 @@
 				type: 'string',
 			},
 			className: {
+				type: 'string',
+			},
+			anchor: {
 				type: 'string',
 			},
 			backgroundColor: {
@@ -2237,6 +2259,7 @@
 		description: __( 'News tile in three column.', 'knd' ),
 		supports: {
 			align: [ 'wide', 'full' ],
+			anchor: true,
 		},
 
 		attributes: {
@@ -2253,6 +2276,9 @@
 				default: 'full',
 			},
 			className: {
+				type: 'string',
+			},
+			anchor: {
 				type: 'string',
 			},
 			backgroundColor: {
@@ -2625,6 +2651,7 @@
 		description: __( 'Image tile in four columns.', 'knd' ),
 		supports: {
 			align: [ 'wide', 'full' ],
+			anchor: true,
 		},
 
 		attributes: {
@@ -2645,6 +2672,9 @@
 				default: 'full'
 			},
 			className: {
+				type: 'string',
+			},
+			anchor: {
 				type: 'string',
 			},
 			backgroundColor: {
@@ -2922,6 +2952,7 @@
 		description: __( 'Tile with photos, names and short descriptions in 3-8 columns.', 'knd' ),
 		supports: {
 			align: [ 'wide', 'full' ],
+			anchor: true,
 		},
 
 		attributes: {
@@ -2942,6 +2973,9 @@
 				default: 'full',
 			},
 			className: {
+				type: 'string',
+			},
+			anchor: {
 				type: 'string',
 			},
 			backgroundColor: {
@@ -3302,6 +3336,7 @@
 		],
 		supports: {
 			align: [ 'wide', 'full' ],
+			anchor: true,
 		},
 
 		attributes: {
@@ -3318,6 +3353,9 @@
 				default: 'full',
 			},
 			className: {
+				type: 'string',
+			},
+			anchor: {
 				type: 'string',
 			},
 			backgroundColor: {
@@ -3646,6 +3684,10 @@
 			__( 'phrase', 'knd' ),
 		],
 
+		supports: {
+			anchor: true,
+		},
+
 		attributes: {
 			text: {
 				type: 'string',
@@ -3659,6 +3701,9 @@
 				default: '',
 			},
 			className: {
+				type: 'string',
+			},
+			anchor: {
 				type: 'string',
 			}
 		},

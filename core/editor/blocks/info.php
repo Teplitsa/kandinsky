@@ -21,6 +21,10 @@ register_block_type( 'knd/info', array(
 			'type'    => 'string',
 			'default' => '',
 		),
+		'anchor'       => array(
+			'type'    => 'string',
+			'default' => '',
+		),
 		'heading'         => array(
 			'type'    => 'string',
 			'default' => esc_html__( '112 volunteers are helping Line of Color at the moment', 'knd' ),
@@ -224,7 +228,13 @@ function knd_block_info_render_callback( $attr ) {
 		$classes[] = 'has-columns';
 	}
 
-	$html = '<div class="' . knd_block_class( $classes ) . '" style="' . $style . '">
+	// Id
+	$attr_id = '';
+	if ( isset( $attr['anchor'] ) && $attr['anchor'] ) {
+		$attr_id = ' id="' . esc_attr( $attr['anchor'] ) . '"';
+	}
+
+	$html = '<div class="' . knd_block_class( $classes ) . '"' . $attr_id . ' style="' . $style . '">
 		<div class="knd-container">
 			' . $heading . '
 			' . $columns . '

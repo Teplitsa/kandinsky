@@ -21,6 +21,10 @@ register_block_type( 'knd/cta', array(
 			'type'    => 'string',
 			'default' => '',
 		),
+		'anchor'       => array(
+			'type'    => 'string',
+			'default' => '',
+		),
 		'heading'         => array(
 			'type'    => 'string',
 			'default' => esc_html__( '112 volunteers are helping Line of Color at the moment', 'knd' ),
@@ -140,12 +144,12 @@ function knd_block_cta_render_callback( $attr ) {
 	if ( isset( $attr['heading'] ) && $attr['heading'] ) {
 		$heading = '<div class="knd-block-cta__title">' . esc_html( $attr['heading'] ) . '</div>';
 	}
-	
+
 	$text = '';
 	if ( isset( $attr['text'] ) && $attr['text'] ) {
 		$text = '<h2 class="knd-block-cta__text">' . esc_html( $attr['text'] ) . '</h2>';
 	}
-	
+
 	$figure = '';
 	if ( isset( $attr['featuredImage'] ) && $attr['featuredImage'] ) {
 		$featured_image = $attr['featuredImage'];
@@ -164,15 +168,21 @@ function knd_block_cta_render_callback( $attr ) {
 			$figure = '<div class="knd-block-cta__figure"><img src="' . esc_url( $featured_image['url'] ) . '" alt=""></div>';
 		}
 	}
-	
+
 	$action = '';
 	if ( isset( $attr['buttonText'] ) && $attr['buttonText'] ) {
 		 $action .= '<div class="knd-block-cta__action">
 				<a href="' . $attr['buttonUrl'] . '" role="button" class="knd-button knd-button-lg">' . $attr['buttonText'] . '</a>
 		</div>';
 	}
-	
-	 $html = '<div class="' . knd_block_class( $classes ) . '" style="' . $style . '">
+
+	// Id
+	$attr_id = '';
+	if ( isset( $attr['anchor'] ) && $attr['anchor'] ) {
+		$attr_id = ' id="' . esc_attr( $attr['anchor'] ) . '"';
+	}
+
+	$html = '<div class="' . knd_block_class( $classes ) . '"' . $attr_id . ' style="' . $style . '">
 		<div class="knd-container">
 			<div class="knd-block-cta__inner">
 				' . $figure . '

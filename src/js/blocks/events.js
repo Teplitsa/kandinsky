@@ -43,6 +43,7 @@
 		],
 		supports: {
 			align: [ 'wide', 'full' ],
+			anchor: true,
 		},
 
 		attributes: {
@@ -58,6 +59,9 @@
 				type: 'string',
 			},
 			className: {
+				type: 'string',
+			},
+			anchor: {
 				type: 'string',
 			},
 			backgroundColor: {

@@ -24,10 +24,6 @@ register_block_type( 'knd/campaign', array(
 			'type'    => 'string',
 			'default' => '',
 		),
-		'className'       => array(
-			'type'    => 'string',
-			'default' => '',
-		),
 		'preview'     => array(
 			'type'    => 'boolean',
 			'default' => false,
@@ -41,6 +37,14 @@ register_block_type( 'knd/campaign', array(
 			'default' => '',
 		),
 		'colorMainThird' => array(
+			'type'    => 'string',
+			'default' => '',
+		),
+		'className'       => array(
+			'type'    => 'string',
+			'default' => '',
+		),
+		'anchor'       => array(
 			'type'    => 'string',
 			'default' => '',
 		),
@@ -95,17 +99,18 @@ function knd_block_campaign_render_callback( $attr ) {
 		$classes[] = 'has-leyka-color-main-third';
 	}
 
+	// Id
+	$attr_id = '';
+	if ( isset( $attr['anchor'] ) && $attr['anchor'] ) {
+		$attr_id = ' id="' . esc_attr( $attr['anchor'] ) . '"';
+	}
+
 	/**
-	 * Using shortcode [leyka_inline_campaign]
-	 * [leyka_campaign_form id="0"]
-	 * [leyka_donations_list campaign_id="0"]
-	 * [leyka_bar campaign_id="0"]
-	 * leyka_payment_form
-	 * [leyka_campaign_form id="311"]
+	 * Using shortcode [leyka_inline_campaign id="311"]
 	 */
 	$html = '';
 	if ( isset( $attr['campaign'] ) && $attr['campaign'] ) {
-		$html = '<div class="' . knd_block_class( $classes ) . '" style="' . $style . '">';
+		$html = '<div class="' . knd_block_class( $classes ) . '"' . $attr_id . ' style="' . $style . '">';
 			$campaign = $attr['campaign'];
 			if ( ! is_numeric( $campaign ) ) {
 

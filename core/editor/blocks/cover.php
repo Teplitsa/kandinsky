@@ -21,6 +21,10 @@ register_block_type( 'knd/cover', array(
 			'type'    => 'string',
 			'default' => '',
 		),
+		'anchor'       => array(
+			'type'    => 'string',
+			'default' => '',
+		),
 		'heading'         => array(
 			'type'    => 'string',
 			'default' => esc_html__( 'We believe', 'knd' ),
@@ -152,7 +156,13 @@ function knd_block_cover_render_callback( $attr ) {
 		$recommend = '<div class="knd-block-recommend">' . nl2br( $attr['recommend'], true ) . '</div>';
 	}
 
-	$html = '<div class="' . knd_block_class( $classes ) . '" style="' . $style . '">
+	// Id
+	$attr_id = '';
+	if ( isset( $attr['anchor'] ) && $attr['anchor'] ) {
+		$attr_id = ' id="' . esc_attr( $attr['anchor'] ) . '"';
+	}
+
+	$html = '<div class="' . knd_block_class( $classes ) . '"' . $attr_id . ' style="' . $style . '">
 		<div class="knd-block-cover-inner">
 			' . $heading . '
 			' . $content . '

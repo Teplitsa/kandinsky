@@ -47,6 +47,7 @@
 		description: __( 'News tile in three column.', 'knd' ),
 		supports: {
 			align: [ 'wide', 'full' ],
+			anchor: true,
 		},
 
 		attributes: {
@@ -63,6 +64,9 @@
 				default: 'full',
 			},
 			className: {
+				type: 'string',
+			},
+			anchor: {
 				type: 'string',
 			},
 			backgroundColor: {

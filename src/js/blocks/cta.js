@@ -50,6 +50,7 @@
 		keywords: [ __( 'call', 'knd' ), __( 'cta', 'knd' ), __( 'action', 'knd' )],
 		supports: {
 			align: [ 'wide', 'full' ],
+			anchor: true,
 		},
 
 		attributes: {
@@ -64,6 +65,9 @@
 				default: 'full',
 			},
 			className: {
+				type: 'string',
+			},
+			anchor: {
 				type: 'string',
 			},
 			heading: {

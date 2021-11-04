@@ -28,6 +28,10 @@ register_block_type( 'knd/recommend', array(
 			'type'    => 'string',
 			'default' => '',
 		),
+		'anchor'       => array(
+			'type'    => 'string',
+			'default' => '',
+		),
 	),
 ) );
 
@@ -61,8 +65,20 @@ function knd_block_recommend_render_callback( $attr ) {
 	if ( isset( $attr['text'] ) && $attr['text'] ) {
 		$content = $attr['text'];
 	}
-	
-	$html = '<div class="' . knd_block_class( $classes ) . '" style="' . $style . '">
+
+	// Id
+	$attr_id = '';
+	if ( isset( $attr['anchor'] ) && $attr['anchor'] ) {
+		$attr_id = ' id="' . esc_attr( $attr['anchor'] ) . '"';
+	}
+
+	// Style attribute
+	$style_attr = '';
+	if ( $style ) {
+		$style_attr = ' style="' . $style . '"';
+	}
+
+	$html = '<div class="' . knd_block_class( $classes ) . '"' . $attr_id . $style_attr . '>
 		' . nl2br( $content, false ) . '
 	</div>';
 

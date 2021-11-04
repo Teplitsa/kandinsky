@@ -84,12 +84,16 @@ register_block_type( 'knd/hero', array(
 			'type'    => 'string',
 			'default' => '',
 		),
+		'blockId'       => array(
+			'type'    => 'string',
+		),
 		'className'       => array(
 			'type'    => 'string',
 			'default' => '',
 		),
-		'blockId'       => array(
+		'anchor'       => array(
 			'type'    => 'string',
+			'default' => '',
 		),
 	),
 ) );
@@ -222,7 +226,13 @@ function knd_block_hero_render_callback( $attr ) {
 		$classes[] = 'knd-block-' . $attr['blockId'];
 	}
 
-	$html = '<div class="' . knd_block_class( $classes ) . '" style="' . $style . '">
+	// Id
+	$attr_id = '';
+	if ( isset( $attr['anchor'] ) && $attr['anchor'] ) {
+		$attr_id = ' id="' . esc_attr( $attr['anchor'] ) . '"';
+	}
+
+	$html = '<div class="' . knd_block_class( $classes ) . '"' . $attr_id . ' style="' . $style . '">
 		<div class="knd-block-hero__inner">
 			<div class="knd-block-hero__content">
 				' . $heading . '

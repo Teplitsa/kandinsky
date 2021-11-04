@@ -29,10 +29,6 @@ register_block_type( 'knd/people', array(
 			'type'    => 'string',
 			'default' => 'full',
 		),
-		'className'       => array(
-			'type'    => 'string',
-			'default' => '',
-		),
 		'backgroundColor' => array(
 			'type'    => 'string',
 			'default' => '',
@@ -68,6 +64,14 @@ register_block_type( 'knd/people', array(
 		'preview'    => array(
 			'type' => 'boolean',
 			'default' => false,
+		),
+		'className'       => array(
+			'type'    => 'string',
+			'default' => '',
+		),
+		'anchor'       => array(
+			'type'    => 'string',
+			'default' => '',
 		),
 	),
 ) );
@@ -138,7 +142,13 @@ function knd_block_people_render_callback( $attr ) {
 		$heading = $attr['heading'];
 	}
 
-	$html  = '<div class="' . knd_block_class( $classes ) . '" style="' . $style . '">';
+	// Id
+	$attr_id = '';
+	if ( isset( $attr['anchor'] ) && $attr['anchor'] ) {
+		$attr_id = ' id="' . esc_attr( $attr['anchor'] ) . '"';
+	}
+
+	$html  = '<div class="' . knd_block_class( $classes ) . '"' . $attr_id . ' style="' . $style . '">';
 	$html .= '<div class="knd-container">';
 
 	if ( $heading ) {

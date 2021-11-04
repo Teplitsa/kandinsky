@@ -63,7 +63,7 @@
 
 		supports: {
 			align: [ 'wide', 'full' ],
-			className: true
+			anchor: true,
 		},
 
 		attributes: {
@@ -118,6 +118,9 @@
 				default: 'full',
 			},
 			className: {
+				type: 'string',
+			},
+			anchor: {
 				type: 'string',
 			},
 			blockId: {

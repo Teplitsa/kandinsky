@@ -81,6 +81,7 @@
 		description: __( 'Tile with photos, names and short descriptions in 3-8 columns.', 'knd' ),
 		supports: {
 			align: [ 'wide', 'full' ],
+			anchor: true,
 		},
 
 		attributes: {
@@ -101,6 +102,9 @@
 				default: 'full',
 			},
 			className: {
+				type: 'string',
+			},
+			anchor: {
 				type: 'string',
 			},
 			backgroundColor: {
