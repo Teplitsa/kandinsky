@@ -12,6 +12,13 @@
 		$('body').addClass('dom-loaded');
 	});
 
+	/** Window width **/
+	var windowWidth = $( '#top' ).width(),
+		$adminbar = $( '#wpadminbar' ),
+		$siteHeader = $( '#site_header, .knd-header' ),
+		breakPointSmall = 480, // Small screens break point
+		breakPointMedium = 767; // Medium screen break point
+
 	/**
 	 * Accesibility Alert
 	 */
@@ -265,13 +272,6 @@
 			}
 		});
 	});
-
-	/** Window width **/
-	var windowWidth = $( '#top' ).width(),
-		$adminbar = $( '#wpadminbar' ),
-		$siteHeader = $( '#site_header, .knd-header' ),
-		breakPointSmall = 480, // Small screens break point
-		breakPointMedium = 767; // Medium screen break point
 
 	/** Resize event **/
 	$( window ).resize(function() {
