@@ -30,6 +30,7 @@ body {
 
 .section-title {
 	@include knd-head-exlarge-single-text();
+	color: var(--knd-color-headings);
 }
 
 .knd-main {

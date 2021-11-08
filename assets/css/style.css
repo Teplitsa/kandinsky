@@ -1265,6 +1265,7 @@ body > svg {
 	font-family: var(--knd-font-family-headings);
 	line-height: 1;
 	font-weight: bold;
+	color: var(--knd-color-headings);
 }
 
 @media (min-width: 440px) and (max-width: 768px) {
@@ -3132,6 +3133,7 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 	-webkit-hyphens: auto;
 	-ms-hyphens: auto;
 	hyphens: auto;
+	color: var(--knd-color-headings);
 }
 
 @media (min-width: 440px) and (max-width: 768px) {
@@ -3745,7 +3747,6 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 	font-size: 50.50472px;
 	font-family: var(--knd-font-family-headings);
 	line-height: 1.05;
-	font-weight: 600;
 	letter-spacing: .001em;
 	text-transform: uppercase;
 	color: var(--knd-color-headings);
@@ -4087,6 +4088,7 @@ div[id*="leyka-pf-"] .inpage-card__thumb {
 	font-size: 1.5em;
 	line-height: 1.1;
 	margin-top: 0 !important;
+	color: var(--knd-color-headings);
 }
 
 /** == Built-in WordPress widgets (_builin.scss) == */

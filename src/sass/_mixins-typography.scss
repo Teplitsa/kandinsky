@@ -100,7 +100,6 @@ $modularscale: (
 	@include ms-respond(font-size, 5);
 	font-family: $heading;
 	line-height: 1.05;
-	font-weight: 600;
 	letter-spacing: .001em;
 	text-transform: uppercase;
 }
