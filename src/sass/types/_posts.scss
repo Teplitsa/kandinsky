@@ -27,31 +27,32 @@
 @mixin post-meta() {
 	font-size: 11px;
 	font-family: $body;
-	font-weight: 500;
+	font-weight: bold;
 	line-height: 1.5;
 	text-transform: uppercase;
-	color: $color-main-dark;
+	color: var(--knd-color-headings);
 
 	a {
 		color: inherit;
 		&:hover { text-decoration: underline; }
 	}
-	
+
 	.date {
 		color: $color-text;
 	}
 	.sep {
-		display:inline-block;
-		width: 5px;
-		height: 5px;
-		border: solid 1px $color-page-bg-dark;
+		padding-left: 10px;
+		padding-right: 10px;
 
-		border-radius: 5px;
-		padding:0px;
-		vertical-align:baseline;
-		margin:1px 7px 2px 7px;
+		&:before {
+			content: '•';
+		}
 	}
-	
+
+	.category {
+		color: var(--knd-color-main);
+		letter-spacing: 0.05em;
+	}
 }
 
 

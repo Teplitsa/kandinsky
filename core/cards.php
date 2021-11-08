@@ -16,8 +16,7 @@ function knd_post_card( WP_Post $cpost ) {
 		<div class="entry-data">
 			<h2 class="entry-title"><?php echo get_the_title($cpost);?></h2>
 		</div>
-
-		<div class="entry-meta"><?php echo strip_tags(knd_posted_on($cpost), '<span>');?></div>
+		<div class="entry-meta"><?php echo strip_tags( knd_posted_on( $cpost ), '<span><time>'); ?></div>
 	</a>
 </article>
 <?php
@@ -33,7 +32,7 @@ function knd_related_post_card( WP_Post $cpost ) {
 			<h2 class="entry-title"><?php echo get_the_title($cpost);?></h2>
 		</div>
 	<?php if('project' != $cpost->post_type) { ?>
-	<div class="entry-meta"><?php echo strip_tags(knd_posted_on($cpost), '<span>');?></div>
+		<div class="entry-meta"><?php echo strip_tags( knd_posted_on( $cpost ), '<span><time>'); ?></div>
 	<?php } ?>
 	</a>
 </article>

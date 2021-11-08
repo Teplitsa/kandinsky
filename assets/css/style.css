@@ -3093,10 +3093,10 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 .tpl-post .entry-meta, .tpl-related-post .entry-meta {
 	font-size: 11px;
 	font-family: var(--knd-font-family-base);
-	font-weight: 500;
+	font-weight: bold;
 	line-height: 1.5;
 	text-transform: uppercase;
-	color: var(--knd-color-main-active);
+	color: var(--knd-color-headings);
 }
 
 .tpl-post .entry-meta a, .tpl-related-post .entry-meta a {
@@ -3112,14 +3112,17 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 }
 
 .tpl-post .entry-meta .sep, .tpl-related-post .entry-meta .sep {
-	display: inline-block;
-	width: 5px;
-	height: 5px;
-	border: solid 1px var(--knd-page-bg-color-dark);
-	border-radius: 5px;
-	padding: 0px;
-	vertical-align: baseline;
-	margin: 1px 7px 2px 7px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.tpl-post .entry-meta .sep:before, .tpl-related-post .entry-meta .sep:before {
+	content: '•';
+}
+
+.tpl-post .entry-meta .category, .tpl-related-post .entry-meta .category {
+	color: var(--knd-color-main);
+	letter-spacing: 0.05em;
 }
 
 .tpl-post .entry-title, .tpl-related-post .entry-title {
@@ -3545,10 +3548,10 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 .entry-header-single .entry-meta {
 	font-size: 11px;
 	font-family: var(--knd-font-family-base);
-	font-weight: 500;
+	font-weight: bold;
 	line-height: 1.5;
 	text-transform: uppercase;
-	color: var(--knd-color-main-active);
+	color: var(--knd-color-headings);
 	margin-bottom: 19px;
 }
 
@@ -3565,14 +3568,17 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 }
 
 .entry-header-single .entry-meta .sep {
-	display: inline-block;
-	width: 5px;
-	height: 5px;
-	border: solid 1px var(--knd-page-bg-color-dark);
-	border-radius: 5px;
-	padding: 0px;
-	vertical-align: baseline;
-	margin: 1px 7px 2px 7px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.entry-header-single .entry-meta .sep:before {
+	content: '•';
+}
+
+.entry-header-single .entry-meta .category {
+	color: var(--knd-color-main);
+	letter-spacing: 0.05em;
 }
 
 .entry-header-single .mobile-sharing {
