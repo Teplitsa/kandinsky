@@ -143,6 +143,7 @@ table,
 	width: 100%;
 	min-width: 240px;
 	border-collapse: collapse;
+	font-size: 14px;
 }
 
 table thead,
@@ -161,7 +162,7 @@ table td,
 table th,
 .wp-block-table td,
 .wp-block-table th {
-	padding: 10px;
+	padding: 15px 10px;
 	border: 1px solid;
 }
 
@@ -187,6 +188,8 @@ table.is-style-underline td,
 .wp-block-table.is-style-underline th,
 .wp-block-table.is-style-underline td {
 	border-width: 0;
+	font-weight: 600;
+	vertical-align: middle;
 }
 
 table.is-style-underline tr,
@@ -211,15 +214,18 @@ table.is-style-underline tbody tr:hover,
 	width: initial;
 }
 
-.the-content .wp-block-table a {
+.the-content .wp-block-table a,
+.editor-styles-wrapper .wp-block-table a {
 	border-bottom: none;
 }
 
-.the-content .wp-block-table a:hover {
+.the-content .wp-block-table a:hover,
+.editor-styles-wrapper .wp-block-table a:hover {
 	text-decoration: underline;
 }
 
-.the-content .wp-block-table a:hover .has-inline-color {
+.the-content .wp-block-table a:hover .has-inline-color,
+.editor-styles-wrapper .wp-block-table a:hover .has-inline-color {
 	text-decoration: underline;
 }
 

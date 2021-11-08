@@ -13,6 +13,7 @@ const { compose, withState } = wp.compose;
 const { select, dispatch, withSelect, withDispatch, useSelect, useDispatch } = wp.data;
 const { TextControl, SelectControl, IconButton, ColorPalette, ToggleControl, PanelRow } = wp.components;
 const { useState, useEffect, Fragment } = wp.element;
+const { registerBlockStyle } = wp.blocks;
 
 const { addFilter, addAction } = wp.hooks;
 
@@ -214,6 +215,11 @@ if( window.pagenow == 'person' ) {
 
 }
 
+registerBlockStyle( 'core/table', {
+	name: 'underline',
+	label: __( 'Underline', 'knd' ),
+	Default: false,
+});
 
 
 //

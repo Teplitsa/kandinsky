@@ -5,6 +5,7 @@
 	font-family: var(--knd-font-family-base);
 	line-height: 1.55;
 	font-weight: var(--knd-font-weight-base, 500);
+	font-size: var(--knd-font-size-base);
 	background-color: var(--knd-page-bg-color);
 }
 
