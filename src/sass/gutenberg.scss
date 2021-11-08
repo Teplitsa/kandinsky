@@ -5,7 +5,7 @@
 .editor-styles-wrapper {
 	font-family: var(--knd-font-family-base);
 	line-height: 1.55;
-	font-weight: 400;
+	font-weight: var(--knd-font-weight-base, 500);
 
 	background-color: var(--knd-page-bg-color);
 

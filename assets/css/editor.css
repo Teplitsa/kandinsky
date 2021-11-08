@@ -438,6 +438,7 @@ h6 {
 	font-weight: var(--knd-font-weight-headings);
 	font-style: var(--knd-font-style-headings);
 	line-height: 1.2;
+	color: var(--knd-color-headings);
 }
 
 h1 {
@@ -838,7 +839,7 @@ h6 {
 
 .the-content pre, .the-content code {
 	line-height: 1.55;
-	font-weight: 400;
+	font-weight: var(--knd-font-weight-base, 500);
 	font-style: var(--knd-font-style-base);
 	font-family: var(--knd-font-family-base);
 }
@@ -947,7 +948,7 @@ body {
 	text-rendering: optimizeLegibility;
 	color: var(--knd-color-base);
 	line-height: 1.55;
-	font-weight: 400;
+	font-weight: var(--knd-font-weight-base, 500);
 	font-style: var(--knd-font-style-base);
 	font-family: var(--knd-font-family-base);
 }
@@ -1315,7 +1316,7 @@ body {
 
 #tinymce pre, #tinymce code {
 	line-height: 1.55;
-	font-weight: 400;
+	font-weight: var(--knd-font-weight-base, 500);
 	font-style: var(--knd-font-style-base);
 	font-family: var(--knd-font-family-base);
 }

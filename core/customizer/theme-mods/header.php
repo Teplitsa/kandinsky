@@ -221,7 +221,7 @@ Kirki::add_field( 'theme_config_id', [
 	'settings'    => 'header_menu_size',
 	'label'       => esc_html__( 'Menu Font Size', 'knd' ),
 	'section'     => 'header',
-	'default'     => '16px',
+	'default'     => '18px',
 	'active_callback' => array(
 		array(
 			'setting'  => 'header_type',

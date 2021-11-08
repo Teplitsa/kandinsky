@@ -26,9 +26,9 @@ $social_color: (
 }
 
 @mixin social-button-link($button-size, $icon-size) {
-	display: inline-block;			
+	display: inline-block;
 	text-align: center;
-	vertical-align: middle;	
+	vertical-align: middle;
 	transition: all 0.2s;
 	text-decoration: none;
 	width: $button-size;
@@ -80,10 +80,32 @@ $social_color: (
 
 .social-likes__widget {
 	cursor: pointer;
-		
+
 	a {
 		@include social-button-link(44px, 22px);
-		padding: 9px 0;
+	}
+
+	a {
+		border-radius: 50rem;
+		border: 1px solid #e6e6e6;
+		background-color: #fff;
+		width: 40px;
+		height: 40px;
+		padding: 7px 0;
+
+		&:hover {
+			background-color: #e6e6e6;
+		}
+
+		.svg-icon {
+			fill: #4d606a;
+			width: 18px;
+			height: 18px;
+		}
+	}
+
+	+ .social-likes__widget {
+		margin-top: 15px;
 	}
 	
 	.sh-text { display: none; }
@@ -95,20 +117,5 @@ $social_color: (
 		vertical-align: middle;
 		width: 22px;
 		height: 22px;
-	}
-}
-
-@each $item in vk, facebook, twitter, telegram, whatsapp, viber, ok  {
-		
-	.social-likes__widget_#{$item} a {
-		background: social_color($item);
-		
-		&:hover, &:focus, &:active {
-			background: transparentize(call(social_color, $item), 0.2);
-		}
-		
-		&:last-of-type {
-			border: none;
-		}		
 	}
 }

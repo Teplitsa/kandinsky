@@ -6,7 +6,7 @@
 	--knd-block-people-background: transparent;
 	--knd-block-people-heading-color: var(--knd-color-headings);
 	--knd-block-people-name-color: var(--knd-color-headings);
-	--knd-block-people-meta-color: var(--knd-page-text-color-light);
+	--knd-block-people-meta-color: var(--knd-color-main);
 }
 
 .wp-block-knd-people {
@@ -179,7 +179,6 @@
 	.entry-meta {
 		font-size: 14px;
 		font-family: var(--knd-font-family-base);
-		font-weight: 400;
 		line-height: 1.5;
 		line-height: 1.4;
 		text-transform: none;

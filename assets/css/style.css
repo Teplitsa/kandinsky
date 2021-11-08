@@ -438,6 +438,7 @@ h6 {
 	font-weight: var(--knd-font-weight-headings);
 	font-style: var(--knd-font-style-headings);
 	line-height: 1.2;
+	color: var(--knd-color-headings);
 }
 
 h1 {
@@ -838,7 +839,7 @@ h6 {
 
 .the-content pre, .the-content code {
 	line-height: 1.55;
-	font-weight: 400;
+	font-weight: var(--knd-font-weight-base, 500);
 	font-style: var(--knd-font-style-base);
 	font-family: var(--knd-font-family-base);
 }
@@ -1298,7 +1299,7 @@ body {
 	color: var(--knd-color-base, #000000);
 	text-rendering: optimizeLegibility;
 	line-height: 1.55;
-	font-weight: 400;
+	font-weight: var(--knd-font-weight-base, 500);
 	font-style: var(--knd-font-style-base);
 	font-family: var(--knd-font-family-base);
 }
@@ -2841,7 +2842,29 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 	width: 44px;
 	height: 44px;
 	padding: 11px 0;
-	padding: 9px 0;
+}
+
+.social-likes__widget a {
+	border-radius: 50rem;
+	border: 1px solid #e6e6e6;
+	background-color: #fff;
+	width: 40px;
+	height: 40px;
+	padding: 7px 0;
+}
+
+.social-likes__widget a:hover {
+	background-color: #e6e6e6;
+}
+
+.social-likes__widget a .svg-icon {
+	fill: #4d606a;
+	width: 18px;
+	height: 18px;
+}
+
+.social-likes__widget + .social-likes__widget {
+	margin-top: 15px;
 }
 
 .social-likes__widget .sh-text {
@@ -2855,90 +2878,6 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 	vertical-align: middle;
 	width: 22px;
 	height: 22px;
-}
-
-.social-likes__widget_vk a {
-	background: #517397;
-}
-
-.social-likes__widget_vk a:hover, .social-likes__widget_vk a:focus, .social-likes__widget_vk a:active {
-	background: rgba(81, 115, 151, 0.8);
-}
-
-.social-likes__widget_vk a:last-of-type {
-	border: none;
-}
-
-.social-likes__widget_facebook a {
-	background: #3B5998;
-}
-
-.social-likes__widget_facebook a:hover, .social-likes__widget_facebook a:focus, .social-likes__widget_facebook a:active {
-	background: rgba(59, 89, 152, 0.8);
-}
-
-.social-likes__widget_facebook a:last-of-type {
-	border: none;
-}
-
-.social-likes__widget_twitter a {
-	background: #1DA1F2;
-}
-
-.social-likes__widget_twitter a:hover, .social-likes__widget_twitter a:focus, .social-likes__widget_twitter a:active {
-	background: rgba(29, 161, 242, 0.8);
-}
-
-.social-likes__widget_twitter a:last-of-type {
-	border: none;
-}
-
-.social-likes__widget_telegram a {
-	background: #2CA5E0;
-}
-
-.social-likes__widget_telegram a:hover, .social-likes__widget_telegram a:focus, .social-likes__widget_telegram a:active {
-	background: rgba(44, 165, 224, 0.8);
-}
-
-.social-likes__widget_telegram a:last-of-type {
-	border: none;
-}
-
-.social-likes__widget_whatsapp a {
-	background: #69BD35;
-}
-
-.social-likes__widget_whatsapp a:hover, .social-likes__widget_whatsapp a:focus, .social-likes__widget_whatsapp a:active {
-	background: rgba(105, 189, 53, 0.8);
-}
-
-.social-likes__widget_whatsapp a:last-of-type {
-	border: none;
-}
-
-.social-likes__widget_viber a {
-	background: #774C98;
-}
-
-.social-likes__widget_viber a:hover, .social-likes__widget_viber a:focus, .social-likes__widget_viber a:active {
-	background: rgba(119, 76, 152, 0.8);
-}
-
-.social-likes__widget_viber a:last-of-type {
-	border: none;
-}
-
-.social-likes__widget_ok a {
-	background: #F58220;
-}
-
-.social-likes__widget_ok a:hover, .social-likes__widget_ok a:focus, .social-likes__widget_ok a:active {
-	background: rgba(245, 130, 32, 0.8);
-}
-
-.social-likes__widget_ok a:last-of-type {
-	border: none;
 }
 
 /* Breadcrumbs */
@@ -3504,7 +3443,7 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 
 .tpl-search .entry-summary {
 	line-height: 1.55;
-	font-weight: 400;
+	font-weight: var(--knd-font-weight-base, 500);
 	font-style: var(--knd-font-style-base);
 	font-family: var(--knd-font-family-base);
 	color: var(--knd-color-base);
@@ -4590,7 +4529,7 @@ div[id*="leyka-pf-"] .inpage-card__thumb {
 
 .widget-full.widget_text .textwidget pre, .widget-full.widget_text .textwidget code {
 	line-height: 1.55;
-	font-weight: 400;
+	font-weight: var(--knd-font-weight-base, 500);
 	font-style: var(--knd-font-style-base);
 	font-family: var(--knd-font-family-base);
 }
@@ -4909,7 +4848,7 @@ div[id*="leyka-pf-"] .inpage-card__thumb {
 
 .leyka-loop .tpl-post p, .leyka-loop .tpl-related-post p {
 	line-height: 1.55;
-	font-weight: 400;
+	font-weight: var(--knd-font-weight-base, 500);
 	font-style: var(--knd-font-style-base);
 	font-family: var(--knd-font-family-base);
 	line-height: 1.33;
