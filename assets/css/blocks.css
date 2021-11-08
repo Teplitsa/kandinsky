@@ -1,6 +1,26 @@
+@charset "UTF-8";
 /**
  * Blocks
  */
+/** == Kandinsky-specific widgets (_widgetsn.scss) == */
+:root {
+	--knd-color-white: #ffffff;
+	--knd-color-black: #000000;
+	--knd-color-light-grey: #f7f8f8;
+	--knd-color-light-blue: #f5fAfE;
+	--knd-header-height: 124px;
+	--knd-font-family-button: var(--knd-font-family-base);
+	--knd-button-border-radius: .5em;
+	--knd-image-border-radius: 8px;
+	--knd-adminbar-height: 32px;
+}
+
+@media (max-width: 765px) {
+	body {
+		--knd-adminbar-height: 46px;
+	}
+}
+
 /**
  * Common Blocks Style
  */
@@ -118,6 +138,91 @@
 	margin-bottom: 26px;
 }
 
+table,
+.wp-block-table {
+	width: 100%;
+	min-width: 240px;
+	border-collapse: collapse;
+}
+
+table thead,
+table tfoot,
+.wp-block-table thead,
+.wp-block-table tfoot {
+	text-align: center;
+}
+
+table th,
+.wp-block-table th {
+	font-family: var(--knd-font-family-headings);
+}
+
+table td,
+table th,
+.wp-block-table td,
+.wp-block-table th {
+	padding: 10px;
+	border: 1px solid;
+}
+
+table.is-style-stripes,
+.wp-block-table.is-style-stripes {
+	border-color: var(--knd-color-light-grey);
+}
+
+table.is-style-stripes th,
+table.is-style-stripes td,
+.wp-block-table.is-style-stripes th,
+.wp-block-table.is-style-stripes td {
+	border-width: 0;
+}
+
+table.is-style-stripes tbody tr:nth-child(odd),
+.wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
+	background-color: var(--knd-color-light-grey);
+}
+
+table.is-style-underline th,
+table.is-style-underline td,
+.wp-block-table.is-style-underline th,
+.wp-block-table.is-style-underline td {
+	border-width: 0;
+}
+
+table.is-style-underline tr,
+.wp-block-table.is-style-underline tr {
+	border-bottom: 1px solid #c5c5c5;
+}
+
+table.is-style-underline tbody tr:hover,
+.wp-block-table.is-style-underline tbody tr:hover {
+	background-color: #f3f3f3;
+}
+
+.wp-block-table:not(:first-child) {
+	margin-top: 25px;
+}
+
+.wp-block-table:not(:last-child) {
+	margin-bottom: 25px;
+}
+
+.wp-block-table.lignwide, .wp-block-table.alignfull {
+	width: initial;
+}
+
+.the-content .wp-block-table a {
+	border-bottom: none;
+}
+
+.the-content .wp-block-table a:hover {
+	text-decoration: underline;
+}
+
+.the-content .wp-block-table a:hover .has-inline-color {
+	text-decoration: underline;
+}
+
 /**
  * Buttons
  */
@@ -125,7 +230,7 @@
 	font-family: var(--knd-font-family-base);
 	display: inline-block;
 	font-style: normal;
-	font-weight: 500;
+	font-weight: 700;
 	font-size: 17px;
 	padding: 12px 20px;
 	color: #fff;
@@ -138,7 +243,7 @@
 	white-space: nowrap;
 }
 
-.knd-button :hover, .knd-event__booking .em-booking-form-details .em-booking-submit :hover, .knd-event__login [name="wp-submit"] :hover {
+.knd-button:hover, .knd-event__booking .em-booking-form-details .em-booking-submit:hover, .knd-event__login :hover[name="wp-submit"] {
 	background: var(--knd-color-main-active);
 	border-color: var(--knd-color-main-active);
 }
@@ -165,8 +270,8 @@
 }
 
 .knd-button-lg {
-	font-size: 26px;
-	padding: 12px 22px;
+	font-size: 18px;
+	padding: 12px 20px;
 }
 
 .knd-button-xl {
@@ -226,7 +331,7 @@
  * Section Links
  */
 .knd-block .section-links {
-	font-weight: 500;
+	font-weight: bold;
 	font-size: 18px;
 	font-family: var(--knd-font-family-base);
 	display: -ms-flexbox;
@@ -238,7 +343,6 @@
 	border-bottom: none;
 	text-decoration: none;
 	line-height: 1.33;
-	letter-spacing: .03em;
 	display: -ms-flexbox;
 	display: flex;
 	-ms-flex-align: center;
@@ -263,8 +367,8 @@
 	right: -2px;
 }
 
-.knd-block .section-links a + a {
-	margin-left: 30px;
+.knd-block .section-links a:not(:last-child) {
+	margin-right: 30px;
 }
 
 /**
@@ -274,7 +378,6 @@
 	--knd-block-hero-background: #e6e6e6;
 	--knd-block-hero-overlay-start: rgba(0, 0, 0, 0);
 	--knd-block-hero-overlay-end: rgba(0, 0, 0, 0.8);
-	--knd-block-hero-color: #081d47;
 	--knd-button-color: #fff;
 	--knd-button-color-hover: #fff;
 	--knd-button-background: var(--knd-color-main);
@@ -341,14 +444,14 @@
 }
 
 .knd-block-hero__title {
-	font-size: 38px;
+	font-size: 36px;
 	letter-spacing: .03em;
-	font-weight: 800;
+	font-weight: 700;
 	margin-bottom: 26px;
+	line-height: 1.2;
 }
 
 .knd-block-hero__actions {
-	padding-top: 10px;
 	display: -ms-flexbox;
 	display: flex;
 	-ms-flex-wrap: wrap;
@@ -356,9 +459,6 @@
 }
 
 .knd-block-hero__actions .knd-button, .knd-block-hero__actions .knd-event__booking .em-booking-form-details .em-booking-submit, .knd-event__booking .em-booking-form-details .knd-block-hero__actions .em-booking-submit, .knd-block-hero__actions .knd-event__login [name="wp-submit"], .knd-event__login .knd-block-hero__actions [name="wp-submit"] {
-	padding: 15px 35px;
-	letter-spacing: .03em;
-	font-size: 18px;
 	margin-top: 15px;
 	margin-right: 15px;
 	text-decoration: none;
@@ -367,10 +467,18 @@
 	border-color: var(--knd-button-background);
 }
 
+.knd-block-hero__actions .knd-button:focus, .knd-block-hero__actions .knd-event__booking .em-booking-form-details .em-booking-submit:focus, .knd-event__booking .em-booking-form-details .knd-block-hero__actions .em-booking-submit:focus, .knd-block-hero__actions .knd-event__login :focus[name="wp-submit"], .knd-event__login .knd-block-hero__actions :focus[name="wp-submit"] {
+	color: var(--knd-button-color);
+}
+
 .knd-block-hero__actions .knd-button-outline {
 	border-bottom-width: 2px;
 	color: var(--knd-button-background);
 	background-color: var(--knd-button-color);
+}
+
+.knd-block-hero__actions .knd-button-outline:focus {
+	color: var(--knd-button-background);
 }
 
 .knd-block-hero__actions .knd-button:hover, .knd-block-hero__actions .knd-event__booking .em-booking-form-details .em-booking-submit:hover, .knd-event__booking .em-booking-form-details .knd-block-hero__actions .em-booking-submit:hover, .knd-block-hero__actions .knd-event__login :hover[name="wp-submit"], .knd-event__login .knd-block-hero__actions :hover[name="wp-submit"] {
@@ -381,6 +489,7 @@
 
 .knd-block-hero__text {
 	font-size: 18px;
+	font-weight: 500;
 	margin-bottom: 26px;
 }
 
@@ -465,7 +574,7 @@
 :root {
 	--knd-block-news-background: transparent;
 	--knd-block-news-title-color: var(--knd-color-headings);
-	--knd-block-news-meta-color:  var(--knd-color-base);
+	--knd-block-news-meta-color:  var(--knd-color-headings);
 }
 
 .wp-block-knd-news {
@@ -530,7 +639,7 @@
 }
 
 .wp-block-knd-news .section-title {
-	font-size: 26px;
+	font-size: 24px;
 	font-family: var(--knd-font-family-headings);
 	color: var(--knd-color-headings);
 	margin-top: 0;
@@ -554,9 +663,7 @@
 	padding-top: 20px;
 	padding-bottom: 20px;
 	font-size: 18px;
-	font-weight: 600;
 	font-family: var(--knd-font-family-headings);
-	letter-spacing: .01em;
 	line-height: 1.25;
 	transition: all 0.35s;
 }
@@ -599,7 +706,7 @@
 .wp-block-knd-news .entry-meta {
 	font-size: 11px;
 	font-family: var(--knd-font-family-base);
-	font-weight: 500;
+	font-weight: 700;
 	line-height: 1.5;
 	text-transform: uppercase;
 	color: var(--knd-block-news-meta-color);
@@ -607,18 +714,16 @@
 
 .wp-block-knd-news .entry-meta .category {
 	color: var(--knd-block-link-color);
+	letter-spacing: 0.05em;
 }
 
 .wp-block-knd-news .entry-meta .sep {
-	display: inline-block;
-	width: 5px;
-	height: 5px;
-	border: solid 1px currentColor;
-	border-radius: 5px;
-	padding: 0px;
-	vertical-align: baseline;
-	margin: 1px 7px 2px 7px;
-	opacity: .4;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.wp-block-knd-news .entry-meta .sep:before {
+	content: '•';
 }
 
 .wp-block-knd-news .section-heading {
@@ -704,11 +809,15 @@
 }
 
 .wp-block-knd-projects .section-title {
-	font-size: 26px;
+	font-size: 24px;
 	font-family: var(--knd-font-family-headings);
 	color: var(--knd-color-headings);
 	margin-top: 0;
-	margin-bottom: 0;
+	margin-bottom: 10px;
+}
+
+.wp-block-knd-projects .section-links {
+	margin-bottom: 10px;
 }
 
 .wp-block-knd-projects .hentry {
@@ -779,7 +888,7 @@
 	align-items: flex-end;
 	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;
-	margin-bottom: 10px;
+	margin-bottom: 0;
 }
 
 /**
@@ -960,7 +1069,7 @@
 }
 
 .wp-block-knd-people .section-title {
-	font-size: 26px;
+	font-size: 24px;
 	font-family: var(--knd-font-family-headings);
 	color: var(--knd-block-people-heading-color);
 	margin-top: 0;
@@ -1140,7 +1249,7 @@
 :root {
 	--knd-block-cta-background: transparent;
 	--knd-block-cta-title-color: var(--knd-color-main);
-	--knd-block-cta-text-color: var(--knd-color-base);
+	--knd-block-cta-text-color: var(--knd-color-headings);
 	--knd-button-color: #fff;
 	--knd-button-color-hover: #fff;
 	--knd-button-background: var(--knd-color-main);
@@ -1178,9 +1287,12 @@
 }
 
 .knd-block-cta__content {
-	text-align: center;
 	-ms-flex: 1;
 	flex: 1;
+}
+
+.knd-block-cta__content:first-child {
+	text-align: center;
 }
 
 .knd-block-cta__figure {
@@ -1204,17 +1316,16 @@
 .knd-block .knd-block-cta__title {
 	color: var(--knd-block-cta-title-color);
 	font-size: 14px;
-	letter-spacing: 0.1em;
-	line-height: 1.4;
+	font-weight: 600;
+	line-height: 1.3;
 	text-transform: uppercase;
-	margin-bottom: 30px;
+	margin-bottom: 15px;
 }
 
 .knd-block .knd-block-cta__text {
 	color: var(--knd-block-cta-text-color);
-	font-size: 36px;
-	letter-spacing: .03em;
-	line-height: 1.2;
+	font-size: 24px;
+	line-height: 1.4;
 	margin-bottom: 30px;
 	margin-top: 0;
 	padding: 0;
@@ -1232,6 +1343,10 @@
 	border-color: var(--knd-button-background);
 }
 
+.knd-block-cta__action .knd-button:focus, .knd-block-cta__action .knd-event__booking .em-booking-form-details .em-booking-submit:focus, .knd-event__booking .em-booking-form-details .knd-block-cta__action .em-booking-submit:focus, .knd-block-cta__action .knd-event__login :focus[name="wp-submit"], .knd-event__login .knd-block-cta__action :focus[name="wp-submit"] {
+	color: var(--knd-button-color);
+}
+
 .knd-block-cta__action .knd-button:hover, .knd-block-cta__action .knd-event__booking .em-booking-form-details .em-booking-submit:hover, .knd-event__booking .em-booking-form-details .knd-block-cta__action .em-booking-submit:hover, .knd-block-cta__action .knd-event__login :hover[name="wp-submit"], .knd-event__login .knd-block-cta__action :hover[name="wp-submit"] {
 	text-decoration: none;
 	color: var(--knd-button-color-hover);
@@ -1239,21 +1354,12 @@
 	border-color: var(--knd-button-background-hover);
 }
 
-.knd-block-cta__action .knd-button-lg {
-	padding: 15px 35px;
-}
-
-.the-content .wp-block-knd-cta.alignfull {
-	margin-left: calc( ( ( 100vw - var(--knd-content-width) ) / 2 ) * -1);
-	margin-right: calc( ( ( 100vw - var(--knd-content-width) ) / 2 ) * -1);
-}
-
 @media (min-width: 768px) {
 	.knd-block-cta__figure {
 		-ms-flex: 0 0 auto;
 		flex: 0 0 auto;
 		width: 40%;
-		margin-right: 30px;
+		margin-right: 40px;
 	}
 }
 
@@ -1267,33 +1373,16 @@
 	}
 }
 
-@media (max-width: 575px) {
-	.knd-block .knd-block-cta__text {
-		font-size: 26px;
-	}
-	.knd-block-cta__action .knd-button-lg {
-		padding: 10px 15px;
-		font-size: 18px;
-	}
-}
-
-@media (min-width: 1200px) {
-	.the-content .wp-block-knd-cta.alignwide {
-		margin-left: calc( ( ( var(--knd-medium-content-width) - var(--knd-content-width) ) / 2 ) * -1);
-		margin-right: calc( ( ( var(--knd-medium-content-width) - var(--knd-content-width) ) / 2 ) * -1);
-	}
-}
-
 /**
  * Info Block
  */
 :root {
 	--knd-block-info-background: transparent;
 	--knd-block-info-heading-color: var(--knd-color-main);
-	--knd-block-info-title-color: var(--knd-color-base);
+	--knd-block-info-title-color: var(--knd-color-headings);
 	--knd-block-info-headings-color: var(--knd-color-headings);
 	--knd-block-info-text-color: var(--knd-color-base);
-	--knd-block-info-link-color: var(--knd-color-base);
+	--knd-block-info-link-color: var(--knd-color-headings);
 	--knd-block-info-link-hover-color: var(--knd-color-main);
 	--knd-block-info-underline-color: var(--knd-color-main);
 }
@@ -1319,26 +1408,21 @@
 
 .knd-block-info__title {
 	color: var(--knd-block-info-heading-color);
-	font-size: 16px;
-	letter-spacing: 0.1em;
+	font-size: 14px;
+	font-weight: 600;
 	line-height: 1.4;
 	text-transform: uppercase;
 	margin: 0 0 10px;
 	padding: 0;
 }
 
-.knd-block-info.has-columns .knd-block-info__title {
-	margin-bottom: 30px;
-}
-
 .knd-block-info .knd-block-info__text {
 	color: var(--knd-block-info-title-color);
-	font-size: 36px;
-	letter-spacing: .03em;
+	font-size: 30px;
 	line-height: 1.2;
 	padding: 0;
 	margin: 0 auto;
-	font-weight: 800;
+	font-weight: 700;
 	font-family: var(--knd-font-family-headings);
 	margin-left: auto;
 	margin-right: auto;
@@ -1381,16 +1465,15 @@
 	color: var(--knd-block-info-headings-color);
 	font-size: 24px;
 	line-height: 1.2;
-	letter-spacing: .03em;
-	font-weight: 600;
+	font-weight: 700;
 	margin: 0 auto 20px;
 }
 
 .knd-block-info .knd-block-info__col p {
 	font-size: 18px;
 	font-family: var(--knd-font-family-base);
-	line-height: 1.55;
-	font-weight: 400;
+	line-height: 1.7;
+	font-weight: 500;
 	margin-bottom: 1.5rem;
 }
 
@@ -1406,8 +1489,7 @@
 	font-family: var(--knd-font-family-base);
 	text-transform: uppercase;
 	line-height: 1.33;
-	letter-spacing: .03em;
-	font-weight: 600;
+	font-weight: 700;
 	display: inline-block;
 	padding: 0px 0px 4px 0px;
 	transition: all .3s;
@@ -1785,7 +1867,7 @@
 }
 
 .wp-block-knd-events .section-title {
-	font-size: 26px;
+	font-size: 24px;
 	font-family: var(--knd-font-family-headings);
 	color: var(--knd-color-headings);
 	margin-top: 0;
@@ -2470,7 +2552,7 @@
 
 .knd-event__booking {
 	border-radius: 20px;
-	background-color: #edf6fe;
+	background-color: #f5fAfE;
 	padding: 50px;
 }
 

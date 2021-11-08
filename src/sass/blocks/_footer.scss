@@ -24,10 +24,6 @@
 		font-size: var(--knd-font-size-logo,22px);
 	}
 
-	.logo-desc {
-		font-weight: 600;
-	}
-
 	.flex-cell {
 		margin-bottom: $gut/2;
 	}
@@ -54,29 +50,38 @@
 /** Footer **/
 .knd-footer {
 
-	@include knd-footer-text();
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 1.55;
+
 	padding: $base*2 0px 30px 0px;
-	background: var(--knd-footer-background, #eeeeee);
-	color: var(--knd-footer-color, #000);
+	background: var(--knd-footer-background, #f7f8f8);
+	color: var(--knd-footer-color, #4d606a);
 
 	a {
 		color: var(--knd-footer-link-color, #f43724);
 
 		&:hover, &:focus, &:active {
-			text-decoration: underline;
 			color: var(--knd-footer-link-color-hover, #db3120);
 		}
 
 	}
-	
+
+	.widget-area a {
+		&:hover, &:focus, &:active {
+			text-decoration: underline;
+		}
+	}
+
 	p {
 		hyphens: none;
 		margin-bottom: $base/2;
 		&:last-child { margin-bottom: 0; }
 	}
 
-	.knd-footer-logo {
+	&-logo {
 		text-decoration: none;
+		display: inline-block;
 
 		&:hover {
 			text-decoration: none;
@@ -109,13 +114,11 @@
 	}
 
 	.copy {
-		@include knd-supersmall-text();
 		max-width: 300px;
-		opacity: .75;
 
 		a { 
 			white-space: nowrap;
-			color: var(--knd-footer-color, #000);
+			color: var(--knd-footer-color, #4d606a);
 		}
 	}
 	
@@ -184,7 +187,9 @@
 				}
 
 				a {
-					@include knd-footer-text();
+					font-weight: bold;
+					font-size: 11px;
+					letter-spacing: 0.05em;
 					text-transform: uppercase;
 				}
 			}
@@ -207,7 +212,7 @@
 
 /** Footer credits block */
 .footer-credits {
-	padding-top: $gut/3;
+	padding-top: 26px;
 	justify-content: center;
 
 	&.flex-row {
@@ -242,11 +247,11 @@
 		align-items: center;
 		text-align: right;
 		text-decoration: none;
-		color: var(--knd-footer-color,#000);
+		color: var(--knd-footer-color,#4d606a);
 
 		&:hover {
 			text-decoration: none;
-			color: var(--knd-footer-color,#000);
+			color: var(--knd-footer-color,#4d606a);
 		}
 	}
 
@@ -256,10 +261,9 @@
 		width: 48px;
 		height: 48px; 
 	}
-		
+
 	.support {
-		@include knd-supersmall-text();
-		line-height: 16px;
+		line-height: 1.2;
 		padding-right: 20px;
 		width: 104px;
 		text-align: right;
@@ -268,8 +272,6 @@
 		@include for(small-screens) {
 			display: block;
 		}
-
-		opacity: .75;
 
 	}
 }

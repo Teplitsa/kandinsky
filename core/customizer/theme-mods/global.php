@@ -42,8 +42,8 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'default'  => array(
 		'font-family' => 'Jost',
 		'variant'     => 'regular',
-		'color'       => '#000000',
-		'font-size'   => '16px',
+		'color'       => '#4d606a',
+		'font-size'   => '18px',
 	),
 	'choices'  => array(
 		'fonts'   => array(
@@ -69,7 +69,7 @@ Kirki::add_field( 'knd_theme_mod', [
 	'default'  => array(
 		'font-family' => 'Exo 2',
 		'variant'     => '800',
-		'color'       => '#000000',
+		'color'       => '#183343',
 	),
 	'output'     => array(
 		array(
@@ -94,6 +94,7 @@ Kirki::add_field( 'knd_theme_mod', [
 			'regular',
 			'italic',
 			'500',
+			'700',
 			'800',
 			'800italic',
 		),
@@ -122,7 +123,7 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'label'       => esc_html__( 'Buttons and links color', 'knd' ),
 	'description' => esc_html__( 'Also used in other decorative elements', 'knd' ),
 	'section'     => 'fonts_colors',
-	'default'     => '#f43724',
+	'default'     => '#dd1400',
 	'transport'   => 'auto',
 	'output'      => array(
 		array(
@@ -138,7 +139,7 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'label'       => esc_html__( 'Buttons and links color hover', 'knd' ),
 	'description' => esc_html__( 'Also used in other active elements', 'knd' ), 
 	'section'     => 'fonts_colors',
-	'default'     => '#db3120',
+	'default'     => '#c81303',
 	'transport'   => 'auto',
 	'output'      => array(
 		array(

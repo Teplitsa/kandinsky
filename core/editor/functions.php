@@ -63,22 +63,22 @@ function knd_color_palette() {
 		'light-grey' => array(
 			'name'  => esc_html__( 'Light Grey', 'knd' ),
 			'slug'  => 'light-grey',
-			'color' => '#eeeeee',
+			'color' => '#f7f8f8',
 		),
 		'light-blue' => array(
 			'name'  => esc_html( 'Light Blue', 'knd' ),
 			'slug'  => 'light-blue',
-			'color' => '#edf6fe',
+			'color' => '#f5fAfE',
 		),
 		'main' => array(
 			'name'  => esc_html( 'Main', 'knd' ),
 			'slug'  => 'main',
-			'color' => get_theme_mod( 'knd_main_color', '#f43724' ),
+			'color' => get_theme_mod( 'knd_main_color', '#dd1400' ),
 		),
 		'base' => array(
 			'name' => esc_html( 'Base', 'knd' ),
 			'slug' => 'base',
-			'color' => ( '#000000' != knd_typography( 'font_base', 'color' ) ? knd_typography( 'font_base', 'color' ) : '#081d47' ),
+			'color' => ( '#000000' != knd_typography( 'font_base', 'color' ) ? knd_typography( 'font_base', 'color' ) : '#4d606a' ),
 		),
 
 	);

@@ -5,10 +5,10 @@
 :root {
 	--knd-block-info-background: transparent;
 	--knd-block-info-heading-color: var(--knd-color-main);
-	--knd-block-info-title-color: var(--knd-color-base);
+	--knd-block-info-title-color: var(--knd-color-headings);
 	--knd-block-info-headings-color: var(--knd-color-headings);
 	--knd-block-info-text-color: var(--knd-color-base);
-	--knd-block-info-link-color: var(--knd-color-base);
+	--knd-block-info-link-color: var(--knd-color-headings);
 	--knd-block-info-link-hover-color: var(--knd-color-main);
 	--knd-block-info-underline-color: var(--knd-color-main);
 }
@@ -30,24 +30,20 @@
 }
 .knd-block-info__title {
 	color: var(--knd-block-info-heading-color);
-	font-size: 16px;
-	letter-spacing: 0.1em;
+	font-size: 14px;
+	font-weight: 600;
 	line-height: 1.4;
 	text-transform: uppercase;
 	margin: 0 0 10px;
 	padding: 0;
 }
-.knd-block-info.has-columns .knd-block-info__title {
-	margin-bottom: 30px;
-}
 .knd-block-info .knd-block-info__text {
 	color: var(--knd-block-info-title-color);
-	font-size: 36px;
-	letter-spacing: .03em;
+	font-size: 30px;
 	line-height: 1.2;
 	padding: 0;
 	margin: 0 auto;
-	font-weight: 800;
+	font-weight: 700;
 	font-family: var(--knd-font-family-headings);
 	margin-left: auto;
 	margin-right: auto;
@@ -78,15 +74,14 @@
 	color: var(--knd-block-info-headings-color);
 	font-size: 24px;
 	line-height: 1.2;
-	letter-spacing: .03em;
-	font-weight: 600;
+	font-weight: 700;
 	margin: 0 auto 20px;
 }
 .knd-block-info .knd-block-info__col p {
 	font-size: 18px;
 	font-family: var(--knd-font-family-base);
-	line-height: 1.55;
-	font-weight: 400;
+	line-height: 1.7;
+	font-weight: 500;
 	margin-bottom: 1.5rem;
 }
 .knd-block-info__link {
@@ -100,8 +95,7 @@
 	font-family: var(--knd-font-family-base);
 	text-transform: uppercase;
 	line-height: 1.33;
-	letter-spacing: .03em;
-	font-weight: 600;
+	font-weight: 700;
 	display: inline-block;
 	padding: 0px 0px 4px 0px;
 	transition: all .3s;

@@ -8,7 +8,7 @@
 	background-color: var(--knd-page-bg-color);
 }
 
-.editor-styles-wrapper .block-editor-writing-flow {
+.editor-styles-wrapper.block-editor-writing-flow {
 	color: var(--knd-color-base);
 }
 

@@ -146,7 +146,7 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'settings'  => 'footer_logo_color',
 	'label'     => esc_html__( 'Logo Color', 'knd' ),
 	'section'   => 'footer_logo',
-	'default'   => '#000000',
+	'default'   => '#183343',
 	'transport' => 'auto',
 	'output'    => array(
 		array(
@@ -168,7 +168,7 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'settings'  => 'footer_logo_desc_color',
 	'label'     => esc_html__( 'Logo Description Color', 'knd' ),
 	'section'   => 'footer_logo',
-	'default'   => '#1e2c49',
+	'default'   => '#4d606a',
 	'transport' => 'auto',
 	'output'    => array(
 		array(
@@ -359,7 +359,7 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'settings'  => 'footer_background',
 	'label'     => esc_html__( 'Footer Background', 'knd' ),
 	'section'   => 'footer',
-	'default'   => '#eeeeee',
+	'default'   => '#f7f8f8',
 	'transport' => 'auto',
 	'output'    => array(
 		array(
@@ -371,10 +371,25 @@ Kirki::add_field( 'knd_theme_mod', array(
 
 Kirki::add_field( 'knd_theme_mod', array(
 	'type'      => 'color',
+	'settings'  => 'footer_heading_color',
+	'label'     => esc_html__( 'Footer Headings Color', 'knd' ),
+	'section'   => 'footer',
+	'default'   => '#183343',
+	'transport' => 'auto',
+	'output'    => array(
+		array(
+			'element'  => ':root',
+			'property' => '--knd-footer-heading-color',
+		),
+	),
+) );
+
+Kirki::add_field( 'knd_theme_mod', array(
+	'type'      => 'color',
 	'settings'  => 'footer_color',
 	'label'     => esc_html__( 'Footer Text Color', 'knd' ),
 	'section'   => 'footer',
-	'default'   => '#000000',
+	'default'   => '#4d606a',
 	'transport' => 'auto',
 	'output'    => array(
 		array(
@@ -389,7 +404,7 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'settings'  => 'footer_color_link',
 	'label'     => esc_html__( 'Footer Links Color', 'knd' ),
 	'section'   => 'footer',
-	'default'   => '#f43724',
+	'default'   => '#dd1400',
 	'transport' => 'auto',
 	'output'    => array(
 		array(
@@ -404,7 +419,7 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'settings'  => 'footer_color_link_hover',
 	'label'     => esc_html__( 'Footer Links Color Hover', 'knd' ),
 	'section'   => 'footer',
-	'default'   => '#db3120',
+	'default'   => '#c81303',
 	'transport' => 'auto',
 	'output'    => array(
 		array(
@@ -438,7 +453,7 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'settings'  => 'footer_color_social',
 	'label'     => esc_html__( 'Footer Social Color', 'knd' ),
 	'section'   => 'footer',
-	'default'   => '#000000',
+	'default'   => '#183343',
 	'transport' => 'auto',
 	'output'    => array(
 		array(
@@ -460,7 +475,7 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'settings'  => 'footer_color_social_hover',
 	'label'     => esc_html__( 'Footer Social Color Hover', 'knd' ),
 	'section'   => 'footer',
-	'default'   => '#333333',
+	'default'   => '#4d606a',
 	'transport' => 'auto',
 	'output'    => array(
 		array(

@@ -152,7 +152,7 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'settings'  => 'header_logo_color',
 	'label'     => esc_html__( 'Logo Color', 'knd' ),
 	'section'   => 'header',
-	'default'   => '#000000',
+	'default'   => '#183343',
 	'transport' => 'auto',
 	'output'    => array(
 		array(
@@ -167,7 +167,7 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'settings'  => 'header_logo_desc_color',
 	'label'     => esc_html__( 'Logo Description Color', 'knd' ),
 	'section'   => 'header',
-	'default'   => '#1e2c49',
+	'default'   => '#4d606a',
 	'transport' => 'auto',
 	'output'    => array(
 		array(
@@ -233,7 +233,7 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'settings'  => 'header_menu_color',
 	'label'     => esc_html__( 'Menu Links Color', 'knd' ),
 	'section'   => 'header',
-	'default'   => '#585858',
+	'default'   => '#4d606a',
 	'transport' => 'auto',
 	'output'    => array(
 		array(
@@ -260,7 +260,7 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'settings'  => 'header_menu_color_hover',
 	'label'     => esc_html__( 'Menu Links Color Hover', 'knd' ),
 	'section'   => 'header',
-	'default'   => '#f43724',
+	'default'   => '#dd1400',
 	'transport' => 'auto',
 	'output'    => array(
 		array(

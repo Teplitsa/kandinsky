@@ -59,12 +59,17 @@
 	}
 }
 .wp-block-knd-projects .section-title {
-	font-size: 26px;
+	font-size: 24px;
 	font-family: var(--knd-font-family-headings);
 	color: var(--knd-color-headings);
 	margin-top: 0;
-	margin-bottom: 0;
+	margin-bottom: 10px;
 }
+.wp-block-knd-projects .section-links {
+	margin-bottom: 10px;
+}
+
+
 .wp-block-knd-projects .hentry {
 	margin-top: 20px;
 	margin-bottom: 20px;
@@ -121,5 +126,5 @@
 	justify-content: space-between;
 	align-items: flex-end;
 	flex-wrap: wrap;
-	margin-bottom: 10px;
+	margin-bottom: 0;
 }

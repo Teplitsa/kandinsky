@@ -6,7 +6,7 @@
 	font-family: var(--knd-font-family-base);
 	display: inline-block;
 	font-style: normal;
-	font-weight: 500;
+	font-weight: 700;
 	font-size: 17px;
 	padding: 12px 20px;
 	color: #fff;
@@ -18,7 +18,7 @@
 	transition: all .3s;
 	white-space: nowrap;
 
-	:hover {
+	&:hover {
 		background: var(--knd-color-main-active);
 		border-color: var(--knd-color-main-active);
 	}
@@ -45,8 +45,8 @@
 	}
 
 	&-lg {
-		font-size: 26px;
-		padding: 12px 22px;
+		font-size: 18px;
+		padding: 12px 20px;
 	}
 
 	&-xl {
@@ -54,4 +54,3 @@
 		padding: 16px 30px;
 	}
 }
-

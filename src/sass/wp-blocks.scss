@@ -2,6 +2,8 @@
  * Blocks
  */
 
+@import 'variables';
+
 // knd blocks
 @import 'knd-blocks/common';
 
@@ -10,6 +12,7 @@
 @import 'wp-blocks/embed';
 @import 'wp-blocks/cover';
 @import 'wp-blocks/media-text';
+@import 'wp-blocks/table';
 
 // knd blocks
 @import 'knd-blocks/buttons';

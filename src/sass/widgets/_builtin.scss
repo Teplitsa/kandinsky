@@ -23,14 +23,12 @@
 
 .widget-bottom {
 	.widget-title {
-		@include knd-link-footerblack-text();
-		margin-bottom: 1.5em;
+		font-size: 11px;
+		margin-bottom: 2em;
 		text-transform: uppercase;
+		color: var(--knd-footer-heading-color)
 	}
 }
-
-
-
 
 
 // Text

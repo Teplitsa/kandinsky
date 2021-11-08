@@ -6,7 +6,6 @@
 	--knd-block-hero-background: #e6e6e6;
 	--knd-block-hero-overlay-start: rgba(0, 0, 0, 0);
 	--knd-block-hero-overlay-end: rgba(0, 0, 0, 0.8);
-	--knd-block-hero-color: #081d47;
 	--knd-button-color: #fff;
 	--knd-button-color-hover: #fff;
 	--knd-button-background: var(--knd-color-main);
@@ -59,39 +58,50 @@
 	order: 2;
 }
 .knd-block-hero__title {
-	font-size: 38px;
+	font-size: 36px;
 	letter-spacing: .03em;
-	font-weight: 800;
+	font-weight: 700;
 	margin-bottom: 26px;
+	line-height: 1.2;
 }
 .knd-block-hero__actions {
-	padding-top: 10px;
 	display: flex;
 	flex-wrap: wrap;
 }
-.knd-block-hero__actions .knd-button {
-	padding: 15px 35px;
-	letter-spacing: .03em;
-	font-size: 18px;
-	margin-top: 15px;
-	margin-right: 15px;
-	text-decoration: none;
-	color: var(--knd-button-color);
-	background-color: var(--knd-button-background);
-	border-color: var(--knd-button-background);
+.knd-block-hero__actions {
+	.knd-button {
+		margin-top: 15px;
+		margin-right: 15px;
+		text-decoration: none;
+		color: var(--knd-button-color);
+		background-color: var(--knd-button-background);
+		border-color: var(--knd-button-background);
+
+		&:focus {
+			color: var(--knd-button-color);
+		}
+
+		&-outline {
+			border-bottom-width: 2px;
+			color: var(--knd-button-background);
+			background-color: var(--knd-button-color);
+
+			&:focus {
+				color: var(--knd-button-background);
+			}
+		}
+
+		&:hover {
+			color: var(--knd-button-color-hover);
+			background-color: var(--knd-button-background-hover);
+			border-color: var(--knd-button-background-hover);
+		}
+	}
 }
-.knd-block-hero__actions .knd-button-outline {
-	border-bottom-width: 2px;
-	color: var(--knd-button-background);
-	background-color: var(--knd-button-color);
-}
-.knd-block-hero__actions .knd-button:hover {
-	color: var(--knd-button-color-hover);
-	background-color: var(--knd-button-background-hover);
-	border-color: var(--knd-button-background-hover);
-}
+
 .knd-block-hero__text {
 	font-size: 18px;
+	font-weight: 500;
 	margin-bottom: 26px;
 }
 .knd-block-hero__figure {
