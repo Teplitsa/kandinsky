@@ -119,6 +119,15 @@
 		a { 
 			white-space: nowrap;
 			color: var(--knd-footer-color, #4d606a);
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+
+		@media (max-width: 480px){
+			text-align: center;
+			max-width: initial;
 		}
 	}
 	
@@ -240,10 +249,10 @@
 	}
 	
 	a {
-		float: right;
+		
 		display: flex;
 		flex-flow: row nowrap;
-		justify-content: flex-end;
+		justify-content: center;
 		align-items: center;
 		text-align: right;
 		text-decoration: none;
@@ -252,6 +261,10 @@
 		&:hover {
 			text-decoration: none;
 			color: var(--knd-footer-color,#4d606a);
+		}
+
+		@media (min-width: 480px) {
+			float: right;
 		}
 	}
 
@@ -267,11 +280,5 @@
 		padding-right: 20px;
 		width: 104px;
 		text-align: right;
-		display: none;
-
-		@include for(small-screens) {
-			display: block;
-		}
-
 	}
 }

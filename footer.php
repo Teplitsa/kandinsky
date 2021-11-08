@@ -108,7 +108,7 @@ $copyright = sprintf( __( 'All materials of the site are avaliabe under license 
 
 			<div class="flex-row footer-credits align-center">
 
-				<div class="flex-cell flex-mf-8 flex-md-6">
+				<div class="flex-cell flex-sm-8 flex-md-6">
 					<?php if ( get_theme_mod( 'footer_copyright', true ) ) { ?>
 						<div class="copy">
 							<?php echo get_theme_mod( 'footer_copyright_text', $copyright ); ?>
@@ -117,7 +117,7 @@ $copyright = sprintf( __( 'All materials of the site are avaliabe under license 
 				</div>
 
 				<?php if ( get_theme_mod( 'footer_creator', true ) ) { ?>
-					<div class="flex-cell flex-mf-4 flex-md-6">
+					<div class="flex-cell flex-sm-4 flex-md-6">
 						<div class="knd-brand">
 							<a title="<?php esc_attr_e( 'Project Kandinsky', 'knd' ) ;?>" href="<?php echo esc_attr( KND_OFFICIAL_WEBSITE_URL ); ?>" target="_blank">
 								<div class="support"><?php esc_html_e( 'Powered by Kandinsky', 'knd' ); ?></div>
