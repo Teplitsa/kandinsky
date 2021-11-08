@@ -78,7 +78,7 @@ function knd_color_palette() {
 		'base' => array(
 			'name' => esc_html( 'Base', 'knd' ),
 			'slug' => 'base',
-			'color' => ( '#000000' != knd_typography( 'font_base', 'color' ) ? knd_typography( 'font_base', 'color' ) : '#4d606a' ),
+			'color' => ( '#4d606a' != knd_typography( 'font_base', 'color' ) ? knd_typography( 'font_base', 'color' ) : '#4d606a' ),
 		),
 
 	);

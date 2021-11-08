@@ -129,13 +129,21 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'settings'        => 'font_logo',
 	'section'         => 'header',
 	'default'         => array(
-		'font-family' => 'Exo 2',
-		'variant'     => '800',
+		'font-family' => 'Raleway',
+		'variant'     => '700',
 		'font-size'   => '22px',
 	),
 	'choices'         => array(
 		'fonts' => array(
 			'google' => knd_cyrillic_fonts(),
+		),
+		'variant' => array(
+			'regular',
+			'italic',
+			'500',
+			'600',
+			'700',
+			'700italic',
 		),
 	),
 	'active_callback' => array(

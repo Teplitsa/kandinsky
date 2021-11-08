@@ -20,18 +20,18 @@ function knd_inline_style() {
 	$knd_page_bg_color      = get_theme_mod( 'knd_page_bg_color', '#ffffff' );
 	$knd_page_bg_color_dark = knd_color_luminance( $knd_page_bg_color, - 0.2 );
 
-	$knd_font_family_base     = '"SourceSansPro", Arial, sans-serif';
-	$knd_font_family_headings = '"Exo2", Arial, sans-serif';
+	$knd_font_family_base     = '"Raleway", Arial, sans-serif';
+	$knd_font_family_headings = '"Raleway", Arial, sans-serif';
 
 	// Base typography.
 	if ( get_theme_mod( 'font_base', true ) && class_exists( 'Kirki' ) ) {
 		$knd_color_base       = knd_typography( 'font_base', 'color', '#4d606a' );
-		$knd_font_family_base = '"' . knd_typography( 'font_base', 'font-family', 'Jost' ) . '"';
-		$knd_font_weight_base = knd_typography( 'font_base', 'variant', '400' );
+		$knd_font_family_base = '"' . knd_typography( 'font_base', 'font-family', 'Raleway' ) . '"';
+		$knd_font_weight_base = knd_typography( 'font_base', 'variant', '500' );
 		$knd_font_size_base   = knd_typography( 'font_base', 'font-size', '18px' );
 	} else {
 		$knd_color_base = '#4d606a';
-		$knd_font_weight_base = '400';
+		$knd_font_weight_base = '500';
 		$knd_font_size_base   = '18px';
 	}
 	$knd_font_style_base = knd_typography( 'font_base', 'font-style', 'normal' );
@@ -130,8 +130,8 @@ function knd_footer_inline_style( $css ){
 	$footer_logo_font = '';
 	if ( get_theme_mod( 'font_footer_logo' ) && class_exists( 'Kirki' ) ) {
 		if ( true !== get_theme_mod( 'font_footer_logo_default' ) ) {
-			$knd_font_family_logo = '"' . knd_typography( 'font_footer_logo', 'font-family', 'Exo 2' ) . '"';
-			$knd_font_weight_logo = knd_typography( 'font_footer_logo', 'variant', '800' );
+			$knd_font_family_logo = '"' . knd_typography( 'font_footer_logo', 'font-family', 'Raleway' ) . '"';
+			$knd_font_weight_logo = knd_typography( 'font_footer_logo', 'variant', '700' );
 			$knd_font_style_logo  = knd_typography( 'font_footer_logo', 'font-style', 'normal' );
 			$knd_font_size_logo   = knd_typography( 'font_footer_logo', 'font-size', '22px' );
 

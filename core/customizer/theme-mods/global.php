@@ -40,8 +40,8 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'label'    => esc_html__( 'Main text', 'knd' ),
 	'section'  => 'fonts_colors',
 	'default'  => array(
-		'font-family' => 'Jost',
-		'variant'     => 'regular',
+		'font-family' => 'Raleway',
+		'variant'     => '500',
 		'color'       => '#4d606a',
 		'font-size'   => '18px',
 	),
@@ -50,10 +50,10 @@ Kirki::add_field( 'knd_theme_mod', array(
 			'google' => knd_cyrillic_fonts(),
 		),
 		'variant' => array(
-			'300',
 			'regular',
 			'italic',
 			'500',
+			'500italic',
 			'600',
 			'700',
 			'700italic',
@@ -67,8 +67,8 @@ Kirki::add_field( 'knd_theme_mod', [
 	'label'    => esc_html__( 'Headings', 'knd' ),
 	'section'  => 'fonts_colors',
 	'default'  => array(
-		'font-family' => 'Exo 2',
-		'variant'     => '800',
+		'font-family' => 'Raleway',
+		'variant'     => '700',
 		'color'       => '#183343',
 	),
 	'output'     => array(
@@ -90,13 +90,13 @@ Kirki::add_field( 'knd_theme_mod', [
 			'google' => knd_cyrillic_fonts(),
 		),
 		'variant' => array(
-			'300',
 			'regular',
 			'italic',
 			'500',
+			'500italic',
+			'600',
 			'700',
-			'800',
-			'800italic',
+			'700italic',
 		),
 	),
 ] );

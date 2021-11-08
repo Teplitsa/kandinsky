@@ -155,21 +155,21 @@ class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
 		);
 
 		$font_base = array(
-			'font-family' => 'Jost',
+			'font-family' => 'Raleway',
 			'variant'     => 'regular',
 			'color'       => '#4d606a',
 			'font-size'   => '18px',
 			'font-backup' => '',
-			'font-weight' => '400',
+			'font-weight' => '500',
 			'font-style'  => 'normal',
 		);
 
 		$font_headings = array(
-			'font-family' => 'Jost',
-			'variant'     => '600',
+			'font-family' => 'Raleway',
+			'variant'     => '700',
 			'color'       => '#183343',
 			'font-backup' => '',
-			'font-weight' => '600',
+			'font-weight' => '700',
 			'font-style'  => 'normal',
 		);
 
