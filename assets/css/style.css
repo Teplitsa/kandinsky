@@ -2000,6 +2000,9 @@ body > svg {
 .knd-header-logo .text {
 	-ms-flex: 1 1 auto;
 	flex: 1 1 auto;
+}
+
+.knd-header-logo .text:not(:first-child) {
 	padding-left: 20px;
 }
 
