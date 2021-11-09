@@ -46,7 +46,7 @@ register_block_type( 'knd/hero', array(
 		),
 		'backgroundColor' => array(
 			'type'    => 'string',
-			'default' => '#e6e6e6',
+			'default' => '#f7f8f8',
 		),
 		'overlayColorStart' => array(
 			'type'    => 'string',
