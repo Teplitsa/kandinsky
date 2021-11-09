@@ -196,7 +196,7 @@ function knd_block_news_render_callback( $attr ) {
 			$html .= '<article class="' . esc_attr( join( ' ', get_post_class( 'knd-col' ) ) ) . '">
 			<a href="' . get_the_permalink() . '" class="thumbnail-link">
 				<div class="entry-preview">
-					' . get_the_post_thumbnail( null, 'post-thumbnail', array( 'alt' => get_the_title() ) ) . '
+					' . get_the_post_thumbnail( null, 'post-thumbnail', array( 'alt' => wp_trim_words( get_the_title(), 5 ), 'aria-hidden' => 'true' ) ) . '
 				</div>
 				' . the_title( '<h3 class="entry-title">', '</h3>', false ) . '
 				<div class="entry-meta">' . strip_tags( knd_posted_on( $this_post ), '<span><time>') . '</div>

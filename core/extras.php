@@ -39,7 +39,11 @@ function knd_kses_allowed_html( $allowed_html ) {
 		'frameborder'     => true,
 		'allowfullscreen' => true,
 		'style'           => true,
+
 	);
+
+	$allowed_html['img']['aria-hidden'] = true;
+
 	return $allowed_html;
 }
 add_filter( 'wp_kses_allowed_html', 'knd_kses_allowed_html' );

@@ -133,7 +133,13 @@
 	padding-right: 10px;
 
 	&:before {
-		content: '•';
+		content: '';
+		display: inline-flex;
+		width: 2px;
+		height: 2px;
+		border-radius: 50%;
+		background-color: currentColor;
+		vertical-align: middle;
 	}
 }
 
