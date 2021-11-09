@@ -3480,7 +3480,7 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 }
 
 .listing-bg {
-	background: var(--knd-color-light-gray);
+	background: var(--knd-color-light-grey);
 }
 
 .featured-post {
@@ -4879,7 +4879,7 @@ div[id*="leyka-pf-"] .inpage-card__thumb {
 
 .leyka-loop .tpl-post .leyka-scale-scale .target, .leyka-loop .tpl-related-post .leyka-scale-scale .target {
 	height: inherit;
-	background: var(--knd-color-light-gray);
+	background: var(--knd-color-light-grey);
 }
 
 .leyka-loop .tpl-post .leyka-scale-scale .target .collected, .leyka-loop .tpl-related-post .leyka-scale-scale .target .collected {
