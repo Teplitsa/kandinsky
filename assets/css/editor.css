@@ -384,6 +384,10 @@ textarea {
 	width: 100%;
 }
 
+html {
+	font-size: var(--knd-font-size-base);
+}
+
 /** == Texts (_text.scss) == */
 /* Screen-reader only text */
 .screen-reader-text {

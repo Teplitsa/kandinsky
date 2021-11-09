@@ -3,7 +3,7 @@
  */
 
 .editor-styles-wrapper {
-	font-family: var(--knd-font-family-base);
+	font-family: var(--knd-font-family-base) !important;
 	line-height: 1.55;
 	font-weight: var(--knd-font-weight-base, 500);
 	font-size: var(--knd-font-size-base);
