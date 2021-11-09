@@ -4,7 +4,7 @@
 	--knd-color-white: #ffffff;
 	--knd-color-black: #000000;
 	--knd-color-light-grey: #f7f8f8;
-	--knd-color-light-blue: #f5fAfE;
+	--knd-color-light-blue: #f5fafe;
 	--knd-header-height: 124px;
 	--knd-font-family-button: var(--knd-font-family-base);
 	--knd-button-border-radius: .5em;
@@ -1910,7 +1910,7 @@ body > svg {
 }
 
 .main-menu ul.sub-menu a:hover, .main-menu ul.sub-menu a:focus, .main-menu ul.sub-menu a:active {
-	opacity: .5;
+	opacity: .7;
 }
 
 .main-menu li.open .submenu-trigger {
@@ -2144,7 +2144,7 @@ body > svg {
 /** Header Nav */
 .knd-header-nav > .knd-nav-menu {
 	font-size: var(--knd-font-size-menu, 18px);
-	--knd-font-submenu-size: var(--knd-font-size-menu);
+	--knd-font-submenu-size: .85em;
 }
 
 .knd-header-nav > .menu {
@@ -2189,6 +2189,12 @@ body > svg {
 	left: -10px;
 	z-index: 11;
 	opacity: 0;
+	visibility: hidden;
+}
+
+.knd-header-nav > .menu > li.menu-item-has-children:hover > .sub-menu, .knd-header-nav > .menu > li.menu-item-has-children.focus > .sub-menu {
+	opacity: 1;
+	visibility: visible;
 }
 
 .knd-header-nav > .menu > li > a {
@@ -2212,8 +2218,6 @@ body > svg {
 	padding: 10px 0;
 	right: 9999rem;
 	transition: opacity 0.15s linear, transform 0.15s linear, right 0s 0.15s;
-	-ms-transform: translateY(0.6rem);
-	transform: translateY(0.6rem);
 }
 
 .knd-header-nav > .menu .sub-menu .sub-menu {
@@ -5599,7 +5603,7 @@ div[id*="leyka-pf-"] .inpage-card__thumb {
 
 .knd-event__booking {
 	border-radius: 20px;
-	background-color: #f5fAfE;
+	background-color: #f5fafe;
 	padding: 50px;
 }
 

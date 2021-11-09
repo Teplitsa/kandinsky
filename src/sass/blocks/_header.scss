@@ -110,25 +110,24 @@
 		a {
 			@include button();
 			margin: $height_gap/2 0 0 $height_gap/2;			
-			
+
 			@include for(medium-screens) {
 				margin-top: ($logo_full_h + $height_gap - 16*3px)/2;
 			}
-			
+
 			@include for(medium-screens) {
 				//margin-right: $height_gap/2;
 			}
-			
 		}
-		
+
 	}
-		
+
 	&.menu {
-		text-align: center;				
+		text-align: center;
 		cursor: pointer;
 		
 		#trigger_menu {
-			display: block;			
+			display: block;
 			width: $logo_small_h + $height_gap;
 			height: $logo_small_h + $height_gap;
 			padding: ($logo_small_h + $height_gap - 22px)/2;
@@ -140,14 +139,14 @@
 				height: 22px;
 			}
 		}
-		
+
 		.svg-icon {
 			width: 18px;
 			height: 18px;
 			fill: $color-text;
 			pointer-events: none;
 		}
-		
+
 		&:hover .svg-icon {
 			fill: $color-main-dark;
 		}
@@ -155,7 +154,7 @@
 		@include for(medium-screens) {
 			#trigger_menu { margin-top: ($logo_full_h - $logo_small_h) /2; }
 		}
-	}	
+	}
 }
 
 
@@ -198,9 +197,8 @@
 			box-shadow: inset 0px 1px 2px rgba(50,50,50, 0.08);
 			background: var(--knd-color-white);
 			color: var(--knd-color-black);
-			padding-bottom: 17px;			
+			padding-bottom: 17px;
 			border-bottom: 2px solid $color-main;
-			//border-bottom: 2px solid $color-text;
 		}
 	}
 }
@@ -402,12 +400,8 @@
 		}
 	}
 
-
-
 	ul.sub-menu {
 		/*display: none;*/
-
-		
 
 		background: $color-main;
 		color: var(--knd-color-white);
@@ -421,7 +415,7 @@
 			transition: all .35s;
 			
 			&:hover, &:focus, &:active {
-				opacity: .5;
+				opacity: .7;
 			}
 		}
 	}
@@ -639,7 +633,7 @@
 
 	> .knd-nav-menu {
 		font-size: var(--knd-font-size-menu, 18px);
-		--knd-font-submenu-size: var(--knd-font-size-menu);
+		--knd-font-submenu-size: .85em;
 	}
 
 	> .menu {
@@ -679,7 +673,15 @@
 					left: -10px;
 					z-index: 11;
 					opacity: 0;
-					//visibility: hidden;
+					visibility: hidden;
+				}
+
+				&:hover,
+				&.focus {
+					> .sub-menu {
+						opacity: 1;
+						visibility: visible;
+					}
 				}
 			}
 
@@ -703,7 +705,6 @@
 			padding: 10px 0;
 			right: 9999rem;
 			transition: opacity 0.15s linear, transform 0.15s linear, right 0s 0.15s;
-			transform: translateY(0.6rem);
 
 			.sub-menu {
 				display: block;

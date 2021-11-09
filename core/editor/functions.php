@@ -68,7 +68,7 @@ function knd_color_palette() {
 		'light-blue' => array(
 			'name'  => esc_html( 'Light Blue', 'knd' ),
 			'slug'  => 'light-blue',
-			'color' => '#f5fAfE',
+			'color' => '#f5fafe',
 		),
 		'main' => array(
 			'name'  => esc_html( 'Main', 'knd' ),

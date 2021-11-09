@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /**
  * Blocks
  */
@@ -7,7 +6,7 @@
 	--knd-color-white: #ffffff;
 	--knd-color-black: #000000;
 	--knd-color-light-grey: #f7f8f8;
-	--knd-color-light-blue: #f5fAfE;
+	--knd-color-light-blue: #f5fafe;
 	--knd-header-height: 124px;
 	--knd-font-family-button: var(--knd-font-family-base);
 	--knd-button-border-radius: .5em;
@@ -737,7 +736,14 @@ table.is-style-underline tbody tr:hover,
 }
 
 .wp-block-knd-news .entry-meta .sep:before {
-	content: '•';
+	content: '';
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	width: 2px;
+	height: 2px;
+	border-radius: 50%;
+	background-color: currentColor;
+	vertical-align: middle;
 }
 
 .wp-block-knd-news .section-heading {
@@ -2564,7 +2570,7 @@ table.is-style-underline tbody tr:hover,
 
 .knd-event__booking {
 	border-radius: 20px;
-	background-color: #f5fAfE;
+	background-color: #f5fafe;
 	padding: 50px;
 }
 

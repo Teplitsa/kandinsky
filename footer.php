@@ -72,9 +72,9 @@ $copyright = sprintf( __( 'All materials of the site are avaliabe under license 
 			<?php
 			if ( get_theme_mod( 'footer_menu_news' ) && is_nav_menu( get_theme_mod( 'footer_menu_news' ) ) ) {
 				$before = '';
-				if ( get_theme_mod( 'footer_menu_news_title' ) && ' ' !== get_theme_mod( 'footer_menu_news_title' ) ) {
+				if ( get_theme_mod( 'footer_menu_news_title' ) && '&nbsp;' !== get_theme_mod( 'footer_menu_news_title' ) ) {
 					$before = '<h3 class="widget-title">' . get_theme_mod( 'footer_menu_news_title', esc_html__( 'News', 'knd' ) ) . '</h3>';
-				} else if ( ' ' !== get_theme_mod( 'footer_menu_news_title' ) ) {
+				} else if ( '&nbsp;' === get_theme_mod( 'footer_menu_news_title' ) ) {
 					$before = '<div class="widget-title">&nbsp;</div>';
 				}
 				wp_nav_menu(
