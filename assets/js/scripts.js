@@ -91,66 +91,6 @@
 
 	});
 
-	$(document).on('keydown', '.site-nav :tabbable:not([readonly])', function(e) {
-
-		// Tab key only (code 9)
-		if (e.keyCode != 9)
-			return;
-
-		if ( ! $('.knd-header').hasClass('menu-open') )
-			return;
-
-		// Get the loop element
-		var loop = $(this).closest('.site-nav');
-
-		// Get the first and last tabbable element
-		var firstTabbable = loop.find(':tabbable:not([readonly])').first();
-		var lastTabbable = loop.find(':tabbable:not([readonly])').last();
-
-		// Leaving the first element with Tab : focus the last one
-		if (firstTabbable.is(e.target) && e.shiftKey == true) {
-		  e.preventDefault();
-		  lastTabbable.focus();
-		}
-
-		// Leaving the last element with Tab : focus the first one
-		if (lastTabbable.is(e.target) && e.shiftKey == false) {
-			e.preventDefault();
-			firstTabbable.focus();
-		}
-	});
-
-
-	$(document).on('keydown', '.knd-search :tabbable:not([readonly])', function(e) {
-
-		// Tab key only (code 9)
-		if (e.keyCode != 9)
-			return;
-
-		if ( ! $('body').hasClass('knd-search-open') )
-			return;
-
-		// Get the loop element
-		var loop = $(this).closest('.knd-search');
-
-		// Get the first and last tabbable element
-		var firstTabbable = loop.find(':tabbable:not([readonly])').first();
-		var lastTabbable = loop.find(':tabbable:not([readonly])').last();
-
-		// Leaving the first element with Tab : focus the last one
-		if (firstTabbable.is(e.target) && e.shiftKey == true) {
-		  e.preventDefault();
-		  lastTabbable.focus();
-		}
-
-		// Leaving the last element with Tab : focus the first one
-		if (lastTabbable.is(e.target) && e.shiftKey == false) {
-			e.preventDefault();
-			firstTabbable.focus();
-		}
-	});
-
-
 	$( '#trigger_menu_close' ).on( 'click', function( e ) {
 
 		e.stopImmediatePropagation();
@@ -427,85 +367,121 @@
 	});
 
 
+	// function focusMenuWithChildren() {
+	// 	// Get all the link elements within the primary menu.
+	// 	var links, i, len,
+	// 		menu = document.querySelector( '.knd-header-nav' );
+
+	// 	if ( ! menu ) {
+	// 		return false;
+	// 	}
+
+	// 	links = menu.getElementsByTagName( 'a' );
+
+	// 	// Each time a menu link is focused or blurred, toggle focus.
+	// 	for ( i = 0, len = links.length; i < len; i++ ) {
+	// 		links[i].addEventListener( 'focus', toggleFocus, true );
+	// 		links[i].addEventListener( 'blur', toggleFocus, true );
+	// 	}
+
+	// 	//Sets or removes the .focus class on an element.
+	// 	function toggleFocus() {
+	// 		var self = this;
+
+	// 		// Move up through the ancestors of the current link until we hit .primary-menu.
+	// 		while ( -1 === self.className.indexOf( 'knd-nav-menu' ) ) {
+	// 			// On li elements toggle the class .focus.
+	// 			if ( 'li' === self.tagName.toLowerCase() ) {
+	// 				if ( -1 !== self.className.indexOf( 'focus' ) ) {
+	// 					self.className = self.className.replace( ' focus', '' );
+	// 				} else {
+	// 					self.className += ' focus';
+	// 				}
+	// 			}
+	// 			self = self.parentElement;
+	// 		}
+	// 	}
+	// }
+
+	//focusMenuWithChildren();          // Primary Menu.
 
 
-		function focusMenuWithChildren() {
-			// Get all the link elements within the primary menu.
-			var links, i, len,
-				menu = document.querySelector( '.knd-header-nav' );
+	// function focusMenuWithChildren2() {
+	// 		// Get all the link elements within the primary menu.
+	// 		var links, i, len,
+	// 			menu = document.querySelector( '.nav-main-menu' );
 
-			if ( ! menu ) {
-				return false;
+	// 		if ( ! menu ) {
+	// 			return false;
+	// 		}
+
+	// 		links = menu.getElementsByTagName( 'a' );
+
+	// 		// Each time a menu link is focused or blurred, toggle focus.
+	// 		for ( i = 0, len = links.length; i < len; i++ ) {
+	// 			links[i].addEventListener( 'focus', toggleFocus, true );
+	// 			links[i].addEventListener( 'blur', toggleFocus, true );
+	// 		}
+
+	// 		//Sets or removes the .focus class on an element.
+	// 		function toggleFocus() {
+	// 			var self = this;
+
+	// 			// Move up through the ancestors of the current link until we hit .primary-menu.
+	// 			while ( -1 === self.className.indexOf( 'main-menu' ) ) {
+	// 				// On li elements toggle the class .focus.
+	// 				if ( 'li' === self.tagName.toLowerCase() ) {
+	// 					if ( -1 !== self.className.indexOf( 'focus' ) ) {
+	// 						self.className = self.className.replace( ' focus', '' );
+	// 					} else {
+	// 						self.className += ' focus';
+	// 					}
+	// 				}
+	// 				self = self.parentElement;
+	// 			}
+	// 		}
+	// 	}
+
+
+	// 	focusMenuWithChildren2();
+
+
+	function kndFocusInModal( selector ){
+
+		// add all the elements inside modal which you want to make focusable
+		const focusableElements = 'button, [href]:not([aria-hidden="true"]), input, [tabindex]:not([tabindex="-1"])';
+		const modal = document.querySelector( selector ); // select the modal by it's id
+
+		const firstFocusableElement = modal.querySelectorAll(focusableElements)[0]; // get first element to be focused inside modal
+		const focusableContent = modal.querySelectorAll(focusableElements);
+		const lastFocusableElement = focusableContent[focusableContent.length - 1]; // get last element to be focused inside modal
+
+
+		document.addEventListener('keydown', function(e) {
+			let isTabPressed = e.key === 'Tab' || e.keyCode === 9;
+
+			if (!isTabPressed) {
+				return;
 			}
 
-			links = menu.getElementsByTagName( 'a' );
-
-			// Each time a menu link is focused or blurred, toggle focus.
-			for ( i = 0, len = links.length; i < len; i++ ) {
-				links[i].addEventListener( 'focus', toggleFocus, true );
-				links[i].addEventListener( 'blur', toggleFocus, true );
-			}
-
-			//Sets or removes the .focus class on an element.
-			function toggleFocus() {
-				var self = this;
-
-				// Move up through the ancestors of the current link until we hit .primary-menu.
-				while ( -1 === self.className.indexOf( 'knd-nav-menu' ) ) {
-					// On li elements toggle the class .focus.
-					if ( 'li' === self.tagName.toLowerCase() ) {
-						if ( -1 !== self.className.indexOf( 'focus' ) ) {
-							self.className = self.className.replace( ' focus', '' );
-						} else {
-							self.className += ' focus';
-						}
-					}
-					self = self.parentElement;
+			if (e.shiftKey) { // if shift key pressed for shift + tab combination
+				if (document.activeElement === firstFocusableElement) {
+					lastFocusableElement.focus(); // add focus for the last focusable element
+					e.preventDefault();
+				}
+			} else { // if tab key is pressed
+				if (document.activeElement === lastFocusableElement) { // if focused has reached to last focusable element then focus first focusable element after pressing tab
+					firstFocusableElement.focus(); // add focus for the first focusable element
+					e.preventDefault();
 				}
 			}
-		}
+		});
 
+		firstFocusableElement.focus();
+	}
 
-	focusMenuWithChildren();          // Primary Menu.
+	kndFocusInModal( '.site-nav' );
+	kndFocusInModal( '.knd-search' );
 
-
-	function focusMenuWithChildren2() {
-			// Get all the link elements within the primary menu.
-			var links, i, len,
-				menu = document.querySelector( '.nav-main-menu' );
-
-			if ( ! menu ) {
-				return false;
-			}
-
-			links = menu.getElementsByTagName( 'a' );
-
-			// Each time a menu link is focused or blurred, toggle focus.
-			for ( i = 0, len = links.length; i < len; i++ ) {
-				links[i].addEventListener( 'focus', toggleFocus, true );
-				links[i].addEventListener( 'blur', toggleFocus, true );
-			}
-
-			//Sets or removes the .focus class on an element.
-			function toggleFocus() {
-				var self = this;
-
-				// Move up through the ancestors of the current link until we hit .primary-menu.
-				while ( -1 === self.className.indexOf( 'main-menu' ) ) {
-					// On li elements toggle the class .focus.
-					if ( 'li' === self.tagName.toLowerCase() ) {
-						if ( -1 !== self.className.indexOf( 'focus' ) ) {
-							self.className = self.className.replace( ' focus', '' );
-						} else {
-							self.className += ' focus';
-						}
-					}
-					self = self.parentElement;
-				}
-			}
-		}
-
-
-		focusMenuWithChildren2(); 
 
 })( jQuery );
