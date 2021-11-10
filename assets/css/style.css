@@ -1671,8 +1671,8 @@ body > svg {
 	height: 100%;
 	background: var(--knd-page-bg-color);
 	overflow-y: auto;
+	transition: right 0.3s, visibility 0s linear 300ms;
 	visibility: hidden;
-	transition: color 0.3s, background 0.3s, border 0.3s, opacity 0.3s;
 }
 
 @media screen and (min-width: 800px) {
@@ -1690,6 +1690,7 @@ body > svg {
 .menu-open .site-nav {
 	right: 0;
 	visibility: visible;
+	transition: right 0.3s, visibility 0s linear 0s;
 }
 
 .site-nav .search-holder .svg-icon {
@@ -1866,14 +1867,6 @@ body > svg {
 	display: none;
 }
 
-.main-menu .menu-item-has-children:not(.focus):not(.open) ul.sub-menu {
-	clip: rect(1px, 1px, 1px, 1px);
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	width: 1px;
-}
-
 .main-menu > .menu-item-has-children > a:after {
 	content: '';
 	position: absolute;
@@ -1886,9 +1879,9 @@ body > svg {
 }
 
 .main-menu ul.sub-menu {
-	/*display: none;*/
-	background: var(--knd-color-main);
-	color: var(--knd-color-white);
+	display: none;
+	visibility: hidden;
+	background-color: #fff;
 }
 
 .main-menu ul.sub-menu li {
@@ -1902,8 +1895,13 @@ body > svg {
 	transition: color 0.3s, background 0.3s, border 0.3s, opacity 0.3s;
 }
 
-.main-menu ul.sub-menu a:hover, .main-menu ul.sub-menu a:focus, .main-menu ul.sub-menu a:active {
+.main-menu ul.sub-menu a:hover {
 	opacity: .7;
+}
+
+.main-menu ul.sub-menu a:focus {
+	outline: none !important;
+	box-shadow: inset 0 0 0 2px #fff;
 }
 
 .main-menu li.open .submenu-trigger {
@@ -1921,7 +1919,7 @@ body > svg {
 }
 
 .main-menu li.open ul.sub-menu {
-	display: block;
+	visibility: visible;
 }
 
 /** New Header Version */

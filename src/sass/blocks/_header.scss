@@ -213,8 +213,8 @@
 	height: 100%;
 	background: $color-page-bg;
 	overflow-y: auto;
+	transition: right 0.3s, visibility 0s linear 300ms;
 	visibility: hidden;
-	transition: color 0.3s, background 0.3s, border 0.3s, opacity 0.3s;
 
 	@include for(medium-screens){
 		right: -310px;
@@ -229,6 +229,7 @@
 	.menu-open & {
 		right: 0;
 		visibility: visible;
+		transition: right 0.3s, visibility 0s linear 0s;
 	}
 
 	.search-holder {
@@ -328,7 +329,7 @@
 				color: var(--knd-color-white);
 			}
 		}
-				
+
 		.submenu-trigger {
 			display: none;
 		}
@@ -369,7 +370,7 @@
 			}
 			
 			.icon-up { 
-				display: none; 
+				display: none;
 			}
 		}
 		
@@ -377,11 +378,7 @@
 
 		&:not(.focus):not(.open) {
 			ul.sub-menu {
-				clip: rect(1px, 1px, 1px, 1px);
-				height: 1px;
-				margin: -1px;
-				overflow: hidden;
-				width: 1px;
+				//overflow: hidden;
 			}
 		}
 	}
@@ -401,21 +398,27 @@
 	}
 
 	ul.sub-menu {
-		/*display: none;*/
+		display: none;
+		visibility: hidden;
+		background-color: #fff;
 
-		background: $color-main;
-		color: var(--knd-color-white);
-		
-		li { border: none; }
-		
+		li {
+			border: none;
+		}
+
 		a {
 			background: $color-main;
 			color: var(--knd-color-white);
 			margin-right: 0;
 			transition: color 0.3s, background 0.3s, border 0.3s, opacity 0.3s;
 			
-			&:hover, &:focus, &:active {
+			&:hover {
 				opacity: .7;
+			}
+
+			&:focus {
+				outline: none !important;
+				box-shadow: inset 0 0 0 2px #fff;
 			}
 		}
 	}
@@ -426,7 +429,7 @@
 			border-left-color: $color-main;
 
 			.icon-down { 
-				display: none; 
+				display: none;
 			}
 			.icon-up {
 				display: block;
@@ -435,7 +438,9 @@
 		}
 
 		
-		ul.sub-menu { display: block; }
+		ul.sub-menu {
+			visibility: visible;
+		}
 	}
 }
 
