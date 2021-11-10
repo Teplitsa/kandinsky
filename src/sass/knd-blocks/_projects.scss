@@ -89,7 +89,7 @@
 	font-family: var(--knd-font-family-headings);
 	letter-spacing: .01em;
 	line-height: 1.25;
-	transition: all 0.35s;
+	transition: color 0.3s, background 0.3s, border-color 0.3s, opacity 0.3s;
 }
 .wp-block-knd-projects .hentry:hover .entry-title {
 	opacity: .7;
@@ -116,7 +116,7 @@
 	height: 100%;
 	background-color: rgba(0, 0, 0, 0);
 	z-index: 10;
-	transition: all 0.35s;
+	transition: color 0.3s, background 0.3s, border-color 0.3s;
 }
 .wp-block-knd-projects .hentry:hover .entry-preview:after {
 	background-color: rgba(0, 0, 0, 0.25);

@@ -68,7 +68,7 @@
 	}
 
 	.widget-area a {
-		&:hover, &:focus, &:active {
+		&:hover {
 			text-decoration: underline;
 		}
 	}
@@ -278,7 +278,7 @@
 	.support {
 		line-height: 1.2;
 		padding-right: 20px;
-		width: 104px;
+		width: 120px;
 		text-align: right;
 	}
 }

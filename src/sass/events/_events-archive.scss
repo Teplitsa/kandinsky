@@ -46,7 +46,7 @@
 				border-radius: 50rem;
 				background-color: #fff;
 				border: 1px solid #e6e6e6;
-				transition: all .3s;
+				transition: color 0.3s, background 0.3s, border-color 0.3s, opacity 0.3s;
 
 				&:hover {
 					background-color: #e6e6e6;

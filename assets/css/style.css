@@ -215,14 +215,11 @@ a {
 }
 
 a:focus,
-button:focus {
+button:focus,
+a:focus-visible {
 	text-decoration: none;
-	outline: 2px solid var(--knd-color-main);
-}
-
-a:focus:not(:focus-visible),
-button:focus:not(:focus-visible) {
-	outline: 0;
+	outline: 2px solid var(--knd-color-main) !important;
+	outline-offset: 2px !important;
 }
 
 article,
@@ -243,8 +240,6 @@ audio,
 canvas,
 video {
 	display: inline-block;
-	*display: inline;
-	*zoom: 1;
 }
 
 audio:not([controls]) {
@@ -304,13 +299,11 @@ textarea {
 	font-size: 100%;
 	margin: 0;
 	vertical-align: baseline;
-	*vertical-align: middle;
 }
 
 button,
 input {
 	line-height: normal;
-	*overflow: visible;
 }
 
 button,
@@ -487,7 +480,7 @@ h6 {
 .the-content a {
 	color: var(--knd-color-main);
 	border-bottom: 1px solid var(--knd-color-main);
-	transition: all .35s;
+	transition: color 0.3s, background 0.3s, border 0.3s, opacity 0.3s;
 }
 
 .the-content a:hover, .the-content a:focus, .the-content a:active {
@@ -1536,7 +1529,7 @@ body > svg {
 	color: var(--knd-color-white);
 	background: var(--knd-color-main);
 	border: 1px solid var(--knd-color-main);
-	transition: all 0.3;
+	transition: color 0.3s, background 0.3s, border 0.3s, opacity 0.3s;
 	text-align: center;
 	padding: 6px 16px;
 	border-radius: var(--knd-button-border-radius);
@@ -1679,7 +1672,7 @@ body > svg {
 	background: var(--knd-page-bg-color);
 	overflow-y: auto;
 	visibility: hidden;
-	transition: all 0.4s;
+	transition: color 0.3s, background 0.3s, border 0.3s, opacity 0.3s;
 }
 
 @media screen and (min-width: 800px) {
@@ -1794,7 +1787,7 @@ body > svg {
 .main-menu li > a {
 	display: block;
 	padding: 19px 20px;
-	transition: all 0.3s;
+	transition: color 0.3s, background 0.3s, border 0.3s, opacity 0.3s;
 	font-size: 12px;
 	font-weight: 400;
 	line-height: 1.5;
@@ -1906,7 +1899,7 @@ body > svg {
 	background: var(--knd-color-main);
 	color: var(--knd-color-white);
 	margin-right: 0;
-	transition: all .35s;
+	transition: color 0.3s, background 0.3s, border 0.3s, opacity 0.3s;
 }
 
 .main-menu ul.sub-menu a:hover, .main-menu ul.sub-menu a:focus, .main-menu ul.sub-menu a:active {
@@ -1955,7 +1948,6 @@ body > svg {
 	-ms-flex-align: stretch;
 	align-items: stretch;
 	min-height: var(--knd-header-height);
-	transition: 0.25s;
 	opacity: 1;
 }
 
@@ -2026,7 +2018,6 @@ body > svg {
 	align-items: center;
 	-ms-flex: 1;
 	flex: 1;
-	transition: 0.25s;
 }
 
 .knd-header__col.knd-col-right {
@@ -2129,6 +2120,7 @@ body > svg {
 	color: var(--knd-color-main-active);
 }
 
+/** Header Nav */
 .knd-header-nav {
 	height: 50px;
 }
@@ -2141,7 +2133,6 @@ body > svg {
 	margin-right: 10px;
 }
 
-/** Header Nav */
 .knd-header-nav > .knd-nav-menu {
 	font-size: var(--knd-font-size-menu, 18px);
 	--knd-font-submenu-size: .85em;
@@ -2177,11 +2168,20 @@ body > svg {
 	margin-left: 30px;
 }
 
+.knd-header-nav > .menu > li.menu-item-has-children > a > .dropdown-nav-toggle {
+	padding-left: 0.15em;
+	padding-right: 0.15em;
+	margin-left: 0.15em;
+	margin-bottom: -0.2em;
+}
+
+.knd-header-nav > .menu > li.menu-item-has-children > a > .dropdown-nav-toggle:focus {
+	outline-color: var(--knd-color-main);
+}
+
 .knd-header-nav > .menu > li.menu-item-has-children > a svg {
 	display: block;
 	width: 0.5em;
-	margin-left: 0.3em;
-	margin-bottom: -0.2em;
 }
 
 .knd-header-nav > .menu > li.menu-item-has-children > .sub-menu {
@@ -2390,7 +2390,7 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 }
 
 .knd-search__form .knd-search__submit:focus {
-	outline: none;
+	outline: none !important;
 	box-shadow: inset 0 0 0 2px #fff, inset 0 0 0 4px var(--knd-color-main);
 }
 
@@ -2442,10 +2442,9 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 }
 
 .knd-header__inner .knd-social-links li a {
-	display: block;
 	text-align: center;
 	vertical-align: middle;
-	transition: all 0.2s;
+	transition: color 0.3s, background 0.3s, border-color 0.3s, opacity 0.3s;
 	text-decoration: none;
 	width: 24px;
 	height: 24px;
@@ -2538,7 +2537,7 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 	color: var(--knd-footer-link-color-hover, #db3120);
 }
 
-.knd-footer .widget-area a:hover, .knd-footer .widget-area a:focus, .knd-footer .widget-area a:active {
+.knd-footer .widget-area a:hover {
 	text-decoration: underline;
 }
 
@@ -2784,7 +2783,7 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 .knd-brand .support {
 	line-height: 1.2;
 	padding-right: 20px;
-	width: 104px;
+	width: 120px;
 	text-align: right;
 }
 
@@ -2821,7 +2820,7 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 	display: inline-block;
 	text-align: center;
 	vertical-align: middle;
-	transition: all 0.2s;
+	transition: color 0.3s, background 0.3s, border-color 0.3s, opacity 0.3s;
 	text-decoration: none;
 	width: 46px;
 	height: 46px;
@@ -2854,7 +2853,7 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 	display: inline-block;
 	text-align: center;
 	vertical-align: middle;
-	transition: all 0.2s;
+	transition: color 0.3s, background 0.3s, border-color 0.3s, opacity 0.3s;
 	text-decoration: none;
 	width: 44px;
 	height: 44px;
@@ -2993,7 +2992,7 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 	border-radius: var(--knd-button-border-radius);
 	text-transform: uppercase;
 	line-height: 1;
-	transition: all .3s;
+	transition: color 0.3s, background 0.3s, border-color 0.3s, opacity 0.3s;
 	white-space: nowrap;
 }
 
@@ -3056,7 +3055,7 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 /**  Cards Structure **/
 /* Post */
 .tpl-post, .tpl-related-post {
-	transition: all 0.3s;
+	transition: color 0.3s, background 0.3s, border 0.3s, opacity 0.3s;
 }
 
 .tpl-post:hover .entry-preview:after, .tpl-related-post:hover .entry-preview:after {
@@ -3099,7 +3098,7 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 	height: 100%;
 	background: rgba(0, 0, 0, 0);
 	z-index: 10;
-	transition: all 0.35s;
+	transition: color 0.3s, background 0.3s, border 0.3s, opacity 0.3s;
 }
 
 .tpl-post .entry-preview img, .tpl-related-post .entry-preview img {
@@ -3201,7 +3200,7 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 
 /** Programms **/
 .tpl-project {
-	transition: all 0.3s;
+	transition: color 0.3s, background 0.3s, border 0.3s, opacity 0.3s;
 }
 
 .tpl-project:hover .entry-preview:after {
@@ -3238,7 +3237,7 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 	height: 100%;
 	background: rgba(0, 0, 0, 0);
 	z-index: 10;
-	transition: all 0.35s;
+	transition: color 0.3s, background 0.3s, border 0.3s, opacity 0.3s;
 }
 
 .tpl-project .entry-preview img {
@@ -3333,7 +3332,7 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 	height: 100%;
 	background: rgba(0, 0, 0, 0);
 	z-index: 10;
-	transition: all 0.35s;
+	transition: color 0.3s, background 0.3s, border 0.3s, opacity 0.3s;
 }
 
 .tpl-person .entry-meta {
@@ -3505,7 +3504,7 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 	display: inline-block;
 	color: var(--knd-color-base);
 	padding: 0px 10px;
-	transition: all 0.3;
+	transition: color 0.3s, background 0.3s;
 }
 
 .paging .page-numbers:hover, .paging .page-numbers:focus, .paging .page-numbers:active {
@@ -4190,7 +4189,7 @@ div[id*="leyka-pf-"] .inpage-card__thumb {
 .widget-full.widget_text .textwidget a {
 	color: var(--knd-color-main);
 	border-bottom: 1px solid var(--knd-color-main);
-	transition: all .35s;
+	transition: color 0.3s, background 0.3s, border 0.3s, opacity 0.3s;
 }
 
 .widget-full.widget_text .textwidget a:hover, .widget-full.widget_text .textwidget a:focus, .widget-full.widget_text .textwidget a:active {
@@ -4721,7 +4720,7 @@ div[id*="leyka-pf-"] .inpage-card__thumb {
 	color: var(--knd-color-white);
 	background: var(--knd-color-main);
 	border: 1px solid var(--knd-color-main);
-	transition: all 0.3;
+	transition: color 0.3s, background 0.3s, border 0.3s, opacity 0.3s;
 	text-align: center;
 	padding: 6px 16px;
 	border-radius: var(--knd-button-border-radius);
@@ -4963,7 +4962,7 @@ div[id*="leyka-pf-"] .inpage-card__thumb {
 	color: var(--knd-color-white);
 	background: var(--knd-color-main);
 	border: 1px solid var(--knd-color-main);
-	transition: all 0.3;
+	transition: color 0.3s, background 0.3s, border 0.3s, opacity 0.3s;
 	text-align: center;
 	padding: 6px 16px;
 	border-radius: var(--knd-button-border-radius);
@@ -5064,7 +5063,7 @@ div[id*="leyka-pf-"] .inpage-card__thumb {
 	border-radius: 50rem;
 	background-color: #fff;
 	border: 1px solid #e6e6e6;
-	transition: all .3s;
+	transition: color 0.3s, background 0.3s, border-color 0.3s, opacity 0.3s;
 }
 
 .knd-events__toolbar .social-likes .social-likes__widget > a:hover {
@@ -5920,7 +5919,7 @@ div[id*="leyka-pf-"] .inpage-card__thumb {
 	overflow: hidden;
 	display: block;
 	border-bottom: 0 !important;
-	transition: 0.3s;
+	transition: filter 0.3s;
 }
 
 .knd-entry-event__speaker-image:hover {

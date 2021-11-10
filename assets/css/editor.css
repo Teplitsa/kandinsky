@@ -215,14 +215,11 @@ a {
 }
 
 a:focus,
-button:focus {
+button:focus,
+a:focus-visible {
 	text-decoration: none;
-	outline: 2px solid var(--knd-color-main);
-}
-
-a:focus:not(:focus-visible),
-button:focus:not(:focus-visible) {
-	outline: 0;
+	outline: 2px solid var(--knd-color-main) !important;
+	outline-offset: 2px !important;
 }
 
 article,
@@ -243,8 +240,6 @@ audio,
 canvas,
 video {
 	display: inline-block;
-	*display: inline;
-	*zoom: 1;
 }
 
 audio:not([controls]) {
@@ -304,13 +299,11 @@ textarea {
 	font-size: 100%;
 	margin: 0;
 	vertical-align: baseline;
-	*vertical-align: middle;
 }
 
 button,
 input {
 	line-height: normal;
-	*overflow: visible;
 }
 
 button,
@@ -487,7 +480,7 @@ h6 {
 .the-content a {
 	color: var(--knd-color-main);
 	border-bottom: 1px solid var(--knd-color-main);
-	transition: all .35s;
+	transition: color 0.3s, background 0.3s, border 0.3s, opacity 0.3s;
 }
 
 .the-content a:hover, .the-content a:focus, .the-content a:active {
@@ -964,7 +957,7 @@ body {
 #tinymce a {
 	color: var(--knd-color-main);
 	border-bottom: 1px solid var(--knd-color-main);
-	transition: all .35s;
+	transition: color 0.3s, background 0.3s, border 0.3s, opacity 0.3s;
 }
 
 #tinymce a:hover, #tinymce a:focus, #tinymce a:active {

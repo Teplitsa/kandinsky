@@ -5,18 +5,18 @@
 /** Utilities **/
 @mixin hidden { //Hide for both screenreaders and browsers
 	display: none;
-	visibility: hidden; 
+	visibility: hidden;
 }
 
 @mixin visuallyhidden { //Hide only visually, but have it available for screenreaders
-	position : absolute;
-	clip : rect(0 0 0 0); 
-	overflow : hidden;
+	position: absolute;
+	clip: rect(0 0 0 0);
+	overflow: hidden;
 	margin: -1px;
-	padding : 0;
-	height : 1px;      
-	width : 1px;
-	border : 0; 
+	padding: 0;
+	height: 1px;
+	width: 1px;
+	border: 0; 
 }
 
 @mixin image-replace {
@@ -103,7 +103,7 @@
 	color: var(--knd-color-main);
 	//display: inline-block;
 	border-bottom: 1px solid var(--knd-color-main);
-	transition: all .35s;
+	transition: color 0.3s, background 0.3s, border 0.3s, opacity 0.3s;
 
 	&:hover, &:focus, &:active {
 		color: var(--knd-color-main-active);
@@ -127,14 +127,14 @@
 /* Elements */
 @mixin button($mod: default){
 	@include knd-button-caption-text();
-	
+
 	display: inline-block;
 	color: var(--knd-color-white);
 	background: $color-main;
 	border: 1px solid $color-main;
-	transition: all 0.3;
+	transition: color 0.3s, background 0.3s, border 0.3s, opacity 0.3s;
 	text-align:center;
-	
+
 	padding: 6px 16px;
 	border-radius: var(--knd-button-border-radius);
 
@@ -158,7 +158,7 @@
 		color: $color-main;
 		&:visited { color: $color-main; }
 		
-		&:hover, &:focus, &:active {            
+		&:hover, &:focus, &:active {
 			background: $color-main-dark;
 			color: var(--knd-color-white);
 			border-color: $color-main-dark;
@@ -168,9 +168,9 @@
 		background: $color-ok;
 		border: 1px solid $color-ok;
 		
-		&:hover, &:focus, &:active {            
+		&:hover, &:focus, &:active {
 			background: darken($color-ok, 10%);
-			border-color: darken($color-ok, 10%);            
+			border-color: darken($color-ok, 10%);
 		}
 	}
 }
@@ -198,6 +198,6 @@
 		height: 100%;
 		background: rgba(0,0,0, 0);
 		z-index: 10;
-		transition: all 0.35s;
-	}   
+		transition: color 0.3s, background 0.3s, border 0.3s, opacity 0.3s;
+	}
 }

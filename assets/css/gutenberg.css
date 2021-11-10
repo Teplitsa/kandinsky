@@ -42,7 +42,7 @@
 	outline: none;
 	color: var(--knd-color-main);
 	border-bottom: 1px solid var(--knd-color-main);
-	transition: all .35s;
+	transition: color 0.3s, background 0.3s, border-color 0.3s, opacity 0.3s;
 }
 
 .editor-styles-wrapper p a :hover,

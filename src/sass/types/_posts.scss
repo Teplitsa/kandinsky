@@ -59,7 +59,7 @@
 /* Post */
 // Post card template
 .tpl-post {
-	transition: all 0.3s;
+	transition: color 0.3s, background 0.3s, border 0.3s, opacity 0.3s;
 	
 	&:hover {
 		.entry-preview:after { background: rgba(0,0,0, 0.25); }
@@ -108,28 +108,28 @@
 
 /** Programms **/
 .tpl-project {
-	transition: all 0.3s;
-	
+	transition: color 0.3s, background 0.3s, border 0.3s, opacity 0.3s;
+
 	&:hover {
 		.entry-preview:after { background: rgba(0,0,0, 0.3); }
-	} 
-	
+	}
+
 	a {
 		display: block;
 		position:relative;
 		height: 100%;
 	}
-	
+
 	.entry-preview {
 		@include shadowed-preview();
-		
+
 		overflow: hidden;
 		border-radius: var(--knd-image-border-radius);
 		img {
 			margin-bottom:0px;
 		}
 	}
-	
+
 	.entry-title {
 		@include knd-head-card-text();
 		margin-bottom: $base*0.75;
@@ -138,28 +138,27 @@
 	}
 }
 
-
 /** People **/
 .tpl-person {
 	margin-bottom: $gut;
 	background: $color-page-bg;
 	transition: background 0.3s;
-		
+
 	&.linked:hover {
 
 	}
-	
-	.entry-title {		
+
+	.entry-title {
 		@include knd-head-card-text();
 		line-height: 1.2;
 		margin-bottom: 12px; 
 	}
-	
+
 	.entry-preview {
 		@include shadowed-preview();
 	}
-	
-	.entry-meta {		
+
+	.entry-meta {
 		@include knd-subhead-text();
 		line-height: 1.4;
 		text-transform: none;
@@ -171,24 +170,23 @@
 			&:hover {  color: $color-text; }
 		}
 	}
-	
+
 	.entry-data {
 		padding: $gut/2;
 	}
-	
+
 	.people-cards-shortcode &:hover {
 		background: $color-page-bg;	
 	}
-	
+
 	.people-cards-shortcode & .entry-preview:after {
 		display:none;
 	}
-	
+
 	.people-cards-shortcode & .entry-data {
 		padding-bottom: 0;
 	}
 }
-
 
 /** Partners **/
 .tpl-org {
@@ -202,7 +200,7 @@
 	@include for(small-screens) {
 		padding-bottom: 60%;
 	}
-	
+
 	.logo-link {
 		display: block;
 		width: 100%;
@@ -210,8 +208,7 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-		
-		
+
 		span {
 			display: inline-block;
 			width: 100%;
@@ -220,7 +217,7 @@
 			line-height: 130px;
 		}
 	}
-	
+
 	img {
 		max-width: 100%;
 		max-height: 100%;
@@ -240,7 +237,7 @@
 	}
 
 	.entry-title {
-		@include knd-body-title-text();             
+		@include knd-body-title-text();
 		padding-top: 0px;
 		hyphens: auto;
 		color: $color-text;
@@ -295,8 +292,8 @@
 		display: inline-block;
 		color: $color-text;
 		padding: 0px 10px;
-		transition: all 0.3;
-		
+		transition: color 0.3s, background 0.3s;
+
 		&:hover, &:focus, &:active {
 			color: $color-page-bg;
 			background: $color-main;
@@ -307,6 +304,7 @@
 		}
 	}
 	
-	&:empty { display: none; }
+	&:empty {
+		display: none;
+	}
 }
-

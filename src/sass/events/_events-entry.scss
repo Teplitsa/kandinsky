@@ -142,7 +142,7 @@
 	overflow: hidden;
 	display: block;
 	border-bottom: 0 !important;
-	transition: 0.3s;
+	transition: filter 0.3s;
 
 	&:hover {
 		filter: grayscale(60%);

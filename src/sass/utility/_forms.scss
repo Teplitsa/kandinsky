@@ -430,17 +430,17 @@ $label-text-color: $color-text;
 	display: block;
 	margin-top: $base/2;
 	
-	input, input:focus {				
-		border: none;		
+	input, input:focus {
+		border: none;
 		outline: none;
 		@include nav-text();
 		line-height: 24px;
 		background: $input-color-active;
 		padding: 6px 20px;
 		color: var(--knd-color-white);
-		transition: background 0.2s;
+		transition: background 0.3s;
 		&:hover {
-			background: $color-main-dark;		
+			background: $color-main-dark;
 		}
 	}
 }

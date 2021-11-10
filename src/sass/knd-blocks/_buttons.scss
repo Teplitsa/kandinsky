@@ -15,7 +15,7 @@
 	border-radius: var(--knd-button-border-radius);
 	text-transform: uppercase;
 	line-height: 1;
-	transition: all .3s;
+	transition: color 0.3s, background 0.3s, border-color 0.3s, opacity 0.3s;
 	white-space: nowrap;
 
 	&:hover {

@@ -252,7 +252,7 @@ table.is-style-underline tbody tr:hover,
 	border-radius: var(--knd-button-border-radius);
 	text-transform: uppercase;
 	line-height: 1;
-	transition: all .3s;
+	transition: color 0.3s, background 0.3s, border-color 0.3s, opacity 0.3s;
 	white-space: nowrap;
 }
 
@@ -679,7 +679,7 @@ table.is-style-underline tbody tr:hover,
 	font-size: 18px;
 	font-family: var(--knd-font-family-headings);
 	line-height: 1.25;
-	transition: all 0.35s;
+	transition: opacity 0.3s;
 }
 
 .wp-block-knd-news .hentry:hover .entry-title {
@@ -710,7 +710,7 @@ table.is-style-underline tbody tr:hover,
 	height: 100%;
 	background-color: rgba(0, 0, 0, 0);
 	z-index: 10;
-	transition: all 0.35s;
+	transition: background-color 0.3s;
 }
 
 .wp-block-knd-news .hentry:hover .entry-preview:after {
@@ -862,7 +862,7 @@ table.is-style-underline tbody tr:hover,
 	font-family: var(--knd-font-family-headings);
 	letter-spacing: .01em;
 	line-height: 1.25;
-	transition: all 0.35s;
+	transition: color 0.3s, background 0.3s, border-color 0.3s, opacity 0.3s;
 }
 
 .wp-block-knd-projects .hentry:hover .entry-title {
@@ -893,7 +893,7 @@ table.is-style-underline tbody tr:hover,
 	height: 100%;
 	background-color: rgba(0, 0, 0, 0);
 	z-index: 10;
-	transition: all 0.35s;
+	transition: color 0.3s, background 0.3s, border-color 0.3s;
 }
 
 .wp-block-knd-projects .hentry:hover .entry-preview:after {
@@ -985,7 +985,7 @@ table.is-style-underline tbody tr:hover,
 	width: auto;
 	margin-left: auto;
 	margin-right: auto;
-	transition: all .3s;
+	transition: filter 0.3s;
 }
 
 .wp-block-knd-partners .partner-link:hover img {
@@ -1122,7 +1122,7 @@ table.is-style-underline tbody tr:hover,
 	max-width: 50%;
 	width: 50%;
 	padding: 0 20px 40px;
-	transition: opacity .3s;
+	transition: opacity 0.3s;
 }
 
 @media (max-width: 480px) {
@@ -1512,7 +1512,7 @@ table.is-style-underline tbody tr:hover,
 	font-weight: 700;
 	display: inline-block;
 	padding: 0px 0px 4px 0px;
-	transition: all .3s;
+	transition: color 0.3s, border-color 0.3s;
 }
 
 .knd-block-info .knd-block-info__link a:hover {
@@ -2032,7 +2032,7 @@ table.is-style-underline tbody tr:hover,
 	border-radius: 50rem;
 	background-color: #fff;
 	border: 1px solid #e6e6e6;
-	transition: all .3s;
+	transition: color 0.3s, background 0.3s, border-color 0.3s, opacity 0.3s;
 }
 
 .knd-events__toolbar .social-likes .social-likes__widget > a:hover {
@@ -2888,7 +2888,7 @@ table.is-style-underline tbody tr:hover,
 	overflow: hidden;
 	display: block;
 	border-bottom: 0 !important;
-	transition: 0.3s;
+	transition: filter 0.3s;
 }
 
 .knd-entry-event__speaker-image:hover {
