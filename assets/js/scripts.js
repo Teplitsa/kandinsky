@@ -103,7 +103,7 @@
 	});
 
 	/** Submenu toggle  **/
-	$( '.submenu-trigger' ).on( 'click', function( e ) {
+	$( '.submenu-trigger' ).on( 'click keypress', function( e ) {
 
 		var li = $( this ).parent( '.menu-item-has-children' );
 		if ( li.hasClass( 'open' ) ) {
@@ -112,10 +112,8 @@
 				$( this ).removeAttr( 'style' );
 			});
 		} else {
-
+			li.addClass( 'open' );
 			li.find( '.sub-menu' ).slideDown( 300, function() {
-				li.addClass( 'open' );
-				$( this ).removeAttr( 'style' );
 			});
 		}
 	});
@@ -366,86 +364,7 @@
 		jQuery( '.knd-block-carousel' ).flickity( 'resize' );
 	});
 
-
-	// function focusMenuWithChildren() {
-	// 	// Get all the link elements within the primary menu.
-	// 	var links, i, len,
-	// 		menu = document.querySelector( '.knd-header-nav' );
-
-	// 	if ( ! menu ) {
-	// 		return false;
-	// 	}
-
-	// 	links = menu.getElementsByTagName( 'a' );
-
-	// 	// Each time a menu link is focused or blurred, toggle focus.
-	// 	for ( i = 0, len = links.length; i < len; i++ ) {
-	// 		links[i].addEventListener( 'focus', toggleFocus, true );
-	// 		links[i].addEventListener( 'blur', toggleFocus, true );
-	// 	}
-
-	// 	//Sets or removes the .focus class on an element.
-	// 	function toggleFocus() {
-	// 		var self = this;
-
-	// 		// Move up through the ancestors of the current link until we hit .primary-menu.
-	// 		while ( -1 === self.className.indexOf( 'knd-nav-menu' ) ) {
-	// 			// On li elements toggle the class .focus.
-	// 			if ( 'li' === self.tagName.toLowerCase() ) {
-	// 				if ( -1 !== self.className.indexOf( 'focus' ) ) {
-	// 					self.className = self.className.replace( ' focus', '' );
-	// 				} else {
-	// 					self.className += ' focus';
-	// 				}
-	// 			}
-	// 			self = self.parentElement;
-	// 		}
-	// 	}
-	// }
-
-	//focusMenuWithChildren();          // Primary Menu.
-
-
-	// function focusMenuWithChildren2() {
-	// 		// Get all the link elements within the primary menu.
-	// 		var links, i, len,
-	// 			menu = document.querySelector( '.nav-main-menu' );
-
-	// 		if ( ! menu ) {
-	// 			return false;
-	// 		}
-
-	// 		links = menu.getElementsByTagName( 'a' );
-
-	// 		// Each time a menu link is focused or blurred, toggle focus.
-	// 		for ( i = 0, len = links.length; i < len; i++ ) {
-	// 			links[i].addEventListener( 'focus', toggleFocus, true );
-	// 			links[i].addEventListener( 'blur', toggleFocus, true );
-	// 		}
-
-	// 		//Sets or removes the .focus class on an element.
-	// 		function toggleFocus() {
-	// 			var self = this;
-
-	// 			// Move up through the ancestors of the current link until we hit .primary-menu.
-	// 			while ( -1 === self.className.indexOf( 'main-menu' ) ) {
-	// 				// On li elements toggle the class .focus.
-	// 				if ( 'li' === self.tagName.toLowerCase() ) {
-	// 					if ( -1 !== self.className.indexOf( 'focus' ) ) {
-	// 						self.className = self.className.replace( ' focus', '' );
-	// 					} else {
-	// 						self.className += ' focus';
-	// 					}
-	// 				}
-	// 				self = self.parentElement;
-	// 			}
-	// 		}
-	// 	}
-
-
-	// 	focusMenuWithChildren2();
-
-
+	// Focus repeat in container.
 	function kndFocusInModal( selector ){
 
 		// add all the elements inside modal which you want to make focusable
@@ -483,5 +402,39 @@
 	kndFocusInModal( '.site-nav' );
 	kndFocusInModal( '.knd-search' );
 
+	// Dropdown menu Accesibility.
+	$('.dropdown-nav-toggle').on('click keypress', function(e){
+		e.preventDefault();
+		$(this).parents('.menu-item-has-children').toggleClass('focus');
+		if ( $(this).parents('.menu-item-has-children').hasClass('focus') ) {
+			$(this).attr('aria-expanded', 'true').attr('aria-label', knd.i18n.a11y.collapse);
+		} else {
+			$(this).attr('aria-expanded', 'false').attr('aria-label', knd.i18n.a11y.expand);
+		}
+	});
+
+	// Close dropdown menu on focusout.
+	$('.menu-item-has-children').on('focusout', function (e) {
+		var $elem = $(this);
+		setTimeout( function() {
+			var hasFocus = !! ($elem.find(':focus').length > 0);
+			if (! hasFocus) {
+				$elem.removeClass('focus')
+				$elem.find('.dropdown-nav-toggle').attr('aria-expanded', 'true').attr('aria-label', knd.i18n.a11y.collapse);
+			}
+		}, 10);
+
+	});
+
+	// Offcanvas Dropdown menu Accesibility.
+	$('.dropdown-nav-toggle').on('click keypress', function(e){
+		e.preventDefault();
+		$(this).parents('.menu-item-has-children').toggleClass('focus');
+		if ( $(this).parents('.menu-item-has-children').hasClass('focus') ) {
+			$(this).attr('aria-expanded', 'true').attr('aria-label', knd.i18n.a11y.collapse);
+		} else {
+			$(this).attr('aria-expanded', 'false').attr('aria-label', knd.i18n.a11y.expand);
+		}
+	});
 
 })( jQuery );

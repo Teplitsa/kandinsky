@@ -9,7 +9,7 @@
 
 <div class="nav-overlay"></div>
 
-<div id="site_nav" class="site-nav" tabindex="-1">
+<div id="site_nav" class="site-nav" tabindex="-1" aria-hidden="true">
 
 	<div class="site-nav-title">
 		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="snt-cell" aria-hidden="true" tabindex="-1">
@@ -22,7 +22,7 @@
 
 	<?php
 	if ( get_theme_mod( 'offcanvas_menu', true ) ) {
-		$after = '<span class="submenu-trigger">' . knd_svg_icon( 'icon-up', false ) . knd_svg_icon( 'icon-down', false ) . '</span>';
+		$after = '<span class="submenu-trigger" aria-label="Развернуть дочернее меню" tabindex="0" role="button" aria-expanded="false">' . knd_svg_icon( 'icon-up', false ) . knd_svg_icon( 'icon-down', false ) . '</span>';
 		wp_nav_menu(
 			array(
 				'menu'                 => esc_html__('Main menu', 'knd'),

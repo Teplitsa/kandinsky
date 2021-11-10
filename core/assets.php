@@ -71,10 +71,16 @@ class KND_CssJs {
 		// Scripts.
 		wp_enqueue_script( 'knd', get_template_directory_uri() . '/assets/js/scripts.js', $dependencies, knd_get_theme_version(), true );
 
-		wp_localize_script( 'knd', 'frontend',
+		wp_localize_script( 'knd', 'knd',
 			array(
-				'ajaxurl' => admin_url( 'admin-ajax.php' ),
-				'langContinue' => esc_html__( 'Continue', 'knd' ),
+				//'ajaxurl' => admin_url( 'admin-ajax.php' ),
+				//'langContinue' => esc_html__( 'Continue', 'knd' ),
+				'i18n' => array(
+					'a11y' => array(
+						'expand' => esc_html__('Развернуть дочернее меню', 'knd'),
+						'collapse' => esc_html__('Свернуть дочернее меню', 'knd'),
+					),
+				),
 			)
 		);
 	}
