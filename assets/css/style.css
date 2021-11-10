@@ -2175,8 +2175,8 @@ body > svg {
 	margin-bottom: -0.2em;
 }
 
-.knd-header-nav > .menu > li.menu-item-has-children > a > .dropdown-nav-toggle:focus {
-	outline-color: var(--knd-color-main);
+.knd-header-nav > .menu > li.menu-item-has-children > a > .dropdown-nav-toggle:focus, .knd-header-nav > .menu > li.menu-item-has-children > a > .dropdown-nav-toggle:focus-visible {
+	outline: 2px solid var(--knd-color-main) !important;
 }
 
 .knd-header-nav > .menu > li.menu-item-has-children > a svg {
