@@ -73,12 +73,10 @@ class KND_CssJs {
 
 		wp_localize_script( 'knd', 'knd',
 			array(
-				//'ajaxurl' => admin_url( 'admin-ajax.php' ),
-				//'langContinue' => esc_html__( 'Continue', 'knd' ),
 				'i18n' => array(
 					'a11y' => array(
-						'expand' => esc_html__('Развернуть дочернее меню', 'knd'),
-						'collapse' => esc_html__('Свернуть дочернее меню', 'knd'),
+						'expand' => esc_html__('Expand child menu', 'knd'),
+						'collapse' => esc_html__('Collapse child menu', 'knd'),
 					),
 				),
 			)

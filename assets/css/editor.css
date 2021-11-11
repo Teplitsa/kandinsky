@@ -215,8 +215,7 @@ a {
 }
 
 a:focus,
-button:focus,
-a:focus-visible {
+button:focus {
 	text-decoration: none;
 	outline: 2px solid var(--knd-color-main) !important;
 	outline-offset: 2px !important;

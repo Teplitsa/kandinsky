@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Kandinsky\n"
-"POT-Creation-Date: 2021-11-09 01:23+0200\n"
+"POT-Creation-Date: 2021-11-10 21:03+0200\n"
 "PO-Revision-Date: 2020-06-22 06:53+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -1301,10 +1301,12 @@ msgstr ""
 msgid "A quick guide to working with the site - %s."
 msgstr ""
 
-#: core/assets.php:77 vendor/envato_setup/steps/design.php:28
-#: vendor/envato_setup/steps/plugins.php:110
-#: vendor/envato_setup/steps/settings.php:45
-msgid "Continue"
+#: core/assets.php:80 core/nav-menu.php:17 template-parts/offcanvas.php:25
+msgid "Expand child menu"
+msgstr ""
+
+#: core/assets.php:81
+msgid "Collapse child menu"
 msgstr ""
 
 #: core/author.php:31
@@ -1921,76 +1923,76 @@ msgstr ""
 msgid "Blocks"
 msgstr ""
 
-#: core/extras.php:68
+#: core/extras.php:72
 msgid "More"
 msgstr ""
 
-#: core/extras.php:269 modules/social.php:63
+#: core/extras.php:273 modules/social.php:63
 msgid "VKontakte"
 msgstr ""
 
-#: core/extras.php:270
+#: core/extras.php:274
 msgid "E.g., https://vk.com/club0123456789"
 msgstr ""
 
-#: core/extras.php:273 modules/social.php:77
+#: core/extras.php:277 modules/social.php:77
 msgid "Odnoklassniki"
 msgstr ""
 
-#: core/extras.php:274
+#: core/extras.php:278
 msgid "E.g., https://ok.ru/profile/0123456789"
 msgstr ""
 
-#: core/extras.php:277 modules/social.php:84
+#: core/extras.php:281 modules/social.php:84
 msgid "Facebook"
 msgstr ""
 
-#: core/extras.php:278
+#: core/extras.php:282
 msgid "E.g., https://www.facebook.com/your-organization-page"
 msgstr ""
 
-#: core/extras.php:281
+#: core/extras.php:285
 msgid "Instagram"
 msgstr ""
 
-#: core/extras.php:282
+#: core/extras.php:286
 msgid "E.g., https://www.instagram.com/your-organization-page"
 msgstr ""
 
-#: core/extras.php:285 modules/social.php:70
+#: core/extras.php:289 modules/social.php:70
 msgid "Twitter"
 msgstr ""
 
-#: core/extras.php:286
+#: core/extras.php:290
 msgid "E.g., https://twitter.com/your-organization-page"
 msgstr ""
 
-#: core/extras.php:289
+#: core/extras.php:293
 msgid "Telegram"
 msgstr ""
 
-#: core/extras.php:290
+#: core/extras.php:294
 msgid "E.g., https://tlgrm.ru/channels/@your-organization-page"
 msgstr ""
 
-#: core/extras.php:293
+#: core/extras.php:297
 msgid "YouTube"
 msgstr ""
 
-#: core/extras.php:294
+#: core/extras.php:298
 msgid "E.g., https://youtube.com/channel/your-organization-channel"
 msgstr ""
 
-#: core/extras.php:297
+#: core/extras.php:301
 msgid "TikTok"
 msgstr ""
 
-#: core/extras.php:352 modules/starter/import_remote_content.php:406
+#: core/extras.php:356 modules/starter/import_remote_content.php:406
 #, php-format
 msgid "Old import files cleanup FAILED: %s."
 msgstr ""
 
-#: core/extras.php:431
+#: core/extras.php:435
 msgid "Recommended plugins to install"
 msgstr ""
 
@@ -3309,6 +3311,12 @@ msgstr ""
 
 #: vendor/envato_setup/steps/design.php:19
 msgid "Upload new logo"
+msgstr ""
+
+#: vendor/envato_setup/steps/design.php:28
+#: vendor/envato_setup/steps/plugins.php:110
+#: vendor/envato_setup/steps/settings.php:45
+msgid "Continue"
 msgstr ""
 
 #: vendor/envato_setup/steps/intro.php:28

@@ -215,8 +215,7 @@ a {
 }
 
 a:focus,
-button:focus,
-a:focus-visible {
+button:focus {
 	text-decoration: none;
 	outline: 2px solid var(--knd-color-main) !important;
 	outline-offset: 2px !important;
@@ -1820,10 +1819,6 @@ body > svg {
 	color: var(--knd-color-white);
 }
 
-.main-menu li .submenu-trigger {
-	display: none;
-}
-
 .main-menu .menu-item-has-children > a {
 	margin-right: 59px;
 }
@@ -1859,12 +1854,8 @@ body > svg {
 	fill: var(--knd-color-white);
 }
 
-.main-menu .menu-item-has-children .submenu-trigger .icon-up {
-	display: none;
-}
-
-.main-menu .menu-item-has-children ul.sub-menu > li:not(.menu-item-has-children) .submenu-trigger {
-	display: none;
+.main-menu .menu-item-has-children .submenu-trigger:focus {
+	outline: 2px solid var(--knd-color-main) !important;
 }
 
 .main-menu > .menu-item-has-children > a:after {
@@ -1909,12 +1900,9 @@ body > svg {
 	border-left-color: var(--knd-color-main);
 }
 
-.main-menu li.open .submenu-trigger .icon-down {
-	display: none;
-}
-
-.main-menu li.open .submenu-trigger .icon-up {
-	display: block;
+.main-menu li.open .submenu-trigger .svg-icon {
+	-ms-transform: rotate(180deg);
+	transform: rotate(180deg);
 	fill: var(--knd-color-white);
 }
 
@@ -2173,7 +2161,7 @@ body > svg {
 	margin-bottom: -0.2em;
 }
 
-.knd-header-nav > .menu > li.menu-item-has-children > a > .dropdown-nav-toggle:focus, .knd-header-nav > .menu > li.menu-item-has-children > a > .dropdown-nav-toggle:focus-visible {
+.knd-header-nav > .menu > li.menu-item-has-children > a > .dropdown-nav-toggle:focus {
 	outline: 2px solid var(--knd-color-main) !important;
 }
 
