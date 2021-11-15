@@ -203,7 +203,7 @@
 									value: props.attributes.postsToShow,
 									initialPosition: 4,
 									min: 2,
-									max: 16,
+									max: kndBlock.partnerCount,
 									onChange: function( val ) {
 										props.setAttributes({ postsToShow: val })
 									}

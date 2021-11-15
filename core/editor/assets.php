@@ -97,6 +97,20 @@ function knd_enqueue_block_editor_assets() {
 		}
 	}
 
+	// Get person count
+	$kndBlock['peopleCount'] = 0;
+	$count_people = wp_count_posts('person');
+	if ( $count_people ) {
+		$kndBlock['peopleCount'] = $count_people->publish;
+	}
+
+	// Get partner count
+	$kndBlock['partnerCount'] = 0;
+	$count_partners = wp_count_posts('org');
+	if ( $count_partners ) {
+		$kndBlock['partnerCount'] = $count_partners->publish;
+	}
+
 	wp_localize_script(
 		'knd-blocks',
 		'kndBlock',

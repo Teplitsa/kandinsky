@@ -239,7 +239,7 @@
 									value: props.attributes.postsToShow,
 									initialPosition: 4,
 									min: 0,
-									max: 16,
+									max: kndBlock.peopleCount,
 									onChange: function( val ) {
 										props.setAttributes({ postsToShow: val })
 									}
