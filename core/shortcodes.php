@@ -51,6 +51,9 @@ add_filter( 'leyka_revo_template_displayed', 'knd_test_for_revo_template' );
 
 /**
  * Donations Shortcode
+ * 
+ * [knd_donations title="Donation Title" qty="2" exclude="" align="full" bg=""] // align: full, wide. bg: hex color
+ * Deprecated, remove in version 3.0
  */
 function knd_donations_shortcode( $atts ) {
 

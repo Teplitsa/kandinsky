@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Deprecated, remove in version 3.0
+ */
 class KND_Donations_Widget extends WP_Widget {
 
 	function __construct() {
