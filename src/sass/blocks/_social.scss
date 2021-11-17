@@ -91,7 +91,9 @@ $social_color: (
 		background-color: #fff;
 		width: 40px;
 		height: 40px;
-		padding: 7px 0;
+		padding: 0;
+		justify-content: center;
+		align-items: center;
 
 		&:hover {
 			background-color: #e6e6e6;
