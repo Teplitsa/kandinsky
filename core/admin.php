@@ -582,15 +582,6 @@ function knd_clear_seo_columns( $columns ) {
 add_filter( 'wpseo_use_page_analysis', '__return_false' );
 
 /**
- * Remove leyka metabox for embedable iframe
- */
-add_action( 'add_meta_boxes', 'knd_remove_leyka_wrong_metaboxes', 20 );
-
-function knd_remove_leyka_wrong_metaboxes() {
-	remove_meta_box( 'leyka_campaign_embed', 'leyka_campaign', 'normal' );
-}
-
-/**
  * Dashboards widgets *
  */
 add_action( 'wp_dashboard_setup', 'knd_remove_dashboard_widgets' );
