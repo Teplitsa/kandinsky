@@ -11,15 +11,6 @@ if ( ! defined( 'WPINC' ) )
 	die();
 
 /** Default filters **/
-add_filter( 'knd_the_content', 'wptexturize' );
-add_filter( 'knd_the_content', 'convert_smilies' );
-add_filter( 'knd_the_content', 'convert_chars' );
-add_filter( 'knd_the_content', 'wpautop' );
-add_filter( 'knd_the_content', 'shortcode_unautop' );
-add_filter( 'knd_the_content', 'do_shortcode' );
-add_filter( 'knd_the_content', 'wp_kses_post', 5 );
-
-
 add_filter( 'knd_the_title', 'wptexturize' );
 add_filter( 'knd_the_title', 'convert_chars' );
 add_filter( 'knd_the_title', 'trim' );
