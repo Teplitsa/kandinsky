@@ -13,6 +13,7 @@
 .leyka-shortcode.campaign-card {
 	.progressbar-unfulfilled {
 		overflow: hidden;
+		margin-top: auto;
 	}
 }
 
@@ -118,6 +119,7 @@
 		background-color: var(--knd-block-card-background);
 		border-radius: var(--knd-image-border-radius);
 		max-width: 1160px !important;
+		height: 100%;
 
 		.campaign-thumb {
 			border-radius: inherit;
@@ -135,14 +137,38 @@
 			}
 		}
 
-		.bottom-line .leyka-button-wrapper {
-			background-color: var(--knd-block-card-button);
-			border-bottom: 0;
-			transition: filter .3s;
+		.bottom-line {
+			margin-top: auto;
 
-			&:hover {
-				filter: brightness(0.9);
+			.leyka-button-wrapper {
+				background-color: var(--knd-block-card-button);
+				border-bottom: 0;
+				transition: filter .3s;
+
+				&:hover {
+					filter: brightness(0.9);
+				}
 			}
+
+			.target-info {
+				.funded {
+					color: var(--knd-block-card-collected-amount);
+				}
+
+				.target {
+					color: var(--knd-block-card-target-amount);
+				}
+			}
+
+			.progressbar-unfulfilled {
+				.progressbar-fulfilled {
+					background-color: var(--knd-block-card-progressbar);
+				}
+			}
+		}
+
+		.progressbar-unfulfilled + .bottom-line {
+			margin-top: -24px;
 		}
 
 		.campaign-title {
@@ -159,20 +185,6 @@
 			&:not(:first-child) {
 				margin-top: -15px;
 			}
-		}
-
-		.bottom-line .target-info {
-			.funded {
-				color: var(--knd-block-card-collected-amount);
-			}
-
-			.target {
-				color: var(--knd-block-card-target-amount);
-			}
-		}
-
-		.progressbar-unfulfilled .progressbar-fulfilled {
-			background-color: var(--knd-block-card-progressbar);
 		}
 	}
 }
