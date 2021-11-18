@@ -358,22 +358,13 @@ function knd_remove_scenario_unzipped_dir() {
 	}
 }
 
-add_action('init','knd_add_tags_to_leyka_campaign');
-
+/**
+ * Add support taxonomy post_tag for post type leyka_campaign
+ */
 function knd_add_tags_to_leyka_campaign() {
 	register_taxonomy_for_object_type('post_tag', 'leyka_campaign');
 }
-
-// change hidden metaboxes
-add_filter('default_hidden_meta_boxes', 'knd_change_hidden_meta_boxes', 10, 2);
-function knd_change_hidden_meta_boxes($hidden, $screen) {
-	
-	if(($key = array_search('postexcerpt', $hidden)) !== false) {
-		unset($hidden[$key]);
-	}
-	
-	return $hidden;
-}
+add_action('init','knd_add_tags_to_leyka_campaign');
 
 /** A singleton class to incapsulate WP_Filesystem instance creation */
 class Knd_Filesystem {
