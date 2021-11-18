@@ -1940,6 +1940,10 @@ table.is-style-underline tbody tr:hover,
 	flex-direction: column;
 }
 
+.knd-block-leyka-cards .bottom-line-item.target-info {
+	padding-right: 10px;
+}
+
 .knd-block-leyka-cards .wp-block-leyka-card.campaign-card {
 	background-color: var(--knd-block-card-background);
 	border-radius: var(--knd-image-border-radius);
@@ -1989,6 +1993,10 @@ table.is-style-underline tbody tr:hover,
 	background-color: var(--knd-block-card-progressbar);
 }
 
+.knd-block-leyka-cards .wp-block-leyka-card.campaign-card .campaign-title + .bottom-line .leyka-button-wrapper:first-child {
+	margin-top: 0;
+}
+
 .knd-block-leyka-cards .wp-block-leyka-card.campaign-card .progressbar-unfulfilled + .bottom-line {
 	margin-top: -24px;
 }
@@ -1998,6 +2006,7 @@ table.is-style-underline tbody tr:hover,
 	margin-top: 0;
 	font-size: 24px;
 	line-height: 1.2;
+	font-weight: 500;
 }
 
 .knd-block-leyka-cards .wp-block-leyka-card.campaign-card .campaign-excerpt {
