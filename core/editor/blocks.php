@@ -19,6 +19,7 @@ function knd_register_blocks() {
 
 	if ( defined( 'LEYKA_VERSION' ) ) {
 		require get_template_directory() . '/core/editor/blocks/leyka-campaign.php';
+		require get_template_directory() . '/core/editor/blocks/leyka-cards.php';
 	}
 
 	if ( defined( 'EM_VERSION' ) ) {

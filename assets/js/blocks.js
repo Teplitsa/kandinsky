@@ -135,6 +135,657 @@
 	window.wp.serverSideRender,
 ) );
 
+/**
+ * Leyka Cards
+ */
+
+( function( blocks, editor, blockEditor, element, components, compose, i18n, serverSideRender ) {
+
+	if ( ! kndBlock.postTypes.leyka_campaign ) {
+		return;
+	}
+
+	const ServerSideRender = serverSideRender;
+
+	const el = element.createElement;
+
+	const { TextControl, SelectControl, RangeControl, NumberControl, FormTokenField, ColorPalette, PanelBody, PanelRow, BaseControl, Button, Disabled } = components;
+
+	const { registerBlockType, withColors, PanelColorSettings, getColorClassName, useBlockProps } = blocks;
+	const { InspectorControls, ColorPaletteControl, MediaUpload, MediaUploadCheck } = blockEditor;
+
+	const { Fragment } = element;
+
+	const { withState } = compose;
+
+	const { __ } = i18n;
+
+	const icon = el( 'svg',
+		{
+			width: "24",
+			height: "24",
+			fill: "none",
+		},
+		el( "rect",
+			{
+				x: "2.2605",
+				y: "3.60922",
+				width: "19.479",
+				height: "16.7815",
+				rx: "1.25",
+				fill: "none",
+				stroke: "#39a94e",
+				"stroke-width": "1.5"
+			}
+		),
+		el( "path",
+			{
+				"fill-rule": "evenodd",
+				"clip-rule": "evenodd",
+				d: "M19.5159 12.555L12 12.555V14.055H19.5159V12.555Z",
+				fill: "#39a94e",
+			}
+		),
+		el( "path",
+			{
+				"fill-rule": "evenodd",
+				"clip-rule": "evenodd",
+				d: "M19.5159 9.7455H12V11.2455L19.5159 11.2455V9.7455Z",
+				fill: "#39a94e",
+			}
+		),
+		el( "path",
+			{
+				"fill-rule": "evenodd",
+				"clip-rule": "evenodd",
+				d: "M19.5159 6.95077H12V8.45077H19.5159V6.95077Z",
+				fill: "#39a94e",
+			}
+		),
+		el( "path",
+			{
+				"fill-rule": "evenodd",
+				"clip-rule": "evenodd",
+				d: "M19.5159 16.3583L4.4841 16.3583V17.8583L19.5159 17.8583V16.3583Z",
+				fill: "#39a94e",
+			}
+		),
+		el( "path",
+			{
+				"fill-rule": "evenodd",
+				"clip-rule": "evenodd",
+				d: "M7.51302 9.65895C8.08912 9.65895 8.55614 9.19193 8.55614 8.61583C8.55614 8.03973 8.08912 7.5727 7.51302 7.5727C6.93692 7.5727 6.46989 8.03973 6.46989 8.61583C6.46989 9.19193 6.93692 9.65895 7.51302 9.65895ZM7.51302 10.2809C8.43259 10.2809 9.17805 9.5354 9.17805 8.61583C9.17805 7.69625 8.43259 6.95079 7.51302 6.95079C6.59345 6.95079 5.84799 7.69625 5.84799 8.61583C5.84799 9.5354 6.59345 10.2809 7.51302 10.2809Z",
+				fill: "#39a94e",
+			}
+		),
+		el( "path",
+			{
+				"fill-rule": "evenodd",
+				"clip-rule": "evenodd",
+				d: "M5.91178 11.5172C6.3113 11.2624 6.83507 11.1049 7.51301 11.1049C8.19121 11.1049 8.72071 11.2624 9.12968 11.5147C9.53782 11.7664 9.80834 12.1017 9.98635 12.4311C10.1634 12.7589 10.2505 13.0833 10.2938 13.3235C10.3155 13.4442 10.3266 13.5456 10.3322 13.6182C10.335 13.6545 10.3364 13.6837 10.3372 13.7047C10.3375 13.7152 10.3378 13.7237 10.3379 13.7299L10.338 13.7377L10.338 13.7403C10.338 13.7403 10.338 13.742 10.027 13.742H10.338V14.053H4.82834L4.81263 13.7586L5.12315 13.742C4.81263 13.7586 4.81263 13.7586 4.81263 13.7586L4.81254 13.7569L4.81242 13.7543L4.81211 13.7465C4.81189 13.7403 4.81164 13.7318 4.81146 13.7213C4.81109 13.7003 4.81099 13.671 4.81185 13.6347C4.81358 13.5621 4.8192 13.4605 4.83454 13.3395C4.86503 13.099 4.935 12.7729 5.09576 12.4428C5.25751 12.1107 5.51279 11.7717 5.91178 11.5172ZM5.44985 13.4311C5.45039 13.4267 5.45094 13.4222 5.45151 13.4177C5.47631 13.2221 5.53243 12.9666 5.65489 12.7151C5.77635 12.4657 5.96142 12.2232 6.24622 12.0415C6.53048 11.8602 6.93395 11.7269 7.51302 11.7268C8.09182 11.7268 8.50508 11.8601 8.80318 12.044C9.10211 12.2284 9.30296 12.4747 9.43921 12.7268C9.57576 12.9795 9.6458 13.2354 9.68125 13.4311H5.44985Z",
+				fill: "#39a94e",
+			}
+		),
+		el( "path",
+			{
+				d: "M4.81263 13.7586L4.82834 14.053H10.338V13.742H10.027C10.338 13.742 10.338 13.7403 10.338 13.7403L10.338 13.7377L10.3379 13.7299C10.3378 13.7237 10.3375 13.7152 10.3372 13.7047C10.3364 13.6837 10.335 13.6545 10.3322 13.6182C10.3266 13.5456 10.3155 13.4442 10.2938 13.3235C10.2505 13.0833 10.1634 12.7589 9.98635 12.4311C9.80834 12.1017 9.53782 11.7664 9.12968 11.5147C8.72071 11.2624 8.19121 11.1049 7.51301 11.1049C6.83507 11.1049 6.3113 11.2624 5.91178 11.5172C5.51279 11.7717 5.25751 12.1107 5.09576 12.4428C4.935 12.7729 4.86503 13.099 4.83454 13.3395C4.8192 13.4605 4.81358 13.5621 4.81185 13.6347C4.81099 13.671 4.81109 13.7003 4.81146 13.7213C4.81164 13.7318 4.81189 13.7403 4.81211 13.7465L4.81242 13.7543L4.81254 13.7569L4.81263 13.7586ZM4.81263 13.7586L5.12315 13.742C4.81263 13.7586 4.81263 13.7586 4.81263 13.7586ZM9.29671 11.8386L9.73864 12.2762M10.0968 13.5874V12.9655M8.55614 8.61583C8.55614 9.19193 8.08912 9.65895 7.51302 9.65895C6.93692 9.65895 6.46989 9.19193 6.46989 8.61583C6.46989 8.03973 6.93692 7.5727 7.51302 7.5727C8.08912 7.5727 8.55614 8.03973 8.55614 8.61583ZM9.17805 8.61583C9.17805 9.5354 8.43259 10.2809 7.51302 10.2809C6.59345 10.2809 5.84799 9.5354 5.84799 8.61583C5.84799 7.69625 6.59345 6.95079 7.51302 6.95079C8.43259 6.95079 9.17805 7.69625 9.17805 8.61583ZM5.44985 13.4311C5.45039 13.4267 5.45094 13.4222 5.45151 13.4177C5.47631 13.2221 5.53243 12.9666 5.65489 12.7151C5.77635 12.4657 5.96142 12.2232 6.24622 12.0415C6.53048 11.8602 6.93395 11.7269 7.51302 11.7268C8.09182 11.7268 8.50508 11.8601 8.80318 12.044C9.10211 12.2284 9.30296 12.4747 9.43921 12.7268C9.57576 12.9795 9.6458 13.2354 9.68125 13.4311H5.44985Z",
+				fill: "none",
+				stroke: "#39a94e",
+				"stroke-width": "0.5",
+			}
+		)
+	);
+
+	var buttonTextControl = function( props, attributes ) {
+		if ( ! props.attributes.showButton ) {
+			return;
+		}
+		return el( TextControl, {
+			label: __('Button Text', 'knd'),
+			value: props.attributes.buttonText,
+			onChange: ( val ) => {
+				props.setAttributes( { buttonText: val } );
+			},
+		});
+	}
+
+	const queryPostsControl = ( props ) => {
+
+		var campaigns = [];
+		var getCampaigns = useSelect( function ( select ) {
+			return wp.data.select('core').getEntityRecords('postType','leyka_campaign',{per_page: -1});
+		}, [] );
+
+		if ( getCampaigns ) {
+			getCampaigns.map((campaign) => {
+				var id = campaign.id;
+				campaigns.push( campaign.title.raw );
+			} )
+		}
+
+		// https://gist.github.com/florianbrinkmann/167939b3e0a8c33a5ae3f1c0dc561859
+
+		const [ selectedCampaigns, setSelectedCampaigns ] = useState( props.attributes.queryInclude );
+
+		return el ( FormTokenField,
+			{
+				label: __('Include campaigns', 'knd'),
+				value: selectedCampaigns,
+				suggestions: campaigns,
+				//tokenizeOnSpace: true,
+				//isBorderless: true,
+				__experimentalExpandOnFocus: true,
+				onChange: ( val ) => {
+					setSelectedCampaigns( val ),
+					props.setAttributes( { queryInclude: val } );
+					console.log(props);
+				},
+			}
+		);
+	};
+
+	const queryPostsExcludeControl = ( props ) => {
+
+		var campaigns = [];
+		var getCampaigns = useSelect( function ( select ) {
+			return wp.data.select('core').getEntityRecords('postType','leyka_campaign',{per_page: -1});
+		}, [] );
+
+		if ( getCampaigns ) {
+			getCampaigns.map((campaign) => {
+				var id = campaign.id;
+				campaigns.push( campaign.title.raw );
+			} )
+		}
+
+		// https://gist.github.com/florianbrinkmann/167939b3e0a8c33a5ae3f1c0dc561859
+
+		const [ selectedCampaigns, setSelectedCampaigns ] = useState( props.attributes.queryExclude );
+
+		return el ( FormTokenField,
+			{
+				label: __('Exclude campaigns', 'knd'),
+				value: selectedCampaigns,
+				suggestions: campaigns,
+				//tokenizeOnSpace: true,
+				//isBorderless: true,
+				__experimentalExpandOnFocus: true,
+				onChange: ( val ) => {
+					setSelectedCampaigns( val ),
+					props.setAttributes( { queryExclude: val } );
+					console.log(props);
+				},
+			}
+		);
+	};
+
+	registerBlockType( 'knd/leyka-cards', {
+		title: __( 'Companies cards', 'knd' ),
+		description: __( 'Leyka: Companies cards.', 'knd' ),
+		icon: icon,
+		category: 'kandinsky',
+		keywords: [ __( 'campaign', 'knd' ), __( 'leyka', 'knd' ), __( 'cards', 'knd' ) ],
+		supports: {
+			align: [ 'wide', 'full' ],
+			anchor: true,
+		},
+
+		attributes: {
+			heading: {
+				type: 'string',
+				default: __( 'Donations', 'knd' ),
+			},
+			align: {
+				type: 'string',
+			},
+			postsToShow: {
+				type: 'number',
+				default: 2
+			},
+			columns: {
+				type: 'number',
+				default: 2
+			},
+			className: {
+				type: 'string',
+			},
+			anchor: {
+				type: 'string',
+			},
+			preview: {
+				type: 'boolean',
+				default: false,
+			},
+			backgroundColor: {
+				type: 'string',
+			},
+			headingColor: {
+				type: 'string',
+			},
+			colorBackground: {
+				type: 'string',
+			},
+			colorTitle: {
+				type: 'string',
+			},
+			colorExcerpt: {
+				type: 'string',
+			},
+			colorButton: {
+				type: 'string',
+			},
+			colorFulfilled: {
+				type: 'string',
+			},
+			colorUnfulfilled: {
+				type: 'string',
+			},
+			colorTargetAmount: {
+				type: 'string',
+			},
+			colorCollectedAmount: {
+				type: 'string',
+			},
+			buttonText: {
+				type: 'string',
+				default: __('Donate', 'knd'),
+			},
+			showImage: {
+				type: 'boolean',
+				default: true,
+			},
+			// showTags: {
+			// 	type: 'boolean',
+			// 	default: false,
+			// },
+			showTitle: {
+				type: 'boolean',
+				default: true,
+			},
+			showExcerpt: {
+				type: 'boolean',
+				default: false,
+			},
+			showButton: {
+				type: 'boolean',
+				default: true,
+			},
+			showProgressbar: {
+				type: 'boolean',
+				default: true,
+			},
+			showTargetAmount: {
+				type: 'boolean',
+				default: true,
+			},
+			showCollectedAmount: {
+				type: 'boolean',
+				default: true,
+			},
+			queryInclude: {
+				type: 'array',
+				default: [],
+			},
+			queryExclude: {
+				type: 'array',
+				default: [],
+			},
+			queryOffset: {
+				type: 'string',
+				default: '',
+			},
+			queryIsFinished: {
+				type: 'boolean',
+				default: false,
+			},
+			queryOrderBy: {
+				type: 'string',
+				default: 'date',
+			}
+		},
+
+		example: {
+			attributes: {
+				'preview' : true,
+			},
+		},
+
+		edit: function( props ) {
+
+			// Pull out the props we'll use
+			const { attributes, className, setAttributes } = props;
+
+			var options = kndBlock.campaigns;
+
+			return (
+				el( Fragment, {},
+
+					el( InspectorControls, {},
+
+						el( PanelBody,
+							{
+								title: __( 'Settings', 'knd' )
+							},
+
+							el( TextControl,
+								{
+									label: __( 'Heading', 'knd' ),
+									value: props.attributes.heading,
+									onChange: ( val ) => {
+										props.setAttributes( { heading: val } );
+									},
+								}
+							),
+
+							el( RangeControl,
+								{
+									label: __( 'Cards to show', 'knd' ),
+									value: props.attributes.postsToShow,
+									initialPosition: 2,
+									min: 0,
+									max: 50,
+									onChange: function( val ) {
+										props.setAttributes({ postsToShow: val })
+									}
+								}
+							),
+							el( RangeControl,
+								{
+									label: __( 'Columns', 'knd' ),
+									value: props.attributes.columns,
+									initialPosition: 2,
+									min: 1,
+									max: 4,
+									onChange: function( val ) {
+										props.setAttributes({ columns: val });
+									}
+								}
+							),
+
+							el( PanelRow, {},
+								el( ToggleControl,
+									{
+										label: __('Show Title', 'knd'),
+										onChange: ( value ) => {
+											props.setAttributes( { showTitle: value } );
+										},
+										checked: props.attributes.showTitle,
+									}
+								)
+							),
+
+							el( PanelRow, {},
+								el( ToggleControl,
+									{
+										label: __('Show Image', 'knd'),
+										onChange: ( value ) => {
+											props.setAttributes( { showImage: value } );
+										},
+										checked: props.attributes.showImage,
+									}
+								)
+							),
+
+							// el( PanelRow, {},
+							// 	el( ToggleControl,
+							// 		{
+							// 			label: __('Show Tags', 'knd'),
+							// 			onChange: ( value ) => {
+							// 				props.setAttributes( { showTags: value } );
+							// 			},
+							// 			checked: props.attributes.showTags,
+							// 		}
+							// 	)
+							// ),
+
+							el( PanelRow, {},
+								el( ToggleControl,
+									{
+										label: __('Show Description', 'knd'),
+										onChange: ( value ) => {
+											props.setAttributes( { showExcerpt: value } );
+										},
+										checked: props.attributes.showExcerpt,
+									}
+								)
+							),
+
+							el( PanelRow, {},
+								el( ToggleControl,
+									{
+										label: __('Show Progressbar', 'knd'),
+										onChange: ( value ) => {
+											props.setAttributes( { showProgressbar: value } );
+										},
+										checked: props.attributes.showProgressbar,
+									}
+								)
+							),
+
+							el( PanelRow, {},
+								el( ToggleControl,
+									{
+										label: __('Show Target Amount', 'knd'),
+										onChange: ( value ) => {
+											props.setAttributes( { showTargetAmount: value } );
+										},
+										checked: props.attributes.showTargetAmount,
+									}
+								)
+							),
+
+							el( PanelRow, {},
+								el( ToggleControl,
+									{
+										label: __('Show Collected Amount', 'knd'),
+										onChange: ( value ) => {
+											props.setAttributes( { showCollectedAmount: value } );
+										},
+										checked: props.attributes.showCollectedAmount,
+									}
+								)
+							),
+
+							el( PanelRow, {},
+								el( ToggleControl,
+									{
+										label: __('Show Button', 'knd'),
+										onChange: ( value ) => {
+											props.setAttributes( { showButton: value } );
+										},
+										checked: props.attributes.showButton,
+									}
+								)
+							),
+
+							buttonTextControl( props, attributes ),
+						),
+
+						el( PanelBody,
+							{
+								title: __( 'Colors', 'knd' ),
+								initialOpen: false
+							},
+
+							el( ColorPaletteControl,
+								{
+									label: __( 'Background Color', 'knd' ),
+									value: props.attributes.backgroundColor,
+									onChange: ( val ) => {
+										props.setAttributes( { backgroundColor: val } );
+									}
+								}
+							),
+
+							el( ColorPaletteControl,
+								{
+									label: __( 'Heading Color', 'knd' ),
+									value: props.attributes.headingColor,
+									onChange: ( val ) => {
+										props.setAttributes( { headingColor: val } );
+									}
+								}
+							),
+
+							el( ColorPaletteControl,
+								{
+									label: __( 'Card background color', 'knd' ),
+									value: props.attributes.colorBackground,
+									onChange: ( val ) => {
+										props.setAttributes({ colorBackground: val });
+									}
+								}
+							),
+
+							el( ColorPaletteControl,
+								{
+									label: __( 'Card title color', 'knd' ),
+									value: props.attributes.colorTitle,
+									onChange: ( val ) => {
+										props.setAttributes({ colorTitle: val });
+									}
+								}
+							),
+
+							el( ColorPaletteControl,
+								{
+									label: __( 'Card description color', 'knd' ),
+									value: props.attributes.colorExcerpt,
+									onChange: ( val ) => {
+										props.setAttributes({ colorExcerpt: val });
+									}
+								}
+							),
+
+							el( ColorPaletteControl,
+								{
+									label: __( 'Main CTA button background color', 'knd' ),
+									value: props.attributes.colorButton,
+									onChange: ( val ) => {
+										props.setAttributes({ colorButton: val });
+									}
+								}
+							),
+
+							el( ColorPaletteControl,
+								{
+									label: __( 'Progressbar fulfilled part color', 'knd' ),
+									value: props.attributes.colorFulfilled,
+									onChange: ( val ) => {
+										props.setAttributes({ colorFulfilled: val });
+									}
+								}
+							),
+
+							el( ColorPaletteControl,
+								{
+									label: __( 'Progressbar unfulfilled part color', 'knd' ),
+									value: props.attributes.colorUnfulfilled,
+									onChange: ( val ) => {
+										props.setAttributes({ colorUnfulfilled: val });
+									}
+								}
+							),
+
+							el( ColorPaletteControl,
+								{
+									label: __( 'Target amount color', 'knd' ),
+									value: props.attributes.colorTargetAmount,
+									onChange: ( val ) => {
+										props.setAttributes({ colorTargetAmount: val });
+									}
+								}
+							),
+
+							el( ColorPaletteControl,
+								{
+									label: __( 'Collected amount color', 'knd' ),
+									value: props.attributes.colorCollectedAmount,
+									onChange: ( val ) => {
+										setAttributes({ colorCollectedAmount: val });
+									}
+								}
+							),
+
+						),
+
+						el( PanelBody,
+							{
+								title: __( 'Query', 'knd' ) // Сортировка и фильтрация
+							},
+
+							el( SelectControl,
+								{
+									label: __( 'Order by', 'knd' ), // Сортировать по
+									options : [
+										{ value: 'date', label: __( 'Date', 'knd' ) },
+										{ value: 'post__in', label: __( 'Include campaigns', 'knd' ) },
+									],
+									value: props.attributes.queryOrderBy,
+									onChange: ( val ) => {
+										props.setAttributes( { queryOrderBy: val } );
+									},
+								},
+							),
+
+							el( TextControl,
+								{
+									label: __( 'Offset', 'knd' ),
+									type: 'number',
+									min: 0,
+									max: 100,
+									value: props.attributes.queryOffset,
+									onChange: ( val ) => {
+										props.setAttributes( { queryOffset: val } );
+									},
+								}
+							),
+
+							queryPostsControl(props),
+
+							el( PanelRow, {},
+								queryPostsExcludeControl(props),
+							),
+
+							el( PanelRow, {},
+								el( ToggleControl,
+									{
+										label: __('Exclude finished campaigns', 'knd'),
+										onChange: ( value ) => {
+											props.setAttributes( { queryIsFinished: value } );
+										},
+										checked: props.attributes.queryIsFinished,
+									}
+								)
+							),
+
+						),
+
+					),
+
+					el(	Disabled,
+						null,
+						el( ServerSideRender, {
+							block: 'knd/leyka-cards',
+							attributes: props.attributes,
+						} ),
+					)
+				)
+			);
+		},
+
+	} );
+}(
+	window.wp.blocks,
+	window.wp.editor,
+	window.wp.blockEditor,
+	window.wp.element,
+	window.wp.components,
+	window.wp.compose,
+	window.wp.i18n,
+	window.wp.serverSideRender,
+) );
+
 /* Cover Image */
 
 ( function( blocks, editor, blockEditor, element, components, compose, i18n, serverSideRender ) {

@@ -2852,7 +2852,11 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 	background-color: #fff;
 	width: 40px;
 	height: 40px;
-	padding: 7px 0;
+	padding: 0;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-ms-flex-align: center;
+	align-items: center;
 }
 
 .social-likes__widget a:hover {
@@ -4769,6 +4773,7 @@ div[id*="leyka-pf-"] .inpage-card__thumb {
 	text-align: center;
 }
 
+/** Deprecated, remove in version 3.0 */
 .leyka-loop .tpl-post, .leyka-loop .tpl-related-post {
 	border: 1px solid var(--knd-page-bg-color-dark);
 	padding: 20px 21.6px 20px;

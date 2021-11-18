@@ -30,6 +30,35 @@ if ( ! function_exists( 'knd_block_class' ) ) {
 	}
 }
 
+if ( ! function_exists( 'knd_block_attr' ) ) {
+	/**
+	 * Return block attributes
+	 */
+	function knd_block_attr( $attr = array() ) {
+
+		$block_attr = '';
+		if ( $attr ) {
+			foreach ( $attr as $name => $value ) {
+				$values = '';
+				if ( is_array( $value ) ) {
+					foreach ( $value as $prop => $prop_val ) {
+						if ( $prop_val ) {
+							$values .= $prop . ':' . $prop_val . ';';
+						}
+					}
+				} else {
+					$values = $value;
+				}
+				if ( $values ) {
+					$block_attr .= ' ' . $name . '="' . $values . '"';
+				}
+			}
+		}
+
+		return apply_filters( 'knd_block_attr', $block_attr, $attr );
+	}
+}
+
 if ( ! function_exists( 'knd_is_page_title' ) ) {
 	/**
 	 * Check Is Page Title
