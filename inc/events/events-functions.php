@@ -275,6 +275,9 @@ add_action('em_options_page_tab_custom', 'knd_em_options_page_tab_custom' );
 
 function knd_em_options_booking_form_options(){
 	$custom_fields = get_option( 'dbem_bookings_custom_fields' );
+
+	em_options_input_text( __( 'CTA button text', 'knd' ), 'dbem_bookings_cta_field', '', esc_html__( 'Book Now', 'knd' ) );
+
 	?>
 	<tr valign="top" id="dbem_bookings_custom_fileds_row">
 		<th scope="row"><?php esc_html_e( 'Custom Fields', 'knd' ); ?></th>
