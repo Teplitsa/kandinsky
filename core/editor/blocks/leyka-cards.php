@@ -118,6 +118,10 @@ register_block_type( 'knd/leyka-cards', array(
 			'type' => 'boolean',
 			'default' => true,
 		),
+		'titleFontSize' => array(
+			'type' => 'string',
+			'default' => '',
+		),
 		'queryInclude' => array(
 			'type' => 'array',
 			'default' => array(),
@@ -263,16 +267,17 @@ function knd_block_leyka_cards_render_callback( $attr ) {
 			'class' => knd_block_class( $classes ),
 			'id'    => $attr_id,
 			'style' => array(
-				'--knd-block-cards-background' => $attr['backgroundColor'],
-				'--knd-block-people-heading-color' => $attr['headingColor'],
-				'--knd-block-card-background' => $attr['colorBackground'],
-				'--knd-block-card-title' => $attr['colorTitle'],
-				'--knd-block-card-excerpt' => $attr['colorExcerpt'],
+				'--knd-block-cards-background'      => $attr['backgroundColor'],
+				'--knd-block-people-heading-color'  => $attr['headingColor'],
+				'--knd-block-card-background'       => $attr['colorBackground'],
+				'--knd-block-card-title'            => $attr['colorTitle'],
+				'--knd-block-card-excerpt'          => $attr['colorExcerpt'],
 				'--knd-block-card-collected-amount' => $attr['colorCollectedAmount'],
-				'--knd-block-card-target-amount' => $attr['colorTargetAmount'],
-				'--knd-block-card-button' => $attr['colorButton'],
-				'--knd-block-card-progressbar' => $attr['colorFulfilled'],
-				'--leyka-color-main-second' => $attr['colorUnfulfilled'],
+				'--knd-block-card-target-amount'    => $attr['colorTargetAmount'],
+				'--knd-block-card-button'           => $attr['colorButton'],
+				'--knd-block-card-progressbar'      => $attr['colorFulfilled'],
+				'--knd-block-card-title-size'       => $attr['titleFontSize'],
+				'--leyka-color-main-second'         => $attr['colorUnfulfilled'],
 			),
 		)
 	);

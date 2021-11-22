@@ -149,10 +149,10 @@
 
 	const el = element.createElement;
 
-	const { TextControl, SelectControl, RangeControl, NumberControl, FormTokenField, ColorPalette, PanelBody, PanelRow, BaseControl, Button, Disabled } = components;
+	const { TextControl, SelectControl, RangeControl, NumberControl, FontSizePicker, FormTokenField, ColorPalette, PanelBody, PanelRow, BaseControl, Button, Disabled } = components;
 
 	const { registerBlockType, withColors, PanelColorSettings, getColorClassName, useBlockProps } = blocks;
-	const { InspectorControls, ColorPaletteControl, MediaUpload, MediaUploadCheck } = blockEditor;
+	const { InspectorControls, ColorPaletteControl, MediaUpload, MediaUploadCheck, useSetting } = blockEditor;
 
 	const { Fragment } = element;
 
@@ -241,7 +241,7 @@
 			return;
 		}
 		return el( TextControl, {
-			label: __('Button Text', 'knd'),
+			label: __('Button text', 'knd'),
 			value: props.attributes.buttonText,
 			onChange: ( val ) => {
 				props.setAttributes( { buttonText: val } );
@@ -313,8 +313,27 @@
 				onChange: ( val ) => {
 					setSelectedCampaigns( val ),
 					props.setAttributes( { queryExclude: val } );
-					console.log(props);
 				},
+			}
+		);
+	};
+
+	const kndFontSizePicker = ( props ) => {
+		const [ fontSize, setFontSize ] = useState( props.attributes.titleFontSize );
+
+		var fontSizes = useSetting('typography.fontSizes');
+
+		return el( FontSizePicker,
+			{
+				fontSizes: fontSizes,
+				value: fontSize,
+				fallbackFontSize: 24,
+				onChange: ( newFontSize ) => {
+					setFontSize( newFontSize );
+					console.log(newFontSize);
+					props.setAttributes( { titleFontSize: newFontSize } );
+					console.log(props.attributes.titleFontSize)
+				}
 			}
 		);
 	};
@@ -421,6 +440,10 @@
 			showCollectedAmount: {
 				type: 'boolean',
 				default: true,
+			},
+			titleFontSize: {
+				type: 'string',
+				default: '',
 			},
 			queryInclude: {
 				type: 'array',
@@ -711,15 +734,25 @@
 
 						el( PanelBody,
 							{
-								title: __( 'Query', 'knd' ) // Сортировка и фильтрация
+								title: __( 'Typography' ),
+								initialOpen: false
+							},
+
+							kndFontSizePicker(props),
+						),
+
+						el( PanelBody,
+							{
+								title: __( 'Query', 'knd' ) ,
+								initialOpen: false
 							},
 
 							el( SelectControl,
 								{
-									label: __( 'Order by', 'knd' ), // Сортировать по
+									label: __( 'Order by' ),
 									options : [
-										{ value: 'date', label: __( 'Date', 'knd' ) },
-										{ value: 'post__in', label: __( 'Include campaigns', 'knd' ) },
+										{ value: 'date', label: __( 'Date' ) },
+										{ value: 'post__in', label: __( 'Included campaigns', 'knd' ) },
 									],
 									value: props.attributes.queryOrderBy,
 									onChange: ( val ) => {
@@ -735,6 +768,7 @@
 									min: 0,
 									max: 100,
 									value: props.attributes.queryOffset,
+									help: __( 'Number of campaigns to skip', 'knd' ),
 									onChange: ( val ) => {
 										props.setAttributes( { queryOffset: val } );
 									},

@@ -11,9 +11,27 @@
 }
 
 .leyka-shortcode.campaign-card {
+	border-radius: var(--knd-image-border-radius);
+	max-width: 1160px !important;
+
 	.progressbar-unfulfilled {
 		overflow: hidden;
 		margin-top: auto;
+	}
+
+	a.campaign-thumb {
+		&:hover {
+			opacity: .8;
+		}
+	}
+
+	.leyka-button-wrapper {
+		border-bottom: 0;
+		transition: filter .3s;
+
+		&:hover {
+			filter: brightness(0.9);
+		}
 	}
 }
 
@@ -21,6 +39,11 @@
 	margin-top: 25px;
 	margin-bottom: 25px;
 	background-color: var(--knd-block-cards-background);
+
+	&:not(.alignfull) .knd-container {
+		padding-left: 0;
+		padding-right: 0;
+	}
 
 	&.has-background {
 		padding-top: 30px;
@@ -121,18 +144,12 @@
 
 	.wp-block-leyka-card.campaign-card {
 		background-color: var(--knd-block-card-background);
-		border-radius: var(--knd-image-border-radius);
-		max-width: 1160px !important;
 		height: 100%;
 
 		.campaign-thumb {
 			border-radius: inherit;
 			height: auto;
 			border-bottom: 0;
-
-			&:hover {
-				opacity: .7;
-			}
 
 			&:after {
 				content: '';
@@ -146,12 +163,6 @@
 
 			.leyka-button-wrapper {
 				background-color: var(--knd-block-card-button);
-				border-bottom: 0;
-				transition: filter .3s;
-
-				&:hover {
-					filter: brightness(0.9);
-				}
 			}
 
 			.target-info {
@@ -171,12 +182,6 @@
 			}
 		}
 
-		.campaign-title + .bottom-line {
-			.leyka-button-wrapper:first-child {
-				margin-top: 0;
-			}
-		}
-
 		.progressbar-unfulfilled + .bottom-line {
 			margin-top: -24px;
 		}
@@ -184,14 +189,21 @@
 		.campaign-title {
 			color: var(--knd-block-card-title);
 			margin-top: 0;
-			font-size: 24px;
+			font-size: var(--knd-block-card-title-size, 24px);
 			line-height: 1.2;
 			font-weight: 500;
+
+			& + .bottom-line {
+				.leyka-button-wrapper:first-child {
+					margin-top: 0;
+				}
+			}
 		}
 
 		.campaign-excerpt {
 			margin-bottom: 24px;
 			color: var(--knd-block-card-excerpt);
+			line-height: 1.4;
 
 			&:not(:first-child) {
 				margin-top: -15px;
@@ -199,3 +211,4 @@
 		}
 	}
 }
+
