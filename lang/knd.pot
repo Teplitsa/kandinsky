@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Kandinsky\n"
-"POT-Creation-Date: 2021-11-19 11:56+0200\n"
+"POT-Creation-Date: 2021-11-23 10:10+0200\n"
 "PO-Revision-Date: 2020-06-22 06:53+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -63,17 +63,17 @@ msgstr ""
 msgid "Add time"
 msgstr ""
 
-#: assets/js/admin.js:158 inc/events/events-functions.php:296
+#: assets/js/admin.js:158 inc/events/events-functions.php:299
 #: src/js/admin/admin.js:158
 msgid "Label"
 msgstr ""
 
-#: assets/js/admin.js:159 inc/events/events-functions.php:297
+#: assets/js/admin.js:159 inc/events/events-functions.php:300
 #: src/js/admin/admin.js:159
 msgid "slug"
 msgstr ""
 
-#: assets/js/admin.js:160 inc/events/events-functions.php:298
+#: assets/js/admin.js:160 inc/events/events-functions.php:301
 #: src/js/admin/admin.js:160
 msgid "Delete"
 msgstr ""
@@ -1444,6 +1444,14 @@ msgstr ""
 msgid "Collapse child menu"
 msgstr ""
 
+#: core/assets.php:80 core/template-tags.php:582
+msgid "Off-Canvas is open"
+msgstr ""
+
+#: core/assets.php:81
+msgid "Off-Canvas is closed"
+msgstr ""
+
 #: core/author.php:31
 msgid "Author"
 msgstr ""
@@ -2295,10 +2303,6 @@ msgstr ""
 msgid "Open Off-Canvas"
 msgstr ""
 
-#: core/template-tags.php:582
-msgid "Off-Canvas is open"
-msgstr ""
-
 #: core/template-tags.php:595
 msgid "Close Off-Canvas"
 msgstr ""
@@ -2376,15 +2380,24 @@ msgstr ""
 msgid "Related heading"
 msgstr ""
 
-#: inc/events/events-functions.php:280
+#: inc/events/events-functions.php:279
+msgid "CTA button text"
+msgstr ""
+
+#: inc/events/events-functions.php:279 inc/events/events-options.php:24
+#: single-event.php:63
+msgid "Book Now"
+msgstr ""
+
+#: inc/events/events-functions.php:283
 msgid "Custom Fields"
 msgstr ""
 
-#: inc/events/events-functions.php:304
+#: inc/events/events-functions.php:307
 msgid "Add new field"
 msgstr ""
 
-#: inc/events/events-functions.php:362
+#: inc/events/events-functions.php:365
 msgid "<strong>ERROR</strong>: Invalid"
 msgstr ""
 
@@ -2452,10 +2465,6 @@ msgstr ""
 
 #: inc/events/events-metabox.php:166
 msgid "Add schedule"
-msgstr ""
-
-#: inc/events/events-options.php:24 single-event.php:62
-msgid "Book Now"
 msgstr ""
 
 #: inc/events/events-options.php:38 inc/events/events-tags.php:211

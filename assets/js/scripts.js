@@ -60,7 +60,7 @@
 		$('.knd-header').addClass('menu-open');
 
 		setTimeout( function(){
-			kndUpdateScreenReaderAlert(e);
+			kndUpdateScreenReaderAlert(knd.i18n.a11y.offCanvasIsOpen);
 			setTimeout( function(){
 				$('.knd-offcanvas-close').focus();
 			},500);
@@ -72,12 +72,18 @@
 
 		if ( $('.knd-header').hasClass( 'menu-open' ) ) {
 			$('.knd-header').removeClass( 'menu-open' );
-			$('.knd-header__inner-desktop .knd-offcanvas-toggle').focus();
 
 			$('.main-menu')
 				.find('.menu-item-has-children.open').removeClass('open')
 				.find('.submenu-trigger').attr('aria-expanded', 'false').attr('aria-label', knd.i18n.a11y.expand)
 				.parent().next('.sub-menu').slideUp( 300 );
+
+			setTimeout( function(){
+				kndUpdateScreenReaderAlert(knd.i18n.a11y.offCanvasIsClosed);
+				setTimeout( function(){
+					$('.knd-header__inner-desktop .knd-offcanvas-toggle').focus();
+				},500);
+			},400);
 		}
 
 	};
@@ -101,12 +107,13 @@
 	/**
 	 * Accesibility Alert
 	 */
-	function kndUpdateScreenReaderAlert( e ){
-		if ( $(e.currentTarget).data('label').length ) {
-			let content = $(e.currentTarget).data('label');
-			$('.knd-screen-reader-alert').html( ' ' );
-			$('.knd-screen-reader-alert').html( content );
-		}
+	function kndUpdateScreenReaderAlert( message ){
+		// if ( $(e.currentTarget).data('label').length ) {
+		// 	let content = $(e.currentTarget).data('label');
+		// 	$('.knd-screen-reader-alert').html( ' ' );
+		// 	$('.knd-screen-reader-alert').html( content );
+		// }
+		$('.knd-screen-reader-alert').html( ' ' ).html( message );
 	}
 
 	/**

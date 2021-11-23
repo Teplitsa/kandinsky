@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-19 11:56+0200\n"
-"PO-Revision-Date: 2021-11-19 11:58+0200\n"
+"POT-Creation-Date: 2021-11-23 10:10+0200\n"
+"PO-Revision-Date: 2021-11-23 10:11+0200\n"
 "Last-Translator: ahaenor <ahaenor@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -69,17 +69,17 @@ msgstr "Удалить расписание"
 msgid "Add time"
 msgstr "Добавить время"
 
-#: assets/js/admin.js:158 inc/events/events-functions.php:296
+#: assets/js/admin.js:158 inc/events/events-functions.php:299
 #: src/js/admin/admin.js:158
 msgid "Label"
 msgstr "Название"
 
-#: assets/js/admin.js:159 inc/events/events-functions.php:297
+#: assets/js/admin.js:159 inc/events/events-functions.php:300
 #: src/js/admin/admin.js:159
 msgid "slug"
 msgstr "слаг"
 
-#: assets/js/admin.js:160 inc/events/events-functions.php:298
+#: assets/js/admin.js:160 inc/events/events-functions.php:301
 #: src/js/admin/admin.js:160
 msgid "Delete"
 msgstr "Удалить"
@@ -1489,6 +1489,14 @@ msgstr "Развернуть дочернее меню"
 msgid "Collapse child menu"
 msgstr "Свернуть дочернее меню"
 
+#: core/assets.php:80 core/template-tags.php:582
+msgid "Off-Canvas is open"
+msgstr "Боковая панель открыта"
+
+#: core/assets.php:81
+msgid "Off-Canvas is closed"
+msgstr "Боковая панель закрыта"
+
 #: core/author.php:31
 msgid "Author"
 msgstr "Автор"
@@ -2359,10 +2367,6 @@ msgstr "Закрыть поиск"
 msgid "Open Off-Canvas"
 msgstr "Открыть боковую панель"
 
-#: core/template-tags.php:582
-msgid "Off-Canvas is open"
-msgstr "Боковая панель открыта"
-
 #: core/template-tags.php:595
 msgid "Close Off-Canvas"
 msgstr "Закрыть боковую панель"
@@ -2440,15 +2444,26 @@ msgstr "Содержание вопроса"
 msgid "Related heading"
 msgstr "Заголовок похожих мероприятий"
 
-#: inc/events/events-functions.php:280
+#: inc/events/events-functions.php:279
+#, fuzzy
+#| msgid "Button text"
+msgid "CTA button text"
+msgstr "Текст кнопки"
+
+#: inc/events/events-functions.php:279 inc/events/events-options.php:24
+#: single-event.php:63
+msgid "Book Now"
+msgstr "Забронировать"
+
+#: inc/events/events-functions.php:283
 msgid "Custom Fields"
 msgstr "Настраиваемые поля"
 
-#: inc/events/events-functions.php:304
+#: inc/events/events-functions.php:307
 msgid "Add new field"
 msgstr "Добавить новое поле"
 
-#: inc/events/events-functions.php:362
+#: inc/events/events-functions.php:365
 msgid "<strong>ERROR</strong>: Invalid"
 msgstr "<strong>ОШИБКА</strong>: Недействительный"
 
@@ -2517,10 +2532,6 @@ msgstr "Удалить расписание"
 #: inc/events/events-metabox.php:166
 msgid "Add schedule"
 msgstr "Добавить расписание"
-
-#: inc/events/events-options.php:24 single-event.php:62
-msgid "Book Now"
-msgstr "Забронировать"
 
 #: inc/events/events-options.php:38 inc/events/events-tags.php:211
 msgid "Still have questions?"

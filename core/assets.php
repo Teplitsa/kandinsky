@@ -75,8 +75,10 @@ class KND_CssJs {
 			array(
 				'i18n' => array(
 					'a11y' => array(
-						'expand' => esc_html__('Expand child menu', 'knd'),
-						'collapse' => esc_html__('Collapse child menu', 'knd'),
+						'expand'            => esc_attr__('Expand child menu', 'knd'),
+						'collapse'          => esc_attr__('Collapse child menu', 'knd'),
+						'offCanvasIsOpen'   => esc_attr__('Off-Canvas is open', 'knd'),
+						'offCanvasIsClosed' => esc_attr__('Off-Canvas is closed', 'knd'),
 					),
 				),
 			)

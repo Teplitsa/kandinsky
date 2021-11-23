@@ -579,7 +579,7 @@ function knd_offcanvas_toggle( $is_active = true ){
 	}
 
 	?>
-	<button class="knd-offcanvas-toggle" aria-label="<?php esc_attr_e( 'Open Off-Canvas', 'knd' ); ?>" data-label="<?php esc_attr_e( 'Off-Canvas is open', 'knd' ); ?>">
+	<button class="knd-offcanvas-toggle" aria-label="<?php esc_attr_e( 'Open Off-Canvas', 'knd' ); ?>">
 		<span></span>
 		<span></span>
 		<span></span>
