@@ -158,12 +158,12 @@
 		var thisParent = $(this).parents('.menu-item-has-children');
 
 		if ( thisParent.hasClass('open') ) {
-			$(this).attr('aria-expanded', 'true').attr('aria-label', knd.i18n.a11y.collapse);
+			$(this).attr('aria-expanded', 'false').attr('aria-label', knd.i18n.a11y.expand);
 			thisParent.find( '.sub-menu' ).slideUp( 300, function(){
 				thisParent.removeClass('open');
 			});
 		} else {
-			$(this).attr('aria-expanded', 'false').attr('aria-label', knd.i18n.a11y.expand);
+			$(this).attr('aria-expanded', 'true').attr('aria-label', knd.i18n.a11y.collapse);
 			thisParent.addClass('open');
 			thisParent.find( '.sub-menu' ).slideDown( 300 );
 		}
