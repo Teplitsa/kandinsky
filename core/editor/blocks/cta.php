@@ -147,7 +147,7 @@ function knd_block_cta_render_callback( $attr ) {
 
 	$text = '';
 	if ( isset( $attr['text'] ) && $attr['text'] ) {
-		$text = '<h2 class="knd-block-cta__text">' . esc_html( $attr['text'] ) . '</h2>';
+		$text = '<h2 class="knd-block-cta__text">' . nl2br( esc_html( $attr['text'] ) ) . '</h2>';
 	}
 
 	$figure = '';
