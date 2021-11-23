@@ -43,7 +43,7 @@ $copyright = sprintf( __( 'All materials of the site are avaliabe under license 
 			<?php if ( get_theme_mod( 'footer_about' ) ) { ?>
 				<div class="widget-bottom widget-bottom-about">
 					<?php if ( get_theme_mod( 'footer_about_title' ) ) { ?>
-						<h3 class="widget-title"><?php echo get_theme_mod( 'footer_about_title', esc_html__( 'About Us', 'knd' ) ); ?></h3>
+						<h2 class="widget-title"><?php echo get_theme_mod( 'footer_about_title', esc_html__( 'About Us', 'knd' ) ); ?></h2>
 					<?php } ?>
 					<div class="textwidget">
 						<?php echo do_shortcode( wpautop( get_theme_mod( 'footer_about' ) ) ); ?>
@@ -55,7 +55,7 @@ $copyright = sprintf( __( 'All materials of the site are avaliabe under license 
 			if ( get_theme_mod( 'footer_menu_ourwork' ) && is_nav_menu( get_theme_mod( 'footer_menu_ourwork' ) ) ) {
 				$before = '';
 				if ( get_theme_mod( 'footer_menu_ourwork_title' ) ) {
-					$before = '<h3 class="widget-title">' . get_theme_mod( 'footer_menu_ourwork_title', esc_html__( 'Our Work', 'knd' ) ) . '</h3>';
+					$before = '<h2 class="widget-title">' . get_theme_mod( 'footer_menu_ourwork_title', esc_html__( 'Our Work', 'knd' ) ) . '</h2>';
 				}
 				wp_nav_menu(
 					array(
@@ -73,7 +73,7 @@ $copyright = sprintf( __( 'All materials of the site are avaliabe under license 
 			if ( get_theme_mod( 'footer_menu_news' ) && is_nav_menu( get_theme_mod( 'footer_menu_news' ) ) ) {
 				$before = '';
 				if ( get_theme_mod( 'footer_menu_news_title' ) && '&nbsp;' !== get_theme_mod( 'footer_menu_news_title' ) ) {
-					$before = '<h3 class="widget-title">' . get_theme_mod( 'footer_menu_news_title', esc_html__( 'News', 'knd' ) ) . '</h3>';
+					$before = '<h2 class="widget-title">' . get_theme_mod( 'footer_menu_news_title', esc_html__( 'News', 'knd' ) ) . '</h2>';
 				} else if ( '&nbsp;' === get_theme_mod( 'footer_menu_news_title' ) ) {
 					$before = '<div class="widget-title">&nbsp;</div>';
 				}
@@ -92,7 +92,7 @@ $copyright = sprintf( __( 'All materials of the site are avaliabe under license 
 			<?php if ( get_theme_mod( 'footer_policy' ) ) { ?>
 				<div class="widget-bottom widget-bottom-policy">
 					<?php if ( get_theme_mod( 'footer_policy_title' ) ) { ?>
-						<h3 class="widget-title"><?php echo get_theme_mod( 'footer_policy_title', esc_html__( 'Security policy', 'knd' ) ); ?></h3>
+						<h2 class="widget-title"><?php echo get_theme_mod( 'footer_policy_title', esc_html__( 'Security policy', 'knd' ) ); ?></h2>
 					<?php } ?>
 					<div class="textwidget">
 						<?php echo do_shortcode( wpautop( get_theme_mod( 'footer_policy' ) ) ); ?>
