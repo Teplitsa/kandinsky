@@ -354,12 +354,12 @@ function knd_block_leyka_cards_render_callback( $attr ) {
 			};
 
 			$html_founded = '';
-			if ( isset( $attr['showTargetAmount'] ) && $attr['showTargetAmount'] ) {
+			if ( isset( $attr['showCollectedAmount'] ) && $attr['showCollectedAmount'] ) {
 				$html_founded = '<div class="funded"> ' . leyka_format_amount( $campaign->total_funded ) . ' ' . leyka_get_currency_label() . '</div>';
 			};
 
 			$html_collected = '';
-			if ( isset( $attr['showCollectedAmount'] ) && $attr['showCollectedAmount'] ) {
+			if ( isset( $attr['showTargetAmount'] ) && $attr['showTargetAmount'] ) {
 				$html_collected = '<div class="target">' . sprintf(__('We need to raise: %s %s', 'leyka'), leyka_format_amount($campaign->target), leyka_get_currency_label() ) . '</div>';
 			};
 

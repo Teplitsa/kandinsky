@@ -588,11 +588,11 @@
 							el( PanelRow, {},
 								el( ToggleControl,
 									{
-										label: __('Show Target Amount', 'knd'),
+										label: __('Show Collected Amount', 'knd'),
 										onChange: ( value ) => {
-											props.setAttributes( { showTargetAmount: value } );
+											props.setAttributes( { showCollectedAmount: value } );
 										},
-										checked: props.attributes.showTargetAmount,
+										checked: props.attributes.showCollectedAmount,
 									}
 								)
 							),
@@ -600,11 +600,11 @@
 							el( PanelRow, {},
 								el( ToggleControl,
 									{
-										label: __('Show Collected Amount', 'knd'),
+										label: __('Show Target Amount', 'knd'),
 										onChange: ( value ) => {
-											props.setAttributes( { showCollectedAmount: value } );
+											props.setAttributes( { showTargetAmount: value } );
 										},
-										checked: props.attributes.showCollectedAmount,
+										checked: props.attributes.showTargetAmount,
 									}
 								)
 							),
