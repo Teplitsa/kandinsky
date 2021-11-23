@@ -3410,7 +3410,7 @@
 
 							el( 'a',
 								{
-									href: kndBlock.getAdminUrl.parents,
+									href: kndBlock.getAdminUrl.partners,
 									target: '_blank',
 								},
 								__( 'Edit partners', 'knd' ),
