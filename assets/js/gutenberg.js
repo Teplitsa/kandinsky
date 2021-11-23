@@ -327,9 +327,11 @@ function kndMutationObserver(){
 
 function kndReinitFlickity(){
 	let carousel     = jQuery( '.knd-block-carousel' ); // .not('.flickity-enabled').length
-	let flktyData    = carousel.attr( 'data-flickity' );
-	let flktyOptions = JSON.parse( flktyData );
-	carousel.flickity( flktyOptions ).flickity( 'resize' );
+	if ( jQuery( '.knd-block-carousel' ).length ) {
+		let flktyData    = carousel.attr( 'data-flickity' );
+		let flktyOptions = JSON.parse( flktyData );
+		carousel.flickity( flktyOptions ).flickity( 'resize' );
+	}
 }
 
 
