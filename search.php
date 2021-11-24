@@ -62,7 +62,6 @@ get_header();
 			<article class="tpl-search">
 				<div class="entry-summary">
 					<p><?php esc_html_e( 'Nothing found under your request', 'knd' ); ?></p>
-					<?php // //$l = __('Enter terms for search in the form and hit Enter', 'knd'); ?>
 				</div>
 			</article>
 
