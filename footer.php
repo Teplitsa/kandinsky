@@ -119,9 +119,14 @@ $copyright = sprintf( __( 'All materials of the site are avaliabe under license 
 				<?php if ( get_theme_mod( 'footer_creator', true ) ) { ?>
 					<div class="flex-cell flex-sm-4 flex-md-6">
 						<div class="knd-brand">
-							<a title="<?php esc_attr_e( 'Project Kandinsky', 'knd' ) ;?>" href="<?php echo esc_attr( KND_OFFICIAL_WEBSITE_URL ); ?>" target="_blank">
+							<a href="<?php echo esc_attr( KND_OFFICIAL_WEBSITE_URL ); ?>" target="_blank">
 								<div class="support"><?php esc_html_e( 'Powered by Kandinsky', 'knd' ); ?></div>
-								<div class="knd-banner"><svg class="knd-icon pic-knd"><use xlink:href="#pic-knd" /></svg></div>
+								<div class="knd-banner">
+									<svg class="knd-icon pic-knd">
+										<title><?php esc_html_e( 'Kandinsky logo', 'knd' ); ?></title>
+										<use xlink:href="#pic-knd" />
+									</svg>
+								</div>
 							</a>
 						</div>
 					</div>

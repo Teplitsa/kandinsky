@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-23 11:19+0200\n"
-"PO-Revision-Date: 2021-11-23 11:19+0200\n"
+"POT-Creation-Date: 2021-11-24 06:46+0200\n"
+"PO-Revision-Date: 2021-11-24 06:47+0200\n"
 "Last-Translator: ahaenor <ahaenor@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -42,7 +42,7 @@ msgstr ""
 "К сожалению, запрошенная страница удалена или никогда не существовала. "
 "Пожалуйста, воспользуйтесь поиском или перейдите на Главную."
 
-#: archive-leyka_campaign.php:30 index.php:57
+#: archive-leyka_campaign.php:30 index.php:43
 msgid "Unfortunately, nothing found"
 msgstr "К сожалению, ничего не найдено"
 
@@ -137,7 +137,7 @@ msgstr "Карточки кампаний"
 
 #: assets/js/blocks.js:343 src/js/blocks/cards.js:206
 msgid "Leyka: Companies cards."
-msgstr "Лейка: Карточки компаний"
+msgstr "Лейка: Карточки компаний."
 
 #: assets/js/blocks.js:346 src/js/blocks/cards.js:209
 msgid "campaign"
@@ -199,12 +199,12 @@ msgid "Show Progressbar"
 msgstr "Показывать прогрессбар"
 
 #: assets/js/blocks.js:591 src/js/blocks/cards.js:454
-msgid "Show Target Amount"
-msgstr "Показывать целевую сумму"
-
-#: assets/js/blocks.js:603 src/js/blocks/cards.js:466
 msgid "Show Collected Amount"
 msgstr "Показывать собранную сумму"
+
+#: assets/js/blocks.js:603 src/js/blocks/cards.js:466
+msgid "Show Target Amount"
+msgstr "Показывать целевую сумму"
 
 #: assets/js/blocks.js:615 src/js/blocks/cards.js:478
 msgid "Show Button"
@@ -1603,7 +1603,7 @@ msgstr "Заголовки и надписи"
 
 #: core/customizer/customizer-deprecated.php:193
 #: core/customizer/theme-mods/archive-settings.php:47
-#: core/template-tags.php:240 core/template-tags.php:347
+#: core/template-tags.php:254 core/template-tags.php:361
 #: modules/starter/plot_config.php:232
 msgid "Our projects"
 msgstr "Наши проекты"
@@ -1615,7 +1615,7 @@ msgstr "Заголовок страницы проектов"
 
 #: core/customizer/customizer-deprecated.php:212
 #: core/customizer/theme-mods/archive-settings.php:74
-#: core/template-tags.php:252 single-leyka_campaign.php:29
+#: core/template-tags.php:266 single-leyka_campaign.php:29
 #: single-leyka_campaign.php:44
 msgid "They need help"
 msgstr "Им нужна помощь"
@@ -1627,7 +1627,7 @@ msgstr "Заголовок страницы активных кампаний"
 
 #: core/customizer/customizer-deprecated.php:228
 #: core/customizer/theme-mods/archive-settings.php:82
-#: core/template-tags.php:247 single-leyka_campaign.php:25
+#: core/template-tags.php:261 single-leyka_campaign.php:25
 #: single-leyka_campaign.php:47
 msgid "They alredy got help"
 msgstr "Уже получили помощь"
@@ -1705,7 +1705,7 @@ msgid "Posts archive title"
 msgstr "Заголовок страницы архива"
 
 #: core/customizer/theme-mods/archive-settings.php:23
-#: core/template-tags.php:232
+#: core/template-tags.php:246
 msgid "Blog"
 msgstr "Блог"
 
@@ -1988,8 +1988,8 @@ msgid "Address"
 msgstr "Адрес"
 
 #: core/customizer/theme-mods/header.php:348
-#: core/customizer/theme-mods/header.php:495 core/template-tags.php:558
-#: search.php:19 searchform.php:9
+#: core/customizer/theme-mods/header.php:495 search.php:11 searchform.php:11
+#: searchform.php:13
 msgid "Search"
 msgstr "Поиск"
 
@@ -1999,8 +1999,8 @@ msgid "Button Text"
 msgstr "Текст кнопки"
 
 #: core/customizer/theme-mods/header.php:382
-#: core/customizer/theme-mods/header.php:527 core/template-tags.php:606
-#: core/template-tags.php:634 core/template-tags.php:712
+#: core/customizer/theme-mods/header.php:527 core/template-tags.php:613
+#: core/template-tags.php:641 core/template-tags.php:719
 #: modules/donations/donations.php:160 modules/starter/plot_config.php:194
 #: modules/starter/plot_config.php:210 modules/starter/plot_config.php:219
 msgid "Help now"
@@ -2062,7 +2062,7 @@ msgstr "Похожие статьи"
 msgid "Related Posts Title"
 msgstr "Заголовок похожих статей"
 
-#: core/customizer/theme-mods/post-settings.php:47 core/template-tags.php:818
+#: core/customizer/theme-mods/post-settings.php:47 core/template-tags.php:825
 msgid "Related posts"
 msgstr "Познакомьтесь с другими проектами"
 
@@ -2084,7 +2084,7 @@ msgid "Related Projects Title"
 msgstr "Заголовок похожие проекты"
 
 #: core/customizer/theme-mods/project-settings.php:47
-#: core/template-tags.php:831 modules/starter/plot_config.php:234
+#: core/template-tags.php:838 modules/starter/plot_config.php:234
 msgid "Related projects"
 msgstr "Познакомьтесь с другими проектами"
 
@@ -2230,7 +2230,7 @@ msgstr "Фиксированный"
 msgid "Persons categories"
 msgstr "Категории людей"
 
-#: core/person.php:9 modules/org/hooks.php:10
+#: core/person.php:9 core/template-tags.php:139 modules/org/hooks.php:10
 msgid "Categories"
 msgstr "Категории"
 
@@ -2319,60 +2319,53 @@ msgctxt "Yoast SEO"
 msgid "Home"
 msgstr "Главная"
 
-#: core/template-tags.php:160 index.php:32 index.php:34 index.php:35
-#: page-events.php:21
+#: core/template-tags.php:168 core/template-tags.php:244 index.php:30
+#: index.php:31 index.php:32 page-events.php:21 search.php:50 search.php:51
+#: search.php:52
 msgid "Page"
 msgstr "Страница"
 
-#: core/template-tags.php:235
+#: core/template-tags.php:249
 msgid "Donations history"
 msgstr "История пожертвований"
 
-#: core/template-tags.php:257
+#: core/template-tags.php:271
 msgid "Search results"
 msgstr "Результаты поиска"
 
-#: core/template-tags.php:260
+#: core/template-tags.php:274
 msgid "404: Page not found"
 msgstr "Ошибка 404: Страница не найдена"
 
-#: core/template-tags.php:346
+#: core/template-tags.php:360
 msgid "More projects"
 msgstr "Еще проекты"
 
-#: core/template-tags.php:349
+#: core/template-tags.php:363
 msgid "More news"
 msgstr "Еще новости"
 
-#: core/template-tags.php:350
+#: core/template-tags.php:364
 msgid "Latest news"
 msgstr "Последние новости"
 
-#: core/template-tags.php:539
+#: core/template-tags.php:553
 msgid "Open search"
 msgstr "Открыть поиск"
 
-#: core/template-tags.php:558
-msgid "Enter text to search ..."
-msgstr "Введите текст для поиска ..."
-
-#: core/template-tags.php:559
-msgid "Start search"
-msgstr "Начать поиск"
-
-#: core/template-tags.php:567
+#: core/template-tags.php:574
 msgid "Close search"
 msgstr "Закрыть поиск"
 
-#: core/template-tags.php:582
+#: core/template-tags.php:589
 msgid "Open Off-Canvas"
 msgstr "Открыть боковую панель"
 
-#: core/template-tags.php:595
+#: core/template-tags.php:602
 msgid "Close Off-Canvas"
 msgstr "Закрыть боковую панель"
 
-#: core/template-tags.php:733 functions.php:83 template-parts/offcanvas.php:31
+#: core/template-tags.php:740 functions.php:83 template-parts/offcanvas.php:31
 msgid "Primary menu"
 msgstr "Главное меню"
 
@@ -2397,6 +2390,10 @@ msgstr "Проект Кандинский"
 #: footer.php:123
 msgid "Powered by Kandinsky"
 msgstr "Работает на Кандинском"
+
+#: footer.php:126
+msgid "Kandinsky logo"
+msgstr "Логотип Кандинский"
 
 #. Author of the plugin/theme
 #: functions.php:235
@@ -2555,11 +2552,11 @@ msgstr "Еще мероприятия"
 msgid "Msk"
 msgstr "Мск"
 
-#: index.php:34
+#: index.php:31 search.php:51
 msgid "Previous"
 msgstr "Предыдущая"
 
-#: index.php:35
+#: index.php:32 search.php:52
 msgid "Next"
 msgstr "Следующая"
 
@@ -2905,7 +2902,7 @@ msgstr "Лось Вениамин Робертович"
 msgid "Home page"
 msgstr "Главная"
 
-#: search.php:24
+#: search.php:16
 #, php-format
 msgid "%s result"
 msgid_plural "%s results"
@@ -2913,17 +2910,17 @@ msgstr[0] "%s результат"
 msgstr[1] "%s результата"
 msgstr[2] "%s результатов"
 
-#: search.php:32
-msgid "Enter terms for search in the form and hit Enter"
-msgstr "Укажите слова для поиска в форме и нажмите Enter"
-
-#: search.php:36
+#: search.php:64
 msgid "Nothing found under your request"
 msgstr "По вашему запросу ничего не найдено"
 
-#: searchform.php:12
-msgid "Find"
-msgstr "Найти"
+#: searchform.php:13
+msgid "Enter text to search ..."
+msgstr "Введите текст для поиска ..."
+
+#: searchform.php:15
+msgid "Start search"
+msgstr "Начать поиск"
 
 #: src/experimental/donations.js:47
 msgid "Leyka Donations"
@@ -3819,6 +3816,12 @@ msgstr "https://te-st.ru/"
 #. Author URI of the plugin/theme
 msgid "https://te-st.ru/"
 msgstr "https://te-st.ru/"
+
+#~ msgid "Enter terms for search in the form and hit Enter"
+#~ msgstr "Укажите слова для поиска в форме и нажмите Enter"
+
+#~ msgid "Find"
+#~ msgstr "Найти"
 
 #, php-format
 #~ msgid "Thumbnail for - %s"
