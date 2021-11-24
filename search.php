@@ -3,14 +3,6 @@
  * Search tempalte
  **/
 
-$posts = $wp_query->posts;
-$s_query = get_search_query();
-$num = 0;
-
-if(!empty($s_query) && $posts > 0){
-	$num = (int)$wp_query->found_posts;
-}
-
 get_header();
 ?>
 <div class="page-header">
@@ -21,32 +13,64 @@ get_header();
 	</div>
 	<div class="widget-full widget_search search-holder">
 		<?php get_search_form();?>
-		<div class="sr-num"><?php printf( _n( '%s result', '%s results', $num, 'knd' ), $num );?></div>
+		<div class="sr-num"><?php printf( _n( '%s result', '%s results', (int) $wp_query->found_posts, 'knd' ), (int) $wp_query->found_posts );?></div>
 	</div>
 </div>
 
 <div class="main-content container search-loop">
+
+	<?php if ( have_posts() ) { ?>
+
 	<div class="text-column">
+
 		<?php
-			if(empty($s_query)){
-				$l = __('Enter terms for search in the form and hit Enter', 'knd');
-				echo "<article class='tpl-search'><div class='entry-summary'><p>{$l }</p></div></article>";	
-			}
-			elseif($num == 0){
-				$l = __('Nothing found under your request', 'knd');
-				echo "<article class='tpl-search'><div class='entry-summary'><p>{$l}</p></div></article>";
-			}
-			else {
-				foreach($posts as $p){
-					knd_search_card($p);
-				}
-			}
+		while ( have_posts() ) {
+			the_post();
+
+			$post_type_object = get_post_type_object(get_post_type());
+			$post_meta = $post_type_object->labels->singular_name;
+			$excerpt = apply_filters( 'knd_the_title', knd_get_post_excerpt( $post, 40, true ) );
+			?>
+			<article class="tpl-search">
+				
+				<h2 class="entry-title">
+					<a href="<?php the_permalink(); ?>" class="entry-link"><?php the_title();?></a>
+				</h2>
+				<div class="entry-meta"><?php echo $post_meta; ?></div>
+				<div class="entry-summary"><?php echo $excerpt;?></div>
+			</article>
+			<?php
+		}
 		?>
 	</div>
+
+	<?php
+		the_posts_pagination(
+			array(
+				'before_page_number' => '<span class="screen-reader-text"> ' . esc_html__( 'Page', 'knd' ) . ' </span>',
+				'prev_text'          => esc_html__( 'Previous', 'knd' ) . '<span class="screen-reader-text"> ' . esc_html__( 'Page', 'knd' ) . '</span>',
+				'next_text'          => esc_html__( 'Next', 'knd' ) . '<span class="screen-reader-text"> ' . esc_html__( 'Page', 'knd' ) . '</span>',
+				'class'              => 'knd-pagination',
+			)
+		);
+	?>
+
+	<?php } else { ?>
+
+		<div class="text-column">
+
+			<article class="tpl-search">
+				<div class="entry-summary">
+					<p><?php esc_html_e( 'Nothing found under your request', 'knd' ); ?></p>
+					<?php // //$l = __('Enter terms for search in the form and hit Enter', 'knd'); ?>
+				</div>
+			</article>
+
+		</div>
+
+	<?php } ?>
+
 </div>
 
-<?php if($num > 0) { ?>
-<div class="paging"><?php knd_paging_nav(); ?></div>
-<?php } ?>
-
 <?php get_footer();
+
