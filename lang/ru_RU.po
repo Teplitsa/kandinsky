@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-23 10:10+0200\n"
-"PO-Revision-Date: 2021-11-23 10:11+0200\n"
+"POT-Creation-Date: 2021-11-23 11:19+0200\n"
+"PO-Revision-Date: 2021-11-23 11:19+0200\n"
 "Last-Translator: ahaenor <ahaenor@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -42,7 +42,7 @@ msgstr ""
 "К сожалению, запрошенная страница удалена или никогда не существовала. "
 "Пожалуйста, воспользуйтесь поиском или перейдите на Главную."
 
-#: archive-leyka_campaign.php:30 index.php:18
+#: archive-leyka_campaign.php:30 index.php:57
 msgid "Unfortunately, nothing found"
 msgstr "К сожалению, ничего не найдено"
 
@@ -1489,7 +1489,7 @@ msgstr "Развернуть дочернее меню"
 msgid "Collapse child menu"
 msgstr "Свернуть дочернее меню"
 
-#: core/assets.php:80 core/template-tags.php:582
+#: core/assets.php:80
 msgid "Off-Canvas is open"
 msgstr "Боковая панель открыта"
 
@@ -2319,7 +2319,8 @@ msgctxt "Yoast SEO"
 msgid "Home"
 msgstr "Главная"
 
-#: core/template-tags.php:160 page-events.php:21
+#: core/template-tags.php:160 index.php:32 index.php:34 index.php:35
+#: page-events.php:21
 msgid "Page"
 msgstr "Страница"
 
@@ -2553,6 +2554,14 @@ msgstr "Еще мероприятия"
 #: inc/events/events-tags.php:123
 msgid "Msk"
 msgstr "Мск"
+
+#: index.php:34
+msgid "Previous"
+msgstr "Предыдущая"
+
+#: index.php:35
+msgid "Next"
+msgstr "Следующая"
 
 #: modules/donations/donations.php:60
 msgid "Please, specify your donation amount"

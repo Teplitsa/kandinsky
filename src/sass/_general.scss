@@ -18,9 +18,35 @@ body {
 
 //global page elements
 .main-content {
-	overflow:hidden;
 	min-height: 60vh;
-} 
+
+	&:not(.knd-overflow-visible) {
+		overflow:hidden;
+	}
+
+	&.archive-post-list {
+		margin-top: 70px;
+		min-height: initial;
+
+		> .container {
+			margin-top: -70px;
+		}
+
+		.knd-pagination {
+			margin-bottom: 0;
+		}
+	}
+
+	&.search-loop {
+		min-height: initial;
+		padding-bottom: 70px;
+		padding-top: 5px;
+
+		.knd-pagination {
+			margin-bottom: 0;
+		}
+	}
+}
 
 .heading {
 	h1 {

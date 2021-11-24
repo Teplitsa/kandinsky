@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Kandinsky\n"
-"POT-Creation-Date: 2021-11-23 10:10+0200\n"
+"POT-Creation-Date: 2021-11-23 11:19+0200\n"
 "PO-Revision-Date: 2020-06-22 06:53+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -36,7 +36,7 @@ msgid ""
 "search field to find the information you need or visit the homepage."
 msgstr ""
 
-#: archive-leyka_campaign.php:30 index.php:18
+#: archive-leyka_campaign.php:30 index.php:57
 msgid "Unfortunately, nothing found"
 msgstr ""
 
@@ -1444,7 +1444,7 @@ msgstr ""
 msgid "Collapse child menu"
 msgstr ""
 
-#: core/assets.php:80 core/template-tags.php:582
+#: core/assets.php:80
 msgid "Off-Canvas is open"
 msgstr ""
 
@@ -2255,7 +2255,8 @@ msgctxt "Yoast SEO"
 msgid "Home"
 msgstr ""
 
-#: core/template-tags.php:160 page-events.php:21
+#: core/template-tags.php:160 index.php:32 index.php:34 index.php:35
+#: page-events.php:21
 msgid "Page"
 msgstr ""
 
@@ -2484,6 +2485,14 @@ msgstr ""
 
 #: inc/events/events-tags.php:123
 msgid "Msk"
+msgstr ""
+
+#: index.php:34
+msgid "Previous"
+msgstr ""
+
+#: index.php:35
+msgid "Next"
 msgstr ""
 
 #: modules/donations/donations.php:60

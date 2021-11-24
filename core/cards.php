@@ -10,7 +10,7 @@ if ( ! defined( 'WPINC' ) )
 function knd_post_card( WP_Post $cpost ) {
 	$pl = get_permalink( $cpost );
 	?>
-<article <?php post_class('flex-cell flex-md-6 flex-lg-4 tpl-post card', $cpost);?>>
+<article <?php post_class('flex-cell flex-md-6 flex-lg-4 tpl-post', $cpost);?>>
 	<a href="<?php echo esc_url( $pl ); ?>" class="thumbnail-link">
 		<div class="entry-preview"><?php echo knd_post_thumbnail( $cpost->ID, 'post-thumbnail' );?></div>
 		<div class="entry-data">
@@ -25,7 +25,7 @@ function knd_post_card( WP_Post $cpost ) {
 function knd_related_post_card( WP_Post $cpost ) {
 	$pl = get_permalink( $cpost );?>
 
-<article <?php post_class('flex-cell flex-md-6 tpl-related-post card', $cpost);?>>
+<article <?php post_class('flex-cell flex-md-6 tpl-related-post', $cpost);?>>
 	<a href="<?php echo esc_url( $pl ); ?>" class="entry-link">
 		<div class="entry-preview"><?php echo knd_post_thumbnail( $cpost->ID, 'post-thumbnail' );?></div>
 		<div class="entry-data">
@@ -69,21 +69,6 @@ function knd_org_card( WP_Post $cpost ) {
 		</a>
 	</div>
 	<?php
-}
-
-/** search **/
-function knd_search_card( WP_Post $cpost ) {
-	$pl = get_permalink( $cpost );
-	$ex = apply_filters( 'knd_the_title', knd_get_post_excerpt( $cpost, 40, true ) );
-	?>
-<article class="tpl-search">
-	<a href="<?php echo $pl; ?>" class="entry-link">
-		<h2 class="entry-title"><?php echo get_the_title($cpost);?></h2>
-		<div class="entry-meta"><?php echo $pl ;?></div>
-		<div class="entry-summary"><?php echo $ex;?></div>
-	</a>
-</article>
-<?php
 }
 
 /** == Helpers == **/

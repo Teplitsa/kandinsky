@@ -1,64 +1,53 @@
 <?php
 /**
  * The main template file.
+ * 
+ * @package Kandinsky
  */
- 
-$posts = $wp_query->posts; 
-$paged = (get_query_var('paged', 0)) ? get_query_var('paged', 0) : 1;
 
-get_header();
-?>
+get_header(); ?>
 
 <div class="container heading">
 	<?php knd_section_title(); ?>
 </div>
 
-<?php if(empty($posts)) { ?>
-	<div class="main-content listing-bg"><div class="container">
-		<div class="empty-message"><?php esc_html_e('Unfortunately, nothing found', 'knd');?></div>
-	</div></div>
-
-<?php  } else { ?>
-	<?php 
-	if($paged == 1) { //featured posts
-		//2 for featured 
-		$featured = array_slice($posts, 0, 2); 
-		array_splice($posts, 0, 2);
-	?>
-
-		<div class="featured-post listing-bg">
-			<div class="container">
-				<div class="flex-row cards-loop">
-				<?php
-					foreach($featured as $f){
-						knd_related_post_card($f);
-					}
-				?>
-				</div>
-			</div>
-		</div>
-
-	<?php } ?>
-
-	<?php if(!empty($posts)):?>
-	<div class="main-content cards-holder listing-bg archive-post-list <?php if($paged > 1):?>next-page<?php endif?>">
+<?php if ( have_posts() ) { ?>
+	<div class="main-content cards-holder listing-bg archive-post-list knd-overflow-visible">
 		<div class="container">
 			<div class="flex-row start cards-loop">
 			<?php
-				foreach($posts as $p){
-					knd_post_card($p);
+				while ( have_posts() ) {
+					the_post();
+					get_template_part( 'template-parts/content', 'archive' );
 				}
 			?>
 			</div>
 		</div>
 
-		<div class="paging"><?php knd_paging_nav( $wp_query ); ?></div>
+		<?php
+			the_posts_pagination(
+				array(
+					'before_page_number' => '<span class="screen-reader-text"> ' . esc_html__( 'Page', 'knd' ) . ' </span>',
+					'prev_text'          => esc_html__( 'Previous', 'knd' ) . '<span class="screen-reader-text"> ' . esc_html__( 'Page', 'knd' ) . '</span>',
+					'next_text'          => esc_html__( 'Next', 'knd' ) . '<span class="screen-reader-text"> ' . esc_html__( 'Page', 'knd' ) . '</span>',
+					'class'              => 'knd-pagination',
+				)
+			);
+		?>
 
 	</div>
-	<?php endif;?>
 
+<?php } else { ?>
+	<div class="main-content listing-bg">
+		<div class="container">
+			<div class="empty-message"><?php esc_html_e( 'Unfortunately, nothing found', 'knd' );?></div>
+			<?php get_search_form(); ?>
+		</div>
+	</div>
 <?php } ?>
 
-<?php knd_bottom_blocks(); ?>
+<?php
 
-<?php get_footer();
+knd_bottom_blocks();
+
+get_footer();

@@ -64,8 +64,8 @@
 	&:hover {
 		.entry-preview:after { background: rgba(0,0,0, 0.25); }
 	}
-	
-	a {
+
+	.thumbnail-link {
 		display: block;
 		//color: $color-text;
 		color: $color-text;
@@ -84,20 +84,26 @@
 		overflow: hidden;
 		border-radius: var(--knd-image-border-radius);
 		img {
-		  margin-bottom:0px;
+			margin-bottom:0px;
 		}
 	}
-	
+
 	.entry-meta {
 		@include post-meta();
 	}
-	
+
 	.entry-title {
-		@include knd-head-card-text();
 		margin-bottom: $base*0.75;
 		padding-top: 0px;
 		hyphens: auto;
 		color: var(--knd-color-headings);
+		line-height: 1.25;
+		font-size: 1rem;
+
+		@media (max-width: 991px) {
+			font-size: 0.9rem;
+		}
+
 	}
 	
 	.entry-summary {
@@ -236,6 +242,12 @@
 		color: $color-text;
 	}
 
+	.entry-link {
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
 	.entry-title {
 		@include knd-body-title-text();
 		padding-top: 0px;
@@ -248,6 +260,7 @@
 		font-size: .85em;
 		margin-top: 2px;
 		margin-bottom: 1em;
+		opacity: .7;
 	}
 	
 	.entry-summary {
@@ -262,7 +275,7 @@
 	padding-bottom: 70px;
 
 	&.cards-holder {
-		padding-top:0px;
+		padding-top: 10px;
 
 		&.next-page {
 			padding-top: $gut;
