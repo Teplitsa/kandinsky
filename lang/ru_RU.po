@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-24 06:46+0200\n"
-"PO-Revision-Date: 2021-11-24 06:47+0200\n"
+"POT-Creation-Date: 2021-11-25 10:35+0200\n"
+"PO-Revision-Date: 2021-11-25 10:37+0200\n"
 "Last-Translator: ahaenor <ahaenor@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -42,9 +42,13 @@ msgstr ""
 "К сожалению, запрошенная страница удалена или никогда не существовала. "
 "Пожалуйста, воспользуйтесь поиском или перейдите на Главную."
 
-#: archive-leyka_campaign.php:30 index.php:43
+#: archive-leyka_campaign.php:30 index.php:34
 msgid "Unfortunately, nothing found"
 msgstr "К сожалению, ничего не найдено"
+
+#: archive-leyka_campaign.php:34
+msgid "Campaigns navigation"
+msgstr "Навигация по кампаниям"
 
 #: archive-leyka_donation.php:20 assets/js/blocks.js:103
 #: src/js/blocks/campaign.js:102
@@ -54,6 +58,10 @@ msgstr "Кампания"
 #: archive-leyka_donation.php:38
 msgid "Anonymous"
 msgstr "Анонимный"
+
+#: archive-leyka_donation.php:52
+msgid "Donations navigation"
+msgstr "Навигация по пожертвованиям"
 
 #: assets/js/admin.js:117 inc/events/events-metabox.php:148
 #: src/js/admin/admin.js:117
@@ -1603,7 +1611,7 @@ msgstr "Заголовки и надписи"
 
 #: core/customizer/customizer-deprecated.php:193
 #: core/customizer/theme-mods/archive-settings.php:47
-#: core/template-tags.php:254 core/template-tags.php:361
+#: core/template-tags.php:254 core/template-tags.php:380
 #: modules/starter/plot_config.php:232
 msgid "Our projects"
 msgstr "Наши проекты"
@@ -1999,8 +2007,8 @@ msgid "Button Text"
 msgstr "Текст кнопки"
 
 #: core/customizer/theme-mods/header.php:382
-#: core/customizer/theme-mods/header.php:527 core/template-tags.php:613
-#: core/template-tags.php:641 core/template-tags.php:719
+#: core/customizer/theme-mods/header.php:527 core/template-tags.php:632
+#: core/template-tags.php:660 core/template-tags.php:738
 #: modules/donations/donations.php:160 modules/starter/plot_config.php:194
 #: modules/starter/plot_config.php:210 modules/starter/plot_config.php:219
 msgid "Help now"
@@ -2062,7 +2070,7 @@ msgstr "Похожие статьи"
 msgid "Related Posts Title"
 msgstr "Заголовок похожих статей"
 
-#: core/customizer/theme-mods/post-settings.php:47 core/template-tags.php:825
+#: core/customizer/theme-mods/post-settings.php:47 core/template-tags.php:844
 msgid "Related posts"
 msgstr "Познакомьтесь с другими проектами"
 
@@ -2084,7 +2092,7 @@ msgid "Related Projects Title"
 msgstr "Заголовок похожие проекты"
 
 #: core/customizer/theme-mods/project-settings.php:47
-#: core/template-tags.php:838 modules/starter/plot_config.php:234
+#: core/template-tags.php:857 modules/starter/plot_config.php:234
 msgid "Related projects"
 msgstr "Познакомьтесь с другими проектами"
 
@@ -2319,9 +2327,9 @@ msgctxt "Yoast SEO"
 msgid "Home"
 msgstr "Главная"
 
-#: core/template-tags.php:168 core/template-tags.php:244 index.php:30
-#: index.php:31 index.php:32 page-events.php:21 search.php:50 search.php:51
-#: search.php:52
+#: core/template-tags.php:168 core/template-tags.php:244
+#: core/template-tags.php:363 core/template-tags.php:364
+#: core/template-tags.php:365 page-events.php:21
 msgid "Page"
 msgstr "Страница"
 
@@ -2337,35 +2345,47 @@ msgstr "Результаты поиска"
 msgid "404: Page not found"
 msgstr "Ошибка 404: Страница не найдена"
 
-#: core/template-tags.php:360
+#: core/template-tags.php:362
+msgid "Posts navigation"
+msgstr "Навигация по записям"
+
+#: core/template-tags.php:364
+msgid "Previous"
+msgstr "Предыдущая"
+
+#: core/template-tags.php:365
+msgid "Next"
+msgstr "Следующая"
+
+#: core/template-tags.php:379
 msgid "More projects"
 msgstr "Еще проекты"
 
-#: core/template-tags.php:363
+#: core/template-tags.php:382
 msgid "More news"
 msgstr "Еще новости"
 
-#: core/template-tags.php:364
+#: core/template-tags.php:383
 msgid "Latest news"
 msgstr "Последние новости"
 
-#: core/template-tags.php:553
+#: core/template-tags.php:572
 msgid "Open search"
 msgstr "Открыть поиск"
 
-#: core/template-tags.php:574
+#: core/template-tags.php:593
 msgid "Close search"
 msgstr "Закрыть поиск"
 
-#: core/template-tags.php:589
+#: core/template-tags.php:608
 msgid "Open Off-Canvas"
 msgstr "Открыть боковую панель"
 
-#: core/template-tags.php:602
+#: core/template-tags.php:621
 msgid "Close Off-Canvas"
 msgstr "Закрыть боковую панель"
 
-#: core/template-tags.php:740 functions.php:83 template-parts/offcanvas.php:31
+#: core/template-tags.php:759 functions.php:83 template-parts/offcanvas.php:31
 msgid "Primary menu"
 msgstr "Главное меню"
 
@@ -2382,10 +2402,6 @@ msgstr "Обновить до версии %s"
 #: footer.php:58 modules/starter/plot_config.php:256
 msgid "Our Work"
 msgstr "Наша работа"
-
-#: footer.php:122
-msgid "Project Kandinsky"
-msgstr "Проект Кандинский"
 
 #: footer.php:123
 msgid "Powered by Kandinsky"
@@ -2443,8 +2459,6 @@ msgid "Related heading"
 msgstr "Заголовок похожих мероприятий"
 
 #: inc/events/events-functions.php:279
-#, fuzzy
-#| msgid "Button text"
 msgid "CTA button text"
 msgstr "Текст кнопки"
 
@@ -2551,14 +2565,6 @@ msgstr "Еще мероприятия"
 #: inc/events/events-tags.php:123
 msgid "Msk"
 msgstr "Мск"
-
-#: index.php:31 search.php:51
-msgid "Previous"
-msgstr "Предыдущая"
-
-#: index.php:32 search.php:52
-msgid "Next"
-msgstr "Следующая"
 
 #: modules/donations/donations.php:60
 msgid "Please, specify your donation amount"
@@ -2910,7 +2916,7 @@ msgstr[0] "%s результат"
 msgstr[1] "%s результата"
 msgstr[2] "%s результатов"
 
-#: search.php:64
+#: search.php:55
 msgid "Nothing found under your request"
 msgstr "По вашему запросу ничего не найдено"
 
@@ -3816,6 +3822,9 @@ msgstr "https://te-st.ru/"
 #. Author URI of the plugin/theme
 msgid "https://te-st.ru/"
 msgstr "https://te-st.ru/"
+
+#~ msgid "Project Kandinsky"
+#~ msgstr "Проект Кандинский"
 
 #~ msgid "Enter terms for search in the form and hit Enter"
 #~ msgstr "Укажите слова для поиска в форме и нажмите Enter"

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Kandinsky\n"
-"POT-Creation-Date: 2021-11-24 06:46+0200\n"
+"POT-Creation-Date: 2021-11-25 10:35+0200\n"
 "PO-Revision-Date: 2020-06-22 06:53+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -36,8 +36,12 @@ msgid ""
 "search field to find the information you need or visit the homepage."
 msgstr ""
 
-#: archive-leyka_campaign.php:30 index.php:43
+#: archive-leyka_campaign.php:30 index.php:34
 msgid "Unfortunately, nothing found"
+msgstr ""
+
+#: archive-leyka_campaign.php:34
+msgid "Campaigns navigation"
 msgstr ""
 
 #: archive-leyka_donation.php:20 assets/js/blocks.js:103
@@ -47,6 +51,10 @@ msgstr ""
 
 #: archive-leyka_donation.php:38
 msgid "Anonymous"
+msgstr ""
+
+#: archive-leyka_donation.php:52
+msgid "Donations navigation"
 msgstr ""
 
 #: assets/js/admin.js:117 inc/events/events-metabox.php:148
@@ -1554,7 +1562,7 @@ msgstr ""
 
 #: core/customizer/customizer-deprecated.php:193
 #: core/customizer/theme-mods/archive-settings.php:47
-#: core/template-tags.php:254 core/template-tags.php:361
+#: core/template-tags.php:254 core/template-tags.php:380
 #: modules/starter/plot_config.php:232
 msgid "Our projects"
 msgstr ""
@@ -1939,8 +1947,8 @@ msgid "Button Text"
 msgstr ""
 
 #: core/customizer/theme-mods/header.php:382
-#: core/customizer/theme-mods/header.php:527 core/template-tags.php:613
-#: core/template-tags.php:641 core/template-tags.php:719
+#: core/customizer/theme-mods/header.php:527 core/template-tags.php:632
+#: core/template-tags.php:660 core/template-tags.php:738
 #: modules/donations/donations.php:160 modules/starter/plot_config.php:194
 #: modules/starter/plot_config.php:210 modules/starter/plot_config.php:219
 msgid "Help now"
@@ -2002,7 +2010,7 @@ msgstr ""
 msgid "Related Posts Title"
 msgstr ""
 
-#: core/customizer/theme-mods/post-settings.php:47 core/template-tags.php:825
+#: core/customizer/theme-mods/post-settings.php:47 core/template-tags.php:844
 msgid "Related posts"
 msgstr ""
 
@@ -2024,7 +2032,7 @@ msgid "Related Projects Title"
 msgstr ""
 
 #: core/customizer/theme-mods/project-settings.php:47
-#: core/template-tags.php:838 modules/starter/plot_config.php:234
+#: core/template-tags.php:857 modules/starter/plot_config.php:234
 msgid "Related projects"
 msgstr ""
 
@@ -2255,9 +2263,9 @@ msgctxt "Yoast SEO"
 msgid "Home"
 msgstr ""
 
-#: core/template-tags.php:168 core/template-tags.php:244 index.php:30
-#: index.php:31 index.php:32 page-events.php:21 search.php:50 search.php:51
-#: search.php:52
+#: core/template-tags.php:168 core/template-tags.php:244
+#: core/template-tags.php:363 core/template-tags.php:364
+#: core/template-tags.php:365 page-events.php:21
 msgid "Page"
 msgstr ""
 
@@ -2273,35 +2281,47 @@ msgstr ""
 msgid "404: Page not found"
 msgstr ""
 
-#: core/template-tags.php:360
-msgid "More projects"
-msgstr ""
-
-#: core/template-tags.php:363
-msgid "More news"
+#: core/template-tags.php:362
+msgid "Posts navigation"
 msgstr ""
 
 #: core/template-tags.php:364
+msgid "Previous"
+msgstr ""
+
+#: core/template-tags.php:365
+msgid "Next"
+msgstr ""
+
+#: core/template-tags.php:379
+msgid "More projects"
+msgstr ""
+
+#: core/template-tags.php:382
+msgid "More news"
+msgstr ""
+
+#: core/template-tags.php:383
 msgid "Latest news"
 msgstr ""
 
-#: core/template-tags.php:553
+#: core/template-tags.php:572
 msgid "Open search"
 msgstr ""
 
-#: core/template-tags.php:574
+#: core/template-tags.php:593
 msgid "Close search"
 msgstr ""
 
-#: core/template-tags.php:589
+#: core/template-tags.php:608
 msgid "Open Off-Canvas"
 msgstr ""
 
-#: core/template-tags.php:602
+#: core/template-tags.php:621
 msgid "Close Off-Canvas"
 msgstr ""
 
-#: core/template-tags.php:740 functions.php:83 template-parts/offcanvas.php:31
+#: core/template-tags.php:759 functions.php:83 template-parts/offcanvas.php:31
 msgid "Primary menu"
 msgstr ""
 
@@ -2317,10 +2337,6 @@ msgstr ""
 
 #: footer.php:58 modules/starter/plot_config.php:256
 msgid "Our Work"
-msgstr ""
-
-#: footer.php:122
-msgid "Project Kandinsky"
 msgstr ""
 
 #: footer.php:123
@@ -2482,14 +2498,6 @@ msgstr ""
 
 #: inc/events/events-tags.php:123
 msgid "Msk"
-msgstr ""
-
-#: index.php:31 search.php:51
-msgid "Previous"
-msgstr ""
-
-#: index.php:32 search.php:52
-msgid "Next"
 msgstr ""
 
 #: modules/donations/donations.php:60
@@ -2833,7 +2841,7 @@ msgid_plural "%s results"
 msgstr[0] ""
 msgstr[1] ""
 
-#: search.php:64
+#: search.php:55
 msgid "Nothing found under your request"
 msgstr ""
 
