@@ -3493,7 +3493,7 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 	font-size: .85em;
 	margin-top: 2px;
 	margin-bottom: 1em;
-	opacity: .7;
+	opacity: .9;
 }
 
 .tpl-search .entry-summary {
