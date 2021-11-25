@@ -2518,20 +2518,6 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 	margin-bottom: 20px;
 }
 
-@media (max-width: 575px) {
-	.bottom-bar .knd-footer-logo__inner {
-		-ms-flex-wrap: wrap;
-		flex-wrap: wrap;
-	}
-	.bottom-bar .knd-footer-logo__image {
-		margin-right: 0;
-		width: 100%;
-	}
-	.bottom-bar .knd-footer-logo__image:not(:last-child) {
-		margin-bottom: 10px;
-	}
-}
-
 /** Footer **/
 .knd-footer {
 	font-size: 14px;
@@ -2580,7 +2566,6 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 	flex: 0 1 auto;
 	display: -ms-flexbox;
 	display: flex;
-	margin-right: 15px;
 	-ms-flex-align: center;
 	align-items: center;
 }
@@ -2598,13 +2583,37 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 	display: flex;
 	-ms-flex-pack: start;
 	justify-content: flex-start;
-	-ms-flex-align: center;
-	align-items: center;
+}
+
+@media (max-width: 575px) {
+	.knd-footer-logo__inner {
+		-ms-flex-direction: column;
+		flex-direction: column;
+	}
+}
+
+@media (min-width: 576px) {
+	.knd-footer-logo__inner {
+		-ms-flex-align: center;
+		align-items: center;
+	}
 }
 
 .knd-footer-logo__text {
 	-ms-flex: 1 1 auto;
 	flex: 1 1 auto;
+}
+
+@media (max-width: 575px) {
+	.knd-footer-logo__text:not(:first-child) {
+		margin-top: 15px;
+	}
+}
+
+@media (min-width: 576px) {
+	.knd-footer-logo__text:not(:first-child) {
+		margin-left: 15px;
+	}
 }
 
 .knd-footer .copy {
@@ -4031,7 +4040,6 @@ div[id*="leyka-pf-"] .inpage-card__thumb {
 	flex: 1 1 auto;
 	width: 75%;
 	padding-left: 6px;
-	color: var(--knd-page-text-color-light);
 }
 
 .ldl-item .purpose {
@@ -4062,6 +4070,7 @@ div[id*="leyka-pf-"] .inpage-card__thumb {
 	color: var(--knd-color-main-active);
 }
 
+.post-type-archive-leyka_donation .knd-pagination, .post-type-archive-leyka_donation .em-pagination,
 .post-type-archive-leyka_donation .paging {
 	margin-top: 40px;
 }

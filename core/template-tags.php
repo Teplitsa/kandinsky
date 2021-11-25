@@ -505,6 +505,10 @@ function knd_show_post_terms( $post_id ) {
  * Header Logo
  */
 function knd_header_logo() {
+
+	$logo_title = get_theme_mod( 'header_logo_title', get_bloginfo( 'name' ) );
+	$logo_desc  = get_theme_mod( 'header_logo_text', get_bloginfo( 'description' ) );
+
 	?>
 	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="knd-header-logo">
 		<div class="knd-header-logo__inner">
@@ -514,48 +518,70 @@ function knd_header_logo() {
 			$logo_url = wp_get_attachment_image_url( $logo_id, 'full', false );
 
 			if ( $logo_url ) {
+				$aria_hidden = '';
+				if ( $logo_title || $logo_desc ) {
+					$aria_hidden = ' aria-hidden="true"';
+				}
 				?>
-				<div class="logo" aria-hidden="true">
+				<div class="logo"<?php echo $aria_hidden; ?>>
 					<?php echo wp_get_attachment_image( $logo_id, 'full', false, array( 'alt' => get_bloginfo( 'name' ) ) ); ?>
 				</div>
 			<?php } ?>
-			<div class="text">
-				<?php if ( get_theme_mod( 'header_logo_title', get_bloginfo( 'name' ) ) ) { ?>
-					<span class="logo-name"><?php echo wp_kses_post( nl2br( get_theme_mod( 'header_logo_title', get_bloginfo( 'name' ) ) ) ); ?></span>
-				<?php } ?>
-				<?php if ( get_theme_mod( 'header_logo_text', get_bloginfo( 'description' ) ) ) { ?>
-					<span class="logo-desc"><?php echo wp_kses_post( nl2br( get_theme_mod( 'header_logo_text', get_bloginfo( 'description' ) ) ) ); ?></span>
-				<?php } ?>
-			</div>
+
+			<?php if ( $logo_title || $logo_desc ) { ?>
+				<div class="text">
+					<?php if ( $logo_title ) { ?>
+						<span class="logo-name"><?php echo wp_kses( nl2br( $logo_title ), array( 'br' => array() ) ); ?></span>
+					<?php } ?>
+					<?php if ( $logo_desc ) { ?>
+						<span class="logo-desc"><?php echo wp_kses( nl2br( $logo_desc ), array( 'br' => array() ) ); ?></span>
+					<?php } ?>
+				</div>
+			<?php } ?>
+
 		</div>
 	</a>
 	<?php
 }
 
 /**
- * Bottom Bar Logo
+ * Footer Logo
  */
 function knd_footer_logo() {
 
 	if ( get_theme_mod( 'footer_logo', true ) ) {
 
-		$logo_id = get_theme_mod( 'footer_logo_image', get_theme_mod( 'header_logo_image', get_theme_mod( 'knd_custom_logo' ) ) );
-
-		$logo_url = wp_get_attachment_image_url( $logo_id, 'full', false );
+		$logo_title = get_theme_mod( 'footer_logo_title', get_theme_mod( 'header_logo_title', get_bloginfo( 'name' ) ) );
+		$logo_desc  = get_theme_mod( 'footer_logo_text', get_theme_mod( 'header_logo_text', get_bloginfo( 'description' ) ) );
+		$logo_id    = get_theme_mod( 'footer_logo_image', get_theme_mod( 'header_logo_image', get_theme_mod( 'knd_custom_logo' ) ) );
+		$logo_url   = wp_get_attachment_image_url( $logo_id, 'full', false );
 		?>
 
 		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="knd-footer-logo">
 			<span class="knd-footer-logo__inner">
-				<?php if ( $logo_url ) { ?>
-					<span class="knd-footer-logo__image">
+				<?php if ( $logo_url ) {
+
+					$aria_hidden = '';
+					if ( $logo_title || $logo_desc ) {
+						$aria_hidden = ' aria-hidden="true"';
+					}
+					?>
+					<span class="knd-footer-logo__image"<?php echo $aria_hidden; ?>>
 						<?php echo wp_get_attachment_image( $logo_id, 'full', false, array( 'alt' => get_bloginfo( 'name' ) ) ); ?>
 					</span>
 				<?php } ?>
 
-				<span class="knd-footer-logo__text">
-					<span class="logo-name"><?php echo wp_kses_post( nl2br( get_theme_mod( 'footer_logo_title', get_theme_mod( 'header_logo_title', get_bloginfo( 'name' ) ) ) ) ); ?></span>
-					<span class="logo-desc"><?php echo wp_kses_post( nl2br( get_theme_mod( 'footer_logo_text', get_theme_mod( 'header_logo_text', get_bloginfo( 'description' ) ) ) ) ); ?></span>
-				</span>
+				<?php if ( $logo_title || $logo_desc ) { ?>
+					<span class="knd-footer-logo__text">
+						<?php if ( $logo_title ) { ?>
+							<span class="logo-name"><?php echo wp_kses( nl2br( $logo_title ), array( 'br' => array() ) ); ?></span>
+						<?php } ?>
+						<?php if ( $logo_desc ) { ?>
+							<span class="logo-desc"><?php echo wp_kses( nl2br( $logo_desc ), array( 'br' => array() ) ); ?></span>
+						<?php } ?>
+					</span>
+				<?php } ?>
+
 			</span>
 		</a>
 
