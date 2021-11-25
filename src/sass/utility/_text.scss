@@ -141,62 +141,7 @@ h6 {
 		&:first-child { margin-top: 0; }
 	}
 
-
-	// Lists
-	ul {
-		margin: $inpage-margin-base 0 $inpage-margin-base 1.5em;
-
-		li {
-			position: relative;
-			padding-left: 20px;
-
-			&:before {
-				content: '–';
-				display: inline-block;
-				line-height: inherit;
-				position: absolute;
-				left: 0;
-				top: 0;
-			}
-
-			li {
-				padding-left: 0;
-				break-inside: avoid;
-				&:before { display: none; }
-			}
-		}
-
-		&:first-child {	margin-top: 0;	}
-	}
-
-	ul ul { list-style: circle; }
-	ul ul ul { list-style: square; }
-
-	ol {
-	   list-style: decimal;
-	   margin: $inpage-margin-base 0 $inpage-margin-base 1.5em;
-	   &:first-child {	margin-top: 0;	}
-	}
-
-	ol ol { list-style: lower-alpha; }
-	ol ol ol { list-style: lower-roman; }
-
-	ul ul,
-	ul ol,
-	ol ul,
-	ol ol {
-	   margin-bottom: 0;
-	   
-	   &:first-child { margin-top: $inpage-margin-base/2;  }
-	}
-	
-	li {
-		margin-bottom: $inpage-margin-base/2;
-		&:last-child { margin-bottom: 0; }
-	}
-
-	ul + p,
-	ol + p { margin-top:  $inpage-margin-base }
+	@include list();
 
 	blockquote {
 		font-style: italic;

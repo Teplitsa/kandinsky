@@ -545,21 +545,17 @@ h6 {
 }
 
 .the-content ul {
-	margin: 26px 0 26px 1.5em;
+	margin-top: 26px;
+	margin-bottom: 26px;
 }
 
-.the-content ul li {
-	position: relative;
-	padding-left: 20px;
+.the-content ul:not([class]) {
+	list-style-type: '– ';
+	padding-left: 1.5em;
 }
 
-.the-content ul li:before {
-	content: '–';
-	display: inline-block;
-	line-height: inherit;
-	position: absolute;
-	left: 0;
-	top: 0;
+.the-content ul:first-child {
+	margin-top: 0;
 }
 
 .the-content ul li li {
@@ -569,10 +565,6 @@ h6 {
 
 .the-content ul li li:before {
 	display: none;
-}
-
-.the-content ul:first-child {
-	margin-top: 0;
 }
 
 .the-content ul ul {
@@ -585,7 +577,12 @@ h6 {
 
 .the-content ol {
 	list-style: decimal;
-	margin: 26px 0 26px 1.5em;
+	margin-top: 26px;
+	margin-bottom: 26px;
+}
+
+.the-content ol:not([class]) {
+	padding-left: 1.5em;
 }
 
 .the-content ol:first-child {
@@ -1022,21 +1019,17 @@ body {
 }
 
 #tinymce ul {
-	margin: 26px 0 26px 1.5em;
+	margin-top: 26px;
+	margin-bottom: 26px;
 }
 
-#tinymce ul li {
-	position: relative;
-	padding-left: 20px;
+#tinymce ul:not([class]) {
+	list-style-type: '– ';
+	padding-left: 1.5em;
 }
 
-#tinymce ul li:before {
-	content: '–';
-	display: inline-block;
-	line-height: inherit;
-	position: absolute;
-	left: 0;
-	top: 0;
+#tinymce ul:first-child {
+	margin-top: 0;
 }
 
 #tinymce ul li li {
@@ -1046,10 +1039,6 @@ body {
 
 #tinymce ul li li:before {
 	display: none;
-}
-
-#tinymce ul:first-child {
-	margin-top: 0;
 }
 
 #tinymce ul ul {
@@ -1062,7 +1051,12 @@ body {
 
 #tinymce ol {
 	list-style: decimal;
-	margin: 26px 0 26px 1.5em;
+	margin-top: 26px;
+	margin-bottom: 26px;
+}
+
+#tinymce ol:not([class]) {
+	padding-left: 1.5em;
 }
 
 #tinymce ol:first-child {

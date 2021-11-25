@@ -545,21 +545,17 @@ h6 {
 }
 
 .the-content ul {
-	margin: 26px 0 26px 1.5em;
+	margin-top: 26px;
+	margin-bottom: 26px;
 }
 
-.the-content ul li {
-	position: relative;
-	padding-left: 20px;
+.the-content ul:not([class]) {
+	list-style-type: '– ';
+	padding-left: 1.5em;
 }
 
-.the-content ul li:before {
-	content: '–';
-	display: inline-block;
-	line-height: inherit;
-	position: absolute;
-	left: 0;
-	top: 0;
+.the-content ul:first-child {
+	margin-top: 0;
 }
 
 .the-content ul li li {
@@ -569,10 +565,6 @@ h6 {
 
 .the-content ul li li:before {
 	display: none;
-}
-
-.the-content ul:first-child {
-	margin-top: 0;
 }
 
 .the-content ul ul {
@@ -585,7 +577,12 @@ h6 {
 
 .the-content ol {
 	list-style: decimal;
-	margin: 26px 0 26px 1.5em;
+	margin-top: 26px;
+	margin-bottom: 26px;
+}
+
+.the-content ol:not([class]) {
+	padding-left: 1.5em;
 }
 
 .the-content ol:first-child {
@@ -4296,21 +4293,17 @@ div[id*="leyka-pf-"] .inpage-card__thumb {
 }
 
 .widget-full.widget_text .textwidget ul {
-	margin: 26px 0 26px 1.5em;
+	margin-top: 26px;
+	margin-bottom: 26px;
 }
 
-.widget-full.widget_text .textwidget ul li {
-	position: relative;
-	padding-left: 20px;
+.widget-full.widget_text .textwidget ul:not([class]) {
+	list-style-type: '– ';
+	padding-left: 1.5em;
 }
 
-.widget-full.widget_text .textwidget ul li:before {
-	content: '–';
-	display: inline-block;
-	line-height: inherit;
-	position: absolute;
-	left: 0;
-	top: 0;
+.widget-full.widget_text .textwidget ul:first-child {
+	margin-top: 0;
 }
 
 .widget-full.widget_text .textwidget ul li li {
@@ -4320,10 +4313,6 @@ div[id*="leyka-pf-"] .inpage-card__thumb {
 
 .widget-full.widget_text .textwidget ul li li:before {
 	display: none;
-}
-
-.widget-full.widget_text .textwidget ul:first-child {
-	margin-top: 0;
 }
 
 .widget-full.widget_text .textwidget ul ul {
@@ -4336,7 +4325,12 @@ div[id*="leyka-pf-"] .inpage-card__thumb {
 
 .widget-full.widget_text .textwidget ol {
 	list-style: decimal;
-	margin: 26px 0 26px 1.5em;
+	margin-top: 26px;
+	margin-bottom: 26px;
+}
+
+.widget-full.widget_text .textwidget ol:not([class]) {
+	padding-left: 1.5em;
 }
 
 .widget-full.widget_text .textwidget ol:first-child {

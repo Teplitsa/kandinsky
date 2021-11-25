@@ -1,0 +1,85 @@
+// Lists
+@mixin list {
+	ul {
+		margin-top: $inpage-margin-base;
+		margin-bottom: $inpage-margin-base;
+
+		&:not([class]) {
+			list-style-type: '– ';
+			padding-left: 1.5em;
+		}
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		li {
+
+			li {
+				padding-left: 0;
+				break-inside: avoid;
+
+				&:before {
+					display: none;
+				}
+			}
+		}
+
+		ul {
+			list-style: circle;
+
+			ul {
+				list-style: square;
+			}
+		}
+	}
+
+	ol {
+		list-style: decimal;
+		margin-top: $inpage-margin-base;
+		margin-bottom: $inpage-margin-base;
+
+		&:not([class]) {
+			padding-left: 1.5em;
+		}
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		ol {
+			list-style: lower-alpha;
+
+			ol {
+				list-style: lower-roman;
+			}
+		}
+	}
+
+	ul ul,
+	ul ol,
+	ol ul,
+	ol ol {
+		margin-bottom: 0;
+
+		&:first-child {
+			margin-top: $inpage-margin-base/2;
+		}
+	}
+
+	li {
+		margin-bottom: $inpage-margin-base/2;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	ul,
+	ol {
+		& + p {
+			margin-top: $inpage-margin-base;
+		}
+	}
+
+}
