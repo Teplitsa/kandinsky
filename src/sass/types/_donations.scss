@@ -149,7 +149,6 @@ div[id*="leyka-pf-"] .inpage-card__thumb {
         flex: 1 1 auto;
         width: 75%;
         padding-left: 6px;
-        color: $color-text-light;
     }
 
     .purpose {
@@ -178,6 +177,7 @@ div[id*="leyka-pf-"] .inpage-card__thumb {
         }
     }
 
+    .knd-pagination,
     .paging {
         margin-top: $gut;
     }
