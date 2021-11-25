@@ -44,16 +44,7 @@ get_header();
 		?>
 	</div>
 
-	<?php
-		the_posts_pagination(
-			array(
-				'before_page_number' => '<span class="screen-reader-text"> ' . esc_html__( 'Page', 'knd' ) . ' </span>',
-				'prev_text'          => esc_html__( 'Previous', 'knd' ) . '<span class="screen-reader-text"> ' . esc_html__( 'Page', 'knd' ) . '</span>',
-				'next_text'          => esc_html__( 'Next', 'knd' ) . '<span class="screen-reader-text"> ' . esc_html__( 'Page', 'knd' ) . '</span>',
-				'class'              => 'knd-pagination',
-			)
-		);
-	?>
+	<?php knd_posts_pagination(); ?>
 
 	<?php } else { ?>
 

@@ -279,6 +279,7 @@ function knd_section_title() {
 }
 
 /** == NAVs == **/
+/** Deprecated, remove in version 3.0 */
 function knd_paging_nav( WP_Query $query = null ) {
 	if ( ! $query ) {
 		
@@ -300,6 +301,7 @@ function knd_paging_nav( WP_Query $query = null ) {
 	}
 }
 
+/** Deprecated, remove in version 3.0 */
 function knd_paginate_links( WP_Query $query = null, $echo = true ) {
 	global $wp_query;
 	
@@ -349,6 +351,25 @@ function knd_paginate_links( WP_Query $query = null, $echo = true ) {
 	} else {
 		return paginate_links( $pagination );
 	}
+}
+
+/**
+ * The Posts Pagination
+ */
+function knd_posts_pagination( $args = array() ){
+
+	$args = wp_parse_args(
+		$args,
+		array(
+			'screen_reader_text' => esc_html__( 'Posts navigation', 'knd' ),
+			'before_page_number' => '<span class="screen-reader-text"> ' . esc_html__( 'Page', 'knd' ) . ' </span>',
+			'prev_text'          => esc_html__( 'Previous', 'knd' ) . '<span class="screen-reader-text"> ' . esc_html__( 'Page', 'knd' ) . '</span>',
+			'next_text'          => esc_html__( 'Next', 'knd' ) . '<span class="screen-reader-text"> ' . esc_html__( 'Page', 'knd' ) . '</span>',
+			'class'              => 'knd-pagination',
+		)
+	);
+
+	the_posts_pagination( $args );
 }
 
 /** More section **/
@@ -406,8 +427,6 @@ function knd_orgs_gallery( $category_ids = '', $org_ids = '' ) {
 	</div>
 <?php
 }
-
-
 
 /** Single template helpers **/
 function knd_related_reports( TST_Event $event, $css = '' ) {

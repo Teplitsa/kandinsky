@@ -31,8 +31,6 @@ get_header();
 	<?php } ?>
 </div>
 
-<?php if(!empty($posts)) { ?>
-<div class="paging"><?php knd_paging_nav($wp_query); ?></div>
-<?php } ?>
+<?php knd_posts_pagination( array( 'screen_reader_text' => esc_html__( 'Campaigns navigation', 'knd' ) ) ); ?>
 
 <?php get_footer();
