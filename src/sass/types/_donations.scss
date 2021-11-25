@@ -1,188 +1,188 @@
 /** Donations **/
 
 .leyka-campaign{
-    margin-bottom: $gut;
+	margin-bottom: $gut;
 
-    .entry-header-single {
-        text-align: center;
-        margin: 0 auto $gut;
-    }
+	.entry-header-single {
+		text-align: center;
+		margin: 0 auto $gut;
+	}
 
-    .campaign-card {
-        margin-bottom: $gut;
-    }
+	.campaign-card {
+		margin-bottom: $gut;
+	}
 
-    div[id*="leyka-pf-"].card-2col  {
-        margin-bottom: $gut;
+	div[id*="leyka-pf-"].card-2col  {
+		margin-bottom: $gut;
 
-        @include for(large-screens) {
-            margin-left: -96px;
-            margin-right: -96px;
-        }
-    }
+		@include for(large-screens) {
+			margin-left: -96px;
+			margin-right: -96px;
+		}
+	}
 
-    div[id*="leyka-pf-"] {
-        
-    }
+	div[id*="leyka-pf-"] {
+		
+	}
 
-    .related-campaigns {
-        text-align: center;
-        margin-top: $gut*.6;
-        margin-bottom: $gut;
+	.related-campaigns {
+		text-align: center;
+		margin-top: $gut*.6;
+		margin-bottom: $gut;
 
-        a {
-            display: inline-block;
-            margin: 0 10px;
-            color: $color-main-dark;
-            &:hover {
-                text-decoration: underline;
-            }
-        }
+		a {
+			display: inline-block;
+			margin: 0 10px;
+			color: $color-main-dark;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
 
-    }
+	}
 }
 
 .lk-thumbnail {
-    position: relative;
-    width: 100%;
-    height: 0;
-    padding-bottom: 61.7%;
+	position: relative;
+	width: 100%;
+	height: 0;
+	padding-bottom: 61.7%;
 
-    a {
-        display: block;
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
+	a {
+		display: block;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
 
-    
+	
 
-    @supports (object-fit: cover) {
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-    }
+	@supports (object-fit: cover) {
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
 
-    @supports not (display: flex) {
-        img {
-            max-width: 100%;
-            max-height: 100%;
-            width: auto;
-            height: auto;
-        }
-    }
-    
+	@supports not (display: flex) {
+		img {
+			max-width: 100%;
+			max-height: 100%;
+			width: auto;
+			height: auto;
+		}
+	}
+	
 }
 
 .leyka-scale-label {
-    .flex-cell {
-        margin-bottom: $gut/2;
-    }
+	.flex-cell {
+		margin-bottom: $gut/2;
+	}
 }
 
 //single fixes
 div[id*="leyka-pf-bottom"] .bottom-form__button button,
 div[id*="leyka-pf-"] .inpage-card__action button {
-    border-radius: 0;
-    max-width: 170px;
+	border-radius: 0;
+	max-width: 170px;
 }
 
 .leyka-js .leyka-pf-bottom,
 .leyka-pf__module {
-    border-radius: 3px;
+	border-radius: 3px;
 }
 
 div[id*="leyka-pf-"] .inpage-card__thumb {
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
 }
 
 .lk-info {
-    p.closed {
-        font-style: italic;
-    }
+	p.closed {
+		font-style: italic;
+	}
 }
 
 //history block
 .single-leyka_campaign {
-    .donation_history {
-        margin: $gut 0;
-    }
+	.donation_history {
+		margin: $gut 0;
+	}
 }
 
 .donation_history {
 
-    .all-link {
-        border-bottom: 1px solid $color-page-bg-dark;
-        padding: $base/2 0;
+	.all-link {
+		border-bottom: 1px solid $color-page-bg-dark;
+		padding: $base/2 0;
 
-        a {
-            color: $color-main;
-        }
-    }
+		a {
+			color: $color-main;
+		}
+	}
 }
 
 .ldl-item {
-    border-bottom: 1px solid $color-page-bg-dark;
-    padding: $base/2 0;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-start;
-    @include knd-nav-text(); 
-    
-    &:first-of-type {
-        border-top: 1px solid $color-page-bg-dark;
-    }
-    
-    .amount {
-        color: $color-text;
-        flex: 1 0 auto;
-        width: 25%;
-        min-width: 80px;
-    }
-    
-    .meta {
-        flex: 1 1 auto;
-        width: 75%;
-        padding-left: 6px;
-    }
+	border-bottom: 1px solid $color-page-bg-dark;
+	padding: $base/2 0;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	@include knd-nav-text(); 
+	
+	&:first-of-type {
+		border-top: 1px solid $color-page-bg-dark;
+	}
+	
+	.amount {
+		color: $color-text;
+		flex: 1 0 auto;
+		width: 25%;
+		min-width: 80px;
+	}
+	
+	.meta {
+		flex: 1 1 auto;
+		width: 75%;
+		padding-left: 6px;
+	}
 
-    .purpose {
-        flex: 1 1 auto;
-        width: 40%;
-        padding-left: 6px;
-        color: $color-text-light;
-        a {
-            color: $color-main;
-        }
-    }
+	.purpose {
+		flex: 1 1 auto;
+		width: 40%;
+		padding-left: 6px;
+		color: $color-text-light;
+		a {
+			color: $color-main;
+		}
+	}
 
-    .purpose + .meta {
-        width: 35%;
-    }
+	.purpose + .meta {
+		width: 35%;
+	}
 }
 
 //donations archive
 .post-type-archive-leyka_donation {
 
-    .heading {
-        margin-bottom: $gut*1.5;
-        a {
-            color: $color-main;
-            &:hover { color: $color-main-dark; }
-        }
-    }
+	.heading {
+		margin-bottom: $gut*1.5;
+		a {
+			color: $color-main;
+			&:hover { color: $color-main-dark; }
+		}
+	}
 
-    .knd-pagination,
-    .paging {
-        margin-top: $gut;
-    }
+	.knd-pagination,
+	.paging { // Deprecated, remove in version 3.0
+		margin-top: $gut;
+	}
 
-    .main-content {
-        margin-bottom: $gut;
-    }
+	.main-content {
+		margin-bottom: $gut;
+	}
 }
