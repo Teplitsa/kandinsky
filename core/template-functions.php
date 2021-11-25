@@ -154,7 +154,7 @@ function knd_cyrillic_fonts() {
  * Get header type
  */
 function knd_get_header_type() {
-	$header_type = get_theme_mod( 'header_type', '1' );
+	$header_type = get_theme_mod( 'header_type', '2' );
 	return apply_filters( 'knd_get_header_type', $header_type );
 }
 

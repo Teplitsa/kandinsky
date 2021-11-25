@@ -22,16 +22,18 @@
 
 	<?php
 	if ( get_theme_mod( 'offcanvas_menu', true ) ) {
-		wp_nav_menu(
-			array(
-				'menu'                 => esc_html__('Main menu', 'knd'),
-				'theme_location'       => 'primary',
-				'container'            => 'nav',
-				'container_class'      => 'nav-main-menu',
-				'container_aria_label' => esc_attr__('Primary menu', 'knd'),
-				'menu_class'           => 'main-menu',
-			)
-		);
+		if ( has_nav_menu( 'primary' ) ) {
+			wp_nav_menu(
+				array(
+					'menu'                 => esc_html__('Main menu', 'knd'),
+					'theme_location'       => 'primary',
+					'container'            => 'nav',
+					'container_class'      => 'nav-main-menu',
+					'container_aria_label' => esc_attr__('Primary menu', 'knd'),
+					'menu_class'           => 'main-menu',
+				)
+			);
+		}
 	}
 	?>
 

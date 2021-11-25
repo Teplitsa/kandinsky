@@ -19,7 +19,7 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'settings' => 'header_type',
 	'label'    => esc_html__( 'Select header template', 'knd' ),
 	'section'  => 'header',
-	'default'  => '1',
+	'default'  => '2',
 	'choices'  => array(
 		'1' => get_template_directory_uri() . '/core/customizer/images/header-1.png',
 		'2' => get_template_directory_uri() . '/core/customizer/images/header-2.png',
