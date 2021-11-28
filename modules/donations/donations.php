@@ -6,21 +6,18 @@ if(!class_exists('Leyka_Payment_Method'))
 get_template_part('/modules/donations/widgets');
 
 /** Custom donation functions */
-
-add_filter('leyka_icons_text_text_box', 'knd_text_pm_icon');
 function knd_text_pm_icon($icons){
 	//size 155x80 px
-	
 	$icons = array(get_template_directory_uri().'/assets/images/text-box.png');
-		
 	return $icons;
 }
+add_filter('leyka_icons_text_text_box', 'knd_text_pm_icon');
 
 //no icon for text gateway
-add_filter('leyka_icons_text_text_box', 'knd_empty_icons');	
 function knd_empty_icons(){
 	return array();
 }
+add_filter('leyka_icons_text_text_box', 'knd_empty_icons');
 
 function knd_activate_leyka() {
 	$imp = new KND_Import_Remote_Content(knd_get_theme_mod('knd_site_scenario'));
@@ -34,10 +31,10 @@ register_activation_hook( 'leyka/leyka.php', 'knd_activate_leyka' );
 /** Form template **/
 //custom amount field
 function knd_amount_field($form){
-	
+
 	if(!defined('LEYKA_VERSION'))
 		return;
-	
+
 	$supported_curr = leyka_get_active_currencies();
 	$current_curr = $form->get_current_currency();
 
@@ -47,39 +44,38 @@ function knd_amount_field($form){
 ?>
 
 <div class="leyka-field amount-selector amount mixed">
-	
-<div class="currency-selector-row" >
-	<div class="currency-variants">
-<?php
-	foreach($supported_curr as $currency => $data) {
 
-	$variants = explode(',', $data['amount_settings']['fixed']);?>
-		<div class="<?php echo $currency;?> amount-variants-container" <?php echo $currency == $current_curr ? '' : 'style="display:none;"';?> >
-			<div class="amount-variants-row">
-				<?php foreach($variants as $i => $amount) { ?>
-					<label class="figure rdc-radio" title="<?php esc_attr_e( 'Please, specify your donation amount', 'knd' );?>">
-						<input type="radio" value="<?php echo (int)$amount;?>" name="leyka_donation_amount" class="rdc-radio__button" <?php checked($i, 0);?> <?php echo $currency == $current_curr ? '' : 'disabled="disabled"';?>>
-						<span class="rdc-radio__label"><?php echo (int)$amount;?></span>
+	<div class="currency-selector-row" >
+		<div class="currency-variants">
+		<?php
+		foreach($supported_curr as $currency => $data) {
+
+		$variants = explode(',', $data['amount_settings']['fixed']);?>
+			<div class="<?php echo $currency;?> amount-variants-container" <?php echo $currency == $current_curr ? '' : 'style="display:none;"';?> >
+				<div class="amount-variants-row">
+					<?php foreach($variants as $i => $amount) { ?>
+						<label class="figure rdc-radio" title="<?php esc_attr_e( 'Please, specify your donation amount', 'knd' );?>">
+							<input type="radio" value="<?php echo (int)$amount;?>" name="leyka_donation_amount" class="rdc-radio__button" <?php checked($i, 0);?> <?php echo $currency == $current_curr ? '' : 'disabled="disabled"';?>>
+							<span class="rdc-radio__label"><?php echo (int)$amount;?></span>
+						</label>
+					<?php } ?>
+					
+					<label class="figure-flex">
+						<span class="figure-sep"><?php esc_html_e('or', 'knd');?></span>
+						<input type="text" title="<?php esc_attr_e( 'Specify the amount of your donation', 'knd' );?>" name="leyka_donation_amount" class="donate_amount_flex" value="<?php echo esc_attr($supported_curr[$current_curr]['amount_settings']['flexible']);?>" <?php echo $currency == $current_curr ? '' : 'disabled="disabled"';?> maxlength="6" size="6">
 					</label>
-				<?php } ?>
-				
-				<label class="figure-flex">
-					<span class="figure-sep"><?php esc_html_e('or', 'knd');?></span>
-					<input type="text" title="<?php esc_attr_e( 'Specify the amount of your donation', 'knd' );?>" name="leyka_donation_amount" class="donate_amount_flex" value="<?php echo esc_attr($supported_curr[$current_curr]['amount_settings']['flexible']);?>" <?php echo $currency == $current_curr ? '' : 'disabled="disabled"';?> maxlength="6" size="6">
-				</label>
-			</div>
-		</div>	
-	<?php } ?>
+				</div>
+			</div>	
+		<?php } ?>
+		</div>
+		<div class="currency"><span class="currency-frame"><?php echo $form->get_currency_field();?></span></div>
 	</div>
-	<div class="currency"><span class="currency-frame"><?php echo $form->get_currency_field();?></span></div>
-</div>
 
-<div class="leyka_donation_amount-error field-error"></div>
-	
+	<div class="leyka_donation_amount-error field-error"></div>
+
 </div>
 <?php
 }
-
 
 /**
  * Deprecated, remove in version 3.0
@@ -117,9 +113,6 @@ $campaign_age = get_post_meta($campaign->ID, 'campaign_age', true);
 $is_finished = get_post_meta($campaign->ID, 'is_finished', true);
 
 ?>
-
-
-
 
 <article <?php post_class('knd-block-item', $campaign); ?>>
 	<div class="leyka-shortcode campaign-card wp-block-leyka-card">
@@ -169,7 +162,6 @@ $is_finished = get_post_meta($campaign->ID, 'is_finished', true);
 // customize default leyka colors
 remove_action( 'wp_head', 'leyka_inline_scripts');
 
-add_action('wp_head', 'knd_leyka_inline_scripts');
 function knd_leyka_inline_scripts(){
 	
 	$main_color = knd_get_main_color();
@@ -192,9 +184,8 @@ function knd_leyka_inline_scripts(){
 	</style>
 	<?php
 }
+add_action('wp_head', 'knd_leyka_inline_scripts');
 
-
-add_action('parse_query', 'knd_leyka_request_corrected');
 function knd_leyka_request_corrected(WP_Query $query) {
 
 	if(is_admin()) {
@@ -230,37 +221,37 @@ function knd_leyka_request_corrected(WP_Query $query) {
 	}
 
 }
+add_action('parse_query', 'knd_leyka_request_corrected');
 
-add_action('init', 'knd_leyka_rewrite_rules');
 function knd_leyka_rewrite_rules(){
-	
+
 	add_rewrite_rule(
 		'^campaign/completed/page/(\d+)/?$',
 		'index.php?post_type=' . Leyka_Campaign_Management::$post_type . '&completed=true&paged=$matches[1]',
 		'top'
 	);
-	
+
 	add_rewrite_rule(
 		'^campaign/completed/?$',
 		'index.php?post_type=' . Leyka_Campaign_Management::$post_type . '&completed=true',
 		'top'
 	);
-	
-	
+
 	add_rewrite_rule(
 		'^campaign/active/page/(\d+)/?$',
 		'index.php?post_type=' . Leyka_Campaign_Management::$post_type . '&active=true&paged=$matches[1]',
 		'top'
 	);
-	
+
 	add_rewrite_rule(
 		'^campaign/active/?$',
 		'index.php?post_type=' . Leyka_Campaign_Management::$post_type . '&active=true',
 		'top'
 	);
-	
+
 	flush_rewrite_rules();
 }
+add_action('init', 'knd_leyka_rewrite_rules');
 
 function knd_leyka_add_query_vars_filter( $vars ){
 	$vars[] = "completed";
@@ -274,64 +265,6 @@ function knd_leyka_help_purpose($campaign) {
 	$cnt = count($terms);
 	return $cnt && isset($terms[$cnt - 1]) ? $terms[$cnt - 1]->name : __('Charity', 'knd');
 }
-
-/*// edit kid age
-function knd_leyka_age_metabox_display_callback($post) {
-	
-	$kid_age = get_post_meta($post->ID, 'campaign_age', true);
-?>
-	<div class='inside'>
-		<p>
-			<input type="text" name="knd-leyka-kid-age" value="<?php echo esc_html($kid_age); ?>" /> 
-		</p>
-	</div>
-<?php 
-	wp_nonce_field( 'knd_leyka_kid_age_nonce_action', 'knd-leyka-save-kid-age' );
-}*/
-
-// function knd_leyka_add_metabox() {
-// 	$plot = knd_get_theme_mod('knd_site_scenario');
-// 	if($plot == 'fundraising-org') {
-// 		add_meta_box( 'knd-leyka-kid-age', esc_html__( 'Kid age', 'knd' ), 'knd_leyka_age_metabox_display_callback', 'leyka_campaign' );
-// 	}
-// }
-// add_action( 'add_meta_boxes', 'knd_leyka_add_metabox' );
-
-// function knd_leyka_save_kid_age_metabox( $post_id, $post ) {
-	
-// 	$nonce_name   = isset( $_POST['knd-leyka-save-kid-age'] ) ? $_POST['knd-leyka-save-kid-age'] : '';
-// 	$campaign_age   = isset( $_POST['knd-leyka-kid-age'] ) ? $_POST['knd-leyka-kid-age'] : '';
-	
-// 	$nonce_action = 'knd_leyka_kid_age_nonce_action';
-	
-// 	if ( ! isset( $nonce_name ) ) {
-// 		return;
-// 	}
-	
-// 	if( $post->post_type != 'leyka_campaign' ) {
-// 		return;
-// 	}
-
-// 	if ( ! wp_verify_nonce( $nonce_name, $nonce_action ) ) {
-// 		return;
-// 	}
-
-// 	if ( ! current_user_can( 'edit_post', $post_id ) ) {
-// 		return;
-// 	}
-
-// 	if ( wp_is_post_autosave( $post_id ) ) {
-// 		return;
-// 	}
-
-// 	if ( wp_is_post_revision( $post_id ) ) {
-// 		return;
-// 	}
-	
-// 	update_post_meta( $post_id, 'campaign_age', $campaign_age );
-	
-// }
-// add_action( 'save_post', 'knd_leyka_save_kid_age_metabox', 10, 2 );
 
 function knd_clear_donation_transients(){
 	delete_transient('knd_default_campaigns');
