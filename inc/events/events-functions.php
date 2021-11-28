@@ -8,12 +8,17 @@
 /**
  * Prevents booking form showing below post
  */
-define( 'EM_DISABLE_AUTO_BOOKINGSFORM', true );
+//define( 'EM_DISABLE_AUTO_BOOKINGSFORM', true );
 
 /**
  * Remove auto adding event to below post
  */
 remove_action( 'get_the_excerpt', array('EM_Event_Post', 'enable_the_content'), 100 );
+
+/**
+ * Remove auto adding custom elements to post content
+ */
+remove_filter( 'the_content',  array('EM_Event_Post','the_content') );
 
 /**
  * Remove auto adding events in the_content.
@@ -246,6 +251,7 @@ add_filter( 'em_options_page_tabs', 'knd_em_options_page_tabs' );
 
 function knd_em_options_page_tab_custom(){
 	global $save_button;
+
 ?>
 
 	<div  class="postbox" id="em-opt-custom" >
@@ -320,7 +326,6 @@ function knd_em_custom_form_fields(){
 				$fields[ $key ]['label'] = $field['label'];
 				$fields[ $key ]['slug'] = $field['slug'];
 			}
-			
 		}
 	}
 	return apply_filters( 'knd_em_custom_form_fields', $fields );
