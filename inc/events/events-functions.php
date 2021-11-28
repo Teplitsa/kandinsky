@@ -259,7 +259,7 @@ function knd_em_options_page_tab_custom(){
 		<div class="inside">
 			
 			<table class="form-table">
-				<tbody class="form-table em-google-maps-enabled">
+				<tbody class="form-table">
 					<?php
 					em_options_input_text( __( 'Schedule heading', 'knd' ), 'dbem_event_schedule_heading' );
 					em_options_input_text( __( 'Question heading', 'knd' ), 'dbem_event_question_heading' );
