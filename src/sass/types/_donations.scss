@@ -113,7 +113,7 @@ div[id*="leyka-pf-"] .inpage-card__thumb {
 		margin: $gut 0;
 	}
 
-	.leyka-pf-need-help {
+	div[id*="leyka-pf-"].leyka-pf-need-help {
 		margin-bottom: 26px;
 	}
 }
