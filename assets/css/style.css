@@ -3978,6 +3978,10 @@ div[id*="leyka-pf-"] .inpage-card__thumb {
 	margin: 40px 0;
 }
 
+.single-leyka_campaign .leyka-pf-need-help {
+	margin-bottom: 26px;
+}
+
 .donation_history .all-link {
 	border-bottom: 1px solid var(--knd-page-bg-color-dark);
 	padding: 13px 0;

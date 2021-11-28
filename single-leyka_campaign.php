@@ -35,7 +35,7 @@ get_header();
 
 		<main class="container-text">
 
-			<div class="campaign-form ">
+			<div class="campaign-form entry-content the-content">
 				<?php the_content(); ?>
 			</div>
 
