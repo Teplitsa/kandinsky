@@ -156,15 +156,6 @@ add_action( 'wp_head', 'knd_favicon', 1 );
 add_action( 'admin_head', 'knd_favicon', 1 );
 add_action( 'login_head', 'knd_favicon', 1 );
 
-/** Add feed link **/
-add_action( 'wp_head', 'knd_feed_link' );
-
-function knd_feed_link() {
-	$name = get_bloginfo( 'name' );
-	echo '<link rel="alternate" type="' . feed_content_type() . '" title="' . esc_attr( $name ) . '" href="' .
-		 esc_url( get_feed_link() ) . "\" />\n";
-}
-
 /** Admin bar **/
 add_action( 'wp_head', 'knd_adminbar_corrections' );
 add_action( 'admin_head', 'knd_adminbar_corrections' );
