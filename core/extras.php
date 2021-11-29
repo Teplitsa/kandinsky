@@ -146,16 +146,6 @@ function knd_get_term_id_from_terms( array $terms ) {
 	return $ids;
 }
 
-/** Favicon **/
-function knd_favicon() {
-	if ( has_site_icon() ) {
-		wp_site_icon();
-	}
-}
-add_action( 'wp_head', 'knd_favicon', 1 );
-add_action( 'admin_head', 'knd_favicon', 1 );
-add_action( 'login_head', 'knd_favicon', 1 );
-
 /** Admin bar **/
 add_action( 'wp_head', 'knd_adminbar_corrections' );
 add_action( 'admin_head', 'knd_adminbar_corrections' );
