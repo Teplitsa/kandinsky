@@ -2,6 +2,7 @@
 /**
  * Wizard Step Settings
  */
+
 ?>
 
 <h1><?php esc_html_e( 'NGO settings', 'knd' ); ?></h1>
@@ -26,14 +27,11 @@
 		<tr>
 			<td>
 				<div id="current-site-icon">
-					<?php $image_url = knd_get_site_icon_img_url();
-					if($image_url) {
-						printf('<img class="site-logo-img" src="%s" style="width: 32px; height: auto;">', $image_url);
-					} ?>
+					<?php knd_site_icon_image(); ?>
 				</div>
 			</td>
 			<td>
-				<a href="#" class="button button-upload"><?php esc_html_e('Upload new site icon', 'knd'); ?></a>
+				<a href="#" class="button button-small button-upload"><?php esc_html_e('Upload new site icon', 'knd'); ?></a>
 			</td>
 		</tr>
 	</table>

@@ -90,17 +90,9 @@ class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
 		),
 
 		'theme_files'     => array(
-			'knd_custom_logo'    => array(
-				'section' => 'images',
-				'file'    => 'logo.svg',
-			),
 		),
 
 		'option_files'    => array(
-			'site_icon' => array(
-				'section' => 'images',
-				'file'    => 'favicon.png',
-			),
 		),
 
 		'theme_colors'    => array(

@@ -234,18 +234,18 @@ class KND_Import_Remote_Content {
 	 * @return string
 	*/
 	function parse_text($text) {
-		
+	
 		$new_text = $text;
-		
+	
 		$new_text = preg_replace("/(?:^|\s+)\/\/(.*?)(\n|$)/s", '[knd_r]\1[/knd_r]', $new_text);
-		
+
 		if(preg_match_all("/mdlink\s*=\s*\"(.*?)\"/", $new_text, $matches)) {
 			foreach($matches[0] as $i => $match) {
 				$url = knd_build_imported_url($matches[1][$i]);
 				$new_text = str_replace($match, $url, $new_text);
 			}
 		}
-		
+
 		if(preg_match_all("/img\s*=\s*[\"'](.*?)[\"']/", $new_text, $matches)) {
 			foreach($matches[0] as $i => $match) {
 				
@@ -257,7 +257,7 @@ class KND_Import_Remote_Content {
 				else {
 					$image_src = '';
 				}
-				
+
 				$new_text = str_replace($match, $image_src, $new_text);
 			}
 		}

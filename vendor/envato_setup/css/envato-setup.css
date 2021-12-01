@@ -1,3 +1,9 @@
+/** Wizard */
+html {
+	background: #f0f0f1;
+	margin: 0 20px;
+}
+
 .envato-setup-content p,
 .envato-setup-content table {
 	font-size: 1em;
@@ -14,7 +20,6 @@ body {
 	height: auto;
 	min-height: 100%;
 	box-sizing: border-box;
-	cursor: auto;
 }
 
 #wc-logo {
@@ -35,6 +40,10 @@ body {
 	overflow: hidden;
 	zoom: 1;
 	border-radius: 3px;
+}
+
+.envato-setup-content form {
+	margin-bottom: 0;
 }
 
 .envato-setup-content h1, .envato-setup-content h2, .envato-setup-content h3,  .envato-setup-content table {
@@ -631,7 +640,27 @@ body {
 	margin-right: 5px;
 }
 
-
+/** Kandinsky Wizard */
+.knd-wizard-wrapper {
+	margin: 0 auto;
+	font-size: 13px;
+	line-height: 1.4em;
+	max-width: 700px;
+}
+.knd-wizard-wrapper .site-logo-img {
+	display: block;
+	max-height: 66px;
+	width: auto;
+	max-width: 100%;
+	margin-right: 10px;
+}
+.knd-wizard-wrapper .site-favicon-img {
+	display: block;
+	max-height: 32px;
+	height: auto;
+	max-width: 32px;
+	width: auto;
+}
 
 .knd-wizard-actions {
 	margin: 15px -24px -24px;
@@ -640,4 +669,8 @@ body {
 	box-sizing: border-box;
 	border-top: 1px solid #f0f0f1;
 	overflow: hidden;
+}
+.wizard-header-logo {
+	width: 100%;
+	height: auto;
 }

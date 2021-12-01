@@ -141,20 +141,20 @@ function knd_customize_register( $wp_customize ) {
 				'priority' => 15 ) ) );
 
 	// Logo image.
-	$wp_customize->add_control(
-		new WP_Customize_Media_Control(
-			$wp_customize,
-			'knd_custom_logo',
-			array(
-				'label'       => esc_html__( 'Logo', 'knd' ),
-				'description' => esc_html__( 'We recommend to use logos in the .svg format (vector graphics). If your logo is in rastre format, we recommend to upload pictures with the dimensions of 630x132 px for the option &quot;Only Image&quot; or 132x13px for the option &quot;Image and Title&quot;.', 'knd' ),
-				'section'     => 'knd_decoration_logo',
-				'settings'    => 'knd_custom_logo',
-				'mime_type'   => 'image',
-				'priority'    => 30,
-			)
-		)
-	);
+	// $wp_customize->add_control(
+	// 	new WP_Customize_Media_Control(
+	// 		$wp_customize,
+	// 		'knd_custom_logo',
+	// 		array(
+	// 			'label'       => esc_html__( 'Logo', 'knd' ),
+	// 			'description' => esc_html__( 'We recommend to use logos in the .svg format (vector graphics). If your logo is in rastre format, we recommend to upload pictures with the dimensions of 630x132 px for the option &quot;Only Image&quot; or 132x13px for the option &quot;Image and Title&quot;.', 'knd' ),
+	// 			'section'     => 'knd_decoration_logo',
+	// 			'settings'    => 'knd_custom_logo',
+	// 			'mime_type'   => 'image',
+	// 			'priority'    => 30,
+	// 		)
+	// 	)
+	// );
 
 	/* homepage */
 

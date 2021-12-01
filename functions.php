@@ -102,14 +102,14 @@ function knd_setup() {
 		)
 	);
 
+	// Add support custom logo.
+	add_theme_support( 'custom-logo' );
+
 	// Add support for responsive embeds.
 	add_theme_support( 'responsive-embeds' );
 
 	// Add support for full and wide align images.
 	add_theme_support( 'align-wide' );
-
-	// Add theme support for selective refresh for widgets.
-	add_theme_support( 'customize-selective-refresh-widgets' );
 
 	//add_theme_support( 'wp-block-styles' );
 
@@ -161,6 +161,11 @@ require get_template_directory() . '/core/assets.php';
 require_once get_theme_file_path( '/core/template-functions.php' );
 
 /**
+ * Independent pages parts layout
+ */
+require_once get_theme_file_path( '/core/template-tags.php' );
+
+/**
  * Nav Menu
  */
 require_once get_theme_file_path( '/core/nav-menu.php' );
@@ -191,7 +196,7 @@ get_template_part(  '/core/cards' ); // layout of cards, list items etc.
 
 get_template_part( '/core/shortcodes' ); // shortcodes core.
 
-get_template_part( '/core/template-tags' ); // independent pages parts layout.
+
 
 get_template_part( '/core/widgets' ); // setup widgets.
 
@@ -200,6 +205,11 @@ get_template_part( '/core/class-mediamnt' ); // tools for work with files.
 
 get_template_part( '/core/class-import' ); // import files into site media lib.
 get_template_part( '/core/import' ); // import files into site media lib.
+
+/**
+ * Customizer
+ */
+require_once get_theme_file_path( '/inc/backward-compatibility.php' );
 
 // Include modules.
 foreach ( glob( get_template_directory() . '/modules/*' ) as $module_file ) {

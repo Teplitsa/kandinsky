@@ -2,6 +2,7 @@
 /**
  * Wizard Step Design
  */
+
 ?>
 
 <h1><?php esc_html_e( 'Logo', 'knd' ); ?></h1>
@@ -13,7 +14,9 @@
 	<table>
 		<tr>
 			<td>
-				<div id="current-logo"><?php echo knd_get_logo_img(); ?></div>
+				<div id="current-logo">
+					<?php echo knd_get_logo_image(); ?>
+				</div>
 			</td>
 			<td>
 				<a href="#" class="button button-small button-upload"><?php esc_html_e('Upload new logo', 'knd'); ?></a>

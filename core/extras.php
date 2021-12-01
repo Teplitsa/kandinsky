@@ -277,8 +277,6 @@ function knd_get_social_media_supported() {
 	);
 }
 
-add_action( 'after_switch_theme', 'knd_after_theme_activation' );
-
 function knd_after_theme_activation() {
 	flush_rewrite_rules( false );
 
@@ -296,6 +294,7 @@ function knd_after_theme_activation() {
 		exit();
 	}
 }
+add_action( 'after_switch_theme', 'knd_after_theme_activation' );
 
 add_action( 'init', 'knd_remove_scenario_unzipped_dir' );
 
@@ -440,6 +439,7 @@ function knd_sanitize_text($text) {
  */
 function knd_svg_upload_mimes( $mimes ) {
 	$mimes['svg'] = 'image/svg+xml';
+	$mimes['svgz'] = 'image/svg+xml';
 	return $mimes;
 }
 add_action( 'upload_mimes', 'knd_svg_upload_mimes' );
@@ -473,3 +473,15 @@ function knd_svgs_response_for_svg( $response, $attachment ) {
 
 }
 add_filter( 'wp_prepare_attachment_for_js', 'knd_svgs_response_for_svg', 10, 2 );
+
+/**
+ * Filters the list of allowed file extensions when sideloading an image from a URL.
+ *
+ * @param string[] $allowed_extensions Array of allowed file extensions.
+ * @param string   $file               The URL of the image to download.
+ */
+function knd_image_sideload_extensions( $allowed_extensions ){
+	$allowed_extensions[] = 'svg';
+	return $allowed_extensions;
+}
+add_filter( 'image_sideload_extensions', 'knd_image_sideload_extensions' );

@@ -67,17 +67,15 @@ function knd_customize_controls_enqueue_scripts() {
 add_action( 'customize_controls_enqueue_scripts', 'knd_customize_controls_enqueue_scripts' );
 
 /**
- * Remove sections and panels
+ * Update sections, panels and controls
  *
  * @param object $wp_customize Customizer.
  */
 function knd_customize_register( $wp_customize ) {
-	$wp_customize->remove_section( 'sidebar-widgets-knd-projects-archive-sidebar' );
-	$wp_customize->remove_section( 'sidebar-widgets-knd-news-archive-sidebar' );
-	/* Trick for hide widgets panel */
-	Kirki::add_panel(
-		'widgets'
-	);
+	/** Change custom logo control section, priority and description */
+	$wp_customize->get_control( 'custom_logo' )->section = 'header';
+	$wp_customize->get_control( 'custom_logo' )->priority = 5;
+	$wp_customize->get_control( 'custom_logo' )->description = esc_html__( 'If only an image is used as a logo, then we recommend uploading an image with the dimensions of 315 x 66 px, or 66 x 66 px for use along with the text.', 'knd' );
 }
 add_action( 'customize_register', 'knd_customize_register' );
 

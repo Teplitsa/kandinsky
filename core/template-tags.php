@@ -445,50 +445,6 @@ function knd_related_reports( TST_Event $event, $css = '' ) {
 	}
 }
 
-function knd_get_site_icon_img_url() {
-	$logo_id = get_option( 'site_icon' );
-	if ( $logo_id ) {
-		return wp_get_attachment_image_url( $logo_id, 'full', false );
-	} else {
-		
-		$site_scenario = knd_get_theme_mod( 'knd_site_scenario' );
-		return $site_scenario ? get_template_directory_uri() . "/vendor/envato_setup/images/$site_scenario/favicon.png" : '';
-	}
-}
-
-function knd_get_logo_img_id() {
-	$logo_id = knd_get_theme_mod( 'knd_custom_logo' );
-	
-	return $logo_id ? (int) $logo_id : false;
-}
-
-function knd_get_logo_img_url() {
-	$logo_id = knd_get_logo_img_id();
-	if ( $logo_id ) {
-		return wp_get_attachment_image_url( $logo_id, 'full', false );
-	} else {
-		
-		$site_scenario = knd_get_theme_mod( 'knd_site_scenario' );
-		return $site_scenario ? get_template_directory_uri() . "/vendor/envato_setup/images/$site_scenario/logo.svg" : '';
-	}
-}
-
-function knd_get_logo_img() {
-	$logo_id = knd_get_logo_img_id();
-	return $logo_id ? wp_get_attachment_image( 
-		$logo_id, 
-		'full', 
-		false, 
-		array( 'alt' => get_bloginfo( 'name' ), 'class' => 'site-logo-img' ) ) : '<img class="site-logo-img" src="' .
-		 get_template_directory_uri() . '/vendor/envato_setup/images/' . knd_get_theme_mod( 'knd_site_scenario' ) .
-		 '/logo.svg" width="315" height="66" alt="' . get_bloginfo( 'name' ) . '">';
-}
-
-function knd_get_content_image_markup( $attachment_id ) {
-	return wp_get_attachment_image( $attachment_id, 'medium', false, array( 'alt' => "" ) );
-}
-
-
 function knd_show_post_terms( $post_id ) {
 	?>
 <div class="tags-line">
@@ -499,6 +455,146 @@ function knd_show_post_terms( $post_id ) {
 	</div>
 
 <?php
+}
+
+/**
+ * Get content image markup
+ */
+function knd_get_content_image_markup( $attachment_id ) {
+	return wp_get_attachment_image( $attachment_id, 'medium', false, array( 'alt' => "" ) );
+}
+
+/**
+ * Get Default site icon url
+ */
+function knd_get_default_site_icon_url() {
+	return get_template_directory_uri() . '/assets/images/favicon.png';
+}
+
+/**
+ * Get site icon id
+ */
+function knd_get_site_icon_id() {
+	$icon_id = get_option( 'site_icon' );
+	return $icon_id;
+}
+
+/**
+ * Get site icon url
+ */
+function knd_get_site_icon_url() {
+	$logo_id = knd_get_site_icon_id();
+	if ( $logo_id ) {
+		$icon_url = wp_get_attachment_image_url( $logo_id, 'full', false );
+	} else {
+		$icon_url = knd_get_default_site_icon_url();
+	}
+	return $icon_url;
+}
+
+/**
+ * Get site icon image
+ */
+function knd_get_site_icon_image() {
+	return knd_get_image_markup( knd_get_site_icon_url(),
+		array(
+			'class' => 'site-logo-img site-favicon-img',
+			'alt' => get_bloginfo( 'name' ),
+		)
+	);
+}
+
+/**
+ * Site icon image
+ */
+function knd_site_icon_image() {
+	echo knd_get_site_icon_image();
+}
+
+/**
+ * Get Default logo url
+ */
+function knd_get_default_logo_url() {
+	return get_template_directory_uri() . '/assets/images/logo.svg';
+}
+
+/**
+ * Get logo id
+ */
+function knd_get_logo_id() {
+	$logo_id = false;
+	if ( get_theme_mod( 'custom_logo' ) ) {
+		$logo_id = get_theme_mod( 'custom_logo' );
+	/** Deprecated, remove in version 3.0, use only 'custom_logo' */
+	} elseif ( get_theme_mod( 'header_logo_image' ) ) {
+		$logo_id = get_theme_mod( 'header_logo_image' );
+	} elseif ( get_theme_mod( 'knd_custom_logo' ) ) {
+		$logo_id = get_theme_mod( 'knd_custom_logo' );
+	}
+	return $logo_id;
+}
+
+/**
+ * Get footer logo id
+ */
+function knd_get_footer_logo_id() {
+	$logo_id = knd_get_logo_id();
+	if ( class_exists( 'Kirki' ) ) {
+		$logo_id = get_theme_mod( 'footer_logo_image', $logo_id );
+	}
+	return $logo_id;
+}
+
+/**
+ * Get logo url
+ */
+function knd_get_logo_url() {
+	$logo_id = knd_get_logo_id();
+	if ( $logo_id ) {
+		$logo_url = wp_get_attachment_image_url( $logo_id, 'full', false );
+	} else {
+		$logo_url = knd_get_default_logo_url();
+	}
+	return $logo_url;
+}
+
+/**
+ * Get logo image
+ */
+function knd_get_logo_image() {
+	$logo_id = knd_get_logo_id();
+
+	$attr = array( 'class' => 'site-logo-img', 'alt' => get_bloginfo( 'name' ) );
+
+	$logo_image = '';
+	if ( $logo_id ) {
+		$logo_image = wp_get_attachment_image( $logo_id, 'full', false, $attr );
+	}
+	if ( ! $logo_image ) {
+		$logo_image = knd_get_image_markup( knd_get_logo_url(), $attr );
+	}
+
+	return $logo_image;
+}
+
+/**
+ * Get image markup.
+ */
+function knd_get_image_markup( $url, $attr = array() ) {
+
+	$html = '';
+	$html_attr = '';
+	if ( $url ) {
+		$html_attr .= ' src="' . esc_url( $url ) . '"';
+
+		foreach ( $attr as $name => $value ) {
+			$html_attr .= " $name=" . '"' . $value . '"';
+		}
+
+		$html = '<img ' . $html_attr . '>';
+	}
+
+	return $html;
 }
 
 /**
@@ -513,7 +609,7 @@ function knd_header_logo() {
 	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="knd-header-logo">
 		<div class="knd-header-logo__inner">
 			<?php
-			$logo_id = get_theme_mod( 'header_logo_image', get_theme_mod( 'knd_custom_logo' ) );
+			$logo_id = knd_get_logo_id();
 
 			$logo_url = wp_get_attachment_image_url( $logo_id, 'full', false );
 
@@ -545,6 +641,28 @@ function knd_header_logo() {
 }
 
 /**
+ * Header Off-Canvas Toggle
+ */
+function knd_header_mobile_logo() {
+	?>
+	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="knd-header-mobile-logo">
+	<?php
+	$logo_id  = knd_get_logo_id();
+	$logo_url = wp_get_attachment_image_url( $logo_id, 'full', false );
+
+	if ( $logo_url ) {
+		echo wp_get_attachment_image( $logo_id, 'full', false, array( 'alt' => get_bloginfo( 'name' ) ) );
+	} elseif ( get_theme_mod( 'header_logo_title' ) ) {
+		echo wp_kses_post( get_theme_mod( 'header_logo_title' ) );
+	} else {
+		bloginfo();
+	}
+	?>
+	</a>
+	<?php
+}
+
+/**
  * Footer Logo
  */
 function knd_footer_logo() {
@@ -553,7 +671,7 @@ function knd_footer_logo() {
 
 		$logo_title = get_theme_mod( 'footer_logo_title', get_theme_mod( 'header_logo_title', get_bloginfo( 'name' ) ) );
 		$logo_desc  = get_theme_mod( 'footer_logo_text', get_theme_mod( 'header_logo_text', get_bloginfo( 'description' ) ) );
-		$logo_id    = get_theme_mod( 'footer_logo_image', get_theme_mod( 'header_logo_image', get_theme_mod( 'knd_custom_logo' ) ) );
+		$logo_id    = knd_get_footer_logo_id();
 		$logo_url   = wp_get_attachment_image_url( $logo_id, 'full', false );
 		?>
 
@@ -732,28 +850,6 @@ function knd_offcanvas_additional_button(){
 		</div>
 		<?php
 	}
-}
-
-/**
- * Header Off-Canvas Toggle
- */
-function knd_header_mobile_logo() {
-	?>
-	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="knd-header-mobile-logo">
-	<?php
-	$logo_id  = get_theme_mod( 'header_logo_image', get_theme_mod( 'knd_custom_logo' ) );
-	$logo_url = wp_get_attachment_image_url( $logo_id, 'full', false );
-
-	if ( $logo_url ) {
-		echo wp_get_attachment_image( $logo_id, 'full', false, array( 'alt' => get_bloginfo( 'name' ) ) );
-	} elseif ( get_theme_mod( 'header_logo_title' ) ) {
-		echo wp_kses_post( get_theme_mod( 'header_logo_title' ) );
-	} else {
-		bloginfo();
-	}
-	?>
-	</a>
-	<?php
 }
 
 /**

@@ -49,24 +49,16 @@ var EnvatoWizard = (function( $ ) {
 
 			}
 		});
-		$( '.button-upload' ).on( 'click', function( e ) {
 
+
+		/**
+		 * Select/Upload image
+		 */
+		$('body').on('click', '.button-upload', function(e){
 			e.preventDefault();
 			renderMediaUploader();
-
 		});
-		/*$( '.theme-presets a' ).on( 'click', function( e ) {
 
-			e.preventDefault();
-
-			$( this ).parents( 'ul' ).first().find( '.current' ).removeClass( 'current' );
-			$( this ).parents( 'li' ).first().addClass( 'current' );
-
-			$( '#new_scenario_id' ).val( $( this ).data( 'scenario-id' ) );
-
-			return false;
-
-		});*/
 	}
 
 	function loadingContent() {
@@ -289,6 +281,9 @@ var EnvatoWizard = (function( $ ) {
 
 		fileFrame = wp.media.frames.file_frame = wp.media({
 			title: envatoSetupParams.upload_logo_text,
+			library : {
+					type : 'image'
+				},
 			button: {
 				text: envatoSetupParams.select_logo_text,
 			},

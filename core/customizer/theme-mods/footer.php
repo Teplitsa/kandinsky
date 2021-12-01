@@ -53,7 +53,7 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'type'            => 'image',
 	'settings'        => 'footer_logo_image',
 	'section'         => 'footer_logo',
-	'default'         => get_theme_mod( 'header_logo_image', get_theme_mod( 'knd_custom_logo' ) ),
+	'default'         => knd_get_logo_id(),
 	'choices'         => array(
 		'save_as' => 'id',
 	),

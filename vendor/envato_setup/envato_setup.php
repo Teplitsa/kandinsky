@@ -367,6 +367,7 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 				'jquery',
 				'jquery-blockui',
 			), $this->version);
+
 			wp_localize_script('envato-setup', 'envatoSetupParams', array(
 				'tgm_plugin_nonce' => array(
 					'update' => wp_create_nonce('tgmpa-update'),
@@ -384,7 +385,6 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 			wp_enqueue_style('envato-setup', $this->plugin_url.'css/envato-setup.css', array(
 				'wp-admin',
 				'dashicons',
-				'install',
 			), $this->version);
 
 			wp_enqueue_style('wp-admin'); // Styles for admin notices
@@ -393,6 +393,9 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 			wp_enqueue_script('media');
 
 			ob_start();
+
+			echo '<div class="knd-wizard-wrapper">';
+
 			$this->display_wizard_header();
 			$this->display_wizard_steps();
 			$show_content = true;
@@ -422,6 +425,8 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 			}
 			echo '</div>';
 			$this->display_wizard_footer();
+
+			echo '</div><!-- .knd-wizard-wrapper -->';
 
 			exit;
 
@@ -465,7 +470,7 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 			<body class="envato-setup wp-core-ui knd-wizard">
 			<h1 id="wc-logo">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" target="_blank">
-					<?php echo '<img class="wizard-header-logo" src="'.get_template_directory_uri().'/knd-logo.svg" alt="'.__('Kandinsky theme setup wizard', 'knd').'" style="width:100%; height:auto;">'; ?>
+					<img class="wizard-header-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/knd-logo.svg" alt="<?php esc_attr_e('Kandinsky theme setup wizard', 'knd'); ?>">
 				</a>
 			</h1>
 			<?php
@@ -1047,15 +1052,38 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 
 			$_POST['new_logo_id'] = (int)$_POST['new_logo_id'];
 			if ( $_POST['new_logo_id'] ) {
-				set_theme_mod( 'knd_custom_logo', $_POST['new_logo_id'] );
+				set_theme_mod( 'custom_logo', $_POST['new_logo_id'] );
+				/** Deprecated, remove in version 3.0 */
+				remove_theme_mod( 'knd_custom_logo' );
+				remove_theme_mod( 'header_logo_image' );
+			} elseif ( ! get_theme_mod( 'custom_logo' ) ) {
+
+				/** Insert default site icon image */
+				$url = knd_get_default_logo_url();
+				$post_id = 0;
+				$desc = get_bloginfo( 'name' );
+
+				$img_id = media_sideload_image( $url, $post_id, $desc, 'id');
+
+				if ( is_wp_error( $img_id ) ) {
+					if ( 'http_request_failed' === $img_id->get_error_code() ) {
+						// if http_request_failed.
+						$url = str_replace( 'https:', 'http:', $url );
+						$img_id = media_sideload_image( $url, $post_id, $desc, 'id');
+						if ( ! is_wp_error( $img_id ) ) {
+							set_theme_mod( 'custom_logo', $img_id );
+						}
+					}
+				} else {
+					set_theme_mod( 'custom_logo', $img_id );
+				}
+
 			}
 
 			wp_redirect( esc_url_raw( $this->get_next_step_link() ) );
 			exit;
 
 		}
-
-		
 
 		public function step_settings_handler() {
 
@@ -1067,16 +1095,39 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 			if($_POST['knd_org_name']) {
 				update_option('blogname', $_POST['knd_org_name']);
 			}
+
 			if($_POST['knd_org_description']) {
 				update_option('blogdescription', $_POST['knd_org_description']);
 			}
 
 			$new_favicon_id = (int)$_POST['new_logo_id'];
-			if($new_favicon_id) {
+			if ( $new_favicon_id ) {
 
 				$attr = wp_get_attachment_image_src($new_favicon_id, 'full');
 				if($attr && !empty($attr[1]) && !empty($attr[2])) {
 					update_option('site_icon', $new_favicon_id);
+				}
+
+			} elseif ( ! has_site_icon() ) {
+
+				/** Insert default site icon image */
+				$url = knd_get_default_site_icon_url();
+				$post_id = 0;
+				$desc = get_bloginfo( 'name' );
+
+				$img_id = media_sideload_image( $url, $post_id, $desc, 'id');
+
+				if ( is_wp_error( $img_id ) ) {
+					if ( 'http_request_failed' === $img_id->get_error_code() ) {
+						// if http_request_failed.
+						$url = str_replace( 'https:', 'http:', $url );
+						$img_id = media_sideload_image( $url, $post_id, $desc, 'id');
+						if ( ! is_wp_error( $img_id ) ) {
+							update_option( 'site_icon', $img_id );
+						}
+					}
+				} else {
+					update_option( 'site_icon', $img_id );
 				}
 
 			}

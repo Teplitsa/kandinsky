@@ -20,6 +20,7 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'label'    => esc_html__( 'Select header template', 'knd' ),
 	'section'  => 'header',
 	'default'  => '2',
+	'priority' => 1,
 	'choices'  => array(
 		'1' => get_template_directory_uri() . '/core/customizer/images/header-1.png',
 		'2' => get_template_directory_uri() . '/core/customizer/images/header-2.png',
@@ -34,6 +35,7 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'section'  => 'header',
 	'default'  => '124px',
 	'transport' => 'auto',
+	'priority' => 2,
 	'output'   => array(
 		array(
 			'element'  => ':root',
@@ -49,6 +51,7 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'section'   => 'header',
 	'default'   => '#ffffff',
 	'transport' => 'auto',
+	'priority'  => 3,
 	'output'    => array(
 		array(
 			'element'  => '.knd-header',
@@ -62,19 +65,10 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'settings' => 'header_' . wp_unique_id( 'divider_' ),
 	'section'  => 'header',
 	'default'  => '<div class="knd-customizer-divider"></div>',
+	'priority' => 4,
 ) );
 
-Kirki::add_field( 'knd_theme_mod', array(
-	'type'     => 'image',
-	'settings' => 'header_logo_image',
-	'label'    => esc_html__( 'Logo', 'knd' ),
-	'description' => esc_html__( 'If only an image is used as a logo, then we recommend uploading an image with the dimensions of 315 x 66 px, or 66 x 66 px for use along with the text.', 'knd' ),
-	'section'  => 'header',
-	'default'  => get_theme_mod( 'knd_custom_logo' ),
-	'choices'  => array(
-		'save_as' => 'id',
-	),
-) );
+/* Here is the custom_logo control */
 
 Kirki::add_field( 'knd_theme_mod', array(
 	'type'              => 'text',

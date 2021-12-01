@@ -611,9 +611,8 @@ function knd_custom_links_dashboard_screen( $items = array(), $is_initial_call =
 <div id="knd-dashboard-card" class="knd-dashboard">
 
 	<div class="knd-logo">
-		<a href="<?php echo esc_url(KND_OFFICIAL_WEBSITE_URL);?>"
-			target="_blank"> <img
-			src="<?php echo esc_url(get_template_directory_uri().'/knd-logo.svg');?>">
+		<a href="<?php echo esc_url(KND_OFFICIAL_WEBSITE_URL);?>" target="_blank">
+			<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/knd-logo.svg');?>" alt="<?php esc_attr_e( 'Kandinsky', 'knd' ); ?>">
 		</a>
 	</div>
 	<p>
