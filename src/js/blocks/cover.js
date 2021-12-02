@@ -6,7 +6,7 @@
 
 	const el = element.createElement;
 
-	const { TextControl, TextareaControl, SelectControl, RangeControl, ColorPalette, PanelBody, ToggleControl, BaseControl, Button,  Disabled } = components;
+	const { TextControl, TextareaControl, SelectControl, RangeControl, ColorPalette, PanelBody, PanelRow, ToggleControl, BaseControl, Button,  Disabled, __experimentalUnitControl } = components;
 
 	const { registerBlockType, withColors, PanelColorSettings, getColorClassName, useBlockProps } = blocks;
 	const { InspectorControls, ColorPaletteControl, MediaUpload, MediaUploadCheck } = blockEditor;
@@ -259,13 +259,22 @@
 								),
 							), // Background Image
 
-							el( TextControl, {
-								label: __( 'Min Height', 'knd' ),
-								value: props.attributes.minHeight,
-								onChange: ( val ) => {
-									props.setAttributes( { minHeight: val } );
-								},
-							}),
+							el( __experimentalUnitControl, // __experimentalUseCustomUnits
+								{
+									label: __('Min Height', 'knd'),
+									value: props.attributes.minHeight,
+									onChange: ( val ) => {
+										props.setAttributes( { minHeight: val } );
+									},
+									labelPosition: 'side',
+									units: [
+										{
+											value: "px",
+											label: "px",
+										},
+									]
+								}
+							)
 
 						),
 

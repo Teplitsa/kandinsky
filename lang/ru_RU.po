@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-02 11:45+0200\n"
-"PO-Revision-Date: 2021-12-02 12:10+0200\n"
+"PO-Revision-Date: 2021-12-02 20:17+0200\n"
 "Last-Translator: ahaenor <ahaenor@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -396,7 +396,7 @@ msgstr "Фоновое изображение"
 #: assets/js/blocks.js:1081 assets/js/blocks.js:2369 assets/js/es5.js:480
 #: src/js/blocks/cover.js:239 src/js/blocks/hero.js:450
 msgid "Remove Background Image"
-msgstr "Удалить форовую картинку"
+msgstr "Удалить фоновую картинку"
 
 #: assets/js/blocks.js:1093 assets/js/blocks.js:2381 assets/js/es5.js:494
 #: src/js/blocks/cover.js:251 src/js/blocks/hero.js:462
