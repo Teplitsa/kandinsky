@@ -155,17 +155,17 @@
 	$( '.submenu-trigger' ).on( 'click keypress', function( e ) {
 		e.preventDefault();
 
-		var thisParent = $(this).parents('.menu-item-has-children');
+		var thisParent = $(this).parent().parent('.menu-item-has-children');
 
 		if ( thisParent.hasClass('open') ) {
 			$(this).attr('aria-expanded', 'false').attr('aria-label', knd.i18n.a11y.expand);
-			thisParent.find( '.sub-menu' ).slideUp( 300, function(){
+			$(this).parent().next('.sub-menu' ).slideUp( 300, function(){
 				thisParent.removeClass('open');
 			});
 		} else {
 			$(this).attr('aria-expanded', 'true').attr('aria-label', knd.i18n.a11y.collapse);
 			thisParent.addClass('open');
-			thisParent.find( '.sub-menu' ).slideDown( 300 );
+			$(this).parent().next('.sub-menu' ).slideDown( 300 );
 		}
 
 	});
