@@ -2,6 +2,9 @@
  * Gutenberg
  */
 
+@import 'variables';
+@import 'mixins';
+
 .editor-styles-wrapper {
 	font-family: var(--knd-font-family-base) !important;
 	line-height: 1.55;

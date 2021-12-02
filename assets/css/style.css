@@ -2132,7 +2132,7 @@ body > svg {
 
 /** Header Nav */
 .knd-header-nav {
-	height: 50px;
+	min-height: 50px;
 }
 
 .knd-col-right .knd-header-nav {
@@ -2154,6 +2154,8 @@ body > svg {
 	margin: 0;
 	display: -ms-flexbox;
 	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
 	font-weight: 700;
 	line-height: 120%;
 	-ms-flex-align: center;
@@ -2166,7 +2168,6 @@ body > svg {
 }
 
 .knd-header-nav > .menu > li {
-	height: 100%;
 	display: -ms-flexbox;
 	display: flex;
 	-ms-flex-align: center;
@@ -2174,8 +2175,8 @@ body > svg {
 	white-space: nowrap;
 }
 
-.knd-header-nav > .menu > li:not(:first-child) {
-	margin-left: 30px;
+.knd-header-nav > .menu > li:not(:last-child) {
+	margin-right: 30px;
 }
 
 .knd-header-nav > .menu > li.menu-item-has-children > a > .dropdown-nav-toggle {
@@ -2213,8 +2214,7 @@ body > svg {
 	-ms-flex-align: center;
 	align-items: center;
 	height: 100%;
-	padding-left: 5px;
-	padding-right: 5px;
+	padding: 8px 5px;
 }
 
 .knd-header-nav > .menu .sub-menu {
@@ -2449,6 +2449,11 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 	justify-content: center;
 	-ms-flex-align: center;
 	align-items: center;
+}
+
+.knd-header__inner .knd-social-links {
+	-ms-flex-wrap: nowrap;
+	flex-wrap: nowrap;
 }
 
 .knd-header__inner .knd-social-links li a {

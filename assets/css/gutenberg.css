@@ -1,6 +1,32 @@
+@charset "UTF-8";
 /**
  * Gutenberg
  */
+/** == Kandinsky-specific widgets (_widgetsn.scss) == */
+:root {
+	--knd-color-white: #ffffff;
+	--knd-color-black: #000000;
+	--knd-color-light-grey: #f7f8f8;
+	--knd-color-light-blue: #f5fafe;
+	--knd-header-height: 124px;
+	--knd-font-family-button: var(--knd-font-family-base);
+	--knd-button-border-radius: .5em;
+	--knd-image-border-radius: 8px;
+	--knd-adminbar-height: 32px;
+}
+
+@media (max-width: 765px) {
+	body {
+		--knd-adminbar-height: 46px;
+	}
+}
+
+/** == Mixins (_mixins.scss) == **/
+/** Utilities **/
+/* Media queries */
+/** Global layout presets **/
+/** Post content elements **/
+/* Elements */
 .editor-styles-wrapper {
 	font-family: var(--knd-font-family-base) !important;
 	line-height: 1.55;
@@ -52,6 +78,86 @@
 	color: var(--knd-color-main-active);
 	text-decoration: none;
 	border-bottom-color: transparent;
+}
+
+.editor-styles-wrapper ul {
+	margin-top: 26px;
+	margin-bottom: 26px;
+}
+
+.editor-styles-wrapper ul:not([class]) {
+	list-style-type: '– ';
+	padding-left: 1.5em;
+}
+
+.editor-styles-wrapper ul:first-child {
+	margin-top: 0;
+}
+
+.editor-styles-wrapper ul li li {
+	padding-left: 0;
+	break-inside: avoid;
+}
+
+.editor-styles-wrapper ul li li:before {
+	display: none;
+}
+
+.editor-styles-wrapper ul ul {
+	list-style: circle;
+}
+
+.editor-styles-wrapper ul ul ul {
+	list-style: square;
+}
+
+.editor-styles-wrapper ol {
+	list-style: decimal;
+	margin-top: 26px;
+	margin-bottom: 26px;
+}
+
+.editor-styles-wrapper ol:not([class]) {
+	padding-left: 1.5em;
+}
+
+.editor-styles-wrapper ol:first-child {
+	margin-top: 0;
+}
+
+.editor-styles-wrapper ol ol {
+	list-style: lower-alpha;
+}
+
+.editor-styles-wrapper ol ol ol {
+	list-style: lower-roman;
+}
+
+.editor-styles-wrapper ul ul,
+.editor-styles-wrapper ul ol,
+.editor-styles-wrapper ol ul,
+.editor-styles-wrapper ol ol {
+	margin-bottom: 0;
+}
+
+.editor-styles-wrapper ul ul:first-child,
+.editor-styles-wrapper ul ol:first-child,
+.editor-styles-wrapper ol ul:first-child,
+.editor-styles-wrapper ol ol:first-child {
+	margin-top: 13px;
+}
+
+.editor-styles-wrapper li {
+	margin-bottom: 13px;
+}
+
+.editor-styles-wrapper li:last-child {
+	margin-bottom: 0;
+}
+
+.editor-styles-wrapper ul + p,
+.editor-styles-wrapper ol + p {
+	margin-top: 26px;
 }
 
 .knd-components-heading__help {
