@@ -142,6 +142,10 @@ register_block_type( 'knd/leyka-cards', array(
 			'type' => 'string',
 			'default' => 'date',
 		),
+		'queryCampaignType' => array(
+			'type'    => 'string',
+			'default' => 'all',
+		),
 	),
 ) );
 
@@ -203,17 +207,6 @@ function knd_block_leyka_cards_render_callback( $attr ) {
 		'posts_per_page' => $posts_to_show,
 	);
 
-	// if( !empty($instance['exclude']) ) {
-	// 		$q_args['post__not_in'] = array_map('intval', explode(',', $instance['exclude']));
-	// 	}
-	// 	else {
-			
-	// 		$ex = $this->exclude_prebuild_campaigns();
-	// 		if($ex) {
-	// 			$q_args['post__not_in'] = $ex;
-	// 		}
-	// 	}
-
 	if ( $attr['queryInclude'] ) {
 		$post__in = array();
 		foreach ( $attr['queryInclude'] as $page_title ) {
@@ -259,6 +252,13 @@ function knd_block_leyka_cards_render_callback( $attr ) {
 			'value'   => 1,
 			'compare' => '!=',
 			'type' => 'NUMERIC',
+		);
+	}
+
+	if ( 'all' !== $attr['queryCampaignType'] ) {
+		$args['meta_query'][] = array(
+			'key'     => 'campaign_type',
+			'value'   => $attr['queryCampaignType'],
 		);
 	}
 
@@ -378,6 +378,8 @@ function knd_block_leyka_cards_render_callback( $attr ) {
 					'class' => 'leyka-shortcode campaign-card wp-block-leyka-card',
 				)
 			);
+
+			//var_dump( get_post_meta( get_the_ID(), 'campaign_type', true ) );
 
 			$html .= '<div class="knd-block-item">
 				<div ' . $block_item_attr . '>

@@ -465,6 +465,10 @@
 			queryOrderBy: {
 				type: 'string',
 				default: 'date',
+			},
+			queryCampaignType: {
+				type: 'string',
+				default: 'all',
 			}
 		},
 
@@ -780,6 +784,21 @@
 
 							el( PanelRow, {},
 								queryPostsExcludeControl(props),
+							),
+
+							el( SelectControl,
+								{
+									label: __( 'Campaign type', 'knd' ),
+									options : [
+										{ value: 'all', label: __( 'All', 'knd' ) },
+										{ value: 'temporary', label: __( 'Temporary', 'knd' ) },
+										{ value: 'persistent', label: __( 'Persistent', 'knd' ) },
+									],
+									value: props.attributes.queryCampaignType,
+									onChange: ( val ) => {
+										props.setAttributes( { queryCampaignType: val } );
+									},
+								},
 							),
 
 							el( PanelRow, {},

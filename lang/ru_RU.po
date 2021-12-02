@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-25 10:35+0200\n"
-"PO-Revision-Date: 2021-11-25 10:37+0200\n"
+"POT-Creation-Date: 2021-12-02 11:45+0200\n"
+"PO-Revision-Date: 2021-12-02 12:10+0200\n"
 "Last-Translator: ahaenor <ahaenor@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -55,11 +55,11 @@ msgstr "Навигация по кампаниям"
 msgid "Campaign"
 msgstr "Кампания"
 
-#: archive-leyka_donation.php:38
+#: archive-leyka_donation.php:39
 msgid "Anonymous"
 msgstr "Анонимный"
 
-#: archive-leyka_donation.php:52
+#: archive-leyka_donation.php:54
 msgid "Donations navigation"
 msgstr "Навигация по пожертвованиям"
 
@@ -77,17 +77,17 @@ msgstr "Удалить расписание"
 msgid "Add time"
 msgstr "Добавить время"
 
-#: assets/js/admin.js:158 inc/events/events-functions.php:299
+#: assets/js/admin.js:158 inc/events/events-functions.php:305
 #: src/js/admin/admin.js:158
 msgid "Label"
 msgstr "Название"
 
-#: assets/js/admin.js:159 inc/events/events-functions.php:300
+#: assets/js/admin.js:159 inc/events/events-functions.php:306
 #: src/js/admin/admin.js:159
 msgid "slug"
 msgstr "слаг"
 
-#: assets/js/admin.js:160 inc/events/events-functions.php:301
+#: assets/js/admin.js:160 inc/events/events-functions.php:307
 #: src/js/admin/admin.js:160
 msgid "Delete"
 msgstr "Удалить"
@@ -104,74 +104,74 @@ msgstr "Форма для сбора пожертвований."
 msgid "campaing"
 msgstr "кампания"
 
-#: assets/js/blocks.js:54 assets/js/blocks.js:346
+#: assets/js/blocks.js:54 assets/js/blocks.js:347
 #: src/experimental/donations.js:50 src/js/blocks/campaign.js:53
-#: src/js/blocks/cards.js:209
+#: src/js/blocks/cards.js:210
 msgid "leyka"
 msgstr "лейка"
 
-#: assets/js/blocks.js:99 assets/js/blocks.js:490 assets/js/blocks.js:980
-#: assets/js/blocks.js:1322 assets/js/blocks.js:1796 assets/js/blocks.js:2081
-#: assets/js/blocks.js:2646 assets/js/blocks.js:3138 assets/js/blocks.js:3428
-#: assets/js/blocks.js:3758 assets/js/blocks.js:4212 assets/js/es5.js:192
-#: src/js/blocks/campaign.js:98 src/js/blocks/cards.js:353
+#: assets/js/blocks.js:99 assets/js/blocks.js:495 assets/js/blocks.js:1000
+#: assets/js/blocks.js:1342 assets/js/blocks.js:1816 assets/js/blocks.js:2101
+#: assets/js/blocks.js:2666 assets/js/blocks.js:3158 assets/js/blocks.js:3448
+#: assets/js/blocks.js:3778 assets/js/blocks.js:4232 assets/js/es5.js:192
+#: src/js/blocks/campaign.js:98 src/js/blocks/cards.js:358
 #: src/js/blocks/cover.js:158 src/js/blocks/cta.js:141
 #: src/js/blocks/events.js:243 src/js/blocks/hero.js:182
 #: src/js/blocks/info.js:164 src/js/blocks/news.js:241
 #: src/js/blocks/partners.js:168 src/js/blocks/people.js:202
 #: src/js/blocks/projects.js:289 vendor/envato_setup/envato_setup.php:327
-#: vendor/envato_setup/envato_setup.php:745
+#: vendor/envato_setup/envato_setup.php:750
 msgid "Settings"
 msgstr "Параметры"
 
-#: assets/js/blocks.js:244 assets/js/blocks.js:1464 assets/js/blocks.js:2204
-#: assets/js/es5.js:324 src/js/blocks/cards.js:107 src/js/blocks/cta.js:283
+#: assets/js/blocks.js:245 assets/js/blocks.js:1484 assets/js/blocks.js:2224
+#: assets/js/es5.js:324 src/js/blocks/cards.js:108 src/js/blocks/cta.js:283
 #: src/js/blocks/hero.js:305
 msgid "Button text"
 msgstr "Текст кнопки"
 
-#: assets/js/blocks.js:272 src/js/blocks/cards.js:135
+#: assets/js/blocks.js:273 src/js/blocks/cards.js:136
 msgid "Include campaigns"
 msgstr "Включить кампании"
 
-#: assets/js/blocks.js:307 src/experimental/donations.js:111
-#: src/js/blocks/cards.js:170
+#: assets/js/blocks.js:308 src/experimental/donations.js:111
+#: src/js/blocks/cards.js:171
 msgid "Exclude campaigns"
 msgstr "Исключить кампании"
 
-#: assets/js/blocks.js:342 src/js/blocks/cards.js:205
+#: assets/js/blocks.js:343 src/js/blocks/cards.js:206
 msgid "Companies cards"
 msgstr "Карточки кампаний"
 
-#: assets/js/blocks.js:343 src/js/blocks/cards.js:206
+#: assets/js/blocks.js:344 src/js/blocks/cards.js:207
 msgid "Leyka: Companies cards."
 msgstr "Лейка: Карточки компаний."
 
-#: assets/js/blocks.js:346 src/js/blocks/cards.js:209
+#: assets/js/blocks.js:347 src/js/blocks/cards.js:210
 msgid "campaign"
 msgstr "кампания"
 
-#: assets/js/blocks.js:346 src/js/blocks/cards.js:209
+#: assets/js/blocks.js:347 src/js/blocks/cards.js:210
 msgid "cards"
 msgstr "карточки"
 
-#: assets/js/blocks.js:355 core/admin.php:108
+#: assets/js/blocks.js:356 core/admin.php:108
 #: core/editor/blocks/leyka-cards.php:18 core/shortcodes.php:61
-#: modules/donations/widgets.php:9 src/js/blocks/cards.js:218
-#: vendor/envato_setup/envato_setup.php:763
+#: modules/donations/widgets.php:9 src/js/blocks/cards.js:219
+#: vendor/envato_setup/envato_setup.php:768
 msgid "Donations"
 msgstr "Пожертвования"
 
-#: assets/js/blocks.js:410 core/editor/blocks/leyka-cards.php:86
-#: src/js/blocks/cards.js:273
+#: assets/js/blocks.js:411 core/editor/blocks/leyka-cards.php:86
+#: src/js/blocks/cards.js:274
 msgid "Donate"
 msgstr "Пожертвовать"
 
-#: assets/js/blocks.js:495 assets/js/blocks.js:983 assets/js/blocks.js:1799
-#: assets/js/blocks.js:2672 assets/js/blocks.js:2711 assets/js/blocks.js:2750
-#: assets/js/blocks.js:3142 assets/js/blocks.js:3431 assets/js/blocks.js:3762
-#: assets/js/blocks.js:4215 modules/donations/widgets.php:128
-#: src/experimental/donations.js:95 src/js/blocks/cards.js:358
+#: assets/js/blocks.js:500 assets/js/blocks.js:1003 assets/js/blocks.js:1819
+#: assets/js/blocks.js:2692 assets/js/blocks.js:2731 assets/js/blocks.js:2770
+#: assets/js/blocks.js:3162 assets/js/blocks.js:3451 assets/js/blocks.js:3782
+#: assets/js/blocks.js:4235 modules/donations/widgets.php:128
+#: src/experimental/donations.js:95 src/js/blocks/cards.js:363
 #: src/js/blocks/cover.js:161 src/js/blocks/events.js:246
 #: src/js/blocks/info.js:190 src/js/blocks/info.js:229
 #: src/js/blocks/info.js:268 src/js/blocks/news.js:245
@@ -180,48 +180,48 @@ msgstr "Пожертвовать"
 msgid "Heading"
 msgstr "Заголовок"
 
-#: assets/js/blocks.js:505 src/js/blocks/cards.js:368
+#: assets/js/blocks.js:510 src/js/blocks/cards.js:373
 msgid "Cards to show"
 msgstr "Сколько карточек показывать"
 
-#: assets/js/blocks.js:517 assets/js/blocks.js:3474 assets/js/blocks.js:3806
-#: src/js/blocks/cards.js:380 src/js/blocks/partners.js:214
+#: assets/js/blocks.js:522 assets/js/blocks.js:3494 assets/js/blocks.js:3826
+#: src/js/blocks/cards.js:385 src/js/blocks/partners.js:214
 #: src/js/blocks/people.js:250
 msgid "Columns"
 msgstr "Колонки"
 
-#: assets/js/blocks.js:531 src/js/blocks/cards.js:394
+#: assets/js/blocks.js:536 src/js/blocks/cards.js:399
 msgid "Show Title"
 msgstr "Показывать заголовок"
 
-#: assets/js/blocks.js:543 src/js/blocks/cards.js:406
+#: assets/js/blocks.js:548 src/js/blocks/cards.js:411
 msgid "Show Image"
 msgstr "Показывать картинку"
 
-#: assets/js/blocks.js:567 src/js/blocks/cards.js:430
+#: assets/js/blocks.js:572 src/js/blocks/cards.js:435
 msgid "Show Description"
 msgstr "Показывать описание"
 
-#: assets/js/blocks.js:579 src/js/blocks/cards.js:442
+#: assets/js/blocks.js:584 src/js/blocks/cards.js:447
 msgid "Show Progressbar"
 msgstr "Показывать прогрессбар"
 
-#: assets/js/blocks.js:591 src/js/blocks/cards.js:454
+#: assets/js/blocks.js:596 src/js/blocks/cards.js:459
 msgid "Show Collected Amount"
 msgstr "Показывать собранную сумму"
 
-#: assets/js/blocks.js:603 src/js/blocks/cards.js:466
+#: assets/js/blocks.js:608 src/js/blocks/cards.js:471
 msgid "Show Target Amount"
 msgstr "Показывать целевую сумму"
 
-#: assets/js/blocks.js:615 src/js/blocks/cards.js:478
+#: assets/js/blocks.js:620 src/js/blocks/cards.js:483
 msgid "Show Button"
 msgstr "Показывать кнопку"
 
-#: assets/js/blocks.js:629 assets/js/blocks.js:1097 assets/js/blocks.js:1420
-#: assets/js/blocks.js:1833 assets/js/blocks.js:2784 assets/js/blocks.js:3176
-#: assets/js/blocks.js:3501 assets/js/blocks.js:3844 assets/js/blocks.js:4248
-#: src/js/blocks/cards.js:492 src/js/blocks/cover.js:275
+#: assets/js/blocks.js:634 assets/js/blocks.js:1117 assets/js/blocks.js:1440
+#: assets/js/blocks.js:1853 assets/js/blocks.js:2804 assets/js/blocks.js:3196
+#: assets/js/blocks.js:3521 assets/js/blocks.js:3864 assets/js/blocks.js:4268
+#: src/js/blocks/cards.js:497 src/js/blocks/cover.js:275
 #: src/js/blocks/cta.js:239 src/js/blocks/events.js:280
 #: src/js/blocks/info.js:302 src/js/blocks/news.js:279
 #: src/js/blocks/partners.js:241 src/js/blocks/people.js:288
@@ -229,11 +229,11 @@ msgstr "Показывать кнопку"
 msgid "Colors"
 msgstr "Цвета"
 
-#: assets/js/blocks.js:635 assets/js/blocks.js:1103 assets/js/blocks.js:1426
-#: assets/js/blocks.js:1839 assets/js/blocks.js:2373 assets/js/blocks.js:2790
-#: assets/js/blocks.js:3182 assets/js/blocks.js:3507 assets/js/blocks.js:3850
-#: assets/js/blocks.js:4254 assets/js/blocks.js:4440 assets/js/es5.js:503
-#: src/experimental/donations.js:120 src/js/blocks/cards.js:498
+#: assets/js/blocks.js:640 assets/js/blocks.js:1123 assets/js/blocks.js:1446
+#: assets/js/blocks.js:1859 assets/js/blocks.js:2393 assets/js/blocks.js:2810
+#: assets/js/blocks.js:3202 assets/js/blocks.js:3527 assets/js/blocks.js:3870
+#: assets/js/blocks.js:4274 assets/js/blocks.js:4460 assets/js/es5.js:503
+#: src/experimental/donations.js:120 src/js/blocks/cards.js:503
 #: src/js/blocks/cover.js:281 src/js/blocks/cta.js:245
 #: src/js/blocks/events.js:286 src/js/blocks/hero.js:474
 #: src/js/blocks/info.js:308 src/js/blocks/news.js:285
@@ -242,101 +242,117 @@ msgstr "Цвета"
 msgid "Background Color"
 msgstr "Цвет фона"
 
-#: assets/js/blocks.js:645 assets/js/blocks.js:1849 assets/js/blocks.js:2800
-#: assets/js/blocks.js:3192 assets/js/blocks.js:3517 assets/js/blocks.js:3860
-#: assets/js/blocks.js:4264 src/js/blocks/cards.js:508
+#: assets/js/blocks.js:650 assets/js/blocks.js:1869 assets/js/blocks.js:2820
+#: assets/js/blocks.js:3212 assets/js/blocks.js:3537 assets/js/blocks.js:3880
+#: assets/js/blocks.js:4284 src/js/blocks/cards.js:513
 #: src/js/blocks/events.js:296 src/js/blocks/info.js:318
 #: src/js/blocks/news.js:295 src/js/blocks/partners.js:257
 #: src/js/blocks/people.js:304 src/js/blocks/projects.js:341
 msgid "Heading Color"
 msgstr "Цвет заголовка"
 
-#: assets/js/blocks.js:655 src/js/blocks/cards.js:518
+#: assets/js/blocks.js:660 src/js/blocks/cards.js:523
 msgid "Card background color"
 msgstr "Цвет фона карточки"
 
-#: assets/js/blocks.js:665 src/js/blocks/cards.js:528
+#: assets/js/blocks.js:670 src/js/blocks/cards.js:533
 msgid "Card title color"
 msgstr "Цвет заголовка карточки"
 
-#: assets/js/blocks.js:675 src/js/blocks/cards.js:538
+#: assets/js/blocks.js:680 src/js/blocks/cards.js:543
 msgid "Card description color"
 msgstr "Цвет описания карточки"
 
-#: assets/js/blocks.js:685 src/js/blocks/cards.js:548
+#: assets/js/blocks.js:690 src/js/blocks/cards.js:553
 msgid "Main CTA button background color"
 msgstr "Цвет фона главной кнопки призыва к действию"
 
-#: assets/js/blocks.js:695 src/js/blocks/cards.js:558
+#: assets/js/blocks.js:700 src/js/blocks/cards.js:563
 msgid "Progressbar fulfilled part color"
 msgstr "Цвет заполненной части прогрессбара"
 
-#: assets/js/blocks.js:705 src/js/blocks/cards.js:568
+#: assets/js/blocks.js:710 src/js/blocks/cards.js:573
 msgid "Progressbar unfulfilled part color"
 msgstr "Цвет незаполненной части прогрессбара"
 
-#: assets/js/blocks.js:715 src/js/blocks/cards.js:578
+#: assets/js/blocks.js:720 src/js/blocks/cards.js:583
 msgid "Target amount color"
 msgstr "Цвет текста целевой суммы"
 
-#: assets/js/blocks.js:725 src/js/blocks/cards.js:588
+#: assets/js/blocks.js:730 src/js/blocks/cards.js:593
 msgid "Collected amount color"
 msgstr "Цвет текста собранной суммы"
 
-#: assets/js/blocks.js:737 src/js/blocks/cards.js:600
+#: assets/js/blocks.js:742 src/js/blocks/cards.js:605
 msgid "Typography"
 msgstr "Типографика"
 
-#: assets/js/blocks.js:746 src/js/blocks/cards.js:609
+#: assets/js/blocks.js:751 src/js/blocks/cards.js:614
 msgid "Query"
 msgstr "Сортировка и фильтрация"
 
-#: assets/js/blocks.js:752 src/js/blocks/cards.js:615
+#: assets/js/blocks.js:757 src/js/blocks/cards.js:620
 msgid "Order by"
 msgstr "Сортировать по"
 
-#: assets/js/blocks.js:754 src/js/blocks/cards.js:617
+#: assets/js/blocks.js:759 src/js/blocks/cards.js:622
 msgid "Date"
 msgstr "Дате"
 
-#: assets/js/blocks.js:755 src/js/blocks/cards.js:618
+#: assets/js/blocks.js:760 src/js/blocks/cards.js:623
 msgid "Included campaigns"
 msgstr "Включенным кампаниям"
 
-#: assets/js/blocks.js:766 src/js/blocks/cards.js:629
+#: assets/js/blocks.js:771 src/js/blocks/cards.js:634
 msgid "Offset"
 msgstr "Пропустить"
 
-#: assets/js/blocks.js:771 src/js/blocks/cards.js:634
+#: assets/js/blocks.js:776 src/js/blocks/cards.js:639
 msgid "Number of campaigns to skip"
 msgstr "Сколько кампаний пропустить"
 
-#: assets/js/blocks.js:787 src/js/blocks/cards.js:650
+#: assets/js/blocks.js:791 src/js/blocks/cards.js:654
+msgid "Campaign type"
+msgstr "Тип кампании"
+
+#: assets/js/blocks.js:793 core/editor/assets.php:83 src/js/blocks/cards.js:656
+msgid "All"
+msgstr "Все"
+
+#: assets/js/blocks.js:794 src/js/blocks/cards.js:657
+msgid "Temporary"
+msgstr "Срочная"
+
+#: assets/js/blocks.js:795 src/js/blocks/cards.js:658
+msgid "Persistent"
+msgstr "Постоянная"
+
+#: assets/js/blocks.js:807 src/js/blocks/cards.js:670
 msgid "Exclude finished campaigns"
 msgstr "Исключить завершённые кампании"
 
-#: assets/js/blocks.js:885 src/js/blocks/cover.js:63
+#: assets/js/blocks.js:905 src/js/blocks/cover.js:63
 msgid "Cover"
 msgstr "Обложка"
 
-#: assets/js/blocks.js:886 src/js/blocks/cover.js:64
+#: assets/js/blocks.js:906 src/js/blocks/cover.js:64
 msgid "Text over image."
 msgstr "Текст поверх изображения."
 
-#: assets/js/blocks.js:889 src/js/blocks/cover.js:67
+#: assets/js/blocks.js:909 src/js/blocks/cover.js:67
 msgid "image"
 msgstr "image"
 
-#: assets/js/blocks.js:889 src/js/blocks/cover.js:67
+#: assets/js/blocks.js:909 src/js/blocks/cover.js:67
 msgid "cover"
 msgstr "cover"
 
-#: assets/js/blocks.js:908 core/editor/blocks/cover.php:30
+#: assets/js/blocks.js:928 core/editor/blocks/cover.php:30
 #: src/js/blocks/cover.js:86
 msgid "We believe"
 msgstr "Мы верим"
 
-#: assets/js/blocks.js:912 core/editor/blocks/cover.php:34
+#: assets/js/blocks.js:932 core/editor/blocks/cover.php:34
 #: src/js/blocks/cover.js:90
 msgid ""
 "People are created to love and be loved; People need support and help; Your "
@@ -347,260 +363,260 @@ msgstr ""
 "Ваша жизнь и ваша история важны; Лучшие дни и яркая жизнь здесь рядом; "
 "Надежда и помощь реальны."
 
-#: assets/js/blocks.js:916 core/editor/blocks/cover.php:38
+#: assets/js/blocks.js:936 core/editor/blocks/cover.php:38
 #: src/js/blocks/cover.js:94
 msgid "Recommendations"
 msgstr "Рекомендации"
 
-#: assets/js/blocks.js:956 src/experimental/gutenberg-experimental.js:98
+#: assets/js/blocks.js:976 src/experimental/gutenberg-experimental.js:98
 #: src/js/blocks/cover.js:134
 msgid "Default"
 msgstr "По умолчанию"
 
-#: assets/js/blocks.js:961 src/js/blocks/cover.js:139
+#: assets/js/blocks.js:981 src/js/blocks/cover.js:139
 msgid "Bottom"
 msgstr "Нижний"
 
-#: assets/js/blocks.js:991 core/admin.php:42 src/js/blocks/cover.js:169
+#: assets/js/blocks.js:1011 core/admin.php:42 src/js/blocks/cover.js:169
 #: vendor/envato_setup/envato_setup.php:315
-#: vendor/envato_setup/envato_setup.php:754
+#: vendor/envato_setup/envato_setup.php:759
 msgid "Content"
 msgstr "Контент"
 
-#: assets/js/blocks.js:999 assets/js/blocks.js:4417 src/js/blocks/cover.js:177
+#: assets/js/blocks.js:1019 assets/js/blocks.js:4437 src/js/blocks/cover.js:177
 #: src/js/blocks/recommend.js:94
 msgid "Recommendation"
 msgstr "Рекомендации"
 
-#: assets/js/blocks.js:1016 assets/js/blocks.js:2298 assets/js/es5.js:423
+#: assets/js/blocks.js:1036 assets/js/blocks.js:2318 assets/js/es5.js:423
 #: src/js/blocks/cover.js:194 src/js/blocks/hero.js:399
 msgid "Background Image"
 msgstr "Фоновое изображение"
 
-#: assets/js/blocks.js:1061 assets/js/blocks.js:2349 assets/js/es5.js:480
+#: assets/js/blocks.js:1081 assets/js/blocks.js:2369 assets/js/es5.js:480
 #: src/js/blocks/cover.js:239 src/js/blocks/hero.js:450
 msgid "Remove Background Image"
 msgstr "Удалить форовую картинку"
 
-#: assets/js/blocks.js:1073 assets/js/blocks.js:2361 assets/js/es5.js:494
+#: assets/js/blocks.js:1093 assets/js/blocks.js:2381 assets/js/es5.js:494
 #: src/js/blocks/cover.js:251 src/js/blocks/hero.js:462
 msgid "Add Background Image"
 msgstr "Добавить фоновое изображение"
 
-#: assets/js/blocks.js:1085 src/js/blocks/cover.js:263
+#: assets/js/blocks.js:1105 src/js/blocks/cover.js:263
 msgid "Min Height"
 msgstr "Минимальная высота"
 
-#: assets/js/blocks.js:1113 assets/js/blocks.js:1446 assets/js/blocks.js:2185
-#: assets/js/blocks.js:4430 assets/js/es5.js:305 src/js/blocks/cover.js:291
+#: assets/js/blocks.js:1133 assets/js/blocks.js:1466 assets/js/blocks.js:2205
+#: assets/js/blocks.js:4450 assets/js/es5.js:305 src/js/blocks/cover.js:291
 #: src/js/blocks/cta.js:265 src/js/blocks/hero.js:286
 #: src/js/blocks/recommend.js:107
 msgid "Text Color"
 msgstr "Цвет текста"
 
-#: assets/js/blocks.js:1123 src/js/blocks/cover.js:301
+#: assets/js/blocks.js:1143 src/js/blocks/cover.js:301
 msgid "Content Background Color"
 msgstr "Цвет фона контента"
 
-#: assets/js/blocks.js:1133 src/js/blocks/cover.js:311
+#: assets/js/blocks.js:1153 src/js/blocks/cover.js:311
 msgid "Recommendation Color"
 msgstr "Цвет текста рекомендации"
 
-#: assets/js/blocks.js:1143 src/js/blocks/cover.js:321
+#: assets/js/blocks.js:1163 src/js/blocks/cover.js:321
 msgid "Recommendation Background Color"
 msgstr "Цвет фона рекомендации"
 
-#: assets/js/blocks.js:1227 core/editor/pattern.php:33 src/js/blocks/cta.js:46
+#: assets/js/blocks.js:1247 core/editor/pattern.php:33 src/js/blocks/cta.js:46
 msgid "Call To Action"
 msgstr "Призыв к действию"
 
-#: assets/js/blocks.js:1228 core/editor/pattern.php:36 src/js/blocks/cta.js:47
+#: assets/js/blocks.js:1248 core/editor/pattern.php:36 src/js/blocks/cta.js:47
 msgid "Title, Subtitle, Description, Button, and Image."
 msgstr "Заголовок, подзаголовок, описание, кнопка и изображение."
 
-#: assets/js/blocks.js:1231 src/js/blocks/cta.js:50
+#: assets/js/blocks.js:1251 src/js/blocks/cta.js:50
 msgid "call"
 msgstr "call"
 
-#: assets/js/blocks.js:1231 src/js/blocks/cta.js:50
+#: assets/js/blocks.js:1251 src/js/blocks/cta.js:50
 msgid "cta"
 msgstr "cta"
 
-#: assets/js/blocks.js:1231 src/js/blocks/cta.js:50
+#: assets/js/blocks.js:1251 src/js/blocks/cta.js:50
 msgid "action"
 msgstr "action"
 
-#: assets/js/blocks.js:1256 assets/js/blocks.js:1297 assets/js/blocks.js:2551
+#: assets/js/blocks.js:1276 assets/js/blocks.js:1317 assets/js/blocks.js:2571
 #: core/editor/blocks/cta.php:30 core/editor/blocks/info.php:30
 #: core/editor/content.php:17 src/js/blocks/cta.js:75 src/js/blocks/cta.js:116
 #: src/js/blocks/info.js:69
 msgid "112 volunteers are helping Line of Color at the moment"
 msgstr "112 волонтеров помогают «Линии цвета» в настоящий момент"
 
-#: assets/js/blocks.js:1260 assets/js/blocks.js:1298 assets/js/blocks.js:2555
+#: assets/js/blocks.js:1280 assets/js/blocks.js:1318 assets/js/blocks.js:2575
 #: core/editor/blocks/cta.php:34 core/editor/blocks/info.php:34
 #: core/editor/content.php:17 src/js/blocks/cta.js:79 src/js/blocks/cta.js:117
 #: src/js/blocks/info.js:73
 msgid "Join a team of volunteers and consultants in our projects"
 msgstr "Присоединяйтесь к команде волонтеров и консультантов в наших проектах"
 
-#: assets/js/blocks.js:1264 assets/js/blocks.js:1299
+#: assets/js/blocks.js:1284 assets/js/blocks.js:1319
 #: core/editor/blocks/cta.php:38 src/js/blocks/cta.js:83
 #: src/js/blocks/cta.js:118
 msgid "Become a volunteer"
 msgstr "Стать волонтером"
 
-#: assets/js/blocks.js:1325 assets/js/blocks.js:2649 src/js/blocks/cta.js:144
+#: assets/js/blocks.js:1345 assets/js/blocks.js:2669 src/js/blocks/cta.js:144
 #: src/js/blocks/info.js:167
 msgid "Title"
 msgstr "Заголовок"
 
-#: assets/js/blocks.js:1333 assets/js/blocks.js:2657 assets/js/blocks.js:2680
-#: assets/js/blocks.js:2719 assets/js/blocks.js:2758 assets/js/blocks.js:4421
+#: assets/js/blocks.js:1353 assets/js/blocks.js:2677 assets/js/blocks.js:2700
+#: assets/js/blocks.js:2739 assets/js/blocks.js:2778 assets/js/blocks.js:4441
 #: src/js/blocks/cta.js:152 src/js/blocks/info.js:175 src/js/blocks/info.js:198
 #: src/js/blocks/info.js:237 src/js/blocks/info.js:276
 #: src/js/blocks/recommend.js:98
 msgid "Text"
 msgstr "Текст"
 
-#: assets/js/blocks.js:1350 assets/js/blocks.js:2110 assets/js/es5.js:225
+#: assets/js/blocks.js:1370 assets/js/blocks.js:2130 assets/js/es5.js:225
 #: src/js/blocks/cta.js:169 src/js/blocks/hero.js:211
 msgid "Call to action Image"
 msgstr "Изображение призыва к действию"
 
-#: assets/js/blocks.js:1393 assets/js/blocks.js:2161 assets/js/es5.js:282
+#: assets/js/blocks.js:1413 assets/js/blocks.js:2181 assets/js/es5.js:282
 #: src/js/blocks/cta.js:212 src/js/blocks/hero.js:262
 msgid "Remove Image"
 msgstr "Удалить изображение"
 
-#: assets/js/blocks.js:1405 assets/js/blocks.js:2173 assets/js/es5.js:296
+#: assets/js/blocks.js:1425 assets/js/blocks.js:2193 assets/js/es5.js:296
 #: src/js/blocks/cta.js:224 src/js/blocks/hero.js:274
 msgid "Add Image"
 msgstr "Добавить изображение"
 
-#: assets/js/blocks.js:1436 src/js/blocks/cta.js:255
+#: assets/js/blocks.js:1456 src/js/blocks/cta.js:255
 msgid "Title Color"
 msgstr "Цвет заголовка"
 
-#: assets/js/blocks.js:1459 core/customizer/theme-mods/header.php:372
-#: core/customizer/theme-mods/header.php:510 src/js/blocks/cta.js:278
+#: assets/js/blocks.js:1479 core/customizer/theme-mods/header.php:366
+#: core/customizer/theme-mods/header.php:504 src/js/blocks/cta.js:278
 msgid "Button"
 msgstr "Кнопка"
 
-#: assets/js/blocks.js:1472 assets/js/blocks.js:2212 assets/js/es5.js:333
+#: assets/js/blocks.js:1492 assets/js/blocks.js:2232 assets/js/es5.js:333
 #: src/js/blocks/cta.js:291 src/js/blocks/hero.js:313
 msgid "Button url"
 msgstr "Ссылка кнопки"
 
-#: assets/js/blocks.js:1481 assets/js/blocks.js:2237 assets/js/es5.js:360
+#: assets/js/blocks.js:1501 assets/js/blocks.js:2257 assets/js/es5.js:360
 #: src/js/blocks/cta.js:300 src/js/blocks/hero.js:338
 msgid "Button Background"
 msgstr "Цвет фона кнопки"
 
-#: assets/js/blocks.js:1492 assets/js/blocks.js:2248 assets/js/es5.js:371
+#: assets/js/blocks.js:1512 assets/js/blocks.js:2268 assets/js/es5.js:371
 #: src/js/blocks/cta.js:311 src/js/blocks/hero.js:349
 msgid "Button Color"
 msgstr "Цвет текста кнопки"
 
-#: assets/js/blocks.js:1503 assets/js/blocks.js:2259 assets/js/es5.js:382
+#: assets/js/blocks.js:1523 assets/js/blocks.js:2279 assets/js/es5.js:382
 #: src/js/blocks/cta.js:322 src/js/blocks/hero.js:360
 msgid "Button Hover Background"
 msgstr "Цвет фона кнопки при наведении"
 
-#: assets/js/blocks.js:1514 assets/js/blocks.js:2270 assets/js/es5.js:393
+#: assets/js/blocks.js:1534 assets/js/blocks.js:2290 assets/js/es5.js:393
 #: src/js/blocks/cta.js:333 src/js/blocks/hero.js:371
 msgid "Button Hover Color"
 msgstr "Цвет текста кнопки при наведении"
 
-#: assets/js/blocks.js:1590 page-events.php:136 src/js/blocks/events.js:37
+#: assets/js/blocks.js:1610 page-events.php:136 src/js/blocks/events.js:37
 msgid "Events"
 msgstr "Мероприятия"
 
-#: assets/js/blocks.js:1593 core/admin.php:357 src/js/blocks/events.js:40
+#: assets/js/blocks.js:1613 core/admin.php:357 src/js/blocks/events.js:40
 msgid "Events Manager"
 msgstr "Менеджер по мероприятиям"
 
-#: assets/js/blocks.js:1595 src/js/blocks/events.js:42
+#: assets/js/blocks.js:1615 src/js/blocks/events.js:42
 msgid "events"
 msgstr "мероприятия"
 
-#: assets/js/blocks.js:1605 core/editor/blocks/events.php:18 page-events.php:19
+#: assets/js/blocks.js:1625 core/editor/blocks/events.php:18 page-events.php:19
 #: src/js/blocks/events.js:52
 msgid "Schedule of events"
 msgstr "Расписание мероприятий"
 
-#: assets/js/blocks.js:1650 src/js/blocks/events.js:97
+#: assets/js/blocks.js:1670 src/js/blocks/events.js:97
 msgid "List"
 msgstr "Список"
 
-#: assets/js/blocks.js:1655 assets/js/blocks.js:3448 assets/js/blocks.js:3780
+#: assets/js/blocks.js:1675 assets/js/blocks.js:3468 assets/js/blocks.js:3800
 #: src/js/blocks/events.js:102 src/js/blocks/partners.js:188
 #: src/js/blocks/people.js:224
 msgid "Grid"
 msgstr "Плитка"
 
-#: assets/js/blocks.js:1708 assets/js/blocks.js:3050 assets/js/blocks.js:4124
+#: assets/js/blocks.js:1728 assets/js/blocks.js:3070 assets/js/blocks.js:4144
 #: src/js/blocks/events.js:155 src/js/blocks/news.js:153
 #: src/js/blocks/projects.js:201
 msgid "Link Title"
 msgstr "Текст ссылки"
 
-#: assets/js/blocks.js:1719 assets/js/blocks.js:2696 assets/js/blocks.js:2735
-#: assets/js/blocks.js:2774 assets/js/blocks.js:3061 assets/js/blocks.js:4135
+#: assets/js/blocks.js:1739 assets/js/blocks.js:2716 assets/js/blocks.js:2755
+#: assets/js/blocks.js:2794 assets/js/blocks.js:3081 assets/js/blocks.js:4155
 #: src/js/blocks/events.js:166 src/js/blocks/info.js:214
 #: src/js/blocks/info.js:253 src/js/blocks/info.js:292
 #: src/js/blocks/news.js:164 src/js/blocks/projects.js:212
 msgid "Link Url"
 msgstr "Адрес ссылки"
 
-#: assets/js/blocks.js:1732 assets/js/blocks.js:3074 assets/js/blocks.js:4148
+#: assets/js/blocks.js:1752 assets/js/blocks.js:3094 assets/js/blocks.js:4168
 #: src/js/blocks/events.js:179 src/js/blocks/news.js:177
 #: src/js/blocks/projects.js:225
 msgid "Remove Link"
 msgstr "Удалить ссылку"
 
-#: assets/js/blocks.js:1756 assets/js/blocks.js:3098 assets/js/blocks.js:4172
+#: assets/js/blocks.js:1776 assets/js/blocks.js:3118 assets/js/blocks.js:4192
 #: src/js/blocks/events.js:203 src/js/blocks/news.js:201
 #: src/js/blocks/projects.js:249
 msgid "Add Link"
 msgstr "Добавить ссылку"
 
-#: assets/js/blocks.js:1784 src/js/blocks/events.js:231
+#: assets/js/blocks.js:1804 src/js/blocks/events.js:231
 msgid "Edit events"
 msgstr "Редактировать мероприятия"
 
-#: assets/js/blocks.js:1808 src/js/blocks/events.js:255
+#: assets/js/blocks.js:1828 src/js/blocks/events.js:255
 msgid "Events to show"
 msgstr "Сколько мероприятий показывать"
 
-#: assets/js/blocks.js:1823 assets/js/blocks.js:3166 assets/js/blocks.js:4238
+#: assets/js/blocks.js:1843 assets/js/blocks.js:3186 assets/js/blocks.js:4258
 #: src/js/blocks/events.js:270 src/js/blocks/news.js:269
 #: src/js/blocks/projects.js:315
 msgid "Heading Links"
 msgstr "Ссылки в шапке"
 
-#: assets/js/blocks.js:1859 assets/js/blocks.js:3212 assets/js/blocks.js:4284
+#: assets/js/blocks.js:1879 assets/js/blocks.js:3232 assets/js/blocks.js:4304
 #: src/js/blocks/events.js:306 src/js/blocks/news.js:315
 #: src/js/blocks/projects.js:361
 msgid "Links Color"
 msgstr "Цвет ссылок"
 
-#: assets/js/blocks.js:1957 assets/js/es5.js:74 src/js/blocks/hero.js:58
+#: assets/js/blocks.js:1977 assets/js/es5.js:74 src/js/blocks/hero.js:58
 msgid "Main Block"
 msgstr "Главный блок"
 
-#: assets/js/blocks.js:1958 assets/js/es5.js:75 src/js/blocks/hero.js:59
+#: assets/js/blocks.js:1978 assets/js/es5.js:75 src/js/blocks/hero.js:59
 msgid "Title, description, button, and background image."
 msgstr "Заголовок, описание, кнопка и фоновое изображение."
 
-#: assets/js/blocks.js:1971 assets/js/blocks.js:2045 assets/js/es5.js:86
+#: assets/js/blocks.js:1991 assets/js/blocks.js:2065 assets/js/es5.js:86
 #: assets/js/es5.js:156 core/editor/blocks/hero.php:18
-#: modules/starter/plot_config.php:127 src/js/blocks/hero.js:72
+#: modules/starter/plot_config.php:119 src/js/blocks/hero.js:72
 #: src/js/blocks/hero.js:146
 msgid "We help people to fight alcohol addiction"
 msgstr "Помогаем людям с алкогольной зависимостью"
 
-#: assets/js/blocks.js:1975 assets/js/blocks.js:2046 assets/js/es5.js:90
+#: assets/js/blocks.js:1995 assets/js/blocks.js:2066 assets/js/es5.js:90
 #: assets/js/es5.js:157 core/editor/blocks/hero.php:22 src/js/blocks/hero.js:76
 #: src/js/blocks/hero.js:147
 msgid ""
@@ -610,92 +626,92 @@ msgstr ""
 "В Нашей области 877 человек, которые страдают от алкогольной зависимости. "
 "Ваша поддержка поможет организовать для них реабилитационную программу."
 
-#: assets/js/blocks.js:2030 assets/js/blocks.js:2047 assets/js/es5.js:142
+#: assets/js/blocks.js:2050 assets/js/blocks.js:2067 assets/js/es5.js:142
 #: assets/js/es5.js:158 core/editor/blocks/hero.php:26
 #: src/js/blocks/hero.js:131 src/js/blocks/hero.js:148
 msgid "Help Now"
 msgstr "Помочь сейчас"
 
-#: assets/js/blocks.js:2085 assets/js/es5.js:195 src/js/blocks/hero.js:186
+#: assets/js/blocks.js:2105 assets/js/es5.js:195 src/js/blocks/hero.js:186
 msgid "Call to action title"
 msgstr "Заголовок «призыва к действию» (CTA)"
 
-#: assets/js/blocks.js:2093 assets/js/es5.js:204 src/js/blocks/hero.js:194
+#: assets/js/blocks.js:2113 assets/js/es5.js:204 src/js/blocks/hero.js:194
 msgid "Call to action text"
 msgstr "Текст «призыва к действию» (CTA)"
 
-#: assets/js/blocks.js:2116 assets/js/es5.js:232 src/js/blocks/hero.js:217
+#: assets/js/blocks.js:2136 assets/js/es5.js:232 src/js/blocks/hero.js:217
 msgid "Displayed on the right side of the Call to action text"
 msgstr "Отображается на правой стороне текста Призыв к действию"
 
-#: assets/js/blocks.js:2199 assets/js/es5.js:320 src/js/blocks/hero.js:300
+#: assets/js/blocks.js:2219 assets/js/es5.js:320 src/js/blocks/hero.js:300
 msgid "Buttons"
 msgstr "Кнопки"
 
-#: assets/js/blocks.js:2220 assets/js/es5.js:342 src/js/blocks/hero.js:321
+#: assets/js/blocks.js:2240 assets/js/es5.js:342 src/js/blocks/hero.js:321
 msgid "Additional Button text"
 msgstr "Текст дополнительной кнопки"
 
-#: assets/js/blocks.js:2228 assets/js/es5.js:351 src/js/blocks/hero.js:329
+#: assets/js/blocks.js:2248 assets/js/es5.js:351 src/js/blocks/hero.js:329
 msgid "Additional Button url"
 msgstr "Ссылка дополнительной кнопки"
 
-#: assets/js/blocks.js:2284 assets/js/es5.js:407 src/js/blocks/hero.js:385
+#: assets/js/blocks.js:2304 assets/js/es5.js:407 src/js/blocks/hero.js:385
 msgid "Background"
 msgstr "Фон"
 
-#: assets/js/blocks.js:2304 assets/js/es5.js:430 src/js/blocks/hero.js:405
+#: assets/js/blocks.js:2324 assets/js/es5.js:430 src/js/blocks/hero.js:405
 msgid "Recommended size 1600x663px"
 msgstr "Рекомендуемый размер 1600x663px"
 
-#: assets/js/blocks.js:2387 assets/js/es5.js:517 src/js/blocks/hero.js:488
+#: assets/js/blocks.js:2407 assets/js/es5.js:517 src/js/blocks/hero.js:488
 msgid "Overlay"
 msgstr "Наложение"
 
-#: assets/js/blocks.js:2403 assets/js/es5.js:535 src/js/blocks/hero.js:504
+#: assets/js/blocks.js:2423 assets/js/es5.js:535 src/js/blocks/hero.js:504
 msgid "Overlay Gradient Start Color"
 msgstr "Цвета начала градиента"
 
-#: assets/js/blocks.js:2434 assets/js/es5.js:569 src/js/blocks/hero.js:535
+#: assets/js/blocks.js:2454 assets/js/es5.js:569 src/js/blocks/hero.js:535
 msgid "Overlay Gradient End Color"
 msgstr "Цвет окончания градиента"
 
-#: assets/js/blocks.js:2534 core/editor/pattern.php:45 src/js/blocks/info.js:52
+#: assets/js/blocks.js:2554 core/editor/pattern.php:45 src/js/blocks/info.js:52
 msgid "About Project"
 msgstr "О проекте"
 
-#: assets/js/blocks.js:2537 src/js/blocks/info.js:55
+#: assets/js/blocks.js:2557 src/js/blocks/info.js:55
 msgid "info"
 msgstr "info"
 
-#: assets/js/blocks.js:2537 src/js/blocks/info.js:55
+#: assets/js/blocks.js:2557 src/js/blocks/info.js:55
 msgid "columns"
 msgstr "columns"
 
-#: assets/js/blocks.js:2537 src/js/blocks/info.js:55
+#: assets/js/blocks.js:2557 src/js/blocks/info.js:55
 msgid "about"
 msgstr "about"
 
-#: assets/js/blocks.js:2538 core/editor/pattern.php:48 src/js/blocks/info.js:56
+#: assets/js/blocks.js:2558 core/editor/pattern.php:48 src/js/blocks/info.js:56
 msgid "Subheading, heading and three columns."
 msgstr "Подзаголовок, заголовок и три колонки."
 
-#: assets/js/blocks.js:2559 core/editor/blocks/info.php:38
+#: assets/js/blocks.js:2579 core/editor/blocks/info.php:38
 #: core/editor/content.php:14 src/js/blocks/info.js:77
 msgid "Who we are?"
 msgstr "Кто мы?"
 
-#: assets/js/blocks.js:2563 core/editor/blocks/info.php:42
+#: assets/js/blocks.js:2583 core/editor/blocks/info.php:42
 #: core/editor/content.php:14 src/js/blocks/info.js:81
 msgid "What we do?"
 msgstr "Что мы делаем?"
 
-#: assets/js/blocks.js:2567 core/editor/blocks/info.php:46
+#: assets/js/blocks.js:2587 core/editor/blocks/info.php:46
 #: core/editor/content.php:14 src/js/blocks/info.js:85
 msgid "Stop drinking?"
 msgstr "Бросить пить?"
 
-#: assets/js/blocks.js:2571 core/editor/blocks/info.php:50
+#: assets/js/blocks.js:2591 core/editor/blocks/info.php:50
 #: core/editor/content.php:14 src/js/blocks/info.js:89
 msgid ""
 "The charitable organization &#34;Line of Color&#34; helps to overcome "
@@ -704,7 +720,7 @@ msgstr ""
 "Благотворительная организация &#34;Линия Цвета&#34; помогает преодолеть "
 "алкогольную зависимость и вернуться к полноценной жизни."
 
-#: assets/js/blocks.js:2575 core/editor/blocks/info.php:54
+#: assets/js/blocks.js:2595 core/editor/blocks/info.php:54
 #: core/editor/content.php:14 src/js/blocks/info.js:93
 msgid ""
 "We organize rehabilitation programs, inform and help those who are ready to "
@@ -713,7 +729,7 @@ msgstr ""
 "Организуем реабилитационные программы, информируем, помогаем тем, кто готов "
 "отказаться от пагубной привычки и вернуть свою жизнь."
 
-#: assets/js/blocks.js:2579 core/editor/blocks/info.php:58
+#: assets/js/blocks.js:2599 core/editor/blocks/info.php:58
 #: core/editor/content.php:14 src/js/blocks/info.js:97
 msgid ""
 "Fill out the anonymous form on the website, choose a convenient time for an "
@@ -722,241 +738,241 @@ msgstr ""
 "Заполните анонимную форму на сайте, выберите удобное вам время для "
 "индивидуальной консультации или запишитесь в группу поддержки."
 
-#: assets/js/blocks.js:2583 core/editor/blocks/info.php:62
+#: assets/js/blocks.js:2603 core/editor/blocks/info.php:62
 #: core/editor/content.php:14 src/js/blocks/info.js:101
 msgid "Learn about our work"
 msgstr "Узнайте о нашей работе"
 
-#: assets/js/blocks.js:2587 core/editor/blocks/info.php:66
+#: assets/js/blocks.js:2607 core/editor/blocks/info.php:66
 #: core/editor/content.php:14 src/js/blocks/info.js:105
 msgid "View projects"
 msgstr "Посмотреть проекты"
 
-#: assets/js/blocks.js:2591 core/editor/blocks/info.php:70
+#: assets/js/blocks.js:2611 core/editor/blocks/info.php:70
 #: core/editor/content.php:14 src/js/blocks/info.js:109
 msgid "Get help"
 msgstr "Получить помощь"
 
-#: assets/js/blocks.js:2667 src/js/blocks/info.js:185
+#: assets/js/blocks.js:2687 src/js/blocks/info.js:185
 msgid "Column 1"
 msgstr "Колонка 1"
 
-#: assets/js/blocks.js:2688 assets/js/blocks.js:2727 assets/js/blocks.js:2766
+#: assets/js/blocks.js:2708 assets/js/blocks.js:2747 assets/js/blocks.js:2786
 #: src/js/blocks/info.js:206 src/js/blocks/info.js:245
 #: src/js/blocks/info.js:284
 msgid "Link Text"
 msgstr "Текст ссылки"
 
-#: assets/js/blocks.js:2706 src/js/blocks/info.js:224
+#: assets/js/blocks.js:2726 src/js/blocks/info.js:224
 msgid "Column 2"
 msgstr "Колонка 2"
 
-#: assets/js/blocks.js:2745 src/js/blocks/info.js:263
+#: assets/js/blocks.js:2765 src/js/blocks/info.js:263
 msgid "Column 3"
 msgstr "Колонка 3"
 
-#: assets/js/blocks.js:2810 src/js/blocks/info.js:328
+#: assets/js/blocks.js:2830 src/js/blocks/info.js:328
 msgid "Second Heading Color"
 msgstr "Цвет второго заголовка"
 
-#: assets/js/blocks.js:2820 src/js/blocks/info.js:338
+#: assets/js/blocks.js:2840 src/js/blocks/info.js:338
 msgid "Column Heading Color"
 msgstr "Цвет заголовка колонки"
 
-#: assets/js/blocks.js:2830 src/js/blocks/info.js:348
+#: assets/js/blocks.js:2850 src/js/blocks/info.js:348
 msgid "Column Text Color"
 msgstr "Цвет текста колонки"
 
-#: assets/js/blocks.js:2840 src/js/blocks/info.js:358
+#: assets/js/blocks.js:2860 src/js/blocks/info.js:358
 msgid "Column Link Color"
 msgstr "Цвет ссылки колонки"
 
-#: assets/js/blocks.js:2850 src/js/blocks/info.js:368
+#: assets/js/blocks.js:2870 src/js/blocks/info.js:368
 msgid "Column Link Color Hover"
 msgstr "Цвет ссылки колонки при наведении"
 
-#: assets/js/blocks.js:2860 src/js/blocks/info.js:378
+#: assets/js/blocks.js:2880 src/js/blocks/info.js:378
 msgid "Column Link Underline Color"
 msgstr "Цвет подчеркивание ссылки колонки"
 
-#: assets/js/blocks.js:2940 assets/js/blocks.js:2953 core/admin.php:60
+#: assets/js/blocks.js:2960 assets/js/blocks.js:2973 core/admin.php:60
 #: core/editor/blocks/news.php:18 footer.php:76
-#: modules/starter/plot_config.php:150 modules/starter/plot_config.php:231
-#: modules/starter/plot_config.php:258
+#: modules/starter/plot_config.php:142 modules/starter/plot_config.php:223
+#: modules/starter/plot_config.php:250
 #: modules/starter/plot_data_builder.php:578 src/js/blocks/news.js:43
 #: src/js/blocks/news.js:56
 msgid "News"
 msgstr "Новости"
 
-#: assets/js/blocks.js:2943 assets/js/blocks.js:4017 src/js/blocks/news.js:46
+#: assets/js/blocks.js:2963 assets/js/blocks.js:4037 src/js/blocks/news.js:46
 #: src/js/blocks/projects.js:94
 msgid "news"
 msgstr "news"
 
-#: assets/js/blocks.js:2943 assets/js/blocks.js:4018 src/js/blocks/news.js:46
+#: assets/js/blocks.js:2963 assets/js/blocks.js:4038 src/js/blocks/news.js:46
 #: src/js/blocks/projects.js:95
 msgid "posts"
 msgstr "posts"
 
-#: assets/js/blocks.js:2943 assets/js/blocks.js:4019 src/js/blocks/news.js:46
+#: assets/js/blocks.js:2963 assets/js/blocks.js:4039 src/js/blocks/news.js:46
 #: src/js/blocks/projects.js:96
 msgid "articles"
 msgstr "articles"
 
-#: assets/js/blocks.js:2944 src/js/blocks/news.js:47
+#: assets/js/blocks.js:2964 src/js/blocks/news.js:47
 msgid "News tile in three column."
 msgstr "Плитка новостей в три колонки."
 
-#: assets/js/blocks.js:3126 src/js/blocks/news.js:229
+#: assets/js/blocks.js:3146 src/js/blocks/news.js:229
 msgid "Edit news"
 msgstr "Редактировать новости"
 
-#: assets/js/blocks.js:3151 src/js/blocks/news.js:254
+#: assets/js/blocks.js:3171 src/js/blocks/news.js:254
 msgid "Posts to show"
 msgstr "Сколько постов показывать"
 
-#: assets/js/blocks.js:3202 assets/js/blocks.js:4274 src/js/blocks/news.js:305
+#: assets/js/blocks.js:3222 assets/js/blocks.js:4294 src/js/blocks/news.js:305
 #: src/js/blocks/projects.js:351
 msgid "Post Title Color"
 msgstr "Цвет названия поста"
 
-#: assets/js/blocks.js:3222 src/js/blocks/news.js:325
+#: assets/js/blocks.js:3242 src/js/blocks/news.js:325
 msgid "Date Color"
 msgstr "Цвет даты"
 
-#: assets/js/blocks.js:3323 assets/js/blocks.js:3624
+#: assets/js/blocks.js:3343 assets/js/blocks.js:3644
 #: src/js/blocks/partners.js:63 src/js/blocks/people.js:68
 msgid "Auto Play"
 msgstr "Автозапуск"
 
-#: assets/js/blocks.js:3332 core/admin.php:78 modules/org/hooks.php:30
+#: assets/js/blocks.js:3352 core/admin.php:78 modules/org/hooks.php:30
 #: modules/org/hooks.php:32 modules/org/tax.php:6 src/js/blocks/partners.js:72
 msgid "Partners"
 msgstr "Партнеры"
 
-#: assets/js/blocks.js:3335 src/js/blocks/partners.js:75
+#: assets/js/blocks.js:3355 src/js/blocks/partners.js:75
 msgid "partners"
 msgstr "partners"
 
-#: assets/js/blocks.js:3335 src/js/blocks/partners.js:75
+#: assets/js/blocks.js:3355 src/js/blocks/partners.js:75
 msgid "logos"
 msgstr "logos"
 
-#: assets/js/blocks.js:3336 src/js/blocks/partners.js:76
+#: assets/js/blocks.js:3356 src/js/blocks/partners.js:76
 msgid "Image tile in four columns."
 msgstr "Плитка с изображениями в четыре колонки."
 
-#: assets/js/blocks.js:3345 core/editor/blocks/partners.php:18
+#: assets/js/blocks.js:3365 core/editor/blocks/partners.php:18
 #: src/js/blocks/partners.js:85
 msgid "Our Partners"
 msgstr "Наши партнеры"
 
-#: assets/js/blocks.js:3416 src/js/blocks/partners.js:156
+#: assets/js/blocks.js:3436 src/js/blocks/partners.js:156
 msgid "Edit partners"
 msgstr "Редактировать партнеров"
 
-#: assets/js/blocks.js:3441 assets/js/blocks.js:3773
+#: assets/js/blocks.js:3461 assets/js/blocks.js:3793
 #: src/js/blocks/partners.js:181 src/js/blocks/people.js:217
 msgid "Layout"
 msgstr "Шаблон"
 
-#: assets/js/blocks.js:3452 assets/js/blocks.js:3784
+#: assets/js/blocks.js:3472 assets/js/blocks.js:3804
 #: src/js/blocks/partners.js:192 src/js/blocks/people.js:228
 msgid "Carousel"
 msgstr "Карусель"
 
-#: assets/js/blocks.js:3462 src/js/blocks/partners.js:202
+#: assets/js/blocks.js:3482 src/js/blocks/partners.js:202
 msgid "Partners to show"
 msgstr "Сколько партнеров показывать"
 
-#: assets/js/blocks.js:3487 assets/js/blocks.js:3819
+#: assets/js/blocks.js:3507 assets/js/blocks.js:3839
 #: src/js/blocks/partners.js:227 src/js/blocks/people.js:263
 msgid "Enable link"
 msgstr "Включить ссылку"
 
-#: assets/js/blocks.js:3633 core/admin.php:72 src/js/blocks/people.js:77
+#: assets/js/blocks.js:3653 core/admin.php:72 src/js/blocks/people.js:77
 msgid "Team"
 msgstr "Команда"
 
-#: assets/js/blocks.js:3636 src/js/blocks/people.js:80
+#: assets/js/blocks.js:3656 src/js/blocks/people.js:80
 msgid "people"
 msgstr "people"
 
-#: assets/js/blocks.js:3636 src/js/blocks/people.js:80
+#: assets/js/blocks.js:3656 src/js/blocks/people.js:80
 msgid "user"
 msgstr "user"
 
-#: assets/js/blocks.js:3636 src/js/blocks/people.js:80
+#: assets/js/blocks.js:3656 src/js/blocks/people.js:80
 msgid "team"
 msgstr "team"
 
-#: assets/js/blocks.js:3636 src/js/blocks/people.js:80
+#: assets/js/blocks.js:3656 src/js/blocks/people.js:80
 msgid "profile"
 msgstr "profile"
 
-#: assets/js/blocks.js:3637 src/js/blocks/people.js:81
+#: assets/js/blocks.js:3657 src/js/blocks/people.js:81
 msgid "Tile with photos, names and short descriptions in 3-8 columns."
 msgstr "Плитка с фотографиями, именами и краткими описаниями в 3—8 колонок."
 
-#: assets/js/blocks.js:3646 core/editor/blocks/people.php:18
+#: assets/js/blocks.js:3666 core/editor/blocks/people.php:18
 #: src/js/blocks/people.js:90
 msgid "Our Team"
 msgstr "Команда"
 
-#: assets/js/blocks.js:3711 src/js/blocks/people.js:155
+#: assets/js/blocks.js:3731 src/js/blocks/people.js:155
 msgid "Squared"
 msgstr "Квадратный"
 
-#: assets/js/blocks.js:3716 src/js/blocks/people.js:160
+#: assets/js/blocks.js:3736 src/js/blocks/people.js:160
 msgid "Rounded"
 msgstr "Скругленный"
 
-#: assets/js/blocks.js:3746 src/js/blocks/people.js:190
+#: assets/js/blocks.js:3766 src/js/blocks/people.js:190
 msgid "Edit team"
 msgstr "Редактировать команду"
 
-#: assets/js/blocks.js:3794 src/js/blocks/people.js:238
+#: assets/js/blocks.js:3814 src/js/blocks/people.js:238
 msgid "People to show"
 msgstr "Сколько людей показывать"
 
-#: assets/js/blocks.js:3832 core/person.php:8 modules/org/hooks.php:9
+#: assets/js/blocks.js:3852 core/person.php:8 modules/org/hooks.php:9
 #: src/js/blocks/people.js:276
 msgid "Category"
 msgstr "Категория"
 
-#: assets/js/blocks.js:3870 src/js/blocks/people.js:314
+#: assets/js/blocks.js:3890 src/js/blocks/people.js:314
 msgid "Name Color"
 msgstr "Цвет имени"
 
-#: assets/js/blocks.js:3880 src/js/blocks/people.js:324
+#: assets/js/blocks.js:3900 src/js/blocks/people.js:324
 msgid "Description Color"
 msgstr "Цвет описания"
 
-#: assets/js/blocks.js:4012 assets/js/blocks.js:4030 core/admin.php:66
+#: assets/js/blocks.js:4032 assets/js/blocks.js:4050 core/admin.php:66
 #: core/editor/blocks/projects.php:18 modules/project/hooks.php:15
-#: modules/project/hooks.php:17 modules/starter/plot_config.php:141
-#: modules/starter/plot_config.php:151 src/js/blocks/projects.js:89
+#: modules/project/hooks.php:17 modules/starter/plot_config.php:133
+#: modules/starter/plot_config.php:143 src/js/blocks/projects.js:89
 #: src/js/blocks/projects.js:107
 msgid "Projects"
 msgstr "Проекты"
 
-#: assets/js/blocks.js:4015 src/js/blocks/projects.js:92
+#: assets/js/blocks.js:4035 src/js/blocks/projects.js:92
 msgid "Projects tile in three column."
 msgstr "Плитка проектов в три колонки."
 
-#: assets/js/blocks.js:4020 src/js/blocks/projects.js:97
+#: assets/js/blocks.js:4040 src/js/blocks/projects.js:97
 msgid "projects"
 msgstr "projects"
 
-#: assets/js/blocks.js:4200 src/js/blocks/projects.js:277
+#: assets/js/blocks.js:4220 src/js/blocks/projects.js:277
 msgid "Edit projects"
 msgstr "Редактировать проекты"
 
-#: assets/js/blocks.js:4224 src/js/blocks/projects.js:301
+#: assets/js/blocks.js:4244 src/js/blocks/projects.js:301
 msgid "Projects to show"
 msgstr "Сколько проектов показывать"
 
-#: assets/js/blocks.js:4358 core/editor/blocks/recommend.php:18
+#: assets/js/blocks.js:4378 core/editor/blocks/recommend.php:18
 #: src/js/blocks/recommend.js:35
 msgid ""
 "Your mission should be to summarize everything you do. In a short phrase, "
@@ -965,27 +981,27 @@ msgstr ""
 "Ваша миссия должна обобщать все что вы делаете. В краткой фразе заложите "
 "весь смысл вашей организации и ваших проектов."
 
-#: assets/js/blocks.js:4361 src/js/blocks/recommend.js:38
+#: assets/js/blocks.js:4381 src/js/blocks/recommend.js:38
 msgid "Key phrase"
 msgstr "Ключевая фраза"
 
-#: assets/js/blocks.js:4364 src/js/blocks/recommend.js:41
+#: assets/js/blocks.js:4384 src/js/blocks/recommend.js:41
 msgid "Text on a colored plate."
 msgstr "Текст на цветной плашке."
 
-#: assets/js/blocks.js:4366 src/js/blocks/recommend.js:43
+#: assets/js/blocks.js:4386 src/js/blocks/recommend.js:43
 msgid "quote"
 msgstr "quote"
 
-#: assets/js/blocks.js:4367 src/js/blocks/recommend.js:44
+#: assets/js/blocks.js:4387 src/js/blocks/recommend.js:44
 msgid "recommend"
 msgstr "recommend"
 
-#: assets/js/blocks.js:4368 src/js/blocks/recommend.js:45
+#: assets/js/blocks.js:4388 src/js/blocks/recommend.js:45
 msgid "key"
 msgstr "key"
 
-#: assets/js/blocks.js:4369 src/js/blocks/recommend.js:46
+#: assets/js/blocks.js:4389 src/js/blocks/recommend.js:46
 msgid "phrase"
 msgstr "phrase"
 
@@ -1078,10 +1094,10 @@ msgstr "Обновление пожертвований..."
 msgid "Kandinsky theme updated successfully."
 msgstr "Кандинский успешно обновлен."
 
-#: core/admin-update-theme.php:104 vendor/envato_setup/envato_setup.php:740
-#: vendor/envato_setup/envato_setup.php:749
-#: vendor/envato_setup/envato_setup.php:758
-#: vendor/envato_setup/envato_setup.php:767
+#: core/admin-update-theme.php:104 vendor/envato_setup/envato_setup.php:745
+#: vendor/envato_setup/envato_setup.php:754
+#: vendor/envato_setup/envato_setup.php:763
+#: vendor/envato_setup/envato_setup.php:772
 msgid "Success!"
 msgstr "Успех!"
 
@@ -1097,7 +1113,7 @@ msgstr "Перейти на сайт"
 msgid "Unknown update action"
 msgstr "Неизвестное действие при обновлении"
 
-#: core/admin-update-theme.php:141 vendor/envato_setup/envato_setup.php:631
+#: core/admin-update-theme.php:141 vendor/envato_setup/envato_setup.php:636
 msgid "Success"
 msgstr "Успех"
 
@@ -1141,8 +1157,8 @@ msgstr "Мастер настройки"
 msgid "Static pages"
 msgstr "Страницы"
 
-#: core/admin.php:54 core/customizer/theme-mods/header.php:206
-#: core/customizer/theme-mods/header.php:480
+#: core/admin.php:54 core/customizer/theme-mods/header.php:200
+#: core/customizer/theme-mods/header.php:474
 #: core/customizer/theme-mods/menu.php:12
 msgid "Menu"
 msgstr "Меню"
@@ -1206,9 +1222,9 @@ msgid "Kandinsky settings"
 msgstr "«Кандинский» – настройки"
 
 #. Theme Name of the plugin/theme
-#: core/admin.php:215 core/admin.php:252 core/editor/category.php:20
-#: core/editor/pattern.php:20 core/theme-update/theme-update-checker.php:342
-#: functions.php:234
+#: core/admin.php:215 core/admin.php:252 core/admin.php:615
+#: core/editor/category.php:20 core/editor/pattern.php:20
+#: core/theme-update/theme-update-checker.php:342 functions.php:244
 msgid "Kandinsky"
 msgstr "Кандинский"
 
@@ -1472,19 +1488,19 @@ msgstr "Создано"
 msgid "Kandinsky — useful links"
 msgstr "Кандинский – полезные ссылки"
 
-#: core/admin.php:620
+#: core/admin.php:619
 msgid "Do you want to know all the features of the theme?"
 msgstr "Хотите быть в курсе всех возможностей темы?"
 
-#: core/admin.php:621
+#: core/admin.php:620
 msgid "Find information on"
 msgstr "Найдите информацию на"
 
-#: core/admin.php:622
+#: core/admin.php:621
 msgid "official website"
 msgstr "её официальном сайте"
 
-#: core/admin.php:667
+#: core/admin.php:666
 #, php-format
 msgid "A quick guide to working with the site - %s."
 msgstr "Краткое руководство по работе с сайтом - %s."
@@ -1559,12 +1575,10 @@ msgid "Color scheme"
 msgstr "Цветовая схема"
 
 #: core/customizer/customizer-deprecated.php:104
-#: core/customizer/customizer-deprecated.php:149
 #: core/customizer/theme-mods/footer.php:39
 #: core/customizer/theme-mods/footer.php:47
-#: core/customizer/theme-mods/header.php:70
 #: vendor/envato_setup/envato_setup.php:321
-#: vendor/envato_setup/steps/design.php:7
+#: vendor/envato_setup/steps/design.php:8
 msgid "Logo"
 msgstr "Логотип"
 
@@ -1580,18 +1594,6 @@ msgstr "Основной цвет фона страниц"
 #: core/customizer/theme-mods/global.php:108
 msgid "Recommended - white"
 msgstr "Рекомендуется - белый"
-
-#: core/customizer/customizer-deprecated.php:150
-msgid ""
-"We recommend to use logos in the .svg format (vector graphics). If your logo "
-"is in rastre format, we recommend to upload pictures with the dimensions of "
-"630x132 px for the option &quot;Only Image&quot; or 132x13px for the option "
-"&quot;Image and Title&quot;."
-msgstr ""
-"Мы рекомендуем загружать логотипы в формате .svg (векторная графика). Если "
-"изображения растровое, то мы советуем закачивать изображения в размере "
-"630x132 px для режима &quot;Только изображение&quot; и 132x132 px для режима "
-"&quot;Изображение и название&quot;."
 
 #: core/customizer/customizer-deprecated.php:167
 msgid "Homepage settings"
@@ -1611,8 +1613,8 @@ msgstr "Заголовки и надписи"
 
 #: core/customizer/customizer-deprecated.php:193
 #: core/customizer/theme-mods/archive-settings.php:47
-#: core/template-tags.php:254 core/template-tags.php:380
-#: modules/starter/plot_config.php:232
+#: core/template-tags.php:254 core/template-tags.php:382
+#: modules/starter/plot_config.php:224
 msgid "Our projects"
 msgstr "Наши проекты"
 
@@ -1667,39 +1669,49 @@ msgstr "Установить"
 msgid "No, I’ll do it some other time"
 msgstr "Не устанавливать"
 
-#: core/customizer/kirki.php:94
+#: core/customizer/kirki.php:78
+msgid ""
+"If only an image is used as a logo, then we recommend uploading an image "
+"with the dimensions of 315 x 66 px, or 66 x 66 px for use along with the "
+"text."
+msgstr ""
+"Если в качестве логотипа используется только изображение, мы рекомендуем "
+"загрузить изображение размером 315 x 66 пикселей или 66 x 66 пикселей для "
+"использования вместе с текстом."
+
+#: core/customizer/kirki.php:92
 msgid "Font Family"
 msgstr "Шрифт"
 
-#: core/customizer/kirki.php:97
+#: core/customizer/kirki.php:95
 msgid "Variant"
 msgstr "Насыщенность"
 
-#: core/customizer/kirki.php:100
+#: core/customizer/kirki.php:98
 msgid "Color"
 msgstr "Цвет"
 
-#: core/customizer/kirki.php:103
+#: core/customizer/kirki.php:101
 msgid "Font Size"
 msgstr "Базовый размер, px"
 
-#: core/customizer/kirki.php:106
+#: core/customizer/kirki.php:104
 msgid "No image selected"
 msgstr "Изображение не выбрано"
 
-#: core/customizer/kirki.php:109
+#: core/customizer/kirki.php:107
 msgid "Remove"
 msgstr "Удалить"
 
-#: core/customizer/kirki.php:112
+#: core/customizer/kirki.php:110
 msgid "Select image"
 msgstr "Выбрать изображение"
 
-#: core/customizer/kirki.php:115
+#: core/customizer/kirki.php:113
 msgid "No File Selected"
 msgstr "Изображение не выбрано"
 
-#: core/customizer/kirki.php:173 core/customizer/kirki.php:192
+#: core/customizer/kirki.php:171 core/customizer/kirki.php:190
 #: src/experimental/gutenberg-experimental.js:102
 msgid "None"
 msgstr "Нет"
@@ -1738,28 +1750,28 @@ msgid "Go to Menu"
 msgstr "Переход в раздел Меню"
 
 #: core/customizer/theme-mods/footer.php:72
-#: core/customizer/theme-mods/header.php:82
+#: core/customizer/theme-mods/header.php:76
 msgid "Name"
 msgstr "Название"
 
 #: core/customizer/theme-mods/footer.php:88
-#: core/customizer/theme-mods/header.php:91
+#: core/customizer/theme-mods/header.php:85
 #: vendor/envato_setup/steps/content.php:19
 msgid "Description"
 msgstr "Описание"
 
 #: core/customizer/theme-mods/footer.php:104
-#: core/customizer/theme-mods/header.php:122
+#: core/customizer/theme-mods/header.php:116
 msgid "Use Default Font"
 msgstr "Использовать шрифт по умолчанию"
 
 #: core/customizer/theme-mods/footer.php:155
-#: core/customizer/theme-mods/header.php:161
+#: core/customizer/theme-mods/header.php:155
 msgid "Logo Color"
 msgstr "Цвет для лого"
 
 #: core/customizer/theme-mods/footer.php:177
-#: core/customizer/theme-mods/header.php:176
+#: core/customizer/theme-mods/header.php:170
 msgid "Logo Description Color"
 msgstr "Цвет описания лого"
 
@@ -1769,7 +1781,7 @@ msgid "Footer - Columns"
 msgstr "Подвал - Колонки"
 
 #: core/customizer/theme-mods/footer.php:219 footer.php:46
-#: modules/starter/plot_config.php:250
+#: modules/starter/plot_config.php:242
 msgid "About Us"
 msgstr "О нас"
 
@@ -1782,7 +1794,7 @@ msgid "Menu news"
 msgstr "Меню новости"
 
 #: core/customizer/theme-mods/footer.php:285 footer.php:95
-#: modules/starter/plot_config.php:253
+#: modules/starter/plot_config.php:245
 msgid "Security policy"
 msgstr "Политика безопасности"
 
@@ -1837,13 +1849,13 @@ msgstr "Цвет ссылок в подвале при наведении"
 
 #: core/customizer/theme-mods/footer.php:453
 #: core/customizer/theme-mods/global.php:156
-#: core/customizer/theme-mods/header.php:363
-#: core/customizer/theme-mods/header.php:556
+#: core/customizer/theme-mods/header.php:357
+#: core/customizer/theme-mods/header.php:550
 msgid "Social networks"
 msgstr "Социальные сети"
 
 #: core/customizer/theme-mods/footer.php:454
-#: core/customizer/theme-mods/header.php:364
+#: core/customizer/theme-mods/header.php:358
 msgid "Manage social networks"
 msgstr "Редактировать социальные ссылки"
 
@@ -1941,101 +1953,91 @@ msgstr "Шапка"
 msgid "Select header template"
 msgstr "Выберите шаблон шапки"
 
-#: core/customizer/theme-mods/header.php:33
+#: core/customizer/theme-mods/header.php:34
 msgid "Header Height"
 msgstr "Высота шапки"
 
-#: core/customizer/theme-mods/header.php:48
+#: core/customizer/theme-mods/header.php:50
 msgid "Header Background"
 msgstr "Фон шапки"
 
-#: core/customizer/theme-mods/header.php:71
-msgid ""
-"If only an image is used as a logo, then we recommend uploading an image "
-"with the dimensions of 315 x 66 px, or 66 x 66 px for use along with the "
-"text."
-msgstr ""
-"Если в качестве логотипа используется только изображение, мы рекомендуем "
-"загрузить изображение размером 315 x 66 пикселей или 66 x 66 пикселей для "
-"использования вместе с текстом."
-
-#: core/customizer/theme-mods/header.php:100
+#: core/customizer/theme-mods/header.php:94
 msgid "Custom Text"
 msgstr "Произвольный текст"
 
-#: core/customizer/theme-mods/header.php:116
+#: core/customizer/theme-mods/header.php:110
 msgid "Font For Logo"
 msgstr "Шрифт для лого"
 
-#: core/customizer/theme-mods/header.php:207
+#: core/customizer/theme-mods/header.php:201
 msgid "Go to the menu &quot;In the header&quot;"
 msgstr "Переход в раздел Меню &quot;В шапке&quot;"
 
-#: core/customizer/theme-mods/header.php:222
+#: core/customizer/theme-mods/header.php:216
 msgid "Menu Font Size"
 msgstr "Размер шрифта меню"
 
-#: core/customizer/theme-mods/header.php:242
+#: core/customizer/theme-mods/header.php:236
 msgid "Menu Links Color"
 msgstr "Цвет ссылок в меню"
 
-#: core/customizer/theme-mods/header.php:269
+#: core/customizer/theme-mods/header.php:263
 msgid "Menu Links Color Hover"
 msgstr "Цвет ссылки в меню при наведении"
 
-#: core/customizer/theme-mods/header.php:303
+#: core/customizer/theme-mods/header.php:297
 msgid "Email"
 msgstr "Email"
 
-#: core/customizer/theme-mods/header.php:318
+#: core/customizer/theme-mods/header.php:312
 msgid "Phone"
 msgstr "Телефон"
 
-#: core/customizer/theme-mods/header.php:333
+#: core/customizer/theme-mods/header.php:327
 msgid "Address"
 msgstr "Адрес"
 
-#: core/customizer/theme-mods/header.php:348
-#: core/customizer/theme-mods/header.php:495 search.php:11 searchform.php:11
+#: core/customizer/theme-mods/header.php:342
+#: core/customizer/theme-mods/header.php:489 search.php:11 searchform.php:11
 #: searchform.php:13
 msgid "Search"
 msgstr "Поиск"
 
-#: core/customizer/theme-mods/header.php:380
-#: core/customizer/theme-mods/header.php:525
+#: core/customizer/theme-mods/header.php:374
+#: core/customizer/theme-mods/header.php:519
 msgid "Button Text"
 msgstr "Текст кнопки"
 
-#: core/customizer/theme-mods/header.php:382
-#: core/customizer/theme-mods/header.php:527 core/template-tags.php:632
-#: core/template-tags.php:660 core/template-tags.php:738
-#: modules/donations/donations.php:160 modules/starter/plot_config.php:194
-#: modules/starter/plot_config.php:210 modules/starter/plot_config.php:219
+#: core/customizer/theme-mods/header.php:376
+#: core/customizer/theme-mods/header.php:521 core/template-tags.php:776
+#: core/template-tags.php:804 core/template-tags.php:860
+#: modules/donations/donations.php:153 modules/starter/plot_config.php:186
+#: modules/starter/plot_config.php:202 modules/starter/plot_config.php:211
 msgid "Help now"
 msgstr "Помочь сейчас"
 
-#: core/customizer/theme-mods/header.php:396
-#: core/customizer/theme-mods/header.php:541
+#: core/customizer/theme-mods/header.php:390
+#: core/customizer/theme-mods/header.php:535
 msgid "Button Link"
 msgstr "Ссылка кнопки"
 
-#: core/customizer/theme-mods/header.php:411
+#: core/customizer/theme-mods/header.php:405
 msgid "Additional Button"
 msgstr "Дополнительная кнопка"
 
-#: core/customizer/theme-mods/header.php:426
+#: core/customizer/theme-mods/header.php:420
 msgid "Additional Button Text"
 msgstr "Текст дополнительный кнопки"
 
-#: core/customizer/theme-mods/header.php:446
+#: core/customizer/theme-mods/header.php:440
 msgid "Additional Button Link"
 msgstr "Ссылка дополнительной кнопке"
 
-#: core/customizer/theme-mods/header.php:466
+#: core/customizer/theme-mods/header.php:460
 msgid "Off-Canvas"
 msgstr "Боковая панель"
 
-#: core/customizer/theme-mods/header.php:472
+#: core/customizer/theme-mods/header.php:466
 msgid "Display Off-Canvas"
 msgstr "Отображать Боковую панель"
 
@@ -2070,7 +2072,7 @@ msgstr "Похожие статьи"
 msgid "Related Posts Title"
 msgstr "Заголовок похожих статей"
 
-#: core/customizer/theme-mods/post-settings.php:47 core/template-tags.php:844
+#: core/customizer/theme-mods/post-settings.php:47 core/template-tags.php:966
 msgid "Related posts"
 msgstr "Познакомьтесь с другими проектами"
 
@@ -2092,7 +2094,7 @@ msgid "Related Projects Title"
 msgstr "Заголовок похожие проекты"
 
 #: core/customizer/theme-mods/project-settings.php:47
-#: core/template-tags.php:857 modules/starter/plot_config.php:234
+#: core/template-tags.php:979 modules/starter/plot_config.php:226
 msgid "Related projects"
 msgstr "Познакомьтесь с другими проектами"
 
@@ -2100,15 +2102,11 @@ msgstr "Познакомьтесь с другими проектами"
 msgid "Select campaing"
 msgstr "Выбрать компанию"
 
-#: core/editor/assets.php:83
-msgid "All"
-msgstr "Все"
-
 #: core/editor/blocks/events.php:253 page-events.php:143
 msgid "No events"
 msgstr "Нет мероприятий"
 
-#: core/editor/blocks/leyka-cards.php:334 modules/donations/donations.php:135
+#: core/editor/blocks/leyka-cards.php:334 modules/donations/donations.php:128
 msgid ""
 "Thank you for you support. This campaign is finished and help is going to be "
 "provided. Please follow the updates."
@@ -2116,7 +2114,7 @@ msgstr ""
 "Спасибо за вашу поддержку. Сбор средств завершен и помощь будет оказана. "
 "Следите за обновлениями и отчетами. Благодарим вас за участие."
 
-#: core/editor/blocks/leyka-cards.php:363 modules/donations/donations.php:155
+#: core/editor/blocks/leyka-cards.php:363 modules/donations/donations.php:148
 #, php-format
 msgid "We need to raise: %s %s"
 msgstr "Нужно собрать: %s %s"
@@ -2153,72 +2151,72 @@ msgstr "Блоки"
 msgid "More"
 msgstr "Еще"
 
-#: core/extras.php:264 modules/social.php:63
+#: core/extras.php:245 modules/social.php:63
 msgid "VKontakte"
 msgstr "ВКонтакте"
 
-#: core/extras.php:265
+#: core/extras.php:246
 msgid "E.g., https://vk.com/club0123456789"
 msgstr "Например, https://vk.com/teplitsast"
 
-#: core/extras.php:268 modules/social.php:77
+#: core/extras.php:249 modules/social.php:77
 msgid "Odnoklassniki"
 msgstr "Одноклассники"
 
-#: core/extras.php:269
+#: core/extras.php:250
 msgid "E.g., https://ok.ru/profile/0123456789"
 msgstr "Например, https://ok.ru/profile/0123456789"
 
-#: core/extras.php:272 modules/social.php:84
+#: core/extras.php:253 modules/social.php:84
 msgid "Facebook"
 msgstr "Facebook"
 
-#: core/extras.php:273
+#: core/extras.php:254
 msgid "E.g., https://www.facebook.com/your-organization-page"
 msgstr "Например, https://www.facebook.com/TeplitsaST"
 
-#: core/extras.php:276
+#: core/extras.php:257
 msgid "Instagram"
 msgstr "Instagram"
 
-#: core/extras.php:277
+#: core/extras.php:258
 msgid "E.g., https://www.instagram.com/your-organization-page"
 msgstr "Например, https://www.instagram.com/your-organization-page"
 
-#: core/extras.php:280 modules/social.php:70
+#: core/extras.php:261 modules/social.php:70
 msgid "Twitter"
 msgstr "Twitter"
 
-#: core/extras.php:281
+#: core/extras.php:262
 msgid "E.g., https://twitter.com/your-organization-page"
 msgstr "Например, https://twitter.com/TeplitsaST"
 
-#: core/extras.php:284
+#: core/extras.php:265
 msgid "Telegram"
 msgstr "Telegram"
 
-#: core/extras.php:285
+#: core/extras.php:266
 msgid "E.g., https://tlgrm.ru/channels/@your-organization-page"
 msgstr "Например, https://telegram.me/TeplitsaPRO"
 
-#: core/extras.php:288
+#: core/extras.php:269
 msgid "YouTube"
 msgstr "YouTube"
 
-#: core/extras.php:289
+#: core/extras.php:270
 msgid "E.g., https://youtube.com/channel/your-organization-channel"
 msgstr "Например, https://www.youtube.com/user/teplitsast"
 
-#: core/extras.php:292
+#: core/extras.php:273
 msgid "TikTok"
 msgstr "TikTok"
 
-#: core/extras.php:347 modules/starter/import_remote_content.php:406
+#: core/extras.php:327 modules/starter/import_remote_content.php:406
 #, php-format
 msgid "Old import files cleanup FAILED: %s."
 msgstr "Очистка старых импортных файлов FAILED: %s."
 
-#: core/extras.php:417
+#: core/extras.php:397
 msgid "Recommended plugins to install"
 msgstr "Рекомендуем установить плагины"
 
@@ -2328,8 +2326,8 @@ msgid "Home"
 msgstr "Главная"
 
 #: core/template-tags.php:168 core/template-tags.php:244
-#: core/template-tags.php:363 core/template-tags.php:364
-#: core/template-tags.php:365 page-events.php:21
+#: core/template-tags.php:365 core/template-tags.php:366
+#: core/template-tags.php:367 page-events.php:21
 msgid "Page"
 msgstr "Страница"
 
@@ -2345,47 +2343,47 @@ msgstr "Результаты поиска"
 msgid "404: Page not found"
 msgstr "Ошибка 404: Страница не найдена"
 
-#: core/template-tags.php:362
+#: core/template-tags.php:364
 msgid "Posts navigation"
 msgstr "Навигация по записям"
 
-#: core/template-tags.php:364
+#: core/template-tags.php:366
 msgid "Previous"
 msgstr "Предыдущая"
 
-#: core/template-tags.php:365
+#: core/template-tags.php:367
 msgid "Next"
 msgstr "Следующая"
 
-#: core/template-tags.php:379
+#: core/template-tags.php:381
 msgid "More projects"
 msgstr "Еще проекты"
 
-#: core/template-tags.php:382
+#: core/template-tags.php:384
 msgid "More news"
 msgstr "Еще новости"
 
-#: core/template-tags.php:383
+#: core/template-tags.php:385
 msgid "Latest news"
 msgstr "Последние новости"
 
-#: core/template-tags.php:572
+#: core/template-tags.php:716
 msgid "Open search"
 msgstr "Открыть поиск"
 
-#: core/template-tags.php:593
+#: core/template-tags.php:737
 msgid "Close search"
 msgstr "Закрыть поиск"
 
-#: core/template-tags.php:608
+#: core/template-tags.php:752
 msgid "Open Off-Canvas"
 msgstr "Открыть боковую панель"
 
-#: core/template-tags.php:621
+#: core/template-tags.php:765
 msgid "Close Off-Canvas"
 msgstr "Закрыть боковую панель"
 
-#: core/template-tags.php:759 functions.php:83 template-parts/offcanvas.php:31
+#: core/template-tags.php:881 functions.php:83 template-parts/offcanvas.php:32
 msgid "Primary menu"
 msgstr "Главное меню"
 
@@ -2399,7 +2397,7 @@ msgstr "Доступна новая версия темы <strong>% s </strong>.
 msgid "Update to version %s"
 msgstr "Обновить до версии %s"
 
-#: footer.php:58 modules/starter/plot_config.php:256
+#: footer.php:58 modules/starter/plot_config.php:248
 msgid "Our Work"
 msgstr "Наша работа"
 
@@ -2412,70 +2410,70 @@ msgid "Kandinsky logo"
 msgstr "Логотип Кандинский"
 
 #. Author of the plugin/theme
-#: functions.php:235
+#: functions.php:245
 msgid "Teplitsa"
 msgstr "Теплица социальных технологий"
 
 #. Description of the plugin/theme
-#: functions.php:236
+#: functions.php:246
 msgid "The beautiful design and useful features for nonprofit website"
 msgstr "Красивый дизайн и полезные функции для сайта НКО"
 
-#: inc/events/events-functions.php:95
+#: inc/events/events-functions.php:100
 #, php-format
 msgid "%s before registration closes"
 msgstr "%s до закрытия регистрации"
 
-#: inc/events/events-functions.php:97
+#: inc/events/events-functions.php:102
 msgid "Registration is closed"
 msgstr "Регистрация закрыта"
 
-#: inc/events/events-functions.php:111
+#: inc/events/events-functions.php:116
 msgid "online"
 msgstr "онлайн"
 
-#: inc/events/events-functions.php:240
+#: inc/events/events-functions.php:245
 msgid "Custom Settings"
 msgstr "Пользовательские настройки"
 
-#: inc/events/events-functions.php:252
+#: inc/events/events-functions.php:258
 msgid "Additional settings for the single event page"
 msgstr "Дополнительные настройки для страницы мероприятия"
 
-#: inc/events/events-functions.php:258
+#: inc/events/events-functions.php:264
 msgid "Schedule heading"
 msgstr "Заголовок расписания"
 
-#: inc/events/events-functions.php:259
+#: inc/events/events-functions.php:265
 msgid "Question heading"
 msgstr "Заголовок вопроса"
 
-#: inc/events/events-functions.php:260
+#: inc/events/events-functions.php:266
 msgid "Question content"
 msgstr "Содержание вопроса"
 
-#: inc/events/events-functions.php:261
+#: inc/events/events-functions.php:267
 msgid "Related heading"
 msgstr "Заголовок похожих мероприятий"
 
-#: inc/events/events-functions.php:279
+#: inc/events/events-functions.php:285
 msgid "CTA button text"
 msgstr "Текст кнопки"
 
-#: inc/events/events-functions.php:279 inc/events/events-options.php:24
+#: inc/events/events-functions.php:285 inc/events/events-options.php:23
 #: single-event.php:63
 msgid "Book Now"
 msgstr "Забронировать"
 
-#: inc/events/events-functions.php:283
+#: inc/events/events-functions.php:289
 msgid "Custom Fields"
 msgstr "Настраиваемые поля"
 
-#: inc/events/events-functions.php:307
+#: inc/events/events-functions.php:313
 msgid "Add new field"
 msgstr "Добавить новое поле"
 
-#: inc/events/events-functions.php:365
+#: inc/events/events-functions.php:370
 msgid "<strong>ERROR</strong>: Invalid"
 msgstr "<strong>ОШИБКА</strong>: Недействительный"
 
@@ -2532,7 +2530,7 @@ msgstr "На сайте нет ни одного спикера."
 msgid "Add a new speaker."
 msgstr "Добавить нового спикера."
 
-#: inc/events/events-metabox.php:117 inc/events/events-options.php:37
+#: inc/events/events-metabox.php:117 inc/events/events-options.php:57
 #: inc/events/events-tags.php:160
 msgid "Schedule"
 msgstr "Расписание"
@@ -2545,11 +2543,11 @@ msgstr "Удалить расписание"
 msgid "Add schedule"
 msgstr "Добавить расписание"
 
-#: inc/events/events-options.php:38 inc/events/events-tags.php:211
+#: inc/events/events-options.php:58 inc/events/events-tags.php:211
 msgid "Still have questions?"
 msgstr "Остались вопросы?"
 
-#: inc/events/events-options.php:39
+#: inc/events/events-options.php:59
 msgid ""
 "Write to Alisa Tsvetkova in Telegram @itisalise or email alisetsvetkova@te-"
 "st.ru"
@@ -2557,8 +2555,8 @@ msgstr ""
 "Пишите Алисе Цветковой в Telegram @itisalise или на почту alisetsvetkova@te-"
 "st.ru"
 
-#: inc/events/events-options.php:40
-#: template-parts/entry/entry-event-related.php:12
+#: inc/events/events-options.php:60
+#: template-parts/entry/entry-event-related.php:20
 msgid "More events"
 msgstr "Еще мероприятия"
 
@@ -2566,19 +2564,19 @@ msgstr "Еще мероприятия"
 msgid "Msk"
 msgstr "Мск"
 
-#: modules/donations/donations.php:60
+#: modules/donations/donations.php:57
 msgid "Please, specify your donation amount"
 msgstr "Пожалуйста, укажите сумму пожертвования"
 
-#: modules/donations/donations.php:67
+#: modules/donations/donations.php:64
 msgid "or"
 msgstr "или"
 
-#: modules/donations/donations.php:68
+#: modules/donations/donations.php:65
 msgid "Specify the amount of your donation"
 msgstr "Укажите сумму вашего пожертвования"
 
-#: modules/donations/donations.php:275
+#: modules/donations/donations.php:266
 msgid "Charity"
 msgstr "Благотворительность"
 
@@ -2776,25 +2774,25 @@ msgstr "Разархивированная директория не найде�
 msgid "Plot dir not found: %s"
 msgstr "Директория сценария не найдена: %s"
 
-#: modules/starter/plot_config.php:126
+#: modules/starter/plot_config.php:118
 msgid "Line of Color"
 msgstr "Линия Цвета"
 
-#: modules/starter/plot_config.php:137
+#: modules/starter/plot_config.php:129
 #: modules/starter/plot_data_builder.php:1131
 #: modules/starter/plot_data_builder.php:1133
 msgid "Primary Menu"
 msgstr "Главное меню"
 
-#: modules/starter/plot_config.php:143
+#: modules/starter/plot_config.php:135
 msgid "Kandinsky our work footer menu"
 msgstr "Меню «Наша работа» в подвале"
 
-#: modules/starter/plot_config.php:149
+#: modules/starter/plot_config.php:141
 msgid "Kandinsky news footer menu"
 msgstr "Меню «Новости» в подвале"
 
-#: modules/starter/plot_config.php:176
+#: modules/starter/plot_config.php:168
 msgid ""
 "Our office, training rooms and support group rooms are open daily from 9:00 "
 "am to 10:00 pm."
@@ -2802,7 +2800,7 @@ msgstr ""
 "Наш офис, учебные залы и помещения групп поддержки открыты ежедневно с 9:00 "
 "до 22:00 часов."
 
-#: modules/starter/plot_config.php:177
+#: modules/starter/plot_config.php:169
 msgid ""
 "Moscow, 7th Stroiteley Street, 17, office: 211-217\n"
 "+7 (495) 787-87-23"
@@ -2810,7 +2808,7 @@ msgstr ""
 "Москва, 7-я улица Строителей, 17, оф.: 211-217\n"
 "+7 (495) 787-87-23"
 
-#: modules/starter/plot_config.php:182
+#: modules/starter/plot_config.php:174
 #, php-format
 msgid ""
 "By making a donation, the user concludes a donation agreement by accepting a "
@@ -2819,23 +2817,23 @@ msgstr ""
 "Совершая пожертвование, пользователь заключает договор пожертвования путем "
 "акцепта публичной оферты, которая находится %sздесь%s."
 
-#: modules/starter/plot_config.php:183
+#: modules/starter/plot_config.php:175
 msgid "Personal data processing policy"
 msgstr "Политика обработки персональных данных"
 
-#: modules/starter/plot_config.php:184
+#: modules/starter/plot_config.php:176
 msgid "Privacy policy"
 msgstr "Политика конфиденциальности"
 
-#: modules/starter/plot_config.php:233
+#: modules/starter/plot_config.php:225
 msgid "Related items"
 msgstr "Еще по теме"
 
-#: modules/starter/plot_config.php:257
+#: modules/starter/plot_config.php:249
 msgid "kandinsky-our-work-footer-menu"
 msgstr "menyu-nasha-rabota-v-podvale"
 
-#: modules/starter/plot_config.php:259
+#: modules/starter/plot_config.php:251
 msgid "kandinsky-news-footer-menu"
 msgstr "menyu-novosti-v-podvale"
 
@@ -2948,7 +2946,7 @@ msgstr "Настройки кампании"
 msgid "Qty"
 msgstr "Кол.-во"
 
-#: template-parts/offcanvas.php:27
+#: template-parts/offcanvas.php:28
 msgid "Main menu"
 msgstr "Главное меню"
 
@@ -2956,7 +2954,7 @@ msgstr "Главное меню"
 #: vendor/class-tgm-plugin-activation.php:816
 #: vendor/class-tgm-plugin-activation.php:2522
 #: vendor/class-tgm-plugin-activation.php:3569
-#: vendor/envato_setup/envato_setup.php:480
+#: vendor/envato_setup/envato_setup.php:485
 msgid "Return to the Dashboard"
 msgstr "Вернуться в админку"
 
@@ -3345,135 +3343,135 @@ msgstr "Поддержка"
 msgid "Ready!"
 msgstr "Все готово!"
 
-#: vendor/envato_setup/envato_setup.php:378
+#: vendor/envato_setup/envato_setup.php:379
 msgid "...verifying"
 msgstr "Верификация"
 
-#: vendor/envato_setup/envato_setup.php:379
+#: vendor/envato_setup/envato_setup.php:380
 msgid "Processing..."
 msgstr "Обработка..."
 
-#: vendor/envato_setup/envato_setup.php:380
+#: vendor/envato_setup/envato_setup.php:381
 msgid "Upload Logo"
 msgstr "Загрузить логотип"
 
-#: vendor/envato_setup/envato_setup.php:381
+#: vendor/envato_setup/envato_setup.php:382
 msgid "Select Logo"
 msgstr "Выбрать логотип"
 
-#: vendor/envato_setup/envato_setup.php:405
-#: vendor/envato_setup/envato_setup.php:1115
+#: vendor/envato_setup/envato_setup.php:408
+#: vendor/envato_setup/envato_setup.php:1166
 #: vendor/envato_setup/steps/intro.php:44
 msgid "Error:"
 msgstr "Ошибка:"
 
-#: vendor/envato_setup/envato_setup.php:407
-#: vendor/envato_setup/envato_setup.php:1121
+#: vendor/envato_setup/envato_setup.php:410
+#: vendor/envato_setup/envato_setup.php:1172
 #: vendor/envato_setup/steps/intro.php:48
 msgid "Back to the Dashboard"
 msgstr "Вернуться в административный раздел сайта"
 
-#: vendor/envato_setup/envato_setup.php:459
+#: vendor/envato_setup/envato_setup.php:464
 msgid "Kandinsky - setup wizard"
 msgstr "«Кандинский» – мастер настройки"
 
-#: vendor/envato_setup/envato_setup.php:468
+#: vendor/envato_setup/envato_setup.php:473
 msgid "Kandinsky theme setup wizard"
 msgstr "Мастер настройки темы"
 
-#: vendor/envato_setup/envato_setup.php:572
+#: vendor/envato_setup/envato_setup.php:577
 msgid "No slug found"
 msgstr "Плагин не найден"
 
-#: vendor/envato_setup/envato_setup.php:591
+#: vendor/envato_setup/envato_setup.php:596
 msgid "Activating Plugin"
 msgstr "Активация"
 
-#: vendor/envato_setup/envato_setup.php:605
+#: vendor/envato_setup/envato_setup.php:610
 msgid "Updating Plugin"
 msgstr "Обновление плагина"
 
-#: vendor/envato_setup/envato_setup.php:619
+#: vendor/envato_setup/envato_setup.php:624
 msgid "Installing Plugin"
 msgstr "Установка плагина"
 
-#: vendor/envato_setup/envato_setup.php:736
+#: vendor/envato_setup/envato_setup.php:741
 msgid "Website title and description"
 msgstr "Название и описание сайта"
 
-#: vendor/envato_setup/envato_setup.php:737
+#: vendor/envato_setup/envato_setup.php:742
 msgid "Insert default website title and description as seen in the demo."
 msgstr "Укажите название и напишите краткое описание сайта."
 
-#: vendor/envato_setup/envato_setup.php:738
-#: vendor/envato_setup/envato_setup.php:747
-#: vendor/envato_setup/envato_setup.php:756
-#: vendor/envato_setup/envato_setup.php:765
+#: vendor/envato_setup/envato_setup.php:743
+#: vendor/envato_setup/envato_setup.php:752
+#: vendor/envato_setup/envato_setup.php:761
+#: vendor/envato_setup/envato_setup.php:770
 msgid "Pending"
 msgstr "Отложено"
 
-#: vendor/envato_setup/envato_setup.php:739
-#: vendor/envato_setup/envato_setup.php:748
-#: vendor/envato_setup/envato_setup.php:757
-#: vendor/envato_setup/envato_setup.php:766
+#: vendor/envato_setup/envato_setup.php:744
+#: vendor/envato_setup/envato_setup.php:753
+#: vendor/envato_setup/envato_setup.php:762
+#: vendor/envato_setup/envato_setup.php:771
 msgid "Installing..."
 msgstr "Установка..."
 
-#: vendor/envato_setup/envato_setup.php:746
+#: vendor/envato_setup/envato_setup.php:751
 msgid "Insert default website settings as seen in the demo."
 msgstr "Набор демонстрационных значений параметров сайта."
 
-#: vendor/envato_setup/envato_setup.php:755
+#: vendor/envato_setup/envato_setup.php:760
 msgid "Install default website posts, pages and menus."
 msgstr "Установить записи, страницы и меню."
 
-#: vendor/envato_setup/envato_setup.php:764
+#: vendor/envato_setup/envato_setup.php:769
 msgid "Install donations components."
 msgstr "Установить модуль для сбора пожертвований."
 
-#: vendor/envato_setup/envato_setup.php:820
+#: vendor/envato_setup/envato_setup.php:825
 msgid "No content Found"
 msgstr "Контент не найден"
 
-#: vendor/envato_setup/envato_setup.php:885
+#: vendor/envato_setup/envato_setup.php:890
 msgid "Error"
 msgstr "Ошибка"
 
-#: vendor/envato_setup/envato_setup.php:906
+#: vendor/envato_setup/envato_setup.php:911
 #: vendor/envato_setup/steps/intro.php:62
 msgid "Downloading template archive..."
 msgstr "Идет скачивание архива темы..."
 
-#: vendor/envato_setup/envato_setup.php:907
+#: vendor/envato_setup/envato_setup.php:912
 msgid "Extracting template content..."
 msgstr "Идет распаковка архива темы..."
 
-#: vendor/envato_setup/envato_setup.php:908
+#: vendor/envato_setup/envato_setup.php:913
 msgid "Importing template content..."
 msgstr "Идет импорт содержимого. Операция может занять несколько минут..."
 
-#: vendor/envato_setup/envato_setup.php:909
+#: vendor/envato_setup/envato_setup.php:914
 msgid "Building template files..."
 msgstr "Подготовка файлов..."
 
-#: vendor/envato_setup/envato_setup.php:910
+#: vendor/envato_setup/envato_setup.php:915
 msgid "Building template options..."
 msgstr "Подготовка настроек..."
 
-#: vendor/envato_setup/envato_setup.php:911
+#: vendor/envato_setup/envato_setup.php:916
 msgid "Building template colors..."
 msgstr "Подготовка цветов..."
 
-#: vendor/envato_setup/envato_setup.php:921
+#: vendor/envato_setup/envato_setup.php:926
 msgid "Please select the scenario"
 msgstr "Пожалуйста выберите шаблон"
 
-#: vendor/envato_setup/envato_setup.php:955
+#: vendor/envato_setup/envato_setup.php:960
 #, php-format
 msgid "Plot data builder was not produced for plot: %s"
 msgstr "Конструктор сценариев не обнаружен для сценария: %s"
 
-#: vendor/envato_setup/envato_setup.php:1115
+#: vendor/envato_setup/envato_setup.php:1166
 #, php-format
 msgid ""
 "Please, send a report about it to the <a href='mailto:%s' "
@@ -3482,7 +3480,7 @@ msgstr ""
 "Пожалуйста, напишите об этой ошибке <a href='mailto:%s' "
 "target='_blank'>нашей службе тех.поддержки</a>."
 
-#: vendor/envato_setup/envato_setup.php:1117
+#: vendor/envato_setup/envato_setup.php:1168
 #, php-format
 msgid ""
 "We're sorry, but some error occured during to this wizard step :( <div "
@@ -3493,7 +3491,7 @@ msgstr ""
 "class='wizard-error-support-text'>Пожалуйста, напишите об этом <a "
 "href='mailto:%s' target='_blank'>нашей службе тех.поддержки</a>."
 
-#: vendor/envato_setup/envato_setup.php:1122
+#: vendor/envato_setup/envato_setup.php:1173
 #: vendor/envato_setup/steps/intro.php:49
 msgid "Email to the theme support"
 msgstr "Написать тех.службе"
@@ -3528,10 +3526,10 @@ msgid "Item"
 msgstr "Тип"
 
 #: vendor/envato_setup/steps/content.php:44
-#: vendor/envato_setup/steps/design.php:27
+#: vendor/envato_setup/steps/design.php:30
 #: vendor/envato_setup/steps/plugins.php:108
 #: vendor/envato_setup/steps/ready.php:30
-#: vendor/envato_setup/steps/settings.php:44
+#: vendor/envato_setup/steps/settings.php:42
 #: vendor/envato_setup/steps/support.php:40
 msgid "Back"
 msgstr "Шаг назад"
@@ -3541,14 +3539,14 @@ msgid "Set up"
 msgstr "Настроить"
 
 #: vendor/envato_setup/steps/content.php:49
-#: vendor/envato_setup/steps/design.php:30
+#: vendor/envato_setup/steps/design.php:33
 #: vendor/envato_setup/steps/intro.php:59
 #: vendor/envato_setup/steps/plugins.php:113
-#: vendor/envato_setup/steps/settings.php:47
+#: vendor/envato_setup/steps/settings.php:45
 msgid "Skip this step"
 msgstr "Пропустить шаг"
 
-#: vendor/envato_setup/steps/design.php:10
+#: vendor/envato_setup/steps/design.php:11
 msgid ""
 "Please add your organization main logo below. The recommended size is "
 "<strong>315 x 66 px</strong> if only an image is used as a logo and "
@@ -3562,20 +3560,20 @@ msgstr ""
 "вместе с текстом. Логотип можно изменить в любое время в настройках вашего "
 "сайта. Внешний вид > Настроить > Шапка."
 
-#: vendor/envato_setup/steps/design.php:12
+#: vendor/envato_setup/steps/design.php:13
 #, php-format
 msgid "Try our %sPaseka program%s if you need a new logo designed."
 msgstr ""
 "Если вам нужен новый дизайн логотипа и фирменного стиля, вы можете найти "
 "исполнителя с помощью нашей %sпрограммы «Пасека»%s."
 
-#: vendor/envato_setup/steps/design.php:19
+#: vendor/envato_setup/steps/design.php:22
 msgid "Upload new logo"
 msgstr "Загрузить логотип"
 
-#: vendor/envato_setup/steps/design.php:28
+#: vendor/envato_setup/steps/design.php:31
 #: vendor/envato_setup/steps/plugins.php:110
-#: vendor/envato_setup/steps/settings.php:45
+#: vendor/envato_setup/steps/settings.php:43
 msgid "Continue"
 msgstr "Продолжить"
 
@@ -3720,19 +3718,19 @@ msgstr "Посмотреть на новый сайт!"
 msgid "#success"
 msgstr "#успех"
 
-#: vendor/envato_setup/steps/settings.php:7
+#: vendor/envato_setup/steps/settings.php:8
 msgid "NGO settings"
 msgstr "Настройки организации"
 
-#: vendor/envato_setup/steps/settings.php:11
+#: vendor/envato_setup/steps/settings.php:12
 msgid "The website title"
 msgstr "Название сайта"
 
-#: vendor/envato_setup/steps/settings.php:17
+#: vendor/envato_setup/steps/settings.php:18
 msgid "The website description"
 msgstr "Описание сайта"
 
-#: vendor/envato_setup/steps/settings.php:22
+#: vendor/envato_setup/steps/settings.php:23
 msgid ""
 "Please add your site icon below. The recommended size is <strong>64 x 64 px</"
 "strong>. The site icon can be changed at any time from the Appearance > "
@@ -3742,14 +3740,14 @@ msgstr ""
 "<strong>64 x 64 пикселя</strong>. В будущем вы сможете изменить фавикон в "
 "административном разделе сайта, на странице «Внешний вид > Настроить»."
 
-#: vendor/envato_setup/steps/settings.php:24
+#: vendor/envato_setup/steps/settings.php:25
 #, php-format
 msgid "Try our %sPaseka program%s if you need a new site icon designed."
 msgstr ""
 "Если вам нужен новый дизайн фавикона, вы можете найти исполнителя с помощью "
 "нашей %sпрограммы «Пасека»%s."
 
-#: vendor/envato_setup/steps/settings.php:36
+#: vendor/envato_setup/steps/settings.php:34
 msgid "Upload new site icon"
 msgstr "Загрузить favicon"
 
@@ -3822,6 +3820,17 @@ msgstr "https://te-st.ru/"
 #. Author URI of the plugin/theme
 msgid "https://te-st.ru/"
 msgstr "https://te-st.ru/"
+
+#~ msgid ""
+#~ "We recommend to use logos in the .svg format (vector graphics). If your "
+#~ "logo is in rastre format, we recommend to upload pictures with the "
+#~ "dimensions of 630x132 px for the option &quot;Only Image&quot; or "
+#~ "132x13px for the option &quot;Image and Title&quot;."
+#~ msgstr ""
+#~ "Мы рекомендуем загружать логотипы в формате .svg (векторная графика). "
+#~ "Если изображения растровое, то мы советуем закачивать изображения в "
+#~ "размере 630x132 px для режима &quot;Только изображение&quot; и 132x132 px "
+#~ "для режима &quot;Изображение и название&quot;."
 
 #~ msgid "Project Kandinsky"
 #~ msgstr "Проект Кандинский"
