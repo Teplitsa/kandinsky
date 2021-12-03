@@ -21,6 +21,10 @@ register_block_type( 'knd/news', array(
 			'type'    => 'integer',
 			'default' => 3,
 		),
+		'columns'     => array(
+			'type'    => 'integer',
+			'default' => 3,
+		),
 		'align'            => array(
 			'type'    => 'string',
 			'default' => 'full',
@@ -93,6 +97,13 @@ function knd_block_news_render_callback( $attr ) {
 	if ( isset( $attr['postsToShow'] ) && $attr['postsToShow'] ) {
 		$posts_to_show = $attr['postsToShow'];
 	}
+
+	// Columns
+	$columns = 3;
+	if ( isset( $attr['columns'] ) && $attr['columns'] ) {
+		$columns = $attr['columns'];
+	}
+	$classes['cols'] = 'knd-block-col-' . $columns;
 
 	// Background Color
 	$style = '';

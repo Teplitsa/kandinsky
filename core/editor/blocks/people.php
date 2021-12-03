@@ -111,7 +111,7 @@ function knd_block_people_render_callback( $attr ) {
 	if ( isset( $attr['columns'] ) && $attr['columns'] ) {
 		$columns = $attr['columns'];
 	}
-	$classes['cols'] = ' knd-block-col-' . $columns;
+	$classes['cols'] = 'knd-block-col-' . $columns;
 
 	// Background Color
 	$style = '';

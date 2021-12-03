@@ -3001,6 +3001,10 @@
 				type: 'number',
 				default: 3
 			},
+			columns: {
+				type: 'number',
+				default: 3
+			},
 			align: {
 				type: 'string',
 				default: 'full',
@@ -3196,10 +3200,23 @@
 									label: __('Posts to show','knd'),
 									value: props.attributes.postsToShow,
 									initialPosition: 3,
-									min: 2,
-									max: 12,
+									min: 1,
+									max: 30,
 									onChange: ( val ) => {
 										props.setAttributes( { postsToShow: val } );
+									}
+								}
+							),
+
+							el( RangeControl,
+								{
+									label: __( 'Columns', 'knd' ),
+									value: props.attributes.columns,
+									initialPosition: 3,
+									min: 1,
+									max: 4,
+									onChange: function( val ) {
+										props.setAttributes({ columns: val });
 									}
 								}
 							),
@@ -4078,6 +4095,10 @@
 				type: 'number',
 				default: 3
 			},
+			columns: {
+				type: 'number',
+				default: 3
+			},
 			align: {
 				type: 'string',
 				default: 'full',
@@ -4269,13 +4290,27 @@
 									label: __( 'Projects to show', 'knd' ),
 									value: props.attributes.postsToShow,
 									initialPosition: 3,
-									min: 2,
-									max: 12,
+									min: 1,
+									max: 30,
 									onChange: ( val ) => {
 										props.setAttributes({ postsToShow: val })
 									}
 								}
 							),
+
+							el( RangeControl,
+								{
+									label: __( 'Columns', 'knd' ),
+									value: props.attributes.columns,
+									initialPosition: 3,
+									min: 1,
+									max: 4,
+									onChange: function( val ) {
+										props.setAttributes({ columns: val });
+									}
+								}
+							),
+
 						),
 
 						el( PanelBody,
