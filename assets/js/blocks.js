@@ -1295,6 +1295,10 @@
 			buttonUrl: {
 				type: 'string',
 			},
+			buttonTarget: {
+				type: 'boolean',
+				default: false,
+			},
 			backgroundColor: {
 				type: 'string',
 			},
@@ -1504,6 +1508,18 @@
 									props.setAttributes( { buttonUrl: val } );
 								},
 							}),
+
+							el( PanelRow, {},
+								el( ToggleControl,
+									{
+										label: __('Open in new tab', 'knd'),
+										onChange: ( value ) => {
+											props.setAttributes( { buttonTarget: value } );
+										},
+										checked: props.attributes.buttonTarget,
+									}
+								)
+							),
 
 							el( ColorPaletteControl,
 								{

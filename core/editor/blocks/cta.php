@@ -41,6 +41,10 @@ register_block_type( 'knd/cta', array(
 			'type'    => 'string',
 			'default' => '',
 		),
+		'buttonTarget'         => array(
+			'type'    => 'boolean',
+			'default' => false,
+		),
 		'featuredImage' => array(
 			'type'    => 'object',
 			'default' => array(
@@ -171,8 +175,19 @@ function knd_block_cta_render_callback( $attr ) {
 
 	$action = '';
 	if ( isset( $attr['buttonText'] ) && $attr['buttonText'] ) {
-		 $action .= '<div class="knd-block-cta__action">
-				<a href="' . $attr['buttonUrl'] . '" role="button" class="knd-button knd-button-lg">' . $attr['buttonText'] . '</a>
+
+		$button_attr = array(
+			'class' => 'knd-button knd-button-lg',
+			'role'  => 'button',
+			'href'  => $attr['buttonUrl'],
+		);
+
+		if ( isset( $attr['buttonTarget'] ) && $attr['buttonTarget'] ) {
+			$button_attr['target'] = '_blank';
+		}
+
+		$action .= '<div class="knd-block-cta__action">
+				<a '. knd_tag_attr( $button_attr ) . '>' . $attr['buttonText'] . '</a>
 		</div>';
 	}
 

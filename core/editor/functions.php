@@ -59,6 +59,35 @@ if ( ! function_exists( 'knd_block_attr' ) ) {
 	}
 }
 
+if ( ! function_exists( 'knd_tag_attr' ) ) {
+	/**
+	 * Return tag attributes
+	 */
+	function knd_tag_attr( $attr = array() ) {
+
+		$tag_attr = '';
+		if ( $attr ) {
+			foreach ( $attr as $name => $value ) {
+				$values = '';
+				if ( is_array( $value ) ) {
+					foreach ( $value as $prop => $prop_val ) {
+						if ( $prop_val ) {
+							$values .= $prop . ':' . $prop_val . ';';
+						}
+					}
+				} else {
+					$values = $value;
+				}
+				if ( $values ) {
+					$tag_attr .= ' ' . $name . '="' . $values . '"';
+				}
+			}
+		}
+
+		return apply_filters( 'knd_tag_attr', $tag_attr, $attr );
+	}
+}
+
 if ( ! function_exists( 'knd_is_page_title' ) ) {
 	/**
 	 * Check Is Page Title
