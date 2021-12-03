@@ -2168,6 +2168,10 @@ body > svg {
 
 /** Header Nav */
 .knd-header-nav {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-align: center;
+	align-items: center;
 	min-height: 50px;
 }
 

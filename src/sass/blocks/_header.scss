@@ -661,6 +661,8 @@
 /** Header Nav */
 .knd-header-nav {
 
+	display: flex;
+	align-items: center;
 	min-height: 50px;
 
 	.knd-col-right & {
