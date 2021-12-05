@@ -8,9 +8,24 @@
 	padding: $gut 0;
 }
 
+//@include knd-head-page();
+//@mixin knd-head-page(){
+
 .page-title {
-	@include knd-head-page();
+	font-size: 36px;
+	font-family: var(--knd-font-family-headings);
+	line-height: 1.05;
+	letter-spacing: .001em;
+	text-transform: uppercase;
 	color: var(--knd-color-headings);
+
+	@media (min-width: 768px) {
+		font-size: 46px;
+	}
+
+	@media (min-width: 1200px) {
+		font-size: 56px;
+	}
 }
 
 .page-intro {

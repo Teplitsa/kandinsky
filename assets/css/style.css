@@ -3846,7 +3846,7 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 }
 
 .page-title {
-	font-size: 50.50472px;
+	font-size: 36px;
 	font-family: var(--knd-font-family-headings);
 	line-height: 1.05;
 	letter-spacing: .001em;
@@ -3854,21 +3854,15 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 	color: var(--knd-color-headings);
 }
 
-@media (min-width: 440px) and (max-width: 768px) {
+@media (min-width: 768px) {
 	.page-title {
-		font-size: calc( 50.50472px + 4.20873 * ( ( 100vw - 440px) / 328 ));
+		font-size: 46px;
 	}
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 1200px) {
 	.page-title {
-		font-size: calc( 54.71345px + 4.20873 * ( ( 100vw - 768px) / 256 ));
-	}
-}
-
-@media (min-width: 1024px) {
-	.page-title {
-		font-size: 58.92218px;
+		font-size: 56px;
 	}
 }
 

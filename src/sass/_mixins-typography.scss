@@ -96,14 +96,6 @@ $modularscale: (
 	@include ms-respond(font-size, 2);
 }
 
-@mixin knd-head-page(){
-	@include ms-respond(font-size, 5);
-	font-family: $heading;
-	line-height: 1.05;
-	letter-spacing: .001em;
-	text-transform: uppercase;
-}
-
 @mixin knd-subhead-text() {
 	@include ms-respond(font-size, 0);
 	font-family: $body;

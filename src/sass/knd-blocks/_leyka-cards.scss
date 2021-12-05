@@ -174,16 +174,16 @@
 					color: var(--knd-block-card-target-amount);
 				}
 			}
-
-			.progressbar-unfulfilled {
-				.progressbar-fulfilled {
-					background-color: var(--knd-block-card-progressbar);
-				}
-			}
 		}
 
-		.progressbar-unfulfilled + .bottom-line {
-			margin-top: -24px;
+		.progressbar-unfulfilled {
+			.progressbar-fulfilled {
+				background-color: var(--knd-block-card-progressbar);
+			}
+
+			+ .bottom-line {
+				margin-top: -24px;
+			}
 		}
 
 		.campaign-title {
