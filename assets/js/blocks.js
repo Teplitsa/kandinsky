@@ -1967,7 +1967,7 @@
 
 							el( SelectControl,
 								{
-									label: __( 'What events to show' ),
+									label: __( 'What events to show', 'knd' ),
 									options : [
 										{ value: 'all', label: __( 'All events', 'knd' ) },
 										{ value: 'future', label: __( 'Future events', 'knd' ) },
