@@ -249,33 +249,18 @@
 .site-nav-title {
 	border-bottom: 1px solid $color-page-bg-dark;
 	position: relative;
-	height: $logo_small_h + $height_gap;
 
-	@include for(medium-screens) { height: $logo_full_h + $height_gap;}
-	
 	.snt-cell {
 		display: flex;
-		flex-flow: column nowrap;
-		justify-content: center;
-		height: $logo_small_h + $height_gap;
+		align-items: center;
+		height: 76px;
 		max-width: 196px;
 		padding-left: $gut/2;
-		
-		@include for(medium-screens){
-			height: $logo_full_h + $height_gap;
-		}
-	}
-	
-	.logo-name {
-		font-size: 15px;
-		line-height: 16px;
 	}
 
-	.logo-desc {
-		font-size: 11.5px;
-		line-height: 15px;
-		text-transform: none;
-		padding-top: 6px;
+	.logo-name {
+		font-size: 18px;
+		line-height: 1;
 	}
 
 	.close {
@@ -295,17 +280,13 @@
 			height: 18px;
 			fill: var(--knd-color-white);
 		}
-		
+
 		&:hover {
 			background: $color-main-dark;
 		}
 
 		&:focus {
 			outline-color: var(--knd-color-base);
-		}
-		
-		@include for(medium-screens){
-			margin-top: ($logo_full_h - $logo_small_h)/2;
 		}
 	}
 }

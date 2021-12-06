@@ -1731,43 +1731,21 @@ body > svg {
 .site-nav-title {
 	border-bottom: 1px solid var(--knd-page-bg-color-dark);
 	position: relative;
-	height: 76px;
-}
-
-@media screen and (min-width: 800px) {
-	.site-nav-title {
-		height: 100px;
-	}
 }
 
 .site-nav-title .snt-cell {
 	display: -ms-flexbox;
 	display: flex;
-	-ms-flex-flow: column nowrap;
-	flex-flow: column nowrap;
-	-ms-flex-pack: center;
-	justify-content: center;
+	-ms-flex-align: center;
+	align-items: center;
 	height: 76px;
 	max-width: 196px;
 	padding-left: 20px;
 }
 
-@media screen and (min-width: 800px) {
-	.site-nav-title .snt-cell {
-		height: 100px;
-	}
-}
-
 .site-nav-title .logo-name {
-	font-size: 15px;
-	line-height: 16px;
-}
-
-.site-nav-title .logo-desc {
-	font-size: 11.5px;
-	line-height: 15px;
-	text-transform: none;
-	padding-top: 6px;
+	font-size: 18px;
+	line-height: 1;
 }
 
 .site-nav-title .close {
@@ -1795,12 +1773,6 @@ body > svg {
 
 .site-nav-title .close:focus {
 	outline-color: var(--knd-color-base);
-}
-
-@media screen and (min-width: 800px) {
-	.site-nav-title .close {
-		margin-top: 12px;
-	}
 }
 
 .main-menu li {
