@@ -56,6 +56,18 @@ register_block_type( 'knd/events', array(
 			'type'    => 'string',
 			'default' => '',
 		),
+		'queryOffset' => array(
+			'type' => 'string',
+			'default' => '',
+		),
+		'queryOrderBy' => array(
+			'type' => 'string',
+			'default' => '_event_start_date',
+		),
+		'queryWhat' => array(
+			'type' => 'string',
+			'default' => 'future',
+		),
 	),
 ) );
 
@@ -168,7 +180,29 @@ function knd_block_events_render_callback( $attr ) {
 	$args = array(
 		'post_type'      => 'event',
 		'posts_per_page' => $posts_to_show,
+		'meta_key'       => '_event_start_date',
 	);
+
+	if ( $attr['queryOffset'] ) {
+		$args['offset'] = $attr['queryOffset'];
+	}
+
+	// Order by
+	if ( $attr['queryOrderBy'] && 'date' !== $attr['queryOrderBy'] ) {
+		$args['orderby'] = 'meta_value';
+		$args['order'] = 'asc';
+	}
+
+	// What events to show
+	if ( $attr['queryWhat'] && 'future' === $attr['queryWhat'] ) {
+		$args['meta_query'] = array(
+			array(
+				'key' => '_event_start_date',
+				'value' => date( 'Y-m-d'),
+				'compare' => '>='
+			),
+		);
+	}
 
 	$query = new WP_Query( $args );
 
@@ -180,6 +214,7 @@ function knd_block_events_render_callback( $attr ) {
 			$query->the_post();
 
 			global $post;
+
 			$post_id = $post->ID;
 
 			$this_event = knd_init_event_metas( get_the_ID() );
@@ -240,7 +275,6 @@ function knd_block_events_render_callback( $attr ) {
 								</div>
 							</div>
 						</div>
-
 					</article>
 				</div>';
 

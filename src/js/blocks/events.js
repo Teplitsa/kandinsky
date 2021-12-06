@@ -12,7 +12,7 @@
 
 	const el = element.createElement;
 
-	const { TextControl, SelectControl, RangeControl, ColorPalette, Button, Dashicon, PanelBody, ToggleControl, Disabled } = components;
+	const { TextControl, SelectControl, RangeControl, ColorPalette, Button, FormTokenField, Dashicon, PanelBody, ToggleControl, Disabled } = components;
 
 	const { registerBlockType, withColors, PanelColorSettings, getColorClassName, useBlockProps } = blocks;
 	const { InspectorControls, ColorPaletteControl } = blockEditor;
@@ -79,7 +79,19 @@
 			},
 			hiddenReload: {
 				type: 'string',
-			}
+			},
+			queryOffset: {
+				type: 'string',
+				default: '',
+			},
+			queryOrderBy: {
+				type: 'string',
+				default: '_event_start_date',
+			},
+			queryWhat: {
+				type: 'string',
+				default: 'future',
+			},
 		},
 
 		example: {
@@ -255,8 +267,8 @@
 									label: __( 'Events to show', 'knd' ),
 									value: props.attributes.postsToShow,
 									initialPosition: 2,
-									min: -1,
-									max: 12,
+									min: 0,
+									max: 50,
 									onChange: ( val ) => {
 										props.setAttributes({ postsToShow: val })
 									}
@@ -309,6 +321,56 @@
 										props.setAttributes( { linkColor: val } );
 									}
 								}
+							),
+
+						),
+
+						el( PanelBody,
+							{
+								title: __( 'Query', 'knd' ) ,
+								initialOpen: false
+							},
+
+							el( SelectControl,
+								{
+									label: __( 'Order by' ),
+									options : [
+										{ value: 'date', label: __( 'Published Date', 'knd' ) },
+										{ value: '_event_start_date', label: __( 'Event Start Date', 'knd' ) },
+									],
+									value: props.attributes.queryOrderBy,
+									onChange: ( val ) => {
+										props.setAttributes( { queryOrderBy: val } );
+									},
+								},
+							),
+
+							el( TextControl,
+								{
+									label: __( 'Offset', 'knd' ),
+									type: 'number',
+									min: 0,
+									max: 100,
+									value: props.attributes.queryOffset,
+									help: __( 'Number of events to skip', 'knd' ),
+									onChange: ( val ) => {
+										props.setAttributes( { queryOffset: val } );
+									},
+								}
+							),
+
+							el( SelectControl,
+								{
+									label: __( 'What events to show' ),
+									options : [
+										{ value: 'all', label: __( 'All events', 'knd' ) },
+										{ value: 'future', label: __( 'Future events', 'knd' ) },
+									],
+									value: props.attributes.queryWhat,
+									onChange: ( val ) => {
+										props.setAttributes( { queryWhat: val } );
+									},
+								},
 							),
 
 						),
