@@ -5422,6 +5422,13 @@ div[id*="leyka-pf-"] .inpage-card__thumb {
 	margin-bottom: 8px;
 }
 
+@media (max-width: 767px) {
+	.knd-event__content {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+}
+
 .knd-event__dates {
 	-ms-flex: 0 0 auto;
 	flex: 0 0 auto;
@@ -5620,9 +5627,20 @@ div[id*="leyka-pf-"] .inpage-card__thumb {
 	margin-left: -28px;
 }
 
-.knd-event__speaker-item:hover + .knd-event__speaker-item {
-	transition: all .3s;
-	margin-left: 0;
+@media (min-width: 768px) {
+	.knd-event__speaker-item:hover + .knd-event__speaker-item {
+		transition: all .3s;
+		margin-left: 0;
+	}
+}
+
+@media (max-width: 767px) {
+	.knd-event__speaker-item:not(:first-child) {
+		margin-left: -20px;
+	}
+	.knd-event__speaker-item:not(:first-child:last-child) .knd-event__speaker-name {
+		display: none;
+	}
 }
 
 .knd-event__speaker-image {
@@ -5649,6 +5667,13 @@ div[id*="leyka-pf-"] .inpage-card__thumb {
 
 .knd-event__speaker-item:first-child:last-child .knd-event__speaker-name {
 	max-width: none;
+}
+
+.knd-event__speaker-name span {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	display: block;
+	max-width: calc( 100vw - 255px);
 }
 
 .knd-event__booking {

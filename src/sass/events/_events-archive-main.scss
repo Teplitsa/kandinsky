@@ -113,6 +113,11 @@
 		align-items: flex-start;
 		margin-bottom: 8px;
 	}
+
+	@media (max-width: 767px) {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
 }
 
 &__dates {
@@ -307,12 +312,25 @@
 			margin-left: -28px;
 		}
 
-		&:hover + #{$speaker}-item {
-			transition: all .3s;
-			margin-left: 0;
+		@media (min-width: 768px) {
+
+			&:hover + #{$speaker}-item {
+				transition: all .3s;
+				margin-left: 0;
+			}
 		}
 
-		
+		@media (max-width: 767px) {
+			&:not(:first-child) {
+				margin-left: -20px;
+			}
+
+			&:not(:first-child:last-child) {
+				.knd-event__speaker-name {
+					display: none;
+				}
+			}
+		}
 	}
 
 	&-image {
@@ -338,6 +356,13 @@
 
 		#{$speaker}-item:first-child:last-child & {
 			max-width: none;
+		}
+
+		span {
+			text-overflow: ellipsis;
+			overflow: hidden;
+			display: block;
+			max-width: calc( 100vw - 255px);
 		}
 	}
 

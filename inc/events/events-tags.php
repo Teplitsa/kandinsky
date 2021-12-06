@@ -48,7 +48,9 @@ function knd_get_event_speakers() {
 						<img src="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'square' ) ;?>" alt="<?php echo get_the_title(); ?>">
 					<?php } ?>
 				</div>
-				<div class="knd-event__speaker-name"><?php the_title(); ?></div>
+				<div class="knd-event__speaker-name">
+					<span><?php the_title(); ?></span>
+				</div>
 			</a>
 		<?php endwhile; ?>
 		</div>
