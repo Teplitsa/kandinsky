@@ -2054,7 +2054,7 @@ table.is-style-underline tbody tr:hover,
 	line-height: 1.4;
 }
 
-.knd-block-leyka-cards .wp-block-leyka-card.campaign-card .campaign-excerpt:not(:first-child) {
+.knd-block-leyka-cards .wp-block-leyka-card.campaign-card .campaign-title + .campaign-excerpt {
 	margin-top: -15px;
 }
 

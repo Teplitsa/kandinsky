@@ -204,10 +204,10 @@
 			margin-bottom: 24px;
 			color: var(--knd-block-card-excerpt);
 			line-height: 1.4;
+		}
 
-			&:not(:first-child) {
-				margin-top: -15px;
-			}
+		.campaign-title + .campaign-excerpt {
+			margin-top: -15px;
 		}
 	}
 }
