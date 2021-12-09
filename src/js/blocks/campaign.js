@@ -50,7 +50,7 @@
 		description: __( 'Donation form.', 'knd' ),
 		icon: icon,
 		category: 'kandinsky',
-		keywords: [ __( 'campaing', 'knd' ), __( 'leyka', 'knd' ) ],
+		keywords: [ __( 'campaign', 'knd' ), __( 'leyka', 'knd' ) ],
 		supports: {
 			align: [ 'wide', 'full' ],
 			anchor: true,

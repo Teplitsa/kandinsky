@@ -50,7 +50,7 @@ function knd_enqueue_block_editor_assets() {
 		if ( $campaigns ) {
 			$kndBlock['campaigns'][] = array(
 				'value' => '',
-				'label' => esc_html__( 'Select campaing', 'knd' ),
+				'label' => esc_html__( 'Select campaign', 'knd' ),
 			);
 			foreach( $campaigns as $campaign ) {
 				$kndBlock['campaigns'][] = array(

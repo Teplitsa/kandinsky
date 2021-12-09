@@ -348,8 +348,8 @@
 	};
 
 	registerBlockType( 'knd/leyka-cards', {
-		title: __( 'Companies cards', 'knd' ),
-		//description: __( 'Leyka: Companies cards.', 'knd' ),
+		title: __( 'Campaigns cards', 'knd' ),
+		description: __( 'Campaigns informer with configurable elements', 'knd' ),
 		icon: icon,
 		category: 'leyka',
 		keywords: [ __( 'campaign', 'knd' ), __( 'leyka', 'knd' ), __( 'cards', 'knd' ) ],
@@ -525,6 +525,7 @@
 									}
 								}
 							),
+
 							el( RangeControl,
 								{
 									label: __( 'Columns', 'knd' ),
