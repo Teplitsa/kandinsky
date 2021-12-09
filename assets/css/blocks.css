@@ -137,7 +137,6 @@
 	margin-bottom: 26px;
 }
 
-table,
 .wp-block-table {
 	width: 100%;
 	min-width: 240px;
@@ -145,45 +144,34 @@ table,
 	font-size: 14px;
 }
 
-table thead,
-table tfoot,
 .wp-block-table thead,
 .wp-block-table tfoot {
 	text-align: center;
 }
 
-table th,
 .wp-block-table th {
 	font-family: var(--knd-font-family-headings);
 }
 
-table td,
-table th,
 .wp-block-table td,
 .wp-block-table th {
 	padding: 15px 10px;
 	border: 1px solid;
 }
 
-table.is-style-stripes,
 .wp-block-table.is-style-stripes {
 	border-color: var(--knd-color-light-grey);
 }
 
-table.is-style-stripes th,
-table.is-style-stripes td,
 .wp-block-table.is-style-stripes th,
 .wp-block-table.is-style-stripes td {
 	border-width: 0;
 }
 
-table.is-style-stripes tbody tr:nth-child(odd),
 .wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
 	background-color: var(--knd-color-light-grey);
 }
 
-table.is-style-underline th,
-table.is-style-underline td,
 .wp-block-table.is-style-underline th,
 .wp-block-table.is-style-underline td {
 	border-width: 0;
@@ -191,12 +179,10 @@ table.is-style-underline td,
 	vertical-align: middle;
 }
 
-table.is-style-underline tr,
 .wp-block-table.is-style-underline tr {
 	border-bottom: 1px solid #c5c5c5;
 }
 
-table.is-style-underline tbody tr:hover,
 .wp-block-table.is-style-underline tbody tr:hover {
 	background-color: #f3f3f3;
 }

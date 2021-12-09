@@ -1,4 +1,4 @@
-table,
+//table,
 .wp-block-table {
 	width: 100%;
 	min-width: 240px;
@@ -15,7 +15,7 @@ table,
 
 	td,
 	th {
-		padding: calc(0.5 * var(--global--spacing-unit));
+		padding: 15px 10px;
 		border: 1px solid;
 	}
 

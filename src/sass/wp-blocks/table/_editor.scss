@@ -1,4 +1,4 @@
-table,
+//table,
 .wp-block-table {
 
 	thead,
@@ -12,7 +12,7 @@ table,
 
 	td,
 	th {
-		padding: calc(0.5 * var(--global--spacing-unit));
+		padding: 15px 10px;
 	}
 
 	&.is-style-regular .has-background,
