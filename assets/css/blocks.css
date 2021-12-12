@@ -1819,7 +1819,7 @@
 	padding-bottom: 30px;
 }
 
-.knd-block-campaing.has-background.alignfull {
+.knd-block-campaign.has-background.alignfull {
 	margin-top: 0;
 	margin-bottom: 0;
 }
@@ -1850,7 +1850,6 @@
 
 .leyka-shortcode.campaign-card {
 	border-radius: var(--knd-image-border-radius);
-	max-width: 1160px !important;
 }
 
 .leyka-shortcode.campaign-card .progressbar-unfulfilled {
@@ -2044,6 +2043,27 @@
 	margin-top: -15px;
 }
 
+/** Leyka cards */
+.leyka-block-cards .leyka-block-card.campaign-card {
+	border-radius: var(--knd-image-border-radius);
+}
+
+.leyka-block-cards .leyka-block-card.campaign-card .campaign-thumb {
+	border-radius: calc(var(--knd-image-border-radius) / 1.6);
+	height: auto;
+	border-bottom: 0;
+}
+
+.leyka-block-cards .leyka-block-card.campaign-card .campaign-thumb:after {
+	content: '';
+	display: block;
+	padding-top: 60%;
+}
+
+.leyka-block-cards .bottom-line-item.target-info:not(:last-child) {
+	padding-right: 10px;
+}
+
 /**
  * Block Projects
  */
@@ -2175,19 +2195,33 @@
 	background-color: var(--knd-color-base);
 }
 
+.entry-content *[class*=inner-container] > *:not(.entry-content):not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator) {
+	max-width: 720px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.entry-content .alignfull [class*=inner-container] > .alignwide {
+	width: 1200px;
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.entry-content .alignfull [class*=inner-container] > .alignfull {
+	width: 100%;
+	max-width: 100%;
+}
+
 @media (min-width: 768px) {
-	.entry-content .alignfull {
+	.entry-content > .alignfull {
 		margin-left: calc( ( ( 100vw - var(--knd-content-width) ) / 2 ) * -1);
 		margin-right: calc( ( ( 100vw - var(--knd-content-width) ) / 2 ) * -1);
-	}
-	.entry-content .alignfull .alignfull {
-		margin-left: auto;
-		margin-right: auto;
 	}
 }
 
 @media (min-width: 1200px) {
-	.entry-content .alignwide {
+	.entry-content > .alignwide {
 		margin-left: calc( ( ( var(--knd-medium-content-width) - var(--knd-content-width) ) / 2 ) * -1);
 		margin-right: calc( ( ( var(--knd-medium-content-width) - var(--knd-content-width) ) / 2 ) * -1);
 	}

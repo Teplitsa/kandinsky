@@ -2,6 +2,8 @@
 /**
  * Gutenberg Block Leyka Campaign
  *
+ * Remove in version 2.2 (transformed to block leyka/form)
+ * 
  * @package Kandinsky
  */
 
@@ -49,6 +51,7 @@ register_block_type( 'knd/campaign', array(
 			'default' => '',
 		),
 	),
+
 ) );
 
 /**
@@ -73,9 +76,9 @@ function knd_block_campaign_render_callback( $attr ) {
 	if ( isset( $attr['className'] ) && $attr['className'] ) {
 		$classes['class_name'] = $attr['className'];
 	}
-	
+
 	$style = '';
-	
+
 	// Background Color
 	if ( isset( $attr['backgroundColor'] ) && $attr['backgroundColor'] ) {
 		$style .= 'background-color:' . $attr['backgroundColor'] . ';';

@@ -18,6 +18,7 @@ function knd_register_blocks() {
 	require get_template_directory() . '/core/editor/blocks/recommend.php';
 
 	if ( defined( 'LEYKA_VERSION' ) ) {
+		//if (version_compare( LEYKA_VERSION, '3.21') >= 0) {}
 		require get_template_directory() . '/core/editor/blocks/leyka-campaign.php';
 		require get_template_directory() . '/core/editor/blocks/leyka-cards.php';
 	}

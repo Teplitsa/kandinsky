@@ -23,10 +23,12 @@ function knd_enqueue_block_editor_assets() {
 		'wp-compose',
 		'wp-hooks',
 		'wp-server-side-render',
-		'wp-i18n'
+		'wp-i18n',
+		'wp-deprecated',
+		'lodash',
 	);
 
-	wp_enqueue_script( 'knd-gutenberg', get_template_directory_uri() . '/assets/js/gutenberg.js', $dependencies );
+	wp_enqueue_script( 'knd-gutenberg', get_template_directory_uri() . '/assets/js/gutenberg.js', $dependencies, filemtime( get_template_directory() . '/assets/js/gutenberg.js' )  );
 	wp_enqueue_script( 'knd-blocks', get_template_directory_uri() . '/assets/js/blocks.js', array( 'knd-gutenberg' ), filemtime( get_template_directory() . '/assets/js/blocks.js' ) );
 
 	wp_enqueue_style( 'knd-gutenberg', get_template_directory_uri() . '/assets/css/gutenberg.css', filemtime( get_template_directory() .'/assets/css/gutenberg.css' ) );
@@ -77,7 +79,7 @@ function knd_enqueue_block_editor_assets() {
 		'campaignPreview' => esc_url( get_theme_file_uri( 'assets/images/campaign.jpg' ) ),
 	);
 
-	$kndBlock['postTypes'] = get_post_types( array(  'public'   => true ) );
+	$kndBlock['postTypes'] = get_post_types( array( 'public' => true ) );
 
 	$kndBlock['peopleCats'] = array(
 		'0' => esc_html__( 'All', 'knd' ),
@@ -111,8 +113,14 @@ function knd_enqueue_block_editor_assets() {
 		$kndBlock['partnerCount'] = $count_partners->publish;
 	}
 
+	// Get Leyka version
+	$kndBlock['leykaVersion'] = '';
+	if ( defined( 'LEYKA_VERSION' ) ) {
+		$kndBlock['leykaVersion'] = LEYKA_VERSION;
+	}
+
 	wp_localize_script(
-		'knd-blocks',
+		'knd-gutenberg',
 		'kndBlock',
 		$kndBlock
 	);

@@ -3,7 +3,7 @@
  * Leyka Campaign
  */
 
-( function( blocks, editor, blockEditor, element, components, compose, i18n, serverSideRender ) {
+( function( blocks, editor, blockEditor, element, components, data, compose, i18n, serverSideRender ) {
 
 	if ( ! kndBlock.postTypes.leyka_campaign ) {
 		return;
@@ -15,10 +15,11 @@
 
 	const { TextControl, SelectControl, ColorPalette, PanelBody, BaseControl, Button, Disabled } = components;
 
-	const { registerBlockType, withColors, PanelColorSettings, getColorClassName, useBlockProps } = blocks;
+	const { registerBlockType, withColors, PanelColorSettings, getColorClassName, useBlockProps, createBlock } = blocks;
+
 	const { InspectorControls, ColorPaletteControl, MediaUpload, MediaUploadCheck } = blockEditor;
 
-	const { Fragment } = element;
+	const { Fragment, Component } = element;
 
 	const { withState } = compose;
 
@@ -46,35 +47,37 @@
 		)
 	);
 
+	let attributes = {
+		align: {
+			type: 'string',
+		},
+		campaign: {
+			type: 'string',
+		},
+		className: {
+			type: 'string',
+		},
+		anchor: {
+			type: 'string',
+		},
+		preview: {
+			type: 'boolean',
+			default: false,
+		}
+	};
+
 	registerBlockType( 'knd/campaign', {
 		title: __( 'Collecting donations', 'knd' ),
 		description: __( 'Donation form.', 'knd' ),
 		icon: icon,
 		category: 'kandinsky',
-		keywords: [ __( 'campaing', 'knd' ), __( 'leyka', 'knd' ) ],
+		keywords: [ __( 'campaign', 'knd' ), __( 'leyka', 'knd' ) ],
 		supports: {
 			align: [ 'wide', 'full' ],
 			anchor: true,
 		},
 
-		attributes: {
-			align: {
-				type: 'string',
-			},
-			campaign: {
-				type: 'string',
-			},
-			className: {
-				type: 'string',
-			},
-			anchor: {
-				type: 'string',
-			},
-			preview: {
-				type: 'boolean',
-				default: false,
-			},
-		},
+		attributes: attributes,
 
 		example: {
 			attributes: {
@@ -85,9 +88,15 @@
 		edit: function( props ) {
 
 			// Pull out the props we'll use
-			const { attributes, className, setAttributes } = props;
+			const { attributes, className, setAttributes, clientId } = props;
 
-			var options = kndBlock.campaigns;
+			let options = kndBlock.campaigns;
+
+			if ( kndBlock.leykaVersion >= 3.21 ) {
+				let { replaceBlock } = dispatch('core/block-editor');
+				let newBlock = createBlock( 'leyka/form', attributes );
+				replaceBlock( clientId, newBlock );
+			}
 
 			return (
 				el( Fragment, {},
@@ -118,18 +127,21 @@
 							block: 'knd/campaign',
 							attributes: props.attributes,
 						} ),
-					)
+					),
+
 				)
 			);
 		},
 
 	} );
+
 }(
 	window.wp.blocks,
 	window.wp.editor,
 	window.wp.blockEditor,
 	window.wp.element,
 	window.wp.components,
+	window.wp.data,
 	window.wp.compose,
 	window.wp.i18n,
 	window.wp.serverSideRender,
@@ -356,6 +368,25 @@
 		supports: {
 			align: [ 'wide', 'full' ],
 			anchor: true,
+		},
+
+		transforms: {
+			from: [
+				//
+			],
+			to: [
+				{
+					type: 'block',
+					blocks: [ 'leyka/cards' ],
+					transform: ( attributes, innerBlocks ) => {
+						return createBlock(
+							'leyka/card',
+							attributes,
+							innerBlocks
+						);
+					},
+				},
+			],
 		},
 
 		attributes: {
