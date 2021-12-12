@@ -225,6 +225,10 @@ registerBlockStyle( 'core/table', {
 if ( kndBlock.leykaVersion >= 3.21 ) {
 	dispatch( 'core/edit-post' ).hideBlockTypes( [ 'knd/campaign' ] );
 }
+// Hide block knd/leyka-cards if leyka version >= 3.22
+if ( kndBlock.leykaVersion >= 3.22 ) {
+	dispatch( 'core/edit-post' ).hideBlockTypes( [ 'knd/leyka-cards' ] );
+}
 
 
 //

@@ -12,7 +12,7 @@
 
 .leyka-shortcode.campaign-card {
 	border-radius: var(--knd-image-border-radius);
-	max-width: 1160px !important;
+	//max-width: 1160px !important;
 
 	.progressbar-unfulfilled {
 		overflow: hidden;
@@ -212,3 +212,26 @@
 	}
 }
 
+/** Leyka cards */
+.leyka-block-cards {
+
+	.leyka-block-card.campaign-card {
+		border-radius: var(--knd-image-border-radius);
+
+		.campaign-thumb {
+			border-radius: calc(var(--knd-image-border-radius) / 1.6);
+			height: auto;
+			border-bottom: 0;
+
+			&:after {
+				content: '';
+				display: block;
+				padding-top: 60%;
+			}
+		}
+	}
+
+	.bottom-line-item.target-info:not(:last-child){
+		padding-right: 10px;
+	}
+}

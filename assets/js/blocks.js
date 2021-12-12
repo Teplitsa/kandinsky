@@ -73,6 +73,7 @@
 		category: 'kandinsky',
 		keywords: [ __( 'campaign', 'knd' ), __( 'leyka', 'knd' ) ],
 		supports: {
+			html: false,
 			align: [ 'wide', 'full' ],
 			anchor: true,
 		},
@@ -90,13 +91,13 @@
 			// Pull out the props we'll use
 			const { attributes, className, setAttributes, clientId } = props;
 
-			let options = kndBlock.campaigns;
-
 			if ( kndBlock.leykaVersion >= 3.21 ) {
 				let { replaceBlock } = dispatch('core/block-editor');
 				let newBlock = createBlock( 'leyka/form', attributes );
 				replaceBlock( clientId, newBlock );
 			}
+
+			let options = kndBlock.campaigns;
 
 			return (
 				el( Fragment, {},
@@ -163,8 +164,11 @@
 
 	const { TextControl, SelectControl, RangeControl, NumberControl, FontSizePicker, FormTokenField, ColorPalette, PanelBody, PanelRow, BaseControl, Button, Disabled } = components;
 
-	const { registerBlockType, withColors, PanelColorSettings, getColorClassName, useBlockProps } = blocks;
+	const { registerBlockType, withColors, PanelColorSettings, getColorClassName, useBlockProps, createBlock } = blocks;
+
 	const { InspectorControls, ColorPaletteControl, MediaUpload, MediaUploadCheck, useSetting } = blockEditor;
+
+	const { omit, assign } = lodash;
 
 	const { Fragment } = element;
 
@@ -258,7 +262,7 @@
 
 	);
 
-	var buttonTextControl = function( props, attributes ) {
+	let buttonTextControl = function( props, attributes ) {
 		if ( ! props.attributes.showButton ) {
 			return;
 		}
@@ -271,16 +275,16 @@
 		});
 	}
 
-	const queryPostsControl = ( props ) => {
+	let queryPostsControl = ( props ) => {
 
-		var campaigns = [];
-		var getCampaigns = useSelect( function ( select ) {
+		let campaigns = [];
+		let getCampaigns = useSelect( function ( select ) {
 			return wp.data.select('core').getEntityRecords('postType','leyka_campaign',{per_page: -1});
 		}, [] );
 
 		if ( getCampaigns ) {
 			getCampaigns.map((campaign) => {
-				var id = campaign.id;
+				let id = campaign.id;
 				campaigns.push( campaign.title.raw );
 			} )
 		}
@@ -305,16 +309,16 @@
 		);
 	};
 
-	const queryPostsExcludeControl = ( props ) => {
+	let queryPostsExcludeControl = ( props ) => {
 
-		var campaigns = [];
-		var getCampaigns = useSelect( function ( select ) {
+		let campaigns = [];
+		let getCampaigns = useSelect( function ( select ) {
 			return wp.data.select('core').getEntityRecords('postType','leyka_campaign',{per_page: -1});
 		}, [] );
 
 		if ( getCampaigns ) {
 			getCampaigns.map((campaign) => {
-				var id = campaign.id;
+				let id = campaign.id;
 				campaigns.push( campaign.title.raw );
 			} )
 		}
@@ -342,7 +346,7 @@
 	const kndFontSizePicker = ( props ) => {
 		const [ fontSize, setFontSize ] = useState( props.attributes.titleFontSize );
 
-		var fontSizes = useSetting('typography.fontSizes');
+		let fontSizes = useSetting('typography.fontSizes');
 
 		return el( FontSizePicker,
 			{
@@ -351,9 +355,7 @@
 				fallbackFontSize: 24,
 				onChange: ( newFontSize ) => {
 					setFontSize( newFontSize );
-					console.log(newFontSize);
 					props.setAttributes( { titleFontSize: newFontSize } );
-					console.log(props.attributes.titleFontSize)
 				}
 			}
 		);
@@ -366,27 +368,9 @@
 		category: 'leyka',
 		keywords: [ __( 'campaign', 'knd' ), __( 'leyka', 'knd' ), __( 'cards', 'knd' ) ],
 		supports: {
+			html: false,
 			align: [ 'wide', 'full' ],
 			anchor: true,
-		},
-
-		transforms: {
-			from: [
-				//
-			],
-			to: [
-				{
-					type: 'block',
-					blocks: [ 'leyka/cards' ],
-					transform: ( attributes, innerBlocks ) => {
-						return createBlock(
-							'leyka/card',
-							attributes,
-							innerBlocks
-						);
-					},
-				},
-			],
 		},
 
 		attributes: {
@@ -453,10 +437,6 @@
 				type: 'boolean',
 				default: true,
 			},
-			// showTags: {
-			// 	type: 'boolean',
-			// 	default: false,
-			// },
 			showTitle: {
 				type: 'boolean',
 				default: true,
@@ -520,9 +500,21 @@
 		edit: function( props ) {
 
 			// Pull out the props we'll use
-			const { attributes, className, setAttributes } = props;
+			const { attributes, className, setAttributes, clientId } = props;
 
-			var options = kndBlock.campaigns;
+			if ( kndBlock.leykaVersion >= 3.22 ) {
+
+				let newAttributes = assign(
+					omit( attributes, ['heading','headingColor','backgroundColor']),
+					{ align: 'none' }
+				);
+
+				let { replaceBlock } = dispatch('core/block-editor');
+				let newBlock = createBlock( 'leyka/cards', newAttributes );
+				replaceBlock( clientId, newBlock );
+			}
+
+			let options = kndBlock.campaigns;
 
 			return (
 				el( Fragment, {},

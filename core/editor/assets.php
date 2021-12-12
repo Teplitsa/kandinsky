@@ -24,7 +24,6 @@ function knd_enqueue_block_editor_assets() {
 		'wp-hooks',
 		'wp-server-side-render',
 		'wp-i18n',
-		'wp-deprecated',
 		'lodash',
 	);
 

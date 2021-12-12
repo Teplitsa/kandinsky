@@ -72,6 +72,7 @@
 		category: 'kandinsky',
 		keywords: [ __( 'campaign', 'knd' ), __( 'leyka', 'knd' ) ],
 		supports: {
+			html: false,
 			align: [ 'wide', 'full' ],
 			anchor: true,
 		},
@@ -89,13 +90,13 @@
 			// Pull out the props we'll use
 			const { attributes, className, setAttributes, clientId } = props;
 
-			let options = kndBlock.campaigns;
-
 			if ( kndBlock.leykaVersion >= 3.21 ) {
 				let { replaceBlock } = dispatch('core/block-editor');
 				let newBlock = createBlock( 'leyka/form', attributes );
 				replaceBlock( clientId, newBlock );
 			}
+
+			let options = kndBlock.campaigns;
 
 			return (
 				el( Fragment, {},
