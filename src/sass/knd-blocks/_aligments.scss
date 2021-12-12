@@ -1,25 +1,48 @@
 
 .entry-content {
-	.alignfull {
+
+	> *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator) {
+		
+	}
+
+	*[class*=inner-container] > *:not(.entry-content):not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator) {
+		max-width: 720px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.alignfull [class*=inner-container] > .alignwide {
+		width: 1200px;
+		max-width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.alignfull [class*=inner-container] > .alignfull {
+		width: 100%;
+		max-width: 100%;
+	}
+
+	// .alignfull,
+	// .alignwide {
+	// 	margin-left: auto;
+	// 	margin-right: auto;
+	// }
+
+	> .alignfull {
 		@media (min-width: 768px){
 			margin-left: calc( ( ( 100vw - var(--knd-content-width) ) / 2 ) * -1 );
 			margin-right: calc( ( ( 100vw - var(--knd-content-width) ) / 2 ) * -1 );
-
-			.alignfull {
-				margin-left: auto;
-				margin-right: auto;
-			}
 		}
 	}
 
-	.alignwide {
+	> .alignwide {
 		@media (min-width: 1200px){
 			margin-left: calc( ( ( var(--knd-medium-content-width) - var(--knd-content-width) ) / 2 ) * -1 );
 			margin-right: calc( ( ( var(--knd-medium-content-width) - var(--knd-content-width) ) / 2 ) * -1 );
 		}
 	}
 }
-
 
 @media (min-width: 1200px){
 	.the-content .wp-block-knd-projects.alignwide {
