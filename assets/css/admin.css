@@ -356,15 +356,23 @@ table.media .column-title .media-icon img[src*='.svg'] {
 
 .dbem-kookings-fields {
 	margin-bottom: 10px;
+	counter-reset: field;
+	position: relative;
 }
 
 .dbem-kookings-fields:empty {
 	margin-bottom: 0;
 }
 
+.dbem-kookings-fields .ui-state-highlight {
+	height: 40px;
+}
+
 .dbem-kookings-fields-group {
+	position: relative;
 	display: -ms-flexbox;
 	display: flex;
+	counter-increment: field;
 }
 
 #em-options-form .dbem-kookings-fields-group input[type="text"] {
@@ -375,4 +383,49 @@ table.media .column-title .media-icon img[src*='.svg'] {
 
 .dbem-kookings-fields-group + .dbem-kookings-fields-group {
 	margin-top: 10px;
+}
+
+.dbem-kookings-fields-group:before {
+	content: counter(field);
+	position: absolute;
+	top: 6px;
+	right: 100%;
+	margin-right: 5px;
+	display: block;
+	width: 15px;
+	text-align: right;
+}
+
+.dbem-kookings-fields-group .drag-icons-group {
+	position: absolute;
+	top: 50%;
+	right: 100%;
+	margin-right: 8px;
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	opacity: 0;
+	transition: opacity .3s;
+	width: 20px;
+	color: #135e96;
+}
+
+.dbem-kookings-fields-group .drag-icons-group .dashicons {
+	-ms-transform: rotate(90deg);
+	transform: rotate(90deg);
+	margin: 0 -10px;
+	font-size: 12px;
+}
+
+.dbem-kookings-fields-group .drag-icons-group:hover {
+	cursor: grab;
+}
+
+.dbem-kookings-fields-group .ui-sortable-helper {
+	opacity: .7;
+	cursor: grab;
+	margin-top: 0;
+}
+
+.dbem-kookings-fields-group:hover .drag-icons-group {
+	opacity: 1;
 }

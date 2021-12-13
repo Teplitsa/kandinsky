@@ -278,11 +278,50 @@ function knd_em_options_page_tab_custom(){
 }
 add_action('em_options_page_tab_custom', 'knd_em_options_page_tab_custom' );
 
+function knd_em_booking_form_default_fields(){
+	$original_fields = array(
+		array(
+			'label' => esc_attr__('Name','events-manager'),
+			'slug' => 'user_name',
+			'order' => 0,
+		),
+		array(
+			'label' => esc_attr__('Phone','events-manager'),
+			'slug' => 'dbem_phone',
+			'order' => 1,
+		),
+		array(
+			'label' => esc_attr__('E-mail','events-manager'),
+			'slug' => 'user_email',
+			'order' => 2,
+		),
+	);
+	return $original_fields;
+}
 
 function knd_em_options_booking_form_options(){
+
+	$original_fields = knd_em_booking_form_default_fields();
+
 	$custom_fields = get_option( 'dbem_bookings_custom_fields' );
 
 	em_options_input_text( __( 'CTA button text', 'knd' ), 'dbem_bookings_cta_field', '', esc_html__( 'Book Now', 'knd' ) );
+
+	if ( $custom_fields && is_array( $custom_fields ) ) {
+		$has_user_name = false;
+		foreach ( $custom_fields as $field ) {
+			if ( $field['slug'] === 'user_name' ) {
+				$has_user_name = true;
+			}
+		}
+		if ( $has_user_name ) {
+			$fields = $custom_fields;
+		} else {
+			$fields = array_merge( $original_fields, $custom_fields);
+		}
+	} else {
+		$fields = $original_fields;
+	}
 
 	?>
 	<tr valign="top" id="dbem_bookings_custom_fileds_row">
@@ -290,8 +329,11 @@ function knd_em_options_booking_form_options(){
 		<td>
 			<input name="dbem_bookings_custom_fields" type="hidden" value="">
 			<div class="dbem-kookings-fields">
-				<?php if ( $custom_fields && is_array( $custom_fields ) ) {
-					foreach ( $custom_fields as $key => $field ) {
+
+				<?php if ( $fields ) {
+					$order = 0;
+					foreach ( $fields as $key => $field ) {
+
 						$field_label = '';
 						if ( isset( $field['label'] ) ) {
 							$field_label = $field['label'];
@@ -300,11 +342,24 @@ function knd_em_options_booking_form_options(){
 						if ( isset( $field['slug'] ) ) {
 							$field_slug = $field['slug'];
 						};
+						$disabled = false;
+						foreach($original_fields as $original_field){
+							if ( $original_field['slug'] === $field['slug']) {
+								$disabled = true;
+							}
+						}
 						?>
 						<div class="dbem-kookings-fields-group">
-							<input name="dbem_bookings_custom_fields[<?php echo $key; ?>][label]" type="text" value="<?php echo esc_attr( $field_label ); ?>" placeholder="<?php esc_html_e( 'Label', 'knd' ); ?>">
-							<input name="dbem_bookings_custom_fields[<?php echo $key; ?>][slug]" type="text" value="<?php echo esc_attr( $field_slug ); ?>" placeholder="<?php esc_html_e( 'slug', 'knd' ); ?>">
-							<a href="#" class="button button-link button-link-delete knd-booking-fields-remove"><?php esc_html_e( 'Delete', 'knd' ); ?></a>
+							<div class="drag-icons-group">
+								<i class="dashicons dashicons-ellipsis"></i>
+								<i class="dashicons dashicons-ellipsis"></i>
+							</div>
+							<input name="dbem_bookings_custom_fields[<?php echo $key; ?>][order]" class="bookings-custom-field-order" type="hidden" value="<?php echo esc_attr( $order++ ); ?>">
+							<input name="dbem_bookings_custom_fields[<?php echo $key; ?>][label]" class="bookings-custom-field-label"  type="text" value="<?php echo esc_attr( $field_label ); ?>" placeholder="<?php esc_html_e( 'Label', 'knd' ); ?>">
+							<input name="dbem_bookings_custom_fields[<?php echo $key; ?>][slug]" class="bookings-custom-field-slug"  type="text" value="<?php echo esc_attr( $field_slug ); ?>" placeholder="<?php esc_html_e( 'slug', 'knd' ); ?>" <?php readonly( $disabled, true ); ?>>
+							<?php if ( ! $disabled ) { ?>
+								<a href="#" class="button button-link button-link-delete knd-booking-fields-remove"><?php esc_html_e( 'Delete', 'knd' ); ?></a>
+							<?php } ?>
 						</div>
 						<?php
 					}
@@ -319,6 +374,9 @@ add_action( 'em_options_booking_form_options', 'knd_em_options_booking_form_opti
 
 function knd_em_custom_form_fields(){
 	$fields_option = get_option( 'dbem_bookings_custom_fields' );
+	if ( ! $fields_option ) {
+		$fields_option = knd_em_booking_form_default_fields();
+	}
 	$fields = array();
 	if ( $fields_option && is_array( $fields_option ) ) {
 		foreach ( $fields_option as $key => $field ) {
@@ -330,6 +388,20 @@ function knd_em_custom_form_fields(){
 	}
 	return apply_filters( 'knd_em_custom_form_fields', $fields );
 }
+
+function knd_em_custom_clean_form_fields(){
+	$fields = knd_em_custom_form_fields();
+	if ( ! $fields ) {
+		return;
+	}
+	foreach( $fields as $key => $field ) {
+		if ( 'user_name' === $field['slug'] || 'dbem_phone' === $field['slug'] || 'user_email' === $field['slug'] ) {
+			unset( $fields[$key] );
+		}
+	}
+	return $fields;
+}
+
 
 function knd_em_register_form(){
 	$fields = knd_em_custom_form_fields();
@@ -343,6 +415,9 @@ function knd_em_register_form(){
 			$label = $field['label'];
 
 			$attr = 'dbem_' . $slug;
+			if ( 'user_name' === $slug || 'dbem_phone' === $slug || 'user_email' === $slug ) {
+				$attr = $slug;
+			}
 			?>
 			<p>
 				<label for="<?php echo $attr; ?>"><?php echo $label; ?></label>
@@ -356,7 +431,18 @@ add_action( 'em_register_form', 'knd_em_register_form' );
 
 function knd_em_registration_errors( $errors ){
 
-	$fields = knd_em_custom_form_fields();
+	if ( isset( $_REQUEST['user_email'] ) && $_REQUEST['user_email']) {
+		print_r($_REQUEST['user_email']);
+		if ( isset( $_REQUEST['user_name'] ) && ! $_REQUEST['user_name'] ){
+			$errors->add( 'invalid_' . $slug, __( '<strong>ERROR</strong>: Please enter a username.', 'events-manager') );
+		}
+	}
+
+	if ( isset( $_REQUEST['dbem_phone'] ) && ! $_REQUEST['dbem_phone']) {
+		$errors->add( 'invalid_' . $slug, __( '<strong>ERROR</strong>: Please enter your phone number.', 'knd') );
+	}
+
+	$fields = knd_em_custom_clean_form_fields();
 	if ( ! $fields ) {
 		return $errors;
 	}
@@ -367,17 +453,18 @@ function knd_em_registration_errors( $errors ){
 			$label = $field['label'];
 			$attr = 'dbem_' . $slug;
 			if ( isset( $_REQUEST[ $attr ] ) && ! $_REQUEST[ $attr ] ){
-				$errors->add( 'invalid_' . $slug, sprintf( __( '<strong>ERROR</strong>: Invalid', 'knd') . ' ' . $label, get_option( 'admin_email' ) ) );
+				$errors->add( 'invalid_' . $slug, __( '<strong>ERROR</strong>: Please fill in the field', 'knd') . ' ' . $label );
 			}
 		}
 	}
+
 	return $errors;
 }
 add_filter( 'em_registration_errors', 'knd_em_registration_errors' );
 
 function knd_em_register_new_user( $user_id ){
 
-	$fields = knd_em_custom_form_fields();
+	$fields = knd_em_custom_clean_form_fields();
 	if ( $fields ) {
 		foreach( $fields as $field ) {
 			if ( isset( $field['slug'] ) ) {
@@ -401,7 +488,7 @@ function knd_em_person_display_summary( $html, $current ){
 
 	$user_id = $current->ID;
 
-	$fields = knd_em_custom_form_fields();
+	$fields = knd_em_custom_clean_form_fields();
 	if ( $fields ) {
 		foreach( $fields as $field ) {
 			if ( isset( $field['slug'] ) ) {
@@ -420,7 +507,7 @@ add_filter( 'em_person_display_summary', 'knd_em_person_display_summary', 10, 2 
 
 
 function knd_user_contactmethods( $array ) {
-	$fields = knd_em_custom_form_fields();
+	$fields = knd_em_custom_clean_form_fields();
 	if ( $fields ) {
 		foreach( $fields as $field ) {
 			if ( isset( $field['slug'] ) ) {
@@ -441,6 +528,8 @@ add_filter( 'user_contactmethods', 'knd_user_contactmethods' );
 function knd_em_locate_template( $located, $template_name, $load, $the_args ){
 	if ( 'forms/bookingform/login.php' === $template_name ) {
 		$located = get_template_directory() . '/inc/events/events-login-form.php';
+	} else if ( 'forms/bookingform/booking-fields.php' === $template_name ) {
+		$located = get_template_directory() . '/inc/events/events-booking-fields.php';
 	}
 	return $located;
 }

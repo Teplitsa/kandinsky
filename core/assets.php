@@ -92,7 +92,7 @@ class KND_CssJs {
 		wp_enqueue_style( 'knd-admin', get_template_directory_uri() . '/assets/css/admin.css', null, knd_get_theme_version() );
 
 		// Admin Scripts.
-		wp_enqueue_script( 'knd-admin', get_template_directory_uri() . '/assets/js/admin.js', array( 'jquery', 'wp-i18n' ), knd_get_theme_version() );
+		wp_enqueue_script( 'knd-admin', get_template_directory_uri() . '/assets/js/admin.js', array( 'jquery', 'wp-i18n',  'jquery-ui-core', 'jquery-ui-sortable' ), knd_get_theme_version() );
 
 		/* Translatable string */
 		wp_localize_script('knd-admin', '_knd',

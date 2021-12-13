@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Kandinsky\n"
-"POT-Creation-Date: 2021-12-06 20:30+0200\n"
+"POT-Creation-Date: 2021-12-13 15:33+0200\n"
 "PO-Revision-Date: 2020-06-22 06:53+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -44,8 +44,8 @@ msgstr ""
 msgid "Campaigns navigation"
 msgstr ""
 
-#: archive-leyka_donation.php:20 assets/js/blocks.js:103
-#: src/js/blocks/campaign.js:102
+#: archive-leyka_donation.php:20 assets/js/blocks.js:113
+#: src/js/blocks/campaign.js:112
 msgid "Campaign"
 msgstr ""
 
@@ -71,44 +71,45 @@ msgstr ""
 msgid "Add time"
 msgstr ""
 
-#: assets/js/admin.js:158 inc/events/events-functions.php:305
-#: src/js/admin/admin.js:158
+#: assets/js/admin.js:161 inc/events/events-functions.php:358
+#: src/js/admin/admin.js:161
 msgid "Label"
 msgstr ""
 
-#: assets/js/admin.js:159 inc/events/events-functions.php:306
-#: src/js/admin/admin.js:159
+#: assets/js/admin.js:162 inc/events/events-functions.php:359
+#: src/js/admin/admin.js:162
 msgid "slug"
 msgstr ""
 
-#: assets/js/admin.js:160 inc/events/events-functions.php:307
-#: src/js/admin/admin.js:160
+#: assets/js/admin.js:163 inc/events/events-functions.php:361
+#: src/js/admin/admin.js:163
 msgid "Delete"
 msgstr ""
 
-#: assets/js/blocks.js:50 src/js/blocks/campaign.js:49
+#: assets/js/blocks.js:70 src/js/blocks/campaign.js:69
 msgid "Collecting donations"
 msgstr ""
 
-#: assets/js/blocks.js:51 src/js/blocks/campaign.js:50
+#: assets/js/blocks.js:71 src/js/blocks/campaign.js:70
 msgid "Donation form."
 msgstr ""
 
-#: assets/js/blocks.js:54 src/js/blocks/campaign.js:53
-msgid "campaing"
+#: assets/js/blocks.js:74 assets/js/blocks.js:369 src/js/blocks/campaign.js:73
+#: src/js/blocks/cards.js:219
+msgid "campaign"
 msgstr ""
 
-#: assets/js/blocks.js:54 assets/js/blocks.js:355
-#: src/experimental/donations.js:50 src/js/blocks/campaign.js:53
-#: src/js/blocks/cards.js:218
+#: assets/js/blocks.js:74 assets/js/blocks.js:369
+#: src/experimental/donations.js:50 src/js/blocks/campaign.js:73
+#: src/js/blocks/cards.js:219
 msgid "leyka"
 msgstr ""
 
-#: assets/js/blocks.js:99 assets/js/blocks.js:503 assets/js/blocks.js:1008
-#: assets/js/blocks.js:1363 assets/js/blocks.js:1861 assets/js/blocks.js:2196
-#: assets/js/blocks.js:2761 assets/js/blocks.js:3257 assets/js/blocks.js:3560
-#: assets/js/blocks.js:3890 assets/js/blocks.js:4348 assets/js/es5.js:192
-#: src/js/blocks/campaign.js:98 src/js/blocks/cards.js:366
+#: assets/js/blocks.js:109 assets/js/blocks.js:526 assets/js/blocks.js:1032
+#: assets/js/blocks.js:1387 assets/js/blocks.js:1885 assets/js/blocks.js:2220
+#: assets/js/blocks.js:2785 assets/js/blocks.js:3281 assets/js/blocks.js:3584
+#: assets/js/blocks.js:3914 assets/js/blocks.js:4372 assets/js/es5.js:192
+#: src/js/blocks/campaign.js:108 src/js/blocks/cards.js:376
 #: src/js/blocks/cover.js:158 src/js/blocks/cta.js:145
 #: src/js/blocks/events.js:255 src/js/blocks/hero.js:182
 #: src/js/blocks/info.js:164 src/js/blocks/news.js:245
@@ -118,50 +119,50 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: assets/js/blocks.js:254 assets/js/blocks.js:1505 assets/js/blocks.js:2319
-#: assets/js/es5.js:324 src/js/blocks/cards.js:117 src/js/blocks/cta.js:287
+#: assets/js/blocks.js:270 assets/js/blocks.js:1529 assets/js/blocks.js:2343
+#: assets/js/es5.js:324 src/js/blocks/cards.js:120 src/js/blocks/cta.js:287
 #: src/js/blocks/hero.js:305
 msgid "Button text"
 msgstr ""
 
-#: assets/js/blocks.js:282 src/js/blocks/cards.js:145
+#: assets/js/blocks.js:298 src/js/blocks/cards.js:148
 msgid "Include campaigns"
 msgstr ""
 
-#: assets/js/blocks.js:316 src/experimental/donations.js:111
-#: src/js/blocks/cards.js:179
+#: assets/js/blocks.js:332 src/experimental/donations.js:111
+#: src/js/blocks/cards.js:182
 msgid "Exclude campaigns"
 msgstr ""
 
-#: assets/js/blocks.js:351 src/js/blocks/cards.js:214
-msgid "Companies cards"
+#: assets/js/blocks.js:365 src/js/blocks/cards.js:215
+msgid "Campaigns cards"
 msgstr ""
 
-#: assets/js/blocks.js:355 src/js/blocks/cards.js:218
-msgid "campaign"
+#: assets/js/blocks.js:366 src/js/blocks/cards.js:216
+msgid "Campaigns informer with configurable elements"
 msgstr ""
 
-#: assets/js/blocks.js:355 src/js/blocks/cards.js:218
+#: assets/js/blocks.js:369 src/js/blocks/cards.js:219
 msgid "cards"
 msgstr ""
 
-#: assets/js/blocks.js:364 core/admin.php:108
+#: assets/js/blocks.js:379 core/admin.php:108
 #: core/editor/blocks/leyka-cards.php:18 core/shortcodes.php:61
-#: modules/donations/widgets.php:9 src/js/blocks/cards.js:227
+#: modules/donations/widgets.php:9 src/js/blocks/cards.js:229
 #: vendor/envato_setup/envato_setup.php:768
 msgid "Donations"
 msgstr ""
 
-#: assets/js/blocks.js:419 core/editor/blocks/leyka-cards.php:86
-#: src/js/blocks/cards.js:282
+#: assets/js/blocks.js:434 core/editor/blocks/leyka-cards.php:86
+#: src/js/blocks/cards.js:284
 msgid "Donate"
 msgstr ""
 
-#: assets/js/blocks.js:508 assets/js/blocks.js:1011 assets/js/blocks.js:1864
-#: assets/js/blocks.js:2787 assets/js/blocks.js:2826 assets/js/blocks.js:2865
-#: assets/js/blocks.js:3261 assets/js/blocks.js:3563 assets/js/blocks.js:3894
-#: assets/js/blocks.js:4351 modules/donations/widgets.php:128
-#: src/experimental/donations.js:95 src/js/blocks/cards.js:371
+#: assets/js/blocks.js:531 assets/js/blocks.js:1035 assets/js/blocks.js:1888
+#: assets/js/blocks.js:2811 assets/js/blocks.js:2850 assets/js/blocks.js:2889
+#: assets/js/blocks.js:3285 assets/js/blocks.js:3587 assets/js/blocks.js:3918
+#: assets/js/blocks.js:4375 modules/donations/widgets.php:128
+#: src/experimental/donations.js:95 src/js/blocks/cards.js:381
 #: src/js/blocks/cover.js:161 src/js/blocks/events.js:258
 #: src/js/blocks/info.js:190 src/js/blocks/info.js:229
 #: src/js/blocks/info.js:268 src/js/blocks/news.js:249
@@ -170,49 +171,49 @@ msgstr ""
 msgid "Heading"
 msgstr ""
 
-#: assets/js/blocks.js:518 src/js/blocks/cards.js:381
+#: assets/js/blocks.js:541 src/js/blocks/cards.js:391
 msgid "Cards to show"
 msgstr ""
 
-#: assets/js/blocks.js:530 assets/js/blocks.js:3283 assets/js/blocks.js:3606
-#: assets/js/blocks.js:3938 assets/js/blocks.js:4373 src/js/blocks/cards.js:393
+#: assets/js/blocks.js:554 assets/js/blocks.js:3307 assets/js/blocks.js:3630
+#: assets/js/blocks.js:3962 assets/js/blocks.js:4397 src/js/blocks/cards.js:404
 #: src/js/blocks/news.js:271 src/js/blocks/partners.js:214
 #: src/js/blocks/people.js:250 src/js/blocks/projects.js:318
 msgid "Columns"
 msgstr ""
 
-#: assets/js/blocks.js:544 src/js/blocks/cards.js:407
+#: assets/js/blocks.js:568 src/js/blocks/cards.js:418
 msgid "Show Title"
 msgstr ""
 
-#: assets/js/blocks.js:556 src/js/blocks/cards.js:419
+#: assets/js/blocks.js:580 src/js/blocks/cards.js:430
 msgid "Show Image"
 msgstr ""
 
-#: assets/js/blocks.js:580 src/js/blocks/cards.js:443
+#: assets/js/blocks.js:604 src/js/blocks/cards.js:454
 msgid "Show Description"
 msgstr ""
 
-#: assets/js/blocks.js:592 src/js/blocks/cards.js:455
+#: assets/js/blocks.js:616 src/js/blocks/cards.js:466
 msgid "Show Progressbar"
 msgstr ""
 
-#: assets/js/blocks.js:604 src/js/blocks/cards.js:467
+#: assets/js/blocks.js:628 src/js/blocks/cards.js:478
 msgid "Show Collected Amount"
 msgstr ""
 
-#: assets/js/blocks.js:616 src/js/blocks/cards.js:479
+#: assets/js/blocks.js:640 src/js/blocks/cards.js:490
 msgid "Show Target Amount"
 msgstr ""
 
-#: assets/js/blocks.js:628 src/js/blocks/cards.js:491
+#: assets/js/blocks.js:652 src/js/blocks/cards.js:502
 msgid "Show Button"
 msgstr ""
 
-#: assets/js/blocks.js:642 assets/js/blocks.js:1134 assets/js/blocks.js:1461
-#: assets/js/blocks.js:1898 assets/js/blocks.js:2899 assets/js/blocks.js:3308
-#: assets/js/blocks.js:3633 assets/js/blocks.js:3976 assets/js/blocks.js:4398
-#: src/js/blocks/cards.js:505 src/js/blocks/cover.js:284
+#: assets/js/blocks.js:666 assets/js/blocks.js:1158 assets/js/blocks.js:1485
+#: assets/js/blocks.js:1922 assets/js/blocks.js:2923 assets/js/blocks.js:3332
+#: assets/js/blocks.js:3657 assets/js/blocks.js:4000 assets/js/blocks.js:4422
+#: src/js/blocks/cards.js:516 src/js/blocks/cover.js:284
 #: src/js/blocks/cta.js:243 src/js/blocks/events.js:292
 #: src/js/blocks/info.js:302 src/js/blocks/news.js:296
 #: src/js/blocks/partners.js:241 src/js/blocks/people.js:288
@@ -220,11 +221,11 @@ msgstr ""
 msgid "Colors"
 msgstr ""
 
-#: assets/js/blocks.js:648 assets/js/blocks.js:1140 assets/js/blocks.js:1467
-#: assets/js/blocks.js:1904 assets/js/blocks.js:2488 assets/js/blocks.js:2905
-#: assets/js/blocks.js:3314 assets/js/blocks.js:3639 assets/js/blocks.js:3982
-#: assets/js/blocks.js:4404 assets/js/blocks.js:4590 assets/js/es5.js:503
-#: src/experimental/donations.js:120 src/js/blocks/cards.js:511
+#: assets/js/blocks.js:672 assets/js/blocks.js:1164 assets/js/blocks.js:1491
+#: assets/js/blocks.js:1928 assets/js/blocks.js:2512 assets/js/blocks.js:2929
+#: assets/js/blocks.js:3338 assets/js/blocks.js:3663 assets/js/blocks.js:4006
+#: assets/js/blocks.js:4428 assets/js/blocks.js:4614 assets/js/es5.js:503
+#: src/experimental/donations.js:120 src/js/blocks/cards.js:522
 #: src/js/blocks/cover.js:290 src/js/blocks/cta.js:249
 #: src/js/blocks/events.js:298 src/js/blocks/hero.js:474
 #: src/js/blocks/info.js:308 src/js/blocks/news.js:302
@@ -233,120 +234,120 @@ msgstr ""
 msgid "Background Color"
 msgstr ""
 
-#: assets/js/blocks.js:658 assets/js/blocks.js:1914 assets/js/blocks.js:2915
-#: assets/js/blocks.js:3324 assets/js/blocks.js:3649 assets/js/blocks.js:3992
-#: assets/js/blocks.js:4414 src/js/blocks/cards.js:521
+#: assets/js/blocks.js:682 assets/js/blocks.js:1938 assets/js/blocks.js:2939
+#: assets/js/blocks.js:3348 assets/js/blocks.js:3673 assets/js/blocks.js:4016
+#: assets/js/blocks.js:4438 src/js/blocks/cards.js:532
 #: src/js/blocks/events.js:308 src/js/blocks/info.js:318
 #: src/js/blocks/news.js:312 src/js/blocks/partners.js:257
 #: src/js/blocks/people.js:304 src/js/blocks/projects.js:359
 msgid "Heading Color"
 msgstr ""
 
-#: assets/js/blocks.js:668 src/js/blocks/cards.js:531
+#: assets/js/blocks.js:692 src/js/blocks/cards.js:542
 msgid "Card background color"
 msgstr ""
 
-#: assets/js/blocks.js:678 src/js/blocks/cards.js:541
+#: assets/js/blocks.js:702 src/js/blocks/cards.js:552
 msgid "Card title color"
 msgstr ""
 
-#: assets/js/blocks.js:688 src/js/blocks/cards.js:551
+#: assets/js/blocks.js:712 src/js/blocks/cards.js:562
 msgid "Card description color"
 msgstr ""
 
-#: assets/js/blocks.js:698 src/js/blocks/cards.js:561
+#: assets/js/blocks.js:722 src/js/blocks/cards.js:572
 msgid "Main CTA button background color"
 msgstr ""
 
-#: assets/js/blocks.js:708 src/js/blocks/cards.js:571
+#: assets/js/blocks.js:732 src/js/blocks/cards.js:582
 msgid "Progressbar fulfilled part color"
 msgstr ""
 
-#: assets/js/blocks.js:718 src/js/blocks/cards.js:581
+#: assets/js/blocks.js:742 src/js/blocks/cards.js:592
 msgid "Progressbar unfulfilled part color"
 msgstr ""
 
-#: assets/js/blocks.js:728 src/js/blocks/cards.js:591
+#: assets/js/blocks.js:752 src/js/blocks/cards.js:602
 msgid "Target amount color"
 msgstr ""
 
-#: assets/js/blocks.js:738 src/js/blocks/cards.js:601
+#: assets/js/blocks.js:762 src/js/blocks/cards.js:612
 msgid "Collected amount color"
 msgstr ""
 
-#: assets/js/blocks.js:750 src/js/blocks/cards.js:613
+#: assets/js/blocks.js:774 src/js/blocks/cards.js:624
 msgid "Typography"
 msgstr ""
 
-#: assets/js/blocks.js:759 assets/js/blocks.js:1936 src/js/blocks/cards.js:622
+#: assets/js/blocks.js:783 assets/js/blocks.js:1960 src/js/blocks/cards.js:633
 #: src/js/blocks/events.js:330
 msgid "Query"
 msgstr ""
 
-#: assets/js/blocks.js:765 assets/js/blocks.js:1942 src/js/blocks/cards.js:628
+#: assets/js/blocks.js:789 assets/js/blocks.js:1966 src/js/blocks/cards.js:639
 #: src/js/blocks/events.js:336
 msgid "Order by"
 msgstr ""
 
-#: assets/js/blocks.js:767 src/js/blocks/cards.js:630
+#: assets/js/blocks.js:791 src/js/blocks/cards.js:641
 msgid "Date"
 msgstr ""
 
-#: assets/js/blocks.js:768 src/js/blocks/cards.js:631
+#: assets/js/blocks.js:792 src/js/blocks/cards.js:642
 msgid "Included campaigns"
 msgstr ""
 
-#: assets/js/blocks.js:779 assets/js/blocks.js:1956 src/js/blocks/cards.js:642
+#: assets/js/blocks.js:803 assets/js/blocks.js:1980 src/js/blocks/cards.js:653
 #: src/js/blocks/events.js:350
 msgid "Offset"
 msgstr ""
 
-#: assets/js/blocks.js:784 src/js/blocks/cards.js:647
+#: assets/js/blocks.js:808 src/js/blocks/cards.js:658
 msgid "Number of campaigns to skip"
 msgstr ""
 
-#: assets/js/blocks.js:799 src/js/blocks/cards.js:662
+#: assets/js/blocks.js:823 src/js/blocks/cards.js:673
 msgid "Campaign type"
 msgstr ""
 
-#: assets/js/blocks.js:801 core/editor/assets.php:83 src/js/blocks/cards.js:664
+#: assets/js/blocks.js:825 core/editor/assets.php:84 src/js/blocks/cards.js:675
 msgid "All"
 msgstr ""
 
-#: assets/js/blocks.js:802 src/js/blocks/cards.js:665
+#: assets/js/blocks.js:826 src/js/blocks/cards.js:676
 msgid "Temporary"
 msgstr ""
 
-#: assets/js/blocks.js:803 src/js/blocks/cards.js:666
+#: assets/js/blocks.js:827 src/js/blocks/cards.js:677
 msgid "Persistent"
 msgstr ""
 
-#: assets/js/blocks.js:815 src/js/blocks/cards.js:678
+#: assets/js/blocks.js:839 src/js/blocks/cards.js:689
 msgid "Exclude finished campaigns"
 msgstr ""
 
-#: assets/js/blocks.js:913 src/js/blocks/cover.js:63
+#: assets/js/blocks.js:937 src/js/blocks/cover.js:63
 msgid "Cover"
 msgstr ""
 
-#: assets/js/blocks.js:914 src/js/blocks/cover.js:64
+#: assets/js/blocks.js:938 src/js/blocks/cover.js:64
 msgid "Text over image."
 msgstr ""
 
-#: assets/js/blocks.js:917 src/js/blocks/cover.js:67
+#: assets/js/blocks.js:941 src/js/blocks/cover.js:67
 msgid "image"
 msgstr ""
 
-#: assets/js/blocks.js:917 src/js/blocks/cover.js:67
+#: assets/js/blocks.js:941 src/js/blocks/cover.js:67
 msgid "cover"
 msgstr ""
 
-#: assets/js/blocks.js:936 core/editor/blocks/cover.php:30
+#: assets/js/blocks.js:960 core/editor/blocks/cover.php:30
 #: src/js/blocks/cover.js:86
 msgid "We believe"
 msgstr ""
 
-#: assets/js/blocks.js:940 core/editor/blocks/cover.php:34
+#: assets/js/blocks.js:964 core/editor/blocks/cover.php:34
 #: src/js/blocks/cover.js:90
 msgid ""
 "People are created to love and be loved; People need support and help; Your "
@@ -354,288 +355,288 @@ msgid ""
 "Hope and help are real."
 msgstr ""
 
-#: assets/js/blocks.js:944 core/editor/blocks/cover.php:38
+#: assets/js/blocks.js:968 core/editor/blocks/cover.php:38
 #: src/js/blocks/cover.js:94
 msgid "Recommendations"
 msgstr ""
 
-#: assets/js/blocks.js:984 src/experimental/gutenberg-experimental.js:98
+#: assets/js/blocks.js:1008 src/experimental/gutenberg-experimental.js:98
 #: src/js/blocks/cover.js:134
 msgid "Default"
 msgstr ""
 
-#: assets/js/blocks.js:989 src/js/blocks/cover.js:139
+#: assets/js/blocks.js:1013 src/js/blocks/cover.js:139
 msgid "Bottom"
 msgstr ""
 
-#: assets/js/blocks.js:1019 core/admin.php:42 src/js/blocks/cover.js:169
+#: assets/js/blocks.js:1043 core/admin.php:42 src/js/blocks/cover.js:169
 #: vendor/envato_setup/envato_setup.php:315
 #: vendor/envato_setup/envato_setup.php:759
 msgid "Content"
 msgstr ""
 
-#: assets/js/blocks.js:1027 assets/js/blocks.js:4567 src/js/blocks/cover.js:177
+#: assets/js/blocks.js:1051 assets/js/blocks.js:4591 src/js/blocks/cover.js:177
 #: src/js/blocks/recommend.js:94
 msgid "Recommendation"
 msgstr ""
 
-#: assets/js/blocks.js:1044 assets/js/blocks.js:2413 assets/js/es5.js:423
+#: assets/js/blocks.js:1068 assets/js/blocks.js:2437 assets/js/es5.js:423
 #: src/js/blocks/cover.js:194 src/js/blocks/hero.js:399
 msgid "Background Image"
 msgstr ""
 
-#: assets/js/blocks.js:1089 assets/js/blocks.js:2464 assets/js/es5.js:480
+#: assets/js/blocks.js:1113 assets/js/blocks.js:2488 assets/js/es5.js:480
 #: src/js/blocks/cover.js:239 src/js/blocks/hero.js:450
 msgid "Remove Background Image"
 msgstr ""
 
-#: assets/js/blocks.js:1101 assets/js/blocks.js:2476 assets/js/es5.js:494
+#: assets/js/blocks.js:1125 assets/js/blocks.js:2500 assets/js/es5.js:494
 #: src/js/blocks/cover.js:251 src/js/blocks/hero.js:462
 msgid "Add Background Image"
 msgstr ""
 
-#: assets/js/blocks.js:1114 src/js/blocks/cover.js:264
+#: assets/js/blocks.js:1138 src/js/blocks/cover.js:264
 msgid "Min Height"
 msgstr ""
 
-#: assets/js/blocks.js:1150 assets/js/blocks.js:1487 assets/js/blocks.js:2300
-#: assets/js/blocks.js:4580 assets/js/es5.js:305 src/js/blocks/cover.js:300
+#: assets/js/blocks.js:1174 assets/js/blocks.js:1511 assets/js/blocks.js:2324
+#: assets/js/blocks.js:4604 assets/js/es5.js:305 src/js/blocks/cover.js:300
 #: src/js/blocks/cta.js:269 src/js/blocks/hero.js:286
 #: src/js/blocks/recommend.js:107
 msgid "Text Color"
 msgstr ""
 
-#: assets/js/blocks.js:1160 src/js/blocks/cover.js:310
+#: assets/js/blocks.js:1184 src/js/blocks/cover.js:310
 msgid "Content Background Color"
 msgstr ""
 
-#: assets/js/blocks.js:1170 src/js/blocks/cover.js:320
+#: assets/js/blocks.js:1194 src/js/blocks/cover.js:320
 msgid "Recommendation Color"
 msgstr ""
 
-#: assets/js/blocks.js:1180 src/js/blocks/cover.js:330
+#: assets/js/blocks.js:1204 src/js/blocks/cover.js:330
 msgid "Recommendation Background Color"
 msgstr ""
 
-#: assets/js/blocks.js:1264 core/editor/pattern.php:33 src/js/blocks/cta.js:46
+#: assets/js/blocks.js:1288 core/editor/pattern.php:33 src/js/blocks/cta.js:46
 msgid "Call To Action"
 msgstr ""
 
-#: assets/js/blocks.js:1265 core/editor/pattern.php:36 src/js/blocks/cta.js:47
+#: assets/js/blocks.js:1289 core/editor/pattern.php:36 src/js/blocks/cta.js:47
 msgid "Title, Subtitle, Description, Button, and Image."
 msgstr ""
 
-#: assets/js/blocks.js:1268 src/js/blocks/cta.js:50
+#: assets/js/blocks.js:1292 src/js/blocks/cta.js:50
 msgid "call"
 msgstr ""
 
-#: assets/js/blocks.js:1268 src/js/blocks/cta.js:50
+#: assets/js/blocks.js:1292 src/js/blocks/cta.js:50
 msgid "cta"
 msgstr ""
 
-#: assets/js/blocks.js:1268 src/js/blocks/cta.js:50
+#: assets/js/blocks.js:1292 src/js/blocks/cta.js:50
 msgid "action"
 msgstr ""
 
-#: assets/js/blocks.js:1293 assets/js/blocks.js:1338 assets/js/blocks.js:2666
+#: assets/js/blocks.js:1317 assets/js/blocks.js:1362 assets/js/blocks.js:2690
 #: core/editor/blocks/cta.php:30 core/editor/blocks/info.php:30
 #: core/editor/content.php:17 src/js/blocks/cta.js:75 src/js/blocks/cta.js:120
 #: src/js/blocks/info.js:69
 msgid "112 volunteers are helping Line of Color at the moment"
 msgstr ""
 
-#: assets/js/blocks.js:1297 assets/js/blocks.js:1339 assets/js/blocks.js:2670
+#: assets/js/blocks.js:1321 assets/js/blocks.js:1363 assets/js/blocks.js:2694
 #: core/editor/blocks/cta.php:34 core/editor/blocks/info.php:34
 #: core/editor/content.php:17 src/js/blocks/cta.js:79 src/js/blocks/cta.js:121
 #: src/js/blocks/info.js:73
 msgid "Join a team of volunteers and consultants in our projects"
 msgstr ""
 
-#: assets/js/blocks.js:1301 assets/js/blocks.js:1340
+#: assets/js/blocks.js:1325 assets/js/blocks.js:1364
 #: core/editor/blocks/cta.php:38 src/js/blocks/cta.js:83
 #: src/js/blocks/cta.js:122
 msgid "Become a volunteer"
 msgstr ""
 
-#: assets/js/blocks.js:1366 assets/js/blocks.js:2764 src/js/blocks/cta.js:148
+#: assets/js/blocks.js:1390 assets/js/blocks.js:2788 src/js/blocks/cta.js:148
 #: src/js/blocks/info.js:167
 msgid "Title"
 msgstr ""
 
-#: assets/js/blocks.js:1374 assets/js/blocks.js:2772 assets/js/blocks.js:2795
-#: assets/js/blocks.js:2834 assets/js/blocks.js:2873 assets/js/blocks.js:4571
+#: assets/js/blocks.js:1398 assets/js/blocks.js:2796 assets/js/blocks.js:2819
+#: assets/js/blocks.js:2858 assets/js/blocks.js:2897 assets/js/blocks.js:4595
 #: src/js/blocks/cta.js:156 src/js/blocks/info.js:175 src/js/blocks/info.js:198
 #: src/js/blocks/info.js:237 src/js/blocks/info.js:276
 #: src/js/blocks/recommend.js:98
 msgid "Text"
 msgstr ""
 
-#: assets/js/blocks.js:1391 assets/js/blocks.js:2225 assets/js/es5.js:225
+#: assets/js/blocks.js:1415 assets/js/blocks.js:2249 assets/js/es5.js:225
 #: src/js/blocks/cta.js:173 src/js/blocks/hero.js:211
 msgid "Call to action Image"
 msgstr ""
 
-#: assets/js/blocks.js:1434 assets/js/blocks.js:2276 assets/js/es5.js:282
+#: assets/js/blocks.js:1458 assets/js/blocks.js:2300 assets/js/es5.js:282
 #: src/js/blocks/cta.js:216 src/js/blocks/hero.js:262
 msgid "Remove Image"
 msgstr ""
 
-#: assets/js/blocks.js:1446 assets/js/blocks.js:2288 assets/js/es5.js:296
+#: assets/js/blocks.js:1470 assets/js/blocks.js:2312 assets/js/es5.js:296
 #: src/js/blocks/cta.js:228 src/js/blocks/hero.js:274
 msgid "Add Image"
 msgstr ""
 
-#: assets/js/blocks.js:1477 src/js/blocks/cta.js:259
+#: assets/js/blocks.js:1501 src/js/blocks/cta.js:259
 msgid "Title Color"
 msgstr ""
 
-#: assets/js/blocks.js:1500 core/customizer/theme-mods/header.php:366
+#: assets/js/blocks.js:1524 core/customizer/theme-mods/header.php:366
 #: core/customizer/theme-mods/header.php:504 src/js/blocks/cta.js:282
 msgid "Button"
 msgstr ""
 
-#: assets/js/blocks.js:1513 assets/js/blocks.js:2327 assets/js/es5.js:333
+#: assets/js/blocks.js:1537 assets/js/blocks.js:2351 assets/js/es5.js:333
 #: src/js/blocks/cta.js:295 src/js/blocks/hero.js:313
 msgid "Button url"
 msgstr ""
 
-#: assets/js/blocks.js:1523 src/js/blocks/cta.js:305
+#: assets/js/blocks.js:1547 src/js/blocks/cta.js:305
 msgid "Open in new tab"
 msgstr ""
 
-#: assets/js/blocks.js:1534 assets/js/blocks.js:2352 assets/js/es5.js:360
+#: assets/js/blocks.js:1558 assets/js/blocks.js:2376 assets/js/es5.js:360
 #: src/js/blocks/cta.js:316 src/js/blocks/hero.js:338
 msgid "Button Background"
 msgstr ""
 
-#: assets/js/blocks.js:1545 assets/js/blocks.js:2363 assets/js/es5.js:371
+#: assets/js/blocks.js:1569 assets/js/blocks.js:2387 assets/js/es5.js:371
 #: src/js/blocks/cta.js:327 src/js/blocks/hero.js:349
 msgid "Button Color"
 msgstr ""
 
-#: assets/js/blocks.js:1556 assets/js/blocks.js:2374 assets/js/es5.js:382
+#: assets/js/blocks.js:1580 assets/js/blocks.js:2398 assets/js/es5.js:382
 #: src/js/blocks/cta.js:338 src/js/blocks/hero.js:360
 msgid "Button Hover Background"
 msgstr ""
 
-#: assets/js/blocks.js:1567 assets/js/blocks.js:2385 assets/js/es5.js:393
+#: assets/js/blocks.js:1591 assets/js/blocks.js:2409 assets/js/es5.js:393
 #: src/js/blocks/cta.js:349 src/js/blocks/hero.js:371
 msgid "Button Hover Color"
 msgstr ""
 
-#: assets/js/blocks.js:1643 page-events.php:136 src/js/blocks/events.js:37
+#: assets/js/blocks.js:1667 page-events.php:136 src/js/blocks/events.js:37
 msgid "Events"
 msgstr ""
 
-#: assets/js/blocks.js:1646 core/admin.php:357 src/js/blocks/events.js:40
+#: assets/js/blocks.js:1670 core/admin.php:357 src/js/blocks/events.js:40
 msgid "Events Manager"
 msgstr ""
 
-#: assets/js/blocks.js:1648 src/js/blocks/events.js:42
+#: assets/js/blocks.js:1672 src/js/blocks/events.js:42
 msgid "events"
 msgstr ""
 
-#: assets/js/blocks.js:1658 core/editor/blocks/events.php:18 page-events.php:19
+#: assets/js/blocks.js:1682 core/editor/blocks/events.php:18 page-events.php:19
 #: src/js/blocks/events.js:52
 msgid "Schedule of events"
 msgstr ""
 
-#: assets/js/blocks.js:1715 src/js/blocks/events.js:109
+#: assets/js/blocks.js:1739 src/js/blocks/events.js:109
 msgid "List"
 msgstr ""
 
-#: assets/js/blocks.js:1720 assets/js/blocks.js:3580 assets/js/blocks.js:3912
+#: assets/js/blocks.js:1744 assets/js/blocks.js:3604 assets/js/blocks.js:3936
 #: src/js/blocks/events.js:114 src/js/blocks/partners.js:188
 #: src/js/blocks/people.js:224
 msgid "Grid"
 msgstr ""
 
-#: assets/js/blocks.js:1773 assets/js/blocks.js:3169 assets/js/blocks.js:4260
+#: assets/js/blocks.js:1797 assets/js/blocks.js:3193 assets/js/blocks.js:4284
 #: src/js/blocks/events.js:167 src/js/blocks/news.js:157
 #: src/js/blocks/projects.js:205
 msgid "Link Title"
 msgstr ""
 
-#: assets/js/blocks.js:1784 assets/js/blocks.js:2811 assets/js/blocks.js:2850
-#: assets/js/blocks.js:2889 assets/js/blocks.js:3180 assets/js/blocks.js:4271
+#: assets/js/blocks.js:1808 assets/js/blocks.js:2835 assets/js/blocks.js:2874
+#: assets/js/blocks.js:2913 assets/js/blocks.js:3204 assets/js/blocks.js:4295
 #: src/js/blocks/events.js:178 src/js/blocks/info.js:214
 #: src/js/blocks/info.js:253 src/js/blocks/info.js:292
 #: src/js/blocks/news.js:168 src/js/blocks/projects.js:216
 msgid "Link Url"
 msgstr ""
 
-#: assets/js/blocks.js:1797 assets/js/blocks.js:3193 assets/js/blocks.js:4284
+#: assets/js/blocks.js:1821 assets/js/blocks.js:3217 assets/js/blocks.js:4308
 #: src/js/blocks/events.js:191 src/js/blocks/news.js:181
 #: src/js/blocks/projects.js:229
 msgid "Remove Link"
 msgstr ""
 
-#: assets/js/blocks.js:1821 assets/js/blocks.js:3217 assets/js/blocks.js:4308
+#: assets/js/blocks.js:1845 assets/js/blocks.js:3241 assets/js/blocks.js:4332
 #: src/js/blocks/events.js:215 src/js/blocks/news.js:205
 #: src/js/blocks/projects.js:253
 msgid "Add Link"
 msgstr ""
 
-#: assets/js/blocks.js:1849 src/js/blocks/events.js:243
+#: assets/js/blocks.js:1873 src/js/blocks/events.js:243
 msgid "Edit events"
 msgstr ""
 
-#: assets/js/blocks.js:1873 src/js/blocks/events.js:267
+#: assets/js/blocks.js:1897 src/js/blocks/events.js:267
 msgid "Events to show"
 msgstr ""
 
-#: assets/js/blocks.js:1888 assets/js/blocks.js:3298 assets/js/blocks.js:4388
+#: assets/js/blocks.js:1912 assets/js/blocks.js:3322 assets/js/blocks.js:4412
 #: src/js/blocks/events.js:282 src/js/blocks/news.js:286
 #: src/js/blocks/projects.js:333
 msgid "Heading Links"
 msgstr ""
 
-#: assets/js/blocks.js:1924 assets/js/blocks.js:3344 assets/js/blocks.js:4434
+#: assets/js/blocks.js:1948 assets/js/blocks.js:3368 assets/js/blocks.js:4458
 #: src/js/blocks/events.js:318 src/js/blocks/news.js:332
 #: src/js/blocks/projects.js:379
 msgid "Links Color"
 msgstr ""
 
-#: assets/js/blocks.js:1944 src/js/blocks/events.js:338
+#: assets/js/blocks.js:1968 src/js/blocks/events.js:338
 msgid "Published Date"
 msgstr ""
 
-#: assets/js/blocks.js:1945 src/js/blocks/events.js:339
+#: assets/js/blocks.js:1969 src/js/blocks/events.js:339
 msgid "Event Start Date"
 msgstr ""
 
-#: assets/js/blocks.js:1961 src/js/blocks/events.js:355
+#: assets/js/blocks.js:1985 src/js/blocks/events.js:355
 msgid "Number of events to skip"
 msgstr ""
 
-#: assets/js/blocks.js:1970 src/js/blocks/events.js:364
+#: assets/js/blocks.js:1994 src/js/blocks/events.js:364
 msgid "What events to show"
 msgstr ""
 
-#: assets/js/blocks.js:1972 src/js/blocks/events.js:366
+#: assets/js/blocks.js:1996 src/js/blocks/events.js:366
 msgid "All events"
 msgstr ""
 
-#: assets/js/blocks.js:1973 src/js/blocks/events.js:367
+#: assets/js/blocks.js:1997 src/js/blocks/events.js:367
 msgid "Future events"
 msgstr ""
 
-#: assets/js/blocks.js:2072 assets/js/es5.js:74 src/js/blocks/hero.js:58
+#: assets/js/blocks.js:2096 assets/js/es5.js:74 src/js/blocks/hero.js:58
 msgid "Main Block"
 msgstr ""
 
-#: assets/js/blocks.js:2073 assets/js/es5.js:75 src/js/blocks/hero.js:59
+#: assets/js/blocks.js:2097 assets/js/es5.js:75 src/js/blocks/hero.js:59
 msgid "Title, description, button, and background image."
 msgstr ""
 
-#: assets/js/blocks.js:2086 assets/js/blocks.js:2160 assets/js/es5.js:86
+#: assets/js/blocks.js:2110 assets/js/blocks.js:2184 assets/js/es5.js:86
 #: assets/js/es5.js:156 core/editor/blocks/hero.php:18
 #: modules/starter/plot_config.php:119 src/js/blocks/hero.js:72
 #: src/js/blocks/hero.js:146
 msgid "We help people to fight alcohol addiction"
 msgstr ""
 
-#: assets/js/blocks.js:2090 assets/js/blocks.js:2161 assets/js/es5.js:90
+#: assets/js/blocks.js:2114 assets/js/blocks.js:2185 assets/js/es5.js:90
 #: assets/js/es5.js:157 core/editor/blocks/hero.php:22 src/js/blocks/hero.js:76
 #: src/js/blocks/hero.js:147
 msgid ""
@@ -643,170 +644,170 @@ msgid ""
 "support will help organize a rehabilitation program for them."
 msgstr ""
 
-#: assets/js/blocks.js:2145 assets/js/blocks.js:2162 assets/js/es5.js:142
+#: assets/js/blocks.js:2169 assets/js/blocks.js:2186 assets/js/es5.js:142
 #: assets/js/es5.js:158 core/editor/blocks/hero.php:26
 #: src/js/blocks/hero.js:131 src/js/blocks/hero.js:148
 msgid "Help Now"
 msgstr ""
 
-#: assets/js/blocks.js:2200 assets/js/es5.js:195 src/js/blocks/hero.js:186
+#: assets/js/blocks.js:2224 assets/js/es5.js:195 src/js/blocks/hero.js:186
 msgid "Call to action title"
 msgstr ""
 
-#: assets/js/blocks.js:2208 assets/js/es5.js:204 src/js/blocks/hero.js:194
+#: assets/js/blocks.js:2232 assets/js/es5.js:204 src/js/blocks/hero.js:194
 msgid "Call to action text"
 msgstr ""
 
-#: assets/js/blocks.js:2231 assets/js/es5.js:232 src/js/blocks/hero.js:217
+#: assets/js/blocks.js:2255 assets/js/es5.js:232 src/js/blocks/hero.js:217
 msgid "Displayed on the right side of the Call to action text"
 msgstr ""
 
-#: assets/js/blocks.js:2314 assets/js/es5.js:320 src/js/blocks/hero.js:300
+#: assets/js/blocks.js:2338 assets/js/es5.js:320 src/js/blocks/hero.js:300
 msgid "Buttons"
 msgstr ""
 
-#: assets/js/blocks.js:2335 assets/js/es5.js:342 src/js/blocks/hero.js:321
+#: assets/js/blocks.js:2359 assets/js/es5.js:342 src/js/blocks/hero.js:321
 msgid "Additional Button text"
 msgstr ""
 
-#: assets/js/blocks.js:2343 assets/js/es5.js:351 src/js/blocks/hero.js:329
+#: assets/js/blocks.js:2367 assets/js/es5.js:351 src/js/blocks/hero.js:329
 msgid "Additional Button url"
 msgstr ""
 
-#: assets/js/blocks.js:2399 assets/js/es5.js:407 src/js/blocks/hero.js:385
+#: assets/js/blocks.js:2423 assets/js/es5.js:407 src/js/blocks/hero.js:385
 msgid "Background"
 msgstr ""
 
-#: assets/js/blocks.js:2419 assets/js/es5.js:430 src/js/blocks/hero.js:405
+#: assets/js/blocks.js:2443 assets/js/es5.js:430 src/js/blocks/hero.js:405
 msgid "Recommended size 1600x663px"
 msgstr ""
 
-#: assets/js/blocks.js:2502 assets/js/es5.js:517 src/js/blocks/hero.js:488
+#: assets/js/blocks.js:2526 assets/js/es5.js:517 src/js/blocks/hero.js:488
 msgid "Overlay"
 msgstr ""
 
-#: assets/js/blocks.js:2518 assets/js/es5.js:535 src/js/blocks/hero.js:504
+#: assets/js/blocks.js:2542 assets/js/es5.js:535 src/js/blocks/hero.js:504
 msgid "Overlay Gradient Start Color"
 msgstr ""
 
-#: assets/js/blocks.js:2549 assets/js/es5.js:569 src/js/blocks/hero.js:535
+#: assets/js/blocks.js:2573 assets/js/es5.js:569 src/js/blocks/hero.js:535
 msgid "Overlay Gradient End Color"
 msgstr ""
 
-#: assets/js/blocks.js:2649 core/editor/pattern.php:45 src/js/blocks/info.js:52
+#: assets/js/blocks.js:2673 core/editor/pattern.php:45 src/js/blocks/info.js:52
 msgid "About Project"
 msgstr ""
 
-#: assets/js/blocks.js:2652 src/js/blocks/info.js:55
+#: assets/js/blocks.js:2676 src/js/blocks/info.js:55
 msgid "info"
 msgstr ""
 
-#: assets/js/blocks.js:2652 src/js/blocks/info.js:55
+#: assets/js/blocks.js:2676 src/js/blocks/info.js:55
 msgid "columns"
 msgstr ""
 
-#: assets/js/blocks.js:2652 src/js/blocks/info.js:55
+#: assets/js/blocks.js:2676 src/js/blocks/info.js:55
 msgid "about"
 msgstr ""
 
-#: assets/js/blocks.js:2653 core/editor/pattern.php:48 src/js/blocks/info.js:56
+#: assets/js/blocks.js:2677 core/editor/pattern.php:48 src/js/blocks/info.js:56
 msgid "Subheading, heading and three columns."
 msgstr ""
 
-#: assets/js/blocks.js:2674 core/editor/blocks/info.php:38
+#: assets/js/blocks.js:2698 core/editor/blocks/info.php:38
 #: core/editor/content.php:14 src/js/blocks/info.js:77
 msgid "Who we are?"
 msgstr ""
 
-#: assets/js/blocks.js:2678 core/editor/blocks/info.php:42
+#: assets/js/blocks.js:2702 core/editor/blocks/info.php:42
 #: core/editor/content.php:14 src/js/blocks/info.js:81
 msgid "What we do?"
 msgstr ""
 
-#: assets/js/blocks.js:2682 core/editor/blocks/info.php:46
+#: assets/js/blocks.js:2706 core/editor/blocks/info.php:46
 #: core/editor/content.php:14 src/js/blocks/info.js:85
 msgid "Stop drinking?"
 msgstr ""
 
-#: assets/js/blocks.js:2686 core/editor/blocks/info.php:50
+#: assets/js/blocks.js:2710 core/editor/blocks/info.php:50
 #: core/editor/content.php:14 src/js/blocks/info.js:89
 msgid ""
 "The charitable organization &#34;Line of Color&#34; helps to overcome "
 "alcohol addiction and return to a fulfilling life."
 msgstr ""
 
-#: assets/js/blocks.js:2690 core/editor/blocks/info.php:54
+#: assets/js/blocks.js:2714 core/editor/blocks/info.php:54
 #: core/editor/content.php:14 src/js/blocks/info.js:93
 msgid ""
 "We organize rehabilitation programs, inform and help those who are ready to "
 "give up their addiction and return their lives."
 msgstr ""
 
-#: assets/js/blocks.js:2694 core/editor/blocks/info.php:58
+#: assets/js/blocks.js:2718 core/editor/blocks/info.php:58
 #: core/editor/content.php:14 src/js/blocks/info.js:97
 msgid ""
 "Fill out the anonymous form on the website, choose a convenient time for an "
 "individual consultation, or sign up for a support group."
 msgstr ""
 
-#: assets/js/blocks.js:2698 core/editor/blocks/info.php:62
+#: assets/js/blocks.js:2722 core/editor/blocks/info.php:62
 #: core/editor/content.php:14 src/js/blocks/info.js:101
 msgid "Learn about our work"
 msgstr ""
 
-#: assets/js/blocks.js:2702 core/editor/blocks/info.php:66
+#: assets/js/blocks.js:2726 core/editor/blocks/info.php:66
 #: core/editor/content.php:14 src/js/blocks/info.js:105
 msgid "View projects"
 msgstr ""
 
-#: assets/js/blocks.js:2706 core/editor/blocks/info.php:70
+#: assets/js/blocks.js:2730 core/editor/blocks/info.php:70
 #: core/editor/content.php:14 src/js/blocks/info.js:109
 msgid "Get help"
 msgstr ""
 
-#: assets/js/blocks.js:2782 src/js/blocks/info.js:185
+#: assets/js/blocks.js:2806 src/js/blocks/info.js:185
 msgid "Column 1"
 msgstr ""
 
-#: assets/js/blocks.js:2803 assets/js/blocks.js:2842 assets/js/blocks.js:2881
+#: assets/js/blocks.js:2827 assets/js/blocks.js:2866 assets/js/blocks.js:2905
 #: src/js/blocks/info.js:206 src/js/blocks/info.js:245
 #: src/js/blocks/info.js:284
 msgid "Link Text"
 msgstr ""
 
-#: assets/js/blocks.js:2821 src/js/blocks/info.js:224
+#: assets/js/blocks.js:2845 src/js/blocks/info.js:224
 msgid "Column 2"
 msgstr ""
 
-#: assets/js/blocks.js:2860 src/js/blocks/info.js:263
+#: assets/js/blocks.js:2884 src/js/blocks/info.js:263
 msgid "Column 3"
 msgstr ""
 
-#: assets/js/blocks.js:2925 src/js/blocks/info.js:328
+#: assets/js/blocks.js:2949 src/js/blocks/info.js:328
 msgid "Second Heading Color"
 msgstr ""
 
-#: assets/js/blocks.js:2935 src/js/blocks/info.js:338
+#: assets/js/blocks.js:2959 src/js/blocks/info.js:338
 msgid "Column Heading Color"
 msgstr ""
 
-#: assets/js/blocks.js:2945 src/js/blocks/info.js:348
+#: assets/js/blocks.js:2969 src/js/blocks/info.js:348
 msgid "Column Text Color"
 msgstr ""
 
-#: assets/js/blocks.js:2955 src/js/blocks/info.js:358
+#: assets/js/blocks.js:2979 src/js/blocks/info.js:358
 msgid "Column Link Color"
 msgstr ""
 
-#: assets/js/blocks.js:2965 src/js/blocks/info.js:368
+#: assets/js/blocks.js:2989 src/js/blocks/info.js:368
 msgid "Column Link Color Hover"
 msgstr ""
 
-#: assets/js/blocks.js:2975 src/js/blocks/info.js:378
+#: assets/js/blocks.js:2999 src/js/blocks/info.js:378
 msgid "Column Link Underline Color"
 msgstr ""
 
-#: assets/js/blocks.js:3055 assets/js/blocks.js:3068 core/admin.php:60
+#: assets/js/blocks.js:3079 assets/js/blocks.js:3092 core/admin.php:60
 #: core/editor/blocks/news.php:18 footer.php:76
 #: modules/starter/plot_config.php:142 modules/starter/plot_config.php:223
 #: modules/starter/plot_config.php:250
@@ -815,151 +816,151 @@ msgstr ""
 msgid "News"
 msgstr ""
 
-#: assets/js/blocks.js:3058 assets/js/blocks.js:4149 src/js/blocks/news.js:46
+#: assets/js/blocks.js:3082 assets/js/blocks.js:4173 src/js/blocks/news.js:46
 #: src/js/blocks/projects.js:94
 msgid "news"
 msgstr ""
 
-#: assets/js/blocks.js:3058 assets/js/blocks.js:4150 src/js/blocks/news.js:46
+#: assets/js/blocks.js:3082 assets/js/blocks.js:4174 src/js/blocks/news.js:46
 #: src/js/blocks/projects.js:95
 msgid "posts"
 msgstr ""
 
-#: assets/js/blocks.js:3058 assets/js/blocks.js:4151 src/js/blocks/news.js:46
+#: assets/js/blocks.js:3082 assets/js/blocks.js:4175 src/js/blocks/news.js:46
 #: src/js/blocks/projects.js:96
 msgid "articles"
 msgstr ""
 
-#: assets/js/blocks.js:3059 src/js/blocks/news.js:47
+#: assets/js/blocks.js:3083 src/js/blocks/news.js:47
 msgid "News tile in three column."
 msgstr ""
 
-#: assets/js/blocks.js:3245 src/js/blocks/news.js:233
+#: assets/js/blocks.js:3269 src/js/blocks/news.js:233
 msgid "Edit news"
 msgstr ""
 
-#: assets/js/blocks.js:3270 src/js/blocks/news.js:258
+#: assets/js/blocks.js:3294 src/js/blocks/news.js:258
 msgid "Posts to show"
 msgstr ""
 
-#: assets/js/blocks.js:3334 assets/js/blocks.js:4424 src/js/blocks/news.js:322
+#: assets/js/blocks.js:3358 assets/js/blocks.js:4448 src/js/blocks/news.js:322
 #: src/js/blocks/projects.js:369
 msgid "Post Title Color"
 msgstr ""
 
-#: assets/js/blocks.js:3354 src/js/blocks/news.js:342
+#: assets/js/blocks.js:3378 src/js/blocks/news.js:342
 msgid "Date Color"
 msgstr ""
 
-#: assets/js/blocks.js:3455 assets/js/blocks.js:3756
+#: assets/js/blocks.js:3479 assets/js/blocks.js:3780
 #: src/js/blocks/partners.js:63 src/js/blocks/people.js:68
 msgid "Auto Play"
 msgstr ""
 
-#: assets/js/blocks.js:3464 core/admin.php:78 modules/org/hooks.php:30
+#: assets/js/blocks.js:3488 core/admin.php:78 modules/org/hooks.php:30
 #: modules/org/hooks.php:32 modules/org/tax.php:6 src/js/blocks/partners.js:72
 msgid "Partners"
 msgstr ""
 
-#: assets/js/blocks.js:3467 src/js/blocks/partners.js:75
+#: assets/js/blocks.js:3491 src/js/blocks/partners.js:75
 msgid "partners"
 msgstr ""
 
-#: assets/js/blocks.js:3467 src/js/blocks/partners.js:75
+#: assets/js/blocks.js:3491 src/js/blocks/partners.js:75
 msgid "logos"
 msgstr ""
 
-#: assets/js/blocks.js:3468 src/js/blocks/partners.js:76
+#: assets/js/blocks.js:3492 src/js/blocks/partners.js:76
 msgid "Image tile in four columns."
 msgstr ""
 
-#: assets/js/blocks.js:3477 core/editor/blocks/partners.php:18
+#: assets/js/blocks.js:3501 core/editor/blocks/partners.php:18
 #: src/js/blocks/partners.js:85
 msgid "Our Partners"
 msgstr ""
 
-#: assets/js/blocks.js:3548 src/js/blocks/partners.js:156
+#: assets/js/blocks.js:3572 src/js/blocks/partners.js:156
 msgid "Edit partners"
 msgstr ""
 
-#: assets/js/blocks.js:3573 assets/js/blocks.js:3905
+#: assets/js/blocks.js:3597 assets/js/blocks.js:3929
 #: src/js/blocks/partners.js:181 src/js/blocks/people.js:217
 msgid "Layout"
 msgstr ""
 
-#: assets/js/blocks.js:3584 assets/js/blocks.js:3916
+#: assets/js/blocks.js:3608 assets/js/blocks.js:3940
 #: src/js/blocks/partners.js:192 src/js/blocks/people.js:228
 msgid "Carousel"
 msgstr ""
 
-#: assets/js/blocks.js:3594 src/js/blocks/partners.js:202
+#: assets/js/blocks.js:3618 src/js/blocks/partners.js:202
 msgid "Partners to show"
 msgstr ""
 
-#: assets/js/blocks.js:3619 assets/js/blocks.js:3951
+#: assets/js/blocks.js:3643 assets/js/blocks.js:3975
 #: src/js/blocks/partners.js:227 src/js/blocks/people.js:263
 msgid "Enable link"
 msgstr ""
 
-#: assets/js/blocks.js:3765 core/admin.php:72 src/js/blocks/people.js:77
+#: assets/js/blocks.js:3789 core/admin.php:72 src/js/blocks/people.js:77
 msgid "Team"
 msgstr ""
 
-#: assets/js/blocks.js:3768 src/js/blocks/people.js:80
+#: assets/js/blocks.js:3792 src/js/blocks/people.js:80
 msgid "people"
 msgstr ""
 
-#: assets/js/blocks.js:3768 src/js/blocks/people.js:80
+#: assets/js/blocks.js:3792 src/js/blocks/people.js:80
 msgid "user"
 msgstr ""
 
-#: assets/js/blocks.js:3768 src/js/blocks/people.js:80
+#: assets/js/blocks.js:3792 src/js/blocks/people.js:80
 msgid "team"
 msgstr ""
 
-#: assets/js/blocks.js:3768 src/js/blocks/people.js:80
+#: assets/js/blocks.js:3792 src/js/blocks/people.js:80
 msgid "profile"
 msgstr ""
 
-#: assets/js/blocks.js:3769 src/js/blocks/people.js:81
+#: assets/js/blocks.js:3793 src/js/blocks/people.js:81
 msgid "Tile with photos, names and short descriptions in 3-8 columns."
 msgstr ""
 
-#: assets/js/blocks.js:3778 core/editor/blocks/people.php:18
+#: assets/js/blocks.js:3802 core/editor/blocks/people.php:18
 #: src/js/blocks/people.js:90
 msgid "Our Team"
 msgstr ""
 
-#: assets/js/blocks.js:3843 src/js/blocks/people.js:155
+#: assets/js/blocks.js:3867 src/js/blocks/people.js:155
 msgid "Squared"
 msgstr ""
 
-#: assets/js/blocks.js:3848 src/js/blocks/people.js:160
+#: assets/js/blocks.js:3872 src/js/blocks/people.js:160
 msgid "Rounded"
 msgstr ""
 
-#: assets/js/blocks.js:3878 src/js/blocks/people.js:190
+#: assets/js/blocks.js:3902 src/js/blocks/people.js:190
 msgid "Edit team"
 msgstr ""
 
-#: assets/js/blocks.js:3926 src/js/blocks/people.js:238
+#: assets/js/blocks.js:3950 src/js/blocks/people.js:238
 msgid "People to show"
 msgstr ""
 
-#: assets/js/blocks.js:3964 core/person.php:8 modules/org/hooks.php:9
+#: assets/js/blocks.js:3988 core/person.php:8 modules/org/hooks.php:9
 #: src/js/blocks/people.js:276
 msgid "Category"
 msgstr ""
 
-#: assets/js/blocks.js:4002 src/js/blocks/people.js:314
+#: assets/js/blocks.js:4026 src/js/blocks/people.js:314
 msgid "Name Color"
 msgstr ""
 
-#: assets/js/blocks.js:4012 src/js/blocks/people.js:324
+#: assets/js/blocks.js:4036 src/js/blocks/people.js:324
 msgid "Description Color"
 msgstr ""
 
-#: assets/js/blocks.js:4144 assets/js/blocks.js:4162 core/admin.php:66
+#: assets/js/blocks.js:4168 assets/js/blocks.js:4186 core/admin.php:66
 #: core/editor/blocks/projects.php:18 modules/project/hooks.php:15
 #: modules/project/hooks.php:17 modules/starter/plot_config.php:133
 #: modules/starter/plot_config.php:143 src/js/blocks/projects.js:89
@@ -967,50 +968,50 @@ msgstr ""
 msgid "Projects"
 msgstr ""
 
-#: assets/js/blocks.js:4147 src/js/blocks/projects.js:92
+#: assets/js/blocks.js:4171 src/js/blocks/projects.js:92
 msgid "Projects tile in three column."
 msgstr ""
 
-#: assets/js/blocks.js:4152 src/js/blocks/projects.js:97
+#: assets/js/blocks.js:4176 src/js/blocks/projects.js:97
 msgid "projects"
 msgstr ""
 
-#: assets/js/blocks.js:4336 src/js/blocks/projects.js:281
+#: assets/js/blocks.js:4360 src/js/blocks/projects.js:281
 msgid "Edit projects"
 msgstr ""
 
-#: assets/js/blocks.js:4360 src/js/blocks/projects.js:305
+#: assets/js/blocks.js:4384 src/js/blocks/projects.js:305
 msgid "Projects to show"
 msgstr ""
 
-#: assets/js/blocks.js:4508 core/editor/blocks/recommend.php:18
+#: assets/js/blocks.js:4532 core/editor/blocks/recommend.php:18
 #: src/js/blocks/recommend.js:35
 msgid ""
 "Your mission should be to summarize everything you do. In a short phrase, "
 "put the whole point of your organization and your projects."
 msgstr ""
 
-#: assets/js/blocks.js:4511 src/js/blocks/recommend.js:38
+#: assets/js/blocks.js:4535 src/js/blocks/recommend.js:38
 msgid "Key phrase"
 msgstr ""
 
-#: assets/js/blocks.js:4514 src/js/blocks/recommend.js:41
+#: assets/js/blocks.js:4538 src/js/blocks/recommend.js:41
 msgid "Text on a colored plate."
 msgstr ""
 
-#: assets/js/blocks.js:4516 src/js/blocks/recommend.js:43
+#: assets/js/blocks.js:4540 src/js/blocks/recommend.js:43
 msgid "quote"
 msgstr ""
 
-#: assets/js/blocks.js:4517 src/js/blocks/recommend.js:44
+#: assets/js/blocks.js:4541 src/js/blocks/recommend.js:44
 msgid "recommend"
 msgstr ""
 
-#: assets/js/blocks.js:4518 src/js/blocks/recommend.js:45
+#: assets/js/blocks.js:4542 src/js/blocks/recommend.js:45
 msgid "key"
 msgstr ""
 
-#: assets/js/blocks.js:4519 src/js/blocks/recommend.js:46
+#: assets/js/blocks.js:4543 src/js/blocks/recommend.js:46
 msgid "phrase"
 msgstr ""
 
@@ -1728,7 +1729,7 @@ msgid "Go to Menu"
 msgstr ""
 
 #: core/customizer/theme-mods/footer.php:72
-#: core/customizer/theme-mods/header.php:76
+#: core/customizer/theme-mods/header.php:76 inc/events/events-functions.php:284
 msgid "Name"
 msgstr ""
 
@@ -1962,6 +1963,7 @@ msgid "Email"
 msgstr ""
 
 #: core/customizer/theme-mods/header.php:312
+#: inc/events/events-functions.php:289
 msgid "Phone"
 msgstr ""
 
@@ -2070,8 +2072,8 @@ msgstr ""
 msgid "Related projects"
 msgstr ""
 
-#: core/editor/assets.php:53
-msgid "Select campaing"
+#: core/editor/assets.php:54
+msgid "Select campaign"
 msgstr ""
 
 #: core/editor/blocks/events.php:287 page-events.php:143
@@ -2387,6 +2389,10 @@ msgstr ""
 msgid "The beautiful design and useful features for nonprofit website"
 msgstr ""
 
+#: inc/events/events-booking-fields.php:12
+msgid "Comment"
+msgstr ""
+
 #: inc/events/events-functions.php:100
 #, php-format
 msgid "%s before registration closes"
@@ -2424,25 +2430,37 @@ msgstr ""
 msgid "Related heading"
 msgstr ""
 
-#: inc/events/events-functions.php:285
+#: inc/events/events-functions.php:294
+msgid "E-mail"
+msgstr ""
+
+#: inc/events/events-functions.php:308
 msgid "CTA button text"
 msgstr ""
 
-#: inc/events/events-functions.php:285 inc/events/events-options.php:23
+#: inc/events/events-functions.php:308 inc/events/events-options.php:23
 #: single-event.php:63
 msgid "Book Now"
 msgstr ""
 
-#: inc/events/events-functions.php:289
+#: inc/events/events-functions.php:328
 msgid "Custom Fields"
 msgstr ""
 
-#: inc/events/events-functions.php:313
+#: inc/events/events-functions.php:368
 msgid "Add new field"
 msgstr ""
 
-#: inc/events/events-functions.php:370
-msgid "<strong>ERROR</strong>: Invalid"
+#: inc/events/events-functions.php:442
+msgid "<strong>ERROR</strong>: Please enter a username."
+msgstr ""
+
+#: inc/events/events-functions.php:447
+msgid "<strong>ERROR</strong>: Please enter your phone number."
+msgstr ""
+
+#: inc/events/events-functions.php:456
+msgid "<strong>ERROR</strong>: Please fill in the field"
 msgstr ""
 
 #: inc/events/events-login-form.php:9

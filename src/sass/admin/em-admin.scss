@@ -62,14 +62,22 @@
 
 .dbem-kookings-fields {
 	margin-bottom: 10px;
+	counter-reset: field;
+	position: relative;
 
 	&:empty {
 		margin-bottom: 0;
 	}
+
+	.ui-state-highlight {
+		height: 40px;
+	}
 }
 
 .dbem-kookings-fields-group {
+	position: relative;
 	display: flex;
+	counter-increment: field;
 
 	#em-options-form & input[type="text"] {
 		width: auto;
@@ -81,4 +89,48 @@
 		margin-top: 10px;
 	}
 
+	&:before {
+		content: counter(field);
+		position: absolute;
+		top: 6px;
+		right: 100%;
+		margin-right: 5px;
+		display: block;
+		width: 15px;
+		text-align: right;
+	}
+
+	.drag-icons-group {
+		position: absolute;
+		top: 50%;
+		right: 100%;
+		margin-right: 8px;
+		transform: translateY(-50%);
+		opacity: 0;
+		transition: opacity .3s;
+		width: 20px;
+		color: #135e96;
+
+		.dashicons {
+			transform: rotate(90deg);
+			margin: 0 -10px;
+			font-size: 12px
+		}
+
+		&:hover {
+			cursor: grab;
+		}
+	}
+
+	.ui-sortable-helper {
+		opacity: .7;
+		cursor: grab;
+		margin-top: 0;
+	}
+
+	&:hover {
+		.drag-icons-group {
+			opacity: 1;
+		}
+	}
 }

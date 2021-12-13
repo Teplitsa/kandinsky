@@ -142,10 +142,11 @@ jQuery( document ).ready( function( $ ) {
 	$(document).on('click', '.knd-booking-fields-remove', function(e){
 		e.preventDefault();
 		$(this).parents('.dbem-kookings-fields-group').remove();
-		var fieldsGroup = $('.dbem-kookings-fields').find('.dbem-kookings-fields-group');
+		var fieldsGroup = $('.dbem-kookings-fields .dbem-kookings-fields-group');
 		fieldsGroup.each(function( index ) {
-			$(this).find('input:nth-child(1)').attr('name', 'dbem_bookings_custom_fields[' + index + '][label]');
-			$(this).find('input:nth-child(2)').attr('name', 'dbem_bookings_custom_fields[' + index + '][slug]');
+			$(this).find('.bookings-custom-field-order').val( index ).attr('name','dbem_bookings_custom_fields[' + index + '][order]');
+			$(this).find('.bookings-custom-field-label').attr('name','dbem_bookings_custom_fields[' + index + '][label]');
+			$(this).find('.bookings-custom-field-slug').attr('name','dbem_bookings_custom_fields[' + index + '][slug]');
 		});
 	});
 
@@ -155,13 +156,35 @@ jQuery( document ).ready( function( $ ) {
 		var itemKey = $('.dbem-kookings-fields .dbem-kookings-fields-group').length;
 
 		var fieldHtml = '<div class="dbem-kookings-fields-group">' +
-			'<input name="dbem_bookings_custom_fields[' + itemKey + '][label]" type="text" value="" placeholder="' + __( 'Label', 'knd' ) + '">' +
-			'<input name="dbem_bookings_custom_fields[' + itemKey + '][slug]" type="text" value="" placeholder="' + __( 'slug', 'knd' ) + '">' +
+			'<div class="drag-icons-group"><i class="dashicons dashicons-ellipsis"></i><i class="dashicons dashicons-ellipsis"></i></div>' +
+			'<input name="dbem_bookings_custom_fields[' + itemKey + '][order]" class="bookings-custom-field-order" type="hidden" value="' + itemKey + '">' +
+			'<input name="dbem_bookings_custom_fields[' + itemKey + '][label]" class="bookings-custom-field-label"  type="text" value="" placeholder="' + __( 'Label', 'knd' ) + '">' +
+			'<input name="dbem_bookings_custom_fields[' + itemKey + '][slug]" class="bookings-custom-field-slug" type="text" value="" placeholder="' + __( 'slug', 'knd' ) + '">' +
 			'<a href="#" class="button button-link button-link-delete knd-booking-fields-remove">' + __( 'Delete', 'knd' ) + '</a>' + 
 		'</div>';
 
 		$('.dbem-kookings-fields').append( fieldHtml );
 	});
+
+	/**
+	 * Sortable
+	 */
+	 $('.dbem-kookings-fields').sortable({
+		axis: 'y',
+		cursor: 'move',
+		placeholder: 'ui-state-highlight',
+		update: function( event, ui ) {
+			var bookingFields = $('.dbem-kookings-fields .dbem-kookings-fields-group');
+			bookingFields.each(function( index ) {
+				$(this).find('.bookings-custom-field-order').val( index ).attr('name','dbem_bookings_custom_fields[' + index + '][order]');
+				$(this).find('.bookings-custom-field-label').attr('name','dbem_bookings_custom_fields[' + index + '][label]');
+				$(this).find('.bookings-custom-field-slug').attr('name','dbem_bookings_custom_fields[' + index + '][slug]');
+			});
+		}
+	});
+
+
+	//dbem-kookings-fields-group
 
 
 } );
