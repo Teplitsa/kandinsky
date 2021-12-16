@@ -315,7 +315,7 @@ var EnvatoWizard = (function( $ ) {
 			completed = false,
 			_modifier = $button.is( 'input' ) || $button.is( 'button' ) ? 'val' : 'text',
 			animIndex = [ 0, 1, 2 ];
-			
+
 		var existingText = $button.is( 'input' ) || $button.is( 'button' ) ? $button.val() : $button.text();
 
 		if ( 'yes' === $button.data( 'done-loading' ) ) {
@@ -323,6 +323,7 @@ var EnvatoWizard = (function( $ ) {
 		}
 
 		$button.css( 'width', existingWidth ).addClass( 'dtbaker_loading_button_current' );
+		$button.addClass('button-disabled');
 
 		$button[ _modifier ]( loadingText );
 		$button.data( 'done-loading', 'yes' );
@@ -377,7 +378,7 @@ var EnvatoWizard = (function( $ ) {
 EnvatoWizard.init();
 
 var KndDownloadPlotStepManager = function() {
-	
+
 	this.init = function(btn) {
 		var $ = jQuery;
 		var self = this;
@@ -396,9 +397,9 @@ var KndDownloadPlotStepManager = function() {
 		
 		var $stepExplanations = $('#knd-download-status-explain');
 		$stepExplanations.show();
-		
+
 		$.post(envatoSetupParams.ajaxurl, {
-			
+
 			action: 'knd_wizard_download_plot_step',
 			new_scenario_id: $('#new_scenario_id').val(),
 			save_step: '...',
@@ -410,7 +411,7 @@ var KndDownloadPlotStepManager = function() {
 		.done(function(json){
 			
 			if(json.status == 'ok') {
-				
+
 				self.tries = 0;
 				
 				if(json.status_explain) {
@@ -473,9 +474,9 @@ var KndDownloadPlotStepManager = function() {
 			
 		})
 		.fail(function(){
-			
+
 			console.log('fail');
-			
+
 			if((step == 2 || step == 1 || step == 0) && self.tries < 2) {
 				self.tries += 1;
 				setTimeout(function(){
@@ -488,7 +489,7 @@ var KndDownloadPlotStepManager = function() {
 				$error.find('.wizard-error-support-text').html('');
 				$error.show();
 			}
-			
+
 		});
 		
 	}

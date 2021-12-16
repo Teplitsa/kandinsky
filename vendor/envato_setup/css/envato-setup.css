@@ -497,6 +497,8 @@ body {
 .envato-setup .envato-setup-actions .button-skip {
 	display: flex;
 	align-items: center;
+	text-align: center;
+	justify-content: center;
 }
 
 @media (min-width: 783px ) {
@@ -518,12 +520,19 @@ body {
 	text-align: center
 }
 
-
-.dtbaker_loading_button_current{
-	color:#CCC !important;
-	text-align: center;
-
+#knd-download-status-explain {
+	display: inline-block;
+	margin-top: 6px;
 }
+
+.wp-core-ui .dtbaker_loading_button_current.button-disabled {
+	background-color: #2271b1 !important;
+	border-color: #2271b1 !important;
+	color: #ccc !important;
+	text-align: center;
+	pointer-events: none;
+}
+
 .envato-wizard-plugins li,
 .envato-wizard-plugins-recommended li {
 	position: relative;
