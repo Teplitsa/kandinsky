@@ -2,6 +2,13 @@
 /**
  * Wizard Step Content
  */
+
+$demo_dir_exists = false;
+$git_imp = new KND_Import_Git_Content('color-line');
+if ( Knd_Filesystem::get_instance()->is_dir( $git_imp->is_dir() ) ) {
+	$demo_dir_exists = true;
+}
+
 ?>
 
 <h1><?php esc_html_e('Theme default content', 'knd'); ?></h1>
@@ -22,16 +29,34 @@
 			</thead>
 			<tbody>
 			<?php foreach($this->_content_default_get() as $slug => $default) { ?>
+				<?php
+					$checked = true;
+					$disabled = false;
+					if ( ( isset($default['checked'] ) || $default['checked'] ) ) {
+						$checked = true;
+					}
+					if ( 'content' === $slug && ! $demo_dir_exists ) {
+						$checked = false;
+						$disabled = true;
+					}
+				?>
 				<tr class="envato_default_content" data-content="<?php echo esc_attr($slug); ?>">
 					<td>
-						<input type="checkbox" name="default_content[<?php echo esc_attr($slug); ?>]" class="envato_default_content" id="default_content_<?php echo esc_attr($slug); ?>" value="1" <?php echo !isset($default['checked']) || $default['checked'] ? 'checked="checked"' : ''; ?>>
+						<input type="checkbox" name="default_content[<?php echo esc_attr($slug); ?>]" class="envato_default_content" id="default_content_<?php echo esc_attr($slug); ?>" value="1" <?php checked( $checked, true ); ?> <?php if ( 'content' === $slug ) disabled( $disabled, true ); ?>>
 					</td>
 					<td>
 						<label for="default_content_<?php echo esc_attr($slug); ?>">
 							<?php echo esc_html($default['title']); ?>
 						</label>
 					</td>
-					<td class="description"><?php echo esc_html($default['description']); ?></td>
+					<td class="description">
+						<?php echo esc_html($default['description']); ?>
+						<?php if ( 'content' === $slug && ! $demo_dir_exists ) { ?>
+							<i><br><?php esc_html_e( 'This option is disabled because is missing demo content import folder.', 'knd' ); ?><br>
+							<?php esc_html_e( 'Most likely you missed the first step.', 'knd' ); ?><br>
+							<?php echo sprintf( esc_html__( 'To import all content, please go back %sprev step%s and click the "Let\'s go!" button.', 'knd' ), '<a href="' . esc_url( $this->get_prev_step_link() ) . '">', '</a>' ); ?></i>
+						<?php } ?>
+						</td>
 					<td class="status"><span><?php echo esc_html($default['pending']); ?></span>
 						<div class="spinner"></div>
 					</td>

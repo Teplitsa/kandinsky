@@ -991,7 +991,6 @@ class KND_Plot_Data_Builder {
 	}
 
 	public function build_theme_options() {
-		
 		$this->save_theme_options($this->data_routes['theme_options']);
 		do_action('knd_plotdata_build_theme_options');
 	}
@@ -1145,8 +1144,9 @@ class KND_Plot_Data_Builder {
 	}
 	
 	public function build_title_and_description() {
-		$this->safe_update_option('blogname', $this->data_routes['general_options']['site_name']);
-		$this->safe_update_option('blogdescription', $this->data_routes['general_options']['site_description']);
+		// $options = $this->data_routes['general_options'];
+		// update_option( 'blogname', $options['site_name'] );
+		// update_option( 'blogdescription', $options['site_description'] );
 	}
 	
 	public function save_hash($name, $val) {

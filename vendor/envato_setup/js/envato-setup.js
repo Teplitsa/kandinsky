@@ -62,13 +62,14 @@ var EnvatoWizard = (function( $ ) {
 	}
 
 	function loadingContent() {
-		$( '.envato-setup-content' ).block({
-			message: null,
-			overlayCSS: {
-				background: '#fff',
-				opacity: 0.6
-			}
-		});
+		$( '.envato-setup-content' ).addClass('rewind');
+		// $( '.envato-setup-content' ).block({
+		// 	message: null,
+		// 	overlayCSS: {
+		// 		background: '#fff',
+		// 		opacity: 0.6
+		// 	}
+		// });
 	}
 
 	function PluginManager() {
@@ -80,6 +81,7 @@ var EnvatoWizard = (function( $ ) {
 			currentItemHash = '';
 
 		function ajaxCallback( response ) {
+
 			if ( 'object' === typeof response && 'undefined' !== typeof response.message ) {
 
 				$currentNode.find( 'span' ).text( response.message );
@@ -94,7 +96,7 @@ var EnvatoWizard = (function( $ ) {
 						jQuery.post( response.url, response, function() {
 							processCurrent();
 							$currentNode.find( 'span' ).
-								text( response.message + envatoSetupParams.verify_text );
+								text( response.message + ' ' + envatoSetupParams.verify_text );
 						} ).fail( ajaxCallback );
 					}
 
@@ -108,7 +110,7 @@ var EnvatoWizard = (function( $ ) {
 
 			} else {
 				// Error - try again with next plugin
-				$currentNode.find( 'span' ).text( 'ajax error' );
+				$currentNode.find( 'span' ).text( envatoSetupParams.ajax_error );
 				findNext();
 			}
 		}
@@ -127,16 +129,16 @@ var EnvatoWizard = (function( $ ) {
 		}
 
 		function findNext() {
-			var doNext = false,
-				$li = $( '.envato-wizard-plugins li,.envato-wizard-plugins-recommended li:has(.plugin-accepted:checked)');
+			let doNext = false;
+			let plugins = $( '.envato-wizard-plugins li,.envato-wizard-plugins-recommended li.selected');
 			if ( $currentNode ) {
 				if ( ! $currentNode.data( 'done_item' ) ) {
 					itemsCompleted++;
 					$currentNode.data( 'done_item', 1 );
 				}
-				$currentNode.find( '.spinner' ).css( 'visibility', 'hidden' );
+				$currentNode.removeClass('active');
 			}
-			$li.each(function() {
+			plugins.each(function() {
 				if ( '' === currentItem || doNext ) {
 					currentItem = $( this ).data( 'slug' );
 					$currentNode = $( this );
@@ -146,14 +148,15 @@ var EnvatoWizard = (function( $ ) {
 					doNext = true;
 				}
 			});
-			if ( itemsCompleted >= $li.length ) {
+			if ( itemsCompleted >= plugins.length ) {
 				complete();
 			}
 		}
 
 		return {
 			init: function( btn ) {
-				$( '.envato-wizard-plugins' ).addClass( 'installing' );
+				$('.envato-wizard-plugins').find('li').addClass('active');
+				$('.envato-wizard-plugins-recommended').find('.plugin-accepted:checked').parents('li').addClass('active selected');
 				complete = function() {
 					loadingContent();
 					window.location.href = btn.href;
@@ -196,7 +199,7 @@ var EnvatoWizard = (function( $ ) {
 
 			} else {
 
-				$currentNode.find( 'span' ).text( 'ajax error' );
+				$currentNode.find( 'span' ).text( envatoSetupParams.ajax_error );
 				findNext();
 
 			}

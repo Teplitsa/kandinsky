@@ -20,9 +20,15 @@ function knd_empty_icons(){
 add_filter('leyka_icons_text_text_box', 'knd_empty_icons');
 
 function knd_activate_leyka() {
+
+	$git_imp = new KND_Import_Git_Content('color-line');
+	if ( ! Knd_Filesystem::get_instance()->is_dir( $git_imp->is_dir() ) ) {
+		return;
+	}
+
 	$imp = new KND_Import_Remote_Content(knd_get_theme_mod('knd_site_scenario'));
 	$imp->import_downloaded_content();
-	
+
 	$pdb = KND_Plot_Data_Builder::produce_builder($imp);
 	$pdb->build_leyka_capmaigns();
 }

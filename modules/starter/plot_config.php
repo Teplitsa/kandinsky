@@ -115,9 +115,8 @@ class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
 		);
 
 		$this->data_routes['general_options'] = array(
-			'site_name'           => esc_html__( 'Line of Color', 'knd' ),
-			'site_description'    => esc_html__( 'We help people to fight alcohol addiction', 'knd' ),
-			//'knd_footer_contacts' => '',
+			// 'site_name'           => esc_html__( 'Line of Color', 'knd' ),
+			// 'site_description'    => esc_html__( 'We help people to fight alcohol addiction', 'knd' ),
 		);
 
 
@@ -145,121 +144,6 @@ class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
 				array('post_type' => 'page', 'slug' => 'howtohelp' ),
 			),
 		);
-
-		$font_base = array(
-			'font-family' => 'Raleway',
-			'variant'     => 'regular',
-			'color'       => '#4d606a',
-			'font-size'   => '18px',
-			'font-backup' => '',
-			'font-weight' => '500',
-			'font-style'  => 'normal',
-		);
-
-		$font_headings = array(
-			'font-family' => 'Raleway',
-			'variant'     => '700',
-			'color'       => '#183343',
-			'font-backup' => '',
-			'font-weight' => '700',
-			'font-style'  => 'normal',
-		);
-
-		$about_content = '<p>' . esc_html__( 'Our office, training rooms and support group rooms are open daily from 9:00 am to 10:00 pm.', 'knd' ) . '</p>
-<p>' . esc_html__( 'Moscow, 7th Stroiteley Street, 17, office: 211-217
-+7 (495) 787-87-23', 'knd' ) . '
-<a href="mailto:info@colorline.ru">info@colorline.ru</a>
-</p>';
-		
-		$policy_content = sprintf( '<p>' . esc_html__( 'By making a donation, the user concludes a donation agreement by accepting a public offer, which is located %shere%s.', 'knd' ) . '</p>
-<p><a href="' . esc_url( home_url( 'legal' ) ) . '">' . esc_html__( 'Personal data processing policy', 'knd' ) . '</a><br>
-<a href="' . esc_url( home_url( 'legal' ) ) . '">' . esc_html__( 'Privacy policy', 'knd' ) . '</a>
-</p>', '<a href="' . esc_url( home_url( 'legal' ) ) . '">', '</a>' );
-
-		$theme_mods = array(
-			'font_base'             => $font_base,
-			'font_headings'         => $font_headings,
-			'knd_page_bg_color'     => '#ffffff',
-			'knd_main_color'        => '#dd1400',
-			'knd_main_color_active' => '#c81303',
-			'header_background'     => '#ffffff',
-			'header_button_text'    =>  esc_html__( 'Help now', 'knd' ),
-			'header_button_link'    => home_url( 'howtohelp' ),
-			'header_type'           => '2',
-			'header_offcanvas'         => '0',
-			'header_additional_button' => '0',
-			'header_search'            => false,
-			'header_height'            => '124px',
-			'header_logo_title'        => get_bloginfo( 'name' ),
-			'header_logo_text'         => get_bloginfo( 'description' ),
-			'font_logo_default'        => true,
-			'header_logo_color'        => '#183343',
-			'header_logo_desc_color'   => '#4d606a',
-			'header_menu_color'        => '#4d606a',
-			'header_menu_color_hover'  => '#dd1400',
-			'header_menu_size'         => '18px',
-			'header_button'            => true,
-			'header_button_text'       => esc_html__( 'Help now', 'knd' ),
-			'header_button_link'       => home_url( 'howtohelp' ),
-			'header_additional_button' => false,
-			'header_additional_button_text' => '',
-			'header_additional_button_link' => '',
-			'header_offcanvas'              => false,
-			'offcanvas_menu'                => false,
-			'offcanvas_search'              => false,
-			'offcanvas_button'              => false,
-			'offcanvas_button_text'         => esc_html__( 'Help now', 'knd' ),
-			'offcanvas_button_link'         => home_url( 'howtohelp' ),
-			'offcanvas_social'              => false,
-
-			'knd_social_vk'        => 'https://vk.com/teplitsast',
-			'knd_social_ok'        => 'https://ok.ru/profile/0123456789',
-			'knd_social_facebook'  => 'https://www.facebook.com/TeplitsaST',
-			'knd_social_instagram' => 'https://www.instagram.com/your-organization-page',
-			'knd_social_twitter'   => 'https://twitter.com/TeplitsaST',
-			'knd_social_telegram'  => 'https://telegram.me/TeplitsaPRO',
-			'knd_social_youtube'   => 'https://www.youtube.com/user/teplitsast',
-
-			'knd_news_archive_title'     => esc_html__( 'News', 'knd' ),
-			'knd_projects_archive_title' => esc_html__( 'Our projects', 'knd' ),
-			'post_related_title'         => esc_html__( 'Related items', 'knd' ),
-			'project_related_title'      => esc_html__( 'Related projects', 'knd' ),
-
-			'footer_logo_title'       => get_bloginfo( 'name' ),
-			'footer_logo_text'        => get_bloginfo( 'description' ),
-			'footer_background'       => '#f7f8f8',
-			'footer_color'            => '#4d606a',
-			'footer_heading_color'    => '#183343',
-			'footer_color_link'       => '#dd1400',
-			'footer_color_link_hover' => '#c81303',
-			'font_footer_logo_default' => true,
-			'footer_logo_color'        => '#183343',
-			'footer_logo_desc_color'   => '#4d606a',
-			'footer_social'            => true,
-			'footer_color_social'       => '#183343',
-			'footer_color_social_hover' => '#4d606a',
-
-			'footer_about_title'        => esc_html__( 'About Us', 'knd' ),
-			'footer_about'              => $about_content,
-
-			'footer_policy_title'        => esc_html__( 'Security policy', 'knd' ),
-			'footer_policy'              => $policy_content,
-
-			'footer_menu_ourwork_title' => esc_html__( 'Our Work', 'knd' ),
-			'footer_menu_ourwork'       => esc_html__( 'kandinsky-our-work-footer-menu', 'knd' ),
-			'footer_menu_news_title'    => esc_html__( 'News', 'knd' ),
-			'footer_menu_news'          => esc_html__( 'kandinsky-news-footer-menu', 'knd' ),
-
-			'archive_bottom_block'  => 'posts-bottom-blocks',
-			'post_bottom_block'     => 'posts-bottom-blocks',
-			'projects_bottom_block' => 'projects-bottom-blocks',
-			'project_bottom_block'  => 'projects-bottom-blocks',
-
-		);
-
-		foreach ( $theme_mods as $name => $mod ) {
-			set_theme_mod( $name, $mod );
-		}
 
 	}
 

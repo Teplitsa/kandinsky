@@ -42,7 +42,7 @@ class KND_Import_Remote_Content {
 		$this->parsedown = new Parsedown();
 
 	}
-	
+
 	public function __get($name) {
 		if($name == 'plot_name') {
 			return $this->plot_name;
@@ -266,6 +266,7 @@ class KND_Import_Remote_Content {
 		
 		return $new_text;
 	}
+
 }
 
 /**
@@ -276,7 +277,7 @@ class KND_Import_Git_Content {
 	
 	private $content_archive_url = false;
 	private $plot_name = '';
-	private $import_content_files_dir = NULL;
+	public $import_content_files_dir = NULL;
 	private $zip_fpath = NULL;
 	private $content_files = array();
 	private $piece_parser = NULL;
@@ -502,6 +503,17 @@ class KND_Import_Git_Content {
 		}
 		
 		return $inner_content_files;
+	}
+
+	/**
+	 * Check if import folder exists.
+	 *
+	 * @param string $plot_name
+	 * @return string
+	*/
+	function is_dir() {
+		$destination = wp_upload_dir();
+		return "{$destination['path']}/kandinsky-text-{$this->plot_name}-master";
 	}
 }
 

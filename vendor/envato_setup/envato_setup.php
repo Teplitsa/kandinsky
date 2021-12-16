@@ -366,7 +366,7 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 			wp_register_script('envato-setup', $this->plugin_url.'js/envato-setup.js', array(
 				'jquery',
 				'jquery-blockui',
-			), $this->version);
+			), $this->version, '2');
 
 			wp_localize_script('envato-setup', 'envatoSetupParams', array(
 				'tgm_plugin_nonce' => array(
@@ -380,6 +380,7 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 				'processing_text' => esc_html__('Processing...', 'knd'),
 				'upload_logo_text' => esc_html__('Upload Logo', 'knd'),
 				'select_logo_text' => esc_html__('Select Logo', 'knd'),
+				'ajax_error' => esc_html__('Ajax error', 'knd'),
 			));
 
 			wp_enqueue_style('envato-setup', $this->plugin_url.'css/envato-setup.css', array(
@@ -392,9 +393,11 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 			wp_enqueue_media();
 			wp_enqueue_script('media');
 
+			set_current_screen( $_GET['page'] );
+
 			ob_start();
 
-			echo '<div class="knd-wizard-wrapper">';
+			$screen = get_current_screen();
 
 			$this->display_wizard_header();
 			$this->display_wizard_steps();
@@ -426,8 +429,6 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 			echo '</div>';
 			$this->display_wizard_footer();
 
-			echo '</div><!-- .knd-wizard-wrapper -->';
-
 			exit;
 
 		}
@@ -455,10 +456,10 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 		public function display_wizard_header() {?>
 
 			<!DOCTYPE html>
-			<html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
+			<html <?php language_attributes(); ?>>
 			<head>
-				<meta name="viewport" content="width=device-width"/>
-				<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+				<meta charset="UTF-8">
+				<meta name="viewport" content="width=device-width, initial-scale=1">
 				<?php // To avoid theme check issues...
 				echo '<t';
 				echo 'itle>'.__('Kandinsky - setup wizard', 'knd').'</ti'.'tle>'; ?>
@@ -468,11 +469,12 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 				<?php do_action('admin_head'); ?>
 			</head>
 			<body class="envato-setup wp-core-ui knd-wizard">
-			<h1 id="wc-logo">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" target="_blank">
-					<img class="wizard-header-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/knd-logo.svg" alt="<?php esc_attr_e('Kandinsky theme setup wizard', 'knd'); ?>">
-				</a>
-			</h1>
+				<div class="knd-wizard-wrapper">
+					<h1 id="wc-logo">
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" target="_blank">
+							<img class="wizard-header-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/knd-logo.svg" alt="<?php esc_attr_e('Kandinsky theme setup wizard', 'knd'); ?>">
+						</a>
+					</h1>
 			<?php
 		}
 
@@ -480,14 +482,17 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 		 * Setup Wizard Footer
 		 */
 		public function display_wizard_footer() { ?>
-			<?php if($this->step == 'next_steps') { ?>
-				<a class="wc-return-to-dashboard" href="<?php echo esc_url(admin_url()); ?>">
-					<?php esc_html_e('Return to the Dashboard', 'knd'); ?>
-				</a>
-			<?php } ?>
+				<?php if($this->step == 'next_steps') { ?>
+					<a class="wc-return-to-dashboard" href="<?php echo esc_url(admin_url()); ?>">
+						<?php esc_html_e('Return to the Dashboard', 'knd'); ?>
+					</a>
+				<?php } ?>
+				</div><!-- .knd-wizard-wrapper -->
 			</body>
-			<?php @do_action('admin_footer'); // This was spitting out some errors in some admin templates. quick @ fix until I have time to find out what's causing errors
-			do_action('admin_print_footer_scripts'); ?>
+			<?php
+				do_action('admin_footer');
+				do_action('admin_print_footer_scripts');
+			?>
 			</html>
 			<?php
 		}
@@ -641,11 +646,16 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 
 		public function _content_install_site_title_desc() {
 
-			$imp = new KND_Import_Remote_Content(knd_get_theme_mod('knd_site_scenario'));
-			$imp->import_downloaded_content();
+			update_option( 'blogname', esc_html__( 'Line of Color', 'knd' ) );
+			update_option( 'blogdescription', esc_html__( 'We help people to fight alcohol addiction', 'knd' ) );
 
-			$pdb = KND_Plot_Data_Builder::produce_builder($imp);
-			$pdb->build_title_and_description();
+			return true;
+
+		}
+
+		public function _content_install_settings() {
+
+			knd_update_demo_theme_mods();
 
 			return true;
 
@@ -670,20 +680,6 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 
 			$pdb = KND_Plot_Data_Builder::produce_builder($imp);
 			$pdb->build_pages();
-
-			return true;
-
-		}
-
-		public function _content_install_settings() {
-
-			$imp = new KND_Import_Remote_Content(knd_get_theme_mod('knd_site_scenario'));
-			$imp->import_downloaded_content();
-
-			$pdb = KND_Plot_Data_Builder::produce_builder($imp);
-
-			$pdb->build_theme_options();
-			$pdb->build_general_options();
 
 			return true;
 
@@ -992,8 +988,8 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 
 					}
 					
-				}                        
-			}    
+				}
+			}
 		}
 
 		public function step_scenario_handler() {
@@ -1178,13 +1174,142 @@ function knd_display_wizard_error(Exception $ex) {
 }
 
 /**
+ * Demo theme mods
+ */
+function knd_demo_theme_mods() {
+
+	$font_base = array(
+		'font-family' => 'Raleway',
+		'variant'     => 'regular',
+		'color'       => '#4d606a',
+		'font-size'   => '18px',
+		'font-backup' => '',
+		'font-weight' => '500',
+		'font-style'  => 'normal',
+	);
+
+	$font_headings = array(
+		'font-family' => 'Raleway',
+		'variant'     => '700',
+		'color'       => '#183343',
+		'font-backup' => '',
+		'font-weight' => '700',
+		'font-style'  => 'normal',
+	);
+
+	$about_content = '<p>' . esc_html__( 'Our office, training rooms and support group rooms are open daily from 9:00 am to 10:00 pm.', 'knd' ) . '</p>
+<p>' . esc_html__( 'Moscow, 7th Stroiteley Street, 17, office: 211-217
++7 (495) 787-87-23', 'knd' ) . '
+<a href="mailto:info@colorline.ru">info@colorline.ru</a>
+</p>';
+	
+	$policy_content = sprintf( '<p>' . esc_html__( 'By making a donation, the user concludes a donation agreement by accepting a public offer, which is located %shere%s.', 'knd' ) . '</p>
+<p><a href="' . esc_url( home_url( 'legal' ) ) . '">' . esc_html__( 'Personal data processing policy', 'knd' ) . '</a><br>
+<a href="' . esc_url( home_url( 'legal' ) ) . '">' . esc_html__( 'Privacy policy', 'knd' ) . '</a>
+</p>', '<a href="' . esc_url( home_url( 'legal' ) ) . '">', '</a>' );
+
+	$theme_mods = array(
+		'font_base'             => $font_base,
+		'font_headings'         => $font_headings,
+		'knd_page_bg_color'     => '#ffffff',
+		'knd_main_color'        => '#dd1400',
+		'knd_main_color_active' => '#c81303',
+		'header_background'     => '#ffffff',
+		'header_button_text'    =>  esc_html__( 'Help now', 'knd' ),
+		'header_button_link'    => home_url( 'howtohelp' ),
+		'header_type'           => '2',
+		'header_offcanvas'         => '0',
+		'header_additional_button' => '0',
+		'header_search'            => false,
+		'header_height'            => '124px',
+		'header_logo_title'        => get_bloginfo( 'name' ),
+		'header_logo_text'         => get_bloginfo( 'description' ),
+		'font_logo_default'        => true,
+		'header_logo_color'        => '#183343',
+		'header_logo_desc_color'   => '#4d606a',
+		'header_menu_color'        => '#4d606a',
+		'header_menu_color_hover'  => '#dd1400',
+		'header_menu_size'         => '18px',
+		'header_button'            => true,
+		'header_button_text'       => esc_html__( 'Help now', 'knd' ),
+		'header_button_link'       => home_url( 'howtohelp' ),
+		'header_additional_button' => false,
+		'header_additional_button_text' => '',
+		'header_additional_button_link' => '',
+		'header_offcanvas'              => false,
+		'offcanvas_menu'                => false,
+		'offcanvas_search'              => false,
+		'offcanvas_button'              => false,
+		'offcanvas_button_text'         => esc_html__( 'Help now', 'knd' ),
+		'offcanvas_button_link'         => home_url( 'howtohelp' ),
+		'offcanvas_social'              => false,
+
+		'knd_social_vk'        => 'https://vk.com/teplitsast',
+		'knd_social_ok'        => 'https://ok.ru/profile/0123456789',
+		'knd_social_facebook'  => 'https://www.facebook.com/TeplitsaST',
+		'knd_social_instagram' => 'https://www.instagram.com/your-organization-page',
+		'knd_social_twitter'   => 'https://twitter.com/TeplitsaST',
+		'knd_social_telegram'  => 'https://telegram.me/TeplitsaPRO',
+		'knd_social_youtube'   => 'https://www.youtube.com/user/teplitsast',
+
+		'knd_news_archive_title'     => esc_html__( 'News', 'knd' ),
+		'knd_projects_archive_title' => esc_html__( 'Our projects', 'knd' ),
+		'post_related_title'         => esc_html__( 'Related items', 'knd' ),
+		'project_related_title'      => esc_html__( 'Related projects', 'knd' ),
+
+		'footer_logo_title'       => get_bloginfo( 'name' ),
+		'footer_logo_text'        => get_bloginfo( 'description' ),
+		'footer_background'       => '#f7f8f8',
+		'footer_color'            => '#4d606a',
+		'footer_heading_color'    => '#183343',
+		'footer_color_link'       => '#dd1400',
+		'footer_color_link_hover' => '#c81303',
+		'font_footer_logo_default' => true,
+		'footer_logo_color'        => '#183343',
+		'footer_logo_desc_color'   => '#4d606a',
+		'footer_social'            => true,
+		'footer_color_social'       => '#183343',
+		'footer_color_social_hover' => '#4d606a',
+
+		'footer_about_title'        => esc_html__( 'About Us', 'knd' ),
+		'footer_about'              => $about_content,
+
+		'footer_policy_title'        => esc_html__( 'Security policy', 'knd' ),
+		'footer_policy'              => $policy_content,
+
+		'footer_menu_ourwork_title' => esc_html__( 'Our Work', 'knd' ),
+		'footer_menu_ourwork'       => esc_html__( 'kandinsky-our-work-footer-menu', 'knd' ),
+		'footer_menu_news_title'    => esc_html__( 'News', 'knd' ),
+		'footer_menu_news'          => esc_html__( 'kandinsky-news-footer-menu', 'knd' ),
+
+		'archive_bottom_block'  => 'posts-bottom-blocks',
+		'post_bottom_block'     => 'posts-bottom-blocks',
+		'projects_bottom_block' => 'projects-bottom-blocks',
+		'project_bottom_block'  => 'projects-bottom-blocks',
+
+	);
+
+	return $theme_mods;
+}
+
+/**
+ * Demo update theme mods
+ */
+function knd_update_demo_theme_mods() {
+	$theme_mods = knd_demo_theme_mods();
+	foreach ( $theme_mods as $name => $mod ) {
+		set_theme_mod( $name, $mod );
+	}
+}
+
+/**
  * Loads the main instance of Envato_Theme_Setup_Wizard to have
  * ability extend class functionality
  *
  * @since 1.1.1
  * @return object Envato_Theme_Setup_Wizard
  */
-add_action('after_setup_theme', 'envato_theme_setup_wizard');
+
 if( !function_exists('envato_theme_setup_wizard')) {
 	function envato_theme_setup_wizard() {
 
@@ -1196,6 +1321,7 @@ if( !function_exists('envato_theme_setup_wizard')) {
 
 	}
 }
+add_action('after_setup_theme', 'envato_theme_setup_wizard');
 //add_action('init', 'envato_theme_setup_wizard', 1); // No admin_init here!
 
 // To remove the notice from Disable Comments plugin:

@@ -394,6 +394,16 @@ body {
 	margin: 0 0 24px
 }
 
+.envato-setup-content .spinner {
+	margin-top: 2px;
+}
+
+.envato-setup-content.rewind {
+	pointer-events: none;
+	user-select: none;
+	opacity: .5;
+}
+
 .envato-setup-steps {
 	padding: 0 0 24px;
 	margin: 0;
@@ -514,10 +524,12 @@ body {
 	text-align: center;
 
 }
-.envato-wizard-plugins li, .envato-wizard-plugins-recommended li {
+.envato-wizard-plugins li,
+.envato-wizard-plugins-recommended li {
 	position: relative;
 }
-.envato-wizard-plugins li span, .envato-wizard-plugins-recommended li span {
+.envato-wizard-plugins li span,
+.envato-wizard-plugins-recommended li span {
 	padding: 0 0 0 10px;
 	font-size: 0.9em;
 	color: #0091cd;
@@ -525,13 +537,14 @@ body {
 	position: relative;
 
 }
-.envato-wizard-plugins.installing li .spinner, .envato-wizard-plugins-recommended.installing li .spinner {
+.envato-wizard-plugins li.active .spinner,
+.envato-wizard-plugins-recommended li.active .spinner {
 	visibility: visible;
 }
-.envato-wizard-plugins li .spinner, .envato-wizard-plugins-recommended li .spinner {
+.envato-wizard-plugins li .spinner,
+.envato-wizard-plugins-recommended li .spinner {
 	display: inline-block;
 	position: absolute;
-
 }
 .envato-setup-pages{
 	width: 100%;
@@ -546,6 +559,7 @@ body {
 .envato-setup-pages td,
 .envato-setup-pages th{
 	padding: 5px 0;
+	vertical-align: top;
 }
 .envato-setup-pages .status{
 	display: none;
@@ -673,4 +687,8 @@ body {
 .wizard-header-logo {
 	width: 100%;
 	height: auto;
+}
+
+.knd-wizard-wrapper ~ * {
+	display: none;
 }
