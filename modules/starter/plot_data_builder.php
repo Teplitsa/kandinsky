@@ -49,7 +49,6 @@ class KND_Plot_Data_Builder {
 	 *
 	 */
 	public function build_all() {
-		
 		$this->build_posts();
 		$this->build_pages();
 		$this->build_leyka_capmaigns();
@@ -60,7 +59,6 @@ class KND_Plot_Data_Builder {
 		$this->build_theme_options();
 		$this->build_general_options();
 		$this->build_menus();
-		//$this->build_sidebars();
 	}
 
 	public function build_leyka_capmaigns() {
@@ -130,49 +128,49 @@ class KND_Plot_Data_Builder {
 		}
 		
 	}
-	
+
 	public function _remove_all_section_campaigns_with_donations() {
-		
-		foreach($this->imp->possible_plots as $plot_name) {
 
-			if ( $plot_name != $this->imp->plot_name) {
+		// foreach($this->imp->possible_plots as $plot_name) {
 
-				$builder = self::produce_plot_builder($plot_name, $this->imp);
+		// 	if ( $plot_name != $this->imp->plot_name) {
 
-				if ( isset( $builder->data_routes ) ) {
-					$plot_config = $builder->data_routes;
+		// 		$builder = self::produce_plot_builder($plot_name, $this->imp);
 
-					foreach($plot_config['leyka_campaigns'] as $section => $section_data) {
+		// 		if ( isset( $builder->data_routes ) ) {
+		// 			$plot_config = $builder->data_routes;
 
-						$post_type = Leyka_Campaign_Management::$post_type;
-						$post_pieces_name = $section_data;
+		// 			foreach($plot_config['leyka_campaigns'] as $section => $section_data) {
 
-						foreach($post_pieces_name as $piece_name) {
+		// 				$post_type = Leyka_Campaign_Management::$post_type;
+		// 				$post_pieces_name = $section_data;
 
-							$piece = new KND_Piece(array('piece_name' => $piece_name, 'piece_section' => $section));
-							$slug = $piece->get_post_slug();
+		// 				foreach($post_pieces_name as $piece_name) {
 
-							$campaign = knd_get_post($slug, $post_type);
-							if($campaign) {
-								$leyka_campaign = new Leyka_Campaign($campaign);
+		// 					$piece = new KND_Piece(array('piece_name' => $piece_name, 'piece_section' => $section));
+		// 					$slug = $piece->get_post_slug();
+
+		// 					$campaign = knd_get_post($slug, $post_type);
+		// 					if($campaign) {
+		// 						$leyka_campaign = new Leyka_Campaign($campaign);
 								
-								$donations = $leyka_campaign->get_donations();
-								foreach($donations as $donation) {
-									$donation->delete(True);
-								}
+		// 						$donations = $leyka_campaign->get_donations();
+		// 						foreach($donations as $donation) {
+		// 							$donation->delete(True);
+		// 						}
 								
-								$leyka_campaign->delete(True);
-							}
-						}
-					}
-				}
-			}
-		}
+		// 						$leyka_campaign->delete(True);
+		// 					}
+		// 				}
+		// 			}
+		// 		}
+		// 	}
+		// }
 	}
 	
 	public function _install_campaigns_with_donations() {
 		
-		$this->_remove_all_section_campaigns_with_donations();
+		//$this->_remove_all_section_campaigns_with_donations();
 		
 		foreach(array_keys($this->data_routes['leyka_campaigns']) as $section) {
 			$this->_install_section_campaigns_with_donations($section);
@@ -320,9 +318,9 @@ class KND_Plot_Data_Builder {
 	 *
 	 */
 	public function build_posts() {
-		
-		$this->remove_all_other_plots_posts();
-		
+
+		//$this->remove_all_other_plots_posts();
+
 		foreach(array_keys($this->data_routes['posts']) as $section) {
 			$this->build_section_posts($section);
 		}
@@ -330,174 +328,162 @@ class KND_Plot_Data_Builder {
 		global $wp_rewrite;
 		$wp_rewrite->flush_rules( false );
 	}
-	
+
 	public function remove_all_other_plots_posts() {
-		foreach($this->imp->possible_plots as $plot_name) {
+		// foreach($this->imp->possible_plots as $plot_name) {
 			
-			if( $plot_name != $this->imp->plot_name ) {
+		// 	if( $plot_name != $this->imp->plot_name ) {
 
-				$builder = self::produce_plot_builder( $plot_name, $this->imp );
+		// 		$builder = self::produce_plot_builder( $plot_name, $this->imp );
 
-				if ( isset( $builder->data_routes ) ) {
-					$plot_config = $builder->data_routes;
+		// 		if ( isset( $builder->data_routes ) ) {
+		// 			$plot_config = $builder->data_routes;
 
-					foreach($plot_config['posts'] as $section => $section_data) {
+		// 			foreach($plot_config['posts'] as $section => $section_data) {
 						
-						$post_type = isset($section_data['post_type']) ? $section_data['post_type'] : 'post';
-						$post_pieces_name = $section_data['pieces'];
+		// 				$post_type = isset($section_data['post_type']) ? $section_data['post_type'] : 'post';
+		// 				$post_pieces_name = $section_data['pieces'];
 						
-						foreach($post_pieces_name as $piece_name) {
+		// 				foreach($post_pieces_name as $piece_name) {
 							
-							$piece = new KND_Piece(array('piece_name' => $piece_name, 'piece_section' => $section));
-							$slug = $piece->get_post_slug();
+		// 					$piece = new KND_Piece(array('piece_name' => $piece_name, 'piece_section' => $section));
+		// 					$slug = $piece->get_post_slug();
 							
-							$post = knd_get_post($slug, $post_type);
-							if($post) {
-								$this->safe_delete_post( $post );
-							}
-						}
-					}
-				}
-			}
-		}
+		// 					$post = knd_get_post($slug, $post_type);
+		// 					if($post) {
+		// 						$this->safe_delete_post( $post );
+		// 					}
+		// 				}
+		// 			}
+		// 		}
+		// 	}
+		// }
 	}
 	
 	public function remove_all_content() {
+		// global $wpdb;
+		// $sql = "DELETE FROM $wpdb->options WHERE `option_name` LIKE 'knd_val_hash_%'";
+		// $wpdb->query($sql);
 		
-		global $wpdb;
-		$sql = "DELETE FROM $wpdb->options WHERE `option_name` LIKE 'knd_val_hash_%'";
-		$wpdb->query($sql);
+		// foreach($this->imp->possible_plots as $plot_name) {
+		// 		$builder = self::produce_plot_builder($plot_name, $this->imp);
+		// 		$plot_config = $builder->data_routes;
 		
-		foreach($this->imp->possible_plots as $plot_name) {
-				$builder = self::produce_plot_builder($plot_name, $this->imp);
-				$plot_config = $builder->data_routes;
+		// 		foreach($plot_config['posts'] as $section => $section_data) {
 		
-				foreach($plot_config['posts'] as $section => $section_data) {
+		// 			$post_type = isset($section_data['post_type']) ? $section_data['post_type'] : 'post';
+		// 			$post_pieces_name = $section_data['pieces'];
 		
-					$post_type = isset($section_data['post_type']) ? $section_data['post_type'] : 'post';
-					$post_pieces_name = $section_data['pieces'];
+		// 			foreach($post_pieces_name as $piece_name) {
 		
-					foreach($post_pieces_name as $piece_name) {
+		// 				$piece = new KND_Piece(array('piece_name' => $piece_name, 'piece_section' => $section));
+		// 				$slug = $piece->get_post_slug();
 		
-						$piece = new KND_Piece(array('piece_name' => $piece_name, 'piece_section' => $section));
-						$slug = $piece->get_post_slug();
-		
-						$post = knd_get_post($slug, $post_type);
-						if($post) {
-							wp_delete_post( $post->ID, true );
-						}
-					}
-				}
+		// 				$post = knd_get_post($slug, $post_type);
+		// 				if($post) {
+		// 					wp_delete_post( $post->ID, true );
+		// 				}
+		// 			}
+		// 		}
 				
-				foreach($plot_config['pages'] as $section => $section_data) {
+		// 		foreach($plot_config['pages'] as $section => $section_data) {
 				
-					$post_type = isset($section_data['post_type']) ? $section_data['post_type'] : 'page';
-					if(isset($section_data['piece'])) {
-						$slug = $section_data['post_slug'];
-						$post = knd_get_post($slug, $post_type);
-						if($post) {
-							wp_delete_post( $post->ID, true );
-						}
-					}
-					elseif(isset($section_data['pieces'])) {
-						$post_pieces_name = $section_data['pieces'];
+		// 			$post_type = isset($section_data['post_type']) ? $section_data['post_type'] : 'page';
+		// 			if(isset($section_data['piece'])) {
+		// 				$slug = $section_data['post_slug'];
+		// 				$post = knd_get_post($slug, $post_type);
+		// 				if($post) {
+		// 					wp_delete_post( $post->ID, true );
+		// 				}
+		// 			}
+		// 			elseif(isset($section_data['pieces'])) {
+		// 				$post_pieces_name = $section_data['pieces'];
 						
-						foreach($post_pieces_name as $piece_name) {
+		// 				foreach($post_pieces_name as $piece_name) {
 						
-							$piece = new KND_Piece(array('piece_name' => $piece_name, 'piece_section' => $section));
-							$slug = $piece->get_post_slug();
+		// 					$piece = new KND_Piece(array('piece_name' => $piece_name, 'piece_section' => $section));
+		// 					$slug = $piece->get_post_slug();
 						
-							$post = knd_get_post($slug, $post_type);
-							if($post) {
-								wp_delete_post( $post->ID, true );
-							}
-						}
-					}
-				}
+		// 					$post = knd_get_post($slug, $post_type);
+		// 					if($post) {
+		// 						wp_delete_post( $post->ID, true );
+		// 					}
+		// 				}
+		// 			}
+		// 		}
 				
-				foreach($plot_config['pages_templates'] as $section => $section_data) {
+		// 		foreach($plot_config['pages_templates'] as $section => $section_data) {
 				
-					$post_type = isset($section_data['post_type']) ? $section_data['post_type'] : 'page';
-					$slug = $section_data['post_slug'];
-					$post = knd_get_post($slug, $post_type);
-					if($post) {
-						wp_delete_post( $post->ID, true );
-					}
-				}
+		// 			$post_type = isset($section_data['post_type']) ? $section_data['post_type'] : 'page';
+		// 			$slug = $section_data['post_slug'];
+		// 			$post = knd_get_post($slug, $post_type);
+		// 			if($post) {
+		// 				wp_delete_post( $post->ID, true );
+		// 			}
+		// 		}
 				
-				if(defined('LEYKA_VERSION')) {
-					foreach($plot_config['leyka_campaigns'] as $section => $section_data) {
+		// 		if(defined('LEYKA_VERSION')) {
+		// 			foreach($plot_config['leyka_campaigns'] as $section => $section_data) {
 					
-						$post_type = Leyka_Campaign_Management::$post_type;
-						$post_pieces_name = $section_data;
+		// 				$post_type = Leyka_Campaign_Management::$post_type;
+		// 				$post_pieces_name = $section_data;
 					
-						foreach($post_pieces_name as $piece_name) {
+		// 				foreach($post_pieces_name as $piece_name) {
 					
-							$piece = new KND_Piece(array('piece_name' => $piece_name, 'piece_section' => $section));
-							$slug = $piece->get_post_slug();
+		// 					$piece = new KND_Piece(array('piece_name' => $piece_name, 'piece_section' => $section));
+		// 					$slug = $piece->get_post_slug();
 					
-							$campaign = knd_get_post($slug, $post_type);
-							if($campaign) {
-								$leyka_campaign = new Leyka_Campaign($campaign);
+		// 					$campaign = knd_get_post($slug, $post_type);
+		// 					if($campaign) {
+		// 						$leyka_campaign = new Leyka_Campaign($campaign);
 					
-								$donations = $leyka_campaign->get_donations();
-								foreach($donations as $donation) {
-									$donation->delete(true);
-								}
+		// 						$donations = $leyka_campaign->get_donations();
+		// 						foreach($donations as $donation) {
+		// 							$donation->delete(true);
+		// 						}
 					
-								$leyka_campaign->delete(true);
-							}
-						}
-					}
-				}
-				
-				$this->remove_options($plot_config);
-				$this->remove_menus($plot_config);
-				$this->remove_sidebars($plot_config);
-				
-		}
+		// 						$leyka_campaign->delete(true);
+		// 					}
+		// 				}
+		// 			}
+		// 		}
+
+		// 		$this->remove_options($plot_config);
+		// 		$this->remove_menus($plot_config);
+		// 		$this->remove_sidebars($plot_config);
+
+		// }
 	}
 	
 	public function remove_sidebars($plot_config) {
-		
-		foreach($plot_config['sidebar_widgets'] as $key => $sidebar_widgets) {
-			
-			foreach($this->data_routes['sidebar_widgets'] as $sidebar_name => $widgets_list) {
-				$sidebars = get_option( 'sidebars_widgets' );
-				$sidebars[$sidebar_name] = array();
-				$this->safe_update_option( 'sidebars_widgets', $sidebars );
-			}
-			
-			unregister_sidebar($key);
-		}
-		 
+		//...
 	}
 	
 	public function remove_menus($plot_config) {
-		
-		foreach(array_keys($plot_config['menus']) as $key) {
-			$menu_object = wp_get_nav_menu_object( $key );
-			if($menu_object) {
-				wp_delete_term( $menu_object->term_id, 'nav_menu' );
-			}
-		}
-		
+
+		// foreach(array_keys($plot_config['menus']) as $key) {
+		// 	$menu_object = wp_get_nav_menu_object( $key );
+		// 	if($menu_object) {
+		// 		wp_delete_term( $menu_object->term_id, 'nav_menu' );
+		// 	}
+		// }
+
 	}
 	
 	public function remove_options($plot_config) {
-		
-		foreach(array_keys($plot_config['theme_options']) as $key) {
-			remove_theme_mod( $key );
-		}
-		
-		foreach(array_keys($plot_config['theme_colors']) as $key) {
-			remove_theme_mod( $key );
-		}
-		
-		foreach(array_keys($plot_config['general_options']) as $key) {
-			delete_option( $key );
-		}
-		
+
+		// foreach(array_keys($plot_config['theme_options']) as $key) {
+		// 	remove_theme_mod( $key );
+		// }
+
+		// foreach(array_keys($plot_config['theme_colors']) as $key) {
+		// 	remove_theme_mod( $key );
+		// }
+
+		// foreach(array_keys($plot_config['general_options']) as $key) {
+		// 	delete_option( $key );
+		// }
+
 	}
 	
 	/**
@@ -524,11 +510,10 @@ class KND_Plot_Data_Builder {
 					}
 				}
 
-			}
-			else {
+			} else {
 				$this->build_section_simple_page($page_options);
 			}
-			
+
 		}
 		
 		foreach($this->data_routes['pages_templates'] as $section => $page_options) {
@@ -578,7 +563,7 @@ class KND_Plot_Data_Builder {
 		$piece = new KND_Piece(array('slug' => 'news', 'title' => __('News', 'knd')));
 		$homepage_id = $this->safe_save_post($piece, 'page');
 		$this->safe_update_option( 'page_for_posts', $homepage_id );
-		
+
 		global $wp_rewrite;
 		$wp_rewrite->flush_rules( false );
 	}
@@ -1031,71 +1016,9 @@ class KND_Plot_Data_Builder {
 			$this->safe_update_option('permalink_structure', '/%year%/%monthnum%/%postname%/');
 		}
 	}
-	
-	// public function build_sidebars() {
-		
-	// 	//$this->build_footer_sidebar();
-	// 	//$this->build_configured_sidebar();
-		
-	// 	//KND_StarterSidebars::setup_footer_sidebar();
-		
-	// 	global $wp_rewrite;
-	// 	$wp_rewrite->flush_rules( false );
-	// }
-	
-	// public function build_configured_sidebar() {
-		
-	// 	if(!isset($this->data_routes['sidebar_widgets'])) {
-	// 		return;
-	// 	}
-		
-	// 	foreach($this->data_routes['sidebar_widgets'] as $sidebar_name => $widgets_list) {
-			
-	// 		$sidebars = get_option( 'sidebars_widgets' );
-	// 		$sidebars[$sidebar_name] = array();
-	// 		$this->safe_update_option( 'sidebars_widgets', $sidebars );
-			
-	// 		foreach($widgets_list as $widget) {
-				
-	// 			$widget_options = $widget['options'];
-	// 			$widget_name = $widget['slug'];
-				
-	// 			// add text on home
-	// 			$widgets = get_option('widget_' . $widget_name);
-				
-	// 			$widgets[] = $widget_options;
-	// 			$widgets_keys = array_keys($widgets);
-	// 			$widget_index = end($widgets_keys);
-	// 			$sidebars[$sidebar_name][] = $widget_name . '-' . $widget_index;
-				
-	// 			$this->safe_update_option( 'widget_' . $widget_name, $widgets );
-	// 		}
-			
-	// 		$this->safe_update_option( 'sidebars_widgets', $sidebars );
-	// 	}
-	// }
-	
+
 	public function build_footer_sidebar() {
 		// footer contacts
-		// $knd_footer_contacts = $this->data_routes['general_options']['knd_footer_contacts'];
-		// $knd_address_phone = nl2br(trim($this->data_routes['general_options']['knd_address_phone']));
-		// $knd_footer_contacts = str_replace("{knd_address_phone}", $knd_address_phone, $knd_footer_contacts);
-		
-		// $this->safe_update_option('knd_footer_contacts', $knd_footer_contacts);
-		// $this->safe_update_option('knd_address_phone', $knd_address_phone);
-		// $this->safe_update_option('text_in_header', $knd_address_phone);
-		
-		// // security and pd
-		// $knd_footer_security_pd = $this->data_routes['general_options']['knd_footer_security_pd'];
-		// $knd_url_pd_policy = $this->data_routes['theme_options']['knd_url_pd_policy'];
-		// $knd_url_privacy_policy = $this->data_routes['theme_options']['knd_url_privacy_policy'];
-		// $knd_url_public_oferta = $this->data_routes['theme_options']['knd_url_public_oferta'];
-		
-		// $knd_footer_security_pd = str_replace("{knd_url_pd_policy}", $knd_url_pd_policy, $knd_footer_security_pd);
-		// $knd_footer_security_pd = str_replace("{knd_url_privacy_policy}", $knd_url_privacy_policy, $knd_footer_security_pd);
-		// $knd_footer_security_pd = str_replace("{knd_url_public_oferta}", $knd_url_public_oferta, $knd_footer_security_pd);
-		
-		// $this->safe_update_option('knd_footer_security_pd', $knd_footer_security_pd);
 	}
 	
 	public function build_menus() {
@@ -1144,20 +1067,18 @@ class KND_Plot_Data_Builder {
 	}
 	
 	public function build_title_and_description() {
-		// $options = $this->data_routes['general_options'];
-		// update_option( 'blogname', $options['site_name'] );
-		// update_option( 'blogdescription', $options['site_description'] );
+		//...
 	}
-	
+
 	public function save_hash($name, $val) {
 		update_option('knd_val_hash_' . $name, md5(maybe_serialize($val)));
 	}
-	
+
 	public function validate_hash($name, $val) {
 		$hash = get_option('knd_val_hash_' . $name);
 		return !$hash || $hash == md5(maybe_serialize($val));
 	}
-	
+
 	public function validate_post_hash($post) {
 		$title_hash = get_option('knd_val_hash_' . $post->post_name . '_title');
 		$content_hash = get_option('knd_val_hash_' . $post->post_name . '_content');
@@ -1165,8 +1086,7 @@ class KND_Plot_Data_Builder {
 		
 		return !($title_hash || $content_hash || $excerpt_hash) || ($title_hash == md5($post->post_title) && $content_hash == md5($post->post_content) && $excerpt_hash == md5($post->post_excerpt));
 	}
-	
-	
+
 	public function save_post_hash($post) {
 		if(!$post) {
 			return;
@@ -1175,7 +1095,7 @@ class KND_Plot_Data_Builder {
 		update_option('knd_val_hash_' . $post->post_name . '_content', md5($post->post_content));
 		update_option('knd_val_hash_' . $post->post_name . '_excerpt', md5($post->post_excerpt));
 	}
-	
+
 	public function safe_update_option($key, $value) {
 		if($this->validate_hash($key, get_option($key)) || get_option( 'knd_update_may_remove_my_content', false )) {
 			update_option($key, $value);
@@ -1191,11 +1111,11 @@ class KND_Plot_Data_Builder {
 	}
 	
 	public function safe_delete_post($post) {
-		if($this->validate_post_hash($post) || get_option( 'knd_update_may_remove_my_content', false )) {
-			wp_delete_post( $post->ID, true );
-		}
+		// if($this->validate_post_hash($post) || get_option( 'knd_update_may_remove_my_content', false )) {
+		// 	wp_delete_post( $post->ID, true );
+		// }
 	}
-	
+
 	public function safe_save_post($piece, $post_type) {
 		return $this->save_post($piece, $post_type);
 	}

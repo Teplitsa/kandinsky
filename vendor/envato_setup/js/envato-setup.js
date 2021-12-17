@@ -50,7 +50,6 @@ var EnvatoWizard = (function( $ ) {
 			}
 		});
 
-
 		/**
 		 * Select/Upload image
 		 */
@@ -63,13 +62,6 @@ var EnvatoWizard = (function( $ ) {
 
 	function loadingContent() {
 		$( '.envato-setup-content' ).addClass('rewind');
-		// $( '.envato-setup-content' ).block({
-		// 	message: null,
-		// 	overlayCSS: {
-		// 		background: '#fff',
-		// 		opacity: 0.6
-		// 	}
-		// });
 	}
 
 	function PluginManager() {
@@ -491,7 +483,7 @@ var KndDownloadPlotStepManager = function() {
 			}
 
 		});
-		
+
 	}
-	
+
 }

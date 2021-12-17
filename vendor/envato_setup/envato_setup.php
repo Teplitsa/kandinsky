@@ -402,24 +402,23 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 			echo '<div class="envato-setup-content">';
 			try {
 
-				if( !defined('PHP_VERSION') || version_compare(PHP_VERSION, KND_MIN_PHP_VERSION, '<') ) {
+				if ( !defined('PHP_VERSION') || version_compare(PHP_VERSION, KND_MIN_PHP_VERSION, '<') ) {
 					echo '<div class="wizard-error">';
 					echo '<span class="error-begin">'.__('Error:', 'knd').'</span><span class="error-text">'.KND_PHP_VERSION_ERROR_MESSAGE.'.</span><div class="wizard-error-support-text"></div>';
 					echo '<p class="envato-setup-actions error step">
 						<a href="'.admin_url().'" class="button button-large button-error">'.__('Back to the Dashboard', 'knd').'</a>
 						</p>';
 					echo '</div>';
-				}
-				else {
-					if( !empty($_REQUEST['save_step']) && isset($this->steps[ $this->step ]['handler'])) {
+				} else {
+					if ( !empty($_REQUEST['save_step']) && isset($this->steps[ $this->step ]['handler'] ) ) {
 						$show_content = call_user_func($this->steps[ $this->step ]['handler']);
 					}
-					if($show_content) {
+					if ( $show_content) {
 						$this->display_wizard_current_step_content();
 					}
 				}
 
-			} catch(Exception $ex) {
+			} catch (Exception $ex) {
 				knd_display_wizard_error($ex);
 			}
 			echo '</div>';
@@ -456,9 +455,7 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 			<head>
 				<meta charset="UTF-8">
 				<meta name="viewport" content="width=device-width, initial-scale=1">
-				<?php // To avoid theme check issues...
-				echo '<t';
-				echo 'itle>'.__('Kandinsky - setup wizard', 'knd').'</ti'.'tle>'; ?>
+				<title><?php esc_html_e( 'Kandinsky - setup wizard', 'knd' ); ?></title>
 				<?php wp_print_scripts('envato-setup'); ?>
 				<?php do_action('admin_print_styles'); ?>
 				<?php do_action('admin_print_scripts'); ?>
@@ -499,14 +496,14 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 		public function display_wizard_steps() {
 
 			$ouput_steps = $this->steps;
-			//array_shift($ouput_steps); ?>
+			?>
 
 			<ol class="envato-setup-steps">
 				<?php foreach($ouput_steps as $step_key => $step) : ?>
 					<li class="<?php $show_link = false;
 					if($step_key === $this->step) {
 						echo 'active';
-					} elseif(array_search($this->step, array_keys($this->steps)) > array_search($step_key, array_keys($this->steps))) {
+					} elseif (array_search($this->step, array_keys($this->steps)) > array_search($step_key, array_keys($this->steps))) {
 						echo 'done';
 						$show_link = true;
 					}
@@ -523,7 +520,6 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 							?>
 							<span class="dashicons dashicons-<?php echo esc_html( $step['icon'] ); ?>"></span>
 							<span class="step-name"><?php echo esc_html( $step['name'] ); ?></span>
-							
 							<?php
 						}
 						?></li>
@@ -688,7 +684,6 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 
 			$pdb = KND_Plot_Data_Builder::produce_builder($imp);
 			$pdb->build_menus();
-			//$pdb->build_sidebars();
 
 			return true;
 
@@ -707,7 +702,6 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 			$pdb->build_theme_options();
 
 			$pdb->build_menus();
-			//$pdb->build_sidebars();
 
 			return true;
 
@@ -898,7 +892,7 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 		 * Save logo & design options
 		 */
 		public function ajax_download_plot_step() {
-			
+
 			$scenario_download_status_explain = array(
 				0 => esc_html__('Downloading template archive...', 'knd'),
 				1 => esc_html__('Extracting template content...', 'knd'),
@@ -907,11 +901,11 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 				4 => esc_html__('Building template options...', 'knd'),
 				5 => esc_html__('Building template colors...', 'knd'),
 			);
-			
+
 			check_admin_referer('knd-setup');
-			
+
 			if(empty($_POST['new_scenario_id'])) {
-				
+
 				wp_send_json(array(
 					'status' => 'error',
 					'no_scenario_id' => true,
@@ -962,7 +956,7 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 								$pdb->build_theme_colors();
 							}
 						}
-						
+
 						wp_send_json(array(
 							'status' => 'ok',
 							'knd_download_step' => $download_step,
@@ -1002,22 +996,6 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 
 					try {
 
-						//$imp = new KND_Import_Remote_Content($plot_name);
-						//$imp->import_content();
-						
-						//$pdb = KND_Plot_Data_Builder::produce_builder($imp);
-						//if( !$pdb) { // Show some user-friendly error
-						//    throw new Exception(sprintf(__('Plot data builder was not produced for plot: %s', 'knd'), $plot_name));
-						//}
-						//$pdb->build_theme_files();
-						//$pdb->build_option_files();
-						//$pdb->build_theme_colors();
-						//
-						//update_option('knd_setup_install_leyka', false);
-						//
-						//wp_redirect(esc_url_raw($this->get_next_step_link()));
-						//exit;
-						
 						wp_redirect(esc_url_raw($this->get_next_step_link()));
 						exit();
 
@@ -1318,7 +1296,6 @@ if( !function_exists('envato_theme_setup_wizard')) {
 	}
 }
 add_action('after_setup_theme', 'envato_theme_setup_wizard');
-//add_action('init', 'envato_theme_setup_wizard', 1); // No admin_init here!
 
 // To remove the notice from Disable Comments plugin:
 add_action('wp_loaded', function() {
