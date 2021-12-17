@@ -1,7 +1,5 @@
 <?php if( !defined('WPINC') ) die;
 
-//error_reporting(E_ALL);
-
 function knd_get_wizard_plot_names($plot_name = '') {
 
 	$plot_names = array(
@@ -56,7 +54,7 @@ class KND_Import_Remote_Content {
 			return null;
 		}
 	}
-	
+
 	/**
 	 * Import remote content and extract it into $this->plot_data array, 
 	 * using $this->content_importer to do all source dependent things.
@@ -69,7 +67,7 @@ class KND_Import_Remote_Content {
 		
 		return $this->parse_plot_data();
 	}
-	
+
 	/**
 	 * Store parsed content in plot_data
 	 *
@@ -94,7 +92,7 @@ class KND_Import_Remote_Content {
 	function extract_content() {
 		$this->content_importer->extract();
 	}
-	
+
 	/**
 	 * Parse extracted content using specified importer.
 	 *
@@ -102,7 +100,7 @@ class KND_Import_Remote_Content {
 	function parse_content($plot_name) {
 		return $this->content_importer->parse($plot_name);
 	}
-	
+
 	function import_downloaded_content() {
 
 		$this->plot_data = $this->parse_exist_content();
@@ -147,7 +145,7 @@ class KND_Import_Remote_Content {
 		} catch (Exception $ex) {
 			$val = NULL;
 		}
-	
+
 		return $val;
 	}
 	
@@ -159,7 +157,7 @@ class KND_Import_Remote_Content {
 	 * @return KND_Piece|NULL
 	*/
 	function get_piece($piece_name, $section = '') {
-		
+
 		try {
 			if($section) {
 				$val = isset($this->plot_data[$this->plot_name][$section][$piece_name]['piece']) ? $this->plot_data[$this->plot_name][$section][$piece_name]['piece'] : NULL;
@@ -203,7 +201,7 @@ class KND_Import_Remote_Content {
 	 * @return int|NULL
 	*/
 	function get_thumb_attachment_id($piece) {
-		
+
 		$file_data = NULL;
 
 		if(isset($this->plot_data[$this->plot_name][$piece->piece_section][$piece->thumb])) {
@@ -216,13 +214,13 @@ class KND_Import_Remote_Content {
 	}
 
 	function get_image_attachment_id($image_name) {
-	
+
 		$file_data = NULL;
-	
+
 		if(isset($this->plot_data[$this->plot_name]['img'][$image_name])) {
 			$file_data = $this->plot_data[$this->plot_name]['img'][$image_name];
 		}
-	
+
 		return isset($file_data['attachment_id']) ? $file_data['attachment_id'] : NULL;
 
 	}
@@ -261,9 +259,9 @@ class KND_Import_Remote_Content {
 				$new_text = str_replace($match, $image_src, $new_text);
 			}
 		}
-		
+
 		$new_text = $this->parsedown->text($new_text);
-		
+
 		return $new_text;
 	}
 
@@ -340,13 +338,13 @@ class KND_Import_Git_Content {
 			$this->distr_attachment_id = $exist_attachment->ID;
 			$this->zip_fpath = get_post_meta( $this->distr_attachment_id, 'kandinsky_zip_fpath', true );
 			$this->import_content_files_dir = get_post_meta($this->distr_attachment_id, 'kandinsky_import_content_files_dir', true);
-			
+
 		}
 
 		return $this->unzip_git_zip();
 
 	}
-	
+
 	/**
 	 * Extract files from archive.
 	 *
@@ -354,7 +352,7 @@ class KND_Import_Git_Content {
 	public function parse($plot_name) {
 		return $this->parse_git_files($plot_name);
 	}
-	
+
 	public function parse_exist_content($plot_name) {
 
 		$exist_attachment = TST_Import::get_instance()->get_attachment_by_old_url( $this->content_archive_url );
@@ -363,7 +361,7 @@ class KND_Import_Git_Content {
 			$this->distr_attachment_id = $exist_attachment->ID;
 			$this->zip_fpath = get_post_meta( $this->distr_attachment_id, 'kandinsky_zip_fpath', true );
 			$this->import_content_files_dir = get_post_meta($this->distr_attachment_id, 'kandinsky_import_content_files_dir', true);
-			
+
 		}
 
 		return $this->parse_git_files($plot_name);
@@ -385,7 +383,7 @@ class KND_Import_Git_Content {
 		update_post_meta( $this->distr_attachment_id, 'kandinsky_import_content_files_dir', wp_slash($this->import_content_files_dir) );
 
 	}
-	
+
 	/**
 	 * Unzip archive into uploads dir.
 	 *
@@ -461,7 +459,7 @@ class KND_Import_Git_Content {
 	 * @return array
 	 */
 	private function scan_content_dir($plot_dir, $section = '') {
-		
+
 		$plot_dir_listing = scandir($plot_dir);
 		$inner_content_files = array();
 
@@ -498,10 +496,10 @@ class KND_Import_Git_Content {
 					
 					$inner_content_files[$piece_name] = $file_data;
 				}
-				
+
 			}
 		}
-		
+
 		return $inner_content_files;
 	}
 
@@ -522,7 +520,7 @@ class KND_Import_Git_Content {
  *
  */
 class KND_Git_Piece_Parser {
-	
+
 	function __construct() {
 		$this->parsedown = new Parsedown();
 	}
@@ -544,9 +542,9 @@ class KND_Git_Piece_Parser {
 			$header = trim($content_parts[0]);
 			$parsed_data = $this->parse_post_header($header);
 		}
-		
+
 		$parsed_data['content'] = $text;
-		
+
 		return $parsed_data;
 	}
 
@@ -580,7 +578,7 @@ class KND_Git_Piece_Parser {
 			$parsed_data[$param_name] = $param_val;
 
 		}
-		
+
 		return $parsed_data;
 	}
 }
@@ -650,25 +648,25 @@ class KND_Piece {
 	 * @return string
 	 */
 	function get_post_slug() {
-		
+
 		$slug = "";
-		
+
 		if($this->slug) {
-			
+
 			$slug = $this->slug;
-			
+
 		}
 		else {
-			
+
 			if($this->piece_section) {
 				$slug = $this->piece_section . "-";
 			}
-			
+
 			$slug .= $this->piece_name;
-			
+
 		}
-		
+
 		return $slug;
 	}
-	
+
 }

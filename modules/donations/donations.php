@@ -169,7 +169,7 @@ $is_finished = get_post_meta($campaign->ID, 'is_finished', true);
 remove_action( 'wp_head', 'leyka_inline_scripts');
 
 function knd_leyka_inline_scripts(){
-	
+
 	$main_color = knd_get_main_color();
 	$dark_color = knd_color_luminance($main_color, -0.1);
 	$light_color = knd_color_luminance($main_color, 0.2);

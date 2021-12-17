@@ -196,10 +196,6 @@ get_template_part(  '/core/cards' ); // layout of cards, list items etc.
 
 get_template_part( '/core/shortcodes' ); // shortcodes core.
 
-
-
-get_template_part( '/core/widgets' ); // setup widgets.
-
 // import data utils.
 get_template_part( '/core/class-mediamnt' ); // tools for work with files.
 
@@ -230,8 +226,6 @@ if ( is_admin() || current_user_can( 'manage_options' ) ) {
 	* Theme Update checker
 	*/
 	require get_template_directory() . '/core/theme-update/theme-update-checker.php';
-
-	get_template_part( '/core/admin-update-theme' );
 	get_template_part( '/core/admin' );
 	get_template_part( '/vendor/class-tgm-plugin-activation' );
 }
