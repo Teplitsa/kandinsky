@@ -97,7 +97,7 @@
 			},
 			queryOrder: {
 				type: 'string',
-				default: 'post_date/desc'
+				default: 'date/desc'
 			},
 			queryOffset: {
 				type: 'string',

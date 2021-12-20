@@ -80,31 +80,6 @@ function knd_enqueue_block_editor_assets() {
 
 	$kndBlock['postTypes'] = get_post_types( array( 'public' => true ) );
 
-	$kndBlock['peopleCats'] = array(
-		'0' => esc_html__( 'All', 'knd' ),
-	);
-
-	$people_cats = get_terms(
-		array(
-			'taxonomy' => 'person_cat',
-			'hide_empty' => false,
-		)
-	);
-
-	if ( $people_cats ) {
-		foreach ( $people_cats as $people_cat ) {
-			$term_id = $people_cat->term_id;
-			$kndBlock['peopleCats'][ $term_id ] = $people_cat->name;
-		}
-	}
-
-	// Get person count
-	$kndBlock['peopleCount'] = 0;
-	$count_people = wp_count_posts('person');
-	if ( $count_people ) {
-		$kndBlock['peopleCount'] = $count_people->publish;
-	}
-
 	// Get partner count
 	$kndBlock['partnerCount'] = 0;
 	$count_partners = wp_count_posts('org');

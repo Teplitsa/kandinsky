@@ -124,6 +124,18 @@
 				type: 'boolean',
 				default: false,
 			},
+			queryOrder: {
+				type: 'string',
+				default: 'date/desc'
+			},
+			queryOffset: {
+				type: 'string',
+				default: '',
+			},
+			queryCategory: {
+				type: 'string',
+				default: 0,
+			}
 		},
 
 		example: {
@@ -137,6 +149,24 @@
 		edit: function( props ) {
 
 			doAction( 'knd.block.edit', props );
+
+			let categoryOptions = function(){
+				// Get Terms
+				var getTerms = useSelect( ( select, props ) => {
+					return select('core').getEntityRecords('taxonomy', 'org_cat' );
+				}, [] );
+
+				var categories = [
+					{ value: 0, label: __( 'All Categories', 'knd' ) },
+				];
+
+				if ( getTerms ) {
+					getTerms.map((term) => {
+						categories.push({ value: term.id, label: term.name } );
+					} );
+				}
+				return categories;
+			}
 
 			return (
 				el( Fragment, {},
@@ -260,6 +290,55 @@
 										props.setAttributes( { headingColor: val } );
 									}
 								}
+							),
+
+						),
+
+						el( PanelBody,
+							{
+								title: __( 'Query', 'knd' ) ,
+								initialOpen: false
+							},
+
+							el( SelectControl,
+								{
+									label: __( 'Order by' ),
+									options : [
+										{ value: 'date/desc', label: __( 'Newest to oldest' ) },
+										{ value: 'date/asc', label: __( 'Oldest to newest' ) },
+										{ value: 'title/asc', label: __( 'A → Z' ) },
+										{ value: 'title/desc', label: __( 'Z → A' ) },
+									],
+									value: props.attributes.queryOrder,
+									onChange: ( val ) => {
+										props.setAttributes( { queryOrder: val } );
+									},
+								},
+							),
+
+							el( TextControl,
+								{
+									label: __( 'Offset', 'knd' ),
+									type: 'number',
+									min: 0,
+									max: 100,
+									value: props.attributes.queryOffset,
+									help: __( 'Number of partners to skip', 'knd' ),
+									onChange: ( val ) => {
+										props.setAttributes( { queryOffset: val } );
+									},
+								}
+							),
+
+							el( SelectControl,
+								{
+									label: __( 'Select category', 'knd' ),
+									options : categoryOptions(),
+									value: props.attributes.queryCategory,
+									onChange: ( val ) => {
+										props.setAttributes( { queryCategory: val } );
+									},
+								},
 							),
 
 						),

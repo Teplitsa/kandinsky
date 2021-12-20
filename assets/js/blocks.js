@@ -3134,7 +3134,7 @@
 			},
 			queryOrder: {
 				type: 'string',
-				default: 'post_date/desc'
+				default: 'date/desc'
 			},
 			queryOffset: {
 				type: 'string',
@@ -3621,6 +3621,18 @@
 				type: 'boolean',
 				default: false,
 			},
+			queryOrder: {
+				type: 'string',
+				default: 'date/desc'
+			},
+			queryOffset: {
+				type: 'string',
+				default: '',
+			},
+			queryCategory: {
+				type: 'string',
+				default: 0,
+			}
 		},
 
 		example: {
@@ -3634,6 +3646,24 @@
 		edit: function( props ) {
 
 			doAction( 'knd.block.edit', props );
+
+			let categoryOptions = function(){
+				// Get Terms
+				var getTerms = useSelect( ( select, props ) => {
+					return select('core').getEntityRecords('taxonomy', 'org_cat' );
+				}, [] );
+
+				var categories = [
+					{ value: 0, label: __( 'All Categories', 'knd' ) },
+				];
+
+				if ( getTerms ) {
+					getTerms.map((term) => {
+						categories.push({ value: term.id, label: term.name } );
+					} );
+				}
+				return categories;
+			}
 
 			return (
 				el( Fragment, {},
@@ -3757,6 +3787,55 @@
 										props.setAttributes( { headingColor: val } );
 									}
 								}
+							),
+
+						),
+
+						el( PanelBody,
+							{
+								title: __( 'Query', 'knd' ) ,
+								initialOpen: false
+							},
+
+							el( SelectControl,
+								{
+									label: __( 'Order by' ),
+									options : [
+										{ value: 'date/desc', label: __( 'Newest to oldest' ) },
+										{ value: 'date/asc', label: __( 'Oldest to newest' ) },
+										{ value: 'title/asc', label: __( 'A → Z' ) },
+										{ value: 'title/desc', label: __( 'Z → A' ) },
+									],
+									value: props.attributes.queryOrder,
+									onChange: ( val ) => {
+										props.setAttributes( { queryOrder: val } );
+									},
+								},
+							),
+
+							el( TextControl,
+								{
+									label: __( 'Offset', 'knd' ),
+									type: 'number',
+									min: 0,
+									max: 100,
+									value: props.attributes.queryOffset,
+									help: __( 'Number of partners to skip', 'knd' ),
+									onChange: ( val ) => {
+										props.setAttributes( { queryOffset: val } );
+									},
+								}
+							),
+
+							el( SelectControl,
+								{
+									label: __( 'Select category', 'knd' ),
+									options : categoryOptions(),
+									value: props.attributes.queryCategory,
+									onChange: ( val ) => {
+										props.setAttributes( { queryCategory: val } );
+									},
+								},
 							),
 
 						),
@@ -3912,9 +3991,6 @@
 			metaColor: {
 				type: 'string',
 			},
-			category: {
-				type: 'string',
-			},
 			layout: {
 				type: 'string',
 				default: 'grid',
@@ -3931,6 +4007,18 @@
 				type: 'boolean',
 				default: false,
 			},
+			queryOrder: {
+				type: 'string',
+				default: 'date/desc'
+			},
+			queryOffset: {
+				type: 'string',
+				default: '',
+			},
+			category: {
+				type: 'string',
+				default: 0,
+			}
 		},
 
 		example: {
@@ -3956,12 +4044,23 @@
 
 		edit: function( props ) {
 
-			var peopleCats = kndBlock.peopleCats;
-			var peopleCatsOptions = [];
+			let categoryOptions = function(){
+				// Get Terms
+				var getTerms = useSelect( ( select, props ) => {
+					return select('core').getEntityRecords('taxonomy', 'person_cat' );
+				}, [] );
 
-			Object.keys(peopleCats).forEach(function (key) {
-				peopleCatsOptions.push({value: key, label: peopleCats[key]})
-			});
+				var categories = [
+					{ value: 0, label: __( 'All Categories', 'knd' ) },
+				];
+
+				if ( getTerms ) {
+					getTerms.map((term) => {
+						categories.push({ value: term.id, label: term.name } );
+					} );
+				}
+				return categories;
+			}
 
 			doAction( 'knd.block.edit', props );
 
@@ -4032,7 +4131,7 @@
 									value: props.attributes.postsToShow,
 									initialPosition: 4,
 									min: 0,
-									max: kndBlock.peopleCount,
+									max: 50,
 									onChange: function( val ) {
 										props.setAttributes({ postsToShow: val })
 									}
@@ -4063,17 +4162,6 @@
 
 							autoPlayToggleControl( props ),
 
-							el ( SelectControl,
-								{
-									//multiple: true,
-									label: __( 'Category', 'knd' ),
-									onChange: ( val ) => {
-										props.setAttributes( { category: val } );
-									},
-									value: props.attributes.category,
-									options: peopleCatsOptions,
-								}
-							),
 						),
 
 						el( PanelBody,
@@ -4123,6 +4211,56 @@
 							),
 
 						),
+
+						el( PanelBody,
+							{
+								title: __( 'Query', 'knd' ) ,
+								initialOpen: false
+							},
+
+							el( SelectControl,
+								{
+									label: __( 'Order by' ),
+									options : [
+										{ value: 'date/desc', label: __( 'Newest to oldest' ) },
+										{ value: 'date/asc', label: __( 'Oldest to newest' ) },
+										{ value: 'title/asc', label: __( 'A → Z' ) },
+										{ value: 'title/desc', label: __( 'Z → A' ) },
+									],
+									value: props.attributes.queryOrder,
+									onChange: ( val ) => {
+										props.setAttributes( { queryOrder: val } );
+									},
+								},
+							),
+
+							el( TextControl,
+								{
+									label: __( 'Offset', 'knd' ),
+									type: 'number',
+									min: 0,
+									max: 100,
+									value: props.attributes.queryOffset,
+									help: __( 'Number of peoples to skip', 'knd' ),
+									onChange: ( val ) => {
+										props.setAttributes( { queryOffset: val } );
+									},
+								}
+							),
+
+							el( SelectControl,
+								{
+									label: __( 'Select category', 'knd' ),
+									options : categoryOptions(),
+									value: props.attributes.category,
+									onChange: ( val ) => {
+										props.setAttributes( { category: val } );
+									},
+								},
+							),
+
+						),
+
 					),
 
 					el( Disabled, null,
@@ -4305,7 +4443,7 @@
 			},
 			queryOrder: {
 				type: 'string',
-				default: 'post_date/desc'
+				default: 'date/desc'
 			},
 			queryOffset: {
 				type: 'string',

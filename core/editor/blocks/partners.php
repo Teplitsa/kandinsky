@@ -61,6 +61,18 @@ register_block_type( 'knd/partners', array(
 			'type'    => 'string',
 			'default' => '',
 		),
+		'queryOrder' => array(
+			'type'    => 'string',
+			'default' => 'date/desc',
+		),
+		'queryOffset' => array(
+			'type' => 'string',
+			'default' => '',
+		),
+		'queryCategory' => array(
+			'type' => 'string',
+			'default' => 0,
+		),
 	),
 ) );
 
@@ -165,6 +177,36 @@ function knd_block_partners_render_callback( $attr ) {
 		'posts_per_page' => $posts_to_show,
 		'meta_key'       => '_thumbnail_id',
 	);
+
+	// Orderby
+	if ( isset( $attr['queryOrder'] ) && $attr['queryOrder'] ) {
+		$queryOrder = $attr['queryOrder'];
+		$order = explode( '/', $queryOrder );
+		if ( $order ) {
+			$args['orderby'] = array(
+				$order[0] => $order[1],
+			);
+			if ( 'date' === $order[0] ) {
+				$args['orderby']['ID'] = $order[1];
+			}
+		}
+	}
+
+	// Offset
+	if ( isset( $attr['queryOffset'] ) && $attr['queryOffset'] ) {
+		$args['offset'] = $attr['queryOffset'];
+	}
+
+	// Category
+	if ( isset( $attr['queryCategory'] ) && $attr['queryCategory'] ) {
+		$args['tax_query'] = array(
+			array(
+				'taxonomy' => 'org_cat',
+				'field'    => 'id',
+				'terms'    => $attr['queryCategory'],
+			),
+		);
+	}
 
 	$query = new WP_Query( $args );
 

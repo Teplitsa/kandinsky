@@ -67,7 +67,7 @@ register_block_type( 'knd/news', array(
 		),
 		'queryOrder' => array(
 			'type'    => 'string',
-			'default' => 'post_date/desc',
+			'default' => 'date/desc',
 		),
 		'queryOffset' => array(
 			'type' => 'string',
