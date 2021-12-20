@@ -65,6 +65,18 @@ register_block_type( 'knd/news', array(
 			'type'    => 'string',
 			'default' => '',
 		),
+		'queryOrder' => array(
+			'type'    => 'string',
+			'default' => 'post_date/desc',
+		),
+		'queryOffset' => array(
+			'type' => 'string',
+			'default' => '',
+		),
+		'queryCategory' => array(
+			'type' => 'string',
+			'default' => 0,
+		),
 	),
 ) );
 
@@ -194,6 +206,36 @@ function knd_block_news_render_callback( $attr ) {
 		'posts_per_page'      => $posts_to_show,
 		'ignore_sticky_posts' => true,
 	);
+
+	// Orderby
+	if ( isset( $attr['queryOrder'] ) && $attr['queryOrder'] ) {
+		$queryOrder = $attr['queryOrder'];
+		$order = explode( '/', $queryOrder );
+		if ( $order ) {
+			$args['orderby'] = array(
+				$order[0] => $order[1],
+			);
+			if ( 'date' === $order[0] ) {
+				$args['orderby']['ID'] = $order[1];
+			}
+		}
+	}
+
+	// Offset
+	if ( isset( $attr['queryOffset'] ) && $attr['queryOffset'] ) {
+		$args['offset'] = $attr['queryOffset'];
+	}
+
+	// Category
+	if ( isset( $attr['queryCategory'] ) && $attr['queryCategory'] ) {
+		$args['tax_query'] = array(
+			array(
+				'taxonomy' => 'category',
+				'field'    => 'id',
+				'terms'    => $attr['queryCategory'],
+			),
+		);
+	}
 
 	$query = new WP_Query( $args );
 
