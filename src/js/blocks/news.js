@@ -285,6 +285,7 @@
 							{
 								title: __( 'Heading Links', 'knd' ),
 								className: 'knd-components-panel__body',
+								initialOpen: false
 							},
 
 							headingFields
