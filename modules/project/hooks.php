@@ -62,8 +62,6 @@ function knd_register_project_tag_taxonomy() {
 		'search_items'               => __( 'Search Tags' ),
 		'popular_items'              => __( 'Popular Tags' ),
 		'all_items'                  => __( 'All Tags' ),
-		'parent_item'                => null,
-		'parent_item_colon'          => null,
 		'edit_item'                  => __( 'Edit Tag' ),
 		'update_item'                => __( 'Update Tag' ),
 		'add_new_item'               => __( 'Add New Tag' ),
@@ -81,6 +79,7 @@ function knd_register_project_tag_taxonomy() {
 		'update_count_callback' => '_update_post_term_count',
 		'query_var'             => true,
 		'show_in_rest'          => true,
+		'show_admin_column'     => true,
 		'rewrite'               => array(
 			'slug' => 'project-tag',
 		),

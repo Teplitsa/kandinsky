@@ -69,6 +69,10 @@ register_block_type( 'knd/projects', array(
 			'type' => 'string',
 			'default' => '',
 		),
+		'queryTag' => array(
+			'type' => 'string',
+			'default' => 0,
+		),
 	),
 ) );
 
@@ -210,6 +214,17 @@ function knd_block_projects_render_callback( $attr ) {
 	// Offset
 	if ( isset( $attr['queryOffset'] ) && $attr['queryOffset'] ) {
 		$args['offset'] = $attr['queryOffset'];
+	}
+
+	// Category
+	if ( isset( $attr['queryTag'] ) && $attr['queryTag'] ) {
+		$args['tax_query'] = array(
+			array(
+				'taxonomy' => 'project_tag',
+				'field'    => 'id',
+				'terms'    => $attr['queryTag'],
+			),
+		);
 	}
 
 	$query = new WP_Query( $args );

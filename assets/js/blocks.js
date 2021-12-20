@@ -4448,6 +4448,10 @@
 			queryOffset: {
 				type: 'string',
 				default: '',
+			},
+			queryTag: {
+				type: 'string',
+				default: 0,
 			}
 		},
 
@@ -4460,6 +4464,24 @@
 		},
 
 		edit: function( props ) {
+
+			let tagOptions = function(){
+				// Get Terms
+				var getTerms = useSelect( ( select, props ) => {
+					return select('core').getEntityRecords('taxonomy', 'project_tag' );
+				}, [] );
+
+				var tags = [
+					{ value: 0, label: __( 'All Tags', 'knd' ) },
+				];
+
+				if ( getTerms ) {
+					getTerms.map((term) => {
+						tags.push({ value: term.id, label: term.name } );
+					} );
+				}
+				return tags;
+			}
 
 			var t = function() {
 				var t = [].concat(r( props.attributes.headingLinks));
@@ -4727,6 +4749,17 @@
 										props.setAttributes( { queryOffset: val } );
 									},
 								}
+							),
+
+							el( SelectControl,
+								{
+									label: __( 'Select tag', 'knd' ),
+									options : tagOptions(),
+									value: props.attributes.queryTag,
+									onChange: ( val ) => {
+										props.setAttributes( { queryTag: val } );
+									},
+								},
 							),
 
 						),

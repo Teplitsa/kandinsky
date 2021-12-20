@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-20 11:58+0200\n"
-"PO-Revision-Date: 2021-12-20 11:58+0200\n"
+"POT-Creation-Date: 2021-12-20 12:15+0200\n"
+"PO-Revision-Date: 2021-12-20 12:20+0200\n"
 "Last-Translator: ahaenor <ahaenor@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -114,13 +114,13 @@ msgstr "лейка"
 #: assets/js/blocks.js:109 assets/js/blocks.js:526 assets/js/blocks.js:1032
 #: assets/js/blocks.js:1387 assets/js/blocks.js:1885 assets/js/blocks.js:2221
 #: assets/js/blocks.js:2786 assets/js/blocks.js:3312 assets/js/blocks.js:3695
-#: assets/js/blocks.js:4094 assets/js/blocks.js:4599 assets/js/es5.js:192
+#: assets/js/blocks.js:4094 assets/js/blocks.js:4621 assets/js/es5.js:192
 #: src/js/blocks/campaign.js:108 src/js/blocks/cards.js:376
 #: src/js/blocks/cover.js:158 src/js/blocks/cta.js:145
 #: src/js/blocks/events.js:255 src/js/blocks/hero.js:182
 #: src/js/blocks/info.js:164 src/js/blocks/news.js:275
 #: src/js/blocks/partners.js:198 src/js/blocks/people.js:222
-#: src/js/blocks/projects.js:301 vendor/envato_setup/envato_setup.php:327
+#: src/js/blocks/projects.js:323 vendor/envato_setup/envato_setup.php:327
 #: vendor/envato_setup/envato_setup.php:736
 msgid "Settings"
 msgstr "Параметры"
@@ -167,13 +167,13 @@ msgstr "Пожертвовать"
 #: assets/js/blocks.js:531 assets/js/blocks.js:1035 assets/js/blocks.js:1888
 #: assets/js/blocks.js:2812 assets/js/blocks.js:2851 assets/js/blocks.js:2890
 #: assets/js/blocks.js:3316 assets/js/blocks.js:3698 assets/js/blocks.js:4098
-#: assets/js/blocks.js:4602 modules/donations/widgets.php:128
+#: assets/js/blocks.js:4624 modules/donations/widgets.php:128
 #: src/experimental/donations.js:95 src/js/blocks/cards.js:381
 #: src/js/blocks/cover.js:161 src/js/blocks/events.js:258
 #: src/js/blocks/info.js:190 src/js/blocks/info.js:229
 #: src/js/blocks/info.js:268 src/js/blocks/news.js:279
 #: src/js/blocks/partners.js:201 src/js/blocks/people.js:226
-#: src/js/blocks/projects.js:304
+#: src/js/blocks/projects.js:326
 msgid "Heading"
 msgstr "Заголовок"
 
@@ -182,9 +182,9 @@ msgid "Cards to show"
 msgstr "Сколько карточек показывать"
 
 #: assets/js/blocks.js:554 assets/js/blocks.js:3338 assets/js/blocks.js:3741
-#: assets/js/blocks.js:4142 assets/js/blocks.js:4624 src/js/blocks/cards.js:404
+#: assets/js/blocks.js:4142 assets/js/blocks.js:4646 src/js/blocks/cards.js:404
 #: src/js/blocks/news.js:301 src/js/blocks/partners.js:244
-#: src/js/blocks/people.js:270 src/js/blocks/projects.js:326
+#: src/js/blocks/people.js:270 src/js/blocks/projects.js:348
 msgid "Columns"
 msgstr "Колонки"
 
@@ -218,34 +218,34 @@ msgstr "Показывать кнопку"
 
 #: assets/js/blocks.js:666 assets/js/blocks.js:1158 assets/js/blocks.js:1485
 #: assets/js/blocks.js:1923 assets/js/blocks.js:2924 assets/js/blocks.js:3364
-#: assets/js/blocks.js:3768 assets/js/blocks.js:4169 assets/js/blocks.js:4650
+#: assets/js/blocks.js:3768 assets/js/blocks.js:4169 assets/js/blocks.js:4672
 #: src/js/blocks/cards.js:516 src/js/blocks/cover.js:284
 #: src/js/blocks/cta.js:243 src/js/blocks/events.js:293
 #: src/js/blocks/info.js:302 src/js/blocks/news.js:327
 #: src/js/blocks/partners.js:271 src/js/blocks/people.js:297
-#: src/js/blocks/projects.js:352
+#: src/js/blocks/projects.js:374
 msgid "Colors"
 msgstr "Цвета"
 
 #: assets/js/blocks.js:672 assets/js/blocks.js:1164 assets/js/blocks.js:1491
 #: assets/js/blocks.js:1929 assets/js/blocks.js:2513 assets/js/blocks.js:2930
 #: assets/js/blocks.js:3370 assets/js/blocks.js:3774 assets/js/blocks.js:4175
-#: assets/js/blocks.js:4656 assets/js/blocks.js:4880 assets/js/es5.js:503
+#: assets/js/blocks.js:4678 assets/js/blocks.js:4913 assets/js/es5.js:503
 #: src/experimental/donations.js:120 src/js/blocks/cards.js:522
 #: src/js/blocks/cover.js:290 src/js/blocks/cta.js:249
 #: src/js/blocks/events.js:299 src/js/blocks/hero.js:474
 #: src/js/blocks/info.js:308 src/js/blocks/news.js:333
 #: src/js/blocks/partners.js:277 src/js/blocks/people.js:303
-#: src/js/blocks/projects.js:358 src/js/blocks/recommend.js:117
+#: src/js/blocks/projects.js:380 src/js/blocks/recommend.js:117
 msgid "Background Color"
 msgstr "Цвет фона"
 
 #: assets/js/blocks.js:682 assets/js/blocks.js:1939 assets/js/blocks.js:2940
 #: assets/js/blocks.js:3380 assets/js/blocks.js:3784 assets/js/blocks.js:4185
-#: assets/js/blocks.js:4666 src/js/blocks/cards.js:532
+#: assets/js/blocks.js:4688 src/js/blocks/cards.js:532
 #: src/js/blocks/events.js:309 src/js/blocks/info.js:318
 #: src/js/blocks/news.js:343 src/js/blocks/partners.js:287
-#: src/js/blocks/people.js:313 src/js/blocks/projects.js:368
+#: src/js/blocks/people.js:313 src/js/blocks/projects.js:390
 msgid "Heading Color"
 msgstr "Цвет заголовка"
 
@@ -286,18 +286,18 @@ msgid "Typography"
 msgstr "Типографика"
 
 #: assets/js/blocks.js:783 assets/js/blocks.js:1961 assets/js/blocks.js:3422
-#: assets/js/blocks.js:3796 assets/js/blocks.js:4217 assets/js/blocks.js:4698
+#: assets/js/blocks.js:3796 assets/js/blocks.js:4217 assets/js/blocks.js:4720
 #: src/js/blocks/cards.js:633 src/js/blocks/events.js:331
 #: src/js/blocks/news.js:385 src/js/blocks/partners.js:299
-#: src/js/blocks/people.js:345 src/js/blocks/projects.js:400
+#: src/js/blocks/people.js:345 src/js/blocks/projects.js:422
 msgid "Query"
 msgstr "Сортировка и фильтрация"
 
 #: assets/js/blocks.js:789 assets/js/blocks.js:1967 assets/js/blocks.js:3428
-#: assets/js/blocks.js:3802 assets/js/blocks.js:4223 assets/js/blocks.js:4704
+#: assets/js/blocks.js:3802 assets/js/blocks.js:4223 assets/js/blocks.js:4726
 #: src/js/blocks/cards.js:639 src/js/blocks/events.js:337
 #: src/js/blocks/news.js:391 src/js/blocks/partners.js:305
-#: src/js/blocks/people.js:351 src/js/blocks/projects.js:406
+#: src/js/blocks/people.js:351 src/js/blocks/projects.js:428
 msgid "Order by"
 msgstr "Сортировать по"
 
@@ -310,10 +310,10 @@ msgid "Included campaigns"
 msgstr "Включенным кампаниям"
 
 #: assets/js/blocks.js:803 assets/js/blocks.js:1981 assets/js/blocks.js:3444
-#: assets/js/blocks.js:3818 assets/js/blocks.js:4239 assets/js/blocks.js:4720
+#: assets/js/blocks.js:3818 assets/js/blocks.js:4239 assets/js/blocks.js:4742
 #: src/js/blocks/cards.js:653 src/js/blocks/events.js:351
 #: src/js/blocks/news.js:407 src/js/blocks/partners.js:321
-#: src/js/blocks/people.js:367 src/js/blocks/projects.js:422
+#: src/js/blocks/people.js:367 src/js/blocks/projects.js:444
 msgid "Offset"
 msgstr "Пропустить"
 
@@ -393,7 +393,7 @@ msgstr "Нижний"
 msgid "Content"
 msgstr "Контент"
 
-#: assets/js/blocks.js:1051 assets/js/blocks.js:4857 src/js/blocks/cover.js:177
+#: assets/js/blocks.js:1051 assets/js/blocks.js:4890 src/js/blocks/cover.js:177
 #: src/js/blocks/recommend.js:94
 msgid "Recommendation"
 msgstr "Рекомендации"
@@ -418,7 +418,7 @@ msgid "Min Height"
 msgstr "Минимальная высота"
 
 #: assets/js/blocks.js:1174 assets/js/blocks.js:1511 assets/js/blocks.js:2325
-#: assets/js/blocks.js:4870 assets/js/es5.js:305 src/js/blocks/cover.js:300
+#: assets/js/blocks.js:4903 assets/js/es5.js:305 src/js/blocks/cover.js:300
 #: src/js/blocks/cta.js:269 src/js/blocks/hero.js:286
 #: src/js/blocks/recommend.js:107
 msgid "Text Color"
@@ -482,7 +482,7 @@ msgid "Title"
 msgstr "Заголовок"
 
 #: assets/js/blocks.js:1398 assets/js/blocks.js:2797 assets/js/blocks.js:2820
-#: assets/js/blocks.js:2859 assets/js/blocks.js:2898 assets/js/blocks.js:4861
+#: assets/js/blocks.js:2859 assets/js/blocks.js:2898 assets/js/blocks.js:4894
 #: src/js/blocks/cta.js:156 src/js/blocks/info.js:175 src/js/blocks/info.js:198
 #: src/js/blocks/info.js:237 src/js/blocks/info.js:276
 #: src/js/blocks/recommend.js:98
@@ -569,29 +569,29 @@ msgstr "Список"
 msgid "Grid"
 msgstr "Плитка"
 
-#: assets/js/blocks.js:1797 assets/js/blocks.js:3224 assets/js/blocks.js:4511
+#: assets/js/blocks.js:1797 assets/js/blocks.js:3224 assets/js/blocks.js:4533
 #: src/js/blocks/events.js:167 src/js/blocks/news.js:187
-#: src/js/blocks/projects.js:213
+#: src/js/blocks/projects.js:235
 msgid "Link Title"
 msgstr "Текст ссылки"
 
 #: assets/js/blocks.js:1808 assets/js/blocks.js:2836 assets/js/blocks.js:2875
-#: assets/js/blocks.js:2914 assets/js/blocks.js:3235 assets/js/blocks.js:4522
+#: assets/js/blocks.js:2914 assets/js/blocks.js:3235 assets/js/blocks.js:4544
 #: src/js/blocks/events.js:178 src/js/blocks/info.js:214
 #: src/js/blocks/info.js:253 src/js/blocks/info.js:292
-#: src/js/blocks/news.js:198 src/js/blocks/projects.js:224
+#: src/js/blocks/news.js:198 src/js/blocks/projects.js:246
 msgid "Link Url"
 msgstr "Адрес ссылки"
 
-#: assets/js/blocks.js:1821 assets/js/blocks.js:3248 assets/js/blocks.js:4535
+#: assets/js/blocks.js:1821 assets/js/blocks.js:3248 assets/js/blocks.js:4557
 #: src/js/blocks/events.js:191 src/js/blocks/news.js:211
-#: src/js/blocks/projects.js:237
+#: src/js/blocks/projects.js:259
 msgid "Remove Link"
 msgstr "Удалить ссылку"
 
-#: assets/js/blocks.js:1845 assets/js/blocks.js:3272 assets/js/blocks.js:4559
+#: assets/js/blocks.js:1845 assets/js/blocks.js:3272 assets/js/blocks.js:4581
 #: src/js/blocks/events.js:215 src/js/blocks/news.js:235
-#: src/js/blocks/projects.js:261
+#: src/js/blocks/projects.js:283
 msgid "Add Link"
 msgstr "Добавить ссылку"
 
@@ -603,15 +603,15 @@ msgstr "Редактировать мероприятия"
 msgid "Events to show"
 msgstr "Сколько мероприятий показывать"
 
-#: assets/js/blocks.js:1912 assets/js/blocks.js:3353 assets/js/blocks.js:4639
+#: assets/js/blocks.js:1912 assets/js/blocks.js:3353 assets/js/blocks.js:4661
 #: src/js/blocks/events.js:282 src/js/blocks/news.js:316
-#: src/js/blocks/projects.js:341
+#: src/js/blocks/projects.js:363
 msgid "Heading Links"
 msgstr "Ссылки в шапке"
 
-#: assets/js/blocks.js:1949 assets/js/blocks.js:3400 assets/js/blocks.js:4686
+#: assets/js/blocks.js:1949 assets/js/blocks.js:3400 assets/js/blocks.js:4708
 #: src/js/blocks/events.js:319 src/js/blocks/news.js:363
-#: src/js/blocks/projects.js:388
+#: src/js/blocks/projects.js:410
 msgid "Links Color"
 msgstr "Цвет ссылок"
 
@@ -874,8 +874,8 @@ msgstr "Редактировать новости"
 msgid "Posts to show"
 msgstr "Сколько постов показывать"
 
-#: assets/js/blocks.js:3390 assets/js/blocks.js:4676 src/js/blocks/news.js:353
-#: src/js/blocks/projects.js:378
+#: assets/js/blocks.js:3390 assets/js/blocks.js:4698 src/js/blocks/news.js:353
+#: src/js/blocks/projects.js:400
 msgid "Post Title Color"
 msgstr "Цвет названия поста"
 
@@ -884,30 +884,30 @@ msgid "Date Color"
 msgstr "Цвет даты"
 
 #: assets/js/blocks.js:3430 assets/js/blocks.js:3804 assets/js/blocks.js:4225
-#: assets/js/blocks.js:4706 src/js/blocks/news.js:393
+#: assets/js/blocks.js:4728 src/js/blocks/news.js:393
 #: src/js/blocks/partners.js:307 src/js/blocks/people.js:353
-#: src/js/blocks/projects.js:408
+#: src/js/blocks/projects.js:430
 msgid "Newest to oldest"
 msgstr "От новых к старым"
 
 #: assets/js/blocks.js:3431 assets/js/blocks.js:3805 assets/js/blocks.js:4226
-#: assets/js/blocks.js:4707 src/js/blocks/news.js:394
+#: assets/js/blocks.js:4729 src/js/blocks/news.js:394
 #: src/js/blocks/partners.js:308 src/js/blocks/people.js:354
-#: src/js/blocks/projects.js:409
+#: src/js/blocks/projects.js:431
 msgid "Oldest to newest"
 msgstr "От старых к новым"
 
 #: assets/js/blocks.js:3432 assets/js/blocks.js:3806 assets/js/blocks.js:4227
-#: assets/js/blocks.js:4708 src/js/blocks/news.js:395
+#: assets/js/blocks.js:4730 src/js/blocks/news.js:395
 #: src/js/blocks/partners.js:309 src/js/blocks/people.js:355
-#: src/js/blocks/projects.js:410
+#: src/js/blocks/projects.js:432
 msgid "A → Z"
 msgstr "А → Я"
 
 #: assets/js/blocks.js:3433 assets/js/blocks.js:3807 assets/js/blocks.js:4228
-#: assets/js/blocks.js:4709 src/js/blocks/news.js:396
+#: assets/js/blocks.js:4731 src/js/blocks/news.js:396
 #: src/js/blocks/partners.js:310 src/js/blocks/people.js:356
-#: src/js/blocks/projects.js:411
+#: src/js/blocks/projects.js:433
 msgid "Z → A"
 msgstr "Я → А"
 
@@ -1048,19 +1048,28 @@ msgstr "Плитка проектов в три колонки."
 msgid "projects"
 msgstr "projects"
 
-#: assets/js/blocks.js:4587 src/js/blocks/projects.js:289
+#: assets/js/blocks.js:4475 modules/project/hooks.php:64
+#: src/js/blocks/projects.js:177
+msgid "All Tags"
+msgstr "Все метки"
+
+#: assets/js/blocks.js:4609 src/js/blocks/projects.js:311
 msgid "Edit projects"
 msgstr "Редактировать проекты"
 
-#: assets/js/blocks.js:4611 src/js/blocks/projects.js:313
+#: assets/js/blocks.js:4633 src/js/blocks/projects.js:335
 msgid "Projects to show"
 msgstr "Сколько проектов показывать"
 
-#: assets/js/blocks.js:4725 src/js/blocks/projects.js:427
+#: assets/js/blocks.js:4747 src/js/blocks/projects.js:449
 msgid "Number of projects to skip"
 msgstr "Сколько проектов пропустить"
 
-#: assets/js/blocks.js:4798 core/editor/blocks/recommend.php:18
+#: assets/js/blocks.js:4756 src/js/blocks/projects.js:458
+msgid "Select tag"
+msgstr "Выбрать метку"
+
+#: assets/js/blocks.js:4831 core/editor/blocks/recommend.php:18
 #: src/js/blocks/recommend.js:35
 msgid ""
 "Your mission should be to summarize everything you do. In a short phrase, "
@@ -1069,27 +1078,27 @@ msgstr ""
 "Ваша миссия должна обобщать все что вы делаете. В краткой фразе заложите "
 "весь смысл вашей организации и ваших проектов."
 
-#: assets/js/blocks.js:4801 src/js/blocks/recommend.js:38
+#: assets/js/blocks.js:4834 src/js/blocks/recommend.js:38
 msgid "Key phrase"
 msgstr "Ключевая фраза"
 
-#: assets/js/blocks.js:4804 src/js/blocks/recommend.js:41
+#: assets/js/blocks.js:4837 src/js/blocks/recommend.js:41
 msgid "Text on a colored plate."
 msgstr "Текст на цветной плашке."
 
-#: assets/js/blocks.js:4806 src/js/blocks/recommend.js:43
+#: assets/js/blocks.js:4839 src/js/blocks/recommend.js:43
 msgid "quote"
 msgstr "quote"
 
-#: assets/js/blocks.js:4807 src/js/blocks/recommend.js:44
+#: assets/js/blocks.js:4840 src/js/blocks/recommend.js:44
 msgid "recommend"
 msgstr "recommend"
 
-#: assets/js/blocks.js:4808 src/js/blocks/recommend.js:45
+#: assets/js/blocks.js:4841 src/js/blocks/recommend.js:45
 msgid "key"
 msgstr "key"
 
-#: assets/js/blocks.js:4809 src/js/blocks/recommend.js:46
+#: assets/js/blocks.js:4842 src/js/blocks/recommend.js:46
 msgid "phrase"
 msgstr "phrase"
 
@@ -2805,10 +2814,6 @@ msgstr "Поиск Тегов"
 #: modules/project/hooks.php:63
 msgid "Popular Tags"
 msgstr "Популярные теги"
-
-#: modules/project/hooks.php:64
-msgid "All Tags"
-msgstr "Все теги"
 
 #: modules/project/hooks.php:67
 msgid "Edit Tag"
