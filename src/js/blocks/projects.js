@@ -179,7 +179,7 @@
 
 				if ( getTerms ) {
 					getTerms.map((term) => {
-						tags.push({ value: term.id, label: term.name } );
+						tags.push( { value: term.id, label: term.name } );
 					} );
 				}
 				return tags;

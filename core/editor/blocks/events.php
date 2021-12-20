@@ -64,6 +64,10 @@ register_block_type( 'knd/events', array(
 			'type' => 'string',
 			'default' => '_event_start_date',
 		),
+		'queryInclude' => array(
+			'type' => 'array',
+			'default' => array(),
+		),
 		'queryWhat' => array(
 			'type' => 'string',
 			'default' => 'future',
@@ -188,10 +192,21 @@ function knd_block_events_render_callback( $attr ) {
 	}
 
 	// Order by
-	if ( $attr['queryOrderBy'] && 'date' !== $attr['queryOrderBy'] ) {
-		$args['orderby'] = 'meta_value';
-		$args['order'] = 'asc';
+	if ( $attr['queryOrderBy'] ) {
+		$args['orderby'] = $attr['queryOrderBy'];
+		if ( '_event_start_date' === $attr['queryOrderBy'] ) {
+			$args['orderby'] = 'meta_value';
+			$attr['queryOrderBy'] = 'meta_value';
+		}
+		if ( 'meta_value' === $attr['queryOrderBy'] ) {
+			$args['order'] = 'asc';
+		}
 	}
+
+	// if ( $attr['queryOrderBy'] && 'date' !== $attr['queryOrderBy'] && 'post__in' !== $attr['queryOrderBy'] ) {
+	// 	$args['orderby'] = 'meta_value';
+	// 	$args['order'] = 'asc';
+	// }
 
 	// What events to show
 	if ( $attr['queryWhat'] && 'future' === $attr['queryWhat'] ) {
@@ -202,6 +217,21 @@ function knd_block_events_render_callback( $attr ) {
 				'compare' => '>='
 			),
 		);
+	}
+
+	// Include campaigns.
+	if ( $attr['queryInclude'] ) {
+		$post__in = array();
+		foreach ( $attr['queryInclude'] as $page_title ) {
+			$page_obj = get_page_by_title( $page_title, OBJECT, 'event' );
+			$post__in[] = $page_obj->ID;
+		}
+		$args['post__in'] = $post__in;
+
+		// Order by
+		if ( $attr['queryOrderBy'] && 'date' !== $attr['queryOrderBy'] ) {
+			$args['orderby'] = $attr['queryOrderBy'];
+		}
 	}
 
 	$query = new WP_Query( $args );

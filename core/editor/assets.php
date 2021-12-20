@@ -80,6 +80,8 @@ function knd_enqueue_block_editor_assets() {
 
 	$kndBlock['postTypes'] = get_post_types( array( 'public' => true ) );
 
+	$kndBlock['getEvents'] = get_posts( array( 'post_type' => 'event', 'numberposts' => -1 ) );
+
 	// Get partner count
 	$kndBlock['partnerCount'] = 0;
 	$count_partners = wp_count_posts('org');

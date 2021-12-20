@@ -92,12 +92,17 @@
 				type: 'string',
 				default: 'future',
 			},
+			queryInclude: {
+				type: 'array',
+				default: [],
+			}
 		},
 
 		example: {
 			attributes: {
 				postsToShow: 2,
-				backgroundColor: '#f0f0f0'
+				backgroundColor: '#f0f0f0',
+				queryWhat: 'all'
 			},
 			viewportWidth: 720
 		},
@@ -116,6 +121,35 @@
 		],
 
 		edit: function( props ) {
+
+			const queryPostsControl = ( props ) => {
+
+				var events = [];
+				var getEvents = kndBlock.getEvents;
+
+				console.log(getEvents);
+
+				if ( getEvents ) {
+					getEvents.map((event) => {
+						events.push( event.post_title );
+					} )
+				}
+
+				const [ selectedEvents, setSelectedEvents ] = useState( props.attributes.queryInclude );
+
+				return el ( FormTokenField,
+					{
+						label: __( 'Include events', 'knd' ),
+						value: selectedEvents,
+						suggestions: events,
+						__experimentalExpandOnFocus: true,
+						onChange: ( val ) => {
+							setSelectedEvents( val ),
+							props.setAttributes( { queryInclude: val } );
+						},
+					}
+				);
+			};
 
 			var t = function() {
 				var t = [].concat(r( props.attributes.headingLinks));
@@ -337,7 +371,8 @@
 									label: __( 'Order by' ),
 									options : [
 										{ value: 'date', label: __( 'Published Date', 'knd' ) },
-										{ value: '_event_start_date', label: __( 'Event Start Date', 'knd' ) },
+										{ value: 'meta_value', label: __( 'Event Start Date', 'knd' ) },
+										{ value: 'post__in', label: __( 'Included events', 'knd' ) },
 									],
 									value: props.attributes.queryOrderBy,
 									onChange: ( val ) => {
@@ -359,6 +394,8 @@
 									},
 								}
 							),
+
+							queryPostsControl(props),
 
 							el( SelectControl,
 								{
