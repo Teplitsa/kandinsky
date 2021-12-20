@@ -12,9 +12,9 @@ jQuery( document ).ready( function( $ ) {
 		}
 	});
 
-	if(kndAdminUpdateTheme.update_action_nonce) {
-		kndDoUpdateThemeAction('knd_download_theme_update');
-	}
+	// if(kndAdminUpdateTheme.update_action_nonce) {
+	// 	kndDoUpdateThemeAction('knd_download_theme_update');
+	// }
 
 	function kndDoUpdateThemeAction(action) {
 		
