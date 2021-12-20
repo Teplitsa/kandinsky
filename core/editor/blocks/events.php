@@ -203,11 +203,6 @@ function knd_block_events_render_callback( $attr ) {
 		}
 	}
 
-	// if ( $attr['queryOrderBy'] && 'date' !== $attr['queryOrderBy'] && 'post__in' !== $attr['queryOrderBy'] ) {
-	// 	$args['orderby'] = 'meta_value';
-	// 	$args['order'] = 'asc';
-	// }
-
 	// What events to show
 	if ( $attr['queryWhat'] && 'future' === $attr['queryWhat'] ) {
 		$args['meta_query'] = array(
