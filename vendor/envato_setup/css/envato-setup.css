@@ -588,11 +588,21 @@ body {
 .envato-setup-pages.installing .spinner{
 	visibility: visible;
 }
-.envato-setup-pages  .spinner{
+.envato-setup-pages .spinner{
 	display: inline-block;
 	position: absolute;
 
 }
+.envato-setup-pages .description-warning {
+	font-style: italic;
+	color: #ffb900;
+}
+
+.envato-setup-pages .description-warning strong {
+	color: #f56e28;
+}
+
+
 
 .knd-wizard-preview img {
 	display: block;

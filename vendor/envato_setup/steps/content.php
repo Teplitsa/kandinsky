@@ -51,11 +51,23 @@ if ( Knd_Filesystem::get_instance()->is_dir( $git_imp->is_dir() ) ) {
 					</td>
 					<td class="description">
 						<?php echo esc_html($default['description']); ?>
+
 						<?php if ( 'content' === $slug && ! $demo_dir_exists ) { ?>
-							<i><br><?php esc_html_e( 'This option is disabled because is missing demo content import folder.', 'knd' ); ?><br>
+							<span class="description-warning"><br><?php esc_html_e( 'This option is disabled because is missing demo content import folder.', 'knd' ); ?><br>
 							<?php esc_html_e( 'Most likely you missed the first step.', 'knd' ); ?><br>
-							<?php echo sprintf( esc_html__( 'To import all content, please go back %sprev step%s and click the "Let\'s go!" button.', 'knd' ), '<a href="' . esc_url( $this->get_prev_step_link() ) . '">', '</a>' ); ?></i>
+							<?php echo sprintf( esc_html__( 'To import all content, please go back %sprev step%s and click the "Let\'s go!" button.', 'knd' ), '<a href="' . esc_url( $this->get_prev_step_link() ) . '">', '</a>' ); ?></span>
 						<?php } ?>
+
+						<?php if ( 'donations' === $slug && get_option('leyka_org_full_name') ) { ?>
+							<br>
+							<span class="description-warning">
+								<strong><?php esc_html_e( 'Warning!', 'knd' ); ?></strong><br>
+								<?php esc_html_e( 'Donation content was detected on the site.', 'knd' ); ?>
+								<br>
+								<?php esc_html_e( 'Please uncheck this option if you do not need to overwrite content to demo data.', 'knd' ); ?>
+							</span>
+						<?php } ?>
+
 						</td>
 					<td class="status"><span><?php echo esc_html($default['pending']); ?></span>
 						<div class="spinner"></div>

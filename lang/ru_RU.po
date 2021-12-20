@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-16 19:19+0200\n"
-"PO-Revision-Date: 2021-12-16 19:27+0200\n"
+"POT-Creation-Date: 2021-12-20 05:31+0200\n"
+"PO-Revision-Date: 2021-12-20 05:32+0200\n"
 "Last-Translator: ahaenor <ahaenor@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -121,7 +121,7 @@ msgstr "лейка"
 #: src/js/blocks/info.js:164 src/js/blocks/news.js:245
 #: src/js/blocks/partners.js:168 src/js/blocks/people.js:202
 #: src/js/blocks/projects.js:293 vendor/envato_setup/envato_setup.php:327
-#: vendor/envato_setup/envato_setup.php:746
+#: vendor/envato_setup/envato_setup.php:736
 msgid "Settings"
 msgstr "Параметры"
 
@@ -155,7 +155,7 @@ msgstr "карточки"
 #: assets/js/blocks.js:379 core/admin.php:108
 #: core/editor/blocks/leyka-cards.php:18 core/shortcodes.php:61
 #: modules/donations/widgets.php:9 src/js/blocks/cards.js:229
-#: vendor/envato_setup/envato_setup.php:764
+#: vendor/envato_setup/envato_setup.php:754
 msgid "Donations"
 msgstr "Пожертвования"
 
@@ -380,7 +380,7 @@ msgstr "Нижний"
 
 #: assets/js/blocks.js:1043 core/admin.php:42 src/js/blocks/cover.js:169
 #: vendor/envato_setup/envato_setup.php:315
-#: vendor/envato_setup/envato_setup.php:755
+#: vendor/envato_setup/envato_setup.php:745
 msgid "Content"
 msgstr "Контент"
 
@@ -640,7 +640,7 @@ msgstr "Заголовок, описание, кнопка и фоновое и�
 
 #: assets/js/blocks.js:2110 assets/js/blocks.js:2184 assets/js/es5.js:86
 #: assets/js/es5.js:156 core/editor/blocks/hero.php:18 src/js/blocks/hero.js:72
-#: src/js/blocks/hero.js:146 vendor/envato_setup/envato_setup.php:650
+#: src/js/blocks/hero.js:146 vendor/envato_setup/envato_setup.php:642
 msgid "We help people to fight alcohol addiction"
 msgstr "Помогаем людям с алкогольной зависимостью"
 
@@ -826,9 +826,9 @@ msgstr "Цвет подчеркивание ссылки колонки"
 #: assets/js/blocks.js:3079 assets/js/blocks.js:3092 core/admin.php:60
 #: core/editor/blocks/news.php:18 footer.php:76
 #: modules/starter/plot_config.php:141
-#: modules/starter/plot_data_builder.php:578 src/js/blocks/news.js:43
-#: src/js/blocks/news.js:56 vendor/envato_setup/envato_setup.php:1255
-#: vendor/envato_setup/envato_setup.php:1282
+#: modules/starter/plot_data_builder.php:563 src/js/blocks/news.js:43
+#: src/js/blocks/news.js:56 vendor/envato_setup/envato_setup.php:1229
+#: vendor/envato_setup/envato_setup.php:1256
 msgid "News"
 msgstr "Новости"
 
@@ -1122,10 +1122,10 @@ msgstr "Обновление пожертвований..."
 msgid "Kandinsky theme updated successfully."
 msgstr "Кандинский успешно обновлен."
 
-#: core/admin-update-theme.php:104 vendor/envato_setup/envato_setup.php:741
-#: vendor/envato_setup/envato_setup.php:750
-#: vendor/envato_setup/envato_setup.php:759
-#: vendor/envato_setup/envato_setup.php:768
+#: core/admin-update-theme.php:104 vendor/envato_setup/envato_setup.php:731
+#: vendor/envato_setup/envato_setup.php:740
+#: vendor/envato_setup/envato_setup.php:749
+#: vendor/envato_setup/envato_setup.php:758
 msgid "Success!"
 msgstr "Успех!"
 
@@ -1141,7 +1141,7 @@ msgstr "Перейти на сайт"
 msgid "Unknown update action"
 msgstr "Неизвестное действие при обновлении"
 
-#: core/admin-update-theme.php:141 vendor/envato_setup/envato_setup.php:641
+#: core/admin-update-theme.php:141 vendor/envato_setup/envato_setup.php:633
 msgid "Success"
 msgstr "Успех"
 
@@ -1252,7 +1252,7 @@ msgstr "«Кандинский» – настройки"
 #. Theme Name of the plugin/theme
 #: core/admin.php:215 core/admin.php:252 core/admin.php:615
 #: core/editor/category.php:20 core/editor/pattern.php:20
-#: core/theme-update/theme-update-checker.php:342 functions.php:244
+#: core/theme-update/theme-update-checker.php:342 functions.php:238
 msgid "Kandinsky"
 msgstr "Кандинский"
 
@@ -1642,7 +1642,7 @@ msgstr "Заголовки и надписи"
 #: core/customizer/customizer-deprecated.php:193
 #: core/customizer/theme-mods/archive-settings.php:47
 #: core/template-tags.php:254 core/template-tags.php:382
-#: vendor/envato_setup/envato_setup.php:1256
+#: vendor/envato_setup/envato_setup.php:1230
 msgid "Our projects"
 msgstr "Наши проекты"
 
@@ -1809,7 +1809,7 @@ msgid "Footer - Columns"
 msgstr "Подвал - Колонки"
 
 #: core/customizer/theme-mods/footer.php:219 footer.php:46
-#: vendor/envato_setup/envato_setup.php:1274
+#: vendor/envato_setup/envato_setup.php:1248
 msgid "About Us"
 msgstr "О нас"
 
@@ -1822,7 +1822,7 @@ msgid "Menu news"
 msgstr "Меню новости"
 
 #: core/customizer/theme-mods/footer.php:285 footer.php:95
-#: vendor/envato_setup/envato_setup.php:1277
+#: vendor/envato_setup/envato_setup.php:1251
 msgid "Security policy"
 msgstr "Политика безопасности"
 
@@ -2041,9 +2041,9 @@ msgstr "Текст кнопки"
 #: core/customizer/theme-mods/header.php:521 core/template-tags.php:776
 #: core/template-tags.php:804 core/template-tags.php:860
 #: modules/donations/donations.php:159
-#: vendor/envato_setup/envato_setup.php:1218
-#: vendor/envato_setup/envato_setup.php:1234
-#: vendor/envato_setup/envato_setup.php:1243
+#: vendor/envato_setup/envato_setup.php:1192
+#: vendor/envato_setup/envato_setup.php:1208
+#: vendor/envato_setup/envato_setup.php:1217
 msgid "Help now"
 msgstr "Помочь сейчас"
 
@@ -2125,7 +2125,7 @@ msgid "Related Projects Title"
 msgstr "Заголовок похожие проекты"
 
 #: core/customizer/theme-mods/project-settings.php:47
-#: core/template-tags.php:979 vendor/envato_setup/envato_setup.php:1258
+#: core/template-tags.php:979 vendor/envato_setup/envato_setup.php:1232
 msgid "Related projects"
 msgstr "Познакомьтесь с другими проектами"
 
@@ -2242,7 +2242,7 @@ msgstr "Например, https://www.youtube.com/user/teplitsast"
 msgid "TikTok"
 msgstr "TikTok"
 
-#: core/extras.php:327 modules/starter/import_remote_content.php:407
+#: core/extras.php:327 modules/starter/import_remote_content.php:405
 #, php-format
 msgid "Old import files cleanup FAILED: %s."
 msgstr "Очистка старых импортных файлов FAILED: %s."
@@ -2428,7 +2428,7 @@ msgstr "Доступна новая версия темы <strong>% s </strong>.
 msgid "Update to version %s"
 msgstr "Обновить до версии %s"
 
-#: footer.php:58 vendor/envato_setup/envato_setup.php:1280
+#: footer.php:58 vendor/envato_setup/envato_setup.php:1254
 msgid "Our Work"
 msgstr "Наша работа"
 
@@ -2441,12 +2441,12 @@ msgid "Kandinsky logo"
 msgstr "Логотип Кандинский"
 
 #. Author of the plugin/theme
-#: functions.php:245
+#: functions.php:239
 msgid "Teplitsa"
 msgstr "Теплица социальных технологий"
 
 #. Description of the plugin/theme
-#: functions.php:246
+#: functions.php:240
 msgid "The beautiful design and useful features for nonprofit website"
 msgstr "Красивый дизайн и полезные функции для сайта НКО"
 
@@ -2793,37 +2793,37 @@ msgstr "Поделиться в Telegram"
 msgid "Share on Viber"
 msgstr "Поделиться на Viber"
 
-#: modules/starter/import_remote_content.php:396
+#: modules/starter/import_remote_content.php:394
 msgid "No zip file"
 msgstr "ZIP-файл не найден"
 
-#: modules/starter/import_remote_content.php:400
+#: modules/starter/import_remote_content.php:398
 #, php-format
 msgid "Zip file not found: %s"
 msgstr ".zip-файл не найден: %s"
 
-#: modules/starter/import_remote_content.php:424
+#: modules/starter/import_remote_content.php:422
 #, php-format
 msgid "Unzip FAILED: %s to %s. Error: %s"
 msgstr "Процесс разархивирования НЕ УДАЛСЯ: %s – %s. Ошибка: %s"
 
-#: modules/starter/import_remote_content.php:437
+#: modules/starter/import_remote_content.php:435
 msgid "No git content dir!"
 msgstr "Git-директория не найдена!"
 
-#: modules/starter/import_remote_content.php:441
+#: modules/starter/import_remote_content.php:439
 #, php-format
 msgid "Unzipped dir not found: %s"
 msgstr "Разархивированная директория не найдена: %s"
 
-#: modules/starter/import_remote_content.php:447
+#: modules/starter/import_remote_content.php:445
 #, php-format
 msgid "Plot dir not found: %s"
 msgstr "Директория сценария не найдена: %s"
 
 #: modules/starter/plot_config.php:128
-#: modules/starter/plot_data_builder.php:1130
-#: modules/starter/plot_data_builder.php:1132
+#: modules/starter/plot_data_builder.php:1053
+#: modules/starter/plot_data_builder.php:1055
 msgid "Primary Menu"
 msgstr "Главное меню"
 
@@ -2835,7 +2835,7 @@ msgstr "Меню «Наша работа» в подвале"
 msgid "Kandinsky news footer menu"
 msgstr "Меню «Новости» в подвале"
 
-#: modules/starter/plot_data_builder.php:81
+#: modules/starter/plot_data_builder.php:79
 msgid ""
 "165150, Arkhangelsk region, Velsky district, Velsk, st. Rogozin, 48, office. "
 "12"
@@ -2843,64 +2843,64 @@ msgstr ""
 "165150, Архангельская область, Вельский район, г. Вельск, ул. Рогозина, д. "
 "48, каб. 12"
 
-#: modules/starter/plot_data_builder.php:85
+#: modules/starter/plot_data_builder.php:83
 msgid "Kotov Aristarkh Evgraphovich"
 msgstr "Котов Аристарх Евграфович"
 
-#: modules/starter/plot_data_builder.php:86
+#: modules/starter/plot_data_builder.php:84
 msgid "Sobakin Yevlampy Mstislavovich"
 msgstr "Собакин Евлампий Мстиславович"
 
-#: modules/starter/plot_data_builder.php:87
+#: modules/starter/plot_data_builder.php:85
 msgid "Director"
 msgstr "Директор"
 
-#: modules/starter/plot_data_builder.php:95
+#: modules/starter/plot_data_builder.php:93
 msgid "MEOW Zoobank"
 msgstr "МЯО Звербанк"
 
-#: modules/starter/plot_data_builder.php:109
+#: modules/starter/plot_data_builder.php:107
 msgid "I accept"
 msgstr "Я принимаю"
 
-#: modules/starter/plot_data_builder.php:110
+#: modules/starter/plot_data_builder.php:108
 msgid "Terms of Service"
 msgstr "Условия договора оферты"
+
+#: modules/starter/plot_data_builder.php:256
+#: modules/starter/plot_data_builder.php:264
+#: modules/starter/plot_data_builder.php:268
+#: modules/starter/plot_data_builder.php:272
+#: modules/starter/plot_data_builder.php:276
+#: modules/starter/plot_data_builder.php:280
+msgid "Martynov Semyon Semyonovich"
+msgstr "Мартынов Семен Семенович"
+
+#: modules/starter/plot_data_builder.php:257
+#: modules/starter/plot_data_builder.php:265
+#: modules/starter/plot_data_builder.php:269
+#: modules/starter/plot_data_builder.php:273
+#: modules/starter/plot_data_builder.php:277
+msgid "Korovin Ostap Rudolfovich"
+msgstr "Коровин Остап Рудольфович"
 
 #: modules/starter/plot_data_builder.php:258
 #: modules/starter/plot_data_builder.php:266
 #: modules/starter/plot_data_builder.php:270
 #: modules/starter/plot_data_builder.php:274
 #: modules/starter/plot_data_builder.php:278
-#: modules/starter/plot_data_builder.php:282
-msgid "Martynov Semyon Semyonovich"
-msgstr "Мартынов Семен Семенович"
+msgid "Bykov Ivan Ivanovich"
+msgstr "Быков Иван Иванович"
 
 #: modules/starter/plot_data_builder.php:259
 #: modules/starter/plot_data_builder.php:267
 #: modules/starter/plot_data_builder.php:271
 #: modules/starter/plot_data_builder.php:275
 #: modules/starter/plot_data_builder.php:279
-msgid "Korovin Ostap Rudolfovich"
-msgstr "Коровин Остап Рудольфович"
-
-#: modules/starter/plot_data_builder.php:260
-#: modules/starter/plot_data_builder.php:268
-#: modules/starter/plot_data_builder.php:272
-#: modules/starter/plot_data_builder.php:276
-#: modules/starter/plot_data_builder.php:280
-msgid "Bykov Ivan Ivanovich"
-msgstr "Быков Иван Иванович"
-
-#: modules/starter/plot_data_builder.php:261
-#: modules/starter/plot_data_builder.php:269
-#: modules/starter/plot_data_builder.php:273
-#: modules/starter/plot_data_builder.php:277
-#: modules/starter/plot_data_builder.php:281
 msgid "Moose Veniamin Robertovich"
 msgstr "Лось Вениамин Робертович"
 
-#: modules/starter/plot_data_builder.php:567
+#: modules/starter/plot_data_builder.php:552
 msgid "Home page"
 msgstr "Главная"
 
@@ -2952,7 +2952,7 @@ msgstr "Главное меню"
 #: vendor/class-tgm-plugin-activation.php:816
 #: vendor/class-tgm-plugin-activation.php:2522
 #: vendor/class-tgm-plugin-activation.php:3569
-#: vendor/envato_setup/envato_setup.php:487
+#: vendor/envato_setup/envato_setup.php:480
 msgid "Return to the Dashboard"
 msgstr "Вернуться в админку"
 
@@ -3341,143 +3341,143 @@ msgstr "Поддержка"
 msgid "Ready!"
 msgstr "Все готово!"
 
-#: vendor/envato_setup/envato_setup.php:379
+#: vendor/envato_setup/envato_setup.php:375
 msgid "...verifying"
 msgstr "...верификация"
 
-#: vendor/envato_setup/envato_setup.php:380
+#: vendor/envato_setup/envato_setup.php:376
 msgid "Processing..."
 msgstr "Обработка..."
 
-#: vendor/envato_setup/envato_setup.php:381
+#: vendor/envato_setup/envato_setup.php:377
 msgid "Upload Logo"
 msgstr "Загрузить логотип"
 
-#: vendor/envato_setup/envato_setup.php:382
+#: vendor/envato_setup/envato_setup.php:378
 msgid "Select Logo"
 msgstr "Выбрать логотип"
 
-#: vendor/envato_setup/envato_setup.php:383
+#: vendor/envato_setup/envato_setup.php:379
 msgid "Ajax error"
 msgstr "Ошибка Ajax"
 
-#: vendor/envato_setup/envato_setup.php:411
-#: vendor/envato_setup/envato_setup.php:1162
+#: vendor/envato_setup/envato_setup.php:407
+#: vendor/envato_setup/envato_setup.php:1136
 #: vendor/envato_setup/steps/intro.php:44
 msgid "Error:"
 msgstr "Ошибка:"
 
-#: vendor/envato_setup/envato_setup.php:413
-#: vendor/envato_setup/envato_setup.php:1168
+#: vendor/envato_setup/envato_setup.php:409
+#: vendor/envato_setup/envato_setup.php:1142
 #: vendor/envato_setup/steps/intro.php:48
 msgid "Back to the Dashboard"
 msgstr "Вернуться в административный раздел сайта"
 
-#: vendor/envato_setup/envato_setup.php:465
+#: vendor/envato_setup/envato_setup.php:458
 msgid "Kandinsky - setup wizard"
 msgstr "«Кандинский» – мастер настройки"
 
-#: vendor/envato_setup/envato_setup.php:475
+#: vendor/envato_setup/envato_setup.php:468
 msgid "Kandinsky theme setup wizard"
 msgstr "Мастер настройки темы"
 
-#: vendor/envato_setup/envato_setup.php:582
+#: vendor/envato_setup/envato_setup.php:574
 msgid "No slug found"
 msgstr "Плагин не найден"
 
-#: vendor/envato_setup/envato_setup.php:601
+#: vendor/envato_setup/envato_setup.php:593
 msgid "Activating Plugin"
 msgstr "Активация"
 
-#: vendor/envato_setup/envato_setup.php:615
+#: vendor/envato_setup/envato_setup.php:607
 msgid "Updating Plugin"
 msgstr "Обновление плагина"
 
-#: vendor/envato_setup/envato_setup.php:629
+#: vendor/envato_setup/envato_setup.php:621
 msgid "Installing Plugin"
 msgstr "Установка плагина"
 
-#: vendor/envato_setup/envato_setup.php:649
+#: vendor/envato_setup/envato_setup.php:641
 msgid "Line of Color"
 msgstr "Линия Цвета"
 
-#: vendor/envato_setup/envato_setup.php:737
+#: vendor/envato_setup/envato_setup.php:727
 msgid "Website title and description"
 msgstr "Название и описание сайта"
 
-#: vendor/envato_setup/envato_setup.php:738
+#: vendor/envato_setup/envato_setup.php:728
 msgid "Insert default website title and description as seen in the demo."
 msgstr "Укажите название и напишите краткое описание сайта."
 
-#: vendor/envato_setup/envato_setup.php:739
-#: vendor/envato_setup/envato_setup.php:748
-#: vendor/envato_setup/envato_setup.php:757
-#: vendor/envato_setup/envato_setup.php:766
+#: vendor/envato_setup/envato_setup.php:729
+#: vendor/envato_setup/envato_setup.php:738
+#: vendor/envato_setup/envato_setup.php:747
+#: vendor/envato_setup/envato_setup.php:756
 msgid "Pending"
 msgstr "Отложено"
 
-#: vendor/envato_setup/envato_setup.php:740
-#: vendor/envato_setup/envato_setup.php:749
-#: vendor/envato_setup/envato_setup.php:758
-#: vendor/envato_setup/envato_setup.php:767
+#: vendor/envato_setup/envato_setup.php:730
+#: vendor/envato_setup/envato_setup.php:739
+#: vendor/envato_setup/envato_setup.php:748
+#: vendor/envato_setup/envato_setup.php:757
 msgid "Installing..."
 msgstr "Установка..."
 
-#: vendor/envato_setup/envato_setup.php:747
+#: vendor/envato_setup/envato_setup.php:737
 msgid "Insert default website settings as seen in the demo."
 msgstr "Набор демонстрационных значений параметров сайта."
 
-#: vendor/envato_setup/envato_setup.php:756
+#: vendor/envato_setup/envato_setup.php:746
 msgid "Install default website posts, pages and menus."
 msgstr "Установить записи, страницы и меню."
 
-#: vendor/envato_setup/envato_setup.php:765
+#: vendor/envato_setup/envato_setup.php:755
 msgid "Install donations components."
 msgstr "Установить модуль для сбора пожертвований."
 
-#: vendor/envato_setup/envato_setup.php:821
+#: vendor/envato_setup/envato_setup.php:811
 msgid "No content Found"
 msgstr "Контент не найден"
 
-#: vendor/envato_setup/envato_setup.php:886
+#: vendor/envato_setup/envato_setup.php:876
 msgid "Error"
 msgstr "Ошибка"
 
-#: vendor/envato_setup/envato_setup.php:907
+#: vendor/envato_setup/envato_setup.php:897
 #: vendor/envato_setup/steps/intro.php:62
 msgid "Downloading template archive..."
 msgstr "Идет скачивание архива темы..."
 
-#: vendor/envato_setup/envato_setup.php:908
+#: vendor/envato_setup/envato_setup.php:898
 msgid "Extracting template content..."
 msgstr "Идет распаковка архива темы..."
 
-#: vendor/envato_setup/envato_setup.php:909
+#: vendor/envato_setup/envato_setup.php:899
 msgid "Importing template content..."
 msgstr "Идет импорт содержимого. Операция может занять несколько минут..."
 
-#: vendor/envato_setup/envato_setup.php:910
+#: vendor/envato_setup/envato_setup.php:900
 msgid "Building template files..."
 msgstr "Подготовка файлов..."
 
-#: vendor/envato_setup/envato_setup.php:911
+#: vendor/envato_setup/envato_setup.php:901
 msgid "Building template options..."
 msgstr "Подготовка настроек..."
 
-#: vendor/envato_setup/envato_setup.php:912
+#: vendor/envato_setup/envato_setup.php:902
 msgid "Building template colors..."
 msgstr "Подготовка цветов..."
 
-#: vendor/envato_setup/envato_setup.php:922
+#: vendor/envato_setup/envato_setup.php:912
 msgid "Please select the scenario"
 msgstr "Пожалуйста выберите шаблон"
 
-#: vendor/envato_setup/envato_setup.php:956
+#: vendor/envato_setup/envato_setup.php:946
 #, php-format
 msgid "Plot data builder was not produced for plot: %s"
 msgstr "Конструктор сценариев не обнаружен для сценария: %s"
 
-#: vendor/envato_setup/envato_setup.php:1162
+#: vendor/envato_setup/envato_setup.php:1136
 #, php-format
 msgid ""
 "Please, send a report about it to the <a href='mailto:%s' "
@@ -3486,7 +3486,7 @@ msgstr ""
 "Пожалуйста, напишите об этой ошибке <a href='mailto:%s' "
 "target='_blank'>нашей службе тех.поддержки</a>."
 
-#: vendor/envato_setup/envato_setup.php:1164
+#: vendor/envato_setup/envato_setup.php:1138
 #, php-format
 msgid ""
 "We're sorry, but some error occured during to this wizard step :( <div "
@@ -3497,12 +3497,12 @@ msgstr ""
 "class='wizard-error-support-text'>Пожалуйста, напишите об этом <a "
 "href='mailto:%s' target='_blank'>нашей службе тех.поддержки</a>."
 
-#: vendor/envato_setup/envato_setup.php:1169
+#: vendor/envato_setup/envato_setup.php:1143
 #: vendor/envato_setup/steps/intro.php:49
 msgid "Email to the theme support"
 msgstr "Написать тех.службе"
 
-#: vendor/envato_setup/envato_setup.php:1200
+#: vendor/envato_setup/envato_setup.php:1174
 msgid ""
 "Our office, training rooms and support group rooms are open daily from 9:00 "
 "am to 10:00 pm."
@@ -3510,7 +3510,7 @@ msgstr ""
 "Наш офис, учебные залы и помещения групп поддержки открыты ежедневно с 9:00 "
 "до 22:00 часов."
 
-#: vendor/envato_setup/envato_setup.php:1201
+#: vendor/envato_setup/envato_setup.php:1175
 msgid ""
 "Moscow, 7th Stroiteley Street, 17, office: 211-217\n"
 "+7 (495) 787-87-23"
@@ -3518,7 +3518,7 @@ msgstr ""
 "Москва, 7-я улица Строителей, 17, оф.: 211-217\n"
 "+7 (495) 787-87-23"
 
-#: vendor/envato_setup/envato_setup.php:1206
+#: vendor/envato_setup/envato_setup.php:1180
 #, php-format
 msgid ""
 "By making a donation, the user concludes a donation agreement by accepting a "
@@ -3527,23 +3527,23 @@ msgstr ""
 "Совершая пожертвование, пользователь заключает договор пожертвования путем "
 "акцепта публичной оферты, которая находится %sздесь%s."
 
-#: vendor/envato_setup/envato_setup.php:1207
+#: vendor/envato_setup/envato_setup.php:1181
 msgid "Personal data processing policy"
 msgstr "Политика обработки персональных данных"
 
-#: vendor/envato_setup/envato_setup.php:1208
+#: vendor/envato_setup/envato_setup.php:1182
 msgid "Privacy policy"
 msgstr "Политика конфиденциальности"
 
-#: vendor/envato_setup/envato_setup.php:1257
+#: vendor/envato_setup/envato_setup.php:1231
 msgid "Related items"
 msgstr "Еще по теме"
 
-#: vendor/envato_setup/envato_setup.php:1281
+#: vendor/envato_setup/envato_setup.php:1255
 msgid "kandinsky-our-work-footer-menu"
 msgstr "menyu-nasha-rabota-v-podvale"
 
-#: vendor/envato_setup/envato_setup.php:1283
+#: vendor/envato_setup/envato_setup.php:1257
 msgid "kandinsky-news-footer-menu"
 msgstr "menyu-novosti-v-podvale"
 
@@ -3576,16 +3576,16 @@ msgstr ""
 msgid "Item"
 msgstr "Тип"
 
-#: vendor/envato_setup/steps/content.php:55
+#: vendor/envato_setup/steps/content.php:56
 msgid "This option is disabled because is missing demo content import folder."
 msgstr ""
 "Это опция отключена, поскольку отсутствует папка для импорта демо контента."
 
-#: vendor/envato_setup/steps/content.php:56
+#: vendor/envato_setup/steps/content.php:57
 msgid "Most likely you missed the first step."
 msgstr "Скорее всего, вы пропустили первый шаг."
 
-#: vendor/envato_setup/steps/content.php:57
+#: vendor/envato_setup/steps/content.php:58
 #, php-format
 msgid ""
 "To import all content, please go back %sprev step%s and click the \"Let's go!"
@@ -3594,7 +3594,23 @@ msgstr ""
 "Чтобы импортировать весь контент, вернитесь на %sпредыдущий шаг%s и нажмите "
 "кнопку \"Поехали!\"."
 
-#: vendor/envato_setup/steps/content.php:69
+#: vendor/envato_setup/steps/content.php:64
+msgid "Warning!"
+msgstr "Предупреждение!"
+
+#: vendor/envato_setup/steps/content.php:65
+msgid "Donation content was detected on the site."
+msgstr "На сайте был обнаружен контент пожертвований."
+
+#: vendor/envato_setup/steps/content.php:67
+msgid ""
+"Please uncheck this option if you do not need to overwrite content to demo "
+"data."
+msgstr ""
+"Снимите флажок с этого параметра, если вам не нужно перезаписывать контент "
+"на демонстрационные данные."
+
+#: vendor/envato_setup/steps/content.php:82
 #: vendor/envato_setup/steps/design.php:30
 #: vendor/envato_setup/steps/plugins.php:108
 #: vendor/envato_setup/steps/ready.php:30
@@ -3603,11 +3619,11 @@ msgstr ""
 msgid "Back"
 msgstr "Шаг назад"
 
-#: vendor/envato_setup/steps/content.php:71
+#: vendor/envato_setup/steps/content.php:84
 msgid "Set up"
 msgstr "Настроить"
 
-#: vendor/envato_setup/steps/content.php:74
+#: vendor/envato_setup/steps/content.php:87
 #: vendor/envato_setup/steps/design.php:33
 #: vendor/envato_setup/steps/intro.php:59
 #: vendor/envato_setup/steps/plugins.php:113
