@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-20 05:31+0200\n"
-"PO-Revision-Date: 2021-12-20 05:32+0200\n"
+"POT-Creation-Date: 2021-12-20 06:23+0200\n"
+"PO-Revision-Date: 2021-12-20 06:24+0200\n"
 "Last-Translator: ahaenor <ahaenor@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -1653,8 +1653,8 @@ msgstr "Заголовок страницы проектов"
 
 #: core/customizer/customizer-deprecated.php:212
 #: core/customizer/theme-mods/archive-settings.php:74
-#: core/template-tags.php:266 single-leyka_campaign.php:29
-#: single-leyka_campaign.php:44
+#: core/template-tags.php:266 single-leyka_campaign.php:31
+#: single-leyka_campaign.php:50
 msgid "They need help"
 msgstr "Им нужна помощь"
 
@@ -1665,8 +1665,8 @@ msgstr "Заголовок страницы активных кампаний"
 
 #: core/customizer/customizer-deprecated.php:228
 #: core/customizer/theme-mods/archive-settings.php:82
-#: core/template-tags.php:261 single-leyka_campaign.php:25
-#: single-leyka_campaign.php:47
+#: core/template-tags.php:261 single-leyka_campaign.php:27
+#: single-leyka_campaign.php:53
 msgid "They alredy got help"
 msgstr "Уже получили помощь"
 
@@ -1697,7 +1697,7 @@ msgstr "Установить"
 msgid "No, I’ll do it some other time"
 msgstr "Не устанавливать"
 
-#: core/customizer/kirki.php:78
+#: core/customizer/kirki.php:79
 msgid ""
 "If only an image is used as a logo, then we recommend uploading an image "
 "with the dimensions of 315 x 66 px, or 66 x 66 px for use along with the "
@@ -1707,39 +1707,39 @@ msgstr ""
 "загрузить изображение размером 315 x 66 пикселей или 66 x 66 пикселей для "
 "использования вместе с текстом."
 
-#: core/customizer/kirki.php:92
+#: core/customizer/kirki.php:93
 msgid "Font Family"
 msgstr "Шрифт"
 
-#: core/customizer/kirki.php:95
+#: core/customizer/kirki.php:96
 msgid "Variant"
 msgstr "Насыщенность"
 
-#: core/customizer/kirki.php:98
+#: core/customizer/kirki.php:99
 msgid "Color"
 msgstr "Цвет"
 
-#: core/customizer/kirki.php:101
+#: core/customizer/kirki.php:102
 msgid "Font Size"
 msgstr "Базовый размер, px"
 
-#: core/customizer/kirki.php:104
+#: core/customizer/kirki.php:105
 msgid "No image selected"
 msgstr "Изображение не выбрано"
 
-#: core/customizer/kirki.php:107
+#: core/customizer/kirki.php:108
 msgid "Remove"
 msgstr "Удалить"
 
-#: core/customizer/kirki.php:110
+#: core/customizer/kirki.php:111
 msgid "Select image"
 msgstr "Выбрать изображение"
 
-#: core/customizer/kirki.php:113
+#: core/customizer/kirki.php:114
 msgid "No File Selected"
 msgstr "Изображение не выбрано"
 
-#: core/customizer/kirki.php:171 core/customizer/kirki.php:190
+#: core/customizer/kirki.php:172 core/customizer/kirki.php:191
 #: src/experimental/gutenberg-experimental.js:102
 msgid "None"
 msgstr "Нет"
@@ -1764,6 +1764,19 @@ msgstr "Блоки внизу страниц архива"
 #: core/customizer/theme-mods/archive-settings.php:53
 msgid "Projects Page Bottom Blocks"
 msgstr "Блоки внизу страниц проектов"
+
+#: core/customizer/theme-mods/campaign-settings.php:13
+msgctxt "Customizer"
+msgid "Campaign Settings"
+msgstr "Страница кампании"
+
+#: core/customizer/theme-mods/campaign-settings.php:21
+msgid "Show link above title"
+msgstr "Показывать ссылку над заголовком"
+
+#: core/customizer/theme-mods/campaign-settings.php:29
+msgid "Show links after content"
+msgstr "Показывать ссылки после контента"
 
 #: core/customizer/theme-mods/footer.php:12
 msgid "Footer"
@@ -3610,7 +3623,7 @@ msgstr ""
 "Снимите флажок с этого параметра, если вам не нужно перезаписывать контент "
 "на демонстрационные данные."
 
-#: vendor/envato_setup/steps/content.php:82
+#: vendor/envato_setup/steps/content.php:81
 #: vendor/envato_setup/steps/design.php:30
 #: vendor/envato_setup/steps/plugins.php:108
 #: vendor/envato_setup/steps/ready.php:30
@@ -3619,11 +3632,11 @@ msgstr ""
 msgid "Back"
 msgstr "Шаг назад"
 
-#: vendor/envato_setup/steps/content.php:84
+#: vendor/envato_setup/steps/content.php:83
 msgid "Set up"
 msgstr "Настроить"
 
-#: vendor/envato_setup/steps/content.php:87
+#: vendor/envato_setup/steps/content.php:86
 #: vendor/envato_setup/steps/design.php:33
 #: vendor/envato_setup/steps/intro.php:59
 #: vendor/envato_setup/steps/plugins.php:113

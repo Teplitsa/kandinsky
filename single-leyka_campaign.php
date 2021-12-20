@@ -19,18 +19,23 @@ get_header();
 	<div class="container">
 
 		<div class="entry-header-single container-text">
-			<div class="entry-meta">
-			<?php if ( $is_finished ) { ?>
-				<a href="<?php echo site_url( '/campaign/completed/' ); ?>" class="entry-link">
-					<?php echo esc_html( get_theme_mod( 'knd_completed_campaigns_archive_title', __( 'They alredy got help', 'knd' ) ) ); ?>
-				</a> 
-			<?php } else { ?>
-				<a href="<?php echo site_url( '/campaign/active/' ); ?>" class="entry-link">
-					<?php echo esc_html( get_theme_mod( 'knd_active_campaigns_archive_title', __( 'They need help', 'knd' ) ) ); ?>
-				</a> 
+
+			<?php if ( get_theme_mod( 'campaign_link_above_title', true ) ) { ?>
+				<div class="entry-meta">
+				<?php if ( $is_finished ) { ?>
+					<a href="<?php echo site_url( '/campaign/completed/' ); ?>" class="entry-link">
+						<?php echo esc_html( get_theme_mod( 'knd_completed_campaigns_archive_title', __( 'They alredy got help', 'knd' ) ) ); ?>
+					</a> 
+				<?php } else { ?>
+					<a href="<?php echo site_url( '/campaign/active/' ); ?>" class="entry-link">
+						<?php echo esc_html( get_theme_mod( 'knd_active_campaigns_archive_title', __( 'They need help', 'knd' ) ) ); ?>
+					</a> 
+				<?php } ?>
+				</div>
 			<?php } ?>
-			</div>
+
 			<?php the_title( '<h1 class="entry-title">', $age . '</h1>' ); ?>
+
 		</div>
 
 		<main class="container-text">
@@ -39,14 +44,16 @@ get_header();
 				<?php the_content(); ?>
 			</div>
 
-			<div class="related-campaigns">
-				<a href="<?php echo site_url( '/campaign/active/' ); ?>" class="entry-link">
-					<?php echo esc_html( get_theme_mod( 'knd_active_campaigns_archive_title', __( 'They need help', 'knd' ) ) ); ?>
-				</a>
-				<a href="<?php echo site_url( '/campaign/completed/' ); ?>" class="entry-link">
-					<?php echo esc_html( get_theme_mod( 'knd_completed_campaigns_archive_title', __( 'They alredy got help', 'knd' ) ) ); ?>
-				</a>
-			</div>
+			<?php if ( get_theme_mod( 'campaign_links_after_content', true ) ) { ?>
+				<div class="related-campaigns">
+					<a href="<?php echo site_url( '/campaign/active/' ); ?>" class="entry-link">
+						<?php echo esc_html( get_theme_mod( 'knd_active_campaigns_archive_title', __( 'They need help', 'knd' ) ) ); ?>
+					</a>
+					<a href="<?php echo site_url( '/campaign/completed/' ); ?>" class="entry-link">
+						<?php echo esc_html( get_theme_mod( 'knd_completed_campaigns_archive_title', __( 'They alredy got help', 'knd' ) ) ); ?>
+					</a>
+				</div>
+			<?php } ?>
 
 		</main>
 

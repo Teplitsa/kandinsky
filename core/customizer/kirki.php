@@ -52,6 +52,9 @@ require_once get_theme_file_path( '/core/customizer/theme-mods/homepage.php' );
 require_once get_theme_file_path( '/core/customizer/theme-mods/archive-settings.php' );
 require_once get_theme_file_path( '/core/customizer/theme-mods/post-settings.php' );
 require_once get_theme_file_path( '/core/customizer/theme-mods/project-settings.php' );
+if ( defined( 'LEYKA_VERSION' ) ) {
+	require_once get_theme_file_path( '/core/customizer/theme-mods/campaign-settings.php' );
+}
 require_once get_theme_file_path( '/core/customizer/theme-mods/footer.php' );
 
 /**
