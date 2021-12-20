@@ -61,6 +61,14 @@ register_block_type( 'knd/projects', array(
 			'type'    => 'string',
 			'default' => '',
 		),
+		'queryOrder' => array(
+			'type'    => 'string',
+			'default' => 'post_date/desc',
+		),
+		'queryOffset' => array(
+			'type' => 'string',
+			'default' => '',
+		),
 	),
 ) );
 
@@ -184,6 +192,25 @@ function knd_block_projects_render_callback( $attr ) {
 		'post_type'      => 'project',
 		'posts_per_page' => $posts_to_show,
 	);
+
+	// Orderby
+	if ( isset( $attr['queryOrder'] ) && $attr['queryOrder'] ) {
+		$queryOrder = $attr['queryOrder'];
+		$order = explode( '/', $queryOrder );
+		if ( $order ) {
+			$args['orderby'] = array(
+				$order[0] => $order[1],
+			);
+			if ( 'date' === $order[0] ) {
+				$args['orderby']['ID'] = $order[1];
+			}
+		}
+	}
+
+	// Offset
+	if ( isset( $attr['queryOffset'] ) && $attr['queryOffset'] ) {
+		$args['offset'] = $attr['queryOffset'];
+	}
 
 	$query = new WP_Query( $args );
 
