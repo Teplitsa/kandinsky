@@ -989,48 +989,46 @@ if ( ! function_exists( 'knd_bottom_blocks' ) ) {
 	 */
 	function knd_bottom_blocks() {
 		if ( is_singular( 'post' ) && get_theme_mod( 'post_bottom_block') ) {
-			?>
-			<div class="knd-signle-after-content">
-				<div class="container entry-content the-content">
-					<?php
-					$block_name = get_theme_mod( 'post_bottom_block');
-					$block      = get_page_by_path( $block_name, OBJECT, 'wp_block' );
-					$content    = $block->post_content;
-					$content    = apply_filters('the_content', $content);
-					$content    = str_replace(']]>', ']]&gt;', $content);
-					echo $content;
-					?>
+			$block_name = get_theme_mod( 'post_bottom_block');
+			$block      = get_page_by_path( $block_name, OBJECT, 'wp_block' );
+			if ( $block ) {
+				$content = $block->post_content;
+				$content = apply_filters('the_content', $content);
+				$content = str_replace(']]>', ']]&gt;', $content);
+				?>
+				<div class="knd-signle-after-content">
+					<div class="container entry-content the-content">
+						<?php echo $content; ?>
+					</div>
 				</div>
-
-			</div>
-			<?php
+				<?php
+			}
 		}
 
 		if ( is_singular( 'project' ) && get_theme_mod( 'project_bottom_block') ) {
-			?>
-			<div class="knd-signle-after-content">
-				<div class="container entry-content the-content">
-					<?php
-					$block_name = get_theme_mod( 'project_bottom_block');
-					$block      = get_page_by_path( $block_name, OBJECT, 'wp_block' );
-					$content    = $block->post_content;
-					$content    = apply_filters('the_content', $content);
-					$content    = str_replace(']]>', ']]&gt;', $content);
-					echo $content;
-					?>
+			$block_name = get_theme_mod( 'project_bottom_block');
+			$block      = get_page_by_path( $block_name, OBJECT, 'wp_block' );
+			if ( $block ) {
+				$content = $block->post_content;
+				$content = apply_filters('the_content', $content);
+				$content = str_replace(']]>', ']]&gt;', $content);
+				?>
+				<div class="knd-signle-after-content">
+					<div class="container entry-content the-content">
+						<?php echo $content; ?>
+					</div>
 				</div>
-
-			</div>
-			<?php
+				<?php
+			}
 		}
 
 		if ( ( is_home() || is_category() || is_tag() ) && get_theme_mod( 'archive_bottom_block') ) {
 			$block_name = get_theme_mod( 'archive_bottom_block' );
 			$block      = get_page_by_path( $block_name, OBJECT, 'wp_block' );
 			if ( $block ) {
-				$content    = $block->post_content;
-				$content    = apply_filters('the_content', $content);
-				$content    = str_replace(']]>', ']]&gt;', $content);
+				$content = $block->post_content;
+				$content = apply_filters('the_content', $content);
+				$content = str_replace(']]>', ']]&gt;', $content);
 				?>
 				<div class="knd-archive-sidebar">
 					<div class="container entry-content the-content">
@@ -1044,10 +1042,10 @@ if ( ! function_exists( 'knd_bottom_blocks' ) ) {
 		if ( ( is_post_type_archive( 'project' ) || is_tax( 'project_tag' ) ) && get_theme_mod( 'projects_bottom_block') ) {
 			$block_name = get_theme_mod( 'projects_bottom_block' );
 			$block      = get_page_by_path( $block_name, OBJECT, 'wp_block' );
-			$content    = $block->post_content;
-			$content    = apply_filters('the_content', $content);
-			$content    = str_replace(']]>', ']]&gt;', $content);
 			if ( $block ) {
+				$content = $block->post_content;
+				$content = apply_filters('the_content', $content);
+				$content = str_replace(']]>', ']]&gt;', $content);
 				?>
 				<div class="knd-archive-sidebar">
 					<div class="container entry-content the-content">
