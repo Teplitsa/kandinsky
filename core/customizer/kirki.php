@@ -79,8 +79,10 @@ function knd_customize_register( $wp_customize ) {
 	$wp_customize->get_control( 'custom_logo' )->section = 'header';
 	$wp_customize->get_control( 'custom_logo' )->priority = 5;
 	$wp_customize->get_control( 'custom_logo' )->description = esc_html__( 'If only an image is used as a logo, then we recommend uploading an image with the dimensions of 315 x 66 px, or 66 x 66 px for use along with the text.', 'knd' );
+	/** Change panel nav_menus priority */
+	$wp_customize->get_panel( 'nav_menus' )->priority = 2;
 }
-add_action( 'customize_register', 'knd_customize_register' );
+add_action( 'customize_register', 'knd_customize_register', 11 );
 
 /**
  * Custom translate
