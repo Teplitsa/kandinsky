@@ -81,6 +81,21 @@
 	margin-bottom: 26px;
 }
 
+/* Columns */
+.wp-block-columns .wp-block-column > *:first-child {
+	margin-top: 0;
+}
+
+.wp-block-columns .wp-block-column *:last-child {
+	margin-bottom: 0;
+}
+
+@media (max-width: 781px) {
+	.wp-block-columns .wp-block-column:not(:last-child) {
+		margin-bottom: 26px;
+	}
+}
+
 /* Embeds */
 .wp-block-embed figcaption {
 	color: var(--knd-page-text-color-light);

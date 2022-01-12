@@ -1,0 +1,19 @@
+/* Columns */
+
+.wp-block-columns {
+	.wp-block-column {
+		> *:first-child {
+			margin-top: 0;
+		}
+
+		*:last-child {
+			margin-bottom: 0;
+		}
+
+		@media (max-width: 781px) {
+			&:not(:last-child) {
+				margin-bottom: 26px;
+			}
+		}
+	}
+}
