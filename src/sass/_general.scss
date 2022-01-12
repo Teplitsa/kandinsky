@@ -18,7 +18,10 @@ body {
 
 //global page elements
 .main-content {
-	min-height: 60vh;
+
+	@media (max-height: 1200px){
+		min-height: 60vh;
+	}
 
 	&:not(.knd-overflow-visible) {
 		overflow:hidden;

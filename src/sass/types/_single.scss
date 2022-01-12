@@ -68,7 +68,9 @@
 
 .single {
 	.entry-content {
-		min-height: 20vh;
+		@media (max-height: 1200px){
+			min-height: 20vh;
+		}
 	}
 }
 

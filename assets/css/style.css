@@ -1306,8 +1306,10 @@ body > svg {
 	display: inline-block;
 }
 
-.main-content {
-	min-height: 60vh;
+@media (max-height: 1200px) {
+	.main-content {
+		min-height: 60vh;
+	}
 }
 
 .main-content:not(.knd-overflow-visible) {
@@ -3742,8 +3744,10 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 	}
 }
 
-.single .entry-content {
-	min-height: 20vh;
+@media (max-height: 1200px) {
+	.single .entry-content {
+		min-height: 20vh;
+	}
 }
 
 .knd-signle-after-content {
