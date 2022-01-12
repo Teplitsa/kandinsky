@@ -2919,8 +2919,8 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 
 .social-likes__widget a .svg-icon {
 	fill: #4d606a;
-	width: 18px;
-	height: 18px;
+	width: 20px;
+	height: 20px;
 }
 
 .social-likes__widget + .social-likes__widget {
