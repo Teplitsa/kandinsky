@@ -23,7 +23,16 @@ if($current_site_scenario) {
 	
 }
 
-if( $is_show_hello) : ?>
+$locale     = get_locale();
+$thumb_slug = 'demo-thumb';
+
+if ( 'ru_RU' === $locale ) {
+	$thumb_slug .= '-ru';
+}
+
+$demo_thumb_url = get_template_directory_uri() . '/assets/images/' . $thumb_slug . '.jpg';
+
+if ( $is_show_hello) : ?>
 
 <h1><?php esc_html_e( 'Kandinsky Configuration Wizard', 'knd' ); ?></h1>
 <form method="post">
@@ -33,7 +42,7 @@ if( $is_show_hello) : ?>
 	<p><?php esc_html_e( 'You have installed the Kandinsky theme. This is how your default website design will look like:', 'knd' ); ?></p>
 
 	<p class="knd-wizard-preview">
-		<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/demo-thumb.png' ); ?>" alt="">
+		<img src="<?php echo esc_url( $demo_thumb_url ); ?>" alt="">
 	</p>
 
 	<p><?php esc_html_e( 'Now you can make basic settings - upload a logo, set the site structure, install the necessary add-ons. This will take a couple of minutes. And you can change the text, pictures, colors and fonts later.', 'knd' ); ?></p>
