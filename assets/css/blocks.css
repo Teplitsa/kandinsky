@@ -458,7 +458,7 @@
 	order: 2;
 }
 
-.knd-block-hero__title {
+.knd-block-hero .knd-block-hero__title {
 	font-size: 36px;
 	letter-spacing: .03em;
 	font-weight: 700;
