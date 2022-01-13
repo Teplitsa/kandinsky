@@ -1058,3 +1058,25 @@ if ( ! function_exists( 'knd_bottom_blocks' ) ) {
 
 	}
 }
+
+if ( ! function_exists( 'knd_screen_reader_alert' ) ) {
+	/**
+	 * Screen Reader Alert
+	 */
+	function knd_screen_reader_alert() { ?>
+		<span class="screen-reader-text knd-screen-reader-alert" role="alert"></span>
+	<?php }
+}
+
+if ( ! function_exists( 'knd_button_totop' ) ) {
+	/**
+	 * Scroll To Top Button
+	 */
+	function knd_button_totop() {
+		if ( get_theme_mod( 'button_totop', true ) ) { ?>
+		<a href="#" aria-hidden="true" tabindex="-1" class="knd-to-top">
+			<?php knd_svg_icon( 'icon-up' ); ?>
+		</a>
+		<?php }
+	}
+}

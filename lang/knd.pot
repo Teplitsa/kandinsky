@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Kandinsky\n"
-"POT-Creation-Date: 2021-12-20 13:38+0200\n"
+"POT-Creation-Date: 2022-01-13 10:14+0200\n"
 "PO-Revision-Date: 2020-06-22 06:53+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -1266,7 +1266,7 @@ msgid "Other"
 msgstr ""
 
 #: core/admin.php:120 core/customizer/customizer-deprecated.php:34
-#: core/customizer/theme-mods/global.php:253
+#: core/customizer/theme-mods/global.php:271
 msgid "Documentation"
 msgstr ""
 
@@ -1611,18 +1611,18 @@ msgid "Can't rename downloaded file: from %s to %s"
 msgstr ""
 
 #: core/customizer/customizer-deprecated.php:28
-#: core/customizer/theme-mods/global.php:245
+#: core/customizer/theme-mods/global.php:263
 msgid "Theme Info"
 msgstr ""
 
 #: core/customizer/customizer-deprecated.php:31
-#: core/customizer/theme-mods/global.php:249
+#: core/customizer/theme-mods/global.php:267
 msgid "Support"
 msgstr ""
 
 #: core/customizer/customizer-deprecated.php:44
 #: core/customizer/customizer-deprecated.php:59
-#: core/customizer/theme-mods/global.php:236
+#: core/customizer/theme-mods/global.php:254
 msgid "Important Links"
 msgstr ""
 
@@ -1734,39 +1734,39 @@ msgid ""
 "text."
 msgstr ""
 
-#: core/customizer/kirki.php:95
+#: core/customizer/kirki.php:97
 msgid "Font Family"
 msgstr ""
 
-#: core/customizer/kirki.php:98
+#: core/customizer/kirki.php:100
 msgid "Variant"
 msgstr ""
 
-#: core/customizer/kirki.php:101
+#: core/customizer/kirki.php:103
 msgid "Color"
 msgstr ""
 
-#: core/customizer/kirki.php:104
+#: core/customizer/kirki.php:106
 msgid "Font Size"
 msgstr ""
 
-#: core/customizer/kirki.php:107
+#: core/customizer/kirki.php:109
 msgid "No image selected"
 msgstr ""
 
-#: core/customizer/kirki.php:110
+#: core/customizer/kirki.php:112
 msgid "Remove"
 msgstr ""
 
-#: core/customizer/kirki.php:113
+#: core/customizer/kirki.php:115
 msgid "Select image"
 msgstr ""
 
-#: core/customizer/kirki.php:116
+#: core/customizer/kirki.php:118
 msgid "No File Selected"
 msgstr ""
 
-#: core/customizer/kirki.php:174 core/customizer/kirki.php:193
+#: core/customizer/kirki.php:176 core/customizer/kirki.php:195
 #: src/experimental/gutenberg-experimental.js:102
 msgid "None"
 msgstr ""
@@ -1970,10 +1970,18 @@ msgid "Also used in other active elements"
 msgstr ""
 
 #: core/customizer/theme-mods/global.php:183
-msgid "Analytics"
+msgid "Miscellaneous Settings"
 msgstr ""
 
 #: core/customizer/theme-mods/global.php:192
+msgid "Scroll To Top Button"
+msgstr ""
+
+#: core/customizer/theme-mods/global.php:201
+msgid "Analytics"
+msgstr ""
+
+#: core/customizer/theme-mods/global.php:210
 msgid ""
 "Here you can insert the code for user analytics systems, Google Analytics or "
 "Yandex.Metrica. Below are 3 areas of the site where you can paste the code, "
@@ -1981,29 +1989,29 @@ msgid ""
 "here."
 msgstr ""
 
-#: core/customizer/theme-mods/global.php:199
+#: core/customizer/theme-mods/global.php:217
 msgid "Before </head>"
 msgstr ""
 
-#: core/customizer/theme-mods/global.php:202
-#: core/customizer/theme-mods/global.php:214
-#: core/customizer/theme-mods/global.php:226
+#: core/customizer/theme-mods/global.php:220
+#: core/customizer/theme-mods/global.php:232
+#: core/customizer/theme-mods/global.php:244
 msgid "Code can be copied here."
 msgstr ""
 
-#: core/customizer/theme-mods/global.php:211
+#: core/customizer/theme-mods/global.php:229
 msgid "At the beginning of <body>"
 msgstr ""
 
-#: core/customizer/theme-mods/global.php:223
+#: core/customizer/theme-mods/global.php:241
 msgid "Before </body>"
 msgstr ""
 
-#: core/customizer/theme-mods/global.php:276
+#: core/customizer/theme-mods/global.php:294
 msgid "Yoast SEO Breadcrumbs"
 msgstr ""
 
-#: core/customizer/theme-mods/global.php:286
+#: core/customizer/theme-mods/global.php:304
 msgid "Additional CSS"
 msgstr ""
 
@@ -2167,7 +2175,7 @@ msgstr ""
 msgid "Select campaign"
 msgstr ""
 
-#: core/editor/blocks/events.php:313 page-events.php:143
+#: core/editor/blocks/events.php:312 page-events.php:143
 msgid "No events"
 msgstr ""
 

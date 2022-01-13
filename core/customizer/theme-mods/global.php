@@ -176,13 +176,31 @@ foreach ( knd_get_social_media_supported() as $id => $data ) {
 
 }
 
+/* Miscellaneous Settings Section */
+Kirki::add_section(
+	'miscellaneous',
+	array(
+		'title'    => esc_html__( 'Miscellaneous Settings', 'knd' ),
+		'panel'    => 'global',
+		'priority' => 4,
+	)
+);
+
+Kirki::add_field( 'knd_theme_mod', array(
+	'type'            => 'toggle',
+	'settings'        => 'button_totop',
+	'label'           => esc_html__( 'Scroll To Top Button', 'knd' ),
+	'section'         => 'miscellaneous',
+	'default'         => true,
+) );
+
 /* Analitics Section */
 Kirki::add_section(
 	'analitics',
 	array(
 		'title'    => esc_html__( 'Analytics', 'knd' ),
 		'panel'    => 'global',
-		'priority' => 3,
+		'priority' => 5,
 	)
 );
 
@@ -235,7 +253,7 @@ Kirki::add_section(
 	array(
 		'title'    => esc_html__( 'Important Links', 'knd' ),
 		'panel'    => 'global',
-		'priority' => 5,
+		'priority' => 6,
 	)
 );
 

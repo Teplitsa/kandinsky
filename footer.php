@@ -139,7 +139,7 @@ $copyright = sprintf( __( 'All materials of the site are avaliabe under license 
 
 </footer>
 
-<span class="screen-reader-text knd-screen-reader-alert" role="alert"></span>
+<?php do_action( 'knd_before_wp_footer' ); ?>
 
 <?php wp_footer(); ?>
 

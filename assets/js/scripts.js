@@ -345,6 +345,35 @@
 	});
 
 	/**
+	 * Scroll To Top Button
+	 */
+	$( document ).ready( function() {
+
+		var btnToTop = $( '.knd-to-top' );
+
+		$( window ).scroll( function() {
+			var offset = $( 'body' ).innerHeight() * 0.1;
+
+			if ( $( this ).scrollTop() > offset ) {
+				btnToTop.addClass( 'active' );
+			} else {
+				btnToTop.removeClass( 'active' );
+			}
+		} );
+
+		btnToTop.on( 'click', function() {
+
+			$( this ).blur();
+
+			$( 'body, html' ).animate( {
+				scrollTop: 0
+			}, 400 );
+
+			return false;
+		} );
+	} );
+
+	/**
 	 * FancyBox
 	 */
 	$('.entry-content .wp-block-gallery, .entry-content .gallery').each( function( index ) {
