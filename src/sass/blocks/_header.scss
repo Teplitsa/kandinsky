@@ -912,6 +912,7 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 		&:focus {
 			background: var(--knd-color-white);
 			color: var(--knd-color-black);
+			box-shadow: none;
 		}
 	}
 }
