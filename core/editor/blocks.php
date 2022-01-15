@@ -7,24 +7,32 @@
 
 function knd_register_blocks() {
 
-	require get_template_directory() . '/core/editor/blocks/hero.php';
-	require get_template_directory() . '/core/editor/blocks/news.php';
-	require get_template_directory() . '/core/editor/blocks/projects.php';
-	require get_template_directory() . '/core/editor/blocks/partners.php';
-	require get_template_directory() . '/core/editor/blocks/people.php';
-	require get_template_directory() . '/core/editor/blocks/cta.php';
-	require get_template_directory() . '/core/editor/blocks/info.php';
-	require get_template_directory() . '/core/editor/blocks/cover.php';
-	require get_template_directory() . '/core/editor/blocks/recommend.php';
+	$blocks = array(
+		'hero',
+		'news',
+		'projects',
+		'partners',
+		'people',
+		'cta',
+		'info',
+		'cover',
+		'recommend',
+	);
 
 	if ( defined( 'LEYKA_VERSION' ) ) {
-		//if (version_compare( LEYKA_VERSION, '3.21') >= 0) {}
-		require get_template_directory() . '/core/editor/blocks/leyka-campaign.php';
-		require get_template_directory() . '/core/editor/blocks/leyka-cards.php';
+		if ( version_compare( LEYKA_VERSION, '3.23', '<' ) ) {
+			$blocks[] = 'leyka-campaign';
+			$blocks[] = 'leyka-cards';
+		}
 	}
 
 	if ( defined( 'EM_VERSION' ) ) {
-		require get_template_directory() . '/core/editor/blocks/events.php';
+		$blocks[] = 'events';
+	}
+
+	foreach ( $blocks as $block ) {
+		$block_template_path = get_theme_file_path( 'core/editor/blocks/' . $block . '.php' );
+		require_once apply_filters( 'knd_block_template_path', $block_template_path, $block, $blocks );
 	}
 
 }
