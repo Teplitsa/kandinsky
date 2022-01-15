@@ -83,9 +83,6 @@
 .editor-styles-wrapper ul {
 	margin-top: 26px;
 	margin-bottom: 26px;
-}
-
-.editor-styles-wrapper ul:not([class]) {
 	list-style-type: '– ';
 	padding-left: 1.5em;
 }
@@ -115,9 +112,6 @@
 	list-style: decimal;
 	margin-top: 26px;
 	margin-bottom: 26px;
-}
-
-.editor-styles-wrapper ol:not([class]) {
 	padding-left: 1.5em;
 }
 

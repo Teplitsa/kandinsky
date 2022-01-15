@@ -547,9 +547,6 @@ h6 {
 .the-content ul {
 	margin-top: 26px;
 	margin-bottom: 26px;
-}
-
-.the-content ul:not([class]) {
 	list-style-type: '– ';
 	padding-left: 1.5em;
 }
@@ -579,9 +576,6 @@ h6 {
 	list-style: decimal;
 	margin-top: 26px;
 	margin-bottom: 26px;
-}
-
-.the-content ol:not([class]) {
 	padding-left: 1.5em;
 }
 
@@ -4358,9 +4352,6 @@ div[id*="leyka-pf-"] .inpage-card__thumb {
 .widget-full.widget_text .textwidget ul {
 	margin-top: 26px;
 	margin-bottom: 26px;
-}
-
-.widget-full.widget_text .textwidget ul:not([class]) {
 	list-style-type: '– ';
 	padding-left: 1.5em;
 }
@@ -4390,9 +4381,6 @@ div[id*="leyka-pf-"] .inpage-card__thumb {
 	list-style: decimal;
 	margin-top: 26px;
 	margin-bottom: 26px;
-}
-
-.widget-full.widget_text .textwidget ol:not([class]) {
 	padding-left: 1.5em;
 }
 
