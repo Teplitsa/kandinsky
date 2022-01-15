@@ -2394,6 +2394,15 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 	border: 2px solid var(--knd-color-main);
 }
 
+.site-nav .knd-search__form .knd-search__input {
+	background-color: transparent;
+}
+
+.site-nav .knd-search__form .knd-search__input:focus {
+	background: var(--knd-color-white);
+	color: var(--knd-color-black);
+}
+
 .knd-search__form .knd-search__submit {
 	position: absolute;
 	top: 2px;

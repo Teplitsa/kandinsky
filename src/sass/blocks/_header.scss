@@ -905,6 +905,15 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 	padding: 18px 30px;
 	width: 100%;
 	border: 2px solid var(--knd-color-main);
+
+	.site-nav & {
+		background-color: transparent;
+
+		&:focus {
+			background: var(--knd-color-white);
+			color: var(--knd-color-black);
+		}
+	}
 }
 .knd-search__form {
 	.knd-search__submit {
