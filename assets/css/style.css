@@ -3057,6 +3057,7 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 	-ms-flex-pack: center;
 	justify-content: center;
 	position: fixed;
+	z-index: 101;
 	left: -9999px;
 	bottom: 40px;
 	transition: opacity 0.25s;

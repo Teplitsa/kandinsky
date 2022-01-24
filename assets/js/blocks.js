@@ -1211,7 +1211,7 @@
 
 	const el = element.createElement;
 
-	const { TextControl, TextareaControl, SelectControl, RangeControl, ColorPalette, ColorPicker, PanelBody, ToggleControl, BaseControl, Button, Dropdown, Tooltip, Disabled } = components;
+	const { TextControl, TextareaControl, SelectControl, RangeControl, ColorPalette, ColorPicker, PanelBody, ToggleControl, BaseControl, Button, ButtonGroup, Dropdown, Tooltip, Disabled } = components;
 
 	const { registerBlockType, withColors, PanelColorSettings, getColorClassName, useBlockProps } = blocks;
 
@@ -1289,6 +1289,10 @@
 				default: {
 					url: kndBlock.getImageUrl.heroFeatured,
 				}
+			},
+			headingLevel: {
+				type: 'string',
+				default: 'h1',
 			},
 			textColor: {
 				type: 'string',
@@ -1692,78 +1696,169 @@
 								initialOpen: false
 							},
 
-							el( 'div', {
-								className: 'knd-components',
-							},
-
 							el( 'div',
 								{
-									className: 'knd-components-heading',
+								 className: 'knd-components',
 								},
+
 								el( 'div',
 									{
-										className: 'knd-components-heading__label'
+										className: 'knd-components-heading',
 									},
-									__( 'Overlay Gradient Start Color', 'knd' ),
+									el( 'div',
+										{
+											className: 'knd-components-heading__label'
+										},
+										__( 'Overlay Gradient Start Color', 'knd' ),
+									),
+								),
+
+								el( ColorPicker,
+									{
+										disableAlpha: false,
+										color: props.attributes.overlayColorStart,
+										onChangeComplete: ( val ) => {
+											var color = val.hex;
+											if ( val.rgb.a !== 1 ) {
+												color = 'rgba(' + val.rgb.r + ',' + val.rgb.g + ',' + val.rgb.b + ',' + val.rgb.a + ')'
+											}
+											props.setAttributes({ overlayColorStart: color });
+										}
+									}
 								),
 							),
 
-							el( ColorPicker,
-								{
-									disableAlpha: false,
-									color: props.attributes.overlayColorStart,
-									onChangeComplete: ( val ) => {
-										var color = val.hex;
-										if ( val.rgb.a !== 1 ) {
-											color = 'rgba(' + val.rgb.r + ',' + val.rgb.g + ',' + val.rgb.b + ',' + val.rgb.a + ')'
-										}
-										props.setAttributes({ overlayColorStart: color });
-									}
-								}
-							),
-						),
-
-						el( 'div', {
-							className: 'knd-components',
-						},
-
-						el( 'div',
-							{
-								className: 'knd-components-heading',
-							},
 							el( 'div',
 								{
-									className: 'knd-components-heading__label'
+									className: 'knd-components',
 								},
-								__( 'Overlay Gradient End Color', 'knd' ),
+
+								el( 'div',
+									{
+										className: 'knd-components-heading',
+									},
+									el( 'div',
+										{
+											className: 'knd-components-heading__label'
+										},
+										__( 'Overlay Gradient End Color', 'knd' ),
+									),
+								),
+
+								el( ColorPicker,
+									{
+										disableAlpha: false,
+										color: props.attributes.overlayColorEnd,
+										onChangeComplete: ( val ) => {
+											var color = val.hex;
+											if ( val.rgb.a !== 1 ) {
+												color = 'rgba(' + val.rgb.r + ',' + val.rgb.g + ',' + val.rgb.b + ',' + val.rgb.a + ')'
+											}
+											props.setAttributes({ overlayColorEnd: color });
+										}
+									}
+								),
 							),
 						),
 
-						el( ColorPicker,
+						el( PanelBody,
 							{
-								disableAlpha: false,
-								color: props.attributes.overlayColorEnd,
-								onChangeComplete: ( val ) => {
-									var color = val.hex;
-									if ( val.rgb.a !== 1 ) {
-										color = 'rgba(' + val.rgb.r + ',' + val.rgb.g + ',' + val.rgb.b + ',' + val.rgb.a + ')'
-									}
-									props.setAttributes({ overlayColorEnd: color });
-								}
-							}
+								title: __( 'Typography', 'knd' ),
+								initialOpen: false,
+							},
+
+							el( BaseControl,
+								{
+									label: __( 'Heading level', 'knd'),
+									className: 'knd-components-base-control',
+								},
+
+								el( BaseControl,{},
+
+									el( ButtonGroup, null,
+
+										el( Button,
+											{
+												onClick: function( e ) {
+													props.setAttributes({ headingLevel: e.target.innerText.toLowerCase() });
+												},
+												isPrimary: (props.attributes.headingLevel === 'h1'),
+											},
+											el ( 'strong', {},
+												'H1',
+											),
+										),
+										el( Button,
+											{
+												onClick: function( e ) {
+													props.setAttributes({ headingLevel: e.target.innerText.toLowerCase() });
+												},
+												isPrimary: (props.attributes.headingLevel === 'h2'),
+											},
+											el ( 'strong', {},
+												'H2',
+											),
+										),
+										el( Button,
+											{
+												onClick: function( e ) {
+													props.setAttributes({ headingLevel: e.target.innerText.toLowerCase() });
+												},
+												isPrimary: (props.attributes.headingLevel === 'h3'),
+											},
+											el ( 'strong', {},
+												'H3',
+											),
+										),
+										el( Button,
+											{
+												onClick: function( e ) {
+													props.setAttributes({ headingLevel: e.target.innerText.toLowerCase() });
+												},
+												isPrimary: (props.attributes.headingLevel === 'h4'),
+											},
+											el ( 'strong', {},
+												'H4',
+											),
+										),
+										el( Button,
+											{
+												onClick: function( e ) {
+													props.setAttributes({ headingLevel: e.target.innerText.toLowerCase() });
+												},
+												isPrimary: (props.attributes.headingLevel === 'h5'),
+											},
+											el ( 'strong', {},
+												'H5',
+											),
+										),
+										el( Button,
+											{
+												onClick: function( e ) {
+													props.setAttributes({ headingLevel: e.target.innerText.toLowerCase() });
+												},
+												isPrimary: (props.attributes.headingLevel === 'h6'),
+											},
+											el ( 'strong', {},
+												'H6',
+											),
+										),
+
+									),
+								),
+
+							),
 						),
 					),
-				),
-			),
 
-			el(	Disabled,
-				null,
-				el( ServerSideRender, {
-					block: 'knd/hero',
-					attributes: props.attributes,
-				} ),
-			)
-			)
+					el(	Disabled,
+						null,
+						el( ServerSideRender, {
+							block: 'knd/hero',
+							attributes: props.attributes,
+						} ),
+					)
+				)
 			);
 		},
 

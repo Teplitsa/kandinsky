@@ -173,6 +173,11 @@
 	align-self: center;
 }
 
+.knd-components-base-control .components-base-control__label {
+	margin-bottom: 8px;
+	display: block;
+}
+
 .knd-editor-block-card__description {
 	padding: 0 16px 16px 60px;
 	margin-top: -12px;

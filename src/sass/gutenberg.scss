@@ -85,6 +85,13 @@
 	.components-color-picker__inputs-toggle-wrapper {
 		align-self: center;
 	}
+
+	&-base-control {
+		.components-base-control__label {
+			margin-bottom: 8px;
+			display: block;
+		}
+	}
 }
 
 .knd-editor-block-card__description {

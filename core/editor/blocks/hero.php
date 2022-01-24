@@ -41,6 +41,10 @@ register_block_type( 'knd/hero', array(
 			'type'    => 'string',
 			'default' => 'full',
 		),
+		'headingLevel' => array(
+			'type'    => 'string',
+			'default' => 'h1',
+		),
 		'textColor' => array(
 			'type'    => 'string',
 		),
@@ -107,7 +111,8 @@ function knd_block_hero_render_callback( $attr ) {
 
 	$heading = '';
 	if ( isset( $attr['heading'] ) && $attr['heading'] ) {
-		$heading = '<h1 class="knd-block-hero__title">' . $attr['heading'] . '</h1>';
+		$heading_level = $attr['headingLevel'];
+		$heading = '<' . $heading_level . ' class="knd-block-hero__title">' . $attr['heading'] . '</' . $heading_level . '>';
 	}
 
 	$text = '';
