@@ -326,6 +326,9 @@
 .knd-block-carousel .flickity-slider {
 	display: -ms-flexbox;
 	display: flex;
+}
+
+.wp-block-knd-partners .knd-block-carousel .flickity-slider {
 	-ms-flex-align: center;
 	align-items: center;
 }

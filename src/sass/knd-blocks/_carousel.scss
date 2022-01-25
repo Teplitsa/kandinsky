@@ -35,8 +35,12 @@
 
 		&-slider {
 			display: flex;
-			align-items: center;
+
+			.wp-block-knd-partners & {
+				align-items: center;
+			}
 		}
+
 	}
 
 	&.flickity-buttons-top {

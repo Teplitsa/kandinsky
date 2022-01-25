@@ -2281,7 +2281,6 @@ body > svg {
 
 .knd-header-nav .sub-menu {
 	max-width: 300px;
-	width: -webkit-max-content;
 	width: max-content;
 }
 
