@@ -663,6 +663,35 @@ function knd_header_mobile_logo() {
 }
 
 /**
+ * OffCanvas Logo
+ */
+function knd_offcanvas_logo() {
+
+	$logo_title = get_theme_mod( 'header_logo_title', get_bloginfo( 'name' ) );
+
+	?>
+
+	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="snt-cell" aria-hidden="true" tabindex="-1">
+		<?php if ( $logo_title ) { ?>
+			<span class="logo-name"><?php echo wp_kses_post( nl2br( get_theme_mod( 'header_logo_title', get_bloginfo( 'name' ) ) ) ); ?></span>
+		<?php } else { ?>
+			<span class="logo-name">
+				<?php
+					$logo_id  = knd_get_logo_id();
+					$logo_url = wp_get_attachment_image_url( $logo_id, 'full', false );
+
+					if ( $logo_url ) {
+						echo wp_get_attachment_image( $logo_id, 'full', false, array( 'alt' => get_bloginfo( 'name' ) ) );
+					}
+				?>
+			</span>
+		<?php } ?>
+	</a>
+
+	<?php
+}
+
+/**
  * Footer Logo
  */
 function knd_footer_logo() {

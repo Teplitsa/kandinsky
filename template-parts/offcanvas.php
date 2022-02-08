@@ -12,9 +12,7 @@
 <div id="site_nav" class="site-nav" tabindex="-1">
 
 	<div class="site-nav-title">
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="snt-cell" aria-hidden="true" tabindex="-1">
-			<span class="logo-name"><?php echo wp_kses_post( nl2br( get_theme_mod( 'header_logo_title', get_bloginfo( 'name' ) ) ) ); ?></span>
-		</a>
+		<?php knd_offcanvas_logo(); ?>
 
 		<?php knd_offcanvas_close(); ?>
 	</div>
