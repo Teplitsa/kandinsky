@@ -102,6 +102,13 @@ Kirki::add_field( 'knd_theme_mod', [
 ] );
 
 Kirki::add_field( 'knd_theme_mod', array(
+	'type'     => 'custom',
+	'settings' => 'header_' . wp_unique_id( 'divider_' ),
+	'section'  => 'fonts_colors',
+	'default'  => '<div class="knd-customizer-divider"></div>',
+) );
+
+Kirki::add_field( 'knd_theme_mod', array(
 	'type'        => 'color',
 	'settings'    => 'knd_page_bg_color',
 	'label'       => esc_html__( 'Page Background color', 'knd' ),
@@ -259,24 +266,28 @@ Kirki::add_section(
 
 $important_links_arr = array( 
 	'theme-info' => array( 
-		'link' => esc_url( TST_OFFICIAL_WEBSITE_URL ),
+		'link' => esc_url( KND_OFFICIAL_WEBSITE_URL ),
 		'text' => esc_html__( 'Theme Info', 'knd' ),
 	),
 	'support' => array( 
-		'link' => esc_url( KND_SUPPORT_EMAIL ),
+		'link' => esc_url( KND_OFFICIAL_SUPPORT_URL ),
 		'text' => esc_html__( 'Support', 'knd' ),
 	), 
 	'documentation' => array( 
 		'link' => esc_url( KND_DOC_URL ),
 		'text' => esc_html__( 'Documentation', 'knd' ),
 	),
+	'changelog' => array( 
+		'link' => esc_url( KND_CHANGELOG_URL ),
+		'text' => esc_html__( 'Changelog', 'knd' ),
+	),
 );
 
 $important_links = '';
 
 foreach ( $important_links_arr as $important_link ) {
-	$important_links .= '<p><a target="_blank" href="' . $important_link['link'] . '" >' . esc_attr( 
-		$important_link['text'] ) . ' </a></p>';
+	$important_links .= '<div class="knd-customizer-heading"><a target="_blank" href="' . $important_link['link'] . '" class="knd-customizer-link">' . esc_attr( 
+		$important_link['text'] ) . ' </a></div>';
 }
 
 Kirki::add_field( 'knd_theme_mod', [

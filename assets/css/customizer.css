@@ -92,3 +92,41 @@
 	line-height: 1.55;
 	font-weight: 600;
 }
+.knd-customizer-heading + .knd-customizer-heading {
+	margin-top: 0;
+	border-top: 0;
+}
+.knd-customizer-link {
+	display: block;
+	margin: -10px -10px -11px -14px;
+	padding: 10px 10px 11px 14px;
+	color: #2271b1;
+	background-color: #fff;
+	border-left: 4px solid #fff;
+	text-decoration: none;
+	position: relative;
+	transition: .15s color ease-in-out,.15s background-color ease-in-out,.15s border-color ease-in-out;
+}
+.knd-customizer-link:hover {
+	color: #2271b1;
+	background: #f6f7f7;
+	border-left-color: #2271b1;
+}
+
+.knd-customizer-link:after {
+	content: "\f504";
+	color: #a7aaad;
+	top: calc(50% - 10px);
+	position: absolute;
+	top: 12px;
+	right: 10px;
+	z-index: 1;
+	float:  right;
+	font: normal 20px/1 dashicons;
+	display: block;
+	-webkit-font-smoothing: antialiased;
+}
+.knd-customizer-link:hover:after {
+	color: #2271b1;
+}
+

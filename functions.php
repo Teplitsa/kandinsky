@@ -16,6 +16,8 @@ if ( ! defined( 'WPINC' ) ) {
 define('KND_VERSION', '2.1.8');
 define('KND_DOC_URL', 'https://knd.te-st.ru/docs/');
 define('KND_OFFICIAL_WEBSITE_URL', 'https://knd.te-st.ru/');
+define('KND_OFFICIAL_SUPPORT_URL', 'https://knd.te-st.ru/bug/');
+define('KND_CHANGELOG_URL', 'https://knd.te-st.ru/changelog/');
 define('KND_SOURCES_PAGE_URL', 'https://github.com/Teplitsa/kandinsky/');
 define('KND_SOURCES_ISSUES_PAGE_URL', 'https://github.com/Teplitsa/kandinsky/issues/');
 define('TST_OFFICIAL_WEBSITE_URL', 'https://te-st.ru/');
