@@ -96,11 +96,11 @@ function knd_gettext( $translation, $text, $domain ) {
 		if ( $text === 'Font Family' ) {
 			$translation = esc_html__( 'Font Family', 'knd' );
 		}
-		if ( $text === 'Variant' ) {
-			$translation = esc_html__( 'Variant', 'knd' );
+		if ( $text === 'Font Variant' ) {
+			$translation = esc_html__( 'Font Variant', 'knd' );
 		}
-		if ( $text === 'Color' ) {
-			$translation = esc_html__( 'Color', 'knd' );
+		if ( $text === 'Font Color' ) {
+			$translation = esc_html__( 'Font Color', 'knd' );
 		}
 		if ( $text === 'Font Size' ) {
 			$translation = esc_html__( 'Font Size', 'knd' );
@@ -116,6 +116,12 @@ function knd_gettext( $translation, $text, $domain ) {
 		}
 		if ( $text === 'No File Selected' ) {
 			$translation = esc_html__( 'No File Selected', 'knd' );
+		}
+		if ( $text === 'Select...' ) {
+			$translation = esc_html__( 'Select...', 'knd' );
+		}
+		if ( $text === 'No options' ) {
+			$translation = esc_html__( 'No options', 'knd' );
 		}
 	}
 	return $translation;

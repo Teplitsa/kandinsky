@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-10 09:15+0200\n"
-"PO-Revision-Date: 2022-02-10 09:20+0200\n"
+"POT-Creation-Date: 2022-02-10 17:24+0200\n"
+"PO-Revision-Date: 2022-02-10 17:25+0200\n"
 "Last-Translator: ahaenor <ahaenor@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -1178,7 +1178,7 @@ msgid "Other"
 msgstr "Другое"
 
 #: core/admin.php:120 core/customizer/customizer-deprecated.php:34
-#: core/customizer/theme-mods/global.php:271
+#: core/customizer/theme-mods/global.php:278
 msgid "Documentation"
 msgstr "Документация"
 
@@ -1218,7 +1218,7 @@ msgstr "«Кандинский» – настройки"
 #. Theme Name of the plugin/theme
 #: core/admin.php:215 core/admin.php:252 core/admin.php:615
 #: core/editor/category.php:20 core/editor/pattern.php:20
-#: core/theme-update/theme-update-checker.php:342 functions.php:238
+#: core/theme-update/theme-update-checker.php:342 functions.php:240
 msgid "Kandinsky"
 msgstr "Кандинский"
 
@@ -1545,18 +1545,18 @@ msgid "Can't rename downloaded file: from %s to %s"
 msgstr "Невозможно переименовать загружаемый файл: из %s в %s"
 
 #: core/customizer/customizer-deprecated.php:28
-#: core/customizer/theme-mods/global.php:263
+#: core/customizer/theme-mods/global.php:270
 msgid "Theme Info"
 msgstr "О теме"
 
 #: core/customizer/customizer-deprecated.php:31
-#: core/customizer/theme-mods/global.php:267
+#: core/customizer/theme-mods/global.php:274
 msgid "Support"
 msgstr "Служба поддержки"
 
 #: core/customizer/customizer-deprecated.php:44
 #: core/customizer/customizer-deprecated.php:59
-#: core/customizer/theme-mods/global.php:254
+#: core/customizer/theme-mods/global.php:261
 msgid "Important Links"
 msgstr "Важные ссылки"
 
@@ -1585,7 +1585,7 @@ msgid "Page Background Color"
 msgstr "Основной цвет фона страниц"
 
 #: core/customizer/customizer-deprecated.php:138
-#: core/customizer/theme-mods/global.php:108
+#: core/customizer/theme-mods/global.php:115
 msgid "Recommended - white"
 msgstr "Рекомендуется - белый"
 
@@ -1678,12 +1678,12 @@ msgid "Font Family"
 msgstr "Шрифт"
 
 #: core/customizer/kirki.php:100
-msgid "Variant"
+msgid "Font Variant"
 msgstr "Насыщенность"
 
 #: core/customizer/kirki.php:103
-msgid "Color"
-msgstr "Цвет"
+msgid "Font Color"
+msgstr "Цвет текста"
 
 #: core/customizer/kirki.php:106
 msgid "Font Size"
@@ -1705,7 +1705,15 @@ msgstr "Выбрать изображение"
 msgid "No File Selected"
 msgstr "Изображение не выбрано"
 
-#: core/customizer/kirki.php:176 core/customizer/kirki.php:195
+#: core/customizer/kirki.php:121
+msgid "Select..."
+msgstr "Выбор..."
+
+#: core/customizer/kirki.php:124
+msgid "No options"
+msgstr "Нет вариантов"
+
+#: core/customizer/kirki.php:182 core/customizer/kirki.php:201
 #: src/experimental/gutenberg-experimental.js:102
 msgid "None"
 msgstr "Нет"
@@ -1855,7 +1863,7 @@ msgid "Footer Links Color Hover"
 msgstr "Цвет ссылок в подвале при наведении"
 
 #: core/customizer/theme-mods/footer.php:453
-#: core/customizer/theme-mods/global.php:156
+#: core/customizer/theme-mods/global.php:163
 #: core/customizer/theme-mods/header.php:357
 #: core/customizer/theme-mods/header.php:550
 msgid "Social networks"
@@ -1890,39 +1898,39 @@ msgstr "Основной текст"
 msgid "Headings"
 msgstr "Заголовки"
 
-#: core/customizer/theme-mods/global.php:107
+#: core/customizer/theme-mods/global.php:114
 msgid "Page Background color"
 msgstr "Фон страницы"
 
-#: core/customizer/theme-mods/global.php:123
+#: core/customizer/theme-mods/global.php:130
 msgid "Buttons and links color"
 msgstr "Цвет кнопок и ссылок"
 
-#: core/customizer/theme-mods/global.php:124
+#: core/customizer/theme-mods/global.php:131
 msgid "Also used in other decorative elements"
 msgstr "Также используется в других декоративных элементах"
 
-#: core/customizer/theme-mods/global.php:139
+#: core/customizer/theme-mods/global.php:146
 msgid "Buttons and links color hover"
 msgstr "Цвет кнопок и ссылок при наведении"
 
-#: core/customizer/theme-mods/global.php:140
+#: core/customizer/theme-mods/global.php:147
 msgid "Also used in other active elements"
 msgstr "Также используется в других активных элементах"
 
-#: core/customizer/theme-mods/global.php:183
+#: core/customizer/theme-mods/global.php:190
 msgid "Miscellaneous Settings"
 msgstr "Разные настройки"
 
-#: core/customizer/theme-mods/global.php:192
+#: core/customizer/theme-mods/global.php:199
 msgid "Scroll To Top Button"
 msgstr "Кнопка наверх"
 
-#: core/customizer/theme-mods/global.php:201
+#: core/customizer/theme-mods/global.php:208
 msgid "Analytics"
 msgstr "Аналитика"
 
-#: core/customizer/theme-mods/global.php:210
+#: core/customizer/theme-mods/global.php:217
 msgid ""
 "Here you can insert the code for user analytics systems, Google Analytics or "
 "Yandex.Metrica. Below are 3 areas of the site where you can paste the code, "
@@ -1934,29 +1942,33 @@ msgstr ""
 "зависимости, от требований устанавливаемых систем, можете вставить код. "
 "Просто скопируйте его сюда."
 
-#: core/customizer/theme-mods/global.php:217
+#: core/customizer/theme-mods/global.php:224
 msgid "Before </head>"
 msgstr "Перед </head>"
 
-#: core/customizer/theme-mods/global.php:220
-#: core/customizer/theme-mods/global.php:232
-#: core/customizer/theme-mods/global.php:244
+#: core/customizer/theme-mods/global.php:227
+#: core/customizer/theme-mods/global.php:239
+#: core/customizer/theme-mods/global.php:251
 msgid "Code can be copied here."
 msgstr "Код можно скопировать сюда."
 
-#: core/customizer/theme-mods/global.php:229
+#: core/customizer/theme-mods/global.php:236
 msgid "At the beginning of <body>"
 msgstr "В начале <body>"
 
-#: core/customizer/theme-mods/global.php:241
+#: core/customizer/theme-mods/global.php:248
 msgid "Before </body>"
 msgstr "Перед </body>"
 
-#: core/customizer/theme-mods/global.php:294
+#: core/customizer/theme-mods/global.php:282
+msgid "Changelog"
+msgstr "Changelog"
+
+#: core/customizer/theme-mods/global.php:305
 msgid "Yoast SEO Breadcrumbs"
 msgstr "Цепочки навигации Yoast SEO"
 
-#: core/customizer/theme-mods/global.php:304
+#: core/customizer/theme-mods/global.php:315
 msgid "Additional CSS"
 msgstr "Дополнительные стили"
 
@@ -2025,8 +2037,8 @@ msgid "Button Text"
 msgstr "Текст кнопки"
 
 #: core/customizer/theme-mods/header.php:376
-#: core/customizer/theme-mods/header.php:521 core/template-tags.php:805
-#: core/template-tags.php:833 core/template-tags.php:890
+#: core/customizer/theme-mods/header.php:521 core/template-tags.php:813
+#: core/template-tags.php:841 core/template-tags.php:898
 #: modules/donations/donations.php:159
 #: vendor/envato_setup/envato_setup.php:1192
 #: vendor/envato_setup/envato_setup.php:1208
@@ -2094,7 +2106,7 @@ msgstr "Комментарии"
 msgid "Related Posts Title"
 msgstr "Заголовок похожих статей"
 
-#: core/customizer/theme-mods/post-settings.php:55 core/template-tags.php:997
+#: core/customizer/theme-mods/post-settings.php:55 core/template-tags.php:1005
 msgid "Related posts"
 msgstr "Познакомьтесь с другими проектами"
 
@@ -2116,7 +2128,7 @@ msgid "Related Projects Title"
 msgstr "Заголовок похожие проекты"
 
 #: core/customizer/theme-mods/project-settings.php:47
-#: core/template-tags.php:1010 vendor/envato_setup/envato_setup.php:1232
+#: core/template-tags.php:1018 vendor/envato_setup/envato_setup.php:1232
 msgid "Related projects"
 msgstr "Познакомьтесь с другими проектами"
 
@@ -2391,23 +2403,23 @@ msgstr "Еще новости"
 msgid "Latest news"
 msgstr "Последние новости"
 
-#: core/template-tags.php:745
+#: core/template-tags.php:753
 msgid "Open search"
 msgstr "Открыть поиск"
 
-#: core/template-tags.php:766
+#: core/template-tags.php:774
 msgid "Close search"
 msgstr "Закрыть поиск"
 
-#: core/template-tags.php:781
+#: core/template-tags.php:789
 msgid "Open Off-Canvas"
 msgstr "Открыть боковую панель"
 
-#: core/template-tags.php:794
+#: core/template-tags.php:802
 msgid "Close Off-Canvas"
 msgstr "Закрыть боковую панель"
 
-#: core/template-tags.php:912 functions.php:83 template-parts/offcanvas.php:29
+#: core/template-tags.php:920 functions.php:85 template-parts/offcanvas.php:29
 msgid "Primary menu"
 msgstr "Главное меню"
 
@@ -2434,12 +2446,12 @@ msgid "Kandinsky logo"
 msgstr "Логотип Кандинский"
 
 #. Author of the plugin/theme
-#: functions.php:239
+#: functions.php:241
 msgid "Teplitsa"
 msgstr "Теплица социальных технологий"
 
 #. Description of the plugin/theme
-#: functions.php:240
+#: functions.php:242
 msgid "The beautiful design and useful features for nonprofit website"
 msgstr "Красивый дизайн и полезные функции для сайта НКО"
 
@@ -3898,6 +3910,9 @@ msgstr "https://te-st.ru/"
 #. Author URI of the plugin/theme
 msgid "https://te-st.ru/"
 msgstr "https://te-st.ru/"
+
+#~ msgid "Color"
+#~ msgstr "Цвет"
 
 #~ msgid "Collecting donations"
 #~ msgstr "Сбор пожертвований"
