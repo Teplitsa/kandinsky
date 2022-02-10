@@ -4586,6 +4586,10 @@ div[id*="leyka-pf-"] .inpage-card__thumb {
 	margin-bottom: 2em;
 	text-transform: uppercase;
 	color: var(--knd-footer-heading-color);
+	font-family: var(--knd-font-family-headings);
+	font-weight: var(--knd-font-weight-headings);
+	font-style: var(--knd-font-style-headings);
+	line-height: 1.2;
 }
 
 .widget-full.widget_text {

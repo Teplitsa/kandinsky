@@ -26,10 +26,13 @@
 		font-size: 11px;
 		margin-bottom: 2em;
 		text-transform: uppercase;
-		color: var(--knd-footer-heading-color)
+		color: var(--knd-footer-heading-color);
+		font-family: var(--knd-font-family-headings);
+		font-weight: var(--knd-font-weight-headings);
+		font-style: var(--knd-font-style-headings);
+		line-height: 1.2;
 	}
 }
-
 
 // Text
 .widget-full.widget_text {
