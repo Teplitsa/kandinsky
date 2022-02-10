@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Kandinsky\n"
-"POT-Creation-Date: 2022-01-24 20:22+0200\n"
+"POT-Creation-Date: 2022-02-10 09:15+0200\n"
 "PO-Revision-Date: 2020-06-22 06:53+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -131,7 +131,7 @@ msgstr ""
 #: assets/js/blocks.js:159 assets/js/blocks.js:514 assets/js/blocks.js:1046
 #: assets/js/blocks.js:1389 assets/js/blocks.js:2045 assets/js/blocks.js:2571
 #: assets/js/blocks.js:2954 assets/js/blocks.js:3353 assets/js/blocks.js:3880
-#: assets/js/es5.js:192 src/js/blocks/cover.js:158 src/js/blocks/cta.js:145
+#: src/js/blocks/cover.js:158 src/js/blocks/cta.js:145
 #: src/js/blocks/events.js:289 src/js/blocks/hero.js:186
 #: src/js/blocks/info.js:164 src/js/blocks/news.js:275
 #: src/js/blocks/partners.js:198 src/js/blocks/people.js:222
@@ -163,18 +163,18 @@ msgstr ""
 msgid "Recommendation"
 msgstr ""
 
-#: assets/js/blocks.js:195 assets/js/blocks.js:1606 assets/js/es5.js:423
-#: src/js/blocks/cover.js:194 src/js/blocks/hero.js:403
+#: assets/js/blocks.js:195 assets/js/blocks.js:1606 src/js/blocks/cover.js:194
+#: src/js/blocks/hero.js:403
 msgid "Background Image"
 msgstr ""
 
-#: assets/js/blocks.js:240 assets/js/blocks.js:1657 assets/js/es5.js:480
-#: src/js/blocks/cover.js:239 src/js/blocks/hero.js:454
+#: assets/js/blocks.js:240 assets/js/blocks.js:1657 src/js/blocks/cover.js:239
+#: src/js/blocks/hero.js:454
 msgid "Remove Background Image"
 msgstr ""
 
-#: assets/js/blocks.js:252 assets/js/blocks.js:1669 assets/js/es5.js:494
-#: src/js/blocks/cover.js:251 src/js/blocks/hero.js:466
+#: assets/js/blocks.js:252 assets/js/blocks.js:1669 src/js/blocks/cover.js:251
+#: src/js/blocks/hero.js:466
 msgid "Add Background Image"
 msgstr ""
 
@@ -195,20 +195,18 @@ msgstr ""
 #: assets/js/blocks.js:291 assets/js/blocks.js:618 assets/js/blocks.js:1090
 #: assets/js/blocks.js:1681 assets/js/blocks.js:2189 assets/js/blocks.js:2629
 #: assets/js/blocks.js:3033 assets/js/blocks.js:3434 assets/js/blocks.js:3937
-#: assets/js/blocks.js:4172 assets/js/es5.js:503
-#: src/experimental/donations.js:120 src/js/blocks/cover.js:290
-#: src/js/blocks/cta.js:249 src/js/blocks/events.js:333
-#: src/js/blocks/hero.js:478 src/js/blocks/info.js:308
-#: src/js/blocks/news.js:333 src/js/blocks/partners.js:277
-#: src/js/blocks/people.js:303 src/js/blocks/projects.js:380
-#: src/js/blocks/recommend.js:117
+#: assets/js/blocks.js:4172 src/experimental/donations.js:120
+#: src/js/blocks/cover.js:290 src/js/blocks/cta.js:249
+#: src/js/blocks/events.js:333 src/js/blocks/hero.js:478
+#: src/js/blocks/info.js:308 src/js/blocks/news.js:333
+#: src/js/blocks/partners.js:277 src/js/blocks/people.js:303
+#: src/js/blocks/projects.js:380 src/js/blocks/recommend.js:117
 msgid "Background Color"
 msgstr ""
 
 #: assets/js/blocks.js:301 assets/js/blocks.js:638 assets/js/blocks.js:1493
-#: assets/js/blocks.js:4162 assets/js/es5.js:305 src/js/blocks/cover.js:300
-#: src/js/blocks/cta.js:269 src/js/blocks/hero.js:290
-#: src/js/blocks/recommend.js:107
+#: assets/js/blocks.js:4162 src/js/blocks/cover.js:300 src/js/blocks/cta.js:269
+#: src/js/blocks/hero.js:290 src/js/blocks/recommend.js:107
 msgid "Text Color"
 msgstr ""
 
@@ -277,18 +275,18 @@ msgstr ""
 msgid "Text"
 msgstr ""
 
-#: assets/js/blocks.js:542 assets/js/blocks.js:1418 assets/js/es5.js:225
-#: src/js/blocks/cta.js:173 src/js/blocks/hero.js:215
+#: assets/js/blocks.js:542 assets/js/blocks.js:1418 src/js/blocks/cta.js:173
+#: src/js/blocks/hero.js:215
 msgid "Call to action Image"
 msgstr ""
 
-#: assets/js/blocks.js:585 assets/js/blocks.js:1469 assets/js/es5.js:282
-#: src/js/blocks/cta.js:216 src/js/blocks/hero.js:266
+#: assets/js/blocks.js:585 assets/js/blocks.js:1469 src/js/blocks/cta.js:216
+#: src/js/blocks/hero.js:266
 msgid "Remove Image"
 msgstr ""
 
-#: assets/js/blocks.js:597 assets/js/blocks.js:1481 assets/js/es5.js:296
-#: src/js/blocks/cta.js:228 src/js/blocks/hero.js:278
+#: assets/js/blocks.js:597 assets/js/blocks.js:1481 src/js/blocks/cta.js:228
+#: src/js/blocks/hero.js:278
 msgid "Add Image"
 msgstr ""
 
@@ -301,13 +299,13 @@ msgstr ""
 msgid "Button"
 msgstr ""
 
-#: assets/js/blocks.js:656 assets/js/blocks.js:1512 assets/js/es5.js:324
-#: src/js/blocks/cta.js:287 src/js/blocks/hero.js:309
+#: assets/js/blocks.js:656 assets/js/blocks.js:1512 src/js/blocks/cta.js:287
+#: src/js/blocks/hero.js:309
 msgid "Button text"
 msgstr ""
 
-#: assets/js/blocks.js:664 assets/js/blocks.js:1520 assets/js/es5.js:333
-#: src/js/blocks/cta.js:295 src/js/blocks/hero.js:317
+#: assets/js/blocks.js:664 assets/js/blocks.js:1520 src/js/blocks/cta.js:295
+#: src/js/blocks/hero.js:317
 msgid "Button url"
 msgstr ""
 
@@ -315,23 +313,23 @@ msgstr ""
 msgid "Open in new tab"
 msgstr ""
 
-#: assets/js/blocks.js:685 assets/js/blocks.js:1545 assets/js/es5.js:360
-#: src/js/blocks/cta.js:316 src/js/blocks/hero.js:342
+#: assets/js/blocks.js:685 assets/js/blocks.js:1545 src/js/blocks/cta.js:316
+#: src/js/blocks/hero.js:342
 msgid "Button Background"
 msgstr ""
 
-#: assets/js/blocks.js:696 assets/js/blocks.js:1556 assets/js/es5.js:371
-#: src/js/blocks/cta.js:327 src/js/blocks/hero.js:353
+#: assets/js/blocks.js:696 assets/js/blocks.js:1556 src/js/blocks/cta.js:327
+#: src/js/blocks/hero.js:353
 msgid "Button Color"
 msgstr ""
 
-#: assets/js/blocks.js:707 assets/js/blocks.js:1567 assets/js/es5.js:382
-#: src/js/blocks/cta.js:338 src/js/blocks/hero.js:364
+#: assets/js/blocks.js:707 assets/js/blocks.js:1567 src/js/blocks/cta.js:338
+#: src/js/blocks/hero.js:364
 msgid "Button Hover Background"
 msgstr ""
 
-#: assets/js/blocks.js:718 assets/js/blocks.js:1578 assets/js/es5.js:393
-#: src/js/blocks/cta.js:349 src/js/blocks/hero.js:375
+#: assets/js/blocks.js:718 assets/js/blocks.js:1578 src/js/blocks/cta.js:349
+#: src/js/blocks/hero.js:375
 msgid "Button Hover Color"
 msgstr ""
 
@@ -472,75 +470,75 @@ msgstr ""
 msgid "Future events"
 msgstr ""
 
-#: assets/js/blocks.js:1261 assets/js/es5.js:74 src/js/blocks/hero.js:58
+#: assets/js/blocks.js:1261 src/js/blocks/hero.js:58
 msgid "Main Block"
 msgstr ""
 
-#: assets/js/blocks.js:1262 assets/js/es5.js:75 src/js/blocks/hero.js:59
+#: assets/js/blocks.js:1262 src/js/blocks/hero.js:59
 msgid "Title, description, button, and background image."
 msgstr ""
 
-#: assets/js/blocks.js:1275 assets/js/blocks.js:1353 assets/js/es5.js:86
-#: assets/js/es5.js:156 core/editor/blocks/hero.php:18 src/js/blocks/hero.js:72
+#: assets/js/blocks.js:1275 assets/js/blocks.js:1353
+#: core/editor/blocks/hero.php:18 src/js/blocks/hero.js:72
 #: src/js/blocks/hero.js:150 vendor/envato_setup/envato_setup.php:642
 msgid "We help people to fight alcohol addiction"
 msgstr ""
 
-#: assets/js/blocks.js:1279 assets/js/blocks.js:1354 assets/js/es5.js:90
-#: assets/js/es5.js:157 core/editor/blocks/hero.php:22 src/js/blocks/hero.js:76
+#: assets/js/blocks.js:1279 assets/js/blocks.js:1354
+#: core/editor/blocks/hero.php:22 src/js/blocks/hero.js:76
 #: src/js/blocks/hero.js:151
 msgid ""
 "There are 877 people in our region who suffer from alcohol addiction. Your "
 "support will help organize a rehabilitation program for them."
 msgstr ""
 
-#: assets/js/blocks.js:1338 assets/js/blocks.js:1355 assets/js/es5.js:142
-#: assets/js/es5.js:158 core/editor/blocks/hero.php:26
-#: src/js/blocks/hero.js:135 src/js/blocks/hero.js:152
+#: assets/js/blocks.js:1338 assets/js/blocks.js:1355
+#: core/editor/blocks/hero.php:26 src/js/blocks/hero.js:135
+#: src/js/blocks/hero.js:152
 msgid "Help Now"
 msgstr ""
 
-#: assets/js/blocks.js:1393 assets/js/es5.js:195 src/js/blocks/hero.js:190
+#: assets/js/blocks.js:1393 src/js/blocks/hero.js:190
 msgid "Call to action title"
 msgstr ""
 
-#: assets/js/blocks.js:1401 assets/js/es5.js:204 src/js/blocks/hero.js:198
+#: assets/js/blocks.js:1401 src/js/blocks/hero.js:198
 msgid "Call to action text"
 msgstr ""
 
-#: assets/js/blocks.js:1424 assets/js/es5.js:232 src/js/blocks/hero.js:221
+#: assets/js/blocks.js:1424 src/js/blocks/hero.js:221
 msgid "Displayed on the right side of the Call to action text"
 msgstr ""
 
-#: assets/js/blocks.js:1507 assets/js/es5.js:320 src/js/blocks/hero.js:304
+#: assets/js/blocks.js:1507 src/js/blocks/hero.js:304
 msgid "Buttons"
 msgstr ""
 
-#: assets/js/blocks.js:1528 assets/js/es5.js:342 src/js/blocks/hero.js:325
+#: assets/js/blocks.js:1528 src/js/blocks/hero.js:325
 msgid "Additional Button text"
 msgstr ""
 
-#: assets/js/blocks.js:1536 assets/js/es5.js:351 src/js/blocks/hero.js:333
+#: assets/js/blocks.js:1536 src/js/blocks/hero.js:333
 msgid "Additional Button url"
 msgstr ""
 
-#: assets/js/blocks.js:1592 assets/js/es5.js:407 src/js/blocks/hero.js:389
+#: assets/js/blocks.js:1592 src/js/blocks/hero.js:389
 msgid "Background"
 msgstr ""
 
-#: assets/js/blocks.js:1612 assets/js/es5.js:430 src/js/blocks/hero.js:409
+#: assets/js/blocks.js:1612 src/js/blocks/hero.js:409
 msgid "Recommended size 1600x663px"
 msgstr ""
 
-#: assets/js/blocks.js:1695 assets/js/es5.js:517 src/js/blocks/hero.js:492
+#: assets/js/blocks.js:1695 src/js/blocks/hero.js:492
 msgid "Overlay"
 msgstr ""
 
-#: assets/js/blocks.js:1712 assets/js/es5.js:535 src/js/blocks/hero.js:509
+#: assets/js/blocks.js:1712 src/js/blocks/hero.js:509
 msgid "Overlay Gradient Start Color"
 msgstr ""
 
-#: assets/js/blocks.js:1744 assets/js/es5.js:569 src/js/blocks/hero.js:541
+#: assets/js/blocks.js:1744 src/js/blocks/hero.js:541
 msgid "Overlay Gradient End Color"
 msgstr ""
 
@@ -967,6 +965,41 @@ msgstr ""
 
 #: assets/js/gutenberg.js:220
 msgid "Underline"
+msgstr ""
+
+#: comments.php:30
+msgid "1 comment"
+msgstr ""
+
+#. translators: %s: Comment count number.
+#: comments.php:35
+#, php-format
+msgctxt "Comments title"
+msgid "%s comment"
+msgid_plural "%s comments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:57 core/template-tags.php:168 core/template-tags.php:244
+#: core/template-tags.php:365 core/template-tags.php:366
+#: core/template-tags.php:367 page-events.php:21
+msgid "Page"
+msgstr ""
+
+#: comments.php:59
+msgid "Older comments"
+msgstr ""
+
+#: comments.php:60
+msgid "Newer comments"
+msgstr ""
+
+#: comments.php:66
+msgid "Comments are closed."
+msgstr ""
+
+#: comments.php:74
+msgid "Leave a comment"
 msgstr ""
 
 #: core/admin-update-theme.php:50
@@ -1420,7 +1453,7 @@ msgstr ""
 msgid "A quick guide to working with the site - %s."
 msgstr ""
 
-#: core/assets.php:78 core/nav-menu.php:17 core/nav-menu.php:27
+#: core/assets.php:78 core/nav-menu.php:18 core/nav-menu.php:29
 msgid "Expand child menu"
 msgstr ""
 
@@ -1935,8 +1968,8 @@ msgid "Button Text"
 msgstr ""
 
 #: core/customizer/theme-mods/header.php:376
-#: core/customizer/theme-mods/header.php:521 core/template-tags.php:776
-#: core/template-tags.php:804 core/template-tags.php:860
+#: core/customizer/theme-mods/header.php:521 core/template-tags.php:805
+#: core/template-tags.php:833 core/template-tags.php:890
 #: modules/donations/donations.php:159
 #: vendor/envato_setup/envato_setup.php:1192
 #: vendor/envato_setup/envato_setup.php:1208
@@ -1997,14 +2030,18 @@ msgid "Related Posts"
 msgstr ""
 
 #: core/customizer/theme-mods/post-settings.php:45
+msgid "Comments"
+msgstr ""
+
+#: core/customizer/theme-mods/post-settings.php:53
 msgid "Related Posts Title"
 msgstr ""
 
-#: core/customizer/theme-mods/post-settings.php:47 core/template-tags.php:966
+#: core/customizer/theme-mods/post-settings.php:55 core/template-tags.php:997
 msgid "Related posts"
 msgstr ""
 
-#: core/customizer/theme-mods/post-settings.php:60
+#: core/customizer/theme-mods/post-settings.php:68
 #: core/customizer/theme-mods/project-settings.php:60
 msgid "Bottom Blocks"
 msgstr ""
@@ -2022,7 +2059,7 @@ msgid "Related Projects Title"
 msgstr ""
 
 #: core/customizer/theme-mods/project-settings.php:47
-#: core/template-tags.php:979 vendor/envato_setup/envato_setup.php:1232
+#: core/template-tags.php:1010 vendor/envato_setup/envato_setup.php:1232
 msgid "Related projects"
 msgstr ""
 
@@ -2257,12 +2294,6 @@ msgctxt "Yoast SEO"
 msgid "Home"
 msgstr ""
 
-#: core/template-tags.php:168 core/template-tags.php:244
-#: core/template-tags.php:365 core/template-tags.php:366
-#: core/template-tags.php:367 page-events.php:21
-msgid "Page"
-msgstr ""
-
 #: core/template-tags.php:249
 msgid "Donations history"
 msgstr ""
@@ -2299,23 +2330,23 @@ msgstr ""
 msgid "Latest news"
 msgstr ""
 
-#: core/template-tags.php:716
+#: core/template-tags.php:745
 msgid "Open search"
 msgstr ""
 
-#: core/template-tags.php:737
+#: core/template-tags.php:766
 msgid "Close search"
 msgstr ""
 
-#: core/template-tags.php:752
+#: core/template-tags.php:781
 msgid "Open Off-Canvas"
 msgstr ""
 
-#: core/template-tags.php:765
+#: core/template-tags.php:794
 msgid "Close Off-Canvas"
 msgstr ""
 
-#: core/template-tags.php:881 functions.php:83 template-parts/offcanvas.php:31
+#: core/template-tags.php:912 functions.php:83 template-parts/offcanvas.php:29
 msgid "Primary menu"
 msgstr ""
 
@@ -2840,7 +2871,7 @@ msgstr ""
 msgid "Exclude campaigns"
 msgstr ""
 
-#: template-parts/offcanvas.php:27
+#: template-parts/offcanvas.php:25
 msgid "Main menu"
 msgstr ""
 

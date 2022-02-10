@@ -67,6 +67,12 @@ get_header();
 			<?php knd_entry_tags(); ?>
 
 			<?php knd_entry_related(); ?>
+
+			<?php
+			if ( comments_open() || get_comments_number() ) {
+				comments_template();
+			}
+			?>
 		</main>
 
 		<div class="flex-cell flex-md-2 hide-upto-medium"></div>

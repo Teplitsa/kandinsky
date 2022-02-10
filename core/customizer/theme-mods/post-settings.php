@@ -40,6 +40,14 @@ Kirki::add_field( 'knd_theme_mod', array(
 ) );
 
 Kirki::add_field( 'knd_theme_mod', array(
+	'type'     => 'toggle',
+	'settings' => 'post_comments',
+	'label'    => esc_html__( 'Comments', 'knd' ),
+	'section'  => 'post_settings',
+	'default'  => '0',
+) );
+
+Kirki::add_field( 'knd_theme_mod', array(
 	'type'              => 'text',
 	'settings'          => 'post_related_title',
 	'label'             => esc_html__( 'Related Posts Title', 'knd' ),

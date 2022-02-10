@@ -249,6 +249,18 @@ function widgets_scripts( $hook ) {
 add_action( 'admin_enqueue_scripts', 'widgets_scripts' );
 
 /**
+ * Comments
+ */
+
+function knd_comment_form_default_fields( $fields ){
+	if( isset( $fields['url'] ) ) {
+		unset( $fields['url'] );
+	}
+	return $fields;
+}
+add_filter( 'comment_form_default_fields', 'knd_comment_form_default_fields');
+
+/**
  * Editor
  */
 require_once get_template_directory() . '/core/editor/editor.php';

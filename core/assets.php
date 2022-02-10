@@ -83,6 +83,11 @@ class KND_CssJs {
 				),
 			)
 		);
+
+		// Threaded comment reply styles.
+		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) && get_theme_mod( 'post_comments' ) ) {
+			wp_enqueue_script( 'comment-reply' );
+		}
 	}
 
 	/* admin styles - moved to news system also */
