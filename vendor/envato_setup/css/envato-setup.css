@@ -494,6 +494,12 @@ body {
 	float: left;
 }
 
+.envato-setup .button-wizard-back.disabled,
+.envato-setup .button-skip.disabled,
+.envato-setup-steps.disabled {
+	pointer-events: none;
+}
+
 .envato-setup .envato-setup-actions .button-skip {
 	display: flex;
 	align-items: center;

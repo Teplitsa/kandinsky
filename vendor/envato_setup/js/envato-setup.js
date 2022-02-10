@@ -29,11 +29,13 @@ var EnvatoWizard = (function( $ ) {
 		$( '.button-next' ).on( 'click', function( e ) {
 
 			stopLoadingAnimation = dtbakerLoadingButton( this );
-			
+
+			$('.button-wizard-back, .button-skip, .envato-setup-steps').addClass('disabled');
+
 			if ( !stopLoadingAnimation  ) {
 				return false;
 			}
-			
+
 			if (
 				$( this ).data( 'callback' ) &&
 				typeof callbacks[ $( this ).data( 'callback' ) ] !== 'undefined'
@@ -389,6 +391,8 @@ var KndDownloadPlotStepManager = function() {
 		
 		var $stepExplanations = $('#knd-download-status-explain');
 		$stepExplanations.show();
+
+		$('.button-wizard-back').addClass('disabled');
 
 		$.post(envatoSetupParams.ajaxurl, {
 
