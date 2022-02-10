@@ -885,14 +885,16 @@ function knd_offcanvas_additional_button(){
  * Header Mobile Button
  */
 function knd_header_mobile_button(){
-	$link = get_theme_mod( 'header_button_link' );
-	$text = get_theme_mod( 'header_button_text', esc_html__( 'Help now', 'knd' ) );
-	if ( $text ) {
-		?>
-		<a href="<?php echo esc_url( $link ); ?>" role="button" class="knd-button knd-button-xs">
-			<?php echo esc_html( $text ); ?>
-		</a>
-		<?php
+	if ( get_theme_mod( 'header_button', true ) ) {
+		$link = get_theme_mod( 'header_button_link' );
+		$text = get_theme_mod( 'header_button_text', esc_html__( 'Help now', 'knd' ) );
+		if ( $text ) {
+			?>
+			<a href="<?php echo esc_url( $link ); ?>" role="button" class="knd-button knd-button-xs">
+				<?php echo esc_html( $text ); ?>
+			</a>
+			<?php
+		}
 	}
 }
 
