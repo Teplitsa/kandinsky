@@ -4522,6 +4522,7 @@ div[id*="leyka-pf-"] .inpage-card__thumb {
 	padding: 12px;
 	font-weight: bold;
 	font-family: inherit;
+	width: 100%;
 }
 
 /** == Built-in WordPress widgets (_builin.scss) == */
