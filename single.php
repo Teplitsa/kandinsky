@@ -51,7 +51,7 @@ get_header();
 
 			<?php if ( has_excerpt() ) { ?>
 				<div class="entry-lead">
-					<?php the_excerpt(); ?>
+					<?php echo wpautop( $post->post_excerpt ); ?>
 				</div>
 			<?php } ?>
 
