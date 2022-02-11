@@ -457,6 +457,14 @@ function knd_show_post_terms( $post_id ) {
 <?php
 }
 
+
+/**
+ * Get Home Url
+ */
+function knd_get_home_url() {
+	return apply_filters( 'knd_get_home_url', home_url( '/' ) );
+}
+
 /**
  * Get content image markup
  */
@@ -607,7 +615,7 @@ if ( ! function_exists( 'knd_header_logo' ) ) {
 		$logo_desc  = get_theme_mod( 'header_logo_text', get_bloginfo( 'description' ) );
 
 		?>
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="knd-header-logo">
+		<a href="<?php echo esc_url( knd_get_home_url() ); ?>" rel="home" class="knd-header-logo">
 			<div class="knd-header-logo__inner">
 				<?php
 				$logo_id = knd_get_logo_id();
@@ -648,7 +656,7 @@ if ( ! function_exists( 'knd_header_logo' ) ) {
 if ( ! function_exists( 'knd_header_mobile_logo' ) ) {
 	function knd_header_mobile_logo() {
 		?>
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="knd-header-mobile-logo">
+		<a href="<?php echo esc_url( knd_get_home_url() ); ?>" rel="home" class="knd-header-mobile-logo">
 		<?php
 		$logo_id  = knd_get_logo_id();
 		$logo_url = wp_get_attachment_image_url( $logo_id, 'full', false );
@@ -676,7 +684,7 @@ if ( ! function_exists( 'knd_offcanvas_logo' ) ) {
 
 		?>
 
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="snt-cell" aria-hidden="true" tabindex="-1">
+		<a href="<?php echo esc_url( knd_get_home_url() ); ?>" rel="home" class="snt-cell" aria-hidden="true" tabindex="-1">
 			<?php if ( $logo_title ) { ?>
 				<span class="logo-name"><?php echo wp_kses_post( nl2br( get_theme_mod( 'header_logo_title', get_bloginfo( 'name' ) ) ) ); ?></span>
 			<?php } else { ?>
@@ -711,7 +719,7 @@ if ( ! function_exists( 'knd_footer_logo' ) ) {
 			$logo_url   = wp_get_attachment_image_url( $logo_id, 'full', false );
 			?>
 
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="knd-footer-logo">
+			<a href="<?php echo esc_url( knd_get_home_url() ); ?>" class="knd-footer-logo">
 				<span class="knd-footer-logo__inner">
 					<?php if ( $logo_url ) {
 
