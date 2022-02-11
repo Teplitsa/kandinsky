@@ -2944,6 +2944,16 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 	height: 22px;
 }
 
+.entry-content .wp-block-social-links {
+	padding-left: 0;
+	padding-right: 0;
+	text-indent: 0;
+}
+
+.entry-content .wp-block-social-links > * {
+	margin: 0;
+}
+
 /* Breadcrumbs */
 .knd-breadcrumbs {
 	text-transform: uppercase;
