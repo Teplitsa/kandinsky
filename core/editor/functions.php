@@ -108,37 +108,36 @@ if ( ! function_exists( 'knd_is_page_title' ) ) {
 function knd_color_palette() {
 
 	$colors = array(
-		'white' => array(
+		array(
 			'name'  => esc_html__( 'White', 'knd' ),
 			'slug'  => 'white',
 			'color' => '#ffffff',
 		),
-		'black' => array(
+		array(
 			'name'  => esc_html__( 'Black', 'knd' ),
 			'slug'  => 'black',
 			'color' => '#000000',
 		),
-		'light-grey' => array(
+		array(
 			'name'  => esc_html__( 'Light Grey', 'knd' ),
 			'slug'  => 'light-grey',
 			'color' => '#f7f8f8',
 		),
-		'light-blue' => array(
+		array(
 			'name'  => esc_html( 'Light Blue', 'knd' ),
 			'slug'  => 'light-blue',
 			'color' => '#f5fafe',
 		),
-		'main' => array(
+		array(
 			'name'  => esc_html( 'Main', 'knd' ),
 			'slug'  => 'main',
 			'color' => get_theme_mod( 'knd_main_color', '#dd1400' ),
 		),
-		'base' => array(
+		array(
 			'name' => esc_html( 'Base', 'knd' ),
 			'slug' => 'base',
 			'color' => ( '#4d606a' != knd_typography( 'font_base', 'color' ) ? knd_typography( 'font_base', 'color' ) : '#4d606a' ),
 		),
-
 	);
 
 	return apply_filters( 'knd_color_palette', $colors );
