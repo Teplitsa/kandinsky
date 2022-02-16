@@ -680,25 +680,23 @@ if ( ! function_exists( 'knd_header_mobile_logo' ) ) {
 if ( ! function_exists( 'knd_offcanvas_logo' ) ) {
 	function knd_offcanvas_logo() {
 
-		$logo_title = get_theme_mod( 'header_logo_title', get_bloginfo( 'name' ) );
+		$logo_title = '<span>' . nl2br( get_theme_mod( 'header_logo_title', get_bloginfo( 'name' ) ) ) . '</span>';
+		$logo_id    = knd_get_logo_id();
+		$logo_img   = wp_get_attachment_image( $logo_id, 'full', false, array( 'alt' => get_bloginfo( 'name' ) ) );
+
+		$logo = $logo_title;
+		if ( $logo_id ) {
+			$logo = $logo_img;
+		}
+
+		if ( ! $logo ) {
+			return;
+		}
 
 		?>
 
 		<a href="<?php echo esc_url( knd_get_home_url() ); ?>" rel="home" class="snt-cell" aria-hidden="true" tabindex="-1">
-			<?php if ( $logo_title ) { ?>
-				<span class="logo-name"><?php echo wp_kses_post( nl2br( get_theme_mod( 'header_logo_title', get_bloginfo( 'name' ) ) ) ); ?></span>
-			<?php } else { ?>
-				<span class="logo-name">
-					<?php
-						$logo_id  = knd_get_logo_id();
-						$logo_url = wp_get_attachment_image_url( $logo_id, 'full', false );
-
-						if ( $logo_url ) {
-							echo wp_get_attachment_image( $logo_id, 'full', false, array( 'alt' => get_bloginfo( 'name' ) ) );
-						}
-					?>
-				</span>
-			<?php } ?>
+			<span class="logo-name"><?php echo wp_kses_post( $logo ); ?></span>
 		</a>
 
 		<?php

@@ -1727,6 +1727,7 @@ body > svg {
 .site-nav-title {
 	border-bottom: 1px solid var(--knd-page-bg-color-dark);
 	position: relative;
+	height: 76px;
 }
 
 .site-nav-title .snt-cell {
@@ -1734,15 +1735,34 @@ body > svg {
 	display: flex;
 	-ms-flex-align: center;
 	align-items: center;
-	height: 76px;
-	max-width: 196px;
+	height: 100%;
+	max-width: 205px;
 	padding-left: 20px;
 }
 
 .site-nav-title .logo-name {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-align: center;
+	align-items: center;
 	font-size: 18px;
 	line-height: 1;
-	padding-right: 10px;
+	max-width: 100%;
+	height: calc( 100% - 24px);
+}
+
+.site-nav-title .logo-name img {
+	display: block;
+	height: auto;
+	width: auto;
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.site-nav-title .logo-name > span {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
 }
 
 .site-nav-title .close {
@@ -2082,11 +2102,16 @@ body > svg {
 	height: 66px;
 	-ms-flex: 0 0 auto;
 	flex: 0 0 auto;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-align: center;
+	align-items: center;
 }
 
 .knd-header-logo .logo img {
-	height: 100%;
+	height: auto;
 	width: auto;
+	max-height: 100%;
 }
 
 .knd-header-logo .logo-name {
