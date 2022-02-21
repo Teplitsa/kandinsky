@@ -47,7 +47,7 @@
     "@babel/preset-react": "^7.14.5",
     "modularscale-sass": "^3.0.10",
     "node-bourbon": "^4.2.3",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.1",
     "relative-path": "^1.0.0",
     "run-sequence": "^1.2.2"
   }
