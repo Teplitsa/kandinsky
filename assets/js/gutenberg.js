@@ -333,9 +333,6 @@ function kndReinitFlickity(){
 	}
 }
 
-
-
-
 /* Get Terms */
 
 

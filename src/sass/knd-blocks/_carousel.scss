@@ -38,6 +38,11 @@
 
 			.wp-block-knd-partners & {
 				align-items: center;
+
+				.knd-block-item {
+					padding-top: 10px;
+					padding-bottom: 10px;
+				}
 			}
 		}
 
@@ -58,5 +63,11 @@
 
 		}
 
+	}
+}
+
+.flickity-button {
+	&-hidden {
+		display: none;
 	}
 }

@@ -333,6 +333,11 @@
 	align-items: center;
 }
 
+.wp-block-knd-partners .knd-block-carousel .flickity-slider .knd-block-item {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
 .knd-block-carousel.flickity-buttons-top .flickity-prev-next-button.previous {
 	left: auto;
 	right: 75px;
@@ -342,6 +347,10 @@
 .knd-block-carousel.flickity-buttons-top .flickity-prev-next-button.next {
 	right: 20px;
 	top: -40px;
+}
+
+.flickity-button-hidden {
+	display: none;
 }
 
 /**
@@ -1155,6 +1164,7 @@
 	width: 50%;
 	padding: 0 20px 40px;
 	transition: opacity 0.3s;
+	box-sizing: border-box;
 }
 
 @media (max-width: 480px) {

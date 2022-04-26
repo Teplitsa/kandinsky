@@ -151,6 +151,7 @@ function knd_block_partners_render_callback( $attr ) {
 		'groupCells' => true,
 		'selectedAttraction' => 0.08,
 		'friction' => 1,
+		'imagesLoaded' => true,
 		'arrowShape' => 'm 56.0012 76.6652 c 1.3652 0 2.7308 -0.5224 3.7708 -1.5624 c 2.0852 -2.0856 2.0852 -5.456 0 -7.5416 l -17.6268 -17.6264 l 16.96 -17.5628 c 2.0428 -2.1228 1.984 -5.4984 -0.1332 -7.5412 c -2.1228 -2.0428 -5.4988 -1.984 -7.5416 0.128 l -20.5972 21.3332 c -2.0212 2.096 -1.9944 5.4188 0.064 7.4776 l 21.3332 21.3332 c 1.0404 1.04 2.4056 1.5624 3.7708 1.5624 z',
 	);
 	// Svg path editor online //https://yqnn.github.io/svg-path-editor/

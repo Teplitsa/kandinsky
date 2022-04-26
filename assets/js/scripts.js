@@ -26,6 +26,7 @@
 		init: function() {
 			window.knd.closeOffcanvas();
 		}
+		
 		/*initOutlineToggle: function() {
 			document.body.addEventListener("keydown", (function() {
 				document.body.classList.remove("hide-focus-outline")
@@ -493,7 +494,18 @@
 	});
 
 	$(window).on('load resize', function () {
-		jQuery( '.knd-block-carousel' ).flickity( 'resize' );
+		$( '.knd-block-carousel' ).flickity( 'resize' );
+	});
+
+	$('.knd-block-carousel').on( 'ready.flickity select.flickity', function( event ) {
+		var allSlides    = $(this).find('.flickity-slider .knd-block-item').length;
+		var activeSlides = $(this).find('.flickity-slider .knd-block-item.is-selected').length;
+		var sliderArrows = $(this).find('.flickity-button');
+		if ( Number( activeSlides ) < Number( allSlides ) ) {
+			sliderArrows.removeClass('flickity-button-hidden');
+		} else {
+			sliderArrows.addClass('flickity-button-hidden');
+		}
 	});
 
 	// Focus repeat in container.

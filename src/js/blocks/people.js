@@ -151,7 +151,8 @@
 
 		example: {
 			attributes: {
-				postsToShow: 4,
+				postsToShow: 2,
+				heading: '',
 				preview : true
 			},
 			viewportWidth: 720
