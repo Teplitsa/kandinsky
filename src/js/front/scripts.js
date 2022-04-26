@@ -20,42 +20,17 @@
 		breakPointMedium = 767; // Medium screen break point
 
 	window.knd2 = {
-		closeOffcanvas: function(){
-			console.log('');
-		},
-		init: function() {
-			window.knd.closeOffcanvas();
-		}
-		
-		/*initOutlineToggle: function() {
-			document.body.addEventListener("keydown", (function() {
-				document.body.classList.remove("hide-focus-outline")
-			})), document.body.addEventListener("mousedown", (function() {
-				document.body.classList.add("hide-focus-outline")
-			}))
-		},
-		getOffset: function(e) {
-			if (e instanceof HTMLElement) {
-				var t = e.getBoundingClientRect();
-				return {
-					top: t.top + window.pageYOffset,
-					left: t.left + window.pageXOffset
-				}
-			}
-			return {
-				top: null,
-				left: null
-			}
-		},
-		findParents: function(e, t) {
-			var o = [];
-			return function e(n) {
-				var i = n.parentNode;
-				i instanceof HTMLElement && (i.matches(t) && o.push(i), e(i))
-			}(e), o
-		},*/
+		// closeOffcanvas: function(){
+		// 	console.log('');
+		// },
+		// init: function() {
+		// 	window.knd.closeOffcanvas();
+		// }
 	}
 
+	/**
+	 * Open Off-Canvas
+	 */
 	knd.openOffcanvas = function( e ){
 
 		$('.knd-header').addClass('menu-open');
@@ -69,6 +44,9 @@
 
 	};
 
+	/**
+	 * Close Off-Canvas
+	 */
 	knd.closeOffcanvas = function( e ){
 
 		if ( $('.knd-header').hasClass( 'menu-open' ) ) {
@@ -81,7 +59,7 @@
 
 			var focusButton = true;
 
-			if ( $(e.target).parent().parent('.main-menu').length ) {
+			if ( $(e.target).parents('.main-menu').length ) {
 				focusButton = false;
 			}
 
