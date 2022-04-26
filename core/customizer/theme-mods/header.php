@@ -463,7 +463,7 @@ Kirki::add_field( 'knd_theme_mod', array(
 Kirki::add_field( 'knd_theme_mod', array(
 	'type'     => 'toggle',
 	'settings' => 'header_offcanvas',
-	'label'    => esc_html__( 'Display Off-Canvas', 'knd' ),
+	'label'    => esc_html__( 'Display Off-Canvas Toggle Button', 'knd' ),
 	'section'  => 'header',
 	'default'  => true,
 ) );
@@ -474,13 +474,6 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'label'           => esc_html__( 'Menu', 'knd' ),
 	'section'         => 'header',
 	'default'         => true,
-	'active_callback' => array(
-		array(
-			'setting'  => 'header_offcanvas',
-			'operator' => '==',
-			'value'    => true,
-		),
-	),
 ) );
 
 Kirki::add_field( 'knd_theme_mod', array(
@@ -489,13 +482,6 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'label'           => esc_html__( 'Search', 'knd' ),
 	'section'         => 'header',
 	'default'         => true,
-	'active_callback' => array(
-		array(
-			'setting'  => 'header_offcanvas',
-			'operator' => '==',
-			'value'    => true,
-		),
-	),
 ) );
 
 Kirki::add_field( 'knd_theme_mod', array(
@@ -504,13 +490,6 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'label'           => esc_html__( 'Button', 'knd' ),
 	'section'         => 'header',
 	'default'         => true,
-	'active_callback' => array(
-		array(
-			'setting'  => 'header_offcanvas',
-			'operator' => '==',
-			'value'    => true,
-		),
-	),
 ) );
 
 Kirki::add_field( 'knd_theme_mod', array(
@@ -550,11 +529,4 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'label'           => esc_html__( 'Social networks', 'knd' ),
 	'section'         => 'header',
 	'default'         => false,
-	'active_callback' => array(
-		array(
-			'setting'  => 'header_offcanvas',
-			'operator' => '==',
-			'value'    => true,
-		),
-	),
 ) );
