@@ -2014,6 +2014,23 @@ body > svg {
 	min-height: 60px;
 }
 
+.knd-header__inner-mobile .knd-button, .knd-header__inner-mobile .knd-event__booking .em-booking-form-details .em-booking-submit, .knd-event__booking .em-booking-form-details .knd-header__inner-mobile .em-booking-submit, .knd-header__inner-mobile .knd-event__login [name="wp-submit"], .knd-event__login .knd-header__inner-mobile [name="wp-submit"] {
+	margin-left: 20px;
+}
+
+@media (max-width: 379px) {
+	.knd-header__inner-mobile .knd-button, .knd-header__inner-mobile .knd-event__booking .em-booking-form-details .em-booking-submit, .knd-event__booking .em-booking-form-details .knd-header__inner-mobile .em-booking-submit, .knd-header__inner-mobile .knd-event__login [name="wp-submit"], .knd-event__login .knd-header__inner-mobile [name="wp-submit"] {
+		display: none;
+	}
+}
+
+@media (max-width: 379px) {
+	.knd-header__inner-mobile .knd-col-right {
+		-ms-flex: initial;
+		flex: initial;
+	}
+}
+
 @media (min-width: 992px) {
 	body:not(.is-customize-preview) .knd-header__inner-mobile {
 		display: none;

@@ -540,6 +540,20 @@
 
 .knd-header__inner-mobile {
 	min-height: 60px;
+
+	.knd-button {
+		margin-left: 20px;
+
+		@media (max-width: 379px) {
+			display: none;
+		}
+	}
+
+	.knd-col-right {
+		@media (max-width: 379px) {
+			flex: initial;
+		}
+	}
 }
 @media (min-width: 992px){
 	body:not(.is-customize-preview) .knd-header__inner-mobile {
