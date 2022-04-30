@@ -71,6 +71,8 @@ $color-ok :             #1db318; // ok messages
 	--knd-button-border-radius: .5em;
 	--knd-image-border-radius: 8px;
 	--knd-adminbar-height: #{$adminbar_large_screen};
+
+	--scroll-bar-width: 15px;
 }
 
 @media (max-width: 765px){

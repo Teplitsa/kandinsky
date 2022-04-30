@@ -29,6 +29,14 @@
 	}
 
 	/**
+	 * Get Scrollbar width
+	 */
+	knd.getScrollBarWidth = function() {
+		const scrollbarWidth = window.innerWidth - document.body.clientWidth;
+		document.documentElement.style.setProperty('--scroll-bar-width', scrollbarWidth + 'px');
+	}
+
+	/**
 	 * Open Off-Canvas
 	 */
 	knd.openOffcanvas = function( e ){
@@ -421,16 +429,16 @@
 	/**
 	 * FancyBox
 	 */
-	$('.entry-content .wp-block-gallery, .entry-content .gallery').each( function( index ) {
-		$( this ).find('a[href$=".jpg"], a[href$=".png"], a[href$=".jpeg"], a[href$=".gif"]').attr('data-fancybox', 'gallery-' + ( index + 1 ) );
-	});
-
 	$('.entry-content .wp-block-image').find('a[href$=".jpg"], a[href$=".png"], a[href$=".jpeg"], a[href$=".gif"]').attr('data-fancybox','');
 
 	$( '.entry-content' ).find('a[href$=".jpg"], a[href$=".png"], a[href$=".jpeg"], a[href$=".gif"]').each( function( index ) {
 		if ( $(this).parents('.wp-block-image').length == 0 && $(this).parents('.wp-block-gallery').length == 0 ) {
 			$(this).attr('data-fancybox', '');
 		}
+	});
+
+	$('.entry-content .wp-block-gallery, .entry-content .gallery').each( function( index ) {
+		$( this ).find('a[href$=".jpg"], a[href$=".png"], a[href$=".jpeg"], a[href$=".gif"]').attr('data-fancybox', 'gallery-' + ( index + 1 ) );
 	});
 
 	/**
@@ -527,5 +535,7 @@
 
 	kndFocusInModal( '.site-nav' );
 	kndFocusInModal( '.knd-search' );
+
+	knd.getScrollBarWidth();
 
 })( jQuery );

@@ -1,7 +1,19 @@
-.wp-block-image figcaption {
-	color: #95a4ad;
-	font-size: 0.85rem;
-	margin-top: 0.5rem;
-	margin-bottom: 1rem;
-	text-align: center;
+/**
+ * Block Image
+ */
+.wp-block-image {
+
+	&:not(.is-style-rounded) {
+		border-radius: var(--knd-image-border-radius);
+	}
+
+	figcaption {
+		color: #95a4ad;
+		font-size: 0.85rem;
+		margin-top: 0.5rem;
+		margin-bottom: 1rem;
+		text-align: center;
+		border-bottom-right-radius: var(--knd-image-border-radius);
+		border-bottom-left-radius: var(--knd-image-border-radius);
+	}
 }

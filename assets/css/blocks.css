@@ -12,6 +12,7 @@
 	--knd-button-border-radius: .5em;
 	--knd-image-border-radius: 8px;
 	--knd-adminbar-height: 32px;
+	--scroll-bar-width: 15px;
 }
 
 @media (max-width: 765px) {
@@ -229,12 +230,96 @@
 	text-decoration: underline;
 }
 
+/**
+ * Block Image
+ */
+.wp-block-image:not(.is-style-rounded) {
+	border-radius: var(--knd-image-border-radius);
+}
+
 .wp-block-image figcaption {
 	color: #95a4ad;
 	font-size: 0.85rem;
 	margin-top: 0.5rem;
 	margin-bottom: 1rem;
 	text-align: center;
+	border-bottom-right-radius: var(--knd-image-border-radius);
+	border-bottom-left-radius: var(--knd-image-border-radius);
+}
+
+/**
+ * Block Gallery
+ */
+/* Gallery */
+.wp-block-gallery {
+	margin-top: 32px;
+	margin-bottom: 32px;
+}
+
+.wp-block-gallery .wp-block-image > a {
+	border-bottom: 0;
+}
+
+.wp-block-gallery.has-nested-images figure.wp-block-image figcaption {
+	font-size: 0.85rem;
+}
+
+.wp-block-gallery.has-nested-images figure.wp-block-image.is-style-rounded figcaption {
+	color: #95a4ad;
+}
+
+.wp-block-gallery ul li:before {
+	content: none !important;
+}
+
+.wp-block-gallery ul li:before {
+	content: none !important;
+}
+
+.wp-block-gallery ul {
+	margin: 0 !important;
+}
+
+.wp-block-gallery .blocks-gallery-item {
+	padding-left: 0;
+}
+
+.wp-block-gallery .blocks-gallery-item:last-child {
+	margin-bottom: 1em;
+}
+
+.wp-block-gallery.is-cropped .blocks-gallery-item a,
+.wp-block-gallery.is-cropped .blocks-gallery-item img {
+	height: 100%;
+	-ms-flex: 1;
+	flex: 1;
+	object-fit: cover;
+}
+
+.wp-block-gallery .blocks-gallery-item img {
+	transition: opacity 0.3s;
+}
+
+.wp-block-gallery .blocks-gallery-item a {
+	border-bottom: 0;
+}
+
+.wp-block-gallery .blocks-gallery-item a:hover img {
+	opacity: .8;
+}
+
+@media (min-width: 768px) {
+	.the-content .wp-block-gallery.alignfull {
+		margin-left: calc( ( ( 100vw - ( var(--knd-content-width) + var(--scroll-bar-width) ) ) / 2 ) * -1);
+		margin-right: calc( ( ( 100vw - ( var(--knd-content-width) + var(--scroll-bar-width) ) ) / 2 ) * -1);
+	}
+}
+
+@media (min-width: 1200px) {
+	.the-content .wp-block-gallery.alignwide {
+		margin-left: calc( ( ( var(--knd-medium-content-width) - var(--knd-content-width) ) / 2 ) * -1);
+		margin-right: calc( ( ( var(--knd-medium-content-width) - var(--knd-content-width) ) / 2 ) * -1);
+	}
 }
 
 /**
@@ -3290,16 +3375,12 @@
 	}
 }
 
-.wp-block-image:not(.alignfull):not(.is-style-rounded) img {
-	border-radius: var(--knd-image-border-radius);
-}
-
 /* Block Align */
 @media (min-width: 768px) {
 	.the-content .knd-block.alignfull,
 	.knd-block-image.alignfull {
-		margin-left: calc( ( ( 100vw - var(--knd-content-width) ) / 2 ) * -1);
-		margin-right: calc( ( ( 100vw - var(--knd-content-width) ) / 2 ) * -1);
+		margin-left: calc( ( ( 100vw - ( var(--knd-content-width) + var(--scroll-bar-width) ) ) / 2 ) * -1);
+		margin-right: calc( ( ( 100vw - ( var(--knd-content-width) + var(--scroll-bar-width) ) ) / 2 ) * -1);
 	}
 }
 
@@ -3340,66 +3421,6 @@
 
 .d-none {
 	display: none !important;
-}
-
-/* Gallery */
-.wp-block-gallery {
-	margin-top: 32px;
-	margin-bottom: 32px;
-}
-
-.wp-block-gallery ul li:before {
-	content: none !important;
-}
-
-.wp-block-gallery ul li:before {
-	content: none !important;
-}
-
-.wp-block-gallery ul {
-	margin: 0 !important;
-}
-
-.wp-block-gallery .blocks-gallery-item {
-	padding-left: 0;
-}
-
-.wp-block-gallery .blocks-gallery-item:last-child {
-	margin-bottom: 1em;
-}
-
-.wp-block-gallery.is-cropped .blocks-gallery-item a,
-.wp-block-gallery.is-cropped .blocks-gallery-item img {
-	height: 100%;
-	-ms-flex: 1;
-	flex: 1;
-	object-fit: cover;
-}
-
-.wp-block-gallery .blocks-gallery-item img {
-	transition: opacity 0.3s;
-}
-
-.wp-block-gallery .blocks-gallery-item a {
-	border-bottom: 0;
-}
-
-.wp-block-gallery .blocks-gallery-item a:hover img {
-	opacity: .8;
-}
-
-@media (min-width: 768px) {
-	.the-content .wp-block-gallery.alignfull {
-		margin-left: calc( ( ( 100vw - var(--knd-content-width) ) / 2 ) * -1);
-		margin-right: calc( ( ( 100vw - var(--knd-content-width) ) / 2 ) * -1);
-	}
-}
-
-@media (min-width: 1200px) {
-	.the-content .wp-block-gallery.alignwide {
-		margin-left: calc( ( ( var(--knd-medium-content-width) - var(--knd-content-width) ) / 2 ) * -1);
-		margin-right: calc( ( ( var(--knd-medium-content-width) - var(--knd-content-width) ) / 2 ) * -1);
-	}
 }
 
 /* BlockQuote */

@@ -10,6 +10,7 @@
 	--knd-button-border-radius: .5em;
 	--knd-image-border-radius: 8px;
 	--knd-adminbar-height: 32px;
+	--scroll-bar-width: 15px;
 }
 
 @media (max-width: 765px) {
