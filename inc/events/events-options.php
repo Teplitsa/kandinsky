@@ -56,7 +56,7 @@ function knd_set_default_em_options(){
 	$em_options = array(
 		'dbem_event_schedule_heading' => esc_html__( 'Schedule', 'knd' ),
 		'dbem_event_question_heading' => esc_html__( 'Still have questions?', 'knd' ),
-		'dbem_event_question_content' => esc_html__( 'Write to Alisa Tsvetkova in Telegram @itisalise or email alisetsvetkova@te-st.ru', 'knd' ),
+		'dbem_event_question_content' => esc_html__( 'Write to us at help@te-st.ru', 'knd' ),
 		'dbem_event_related_heading'  => esc_html__( 'More events', 'knd' ),
 	);
 
