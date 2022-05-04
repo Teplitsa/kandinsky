@@ -106,7 +106,7 @@ function knd_get_admin_menu_items( $place = '' ) {
 						'class' => '',
 						'icon' => 'dashicons-chart-area',
 						'text' => esc_html__( 'Donations', 'knd' ),
-						'link' => admin_url( '/edit.php?post_type=leyka_donation' )
+						'link' => admin_url( '/admin.php?page=leyka_donations' )
 					)
 				)
 			),
