@@ -2,53 +2,6 @@
  * Customizer
  */
 
-#customize-control-font_base > .wrapper > .font-size {
-	order: 4;
-}
-.customize-control-kirki-generic textarea {
-	border-color: #7e8993;
-}
-
-/* Color Picker */
-.customize-control .wp-color-result-text {
-	line-height: 28px !important;
-}
-
-/* Select2 */
-.customize-control .select2-selection {
-	border-color: #999;
-	border-radius: 3px;
-	min-height: 30px;
-	background: #fff;
-}
-.customize-control .select2-selection .select2-selection__rendered {
-	min-height: 28px;
-	line-height: 28px;
-	padding: 0 24px 0 8px;
-	background: transparent url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M5%206l5%205%205-5%202%201-7%207-7-7%202-1z%22%20fill%3D%22%23555%22%2F%3E%3C%2Fsvg%3E') no-repeat right 5px top 55%;
-	background-size: 16px 16px;
-}
-.customize-control .select2-selection .select2-selection__arrow {
-	display: none;
-}
-
-.select2-dropdown {
-	border-color: #999;
-}
-.select2-container--default .select2-search--dropdown .select2-search__field {
-	border-color: #999;
-}
-.select2-results__option {
-	padding: 0;
-}
-.select2-results__option[role="option"] {
-	padding: 3px 6px;
-	margin-bottom: 0;
-}
-.select2-search__field {
-	line-height: 1.4 !important;
-}
-
 /* Custom */
 #customize-control-font_logo_header {
 	margin-bottom: 0;
@@ -112,7 +65,6 @@
 	background: #f6f7f7;
 	border-left-color: #2271b1;
 }
-
 .knd-customizer-link:after {
 	content: "\f504";
 	color: #a7aaad;
