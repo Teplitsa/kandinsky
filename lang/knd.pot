@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Kandinsky\n"
-"POT-Creation-Date: 2022-04-26 09:29+0300\n"
+"POT-Creation-Date: 2022-05-13 13:58+0300\n"
 "PO-Revision-Date: 2020-06-22 06:53+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -1622,46 +1622,6 @@ msgid ""
 "text."
 msgstr ""
 
-#: core/customizer/kirki.php:97
-msgid "Font Family"
-msgstr ""
-
-#: core/customizer/kirki.php:100
-msgid "Font Variant"
-msgstr ""
-
-#: core/customizer/kirki.php:103
-msgid "Font Color"
-msgstr ""
-
-#: core/customizer/kirki.php:106
-msgid "Font Size"
-msgstr ""
-
-#: core/customizer/kirki.php:109
-msgid "No image selected"
-msgstr ""
-
-#: core/customizer/kirki.php:112
-msgid "Remove"
-msgstr ""
-
-#: core/customizer/kirki.php:115
-msgid "Select image"
-msgstr ""
-
-#: core/customizer/kirki.php:118
-msgid "No File Selected"
-msgstr ""
-
-#: core/customizer/kirki.php:121
-msgid "Select..."
-msgstr ""
-
-#: core/customizer/kirki.php:124
-msgid "No options"
-msgstr ""
-
 #: core/customizer/kirki.php:182 core/customizer/kirki.php:201
 #: src/experimental/gutenberg-experimental.js:102
 msgid "None"
@@ -2539,9 +2499,7 @@ msgid "Still have questions?"
 msgstr ""
 
 #: inc/events/events-options.php:59
-msgid ""
-"Write to Alisa Tsvetkova in Telegram @itisalise or email alisetsvetkova@te-"
-"st.ru"
+msgid "Write to us at help@te-st.ru"
 msgstr ""
 
 #: inc/events/events-options.php:60

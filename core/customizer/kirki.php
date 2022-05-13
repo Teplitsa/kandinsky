@@ -18,21 +18,6 @@ function knd_kses( $content ) {
 add_filter( 'kirki_telemetry', '__return_false' );
 
 /**
- * Kirki Config
- *
- * @param array $config is an array of Kirki configuration parameters.
- */
-function csco_kirki_config( $config ) {
-
-	// Disable Kirki preloader styles.
-	$config['disable_loader'] = true;
-
-	return $config;
-
-}
-add_filter( 'kirki/config', 'csco_kirki_config' );
-
-/**
  * Add config
  */
 Kirki::add_config( 'knd_theme_mod', array(
@@ -40,6 +25,16 @@ Kirki::add_config( 'knd_theme_mod', array(
 	'option_type'    => 'theme_mod',
 	'disable_output' => true,
 ) );
+
+/**
+ * Load translate from default wp files.
+ */
+function knd_override_load_textdomain( $override, $domain ) {
+	if ( $domain === 'kirki' ) {
+		return false;
+	}
+}
+add_filter( 'override_load_textdomain', 'knd_override_load_textdomain', 5, 2 );
 
 /**
  * Theme Mods
@@ -83,50 +78,6 @@ function knd_customize_register( $wp_customize ) {
 	$wp_customize->get_panel( 'nav_menus' )->priority = 2;
 }
 add_action( 'customize_register', 'knd_customize_register', 11 );
-
-/**
- * Custom translate
- *
- * @param string $translation Translation string.
- * @param string $text Original string.
- * @param string $domain Textdomain.
- */
-function knd_gettext( $translation, $text, $domain ) {
-	if ( 'kirki' === $domain ) {
-		if ( $text === 'Font Family' ) {
-			$translation = esc_html__( 'Font Family', 'knd' );
-		}
-		if ( $text === 'Font Variant' ) {
-			$translation = esc_html__( 'Font Variant', 'knd' );
-		}
-		if ( $text === 'Font Color' ) {
-			$translation = esc_html__( 'Font Color', 'knd' );
-		}
-		if ( $text === 'Font Size' ) {
-			$translation = esc_html__( 'Font Size', 'knd' );
-		}
-		if ( $text === 'No image selected' ) {
-			$translation = esc_html__( 'No image selected', 'knd' );
-		}
-		if ( $text === 'Remove' ) {
-			$translation = esc_html__( 'Remove', 'knd' );
-		}
-		if ( $text === 'Select image' ) {
-			$translation = esc_html__( 'Select image', 'knd' );
-		}
-		if ( $text === 'No File Selected' ) {
-			$translation = esc_html__( 'No File Selected', 'knd' );
-		}
-		if ( $text === 'Select...' ) {
-			$translation = esc_html__( 'Select...', 'knd' );
-		}
-		if ( $text === 'No options' ) {
-			$translation = esc_html__( 'No options', 'knd' );
-		}
-	}
-	return $translation;
-}
-add_filter( 'gettext', 'knd_gettext', 10, 3 );
 
 /**
  * Sanitize metrics code
