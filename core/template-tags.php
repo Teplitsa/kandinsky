@@ -957,7 +957,7 @@ if ( ! function_exists( 'knd_entry_tags' ) ) {
 
 		$post_type = get_post_type( get_the_ID() );
 
-		if ( ! get_theme_mod( $post_type . '_tags', false ) ) {
+		if ( ! get_theme_mod( $post_type . '_tags', true ) ) {
 			return;
 		}
 
