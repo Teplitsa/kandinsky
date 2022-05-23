@@ -66,6 +66,7 @@
 	width: 100%;
 	padding-right: 20px;
 	padding-left: 20px;
+	box-sizing: border-box;
 }
 
 .knd-container-md {
@@ -1098,6 +1099,7 @@
 	flex: 0 0 25%;
 	max-width: 25%;
 	padding: 0 20px 40px;
+	box-sizing: border-box;
 }
 
 .wp-block-knd-partners .partner-link {
@@ -2038,6 +2040,7 @@
 	padding-right: 20px;
 	padding-bottom: 20px;
 	padding-top: 20px;
+	box-sizing: border-box;
 }
 
 .knd-block-leyka-cards .knd-block-item:first-child {

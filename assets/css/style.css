@@ -1316,12 +1316,33 @@ body > svg {
 	min-height: initial;
 }
 
-.main-content.archive-post-list > .container {
+.main-content.archive-post-list > .container:first-child {
 	margin-top: -70px;
 }
 
 .main-content.archive-post-list .knd-pagination, .main-content.archive-post-list .em-pagination {
 	margin-bottom: 0;
+}
+
+.main-content.archive-post-list .projects-completed-container {
+	margin-top: 30px;
+}
+
+.main-content.archive-post-list .projects-completed-container .section-title {
+	font-size: 26px;
+	font-family: var(--knd-font-family-headings);
+	color: var(--knd-color-headings);
+	margin-top: 0;
+	margin-bottom: 30px;
+	padding: 0;
+}
+
+.main-content.archive-post-list .knd-pagination + .projects-completed-container, .main-content.archive-post-list .em-pagination + .projects-completed-container {
+	margin-top: 70px;
+}
+
+.main-content.archive-post-list .knd-project-completed {
+	filter: grayscale(100%);
 }
 
 .main-content.search-loop {
