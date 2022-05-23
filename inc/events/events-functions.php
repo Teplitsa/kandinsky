@@ -93,9 +93,9 @@ function knd_get_event_meta( $key = '',  $this_event = null ) {
  */
 function knd_is_booking_open() {
 
-	global $EM_Event;
+	global $this_event;
 
-	$is_open = $EM_Event->get_bookings()->is_open();
+	$is_open = $this_event->get_bookings()->is_open();
 
 	return $is_open;
 }
@@ -104,6 +104,7 @@ function knd_is_booking_open() {
  * Get event remained
  */
 function knd_get_event_remained() {
+
 
 	if ( knd_is_booking_open() ) {
 		$current_date = current_time( 'timestamp' );
