@@ -39,18 +39,79 @@ add_filter( 'override_load_textdomain', 'knd_override_load_textdomain', 5, 2 );
 /**
  * Theme Mods
  */
-require_once get_theme_file_path( '/core/customizer/theme-mods/global.php' );
-require_once get_theme_file_path( '/core/customizer/theme-mods/menu.php' );
-require_once get_theme_file_path( '/core/customizer/theme-mods/header.php' );
-require_once get_theme_file_path( '/core/customizer/theme-mods/pages.php' );
-require_once get_theme_file_path( '/core/customizer/theme-mods/homepage.php' );
-require_once get_theme_file_path( '/core/customizer/theme-mods/archive-settings.php' );
-require_once get_theme_file_path( '/core/customizer/theme-mods/post-settings.php' );
-require_once get_theme_file_path( '/core/customizer/theme-mods/project-settings.php' );
-if ( defined( 'LEYKA_VERSION' ) ) {
-	require_once get_theme_file_path( '/core/customizer/theme-mods/campaign-settings.php' );
-}
-require_once get_theme_file_path( '/core/customizer/theme-mods/footer.php' );
+
+add_action( 'init', function(){
+
+	/**
+	 * Get wp_blocks as array( 'block-name' => 'Block Name' )
+	 */
+	function knd_get_blocks_option(){
+		$choices = array(
+			'0' => esc_html__( 'None', 'knd' ),
+		);
+
+		$posts = get_posts( array(
+			'numberposts' => -1,
+			'post_type'   => 'wp_block',
+		) );
+
+		foreach( $posts as $post ){
+			$choices[ $post->post_name ] = $post->post_title;
+		}
+		return $choices;
+	}
+
+	/**
+	 * Get wp_get_nav_menus as array( 'menu-slug' => 'Menu Name' )
+	 */
+	function knd_get_menus_option(){
+		$choices = array(
+			'0' => esc_html__( 'None', 'knd' ),
+		);
+
+		$menus = wp_get_nav_menus();
+
+		foreach( $menus as $menu ){
+			$choices[ $menu->slug ] = $menu->name;
+		}
+		return $choices;
+	}
+
+	/**
+	 * Get wp_blocks as array( 'block-name' => 'Block Name' )
+	 */
+	function knd_get_project_cats(){
+		$choices = array(
+			'' => esc_html__( 'Select a category', 'knd' ), // Выберите категорию
+		);
+
+		$terms = get_terms( array(
+			'taxonomy' => 'project_cat',
+			'hide_empty' => false,
+		) );
+
+		if( $terms && ! is_wp_error($terms) ){
+			foreach( $terms as $term ){
+				$choices[ $term->slug ] = $term->name;
+			}
+		}
+
+		return $choices;
+	}
+
+	require_once get_theme_file_path( '/core/customizer/theme-mods/global.php' );
+	require_once get_theme_file_path( '/core/customizer/theme-mods/menu.php' );
+	require_once get_theme_file_path( '/core/customizer/theme-mods/header.php' );
+	require_once get_theme_file_path( '/core/customizer/theme-mods/pages.php' );
+	require_once get_theme_file_path( '/core/customizer/theme-mods/homepage.php' );
+	require_once get_theme_file_path( '/core/customizer/theme-mods/archive-settings.php' );
+	require_once get_theme_file_path( '/core/customizer/theme-mods/post-settings.php' );
+	require_once get_theme_file_path( '/core/customizer/theme-mods/project-settings.php' );
+	if ( defined( 'LEYKA_VERSION' ) ) {
+		require_once get_theme_file_path( '/core/customizer/theme-mods/campaign-settings.php' );
+	}
+	require_once get_theme_file_path( '/core/customizer/theme-mods/footer.php' );
+}, 20 );
 
 /**
  * Customizer Controls Scripts
@@ -124,38 +185,3 @@ function knd_add_wp_footer() {
 	}
 }
 add_action( 'wp_footer', 'knd_add_wp_footer', 999 );
-
-/**
- * Get wp_blocks as array( 'block-name' => 'Block Name' )
- */
-function knd_get_blocks_option(){
-	$choices = array(
-		'0' => esc_html__( 'None', 'knd' ),
-	);
-
-	$posts = get_posts( array(
-		'numberposts' => -1,
-		'post_type'   => 'wp_block',
-	) );
-
-	foreach( $posts as $post ){
-		$choices[ $post->post_name ] = $post->post_title;
-	}
-	return $choices;
-}
-
-/**
- * Get wp_get_nav_menus as array( 'menu-slug' => 'Menu Name' )
- */
-function knd_get_menus_option(){
-	$choices = array(
-		'0' => esc_html__( 'None', 'knd' ),
-	);
-
-	$menus = wp_get_nav_menus();
-
-	foreach( $menus as $menu ){
-		$choices[ $menu->slug ] = $menu->name;
-	}
-	return $choices;
-}

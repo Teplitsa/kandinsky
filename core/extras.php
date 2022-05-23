@@ -488,4 +488,3 @@ add_filter( 'image_sideload_extensions', 'knd_image_sideload_extensions' );
 
 add_action( 'knd_before_wp_footer', 'knd_button_totop' );
 add_action( 'knd_before_wp_footer', 'knd_screen_reader_alert' );
-
