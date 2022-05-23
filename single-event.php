@@ -57,7 +57,7 @@ while ( have_posts() ) :
 							<?php } ?>
 						</div>
 					</div>
-					<?php if ( knd_get_event_meta( 'event_rsvp' ) ) { ?>
+					<?php if ( knd_get_event_meta( 'event_rsvp' ) && knd_is_booking_open() ) { ?>
 						<div class="knd-event__cta">
 							<a href="#" class="knd-button knd-event__cta-button">
 								<?php echo get_option( 'dbem_bookings_cta_field', esc_html__( 'Book Now', 'knd' ) ); ?>

@@ -89,15 +89,27 @@ function knd_get_event_meta( $key = '',  $this_event = null ) {
 }
 
 /**
+ * Is booking open
+ */
+function knd_is_booking_open() {
+
+	global $EM_Event;
+
+	$is_open = $EM_Event->get_bookings()->is_open();
+
+	return $is_open;
+}
+
+/**
  * Get event remained
  */
 function knd_get_event_remained() {
-	$current_date = current_time( 'timestamp' );
-	$start_date   = strtotime( knd_get_event_meta( '#_{Y-m-d}' ) );
 
-	if ( $start_date > $current_date ) {
-		$time_diff = human_time_diff( $start_date, $current_date );
-		$remained  = sprintf( esc_html__( '%s before registration closes', 'knd' ), $time_diff ); 
+	if ( knd_is_booking_open() ) {
+		$current_date = current_time( 'timestamp' );
+		$start_date   = strtotime( knd_get_event_meta( '#_BOOKINGSCUTOFFDATE' ) . ' ' . knd_get_event_meta( '#_BOOKINGSCUTOFFTIME' ) );
+		$time_diff    = human_time_diff( $start_date, $current_date );
+		$remained     = sprintf( esc_html__( '%s before registration closes', 'knd' ), $time_diff ); 
 	} else {
 		$remained = esc_html__( 'Registration is closed', 'knd' );
 	}
