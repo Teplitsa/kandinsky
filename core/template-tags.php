@@ -151,12 +151,13 @@ function knd_posted_on( WP_Post $cpost, $args = array() ) {
 		//$event = new TST_Event( $cpost );
 		//return $event->posted_on_card();
 	} elseif ( 'project' == $cpost->post_type ) {
-		
-		$p = get_page_by_path( 'activity' );
-		if ( $p ) {
-			$meta[] = "<span class='category'><a href='" . get_permalink( $p ) . "'>" . get_the_title( $p ) .
-				 "</a></span>";
+
+		$cat = get_the_term_list( $cpost->ID, 'project_cat', '<span class="category">', ', ', '</span>' );
+
+		if ( has_term( '', 'project_cat', $cpost ) ) {
+			$meta[] = $cat;
 		}
+
 	} elseif ( 'person' == $cpost->post_type ) {
 		
 		$cat = get_the_term_list( $cpost->ID, 'person_cat', '<span class="category">', ', ', '</span>' );

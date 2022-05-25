@@ -57,6 +57,45 @@ Kirki::add_field( 'knd_theme_mod', array(
 ) );
 
 Kirki::add_field( 'knd_theme_mod', array(
+	'type'        => 'toggle',
+	'settings'    => 'projects_completed',
+	'label'       => esc_html__( 'Completed projects', 'knd' ),
+	'section'     => 'archive_settings',
+	'default'     => '0',
+) );
+
+Kirki::add_field( 'knd_theme_mod', array(
+	'type'        => 'select',
+	'settings'    => 'projects_completed_cat',
+	'label'       => esc_html__( 'What projects do we consider completed?', 'knd' ),
+	'section'     => 'archive_settings',
+	'default'     => '',
+	'choices'     => knd_get_project_cats(),
+	'active_callback'   => array(
+		array(
+			'setting'  => 'projects_completed',
+			'operator' => '==',
+			'value'    => '1',
+		),
+	),
+) );
+
+Kirki::add_field( 'knd_theme_mod', array(
+	'type'        => 'toggle',
+	'settings'    => 'projects_completed_style',
+	'label'       => esc_html__( 'Special style for completed projects', 'knd' ), // специальный стиль у завершенных проектов
+	'section'     => 'archive_settings',
+	'default'     => '0',
+	'active_callback'   => array(
+		array(
+			'setting'  => 'projects_completed',
+			'operator' => '==',
+			'value'    => '1',
+		),
+	),
+) );
+
+Kirki::add_field( 'knd_theme_mod', array(
 	'type'     => 'custom',
 	'settings' => 'archive_' . wp_unique_id( 'divider_' ),
 	'section'  => 'archive_settings',

@@ -53,6 +53,35 @@ function knd_register_post_type_project() {
 add_action( 'init', 'knd_register_post_type_project' );
 
 /**
+ * Register taxonomy project category
+ */
+function knd_register_project_category() {
+	$labels = array(
+		'name'                       => __( 'Project Categories', 'knd' ),
+		'singular_name'              => __( 'Project Category', 'knd' ),
+		'all_items'                  => __( 'Project Categories', 'knd' ),
+		'edit_item'                  => __( 'Edit Category', 'knd' ),
+		'update_item'                => __( 'Update Category', 'knd' ),
+		'add_new_item'               => __( 'Add New Category', 'knd' ),
+		'new_item_name'              => __( 'New Category', 'knd' ),
+		'menu_name'                  => __( 'Categories', 'knd' ),
+	);
+
+	register_taxonomy( 'project_cat', 'project', array(
+		'hierarchical'          => true,
+		'labels'                => $labels,
+		'show_ui'               => true,
+		'query_var'             => true,
+		'show_in_rest'          => true,
+		'show_admin_column'     => true,
+		'rewrite'               => array(
+			'slug' => 'project-cat',
+		),
+	));
+}
+add_action( 'init', 'knd_register_project_category' );
+
+/**
  * Register taxonomy project tag
  */
 function knd_register_project_tag_taxonomy() {
@@ -91,3 +120,30 @@ add_action( 'init', 'knd_register_project_tag_taxonomy' );
  * Setup Starter Data Project
  */
 add_action( 'knd_save_demo_content', array( 'KND_Project', 'setup_starter_data' ) );
+
+/**
+ * Preget projects
+ */
+
+function knd_projects_pre_get_posts( $query ) {
+	if ( ! is_admin() && $query->is_main_query() ) {
+		if ( $query->is_post_type_archive('project') ){
+			$query->set( 'posts_per_page', 8 );
+
+			if ( get_theme_mod('projects_completed') ) {
+
+				$query->set( 'tax_query', array(
+					'relation' => 'OR',
+					array(
+						'taxonomy' => 'project_cat',
+						'field' => 'id',
+						'terms' => array(49),
+						'operator' => 'NOT IN'
+					)
+				) );
+			}
+			
+		}
+	}
+}
+add_action( 'pre_get_posts', 'knd_projects_pre_get_posts' );

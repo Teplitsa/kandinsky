@@ -31,12 +31,33 @@ body {
 		margin-top: 70px;
 		min-height: initial;
 
-		> .container {
+		> .container:first-child {
 			margin-top: -70px;
 		}
 
 		.knd-pagination {
 			margin-bottom: 0;
+		}
+
+		.projects-completed-container {
+			margin-top: 30px;
+
+			.section-title {
+				font-size: 26px;
+				font-family: var(--knd-font-family-headings);
+				color: var(--knd-color-headings);
+				margin-top: 0;
+				margin-bottom: 30px;
+				padding: 0;
+			}
+		}
+
+		.knd-pagination + .projects-completed-container {
+			margin-top: 70px;
+		}
+
+		.knd-project-completed {
+			filter: grayscale(100%);
 		}
 	}
 

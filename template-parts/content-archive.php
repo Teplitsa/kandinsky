@@ -16,6 +16,10 @@ if ( ! is_paged() && ( 0 === $post_index || 1 === $post_index ) ) {
 	$post_class .= ' flex-lg-4 tpl-post';
 }
 
+if ( has_term( get_theme_mod( 'projects_completed_cat' ), 'project_cat', $post->ID ) ) {
+	$post_class .= ' knd-project-completed';
+}
+
 ?>
 
 <article <?php post_class( $post_class );?>>
@@ -26,7 +30,7 @@ if ( ! is_paged() && ( 0 === $post_index || 1 === $post_index ) ) {
 				<?php the_title('<h2 class="entry-title">','</h2>'); ?>
 			</div>
 		</a>
-		<?php if ( 'post' === get_post_type() ) { ?>
+		<?php if ( 'post' === get_post_type() || 'project' === get_post_type() ) { ?>
 			<div class="entry-meta"><?php echo knd_posted_on( $post, array( 'cat_link' => true ) ); ?></div>
 		<?php } ?>
 	</div>
