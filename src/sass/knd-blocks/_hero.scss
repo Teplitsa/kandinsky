@@ -76,6 +76,16 @@
 		font-size: 18px;
 		font-weight: 500;
 		margin-bottom: 26px;
+
+		a {
+			color: inherit !important;
+			border: none !important;
+			text-decoration: underline;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
 	}
 
 	&__figure {

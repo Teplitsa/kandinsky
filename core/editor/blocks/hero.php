@@ -117,7 +117,7 @@ function knd_block_hero_render_callback( $attr ) {
 
 	$text = '';
 	if ( isset( $attr['text'] ) && $attr['text'] ) {
-		$text = '<div class="knd-block-hero__text">' . $attr['text'] . '</div>';
+		$text = '<div class="knd-block-hero__text">' . nl2br( $attr['text'] ) . '</div>';
 	}
 
 	$actions = '';

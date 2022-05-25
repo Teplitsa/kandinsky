@@ -570,6 +570,16 @@
 	margin-bottom: 26px;
 }
 
+.knd-block-hero__text a {
+	color: inherit !important;
+	border: none !important;
+	text-decoration: underline;
+}
+
+.knd-block-hero__text a:hover {
+	text-decoration: none;
+}
+
 .knd-block-hero__figure {
 	display: -ms-flexbox;
 	display: flex;
