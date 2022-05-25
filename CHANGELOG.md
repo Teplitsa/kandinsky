@@ -11,6 +11,7 @@ All notable changes to this project will be documented in this file.
 ### Transform deprecated block Donation Form from theme to same block from Leyka plugin.
 ### Added settings controls to disable buttons on the single campaign page.
 ### Add Query controls for blocks News, Projects, Partners, Team and Events.
+### Added support for categories for projects and created functionality for separating completed projects.
 ### Added to top button.
 ### Add Heading level option for hero block title.
 ### Improve function scroll to anchor.
