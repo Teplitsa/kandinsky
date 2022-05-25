@@ -572,12 +572,11 @@
 
 .knd-block-hero__text a {
 	color: inherit !important;
-	border: none !important;
-	text-decoration: underline;
+	border-color: currentColor !important;
 }
 
 .knd-block-hero__text a:hover {
-	text-decoration: none;
+	border-color: transparent !important;
 }
 
 .knd-block-hero__figure {

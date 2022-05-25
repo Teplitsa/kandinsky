@@ -79,11 +79,10 @@
 
 		a {
 			color: inherit !important;
-			border: none !important;
-			text-decoration: underline;
+			border-color: currentColor !important;
 
 			&:hover {
-				text-decoration: none;
+				border-color: transparent !important;
 			}
 		}
 	}
