@@ -26,9 +26,8 @@ get_header(); ?>
 
 		<?php knd_posts_pagination(); ?>
 
-		<?php if( is_post_type_archive( 'project' ) ) { ?>
-			
-			<?php
+		<?php if( is_post_type_archive( 'project' ) && get_theme_mod( 'projects_completed' ) && get_theme_mod( 'projects_completed_cat' ) ) {
+
 			$args = array(
 				'post_type'      => 'project',
 				'posts_per_page' => -1,
@@ -36,7 +35,7 @@ get_header(); ?>
 					array(
 						'taxonomy' => 'project_cat',
 						'field'    => 'slug',
-						'terms'    => get_theme_mod( 'projects_completed_cat' ),
+						'terms'    => array( get_theme_mod( 'projects_completed_cat' ) ),
 					),
 				),
 			);

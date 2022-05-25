@@ -132,12 +132,14 @@ function knd_projects_pre_get_posts( $query ) {
 
 			if ( get_theme_mod('projects_completed') ) {
 
+				$term_slug = get_theme_mod( 'projects_completed_cat' );
+
 				$query->set( 'tax_query', array(
 					'relation' => 'OR',
 					array(
 						'taxonomy' => 'project_cat',
-						'field' => 'id',
-						'terms' => array(49),
+						'field' => 'slug',
+						'terms' => array( $term_slug ),
 						'operator' => 'NOT IN'
 					)
 				) );

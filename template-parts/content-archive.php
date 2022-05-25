@@ -16,7 +16,7 @@ if ( ! is_paged() && ( 0 === $post_index || 1 === $post_index ) ) {
 	$post_class .= ' flex-lg-4 tpl-post';
 }
 
-if ( has_term( get_theme_mod( 'projects_completed_cat' ), 'project_cat', $post->ID ) ) {
+if ( has_term( get_theme_mod( 'projects_completed_cat' ), 'project_cat', $post->ID ) && get_theme_mod( 'projects_completed_style' ) && get_theme_mod( 'projects_completed' ) ) {
 	$post_class .= ' knd-project-completed';
 }
 
