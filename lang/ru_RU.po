@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-17 02:51+0300\n"
-"PO-Revision-Date: 2022-05-17 02:54+0300\n"
+"POT-Creation-Date: 2022-05-30 12:09+0300\n"
+"PO-Revision-Date: 2022-05-30 12:10+0300\n"
 "Last-Translator: ahaenor <ahaenor@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -42,7 +42,7 @@ msgstr ""
 "К сожалению, запрошенная страница удалена или никогда не существовала. "
 "Пожалуйста, воспользуйтесь поиском или перейдите на Главную."
 
-#: archive-leyka_campaign.php:30 index.php:84
+#: archive-leyka_campaign.php:30 index.php:86
 msgid "Unfortunately, nothing found"
 msgstr "К сожалению, ничего не найдено"
 
@@ -714,26 +714,26 @@ msgid "Projects archive title"
 msgstr "Заголовок страницы проектов"
 
 #: core/customizer/customizer-deprecated.php:212
-#: core/customizer/theme-mods/archive-settings.php:113
+#: core/customizer/theme-mods/archive-settings.php:153
 #: core/template-tags.php:267 single-leyka_campaign.php:31
 #: single-leyka_campaign.php:50
 msgid "They need help"
 msgstr "Им нужна помощь"
 
 #: core/customizer/customizer-deprecated.php:219
-#: core/customizer/theme-mods/archive-settings.php:111
+#: core/customizer/theme-mods/archive-settings.php:151
 msgid "Active campaigns archive title"
 msgstr "Заголовок страницы активных кампаний"
 
 #: core/customizer/customizer-deprecated.php:228
-#: core/customizer/theme-mods/archive-settings.php:121
+#: core/customizer/theme-mods/archive-settings.php:161
 #: core/template-tags.php:262 single-leyka_campaign.php:27
 #: single-leyka_campaign.php:53
 msgid "They alredy got help"
 msgstr "Уже получили помощь"
 
 #: core/customizer/customizer-deprecated.php:235
-#: core/customizer/theme-mods/archive-settings.php:119
+#: core/customizer/theme-mods/archive-settings.php:159
 msgid "Completed campaigns archive title"
 msgstr "Заголовок страницы завершенных кампаний"
 
@@ -808,8 +808,16 @@ msgid "What projects do we consider completed?"
 msgstr "Какие проекты считаем завершенными?"
 
 #: core/customizer/theme-mods/archive-settings.php:86
-msgid "Special style for completed projects"
-msgstr "Специальный стиль у завершенных проектов"
+msgid "Highlight display of completed projects"
+msgstr "Выделить отображение завершенных проектов"
+
+#: core/customizer/theme-mods/archive-settings.php:106
+msgid "Opacity"
+msgstr "Прозрачность"
+
+#: core/customizer/theme-mods/archive-settings.php:126
+msgid "Color"
+msgstr "Цвет"
 
 #: core/customizer/theme-mods/campaign-settings.php:13
 msgctxt "Customizer"
@@ -837,7 +845,7 @@ msgid "Go to Menu"
 msgstr "Переход в раздел Меню"
 
 #: core/customizer/theme-mods/footer.php:72
-#: core/customizer/theme-mods/header.php:76 inc/events/events-functions.php:284
+#: core/customizer/theme-mods/header.php:76 inc/events/events-functions.php:297
 msgid "Name"
 msgstr "Название"
 
@@ -1089,7 +1097,7 @@ msgid "Email"
 msgstr "Email"
 
 #: core/customizer/theme-mods/header.php:312
-#: inc/events/events-functions.php:289
+#: inc/events/events-functions.php:302
 msgid "Phone"
 msgstr "Телефон"
 
@@ -1683,85 +1691,85 @@ msgstr "Красивый дизайн и полезные функции для 
 msgid "Comment"
 msgstr "Комментарий"
 
-#: inc/events/events-functions.php:100
+#: inc/events/events-functions.php:113
 #, php-format
 msgid "%s before registration closes"
 msgstr "%s до закрытия регистрации"
 
-#: inc/events/events-functions.php:102
+#: inc/events/events-functions.php:115
 msgid "Registration is closed"
 msgstr "Регистрация закрыта"
 
-#: inc/events/events-functions.php:116
+#: inc/events/events-functions.php:129
 msgid "online"
 msgstr "онлайн"
 
-#: inc/events/events-functions.php:245
+#: inc/events/events-functions.php:258
 msgid "Custom Settings"
 msgstr "Пользовательские настройки"
 
-#: inc/events/events-functions.php:258
+#: inc/events/events-functions.php:271
 msgid "Additional settings for the single event page"
 msgstr "Дополнительные настройки для страницы мероприятия"
 
-#: inc/events/events-functions.php:264
+#: inc/events/events-functions.php:277
 msgid "Schedule heading"
 msgstr "Заголовок расписания"
 
-#: inc/events/events-functions.php:265
+#: inc/events/events-functions.php:278
 msgid "Question heading"
 msgstr "Заголовок вопроса"
 
-#: inc/events/events-functions.php:266
+#: inc/events/events-functions.php:279
 msgid "Question content"
 msgstr "Содержание вопроса"
 
-#: inc/events/events-functions.php:267
+#: inc/events/events-functions.php:280
 msgid "Related heading"
 msgstr "Заголовок похожих мероприятий"
 
-#: inc/events/events-functions.php:294
+#: inc/events/events-functions.php:307
 msgid "E-mail"
 msgstr "E-mail"
 
-#: inc/events/events-functions.php:308
+#: inc/events/events-functions.php:321
 msgid "CTA button text"
 msgstr "Текст кнопки"
 
-#: inc/events/events-functions.php:308 inc/events/events-options.php:23
+#: inc/events/events-functions.php:321 inc/events/events-options.php:23
 #: single-event.php:63
 msgid "Book Now"
 msgstr "Забронировать"
 
-#: inc/events/events-functions.php:328
+#: inc/events/events-functions.php:341
 msgid "Custom Fields"
 msgstr "Настраиваемые поля"
 
-#: inc/events/events-functions.php:358 src/js/admin/admin.js:161
+#: inc/events/events-functions.php:371 src/js/admin/admin.js:161
 msgid "Label"
 msgstr "Название"
 
-#: inc/events/events-functions.php:359 src/js/admin/admin.js:162
+#: inc/events/events-functions.php:372 src/js/admin/admin.js:162
 msgid "slug"
 msgstr "слаг"
 
-#: inc/events/events-functions.php:361 src/js/admin/admin.js:163
+#: inc/events/events-functions.php:374 src/js/admin/admin.js:163
 msgid "Delete"
 msgstr "Удалить"
 
-#: inc/events/events-functions.php:368
+#: inc/events/events-functions.php:381
 msgid "Add new field"
 msgstr "Добавить новое поле"
 
-#: inc/events/events-functions.php:437
+#: inc/events/events-functions.php:450
 msgid "<strong>ERROR</strong>: Please enter a username."
 msgstr "<strong>ОШИБКА</strong>: Пожалуйста, введите ваше имя."
 
-#: inc/events/events-functions.php:442
+#: inc/events/events-functions.php:455
 msgid "<strong>ERROR</strong>: Please enter your phone number."
 msgstr "<strong>ОШИБКА</strong>: Пожалуйста, введите ваш номер телефона."
 
-#: inc/events/events-functions.php:456
+#: inc/events/events-functions.php:469
 msgid "<strong>ERROR</strong>: Please fill in the field"
 msgstr "<strong>ОШИБКА</strong>: Пожалуйста, заполните поле"
 
@@ -3821,9 +3829,6 @@ msgstr "Понятно!"
 #~ msgstr ""
 #~ "Пишите Алисе Цветковой в Telegram @itisalise или на почту "
 #~ "alisetsvetkova@te-st.ru"
-
-#~ msgid "Color"
-#~ msgstr "Цвет"
 
 #~ msgid "Collecting donations"
 #~ msgstr "Сбор пожертвований"

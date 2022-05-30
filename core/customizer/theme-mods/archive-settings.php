@@ -83,12 +83,72 @@ Kirki::add_field( 'knd_theme_mod', array(
 Kirki::add_field( 'knd_theme_mod', array(
 	'type'        => 'toggle',
 	'settings'    => 'projects_completed_style',
-	'label'       => esc_html__( 'Special style for completed projects', 'knd' ), // специальный стиль у завершенных проектов
+	'label'       => esc_html__( 'Highlight display of completed projects', 'knd' ),
 	'section'     => 'archive_settings',
 	'default'     => '0',
 	'active_callback'   => array(
 		array(
 			'setting'  => 'projects_completed',
+			'operator' => '==',
+			'value'    => '1',
+		),
+		array(
+			'setting'  => 'projects_completed_cat',
+			'operator' => '!=',
+			'value'    => '',
+		),
+	),
+) );
+
+Kirki::add_field( 'knd_theme_mod', array(
+	'type'        => 'slider',
+	'settings'    => 'projects_completed_opacity',
+	'label'       => esc_html__( 'Opacity', 'knd' ),
+	'section'     => 'archive_settings',
+	'default'     => 0.8,
+	'choices'     => [
+		'min'  => 0,
+		'max'  => 1,
+		'step' => 0.1,
+	],
+	'active_callback'   => array(
+		array(
+			'setting'  => 'projects_completed',
+			'operator' => '==',
+			'value'    => '1',
+		),
+		array(
+			'setting'  => 'projects_completed_cat',
+			'operator' => '!=',
+			'value'    => '',
+		),
+		array(
+			'setting'  => 'projects_completed_style',
+			'operator' => '==',
+			'value'    => '1',
+		),
+	),
+) );
+
+Kirki::add_field( 'knd_theme_mod', array(
+	'type'        => 'color',
+	'settings'    => 'projects_completed_color',
+	'label'       => esc_html__( 'Color', 'knd' ),
+	'section'     => 'archive_settings',
+	'default'     => knd_typography( 'font_base', 'color', '#4d606a' ),
+	'active_callback'   => array(
+		array(
+			'setting'  => 'projects_completed',
+			'operator' => '==',
+			'value'    => '1',
+		),
+		array(
+			'setting'  => 'projects_completed_cat',
+			'operator' => '!=',
+			'value'    => '',
+		),
+		array(
+			'setting'  => 'projects_completed_style',
 			'operator' => '==',
 			'value'    => '1',
 		),

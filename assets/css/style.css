@@ -1342,7 +1342,12 @@ body > svg {
 }
 
 .main-content.archive-post-list .knd-project-completed {
-	filter: grayscale(100%);
+	opacity: var(--knd-completed-project-opacity);
+}
+
+.main-content.archive-post-list .knd-project-completed .thumbnail-link,
+.main-content.archive-post-list .knd-project-completed .entry-title {
+	color: var(--knd-completed-project-color);
 }
 
 .main-content.search-loop {

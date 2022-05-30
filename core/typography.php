@@ -72,6 +72,9 @@ function knd_inline_style() {
 	--knd-font-style-headings:  ' . $knd_font_style_headings . ';
 
 	--knd-font-size-menu: ' . $knd_font_size_menu . ';
+
+	--knd-completed-project-color: ' . get_theme_mod( 'projects_completed_color', $knd_color_base ) . ';
+	--knd-completed-project-opacity: ' . get_theme_mod( 'projects_completed_opacity', '0.8' ) . ';
 }';
 
 	$custom_css = apply_filters( 'knd_inline_style', $custom_css );
