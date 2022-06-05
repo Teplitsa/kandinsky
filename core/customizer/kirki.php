@@ -27,16 +27,6 @@ Kirki::add_config( 'knd_theme_mod', array(
 ) );
 
 /**
- * Load translate from default wp files.
- */
-function knd_override_load_textdomain( $override, $domain ) {
-	if ( $domain === 'kirki' ) {
-		return false;
-	}
-}
-add_filter( 'override_load_textdomain', 'knd_override_load_textdomain', 5, 2 );
-
-/**
  * Theme Mods
  */
 
@@ -137,6 +127,7 @@ function knd_customize_register( $wp_customize ) {
 	$wp_customize->get_control( 'custom_logo' )->description = esc_html__( 'If only an image is used as a logo, then we recommend uploading an image with the dimensions of 315 x 66 px, or 66 x 66 px for use along with the text.', 'knd' );
 	/** Change panel nav_menus priority */
 	$wp_customize->get_panel( 'nav_menus' )->priority = 2;
+
 }
 add_action( 'customize_register', 'knd_customize_register', 11 );
 
@@ -185,3 +176,84 @@ function knd_add_wp_footer() {
 	}
 }
 add_action( 'wp_footer', 'knd_add_wp_footer', 999 );
+
+/**
+ * Add admin notice if Kirki plugin not activated.
+ */
+function knd_kirki_admin_notices() {
+
+	if ( get_option( 'knd_disable_kirki_notice' ) ) {
+		return;
+	}
+
+	$screen = get_current_screen();
+
+	if ( 'appearance_page_knd-install-plugins' !== $screen->id ) {
+
+		?>
+		<div class="notice notice-info knd-kirki-notice">
+			<p><?php esc_html_e('In order to make Kandinsky work full speed, you will need few plugins. WordPress will install or update the following plugins:', 'knd');?></p>
+			<ul>
+				<li><strong>Kirki Customizer Framework</strong><br>
+					<i><?php esc_html_e('Plugin that allows web-font customization.', 'knd');?></i>
+				</li>
+			</ul>
+			<p>
+				<a class="button button-primary" href="<?php echo esc_url( admin_url( 'themes.php?page=knd-install-plugins' ) ); ?>">
+					<?php esc_html_e( 'Install', 'knd' ); ?>
+				</a>
+				<a class="button-secondary button delete-theme knd-kirki-notice-dismiss" href="#">
+					<?php esc_html_e( 'No, I’ll do it some other time', 'knd' );?>
+				</a>
+			</p>
+			<button type="button" class="knd-kirki-notice-dismiss notice-dismiss"></button>
+		</div>
+		<?php
+	}
+}
+add_action( 'admin_notices', 'knd_kirki_admin_notices' );
+
+/**
+ * Save dismiss notice status
+ */
+function knd_save_dismiss_notice() {
+
+	/* Check nonce */
+	check_ajax_referer( 'knd-nonce', 'nonce' );
+
+	/* Stop if the current user is not an admin or do not have administrative access */
+	if ( ! current_user_can( 'manage_options' ) ) {
+		die();
+	}
+
+	update_option( 'knd_disable_kirki_notice', true );
+
+	$result = get_option( 'knd_disable_kirki_notice' );
+
+	wp_send_json( $result );
+
+}
+add_action( 'wp_ajax_knd_dismiss_notice', 'knd_save_dismiss_notice' );
+
+/**
+ * Load translate from default wp files.
+ */
+function knd_remove_kirki_override_load_textdomain() {
+	$tag      = 'override_load_textdomain';
+	$priority = 5;
+	$class    = 'Kirki\L10n';
+	$function = 'override_load_textdomain';
+	global $wp_filter;
+
+	foreach( $wp_filter[$tag]->callbacks[$priority] as $callback ) {
+		if ( $callback['function'] 
+			&& is_a( $callback['function'][0], $class ) 
+			&& $callback['function'][1] == $function) {
+			$callable = [ $callback['function'][0], $function ];
+			$wp_filter[$tag]->remove_filter( $tag, $callable, $priority );
+		break;
+		}
+	}
+}
+
+knd_remove_kirki_override_load_textdomain();

@@ -10,7 +10,7 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 /**
- * Customizer options
+ * Kirki Customizer Framework
  *
  * @package Kandinsky
  */
