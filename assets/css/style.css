@@ -2573,10 +2573,9 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 
 .knd-header__inner .knd-social-links li a .image-icon {
 	display: block;
-	max-width: 14px;
-	max-height: 14px;
-	width: auto;
-	height: auto;
+	width: 14px;
+	height: 14px;
+	background-color: var(--knd-color-main);
 }
 
 .knd-header__inner .knd-social-links li a:hover .svg-icon {
@@ -2584,7 +2583,7 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 }
 
 .knd-header__inner .knd-social-links li a:hover .image-icon {
-	filter: brightness(0) invert(1);
+	background-color: #fff;
 	opacity: 1;
 }
 
@@ -2600,15 +2599,23 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 	padding: 0 0 26px;
 }
 
-.bottom-bar .knd-social-links a {
+.bottom-bar .knd-social-links li a {
 	color: var(--knd-social-color, #000);
 }
 
-.bottom-bar .knd-social-links a:hover {
+.bottom-bar .knd-social-links li a .image-icon-mask .image-icon {
+	background-color: var(--knd-social-color, #000);
+}
+
+.bottom-bar .knd-social-links li a:hover {
 	color: var(--knd-social-color-hover, #000);
 }
 
-.bottom-bar .knd-social-links a .svg-icon {
+.bottom-bar .knd-social-links li a:hover .image-icon-mask .image-icon {
+	background-color: var(--knd-social-color-hover, #000);
+}
+
+.bottom-bar .knd-social-links li a .svg-icon {
 	fill: currentColor;
 }
 
@@ -2967,13 +2974,32 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 	height: 20px;
 }
 
-.knd-social-links li .image-icon {
-	display: block;
-	max-width: 20px;
-	max-height: 20px;
-	width: auto;
-	height: auto;
+.knd-social-links li .image-icon-mask {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-ms-flex-align: center;
+	align-items: center;
+	width: 20px;
+	height: 20px;
 	transition: opacity .3s;
+}
+
+.knd-social-links li .image-icon-mask .image-icon {
+	display: block;
+	width: 20px;
+	height: 20px;
+	transition: opacity .3s;
+	background-color: var(--knd-color-base);
+	-webkit-mask-image: var(--hms-social-icon);
+	mask-image: var(--hms-social-icon);
+	-webkit-mask-size: contain;
+	mask-size: contain;
+	-webkit-mask-repeat: no-repeat;
+	mask-repeat: no-repeat;
+	-webkit-mask-position: center;
+	mask-position: center;
 }
 
 .knd-social-links li a:hover .image-icon {

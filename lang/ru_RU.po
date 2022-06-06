@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-06 09:26+0300\n"
-"PO-Revision-Date: 2022-06-06 09:29+0300\n"
+"POT-Creation-Date: 2022-06-06 19:43+0300\n"
+"PO-Revision-Date: 2022-06-06 19:44+0300\n"
 "Last-Translator: ahaenor <ahaenor@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -274,11 +274,11 @@ msgstr "SEO"
 msgid "Donations"
 msgstr "Пожертвования"
 
-#: core/admin.php:114
+#: core/admin.php:114 core/customizer/theme-mods/global.php:192
 msgid "Other"
 msgstr "Другое"
 
-#: core/admin.php:120 core/customizer/theme-mods/global.php:326
+#: core/admin.php:120 core/customizer/theme-mods/global.php:327
 msgid "Documentation"
 msgstr "Документация"
 
@@ -943,10 +943,6 @@ msgstr "Цвет кнопок и ссылок при наведении"
 msgid "Also used in other active elements"
 msgstr "Также используется в других активных элементах"
 
-#: core/customizer/theme-mods/global.php:192
-msgid "Custom"
-msgstr "Пользовательская сеть"
-
 #: core/customizer/theme-mods/global.php:200
 msgid "Add social network"
 msgstr "Добавить социальную сеть"
@@ -960,7 +956,7 @@ msgid "Select network"
 msgstr "Выберите социальную сеть"
 
 #: core/customizer/theme-mods/global.php:217 core/extras.php:246
-#: modules/social.php:105
+#: modules/social.php:114
 msgid "Facebook"
 msgstr "Facebook"
 
@@ -972,19 +968,24 @@ msgstr "URL"
 msgid "Icon"
 msgstr "Иконка"
 
-#: core/customizer/theme-mods/global.php:238
+#: core/customizer/theme-mods/global.php:226
+msgid ""
+"The recommended icon size is 40x40 pixels, and with a transparent background."
+msgstr "Рекомендуемый размер иконки 40x40 пикселей, с прозрачным фоном."
+
+#: core/customizer/theme-mods/global.php:239
 msgid "Miscellaneous Settings"
 msgstr "Разные настройки"
 
-#: core/customizer/theme-mods/global.php:247
+#: core/customizer/theme-mods/global.php:248
 msgid "Scroll To Top Button"
 msgstr "Кнопка наверх"
 
-#: core/customizer/theme-mods/global.php:256
+#: core/customizer/theme-mods/global.php:257
 msgid "Analytics"
 msgstr "Аналитика"
 
-#: core/customizer/theme-mods/global.php:265
+#: core/customizer/theme-mods/global.php:266
 msgid ""
 "Here you can insert the code for user analytics systems, Google Analytics or "
 "Yandex.Metrica. Below are 3 areas of the site where you can paste the code, "
@@ -996,45 +997,45 @@ msgstr ""
 "зависимости, от требований устанавливаемых систем, можете вставить код. "
 "Просто скопируйте его сюда."
 
-#: core/customizer/theme-mods/global.php:272
+#: core/customizer/theme-mods/global.php:273
 msgid "Before </head>"
 msgstr "Перед </head>"
 
-#: core/customizer/theme-mods/global.php:275
-#: core/customizer/theme-mods/global.php:287
-#: core/customizer/theme-mods/global.php:299
+#: core/customizer/theme-mods/global.php:276
+#: core/customizer/theme-mods/global.php:288
+#: core/customizer/theme-mods/global.php:300
 msgid "Code can be copied here."
 msgstr "Код можно скопировать сюда."
 
-#: core/customizer/theme-mods/global.php:284
+#: core/customizer/theme-mods/global.php:285
 msgid "At the beginning of <body>"
 msgstr "В начале <body>"
 
-#: core/customizer/theme-mods/global.php:296
+#: core/customizer/theme-mods/global.php:297
 msgid "Before </body>"
 msgstr "Перед </body>"
 
-#: core/customizer/theme-mods/global.php:309
+#: core/customizer/theme-mods/global.php:310
 msgid "Important Links"
 msgstr "Важные ссылки"
 
-#: core/customizer/theme-mods/global.php:318
+#: core/customizer/theme-mods/global.php:319
 msgid "Theme Info"
 msgstr "О теме"
 
-#: core/customizer/theme-mods/global.php:322
+#: core/customizer/theme-mods/global.php:323
 msgid "Support"
 msgstr "Служба поддержки"
 
-#: core/customizer/theme-mods/global.php:330
+#: core/customizer/theme-mods/global.php:331
 msgid "Changelog"
 msgstr "Changelog"
 
-#: core/customizer/theme-mods/global.php:353
+#: core/customizer/theme-mods/global.php:354
 msgid "Yoast SEO Breadcrumbs"
 msgstr "Цепочки навигации Yoast SEO"
 
-#: core/customizer/theme-mods/global.php:363
+#: core/customizer/theme-mods/global.php:364
 msgid "Additional CSS"
 msgstr "Дополнительные стили"
 
@@ -1408,11 +1409,11 @@ msgstr "Блоки"
 msgid "More"
 msgstr "Еще"
 
-#: core/extras.php:244 modules/social.php:84
+#: core/extras.php:244 modules/social.php:93
 msgid "VKontakte"
 msgstr "ВКонтакте"
 
-#: core/extras.php:245 modules/social.php:98
+#: core/extras.php:245 modules/social.php:107
 msgid "Odnoklassniki"
 msgstr "Одноклассники"
 
@@ -1420,7 +1421,7 @@ msgstr "Одноклассники"
 msgid "Instagram"
 msgstr "Instagram"
 
-#: core/extras.php:248 modules/social.php:91
+#: core/extras.php:248 modules/social.php:100
 msgid "Twitter"
 msgstr "Twitter"
 
@@ -2006,31 +2007,31 @@ msgstr "Добавить или удалить теги"
 msgid "Choose from the most used tags"
 msgstr "Выбрать из часто используемые"
 
-#: modules/social.php:82
+#: modules/social.php:91
 msgid "Share on VK"
 msgstr "Поделиться ВКонтакте"
 
-#: modules/social.php:89
+#: modules/social.php:98
 msgid "Share on Twitter"
 msgstr "Поделиться в Twitter"
 
-#: modules/social.php:96
+#: modules/social.php:105
 msgid "Share on OK"
 msgstr "Поделиться в Одноклассниках"
 
-#: modules/social.php:103
+#: modules/social.php:112
 msgid "Share on Facebook"
 msgstr "Поделиться в Facebook"
 
-#: modules/social.php:132
+#: modules/social.php:141
 msgid "Share on WhatsApp"
 msgstr "Поделиться в WhatsApp"
 
-#: modules/social.php:139
+#: modules/social.php:148
 msgid "Share on Telegram"
 msgstr "Поделиться в Telegram"
 
-#: modules/social.php:146
+#: modules/social.php:155
 msgid "Share on Viber"
 msgstr "Поделиться на Viber"
 
@@ -3717,6 +3718,9 @@ msgstr ""
 #: vendor/envato_setup/steps/support.php:41
 msgid "OK, I've got it!"
 msgstr "Понятно!"
+
+#~ msgid "Custom"
+#~ msgstr "Пользовательская сеть"
 
 #~ msgid "Decoration"
 #~ msgstr "Оформление"

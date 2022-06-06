@@ -36,7 +36,8 @@ function knd_social_links( $atts = array(), $echo = true ) {
 	if ( $knd_social ) {
 		?>
 			<ul class="knd-social-links <?php echo esc_attr( $classes ); ?>">
-				<?php foreach( $knd_social as $setting ) {
+				<?php
+				foreach( $knd_social as $setting ) {
 
 					$icon = '<svg class="svg-icon">
 						<title>' . esc_html( $setting['label'] ) . '</title>
@@ -44,8 +45,12 @@ function knd_social_links( $atts = array(), $echo = true ) {
 					</svg>';
 
 					if ( ! $setting['network'] && $setting['image'] ) {
-						$icon = '<img src="' . wp_get_attachment_image_url( $setting['image'] ) . '" alt="" class="image-icon">';
+						$icon = '<div class="image-icon-mask"><div class="image-icon" style="--hms-social-icon:url(' . wp_get_attachment_image_url( $setting['image'] ) . ')"></div></div>';
+					} else if ( ! $setting['network'] ) {
+						$icon = '';
 					}
+
+					if ( $icon ) {
 					?>
 					<li class="<?php echo esc_attr( $setting['network'] );?>">
 						<a href="<?php echo esc_url( $setting['url'] );?>" target="_blank" aria-label="<?php echo esc_attr( $setting['label'] );?>">
@@ -53,8 +58,12 @@ function knd_social_links( $atts = array(), $echo = true ) {
 							<span><?php echo esc_html( $setting['label'] ); ?></span>
 						</a>
 					</li>
-				<?php }?>
+					<?php
+					}
+				}
+				?>
 			</ul>
+
 		<?php 
 	}
 

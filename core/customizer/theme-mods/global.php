@@ -223,6 +223,7 @@ new \Kirki\Field\Repeater(
 			'image'    => [
 				'type'  => 'image',
 				'label' => esc_html__( 'Icon', 'knd' ),
+				'description' => esc_html__( 'The recommended icon size is 40x40 pixels, and with a transparent background.', 'knd' ),
 				'choices'     => [
 					'save_as' => 'id',
 				],

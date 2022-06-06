@@ -72,12 +72,26 @@ $social_color: (
 			height: 20px;
 		}
 
-		.image-icon {
-			display: block;
-			max-width: 20px;
-			max-height: 20px;
-			width: auto;
-			height: auto;
+		.image-icon-mask {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 20px;
+			height: 20px;
+
+			.image-icon {
+				display: block;
+				width: 20px;
+				height: 20px;
+				transition: opacity .3s;
+				background-color: var(--knd-color-base);
+				mask-image: var(--hms-social-icon);
+				mask-size: contain;
+				mask-repeat: no-repeat;
+				mask-position: center;
+			}
+			
+
 			transition: opacity .3s;
 		}
 

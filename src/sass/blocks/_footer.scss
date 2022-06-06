@@ -6,12 +6,20 @@
 
 	padding: 0 0 $base;
 
-	.knd-social-links {
+	.knd-social-links li {
 		a {
 			color: var(--knd-social-color,#000);
 
+			.image-icon-mask .image-icon {
+				background-color: var(--knd-social-color,#000);
+			}
+
 			&:hover {
 				color: var(--knd-social-color-hover,#000);
+
+				.image-icon-mask .image-icon {
+					background-color: var(--knd-social-color-hover,#000);
+				}
 			}
 
 			.svg-icon {

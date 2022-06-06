@@ -1046,10 +1046,9 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 	}
 	.image-icon {
 		display: block;
-		max-width: 14px;
-		max-height: 14px;
-		width: auto;
-		height: auto;
+		width: 14px;
+		height: 14px;
+		background-color: var(--knd-color-main);
 	}
 }
 .knd-header__inner .knd-social-links li a:hover {
@@ -1057,7 +1056,7 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 		fill: #fff;
 	}
 	.image-icon {
-		filter: brightness(0) invert(1);
+		background-color: #fff;
 		opacity: 1;
 	}
 }
