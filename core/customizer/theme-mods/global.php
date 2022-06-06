@@ -189,7 +189,7 @@ foreach ( knd_get_social_media_supported() as $id => $label ) {
 	$socials_choices[ $id ] = $label;
 }
 
-$socials_choices[''] = esc_html__( 'Custom', 'knd' );
+$socials_choices[''] = esc_html__( 'Other', 'knd' );
 
 new \Kirki\Field\Repeater(
 	[
