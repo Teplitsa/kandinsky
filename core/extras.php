@@ -241,39 +241,14 @@ function knd_filter_search_query( $s ) {
 
 function knd_get_social_media_supported() {
 	return array( 
-		'vk' => array( 
-			'label' => esc_html__( 'VKontakte', 'knd' ),
-			'description' => esc_html__( 'E.g., https://vk.com/club0123456789', 'knd' )
-		),
-		'ok' => array( 
-			'label' => esc_html__( 'Odnoklassniki', 'knd' ),
-			'description' => esc_html__( 'E.g., https://ok.ru/profile/0123456789', 'knd' )
-		),
-		'facebook' => array( 
-			'label' => esc_html__( 'Facebook', 'knd' ),
-			'description' => esc_html__( 'E.g., https://www.facebook.com/your-organization-page', 'knd' )
-		),
-		'instagram' => array(
-			'label' => esc_html__( 'Instagram', 'knd' ),
-			'description' => esc_html__( 'E.g., https://www.instagram.com/your-organization-page', 'knd' )
-		),
-		'twitter' => array(
-			'label' => esc_html__( 'Twitter', 'knd' ),
-			'description' => esc_html__( 'E.g., https://twitter.com/your-organization-page', 'knd' )
-		),
-		'telegram' => array(
-			'label' => esc_html__( 'Telegram', 'knd' ),
-			'description' => esc_html__( 'E.g., https://tlgrm.ru/channels/@your-organization-page', 'knd' )
-		),
-		'youtube' => array(
-			'label' => esc_html__( 'YouTube', 'knd' ),
-			'description' => esc_html__( 'E.g., https://youtube.com/channel/your-organization-channel', 'knd' )
-		),
-		'tiktok' => array(
-			'label'       => esc_html__( 'TikTok', 'knd' ),
-			'description' => '',
-			'placeholder' => 'https://www.tiktok.com/@username',
-		),
+		'vk'        => esc_html__( 'VKontakte', 'knd' ),
+		'ok'        => esc_html__( 'Odnoklassniki', 'knd' ),
+		'facebook'  => esc_html__( 'Facebook', 'knd' ),
+		'instagram' => esc_html__( 'Instagram', 'knd' ),
+		'twitter'   => esc_html__( 'Twitter', 'knd' ),
+		'telegram'  => esc_html__( 'Telegram', 'knd' ),
+		'youtube'   => esc_html__( 'YouTube', 'knd' ),
+		'tiktok'    => esc_html__( 'TikTok', 'knd' ),
 	);
 }
 

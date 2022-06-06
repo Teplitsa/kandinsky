@@ -85,3 +85,7 @@
 .customize-control-title {
 	line-height: 1.3;
 }
+
+.customize-control-repeater .upload-button {
+	width: initial;
+}

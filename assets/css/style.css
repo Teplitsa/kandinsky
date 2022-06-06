@@ -2571,8 +2571,21 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 	fill: var(--knd-color-main);
 }
 
+.knd-header__inner .knd-social-links li a .image-icon {
+	display: block;
+	max-width: 14px;
+	max-height: 14px;
+	width: auto;
+	height: auto;
+}
+
 .knd-header__inner .knd-social-links li a:hover .svg-icon {
 	fill: #fff;
+}
+
+.knd-header__inner .knd-social-links li a:hover .image-icon {
+	filter: brightness(0) invert(1);
+	opacity: 1;
 }
 
 @media (max-width: 1199px) {
@@ -2928,7 +2941,12 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 
 .knd-social-links li a {
 	border-radius: 50%;
-	display: inline-block;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-ms-flex-align: center;
+	align-items: center;
 	text-align: center;
 	vertical-align: middle;
 	transition: color 0.3s, background 0.3s, border-color 0.3s, opacity 0.3s;
@@ -2943,10 +2961,23 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 }
 
 .knd-social-links li .svg-icon {
-	display: inline-block;
-	vertical-align: top;
+	display: block;
+	vertical-align: middle;
 	width: 20px;
 	height: 20px;
+}
+
+.knd-social-links li .image-icon {
+	display: block;
+	max-width: 20px;
+	max-height: 20px;
+	width: auto;
+	height: auto;
+	transition: opacity .3s;
+}
+
+.knd-social-links li a:hover .image-icon {
+	opacity: .7;
 }
 
 /**  Sharing **/
@@ -2961,7 +2992,12 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 }
 
 .social-likes__widget a {
-	display: inline-block;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-ms-flex-align: center;
+	align-items: center;
 	text-align: center;
 	vertical-align: middle;
 	transition: color 0.3s, background 0.3s, border-color 0.3s, opacity 0.3s;
@@ -3005,7 +3041,7 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 }
 
 .social-likes__widget .svg-icon {
-	display: inline-block;
+	display: block;
 	vertical-align: moddle;
 	fill: #ffffff;
 	vertical-align: middle;

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-30 12:09+0300\n"
-"PO-Revision-Date: 2022-05-30 12:10+0300\n"
+"POT-Creation-Date: 2022-06-06 09:26+0300\n"
+"PO-Revision-Date: 2022-06-06 09:29+0300\n"
 "Last-Translator: ahaenor <ahaenor@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -278,8 +278,7 @@ msgstr "Пожертвования"
 msgid "Other"
 msgstr "Другое"
 
-#: core/admin.php:120 core/customizer/customizer-deprecated.php:34
-#: core/customizer/theme-mods/global.php:278
+#: core/admin.php:120 core/customizer/theme-mods/global.php:326
 msgid "Documentation"
 msgstr "Документация"
 
@@ -640,104 +639,7 @@ msgstr "%s - нет прав на запись во временный файл 
 msgid "Can't rename downloaded file: from %s to %s"
 msgstr "Невозможно переименовать загружаемый файл: из %s в %s"
 
-#: core/customizer/customizer-deprecated.php:28
-#: core/customizer/theme-mods/global.php:270
-msgid "Theme Info"
-msgstr "О теме"
-
-#: core/customizer/customizer-deprecated.php:31
-#: core/customizer/theme-mods/global.php:274
-msgid "Support"
-msgstr "Служба поддержки"
-
-#: core/customizer/customizer-deprecated.php:44
-#: core/customizer/customizer-deprecated.php:59
-#: core/customizer/theme-mods/global.php:261
-msgid "Important Links"
-msgstr "Важные ссылки"
-
-#: core/customizer/customizer-deprecated.php:91
-msgid "Decoration"
-msgstr "Оформление"
-
-#: core/customizer/customizer-deprecated.php:96
-msgid "Color scheme"
-msgstr "Цветовая схема"
-
-#: core/customizer/customizer-deprecated.php:104
-#: core/customizer/theme-mods/footer.php:39
-#: core/customizer/theme-mods/footer.php:47
-#: vendor/envato_setup/envato_setup.php:321
-#: vendor/envato_setup/steps/design.php:8
-msgid "Logo"
-msgstr "Логотип"
-
-#: core/customizer/customizer-deprecated.php:125
-msgid "Action Color"
-msgstr "Основной цвет схемы"
-
-#: core/customizer/customizer-deprecated.php:137
-msgid "Page Background Color"
-msgstr "Основной цвет фона страниц"
-
-#: core/customizer/customizer-deprecated.php:138
-#: core/customizer/theme-mods/global.php:115
-msgid "Recommended - white"
-msgstr "Рекомендуется - белый"
-
-#: core/customizer/customizer-deprecated.php:167
-msgid "Homepage settings"
-msgstr "Главная страница"
-
-#: core/customizer/customizer-deprecated.php:168
-msgid "Homepage settings and blocks"
-msgstr "Настройки и блоки главной страницы"
-
-#: core/customizer/customizer-deprecated.php:171
-msgid "Static page settings"
-msgstr "Статичная страница"
-
-#: core/customizer/customizer-deprecated.php:186
-msgid "Titles and captions"
-msgstr "Заголовки и надписи"
-
-#: core/customizer/customizer-deprecated.php:193
-#: core/customizer/theme-mods/archive-settings.php:47
-#: core/template-tags.php:255 core/template-tags.php:383
-#: vendor/envato_setup/envato_setup.php:1230
-msgid "Our projects"
-msgstr "Наши проекты"
-
-#: core/customizer/customizer-deprecated.php:200
-#: core/customizer/theme-mods/archive-settings.php:45
-msgid "Projects archive title"
-msgstr "Заголовок страницы проектов"
-
-#: core/customizer/customizer-deprecated.php:212
-#: core/customizer/theme-mods/archive-settings.php:153
-#: core/template-tags.php:267 single-leyka_campaign.php:31
-#: single-leyka_campaign.php:50
-msgid "They need help"
-msgstr "Им нужна помощь"
-
-#: core/customizer/customizer-deprecated.php:219
-#: core/customizer/theme-mods/archive-settings.php:151
-msgid "Active campaigns archive title"
-msgstr "Заголовок страницы активных кампаний"
-
-#: core/customizer/customizer-deprecated.php:228
-#: core/customizer/theme-mods/archive-settings.php:161
-#: core/template-tags.php:262 single-leyka_campaign.php:27
-#: single-leyka_campaign.php:53
-msgid "They alredy got help"
-msgstr "Уже получили помощь"
-
-#: core/customizer/customizer-deprecated.php:235
-#: core/customizer/theme-mods/archive-settings.php:159
-msgid "Completed campaigns archive title"
-msgstr "Заголовок страницы завершенных кампаний"
-
-#: core/customizer/customizer-deprecated.php:260
+#: core/customizer/customizer-deprecated.php:27 core/customizer/kirki.php:195
 msgid ""
 "In order to make Kandinsky work full speed, you will need few plugins. "
 "WordPress will install or update the following plugins:"
@@ -745,30 +647,30 @@ msgstr ""
 "Для корректной работы темы Кандинский понадобится несколько плагинов. Мы "
 "установим или обновим следующие плагины:"
 
-#: core/customizer/customizer-deprecated.php:263
+#: core/customizer/customizer-deprecated.php:30 core/customizer/kirki.php:198
 msgid "Plugin that allows web-font customization."
 msgstr "Плагин, позволяющий редактировать шрифты сайта."
 
-#: core/customizer/customizer-deprecated.php:268
+#: core/customizer/customizer-deprecated.php:35 core/customizer/kirki.php:203
 #: vendor/class-tgm-plugin-activation.php:2706
 #: vendor/envato_setup/steps/plugins.php:79
 msgid "Install"
 msgstr "Установить"
 
-#: core/customizer/customizer-deprecated.php:271
+#: core/customizer/customizer-deprecated.php:38 core/customizer/kirki.php:206
 msgid "No, I’ll do it some other time"
 msgstr "Не устанавливать"
 
-#: core/customizer/kirki.php:50 core/customizer/kirki.php:69
+#: core/customizer/kirki.php:40 core/customizer/kirki.php:59
 #: src/experimental/gutenberg-experimental.js:102
 msgid "None"
 msgstr "Нет"
 
-#: core/customizer/kirki.php:85
+#: core/customizer/kirki.php:75
 msgid "Select a category"
 msgstr "Выберите категорию"
 
-#: core/customizer/kirki.php:137
+#: core/customizer/kirki.php:127
 msgid ""
 "If only an image is used as a logo, then we recommend uploading an image "
 "with the dimensions of 315 x 66 px, or 66 x 66 px for use along with the "
@@ -795,6 +697,16 @@ msgstr "Блог"
 msgid "Posts Page Bottom Blocks"
 msgstr "Блоки внизу страниц архива"
 
+#: core/customizer/theme-mods/archive-settings.php:45
+msgid "Projects archive title"
+msgstr "Заголовок страницы проектов"
+
+#: core/customizer/theme-mods/archive-settings.php:47
+#: core/template-tags.php:255 core/template-tags.php:383
+#: vendor/envato_setup/envato_setup.php:1230
+msgid "Our projects"
+msgstr "Наши проекты"
+
 #: core/customizer/theme-mods/archive-settings.php:53
 msgid "Projects Page Bottom Blocks"
 msgstr "Блоки внизу страниц проектов"
@@ -815,9 +727,29 @@ msgstr "Выделить отображение завершенных прое�
 msgid "Opacity"
 msgstr "Прозрачность"
 
-#: core/customizer/theme-mods/archive-settings.php:126
+#: core/customizer/theme-mods/archive-settings.php:136
 msgid "Color"
 msgstr "Цвет"
+
+#: core/customizer/theme-mods/archive-settings.php:171
+msgid "Active campaigns archive title"
+msgstr "Заголовок страницы активных кампаний"
+
+#: core/customizer/theme-mods/archive-settings.php:173
+#: core/template-tags.php:267 single-leyka_campaign.php:31
+#: single-leyka_campaign.php:50
+msgid "They need help"
+msgstr "Им нужна помощь"
+
+#: core/customizer/theme-mods/archive-settings.php:179
+msgid "Completed campaigns archive title"
+msgstr "Заголовок страницы завершенных кампаний"
+
+#: core/customizer/theme-mods/archive-settings.php:181
+#: core/template-tags.php:262 single-leyka_campaign.php:27
+#: single-leyka_campaign.php:53
+msgid "They alredy got help"
+msgstr "Уже получили помощь"
 
 #: core/customizer/theme-mods/campaign-settings.php:13
 msgctxt "Customizer"
@@ -844,7 +776,15 @@ msgstr "Переход в раздел Меню &quot;В подвале&quot;"
 msgid "Go to Menu"
 msgstr "Переход в раздел Меню"
 
+#: core/customizer/theme-mods/footer.php:39
+#: core/customizer/theme-mods/footer.php:47
+#: vendor/envato_setup/envato_setup.php:321
+#: vendor/envato_setup/steps/design.php:8
+msgid "Logo"
+msgstr "Логотип"
+
 #: core/customizer/theme-mods/footer.php:72
+#: core/customizer/theme-mods/global.php:216
 #: core/customizer/theme-mods/header.php:76 inc/events/events-functions.php:297
 msgid "Name"
 msgstr "Название"
@@ -944,6 +884,7 @@ msgstr "Цвет ссылок в подвале при наведении"
 
 #: core/customizer/theme-mods/footer.php:453
 #: core/customizer/theme-mods/global.php:163
+#: core/customizer/theme-mods/global.php:197
 #: core/customizer/theme-mods/header.php:357
 #: core/customizer/theme-mods/header.php:529
 msgid "Social networks"
@@ -982,6 +923,10 @@ msgstr "Заголовки"
 msgid "Page Background color"
 msgstr "Фон страницы"
 
+#: core/customizer/theme-mods/global.php:115
+msgid "Recommended - white"
+msgstr "Рекомендуется - белый"
+
 #: core/customizer/theme-mods/global.php:130
 msgid "Buttons and links color"
 msgstr "Цвет кнопок и ссылок"
@@ -998,19 +943,48 @@ msgstr "Цвет кнопок и ссылок при наведении"
 msgid "Also used in other active elements"
 msgstr "Также используется в других активных элементах"
 
-#: core/customizer/theme-mods/global.php:190
+#: core/customizer/theme-mods/global.php:192
+msgid "Custom"
+msgstr "Пользовательская сеть"
+
+#: core/customizer/theme-mods/global.php:200
+msgid "Add social network"
+msgstr "Добавить социальную сеть"
+
+#: core/customizer/theme-mods/global.php:203
+msgid "Social network name"
+msgstr "Имя социальной сети"
+
+#: core/customizer/theme-mods/global.php:210
+msgid "Select network"
+msgstr "Выберите социальную сеть"
+
+#: core/customizer/theme-mods/global.php:217 core/extras.php:246
+#: modules/social.php:105
+msgid "Facebook"
+msgstr "Facebook"
+
+#: core/customizer/theme-mods/global.php:221
+msgid "URL"
+msgstr "URL"
+
+#: core/customizer/theme-mods/global.php:225
+msgid "Icon"
+msgstr "Иконка"
+
+#: core/customizer/theme-mods/global.php:238
 msgid "Miscellaneous Settings"
 msgstr "Разные настройки"
 
-#: core/customizer/theme-mods/global.php:199
+#: core/customizer/theme-mods/global.php:247
 msgid "Scroll To Top Button"
 msgstr "Кнопка наверх"
 
-#: core/customizer/theme-mods/global.php:208
+#: core/customizer/theme-mods/global.php:256
 msgid "Analytics"
 msgstr "Аналитика"
 
-#: core/customizer/theme-mods/global.php:217
+#: core/customizer/theme-mods/global.php:265
 msgid ""
 "Here you can insert the code for user analytics systems, Google Analytics or "
 "Yandex.Metrica. Below are 3 areas of the site where you can paste the code, "
@@ -1022,33 +996,45 @@ msgstr ""
 "зависимости, от требований устанавливаемых систем, можете вставить код. "
 "Просто скопируйте его сюда."
 
-#: core/customizer/theme-mods/global.php:224
+#: core/customizer/theme-mods/global.php:272
 msgid "Before </head>"
 msgstr "Перед </head>"
 
-#: core/customizer/theme-mods/global.php:227
-#: core/customizer/theme-mods/global.php:239
-#: core/customizer/theme-mods/global.php:251
+#: core/customizer/theme-mods/global.php:275
+#: core/customizer/theme-mods/global.php:287
+#: core/customizer/theme-mods/global.php:299
 msgid "Code can be copied here."
 msgstr "Код можно скопировать сюда."
 
-#: core/customizer/theme-mods/global.php:236
+#: core/customizer/theme-mods/global.php:284
 msgid "At the beginning of <body>"
 msgstr "В начале <body>"
 
-#: core/customizer/theme-mods/global.php:248
+#: core/customizer/theme-mods/global.php:296
 msgid "Before </body>"
 msgstr "Перед </body>"
 
-#: core/customizer/theme-mods/global.php:282
+#: core/customizer/theme-mods/global.php:309
+msgid "Important Links"
+msgstr "Важные ссылки"
+
+#: core/customizer/theme-mods/global.php:318
+msgid "Theme Info"
+msgstr "О теме"
+
+#: core/customizer/theme-mods/global.php:322
+msgid "Support"
+msgstr "Служба поддержки"
+
+#: core/customizer/theme-mods/global.php:330
 msgid "Changelog"
 msgstr "Changelog"
 
-#: core/customizer/theme-mods/global.php:305
+#: core/customizer/theme-mods/global.php:353
 msgid "Yoast SEO Breadcrumbs"
 msgstr "Цепочки навигации Yoast SEO"
 
-#: core/customizer/theme-mods/global.php:315
+#: core/customizer/theme-mods/global.php:363
 msgid "Additional CSS"
 msgstr "Дополнительные стили"
 
@@ -1422,72 +1408,40 @@ msgstr "Блоки"
 msgid "More"
 msgstr "Еще"
 
-#: core/extras.php:245 modules/social.php:63
+#: core/extras.php:244 modules/social.php:84
 msgid "VKontakte"
 msgstr "ВКонтакте"
 
-#: core/extras.php:246
-msgid "E.g., https://vk.com/club0123456789"
-msgstr "Например, https://vk.com/teplitsast"
-
-#: core/extras.php:249 modules/social.php:77
+#: core/extras.php:245 modules/social.php:98
 msgid "Odnoklassniki"
 msgstr "Одноклассники"
 
-#: core/extras.php:250
-msgid "E.g., https://ok.ru/profile/0123456789"
-msgstr "Например, https://ok.ru/profile/0123456789"
-
-#: core/extras.php:253 modules/social.php:84
-msgid "Facebook"
-msgstr "Facebook"
-
-#: core/extras.php:254
-msgid "E.g., https://www.facebook.com/your-organization-page"
-msgstr "Например, https://www.facebook.com/TeplitsaST"
-
-#: core/extras.php:257
+#: core/extras.php:247
 msgid "Instagram"
 msgstr "Instagram"
 
-#: core/extras.php:258
-msgid "E.g., https://www.instagram.com/your-organization-page"
-msgstr "Например, https://www.instagram.com/your-organization-page"
-
-#: core/extras.php:261 modules/social.php:70
+#: core/extras.php:248 modules/social.php:91
 msgid "Twitter"
 msgstr "Twitter"
 
-#: core/extras.php:262
-msgid "E.g., https://twitter.com/your-organization-page"
-msgstr "Например, https://twitter.com/TeplitsaST"
-
-#: core/extras.php:265
+#: core/extras.php:249
 msgid "Telegram"
 msgstr "Telegram"
 
-#: core/extras.php:266
-msgid "E.g., https://tlgrm.ru/channels/@your-organization-page"
-msgstr "Например, https://telegram.me/TeplitsaPRO"
-
-#: core/extras.php:269
+#: core/extras.php:250
 msgid "YouTube"
 msgstr "YouTube"
 
-#: core/extras.php:270
-msgid "E.g., https://youtube.com/channel/your-organization-channel"
-msgstr "Например, https://www.youtube.com/user/teplitsast"
-
-#: core/extras.php:273
+#: core/extras.php:251
 msgid "TikTok"
 msgstr "TikTok"
 
-#: core/extras.php:327 modules/starter/import_remote_content.php:405
+#: core/extras.php:302 modules/starter/import_remote_content.php:405
 #, php-format
 msgid "Old import files cleanup FAILED: %s."
 msgstr "Очистка старых импортных файлов FAILED: %s."
 
-#: core/extras.php:397
+#: core/extras.php:372
 msgid "Recommended plugins to install"
 msgstr "Рекомендуем установить плагины"
 
@@ -2052,31 +2006,31 @@ msgstr "Добавить или удалить теги"
 msgid "Choose from the most used tags"
 msgstr "Выбрать из часто используемые"
 
-#: modules/social.php:61
+#: modules/social.php:82
 msgid "Share on VK"
 msgstr "Поделиться ВКонтакте"
 
-#: modules/social.php:68
+#: modules/social.php:89
 msgid "Share on Twitter"
 msgstr "Поделиться в Twitter"
 
-#: modules/social.php:75
+#: modules/social.php:96
 msgid "Share on OK"
 msgstr "Поделиться в Одноклассниках"
 
-#: modules/social.php:82
+#: modules/social.php:103
 msgid "Share on Facebook"
 msgstr "Поделиться в Facebook"
 
-#: modules/social.php:111
+#: modules/social.php:132
 msgid "Share on WhatsApp"
 msgstr "Поделиться в WhatsApp"
 
-#: modules/social.php:118
+#: modules/social.php:139
 msgid "Share on Telegram"
 msgstr "Поделиться в Telegram"
 
-#: modules/social.php:125
+#: modules/social.php:146
 msgid "Share on Viber"
 msgstr "Поделиться на Viber"
 
@@ -3764,6 +3718,51 @@ msgstr ""
 msgid "OK, I've got it!"
 msgstr "Понятно!"
 
+#~ msgid "Decoration"
+#~ msgstr "Оформление"
+
+#~ msgid "Color scheme"
+#~ msgstr "Цветовая схема"
+
+#~ msgid "Action Color"
+#~ msgstr "Основной цвет схемы"
+
+#~ msgid "Page Background Color"
+#~ msgstr "Основной цвет фона страниц"
+
+#~ msgid "Homepage settings"
+#~ msgstr "Главная страница"
+
+#~ msgid "Homepage settings and blocks"
+#~ msgstr "Настройки и блоки главной страницы"
+
+#~ msgid "Static page settings"
+#~ msgstr "Статичная страница"
+
+#~ msgid "Titles and captions"
+#~ msgstr "Заголовки и надписи"
+
+#~ msgid "E.g., https://vk.com/club0123456789"
+#~ msgstr "Например, https://vk.com/teplitsast"
+
+#~ msgid "E.g., https://ok.ru/profile/0123456789"
+#~ msgstr "Например, https://ok.ru/profile/0123456789"
+
+#~ msgid "E.g., https://www.facebook.com/your-organization-page"
+#~ msgstr "Например, https://www.facebook.com/TeplitsaST"
+
+#~ msgid "E.g., https://www.instagram.com/your-organization-page"
+#~ msgstr "Например, https://www.instagram.com/your-organization-page"
+
+#~ msgid "E.g., https://twitter.com/your-organization-page"
+#~ msgstr "Например, https://twitter.com/TeplitsaST"
+
+#~ msgid "E.g., https://tlgrm.ru/channels/@your-organization-page"
+#~ msgstr "Например, https://telegram.me/TeplitsaPRO"
+
+#~ msgid "E.g., https://youtube.com/channel/your-organization-channel"
+#~ msgstr "Например, https://www.youtube.com/user/teplitsast"
+
 #~ msgid "Hide the page title"
 #~ msgstr "Скрыть заголовок страницы"
 
@@ -4022,11 +4021,6 @@ msgstr "Понятно!"
 #, php-format
 #~ msgid "%s before start"
 #~ msgstr "%s до начало"
-
-#, fuzzy
-#~| msgid "Custom Text"
-#~ msgid "Custom"
-#~ msgstr "Произвольный текст"
 
 #, fuzzy
 #~| msgid "Text Color"

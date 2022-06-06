@@ -26,7 +26,9 @@ $social_color: (
 }
 
 @mixin social-button-link($button-size, $icon-size) {
-	display: inline-block;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	text-align: center;
 	vertical-align: middle;
 	transition: color 0.3s, background 0.3s, border-color 0.3s, opacity 0.3s;
@@ -56,7 +58,7 @@ $social_color: (
 
 	li {
 		text-align: center;
-		
+
 		a {
 			border-radius: 50%;
 			@include social-button-link(46px, 22px);
@@ -64,10 +66,25 @@ $social_color: (
 		}
 
 		.svg-icon {
-			display: inline-block;
-			vertical-align: top;
+			display: block;
+			vertical-align: middle;
 			width: 20px;
 			height: 20px;
+		}
+
+		.image-icon {
+			display: block;
+			max-width: 20px;
+			max-height: 20px;
+			width: auto;
+			height: auto;
+			transition: opacity .3s;
+		}
+
+		a:hover {
+			.image-icon {
+				opacity: .7;
+			}
 		}
 	}
 }
@@ -114,7 +131,7 @@ $social_color: (
 	.sh-text { display: none; }
 	
 	.svg-icon {
-		display: inline-block;
+		display: block;
 		vertical-align: moddle;
 		fill: #ffffff;
 		vertical-align: middle;

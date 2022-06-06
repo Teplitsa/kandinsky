@@ -8,34 +8,55 @@ function knd_social_links( $atts = array(), $echo = true ) {
 
 	$social_links = array();
 
-	foreach( knd_get_social_media_supported() as $id => $data ) {
+	foreach( knd_get_social_media_supported() as $id => $label ) {
 
 		$link = esc_url( knd_get_theme_mod( 'knd_social_' . $id ) );
 		if( $link ) {
-			$social_links[ $id ] = array( 'label' => $data['label'], 'link' => $link );
+			$social_links[ $id ] = array( 'label' => $label, 'link' => $link );
 		}
 
 	}
 
+	$default_socials = array();
+
+	if( $social_links ) {
+		foreach( $social_links as $id => $data ) {
+			$default_socials[] = array(
+				'network' => $id,
+				'label'   => $data['label'],
+				'url'     => $data['link'],
+			);
+		}
+	}
+
+	$knd_social = get_theme_mod( 'knd_social', $default_socials );
+
 	ob_start();
 
-	if( $social_links ) { ?>
+	if ( $knd_social ) {
+		?>
+			<ul class="knd-social-links <?php echo esc_attr( $classes ); ?>">
+				<?php foreach( $knd_social as $setting ) {
 
-		<ul class="knd-social-links <?php echo esc_attr( $classes ); ?>">
-			<?php foreach( $social_links as $id => $data ) { ?>
-				<li class="<?php echo esc_attr( $id );?>">
-					<a href="<?php echo esc_url( $data['link'] );?>" target="_blank" aria-label="<?php echo esc_attr( $data['label'] );?>">
-						<svg class="svg-icon">
-							<title><?php echo esc_html( $data['label'] );?></title>
-							<use xlink:href="#icon-<?php echo esc_attr( $id );?>" />
-						</svg>
-						<span><?php echo esc_html( $data['label'] ); ?></span>
-					</a>
-				</li>
-			<?php }?>
-		</ul>
+					$icon = '<svg class="svg-icon">
+						<title>' . esc_html( $setting['label'] ) . '</title>
+						<use xlink:href="#icon-' . esc_attr( $setting['network'] ) . '" />
+					</svg>';
 
-	<?php }
+					if ( ! $setting['network'] && $setting['image'] ) {
+						$icon = '<img src="' . wp_get_attachment_image_url( $setting['image'] ) . '" alt="" class="image-icon">';
+					}
+					?>
+					<li class="<?php echo esc_attr( $setting['network'] );?>">
+						<a href="<?php echo esc_url( $setting['url'] );?>" target="_blank" aria-label="<?php echo esc_attr( $setting['label'] );?>">
+							<?php echo $icon; ?>
+							<span><?php echo esc_html( $setting['label'] ); ?></span>
+						</a>
+					</li>
+				<?php }?>
+			</ul>
+		<?php 
+	}
 
 	$out = ob_get_contents();
 	ob_end_clean();

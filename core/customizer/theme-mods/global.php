@@ -166,22 +166,70 @@ Kirki::add_section(
 	)
 );
 
-foreach ( knd_get_social_media_supported() as $id => $data ) {
+$socials_default = [];
+$socials_choices = [];
 
-	$social_label       = isset( $data['label'] ) ? $data['label'] : '';
-	$social_placeholder = isset( $data['placeholder'] ) ? $data['placeholder'] : '';
+foreach ( knd_get_social_media_supported() as $id => $label ) {
+	// Remove in next version.
+	// Kirki::add_field( 'knd_theme_mod', array(
+	// 	'type'        => 'url',
+	// 	'settings'    => 'knd_social_' . esc_attr( $id ),
+	// 	'label'       => esc_html( $label ),
+	// 	'section'     => 'socials',
+	// ) );
 
-	Kirki::add_field( 'knd_theme_mod', array(
-		'type'        => 'url',
-		'settings'    => 'knd_social_' . esc_attr( $id ),
-		'label'       => esc_html( $social_label ),
-		'section'     => 'socials',
-		'input_attrs' => array(
-			'placeholder' => esc_attr( $social_placeholder ),
-		),
-	) );
+	if ( get_theme_mod( 'knd_social_' . esc_attr( $id ) ) ) {
+		$socials_default[] = array(
+			'network' => $id,
+			'label'   => $label,
+			'url'     => get_theme_mod( 'knd_social_' . esc_attr( $id ) ),
+		);
+	}
 
+	$socials_choices[ $id ] = $label;
 }
+
+$socials_choices[''] = esc_html__( 'Custom', 'knd' );
+
+new \Kirki\Field\Repeater(
+	[
+		'settings' => 'knd_social',
+		'label'    => esc_html__( 'Social networks', 'knd' ),
+		'section'  => 'socials',
+		'priority' => 10,
+		'button_label' => esc_html__( 'Add social network', 'knd' ),
+		'row_label'    => [
+			'type'  => 'field',
+			'value' => esc_html__( 'Social network name', 'kirki' ),
+			'field' => 'label',
+		],
+		'default' => $socials_default,
+		'fields'   => [
+			'network' => [
+				'type'    => 'select',
+				'label'   => esc_html__( 'Select network', 'knd' ),
+				'default' => 'facebook',
+				'choices' => $socials_choices,
+			],
+			'label'   => [
+				'type'        => 'text',
+				'label'       => esc_html__( 'Name', 'knd' ),
+				'default'     => esc_html__( 'Facebook', 'knd' ),
+			],
+			'url'    => [
+				'type'  => 'text',
+				'label' => esc_html__( 'URL', 'knd' ),
+			],
+			'image'    => [
+				'type'  => 'image',
+				'label' => esc_html__( 'Icon', 'knd' ),
+				'choices'     => [
+					'save_as' => 'id',
+				],
+			],
+		],
+	]
+);
 
 /* Miscellaneous Settings Section */
 Kirki::add_section(

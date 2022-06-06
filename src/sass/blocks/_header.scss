@@ -1038,13 +1038,28 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 .knd-header__inner .knd-social-links li a:hover {
 	background-color: var(--knd-color-main);
 }
-.knd-header__inner .knd-social-links li a .svg-icon {
-	width: 14px;
-	height: 14px;
-	fill: var(--knd-color-main);
+.knd-header__inner .knd-social-links li a {
+	.svg-icon {
+		width: 14px;
+		height: 14px;
+		fill: var(--knd-color-main);
+	}
+	.image-icon {
+		display: block;
+		max-width: 14px;
+		max-height: 14px;
+		width: auto;
+		height: auto;
+	}
 }
-.knd-header__inner .knd-social-links li a:hover .svg-icon {
-	fill: #fff;
+.knd-header__inner .knd-social-links li a:hover {
+	.svg-icon {
+		fill: #fff;
+	}
+	.image-icon {
+		filter: brightness(0) invert(1);
+		opacity: 1;
+	}
 }
 @media (max-width: 1199px) {
 	.knd-header__inner .knd-social-links {
