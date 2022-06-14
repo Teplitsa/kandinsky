@@ -330,6 +330,12 @@ $update_info = (array) get_option( 'external_theme_updates-' . get_template() );
 if ( $update_info && isset( $update_info['update'] ) ) {
 	function knd_update_notice() {
 
+		$screen = get_current_screen();
+
+		if( $screen->parent_base !== 'index' || $screen->base !== 'dashboard' ){
+			return false;
+		}
+
 		$update_info    = (array) get_option( 'external_theme_updates-' . get_template() );
 		$update_details = (array) json_decode( $update_info['update'] );
 
