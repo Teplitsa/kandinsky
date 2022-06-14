@@ -365,6 +365,7 @@ function knd_register_required_plugins() {
 			'slug'        => 'kirki',
 			'is_callable' => '',
 			'required'    => true,
+			'version'     => '4.0.0',
 			'description' => esc_html__( 'The Ultimate WordPress Customizer Framework.', 'knd' ),
 		),
 		array( 

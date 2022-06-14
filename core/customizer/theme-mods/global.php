@@ -191,46 +191,48 @@ foreach ( knd_get_social_media_supported() as $id => $label ) {
 
 $socials_choices[''] = esc_html__( 'Other', 'knd' );
 
-new \Kirki\Field\Repeater(
-	[
-		'settings' => 'knd_social',
-		'label'    => esc_html__( 'Social networks', 'knd' ),
-		'section'  => 'socials',
-		'priority' => 10,
-		'button_label' => esc_html__( 'Add social network', 'knd' ),
-		'row_label'    => [
-			'type'  => 'field',
-			'value' => esc_html__( 'Social network name', 'kirki' ),
-			'field' => 'label',
-		],
-		'default' => $socials_default,
-		'fields'   => [
-			'network' => [
-				'type'    => 'select',
-				'label'   => esc_html__( 'Select network', 'knd' ),
-				'default' => 'facebook',
-				'choices' => $socials_choices,
+if( class_exists( 'Kirki\Field\Repeater' ) ) {
+	new \Kirki\Field\Repeater(
+		[
+			'settings' => 'knd_social',
+			'label'    => esc_html__( 'Social networks', 'knd' ),
+			'section'  => 'socials',
+			'priority' => 10,
+			'button_label' => esc_html__( 'Add social network', 'knd' ),
+			'row_label'    => [
+				'type'  => 'field',
+				'value' => esc_html__( 'Social network name', 'kirki' ),
+				'field' => 'label',
 			],
-			'label'   => [
-				'type'        => 'text',
-				'label'       => esc_html__( 'Name', 'knd' ),
-				'default'     => esc_html__( 'Facebook', 'knd' ),
-			],
-			'url'    => [
-				'type'  => 'text',
-				'label' => esc_html__( 'URL', 'knd' ),
-			],
-			'image'    => [
-				'type'  => 'image',
-				'label' => esc_html__( 'Icon', 'knd' ),
-				'description' => esc_html__( 'The recommended icon size is 40x40 pixels, and with a transparent background.', 'knd' ),
-				'choices'     => [
-					'save_as' => 'id',
+			'default' => $socials_default,
+			'fields'   => [
+				'network' => [
+					'type'    => 'select',
+					'label'   => esc_html__( 'Select network', 'knd' ),
+					'default' => 'facebook',
+					'choices' => $socials_choices,
+				],
+				'label'   => [
+					'type'        => 'text',
+					'label'       => esc_html__( 'Name', 'knd' ),
+					'default'     => esc_html__( 'Facebook', 'knd' ),
+				],
+				'url'    => [
+					'type'  => 'text',
+					'label' => esc_html__( 'URL', 'knd' ),
+				],
+				'image'    => [
+					'type'  => 'image',
+					'label' => esc_html__( 'Icon', 'knd' ),
+					'description' => esc_html__( 'The recommended icon size is 40x40 pixels, and with a transparent background.', 'knd' ),
+					'choices'     => [
+						'save_as' => 'id',
+					],
 				],
 			],
-		],
-	]
-);
+		]
+	);
+}
 
 /* Miscellaneous Settings Section */
 Kirki::add_section(

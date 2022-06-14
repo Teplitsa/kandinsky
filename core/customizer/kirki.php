@@ -187,13 +187,15 @@ function knd_remove_kirki_override_load_textdomain() {
 	$function = 'override_load_textdomain';
 	global $wp_filter;
 
-	foreach( $wp_filter[$tag]->callbacks[$priority] as $callback ) {
-		if ( $callback['function'] 
-			&& is_a( $callback['function'][0], $class ) 
-			&& $callback['function'][1] == $function) {
-			$callable = [ $callback['function'][0], $function ];
-			$wp_filter[$tag]->remove_filter( $tag, $callable, $priority );
-		break;
+	if (isset( $wp_filter[$tag] ) ) {
+		foreach( $wp_filter[$tag]->callbacks[$priority] as $callback ) {
+			if ( $callback['function'] 
+				&& is_a( $callback['function'][0], $class ) 
+				&& $callback['function'][1] == $function) {
+				$callable = [ $callback['function'][0], $function ];
+				$wp_filter[$tag]->remove_filter( $tag, $callable, $priority );
+			break;
+			}
 		}
 	}
 }
