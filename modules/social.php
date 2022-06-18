@@ -81,38 +81,58 @@ function knd_social_links( $atts = array(), $echo = true ) {
 /** Available social shares */
 function knd_social_shares(){
 	global $post;
-	$title = get_the_title( $post );
-	$link = knd_current_url();
-	$text = $title . ' ' . $link;
+	$title = rawurlencode_deep( get_the_title( $post ) );
+	$url   = knd_current_url();
+	$text  = rawurlencode_deep( $title . ' ' . $url );
 
 	$shares = array(
 		'vk' => array(
 			'label'       => esc_html__( 'Share on VK', 'knd' ),
-			'url'         => 'https://vk.com/share.php?url=' . esc_url( $link ).'&title=' . esc_html( $title ),
+			'url'         => 'https://vk.com/share.php?url=' . esc_url( $url ).'&title=' . esc_html( $title ),
 			'txt'         => esc_html__( 'VKontakte', 'knd' ),
 			'icon'        => 'icon-vk',
 			'only_mobile' => false,
+			'target'      => 'popup',
 		),
 		'twitter' => array(
 			'label'       => esc_html__( 'Share on Twitter', 'knd' ),
-			'url'         => 'https://twitter.com/intent/tweet?url=' . esc_url( $link ).'&text=' . esc_html( $title ),
+			'url'         => 'https://twitter.com/intent/tweet?url=' . esc_url( $url ).'&text=' . esc_html( $title ),
 			'txt'         => esc_html__( 'Twitter', 'knd' ),
 			'icon'        => 'icon-twitter',
 			'only_mobile' => false,
+			'target'      => 'popup'
 		),
 		'ok' => array(
-			'label' => esc_html__( 'Share on OK', 'knd' ),
-			'url' => 'https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&service=odnoklassniki&st.shareUrl=' . esc_url( $link ),
-			'txt' => esc_html__( 'Odnoklassniki', 'knd' ),
-			'icon' => 'icon-ok',
-			'only_mobile'  => false,
+			'label'       => esc_html__( 'Share on OK', 'knd' ),
+			'url'         => 'https://connect.ok.ru/offer?url=' . esc_url( $url ) . '&title=' . esc_html( $title ),
+			'txt'         => esc_html__( 'Odnoklassniki', 'knd' ),
+			'icon'        => 'icon-ok',
+			'only_mobile' => false,
+			'target'      => 'popup'
 		),
 		'facebook' => array(
 			'label'       => esc_html__( 'Share on Facebook', 'knd' ),
-			'url'         => 'https://www.facebook.com/sharer/sharer.php?u=' . esc_url( $link ),
+			'url'         => 'https://www.facebook.com/sharer/sharer.php?u=' . esc_url( $url ),
 			'txt'         => esc_html__( 'Facebook', 'knd' ),
 			'icon'        => 'icon-facebook',
 			'only_mobile' => false,
+			'target'      => 'popup'
+		),
+		'telegram' => array(
+			'label'       => esc_html__( 'Share on Telegram', 'knd' ),
+			'url'         => 'https://t.me/share/url?url=' . esc_url( $url ) . '&text=' . esc_html( $title ),
+			'txt'         => 'Telegram',
+			'icon'        => 'icon-telegram',
+			'only_mobile' => false,
+			'target'      => 'blank',
+		),
+		'viber' => array(
+			'label'       => esc_html__( 'Share on Viber', 'knd' ),
+			'url'         => 'viber://forward?text=' . esc_html( $text ),
+			'txt'         => 'Viber',
+			'icon'        => 'icon-viber',
+			'only_mobile' => false,
+			'target'      => 'blank'
 		),
 		'whatsapp' => array(
 			'label'       => esc_html__( 'Share on WhatsApp', 'knd' ),
@@ -120,20 +140,7 @@ function knd_social_shares(){
 			'txt'         => 'WhatsApp',
 			'icon'        => 'icon-whatsup',
 			'only_mobile' => true,
-		),
-		'telegram' => array(
-			'label'       => esc_html__( 'Share on Telegram', 'knd' ),
-			'url'         => 'tg://msg?text=' . esc_html( $text ),
-			'txt'         => 'Telegram',
-			'icon'        => 'icon-telegram',
-			'only_mobile' => true,
-		),
-		'viber' => array(
-			'label'       => esc_html__( 'Share on Viber', 'knd' ),
-			'url'         => 'viber://forward?text=' . esc_html( $text ),
-			'txt'         => 'Viber',
-			'icon'        => 'icon-viber',
-			'only_mobile' => true,
+			'target'      => 'blank'
 		),
 	);
 
@@ -164,12 +171,12 @@ function knd_social_share_no_js() {
 		<?php
 		foreach( $shares as $slug => $item ){
 			$on_click = '';
-			if ( ! $item['only_mobile'] ) {
+			if ( 'popup' === $item['target'] ) {
 				$on_click = 'onClick="window.open(\'' . $item['url'] . '\',\'' . $item['label'] . '\',\'top=320,left=325,width=650,height=430,status=no,scrollbars=no,menubar=no,tollbars=no\');return false;"';
 			}
 			?>
 			<div title="<?php echo esc_attr( $item['label']);?>" class="social-likes__widget social-likes__widget_<?php echo esc_attr( $slug ); ?>">
-				<a href="<?php echo $item['url'];?>" class="social-likes__button social-likes__button_<?php echo esc_attr( $slug ); ?>" target="_blank" <?php echo $on_click; ?>>
+				<a href="<?php echo esc_attr( $item['url'] );?>" class="social-likes__button social-likes__button_<?php echo esc_attr( $slug ); ?>" target="_blank" <?php echo $on_click; ?>>
 					<svg class="svg-icon"><use xlink:href="#<?php echo esc_attr( $item['icon'] ); ?>" /></svg>
 					<span class="sh-text"><?php echo esc_html( $item['txt'] ); ?></span>
 				</a>

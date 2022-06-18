@@ -247,7 +247,7 @@ Kirki::add_section(
 foreach ( knd_social_shares() as $slug => $item ) {
 	$description = '';
 	if ( $item['only_mobile'] ) {
-		$description = esc_html__( 'Available only on mobile devices', 'knd' );
+		$description = esc_html__( 'Mobile only', 'knd' );
 	}
 	Kirki::add_field( 'knd_theme_mod', array(
 		'type'        => 'toggle',
