@@ -234,13 +234,38 @@ if( class_exists( 'Kirki\Field\Repeater' ) ) {
 	);
 }
 
+/* Share Buttons */
+Kirki::add_section(
+	'knd_share',
+	array(
+		'title'    => esc_html__( 'Share Buttons', 'knd' ),
+		'panel'    => 'global',
+		'priority' => 4,
+	)
+);
+
+foreach ( knd_social_shares() as $slug => $item ) {
+	$description = '';
+	if ( $item['only_mobile'] ) {
+		$description = esc_html__( 'Available only on mobile devices', 'knd' );
+	}
+	Kirki::add_field( 'knd_theme_mod', array(
+		'type'        => 'toggle',
+		'settings'    => 'social_share_' . $slug,
+		'label'       => $item['label'],
+		'description' => $description,
+		'section'     => 'knd_share',
+		'default'     => true,
+	) );
+}
+
 /* Miscellaneous Settings Section */
 Kirki::add_section(
 	'miscellaneous',
 	array(
 		'title'    => esc_html__( 'Miscellaneous Settings', 'knd' ),
 		'panel'    => 'global',
-		'priority' => 4,
+		'priority' => 5,
 	)
 );
 
@@ -258,7 +283,7 @@ Kirki::add_section(
 	array(
 		'title'    => esc_html__( 'Analytics', 'knd' ),
 		'panel'    => 'global',
-		'priority' => 5,
+		'priority' => 6,
 	)
 );
 

@@ -3970,7 +3970,11 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 
 .mobile-sharing .social-likes__widget {
 	float: left;
-	margin: 0 8px 0 0;
+	margin: 0;
+}
+
+.mobile-sharing .social-likes__widget:not(:last-child) {
+	margin-right: 6px;
 }
 
 .tags-line {
