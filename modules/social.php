@@ -160,7 +160,14 @@ function knd_social_share_no_js() {
 	}
 
 	foreach( $shares as $slug => $item ){
-		if ( ! get_theme_mod('social_share_' . $slug, true ) ) {
+		$default = true;
+		if ( 'telegram' === $slug || 'viber' === $slug ) {
+			$default = false;
+		}
+		if ( wp_is_mobile() ) {
+			$default = true;
+		}
+		if ( ! get_theme_mod('social_share_' . $slug, $default ) ) {
 			unset( $shares[ $slug ] );
 		}
 	}

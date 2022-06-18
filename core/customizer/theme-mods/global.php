@@ -249,14 +249,20 @@ foreach ( knd_social_shares() as $slug => $item ) {
 	if ( $item['only_mobile'] ) {
 		$description = esc_html__( 'Mobile only', 'knd' );
 	}
+	$default = true;
+	if ( 'telegram' === $slug || 'viber' === $slug ) {
+		$default = false;
+	}
 	Kirki::add_field( 'knd_theme_mod', array(
 		'type'        => 'toggle',
 		'settings'    => 'social_share_' . $slug,
 		'label'       => $item['label'],
 		'description' => $description,
 		'section'     => 'knd_share',
-		'default'     => true,
+		'default'     => $default,
 	) );
+
+	//remove_theme_mod('social_share_' . $slug );
 }
 
 /* Miscellaneous Settings Section */
