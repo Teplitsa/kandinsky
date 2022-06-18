@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-06 19:43+0300\n"
-"PO-Revision-Date: 2022-06-06 19:44+0300\n"
+"POT-Creation-Date: 2022-06-18 20:07+0300\n"
+"PO-Revision-Date: 2022-06-18 20:08+0300\n"
 "Last-Translator: ahaenor <ahaenor@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -278,7 +278,7 @@ msgstr "Пожертвования"
 msgid "Other"
 msgstr "Другое"
 
-#: core/admin.php:120 core/customizer/theme-mods/global.php:327
+#: core/admin.php:120 core/customizer/theme-mods/global.php:354
 msgid "Documentation"
 msgstr "Документация"
 
@@ -315,9 +315,9 @@ msgstr "Тех.поддержка"
 msgid "Kandinsky settings"
 msgstr "«Кандинский» – настройки"
 
-#: core/admin.php:215 core/admin.php:252 core/admin.php:615
+#: core/admin.php:215 core/admin.php:252 core/admin.php:616
 #: core/editor/category.php:20 core/editor/pattern.php:20
-#: core/theme-update/theme-update-checker.php:342 functions.php:240
+#: core/theme-update/theme-update-checker.php:348 functions.php:240
 msgid "Kandinsky"
 msgstr "Кандинский"
 
@@ -395,42 +395,42 @@ msgstr ""
 msgid "Kirki Customizer Framework"
 msgstr "Kirki Customizer Framework"
 
-#: core/admin.php:368
+#: core/admin.php:369
 msgid "The Ultimate WordPress Customizer Framework."
 msgstr "The Ultimate WordPress Customizer Framework."
 
-#: core/admin.php:371
+#: core/admin.php:372
 msgid "Leyka"
 msgstr "Лейка"
 
-#: core/admin.php:375
+#: core/admin.php:376
 msgid "This plugin will add means for donations collection to your website."
 msgstr ""
 "Этот плагин добавит на сайт возможности сбора и управления пожертвованиями."
 
-#: core/admin.php:399 vendor/class-tgm-plugin-activation.php:327
+#: core/admin.php:400 vendor/class-tgm-plugin-activation.php:327
 msgid "Install Required Plugins"
 msgstr "Установить требуемые плагины"
 
-#: core/admin.php:400 vendor/class-tgm-plugin-activation.php:328
+#: core/admin.php:401 vendor/class-tgm-plugin-activation.php:328
 msgid "Install Plugins"
 msgstr "Установить плагины"
 
-#: core/admin.php:402 vendor/class-tgm-plugin-activation.php:330
+#: core/admin.php:403 vendor/class-tgm-plugin-activation.php:330
 #, php-format
 msgid "Installing Plugin: %s"
 msgstr "Установка плагина: %s"
 
-#: core/admin.php:404 vendor/class-tgm-plugin-activation.php:332
+#: core/admin.php:405 vendor/class-tgm-plugin-activation.php:332
 #, php-format
 msgid "Updating Plugin: %s"
 msgstr "Обновление плагина: %s"
 
-#: core/admin.php:405 vendor/class-tgm-plugin-activation.php:333
+#: core/admin.php:406 vendor/class-tgm-plugin-activation.php:333
 msgid "Something went wrong with the plugin API."
 msgstr "Ошибка при работе с API плагина."
 
-#: core/admin.php:407 vendor/class-tgm-plugin-activation.php:334
+#: core/admin.php:408 vendor/class-tgm-plugin-activation.php:334
 #, php-format
 msgid "This theme requires the following plugin: %1$s."
 msgid_plural "This theme requires the following plugins: %1$s."
@@ -438,7 +438,7 @@ msgstr[0] "Необходимо установить плагин %1$s."
 msgstr[1] "Необходимо установить плагины: %1$s."
 msgstr[2] "Необходимо установить плагины: %1$s."
 
-#: core/admin.php:411 vendor/class-tgm-plugin-activation.php:335
+#: core/admin.php:412 vendor/class-tgm-plugin-activation.php:335
 #, php-format
 msgid "This theme recommends the following plugin: %1$s."
 msgid_plural "This theme recommends the following plugins: %1$s."
@@ -446,7 +446,7 @@ msgstr[0] "Рекомендуется установить плагин %1$s."
 msgstr[1] "Рекомендуется установить плагины: %1$s."
 msgstr[2] "Рекомендуется установить плагины: %1$s."
 
-#: core/admin.php:415 vendor/class-tgm-plugin-activation.php:337
+#: core/admin.php:416 vendor/class-tgm-plugin-activation.php:337
 #, php-format
 msgid ""
 "The following plugin needs to be updated to its latest version to ensure "
@@ -458,7 +458,7 @@ msgstr[0] "Необходимо обновить плагин %1$s."
 msgstr[1] "Необходимо обновить плагины: %1$s."
 msgstr[2] "Необходимо обновить плагины: %1$s."
 
-#: core/admin.php:419 vendor/class-tgm-plugin-activation.php:343
+#: core/admin.php:420 vendor/class-tgm-plugin-activation.php:343
 #, php-format
 msgid "There is an update available for: %1$s."
 msgid_plural "There are updates available for the following plugins: %1$s."
@@ -466,7 +466,7 @@ msgstr[0] "%1$s: доступно обновление."
 msgstr[1] "%1$s: доступно обновление."
 msgstr[2] "%1$s: доступно обновление."
 
-#: core/admin.php:423 vendor/class-tgm-plugin-activation.php:349
+#: core/admin.php:424 vendor/class-tgm-plugin-activation.php:349
 #, php-format
 msgid "The following required plugin is currently inactive: %1$s."
 msgid_plural "The following required plugins are currently inactive: %1$s."
@@ -474,7 +474,7 @@ msgstr[0] "Необходимо активировать плагин %1$s."
 msgstr[1] "Необходимо активировать плагины: %1$s."
 msgstr[2] "Необходимо активировать плагины: %1$s."
 
-#: core/admin.php:427 vendor/class-tgm-plugin-activation.php:355
+#: core/admin.php:428 vendor/class-tgm-plugin-activation.php:355
 #, php-format
 msgid "The following recommended plugin is currently inactive: %1$s."
 msgid_plural "The following recommended plugins are currently inactive: %1$s."
@@ -482,46 +482,46 @@ msgstr[0] "Рекомендуется активировать плагин %1$s
 msgstr[1] "Рекомендуется активировать плагины: %1$s."
 msgstr[2] "Рекомендуется активировать плагины: %1$s."
 
-#: core/admin.php:430 vendor/class-tgm-plugin-activation.php:360
+#: core/admin.php:431 vendor/class-tgm-plugin-activation.php:360
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
 msgstr[0] "Установить плагин"
 msgstr[1] "Установить плагины"
 msgstr[2] "Установить плагин"
 
-#: core/admin.php:431 vendor/class-tgm-plugin-activation.php:365
+#: core/admin.php:432 vendor/class-tgm-plugin-activation.php:365
 msgid "Begin updating plugin"
 msgid_plural "Begin updating plugins"
 msgstr[0] "Обновить плагин"
 msgstr[1] "Обновить плагины"
 msgstr[2] "Обновить плагин"
 
-#: core/admin.php:432 vendor/class-tgm-plugin-activation.php:370
+#: core/admin.php:433 vendor/class-tgm-plugin-activation.php:370
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
 msgstr[0] "Активировать плагин"
 msgstr[1] "Активировать плагины"
 msgstr[2] "Активировать плагин"
 
-#: core/admin.php:433 vendor/class-tgm-plugin-activation.php:374
+#: core/admin.php:434 vendor/class-tgm-plugin-activation.php:374
 msgid "Return to Required Plugins Installer"
 msgstr "На страницу установки требуемых плагинов"
 
-#: core/admin.php:434 vendor/class-tgm-plugin-activation.php:376
+#: core/admin.php:435 vendor/class-tgm-plugin-activation.php:376
 #: vendor/class-tgm-plugin-activation.php:3148
 msgid "Plugin activated successfully."
 msgstr "Плагин активирован."
 
-#: core/admin.php:435 vendor/class-tgm-plugin-activation.php:377
+#: core/admin.php:436 vendor/class-tgm-plugin-activation.php:377
 msgid "The following plugin was activated successfully:"
 msgstr "Плагин успешно активирован:"
 
-#: core/admin.php:437 vendor/class-tgm-plugin-activation.php:379
+#: core/admin.php:438 vendor/class-tgm-plugin-activation.php:379
 #, php-format
 msgid "No action taken. Plugin %1$s was already active."
 msgstr "Плагин %1$s уже активирован."
 
-#: core/admin.php:440 vendor/class-tgm-plugin-activation.php:381
+#: core/admin.php:441 vendor/class-tgm-plugin-activation.php:381
 #, php-format
 msgid ""
 "Plugin not activated. A higher version of %s is needed for this theme. "
@@ -530,66 +530,66 @@ msgstr ""
 "Плагин не активирован – тема требует более высокой версии %s. Пожалуйста, "
 "обновите плагин."
 
-#: core/admin.php:443 vendor/class-tgm-plugin-activation.php:383
+#: core/admin.php:444 vendor/class-tgm-plugin-activation.php:383
 #, php-format
 msgid "All plugins installed and activated successfully. %1$s"
 msgstr "Все плагины установлены и активированы. %1$s"
 
-#: core/admin.php:444 vendor/class-tgm-plugin-activation.php:384
+#: core/admin.php:445 vendor/class-tgm-plugin-activation.php:384
 msgid "Dismiss this notice"
 msgstr "Закрыть уведомление"
 
-#: core/admin.php:446 vendor/class-tgm-plugin-activation.php:385
+#: core/admin.php:447 vendor/class-tgm-plugin-activation.php:385
 msgid ""
 "There are one or more required or recommended plugins to install, update or "
 "activate."
 msgstr "Некоторые плагины необходимо установить, обновить или активировать."
 
-#: core/admin.php:448 vendor/class-tgm-plugin-activation.php:386
+#: core/admin.php:449 vendor/class-tgm-plugin-activation.php:386
 msgid "Please contact the administrator of this site for help."
 msgstr "Пожалуйста, свяжитесь с администрацией сайта."
 
-#: core/admin.php:465
+#: core/admin.php:466
 msgid "Action failed. Please refresh the page and retry."
 msgstr "Операция завершилась с ошибкой. Пожалуйста, перезагрузите страницу."
 
-#: core/admin.php:469
+#: core/admin.php:470
 msgid "Action failed."
 msgstr "Операция завершилась с ошибкой."
 
-#: core/admin.php:483
+#: core/admin.php:484
 msgid "Order"
 msgstr "Порядок"
 
-#: core/admin.php:486
+#: core/admin.php:487
 msgid "Start"
 msgstr "Начало"
 
-#: core/admin.php:489
+#: core/admin.php:490
 msgid "Thumb."
 msgstr "Миниат."
 
-#: core/admin.php:492
+#: core/admin.php:493
 msgid "Created"
 msgstr "Создано"
 
-#: core/admin.php:598
+#: core/admin.php:599
 msgid "Kandinsky — useful links"
 msgstr "Кандинский – полезные ссылки"
 
-#: core/admin.php:619
+#: core/admin.php:620
 msgid "Do you want to know all the features of the theme?"
 msgstr "Хотите быть в курсе всех возможностей темы?"
 
-#: core/admin.php:620
+#: core/admin.php:621
 msgid "Find information on"
 msgstr "Найдите информацию на"
 
-#: core/admin.php:621
+#: core/admin.php:622
 msgid "official website"
 msgstr "её официальном сайте"
 
-#: core/admin.php:666
+#: core/admin.php:667
 #, php-format
 msgid "A quick guide to working with the site - %s."
 msgstr "Краткое руководство по работе с сайтом - %s."
@@ -639,7 +639,7 @@ msgstr "%s - нет прав на запись во временный файл 
 msgid "Can't rename downloaded file: from %s to %s"
 msgstr "Невозможно переименовать загружаемый файл: из %s в %s"
 
-#: core/customizer/customizer-deprecated.php:27 core/customizer/kirki.php:195
+#: core/customizer/customizer-deprecated.php:27
 msgid ""
 "In order to make Kandinsky work full speed, you will need few plugins. "
 "WordPress will install or update the following plugins:"
@@ -647,17 +647,17 @@ msgstr ""
 "Для корректной работы темы Кандинский понадобится несколько плагинов. Мы "
 "установим или обновим следующие плагины:"
 
-#: core/customizer/customizer-deprecated.php:30 core/customizer/kirki.php:198
+#: core/customizer/customizer-deprecated.php:30
 msgid "Plugin that allows web-font customization."
 msgstr "Плагин, позволяющий редактировать шрифты сайта."
 
-#: core/customizer/customizer-deprecated.php:35 core/customizer/kirki.php:203
+#: core/customizer/customizer-deprecated.php:35
 #: vendor/class-tgm-plugin-activation.php:2706
 #: vendor/envato_setup/steps/plugins.php:79
 msgid "Install"
 msgstr "Установить"
 
-#: core/customizer/customizer-deprecated.php:38 core/customizer/kirki.php:206
+#: core/customizer/customizer-deprecated.php:38
 msgid "No, I’ll do it some other time"
 msgstr "Не устанавливать"
 
@@ -784,7 +784,7 @@ msgid "Logo"
 msgstr "Логотип"
 
 #: core/customizer/theme-mods/footer.php:72
-#: core/customizer/theme-mods/global.php:216
+#: core/customizer/theme-mods/global.php:217
 #: core/customizer/theme-mods/header.php:76 inc/events/events-functions.php:297
 msgid "Name"
 msgstr "Название"
@@ -884,7 +884,7 @@ msgstr "Цвет ссылок в подвале при наведении"
 
 #: core/customizer/theme-mods/footer.php:453
 #: core/customizer/theme-mods/global.php:163
-#: core/customizer/theme-mods/global.php:197
+#: core/customizer/theme-mods/global.php:198
 #: core/customizer/theme-mods/header.php:357
 #: core/customizer/theme-mods/header.php:529
 msgid "Social networks"
@@ -943,49 +943,57 @@ msgstr "Цвет кнопок и ссылок при наведении"
 msgid "Also used in other active elements"
 msgstr "Также используется в других активных элементах"
 
-#: core/customizer/theme-mods/global.php:200
+#: core/customizer/theme-mods/global.php:201
 msgid "Add social network"
 msgstr "Добавить социальную сеть"
 
-#: core/customizer/theme-mods/global.php:203
+#: core/customizer/theme-mods/global.php:204
 msgid "Social network name"
 msgstr "Имя социальной сети"
 
-#: core/customizer/theme-mods/global.php:210
+#: core/customizer/theme-mods/global.php:211
 msgid "Select network"
 msgstr "Выберите социальную сеть"
 
-#: core/customizer/theme-mods/global.php:217 core/extras.php:246
-#: modules/social.php:114
+#: core/customizer/theme-mods/global.php:218 core/extras.php:246
+#: modules/social.php:116
 msgid "Facebook"
 msgstr "Facebook"
 
-#: core/customizer/theme-mods/global.php:221
+#: core/customizer/theme-mods/global.php:222
 msgid "URL"
 msgstr "URL"
 
-#: core/customizer/theme-mods/global.php:225
+#: core/customizer/theme-mods/global.php:226
 msgid "Icon"
 msgstr "Иконка"
 
-#: core/customizer/theme-mods/global.php:226
+#: core/customizer/theme-mods/global.php:227
 msgid ""
 "The recommended icon size is 40x40 pixels, and with a transparent background."
 msgstr "Рекомендуемый размер иконки 40x40 пикселей, с прозрачным фоном."
 
-#: core/customizer/theme-mods/global.php:239
+#: core/customizer/theme-mods/global.php:241
+msgid "Share Buttons"
+msgstr "Кнопки поделиться"
+
+#: core/customizer/theme-mods/global.php:250
+msgid "Mobile only"
+msgstr "Только для мобильных устройств"
+
+#: core/customizer/theme-mods/global.php:266
 msgid "Miscellaneous Settings"
 msgstr "Разные настройки"
 
-#: core/customizer/theme-mods/global.php:248
+#: core/customizer/theme-mods/global.php:275
 msgid "Scroll To Top Button"
 msgstr "Кнопка наверх"
 
-#: core/customizer/theme-mods/global.php:257
+#: core/customizer/theme-mods/global.php:284
 msgid "Analytics"
 msgstr "Аналитика"
 
-#: core/customizer/theme-mods/global.php:266
+#: core/customizer/theme-mods/global.php:293
 msgid ""
 "Here you can insert the code for user analytics systems, Google Analytics or "
 "Yandex.Metrica. Below are 3 areas of the site where you can paste the code, "
@@ -997,45 +1005,45 @@ msgstr ""
 "зависимости, от требований устанавливаемых систем, можете вставить код. "
 "Просто скопируйте его сюда."
 
-#: core/customizer/theme-mods/global.php:273
+#: core/customizer/theme-mods/global.php:300
 msgid "Before </head>"
 msgstr "Перед </head>"
 
-#: core/customizer/theme-mods/global.php:276
-#: core/customizer/theme-mods/global.php:288
-#: core/customizer/theme-mods/global.php:300
+#: core/customizer/theme-mods/global.php:303
+#: core/customizer/theme-mods/global.php:315
+#: core/customizer/theme-mods/global.php:327
 msgid "Code can be copied here."
 msgstr "Код можно скопировать сюда."
 
-#: core/customizer/theme-mods/global.php:285
+#: core/customizer/theme-mods/global.php:312
 msgid "At the beginning of <body>"
 msgstr "В начале <body>"
 
-#: core/customizer/theme-mods/global.php:297
+#: core/customizer/theme-mods/global.php:324
 msgid "Before </body>"
 msgstr "Перед </body>"
 
-#: core/customizer/theme-mods/global.php:310
+#: core/customizer/theme-mods/global.php:337
 msgid "Important Links"
 msgstr "Важные ссылки"
 
-#: core/customizer/theme-mods/global.php:319
+#: core/customizer/theme-mods/global.php:346
 msgid "Theme Info"
 msgstr "О теме"
 
-#: core/customizer/theme-mods/global.php:323
+#: core/customizer/theme-mods/global.php:350
 msgid "Support"
 msgstr "Служба поддержки"
 
-#: core/customizer/theme-mods/global.php:331
+#: core/customizer/theme-mods/global.php:358
 msgid "Changelog"
 msgstr "Changelog"
 
-#: core/customizer/theme-mods/global.php:354
+#: core/customizer/theme-mods/global.php:381
 msgid "Yoast SEO Breadcrumbs"
 msgstr "Цепочки навигации Yoast SEO"
 
-#: core/customizer/theme-mods/global.php:364
+#: core/customizer/theme-mods/global.php:391
 msgid "Additional CSS"
 msgstr "Дополнительные стили"
 
@@ -1409,11 +1417,11 @@ msgstr "Блоки"
 msgid "More"
 msgstr "Еще"
 
-#: core/extras.php:244 modules/social.php:93
+#: core/extras.php:244 modules/social.php:92
 msgid "VKontakte"
 msgstr "ВКонтакте"
 
-#: core/extras.php:245 modules/social.php:107
+#: core/extras.php:245 modules/social.php:108
 msgid "Odnoklassniki"
 msgstr "Одноклассники"
 
@@ -1612,12 +1620,12 @@ msgstr "Закрыть боковую панель"
 msgid "Primary menu"
 msgstr "Главное меню"
 
-#: core/theme-update/theme-update-checker.php:348
+#: core/theme-update/theme-update-checker.php:354
 #, php-format
 msgid "There is a new version of theme <strong>%s</strong> available."
 msgstr "Доступна новая версия темы <strong>% s </strong>."
 
-#: core/theme-update/theme-update-checker.php:349
+#: core/theme-update/theme-update-checker.php:355
 #, php-format
 msgid "Update to version %s"
 msgstr "Обновить до версии %s"
@@ -2007,7 +2015,7 @@ msgstr "Добавить или удалить теги"
 msgid "Choose from the most used tags"
 msgstr "Выбрать из часто используемые"
 
-#: modules/social.php:91
+#: modules/social.php:90
 msgid "Share on VK"
 msgstr "Поделиться ВКонтакте"
 
@@ -2015,25 +2023,25 @@ msgstr "Поделиться ВКонтакте"
 msgid "Share on Twitter"
 msgstr "Поделиться в Twitter"
 
-#: modules/social.php:105
+#: modules/social.php:106
 msgid "Share on OK"
 msgstr "Поделиться в Одноклассниках"
 
-#: modules/social.php:112
+#: modules/social.php:114
 msgid "Share on Facebook"
 msgstr "Поделиться в Facebook"
 
-#: modules/social.php:141
-msgid "Share on WhatsApp"
-msgstr "Поделиться в WhatsApp"
-
-#: modules/social.php:148
+#: modules/social.php:122
 msgid "Share on Telegram"
 msgstr "Поделиться в Telegram"
 
-#: modules/social.php:155
+#: modules/social.php:130
 msgid "Share on Viber"
 msgstr "Поделиться на Viber"
+
+#: modules/social.php:138
+msgid "Share on WhatsApp"
+msgstr "Поделиться в WhatsApp"
 
 #: modules/starter/import_remote_content.php:394
 msgid "No zip file"
@@ -3719,6 +3727,9 @@ msgstr ""
 msgid "OK, I've got it!"
 msgstr "Понятно!"
 
+#~ msgid "Available only on mobile devices"
+#~ msgstr "Доступен только на мобильных устройствах"
+
 #~ msgid "Custom"
 #~ msgstr "Пользовательская сеть"
 
@@ -3874,9 +3885,6 @@ msgstr "Понятно!"
 
 #~ msgid "Show Target Amount"
 #~ msgstr "Показывать целевую сумму"
-
-#~ msgid "Show Button"
-#~ msgstr "Показывать кнопку"
 
 #~ msgid "Card background color"
 #~ msgstr "Цвет фона карточки"
