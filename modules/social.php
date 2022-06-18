@@ -144,7 +144,7 @@ function knd_social_shares(){
 function knd_social_share_no_js() {
 	$shares = knd_social_shares();
 
-	if ( ! knd_is_mobile_user_agent() ) {
+	if ( ! wp_is_mobile() ) {
 		foreach( $shares as $slug => $item ){
 			if ( $item['only_mobile'] ){
 				unset( $shares[ $slug ] );
@@ -180,24 +180,4 @@ function knd_social_share_no_js() {
 		</div>
 	</div>
 <?php
-}
-
-function knd_is_mobile_user_agent(){
-	//may be need some more sophisticated testing
-	$test = false;
-	
-	if(!isset($_SERVER['HTTP_USER_AGENT']))
-		return $test;
-
-	if(stristr($_SERVER['HTTP_USER_AGENT'],'ipad') ) {
-		$test = true;
-	} else if( stristr($_SERVER['HTTP_USER_AGENT'],'iphone') || strstr($_SERVER['HTTP_USER_AGENT'],'iphone') ) {
-		$test = true;
-	} else if( stristr($_SERVER['HTTP_USER_AGENT'],'blackberry') ) {
-		$test = true;
-	} else if( stristr($_SERVER['HTTP_USER_AGENT'],'android') ) {
-		$test = true;
-	}
-
-	return $test;
 }
