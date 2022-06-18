@@ -81,56 +81,56 @@ function knd_social_links( $atts = array(), $echo = true ) {
 /** Available social shares */
 function knd_social_shares(){
 	global $post;
-	$title = esc_html( get_the_title( $post ) );
+	$title = get_the_title( $post );
 	$link = knd_current_url();
 	$text = $title . ' ' . $link;
 
 	$shares = array(
 		'vk' => array(
 			'label'       => esc_html__( 'Share on VK', 'knd' ),
-			'url'         => 'https://vk.com/share.php?url='.$link.'&title='.$title,
+			'url'         => 'https://vk.com/share.php?url=' . esc_url( $link ).'&title=' . esc_html( $title ),
 			'txt'         => esc_html__( 'VKontakte', 'knd' ),
 			'icon'        => 'icon-vk',
 			'only_mobile' => false,
 		),
 		'twitter' => array(
 			'label'       => esc_html__( 'Share on Twitter', 'knd' ),
-			'url'         => 'https://twitter.com/intent/tweet?url='.$link.'&text='.$title,
+			'url'         => 'https://twitter.com/intent/tweet?url=' . esc_url( $link ).'&text=' . esc_html( $title ),
 			'txt'         => esc_html__( 'Twitter', 'knd' ),
 			'icon'        => 'icon-twitter',
 			'only_mobile' => false,
 		),
 		'ok' => array(
 			'label' => esc_html__( 'Share on OK', 'knd' ),
-			'url' => 'https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&service=odnoklassniki&st.shareUrl='.$link,
+			'url' => 'https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&service=odnoklassniki&st.shareUrl=' . esc_url( $link ),
 			'txt' => esc_html__( 'Odnoklassniki', 'knd' ),
 			'icon' => 'icon-ok',
 			'only_mobile'  => false,
 		),
 		'facebook' => array(
 			'label'       => esc_html__( 'Share on Facebook', 'knd' ),
-			'url'         => 'https://www.facebook.com/sharer/sharer.php?u='.$link,
+			'url'         => 'https://www.facebook.com/sharer/sharer.php?u=' . esc_url( $link ),
 			'txt'         => esc_html__( 'Facebook', 'knd' ),
 			'icon'        => 'icon-facebook',
 			'only_mobile' => false,
 		),
 		'whatsapp' => array(
 			'label'       => esc_html__( 'Share on WhatsApp', 'knd' ),
-			'url'         => 'whatsapp://send?text=' . $text,
+			'url'         => 'whatsapp://send?text=' . esc_html( $text ),
 			'txt'         => 'WhatsApp',
 			'icon'        => 'icon-whatsup',
 			'only_mobile' => true,
 		),
 		'telegram' => array(
 			'label'       => esc_html__( 'Share on Telegram', 'knd' ),
-			'url'         => 'tg://msg?text=' . $text,
+			'url'         => 'tg://msg?text=' . esc_html( $text ),
 			'txt'         => 'Telegram',
 			'icon'        => 'icon-telegram',
 			'only_mobile' => true,
 		),
 		'viber' => array(
 			'label'       => esc_html__( 'Share on Viber', 'knd' ),
-			'url'         => 'viber://forward?text=' . $text,
+			'url'         => 'viber://forward?text=' . esc_html( $text ),
 			'txt'         => 'Viber',
 			'icon'        => 'icon-viber',
 			'only_mobile' => true,
@@ -170,8 +170,8 @@ function knd_social_share_no_js() {
 			?>
 			<div title="<?php echo esc_attr( $item['label']);?>" class="social-likes__widget social-likes__widget_<?php echo esc_attr( $slug ); ?>">
 				<a href="<?php echo $item['url'];?>" class="social-likes__button social-likes__button_<?php echo esc_attr( $slug ); ?>" target="_blank" <?php echo $on_click; ?>>
-					<svg class="svg-icon"><use xlink:href="#<?php echo $item['icon'];?>" /></svg>
-					<span class="sh-text"><?php echo $item['txt'];?></span>
+					<svg class="svg-icon"><use xlink:href="#<?php echo esc_attr( $item['icon'] ); ?>" /></svg>
+					<span class="sh-text"><?php echo esc_html( $item['txt'] ); ?></span>
 				</a>
 			</div>
 			<?php
