@@ -226,14 +226,16 @@ function knd_section_title() {
 	global $wp_query;
 
 	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-	
+
 	$title = '';
-	$css = '';
-	
+	$css   = '';
+
 	if ( is_category() ) {
-		$p = get_post( get_option( 'page_for_posts' ) );
-		$title = get_the_title( $p );
-		$title .= knd_get_sep( '&mdash;' );
+		if ( get_option( 'page_for_posts' ) ) {
+			$p     = get_post( get_option( 'page_for_posts' ) );
+			$title = get_the_title( $p );
+			$title .= knd_get_sep( '&mdash;' );
+		}
 		$title .= single_term_title( '', false );
 		$css = 'archive';
 	} elseif ( is_tag() || is_tax() ) {
