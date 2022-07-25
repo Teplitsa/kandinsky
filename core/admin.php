@@ -340,13 +340,13 @@ function knd_register_required_plugins() {
 			'description' => esc_html__( 'A great tool to boost your website SEO positions.', 'knd' )
 		),
 		array(
-			'name'        => esc_html__( 'Cyr to Lat enhanced', 'knd' ),
-			'slug'        => 'cyr3lat', 
-			'is_callable' => 'ctl_sanitize_title', 
+			'name'        => esc_html__( 'Cyr-To-Lat', 'knd' ),
+			'slug'        => 'cyr2lat', 
+			'is_callable' => '', 
 			'required'    => true, 
 			'description' => esc_html__( 'Small helper to seamlessly convert cyrillic pages slugs into latin ones.', 'knd' ),
 		),
-		array( 
+		array(
 			'name'        => esc_html__( 'Disable Comments', 'knd' ),
 			'slug'        => 'disable-comments', 
 			'is_callable' => array( 'Disable_Comments', 'get_instance' ),
