@@ -700,6 +700,7 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 
 			// re-setup theme options after pages created
 			$pdb->build_theme_options();
+			$pdb->build_general_options();
 
 			$pdb->build_menus();
 

@@ -274,6 +274,7 @@ function knd_update_theme_content() {
 		$pdb->build_posts();
 		$pdb->build_pages();
 		$pdb->build_theme_options();
+		$pdb->build_general_options();
 		$pdb->build_menus();
 	}
 	

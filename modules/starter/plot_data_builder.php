@@ -1006,14 +1006,11 @@ class KND_Plot_Data_Builder {
 	}
 
 	public function build_general_options() {
-		// header contacts
-		//$knd_address_phone = $this->data_routes['general_options']['knd_address_phone'];
-		//$this->safe_set_theme_mod('text_in_header', trim($knd_address_phone));
-
 		//save permastructure
 		$test = get_option('permalink_structure');
 		if(empty($test)){
-			$this->safe_update_option('permalink_structure', '/%year%/%monthnum%/%postname%/');
+			update_option('permalink_structure', '/%year%/%monthnum%/%postname%/');
+			flush_rewrite_rules();
 		}
 	}
 
