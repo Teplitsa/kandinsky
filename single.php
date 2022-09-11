@@ -40,10 +40,18 @@ get_header();
 		<div class="flex-cell flex-md-1 hide-upto-medium"></div>
 
 		<div class="flex-cell flex-md-1 single-sharing-col hide-upto-medium">
-			<?php if ( get_theme_mod( 'post_social_shares', true ) ) { ?>
-				<div id="knd_sharing" class="regular-sharing">
-					<?php echo knd_social_share_no_js();?>
-				</div>
+			<?php if ( get_post_type() === 'project' ) { ?>
+				<?php if ( get_theme_mod( 'project_social_shares', true ) ) { ?>
+					<div id="knd_sharing" class="regular-sharing">
+						<?php echo knd_social_share_no_js();?>
+					</div>
+				<?php } ?>
+			<?php } else { ?>
+				<?php if ( get_theme_mod( 'post_social_shares', true ) ) { ?>
+					<div id="knd_sharing" class="regular-sharing">
+						<?php echo knd_social_share_no_js();?>
+					</div>
+				<?php } ?>
 			<?php } ?>
 		</div>
 
