@@ -117,9 +117,14 @@
 // single post terms 
 .tags-line {
 	padding-top: $gut / 2.2;
+
 	a {
-		color: $color-main-dark;
+		color: var(--knd-color-main);
 		@include knd-link-terms-text();
 		margin-right: 4px;
+
+		&:hover {
+			color: var(--knd-color-main-active);
+		}
 	}
 }

@@ -3982,7 +3982,7 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 }
 
 .tags-line a {
-	color: var(--knd-color-main-active);
+	color: var(--knd-color-main);
 	font-size: 12px;
 	font-family: var(--knd-font-family-base);
 	line-height: 1.33;
@@ -4006,6 +4006,10 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 	.tags-line a {
 		font-size: 14px;
 	}
+}
+
+.tags-line a:hover {
+	color: var(--knd-color-main-active);
 }
 
 /** == Pages (_pages.scss) == **/
@@ -4312,7 +4316,7 @@ div[id*="leyka-pf-"] .inpage-card__thumb {
 	font-family: var(--knd-font-family-base);
 	line-height: 1.33;
 	font-weight: 400;
-	color: var(--knd-color-main-active);
+	color: var(--knd-color-main);
 	margin-bottom: 16px;
 }
 
@@ -4332,6 +4336,10 @@ div[id*="leyka-pf-"] .inpage-card__thumb {
 	.related-card-holder a {
 		font-size: 18.662px;
 	}
+}
+
+.related-card-holder a:hover {
+	color: var(--knd-color-main-active);
 }
 
 .related-cards-loop {

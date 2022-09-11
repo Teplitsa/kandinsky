@@ -12,8 +12,12 @@
 	
 	a {
 		@include knd-link-related-text();
-		color: $color-main-dark;
+		color: var(--knd-color-main);
 		margin-bottom: 16px;
+
+		&:hover {
+			color: var(--knd-color-main-active);
+		}
 	}
 }
 
