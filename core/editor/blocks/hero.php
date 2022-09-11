@@ -175,7 +175,7 @@ function knd_block_hero_render_callback( $attr ) {
 	};
 
 	if ( isset( $featured_image['id'] ) && $featured_image['id'] ) {
-		$featured_image = wp_get_attachment_image( $featured_image['id'], 'large' );
+		$featured_image = wp_get_attachment_image( $featured_image['id'], apply_filters( 'knd_hero_block_featured_image_size', 'large' ) );
 		if ( $featured_image ) {
 			$featured_image = '<div class="knd-block-hero__figure">' . $featured_image . '</div>';
 		}
@@ -241,7 +241,7 @@ function knd_block_hero_render_callback( $attr ) {
 		<div class="knd-block-hero__inner">
 			<div class="knd-block-hero__content">
 				' . $heading . '
-				' . $text . '
+				' . apply_filters( 'knd_hero_block_text', $text ) . '
 				' . $actions . '
 			</div>
 			' . $featured_image . '
