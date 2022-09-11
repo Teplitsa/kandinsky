@@ -90,6 +90,7 @@ function knd_cyrillic_fonts() {
 		'Merriweather',
 		'Montserrat',
 		'Montserrat Alternates',
+		'Mulish',
 		'Neucha',
 		'Noto Sans',
 		'Noto Serif',
