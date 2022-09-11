@@ -192,7 +192,7 @@ function knd_block_info_render_callback( $attr ) {
 
 	$text = '';
 	if ( isset( $attr['text'] ) && $attr['text'] ) {
-		$text = '<h2 class="knd-block-info__text">' . $attr['text'] . '</h2>';
+		$text = '<h2 class="knd-block-info__text">' . apply_filters( 'knd_block_info_text', $attr['text'] ) . '</h2>';
 	}
 
 	$title = '';
