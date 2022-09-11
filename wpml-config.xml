@@ -1,12 +1,38 @@
 <wpml-config>
 	<admin-texts>
-		<key name="theme_mods_kandinsky*">
+		<key name="theme_mods_kand*">
 			<key name="header_email" />
 			<key name="header_phone" />
 			<key name="header_address" />
 			<key name="header_custom_text" />
 			<key name="header_additional_button_text" />
 			<key name="header_logo_text" />
+			<key name="header_button_text" />
+			<key name="header_button_link" />
+			<key name="header_additional_button_text" />
+			<key name="header_additional_button_link" />
+			<key name="offcanvas_button_text" />
+			<key name="post_related_title" />
+			<key name="post_bottom_block" />
+			<key name="project_related_title" />
+			<key name="project_bottom_block" />
+			<key name="footer_logo_title" />
+			<key name="footer_logo_text" />
+			<key name="footer_about_title" />
+			<key name="footer_about" />
+			<key name="footer_policy_title" />
+			<key name="footer_policy" />
+			<key name="footer_menu_ourwork_title" />
+			<key name="footer_menu_ourwork" />
+			<key name="footer_menu_news_title" />
+			<key name="footer_menu_news" />
+			<key name="footer_copyright_text" />
+			<key name="knd_news_archive_title" />
+			<key name="archive_bottom_block" />
+			<key name="knd_projects_archive_title" />
+			<key name="projects_bottom_block" />
+			<key name="knd_active_campaigns_archive_title" />
+			<key name="knd_completed_campaigns_archive_title" />
 		</key>
 	</admin-texts>
 </wpml-config>
