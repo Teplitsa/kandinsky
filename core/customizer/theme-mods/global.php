@@ -170,14 +170,6 @@ $socials_default = [];
 $socials_choices = [];
 
 foreach ( knd_get_social_media_supported() as $id => $label ) {
-	// Remove in next version.
-	// Kirki::add_field( 'knd_theme_mod', array(
-	// 	'type'        => 'url',
-	// 	'settings'    => 'knd_social_' . esc_attr( $id ),
-	// 	'label'       => esc_html( $label ),
-	// 	'section'     => 'socials',
-	// ) );
-
 	if ( get_theme_mod( 'knd_social_' . esc_attr( $id ) ) ) {
 		$socials_default[] = array(
 			'network' => $id,
@@ -261,8 +253,6 @@ foreach ( knd_social_shares() as $slug => $item ) {
 		'section'     => 'knd_share',
 		'default'     => $default,
 	) );
-
-	//remove_theme_mod('social_share_' . $slug );
 }
 
 /* Miscellaneous Settings Section */
