@@ -170,7 +170,7 @@
 			let tagOptions = function(){
 				// Get Terms
 				var getTerms = useSelect( ( select, props ) => {
-					return select('core').getEntityRecords('taxonomy', 'project_tag' );
+					return select('core').getEntityRecords('taxonomy', 'project_tag', { per_page: -1 } );
 				}, [] );
 
 				var tags = [
