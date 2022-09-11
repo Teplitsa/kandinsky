@@ -343,7 +343,7 @@
 	 * Scroll To Element on click link with hash
 	 */
 	// a[href^="#"]
-	$( '.knd-nav-menu a, .main-menu a' ).on( 'click', function( e ) {
+	$( '.knd-nav-menu a, .main-menu a, .knd-toc a' ).on( 'click', function( e ) {
 
 		var lacationUrl = window.location.href.replace(/#.*$/, '');
 		var thisUrl     = this.href.replace(/#.*$/, '');
