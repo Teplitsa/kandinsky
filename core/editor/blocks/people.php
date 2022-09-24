@@ -241,14 +241,14 @@ function knd_block_people_render_callback( $attr ) {
 			$excerpt = $this_post->post_excerpt;
 
 			$link = '';
-			$item_class = 'knd-block-item';
+			$item_class = 'knd-block-item knd-entry';
 
 			if ( isset( $attr['isLink'] ) && $attr['isLink'] ) {
 				$link       = '<a href="' . get_permalink() . '" class="knd-block-item-link"></a>';
 				$item_class .= ' is-active-link';
 			}
 
-			$html .= '<article class="' . esc_attr( $item_class ) . '">
+			$html .= '<article class="' . esc_attr( join( ' ', get_post_class( $item_class ) ) ) . '">
 				<div class="knd-block-item__inner">
 					<div class="entry-preview">' . get_the_post_thumbnail( null, 'square' ) . '</div>
 					<div class="entry-data">

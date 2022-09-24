@@ -31,6 +31,7 @@
 @import 'knd-blocks/info';
 @import 'knd-blocks/cover';
 @import 'knd-blocks/recommend';
+@import 'knd-blocks/hint';
 @import 'knd-blocks/donations';
 @import 'knd-blocks/campaign';
 @import 'knd-blocks/leyka-cards';
@@ -79,6 +80,7 @@
 /* Main column width */
 .wp-block {
 	max-width: var(--knd-content-width);
+	box-sizing: border-box;
 }
  
 /* Width of "wide" blocks */

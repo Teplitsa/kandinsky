@@ -1879,6 +1879,203 @@
 	window.wp.serverSideRender,
 ) );
 
+/* Hint Block */
+
+( function( blocks, editor, blockEditor, element, components, compose, i18n, serverSideRender ) {
+
+	const ServerSideRender = serverSideRender;
+
+	const el = element.createElement;
+
+	const { TextControl, TextareaControl, SelectControl, RangeControl, ColorPalette, PanelBody, ToggleControl, BaseControl, Button,  Disabled } = components;
+
+	const { registerBlockType, withColors, PanelColorSettings, getColorClassName } = blocks;
+
+	const { InspectorControls, ColorPaletteControl, MediaUpload, MediaUploadCheck, InnerBlocks, useBlockProps } = blockEditor;
+
+	const { Fragment } = element;
+
+	const { withState } = compose;
+
+	const { __ } = i18n;
+
+	registerBlockType( 'knd/hint', {
+		title: __( 'Hint', 'knd' ), // Подсказка
+		icon: 'lightbulb',
+		category: 'kandinsky',
+		keywords: [
+			__( 'hint', 'knd' ),
+		],
+
+		supports: {
+			anchor: true,
+			// color: {
+			// 	background: true,
+			// }
+		},
+
+		attributes: {
+			direction: {
+				type: 'string',
+				default: 'top',
+			},
+			className: {
+				type: 'string',
+			},
+			anchor: {
+				type: 'string',
+			}
+		},
+
+		// Register block styles.
+		styles: [
+			{
+				name: 'default',
+				label: __( 'Up Arrow', 'knd' ),
+				isDefault: true
+			},
+			{
+				name: 'bottom',
+				label: __( 'Down Arrow', 'knd' )
+			},
+		],
+
+		edit: function( props ) {
+			
+			// Pull out the props we'll use
+			const { attributes, className, setAttributes, clientId } = props;
+
+			var blockProps = useBlockProps( {
+				className: 'knd-block-hint ' + className,
+			} );
+
+			return (
+				el( Fragment, {},
+
+					el( 'div',
+						blockProps,
+						el( 'div',
+							{
+								className: 'knd-block-hint__inner',
+							},
+
+							el(
+								InnerBlocks,
+								{
+									allowedBlocks : [ 'core/paragraph' ],
+								}
+							)
+						)
+					)
+				)
+			);
+		},
+
+		save: function () {
+			var blockProps = useBlockProps.save();
+
+			return el( 'div',
+				Object.assign( blockProps,
+					{
+						className: 'knd-block-hint'
+					}
+				),
+				el( 'div',
+					{
+						className: 'knd-block-hint__inner',
+					},
+					el( InnerBlocks.Content )
+				)
+			);
+		},
+
+
+
+
+
+
+		/*edit: function( props ) {
+
+			var blockProps = useBlockProps();
+
+			return el( 'div', blockProps, el( InnerBlocks ) );
+
+			// // Pull out the props we'll use
+			// const { attributes, className, setAttributes, clientId } = props;
+
+			// // Pull out specific attributes for clarity below
+			// const { backgroundImage, featuredImage } = attributes;
+
+			// return (
+			// 	el( Fragment, {},
+
+			// 		el( InspectorControls, {},
+
+			// 			el( PanelBody,
+			// 				{
+			// 					title: __( 'Hint', 'knd' )
+			// 				},
+
+			// 				el( TextareaControl, {
+			// 					label: __( 'Text', 'knd' ),
+			// 					value: props.attributes.text,
+			// 					onChange: ( val ) => {
+			// 						props.setAttributes( { text: val } );
+			// 					},
+			// 				}),
+
+			// 				el( ColorPaletteControl,
+			// 					{
+			// 						label: __( 'Text Color', 'knd' ),
+			// 						value: props.attributes.textColor,
+			// 						onChange: function( val ) {
+			// 							props.setAttributes({ textColor: val });
+			// 						}
+			// 					}
+			// 				),
+
+			// 				el( ColorPaletteControl,
+			// 					{
+			// 						label: __( 'Background Color', 'knd' ),
+			// 						value: props.attributes.backgroundColor,
+			// 						onChange: function( val ) {
+			// 							props.setAttributes({ backgroundColor: val });
+			// 						}
+			// 					}
+			// 				),
+			// 			),
+			// 		),
+
+			// 		el( Disabled,
+			// 			null,
+			// 			el( ServerSideRender, {
+			// 				block: 'knd/hint',
+			// 				attributes: props.attributes,
+			// 			} ),
+			// 		)
+			// 	)
+			// );
+		},
+
+		save: function() {
+			//return null;
+			var blockProps = useBlockProps.save();
+
+			return el( 'div', blockProps, el( InnerBlocks.Content ) );
+		}*/
+
+	} );
+}(
+	window.wp.blocks,
+	window.wp.editor,
+	window.wp.blockEditor,
+	window.wp.element,
+	window.wp.components,
+	window.wp.compose,
+	window.wp.i18n,
+	window.wp.serverSideRender,
+) );
+
 /**
  * Info Block
  */
@@ -3204,6 +3401,22 @@
 		});
 	};
 
+	// Get person count
+	let personCount = function(){
+		// Get Terms
+		var getPerson = useSelect( ( select, props ) => {
+			return select('core').getEntityRecords('postType', 'person', { per_page: -1 } );
+		}, [] );
+
+		var personCount = 0;
+
+		if ( getPerson ) {
+			personCount = getPerson.length;
+		}
+
+		return personCount;
+	}
+
 	registerBlockType( 'knd/people', {
 		title: __( 'Team', 'knd' ),
 		icon: icon,
@@ -3307,7 +3520,7 @@
 			let categoryOptions = function(){
 				// Get Terms
 				var getTerms = useSelect( ( select, props ) => {
-					return select('core').getEntityRecords('taxonomy', 'person_cat' );
+					return select('core').getEntityRecords('taxonomy', 'person_cat', { per_page: -1 } );
 				}, [] );
 
 				var categories = [
@@ -3391,7 +3604,7 @@
 									value: props.attributes.postsToShow,
 									initialPosition: 4,
 									min: 0,
-									max: 50,
+									max: personCount(),
 									onChange: function( val ) {
 										props.setAttributes({ postsToShow: val })
 									}

@@ -176,7 +176,7 @@ function knd_block_partners_render_callback( $attr ) {
 	$args = array(
 		'post_type'      => 'org',
 		'posts_per_page' => $posts_to_show,
-		'meta_key'       => '_thumbnail_id',
+		//'meta_key'       => '_thumbnail_id',
 	);
 
 	// Orderby
@@ -228,10 +228,16 @@ function knd_block_partners_render_callback( $attr ) {
 
 			$html .= '<div class="knd-block-item">';
 
-				if ( isset( $attr['isLink'] ) && $attr['isLink'] ) {
-					$html .= '<a href="' . esc_url( $url ) . '" class="partner-link" target="_blank">' . get_the_post_thumbnail( null, 'medium_large', array( 'alt' => get_the_title() ) ) . '</a>';
+				if ( has_post_thumbnail() ) {
+					$partner_logo = get_the_post_thumbnail( null, 'medium_large', array( 'alt' => get_the_title() ) );
 				} else {
-					$html .= '<div class="partner-link">' . get_the_post_thumbnail( null, 'medium_large', array( 'alt' => get_the_title() ) ) . '</div>';
+					$partner_logo = '<div class="knd-partner-placeholder"></div>';
+				}
+
+				if ( isset( $attr['isLink'] ) && $attr['isLink'] ) {
+					$html .= '<a href="' . esc_url( $url ) . '" class="partner-link" target="_blank">' . $partner_logo . '</a>';
+				} else {
+					$html .= '<div class="partner-link">' . $partner_logo . '</div>';
 				}
 
 			$html .= '</div>';

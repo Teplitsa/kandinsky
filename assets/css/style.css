@@ -2725,10 +2725,6 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 	}
 }
 
-.knd-footer .copy {
-	max-width: 320px;
-}
-
 .knd-footer .copy a {
 	white-space: nowrap;
 	color: var(--knd-footer-color, #4d606a);
@@ -2828,13 +2824,14 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 }
 
 .knd-footer .widget-bottom-menu .menu li {
-	margin-bottom: .5em;
+	font-size: 11px;
+	line-height: 1.2;
+	margin-bottom: 1.1em;
+	font-weight: bold;
+	letter-spacing: 0.05em;
 }
 
 .knd-footer .widget-bottom-menu .menu a {
-	font-weight: bold;
-	font-size: 11px;
-	letter-spacing: 0.05em;
 	text-transform: uppercase;
 }
 
@@ -2864,6 +2861,17 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 
 .knd-brand {
 	position: relative;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-pack: center;
+	justify-content: center;
+}
+
+@media (min-width: 480px) {
+	.knd-brand {
+		-ms-flex-pack: end;
+		justify-content: flex-end;
+	}
 }
 
 .knd-brand:after {
@@ -2897,12 +2905,6 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 	color: var(--knd-footer-color, #4d606a);
 }
 
-@media (min-width: 480px) {
-	.knd-brand a {
-		float: right;
-	}
-}
-
 .knd-brand .knd-banner {
 	display: block;
 	-ms-flex: 0 0 auto;
@@ -2914,7 +2916,6 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 .knd-brand .support {
 	line-height: 1.2;
 	padding-right: 20px;
-	width: 120px;
 	text-align: right;
 }
 

@@ -236,7 +236,7 @@ function knd_block_projects_render_callback( $attr ) {
 
 			$this_post = get_post( get_the_ID() );
 
-			$html .= '<article class="' . esc_attr( join( ' ', get_post_class( 'knd-col' ) ) ) . '">
+			$html .= '<article class="' . esc_attr( join( ' ', get_post_class( 'knd-col knd-entry' ) ) ) . '">
 			<a href="' . get_the_permalink() . '" class="thumbnail-link">
 				<div class="entry-preview">
 					' . get_the_post_thumbnail( null, 'post-thumbnail', array( 'alt' => wp_trim_words( get_the_title(), 2 ), 'aria-hidden' => 'true' ) ) . '

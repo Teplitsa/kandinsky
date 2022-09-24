@@ -137,13 +137,10 @@
 				}
 			}
 		}
-
 	}
 
 	.copy {
-		max-width: 320px;
-
-		a { 
+		a {
 			white-space: nowrap;
 			color: var(--knd-footer-color, #4d606a);
 
@@ -157,7 +154,7 @@
 			max-width: initial;
 		}
 	}
-	
+
 	//layout
 	.widget-area {
 		display: flex;
@@ -217,20 +214,19 @@
 			}
 
 			.menu {
-
 				li {
-					margin-bottom: .5em;
+					font-size: 11px;
+					line-height: 1.2;
+					margin-bottom: 1.1em;
+					font-weight: bold;
+					letter-spacing: 0.05em;
 				}
 
 				a {
-					font-weight: bold;
-					font-size: 11px;
-					letter-spacing: 0.05em;
 					text-transform: uppercase;
 				}
 			}
 		}
-
 	}
 
 	.hr {
@@ -266,17 +262,22 @@
 
 .knd-brand {
 	position: relative;
-	@include cf;
+	display: flex;
+	justify-content: center;
 
+	@media (min-width: 480px) {
+		justify-content: flex-end;
+	}
+
+	@include cf;
 
 	.knd-icon {
 		display: inline-block;
 		width: 100%; 
 		height: 100%;
 	}
-	
+
 	a {
-		
 		display: flex;
 		flex-flow: row nowrap;
 		justify-content: center;
@@ -288,10 +289,6 @@
 		&:hover {
 			text-decoration: none;
 			color: var(--knd-footer-color,#4d606a);
-		}
-
-		@media (min-width: 480px) {
-			float: right;
 		}
 	}
 
@@ -305,7 +302,6 @@
 	.support {
 		line-height: 1.2;
 		padding-right: 20px;
-		width: 120px;
 		text-align: right;
 	}
 }

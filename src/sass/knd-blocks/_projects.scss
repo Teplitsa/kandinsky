@@ -85,9 +85,10 @@
 			left: 0;
 			width: 100%;
 			height: 100%;
-			background-color: rgba(0, 0, 0, 0);
+			background-color: rgba(0, 0, 0, .1);
 			z-index: 10;
-			transition: color 0.3s, background 0.3s, border-color 0.3s;
+			opacity: 0;
+			transition: opacity 0.3s;
 		}
 
 		img {
@@ -98,7 +99,7 @@
 	}
 
 	.hentry:hover .entry-preview:after {
-		background-color: rgba(0, 0, 0, 0.25);
+		opacity: 1;
 	}
 
 	.section-heading {
@@ -161,5 +162,3 @@
 		}
 	}
 }
-
-
