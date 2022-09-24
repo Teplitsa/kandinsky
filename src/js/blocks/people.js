@@ -73,6 +73,22 @@
 		});
 	};
 
+	// Get person count
+	let personCount = function(){
+		// Get Terms
+		var getPerson = useSelect( ( select, props ) => {
+			return select('core').getEntityRecords('postType', 'person', { per_page: -1 } );
+		}, [] );
+
+		var personCount = 0;
+
+		if ( getPerson ) {
+			personCount = getPerson.length;
+		}
+
+		return personCount;
+	}
+
 	registerBlockType( 'knd/people', {
 		title: __( 'Team', 'knd' ),
 		icon: icon,
@@ -176,7 +192,7 @@
 			let categoryOptions = function(){
 				// Get Terms
 				var getTerms = useSelect( ( select, props ) => {
-					return select('core').getEntityRecords('taxonomy', 'person_cat' );
+					return select('core').getEntityRecords('taxonomy', 'person_cat', { per_page: -1 } );
 				}, [] );
 
 				var categories = [
@@ -260,7 +276,7 @@
 									value: props.attributes.postsToShow,
 									initialPosition: 4,
 									min: 0,
-									max: 50,
+									max: personCount(),
 									onChange: function( val ) {
 										props.setAttributes({ postsToShow: val })
 									}
