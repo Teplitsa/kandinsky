@@ -637,12 +637,10 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 		}
 
 		public function _content_install_site_title_desc() {
-
-			update_option( 'blogname', esc_html__( 'Line of Color', 'knd' ) );
-			update_option( 'blogdescription', esc_html__( 'We help people to fight alcohol addiction', 'knd' ) );
+			update_option( 'blogname', esc_html__( 'Organization name', 'knd' ) );
+			update_option( 'blogdescription', esc_html__( 'Subtitle', 'knd' ) );
 
 			return true;
-
 		}
 
 		public function _content_install_settings() {

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-18 20:07+0300\n"
-"PO-Revision-Date: 2022-06-18 20:08+0300\n"
+"POT-Creation-Date: 2022-09-29 19:34+0300\n"
+"PO-Revision-Date: 2022-09-29 19:37+0300\n"
 "Last-Translator: ahaenor <ahaenor@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -75,9 +75,9 @@ msgstr[0] "%s комментарий"
 msgstr[1] "%s комментария"
 msgstr[2] "%s комментариев"
 
-#: comments.php:57 core/template-tags.php:169 core/template-tags.php:245
-#: core/template-tags.php:366 core/template-tags.php:367
-#: core/template-tags.php:368 page-events.php:21
+#: comments.php:57 core/template-tags.php:169 core/template-tags.php:247
+#: core/template-tags.php:368 core/template-tags.php:369
+#: core/template-tags.php:370 page-events.php:21
 msgid "Page"
 msgstr "Страница"
 
@@ -153,10 +153,10 @@ msgstr "Обновление пожертвований..."
 msgid "Kandinsky theme updated successfully."
 msgstr "Кандинский успешно обновлен."
 
-#: core/admin-update-theme.php:104 vendor/envato_setup/envato_setup.php:731
-#: vendor/envato_setup/envato_setup.php:740
-#: vendor/envato_setup/envato_setup.php:749
-#: vendor/envato_setup/envato_setup.php:758
+#: core/admin-update-theme.php:104 vendor/envato_setup/envato_setup.php:730
+#: vendor/envato_setup/envato_setup.php:739
+#: vendor/envato_setup/envato_setup.php:748
+#: vendor/envato_setup/envato_setup.php:757
 msgid "Success!"
 msgstr "Успех!"
 
@@ -214,7 +214,7 @@ msgstr "Мастер настройки"
 
 #: core/admin.php:42 src/js/blocks/cover.js:169
 #: vendor/envato_setup/envato_setup.php:315
-#: vendor/envato_setup/envato_setup.php:745
+#: vendor/envato_setup/envato_setup.php:744
 msgid "Content"
 msgstr "Контент"
 
@@ -231,8 +231,8 @@ msgstr "Меню"
 #: core/admin.php:60 core/editor/blocks/news.php:18 footer.php:76
 #: modules/starter/plot_config.php:141
 #: modules/starter/plot_data_builder.php:563 src/js/blocks/news.js:43
-#: src/js/blocks/news.js:56 vendor/envato_setup/envato_setup.php:1229
-#: vendor/envato_setup/envato_setup.php:1256
+#: src/js/blocks/news.js:56 vendor/envato_setup/envato_setup.php:1228
+#: vendor/envato_setup/envato_setup.php:1255
 msgid "News"
 msgstr "Новости"
 
@@ -243,7 +243,7 @@ msgstr "Новости"
 msgid "Projects"
 msgstr "Проекты"
 
-#: core/admin.php:72 src/js/blocks/people.js:77
+#: core/admin.php:72 src/js/blocks/people.js:93
 msgid "Team"
 msgstr "Команда"
 
@@ -270,15 +270,15 @@ msgstr "SEO"
 
 #: core/admin.php:108 core/editor/blocks/leyka-cards.php:18
 #: core/shortcodes.php:61 modules/donations/widgets.php:9
-#: vendor/envato_setup/envato_setup.php:754
+#: vendor/envato_setup/envato_setup.php:753
 msgid "Donations"
 msgstr "Пожертвования"
 
-#: core/admin.php:114 core/customizer/theme-mods/global.php:192
+#: core/admin.php:114 core/customizer/theme-mods/global.php:184
 msgid "Other"
 msgstr "Другое"
 
-#: core/admin.php:120 core/customizer/theme-mods/global.php:354
+#: core/admin.php:120 core/customizer/theme-mods/global.php:350
 msgid "Documentation"
 msgstr "Документация"
 
@@ -357,8 +357,8 @@ msgstr ""
 "Прекрасный плагин, помогающий улучшить позиции сайта в поисковых системах."
 
 #: core/admin.php:343
-msgid "Cyr to Lat enhanced"
-msgstr "Cyr to Lat enhanced"
+msgid "Cyr-To-Lat"
+msgstr "Cyr-To-Lat"
 
 #: core/admin.php:347
 msgid ""
@@ -689,7 +689,7 @@ msgid "Posts archive title"
 msgstr "Заголовок страницы архива"
 
 #: core/customizer/theme-mods/archive-settings.php:23
-#: core/template-tags.php:247
+#: core/template-tags.php:249
 msgid "Blog"
 msgstr "Блог"
 
@@ -702,8 +702,8 @@ msgid "Projects archive title"
 msgstr "Заголовок страницы проектов"
 
 #: core/customizer/theme-mods/archive-settings.php:47
-#: core/template-tags.php:255 core/template-tags.php:383
-#: vendor/envato_setup/envato_setup.php:1230
+#: core/template-tags.php:257 core/template-tags.php:385
+#: vendor/envato_setup/envato_setup.php:1229
 msgid "Our projects"
 msgstr "Наши проекты"
 
@@ -736,7 +736,7 @@ msgid "Active campaigns archive title"
 msgstr "Заголовок страницы активных кампаний"
 
 #: core/customizer/theme-mods/archive-settings.php:173
-#: core/template-tags.php:267 single-leyka_campaign.php:31
+#: core/template-tags.php:269 single-leyka_campaign.php:31
 #: single-leyka_campaign.php:50
 msgid "They need help"
 msgstr "Им нужна помощь"
@@ -746,7 +746,7 @@ msgid "Completed campaigns archive title"
 msgstr "Заголовок страницы завершенных кампаний"
 
 #: core/customizer/theme-mods/archive-settings.php:181
-#: core/template-tags.php:262 single-leyka_campaign.php:27
+#: core/template-tags.php:264 single-leyka_campaign.php:27
 #: single-leyka_campaign.php:53
 msgid "They alredy got help"
 msgstr "Уже получили помощь"
@@ -784,7 +784,7 @@ msgid "Logo"
 msgstr "Логотип"
 
 #: core/customizer/theme-mods/footer.php:72
-#: core/customizer/theme-mods/global.php:217
+#: core/customizer/theme-mods/global.php:209
 #: core/customizer/theme-mods/header.php:76 inc/events/events-functions.php:297
 msgid "Name"
 msgstr "Название"
@@ -816,7 +816,7 @@ msgid "Footer - Columns"
 msgstr "Подвал - Колонки"
 
 #: core/customizer/theme-mods/footer.php:219 footer.php:46
-#: vendor/envato_setup/envato_setup.php:1248
+#: vendor/envato_setup/envato_setup.php:1247
 msgid "About Us"
 msgstr "О нас"
 
@@ -829,7 +829,7 @@ msgid "Menu news"
 msgstr "Меню новости"
 
 #: core/customizer/theme-mods/footer.php:285 footer.php:95
-#: vendor/envato_setup/envato_setup.php:1251
+#: vendor/envato_setup/envato_setup.php:1250
 msgid "Security policy"
 msgstr "Политика безопасности"
 
@@ -884,7 +884,7 @@ msgstr "Цвет ссылок в подвале при наведении"
 
 #: core/customizer/theme-mods/footer.php:453
 #: core/customizer/theme-mods/global.php:163
-#: core/customizer/theme-mods/global.php:198
+#: core/customizer/theme-mods/global.php:190
 #: core/customizer/theme-mods/header.php:357
 #: core/customizer/theme-mods/header.php:529
 msgid "Social networks"
@@ -943,57 +943,57 @@ msgstr "Цвет кнопок и ссылок при наведении"
 msgid "Also used in other active elements"
 msgstr "Также используется в других активных элементах"
 
-#: core/customizer/theme-mods/global.php:201
+#: core/customizer/theme-mods/global.php:193
 msgid "Add social network"
 msgstr "Добавить социальную сеть"
 
-#: core/customizer/theme-mods/global.php:204
+#: core/customizer/theme-mods/global.php:196
 msgid "Social network name"
 msgstr "Имя социальной сети"
 
-#: core/customizer/theme-mods/global.php:211
+#: core/customizer/theme-mods/global.php:203
 msgid "Select network"
 msgstr "Выберите социальную сеть"
 
-#: core/customizer/theme-mods/global.php:218 core/extras.php:246
+#: core/customizer/theme-mods/global.php:210 core/extras.php:246
 #: modules/social.php:116
 msgid "Facebook"
 msgstr "Facebook"
 
-#: core/customizer/theme-mods/global.php:222
+#: core/customizer/theme-mods/global.php:214
 msgid "URL"
 msgstr "URL"
 
-#: core/customizer/theme-mods/global.php:226
+#: core/customizer/theme-mods/global.php:218
 msgid "Icon"
 msgstr "Иконка"
 
-#: core/customizer/theme-mods/global.php:227
+#: core/customizer/theme-mods/global.php:219
 msgid ""
 "The recommended icon size is 40x40 pixels, and with a transparent background."
 msgstr "Рекомендуемый размер иконки 40x40 пикселей, с прозрачным фоном."
 
-#: core/customizer/theme-mods/global.php:241
+#: core/customizer/theme-mods/global.php:233
 msgid "Share Buttons"
 msgstr "Кнопки поделиться"
 
-#: core/customizer/theme-mods/global.php:250
+#: core/customizer/theme-mods/global.php:242
 msgid "Mobile only"
 msgstr "Только для мобильных устройств"
 
-#: core/customizer/theme-mods/global.php:266
+#: core/customizer/theme-mods/global.php:262
 msgid "Miscellaneous Settings"
 msgstr "Разные настройки"
 
-#: core/customizer/theme-mods/global.php:275
+#: core/customizer/theme-mods/global.php:271
 msgid "Scroll To Top Button"
 msgstr "Кнопка наверх"
 
-#: core/customizer/theme-mods/global.php:284
+#: core/customizer/theme-mods/global.php:280
 msgid "Analytics"
 msgstr "Аналитика"
 
-#: core/customizer/theme-mods/global.php:293
+#: core/customizer/theme-mods/global.php:289
 msgid ""
 "Here you can insert the code for user analytics systems, Google Analytics or "
 "Yandex.Metrica. Below are 3 areas of the site where you can paste the code, "
@@ -1005,45 +1005,45 @@ msgstr ""
 "зависимости, от требований устанавливаемых систем, можете вставить код. "
 "Просто скопируйте его сюда."
 
-#: core/customizer/theme-mods/global.php:300
+#: core/customizer/theme-mods/global.php:296
 msgid "Before </head>"
 msgstr "Перед </head>"
 
-#: core/customizer/theme-mods/global.php:303
-#: core/customizer/theme-mods/global.php:315
-#: core/customizer/theme-mods/global.php:327
+#: core/customizer/theme-mods/global.php:299
+#: core/customizer/theme-mods/global.php:311
+#: core/customizer/theme-mods/global.php:323
 msgid "Code can be copied here."
 msgstr "Код можно скопировать сюда."
 
-#: core/customizer/theme-mods/global.php:312
+#: core/customizer/theme-mods/global.php:308
 msgid "At the beginning of <body>"
 msgstr "В начале <body>"
 
-#: core/customizer/theme-mods/global.php:324
+#: core/customizer/theme-mods/global.php:320
 msgid "Before </body>"
 msgstr "Перед </body>"
 
-#: core/customizer/theme-mods/global.php:337
+#: core/customizer/theme-mods/global.php:333
 msgid "Important Links"
 msgstr "Важные ссылки"
 
-#: core/customizer/theme-mods/global.php:346
+#: core/customizer/theme-mods/global.php:342
 msgid "Theme Info"
 msgstr "О теме"
 
-#: core/customizer/theme-mods/global.php:350
+#: core/customizer/theme-mods/global.php:346
 msgid "Support"
 msgstr "Служба поддержки"
 
-#: core/customizer/theme-mods/global.php:358
+#: core/customizer/theme-mods/global.php:354
 msgid "Changelog"
 msgstr "Changelog"
 
-#: core/customizer/theme-mods/global.php:381
+#: core/customizer/theme-mods/global.php:377
 msgid "Yoast SEO Breadcrumbs"
 msgstr "Цепочки навигации Yoast SEO"
 
-#: core/customizer/theme-mods/global.php:391
+#: core/customizer/theme-mods/global.php:387
 msgid "Additional CSS"
 msgstr "Дополнительные стили"
 
@@ -1117,12 +1117,12 @@ msgid "Button Text"
 msgstr "Текст кнопки"
 
 #: core/customizer/theme-mods/header.php:376
-#: core/customizer/theme-mods/header.php:500 core/template-tags.php:820
-#: core/template-tags.php:848 core/template-tags.php:905
+#: core/customizer/theme-mods/header.php:500 core/template-tags.php:822
+#: core/template-tags.php:850 core/template-tags.php:907
 #: modules/donations/donations.php:159
-#: vendor/envato_setup/envato_setup.php:1192
-#: vendor/envato_setup/envato_setup.php:1208
-#: vendor/envato_setup/envato_setup.php:1217
+#: vendor/envato_setup/envato_setup.php:1191
+#: vendor/envato_setup/envato_setup.php:1207
+#: vendor/envato_setup/envato_setup.php:1216
 msgid "Help now"
 msgstr "Помочь сейчас"
 
@@ -1186,7 +1186,7 @@ msgstr "Комментарии"
 msgid "Related Posts Title"
 msgstr "Заголовок похожих статей"
 
-#: core/customizer/theme-mods/post-settings.php:55 core/template-tags.php:1012
+#: core/customizer/theme-mods/post-settings.php:55 core/template-tags.php:1014
 msgid "Related posts"
 msgstr "Познакомьтесь с другими проектами"
 
@@ -1208,7 +1208,7 @@ msgid "Related Projects Title"
 msgstr "Заголовок похожие проекты"
 
 #: core/customizer/theme-mods/project-settings.php:47
-#: core/template-tags.php:1025 vendor/envato_setup/envato_setup.php:1232
+#: core/template-tags.php:1027 vendor/envato_setup/envato_setup.php:1231
 msgid "Related projects"
 msgstr "Познакомьтесь с другими проектами"
 
@@ -1261,7 +1261,7 @@ msgid "No events"
 msgstr "Нет мероприятий"
 
 #: core/editor/blocks/hero.php:18 src/js/blocks/hero.js:72
-#: src/js/blocks/hero.js:150 vendor/envato_setup/envato_setup.php:642
+#: src/js/blocks/hero.js:150
 msgid "We help people to fight alcohol addiction"
 msgstr "Помогаем людям с алкогольной зависимостью"
 
@@ -1278,6 +1278,10 @@ msgstr ""
 #: src/js/blocks/hero.js:152
 msgid "Help Now"
 msgstr "Помочь сейчас"
+
+#: core/editor/blocks/hint.php:18
+msgid "Text."
+msgstr "Текст."
 
 #: core/editor/blocks/info.php:38 core/editor/content.php:14
 #: src/js/blocks/info.js:77
@@ -1357,7 +1361,7 @@ msgstr "Нужно собрать: %s %s"
 msgid "Our Partners"
 msgstr "Наши партнеры"
 
-#: core/editor/blocks/people.php:18 src/js/blocks/people.js:90
+#: core/editor/blocks/people.php:18 src/js/blocks/people.js:106
 msgid "Our Team"
 msgstr "Команда"
 
@@ -1445,7 +1449,7 @@ msgstr "YouTube"
 msgid "TikTok"
 msgstr "TikTok"
 
-#: core/extras.php:302 modules/starter/import_remote_content.php:405
+#: core/extras.php:302 modules/starter/import_remote_content.php:407
 #, php-format
 msgid "Old import files cleanup FAILED: %s."
 msgstr "Очистка старых импортных файлов FAILED: %s."
@@ -1564,59 +1568,59 @@ msgctxt "Yoast SEO"
 msgid "Home"
 msgstr "Главная"
 
-#: core/template-tags.php:250
+#: core/template-tags.php:252
 msgid "Donations history"
 msgstr "История пожертвований"
 
-#: core/template-tags.php:272
+#: core/template-tags.php:274
 msgid "Search results"
 msgstr "Результаты поиска"
 
-#: core/template-tags.php:275
+#: core/template-tags.php:277
 msgid "404: Page not found"
 msgstr "Ошибка 404: Страница не найдена"
 
-#: core/template-tags.php:365
+#: core/template-tags.php:367
 msgid "Posts navigation"
 msgstr "Навигация по записям"
 
-#: core/template-tags.php:367
+#: core/template-tags.php:369
 msgid "Previous"
 msgstr "Предыдущая"
 
-#: core/template-tags.php:368
+#: core/template-tags.php:370
 msgid "Next"
 msgstr "Следующая"
 
-#: core/template-tags.php:382
+#: core/template-tags.php:384
 msgid "More projects"
 msgstr "Еще проекты"
 
-#: core/template-tags.php:385
+#: core/template-tags.php:387
 msgid "More news"
 msgstr "Еще новости"
 
-#: core/template-tags.php:386
+#: core/template-tags.php:388
 msgid "Latest news"
 msgstr "Последние новости"
 
-#: core/template-tags.php:760
+#: core/template-tags.php:762
 msgid "Open search"
 msgstr "Открыть поиск"
 
-#: core/template-tags.php:781
+#: core/template-tags.php:783
 msgid "Close search"
 msgstr "Закрыть поиск"
 
-#: core/template-tags.php:796
+#: core/template-tags.php:798
 msgid "Open Off-Canvas"
 msgstr "Открыть боковую панель"
 
-#: core/template-tags.php:809
+#: core/template-tags.php:811
 msgid "Close Off-Canvas"
 msgstr "Закрыть боковую панель"
 
-#: core/template-tags.php:927 functions.php:85 template-parts/offcanvas.php:29
+#: core/template-tags.php:929 functions.php:85 template-parts/offcanvas.php:29
 msgid "Primary menu"
 msgstr "Главное меню"
 
@@ -1630,7 +1634,7 @@ msgstr "Доступна новая версия темы <strong>% s </strong>.
 msgid "Update to version %s"
 msgstr "Обновить до версии %s"
 
-#: footer.php:58 vendor/envato_setup/envato_setup.php:1254
+#: footer.php:58 vendor/envato_setup/envato_setup.php:1253
 msgid "Our Work"
 msgstr "Наша работа"
 
@@ -1851,7 +1855,7 @@ msgstr "Краткий список жертвователей"
 #: src/js/blocks/cover.js:161 src/js/blocks/events.js:292
 #: src/js/blocks/info.js:190 src/js/blocks/info.js:229
 #: src/js/blocks/info.js:268 src/js/blocks/news.js:279
-#: src/js/blocks/partners.js:201 src/js/blocks/people.js:227
+#: src/js/blocks/partners.js:201 src/js/blocks/people.js:243
 #: src/js/blocks/projects.js:326
 msgid "Heading"
 msgstr "Заголовок"
@@ -1869,7 +1873,7 @@ msgid "Partner Categories"
 msgstr "Категория партнеров"
 
 #: modules/org/hooks.php:11 src/js/blocks/news.js:129
-#: src/js/blocks/partners.js:160 src/js/blocks/people.js:183
+#: src/js/blocks/partners.js:160 src/js/blocks/people.js:199
 msgid "All Categories"
 msgstr "Все категории"
 
@@ -2043,37 +2047,37 @@ msgstr "Поделиться на Viber"
 msgid "Share on WhatsApp"
 msgstr "Поделиться в WhatsApp"
 
-#: modules/starter/import_remote_content.php:394
+#: modules/starter/import_remote_content.php:396
 msgid "No zip file"
 msgstr "ZIP-файл не найден"
 
-#: modules/starter/import_remote_content.php:398
+#: modules/starter/import_remote_content.php:400
 #, php-format
 msgid "Zip file not found: %s"
 msgstr ".zip-файл не найден: %s"
 
-#: modules/starter/import_remote_content.php:422
+#: modules/starter/import_remote_content.php:424
 #, php-format
 msgid "Unzip FAILED: %s to %s. Error: %s"
 msgstr "Процесс разархивирования НЕ УДАЛСЯ: %s – %s. Ошибка: %s"
 
-#: modules/starter/import_remote_content.php:435
+#: modules/starter/import_remote_content.php:437
 msgid "No git content dir!"
 msgstr "Git-директория не найдена!"
 
-#: modules/starter/import_remote_content.php:439
+#: modules/starter/import_remote_content.php:441
 #, php-format
 msgid "Unzipped dir not found: %s"
 msgstr "Разархивированная директория не найдена: %s"
 
-#: modules/starter/import_remote_content.php:445
+#: modules/starter/import_remote_content.php:447
 #, php-format
 msgid "Plot dir not found: %s"
 msgstr "Директория сценария не найдена: %s"
 
 #: modules/starter/plot_config.php:128
-#: modules/starter/plot_data_builder.php:1053
-#: modules/starter/plot_data_builder.php:1055
+#: modules/starter/plot_data_builder.php:1050
+#: modules/starter/plot_data_builder.php:1052
 msgid "Primary Menu"
 msgstr "Главное меню"
 
@@ -2210,7 +2214,7 @@ msgstr "Исключить кампании"
 #: src/js/blocks/cta.js:249 src/js/blocks/events.js:333
 #: src/js/blocks/hero.js:478 src/js/blocks/info.js:308
 #: src/js/blocks/news.js:333 src/js/blocks/partners.js:277
-#: src/js/blocks/people.js:304 src/js/blocks/projects.js:380
+#: src/js/blocks/people.js:320 src/js/blocks/projects.js:380
 #: src/js/blocks/recommend.js:117
 msgid "Background Color"
 msgstr "Цвет фона"
@@ -2250,9 +2254,9 @@ msgstr "Нижний"
 #: src/js/blocks/cover.js:158 src/js/blocks/cta.js:145
 #: src/js/blocks/events.js:289 src/js/blocks/hero.js:186
 #: src/js/blocks/info.js:164 src/js/blocks/news.js:275
-#: src/js/blocks/partners.js:198 src/js/blocks/people.js:223
+#: src/js/blocks/partners.js:198 src/js/blocks/people.js:239
 #: src/js/blocks/projects.js:323 vendor/envato_setup/envato_setup.php:327
-#: vendor/envato_setup/envato_setup.php:736
+#: vendor/envato_setup/envato_setup.php:735
 msgid "Settings"
 msgstr "Параметры"
 
@@ -2279,7 +2283,7 @@ msgstr "Минимальная высота"
 #: src/js/blocks/cover.js:284 src/js/blocks/cta.js:243
 #: src/js/blocks/events.js:327 src/js/blocks/info.js:302
 #: src/js/blocks/news.js:327 src/js/blocks/partners.js:271
-#: src/js/blocks/people.js:298 src/js/blocks/projects.js:374
+#: src/js/blocks/people.js:314 src/js/blocks/projects.js:374
 msgid "Colors"
 msgstr "Цвета"
 
@@ -2375,7 +2379,7 @@ msgid "List"
 msgstr "Список"
 
 #: src/js/blocks/events.js:119 src/js/blocks/partners.js:218
-#: src/js/blocks/people.js:245
+#: src/js/blocks/people.js:261
 msgid "Grid"
 msgstr "Плитка"
 
@@ -2419,7 +2423,7 @@ msgstr "Ссылки в шапке"
 
 #: src/js/blocks/events.js:343 src/js/blocks/info.js:318
 #: src/js/blocks/news.js:343 src/js/blocks/partners.js:287
-#: src/js/blocks/people.js:314 src/js/blocks/projects.js:390
+#: src/js/blocks/people.js:330 src/js/blocks/projects.js:390
 msgid "Heading Color"
 msgstr "Цвет заголовка"
 
@@ -2429,13 +2433,13 @@ msgid "Links Color"
 msgstr "Цвет ссылок"
 
 #: src/js/blocks/events.js:365 src/js/blocks/news.js:385
-#: src/js/blocks/partners.js:299 src/js/blocks/people.js:346
+#: src/js/blocks/partners.js:299 src/js/blocks/people.js:362
 #: src/js/blocks/projects.js:422
 msgid "Query"
 msgstr "Сортировка и фильтрация"
 
 #: src/js/blocks/events.js:371 src/js/blocks/news.js:391
-#: src/js/blocks/partners.js:305 src/js/blocks/people.js:352
+#: src/js/blocks/partners.js:305 src/js/blocks/people.js:368
 #: src/js/blocks/projects.js:428
 msgid "Order by"
 msgstr "Сортировать по"
@@ -2453,7 +2457,7 @@ msgid "Included events"
 msgstr "Включенные мероприятия"
 
 #: src/js/blocks/events.js:386 src/js/blocks/news.js:407
-#: src/js/blocks/partners.js:321 src/js/blocks/people.js:368
+#: src/js/blocks/partners.js:321 src/js/blocks/people.js:384
 #: src/js/blocks/projects.js:444
 msgid "Offset"
 msgstr "Пропустить"
@@ -2534,6 +2538,22 @@ msgstr "Типографика"
 msgid "Heading level"
 msgstr "Уровень заголовка"
 
+#: src/js/blocks/hint.js:22
+msgid "Hint"
+msgstr "Подсказка"
+
+#: src/js/blocks/hint.js:26
+msgid "hint"
+msgstr "hint"
+
+#: src/js/blocks/hint.js:53
+msgid "Up Arrow"
+msgstr "Стрелка вверх"
+
+#: src/js/blocks/hint.js:58
+msgid "Down Arrow"
+msgstr "Стрелка вниз"
+
 #: src/js/blocks/info.js:55
 msgid "info"
 msgstr "info"
@@ -2612,7 +2632,7 @@ msgid "Posts to show"
 msgstr "Сколько постов показывать"
 
 #: src/js/blocks/news.js:301 src/js/blocks/partners.js:244
-#: src/js/blocks/people.js:271 src/js/blocks/projects.js:348
+#: src/js/blocks/people.js:287 src/js/blocks/projects.js:348
 msgid "Columns"
 msgstr "Колонки"
 
@@ -2625,22 +2645,22 @@ msgid "Date Color"
 msgstr "Цвет даты"
 
 #: src/js/blocks/news.js:393 src/js/blocks/partners.js:307
-#: src/js/blocks/people.js:354 src/js/blocks/projects.js:430
+#: src/js/blocks/people.js:370 src/js/blocks/projects.js:430
 msgid "Newest to oldest"
 msgstr "От новых к старым"
 
 #: src/js/blocks/news.js:394 src/js/blocks/partners.js:308
-#: src/js/blocks/people.js:355 src/js/blocks/projects.js:431
+#: src/js/blocks/people.js:371 src/js/blocks/projects.js:431
 msgid "Oldest to newest"
 msgstr "От старых к новым"
 
 #: src/js/blocks/news.js:395 src/js/blocks/partners.js:309
-#: src/js/blocks/people.js:356 src/js/blocks/projects.js:432
+#: src/js/blocks/people.js:372 src/js/blocks/projects.js:432
 msgid "A → Z"
 msgstr "А → Я"
 
 #: src/js/blocks/news.js:396 src/js/blocks/partners.js:310
-#: src/js/blocks/people.js:357 src/js/blocks/projects.js:433
+#: src/js/blocks/people.js:373 src/js/blocks/projects.js:433
 msgid "Z → A"
 msgstr "Я → А"
 
@@ -2649,7 +2669,7 @@ msgid "Number of posts to skip"
 msgstr "Сколько постов пропустить"
 
 #: src/js/blocks/news.js:421 src/js/blocks/partners.js:335
-#: src/js/blocks/people.js:382
+#: src/js/blocks/people.js:398
 msgid "Select category"
 msgstr "Выберите категорию"
 
@@ -2673,11 +2693,11 @@ msgstr "Плитка с изображениями в четыре колонк�
 msgid "Edit partners"
 msgstr "Редактировать партнеров"
 
-#: src/js/blocks/partners.js:211 src/js/blocks/people.js:238
+#: src/js/blocks/partners.js:211 src/js/blocks/people.js:254
 msgid "Layout"
 msgstr "Шаблон"
 
-#: src/js/blocks/partners.js:222 src/js/blocks/people.js:249
+#: src/js/blocks/partners.js:222 src/js/blocks/people.js:265
 msgid "Carousel"
 msgstr "Карусель"
 
@@ -2685,7 +2705,7 @@ msgstr "Карусель"
 msgid "Partners to show"
 msgstr "Сколько партнеров показывать"
 
-#: src/js/blocks/partners.js:257 src/js/blocks/people.js:284
+#: src/js/blocks/partners.js:257 src/js/blocks/people.js:300
 msgid "Enable link"
 msgstr "Включить ссылку"
 
@@ -2693,51 +2713,51 @@ msgstr "Включить ссылку"
 msgid "Number of partners to skip"
 msgstr "Сколько партнеров пропустить"
 
-#: src/js/blocks/people.js:80
+#: src/js/blocks/people.js:96
 msgid "people"
 msgstr "people"
 
-#: src/js/blocks/people.js:80
+#: src/js/blocks/people.js:96
 msgid "user"
 msgstr "user"
 
-#: src/js/blocks/people.js:80
+#: src/js/blocks/people.js:96
 msgid "team"
 msgstr "team"
 
-#: src/js/blocks/people.js:80
+#: src/js/blocks/people.js:96
 msgid "profile"
 msgstr "profile"
 
-#: src/js/blocks/people.js:81
+#: src/js/blocks/people.js:97
 msgid "Tile with photos, names and short descriptions in 3-8 columns."
 msgstr "Плитка с фотографиями, именами и краткими описаниями в 3—8 колонок."
 
-#: src/js/blocks/people.js:165
+#: src/js/blocks/people.js:181
 msgid "Squared"
 msgstr "Квадратный"
 
-#: src/js/blocks/people.js:170
+#: src/js/blocks/people.js:186
 msgid "Rounded"
 msgstr "Скругленный"
 
-#: src/js/blocks/people.js:211
+#: src/js/blocks/people.js:227
 msgid "Edit team"
 msgstr "Редактировать команду"
 
-#: src/js/blocks/people.js:259
+#: src/js/blocks/people.js:275
 msgid "People to show"
 msgstr "Сколько людей показывать"
 
-#: src/js/blocks/people.js:324
+#: src/js/blocks/people.js:340
 msgid "Name Color"
 msgstr "Цвет имени"
 
-#: src/js/blocks/people.js:334
+#: src/js/blocks/people.js:350
 msgid "Description Color"
 msgstr "Цвет описания"
 
-#: src/js/blocks/people.js:373
+#: src/js/blocks/people.js:389
 msgid "Number of peoples to skip"
 msgstr "Сколько людей пропустить"
 
@@ -3191,13 +3211,13 @@ msgid "Ajax error"
 msgstr "Ошибка Ajax"
 
 #: vendor/envato_setup/envato_setup.php:407
-#: vendor/envato_setup/envato_setup.php:1136
+#: vendor/envato_setup/envato_setup.php:1135
 #: vendor/envato_setup/steps/intro.php:53
 msgid "Error:"
 msgstr "Ошибка:"
 
 #: vendor/envato_setup/envato_setup.php:409
-#: vendor/envato_setup/envato_setup.php:1142
+#: vendor/envato_setup/envato_setup.php:1141
 #: vendor/envato_setup/steps/intro.php:57
 msgid "Back to the Dashboard"
 msgstr "Вернуться в административный раздел сайта"
@@ -3226,87 +3246,91 @@ msgstr "Обновление плагина"
 msgid "Installing Plugin"
 msgstr "Установка плагина"
 
-#: vendor/envato_setup/envato_setup.php:641
-msgid "Line of Color"
-msgstr "Линия Цвета"
+#: vendor/envato_setup/envato_setup.php:640
+msgid "Organization name"
+msgstr "Название организации"
 
-#: vendor/envato_setup/envato_setup.php:727
+#: vendor/envato_setup/envato_setup.php:641
+msgid "Subtitle"
+msgstr "Подзаголовок"
+
+#: vendor/envato_setup/envato_setup.php:726
 msgid "Website title and description"
 msgstr "Название и описание сайта"
 
-#: vendor/envato_setup/envato_setup.php:728
+#: vendor/envato_setup/envato_setup.php:727
 msgid "Insert default website title and description as seen in the demo."
 msgstr "Укажите название и напишите краткое описание сайта."
+
+#: vendor/envato_setup/envato_setup.php:728
+#: vendor/envato_setup/envato_setup.php:737
+#: vendor/envato_setup/envato_setup.php:746
+#: vendor/envato_setup/envato_setup.php:755
+msgid "Pending"
+msgstr "Отложено"
 
 #: vendor/envato_setup/envato_setup.php:729
 #: vendor/envato_setup/envato_setup.php:738
 #: vendor/envato_setup/envato_setup.php:747
 #: vendor/envato_setup/envato_setup.php:756
-msgid "Pending"
-msgstr "Отложено"
-
-#: vendor/envato_setup/envato_setup.php:730
-#: vendor/envato_setup/envato_setup.php:739
-#: vendor/envato_setup/envato_setup.php:748
-#: vendor/envato_setup/envato_setup.php:757
 msgid "Installing..."
 msgstr "Установка..."
 
-#: vendor/envato_setup/envato_setup.php:737
+#: vendor/envato_setup/envato_setup.php:736
 msgid "Insert default website settings as seen in the demo."
 msgstr "Набор демонстрационных значений параметров сайта."
 
-#: vendor/envato_setup/envato_setup.php:746
+#: vendor/envato_setup/envato_setup.php:745
 msgid "Install default website posts, pages and menus."
 msgstr "Установить записи, страницы и меню."
 
-#: vendor/envato_setup/envato_setup.php:755
+#: vendor/envato_setup/envato_setup.php:754
 msgid "Install donations components."
 msgstr "Установить модуль для сбора пожертвований."
 
-#: vendor/envato_setup/envato_setup.php:811
+#: vendor/envato_setup/envato_setup.php:810
 msgid "No content Found"
 msgstr "Контент не найден"
 
-#: vendor/envato_setup/envato_setup.php:876
+#: vendor/envato_setup/envato_setup.php:875
 msgid "Error"
 msgstr "Ошибка"
 
-#: vendor/envato_setup/envato_setup.php:897
+#: vendor/envato_setup/envato_setup.php:896
 #: vendor/envato_setup/steps/intro.php:71
 msgid "Downloading template archive..."
 msgstr "Идет скачивание архива темы..."
 
-#: vendor/envato_setup/envato_setup.php:898
+#: vendor/envato_setup/envato_setup.php:897
 msgid "Extracting template content..."
 msgstr "Идет распаковка архива темы..."
 
-#: vendor/envato_setup/envato_setup.php:899
+#: vendor/envato_setup/envato_setup.php:898
 msgid "Importing template content..."
 msgstr "Идет импорт содержимого. Операция может занять несколько минут..."
 
-#: vendor/envato_setup/envato_setup.php:900
+#: vendor/envato_setup/envato_setup.php:899
 msgid "Building template files..."
 msgstr "Подготовка файлов..."
 
-#: vendor/envato_setup/envato_setup.php:901
+#: vendor/envato_setup/envato_setup.php:900
 msgid "Building template options..."
 msgstr "Подготовка настроек..."
 
-#: vendor/envato_setup/envato_setup.php:902
+#: vendor/envato_setup/envato_setup.php:901
 msgid "Building template colors..."
 msgstr "Подготовка цветов..."
 
-#: vendor/envato_setup/envato_setup.php:912
+#: vendor/envato_setup/envato_setup.php:911
 msgid "Please select the scenario"
 msgstr "Пожалуйста выберите шаблон"
 
-#: vendor/envato_setup/envato_setup.php:946
+#: vendor/envato_setup/envato_setup.php:945
 #, php-format
 msgid "Plot data builder was not produced for plot: %s"
 msgstr "Конструктор сценариев не обнаружен для сценария: %s"
 
-#: vendor/envato_setup/envato_setup.php:1136
+#: vendor/envato_setup/envato_setup.php:1135
 #, php-format
 msgid ""
 "Please, send a report about it to the <a href='mailto:%s' "
@@ -3315,7 +3339,7 @@ msgstr ""
 "Пожалуйста, напишите об этой ошибке <a href='mailto:%s' "
 "target='_blank'>нашей службе тех.поддержки</a>."
 
-#: vendor/envato_setup/envato_setup.php:1138
+#: vendor/envato_setup/envato_setup.php:1137
 #, php-format
 msgid ""
 "We're sorry, but some error occured during to this wizard step :( <div "
@@ -3326,12 +3350,12 @@ msgstr ""
 "class='wizard-error-support-text'>Пожалуйста, напишите об этом <a "
 "href='mailto:%s' target='_blank'>нашей службе тех.поддержки</a>."
 
-#: vendor/envato_setup/envato_setup.php:1143
+#: vendor/envato_setup/envato_setup.php:1142
 #: vendor/envato_setup/steps/intro.php:58
 msgid "Email to the theme support"
 msgstr "Написать тех.службе"
 
-#: vendor/envato_setup/envato_setup.php:1174
+#: vendor/envato_setup/envato_setup.php:1173
 msgid ""
 "Our office, training rooms and support group rooms are open daily from 9:00 "
 "am to 10:00 pm."
@@ -3339,7 +3363,7 @@ msgstr ""
 "Наш офис, учебные залы и помещения групп поддержки открыты ежедневно с 9:00 "
 "до 22:00 часов."
 
-#: vendor/envato_setup/envato_setup.php:1175
+#: vendor/envato_setup/envato_setup.php:1174
 msgid ""
 "Moscow, 7th Stroiteley Street, 17, office: 211-217\n"
 "+7 (495) 787-87-23"
@@ -3347,7 +3371,7 @@ msgstr ""
 "Москва, 7-я улица Строителей, 17, оф.: 211-217\n"
 "+7 (495) 787-87-23"
 
-#: vendor/envato_setup/envato_setup.php:1180
+#: vendor/envato_setup/envato_setup.php:1179
 #, php-format
 msgid ""
 "By making a donation, the user concludes a donation agreement by accepting a "
@@ -3356,23 +3380,23 @@ msgstr ""
 "Совершая пожертвование, пользователь заключает договор пожертвования путем "
 "акцепта публичной оферты, которая находится %sздесь%s."
 
-#: vendor/envato_setup/envato_setup.php:1181
+#: vendor/envato_setup/envato_setup.php:1180
 msgid "Personal data processing policy"
 msgstr "Политика обработки персональных данных"
 
-#: vendor/envato_setup/envato_setup.php:1182
+#: vendor/envato_setup/envato_setup.php:1181
 msgid "Privacy policy"
 msgstr "Политика конфиденциальности"
 
-#: vendor/envato_setup/envato_setup.php:1231
+#: vendor/envato_setup/envato_setup.php:1230
 msgid "Related items"
 msgstr "Еще по теме"
 
-#: vendor/envato_setup/envato_setup.php:1255
+#: vendor/envato_setup/envato_setup.php:1254
 msgid "kandinsky-our-work-footer-menu"
 msgstr "menyu-nasha-rabota-v-podvale"
 
-#: vendor/envato_setup/envato_setup.php:1257
+#: vendor/envato_setup/envato_setup.php:1256
 msgid "kandinsky-news-footer-menu"
 msgstr "menyu-novosti-v-podvale"
 
@@ -3726,6 +3750,12 @@ msgstr ""
 #: vendor/envato_setup/steps/support.php:41
 msgid "OK, I've got it!"
 msgstr "Понятно!"
+
+#~ msgid "Cyr to Lat enhanced"
+#~ msgstr "Cyr to Lat enhanced"
+
+#~ msgid "Line of Color"
+#~ msgstr "Линия Цвета"
 
 #~ msgid "Available only on mobile devices"
 #~ msgstr "Доступен только на мобильных устройствах"
@@ -4301,9 +4331,6 @@ msgstr "Понятно!"
 
 #~ msgid "Our organization description on main page"
 #~ msgstr "Описание организации на главной странице"
-
-#~ msgid "Our organization"
-#~ msgstr "Наша организация"
 
 #~ msgid "Content:"
 #~ msgstr "Контент:"
