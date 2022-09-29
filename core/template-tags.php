@@ -819,7 +819,7 @@ function knd_offcanvas_close(){
  */
 function knd_header_button_markup() {
 	$link = get_theme_mod( 'header_button_link' );
-	$text = get_theme_mod( 'header_button_text', esc_html__( 'Help now', 'knd' ) );
+	$text = get_theme_mod( 'header_button_text', esc_html__( 'Button text', 'knd' ) );
 	if ( $text ) {
 		?>
 		<a href="<?php echo esc_url( $link ); ?>" role="button" class="knd-button knd-button-sm">
@@ -847,7 +847,7 @@ function knd_offcanvas_button(){
 		<div class="knd-offcanvas-section knd-offcanvas-button">
 			<?php
 			$link = get_theme_mod( 'offcanvas_button_link' );
-			$text = get_theme_mod( 'offcanvas_button_text', esc_html__( 'Help now', 'knd' ) );
+			$text = get_theme_mod( 'offcanvas_button_text', esc_html__( 'Button text', 'knd' ) );
 			if ( $text ) {
 				?>
 				<a href="<?php echo esc_url( $link ); ?>" role="button" class="knd-button knd-button-sm">
@@ -904,7 +904,7 @@ function knd_offcanvas_additional_button(){
 function knd_header_mobile_button(){
 	if ( get_theme_mod( 'header_button', true ) ) {
 		$link = get_theme_mod( 'header_button_link' );
-		$text = get_theme_mod( 'header_button_text', esc_html__( 'Help now', 'knd' ) );
+		$text = get_theme_mod( 'header_button_text', esc_html__( 'Button text', 'knd' ) );
 		if ( $text ) {
 			?>
 			<a href="<?php echo esc_url( $link ); ?>" role="button" class="knd-button knd-button-xs">

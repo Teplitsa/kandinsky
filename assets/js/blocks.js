@@ -1335,7 +1335,7 @@
 			},
 			button: {
 				type: 'string',
-				default: __( 'Help Now', 'knd' ),
+				default: __( 'Button text', 'knd' ),
 			},
 			buttonUrl: {
 				type: 'string',
@@ -1352,7 +1352,7 @@
 			attributes: {
 				heading: __( 'We help people to fight alcohol addiction', 'knd' ),
 				text: __( 'There are 877 people in our region who suffer from alcohol addiction. Your support will help organize a rehabilitation program for them.', 'knd' ),
-				button: __( 'Help Now', 'knd' ),
+				button: __( 'Button text', 'knd' ),
 				backgroundImage: {
 					url: kndBlock.getImageUrl.heroBackground,
 				},

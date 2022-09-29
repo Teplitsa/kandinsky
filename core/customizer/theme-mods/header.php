@@ -373,7 +373,7 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'settings'          => 'header_button_text',
 	'label'             => esc_html__( 'Button Text', 'knd' ),
 	'section'           => 'header',
-	'default'           => esc_html__( 'Help now', 'knd' ),
+	'default'           => esc_html__( 'Button Text', 'knd' ),
 	'sanitize_callback' => 'wp_kses_post',
 	'active_callback'   => array(
 		array(
@@ -497,7 +497,7 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'settings'          => 'offcanvas_button_text',
 	'label'             => esc_html__( 'Button Text', 'knd' ),
 	'section'           => 'header',
-	'default'           => esc_html__( 'Help now', 'knd' ),
+	'default'           => esc_html__( 'Button Text', 'knd' ),
 	'sanitize_callback' => 'wp_kses_post',
 	'active_callback'   => array(
 		array(

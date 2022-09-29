@@ -23,7 +23,7 @@ register_block_type( 'knd/hero', array(
 		),
 		'button'        => array(
 			'type'    => 'string',
-			'default' => esc_html__( 'Help Now', 'knd' ),
+			'default' => esc_html__( 'Button text', 'knd' ),
 		),
 		'buttonUrl'        => array(
 			'type'    => 'string',
