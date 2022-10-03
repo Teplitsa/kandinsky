@@ -230,15 +230,7 @@ function knd_section_title() {
 	$title = '';
 	$css   = '';
 
-	if ( is_category() ) {
-		if ( get_option( 'page_for_posts' ) ) {
-			$p     = get_post( get_option( 'page_for_posts' ) );
-			$title = get_the_title( $p );
-			$title .= knd_get_sep( '&mdash;' );
-		}
-		$title .= single_term_title( '', false );
-		$css = 'archive';
-	} elseif ( is_tag() || is_tax() ) {
+	if ( is_category() || is_tag() || is_tax() ) {
 		$title = single_term_title( '', false );
 		$css = 'archive';
 	} elseif ( is_home() ) {
