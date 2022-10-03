@@ -9,7 +9,7 @@ global $post;
 
 $post_index = $wp_query->current_post;
 
-$post_class = 'flex-cell flex-md-6 knd-post-item';
+$post_class = 'flex-cell flex-md-6 knd-post-item knd-entry';
 if ( ! is_paged() && ( 0 === $post_index || 1 === $post_index ) ) {
 	$post_class .= ' tpl-related-post';
 } else {

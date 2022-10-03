@@ -51,7 +51,7 @@ get_header(); ?>
 					<div class="flex-row start cards-loop">
 					<?php
 					while ( $query->have_posts() ) : $query->the_post();
-					$post_class = 'flex-cell flex-md-6 knd-post-item flex-lg-4 tpl-post';
+					$post_class = 'flex-cell flex-md-6 knd-post-item flex-lg-4 tpl-post knd-entry';
 					if ( get_theme_mod('projects_completed_style') ) {
 						$post_class .= ' knd-project-completed';
 					}
