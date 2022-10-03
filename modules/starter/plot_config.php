@@ -48,11 +48,11 @@ class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
 			'projects' => array(
 				'post_type' => 'project',
 				'pieces'    => array(
-					'project1',
-					'project2',
-					'project3',
-					'project4',
 					'project5',
+					'project4',
+					'project3',
+					'project2',
+					'project1',
 				),
 			),
 			'partners' => array(

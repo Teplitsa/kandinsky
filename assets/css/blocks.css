@@ -1971,6 +1971,7 @@
 .knd-entry:not(.has-post-thumbnail) .entry-preview:after {
 	position: relative;
 	padding-top: 62%;
+	height: auto;
 }
 
 .wp-block-knd-people .knd-entry:not(.has-post-thumbnail) .entry-preview:after {
