@@ -18,6 +18,32 @@ if ( defined( 'EM_VERSION' ) ) {
 	knd_events_update_default_options();
 }
 
+/** Sanitize categories slug */
+$categories = get_terms( array(
+	'taxonomy'   => 'category',
+	'hide_empty' => false,
+) );
+
+if ( $categories && ! is_wp_error( $categories ) ){
+	foreach( $categories as $category ){
+		$category_slug = sanitize_title( $category->slug );
+		wp_update_term( $category->term_id, 'category', array( 'slug' => $category_slug ) );
+	}
+}
+
+/** Sanitize tags slug */
+$tags = get_terms( array(
+	'taxonomy'   => 'post_tag',
+	'hide_empty' => false,
+) );
+
+if ( $tags && ! is_wp_error( $tags ) ){
+	foreach( $tags as $tag ){
+		$tag_slug = sanitize_title( $tag->slug );
+		wp_update_term( $tag->term_id, 'post_tag', array( 'slug' => $tag_slug ) );
+	}
+}
+
 ?>
 
 <h1><?php esc_html_e('Help and support', 'knd'); ?></h1>

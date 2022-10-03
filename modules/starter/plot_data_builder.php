@@ -865,9 +865,9 @@ class KND_Plot_Data_Builder {
 				$page_data['meta_input'][ $meta_name ] = $meta_value;
 			}
 		}
-		
+
 		$uid = wp_insert_post($page_data);
-		
+
 		// add to tax
 		if(count($piece->tags_list)) {
 			$taxonomy = 'post_tag';
@@ -878,7 +878,7 @@ class KND_Plot_Data_Builder {
 				wp_cache_flush();
 			}
 		}
-		
+
 		if(count($piece->cats_list)) {
 			$taxonomy = ($post_type == 'person') ? 'person_cat' : 'category';
 			$terms_list = $this->get_terms_list($piece->cats_list, $taxonomy);
