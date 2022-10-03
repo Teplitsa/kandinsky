@@ -14,8 +14,8 @@ if ( ! defined( 'WPINC' ) ) {
  */
 function knd_inline_style() {
 
-	$main_color        = get_theme_mod( 'knd_main_color', '#dd1400' );
-	$main_color_active = get_theme_mod( 'knd_main_color_active', '#c81303' );
+	$main_color        = get_theme_mod( 'knd_main_color', '#d30a6a' );
+	$main_color_active = get_theme_mod( 'knd_main_color_active', '#ab0957' );
 
 	$knd_page_bg_color      = get_theme_mod( 'knd_page_bg_color', '#ffffff' );
 	$knd_page_bg_color_dark = knd_color_luminance( $knd_page_bg_color, - 0.2 );

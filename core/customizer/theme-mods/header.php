@@ -262,7 +262,7 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'settings'  => 'header_menu_color_hover',
 	'label'     => esc_html__( 'Menu Links Color Hover', 'knd' ),
 	'section'   => 'header',
-	'default'   => '#dd1400',
+	'default'   => '#d30a6a',
 	'transport' => 'auto',
 	'output'    => array(
 		array(

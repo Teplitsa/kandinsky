@@ -412,7 +412,7 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'settings'  => 'footer_color_link',
 	'label'     => esc_html__( 'Footer Links Color', 'knd' ),
 	'section'   => 'footer',
-	'default'   => '#dd1400',
+	'default'   => '#d30a6a',
 	'transport' => 'auto',
 	'output'    => array(
 		array(
@@ -427,7 +427,7 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'settings'  => 'footer_color_link_hover',
 	'label'     => esc_html__( 'Footer Links Color Hover', 'knd' ),
 	'section'   => 'footer',
-	'default'   => '#c81303',
+	'default'   => '#ab0957',
 	'transport' => 'auto',
 	'output'    => array(
 		array(

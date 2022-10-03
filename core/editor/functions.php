@@ -131,7 +131,7 @@ function knd_color_palette() {
 		array(
 			'name'  => esc_html( 'Main', 'knd' ),
 			'slug'  => 'main',
-			'color' => get_theme_mod( 'knd_main_color', '#dd1400' ),
+			'color' => get_theme_mod( 'knd_main_color', '#d30a6a' ),
 		),
 		array(
 			'name' => esc_html( 'Base', 'knd' ),

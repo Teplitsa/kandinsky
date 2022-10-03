@@ -130,7 +130,7 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'label'       => esc_html__( 'Buttons and links color', 'knd' ),
 	'description' => esc_html__( 'Also used in other decorative elements', 'knd' ),
 	'section'     => 'fonts_colors',
-	'default'     => '#dd1400',
+	'default'     => '#d30a6a',
 	'transport'   => 'auto',
 	'output'      => array(
 		array(
@@ -146,7 +146,7 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'label'       => esc_html__( 'Buttons and links color hover', 'knd' ),
 	'description' => esc_html__( 'Also used in other active elements', 'knd' ), 
 	'section'     => 'fonts_colors',
-	'default'     => '#c81303',
+	'default'     => '#ab0957',
 	'transport'   => 'auto',
 	'output'      => array(
 		array(
