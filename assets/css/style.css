@@ -3311,7 +3311,7 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 }
 
 .tpl-post:hover .entry-preview:after, .tpl-related-post:hover .entry-preview:after {
-	background: rgba(0, 0, 0, 0.25);
+	background: rgba(0, 0, 0, 0.1);
 }
 
 .tpl-post .thumbnail-link, .tpl-related-post .thumbnail-link {
@@ -3441,7 +3441,7 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 }
 
 .tpl-project:hover .entry-preview:after {
-	background: rgba(0, 0, 0, 0.3);
+	background: rgba(0, 0, 0, 0.1);
 }
 
 .tpl-project a {
@@ -3984,7 +3984,6 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 	font-family: var(--knd-font-family-base);
 	line-height: 1.33;
 	font-weight: 600;
-	margin-right: 4px;
 }
 
 @media (min-width: 440px) and (max-width: 768px) {
@@ -4007,6 +4006,10 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 
 .tags-line a:hover {
 	color: var(--knd-color-main-active);
+}
+
+.tags-line:not(.single-post-terms) a {
+	margin-right: 4px;
 }
 
 /** == Pages (_pages.scss) == **/

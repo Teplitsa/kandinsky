@@ -62,7 +62,7 @@
 	transition: color 0.3s, background 0.3s, border 0.3s, opacity 0.3s;
 	
 	&:hover {
-		.entry-preview:after { background: rgba(0,0,0, 0.25); }
+		.entry-preview:after { background: rgba(0,0,0, 0.1); }
 	}
 
 	.thumbnail-link {
@@ -117,7 +117,7 @@
 	transition: color 0.3s, background 0.3s, border 0.3s, opacity 0.3s;
 
 	&:hover {
-		.entry-preview:after { background: rgba(0,0,0, 0.3); }
+		.entry-preview:after { background: rgba(0,0,0, 0.1); }
 	}
 
 	a {

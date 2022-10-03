@@ -836,7 +836,7 @@
 }
 
 .wp-block-knd-news .hentry:hover .entry-preview:after {
-	background-color: rgba(0, 0, 0, 0.25);
+	background-color: rgba(0, 0, 0, 0.1);
 }
 
 .wp-block-knd-news .entry-meta {
@@ -1975,6 +1975,10 @@
 
 .wp-block-knd-people .knd-entry:not(.has-post-thumbnail) .entry-preview:after {
 	padding-top: 100%;
+}
+
+.archive-post-list .knd-entry:not(.has-post-thumbnail) .entry-preview {
+	background-color: #f7f8f8;
 }
 
 .knd-partner-placeholder {
