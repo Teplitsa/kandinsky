@@ -121,10 +121,15 @@
 	a {
 		color: var(--knd-color-main);
 		@include knd-link-terms-text();
-		margin-right: 4px;
 
 		&:hover {
 			color: var(--knd-color-main-active);
+		}
+	}
+
+	&:not(.single-post-terms) {
+		a {
+			margin-right: 4px;
 		}
 	}
 }
