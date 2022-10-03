@@ -119,32 +119,37 @@ class KND_Colorline_Data_Builder extends KND_Plot_Data_Builder {
 			// 'site_description'    => '',
 		);
 
-
-		// $this->data_routes['theme_options']['knd_url_pd_policy'] = home_url('legal');
-		// $this->data_routes['theme_options']['knd_url_privacy_policy'] = home_url('legal');
-		// $this->data_routes['theme_options']['knd_url_public_oferta'] = home_url('legal');
-
 		$this->data_routes['menus'] = array(
-			esc_html__('Primary Menu', 'knd') => array(
-				array('post_type' => 'page', 'slug' => 'about' ),
-				array('post_type' => 'page', 'slug' => 'howtohelp' ),
-				array('post_type' => 'page', 'slug' => 'reports' ),
-				array('title' => esc_html__( 'Projects', 'knd' ), 'url' => home_url('/projects/') ),
+			array(
+				'name'  => esc_html__('Primary Menu', 'knd'),
+				'slug'  => 'primary-menu',
+				'items' => array(
+					array('post_type' => 'page', 'slug' => 'about' ),
+					array('post_type' => 'page', 'slug' => 'howtohelp' ),
+					array('post_type' => 'page', 'slug' => 'reports' ),
+					array('title' => esc_html__( 'Projects', 'knd' ), 'url' => home_url('/projects/') ),
+				)
 			),
-			esc_html__( 'Kandinsky our work footer menu', 'knd' ) => array(
-				array('post_type' => 'page', 'slug' => 'about' ),
-				array('post_type' => 'page', 'slug' => 'history' ),
-				array('post_type' => 'page', 'slug' => 'reports' ),
-				array('post_type' => 'page', 'slug' => 'contacts' ),
+			array(
+				'name'  => esc_html__('Kandinsky our work footer menu', 'knd'),
+				'slug'  => 'kandinsky-our-work-footer-menu',
+				'items' => array(
+					array('post_type' => 'page', 'slug' => 'about' ),
+					array('post_type' => 'page', 'slug' => 'history' ),
+					array('post_type' => 'page', 'slug' => 'reports' ),
+					array('post_type' => 'page', 'slug' => 'contacts' ),
+				)
 			),
-			esc_html__( 'Kandinsky news footer menu', 'knd' ) => array(
-				array('title' => esc_html__('News', 'knd'), 'url' => home_url('/news/') ),
-				array('title' => esc_html__( 'Projects', 'knd' ), 'url' => home_url('/projects/') ),
-				array('post_type' => 'page', 'slug' => 'volunteers' ),
-				array('post_type' => 'page', 'slug' => 'howtohelp' ),
+			array(
+				'name'  => esc_html__('Kandinsky news footer menu', 'knd'),
+				'slug'  => 'kandinsky-news-footer-menu',
+				'items' => array(
+					array('title' => esc_html__('News', 'knd'), 'url' => home_url('/news/') ),
+					array('title' => esc_html__( 'Projects', 'knd' ), 'url' => home_url('/projects/') ),
+					array('post_type' => 'page', 'slug' => 'volunteers' ),
+					array('post_type' => 'page', 'slug' => 'howtohelp' ),
+				)
 			),
 		);
-
 	}
-
 }

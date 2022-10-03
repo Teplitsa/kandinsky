@@ -1249,9 +1249,9 @@ function knd_demo_theme_mods() {
 		'footer_policy'              => $policy_content,
 
 		'footer_menu_ourwork_title' => esc_html__( 'Our Work', 'knd' ),
-		'footer_menu_ourwork'       => esc_html__( 'kandinsky-our-work-footer-menu', 'knd' ),
+		'footer_menu_ourwork'       => 'kandinsky-our-work-footer-menu',
 		'footer_menu_news_title'    => esc_html__( 'News', 'knd' ),
-		'footer_menu_news'          => esc_html__( 'kandinsky-news-footer-menu', 'knd' ),
+		'footer_menu_news'          => 'kandinsky-news-footer-menu',
 
 		'archive_bottom_block'  => 'posts-bottom-blocks',
 		'post_bottom_block'     => 'posts-bottom-blocks',

@@ -1023,15 +1023,22 @@ class KND_Plot_Data_Builder {
 		if(!isset($this->data_routes['menus']) || !is_array($this->data_routes['menus'])) {
 			return;
 		}
-		
-		foreach($this->data_routes['menus'] as $menu_name => $menu_items) {
-			
-			if(is_nav_menu($menu_name)){
-				wp_delete_nav_menu($menu_name);
+
+		foreach($this->data_routes['menus'] as $menu ) {
+
+			if ( is_nav_menu( $menu['name'] ) ){
+				wp_delete_nav_menu( $menu['name'] );
 			}
-			$menu_id = wp_create_nav_menu( $menu_name );
-			
-			foreach($menu_items as $k => $v) {
+			$menu_id = wp_create_nav_menu( $menu['name'] );
+
+			if ( $menu_id ) {
+				$args = array(
+					'slug' => $menu['slug'],
+				);
+				wp_update_term( $menu_id, 'nav_menu', $args );
+			}
+
+			foreach($menu['items'] as $k => $v) {
 				if(is_array($v)) {
 					if(isset($v['post_type']) && isset($v['slug'])) {
 						$page = knd_get_post( $v['slug'], $v['post_type'] );
@@ -1044,7 +1051,6 @@ class KND_Plot_Data_Builder {
 					}
 				}
 			}
-			
 		}
 
 		if ( term_exists( esc_html__( 'Primary Menu', 'knd' ), 'nav_menu' ) ) {
