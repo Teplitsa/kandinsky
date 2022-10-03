@@ -2217,10 +2217,6 @@ body > svg {
 	margin-left: auto;
 }
 
-.knd-col-right .knd-header-nav:not(:last-child) {
-	margin-right: 10px;
-}
-
 .knd-header-nav > .knd-nav-menu {
 	font-size: var(--knd-font-size-menu, 18px);
 	--knd-font-submenu-size: .85em;
@@ -2254,7 +2250,7 @@ body > svg {
 }
 
 .knd-header-nav > .menu > li:not(:last-child) {
-	margin-right: 30px;
+	margin-right: 20px;
 }
 
 .knd-header-nav > .menu > li.menu-item-has-children > a > .dropdown-nav-toggle {
@@ -6498,7 +6494,20 @@ div[id*="leyka-pf-"] .inpage-card__thumb {
 	padding: 0 20px 30px;
 	-ms-flex: 0 0 auto;
 	flex: 0 0 auto;
-	width: 33.33333333%;
+	max-width: 100%;
+	width: 100%;
+}
+
+@media (min-width: 768px) {
+	.knd-entry-event__speaker-col {
+		width: 33.33333333%;
+	}
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+	.knd-entry-event__speaker-col {
+		width: 50%;
+	}
 }
 
 .knd-entry-event__speaker-image {

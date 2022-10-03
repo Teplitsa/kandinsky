@@ -3457,7 +3457,20 @@
 	padding: 0 20px 30px;
 	-ms-flex: 0 0 auto;
 	flex: 0 0 auto;
-	width: 33.33333333%;
+	max-width: 100%;
+	width: 100%;
+}
+
+@media (min-width: 768px) {
+	.knd-entry-event__speaker-col {
+		width: 33.33333333%;
+	}
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+	.knd-entry-event__speaker-col {
+		width: 50%;
+	}
 }
 
 .knd-entry-event__speaker-image {
