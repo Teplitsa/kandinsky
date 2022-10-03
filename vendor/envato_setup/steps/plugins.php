@@ -12,6 +12,15 @@ if( !class_exists('TGM_Plugin_Activation') || !isset($GLOBALS['tgmpa'])) {
 if ( ! get_option( 'leyka_last_ver' ) ) {
 	update_option( 'leyka_last_ver', '3.10');
 }
+
+if ( ! get_option( 'wpseo' ) ) {
+	$wpseo_default = array(
+		'should_redirect_after_install_free' => 1,
+		'activation_redirect_timestamp_free' => time(),
+	);
+	update_option( 'wpseo', $wpseo_default );
+}
+
 ?>
 
 <h1><?php esc_html_e('Default Plugins', 'knd'); ?></h1>

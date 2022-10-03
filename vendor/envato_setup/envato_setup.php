@@ -507,7 +507,7 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 						echo 'done';
 						$show_link = true;
 					}
-					?>"><?php
+					?>" data-step="<?php echo esc_attr( $step_key ); ?>"><?php
 						if($show_link) {
 							?>
 							<a href="<?php echo esc_url( $this->get_step_link( $step_key ) ); ?>">

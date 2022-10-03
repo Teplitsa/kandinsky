@@ -335,7 +335,7 @@ function knd_register_required_plugins() {
 		array( 
 			'name'        => esc_html__( 'Yoast SEO', 'knd' ),
 			'slug'        => 'wordpress-seo', 
-			'is_callable' => 'wpseo_init', 
+			'is_callable' => '', 
 			'required'    => true, 
 			'description' => esc_html__( 'A great tool to boost your website SEO positions.', 'knd' )
 		),
@@ -371,8 +371,8 @@ function knd_register_required_plugins() {
 		array( 
 			'name'        => esc_html__( 'Leyka', 'knd' ),
 			'slug'        => 'leyka', 
-			'is_callable' => 'leyka', 
-			'required'    => get_option( 'knd_setup_install_leyka', true ), // knd_get_theme_mod('knd_site_scenario') == 'fundraising-org',
+			'is_callable' => '', 
+			'required'    => get_option( 'knd_setup_install_leyka', true ),
 			'description' => esc_html__( 'This plugin will add means for donations collection to your website.', 'knd' )
 		),
 	);
