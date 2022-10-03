@@ -369,7 +369,7 @@ function knd_em_options_booking_form_options(){
 							</div>
 							<input name="dbem_bookings_custom_fields[<?php echo $key; ?>][order]" class="bookings-custom-field-order" type="hidden" value="<?php echo esc_attr( $order++ ); ?>">
 							<input name="dbem_bookings_custom_fields[<?php echo $key; ?>][label]" class="bookings-custom-field-label"  type="text" value="<?php echo esc_attr( $field_label ); ?>" placeholder="<?php esc_html_e( 'Label', 'knd' ); ?>">
-							<input name="dbem_bookings_custom_fields[<?php echo $key; ?>][slug]" class="bookings-custom-field-slug"  type="text" value="<?php echo esc_attr( $field_slug ); ?>" placeholder="<?php esc_html_e( 'slug', 'knd' ); ?>" <?php readonly( $disabled, true ); ?>>
+							<input name="dbem_bookings_custom_fields[<?php echo $key; ?>][slug]" class="bookings-custom-field-slug"  type="text" value="<?php echo esc_attr( $field_slug ); ?>" placeholder="<?php esc_html_e( 'slug', 'knd' ); ?>" <?php wp_readonly( $disabled, true ); ?>>
 							<?php if ( ! $disabled ) { ?>
 								<a href="#" class="button button-link button-link-delete knd-booking-fields-remove"><?php esc_html_e( 'Delete', 'knd' ); ?></a>
 							<?php } ?>

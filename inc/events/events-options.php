@@ -14,12 +14,10 @@ function knd_events_update_default_options() {
 	//delete_option('dbem_options_updated');
 
 	$em_options = array(
-		'dbem_tags_enabled'             => false,// disable tags. Events > General > General Options - Enable tags?
+		'dbem_tags_enabled'             => false, // disable tags. Events > General > General Options - Enable tags?
 		'dbem_categories_enabled'       => false, // disable categories. Events > General > General Options - Enable categories?
 		'dbem_credits'                  => false, // Disable plugin credits.
-		'dbem_time_format'              => 'g:i', // Time Format.
-		'dbem_location_default_country' => 'RU', // Set default location country
-		'dbem_timezone_default'         => 'Europe/Moscow', // Set default timezone
+		'dbem_time_format'              => 'H:i', // Time Format.
 		'dbem_bookings_submit_button'   =>  esc_html__( 'Book Now', 'knd' ),
 		'dbem_cp_events_comments'       => false, // disable comments.
 		'dbem_events_page_search_form'  => false, // disable search form on events page.
@@ -28,10 +26,6 @@ function knd_events_update_default_options() {
 		'dbem_css_evlist'               => false,
 		'dbem_cp_events_formats'        => false, // Disable auto load content in the_content.
 		'dbem_options_updated'          => true,
-
-		//'dbem_locations_enabled' => 0,
-		//'dbem_single_event_format' => '',
-		//'dbem_single_location_format' => '',
 	);
 
 	$options = array_merge( $options, $em_options );
