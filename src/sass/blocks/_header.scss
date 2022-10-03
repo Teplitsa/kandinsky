@@ -684,10 +684,6 @@
 
 	.knd-col-right & {
 		margin-left: auto;
-
-		&:not(:last-child) {
-			margin-right: 10px;
-		}
 	}
 
 	> .knd-nav-menu {
@@ -716,7 +712,7 @@
 			white-space: nowrap;
 
 			&:not(:last-child) {
-				margin-right: 30px;
+				margin-right: 20px;
 			}
 
 			&.menu-item-has-children {
