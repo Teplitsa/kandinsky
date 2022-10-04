@@ -62,14 +62,11 @@ register_block_type( 'knd/hero', array(
 		),
 		'backgroundImage' => array(
 			'type'    => 'object',
-			'default' => array(
-				'url' => esc_url( get_theme_file_uri( 'assets/images/hero.jpg' ) ),
-			),
 		),
 		'featuredImage' => array(
 			'type'    => 'object',
 			'default' => array(
-				'url' => esc_url( get_theme_file_uri( 'assets/images/hero-featured.png' ) ),
+				'url' => esc_url( get_theme_file_uri( 'assets/images/cta-image.png' ) ),
 			),
 		),
 		'buttonBackground' => array(
@@ -98,6 +95,9 @@ register_block_type( 'knd/hero', array(
 		'anchor'       => array(
 			'type'    => 'string',
 			'default' => '',
+		),
+		'minHeight' => array(
+			'type'    => 'string',
 		),
 	),
 ) );
@@ -225,6 +225,11 @@ function knd_block_hero_render_callback( $attr ) {
 
 	if ( isset( $attr['buttonBackgroundHover'] ) && $attr['buttonBackgroundHover'] ) {
 		$style .= '--knd-button-background-hover:' . $attr['buttonBackgroundHover'] . ';';
+	}
+
+	// Min Height
+	if ( isset( $attr['minHeight'] ) && $attr['minHeight'] ) {
+		$style .= '--knd-block-hero-height:' . $attr['minHeight'] . ';';
 	}
 
 	if ( isset( $attr['blockId'] ) && $attr['blockId'] ) {

@@ -73,8 +73,8 @@ function knd_enqueue_block_editor_assets() {
 
 	$kndBlock['getImageUrl'] = array(
 		'heroBackground'  => esc_url( get_theme_file_uri( 'assets/images/hero.jpg' ) ),
-		'heroFeatured'    => esc_url( get_theme_file_uri( 'assets/images/hero-featured.png' ) ),
-		'ctaFeatured'     => esc_url( get_theme_file_uri( 'assets/images/call-to-action.png' ) ),
+		'heroFeatured'    => esc_url( get_theme_file_uri( 'assets/images/cta-image.png' ) ),
+		'ctaFeatured'     => esc_url( get_theme_file_uri( 'assets/images/cta-image.png' ) ),
 		'campaignPreview' => esc_url( get_theme_file_uri( 'assets/images/campaign.jpg' ) ),
 	);
 

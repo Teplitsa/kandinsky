@@ -6,6 +6,7 @@
 	--knd-block-hero-background: #f7f8f8;
 	--knd-block-hero-overlay-start: rgba(0, 0, 0, 0);
 	--knd-block-hero-overlay-end: rgba(0, 0, 0, 0.8);
+	--knd-block-hero-height: calc(100vh - var(--knd-header-height));
 	--knd-button-color: #fff;
 	--knd-button-color-hover: #fff;
 	--knd-button-background: var(--knd-color-main);
@@ -143,9 +144,7 @@
 
 @media (min-width: 768px){
 	.knd-block-hero.alignfull .knd-block-hero__inner {
-		height: calc(100vh - var(--knd-header-height));
-		max-height: 1000px;
-		min-height: 600px;
+		min-height: var(--knd-block-hero-height);
 		padding-top: 80px;
 		padding-bottom: 80px;
 	}

@@ -8,7 +8,7 @@
 
 	const el = element.createElement;
 
-	const { TextControl, TextareaControl, SelectControl, RangeControl, ColorPalette, ColorPicker, PanelBody, ToggleControl, BaseControl, Button, ButtonGroup, Dropdown, Tooltip, Disabled } = components;
+	const { TextControl, TextareaControl, SelectControl, RangeControl, ColorPalette, ColorPicker, PanelBody, ToggleControl, BaseControl, Button, ButtonGroup, Dropdown, Tooltip, Disabled, __experimentalUnitControl } = components;
 
 	const { registerBlockType, withColors, PanelColorSettings, getColorClassName, useBlockProps } = blocks;
 
@@ -77,9 +77,6 @@
 			},
 			backgroundImage: {
 				type: 'object',
-				default: {
-					url: kndBlock.getImageUrl.heroBackground,
-				}
 			},
 			featuredImage: {
 				type: 'object',
@@ -143,6 +140,9 @@
 			buttonAdditionalUrl: {
 				type: 'string',
 			},
+			minHeight: {
+				type: 'string',
+			},
 		},
 
 		example: {
@@ -150,15 +150,13 @@
 				heading: __( 'We help people to fight alcohol addiction', 'knd' ),
 				text: __( 'There are 877 people in our region who suffer from alcohol addiction. Your support will help organize a rehabilitation program for them.', 'knd' ),
 				button: __( 'Button text', 'knd' ),
-				backgroundImage: {
-					url: kndBlock.getImageUrl.heroBackground,
-				},
 				featuredImage: {
 					url: kndBlock.getImageUrl.heroFeatured,
 				},
-				backgroundColor: '#e6e6e6',
-				overlayColorStart: 'rgba(255,255,255,0.8)',
-				overlayColorEnd:  'rgba(255,255,255,1)',
+				backgroundColor: '#f7f8f8',
+				overlayColorStart: 'rgba(255,255,255,0)',
+				overlayColorEnd:  'rgba(255,255,255,0)',
+				minHeight: '560px',
 			},
 			viewportWidth: 1200
 		},
@@ -296,6 +294,27 @@
 									}
 								}
 							),
+
+							el( __experimentalUnitControl, // __experimentalUseCustomUnits
+								{
+									label: __('Min Height', 'knd'),
+									value: props.attributes.minHeight,
+									onChange: ( val ) => {
+										props.setAttributes( { minHeight: val } );
+									},
+									labelPosition: 'side',
+									units: [
+										{
+											value: "px",
+											label: "px",
+										},
+										{
+											value: "vh",
+											label: "vh",
+										},
+									]
+								}
+							)
 						), // Panel
 
 						// Buttons Panel

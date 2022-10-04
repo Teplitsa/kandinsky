@@ -48,7 +48,7 @@ register_block_type( 'knd/cta', array(
 		'featuredImage' => array(
 			'type'    => 'object',
 			'default' => array(
-				'url' => esc_url( get_theme_file_uri( 'assets/images/call-to-action.png' ) ),
+				'url' => esc_url( get_theme_file_uri( 'assets/images/cta-image.png' ) ),
 			),
 		),
 		'backgroundColor' => array(

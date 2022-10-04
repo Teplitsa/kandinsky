@@ -490,6 +490,7 @@
 	--knd-block-hero-background: #f7f8f8;
 	--knd-block-hero-overlay-start: rgba(0, 0, 0, 0);
 	--knd-block-hero-overlay-end: rgba(0, 0, 0, 0.8);
+	--knd-block-hero-height: calc(100vh - var(--knd-header-height));
 	--knd-button-color: #fff;
 	--knd-button-color-hover: #fff;
 	--knd-button-background: var(--knd-color-main);
@@ -638,9 +639,7 @@
 
 @media (min-width: 768px) {
 	.knd-block-hero.alignfull .knd-block-hero__inner {
-		height: calc(100vh - var(--knd-header-height));
-		max-height: 1000px;
-		min-height: 600px;
+		min-height: var(--knd-block-hero-height);
 		padding-top: 80px;
 		padding-bottom: 80px;
 	}
@@ -1445,13 +1444,32 @@
 	margin-right: 15px;
 }
 
+@media (max-width: 767px) {
+	.knd-block-cta__inner {
+		-ms-flex-direction: column;
+		flex-direction: column;
+	}
+}
+
 .knd-block-cta__content {
 	-ms-flex: 1;
 	flex: 1;
+	min-height: 160px;
 }
 
 .knd-block-cta__content:first-child {
 	text-align: center;
+}
+
+.knd-block-cta__content:not(:first-child) {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-ms-flex-align: start;
+	align-items: flex-start;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
 }
 
 .knd-block-cta__figure {
@@ -1461,6 +1479,21 @@
 	justify-content: center;
 	-ms-flex-align: center;
 	align-items: center;
+}
+
+@media (min-width: 768px) {
+	.knd-block-cta__figure {
+		-ms-flex: 0 0 auto;
+		flex: 0 0 auto;
+		width: 40%;
+		margin-right: 40px;
+	}
+}
+
+@media (max-width: 767px) {
+	.knd-block-cta__figure {
+		margin-bottom: 30px;
+	}
 }
 
 .knd-block-cta__figure img {
@@ -1481,18 +1514,25 @@
 	margin-bottom: 15px;
 }
 
-.knd-block .knd-block-cta__text {
-	color: var(--knd-block-cta-text-color);
-	font-size: 24px;
-	line-height: 1.4;
+.knd-block-cta__text {
 	margin-bottom: 30px;
-	margin-top: 0;
-	padding: 0;
-	font-weight: 800;
-	font-family: var(--knd-font-family-headings);
-	max-width: 700px;
 	margin-left: auto;
 	margin-right: auto;
+	padding: 0;
+	max-width: 700px;
+}
+
+.knd-block .knd-block-cta__text {
+	margin-top: 0;
+	color: var(--knd-block-cta-text-color);
+	font-size: 28px;
+	line-height: 1.3;
+	font-weight: 800;
+	font-family: var(--knd-font-family-headings);
+}
+
+.knd-block-cta__content:not(:first-child) .knd-block-cta__text {
+	margin-left: initial;
 }
 
 .knd-block-cta__action .knd-button, .knd-block-cta__action .knd-event__booking .em-booking-form-details .em-booking-submit, .knd-event__booking .em-booking-form-details .knd-block-cta__action .em-booking-submit, .knd-block-cta__action .knd-event__login [name="wp-submit"], .knd-event__login .knd-block-cta__action [name="wp-submit"] {
@@ -1511,25 +1551,6 @@
 	color: var(--knd-button-color-hover);
 	background-color: var(--knd-button-background-hover);
 	border-color: var(--knd-button-background-hover);
-}
-
-@media (min-width: 768px) {
-	.knd-block-cta__figure {
-		-ms-flex: 0 0 auto;
-		flex: 0 0 auto;
-		width: 40%;
-		margin-right: 40px;
-	}
-}
-
-@media (max-width: 767px) {
-	.knd-block-cta__inner {
-		-ms-flex-direction: column;
-		flex-direction: column;
-	}
-	.knd-block-cta__figure {
-		margin-bottom: 30px;
-	}
 }
 
 /**
