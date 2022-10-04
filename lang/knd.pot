@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Kandinsky\n"
-"POT-Creation-Date: 2022-09-29 19:34+0300\n"
+"POT-Creation-Date: 2022-10-04 06:47+0300\n"
 "PO-Revision-Date: 2020-06-22 06:53+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -119,8 +119,7 @@ msgstr ""
 msgid "Recommendations"
 msgstr ""
 
-#: assets/js/blocks.js:135 src/experimental/gutenberg-experimental.js:98
-#: src/js/blocks/cover.js:134
+#: assets/js/blocks.js:135 src/js/blocks/cover.js:134
 msgid "Default"
 msgstr ""
 
@@ -129,10 +128,10 @@ msgid "Bottom"
 msgstr ""
 
 #: assets/js/blocks.js:159 assets/js/blocks.js:514 assets/js/blocks.js:1046
-#: assets/js/blocks.js:1389 assets/js/blocks.js:2242 assets/js/blocks.js:2768
-#: assets/js/blocks.js:3151 assets/js/blocks.js:3567 assets/js/blocks.js:4094
+#: assets/js/blocks.js:1387 assets/js/blocks.js:2261 assets/js/blocks.js:2787
+#: assets/js/blocks.js:3170 assets/js/blocks.js:3586 assets/js/blocks.js:4113
 #: src/js/blocks/cover.js:158 src/js/blocks/cta.js:145
-#: src/js/blocks/events.js:289 src/js/blocks/hero.js:186
+#: src/js/blocks/events.js:289 src/js/blocks/hero.js:184
 #: src/js/blocks/info.js:164 src/js/blocks/news.js:275
 #: src/js/blocks/partners.js:198 src/js/blocks/people.js:239
 #: src/js/blocks/projects.js:323 vendor/envato_setup/envato_setup.php:327
@@ -140,15 +139,14 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: assets/js/blocks.js:162 assets/js/blocks.js:1049 assets/js/blocks.js:2268
-#: assets/js/blocks.js:2307 assets/js/blocks.js:2346 assets/js/blocks.js:2772
-#: assets/js/blocks.js:3154 assets/js/blocks.js:3571 assets/js/blocks.js:4097
-#: modules/donations/widgets.php:128 src/experimental/donations.js:95
-#: src/js/blocks/cover.js:161 src/js/blocks/events.js:292
-#: src/js/blocks/info.js:190 src/js/blocks/info.js:229
-#: src/js/blocks/info.js:268 src/js/blocks/news.js:279
-#: src/js/blocks/partners.js:201 src/js/blocks/people.js:243
-#: src/js/blocks/projects.js:326
+#: assets/js/blocks.js:162 assets/js/blocks.js:1049 assets/js/blocks.js:2287
+#: assets/js/blocks.js:2326 assets/js/blocks.js:2365 assets/js/blocks.js:2791
+#: assets/js/blocks.js:3173 assets/js/blocks.js:3590 assets/js/blocks.js:4116
+#: modules/donations/widgets.php:128 src/js/blocks/cover.js:161
+#: src/js/blocks/events.js:292 src/js/blocks/info.js:190
+#: src/js/blocks/info.js:229 src/js/blocks/info.js:268
+#: src/js/blocks/news.js:279 src/js/blocks/partners.js:201
+#: src/js/blocks/people.js:243 src/js/blocks/projects.js:326
 msgid "Heading"
 msgstr ""
 
@@ -158,33 +156,34 @@ msgstr ""
 msgid "Content"
 msgstr ""
 
-#: assets/js/blocks.js:178 assets/js/blocks.js:4363 src/js/blocks/cover.js:177
+#: assets/js/blocks.js:178 assets/js/blocks.js:4382 src/js/blocks/cover.js:177
 #: src/js/blocks/recommend.js:94
 msgid "Recommendation"
 msgstr ""
 
-#: assets/js/blocks.js:195 assets/js/blocks.js:1606 src/js/blocks/cover.js:194
-#: src/js/blocks/hero.js:403
+#: assets/js/blocks.js:195 assets/js/blocks.js:1625 src/js/blocks/cover.js:194
+#: src/js/blocks/hero.js:422
 msgid "Background Image"
 msgstr ""
 
-#: assets/js/blocks.js:240 assets/js/blocks.js:1657 src/js/blocks/cover.js:239
-#: src/js/blocks/hero.js:454
+#: assets/js/blocks.js:240 assets/js/blocks.js:1676 src/js/blocks/cover.js:239
+#: src/js/blocks/hero.js:473
 msgid "Remove Background Image"
 msgstr ""
 
-#: assets/js/blocks.js:252 assets/js/blocks.js:1669 src/js/blocks/cover.js:251
-#: src/js/blocks/hero.js:466
+#: assets/js/blocks.js:252 assets/js/blocks.js:1688 src/js/blocks/cover.js:251
+#: src/js/blocks/hero.js:485
 msgid "Add Background Image"
 msgstr ""
 
-#: assets/js/blocks.js:265 src/js/blocks/cover.js:264
+#: assets/js/blocks.js:265 assets/js/blocks.js:1503 src/js/blocks/cover.js:264
+#: src/js/blocks/hero.js:300
 msgid "Min Height"
 msgstr ""
 
 #: assets/js/blocks.js:285 assets/js/blocks.js:612 assets/js/blocks.js:1084
-#: assets/js/blocks.js:2380 assets/js/blocks.js:2820 assets/js/blocks.js:3224
-#: assets/js/blocks.js:3642 assets/js/blocks.js:4145 src/js/blocks/cover.js:284
+#: assets/js/blocks.js:2399 assets/js/blocks.js:2839 assets/js/blocks.js:3243
+#: assets/js/blocks.js:3661 assets/js/blocks.js:4164 src/js/blocks/cover.js:284
 #: src/js/blocks/cta.js:243 src/js/blocks/events.js:327
 #: src/js/blocks/info.js:302 src/js/blocks/news.js:327
 #: src/js/blocks/partners.js:271 src/js/blocks/people.js:314
@@ -193,20 +192,19 @@ msgid "Colors"
 msgstr ""
 
 #: assets/js/blocks.js:291 assets/js/blocks.js:618 assets/js/blocks.js:1090
-#: assets/js/blocks.js:1681 assets/js/blocks.js:2386 assets/js/blocks.js:2826
-#: assets/js/blocks.js:3230 assets/js/blocks.js:3648 assets/js/blocks.js:4151
-#: assets/js/blocks.js:4386 src/experimental/donations.js:120
-#: src/js/blocks/cover.js:290 src/js/blocks/cta.js:249
-#: src/js/blocks/events.js:333 src/js/blocks/hero.js:478
+#: assets/js/blocks.js:1700 assets/js/blocks.js:2405 assets/js/blocks.js:2845
+#: assets/js/blocks.js:3249 assets/js/blocks.js:3667 assets/js/blocks.js:4170
+#: assets/js/blocks.js:4405 src/js/blocks/cover.js:290 src/js/blocks/cta.js:249
+#: src/js/blocks/events.js:333 src/js/blocks/hero.js:497
 #: src/js/blocks/info.js:308 src/js/blocks/news.js:333
 #: src/js/blocks/partners.js:277 src/js/blocks/people.js:320
 #: src/js/blocks/projects.js:380 src/js/blocks/recommend.js:117
 msgid "Background Color"
 msgstr ""
 
-#: assets/js/blocks.js:301 assets/js/blocks.js:638 assets/js/blocks.js:1493
-#: assets/js/blocks.js:4376 src/js/blocks/cover.js:300 src/js/blocks/cta.js:269
-#: src/js/blocks/hero.js:290 src/js/blocks/recommend.js:107
+#: assets/js/blocks.js:301 assets/js/blocks.js:638 assets/js/blocks.js:1491
+#: assets/js/blocks.js:4395 src/js/blocks/cover.js:300 src/js/blocks/cta.js:269
+#: src/js/blocks/hero.js:288 src/js/blocks/recommend.js:107
 msgid "Text Color"
 msgstr ""
 
@@ -242,17 +240,15 @@ msgstr ""
 msgid "action"
 msgstr ""
 
-#: assets/js/blocks.js:444 assets/js/blocks.js:489 assets/js/blocks.js:2147
+#: assets/js/blocks.js:444 assets/js/blocks.js:489 assets/js/blocks.js:2166
 #: core/editor/blocks/cta.php:30 core/editor/blocks/info.php:30
-#: core/editor/content.php:17 src/js/blocks/cta.js:75 src/js/blocks/cta.js:120
-#: src/js/blocks/info.js:69
+#: src/js/blocks/cta.js:75 src/js/blocks/cta.js:120 src/js/blocks/info.js:69
 msgid "112 volunteers are helping Line of Color at the moment"
 msgstr ""
 
-#: assets/js/blocks.js:448 assets/js/blocks.js:490 assets/js/blocks.js:2151
+#: assets/js/blocks.js:448 assets/js/blocks.js:490 assets/js/blocks.js:2170
 #: core/editor/blocks/cta.php:34 core/editor/blocks/info.php:34
-#: core/editor/content.php:17 src/js/blocks/cta.js:79 src/js/blocks/cta.js:121
-#: src/js/blocks/info.js:73
+#: src/js/blocks/cta.js:79 src/js/blocks/cta.js:121 src/js/blocks/info.js:73
 msgid "Join a team of volunteers and consultants in our projects"
 msgstr ""
 
@@ -262,31 +258,31 @@ msgstr ""
 msgid "Become a volunteer"
 msgstr ""
 
-#: assets/js/blocks.js:517 assets/js/blocks.js:2245 src/js/blocks/cta.js:148
+#: assets/js/blocks.js:517 assets/js/blocks.js:2264 src/js/blocks/cta.js:148
 #: src/js/blocks/info.js:167
 msgid "Title"
 msgstr ""
 
-#: assets/js/blocks.js:525 assets/js/blocks.js:2253 assets/js/blocks.js:2276
-#: assets/js/blocks.js:2315 assets/js/blocks.js:2354 assets/js/blocks.js:4367
+#: assets/js/blocks.js:525 assets/js/blocks.js:2272 assets/js/blocks.js:2295
+#: assets/js/blocks.js:2334 assets/js/blocks.js:2373 assets/js/blocks.js:4386
 #: src/js/blocks/cta.js:156 src/js/blocks/info.js:175 src/js/blocks/info.js:198
 #: src/js/blocks/info.js:237 src/js/blocks/info.js:276
 #: src/js/blocks/recommend.js:98
 msgid "Text"
 msgstr ""
 
-#: assets/js/blocks.js:542 assets/js/blocks.js:1418 src/js/blocks/cta.js:173
-#: src/js/blocks/hero.js:215
+#: assets/js/blocks.js:542 assets/js/blocks.js:1416 src/js/blocks/cta.js:173
+#: src/js/blocks/hero.js:213
 msgid "Call to action Image"
 msgstr ""
 
-#: assets/js/blocks.js:585 assets/js/blocks.js:1469 src/js/blocks/cta.js:216
-#: src/js/blocks/hero.js:266
+#: assets/js/blocks.js:585 assets/js/blocks.js:1467 src/js/blocks/cta.js:216
+#: src/js/blocks/hero.js:264
 msgid "Remove Image"
 msgstr ""
 
-#: assets/js/blocks.js:597 assets/js/blocks.js:1481 src/js/blocks/cta.js:228
-#: src/js/blocks/hero.js:278
+#: assets/js/blocks.js:597 assets/js/blocks.js:1479 src/js/blocks/cta.js:228
+#: src/js/blocks/hero.js:276
 msgid "Add Image"
 msgstr ""
 
@@ -299,13 +295,18 @@ msgstr ""
 msgid "Button"
 msgstr ""
 
-#: assets/js/blocks.js:656 assets/js/blocks.js:1512 src/js/blocks/cta.js:287
-#: src/js/blocks/hero.js:309
+#: assets/js/blocks.js:656 assets/js/blocks.js:1335 assets/js/blocks.js:1355
+#: assets/js/blocks.js:1531 core/editor/blocks/hero.php:26
+#: core/template-tags.php:814 core/template-tags.php:842
+#: core/template-tags.php:899 src/js/blocks/cta.js:287
+#: src/js/blocks/hero.js:132 src/js/blocks/hero.js:152
+#: src/js/blocks/hero.js:328 vendor/envato_setup/envato_setup.php:1202
+#: vendor/envato_setup/envato_setup.php:1211
 msgid "Button text"
 msgstr ""
 
-#: assets/js/blocks.js:664 assets/js/blocks.js:1520 src/js/blocks/cta.js:295
-#: src/js/blocks/hero.js:317
+#: assets/js/blocks.js:664 assets/js/blocks.js:1539 src/js/blocks/cta.js:295
+#: src/js/blocks/hero.js:336
 msgid "Button url"
 msgstr ""
 
@@ -313,23 +314,23 @@ msgstr ""
 msgid "Open in new tab"
 msgstr ""
 
-#: assets/js/blocks.js:685 assets/js/blocks.js:1545 src/js/blocks/cta.js:316
-#: src/js/blocks/hero.js:342
+#: assets/js/blocks.js:685 assets/js/blocks.js:1564 src/js/blocks/cta.js:316
+#: src/js/blocks/hero.js:361
 msgid "Button Background"
 msgstr ""
 
-#: assets/js/blocks.js:696 assets/js/blocks.js:1556 src/js/blocks/cta.js:327
-#: src/js/blocks/hero.js:353
+#: assets/js/blocks.js:696 assets/js/blocks.js:1575 src/js/blocks/cta.js:327
+#: src/js/blocks/hero.js:372
 msgid "Button Color"
 msgstr ""
 
-#: assets/js/blocks.js:707 assets/js/blocks.js:1567 src/js/blocks/cta.js:338
-#: src/js/blocks/hero.js:364
+#: assets/js/blocks.js:707 assets/js/blocks.js:1586 src/js/blocks/cta.js:338
+#: src/js/blocks/hero.js:383
 msgid "Button Hover Background"
 msgstr ""
 
-#: assets/js/blocks.js:718 assets/js/blocks.js:1578 src/js/blocks/cta.js:349
-#: src/js/blocks/hero.js:375
+#: assets/js/blocks.js:718 assets/js/blocks.js:1597 src/js/blocks/cta.js:349
+#: src/js/blocks/hero.js:394
 msgid "Button Hover Color"
 msgstr ""
 
@@ -354,7 +355,7 @@ msgstr ""
 msgid "List"
 msgstr ""
 
-#: assets/js/blocks.js:876 assets/js/blocks.js:3171 assets/js/blocks.js:3589
+#: assets/js/blocks.js:876 assets/js/blocks.js:3190 assets/js/blocks.js:3608
 #: src/js/blocks/events.js:119 src/js/blocks/partners.js:218
 #: src/js/blocks/people.js:261
 msgid "Grid"
@@ -364,27 +365,27 @@ msgstr ""
 msgid "Include events"
 msgstr ""
 
-#: assets/js/blocks.js:958 assets/js/blocks.js:2680 assets/js/blocks.js:4006
+#: assets/js/blocks.js:958 assets/js/blocks.js:2699 assets/js/blocks.js:4025
 #: src/js/blocks/events.js:201 src/js/blocks/news.js:187
 #: src/js/blocks/projects.js:235
 msgid "Link Title"
 msgstr ""
 
-#: assets/js/blocks.js:969 assets/js/blocks.js:2292 assets/js/blocks.js:2331
-#: assets/js/blocks.js:2370 assets/js/blocks.js:2691 assets/js/blocks.js:4017
+#: assets/js/blocks.js:969 assets/js/blocks.js:2311 assets/js/blocks.js:2350
+#: assets/js/blocks.js:2389 assets/js/blocks.js:2710 assets/js/blocks.js:4036
 #: src/js/blocks/events.js:212 src/js/blocks/info.js:214
 #: src/js/blocks/info.js:253 src/js/blocks/info.js:292
 #: src/js/blocks/news.js:198 src/js/blocks/projects.js:246
 msgid "Link Url"
 msgstr ""
 
-#: assets/js/blocks.js:982 assets/js/blocks.js:2704 assets/js/blocks.js:4030
+#: assets/js/blocks.js:982 assets/js/blocks.js:2723 assets/js/blocks.js:4049
 #: src/js/blocks/events.js:225 src/js/blocks/news.js:211
 #: src/js/blocks/projects.js:259
 msgid "Remove Link"
 msgstr ""
 
-#: assets/js/blocks.js:1006 assets/js/blocks.js:2728 assets/js/blocks.js:4054
+#: assets/js/blocks.js:1006 assets/js/blocks.js:2747 assets/js/blocks.js:4073
 #: src/js/blocks/events.js:249 src/js/blocks/news.js:235
 #: src/js/blocks/projects.js:283
 msgid "Add Link"
@@ -398,36 +399,36 @@ msgstr ""
 msgid "Events to show"
 msgstr ""
 
-#: assets/js/blocks.js:1073 assets/js/blocks.js:2809 assets/js/blocks.js:4134
+#: assets/js/blocks.js:1073 assets/js/blocks.js:2828 assets/js/blocks.js:4153
 #: src/js/blocks/events.js:316 src/js/blocks/news.js:316
 #: src/js/blocks/projects.js:363
 msgid "Heading Links"
 msgstr ""
 
-#: assets/js/blocks.js:1100 assets/js/blocks.js:2396 assets/js/blocks.js:2836
-#: assets/js/blocks.js:3240 assets/js/blocks.js:3658 assets/js/blocks.js:4161
+#: assets/js/blocks.js:1100 assets/js/blocks.js:2415 assets/js/blocks.js:2855
+#: assets/js/blocks.js:3259 assets/js/blocks.js:3677 assets/js/blocks.js:4180
 #: src/js/blocks/events.js:343 src/js/blocks/info.js:318
 #: src/js/blocks/news.js:343 src/js/blocks/partners.js:287
 #: src/js/blocks/people.js:330 src/js/blocks/projects.js:390
 msgid "Heading Color"
 msgstr ""
 
-#: assets/js/blocks.js:1110 assets/js/blocks.js:2856 assets/js/blocks.js:4181
+#: assets/js/blocks.js:1110 assets/js/blocks.js:2875 assets/js/blocks.js:4200
 #: src/js/blocks/events.js:353 src/js/blocks/news.js:363
 #: src/js/blocks/projects.js:410
 msgid "Links Color"
 msgstr ""
 
-#: assets/js/blocks.js:1122 assets/js/blocks.js:2878 assets/js/blocks.js:3252
-#: assets/js/blocks.js:3690 assets/js/blocks.js:4193
+#: assets/js/blocks.js:1122 assets/js/blocks.js:2897 assets/js/blocks.js:3271
+#: assets/js/blocks.js:3709 assets/js/blocks.js:4212
 #: src/js/blocks/events.js:365 src/js/blocks/news.js:385
 #: src/js/blocks/partners.js:299 src/js/blocks/people.js:362
 #: src/js/blocks/projects.js:422
 msgid "Query"
 msgstr ""
 
-#: assets/js/blocks.js:1128 assets/js/blocks.js:2884 assets/js/blocks.js:3258
-#: assets/js/blocks.js:3696 assets/js/blocks.js:4199
+#: assets/js/blocks.js:1128 assets/js/blocks.js:2903 assets/js/blocks.js:3277
+#: assets/js/blocks.js:3715 assets/js/blocks.js:4218
 #: src/js/blocks/events.js:371 src/js/blocks/news.js:391
 #: src/js/blocks/partners.js:305 src/js/blocks/people.js:368
 #: src/js/blocks/projects.js:428
@@ -446,8 +447,8 @@ msgstr ""
 msgid "Included events"
 msgstr ""
 
-#: assets/js/blocks.js:1143 assets/js/blocks.js:2900 assets/js/blocks.js:3274
-#: assets/js/blocks.js:3712 assets/js/blocks.js:4215
+#: assets/js/blocks.js:1143 assets/js/blocks.js:2919 assets/js/blocks.js:3293
+#: assets/js/blocks.js:3731 assets/js/blocks.js:4234
 #: src/js/blocks/events.js:386 src/js/blocks/news.js:407
 #: src/js/blocks/partners.js:321 src/js/blocks/people.js:384
 #: src/js/blocks/projects.js:444
@@ -492,465 +493,459 @@ msgid ""
 "support will help organize a rehabilitation program for them."
 msgstr ""
 
-#: assets/js/blocks.js:1338 assets/js/blocks.js:1355
-#: core/editor/blocks/hero.php:26 src/js/blocks/hero.js:135
-#: src/js/blocks/hero.js:152
-msgid "Help Now"
-msgstr ""
-
-#: assets/js/blocks.js:1393 src/js/blocks/hero.js:190
+#: assets/js/blocks.js:1391 src/js/blocks/hero.js:188
 msgid "Call to action title"
 msgstr ""
 
-#: assets/js/blocks.js:1401 src/js/blocks/hero.js:198
+#: assets/js/blocks.js:1399 src/js/blocks/hero.js:196
 msgid "Call to action text"
 msgstr ""
 
-#: assets/js/blocks.js:1424 src/js/blocks/hero.js:221
+#: assets/js/blocks.js:1422 src/js/blocks/hero.js:219
 msgid "Displayed on the right side of the Call to action text"
 msgstr ""
 
-#: assets/js/blocks.js:1507 src/js/blocks/hero.js:304
+#: assets/js/blocks.js:1526 src/js/blocks/hero.js:323
 msgid "Buttons"
 msgstr ""
 
-#: assets/js/blocks.js:1528 src/js/blocks/hero.js:325
+#: assets/js/blocks.js:1547 src/js/blocks/hero.js:344
 msgid "Additional Button text"
 msgstr ""
 
-#: assets/js/blocks.js:1536 src/js/blocks/hero.js:333
+#: assets/js/blocks.js:1555 src/js/blocks/hero.js:352
 msgid "Additional Button url"
 msgstr ""
 
-#: assets/js/blocks.js:1592 src/js/blocks/hero.js:389
+#: assets/js/blocks.js:1611 src/js/blocks/hero.js:408
 msgid "Background"
 msgstr ""
 
-#: assets/js/blocks.js:1612 src/js/blocks/hero.js:409
+#: assets/js/blocks.js:1631 src/js/blocks/hero.js:428
 msgid "Recommended size 1600x663px"
 msgstr ""
 
-#: assets/js/blocks.js:1695 src/js/blocks/hero.js:492
+#: assets/js/blocks.js:1714 src/js/blocks/hero.js:511
 msgid "Overlay"
 msgstr ""
 
-#: assets/js/blocks.js:1712 src/js/blocks/hero.js:509
+#: assets/js/blocks.js:1731 src/js/blocks/hero.js:528
 msgid "Overlay Gradient Start Color"
 msgstr ""
 
-#: assets/js/blocks.js:1744 src/js/blocks/hero.js:541
+#: assets/js/blocks.js:1763 src/js/blocks/hero.js:560
 msgid "Overlay Gradient End Color"
 msgstr ""
 
-#: assets/js/blocks.js:1766 src/js/blocks/hero.js:563
+#: assets/js/blocks.js:1785 src/js/blocks/hero.js:582
 msgid "Typography"
 msgstr ""
 
-#: assets/js/blocks.js:1772 src/js/blocks/hero.js:569
+#: assets/js/blocks.js:1791 src/js/blocks/hero.js:588
 msgid "Heading level"
 msgstr ""
 
-#: assets/js/blocks.js:1903 src/js/blocks/hint.js:22
+#: assets/js/blocks.js:1922 src/js/blocks/hint.js:22
 msgid "Hint"
 msgstr ""
 
-#: assets/js/blocks.js:1907 src/js/blocks/hint.js:26
+#: assets/js/blocks.js:1926 src/js/blocks/hint.js:26
 msgid "hint"
 msgstr ""
 
-#: assets/js/blocks.js:1934 src/js/blocks/hint.js:53
+#: assets/js/blocks.js:1953 src/js/blocks/hint.js:53
 msgid "Up Arrow"
 msgstr ""
 
-#: assets/js/blocks.js:1939 src/js/blocks/hint.js:58
+#: assets/js/blocks.js:1958 src/js/blocks/hint.js:58
 msgid "Down Arrow"
 msgstr ""
 
-#: assets/js/blocks.js:2130 core/editor/pattern.php:45 src/js/blocks/info.js:52
+#: assets/js/blocks.js:2149 core/editor/pattern.php:45 src/js/blocks/info.js:52
 msgid "About Project"
 msgstr ""
 
-#: assets/js/blocks.js:2133 src/js/blocks/info.js:55
+#: assets/js/blocks.js:2152 src/js/blocks/info.js:55
 msgid "info"
 msgstr ""
 
-#: assets/js/blocks.js:2133 src/js/blocks/info.js:55
+#: assets/js/blocks.js:2152 src/js/blocks/info.js:55
 msgid "columns"
 msgstr ""
 
-#: assets/js/blocks.js:2133 src/js/blocks/info.js:55
+#: assets/js/blocks.js:2152 src/js/blocks/info.js:55
 msgid "about"
 msgstr ""
 
-#: assets/js/blocks.js:2134 core/editor/pattern.php:48 src/js/blocks/info.js:56
+#: assets/js/blocks.js:2153 core/editor/pattern.php:48 src/js/blocks/info.js:56
 msgid "Subheading, heading and three columns."
 msgstr ""
 
-#: assets/js/blocks.js:2155 core/editor/blocks/info.php:38
-#: core/editor/content.php:14 src/js/blocks/info.js:77
+#: assets/js/blocks.js:2174 core/editor/blocks/info.php:38
+#: src/js/blocks/info.js:77
 msgid "Who we are?"
 msgstr ""
 
-#: assets/js/blocks.js:2159 core/editor/blocks/info.php:42
-#: core/editor/content.php:14 src/js/blocks/info.js:81
+#: assets/js/blocks.js:2178 core/editor/blocks/info.php:42
+#: src/js/blocks/info.js:81
 msgid "What we do?"
 msgstr ""
 
-#: assets/js/blocks.js:2163 core/editor/blocks/info.php:46
-#: core/editor/content.php:14 src/js/blocks/info.js:85
+#: assets/js/blocks.js:2182 core/editor/blocks/info.php:46
+#: src/js/blocks/info.js:85
 msgid "Stop drinking?"
 msgstr ""
 
-#: assets/js/blocks.js:2167 core/editor/blocks/info.php:50
-#: core/editor/content.php:14 src/js/blocks/info.js:89
+#: assets/js/blocks.js:2186 core/editor/blocks/info.php:50
+#: src/js/blocks/info.js:89
 msgid ""
 "The charitable organization &#34;Line of Color&#34; helps to overcome "
 "alcohol addiction and return to a fulfilling life."
 msgstr ""
 
-#: assets/js/blocks.js:2171 core/editor/blocks/info.php:54
-#: core/editor/content.php:14 src/js/blocks/info.js:93
+#: assets/js/blocks.js:2190 core/editor/blocks/info.php:54
+#: src/js/blocks/info.js:93
 msgid ""
 "We organize rehabilitation programs, inform and help those who are ready to "
 "give up their addiction and return their lives."
 msgstr ""
 
-#: assets/js/blocks.js:2175 core/editor/blocks/info.php:58
-#: core/editor/content.php:14 src/js/blocks/info.js:97
+#: assets/js/blocks.js:2194 core/editor/blocks/info.php:58
+#: src/js/blocks/info.js:97
 msgid ""
 "Fill out the anonymous form on the website, choose a convenient time for an "
 "individual consultation, or sign up for a support group."
 msgstr ""
 
-#: assets/js/blocks.js:2179 core/editor/blocks/info.php:62
-#: core/editor/content.php:14 src/js/blocks/info.js:101
+#: assets/js/blocks.js:2198 core/editor/blocks/info.php:62
+#: src/js/blocks/info.js:101
 msgid "Learn about our work"
 msgstr ""
 
-#: assets/js/blocks.js:2183 core/editor/blocks/info.php:66
-#: core/editor/content.php:14 src/js/blocks/info.js:105
+#: assets/js/blocks.js:2202 core/editor/blocks/info.php:66
+#: src/js/blocks/info.js:105
 msgid "View projects"
 msgstr ""
 
-#: assets/js/blocks.js:2187 core/editor/blocks/info.php:70
-#: core/editor/content.php:14 src/js/blocks/info.js:109
+#: assets/js/blocks.js:2206 core/editor/blocks/info.php:70
+#: src/js/blocks/info.js:109
 msgid "Get help"
 msgstr ""
 
-#: assets/js/blocks.js:2263 src/js/blocks/info.js:185
+#: assets/js/blocks.js:2282 src/js/blocks/info.js:185
 msgid "Column 1"
 msgstr ""
 
-#: assets/js/blocks.js:2284 assets/js/blocks.js:2323 assets/js/blocks.js:2362
+#: assets/js/blocks.js:2303 assets/js/blocks.js:2342 assets/js/blocks.js:2381
 #: src/js/blocks/info.js:206 src/js/blocks/info.js:245
 #: src/js/blocks/info.js:284
 msgid "Link Text"
 msgstr ""
 
-#: assets/js/blocks.js:2302 src/js/blocks/info.js:224
+#: assets/js/blocks.js:2321 src/js/blocks/info.js:224
 msgid "Column 2"
 msgstr ""
 
-#: assets/js/blocks.js:2341 src/js/blocks/info.js:263
+#: assets/js/blocks.js:2360 src/js/blocks/info.js:263
 msgid "Column 3"
 msgstr ""
 
-#: assets/js/blocks.js:2406 src/js/blocks/info.js:328
+#: assets/js/blocks.js:2425 src/js/blocks/info.js:328
 msgid "Second Heading Color"
 msgstr ""
 
-#: assets/js/blocks.js:2416 src/js/blocks/info.js:338
+#: assets/js/blocks.js:2435 src/js/blocks/info.js:338
 msgid "Column Heading Color"
 msgstr ""
 
-#: assets/js/blocks.js:2426 src/js/blocks/info.js:348
+#: assets/js/blocks.js:2445 src/js/blocks/info.js:348
 msgid "Column Text Color"
 msgstr ""
 
-#: assets/js/blocks.js:2436 src/js/blocks/info.js:358
+#: assets/js/blocks.js:2455 src/js/blocks/info.js:358
 msgid "Column Link Color"
 msgstr ""
 
-#: assets/js/blocks.js:2446 src/js/blocks/info.js:368
+#: assets/js/blocks.js:2465 src/js/blocks/info.js:368
 msgid "Column Link Color Hover"
 msgstr ""
 
-#: assets/js/blocks.js:2456 src/js/blocks/info.js:378
+#: assets/js/blocks.js:2475 src/js/blocks/info.js:378
 msgid "Column Link Underline Color"
 msgstr ""
 
-#: assets/js/blocks.js:2536 assets/js/blocks.js:2549 core/admin.php:60
+#: assets/js/blocks.js:2555 assets/js/blocks.js:2568 core/admin.php:60
 #: core/editor/blocks/news.php:18 footer.php:76
-#: modules/starter/plot_config.php:141
+#: modules/starter/plot_config.php:147
 #: modules/starter/plot_data_builder.php:563 src/js/blocks/news.js:43
-#: src/js/blocks/news.js:56 vendor/envato_setup/envato_setup.php:1228
-#: vendor/envato_setup/envato_setup.php:1255
+#: src/js/blocks/news.js:56 vendor/envato_setup/envato_setup.php:1223
+#: vendor/envato_setup/envato_setup.php:1250
 msgid "News"
 msgstr ""
 
-#: assets/js/blocks.js:2539 assets/js/blocks.js:3865 src/js/blocks/news.js:46
+#: assets/js/blocks.js:2558 assets/js/blocks.js:3884 src/js/blocks/news.js:46
 #: src/js/blocks/projects.js:94
 msgid "news"
 msgstr ""
 
-#: assets/js/blocks.js:2539 assets/js/blocks.js:3866 src/js/blocks/news.js:46
+#: assets/js/blocks.js:2558 assets/js/blocks.js:3885 src/js/blocks/news.js:46
 #: src/js/blocks/projects.js:95
 msgid "posts"
 msgstr ""
 
-#: assets/js/blocks.js:2539 assets/js/blocks.js:3867 src/js/blocks/news.js:46
+#: assets/js/blocks.js:2558 assets/js/blocks.js:3886 src/js/blocks/news.js:46
 #: src/js/blocks/projects.js:96
 msgid "articles"
 msgstr ""
 
-#: assets/js/blocks.js:2540 src/js/blocks/news.js:47
+#: assets/js/blocks.js:2559 src/js/blocks/news.js:47
 msgid "News tile in three column."
 msgstr ""
 
-#: assets/js/blocks.js:2622 assets/js/blocks.js:3113 assets/js/blocks.js:3527
+#: assets/js/blocks.js:2641 assets/js/blocks.js:3132 assets/js/blocks.js:3546
 #: modules/org/hooks.php:11 src/js/blocks/news.js:129
 #: src/js/blocks/partners.js:160 src/js/blocks/people.js:199
 msgid "All Categories"
 msgstr ""
 
-#: assets/js/blocks.js:2756 src/js/blocks/news.js:263
+#: assets/js/blocks.js:2775 src/js/blocks/news.js:263
 msgid "Edit news"
 msgstr ""
 
-#: assets/js/blocks.js:2781 src/js/blocks/news.js:288
+#: assets/js/blocks.js:2800 src/js/blocks/news.js:288
 msgid "Posts to show"
 msgstr ""
 
-#: assets/js/blocks.js:2794 assets/js/blocks.js:3197 assets/js/blocks.js:3615
-#: assets/js/blocks.js:4119 src/js/blocks/news.js:301
+#: assets/js/blocks.js:2813 assets/js/blocks.js:3216 assets/js/blocks.js:3634
+#: assets/js/blocks.js:4138 src/js/blocks/news.js:301
 #: src/js/blocks/partners.js:244 src/js/blocks/people.js:287
 #: src/js/blocks/projects.js:348
 msgid "Columns"
 msgstr ""
 
-#: assets/js/blocks.js:2846 assets/js/blocks.js:4171 src/js/blocks/news.js:353
+#: assets/js/blocks.js:2865 assets/js/blocks.js:4190 src/js/blocks/news.js:353
 #: src/js/blocks/projects.js:400
 msgid "Post Title Color"
 msgstr ""
 
-#: assets/js/blocks.js:2866 src/js/blocks/news.js:373
+#: assets/js/blocks.js:2885 src/js/blocks/news.js:373
 msgid "Date Color"
 msgstr ""
 
-#: assets/js/blocks.js:2886 assets/js/blocks.js:3260 assets/js/blocks.js:3698
-#: assets/js/blocks.js:4201 src/js/blocks/news.js:393
+#: assets/js/blocks.js:2905 assets/js/blocks.js:3279 assets/js/blocks.js:3717
+#: assets/js/blocks.js:4220 src/js/blocks/news.js:393
 #: src/js/blocks/partners.js:307 src/js/blocks/people.js:370
 #: src/js/blocks/projects.js:430
 msgid "Newest to oldest"
 msgstr ""
 
-#: assets/js/blocks.js:2887 assets/js/blocks.js:3261 assets/js/blocks.js:3699
-#: assets/js/blocks.js:4202 src/js/blocks/news.js:394
+#: assets/js/blocks.js:2906 assets/js/blocks.js:3280 assets/js/blocks.js:3718
+#: assets/js/blocks.js:4221 src/js/blocks/news.js:394
 #: src/js/blocks/partners.js:308 src/js/blocks/people.js:371
 #: src/js/blocks/projects.js:431
 msgid "Oldest to newest"
 msgstr ""
 
-#: assets/js/blocks.js:2888 assets/js/blocks.js:3262 assets/js/blocks.js:3700
-#: assets/js/blocks.js:4203 src/js/blocks/news.js:395
+#: assets/js/blocks.js:2907 assets/js/blocks.js:3281 assets/js/blocks.js:3719
+#: assets/js/blocks.js:4222 src/js/blocks/news.js:395
 #: src/js/blocks/partners.js:309 src/js/blocks/people.js:372
 #: src/js/blocks/projects.js:432
 msgid "A → Z"
 msgstr ""
 
-#: assets/js/blocks.js:2889 assets/js/blocks.js:3263 assets/js/blocks.js:3701
-#: assets/js/blocks.js:4204 src/js/blocks/news.js:396
+#: assets/js/blocks.js:2908 assets/js/blocks.js:3282 assets/js/blocks.js:3720
+#: assets/js/blocks.js:4223 src/js/blocks/news.js:396
 #: src/js/blocks/partners.js:310 src/js/blocks/people.js:373
 #: src/js/blocks/projects.js:433
 msgid "Z → A"
 msgstr ""
 
-#: assets/js/blocks.js:2905 src/js/blocks/news.js:412
+#: assets/js/blocks.js:2924 src/js/blocks/news.js:412
 msgid "Number of posts to skip"
 msgstr ""
 
-#: assets/js/blocks.js:2914 assets/js/blocks.js:3288 assets/js/blocks.js:3726
+#: assets/js/blocks.js:2933 assets/js/blocks.js:3307 assets/js/blocks.js:3745
 #: src/js/blocks/news.js:421 src/js/blocks/partners.js:335
 #: src/js/blocks/people.js:398
 msgid "Select category"
 msgstr ""
 
-#: assets/js/blocks.js:3016 assets/js/blocks.js:3396
+#: assets/js/blocks.js:3035 assets/js/blocks.js:3415
 #: src/js/blocks/partners.js:63 src/js/blocks/people.js:68
 msgid "Auto Play"
 msgstr ""
 
-#: assets/js/blocks.js:3025 core/admin.php:78 modules/org/hooks.php:30
+#: assets/js/blocks.js:3044 core/admin.php:78 modules/org/hooks.php:30
 #: modules/org/hooks.php:32 modules/org/tax.php:6 src/js/blocks/partners.js:72
 msgid "Partners"
 msgstr ""
 
-#: assets/js/blocks.js:3028 src/js/blocks/partners.js:75
+#: assets/js/blocks.js:3047 src/js/blocks/partners.js:75
 msgid "partners"
 msgstr ""
 
-#: assets/js/blocks.js:3028 src/js/blocks/partners.js:75
+#: assets/js/blocks.js:3047 src/js/blocks/partners.js:75
 msgid "logos"
 msgstr ""
 
-#: assets/js/blocks.js:3029 src/js/blocks/partners.js:76
+#: assets/js/blocks.js:3048 src/js/blocks/partners.js:76
 msgid "Image tile in four columns."
 msgstr ""
 
-#: assets/js/blocks.js:3038 core/editor/blocks/partners.php:18
+#: assets/js/blocks.js:3057 core/editor/blocks/partners.php:18
 #: src/js/blocks/partners.js:85
 msgid "Our Partners"
 msgstr ""
 
-#: assets/js/blocks.js:3139 src/js/blocks/partners.js:186
+#: assets/js/blocks.js:3158 src/js/blocks/partners.js:186
 msgid "Edit partners"
 msgstr ""
 
-#: assets/js/blocks.js:3164 assets/js/blocks.js:3582
+#: assets/js/blocks.js:3183 assets/js/blocks.js:3601
 #: src/js/blocks/partners.js:211 src/js/blocks/people.js:254
 msgid "Layout"
 msgstr ""
 
-#: assets/js/blocks.js:3175 assets/js/blocks.js:3593
+#: assets/js/blocks.js:3194 assets/js/blocks.js:3612
 #: src/js/blocks/partners.js:222 src/js/blocks/people.js:265
 msgid "Carousel"
 msgstr ""
 
-#: assets/js/blocks.js:3185 src/js/blocks/partners.js:232
+#: assets/js/blocks.js:3204 src/js/blocks/partners.js:232
 msgid "Partners to show"
 msgstr ""
 
-#: assets/js/blocks.js:3210 assets/js/blocks.js:3628
+#: assets/js/blocks.js:3229 assets/js/blocks.js:3647
 #: src/js/blocks/partners.js:257 src/js/blocks/people.js:300
 msgid "Enable link"
 msgstr ""
 
-#: assets/js/blocks.js:3279 src/js/blocks/partners.js:326
+#: assets/js/blocks.js:3298 src/js/blocks/partners.js:326
 msgid "Number of partners to skip"
 msgstr ""
 
-#: assets/js/blocks.js:3421 core/admin.php:72 src/js/blocks/people.js:93
+#: assets/js/blocks.js:3440 core/admin.php:72 src/js/blocks/people.js:93
 msgid "Team"
 msgstr ""
 
-#: assets/js/blocks.js:3424 src/js/blocks/people.js:96
+#: assets/js/blocks.js:3443 src/js/blocks/people.js:96
 msgid "people"
 msgstr ""
 
-#: assets/js/blocks.js:3424 src/js/blocks/people.js:96
+#: assets/js/blocks.js:3443 src/js/blocks/people.js:96
 msgid "user"
 msgstr ""
 
-#: assets/js/blocks.js:3424 src/js/blocks/people.js:96
+#: assets/js/blocks.js:3443 src/js/blocks/people.js:96
 msgid "team"
 msgstr ""
 
-#: assets/js/blocks.js:3424 src/js/blocks/people.js:96
+#: assets/js/blocks.js:3443 src/js/blocks/people.js:96
 msgid "profile"
 msgstr ""
 
-#: assets/js/blocks.js:3425 src/js/blocks/people.js:97
+#: assets/js/blocks.js:3444 src/js/blocks/people.js:97
 msgid "Tile with photos, names and short descriptions in 3-8 columns."
 msgstr ""
 
-#: assets/js/blocks.js:3434 core/editor/blocks/people.php:18
+#: assets/js/blocks.js:3453 core/editor/blocks/people.php:18
 #: src/js/blocks/people.js:106
 msgid "Our Team"
 msgstr ""
 
-#: assets/js/blocks.js:3509 src/js/blocks/people.js:181
+#: assets/js/blocks.js:3528 src/js/blocks/people.js:181
 msgid "Squared"
 msgstr ""
 
-#: assets/js/blocks.js:3514 src/js/blocks/people.js:186
+#: assets/js/blocks.js:3533 src/js/blocks/people.js:186
 msgid "Rounded"
 msgstr ""
 
-#: assets/js/blocks.js:3555 src/js/blocks/people.js:227
+#: assets/js/blocks.js:3574 src/js/blocks/people.js:227
 msgid "Edit team"
 msgstr ""
 
-#: assets/js/blocks.js:3603 src/js/blocks/people.js:275
+#: assets/js/blocks.js:3622 src/js/blocks/people.js:275
 msgid "People to show"
 msgstr ""
 
-#: assets/js/blocks.js:3668 src/js/blocks/people.js:340
+#: assets/js/blocks.js:3687 src/js/blocks/people.js:340
 msgid "Name Color"
 msgstr ""
 
-#: assets/js/blocks.js:3678 src/js/blocks/people.js:350
+#: assets/js/blocks.js:3697 src/js/blocks/people.js:350
 msgid "Description Color"
 msgstr ""
 
-#: assets/js/blocks.js:3717 src/js/blocks/people.js:389
+#: assets/js/blocks.js:3736 src/js/blocks/people.js:389
 msgid "Number of peoples to skip"
 msgstr ""
 
-#: assets/js/blocks.js:3860 assets/js/blocks.js:3878 core/admin.php:66
+#: assets/js/blocks.js:3879 assets/js/blocks.js:3897 core/admin.php:66
 #: core/editor/blocks/projects.php:18 modules/project/hooks.php:15
-#: modules/project/hooks.php:17 modules/starter/plot_config.php:132
-#: modules/starter/plot_config.php:142 src/js/blocks/projects.js:89
+#: modules/project/hooks.php:17 modules/starter/plot_config.php:130
+#: modules/starter/plot_config.php:148 src/js/blocks/projects.js:89
 #: src/js/blocks/projects.js:107
 msgid "Projects"
 msgstr ""
 
-#: assets/js/blocks.js:3863 src/js/blocks/projects.js:92
+#: assets/js/blocks.js:3882 src/js/blocks/projects.js:92
 msgid "Projects tile in three column."
 msgstr ""
 
-#: assets/js/blocks.js:3868 src/js/blocks/projects.js:97
+#: assets/js/blocks.js:3887 src/js/blocks/projects.js:97
 msgid "projects"
 msgstr ""
 
-#: assets/js/blocks.js:3948 modules/project/hooks.php:93
+#: assets/js/blocks.js:3967 modules/project/hooks.php:93
 #: src/js/blocks/projects.js:177
 msgid "All Tags"
 msgstr ""
 
-#: assets/js/blocks.js:4082 src/js/blocks/projects.js:311
+#: assets/js/blocks.js:4101 src/js/blocks/projects.js:311
 msgid "Edit projects"
 msgstr ""
 
-#: assets/js/blocks.js:4106 src/js/blocks/projects.js:335
+#: assets/js/blocks.js:4125 src/js/blocks/projects.js:335
 msgid "Projects to show"
 msgstr ""
 
-#: assets/js/blocks.js:4220 src/js/blocks/projects.js:449
+#: assets/js/blocks.js:4239 src/js/blocks/projects.js:449
 msgid "Number of projects to skip"
 msgstr ""
 
-#: assets/js/blocks.js:4229 src/js/blocks/projects.js:458
+#: assets/js/blocks.js:4248 src/js/blocks/projects.js:458
 msgid "Select tag"
 msgstr ""
 
-#: assets/js/blocks.js:4304 core/editor/blocks/recommend.php:18
+#: assets/js/blocks.js:4323 core/editor/blocks/recommend.php:18
 #: src/js/blocks/recommend.js:35
 msgid ""
 "Your mission should be to summarize everything you do. In a short phrase, "
 "put the whole point of your organization and your projects."
 msgstr ""
 
-#: assets/js/blocks.js:4307 src/js/blocks/recommend.js:38
+#: assets/js/blocks.js:4326 src/js/blocks/recommend.js:38
 msgid "Key phrase"
 msgstr ""
 
-#: assets/js/blocks.js:4310 src/js/blocks/recommend.js:41
+#: assets/js/blocks.js:4329 src/js/blocks/recommend.js:41
 msgid "Text on a colored plate."
 msgstr ""
 
-#: assets/js/blocks.js:4312 src/js/blocks/recommend.js:43
+#: assets/js/blocks.js:4331 src/js/blocks/recommend.js:43
 msgid "quote"
 msgstr ""
 
-#: assets/js/blocks.js:4313 src/js/blocks/recommend.js:44
+#: assets/js/blocks.js:4332 src/js/blocks/recommend.js:44
 msgid "recommend"
 msgstr ""
 
-#: assets/js/blocks.js:4314 src/js/blocks/recommend.js:45
+#: assets/js/blocks.js:4333 src/js/blocks/recommend.js:45
 msgid "key"
 msgstr ""
 
-#: assets/js/blocks.js:4315 src/js/blocks/recommend.js:46
+#: assets/js/blocks.js:4334 src/js/blocks/recommend.js:46
 msgid "phrase"
 msgstr ""
 
@@ -959,7 +954,6 @@ msgid "Hide the page title"
 msgstr ""
 
 #: assets/js/gutenberg.js:64 assets/js/gutenberg.js:119
-#: src/experimental/gutenberg-experimental.js:115
 msgid "Page Options"
 msgstr ""
 
@@ -996,9 +990,9 @@ msgid_plural "%s comments"
 msgstr[0] ""
 msgstr[1] ""
 
-#: comments.php:57 core/template-tags.php:169 core/template-tags.php:247
-#: core/template-tags.php:368 core/template-tags.php:369
-#: core/template-tags.php:370 page-events.php:21
+#: comments.php:57 core/template-tags.php:169 core/template-tags.php:239
+#: core/template-tags.php:360 core/template-tags.php:361
+#: core/template-tags.php:362 page-events.php:21
 msgid "Page"
 msgstr ""
 
@@ -1525,7 +1519,7 @@ msgstr ""
 
 #: core/customizer/customizer-deprecated.php:35
 #: vendor/class-tgm-plugin-activation.php:2706
-#: vendor/envato_setup/steps/plugins.php:79
+#: vendor/envato_setup/steps/plugins.php:88
 msgid "Install"
 msgstr ""
 
@@ -1534,7 +1528,6 @@ msgid "No, I’ll do it some other time"
 msgstr ""
 
 #: core/customizer/kirki.php:40 core/customizer/kirki.php:59
-#: src/experimental/gutenberg-experimental.js:102
 msgid "None"
 msgstr ""
 
@@ -1558,7 +1551,7 @@ msgid "Posts archive title"
 msgstr ""
 
 #: core/customizer/theme-mods/archive-settings.php:23
-#: core/template-tags.php:249
+#: core/template-tags.php:241
 msgid "Blog"
 msgstr ""
 
@@ -1571,8 +1564,8 @@ msgid "Projects archive title"
 msgstr ""
 
 #: core/customizer/theme-mods/archive-settings.php:47
-#: core/template-tags.php:257 core/template-tags.php:385
-#: vendor/envato_setup/envato_setup.php:1229
+#: core/template-tags.php:249 core/template-tags.php:377
+#: vendor/envato_setup/envato_setup.php:1224
 msgid "Our projects"
 msgstr ""
 
@@ -1605,7 +1598,7 @@ msgid "Active campaigns archive title"
 msgstr ""
 
 #: core/customizer/theme-mods/archive-settings.php:173
-#: core/template-tags.php:269 single-leyka_campaign.php:31
+#: core/template-tags.php:261 single-leyka_campaign.php:31
 #: single-leyka_campaign.php:50
 msgid "They need help"
 msgstr ""
@@ -1615,7 +1608,7 @@ msgid "Completed campaigns archive title"
 msgstr ""
 
 #: core/customizer/theme-mods/archive-settings.php:181
-#: core/template-tags.php:264 single-leyka_campaign.php:27
+#: core/template-tags.php:256 single-leyka_campaign.php:27
 #: single-leyka_campaign.php:53
 msgid "They alredy got help"
 msgstr ""
@@ -1685,7 +1678,6 @@ msgid "Footer - Columns"
 msgstr ""
 
 #: core/customizer/theme-mods/footer.php:219 footer.php:46
-#: vendor/envato_setup/envato_setup.php:1247
 msgid "About Us"
 msgstr ""
 
@@ -1698,7 +1690,7 @@ msgid "Menu news"
 msgstr ""
 
 #: core/customizer/theme-mods/footer.php:285 footer.php:95
-#: vendor/envato_setup/envato_setup.php:1250
+#: vendor/envato_setup/envato_setup.php:1245
 msgid "Security policy"
 msgstr ""
 
@@ -1970,18 +1962,10 @@ msgid "Search"
 msgstr ""
 
 #: core/customizer/theme-mods/header.php:374
-#: core/customizer/theme-mods/header.php:498
-msgid "Button Text"
-msgstr ""
-
 #: core/customizer/theme-mods/header.php:376
-#: core/customizer/theme-mods/header.php:500 core/template-tags.php:822
-#: core/template-tags.php:850 core/template-tags.php:907
-#: modules/donations/donations.php:159
-#: vendor/envato_setup/envato_setup.php:1191
-#: vendor/envato_setup/envato_setup.php:1207
-#: vendor/envato_setup/envato_setup.php:1216
-msgid "Help now"
+#: core/customizer/theme-mods/header.php:498
+#: core/customizer/theme-mods/header.php:500
+msgid "Button Text"
 msgstr ""
 
 #: core/customizer/theme-mods/header.php:390
@@ -2044,7 +2028,7 @@ msgstr ""
 msgid "Related Posts Title"
 msgstr ""
 
-#: core/customizer/theme-mods/post-settings.php:55 core/template-tags.php:1014
+#: core/customizer/theme-mods/post-settings.php:55 core/template-tags.php:1006
 msgid "Related posts"
 msgstr ""
 
@@ -2066,7 +2050,7 @@ msgid "Related Projects Title"
 msgstr ""
 
 #: core/customizer/theme-mods/project-settings.php:47
-#: core/template-tags.php:1027 vendor/envato_setup/envato_setup.php:1231
+#: core/template-tags.php:1019 vendor/envato_setup/envato_setup.php:1226
 msgid "Related projects"
 msgstr ""
 
@@ -2095,16 +2079,6 @@ msgstr ""
 #: core/editor/blocks/leyka-cards.php:363 modules/donations/donations.php:154
 #, php-format
 msgid "We need to raise: %s %s"
-msgstr ""
-
-#: core/editor/content.php:14
-msgid "Charitable organization &#34;Line of Color&#34;"
-msgstr ""
-
-#: core/editor/content.php:14
-msgid ""
-"For more than 10 years we have been helping people with alcoholism, "
-"organizing rehabilitation programs and groups"
 msgstr ""
 
 #: core/editor/functions.php:112
@@ -2274,59 +2248,59 @@ msgctxt "Yoast SEO"
 msgid "Home"
 msgstr ""
 
-#: core/template-tags.php:252
+#: core/template-tags.php:244
 msgid "Donations history"
 msgstr ""
 
-#: core/template-tags.php:274
+#: core/template-tags.php:266
 msgid "Search results"
 msgstr ""
 
-#: core/template-tags.php:277
+#: core/template-tags.php:269
 msgid "404: Page not found"
 msgstr ""
 
-#: core/template-tags.php:367
+#: core/template-tags.php:359
 msgid "Posts navigation"
 msgstr ""
 
-#: core/template-tags.php:369
+#: core/template-tags.php:361
 msgid "Previous"
 msgstr ""
 
-#: core/template-tags.php:370
+#: core/template-tags.php:362
 msgid "Next"
 msgstr ""
 
-#: core/template-tags.php:384
+#: core/template-tags.php:376
 msgid "More projects"
 msgstr ""
 
-#: core/template-tags.php:387
+#: core/template-tags.php:379
 msgid "More news"
 msgstr ""
 
-#: core/template-tags.php:388
+#: core/template-tags.php:380
 msgid "Latest news"
 msgstr ""
 
-#: core/template-tags.php:762
+#: core/template-tags.php:754
 msgid "Open search"
 msgstr ""
 
-#: core/template-tags.php:783
+#: core/template-tags.php:775
 msgid "Close search"
 msgstr ""
 
-#: core/template-tags.php:798
+#: core/template-tags.php:790
 msgid "Open Off-Canvas"
 msgstr ""
 
-#: core/template-tags.php:811
+#: core/template-tags.php:803
 msgid "Close Off-Canvas"
 msgstr ""
 
-#: core/template-tags.php:929 functions.php:85 template-parts/offcanvas.php:29
+#: core/template-tags.php:921 functions.php:85 template-parts/offcanvas.php:29
 msgid "Primary menu"
 msgstr ""
 
@@ -2340,7 +2314,7 @@ msgstr ""
 msgid "Update to version %s"
 msgstr ""
 
-#: footer.php:58 vendor/envato_setup/envato_setup.php:1253
+#: footer.php:58 vendor/envato_setup/envato_setup.php:1248
 msgid "Our Work"
 msgstr ""
 
@@ -2411,7 +2385,7 @@ msgstr ""
 msgid "CTA button text"
 msgstr ""
 
-#: inc/events/events-functions.php:321 inc/events/events-options.php:23
+#: inc/events/events-functions.php:321 inc/events/events-options.php:21
 #: single-event.php:63
 msgid "Book Now"
 msgstr ""
@@ -2489,7 +2463,7 @@ msgstr ""
 msgid "Add a new speaker."
 msgstr ""
 
-#: inc/events/events-metabox.php:117 inc/events/events-options.php:57
+#: inc/events/events-metabox.php:117 inc/events/events-options.php:51
 #: inc/events/events-tags.php:162
 msgid "Schedule"
 msgstr ""
@@ -2502,15 +2476,15 @@ msgstr ""
 msgid "Add schedule"
 msgstr ""
 
-#: inc/events/events-options.php:58 inc/events/events-tags.php:213
+#: inc/events/events-options.php:52 inc/events/events-tags.php:213
 msgid "Still have questions?"
 msgstr ""
 
-#: inc/events/events-options.php:59
+#: inc/events/events-options.php:53
 msgid "Write to us at help@te-st.ru"
 msgstr ""
 
-#: inc/events/events-options.php:60
+#: inc/events/events-options.php:54
 #: template-parts/entry/entry-event-related.php:20
 msgid "More events"
 msgstr ""
@@ -2529,6 +2503,10 @@ msgstr ""
 
 #: modules/donations/donations.php:71
 msgid "Specify the amount of your donation"
+msgstr ""
+
+#: modules/donations/donations.php:159
+msgid "Help now"
 msgstr ""
 
 #: modules/donations/donations.php:272
@@ -2745,9 +2723,9 @@ msgstr ""
 msgid "Plot dir not found: %s"
 msgstr ""
 
-#: modules/starter/plot_config.php:128
-#: modules/starter/plot_data_builder.php:1050
-#: modules/starter/plot_data_builder.php:1052
+#: modules/starter/plot_config.php:124
+#: modules/starter/plot_data_builder.php:1056
+#: modules/starter/plot_data_builder.php:1058
 msgid "Primary Menu"
 msgstr ""
 
@@ -2755,7 +2733,7 @@ msgstr ""
 msgid "Kandinsky our work footer menu"
 msgstr ""
 
-#: modules/starter/plot_config.php:140
+#: modules/starter/plot_config.php:144
 msgid "Kandinsky news footer menu"
 msgstr ""
 
@@ -2843,34 +2821,6 @@ msgstr ""
 
 #: searchform.php:15
 msgid "Start search"
-msgstr ""
-
-#: src/experimental/donations.js:47
-msgid "Leyka Donations"
-msgstr ""
-
-#: src/experimental/donations.js:50
-msgid "donation"
-msgstr ""
-
-#: src/experimental/donations.js:50
-msgid "donate"
-msgstr ""
-
-#: src/experimental/donations.js:50
-msgid "leyka"
-msgstr ""
-
-#: src/experimental/donations.js:91
-msgid "Campaign Settings"
-msgstr ""
-
-#: src/experimental/donations.js:103
-msgid "Qty"
-msgstr ""
-
-#: src/experimental/donations.js:111
-msgid "Exclude campaigns"
 msgstr ""
 
 #: template-parts/offcanvas.php:25
@@ -3073,12 +3023,12 @@ msgid "Upgrade message from the plugin author:"
 msgstr ""
 
 #: vendor/class-tgm-plugin-activation.php:2712
-#: vendor/envato_setup/steps/plugins.php:82
+#: vendor/envato_setup/steps/plugins.php:91
 msgid "Update"
 msgstr ""
 
 #: vendor/class-tgm-plugin-activation.php:2715
-#: vendor/envato_setup/steps/plugins.php:84
+#: vendor/envato_setup/steps/plugins.php:93
 msgid "Activate"
 msgstr ""
 
@@ -3404,43 +3354,23 @@ msgstr ""
 msgid "Email to the theme support"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1173
-msgid ""
-"Our office, training rooms and support group rooms are open daily from 9:00 "
-"am to 10:00 pm."
-msgstr ""
-
-#: vendor/envato_setup/envato_setup.php:1174
-msgid ""
-"Moscow, 7th Stroiteley Street, 17, office: 211-217\n"
-"+7 (495) 787-87-23"
-msgstr ""
-
-#: vendor/envato_setup/envato_setup.php:1179
+#: vendor/envato_setup/envato_setup.php:1176
 #, php-format
 msgid ""
 "By making a donation, the user concludes a donation agreement by accepting a "
-"public offer, which is located %shere%s."
+"%spublic offer%s."
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1180
+#: vendor/envato_setup/envato_setup.php:1177
 msgid "Personal data processing policy"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1181
+#: vendor/envato_setup/envato_setup.php:1178
 msgid "Privacy policy"
 msgstr ""
 
-#: vendor/envato_setup/envato_setup.php:1230
+#: vendor/envato_setup/envato_setup.php:1225
 msgid "Related items"
-msgstr ""
-
-#: vendor/envato_setup/envato_setup.php:1254
-msgid "kandinsky-our-work-footer-menu"
-msgstr ""
-
-#: vendor/envato_setup/envato_setup.php:1256
-msgid "kandinsky-news-footer-menu"
 msgstr ""
 
 #: vendor/envato_setup/steps/content.php:14
@@ -3498,10 +3428,10 @@ msgstr ""
 
 #: vendor/envato_setup/steps/content.php:81
 #: vendor/envato_setup/steps/design.php:30
-#: vendor/envato_setup/steps/plugins.php:108
+#: vendor/envato_setup/steps/plugins.php:117
 #: vendor/envato_setup/steps/ready.php:30
 #: vendor/envato_setup/steps/settings.php:42
-#: vendor/envato_setup/steps/support.php:40
+#: vendor/envato_setup/steps/support.php:66
 msgid "Back"
 msgstr ""
 
@@ -3512,7 +3442,7 @@ msgstr ""
 #: vendor/envato_setup/steps/content.php:86
 #: vendor/envato_setup/steps/design.php:33
 #: vendor/envato_setup/steps/intro.php:68
-#: vendor/envato_setup/steps/plugins.php:113
+#: vendor/envato_setup/steps/plugins.php:122
 #: vendor/envato_setup/steps/settings.php:45
 msgid "Skip this step"
 msgstr ""
@@ -3536,7 +3466,7 @@ msgid "Upload new logo"
 msgstr ""
 
 #: vendor/envato_setup/steps/design.php:31
-#: vendor/envato_setup/steps/plugins.php:110
+#: vendor/envato_setup/steps/plugins.php:119
 #: vendor/envato_setup/steps/settings.php:43
 msgid "Continue"
 msgstr ""
@@ -3576,49 +3506,49 @@ msgstr ""
 msgid "Failed to find TGM plugin"
 msgstr ""
 
-#: vendor/envato_setup/steps/plugins.php:17
+#: vendor/envato_setup/steps/plugins.php:26
 msgid "Default Plugins"
 msgstr ""
 
-#: vendor/envato_setup/steps/plugins.php:35
+#: vendor/envato_setup/steps/plugins.php:44
 msgid ""
 "Your website needs a few essential plugins. The following plugins will be "
 "installed or updated:"
 msgstr ""
 
-#: vendor/envato_setup/steps/plugins.php:36
+#: vendor/envato_setup/steps/plugins.php:45
 msgid "You can add and remove plugins later on, in the Plugins admin folder."
 msgstr ""
 
-#: vendor/envato_setup/steps/plugins.php:45
+#: vendor/envato_setup/steps/plugins.php:54
 msgid "Installation required"
 msgstr ""
 
-#: vendor/envato_setup/steps/plugins.php:48
+#: vendor/envato_setup/steps/plugins.php:57
 msgid "Update and activation required"
 msgstr ""
 
-#: vendor/envato_setup/steps/plugins.php:48
+#: vendor/envato_setup/steps/plugins.php:57
 msgid "Update required"
 msgstr ""
 
-#: vendor/envato_setup/steps/plugins.php:50
+#: vendor/envato_setup/steps/plugins.php:59
 msgid "Activation required"
 msgstr ""
 
-#: vendor/envato_setup/steps/plugins.php:66
+#: vendor/envato_setup/steps/plugins.php:75
 msgid "We also recommend to add several more:"
 msgstr ""
 
-#: vendor/envato_setup/steps/plugins.php:68
+#: vendor/envato_setup/steps/plugins.php:77
 msgid "We recommend to add or update the following plugins:"
 msgstr ""
 
-#: vendor/envato_setup/steps/plugins.php:82
+#: vendor/envato_setup/steps/plugins.php:91
 msgid "Update and activate"
 msgstr ""
 
-#: vendor/envato_setup/steps/plugins.php:104
+#: vendor/envato_setup/steps/plugins.php:113
 msgid ""
 "Good news! All plugins are already installed and up to date. Let's proceed "
 "further."
@@ -3688,15 +3618,15 @@ msgstr ""
 msgid "Upload new site icon"
 msgstr ""
 
-#: vendor/envato_setup/steps/support.php:23
+#: vendor/envato_setup/steps/support.php:49
 msgid "Help and support"
 msgstr ""
 
-#: vendor/envato_setup/steps/support.php:26
+#: vendor/envato_setup/steps/support.php:52
 msgid "Thank you for using “Kandinsky” theme on your website!"
 msgstr ""
 
-#: vendor/envato_setup/steps/support.php:29
+#: vendor/envato_setup/steps/support.php:55
 #, php-format
 msgid ""
 "“Kandinsky” — is a free and open-source project supported by <a href=\"%s\" "
@@ -3704,29 +3634,29 @@ msgid ""
 "the community of independent developers."
 msgstr ""
 
-#: vendor/envato_setup/steps/support.php:31
+#: vendor/envato_setup/steps/support.php:57
 msgid ""
 "In case you encounter any questions or issues, we recommend you the "
 "following links:"
 msgstr ""
 
-#: vendor/envato_setup/steps/support.php:33
+#: vendor/envato_setup/steps/support.php:59
 #, php-format
 msgid ""
 "Documentation and FAQ — <a href=\"%s\" target=\"_blank\">GitHub Wiki</a>"
 msgstr ""
 
-#: vendor/envato_setup/steps/support.php:34
+#: vendor/envato_setup/steps/support.php:60
 #, php-format
 msgid "Source code — <a href=\"%s\" target=\"_blank\">GitHub</a>"
 msgstr ""
 
-#: vendor/envato_setup/steps/support.php:35
+#: vendor/envato_setup/steps/support.php:61
 #, php-format
 msgid "Developers’ <a href=\"%s\">Telegram-channel</a> (in Russian)"
 msgstr ""
 
-#: vendor/envato_setup/steps/support.php:37
+#: vendor/envato_setup/steps/support.php:63
 #, php-format
 msgid ""
 "If you need personalized (free during the testing period) consultations from "
@@ -3735,7 +3665,7 @@ msgid ""
 "at GitHub</a>."
 msgstr ""
 
-#: vendor/envato_setup/steps/support.php:41
+#: vendor/envato_setup/steps/support.php:67
 msgid "OK, I've got it!"
 msgstr ""
 

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-29 19:34+0300\n"
-"PO-Revision-Date: 2022-09-29 19:37+0300\n"
+"POT-Creation-Date: 2022-10-04 06:47+0300\n"
+"PO-Revision-Date: 2022-10-04 06:47+0300\n"
 "Last-Translator: ahaenor <ahaenor@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -75,9 +75,9 @@ msgstr[0] "%s комментарий"
 msgstr[1] "%s комментария"
 msgstr[2] "%s комментариев"
 
-#: comments.php:57 core/template-tags.php:169 core/template-tags.php:247
-#: core/template-tags.php:368 core/template-tags.php:369
-#: core/template-tags.php:370 page-events.php:21
+#: comments.php:57 core/template-tags.php:169 core/template-tags.php:239
+#: core/template-tags.php:360 core/template-tags.php:361
+#: core/template-tags.php:362 page-events.php:21
 msgid "Page"
 msgstr "Страница"
 
@@ -229,16 +229,16 @@ msgid "Menu"
 msgstr "Меню"
 
 #: core/admin.php:60 core/editor/blocks/news.php:18 footer.php:76
-#: modules/starter/plot_config.php:141
+#: modules/starter/plot_config.php:147
 #: modules/starter/plot_data_builder.php:563 src/js/blocks/news.js:43
-#: src/js/blocks/news.js:56 vendor/envato_setup/envato_setup.php:1228
-#: vendor/envato_setup/envato_setup.php:1255
+#: src/js/blocks/news.js:56 vendor/envato_setup/envato_setup.php:1223
+#: vendor/envato_setup/envato_setup.php:1250
 msgid "News"
 msgstr "Новости"
 
 #: core/admin.php:66 core/editor/blocks/projects.php:18
 #: modules/project/hooks.php:15 modules/project/hooks.php:17
-#: modules/starter/plot_config.php:132 modules/starter/plot_config.php:142
+#: modules/starter/plot_config.php:130 modules/starter/plot_config.php:148
 #: src/js/blocks/projects.js:89 src/js/blocks/projects.js:107
 msgid "Projects"
 msgstr "Проекты"
@@ -653,7 +653,7 @@ msgstr "Плагин, позволяющий редактировать шриф
 
 #: core/customizer/customizer-deprecated.php:35
 #: vendor/class-tgm-plugin-activation.php:2706
-#: vendor/envato_setup/steps/plugins.php:79
+#: vendor/envato_setup/steps/plugins.php:88
 msgid "Install"
 msgstr "Установить"
 
@@ -662,7 +662,6 @@ msgid "No, I’ll do it some other time"
 msgstr "Не устанавливать"
 
 #: core/customizer/kirki.php:40 core/customizer/kirki.php:59
-#: src/experimental/gutenberg-experimental.js:102
 msgid "None"
 msgstr "Нет"
 
@@ -689,7 +688,7 @@ msgid "Posts archive title"
 msgstr "Заголовок страницы архива"
 
 #: core/customizer/theme-mods/archive-settings.php:23
-#: core/template-tags.php:249
+#: core/template-tags.php:241
 msgid "Blog"
 msgstr "Блог"
 
@@ -702,8 +701,8 @@ msgid "Projects archive title"
 msgstr "Заголовок страницы проектов"
 
 #: core/customizer/theme-mods/archive-settings.php:47
-#: core/template-tags.php:257 core/template-tags.php:385
-#: vendor/envato_setup/envato_setup.php:1229
+#: core/template-tags.php:249 core/template-tags.php:377
+#: vendor/envato_setup/envato_setup.php:1224
 msgid "Our projects"
 msgstr "Наши проекты"
 
@@ -736,7 +735,7 @@ msgid "Active campaigns archive title"
 msgstr "Заголовок страницы активных кампаний"
 
 #: core/customizer/theme-mods/archive-settings.php:173
-#: core/template-tags.php:269 single-leyka_campaign.php:31
+#: core/template-tags.php:261 single-leyka_campaign.php:31
 #: single-leyka_campaign.php:50
 msgid "They need help"
 msgstr "Им нужна помощь"
@@ -746,7 +745,7 @@ msgid "Completed campaigns archive title"
 msgstr "Заголовок страницы завершенных кампаний"
 
 #: core/customizer/theme-mods/archive-settings.php:181
-#: core/template-tags.php:264 single-leyka_campaign.php:27
+#: core/template-tags.php:256 single-leyka_campaign.php:27
 #: single-leyka_campaign.php:53
 msgid "They alredy got help"
 msgstr "Уже получили помощь"
@@ -816,7 +815,6 @@ msgid "Footer - Columns"
 msgstr "Подвал - Колонки"
 
 #: core/customizer/theme-mods/footer.php:219 footer.php:46
-#: vendor/envato_setup/envato_setup.php:1247
 msgid "About Us"
 msgstr "О нас"
 
@@ -829,7 +827,7 @@ msgid "Menu news"
 msgstr "Меню новости"
 
 #: core/customizer/theme-mods/footer.php:285 footer.php:95
-#: vendor/envato_setup/envato_setup.php:1250
+#: vendor/envato_setup/envato_setup.php:1245
 msgid "Security policy"
 msgstr "Политика безопасности"
 
@@ -1112,19 +1110,11 @@ msgid "Button"
 msgstr "Кнопка"
 
 #: core/customizer/theme-mods/header.php:374
+#: core/customizer/theme-mods/header.php:376
 #: core/customizer/theme-mods/header.php:498
+#: core/customizer/theme-mods/header.php:500
 msgid "Button Text"
 msgstr "Текст кнопки"
-
-#: core/customizer/theme-mods/header.php:376
-#: core/customizer/theme-mods/header.php:500 core/template-tags.php:822
-#: core/template-tags.php:850 core/template-tags.php:907
-#: modules/donations/donations.php:159
-#: vendor/envato_setup/envato_setup.php:1191
-#: vendor/envato_setup/envato_setup.php:1207
-#: vendor/envato_setup/envato_setup.php:1216
-msgid "Help now"
-msgstr "Помочь сейчас"
 
 #: core/customizer/theme-mods/header.php:390
 #: core/customizer/theme-mods/header.php:514
@@ -1186,7 +1176,7 @@ msgstr "Комментарии"
 msgid "Related Posts Title"
 msgstr "Заголовок похожих статей"
 
-#: core/customizer/theme-mods/post-settings.php:55 core/template-tags.php:1014
+#: core/customizer/theme-mods/post-settings.php:55 core/template-tags.php:1006
 msgid "Related posts"
 msgstr "Познакомьтесь с другими проектами"
 
@@ -1208,7 +1198,7 @@ msgid "Related Projects Title"
 msgstr "Заголовок похожие проекты"
 
 #: core/customizer/theme-mods/project-settings.php:47
-#: core/template-tags.php:1027 vendor/envato_setup/envato_setup.php:1231
+#: core/template-tags.php:1019 vendor/envato_setup/envato_setup.php:1226
 msgid "Related projects"
 msgstr "Познакомьтесь с другими проектами"
 
@@ -1235,14 +1225,12 @@ msgid "Recommendations"
 msgstr "Рекомендации"
 
 #: core/editor/blocks/cta.php:30 core/editor/blocks/info.php:30
-#: core/editor/content.php:17 src/js/blocks/cta.js:75 src/js/blocks/cta.js:120
-#: src/js/blocks/info.js:69
+#: src/js/blocks/cta.js:75 src/js/blocks/cta.js:120 src/js/blocks/info.js:69
 msgid "112 volunteers are helping Line of Color at the moment"
 msgstr "112 волонтеров помогают «Линии цвета» в настоящий момент"
 
 #: core/editor/blocks/cta.php:34 core/editor/blocks/info.php:34
-#: core/editor/content.php:17 src/js/blocks/cta.js:79 src/js/blocks/cta.js:121
-#: src/js/blocks/info.js:73
+#: src/js/blocks/cta.js:79 src/js/blocks/cta.js:121 src/js/blocks/info.js:73
 msgid "Join a team of volunteers and consultants in our projects"
 msgstr "Присоединяйтесь к команде волонтеров и консультантов в наших проектах"
 
@@ -1274,32 +1262,31 @@ msgstr ""
 "В Нашей области 877 человек, которые страдают от алкогольной зависимости. "
 "Ваша поддержка поможет организовать для них реабилитационную программу."
 
-#: core/editor/blocks/hero.php:26 src/js/blocks/hero.js:135
-#: src/js/blocks/hero.js:152
-msgid "Help Now"
-msgstr "Помочь сейчас"
+#: core/editor/blocks/hero.php:26 core/template-tags.php:814
+#: core/template-tags.php:842 core/template-tags.php:899
+#: src/js/blocks/cta.js:287 src/js/blocks/hero.js:132 src/js/blocks/hero.js:152
+#: src/js/blocks/hero.js:328 vendor/envato_setup/envato_setup.php:1202
+#: vendor/envato_setup/envato_setup.php:1211
+msgid "Button text"
+msgstr "Текст кнопки"
 
 #: core/editor/blocks/hint.php:18
 msgid "Text."
 msgstr "Текст."
 
-#: core/editor/blocks/info.php:38 core/editor/content.php:14
-#: src/js/blocks/info.js:77
+#: core/editor/blocks/info.php:38 src/js/blocks/info.js:77
 msgid "Who we are?"
 msgstr "Кто мы?"
 
-#: core/editor/blocks/info.php:42 core/editor/content.php:14
-#: src/js/blocks/info.js:81
+#: core/editor/blocks/info.php:42 src/js/blocks/info.js:81
 msgid "What we do?"
 msgstr "Что мы делаем?"
 
-#: core/editor/blocks/info.php:46 core/editor/content.php:14
-#: src/js/blocks/info.js:85
+#: core/editor/blocks/info.php:46 src/js/blocks/info.js:85
 msgid "Stop drinking?"
 msgstr "Бросить пить?"
 
-#: core/editor/blocks/info.php:50 core/editor/content.php:14
-#: src/js/blocks/info.js:89
+#: core/editor/blocks/info.php:50 src/js/blocks/info.js:89
 msgid ""
 "The charitable organization &#34;Line of Color&#34; helps to overcome "
 "alcohol addiction and return to a fulfilling life."
@@ -1307,8 +1294,7 @@ msgstr ""
 "Благотворительная организация &#34;Линия Цвета&#34; помогает преодолеть "
 "алкогольную зависимость и вернуться к полноценной жизни."
 
-#: core/editor/blocks/info.php:54 core/editor/content.php:14
-#: src/js/blocks/info.js:93
+#: core/editor/blocks/info.php:54 src/js/blocks/info.js:93
 msgid ""
 "We organize rehabilitation programs, inform and help those who are ready to "
 "give up their addiction and return their lives."
@@ -1316,8 +1302,7 @@ msgstr ""
 "Организуем реабилитационные программы, информируем, помогаем тем, кто готов "
 "отказаться от пагубной привычки и вернуть свою жизнь."
 
-#: core/editor/blocks/info.php:58 core/editor/content.php:14
-#: src/js/blocks/info.js:97
+#: core/editor/blocks/info.php:58 src/js/blocks/info.js:97
 msgid ""
 "Fill out the anonymous form on the website, choose a convenient time for an "
 "individual consultation, or sign up for a support group."
@@ -1325,18 +1310,15 @@ msgstr ""
 "Заполните анонимную форму на сайте, выберите удобное вам время для "
 "индивидуальной консультации или запишитесь в группу поддержки."
 
-#: core/editor/blocks/info.php:62 core/editor/content.php:14
-#: src/js/blocks/info.js:101
+#: core/editor/blocks/info.php:62 src/js/blocks/info.js:101
 msgid "Learn about our work"
 msgstr "Узнайте о нашей работе"
 
-#: core/editor/blocks/info.php:66 core/editor/content.php:14
-#: src/js/blocks/info.js:105
+#: core/editor/blocks/info.php:66 src/js/blocks/info.js:105
 msgid "View projects"
 msgstr "Посмотреть проекты"
 
-#: core/editor/blocks/info.php:70 core/editor/content.php:14
-#: src/js/blocks/info.js:109
+#: core/editor/blocks/info.php:70 src/js/blocks/info.js:109
 msgid "Get help"
 msgstr "Получить помощь"
 
@@ -1372,18 +1354,6 @@ msgid ""
 msgstr ""
 "Ваша миссия должна обобщать все что вы делаете. В краткой фразе заложите "
 "весь смысл вашей организации и ваших проектов."
-
-#: core/editor/content.php:14
-msgid "Charitable organization &#34;Line of Color&#34;"
-msgstr "Благотворительная организация &#34;Линия Цвета&#34;"
-
-#: core/editor/content.php:14
-msgid ""
-"For more than 10 years we have been helping people with alcoholism, "
-"organizing rehabilitation programs and groups"
-msgstr ""
-"Более 10 лет мы помогаем людям, страдающим алкоголизмом,  организуем "
-"реабилитационные программы и группы"
 
 #: core/editor/functions.php:112
 msgid "White"
@@ -1568,59 +1538,59 @@ msgctxt "Yoast SEO"
 msgid "Home"
 msgstr "Главная"
 
-#: core/template-tags.php:252
+#: core/template-tags.php:244
 msgid "Donations history"
 msgstr "История пожертвований"
 
-#: core/template-tags.php:274
+#: core/template-tags.php:266
 msgid "Search results"
 msgstr "Результаты поиска"
 
-#: core/template-tags.php:277
+#: core/template-tags.php:269
 msgid "404: Page not found"
 msgstr "Ошибка 404: Страница не найдена"
 
-#: core/template-tags.php:367
+#: core/template-tags.php:359
 msgid "Posts navigation"
 msgstr "Навигация по записям"
 
-#: core/template-tags.php:369
+#: core/template-tags.php:361
 msgid "Previous"
 msgstr "Предыдущая"
 
-#: core/template-tags.php:370
+#: core/template-tags.php:362
 msgid "Next"
 msgstr "Следующая"
 
-#: core/template-tags.php:384
+#: core/template-tags.php:376
 msgid "More projects"
 msgstr "Еще проекты"
 
-#: core/template-tags.php:387
+#: core/template-tags.php:379
 msgid "More news"
 msgstr "Еще новости"
 
-#: core/template-tags.php:388
+#: core/template-tags.php:380
 msgid "Latest news"
 msgstr "Последние новости"
 
-#: core/template-tags.php:762
+#: core/template-tags.php:754
 msgid "Open search"
 msgstr "Открыть поиск"
 
-#: core/template-tags.php:783
+#: core/template-tags.php:775
 msgid "Close search"
 msgstr "Закрыть поиск"
 
-#: core/template-tags.php:798
+#: core/template-tags.php:790
 msgid "Open Off-Canvas"
 msgstr "Открыть боковую панель"
 
-#: core/template-tags.php:811
+#: core/template-tags.php:803
 msgid "Close Off-Canvas"
 msgstr "Закрыть боковую панель"
 
-#: core/template-tags.php:929 functions.php:85 template-parts/offcanvas.php:29
+#: core/template-tags.php:921 functions.php:85 template-parts/offcanvas.php:29
 msgid "Primary menu"
 msgstr "Главное меню"
 
@@ -1634,7 +1604,7 @@ msgstr "Доступна новая версия темы <strong>% s </strong>.
 msgid "Update to version %s"
 msgstr "Обновить до версии %s"
 
-#: footer.php:58 vendor/envato_setup/envato_setup.php:1253
+#: footer.php:58 vendor/envato_setup/envato_setup.php:1248
 msgid "Our Work"
 msgstr "Наша работа"
 
@@ -1703,7 +1673,7 @@ msgstr "E-mail"
 msgid "CTA button text"
 msgstr "Текст кнопки"
 
-#: inc/events/events-functions.php:321 inc/events/events-options.php:23
+#: inc/events/events-functions.php:321 inc/events/events-options.php:21
 #: single-event.php:63
 msgid "Book Now"
 msgstr "Забронировать"
@@ -1793,7 +1763,7 @@ msgstr "На сайте нет ни одного спикера."
 msgid "Add a new speaker."
 msgstr "Добавить нового спикера."
 
-#: inc/events/events-metabox.php:117 inc/events/events-options.php:57
+#: inc/events/events-metabox.php:117 inc/events/events-options.php:51
 #: inc/events/events-tags.php:162
 msgid "Schedule"
 msgstr "Расписание"
@@ -1814,15 +1784,15 @@ msgstr "Добавить время"
 msgid "Add schedule"
 msgstr "Добавить расписание"
 
-#: inc/events/events-options.php:58 inc/events/events-tags.php:213
+#: inc/events/events-options.php:52 inc/events/events-tags.php:213
 msgid "Still have questions?"
 msgstr "Остались вопросы?"
 
-#: inc/events/events-options.php:59
+#: inc/events/events-options.php:53
 msgid "Write to us at help@te-st.ru"
 msgstr "Напишите нам на help@te-st.ru"
 
-#: inc/events/events-options.php:60
+#: inc/events/events-options.php:54
 #: template-parts/entry/entry-event-related.php:20
 msgid "More events"
 msgstr "Еще мероприятия"
@@ -1843,6 +1813,10 @@ msgstr "или"
 msgid "Specify the amount of your donation"
 msgstr "Укажите сумму вашего пожертвования"
 
+#: modules/donations/donations.php:159
+msgid "Help now"
+msgstr "Помочь сейчас"
+
 #: modules/donations/donations.php:272
 msgid "Charity"
 msgstr "Благотворительность"
@@ -1851,12 +1825,11 @@ msgstr "Благотворительность"
 msgid "Donations short list"
 msgstr "Краткий список жертвователей"
 
-#: modules/donations/widgets.php:128 src/experimental/donations.js:95
-#: src/js/blocks/cover.js:161 src/js/blocks/events.js:292
-#: src/js/blocks/info.js:190 src/js/blocks/info.js:229
-#: src/js/blocks/info.js:268 src/js/blocks/news.js:279
-#: src/js/blocks/partners.js:201 src/js/blocks/people.js:243
-#: src/js/blocks/projects.js:326
+#: modules/donations/widgets.php:128 src/js/blocks/cover.js:161
+#: src/js/blocks/events.js:292 src/js/blocks/info.js:190
+#: src/js/blocks/info.js:229 src/js/blocks/info.js:268
+#: src/js/blocks/news.js:279 src/js/blocks/partners.js:201
+#: src/js/blocks/people.js:243 src/js/blocks/projects.js:326
 msgid "Heading"
 msgstr "Заголовок"
 
@@ -2075,9 +2048,9 @@ msgstr "Разархивированная директория не найде�
 msgid "Plot dir not found: %s"
 msgstr "Директория сценария не найдена: %s"
 
-#: modules/starter/plot_config.php:128
-#: modules/starter/plot_data_builder.php:1050
-#: modules/starter/plot_data_builder.php:1052
+#: modules/starter/plot_config.php:124
+#: modules/starter/plot_data_builder.php:1056
+#: modules/starter/plot_data_builder.php:1058
 msgid "Primary Menu"
 msgstr "Главное меню"
 
@@ -2085,7 +2058,7 @@ msgstr "Главное меню"
 msgid "Kandinsky our work footer menu"
 msgstr "Меню «Наша работа» в подвале"
 
-#: modules/starter/plot_config.php:140
+#: modules/starter/plot_config.php:144
 msgid "Kandinsky news footer menu"
 msgstr "Меню «Новости» в подвале"
 
@@ -2182,51 +2155,6 @@ msgstr "Введите текст для поиска ..."
 msgid "Start search"
 msgstr "Начать поиск"
 
-#: src/experimental/donations.js:47
-msgid "Leyka Donations"
-msgstr "Пожертвования"
-
-#: src/experimental/donations.js:50
-msgid "donation"
-msgstr "пожертвования"
-
-#: src/experimental/donations.js:50
-msgid "donate"
-msgstr "donate"
-
-#: src/experimental/donations.js:50
-msgid "leyka"
-msgstr "лейка"
-
-#: src/experimental/donations.js:91
-msgid "Campaign Settings"
-msgstr "Настройки кампании"
-
-#: src/experimental/donations.js:103
-msgid "Qty"
-msgstr "Кол.-во"
-
-#: src/experimental/donations.js:111
-msgid "Exclude campaigns"
-msgstr "Исключить кампании"
-
-#: src/experimental/donations.js:120 src/js/blocks/cover.js:290
-#: src/js/blocks/cta.js:249 src/js/blocks/events.js:333
-#: src/js/blocks/hero.js:478 src/js/blocks/info.js:308
-#: src/js/blocks/news.js:333 src/js/blocks/partners.js:277
-#: src/js/blocks/people.js:320 src/js/blocks/projects.js:380
-#: src/js/blocks/recommend.js:117
-msgid "Background Color"
-msgstr "Цвет фона"
-
-#: src/experimental/gutenberg-experimental.js:98 src/js/blocks/cover.js:134
-msgid "Default"
-msgstr "По умолчанию"
-
-#: src/experimental/gutenberg-experimental.js:115
-msgid "Page Options"
-msgstr "Параметры страницы"
-
 #: src/js/admin/admin.js:133
 msgid "Delete schedule"
 msgstr "Удалить расписание"
@@ -2247,12 +2175,16 @@ msgstr "image"
 msgid "cover"
 msgstr "cover"
 
+#: src/js/blocks/cover.js:134
+msgid "Default"
+msgstr "По умолчанию"
+
 #: src/js/blocks/cover.js:139
 msgid "Bottom"
 msgstr "Нижний"
 
 #: src/js/blocks/cover.js:158 src/js/blocks/cta.js:145
-#: src/js/blocks/events.js:289 src/js/blocks/hero.js:186
+#: src/js/blocks/events.js:289 src/js/blocks/hero.js:184
 #: src/js/blocks/info.js:164 src/js/blocks/news.js:275
 #: src/js/blocks/partners.js:198 src/js/blocks/people.js:239
 #: src/js/blocks/projects.js:323 vendor/envato_setup/envato_setup.php:327
@@ -2264,19 +2196,19 @@ msgstr "Параметры"
 msgid "Recommendation"
 msgstr "Рекомендации"
 
-#: src/js/blocks/cover.js:194 src/js/blocks/hero.js:403
+#: src/js/blocks/cover.js:194 src/js/blocks/hero.js:422
 msgid "Background Image"
 msgstr "Фоновое изображение"
 
-#: src/js/blocks/cover.js:239 src/js/blocks/hero.js:454
+#: src/js/blocks/cover.js:239 src/js/blocks/hero.js:473
 msgid "Remove Background Image"
 msgstr "Удалить фоновую картинку"
 
-#: src/js/blocks/cover.js:251 src/js/blocks/hero.js:466
+#: src/js/blocks/cover.js:251 src/js/blocks/hero.js:485
 msgid "Add Background Image"
 msgstr "Добавить фоновое изображение"
 
-#: src/js/blocks/cover.js:264
+#: src/js/blocks/cover.js:264 src/js/blocks/hero.js:300
 msgid "Min Height"
 msgstr "Минимальная высота"
 
@@ -2287,8 +2219,16 @@ msgstr "Минимальная высота"
 msgid "Colors"
 msgstr "Цвета"
 
+#: src/js/blocks/cover.js:290 src/js/blocks/cta.js:249
+#: src/js/blocks/events.js:333 src/js/blocks/hero.js:497
+#: src/js/blocks/info.js:308 src/js/blocks/news.js:333
+#: src/js/blocks/partners.js:277 src/js/blocks/people.js:320
+#: src/js/blocks/projects.js:380 src/js/blocks/recommend.js:117
+msgid "Background Color"
+msgstr "Цвет фона"
+
 #: src/js/blocks/cover.js:300 src/js/blocks/cta.js:269
-#: src/js/blocks/hero.js:290 src/js/blocks/recommend.js:107
+#: src/js/blocks/hero.js:288 src/js/blocks/recommend.js:107
 msgid "Text Color"
 msgstr "Цвет текста"
 
@@ -2326,15 +2266,15 @@ msgstr "Заголовок"
 msgid "Text"
 msgstr "Текст"
 
-#: src/js/blocks/cta.js:173 src/js/blocks/hero.js:215
+#: src/js/blocks/cta.js:173 src/js/blocks/hero.js:213
 msgid "Call to action Image"
 msgstr "Изображение призыва к действию"
 
-#: src/js/blocks/cta.js:216 src/js/blocks/hero.js:266
+#: src/js/blocks/cta.js:216 src/js/blocks/hero.js:264
 msgid "Remove Image"
 msgstr "Удалить изображение"
 
-#: src/js/blocks/cta.js:228 src/js/blocks/hero.js:278
+#: src/js/blocks/cta.js:228 src/js/blocks/hero.js:276
 msgid "Add Image"
 msgstr "Добавить изображение"
 
@@ -2342,11 +2282,7 @@ msgstr "Добавить изображение"
 msgid "Title Color"
 msgstr "Цвет заголовка"
 
-#: src/js/blocks/cta.js:287 src/js/blocks/hero.js:309
-msgid "Button text"
-msgstr "Текст кнопки"
-
-#: src/js/blocks/cta.js:295 src/js/blocks/hero.js:317
+#: src/js/blocks/cta.js:295 src/js/blocks/hero.js:336
 msgid "Button url"
 msgstr "Ссылка кнопки"
 
@@ -2354,19 +2290,19 @@ msgstr "Ссылка кнопки"
 msgid "Open in new tab"
 msgstr "Открыть в новой вкладке"
 
-#: src/js/blocks/cta.js:316 src/js/blocks/hero.js:342
+#: src/js/blocks/cta.js:316 src/js/blocks/hero.js:361
 msgid "Button Background"
 msgstr "Цвет фона кнопки"
 
-#: src/js/blocks/cta.js:327 src/js/blocks/hero.js:353
+#: src/js/blocks/cta.js:327 src/js/blocks/hero.js:372
 msgid "Button Color"
 msgstr "Цвет текста кнопки"
 
-#: src/js/blocks/cta.js:338 src/js/blocks/hero.js:364
+#: src/js/blocks/cta.js:338 src/js/blocks/hero.js:383
 msgid "Button Hover Background"
 msgstr "Цвет фона кнопки при наведении"
 
-#: src/js/blocks/cta.js:349 src/js/blocks/hero.js:375
+#: src/js/blocks/cta.js:349 src/js/blocks/hero.js:394
 msgid "Button Hover Color"
 msgstr "Цвет текста кнопки при наведении"
 
@@ -2486,55 +2422,55 @@ msgstr "Главный блок"
 msgid "Title, description, button, and background image."
 msgstr "Заголовок, описание, кнопка и фоновое изображение."
 
-#: src/js/blocks/hero.js:190
+#: src/js/blocks/hero.js:188
 msgid "Call to action title"
 msgstr "Заголовок «призыва к действию» (CTA)"
 
-#: src/js/blocks/hero.js:198
+#: src/js/blocks/hero.js:196
 msgid "Call to action text"
 msgstr "Текст «призыва к действию» (CTA)"
 
-#: src/js/blocks/hero.js:221
+#: src/js/blocks/hero.js:219
 msgid "Displayed on the right side of the Call to action text"
 msgstr "Отображается на правой стороне текста Призыв к действию"
 
-#: src/js/blocks/hero.js:304
+#: src/js/blocks/hero.js:323
 msgid "Buttons"
 msgstr "Кнопки"
 
-#: src/js/blocks/hero.js:325
+#: src/js/blocks/hero.js:344
 msgid "Additional Button text"
 msgstr "Текст дополнительной кнопки"
 
-#: src/js/blocks/hero.js:333
+#: src/js/blocks/hero.js:352
 msgid "Additional Button url"
 msgstr "Ссылка дополнительной кнопки"
 
-#: src/js/blocks/hero.js:389
+#: src/js/blocks/hero.js:408
 msgid "Background"
 msgstr "Фон"
 
-#: src/js/blocks/hero.js:409
+#: src/js/blocks/hero.js:428
 msgid "Recommended size 1600x663px"
 msgstr "Рекомендуемый размер 1600x663px"
 
-#: src/js/blocks/hero.js:492
+#: src/js/blocks/hero.js:511
 msgid "Overlay"
 msgstr "Наложение"
 
-#: src/js/blocks/hero.js:509
+#: src/js/blocks/hero.js:528
 msgid "Overlay Gradient Start Color"
 msgstr "Цвета начала градиента"
 
-#: src/js/blocks/hero.js:541
+#: src/js/blocks/hero.js:560
 msgid "Overlay Gradient End Color"
 msgstr "Цвет окончания градиента"
 
-#: src/js/blocks/hero.js:563
+#: src/js/blocks/hero.js:582
 msgid "Typography"
 msgstr "Типографика"
 
-#: src/js/blocks/hero.js:569
+#: src/js/blocks/hero.js:588
 msgid "Heading level"
 msgstr "Уровень заголовка"
 
@@ -3011,12 +2947,12 @@ msgid "Upgrade message from the plugin author:"
 msgstr "Обновить сообщение от автора плагина:"
 
 #: vendor/class-tgm-plugin-activation.php:2712
-#: vendor/envato_setup/steps/plugins.php:82
+#: vendor/envato_setup/steps/plugins.php:91
 msgid "Update"
 msgstr "Обновить"
 
 #: vendor/class-tgm-plugin-activation.php:2715
-#: vendor/envato_setup/steps/plugins.php:84
+#: vendor/envato_setup/steps/plugins.php:93
 msgid "Activate"
 msgstr "Активировать"
 
@@ -3355,50 +3291,26 @@ msgstr ""
 msgid "Email to the theme support"
 msgstr "Написать тех.службе"
 
-#: vendor/envato_setup/envato_setup.php:1173
-msgid ""
-"Our office, training rooms and support group rooms are open daily from 9:00 "
-"am to 10:00 pm."
-msgstr ""
-"Наш офис, учебные залы и помещения групп поддержки открыты ежедневно с 9:00 "
-"до 22:00 часов."
-
-#: vendor/envato_setup/envato_setup.php:1174
-msgid ""
-"Moscow, 7th Stroiteley Street, 17, office: 211-217\n"
-"+7 (495) 787-87-23"
-msgstr ""
-"Москва, 7-я улица Строителей, 17, оф.: 211-217\n"
-"+7 (495) 787-87-23"
-
-#: vendor/envato_setup/envato_setup.php:1179
+#: vendor/envato_setup/envato_setup.php:1176
 #, php-format
 msgid ""
 "By making a donation, the user concludes a donation agreement by accepting a "
-"public offer, which is located %shere%s."
+"%spublic offer%s."
 msgstr ""
 "Совершая пожертвование, пользователь заключает договор пожертвования путем "
-"акцепта публичной оферты, которая находится %sздесь%s."
+"акцепта %sпубличной оферты%s."
 
-#: vendor/envato_setup/envato_setup.php:1180
+#: vendor/envato_setup/envato_setup.php:1177
 msgid "Personal data processing policy"
 msgstr "Политика обработки персональных данных"
 
-#: vendor/envato_setup/envato_setup.php:1181
+#: vendor/envato_setup/envato_setup.php:1178
 msgid "Privacy policy"
 msgstr "Политика конфиденциальности"
 
-#: vendor/envato_setup/envato_setup.php:1230
+#: vendor/envato_setup/envato_setup.php:1225
 msgid "Related items"
 msgstr "Еще по теме"
-
-#: vendor/envato_setup/envato_setup.php:1254
-msgid "kandinsky-our-work-footer-menu"
-msgstr "menyu-nasha-rabota-v-podvale"
-
-#: vendor/envato_setup/envato_setup.php:1256
-msgid "kandinsky-news-footer-menu"
-msgstr "menyu-novosti-v-podvale"
 
 #: vendor/envato_setup/steps/content.php:14
 msgid "Theme default content"
@@ -3465,10 +3377,10 @@ msgstr ""
 
 #: vendor/envato_setup/steps/content.php:81
 #: vendor/envato_setup/steps/design.php:30
-#: vendor/envato_setup/steps/plugins.php:108
+#: vendor/envato_setup/steps/plugins.php:117
 #: vendor/envato_setup/steps/ready.php:30
 #: vendor/envato_setup/steps/settings.php:42
-#: vendor/envato_setup/steps/support.php:40
+#: vendor/envato_setup/steps/support.php:66
 msgid "Back"
 msgstr "Шаг назад"
 
@@ -3479,7 +3391,7 @@ msgstr "Настроить"
 #: vendor/envato_setup/steps/content.php:86
 #: vendor/envato_setup/steps/design.php:33
 #: vendor/envato_setup/steps/intro.php:68
-#: vendor/envato_setup/steps/plugins.php:113
+#: vendor/envato_setup/steps/plugins.php:122
 #: vendor/envato_setup/steps/settings.php:45
 msgid "Skip this step"
 msgstr "Пропустить шаг"
@@ -3510,7 +3422,7 @@ msgid "Upload new logo"
 msgstr "Загрузить логотип"
 
 #: vendor/envato_setup/steps/design.php:31
-#: vendor/envato_setup/steps/plugins.php:110
+#: vendor/envato_setup/steps/plugins.php:119
 #: vendor/envato_setup/steps/settings.php:43
 msgid "Continue"
 msgstr "Продолжить"
@@ -3557,11 +3469,11 @@ msgstr "Поехали!"
 msgid "Failed to find TGM plugin"
 msgstr "Плагин TGMPA не найден"
 
-#: vendor/envato_setup/steps/plugins.php:17
+#: vendor/envato_setup/steps/plugins.php:26
 msgid "Default Plugins"
 msgstr "Плагины"
 
-#: vendor/envato_setup/steps/plugins.php:35
+#: vendor/envato_setup/steps/plugins.php:44
 msgid ""
 "Your website needs a few essential plugins. The following plugins will be "
 "installed or updated:"
@@ -3569,41 +3481,41 @@ msgstr ""
 "Вашему сайту понадобится несколько плагинов. Мы установим или обновим "
 "следующие плагины:"
 
-#: vendor/envato_setup/steps/plugins.php:36
+#: vendor/envato_setup/steps/plugins.php:45
 msgid "You can add and remove plugins later on, in the Plugins admin folder."
 msgstr ""
 "Вы можете добавить или удалить плагины и дальше, в разделе «Плагины» "
 "административной панели сайта."
 
-#: vendor/envato_setup/steps/plugins.php:45
+#: vendor/envato_setup/steps/plugins.php:54
 msgid "Installation required"
 msgstr "Необходима установка"
 
-#: vendor/envato_setup/steps/plugins.php:48
+#: vendor/envato_setup/steps/plugins.php:57
 msgid "Update and activation required"
 msgstr "Необходимо обновление и активация"
 
-#: vendor/envato_setup/steps/plugins.php:48
+#: vendor/envato_setup/steps/plugins.php:57
 msgid "Update required"
 msgstr "Необходимо обновление"
 
-#: vendor/envato_setup/steps/plugins.php:50
+#: vendor/envato_setup/steps/plugins.php:59
 msgid "Activation required"
 msgstr "Необходима активация"
 
-#: vendor/envato_setup/steps/plugins.php:66
+#: vendor/envato_setup/steps/plugins.php:75
 msgid "We also recommend to add several more:"
 msgstr "Мы также рекомендуем добавить на сайт следующие плагины:"
 
-#: vendor/envato_setup/steps/plugins.php:68
+#: vendor/envato_setup/steps/plugins.php:77
 msgid "We recommend to add or update the following plugins:"
 msgstr "Мы рекомендуем добавить или обновить следующие плагины:"
 
-#: vendor/envato_setup/steps/plugins.php:82
+#: vendor/envato_setup/steps/plugins.php:91
 msgid "Update and activate"
 msgstr "Обновить и активировать"
 
-#: vendor/envato_setup/steps/plugins.php:104
+#: vendor/envato_setup/steps/plugins.php:113
 msgid ""
 "Good news! All plugins are already installed and up to date. Let's proceed "
 "further."
@@ -3689,15 +3601,15 @@ msgstr ""
 msgid "Upload new site icon"
 msgstr "Загрузить favicon"
 
-#: vendor/envato_setup/steps/support.php:23
+#: vendor/envato_setup/steps/support.php:49
 msgid "Help and support"
 msgstr "Помощь и поддержка"
 
-#: vendor/envato_setup/steps/support.php:26
+#: vendor/envato_setup/steps/support.php:52
 msgid "Thank you for using “Kandinsky” theme on your website!"
 msgstr "Спасибо за использование темы «Кандинский» на вашем сайте!"
 
-#: vendor/envato_setup/steps/support.php:29
+#: vendor/envato_setup/steps/support.php:55
 #, php-format
 msgid ""
 "“Kandinsky” — is a free and open-source project supported by <a href=\"%s\" "
@@ -3708,7 +3620,7 @@ msgstr ""
 "поддерживается <a href=\"%s\" target=\"_blank\">Теплицей социальных "
 "технологий</a> и сообществом независимых разработчиков."
 
-#: vendor/envato_setup/steps/support.php:31
+#: vendor/envato_setup/steps/support.php:57
 msgid ""
 "In case you encounter any questions or issues, we recommend you the "
 "following links:"
@@ -3716,7 +3628,7 @@ msgstr ""
 "Если вы столкнулись с какими-либо проблемами или вопросами, мы рекомендуем "
 "следующие ссылки:"
 
-#: vendor/envato_setup/steps/support.php:33
+#: vendor/envato_setup/steps/support.php:59
 #, php-format
 msgid ""
 "Documentation and FAQ — <a href=\"%s\" target=\"_blank\">GitHub Wiki</a>"
@@ -3724,17 +3636,17 @@ msgstr ""
 "Документация и ответы на вопросы — <a href=\"%s\" target=\"_blank\">GitHub "
 "Wiki</a>"
 
-#: vendor/envato_setup/steps/support.php:34
+#: vendor/envato_setup/steps/support.php:60
 #, php-format
 msgid "Source code — <a href=\"%s\" target=\"_blank\">GitHub</a>"
 msgstr "Исходный код — <a href=\"%s\" target=\"_blank\">GitHub</a>"
 
-#: vendor/envato_setup/steps/support.php:35
+#: vendor/envato_setup/steps/support.php:61
 #, php-format
 msgid "Developers’ <a href=\"%s\">Telegram-channel</a> (in Russian)"
 msgstr "<a href=\"%s\">Telegram-канал</a> разработчиков (на русском)"
 
-#: vendor/envato_setup/steps/support.php:37
+#: vendor/envato_setup/steps/support.php:63
 #, php-format
 msgid ""
 "If you need personalized (free during the testing period) consultations from "
@@ -3747,9 +3659,66 @@ msgstr ""
 "\" target=\"_blank\">%s</a> или <a href=\"%s\" target=\"_blank\">оставляйте "
 "заявку на GitHub</a>."
 
-#: vendor/envato_setup/steps/support.php:41
+#: vendor/envato_setup/steps/support.php:67
 msgid "OK, I've got it!"
 msgstr "Понятно!"
+
+#~ msgid "Help Now"
+#~ msgstr "Помочь сейчас"
+
+#~ msgid "Charitable organization &#34;Line of Color&#34;"
+#~ msgstr "Благотворительная организация &#34;Линия Цвета&#34;"
+
+#~ msgid ""
+#~ "For more than 10 years we have been helping people with alcoholism, "
+#~ "organizing rehabilitation programs and groups"
+#~ msgstr ""
+#~ "Более 10 лет мы помогаем людям, страдающим алкоголизмом,  организуем "
+#~ "реабилитационные программы и группы"
+
+#~ msgid "Leyka Donations"
+#~ msgstr "Пожертвования"
+
+#~ msgid "donation"
+#~ msgstr "пожертвования"
+
+#~ msgid "donate"
+#~ msgstr "donate"
+
+#~ msgid "leyka"
+#~ msgstr "лейка"
+
+#~ msgid "Campaign Settings"
+#~ msgstr "Настройки кампании"
+
+#~ msgid "Qty"
+#~ msgstr "Кол.-во"
+
+#~ msgid "Exclude campaigns"
+#~ msgstr "Исключить кампании"
+
+#~ msgid "Page Options"
+#~ msgstr "Параметры страницы"
+
+#~ msgid ""
+#~ "Our office, training rooms and support group rooms are open daily from "
+#~ "9:00 am to 10:00 pm."
+#~ msgstr ""
+#~ "Наш офис, учебные залы и помещения групп поддержки открыты ежедневно с "
+#~ "9:00 до 22:00 часов."
+
+#~ msgid ""
+#~ "Moscow, 7th Stroiteley Street, 17, office: 211-217\n"
+#~ "+7 (495) 787-87-23"
+#~ msgstr ""
+#~ "Москва, 7-я улица Строителей, 17, оф.: 211-217\n"
+#~ "+7 (495) 787-87-23"
+
+#~ msgid "kandinsky-our-work-footer-menu"
+#~ msgstr "menyu-nasha-rabota-v-podvale"
+
+#~ msgid "kandinsky-news-footer-menu"
+#~ msgstr "menyu-novosti-v-podvale"
 
 #~ msgid "Cyr to Lat enhanced"
 #~ msgstr "Cyr to Lat enhanced"
