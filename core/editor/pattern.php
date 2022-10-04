@@ -59,4 +59,4 @@ function knd_register_patterns() {
  */
 
 }
-add_action( 'init', 'knd_register_patterns' );
+//add_action( 'init', 'knd_register_patterns' );
