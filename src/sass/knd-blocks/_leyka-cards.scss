@@ -10,6 +10,10 @@
 	--knd-block-card-excerpt: var(---knd-color-base);
 }
 
+.entry-content .wp-block-leyka-form:not(:last-child) {
+	margin-bottom: 26px;
+}
+
 .leyka-shortcode.campaign-card {
 	border-radius: var(--knd-image-border-radius);
 	//max-width: 1160px !important;

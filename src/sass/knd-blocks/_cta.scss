@@ -118,6 +118,8 @@
 		color: var(--knd-button-color);
 		background-color: var(--knd-button-background);
 		border-color: var(--knd-button-background);
+		min-width: 180px;
+		text-align: center;
 
 		&:focus {
 			color: var(--knd-button-color);

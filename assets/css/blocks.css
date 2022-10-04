@@ -1545,6 +1545,8 @@
 	color: var(--knd-button-color);
 	background-color: var(--knd-button-background);
 	border-color: var(--knd-button-background);
+	min-width: 180px;
+	text-align: center;
 }
 
 .knd-block-cta__action .knd-button:focus, .knd-block-cta__action .knd-event__booking .em-booking-form-details .em-booking-submit:focus, .knd-event__booking .em-booking-form-details .knd-block-cta__action .em-booking-submit:focus, .knd-block-cta__action .knd-event__login :focus[name="wp-submit"], .knd-event__login .knd-block-cta__action :focus[name="wp-submit"] {
@@ -2177,6 +2179,10 @@
 	--knd-block-card-progressbar: var(--knd-color-main);
 	--knd-block-card-target-amount: var(--leyka-color-gray-notsolight);
 	--knd-block-card-excerpt: var(---knd-color-base);
+}
+
+.entry-content .wp-block-leyka-form:not(:last-child) {
+	margin-bottom: 26px;
 }
 
 .leyka-shortcode.campaign-card {

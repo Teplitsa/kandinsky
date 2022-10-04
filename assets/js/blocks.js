@@ -1928,9 +1928,6 @@
 
 		supports: {
 			anchor: true,
-			// color: {
-			// 	background: true,
-			// }
 		},
 
 		attributes: {
@@ -1958,6 +1955,25 @@
 				label: __( 'Down Arrow', 'knd' )
 			},
 		],
+
+		example: {
+			innerBlocks: [
+				{
+					name: 'core/paragraph',
+					attributes: {
+						/* translators: example text. */
+						content: __(
+							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent et eros eu felis.'
+						),
+						color: {
+							background: '#fdda73',
+						}
+					},
+				},
+			],
+			viewportWidth: 720
+		},
+
 
 		edit: function( props ) {
 			

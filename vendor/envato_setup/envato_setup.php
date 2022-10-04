@@ -1170,13 +1170,10 @@ function knd_demo_theme_mods() {
 		'font-style'  => 'normal',
 	);
 
-	$about_content = '<p>' . esc_html__( 'Our office, training rooms and support group rooms are open daily from 9:00 am to 10:00 pm.', 'knd' ) . '</p>
-<p>' . esc_html__( 'Moscow, 7th Stroiteley Street, 17, office: 211-217
-+7 (495) 787-87-23', 'knd' ) . '
-<a href="mailto:info@colorline.ru">info@colorline.ru</a>
-</p>';
+	$about_content = '<p><strong>ЧАСЫ РАБОТЫ:</strong><br> Мы работаем: время работы</p>
+	<p><strong>КОНТАКТЫ:</strong><br> Адрес<br> Телефон<br> Email</p>';
 	
-	$policy_content = sprintf( '<p>' . esc_html__( 'By making a donation, the user concludes a donation agreement by accepting a public offer, which is located %shere%s.', 'knd' ) . '</p>
+	$policy_content = sprintf( '<p>' . esc_html__( 'By making a donation, the user concludes a donation agreement by accepting a %spublic offer%s.', 'knd' ) . '</p>
 <p><a href="' . esc_url( home_url( 'legal' ) ) . '">' . esc_html__( 'Personal data processing policy', 'knd' ) . '</a><br>
 <a href="' . esc_url( home_url( 'legal' ) ) . '">' . esc_html__( 'Privacy policy', 'knd' ) . '</a>
 </p>', '<a href="' . esc_url( home_url( 'legal' ) ) . '">', '</a>' );
@@ -1242,7 +1239,7 @@ function knd_demo_theme_mods() {
 		'footer_color_social'       => '#183343',
 		'footer_color_social_hover' => '#4d606a',
 
-		'footer_about_title'        => esc_html__( 'About Us', 'knd' ),
+		//'footer_about_title'        => esc_html__( 'About Us', 'knd' ),
 		'footer_about'              => $about_content,
 
 		'footer_policy_title'        => esc_html__( 'Security policy', 'knd' ),
