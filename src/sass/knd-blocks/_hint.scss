@@ -107,6 +107,18 @@
 			}
 		}
 	}
+
+	a[href="#knd-remove-all-hints"] {
+		color: #ea0000;
+
+		&:hover {
+			color: #ea0000;
+		}
+	}
+
+	body:not(.logged-in):not(.block-editor-page) & {
+		display: none;
+	}
 }
 
 @keyframes shears-move {

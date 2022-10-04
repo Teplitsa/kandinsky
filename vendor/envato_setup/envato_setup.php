@@ -1300,3 +1300,44 @@ add_action('wp_loaded', function() {
 		remove_action('admin_print_footer_scripts', array(Disable_Comments::get_instance(), 'discussion_notice'));
 	}
 }, 100);
+
+
+function knd_remove_all_hints() {
+
+	check_ajax_referer( 'knd-nonce', 'nonce' );
+
+	if ( get_option('page_on_front') ) {
+
+		$front_page = get_post( get_option('page_on_front') );
+		$front_page_id = $front_page->ID;
+		$front_content = $front_page->post_content;
+		$front_blocks = parse_blocks( $front_content );
+
+		$front_new_blocks = array();
+
+		foreach( $front_blocks as $block ) {
+			if ( $block['blockName'] !== 'knd/hint' ) {
+				$front_new_blocks[] = $block;
+			}
+		}
+
+		$front_new_content = serialize_blocks( $front_new_blocks );
+
+		$data = array(
+			'ID' => $front_page_id,
+			'post_content' => $front_new_content,
+		);
+
+		wp_update_post( $data );
+
+	}
+
+	$data = array(
+		'request'       => $_REQUEST,
+		'page_on_front' => get_option('page_on_front'),
+	);
+
+	wp_send_json_success( $data );
+
+}
+add_action( 'wp_ajax_knd_remove_all_hints', 'knd_remove_all_hints' );

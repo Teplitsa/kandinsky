@@ -71,18 +71,23 @@ class KND_CssJs {
 		// Scripts.
 		wp_enqueue_script( 'knd', get_template_directory_uri() . '/assets/js/scripts.js', $dependencies, knd_get_theme_version(), true );
 
-		wp_localize_script( 'knd', 'knd',
-			array(
-				'i18n' => array(
-					'a11y' => array(
-						'expand'            => esc_attr__('Expand child menu', 'knd'),
-						'collapse'          => esc_attr__('Collapse child menu', 'knd'),
-						'offCanvasIsOpen'   => esc_attr__('Off-Canvas is open', 'knd'),
-						'offCanvasIsClosed' => esc_attr__('Off-Canvas is closed', 'knd'),
-					),
+		$localize_script = array(
+			'i18n' => array(
+				'a11y' => array(
+					'expand'            => esc_attr__('Expand child menu', 'knd'),
+					'collapse'          => esc_attr__('Collapse child menu', 'knd'),
+					'offCanvasIsOpen'   => esc_attr__('Off-Canvas is open', 'knd'),
+					'offCanvasIsClosed' => esc_attr__('Off-Canvas is closed', 'knd'),
 				),
-			)
+			),
 		);
+
+		if ( is_user_logged_in() ) {
+			$localize_script['ajaxurl'] = admin_url( 'admin-ajax.php' );
+			$localize_script['nonce']   = wp_create_nonce( 'knd-nonce' );
+		}
+
+		wp_localize_script( 'knd', 'knd', $localize_script );
 
 		// Threaded comment reply styles.
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) && get_theme_mod( 'post_comments' ) ) {

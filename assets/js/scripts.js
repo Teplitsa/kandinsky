@@ -538,4 +538,20 @@
 
 	knd.getScrollBarWidth();
 
+	$('[href="#knd-remove-all-hints"]').on('click', function(e){
+		e.preventDefault();
+
+		var data = {
+			'nonce':   knd.nonce,
+			'action': 'knd_remove_all_hints',
+		};
+
+		$.post( knd.ajaxurl, data, function(response) {
+			console.log(response);
+			if ( response.success === true ) {
+				window.location.reload();
+			}
+		});
+	});
+
 })( jQuery );

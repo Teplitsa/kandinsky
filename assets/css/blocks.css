@@ -1971,6 +1971,18 @@
 	color: #004fea;
 }
 
+.knd-block-hint a[href="#knd-remove-all-hints"] {
+	color: #ea0000;
+}
+
+.knd-block-hint a[href="#knd-remove-all-hints"]:hover {
+	color: #ea0000;
+}
+
+body:not(.logged-in):not(.block-editor-page) .knd-block-hint {
+	display: none;
+}
+
 @keyframes shears-move {
 	0% {
 		left: 50%;
