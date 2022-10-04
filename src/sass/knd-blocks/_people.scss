@@ -52,13 +52,14 @@
 
 	.knd-block-items {
 
+		margin-left: -20px;
+		margin-right: -20px;
+
 		&:not(.knd-block-carousel) {
 			display: flex;
 			flex-wrap: wrap;
 			justify-content: center;
 		}
-		margin-left: -20px;
-		margin-right: -20px;
 	}
 
 	.knd-block-item {
@@ -197,6 +198,13 @@
 		&.alignfull {
 			margin-left: calc( ( ( 100vw - var(--knd-content-width) ) / 2 ) * -1 );
 			margin-right: calc( ( ( 100vw - var(--knd-content-width) ) / 2 ) * -1 );
+		}
+	}
+
+	&.alignnone {
+		> .knd-container {
+			padding-left: 0;
+			padding-right: 0;
 		}
 	}
 
