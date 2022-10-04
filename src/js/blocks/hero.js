@@ -69,11 +69,11 @@
 		attributes: {
 			heading: {
 				type: 'string',
-				default: __( 'We help people to fight alcohol addiction', 'knd' ),
+				default: __( 'Заголовок проекта. Суть и&nbsp;основная идея.', 'knd' ),
 			},
 			text: {
 				type: 'string',
-				default: __( 'There are 877 people in our region who suffer from alcohol addiction. Your support will help organize a rehabilitation program for them.', 'knd' ),
+				default: __( 'Описание. Два-три коротких предложения, раскрывающие суть организации. Заголовок привлекает внимание, описание помогает понять как можно поучаствовать, кнопка реализует действие.', 'knd' ),
 			},
 			backgroundImage: {
 				type: 'object',
@@ -147,8 +147,8 @@
 
 		example: {
 			attributes: {
-				heading: __( 'We help people to fight alcohol addiction', 'knd' ),
-				text: __( 'There are 877 people in our region who suffer from alcohol addiction. Your support will help organize a rehabilitation program for them.', 'knd' ),
+				heading: __( 'Заголовок проекта. Суть и&nbsp;основная идея.', 'knd' ),
+				text: __( 'Описание. Два-три коротких предложения, раскрывающие суть организации. Заголовок привлекает внимание, описание помогает понять как можно поучаствовать, кнопка реализует действие.', 'knd' ),
 				button: __( 'Button text', 'knd' ),
 				featuredImage: {
 					url: kndBlock.getImageUrl.heroFeatured,

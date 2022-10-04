@@ -441,15 +441,15 @@
 			},
 			heading: {
 				type: 'string',
-				default: __( '112 volunteers are helping Line of Color at the moment', 'knd' ),
+				default: __( 'Заголовок блока. Отразите тут текущую ситуацию.', 'knd' ),
 			},
 			text: {
 				type: 'string',
-				default: __( 'Join a team of volunteers and consultants in our projects', 'knd' ),
+				default: __( 'Здесь должен быть призыв к действию', 'knd' ),
 			},
 			buttonText: {
 				type: 'string',
-				default: __( 'Become a volunteer', 'knd' ),
+				default: __( 'Действие', 'knd' ),
 			},
 			buttonUrl: {
 				type: 'string',
@@ -486,9 +486,9 @@
 
 		example: {
 			attributes: {
-				heading: __( '112 volunteers are helping Line of Color at the moment', 'knd' ),
-				text: __( 'Join a team of volunteers and consultants in our projects', 'knd' ),
-				buttonText: __( 'Become a volunteer', 'knd' ),
+				heading: __( 'Заголовок блока. Отразите тут текущую ситуацию.', 'knd' ),
+				text: __( 'Здесь должен быть призыв к действию', 'knd' ),
+				buttonText: __( 'Действие', 'knd' ),
 				featuredImage: {
 					url: kndBlock.getImageUrl.ctaFeatured
 				}
@@ -1272,11 +1272,11 @@
 		attributes: {
 			heading: {
 				type: 'string',
-				default: __( 'We help people to fight alcohol addiction', 'knd' ),
+				default: __( 'Заголовок проекта. Суть и&nbsp;основная идея.', 'knd' ),
 			},
 			text: {
 				type: 'string',
-				default: __( 'There are 877 people in our region who suffer from alcohol addiction. Your support will help organize a rehabilitation program for them.', 'knd' ),
+				default: __( 'Описание. Два-три коротких предложения, раскрывающие суть организации. Заголовок привлекает внимание, описание помогает понять как можно поучаствовать, кнопка реализует действие.', 'knd' ),
 			},
 			backgroundImage: {
 				type: 'object',
@@ -1350,8 +1350,8 @@
 
 		example: {
 			attributes: {
-				heading: __( 'We help people to fight alcohol addiction', 'knd' ),
-				text: __( 'There are 877 people in our region who suffer from alcohol addiction. Your support will help organize a rehabilitation program for them.', 'knd' ),
+				heading: __( 'Заголовок проекта. Суть и&nbsp;основная идея.', 'knd' ),
+				text: __( 'Описание. Два-три коротких предложения, раскрывающие суть организации. Заголовок привлекает внимание, описание помогает понять как можно поучаствовать, кнопка реализует действие.', 'knd' ),
 				button: __( 'Button text', 'knd' ),
 				featuredImage: {
 					url: kndBlock.getImageUrl.heroFeatured,
@@ -2179,11 +2179,11 @@
 			},
 			heading: {
 				type: 'string',
-				default: __( '112 volunteers are helping Line of Color at the moment', 'knd' ),
+				default: __( 'Название организации/проекта или заголовок блока: «О нас», «О Проекте»', 'knd' ),
 			},
 			text: {
 				type: 'string',
-				default: __( 'Join a team of volunteers and consultants in our projects', 'knd' ),
+				default: __( 'Выразите тут цель, миссию или девиз организации. «Своей целью мы видим…», «Мы помогаем…»', 'knd' ),
 			},
 			heading1: {
 				type: 'string',

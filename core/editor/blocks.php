@@ -17,7 +17,6 @@ function knd_register_blocks() {
 		'info',
 		'cover',
 		'recommend',
-		//'hint',
 	);
 
 	if ( defined( 'LEYKA_VERSION' ) ) {

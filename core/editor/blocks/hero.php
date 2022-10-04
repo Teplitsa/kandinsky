@@ -15,15 +15,15 @@ register_block_type( 'knd/hero', array(
 	'attributes'      => array(
 		'heading'         => array(
 			'type'    => 'string',
-			'default' => esc_html__( 'We help people to fight alcohol addiction', 'knd' ),
+			'default' => esc_html__( 'Заголовок проекта. Суть и&nbsp;основная идея.', 'knd' ),
 		),
 		'text'        => array(
 			'type'    => 'string',
-			'default' => esc_html__( 'There are 877 people in our region who suffer from alcohol addiction. Your support will help organize a rehabilitation program for them.', 'knd' ),
+			'default' => esc_html__( 'Описание. Два-три коротких предложения, раскрывающие суть организации. Заголовок привлекает внимание, описание помогает понять как можно поучаствовать, кнопка реализует действие.', 'knd' ),
 		),
 		'button'        => array(
 			'type'    => 'string',
-			'default' => esc_html__( 'Button text', 'knd' ),
+			'default' => esc_html__( 'Текст кнопки', 'knd' ),
 		),
 		'buttonUrl'        => array(
 			'type'    => 'string',

@@ -72,15 +72,15 @@
 			},
 			heading: {
 				type: 'string',
-				default: __( '112 volunteers are helping Line of Color at the moment', 'knd' ),
+				default: __( 'Заголовок блока. Отразите тут текущую ситуацию.', 'knd' ),
 			},
 			text: {
 				type: 'string',
-				default: __( 'Join a team of volunteers and consultants in our projects', 'knd' ),
+				default: __( 'Здесь должен быть призыв к действию', 'knd' ),
 			},
 			buttonText: {
 				type: 'string',
-				default: __( 'Become a volunteer', 'knd' ),
+				default: __( 'Действие', 'knd' ),
 			},
 			buttonUrl: {
 				type: 'string',
@@ -117,9 +117,9 @@
 
 		example: {
 			attributes: {
-				heading: __( '112 volunteers are helping Line of Color at the moment', 'knd' ),
-				text: __( 'Join a team of volunteers and consultants in our projects', 'knd' ),
-				buttonText: __( 'Become a volunteer', 'knd' ),
+				heading: __( 'Заголовок блока. Отразите тут текущую ситуацию.', 'knd' ),
+				text: __( 'Здесь должен быть призыв к действию', 'knd' ),
+				buttonText: __( 'Действие', 'knd' ),
 				featuredImage: {
 					url: kndBlock.getImageUrl.ctaFeatured
 				}

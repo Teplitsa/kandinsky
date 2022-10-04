@@ -66,11 +66,11 @@
 			},
 			heading: {
 				type: 'string',
-				default: __( '112 volunteers are helping Line of Color at the moment', 'knd' ),
+				default: __( 'Название организации/проекта или заголовок блока: «О нас», «О Проекте»', 'knd' ),
 			},
 			text: {
 				type: 'string',
-				default: __( 'Join a team of volunteers and consultants in our projects', 'knd' ),
+				default: __( 'Выразите тут цель, миссию или девиз организации. «Своей целью мы видим…», «Мы помогаем…»', 'knd' ),
 			},
 			heading1: {
 				type: 'string',

@@ -27,15 +27,15 @@ register_block_type( 'knd/cta', array(
 		),
 		'heading'         => array(
 			'type'    => 'string',
-			'default' => esc_html__( '112 volunteers are helping Line of Color at the moment', 'knd' ),
+			'default' => esc_html__( 'Заголовок блока. Отразите тут текущую ситуацию.', 'knd' ),
 		),
 		'text'         => array(
 			'type'    => 'string',
-			'default' => esc_html__( 'Join a team of volunteers and consultants in our projects', 'knd' ),
+			'default' => esc_html__( 'Здесь должен быть призыв к действию', 'knd' ),
 		),
 		'buttonText'  => array(
 			'type'    => 'string',
-			'default' => esc_html__( 'Become a volunteer', 'knd' ),
+			'default' => esc_html__( 'Действие', 'knd' ),
 		),
 		'buttonUrl'         => array(
 			'type'    => 'string',

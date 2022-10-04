@@ -27,47 +27,47 @@ register_block_type( 'knd/info', array(
 		),
 		'heading'         => array(
 			'type'    => 'string',
-			'default' => esc_html__( '112 volunteers are helping Line of Color at the moment', 'knd' ),
+			'default' => esc_html__( 'Название организации/проекта или заголовок блока: «О нас», «О Проекте»', 'knd' ),
 		),
 		'text'         => array(
 			'type'    => 'string',
-			'default' => esc_html__( 'Join a team of volunteers and consultants in our projects', 'knd' ),
+			'default' => esc_html__( 'Выразите тут цель, миссию или девиз организации. «Своей целью мы видим…», «Мы помогаем…»', 'knd' ),
 		),
 		'heading1'         => array(
 			'type'    => 'string',
-			'default' => esc_html__( 'Who we are?', 'knd' ),
+			'default' => esc_html__( 'Кто мы?', 'knd' ),
 		),
 		'heading2'         => array(
 			'type'    => 'string',
-			'default' => esc_html__( 'What we do?', 'knd' ),
+			'default' => esc_html__( 'Что делаем?', 'knd' ),
 		),
 		'heading3'         => array(
 			'type'    => 'string',
-			'default' => esc_html__( 'Stop drinking?', 'knd' ),
+			'default' => esc_html__( 'Для кого/Как помочь?', 'knd' ),
 		),
 		'text1'         => array(
 			'type'    => 'string',
-			'default' => esc_html__( 'The charitable organization &#34;Line of Color&#34; helps to overcome alcohol addiction and return to a fulfilling life.', 'knd' ),
+			'default' => esc_html__( 'Кратко опишите основное направление деятельности организации/проекта/инициативы. На что нацелена деятельность.', 'knd' ),
 		),
 		'text2'         => array(
 			'type'    => 'string',
-			'default' => esc_html__( 'We organize rehabilitation programs, inform and help those who are ready to give up their addiction and return their lives.', 'knd' ),
+			'default' => esc_html__( 'Обозначьте здесь практические решения. Чем вы полезны и какие действия предпринимаются для решения проблемы.', 'knd' ),
 		),
 		'text3'         => array(
 			'type'    => 'string',
-			'default' => esc_html__( 'Fill out the anonymous form on the website, choose a convenient time for an individual consultation, or sign up for a support group.', 'knd' ),
+			'default' => esc_html__( 'Добавьте сюда информацию о том, как получить помощь тем, кто в ней нуждается или расскажите как помочь проекту.', 'knd' ),
 		),
 		'linkText1'         => array(
 			'type'    => 'string',
-			'default' => esc_html__( 'Learn about our work', 'knd' ),
+			'default' => esc_html__( 'Узнайте о нашей работе', 'knd' ),
 		),
 		'linkText2'         => array(
 			'type'    => 'string',
-			'default' => esc_html__( 'View projects', 'knd' ),
+			'default' => esc_html__( 'Посмотреть проекты', 'knd' ),
 		),
 		'linkText3'         => array(
 			'type'    => 'string',
-			'default' => esc_html__( 'Get help', 'knd' ),
+			'default' => esc_html__( 'Вам нужна помощь/Как помочь', 'knd' ),
 		),
 		'linkUrl1'         => array(
 			'type'    => 'string',
