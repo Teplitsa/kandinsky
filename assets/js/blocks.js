@@ -1280,6 +1280,9 @@
 			},
 			backgroundImage: {
 				type: 'object',
+				default: {
+					url: kndBlock.getImageUrl.heroBackground,
+				}
 			},
 			featuredImage: {
 				type: 'object',
