@@ -4089,6 +4089,21 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 	min-height: 70vh;
 }
 
+/* Archive pages */
+.knd-archive-description {
+	padding-bottom: 20px;
+}
+
+.knd-archive-description > * {
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+.knd-archive-description > *:not(:first-child) {
+	margin-top: 1rem;
+}
+
 /** Donations **/
 .leyka-campaign {
 	margin-bottom: 40px;

@@ -9,6 +9,7 @@ get_header(); ?>
 
 <div class="container heading">
 	<?php knd_section_title(); ?>
+	<?php knd_archive_description(); ?>
 </div>
 
 <?php if ( have_posts() ) { ?>

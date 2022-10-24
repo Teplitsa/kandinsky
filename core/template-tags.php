@@ -273,6 +273,21 @@ function knd_section_title() {
 	echo "<h1 class='section-title {$css}'>{$title}</h1>";
 }
 
+if ( ! function_exists( 'knd_archive_description' ) ) {
+	/**
+	 * Archive Description
+	 */
+	function knd_archive_description() {
+		if ( get_the_archive_description() ) {
+			?>
+			<div class="knd-archive-description">
+				<?php echo wp_kses_post( get_the_archive_description() ); ?>
+			</div>
+			<?php
+		}
+	}
+}
+
 /** == NAVs == **/
 /** Deprecated, remove in version 3.0 */
 function knd_paging_nav( WP_Query $query = null ) {
