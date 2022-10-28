@@ -15,7 +15,7 @@ register_block_type( 'knd/hero', array(
 	'attributes'      => array(
 		'heading'         => array(
 			'type'    => 'string',
-			'default' => esc_html__( 'Заголовок проекта. Суть и&nbsp;основная идея.', 'knd' ),
+			'default' => esc_html__( 'Заголовок проекта. Суть и основная идея.', 'knd' ),
 		),
 		'text'        => array(
 			'type'    => 'string',
