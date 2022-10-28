@@ -5,7 +5,7 @@
  * @package Kandinsky
  */
 
-/* Header Section */
+/* Footer Section */
 Kirki::add_section(
 	'footer',
 	array(
