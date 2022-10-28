@@ -13,7 +13,6 @@ if ( ! defined( 'WPINC' ) ) {
 // 	@ ini_set( 'display_errors', 1 );
 // }
 
-define('KND_VERSION', '2.2.4');
 define('KND_DOC_URL', 'https://knd.te-st.ru/docs/');
 define('KND_OFFICIAL_WEBSITE_URL', 'https://knd.te-st.ru/');
 define('KND_OFFICIAL_SUPPORT_URL', 'https://knd.te-st.ru/bug/');
@@ -56,6 +55,23 @@ if ( ! isset( $content_width ) ) {
 function knd_load_theme_textdomain() {
 	load_theme_textdomain( 'knd', get_template_directory() . '/lang' );
 	do_action( 'knd_load_textdomain' );
+}
+
+/**
+ * Get Theme Version
+ */
+function knd_theme_version(){
+	$theme = wp_get_theme();
+	$parent = $theme->parent();
+
+	if ( $parent ) {
+		$version = $parent->get( 'Version' );
+		return $version;
+	}
+
+	$version = $theme->get( 'Version' );
+
+	return $version;
 }
 
 /**
