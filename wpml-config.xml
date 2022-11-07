@@ -6,6 +6,7 @@
 			<key name="header_address" />
 			<key name="header_custom_text" />
 			<key name="header_additional_button_text" />
+			<key name="header_logo_title" />
 			<key name="header_logo_text" />
 			<key name="header_button_text" />
 			<key name="header_button_link" />
