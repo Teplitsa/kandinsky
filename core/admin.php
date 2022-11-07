@@ -22,61 +22,13 @@ function knd_get_admin_menu_items( $place = '' ) {
 						'class' => '',
 						'icon' => 'dashicons-admin-appearance',
 						'text' => esc_attr__( 'Fonts and colors', 'knd' ),
-						'link' => admin_url( '/customize.php?autofocus[panel]=fonts_colors' )
+						'link' => admin_url( '/customize.php?autofocus[section]=fonts_colors' )
 					),
 					'social-media-links' => array(
 						'class' => '',
 						'icon' => 'dashicons-share',
 						'text' => esc_attr__( 'Social media links', 'knd' ),
 						'link' => admin_url( '/customize.php?autofocus[section]=socials' )
-					),
-					'site-template-change' => array(
-						'class' => '',
-						'icon' => 'dashicons-admin-generic',
-						'text' => esc_attr__( 'Theme setup wizard', 'knd' ),
-						'link' => KND_SETUP_WIZARD_URL
-					),
-				),
-			),
-			'section_knd-content-settings' => array(
-				'title' => esc_attr__( 'Content', 'knd' ),
-				'link' => '',
-				'items' => array(
-					'page-list' => array(
-						'class' => '',
-						'icon' => 'dashicons-admin-page',
-						'text' => esc_attr__( 'Static pages', 'knd' ),
-						'link' => admin_url( '/edit.php?post_type=page' )
-					),
-					'menu' => array(
-						'class' => '',
-						'icon' => 'dashicons-menu',
-						'text' => esc_attr__( 'Menu', 'knd' ),
-						'link' => admin_url( '/nav-menus.php' )
-					),
-					'news-list' => array(
-						'class' => '',
-						'icon' => 'dashicons-admin-post',
-						'text' => esc_attr__( 'News', 'knd' ),
-						'link' => admin_url( '/edit.php' )
-					),
-					'project-list' => array(
-						'class' => '',
-						'icon' => 'dashicons-category',
-						'text' => esc_attr__( 'Projects', 'knd' ),
-						'link' => admin_url( '/edit.php?post_type=project' )
-					),
-					'person-list' => array(
-						'class' => '',
-						'icon' => 'dashicons-groups',
-						'text' => esc_attr__( 'Team', 'knd' ),
-						'link' => admin_url( '/edit.php?post_type=person' )
-					),
-					'org-list' => array(
-						'class' => '',
-						'icon' => 'dashicons-businessman',
-						'text' => esc_attr__( 'Partners', 'knd' ),
-						'link' => admin_url( '/edit.php?post_type=org' )
 					),
 					'header' => array(
 						'class' => '',
@@ -90,7 +42,13 @@ function knd_get_admin_menu_items( $place = '' ) {
 						'text' => esc_attr__( 'Site footer', 'knd' ),
 						'link' => admin_url( '/customize.php?autofocus[section]=footer' )
 					),
-				)
+					'site-template-change' => array(
+						'class' => '',
+						'icon' => 'dashicons-admin-generic',
+						'text' => esc_attr__( 'Theme setup wizard', 'knd' ),
+						'link' => KND_SETUP_WIZARD_URL
+					),
+				),
 			),
 			'section_knd-plugins' => array(
 				'title' => esc_attr__( 'Plugins', 'knd' ),
@@ -239,6 +197,11 @@ function knd_add_admin_pages( $items = array(), $is_inital_call = true ) {
 add_action( 'admin_menu', 'knd_add_admin_pages' );
 
 function knd_add_adminbar_menu( WP_Admin_Bar $admin_bar, $items = array(), $is_initial_call = true, $parent_item = false ) {
+
+	if ( ! current_user_can( 'manage_options' ) ) {
+		return;
+	}
+
 	$items = empty( $items ) || ! is_array( $items ) ?
 		knd_get_admin_menu_items( 'adminBar' ) : $items;
 	$parent_item = $parent_item ? $parent_item : 'root';
