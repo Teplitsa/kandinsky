@@ -8,7 +8,7 @@
 /**
  * Add arrow to menu item if has children
  */
-function csco_primary_menu_item_args( $args, $item ) {
+function knd_primary_menu_item_args( $args, $item ) {
 
 	$args->link_after  = '';
 
@@ -32,4 +32,4 @@ function csco_primary_menu_item_args( $args, $item ) {
 
 	return $args;
 }
-add_filter( 'nav_menu_item_args', 'csco_primary_menu_item_args', 10, 2 );
+add_filter( 'nav_menu_item_args', 'knd_primary_menu_item_args', 10, 2 );
