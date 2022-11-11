@@ -83,7 +83,7 @@ var EnvatoWizard = (function( $ ) {
 					// We have an ajax url action to perform
 
 					if ( response.hash === currentItemHash ) {
-						$currentNode.find( 'span' ).text( 'failed' );
+						$currentNode.find( 'span' ).text( envatoSetupParams.failed );
 						findNext();
 					} else {
 						currentItemHash = response.hash;
@@ -175,7 +175,7 @@ var EnvatoWizard = (function( $ ) {
 				if ( typeof response.url !== 'undefined' ) {
 					if ( response.hash === currentItemHash ) {
 
-						$currentNode.find( 'span' ).text( 'failed' );
+						$currentNode.find( 'span' ).text( envatoSetupParams.failed );
 						findNext();
 
 					} else {
