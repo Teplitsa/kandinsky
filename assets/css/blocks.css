@@ -1103,6 +1103,11 @@
 	align-items: center;
 }
 
+.wp-block-knd-partners .knd-block-items:not(.flickity-enabled) {
+	display: -ms-flexbox;
+	display: flex;
+}
+
 .wp-block-knd-partners .knd-block-item {
 	-ms-flex: 0 0 25%;
 	flex: 0 0 25%;
