@@ -2481,7 +2481,7 @@ msgid "Still have questions?"
 msgstr ""
 
 #: inc/events/events-options.php:53
-msgid "Write to us at help@te-st.ru"
+msgid "Write to us at help@te-st.org"
 msgstr ""
 
 #: inc/events/events-options.php:54
@@ -3674,5 +3674,5 @@ msgid "https://github.com/Teplitsa/Kandinsky"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "https://te-st.ru/"
+msgid "https://te-st.org/"
 msgstr ""

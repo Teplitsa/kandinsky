@@ -61,7 +61,7 @@ register_block_type( 'knd/campaign', array(
  */
 function knd_block_campaign_render_callback( $attr ) {
 
-	// Docs https://leyka.te-st.ru/docs/shortcodes-v-3-6/
+	// Docs https://leyka.org/docs/shortcodes-v-3-6/
 	// Classes
 	$classes = array(
 		'block_class' => 'knd-block-campaign',

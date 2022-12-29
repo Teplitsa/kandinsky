@@ -304,7 +304,7 @@ class KND_Import_Git_Content {
 			$lang = 'ru';
 		}
 
-		$content_archive_url = 'https://knd.te-st.ru/import/kandinsky-import-' . $lang . '.zip';
+		$content_archive_url = 'https://kndwp.org/import/kandinsky-import-' . $lang . '.zip';
 
 		$this->content_archive_url = $content_archive_url;
 

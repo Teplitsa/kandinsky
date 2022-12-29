@@ -13,20 +13,20 @@ if ( ! defined( 'WPINC' ) ) {
 // 	@ ini_set( 'display_errors', 1 );
 // }
 
-define('KND_DOC_URL', 'https://knd.te-st.ru/docs/');
-define('KND_OFFICIAL_WEBSITE_URL', 'https://knd.te-st.ru/');
-define('KND_OFFICIAL_SUPPORT_URL', 'https://knd.te-st.ru/bug/');
-define('KND_CHANGELOG_URL', 'https://knd.te-st.ru/changelog/');
+define('KND_DOC_URL', 'https://kndwp.org/docs/');
+define('KND_OFFICIAL_WEBSITE_URL', 'https://kndwp.org/');
+define('KND_OFFICIAL_SUPPORT_URL', 'https://kndwp.org/bug/');
+define('KND_CHANGELOG_URL', 'https://kndwp.org/changelog/');
 define('KND_SOURCES_PAGE_URL', 'https://github.com/Teplitsa/kandinsky/');
 define('KND_SOURCES_ISSUES_PAGE_URL', 'https://github.com/Teplitsa/kandinsky/issues/');
-define('TST_OFFICIAL_WEBSITE_URL', 'https://te-st.ru/');
-define('TST_PASEKA_OFFICIAL_WEBSITE_URL', 'https://paseka.te-st.ru/');
-define('KND_SUPPORT_EMAIL', 'support@te-st.ru');
-define('KND_SUPPORT_URL', 'https://pd.te-st.ru/forms/contacts/');
+define('TST_OFFICIAL_WEBSITE_URL', 'https://te-st.org/');
+define('TST_PASEKA_OFFICIAL_WEBSITE_URL', 'https://paseka.te-st.org/');
+define('KND_SUPPORT_EMAIL', 'support@te-st.org');
+define('KND_SUPPORT_URL', 'https://pd.te-st.org/forms/contacts/');
 define('KND_SUPPORT_TELEGRAM', 'https://t.me/joinchat/AAAAAENN3prSrvAs7KwWrg');
 define('KND_SETUP_WIZARD_URL', admin_url('themes.php?page=knd-setup-wizard'));
-define('KND_DISTR_ARCHIVE_URL', 'https://knd.te-st.ru/kandinsky.zip');
-define('KND_UPDATE_INFO_URL', 'https://knd.te-st.ru/kandinsky.json');
+define('KND_DISTR_ARCHIVE_URL', 'https://kndwp.org/kandinsky.zip');
+define('KND_UPDATE_INFO_URL', 'https://kndwp.org/kandinsky.json');
 
 define('KND_MIN_PHP_VERSION', '5.6.0');
 define('KND_PHP_VERSION_ERROR_MESSAGE', '<strong>Внимание:</strong> версия PHP ниже <strong>5.6.0</strong>. Кандинский нуждается в PHP хотя бы <strong>версии 5.6.0</strong>, чтобы работать корректно.<br /><br />Пожалуйста, направьте вашему хостинг-провайдеру запрос на повышение версии PHP для этого сайта.');

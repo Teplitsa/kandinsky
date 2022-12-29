@@ -1789,8 +1789,8 @@ msgid "Still have questions?"
 msgstr "Остались вопросы?"
 
 #: inc/events/events-options.php:53
-msgid "Write to us at help@te-st.ru"
-msgstr "Напишите нам на help@te-st.ru"
+msgid "Write to us at help@te-st.org"
+msgstr "Напишите нам на help@te-st.org"
 
 #: inc/events/events-options.php:54
 #: template-parts/entry/entry-event-related.php:20
@@ -3801,10 +3801,10 @@ msgstr "Понятно!"
 #~ msgstr "Подчеркивания"
 
 #~ msgid "https://github.com/Teplitsa/Kandinsky"
-#~ msgstr "https://te-st.ru/"
+#~ msgstr "https://te-st.org/"
 
-#~ msgid "https://te-st.ru/"
-#~ msgstr "https://te-st.ru/"
+#~ msgid "https://te-st.org/"
+#~ msgstr "https://te-st.org/"
 
 #~ msgid "Font Family"
 #~ msgstr "Шрифт"
@@ -3838,10 +3838,10 @@ msgstr "Понятно!"
 
 #~ msgid ""
 #~ "Write to Alisa Tsvetkova in Telegram @itisalise or email "
-#~ "alisetsvetkova@te-st.ru"
+#~ "alisetsvetkova@te-st.org"
 #~ msgstr ""
 #~ "Пишите Алисе Цветковой в Telegram @itisalise или на почту "
-#~ "alisetsvetkova@te-st.ru"
+#~ "alisetsvetkova@te-st.org"
 
 #~ msgid "Collecting donations"
 #~ msgstr "Сбор пожертвований"
