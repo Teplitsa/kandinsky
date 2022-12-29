@@ -3224,6 +3224,16 @@ body:not(.logged-in):not(.block-editor-page) .knd-block-hint {
 	font-size: var(--knd-font-size-base);
 }
 
+.knd-event__booking .em.em-event-booking-form .em-booking-section {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.knd-event__booking .em.em-event-booking-form .em-tickets {
+	margin: 0;
+	width: 100%;
+}
+
 .knd-event__booking .em-booking {
 	max-width: 530px;
 	margin: 0 auto;
@@ -3269,8 +3279,26 @@ body:not(.logged-in):not(.block-editor-page) .knd-block-hint {
 	width: 100%;
 }
 
+.knd-event__booking .em.pixelbones.input .em-booking-buttons .em-booking-submit {
+	font-family: var(--knd-font-family-base);
+	display: inline-block;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 17px;
+	padding: 12px 20px;
+	color: #fff;
+	background: var(--knd-color-main);
+	border: 2px solid var(--knd-color-main);
+	border-radius: var(--knd-button-border-radius);
+	text-transform: uppercase;
+	line-height: 1;
+	transition: color 0.3s, background 0.3s, border-color 0.3s, opacity 0.3s;
+	white-space: nowrap;
+}
+
 .knd-event__login {
 	margin-top: 15px;
+	margin-bottom: 15px;
 	font-size: var(--knd-font-size-base);
 }
 
@@ -3616,6 +3644,10 @@ body:not(.logged-in):not(.block-editor-page) .knd-block-hint {
 
 .knd-event__booking {
 	margin-bottom: 60px;
+}
+
+.knd-event__booking .em-login-trigger {
+	display: none;
 }
 
 .knd-page-title-disabled .page-content.container {
