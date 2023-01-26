@@ -91,21 +91,15 @@ function knd_custom_excerpt_more( $output ) {
 /** Current URL */
 if ( ! function_exists( 'knd_current_url' ) ) {
 
-	function knd_current_url() {
-		$page_url = 'http';
+	function knd_current_url( ) {
 
-		if ( isset( $_SERVER['HTTPS'] ) && ( $_SERVER['HTTPS'] == 'on' || $_SERVER['HTTPS'] == 'On' ) ) {
-			$page_url .= 's';
-		}
-		$page_url .= '://';
-
-		if ( isset( $_SERVER['SERVER_NAME'] ) ) {
-			$page_url .= $_SERVER['SERVER_NAME'];
-		}
+		$request_uri = '';
 
 		if ( isset( $_SERVER['REQUEST_URI'] ) ) {
-			$page_url .= $_SERVER['REQUEST_URI'];
+			$request_uri = $_SERVER['REQUEST_URI'];
 		}
+
+		$page_url = home_url( $request_uri );
 
 		return $page_url;
 	}
