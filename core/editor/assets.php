@@ -95,6 +95,10 @@ function knd_enqueue_block_editor_assets() {
 		$kndBlock['leykaVersion'] = LEYKA_VERSION;
 	}
 
+	foreach( knd_get_image_sizes() as $name => $size ) {
+		$kndBlock['imageSizes'][ $name ] = $name . ' [' . $size['width'] . 'px, ' . $size['height'] . 'px]';
+	}
+
 	wp_localize_script(
 		'knd-gutenberg',
 		'kndBlock',
@@ -127,7 +131,9 @@ function knd_enqueue_block_assets() {
 	if ( is_admin() ) {
 		$css_dependencies[] = 'wp-edit-blocks';
 	} else {
-		$css_dependencies[] = 'classic-theme-styles';
+		if ( wp_style_is( 'classic-theme-styles', 'registered' ) ) {
+			$css_dependencies[] = 'classic-theme-styles';
+		}
 	}
 
 	wp_enqueue_script( 'flickity', get_template_directory_uri() . '/assets/js/flickity.pkgd.min.js', array( 'jquery' ), '2.2.2' );
