@@ -1135,3 +1135,176 @@ if ( ! function_exists( 'knd_button_totop' ) ) {
 		<?php }
 	}
 }
+
+if ( ! function_exists( 'knd_block_post_title' ) ) {
+	/**
+	 * Block post title
+	 */
+	function knd_block_post_title( $options = array() ) {
+		if ( $options['title'] === false ) {
+			return;
+		}
+
+		$title_class = 'knd-block-post-title';
+
+		if ( isset( $options['titleFontWeight'] ) && $options['titleFontWeight'] != 'bold' ) {
+			$title_class .= ' knd-font-weight-' . $options['titleFontWeight'];
+		}
+
+		$title = sprintf( the_title( '<h3 class="' . esc_attr( $title_class ) . '"><a href="%s">', '</a></h3>', false ), get_the_permalink() );
+
+		return $title;
+	}
+}
+
+if ( ! function_exists( 'knd_block_post_author' ) ) {
+	/**
+	 * Block post author
+	 */
+	function knd_block_post_author( $options = array() ) {
+		if ( $options['author'] === false ) {
+			return;
+		}
+
+		$avatar = '';
+		if ( $options['avatar'] !== false ) {
+			$avatar = get_avatar( get_the_author_meta( 'ID' ), '28' );
+		}
+
+		$author = '<div class="knd-block-post-author">
+			<a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" rel="author">
+				' . $avatar . '
+				' . get_the_author() . '
+			</a>
+		</div>';
+
+		return $author;
+	}
+}
+
+if ( ! function_exists( 'knd_block_post_date' ) ) {
+	/**
+	 * Block post date
+	 */
+	function knd_block_post_date( $options = array() ) {
+		if ( $options['date'] === false ) {
+			return;
+		}
+
+		$date_format = 'd.m.Y';
+		if ( isset( $options['dateFormat'] ) ) {
+			$date_format = $options['dateFormat'];
+		}
+
+		$date = get_the_time( $date_format );
+		if ( $date_format === 'relative' ) {
+			$date = human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ' . esc_html__( 'назад', 'knd' ); // ago
+		}
+
+		$post_date = '<time datetime="' . get_post_time( DATE_W3C ) . '" class="knd-block-post-date">' . esc_html( $date ) . '</time>';
+
+		return $post_date;
+	}
+}
+
+if ( ! function_exists( 'knd_block_post_excerpt' ) ) {
+	/**
+	 * Block post date
+	 */
+	function knd_block_post_excerpt( $options = array() ) {
+		if ( $options['excerpt'] === false ) {
+			return;
+		}
+
+		$length  = $options['excerptLength'];
+		$excerpt = wp_strip_all_tags( get_the_excerpt() );
+
+		if ( ! has_excerpt() ) {
+			$excerpt = wp_trim_words( $excerpt, $length );
+		}
+
+		$excerpt = '<div class="knd-block-post-excerpt">' . esc_html( $excerpt ) . '</div>';
+
+		return $excerpt;
+	}
+}
+
+if ( ! function_exists( 'knd_block_post_thumbnail' ) ) {
+	/**
+	 * Block post thumbnail
+	 */
+	function knd_block_post_thumbnail( $options = array() ) {
+		if ( $options['thumbnail'] === false && $options['thumbnail_link'] === true ) {
+			return;
+		}
+
+		$image_size = 'post-thumbnail';
+		if ( isset( $options['imageSize'] ) && $options['imageSize'] ) {
+			$image_size = $options['imageSize'];
+		}
+
+		$thumbnail = '';
+		if ( $options['thumbnail'] !== false ) {
+			$thumbnail = get_the_post_thumbnail( null, $image_size, array( 'alt' => wp_trim_words( get_the_title(), 5 ), 'aria-hidden' => 'true' ) );
+		}
+
+		$link_start = '<span>';
+		$link_end   = '</span>';
+		if ( isset( $options['thumbnail_link'] ) && $options['thumbnail_link'] === true ) {
+			if ( ! has_post_thumbnail() ) {
+				return;
+			}
+
+			$link_start = '<a href="' . get_the_permalink() . '">';
+			$link_end   = '</a>';
+		}
+
+		if ( $options['layout'] !== 'type-3' ) {
+			$orientation_class = ' knd-ratio-' . $options['imageOrientation'];
+		}
+
+		$thumbnail = '<div class="knd-block-featured-image' . $orientation_class . '">
+			' . $link_start . '
+				' . $thumbnail . '
+			' . $link_end . '
+		</div>';
+
+		return $thumbnail;
+	}
+}
+
+if ( ! function_exists( 'knd_block_post_category' ) ) {
+	/**
+	 * Block post category
+	 */
+	function knd_block_post_category( $options = array() ) {
+		if ( $options['category'] === false ) {
+			return;
+		}
+
+		$category = '<div class="knd-block-post-category">' . get_the_category_list( '&nbsp;&nbsp; ' ) . '</div>';
+
+		return $category;
+	}
+}
+
+if ( ! function_exists( 'knd_block_post_meta' ) ) {
+	/**
+	 * Block post meta
+	 */
+	function knd_block_post_meta( $options = array() ) {
+		if ( $options['author'] === false && $options['date'] === false ) {
+			return;
+		}
+
+		$post_meta = '<div class="knd-block-post-meta">
+			' . knd_block_post_author( $options ) . '
+			' . knd_block_post_date( $options ) . '
+		</div>';
+
+
+		return $post_meta;
+	}
+}
+
+

@@ -13,9 +13,17 @@ register_block_type( 'knd/news', array(
 	'render_callback' => 'knd_block_news_render_callback',
 
 	'attributes'      => array(
+		'layout'     => array(
+			'type'    => 'string',
+			'default' => 'type-1',
+		),
 		'heading'          => array(
 			'type'    => 'string',
-			'default' => esc_html__( 'News', 'knd' ),
+			//'default' => esc_html__( 'News', 'knd' ),
+		),
+		'titleAlign'     => array(
+			'type'    => 'boolean',
+			'default' => false,
 		),
 		'postsToShow'      => array(
 			'type'    => 'integer',
@@ -24,6 +32,10 @@ register_block_type( 'knd/news', array(
 		'columns'     => array(
 			'type'    => 'integer',
 			'default' => 3,
+		),
+		'radius'     => array(
+			'type'    => 'integer',
+			'default' => 5,
 		),
 		'align'            => array(
 			'type'    => 'string',
@@ -41,11 +53,44 @@ register_block_type( 'knd/news', array(
 			'type'    => 'string',
 			'default' => '',
 		),
+		'titleHoverColor'  => array(
+			'type'    => 'string',
+			'default' => '',
+		),
+		'cardBackroundColor'  => array(
+			'type'    => 'string',
+			'default' => '',
+		),
+		'overlayColor'  => array(
+			'type'    => 'string',
+			'default' => '',
+		),
+		'overlayHoverColor'  => array(
+			'type'    => 'string',
+			'default' => '',
+		),
+
 		'linkColor'  => array(
 			'type'    => 'string',
 			'default' => '',
 		),
+		'linkHoverColor'  => array(
+			'type'    => 'string',
+			'default' => '',
+		),
+		'linkHoverBackground'  => array(
+			'type'    => 'string',
+			'default' => '',
+		),
 		'metaColor'  => array(
+			'type'    => 'string',
+			'default' => '',
+		),
+		'excerptColor'  => array(
+			'type'    => 'string',
+			'default' => '',
+		),
+		'dateColor'  => array(
 			'type'    => 'string',
 			'default' => '',
 		),
@@ -77,6 +122,92 @@ register_block_type( 'knd/news', array(
 			'type' => 'string',
 			'default' => 0,
 		),
+
+		'thumbnail'     => array(
+			'type'    => 'boolean',
+			'default' => true,
+		),
+		'imageOrientation'     => array(
+			'type'    => 'string',
+			'default' => 'landscape',
+		),
+		'imageSize'     => array(
+			'type'    => 'string',
+			'default' => 'post-thumbnail',
+		),
+		'imageWidth'     => array(
+			'type'    => 'string',
+			'default' => 'half',
+		),
+		'imagePosition'     => array(
+			'type'    => 'string',
+			'default' => 'left',
+		),
+		
+		'date'     => array(
+			'type'    => 'boolean',
+			'default' => true,
+		),
+		'author'     => array(
+			'type'    => 'boolean',
+			'default' => false,
+		),
+		'avatar'     => array(
+			'type'    => 'boolean',
+			'default' => false,
+		),
+		'category'     => array(
+			'type'    => 'boolean',
+			'default' => true,
+		),
+		'title'     => array(
+			'type'    => 'boolean',
+			'default' => true,
+		),
+		'excerpt'     => array(
+			'type'    => 'boolean',
+			'default' => false,
+		),
+		'excerptLength'     => array(
+			'type'    => 'integer',
+			'default' => 30,
+		),
+		'titleFontSize'  => array(
+			'type'    => 'string',
+			'default' => '18px',
+		),
+		'titleFontSizeMobile'  => array(
+			'type'    => 'string',
+			'default' => '18px',
+		),
+		'excerptFontSize'  => array(
+			'type'    => 'string',
+			'default' => '14px',
+		),
+		'excerptFontSizeMobile'  => array(
+			'type'    => 'string',
+			'default' => '14px',
+		),
+		'titleFontWeight'  => array(
+			'type'    => 'string',
+			'default' => 'bold',
+		),
+		'dateFormat'  => array(
+			'type'    => 'string',
+			'default' => 'd.m.Y',
+		),
+		'alignment'  => array(
+			'type'    => 'string',
+			'default' => 'bottom left',
+		),
+		'paddingTop'  => array(
+			'type'    => 'boolean',
+			'default' => true,
+		),
+		'paddingBottom'  => array(
+			'type'    => 'boolean',
+			'default' => true,
+		),
 	),
 ) );
 
@@ -87,10 +218,18 @@ register_block_type( 'knd/news', array(
  */
 function knd_block_news_render_callback( $attr ) {
 
+	//print_r($attr);
+
 	// Classes
 	$classes = array(
-		'block_class' => 'wp-block-knd-news',
+		'block_class' => 'knd-block-news',
 	);
+
+	$layout = 'type-1';
+	if ( isset( $attr['layout'] ) && $attr['layout'] ) {
+		$classes[] = 'knd-block-news-' . $attr['layout'];
+		$layout = $attr['layout'];
+	}
 
 	// Block Class Name
 	if ( isset( $attr['className'] ) && $attr['className'] ) {
@@ -102,6 +241,35 @@ function knd_block_news_render_callback( $attr ) {
 		$classes['align'] = 'align' . $attr['align'];
 	} else {
 		$classes['align'] = 'alignnone';
+	}
+
+	// Block Content Alignment
+	if ( isset( $attr['alignment'] ) && $attr['alignment'] && $attr['layout'] === 'type-3' ) {
+		$alignment = str_replace( ' ', '-', $attr['alignment'] );
+		$classes['alignment'] = 'is-position-' . $alignment;
+	}
+
+	// Block image width
+	if ( isset( $attr['imageWidth'] ) && $attr['imageWidth'] && $attr['layout'] === 'type-2' ) {
+		$classes['imagewidth'] = 'is-image-width-' . $attr['imageWidth'];
+	}
+
+	// Block image position
+	if ( isset( $attr['imagePosition'] ) && $attr['imagePosition'] && $attr['layout'] === 'type-2' ) {
+		$alignment = str_replace( ' ', '-', $attr['alignment'] );
+		$classes['imageposition'] = 'is-image-position-' . $attr['imagePosition'];
+	}
+
+	// Block Padding
+	if ( $attr['paddingTop'] === false ||  $attr['paddingBottom'] === false ) {
+		$padding_class = 'is-no-padding';
+		if ( $attr['paddingTop'] === false ) {
+			$padding_class .= '-top';
+		}
+		if ( $attr['paddingBottom'] === false ) {
+			$padding_class .= '-bottom';
+		}
+		$classes['padding'] = $padding_class;
 	}
 
 	// Posts To Show
@@ -127,12 +295,33 @@ function knd_block_news_render_callback( $attr ) {
 
 	// Heading Color
 	if ( isset( $attr['headingColor'] ) && $attr['headingColor'] ) {
-		$style .= '--knd-color-headings:' . $attr['headingColor'] . ';';
+		$style .= '--knd-block-heading-color:' . $attr['headingColor'] . ';';
 	}
 
 	// Title Color
 	if ( isset( $attr['titleColor'] ) && $attr['titleColor'] ) {
 		$style .= '--knd-block-news-title-color:' . $attr['titleColor'] . ';';
+		$style .= '--knd-block-post-title-color:' . $attr['titleColor'] . ';';
+	}
+
+	// Title Hover Color
+	if ( isset( $attr['titleHoverColor'] ) && $attr['titleHoverColor'] ) {
+		$style .= '--knd-block-post-title-color-hover:' . $attr['titleHoverColor'] . ';';
+	}
+
+	// Card background Color
+	if ( isset( $attr['cardBackroundColor'] ) && $attr['cardBackroundColor'] ) {
+		$style .= '--knd-card-background:' . $attr['cardBackroundColor'] . ';';
+	}
+
+	// Card overlay Color
+	if ( isset( $attr['overlayColor'] ) && $attr['overlayColor'] ) {
+		$style .= '--knd-block-post-overlay:' . $attr['overlayColor'] . ';';
+	}
+
+	// Card overlay Hover Color
+	if ( isset( $attr['overlayHoverColor'] ) && $attr['overlayHoverColor'] ) {
+		$style .= '--knd-block-post-overlay-hover:' . $attr['overlayHoverColor'] . ';';
 	}
 
 	// Links Color
@@ -140,9 +329,59 @@ function knd_block_news_render_callback( $attr ) {
 		$style .= '--knd-block-link-color:' . $attr['linkColor'] . ';';
 	}
 
+	// Links Hover Color
+	if ( isset( $attr['linkHoverColor'] ) && $attr['linkHoverColor'] ) {
+		$style .= '--knd-block-link-color-hover:' . $attr['linkHoverColor'] . ';';
+	}
+
+	// Links Hover Background Color
+	if ( isset( $attr['linkHoverBackground'] ) && $attr['linkHoverBackground'] ) {
+		$style .= '--knd-block-link-background:' . $attr['linkHoverBackground'] . ';';
+	}
+
 	// Meta Color
 	if ( isset( $attr['metaColor'] ) && $attr['metaColor'] ) {
 		$style .= '--knd-block-news-meta-color:' . $attr['metaColor'] . ';';
+	}
+
+	// Date Color
+	if ( isset( $attr['excerptColor'] ) && $attr['excerptColor'] ) {
+		$style .= '--knd-block-post-excerpt-color:' . $attr['excerptColor'] . ';';
+	}
+
+	// Date Color
+	if ( isset( $attr['dateColor'] ) && $attr['dateColor'] ) {
+		$style .= '--knd-block-post-date-color:' . $attr['dateColor'] . ';';
+	}
+
+	// Border Radius
+	if ( isset( $attr['radius'] ) ) {
+		$style .= '--knd-image-border-radius:' . $attr['radius'] . 'px;';
+	}
+
+	// Title font size mobile
+	if ( isset( $attr['titleFontSize'] ) && $attr['titleFontSize'] != '18px' ) {
+		$style .= '--knd-block-post-title-fontsize:' . $attr['titleFontSize'] . ';';
+	}
+
+	// Title font size mobile
+	if ( isset( $attr['titleFontSizeMobile'] ) && $attr['titleFontSizeMobile'] != '14px' ) {
+		$style .= '--knd-block-post-title-fontsize-mobile:' . $attr['titleFontSizeMobile'] . ';';
+	}
+
+	// Excerpt font size
+	if ( isset( $attr['excerptFontSize'] ) && $attr['excerptFontSize'] != '14px' ) {
+		$style .= '--knd-block-post-excerpt-fontsize:' . $attr['excerptFontSize'] . ';';
+	}
+
+	// Excerpt font size mobile
+	if ( isset( $attr['excerptFontSizeMobile'] ) && $attr['excerptFontSizeMobile'] != '14px' ) {
+		$style .= '--knd-block-post-excerpt-fontsize-mobile:' . $attr['excerptFontSizeMobile'] . ';';
+	}
+
+	$image_size = 'post-thumbnail';
+	if ( isset( $attr['imageSize'] ) && $attr['imageSize'] ) {
+		$image_size = $attr['imageSize'];
 	}
 
 	// Heading
@@ -157,8 +396,17 @@ function knd_block_news_render_callback( $attr ) {
 		$attr_id = ' id="' . esc_attr( $attr['anchor'] ) . '"';
 	}
 
-	$html  = '<div class="' . knd_block_class( $classes ) . '"' . $attr_id . ' style="' . $style . '">';
-	$html .= '<div class="knd-container">';
+	$start_block = '<div class="' . knd_block_class( $classes ) . '"' . $attr_id . ' style="' . $style . '">';
+	$end_block   = '</div>';
+
+	$start_container = '<div class="knd-container">';
+	$end_container   = '</div>';
+
+	$start_row = '<div class="knd-row">';
+	$end_row   = '</div>';
+
+	$before_row = '';
+	$after_row  = '';
 
 	// Heading Links.
 	$heading_links = '';
@@ -189,17 +437,22 @@ function knd_block_news_render_callback( $attr ) {
 		}
 
 		$heading_links .= '</div>';
-
 	}
 
+	$block_heading = '';
+
 	if ( $heading ) {
-		$html .= '<div class="section-heading">
-			<h2 class="section-title">' . esc_html( $heading ) . '</h2>
+		$block_title_class = 'knd-block-title';
+		if ( isset( $attr['titleAlign'] ) && $attr['titleAlign'] ) {
+			$block_title_class .= ' is-align-center';
+		}
+		$block_heading = '<div class="knd-block-heading">
+			<h2 class="' . esc_attr( $block_title_class ) . '">' . esc_html( $heading ) . '</h2>
 			' . $heading_links . '
 		</div>';
 	}
 
-	$html .= '<div class="knd-row start cards-row">';
+	$articles = '';
 
 	$args = array(
 		'post_type'           => 'post',
@@ -246,25 +499,76 @@ function knd_block_news_render_callback( $attr ) {
 
 			$this_post = get_post( get_the_ID() );
 
-			$html .= '<article class="' . esc_attr( join( ' ', get_post_class( 'knd-col knd-entry' ) ) ) . '">
-			<a href="' . get_the_permalink() . '" class="thumbnail-link">
-				<div class="entry-preview">
-					' . get_the_post_thumbnail( null, 'post-thumbnail', array( 'alt' => wp_trim_words( get_the_title(), 5 ), 'aria-hidden' => 'true' ) ) . '
-				</div>
-				' . the_title( '<h3 class="entry-title">', '</h3>', false ) . '
-				<div class="entry-meta">' . strip_tags( knd_posted_on( $this_post ), '<span><time>') . '</div>
-			</a>
-		</article>';
+			if ( $attr['layout'] === 'type-0' ) {
+
+					$articles .= '<article class="' . esc_attr( join( ' ', get_post_class( 'knd-col knd-entry' ) ) ) . '">
+					<a href="' . get_the_permalink() . '" class="thumbnail-link">
+						<div class="entry-preview">
+							' . get_the_post_thumbnail( null, $image_size, array( 'alt' => wp_trim_words( get_the_title(), 5 ), 'aria-hidden' => 'true' ) ) . '
+						</div>
+						' . the_title( '<h3 class="entry-title">', '</h3>', false ) . '
+						<div class="entry-meta">' . strip_tags( knd_posted_on( $this_post ), '<span><time>') . '</div>
+					</a>
+				</article>';
+
+			} else if ( $attr['layout'] === 'type-1' ) {
+				$attr['thumbnail_link'] = true;
+				$articles .= '<article class="' . esc_attr( join( ' ', get_post_class( 'knd-col knd-entry' ) ) ) . '">
+					' . knd_block_post_thumbnail( $attr ) . '
+					' . knd_block_post_category( $attr ) . '
+					' . knd_block_post_title( $attr ) . '
+					' . knd_block_post_excerpt( $attr ) . '
+					' . knd_block_post_meta( $attr ) . '
+				</article>';
+			} else if ( $attr['layout'] === 'type-2' ) {
+				$attr['thumbnail_link'] = true;
+				$articles .= '<article class="' . esc_attr( join( ' ', get_post_class( 'knd-col knd-entry' ) ) ) . '">
+					<div class="knd-post-entry-inner">
+						' . knd_block_post_thumbnail( $attr ) . '
+						<div class="knd-post-entry-content">
+						' . knd_block_post_category( $attr ) . '
+						' . knd_block_post_title( $attr ) . '
+						' . knd_block_post_excerpt( $attr ) . '
+						' . knd_block_post_meta( $attr ) . '
+					</div>
+				</article>';
+			} else if ( $attr['layout'] === 'type-3' ) {
+
+				$orientation_class = 'knd-ratio-' . $attr['imageOrientation'];
+
+				$articles .= '<article class="' . esc_attr( join( ' ', get_post_class( 'knd-col knd-entry' ) ) ) . '">
+					<div class="knd-entry-overlay ' . $orientation_class . '">
+						' . knd_block_post_thumbnail( $attr ) . '
+						<a href="' . get_the_permalink() . '" class="knd-block-post-overlay-link"></a>
+						<div class="knd-block-post-content">
+							' . knd_block_post_category( $attr ) . '
+							' . knd_block_post_title( $attr ) . '
+							' . knd_block_post_excerpt( $attr ) . '
+							' . knd_block_post_meta( $attr ) . '
+						</div>
+					</div>
+				</article>';
+			}
 
 		endwhile;
+
+	else:
 
 	endif;
 
 	wp_reset_postdata();
 
-	$html .= '</div> </div>';
+	if ( $attr['layout'] === 'type-1' ) {
+		$before_row = $block_heading;
+	} else if ( $attr['layout'] === 'type-2' ) {
+		$before_row = $block_heading;
+	} else if ( $attr['layout'] === 'type-3' ) {
+		$before_row = $block_heading;
+	} else if ( $attr['layout'] === 'type-4' ) {
+		//$html = $attr['layout'];
+	}
 
-	$html .= '</div>';
+	$html = $start_block . $start_container . $before_row . $start_row . $articles . $end_row . $after_row . $end_container . $end_block;
 
 	return $html;
 }

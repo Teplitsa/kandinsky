@@ -1,0 +1,15 @@
+/* Separator */
+@media (min-width: 1200px) {
+	.entry-content {
+		> .wp-block-separator {
+		border-bottom: 0;
+
+			&.alignwide {
+				margin-left: calc( ( ( var(--knd-medium-content-width) - 40px - var(--knd-content-width) ) / 2 ) * -1);
+				margin-right: calc( ( ( var(--knd-medium-content-width) - 40px - var(--knd-content-width) ) / 2 ) * -1);
+			}
+		}
+	}
+}
+
+

@@ -437,9 +437,8 @@ function knd_hide_notices() {
 }
 add_action( 'wp_loaded', 'knd_hide_notices' );
 
-add_filter( 'manage_posts_columns', 'knd_common_columns_names', 50, 2 );
-
-function knd_common_columns_names( $columns, $post_type ) {
+function knd_common_columns_names( $columns ) {
+	$post_type = 'post';
 	if ( in_array( $post_type, array( 'post', 'project', 'org', 'person', 'event' ) ) ) {
 		
 		if ( in_array( $post_type, array( 'event', 'programm' ) ) )
@@ -457,9 +456,10 @@ function knd_common_columns_names( $columns, $post_type ) {
 		
 		$columns['id'] = 'ID';
 	}
-	
+
 	return $columns;
 }
+add_filter( 'manage_posts_columns', 'knd_common_columns_names', 50, 2 );
 
 add_action( 'manage_pages_custom_column', 'knd_common_columns_content', 2, 2 );
 add_action( 'manage_posts_custom_column', 'knd_common_columns_content', 2, 2 );
