@@ -193,7 +193,7 @@ if( class_exists( 'Kirki\Field\Repeater' ) ) {
 			'button_label' => esc_html__( 'Add social network', 'knd' ),
 			'row_label'    => [
 				'type'  => 'field',
-				'value' => esc_html__( 'Social network name', 'kirki' ),
+				'value' => esc_html__( 'Social network name', 'knd' ),
 				'field' => 'label',
 			],
 			'default' => $socials_default,
@@ -207,7 +207,7 @@ if( class_exists( 'Kirki\Field\Repeater' ) ) {
 				'label'   => [
 					'type'        => 'text',
 					'label'       => esc_html__( 'Name', 'knd' ),
-					'default'     => esc_html__( 'Facebook', 'knd' ),
+					'default'     => esc_html__( '', 'knd' ),
 				],
 				'url'    => [
 					'type'  => 'text',
