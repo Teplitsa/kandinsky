@@ -2518,6 +2518,9 @@
 				type: 'string',
 				//default: __( 'News', 'knd' ),
 			},
+			headingLink: {
+				type: 'string',
+			},
 			titleAlign: {
 				type: 'boolean',
 				default: false,
@@ -3305,15 +3308,15 @@
 										// 	value: 'type-0'
 										// },
 										{
-											label: __( 'Тип 1', 'knd' ), // Type 1
+											label: __( 'Изображение над текстом', 'knd' ), // Type 1
 											value: 'type-1'
 										},
 										{
-											label: __( 'Тип 2', 'knd' ), // Type 2
+											label: __( 'Изображение рядом с текстом', 'knd' ), // Type 2
 											value: 'type-2'
 										},
 										{
-											label: __( 'Тип 3', 'knd' ), // Type 3
+											label: __( 'Tекст поверх изображения', 'knd' ), // Type 3
 											value: 'type-3'
 										},
 									],
@@ -3355,10 +3358,18 @@
 							},
 
 							el( TextControl, {
-								label: __( 'Title', 'knd' ),
+								label: __( 'Текст заголовка', 'knd' ),
 								value: props.attributes.heading,
 								onChange: ( val ) => {
 									props.setAttributes( { heading: val } );
+								},
+							}),
+
+							el( TextControl, {
+								label: __( 'Ссылка заголовка', 'knd' ),
+								value: props.attributes.headingLink,
+								onChange: ( val ) => {
+									props.setAttributes( { headingLink: val } );
 								},
 							}),
 
@@ -3371,6 +3382,8 @@
 									},
 								}
 							),
+
+							el( __experimentalDivider ),
 
 							el ( BaseControl, {
 								label: __( 'Heading Links', 'knd' ),

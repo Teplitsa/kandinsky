@@ -113,6 +113,30 @@
 			margin-right: auto;
 			text-align: center;
 		}
+
+		> a {
+			border: 0;
+			color: var(--knd-block-heading-color);
+			text-decoration: none;
+			display: inline-flex;
+			align-items: center;
+
+			svg {
+				margin-left: 5px;
+				position: relative;
+				right: 0;
+				transition: right .1s;
+			}
+
+			&:hover {
+				color: var(--knd-block-heading-color);
+				opacity: .7;
+
+				svg {
+					right: -2px;
+				}
+			}
+		}
 	}
 
 	.hentry {
