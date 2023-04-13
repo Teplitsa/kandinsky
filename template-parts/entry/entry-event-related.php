@@ -53,9 +53,11 @@ if ( $related_query->have_posts() ) :
 							<div class="knd-event__details">
 								<h5><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
 								<div class="knd-event__details-list">
-									<div class="knd-event__details-item knd-event__details-remained">
-										<span class="knd-event__details-icon"><?php knd_svg_icon( 'icon-bell' );?></span><?php echo knd_get_event_remained(); ?>
-									</div>
+									<?php if ( knd_get_event_meta( 'event_rsvp' ) ) { ?>
+										<div class="knd-event__details-item knd-event__details-remained">
+											<span class="knd-event__details-icon"><?php knd_svg_icon( 'icon-bell' );?></span><?php echo knd_get_event_remained(); ?>
+										</div>
+									<?php } ?>
 									<div class="knd-event__details-item knd-event__details-dates">
 										<span class="knd-event__details-icon"><?php knd_svg_icon('icon-calendar');?></span><?php echo knd_get_event_times(); ?>, <?php echo knd_get_event_dates(); ?>
 									</div>
