@@ -142,34 +142,6 @@ function knd_adminbar_voices() {
 <?php
 }
 
-/** == Filter to ensure https for local URLs in content == **/
-function knd_force_https( $content ) {
-	if ( ! is_ssl() )
-		return $content;
-		
-		// protocol relative internal links
-	$https_home = home_url( '', 'https' );
-	$http_home = home_url( '', 'http' );
-	$rel_home = str_replace( 'http:', '', $http_home );
-	
-	$content = str_replace( $http_home, $rel_home, $content );
-	$content = str_replace( $https_home, $rel_home, $content );
-	
-	// protocol relative url in src (for external links)
-	preg_match_all( '@src="([^"]+)"@', $content, $match );
-	
-	if ( ! empty( $match ) && isset( $match[1] ) ) {
-		foreach ( $match[1] as $i => $test_url ) {
-			if ( false !== strpos( $test_url, 'http:' ) ) {
-				$replace_url = str_replace( 'http:', '', $test_url );
-				$content = str_replace( $test_url, $replace_url, $content );
-			}
-		}
-	}
-	
-	return $content;
-}
-
 /** filter search request **/
 function knd_filter_search_query( $s ) {
 	$s = preg_replace( "/&#?[a-z0-9]{2,8};/i", "", $s );
