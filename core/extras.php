@@ -142,19 +142,6 @@ function knd_adminbar_voices() {
 <?php
 }
 
-/** filter search request **/
-function knd_filter_search_query( $s ) {
-	$s = preg_replace( "/&#?[a-z0-9]{2,8};/i", "", $s );
-	$s = preg_replace( '/[^a-zA-ZА-Яа-я0-9-\s]/u', '', $s );
-	$s = mb_strcut( $s, 0, 140, 'utf-8' );
-	
-	if ( 4 > mb_strlen( $s, 'utf-8' ) ) {
-		$s = '';
-	}
-	
-	return $s;
-}
-
 function knd_get_social_media_supported() {
 	return array( 
 		'vk'        => esc_html__( 'VKontakte', 'knd' ),
