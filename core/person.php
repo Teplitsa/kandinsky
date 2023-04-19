@@ -1,28 +1,8 @@
 <?php
-
-function knd_person_custom_content() {
-
-	register_taxonomy('person_cat', array('person'), array(
-		'labels' => array(
-			'name'                       => esc_html__( 'Persons categories', 'knd' ),
-			'singular_name'              => esc_html__( 'Category', 'knd' ),
-			'menu_name'                  => esc_html__( 'Categories', 'knd' ),
-			'all_items'                  => esc_html__( 'All categories', 'knd' ),
-			'edit_item'                  => esc_html__( 'Edit category', 'knd' ),
-			'view_item'                  => esc_html__( 'Preview category', 'knd' ),
-			'update_item'                => esc_html__( 'Update category', 'knd' ),
-			'add_new_item'               => esc_html__( 'Add new category', 'knd' ),
-			'new_item_name'              => esc_html__( 'New category name', 'knd' ),
-		),
-		'hierarchical'      => true,
-		'show_ui'           => true,
-		'show_in_nav_menus' => true,
-		'show_tagcloud'     => false,
-		'show_admin_column' => true,
-		'query_var'         => true,
-		'show_in_rest'      => true,
-		'rewrite'           => array('slug' => 'people', 'with_front' => false),
-	));
+/**
+ * Register post type person
+ */
+function knd_register_post_type_person() {
 
 	register_post_type('person', array(
 		'labels' => array(
@@ -59,5 +39,27 @@ function knd_person_custom_content() {
 		'show_in_rest'        => true,
 	));
 
+	register_taxonomy('person_cat', array('person'), array(
+		'labels' => array(
+			'name'                       => esc_html__( 'Persons categories', 'knd' ),
+			'singular_name'              => esc_html__( 'Category', 'knd' ),
+			'menu_name'                  => esc_html__( 'Categories', 'knd' ),
+			'all_items'                  => esc_html__( 'All categories', 'knd' ),
+			'edit_item'                  => esc_html__( 'Edit category', 'knd' ),
+			'view_item'                  => esc_html__( 'Preview category', 'knd' ),
+			'update_item'                => esc_html__( 'Update category', 'knd' ),
+			'add_new_item'               => esc_html__( 'Add new category', 'knd' ),
+			'new_item_name'              => esc_html__( 'New category name', 'knd' ),
+		),
+		'hierarchical'      => true,
+		'show_ui'           => true,
+		'show_in_nav_menus' => true,
+		'show_tagcloud'     => false,
+		'show_admin_column' => true,
+		'query_var'         => true,
+		'show_in_rest'      => true,
+		'rewrite'           => array('slug' => 'people', 'with_front' => false),
+	));
+
 }
-add_action('init', 'knd_person_custom_content', 20);
+add_action('init', 'knd_register_post_type_person' );
