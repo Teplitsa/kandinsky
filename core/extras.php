@@ -142,19 +142,6 @@ function knd_adminbar_voices() {
 <?php
 }
 
-function knd_get_social_media_supported() {
-	return array( 
-		'vk'        => esc_html__( 'VKontakte', 'knd' ),
-		'ok'        => esc_html__( 'Odnoklassniki', 'knd' ),
-		'facebook'  => esc_html__( 'Facebook', 'knd' ),
-		'instagram' => esc_html__( 'Instagram', 'knd' ),
-		'twitter'   => esc_html__( 'Twitter', 'knd' ),
-		'telegram'  => esc_html__( 'Telegram', 'knd' ),
-		'youtube'   => esc_html__( 'YouTube', 'knd' ),
-		'tiktok'    => esc_html__( 'TikTok', 'knd' ),
-	);
-}
-
 function knd_after_theme_activation() {
 	flush_rewrite_rules( false );
 
@@ -198,11 +185,11 @@ function knd_remove_scenario_unzipped_dir() {
 
 	if ( is_string( $scenario_name ) ) {
 
-        $destination = wp_upload_dir();
-        $unzipped_dir = "{$destination['path']}/kandinsky-text-" . $scenario_name . "-master";
+		$destination = wp_upload_dir();
+		$unzipped_dir = "{$destination['path']}/kandinsky-text-" . $scenario_name . "-master";
 
 		if ( !Knd_Filesystem::get_instance()->rmdir($unzipped_dir, true) ) {
-            throw new Exception(sprintf(__('Old import files cleanup FAILED: %s.', 'knd'), $destination["path"]));
+			throw new Exception(sprintf(__('Old import files cleanup FAILED: %s.', 'knd'), $destination["path"]));
 		}
 	}
 }
