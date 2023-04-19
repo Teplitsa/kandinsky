@@ -531,7 +531,7 @@ class KND_Plot_Data_Builder {
 			$replace_images = explode( ',', $replace_images );
 			foreach ( $replace_images as $key => $image_slug ) {
 
-				$attachment = get_page_by_title( $image_slug,  OBJECT, 'attachment' );
+				$attachment = knd_get_post_by_title( $image_slug, 'attachment' );
 				if ( $attachment ) {
 					$image_url = wp_get_attachment_image_url( $attachment->ID, 'large' );
 					$key = $key+1;
@@ -825,7 +825,7 @@ class KND_Plot_Data_Builder {
 			$replace_images = explode( ',', $piece->replace_images );
 			foreach ( $replace_images as $key => $image_slug ) {
 
-				$attachment = get_page_by_title( $image_slug,  OBJECT, 'attachment' );
+				$attachment = knd_get_post_by_title( $image_slug, 'attachment' );
 				if ( $attachment ) {
 					$image_url = wp_get_attachment_image_url( $attachment->ID, 'large' );
 					$key = $key+1;

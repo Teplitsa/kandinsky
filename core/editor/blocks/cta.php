@@ -163,7 +163,7 @@ function knd_block_cta_render_callback( $attr ) {
 				$figure = '<div class="knd-block-cta__figure">' . $featured_image . '</div>';
 			}
 		} elseif ( isset( $featured_image['title'] ) && $featured_image['title'] ){
-			$attachment = get_page_by_title( $featured_image['title'],  OBJECT, 'attachment' );
+			$attachment = knd_get_post_by_title( $featured_image['title'], 'attachment' );
 			if ( $attachment ) {
 				$featured_image = wp_get_attachment_image( $attachment->ID, 'large' );
 				$figure = '<div class="knd-block-cta__figure">' . $featured_image . '</div>';

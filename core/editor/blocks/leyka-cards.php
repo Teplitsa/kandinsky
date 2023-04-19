@@ -210,7 +210,7 @@ function knd_block_leyka_cards_render_callback( $attr ) {
 	if ( $attr['queryInclude'] ) {
 		$post__in = array();
 		foreach ( $attr['queryInclude'] as $page_title ) {
-			$page_obj = get_page_by_title( $page_title, OBJECT, 'leyka_campaign' );
+			$page_obj = knd_get_post_by_title( $page_title, 'leyka_campaign' );
 			$post__in[] = $page_obj->ID;
 		}
 		$args['post__in'] = $post__in;
@@ -224,7 +224,7 @@ function knd_block_leyka_cards_render_callback( $attr ) {
 	if ( $attr['queryExclude'] ) {
 		$post__not_in = array();
 		foreach ( $attr['queryExclude'] as $page_title ) {
-			$page_obj = get_page_by_title( $page_title, OBJECT, 'leyka_campaign' );
+			$page_obj = knd_get_post_by_title( $page_title, 'leyka_campaign' );
 			$post__not_in[] = $page_obj->ID;
 		}
 

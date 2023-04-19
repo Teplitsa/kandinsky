@@ -95,7 +95,7 @@ function knd_block_cover_render_callback( $attr ) {
 			$background_image_url = wp_get_attachment_image_url( $background_image['id'], 'full' );
 			$style .= 'background-image: url(' . esc_url( $background_image_url ) . ');';
 		} elseif ( isset( $background_image['title'] ) && $background_image['title'] ){
-			$attachment = get_page_by_title( $background_image['title'],  OBJECT, 'attachment' );
+			$attachment = knd_get_post_by_title( $background_image['title'], 'attachment' );
 			if ( $attachment ) {
 				$background_image_url = wp_get_attachment_image_url( $attachment->ID, 'large' );
 				$style .= 'background-image: url(' . esc_url( $background_image_url ) . ');';

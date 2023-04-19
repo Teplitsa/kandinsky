@@ -159,7 +159,7 @@ function knd_block_hero_render_callback( $attr ) {
 		$style .= 'background-image: url(' . esc_url( $background_image_url ) . ');';
 
 	} elseif ( isset( $background_image['title'] ) && $background_image['title'] ){
-		$background_attach = get_page_by_title(  $background_image['title'],  OBJECT, 'attachment' );
+		$background_attach = knd_get_post_by_title(  $background_image['title'], 'attachment' );
 		if ( $background_attach ) {
 			$background_image_url = wp_get_attachment_image_url( $background_attach->ID, 'full' );
 			if ( $background_image ) {
@@ -180,7 +180,7 @@ function knd_block_hero_render_callback( $attr ) {
 			$featured_image = '<div class="knd-block-hero__figure">' . $featured_image . '</div>';
 		}
 	} elseif ( isset( $featured_image['title'] ) && $featured_image['title'] ){
-		$attachment = get_page_by_title(  $featured_image['title'],  OBJECT, 'attachment' );
+		$attachment = knd_get_post_by_title( $featured_image['title'], 'attachment' );
 		if ( $attachment ) {
 			$featured_image = wp_get_attachment_image($attachment->ID, 'large' );
 			if ( $featured_image ) {

@@ -281,3 +281,31 @@ function knd_include_svg(){
 add_action( 'admin_footer-post.php', 'knd_include_svg' );
 add_action( 'admin_footer-post-new.php', 'knd_include_svg' );
 add_action( 'wp_body_open', 'knd_include_svg' );
+
+/**
+ * Get post by title
+ */
+function knd_get_post_by_title( $title = null, $post_type = 'page' ) {
+	if ( ! $title ) {
+		return;
+	}
+	$query = new WP_Query(
+		array(
+			'post_type'              => $post_type,
+			'title'                  => $title,
+			'posts_per_page'         => 1,
+			'update_post_term_cache' => false,
+			'update_post_meta_cache' => false,
+			'ignore_sticky_posts' => true,
+			'post_status'         => 'inherit',
+		)
+	);
+
+	if ( ! empty( $query->post ) ) {
+		$post_by_title = $query->post;
+	} else {
+		$post_by_title = null;
+	}
+
+	return $post_by_title;
+}
