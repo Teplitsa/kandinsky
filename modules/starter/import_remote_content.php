@@ -250,7 +250,7 @@ class KND_Import_Remote_Content {
 				$attachment_id = $this->get_image_attachment_id(trim($matches[1][$i]));
 				
 				if($attachment_id) {
-					$image_src = knd_get_content_image_markup($attachment_id);
+					$image_src = wp_get_attachment_image( $attachment_id, 'medium', false, array( 'alt' => '' ) );
 				}
 				else {
 					$image_src = '';
