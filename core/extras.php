@@ -52,21 +52,17 @@ function knd_get_more_text() {
 }
 
 /** excerpt filters  */
-add_filter( 'excerpt_more', 'knd_auto_excerpt_more' );
-
 function knd_auto_excerpt_more( $more ) {
 	return '&hellip;';
 }
-
-add_filter( 'excerpt_length', 'knd_custom_excerpt_length' );
+add_filter( 'excerpt_more', 'knd_auto_excerpt_more' );
 
 function knd_custom_excerpt_length( $l ) {
 	return 30;
 }
+add_filter( 'excerpt_length', 'knd_custom_excerpt_length' );
 
 /** inject */
-add_filter( 'get_the_excerpt', 'knd_custom_excerpt_more' );
-
 function knd_custom_excerpt_more( $output ) {
 	
 	if ( is_singular() || is_search() )
@@ -75,6 +71,7 @@ function knd_custom_excerpt_more( $output ) {
 	$output .= knd_continue_reading_link();
 	return $output;
 }
+add_filter( 'get_the_excerpt', 'knd_custom_excerpt_more' );
 
 /** Current URL */
 if ( ! function_exists( 'knd_current_url' ) ) {
@@ -91,41 +88,6 @@ if ( ! function_exists( 'knd_current_url' ) ) {
 
 		return $page_url;
 	}
-}
-
-/** Extract posts IDs from query **/
-function knd_get_posts_ids_from_query( WP_Query $query ) {
-	$ids = array();
-	if ( ! $query->have_posts() )
-		return $ids;
-	
-	foreach ( $query->posts as $qp ) {
-		$ids[] = $qp->ID;
-	}
-	
-	return $ids;
-}
-
-function knd_get_post_id_from_posts( array $posts ) {
-	$ids = array();
-	foreach ( $posts as $p ) {
-		if ( ! empty( $p ) && ! empty( $p->ID ) ) {
-			$ids[] = $p->ID;
-		}
-	}
-	
-	return $ids;
-}
-
-function knd_get_term_id_from_terms( array $terms ) {
-	$ids = array();
-	foreach ( $terms as $t ) {
-		if ( ! empty( $t ) && ! empty( $t->term_id ) ) {
-			$ids[] = $t->term_id;
-		}
-	}
-	
-	return $ids;
 }
 
 /** Admin bar **/
