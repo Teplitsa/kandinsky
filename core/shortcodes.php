@@ -1,46 +1,48 @@
-<?php /**
+<?php
+/**
  * Shortcodes
- **/
+ */
 
-if ( ! defined( 'WPINC' ) )
+if ( ! defined( 'WPINC' ) ) {
 	die();
+}
 
+/**
+ * Support for leyka shortcode for import
+ */
+function knd_leyka_inline_campaign_shortcode( $atts, $content = null ){
+	if ( defined( 'LEYKA_VERSION' ) ) {
 
-/** Support for leyka shortcode for import **/
-if ( defined( 'LEYKA_VERSION' ) ) {
-
-	/** Wrapper to import leyka shortcodes correctly **/
-	function knd_leyka_inline_campaign_shortcode( $atts, $content = null ) {
+		/** Wrapper to import leyka shortcodes correctly **/
 		$atts = shortcode_atts( array( 'slug' => '' ), $atts );
-		
-		if ( empty( $atts['slug'] ) )
-			return '';
-		
-		if ( ! defined( 'LEYKA_VERSION' ) )
-			return '';
-		
+
+		if ( empty( $atts['slug'] ) ) {
+			return;
+		}
+
 		$camp = get_page_by_path( $atts['slug'], OBJECT, 'leyka_campaign' );
-		if ( ! $camp )
-			return '';
-		
-		return do_shortcode( '[leyka_inline_campaign id="' . $camp->ID . '" template="star"]' );
+
+		if ( ! $camp ) {
+			return;
+		}
+
+		return do_shortcode( '[leyka_inline_campaign id="' . esc_attr( $camp->ID ) . '" template="star"]' );
 	}
-} else {
- // fallback for Leyka shortcode
-	function knd_leyka_inline_campaign_shortcode( $atts, $content = null ) {
-		// don't display anything when we don't have donations
-		return '';
-	}
+
+	return;
+
 }
 add_shortcode( 'knd_leyka_inline_campaign', 'knd_leyka_inline_campaign_shortcode' );
 
 function knd_test_for_revo_template( $revo_displayed ) {
-	if ( ! is_singular() )
+	if ( ! is_singular() ) {
 		return $revo_displayed;
-	
-	if ( is_singular( 'leyka_campaign' ) )
+	}
+
+	if ( is_singular( 'leyka_campaign' ) ) {
 		return $revo_displayed;
-	
+	}
+
 	if ( get_post() && has_shortcode( get_post()->post_content, 'knd_leyka_inline_campaign' ) ) {
 		$revo_displayed = true;
 	}
