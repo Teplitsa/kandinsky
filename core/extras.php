@@ -39,15 +39,6 @@ function knd_kses_allowed_html( $allowed_html ) {
 }
 add_filter( 'wp_kses_allowed_html', 'knd_kses_allowed_html' );
 
-/* temp fix for wpautop in posts */
-function knd_entry_wpautop( $content ) {
-	if ( false === strpos( $content, '[page_section' ) ) {
-		$content = wpautop( $content );
-	}
-	
-	return $content;
-}
-
 /** Custom excerpts  **/
 
 /** more link */
