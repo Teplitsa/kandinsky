@@ -1,17 +1,11 @@
 <?php
 /**
  * Kandinsky functions and definitions
- *
- * @package Kandinsky
  */
 
 if ( ! defined( 'WPINC' ) ) {
 	die();
 }
-
-// if( WP_DEBUG && WP_DEBUG_DISPLAY && (defined('DOING_AJAX') && DOING_AJAX) ){
-// 	@ ini_set( 'display_errors', 1 );
-// }
 
 define('KND_DOC_URL', 'https://kndwp.org/docs/');
 define('KND_OFFICIAL_WEBSITE_URL', 'https://kndwp.org/');
@@ -27,23 +21,6 @@ define('KND_SUPPORT_TELEGRAM', 'https://t.me/joinchat/AAAAAENN3prSrvAs7KwWrg');
 define('KND_SETUP_WIZARD_URL', admin_url('themes.php?page=knd-setup-wizard'));
 define('KND_DISTR_ARCHIVE_URL', 'https://kndwp.org/kandinsky.zip');
 define('KND_UPDATE_INFO_URL', 'https://kndwp.org/kandinsky.json');
-
-define('KND_MIN_PHP_VERSION', '5.6.0');
-define('KND_PHP_VERSION_ERROR_MESSAGE', '<strong>Внимание:</strong> версия PHP ниже <strong>5.6.0</strong>. Кандинский нуждается в PHP хотя бы <strong>версии 5.6.0</strong>, чтобы работать корректно.<br /><br />Пожалуйста, направьте вашему хостинг-провайдеру запрос на повышение версии PHP для этого сайта.');
-
-if ( ! defined('PHP_VERSION') || version_compare(PHP_VERSION, KND_MIN_PHP_VERSION, '<') ) {
-	/**
-	 * Admin notice
-	 */
-	function knd_admin_notice__success() {
-		?>
-		<div class="notice notice-error">
-			<p><?php echo wp_kses_post( KND_PHP_VERSION_ERROR_MESSAGE ); ?></p>
-		</div>
-		<?php
-	}
-	add_action( 'admin_notices', 'knd_admin_notice__success' );
-}
 
 if ( ! isset( $content_width ) ) {
 	$content_width = 800; /* pixels */
