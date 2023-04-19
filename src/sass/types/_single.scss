@@ -112,24 +112,3 @@
 		}
 	}
 }
-
-
-// single post terms 
-.tags-line {
-	padding-top: $gut / 2.2;
-
-	a {
-		color: var(--knd-color-main);
-		@include knd-link-terms-text();
-
-		&:hover {
-			color: var(--knd-color-main-active);
-		}
-	}
-
-	&:not(.single-post-terms) {
-		a {
-			margin-right: 4px;
-		}
-	}
-}
