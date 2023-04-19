@@ -12,7 +12,7 @@ class KND_Donations_Widget extends WP_Widget {
 	}
 
 	function widget($args, $instance) {
-		
+
 		if(isset($args['id']) && in_array($args['id'], array('knd-footer-sidebar', ''))) {
 			return;
 		}
@@ -39,13 +39,12 @@ class KND_Donations_Widget extends WP_Widget {
 			$q_args['post__not_in'] = array_map('intval', explode(',', $instance['exclude']));
 		}
 		else {
-			
 			$ex = $this->exclude_prebuild_campaigns();
 			if($ex) {
 				$q_args['post__not_in'] = $ex;
 			}
 		}
-		
+
 		$q_args['meta_query'] = array(
 			array(
 				'key'     => 'is_finished',
@@ -73,7 +72,7 @@ class KND_Donations_Widget extends WP_Widget {
 				$ex = get_page_by_path($s, OBJECT, 'leyka_campaign' );
 				if($ex){
 					$ids[] = $ex->ID;
-				} 
+				}
 			}
 
 			if(!empty($ids)) {
@@ -90,16 +89,16 @@ class KND_Donations_Widget extends WP_Widget {
 	public static function print_widget($posts, $args, $title){
 
 		extract($args);
-		
+
 		echo $before_widget;
 	?>
-	 <div class="knd-container knd-donations-widget">
+	<div class="knd-container knd-donations-widget">
 		
-		<?php 
+		<?php
 			if(!empty($title)) { 
 				echo $before_title.$title.$after_title;
 			}
-		?>  
+		?>
 		<div class="flex-row start cards-loop leyka-loop">
 			<?php
 				if(!empty($posts)){
@@ -116,13 +115,11 @@ class KND_Donations_Widget extends WP_Widget {
 		echo $after_widget;
 	}
 
-	
-	
 	function form($instance) {
 
 		/* Set up some default widget settings */
 		$defaults = array('title' => '', 'num' => 3, 'exclude' => '');
-		$instance = wp_parse_args((array)$instance, $defaults);		
+		$instance = wp_parse_args((array)$instance, $defaults);
 	?>
 		<p>
 			<label for="<?php echo $this->get_field_id('title');?>"><?php esc_html_e( 'Heading', 'knd' ); ?></label>
@@ -156,11 +153,9 @@ class KND_Donations_Widget extends WP_Widget {
 		$posts = get_posts(array('post_type' => Leyka_Campaign_Management::$post_type, 'posts_per_page' => $num));
 		return $posts;
 	}
-	
 } //class end
 
 function knd_donations_widgets(){
 	register_widget('KND_Donations_Widget');
 }
 add_action('widgets_init', 'knd_donations_widgets', 25);
-
