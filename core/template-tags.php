@@ -7,121 +7,8 @@
  * @package Kandinsky
  */
 
-if ( ! defined( 'WPINC' ) )
+if ( ! defined( 'WPINC' ) ) {
 	die();
-
-function knd_has_authors() {
-	if ( defined( 'TST_HAS_AUTHORS' ) && TST_HAS_AUTHORS && function_exists( 'get_term_meta' ) )
-		return true;
-
-	return false;
-}
-
-/* Custom conditions */
-function is_about() {
-
-	if ( is_page_branch( 2 ) )
-		return true;
-
-	if ( is_post_type_archive( 'org' ) )
-		return true;
-
-	if ( is_post_type_archive( 'org' ) )
-		return true;
-
-	return false;
-}
-
-function is_page_branch( $pageID ) {
-	global $post;
-	
-	if ( empty( $pageID ) )
-		return false;
-	
-	if ( ! is_page() || is_front_page() )
-		return false;
-	
-	if ( is_page( $pageID ) )
-		return true;
-	
-	if ( $post->post_parent == 0 )
-		return false;
-	
-	$parents = get_post_ancestors( $post );
-	
-	if ( is_string( $pageID ) ) {
-		$test_id = get_page_by_path( $pageID )->ID;
-	} else {
-		$test_id = (int) $pageID;
-	}
-
-	if ( in_array( $test_id, $parents ) )
-		return true;
-
-	return false;
-}
-
-function is_tax_branch( $slug, $tax ) {
-	
-	$test = get_term_by( 'slug', $slug, $tax );
-	if ( empty( $test ) )
-		return false;
-	
-	if ( is_tax( $tax ) ) {
-		$qobj = get_queried_object();
-		if ( $qobj->term_id == $test->term_id || $qobj->parent == $test->term_id )
-			return true;
-	}
-	
-	return false;
-}
-
-function is_posts() {
-	if ( is_home() || is_category() )
-		return true;
-	
-	if ( is_tax( 'auctor' ) )
-		return true;
-	
-	if ( is_singular( 'post' ) )
-		return true;
-	
-	return false;
-}
-
-function is_projects() {
-	if ( is_page( 'programms' ) )
-		return true;
-	
-	if ( is_singular( 'programm' ) )
-		return true;
-	
-	return false;
-}
-
-/*function is_expired_event() {
-	if ( ! is_single() )
-		return false;
-	
-	$event = new TST_Event( get_queried_object() );
-	return $event->is_expired();
-}*/
-
-/** Menu filter sceleton **/
-// add_filter('wp_nav_menu_objects', 'knd_custom_menu_items', 2, 2);
-function knd_custom_menu_items( $items, $args ) {
-	if ( empty( $items ) )
-		return;
-	
-	if ( $args->theme_location == 'primary' ) {
-		
-		foreach ( $items as $index => $menu_item ) {
-			if ( in_array( 'current-menu-item', $menu_item->classes ) )
-				$items[$index]->classes[] = 'active';
-		}
-	}
-	
-	return $items;
 }
 
 /** HTML with meta information for the current post-date/time and author **/
@@ -144,12 +31,9 @@ function knd_posted_on( WP_Post $cpost, $args = array() ) {
 		}
 
 		$meta = array_filter( $meta );
-		
+
 		$sep = '<span class="sep"></span>';
-	//} elseif ( 'event' == $cpost->post_type ) {
-		
-		//$event = new TST_Event( $cpost );
-		//return $event->posted_on_card();
+
 	} elseif ( 'project' == $cpost->post_type ) {
 
 		$cat = get_the_term_list( $cpost->ID, 'project_cat', '<span class="category">', ', ', '</span>' );
@@ -172,28 +56,6 @@ function knd_posted_on( WP_Post $cpost, $args = array() ) {
 	return implode( $sep, $meta );
 }
 
-/** Logo **/
-function knd_site_logo( $size = 'regular' ) {
-	switch ( $size ) {
-		case 'regular' :
-			$file = 'pic-logo';
-			break;
-		case 'small' :
-			$file = 'pic-logo-small';
-			break;
-		default :
-			$file = 'icon-logo';
-			break;
-	}
-	
-	$file = esc_attr( $file );
-	?>
-<svg class="logo <?php echo $file;?>">
-	<use xlink:href="#<?php echo $file;?>" />
-</svg>
-<?php
-}
-
 function knd_svg_icon( $id, $echo = true ) {
 	ob_start();
 	?>
@@ -208,20 +70,7 @@ function knd_svg_icon( $id, $echo = true ) {
 	return $out;
 }
 
-/** Separator **/
-function knd_get_sep( $mark = '//' ) {
-	return "<span class='sep'>" . $mark . "</span>";
-}
-
 /** == Titles == **/
-/** CPT archive title **/
-function knd_get_post_type_archive_title( $post_type ) {
-	$pt_obj = get_post_type_object( $post_type );
-	$name = $pt_obj->labels->menu_name;
-	
-	return $name;
-}
-
 function knd_section_title() {
 	global $wp_query;
 
@@ -270,7 +119,7 @@ function knd_section_title() {
 		$css = 'archive e404';
 	}
 	
-	echo "<h1 class='section-title {$css}'>{$title}</h1>";
+	echo '<h1 class="section-title ' . esc_attr( $css ) . '">' . wp_kses_post( $title ) . '</h1>';
 }
 
 if ( ! function_exists( 'knd_archive_description' ) ) {
@@ -285,81 +134,6 @@ if ( ! function_exists( 'knd_archive_description' ) ) {
 			</div>
 			<?php
 		}
-	}
-}
-
-/** == NAVs == **/
-/** Deprecated, remove in version 3.0 */
-function knd_paging_nav( WP_Query $query = null ) {
-	if ( ! $query ) {
-		
-		global $wp_query;
-		$query = $wp_query;
-	}
-	
-	if ( $query->max_num_pages < 2 ) { // Don't print empty markup if there's only one page
-		return;
-	}
-	
-	$p = knd_paginate_links( $query, false );
-	if ( $p ) {
-		?>
-<nav class="paging-navigation" role="navigation">
-	<div class="container"><?php echo $p; ?></div>
-</nav>
-<?php
-	}
-}
-
-/** Deprecated, remove in version 3.0 */
-function knd_paginate_links( WP_Query $query = null, $echo = true ) {
-	global $wp_query;
-	
-	if ( ! $query ) {
-		$query = $wp_query;
-	}
-	
-	$current = ( $query->query_vars['paged'] > 1 ) ? $query->query_vars['paged'] : 1;
-	
-	$parts = parse_url( get_pagenum_link( 1 ) );
-	
-	$pagination = array( 
-		'base' => trailingslashit( esc_url( $parts['host'] . $parts['path'] ) ) . '%_%', 
-		'format' => 'page/%#%/', 
-		'total' => $query->max_num_pages, 
-		'current' => $current, 
-		'prev_next' => true, 
-		'prev_text' => '&lt;', 
-		'next_text' => '&gt;', 
-		'end_size' => 4, 
-		'mid_size' => 4, 
-		'show_all' => false, 
-		'type' => 'plain',  // list
-		'add_args' => array() );
-	
-	if ( ! empty( $query->query_vars['s'] ) ) {
-		$pagination['add_args'] = array( 's' => str_replace( ' ', '+', get_search_query() ) );
-	}
-	
-	foreach ( array( 's' ) as $param ) { // Params to remove
-		
-		if ( $param == 's' ) {
-			continue;
-		}
-		
-		if ( isset( $_GET[$param] ) && ! empty( $_GET[$param] ) ) {
-			$pagination['add_args'] = array_merge( 
-				$pagination['add_args'], 
-				array( $param => esc_attr( trim( $_GET[$param] ) ) ) );
-		}
-	}
-	
-	if ( $echo ) {
-		
-		echo paginate_links( $pagination );
-		return '';
-	} else {
-		return paginate_links( $pagination );
 	}
 }
 
@@ -413,73 +187,11 @@ function knd_more_section( $posts, $title = '', $type = 'news', $css = '' ) {
 <?php
 }
 
-/** == Orgs functions == **/
-function knd_orgs_gallery( $category_ids = '', $org_ids = '' ) {
-	$args = array( 'post_type' => 'org', 'posts_per_page' => - 1 );
-	
-	if ( $category_ids ) {
-		$args['tax_query'] = array( array( 'taxonomy' => 'org_cat', 'field' => 'id', 'terms' => $category_ids ) );
-	}
-	if ( $org_ids ) {
-		$args['post__in'] = explode( ',', $org_ids );
-	}
-	
-	$query = new WP_Query( $args );
-	if ( ! $query->have_posts() ) {
-		return '';
-	}
-	?>
-
-<div class="orgs-gallery  frame">
-	<?php foreach($query->posts as $org) {?>
-		<div class="bit mf-6 sm-4 md-3 "><?php knd_org_card($org);?></div>
-	<?php }?>
-	</div>
-<?php
-}
-
-/** Single template helpers **/
-function knd_related_reports( TST_Event $event, $css = '' ) {
-	$related = $event->get_related_post_id();
-	if ( ! empty( $related ) ) {
-?>
-<div class="expired-notice <?php echo esc_attr($css);?>">
-	<h6>Читать отчет</h6>
-	<?php foreach ( $related as $r ): ?>
-	<p>
-		<a href="<?php echo get_permalink($r);?>"><?php echo get_the_title($r);?></a>
-	</p>
-	<?php endforeach; ?>
-	</div>
-<?php
-	}
-}
-
-function knd_show_post_terms( $post_id ) {
-	?>
-<div class="tags-line">
-	<?php $terms_list = wp_get_object_terms( $post_id, 'post_tag'); ?>
-		<?php foreach($terms_list as $term):?>
-		<a href="<?php get_term_link( $term->term_id, 'post_tag' ) ?>">#<?php echo $term->name?></a>
-	<?php endforeach;?>
-	</div>
-
-<?php
-}
-
-
 /**
  * Get Home Url
  */
 function knd_get_home_url() {
 	return apply_filters( 'knd_get_home_url', home_url( '/' ) );
-}
-
-/**
- * Get content image markup
- */
-function knd_get_content_image_markup( $attachment_id ) {
-	return wp_get_attachment_image( $attachment_id, 'medium', false, array( 'alt' => "" ) );
 }
 
 /**
@@ -822,26 +534,19 @@ function knd_offcanvas_close(){
 }
 
 /**
- * Header Button Markup
- */
-function knd_header_button_markup() {
-	$link = get_theme_mod( 'header_button_link' );
-	$text = get_theme_mod( 'header_button_text', esc_html__( 'Button text', 'knd' ) );
-	if ( $text ) {
-		?>
-		<a href="<?php echo esc_url( $link ); ?>" role="button" class="knd-button knd-button-sm">
-			<?php echo esc_html( $text ); ?>
-		</a>
-		<?php
-	}
-}
-
-/**
  * Header Button
  */
 function knd_header_button(){
 	if ( get_theme_mod( 'header_button', true ) ) {
-		knd_header_button_markup();
+		$link = get_theme_mod( 'header_button_link' );
+		$text = get_theme_mod( 'header_button_text', esc_html__( 'Button text', 'knd' ) );
+		if ( $text ) {
+			?>
+			<a href="<?php echo esc_url( $link ); ?>" role="button" class="knd-button knd-button-sm">
+				<?php echo esc_html( $text ); ?>
+			</a>
+			<?php
+		}
 	}
 }
 
