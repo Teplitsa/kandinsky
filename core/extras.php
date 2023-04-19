@@ -39,9 +39,6 @@ function knd_kses_allowed_html( $allowed_html ) {
 }
 add_filter( 'wp_kses_allowed_html', 'knd_kses_allowed_html' );
 
-/* jpeg compression */
-add_filter('jpeg_quality', function(){ return 95; });
-
 /* temp fix for wpautop in posts */
 function knd_entry_wpautop( $content ) {
 	if ( false === strpos( $content, '[page_section' ) ) {
