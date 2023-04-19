@@ -13,11 +13,6 @@ function knd_kses( $content ) {
 }
 
 /**
- * Telemetry implementation for Kirki
- */
-add_filter( 'kirki_telemetry', '__return_false' );
-
-/**
  * Add config
  */
 Kirki::add_config( 'knd_theme_mod', array(
