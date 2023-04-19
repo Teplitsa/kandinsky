@@ -5,20 +5,6 @@ if(!class_exists('Leyka_Payment_Method'))
 
 get_template_part('/modules/donations/widgets');
 
-/** Custom donation functions */
-function knd_text_pm_icon($icons){
-	//size 155x80 px
-	$icons = array(get_template_directory_uri().'/assets/images/text-box.png');
-	return $icons;
-}
-add_filter('leyka_icons_text_text_box', 'knd_text_pm_icon');
-
-//no icon for text gateway
-function knd_empty_icons(){
-	return array();
-}
-add_filter('leyka_icons_text_text_box', 'knd_empty_icons');
-
 function knd_activate_leyka() {
 
 	$git_imp = new KND_Import_Git_Content('color-line');
