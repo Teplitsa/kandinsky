@@ -120,12 +120,12 @@ if ( is_customize_preview() ) {
 }
 
 /**
- * Function for init setting that should be runned at init hook
+ * Add page support excrpt
  */
-function knd_content_init() {
+function knd_add_page_support_excerpt() {
 	add_post_type_support( 'page', 'excerpt' );
 }
-add_action( 'init', 'knd_content_init', 30 );
+add_action( 'init', 'knd_add_page_support_excerpt' );
 
 /**
  * Includes
