@@ -234,15 +234,6 @@ esc_html__('Kandinsky', 'knd');
 esc_html__('Teplitsa', 'knd');
 esc_html__('The beautiful design and useful features for nonprofit website', 'knd');
 
-function widgets_scripts( $hook ) {
-	if ( 'widgets.php' != $hook ) {
-		return;
-	}
-	wp_enqueue_style( 'wp-color-picker' );
-	wp_enqueue_script( 'wp-color-picker' );
-}
-add_action( 'admin_enqueue_scripts', 'widgets_scripts' );
-
 /**
  * Comments
  */
