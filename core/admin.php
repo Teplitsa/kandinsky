@@ -82,7 +82,7 @@ function knd_get_admin_menu_items( $place = '' ) {
 						'class' => '',
 						'icon' => 'dashicons-format-chat',
 						'text' => esc_html__( 'Support Telegram channel', 'knd' ),
-						'link' => esc_url( 'https://t.me/joinchat/AAAAAENN3prSrvAs7KwWrg' )
+						'link' => esc_url( KND_SUPPORT_TELEGRAM )
 					),
 					'support-email' => array(
 						'class' => '',
