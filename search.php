@@ -36,8 +36,8 @@ get_header();
 				<h2 class="entry-title">
 					<a href="<?php the_permalink(); ?>" class="entry-link"><?php the_title();?></a>
 				</h2>
-				<div class="entry-meta"><?php echo $post_meta; ?></div>
-				<div class="entry-summary"><?php echo $excerpt;?></div>
+				<div class="entry-meta"><?php echo esc_html( $post_meta ); ?></div>
+				<div class="entry-summary"><?php echo esc_html( $excerpt );?></div>
 			</article>
 			<?php
 		}
