@@ -2718,7 +2718,7 @@
 			let categoryOptions = function(){
 				// Get Terms
 				var getTerms = useSelect( ( select, props ) => {
-					return select('core').getEntityRecords('taxonomy', 'category' );
+					return select('core').getEntityRecords('taxonomy', 'category', {per_page: -1});
 				}, [] );
 
 				var categories = [
@@ -3770,7 +3770,7 @@
 			let categoryOptions = function(){
 				// Get Terms
 				var getTerms = useSelect( ( select, props ) => {
-					return select('core').getEntityRecords('taxonomy', 'org_cat' );
+					return select('core').getEntityRecords('taxonomy', 'org_cat', {per_page: -1});
 				}, [] );
 
 				var categories = [
