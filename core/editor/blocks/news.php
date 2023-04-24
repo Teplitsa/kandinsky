@@ -543,7 +543,7 @@ function knd_block_news_render_callback( $attr ) {
 			} else if ( $attr['layout'] === 'type-3' ) {
 
 				$orientation_class = 'knd-ratio-' . $attr['imageOrientation'];
-
+				$attr['thumbnail_link'] = false;
 				$articles .= '<article class="' . esc_attr( join( ' ', get_post_class( 'knd-col knd-entry' ) ) ) . '">
 					<div class="knd-entry-overlay ' . $orientation_class . '">
 						' . knd_block_post_thumbnail( $attr ) . '
