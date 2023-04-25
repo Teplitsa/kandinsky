@@ -3204,6 +3204,7 @@ body:not(.logged-in):not(.block-editor-page) .knd-block-hint {
 
 .knd-events__toolbar .social-likes .social-likes__widget + .social-likes__widget {
 	margin-left: 20px;
+	margin-top: 0;
 }
 
 .knd-events__toolbar .social-likes .social-likes__widget > a {
@@ -3445,7 +3446,7 @@ body:not(.logged-in):not(.block-editor-page) .knd-block-hint {
 	flex: 0 0 auto;
 	width: 220px;
 	background-color: #fff;
-	background-image: url(../images/thumb.svg);
+	background-image: url("data:image/svg+xml,%3Csvg width='170' height='169' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg style='mix-blend-mode:luminosity' clip-path='url(%23a)'%3E%3Ccircle cx='69.75' cy='69.5' r='99.5' fill='url(%23b)'/%3E%3Cpath stroke='%23fff' stroke-width='9.328' d='M-11.62 138.092 115.864-20.485M-11.132 137.62l178.206-94.011'/%3E%3C/g%3E%3Cdefs%3E%3ClinearGradient id='b' x1='169.249' y1='168.999' x2='18.01' y2='133.179' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23f7f8f8'/%3E%3Cstop offset='.979' stop-color='%23f7f8f8'/%3E%3C/linearGradient%3E%3CclipPath id='a'%3E%3Cpath fill='%23fff' transform='translate(-29.75 -30)' d='M0 0h199v198.999H0z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
 	background-repeat: no-repeat;
 	background-position: top left;
 	background-size: 75% auto;

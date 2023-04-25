@@ -338,7 +338,6 @@ gulp.task('zip', function(){
 		'!CHANGELOG.md',
 		'!package.json',
 		'!package-lock.json',
-		'!theme_test.json',
 		'!**.zip'
 	];
 

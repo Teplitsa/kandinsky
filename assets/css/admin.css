@@ -45,13 +45,6 @@
 	height: auto;
 }
 
-#rdc-support-card .tree-logo {
-	width: 150px;
-	height: 80px;
-	margin-left: 9px;
-	margin-bottom: 9px;
-}
-
 .rdc-dashboard .cols::after {
 	clear: both;
 	content: "";
