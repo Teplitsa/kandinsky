@@ -152,8 +152,8 @@ $css .= '
 	--knd-footer-background: ' . get_theme_mod( 'footer_background', '#f7f8f8' ) . ';
 	--knd-footer-heading-color: ' . get_theme_mod( 'footer_heading_color', '#183343' ) . ';
 	--knd-footer-color: ' . get_theme_mod( 'footer_color', '#4d606a' ) . ';
-	--knd-footer-link-color: ' . get_theme_mod( 'footer_color_link', '#dd1400' ) . ';
-	--knd-footer-link-color-hover: ' . get_theme_mod( 'footer_color_link_hover', '#c81303' ) . ';
+	--knd-footer-link-color: ' . get_theme_mod( 'footer_color_link', '#d30a6a' ) . ';
+	--knd-footer-link-color-hover: ' . get_theme_mod( 'footer_color_link_hover', '#ab0957' ) . ';
 }
 .knd-footer {
 	--knd-social-color: ' . get_theme_mod( 'footer_color_social', '#183343' ) . ';
