@@ -20,5 +20,5 @@ if ( class_exists( 'Kirki' ) ) {
 	require_once get_theme_file_path( '/core/customizer/kirki.php' );
 } else {
 	// Load old deprecated functions if not installed Kirki Customizer Framework.
-	require_once get_theme_file_path( '/core/customizer/customizer-deprecated.php' );
+	require_once get_theme_file_path( '/core/customizer/customizer-default.php' );
 }
