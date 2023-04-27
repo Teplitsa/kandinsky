@@ -15,7 +15,7 @@ $copyright = sprintf( __( 'All materials of the site are avaliabe under license 
 <footer class="knd-footer">
 
 	<?php if ( get_theme_mod( 'footer_social', true ) || get_theme_mod( 'footer_logo', true ) ) { ?>
-		<div id="bottom_bar" class="bottom-bar">
+		<div class="bottom-bar">
 			<div class="knd-container">
 				<div class="flex-row align-bottom">
 					<div class="flex-cell flex-md-6">
@@ -103,7 +103,7 @@ $copyright = sprintf( __( 'All materials of the site are avaliabe under license 
 		</div>
 		<?php } ?>
 
-		<?php if ( get_theme_mod( 'footer_copyright', true ) && get_theme_mod( 'footer_copyright', true ) ) { ?>
+		<?php if ( get_theme_mod( 'footer_copyright', true ) || get_theme_mod( 'footer_creator', true ) ) { ?>
 			<div class="hr"></div>
 
 			<div class="flex-row footer-credits align-center">
