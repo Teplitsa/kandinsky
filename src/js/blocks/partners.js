@@ -2,7 +2,7 @@
  * Partners Block
  */
 
-( function( blocks, editor, blockEditor, element, components, compose, i18n, serverSideRender, hooks ) {
+( function( blocks, editor, blockEditor, element, components, compose, i18n, serverSideRender, data, hooks ) {
 
 	const ServerSideRender = serverSideRender;
 
@@ -14,6 +14,8 @@
 	const { InspectorControls, ColorPaletteControl } = blockEditor;
 
 	const { Fragment } = element;
+
+	const { useSelect } = data;
 
 	const { withState } = compose;
 
@@ -370,5 +372,6 @@
 	window.wp.compose,
 	window.wp.i18n,
 	window.wp.serverSideRender,
+	window.wp.data,
 	window.wp.hooks,
 ) );

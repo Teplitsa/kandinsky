@@ -2,17 +2,17 @@
  * Hero Block
  */
 
-( function( blocks, editor, blockEditor, element, components, compose, i18n, serverSideRender ) {
+( function( blocks, blockEditor, element, components, i18n, serverSideRender ) {
 
 	const ServerSideRender = serverSideRender;
 
 	const el = element.createElement;
 
-	const { TextControl, TextareaControl, SelectControl, RangeControl, ColorPalette, ColorPicker, PanelBody, ToggleControl, BaseControl, Button, ButtonGroup, Dropdown, Tooltip, Disabled, __experimentalUnitControl } = components;
+	const { TextControl, TextareaControl, SelectControl, ColorPalette, ColorPicker, PanelBody, BaseControl, Button, ButtonGroup, Disabled, __experimentalUnitControl } = components;
 
-	const { registerBlockType, withColors, PanelColorSettings, getColorClassName, useBlockProps } = blocks;
+	const { registerBlockType } = blocks;
 
-	const { InspectorControls, ColorPaletteControl, InnerBlocks, MediaUpload, MediaUploadCheck } = blockEditor;
+	const { InspectorControls, ColorPaletteControl, PanelColorSettings, MediaUpload, MediaUploadCheck } = blockEditor;
 
 	const { Fragment } = element;
 
@@ -172,11 +172,6 @@
 			// Pull out specific attributes for clarity below
 			const { backgroundImage, featuredImage } = attributes;
 
-			const { blockId } = attributes;
-			if ( ! blockId ) {
-				//setAttributes( { blockId: clientId, featuredImage: { url: kndBlock.getImageUrl.heroFeatured } } );
-			}
-
 			return (
 				el( Fragment, {},
 
@@ -203,24 +198,44 @@
 								},
 							}),
 
-							el( BaseControl, null,
+							el( __experimentalUnitControl,
+								{
+									label: __('Min Height', 'knd'),
+									value: props.attributes.minHeight,
+									onChange: ( val ) => {
+										props.setAttributes( { minHeight: val } );
+									},
+									labelPosition: 'side',
+									units: [
+										{
+											value: "px",
+											label: "px",
+										},
+										{
+											value: "vh",
+											label: "vh",
+										},
+									]
+								}
+							)
+						), // Panel
+
+						// Images Panel
+						el( PanelBody,
+							{
+								title: __( 'Images', 'knd' ),
+								initialOpen: true
+							},
+
+							el( BaseControl, {
+									label: __( 'Call to action Image', 'knd' ),
+								},
 
 								el( 'div',
 									{
-										className: 'knd-components-heading',
+										className: 'knd-components-heading__label'
 									},
-									el( 'div',
-										{
-											className: 'knd-components-heading__label'
-										},
-										__( 'Call to action Image','knd' ),
-									),
-									el( 'div',
-										{
-											className: 'knd-components-heading__help'
-										},
-										__( 'Displayed on the right side of the Call to action text', 'knd' ),
-									),
+									__( 'Displayed on the right side of the Call to action text', 'knd' )
 								),
 
 								el( MediaUploadCheck, null,
@@ -286,150 +301,15 @@
 								),
 							),// Featured image
 
-							el( ColorPaletteControl,
-								{
-									label: __( 'Text Color', 'knd' ),
-									disableAlpha: false,
-									value: props.attributes.textColor,
-									
-									onChange: function( val ) {
-										props.setAttributes({ textColor: val });
-									}
-								}
-							),
-
-							el( __experimentalUnitControl, // __experimentalUseCustomUnits
-								{
-									label: __('Min Height', 'knd'),
-									value: props.attributes.minHeight,
-									onChange: ( val ) => {
-										props.setAttributes( { minHeight: val } );
-									},
-									labelPosition: 'side',
-									units: [
-										{
-											value: "px",
-											label: "px",
-										},
-										{
-											value: "vh",
-											label: "vh",
-										},
-									]
-								}
-							)
-						), // Panel
-
-						// Buttons Panel
-						el( PanelBody,
-							{
-								title: __( 'Buttons', 'knd' ),
-								initialOpen: false
-							},
-
-							el( TextControl, {
-								label: __( 'Button text', 'knd' ),
-								value: props.attributes.button,
-								onChange: ( val ) => {
-									props.setAttributes( { button: val } );
+							el( BaseControl, {
+									label: __( 'Background Image', 'knd' ),
 								},
-							}),
-
-							el( TextControl, {
-								label: __( 'Button url', 'knd' ),
-								value: props.attributes.buttonUrl,
-								onChange: ( val ) => {
-									props.setAttributes( { buttonUrl: val } );
-								},
-							}),
-
-							el( TextControl, {
-								label: __( 'Additional Button text', 'knd' ),
-								value: props.attributes.buttonAdditional,
-								onChange: ( val ) => {
-									props.setAttributes( { buttonAdditional: val } );
-								},
-							}),
-
-							el( TextControl, {
-								label: __( 'Additional Button url', 'knd' ),
-								value: props.attributes.buttonAdditionalUrl,
-								onChange: ( val ) => {
-									props.setAttributes( { buttonAdditionalUrl: val } );
-								},
-							}),
-
-							el( ColorPaletteControl,
-								{
-									label: __( 'Button Background', 'knd' ),
-									disableAlpha: false,
-									value: props.attributes.buttonBackground,
-									onChange: function( val ) {
-										props.setAttributes({ buttonBackground: val });
-									}
-								}
-							),
-
-							el( ColorPaletteControl,
-								{
-									label: __( 'Button Color', 'knd' ),
-									disableAlpha: false,
-									value: props.attributes.buttonColor,
-									onChange: function( val ) {
-										props.setAttributes({ buttonColor: val });
-									}
-								}
-							),
-
-							el( ColorPaletteControl,
-								{
-									label: __( 'Button Hover Background', 'knd' ),
-									disableAlpha: false,
-									value: props.attributes.buttonBackgroundHover,
-									onChange: function( val ) {
-										props.setAttributes({ buttonBackgroundHover: val });
-									}
-								}
-							),
-
-							el( ColorPaletteControl,
-								{
-									label: __( 'Button Hover Color', 'knd' ),
-									disableAlpha: false,
-									value: props.attributes.buttonColorHover,
-									onChange: function( val ) {
-										props.setAttributes({ buttonColorHover: val });
-									}
-								}
-							),
-
-						),
-
-						// Background Panel
-						el( PanelBody,
-							{
-								title: __( 'Background', 'knd' ),
-								initialOpen: false
-							},
-
-							el( BaseControl, {},
 
 								el( 'div',
 									{
-										className: 'knd-components-heading',
+										className: 'knd-components-heading__label'
 									},
-									el( 'div',
-										{
-											className: 'knd-components-heading__label'
-										},
-										__( 'Background Image', 'knd' )
-									),
-									el( 'div',
-										{
-											className: 'knd-components-heading__help'
-										},
-										__( 'Recommended size 1600x663px', 'knd' )
-									),
+									__( 'Recommended size 1600x663px', 'knd' )
 								),
 
 								el( MediaUploadCheck, null,
@@ -494,18 +374,46 @@
 									}),
 								),
 							),
+						),
 
-							el( ColorPaletteControl,
-								{
-									label: __( 'Background Color', 'knd' ),
-									disableAlpha: false,
-									value: props.attributes.backgroundColor,
-									
-									onChange: function( val ) {
-										props.setAttributes({ backgroundColor: val });
-									}
-								}
-							),
+						// Buttons Panel
+						el( PanelBody,
+							{
+								title: __( 'Buttons', 'knd' ),
+								initialOpen: false
+							},
+
+							el( TextControl, {
+								label: __( 'Button text', 'knd' ),
+								value: props.attributes.button,
+								onChange: ( val ) => {
+									props.setAttributes( { button: val } );
+								},
+							}),
+
+							el( TextControl, {
+								label: __( 'Button url', 'knd' ),
+								value: props.attributes.buttonUrl,
+								onChange: ( val ) => {
+									props.setAttributes( { buttonUrl: val } );
+								},
+							}),
+
+							el( TextControl, {
+								label: __( 'Additional Button text', 'knd' ),
+								value: props.attributes.buttonAdditional,
+								onChange: ( val ) => {
+									props.setAttributes( { buttonAdditional: val } );
+								},
+							}),
+
+							el( TextControl, {
+								label: __( 'Additional Button url', 'knd' ),
+								value: props.attributes.buttonAdditionalUrl,
+								onChange: ( val ) => {
+									props.setAttributes( { buttonAdditionalUrl: val } );
+								},
+							}),
 						),
 
 						// Overlay Panel
@@ -670,6 +578,63 @@
 						),
 					),
 
+
+					el( InspectorControls, {
+							group: 'styles',
+						},
+
+						el( PanelColorSettings, {
+							title: __( 'Colors', 'knd' ),
+							initialOpen: true,
+							enableAlpha: true,
+
+							colorSettings: [
+								{
+									label: __( 'Text Color', 'knd' ),
+									value: props.attributes.textColor,
+									onChange: ( val ) => {
+										props.setAttributes( { textColor: val } );
+									}
+								},
+								{
+									label: __( 'Background Color', 'knd' ),
+									value: props.attributes.backgroundColor,
+									onChange: ( val ) => {
+										props.setAttributes( { backgroundColor: val } );
+									}
+								},
+								{
+									label: __( 'Button Background', 'knd' ),
+									value: props.attributes.buttonBackground,
+									onChange: ( val ) => {
+										props.setAttributes( { buttonBackground: val } );
+									}
+								},
+								{
+									label: __( 'Button Color', 'knd' ),
+									value: props.attributes.buttonColor,
+									onChange: ( val ) => {
+										props.setAttributes( { buttonColor: val } );
+									}
+								},
+								{
+									label: __( 'Button Hover Background', 'knd' ),
+									value: props.attributes.buttonBackgroundHover,
+									onChange: ( val ) => {
+										props.setAttributes( { buttonBackgroundHover: val } );
+									}
+								},
+								{
+									label: __( 'Button Hover Color', 'knd' ),
+									value: props.attributes.buttonColorHover,
+									onChange: ( val ) => {
+										props.setAttributes( { buttonColorHover: val } );
+									}
+								}
+							]
+						}),
+					),
+
 					el(	Disabled,
 						null,
 						el( ServerSideRender, {
@@ -689,11 +654,9 @@
 
 }(
 	window.wp.blocks,
-	window.wp.editor,
 	window.wp.blockEditor,
 	window.wp.element,
 	window.wp.components,
-	window.wp.compose,
 	window.wp.i18n,
 	window.wp.serverSideRender,
 ) );

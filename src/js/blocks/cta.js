@@ -10,14 +10,11 @@
 
 	const { registerBlockType } = blocks;
 
-	const { TextControl, TextareaControl, SelectControl, RangeControl, ColorPalette, PanelBody, ToggleControl, BaseControl, Button, Disabled } = components;
+	const { TextControl, TextareaControl, PanelBody, ToggleControl, BaseControl, Button, Disabled } = components;
 
-	const { withColors, PanelColorSettings, getColorClassName, useBlockProps } = blocks;
-	const { InspectorControls, ColorPaletteControl, MediaUpload, MediaUploadCheck } = blockEditor;
+	const { InspectorControls, PanelColorSettings, MediaUpload, MediaUploadCheck } = blockEditor;
 
 	const { Fragment } = element;
-
-	const { withState } = compose;
 
 	const { __ } = i18n;
 
@@ -130,7 +127,7 @@
 		edit: function( props ) {
 
 			// Pull out the props we'll use
-			const { attributes, className, setAttributes } = props;
+			const { attributes, setAttributes } = props;
 
 			// Pull out specific attributes for clarity below
 			const { featuredImage } = attributes;
@@ -160,40 +157,30 @@
 								},
 							}),
 
-							el( BaseControl, {},
+							el( BaseControl, {
+									label: __( 'Call to action Image', 'knd' ),
+								},
 
-								el( 'div',
-									{
-										className: 'knd-components-heading',
-									},
-									el( 'div',
-										{
-												className: 'knd-components-heading__label'
+								el( MediaUploadCheck, null,
+
+									el( MediaUpload, {
+										multiple: false,
+										value: featuredImage ? featuredImage.id : "",
+										allowedTypes: ["image"],
+										onSelect: function onSelect(image) {
+											return setAttributes({
+													featuredImage: {
+														id: image.id,
+														url: image.url,
+													}
+											});
 										},
-										__( 'Call to action Image','knd' ),
-								),
-							),
 
-							el( MediaUploadCheck, null,
+										render: function render(_ref) {
+											var open = _ref.open;
 
-								el( MediaUpload, {
-									multiple: false,
-									value: featuredImage ? featuredImage.id : "",
-									allowedTypes: ["image"],
-									onSelect: function onSelect(image) {
-										return setAttributes({
-												featuredImage: {
-													id: image.id,
-													url: image.url,
-												}
-										});
-									},
-
-									render: function render(_ref) {
-										var open = _ref.open;
-
-										if ( typeof featuredImage.url !== 'undefined' && featuredImage.url ) {
-											return el( 'div', null,
+											if ( typeof featuredImage.url !== 'undefined' && featuredImage.url ) {
+												return el( 'div', null,
 													el( 'p', null,
 														el( 'img', {
 															src: featuredImage.url,
@@ -238,49 +225,11 @@
 
 						),
 
-						el( PanelBody,
-							{
-								title: __( 'Colors', 'knd' ),
-								initialOpen: false
-							},
-
-							el( ColorPaletteControl,
-								{
-									label: __( 'Background Color', 'knd' ),
-									value: props.attributes.backgroundColor,
-									onChange: ( val ) => {
-										props.setAttributes({ backgroundColor: val });
-									}
-								}
-							),
-
-							el( ColorPaletteControl,
-								{
-									label: __( 'Title Color', 'knd' ),
-									value: props.attributes.titleColor,
-									onChange: ( val ) => {
-										props.setAttributes({ titleColor: val });
-									}
-								}
-							),
-
-							el( ColorPaletteControl,
-								{
-									label: __( 'Text Color', 'knd' ),
-									value: props.attributes.textColor,
-									onChange: ( val ) => {
-										props.setAttributes({ textColor: val });
-									}
-								}
-							),
-
-						),
-
 						// Buttons Panel
 						el( PanelBody,
 							{
 								title: __( 'Button', 'knd' ),
-								initialOpen: false
+								initialOpen: true
 							},
 
 							el( TextControl, {
@@ -299,63 +248,79 @@
 								},
 							}),
 
-							el( PanelRow, {},
-								el( ToggleControl,
-									{
-										label: __('Open in new tab', 'knd'),
-										onChange: ( value ) => {
-											props.setAttributes( { buttonTarget: value } );
-										},
-										checked: props.attributes.buttonTarget,
-									}
-								)
-							),
+							el( ToggleControl,
+								{
+									label: __('Open in new tab', 'knd'),
+									onChange: ( value ) => {
+										props.setAttributes( { buttonTarget: value } );
+									},
+									checked: props.attributes.buttonTarget,
+								}
+							)
+						),
+					),
 
-							el( ColorPaletteControl,
+					el( InspectorControls, {
+							group: 'styles',
+						},
+
+						el( PanelColorSettings, {
+							title: __( 'Colors', 'knd' ),
+							initialOpen: true,
+							enableAlpha: true,
+
+							colorSettings: [
+								{
+									label: __( 'Background Color', 'knd' ),
+									value: props.attributes.backgroundColor,
+									onChange: ( val ) => {
+										props.setAttributes( { backgroundColor: val } );
+									}
+								},
+								{
+									label: __( 'Title Color', 'knd' ),
+									value: props.attributes.titleColor,
+									onChange: ( val ) => {
+										props.setAttributes( { titleColor: val } );
+									}
+								},
+								{
+									label: __( 'Text Color', 'knd' ),
+									value: props.attributes.textColor,
+									onChange: ( val ) => {
+										props.setAttributes( { textColor: val } );
+									}
+								},
 								{
 									label: __( 'Button Background', 'knd' ),
-									disableAlpha: false,
 									value: props.attributes.buttonBackground,
-									onChange: function( val ) {
-										props.setAttributes({ buttonBackground: val });
+									onChange: ( val ) => {
+										props.setAttributes( { buttonBackground: val } );
 									}
-								}
-							),
-
-							el( ColorPaletteControl,
+								},
 								{
 									label: __( 'Button Color', 'knd' ),
-									disableAlpha: false,
 									value: props.attributes.buttonColor,
-									onChange: function( val ) {
-										props.setAttributes({ buttonColor: val });
+									onChange: ( val ) => {
+										props.setAttributes( { buttonColor: val } );
 									}
-								}
-							),
-
-							el( ColorPaletteControl,
+								},
 								{
 									label: __( 'Button Hover Background', 'knd' ),
-									disableAlpha: false,
 									value: props.attributes.buttonBackgroundHover,
-									onChange: function( val ) {
-										props.setAttributes({ buttonBackgroundHover: val });
+									onChange: ( val ) => {
+										props.setAttributes( { buttonBackgroundHover: val } );
 									}
-								}
-							),
-
-							el( ColorPaletteControl,
+								},
 								{
 									label: __( 'Button Hover Color', 'knd' ),
-									disableAlpha: false,
 									value: props.attributes.buttonColorHover,
-									onChange: function( val ) {
-										props.setAttributes({ buttonColorHover: val });
+									onChange: ( val ) => {
+										props.setAttributes( { buttonColorHover: val } );
 									}
-								}
-							),
-
-						),
+								},
+							]
+						}),
 					),
 
 					el(	Disabled,

@@ -2,7 +2,7 @@
  * Events Block
  */
 
-( function( blocks, editor, blockEditor, element, components, compose, i18n, serverSideRender, data ) {
+( function( blocks, editor, blockEditor, element, components, compose, i18n, serverSideRender ) {
 
 	if ( ! kndBlock.postTypes.event ) {
 		return;
@@ -12,16 +12,13 @@
 
 	const el = element.createElement;
 
-	const { TextControl, SelectControl, RangeControl, ColorPalette, Button, FormTokenField, Dashicon, PanelBody, ToggleControl, Disabled } = components;
+	const { TextControl, SelectControl, RangeControl, Button, FormTokenField, Dashicon, PanelBody, Disabled } = components;
 
-	const { registerBlockType, withColors, PanelColorSettings, getColorClassName, useBlockProps } = blocks;
-	const { InspectorControls, ColorPaletteControl } = blockEditor;
+	const { registerBlockType } = blocks;
 
-	const { Fragment } = element;
+	const { InspectorControls, PanelColorSettings } = blockEditor;
 
-	const { withState } = compose;
-
-	const { useSelect } = data;
+	const { useState, Fragment } = element;
 
 	const { __ } = i18n;
 
@@ -126,8 +123,6 @@
 
 				var events = [];
 				var getEvents = kndBlock.getEvents;
-
-				console.log(getEvents);
 
 				if ( getEvents ) {
 					getEvents.map((event) => {
@@ -264,30 +259,31 @@
 
 					el( InspectorControls, {},
 
-						el( 'div',
-							{
-								className: 'knd-editor-block-card__description knd-editor-block-card__description-alt'
-							},
-
-							el( 'a',
-								{
-									href: kndBlock.getAdminUrl.event,
-									target: '_blank',
-								},
-								__( 'Edit events', 'knd' ),
-								' ',
-								el( Dashicon,
-									{
-										icon: 'external',
-									}
-								),
-							),
-						),
-
 						el( PanelBody,
 							{
 								title: __( 'Settings', 'knd' )
 							},
+
+							el( 'div',
+								{
+									className: 'knd-editor-block-panel__description'
+								},
+
+								el( 'a',
+									{
+										href: kndBlock.getAdminUrl.news,
+										target: '_blank',
+									},
+									__( 'Edit events', 'knd' ),
+									' ',
+									el( Dashicon,
+										{
+											icon: 'external',
+										}
+									),
+								),
+							),
+
 							el( TextControl, {
 								label: __( 'Heading', 'knd' ),
 								value: props.attributes.heading,
@@ -319,44 +315,6 @@
 							},
 
 							headingFields
-
-						),
-
-						el( PanelBody,
-							{
-								title: __( 'Colors', 'knd' ),
-								initialOpen: false
-							},
-
-							el( ColorPaletteControl,
-								{
-									label: __( 'Background Color', 'knd' ),
-									value: props.attributes.backgroundColor,
-									onChange: ( val ) => {
-										props.setAttributes( { backgroundColor: val } );
-									}
-								}
-							),
-
-							el( ColorPaletteControl,
-								{
-									label: __( 'Heading Color', 'knd' ),
-									value: props.attributes.headingColor,
-									onChange: ( val ) => {
-										props.setAttributes( { headingColor: val } );
-									}
-								}
-							),
-
-							el( ColorPaletteControl,
-								{
-									label: __( 'Links Color', 'knd' ),
-									value: props.attributes.linkColor,
-									onChange: ( val ) => {
-										props.setAttributes( { linkColor: val } );
-									}
-								}
-							),
 
 						),
 
@@ -415,6 +373,41 @@
 
 					),
 
+					el( InspectorControls, {
+							group: 'styles',
+						},
+
+						el( PanelColorSettings, {
+							title: __( 'Colors', 'knd' ),
+							initialOpen: true,
+							enableAlpha: true,
+
+							colorSettings: [
+								{
+									label: __( 'Background Color', 'knd' ),
+									value: props.attributes.backgroundColor,
+									onChange: ( val ) => {
+										props.setAttributes( { backgroundColor: val } );
+									}
+								},
+								{
+									label: __( 'Heading Color', 'knd' ),
+									value: props.attributes.headingColor,
+									onChange: ( val ) => {
+										props.setAttributes( { headingColor: val } );
+									}
+								},
+								{
+									label: __( 'Links Color', 'knd' ),
+									value: props.attributes.linkColor,
+									onChange: ( val ) => {
+										props.setAttributes( { linkColor: val } );
+									}
+								}
+							]
+						}),
+					),
+
 					el( Disabled,
 						null,
 						el( ServerSideRender, {
@@ -441,5 +434,4 @@
 	window.wp.compose,
 	window.wp.i18n,
 	window.wp.serverSideRender,
-	window.wp.data,
 ) );

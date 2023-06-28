@@ -2,7 +2,7 @@
  * News Block
  */
 
-( function( blocks, editor, blockEditor, element, components, compose, i18n, serverSideRender, date ) {
+( function( blocks, editor, blockEditor, element, components, compose, i18n, serverSideRender, data, date ) {
 
 	const ServerSideRender = serverSideRender;
 
@@ -10,12 +10,14 @@
 
 	const { dateI18n } = date;
 
-	const { TextControl, SelectControl, RangeControl, ColorPalette, Dashicon, PanelBody, ToggleControl, Button, IconButton, Disabled, BaseControl, FontSizePicker, __experimentalUnitControl, __experimentalDivider } = components;
+	const { TextControl, SelectControl, RangeControl, Dashicon, PanelBody, ToggleControl, Button, IconButton, Disabled, BaseControl, __experimentalUnitControl, __experimentalDivider } = components;
 
-	const { registerBlockType, withColors, getColorClassName } = blocks;
-	const { InspectorControls, InspectorAdvancedControls, ColorPaletteControl, useBlockProps, PanelColorSettings, BlockControls,__experimentalBlockAlignmentMatrixControl, BlockSettingsMenu, BlockTitle } = blockEditor;
+	const { registerBlockType } = blocks;
+	const { InspectorControls, useBlockProps, PanelColorSettings, BlockControls,__experimentalBlockAlignmentMatrixControl } = blockEditor;
 
 	const { Fragment } = element;
+
+	const { useSelect } = data;
 
 	const { withState } = compose;
 
@@ -112,9 +114,6 @@
 			titleHoverColor: {
 				type: 'string',
 			},
-
-			
-
 			linkColor: {
 				type: 'string',
 			},
@@ -173,8 +172,6 @@
 				type: 'string',
 				default: 'left',
 			},
-			
-			
 			date: {
 				type: 'boolean',
 				default: true,
@@ -491,7 +488,6 @@
 						label: __('Change content position','knd'),
 						value: props.attributes.alignment,
 						onChange: ( val ) => {
-							//console.log(val);
 							props.setAttributes( { alignment: val } );
 						},
 					} )
@@ -807,9 +803,6 @@
 								}
 							]
 						}),
-
-						
-
 					),
 
 					el( InspectorControls, {},
@@ -1156,5 +1149,6 @@
 	window.wp.compose,
 	window.wp.i18n,
 	window.wp.serverSideRender,
+	window.wp.data,
 	window.wp.date,
 ) );

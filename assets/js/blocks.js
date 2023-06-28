@@ -7,14 +7,12 @@
 
 	const el = element.createElement;
 
-	const { TextControl, TextareaControl, SelectControl, RangeControl, ColorPalette, PanelBody, PanelRow, ToggleControl, BaseControl, Button,  Disabled, __experimentalUnitControl } = components;
+	const { TextControl, TextareaControl, ColorPalette, PanelBody, BaseControl, Button, Disabled, __experimentalUnitControl } = components;
 
-	const { registerBlockType, withColors, PanelColorSettings, getColorClassName, useBlockProps } = blocks;
-	const { InspectorControls, ColorPaletteControl, MediaUpload, MediaUploadCheck } = blockEditor;
+	const { registerBlockType } = blocks;
+	const { InspectorControls, ColorPaletteControl, PanelColorSettings, MediaUpload, MediaUploadCheck } = blockEditor;
 
 	const { Fragment } = element;
-
-	const { withState } = compose;
 
 	const { __ } = i18n;
 
@@ -182,19 +180,9 @@
 								},
 							}),
 
-							el( BaseControl, {},
-
-								el( 'div',
-									{
-										className: 'knd-components-heading',
-									},
-									el( 'div',
-										{
-											className: 'knd-components-heading__label'
-										},
-										__( 'Background Image', 'knd' )
-									),
-								),
+							el( BaseControl, {
+									label: __( 'Background Image', 'knd' ),
+								},
 
 								el( MediaUploadCheck, null,
 
@@ -211,7 +199,6 @@
 												}
 											});
 										},
-
 
 										render: function render(_ref) {
 											var open = _ref.open;
@@ -253,9 +240,7 @@
 													)
 												)
 											}
-
 										}
-
 									}),
 								),
 							), // Background Image
@@ -276,68 +261,57 @@
 									]
 								}
 							)
-
 						),
+					),
 
-						// Background Panel
-						el( PanelBody,
-							{
-								title: __( 'Colors', 'knd' ),
-								initialOpen: false
-							},
+					el( InspectorControls, {
+							group: 'styles',
+						},
 
-							el( ColorPaletteControl,
+						el( PanelColorSettings, {
+							title: __( 'Colors', 'knd' ),
+							initialOpen: true,
+							enableAlpha: true,
+
+							colorSettings: [
 								{
 									label: __( 'Background Color', 'knd' ),
 									value: props.attributes.backgroundColor,
-									onChange: function( val ) {
-										props.setAttributes({ backgroundColor: val });
+									onChange: ( val ) => {
+										props.setAttributes( { backgroundColor: val } );
 									}
-								}
-							),
-
-							el( ColorPaletteControl,
+								},
 								{
 									label: __( 'Text Color', 'knd' ),
 									value: props.attributes.textColor,
-									onChange: function( val ) {
-										props.setAttributes({ textColor: val });
+									onChange: ( val ) => {
+										props.setAttributes( { textColor: val } );
 									}
-								}
-							),
-
-							el( ColorPaletteControl,
+								},
 								{
 									label: __( 'Content Background Color', 'knd' ),
 									value: props.attributes.contentColor,
-									onChange: function( val ) {
-										props.setAttributes({ contentColor: val });
+									onChange: ( val ) => {
+										props.setAttributes( { contentColor: val } );
 									}
-								}
-							),
-
-							el( ColorPaletteControl,
+								},
 								{
 									label: __( 'Recommendation Color', 'knd' ),
 									value: props.attributes.recommendColor,
-									onChange: function( val ) {
-										props.setAttributes({ recommendColor: val });
+									onChange: ( val ) => {
+										props.setAttributes( { recommendColor: val } );
 									}
-								}
-							),
-
-							el( ColorPaletteControl,
+								},
 								{
 									label: __( 'Recommendation Background Color', 'knd' ),
 									value: props.attributes.recommendBgColor,
-									onChange: function( val ) {
-										props.setAttributes({ recommendBgColor: val });
+									onChange: ( val ) => {
+										props.setAttributes( { recommendBgColor: val } );
 									}
 								}
-							),
-
+							]
+						}),
 						),
-					),
 
 					el(	Disabled,
 						null,
@@ -379,14 +353,11 @@
 
 	const { registerBlockType } = blocks;
 
-	const { TextControl, TextareaControl, SelectControl, RangeControl, ColorPalette, PanelBody, ToggleControl, BaseControl, Button, Disabled } = components;
+	const { TextControl, TextareaControl, PanelBody, ToggleControl, BaseControl, Button, Disabled } = components;
 
-	const { withColors, PanelColorSettings, getColorClassName, useBlockProps } = blocks;
-	const { InspectorControls, ColorPaletteControl, MediaUpload, MediaUploadCheck } = blockEditor;
+	const { InspectorControls, PanelColorSettings, MediaUpload, MediaUploadCheck } = blockEditor;
 
 	const { Fragment } = element;
-
-	const { withState } = compose;
 
 	const { __ } = i18n;
 
@@ -499,7 +470,7 @@
 		edit: function( props ) {
 
 			// Pull out the props we'll use
-			const { attributes, className, setAttributes } = props;
+			const { attributes, setAttributes } = props;
 
 			// Pull out specific attributes for clarity below
 			const { featuredImage } = attributes;
@@ -529,40 +500,30 @@
 								},
 							}),
 
-							el( BaseControl, {},
+							el( BaseControl, {
+									label: __( 'Call to action Image', 'knd' ),
+								},
 
-								el( 'div',
-									{
-										className: 'knd-components-heading',
-									},
-									el( 'div',
-										{
-												className: 'knd-components-heading__label'
+								el( MediaUploadCheck, null,
+
+									el( MediaUpload, {
+										multiple: false,
+										value: featuredImage ? featuredImage.id : "",
+										allowedTypes: ["image"],
+										onSelect: function onSelect(image) {
+											return setAttributes({
+													featuredImage: {
+														id: image.id,
+														url: image.url,
+													}
+											});
 										},
-										__( 'Call to action Image','knd' ),
-								),
-							),
 
-							el( MediaUploadCheck, null,
+										render: function render(_ref) {
+											var open = _ref.open;
 
-								el( MediaUpload, {
-									multiple: false,
-									value: featuredImage ? featuredImage.id : "",
-									allowedTypes: ["image"],
-									onSelect: function onSelect(image) {
-										return setAttributes({
-												featuredImage: {
-													id: image.id,
-													url: image.url,
-												}
-										});
-									},
-
-									render: function render(_ref) {
-										var open = _ref.open;
-
-										if ( typeof featuredImage.url !== 'undefined' && featuredImage.url ) {
-											return el( 'div', null,
+											if ( typeof featuredImage.url !== 'undefined' && featuredImage.url ) {
+												return el( 'div', null,
 													el( 'p', null,
 														el( 'img', {
 															src: featuredImage.url,
@@ -607,49 +568,11 @@
 
 						),
 
-						el( PanelBody,
-							{
-								title: __( 'Colors', 'knd' ),
-								initialOpen: false
-							},
-
-							el( ColorPaletteControl,
-								{
-									label: __( 'Background Color', 'knd' ),
-									value: props.attributes.backgroundColor,
-									onChange: ( val ) => {
-										props.setAttributes({ backgroundColor: val });
-									}
-								}
-							),
-
-							el( ColorPaletteControl,
-								{
-									label: __( 'Title Color', 'knd' ),
-									value: props.attributes.titleColor,
-									onChange: ( val ) => {
-										props.setAttributes({ titleColor: val });
-									}
-								}
-							),
-
-							el( ColorPaletteControl,
-								{
-									label: __( 'Text Color', 'knd' ),
-									value: props.attributes.textColor,
-									onChange: ( val ) => {
-										props.setAttributes({ textColor: val });
-									}
-								}
-							),
-
-						),
-
 						// Buttons Panel
 						el( PanelBody,
 							{
 								title: __( 'Button', 'knd' ),
-								initialOpen: false
+								initialOpen: true
 							},
 
 							el( TextControl, {
@@ -668,63 +591,79 @@
 								},
 							}),
 
-							el( PanelRow, {},
-								el( ToggleControl,
-									{
-										label: __('Open in new tab', 'knd'),
-										onChange: ( value ) => {
-											props.setAttributes( { buttonTarget: value } );
-										},
-										checked: props.attributes.buttonTarget,
-									}
-								)
-							),
+							el( ToggleControl,
+								{
+									label: __('Open in new tab', 'knd'),
+									onChange: ( value ) => {
+										props.setAttributes( { buttonTarget: value } );
+									},
+									checked: props.attributes.buttonTarget,
+								}
+							)
+						),
+					),
 
-							el( ColorPaletteControl,
+					el( InspectorControls, {
+							group: 'styles',
+						},
+
+						el( PanelColorSettings, {
+							title: __( 'Colors', 'knd' ),
+							initialOpen: true,
+							enableAlpha: true,
+
+							colorSettings: [
+								{
+									label: __( 'Background Color', 'knd' ),
+									value: props.attributes.backgroundColor,
+									onChange: ( val ) => {
+										props.setAttributes( { backgroundColor: val } );
+									}
+								},
+								{
+									label: __( 'Title Color', 'knd' ),
+									value: props.attributes.titleColor,
+									onChange: ( val ) => {
+										props.setAttributes( { titleColor: val } );
+									}
+								},
+								{
+									label: __( 'Text Color', 'knd' ),
+									value: props.attributes.textColor,
+									onChange: ( val ) => {
+										props.setAttributes( { textColor: val } );
+									}
+								},
 								{
 									label: __( 'Button Background', 'knd' ),
-									disableAlpha: false,
 									value: props.attributes.buttonBackground,
-									onChange: function( val ) {
-										props.setAttributes({ buttonBackground: val });
+									onChange: ( val ) => {
+										props.setAttributes( { buttonBackground: val } );
 									}
-								}
-							),
-
-							el( ColorPaletteControl,
+								},
 								{
 									label: __( 'Button Color', 'knd' ),
-									disableAlpha: false,
 									value: props.attributes.buttonColor,
-									onChange: function( val ) {
-										props.setAttributes({ buttonColor: val });
+									onChange: ( val ) => {
+										props.setAttributes( { buttonColor: val } );
 									}
-								}
-							),
-
-							el( ColorPaletteControl,
+								},
 								{
 									label: __( 'Button Hover Background', 'knd' ),
-									disableAlpha: false,
 									value: props.attributes.buttonBackgroundHover,
-									onChange: function( val ) {
-										props.setAttributes({ buttonBackgroundHover: val });
+									onChange: ( val ) => {
+										props.setAttributes( { buttonBackgroundHover: val } );
 									}
-								}
-							),
-
-							el( ColorPaletteControl,
+								},
 								{
 									label: __( 'Button Hover Color', 'knd' ),
-									disableAlpha: false,
 									value: props.attributes.buttonColorHover,
-									onChange: function( val ) {
-										props.setAttributes({ buttonColorHover: val });
+									onChange: ( val ) => {
+										props.setAttributes( { buttonColorHover: val } );
 									}
-								}
-							),
-
-						),
+								},
+							]
+						}),
 					),
 
 					el(	Disabled,
@@ -759,7 +698,7 @@
  * Events Block
  */
 
-( function( blocks, editor, blockEditor, element, components, compose, i18n, serverSideRender, data ) {
+( function( blocks, editor, blockEditor, element, components, compose, i18n, serverSideRender ) {
 
 	if ( ! kndBlock.postTypes.event ) {
 		return;
@@ -769,16 +708,13 @@
 
 	const el = element.createElement;
 
-	const { TextControl, SelectControl, RangeControl, ColorPalette, Button, FormTokenField, Dashicon, PanelBody, ToggleControl, Disabled } = components;
+	const { TextControl, SelectControl, RangeControl, Button, FormTokenField, Dashicon, PanelBody, Disabled } = components;
 
-	const { registerBlockType, withColors, PanelColorSettings, getColorClassName, useBlockProps } = blocks;
-	const { InspectorControls, ColorPaletteControl } = blockEditor;
+	const { registerBlockType } = blocks;
 
-	const { Fragment } = element;
+	const { InspectorControls, PanelColorSettings } = blockEditor;
 
-	const { withState } = compose;
-
-	const { useSelect } = data;
+	const { useState, Fragment } = element;
 
 	const { __ } = i18n;
 
@@ -883,8 +819,6 @@
 
 				var events = [];
 				var getEvents = kndBlock.getEvents;
-
-				console.log(getEvents);
 
 				if ( getEvents ) {
 					getEvents.map((event) => {
@@ -1021,30 +955,31 @@
 
 					el( InspectorControls, {},
 
-						el( 'div',
-							{
-								className: 'knd-editor-block-card__description knd-editor-block-card__description-alt'
-							},
-
-							el( 'a',
-								{
-									href: kndBlock.getAdminUrl.event,
-									target: '_blank',
-								},
-								__( 'Edit events', 'knd' ),
-								' ',
-								el( Dashicon,
-									{
-										icon: 'external',
-									}
-								),
-							),
-						),
-
 						el( PanelBody,
 							{
 								title: __( 'Settings', 'knd' )
 							},
+
+							el( 'div',
+								{
+									className: 'knd-editor-block-panel__description'
+								},
+
+								el( 'a',
+									{
+										href: kndBlock.getAdminUrl.news,
+										target: '_blank',
+									},
+									__( 'Edit events', 'knd' ),
+									' ',
+									el( Dashicon,
+										{
+											icon: 'external',
+										}
+									),
+								),
+							),
+
 							el( TextControl, {
 								label: __( 'Heading', 'knd' ),
 								value: props.attributes.heading,
@@ -1076,44 +1011,6 @@
 							},
 
 							headingFields
-
-						),
-
-						el( PanelBody,
-							{
-								title: __( 'Colors', 'knd' ),
-								initialOpen: false
-							},
-
-							el( ColorPaletteControl,
-								{
-									label: __( 'Background Color', 'knd' ),
-									value: props.attributes.backgroundColor,
-									onChange: ( val ) => {
-										props.setAttributes( { backgroundColor: val } );
-									}
-								}
-							),
-
-							el( ColorPaletteControl,
-								{
-									label: __( 'Heading Color', 'knd' ),
-									value: props.attributes.headingColor,
-									onChange: ( val ) => {
-										props.setAttributes( { headingColor: val } );
-									}
-								}
-							),
-
-							el( ColorPaletteControl,
-								{
-									label: __( 'Links Color', 'knd' ),
-									value: props.attributes.linkColor,
-									onChange: ( val ) => {
-										props.setAttributes( { linkColor: val } );
-									}
-								}
-							),
 
 						),
 
@@ -1172,6 +1069,41 @@
 
 					),
 
+					el( InspectorControls, {
+							group: 'styles',
+						},
+
+						el( PanelColorSettings, {
+							title: __( 'Colors', 'knd' ),
+							initialOpen: true,
+							enableAlpha: true,
+
+							colorSettings: [
+								{
+									label: __( 'Background Color', 'knd' ),
+									value: props.attributes.backgroundColor,
+									onChange: ( val ) => {
+										props.setAttributes( { backgroundColor: val } );
+									}
+								},
+								{
+									label: __( 'Heading Color', 'knd' ),
+									value: props.attributes.headingColor,
+									onChange: ( val ) => {
+										props.setAttributes( { headingColor: val } );
+									}
+								},
+								{
+									label: __( 'Links Color', 'knd' ),
+									value: props.attributes.linkColor,
+									onChange: ( val ) => {
+										props.setAttributes( { linkColor: val } );
+									}
+								}
+							]
+						}),
+					),
+
 					el( Disabled,
 						null,
 						el( ServerSideRender, {
@@ -1198,24 +1130,23 @@
 	window.wp.compose,
 	window.wp.i18n,
 	window.wp.serverSideRender,
-	window.wp.data,
 ) );
 
 /**
  * Hero Block
  */
 
-( function( blocks, editor, blockEditor, element, components, compose, i18n, serverSideRender ) {
+( function( blocks, blockEditor, element, components, i18n, serverSideRender ) {
 
 	const ServerSideRender = serverSideRender;
 
 	const el = element.createElement;
 
-	const { TextControl, TextareaControl, SelectControl, RangeControl, ColorPalette, ColorPicker, PanelBody, ToggleControl, BaseControl, Button, ButtonGroup, Dropdown, Tooltip, Disabled, __experimentalUnitControl } = components;
+	const { TextControl, TextareaControl, SelectControl, ColorPalette, ColorPicker, PanelBody, BaseControl, Button, ButtonGroup, Disabled, __experimentalUnitControl } = components;
 
-	const { registerBlockType, withColors, PanelColorSettings, getColorClassName, useBlockProps } = blocks;
+	const { registerBlockType } = blocks;
 
-	const { InspectorControls, ColorPaletteControl, InnerBlocks, MediaUpload, MediaUploadCheck } = blockEditor;
+	const { InspectorControls, ColorPaletteControl, PanelColorSettings, MediaUpload, MediaUploadCheck } = blockEditor;
 
 	const { Fragment } = element;
 
@@ -1375,11 +1306,6 @@
 			// Pull out specific attributes for clarity below
 			const { backgroundImage, featuredImage } = attributes;
 
-			const { blockId } = attributes;
-			if ( ! blockId ) {
-				//setAttributes( { blockId: clientId, featuredImage: { url: kndBlock.getImageUrl.heroFeatured } } );
-			}
-
 			return (
 				el( Fragment, {},
 
@@ -1406,24 +1332,44 @@
 								},
 							}),
 
-							el( BaseControl, null,
+							el( __experimentalUnitControl,
+								{
+									label: __('Min Height', 'knd'),
+									value: props.attributes.minHeight,
+									onChange: ( val ) => {
+										props.setAttributes( { minHeight: val } );
+									},
+									labelPosition: 'side',
+									units: [
+										{
+											value: "px",
+											label: "px",
+										},
+										{
+											value: "vh",
+											label: "vh",
+										},
+									]
+								}
+							)
+						), // Panel
+
+						// Images Panel
+						el( PanelBody,
+							{
+								title: __( 'Images', 'knd' ),
+								initialOpen: true
+							},
+
+							el( BaseControl, {
+									label: __( 'Call to action Image', 'knd' ),
+								},
 
 								el( 'div',
 									{
-										className: 'knd-components-heading',
+										className: 'knd-components-heading__label'
 									},
-									el( 'div',
-										{
-											className: 'knd-components-heading__label'
-										},
-										__( 'Call to action Image','knd' ),
-									),
-									el( 'div',
-										{
-											className: 'knd-components-heading__help'
-										},
-										__( 'Displayed on the right side of the Call to action text', 'knd' ),
-									),
+									__( 'Displayed on the right side of the Call to action text', 'knd' )
 								),
 
 								el( MediaUploadCheck, null,
@@ -1489,150 +1435,15 @@
 								),
 							),// Featured image
 
-							el( ColorPaletteControl,
-								{
-									label: __( 'Text Color', 'knd' ),
-									disableAlpha: false,
-									value: props.attributes.textColor,
-									
-									onChange: function( val ) {
-										props.setAttributes({ textColor: val });
-									}
-								}
-							),
-
-							el( __experimentalUnitControl, // __experimentalUseCustomUnits
-								{
-									label: __('Min Height', 'knd'),
-									value: props.attributes.minHeight,
-									onChange: ( val ) => {
-										props.setAttributes( { minHeight: val } );
-									},
-									labelPosition: 'side',
-									units: [
-										{
-											value: "px",
-											label: "px",
-										},
-										{
-											value: "vh",
-											label: "vh",
-										},
-									]
-								}
-							)
-						), // Panel
-
-						// Buttons Panel
-						el( PanelBody,
-							{
-								title: __( 'Buttons', 'knd' ),
-								initialOpen: false
-							},
-
-							el( TextControl, {
-								label: __( 'Button text', 'knd' ),
-								value: props.attributes.button,
-								onChange: ( val ) => {
-									props.setAttributes( { button: val } );
+							el( BaseControl, {
+									label: __( 'Background Image', 'knd' ),
 								},
-							}),
-
-							el( TextControl, {
-								label: __( 'Button url', 'knd' ),
-								value: props.attributes.buttonUrl,
-								onChange: ( val ) => {
-									props.setAttributes( { buttonUrl: val } );
-								},
-							}),
-
-							el( TextControl, {
-								label: __( 'Additional Button text', 'knd' ),
-								value: props.attributes.buttonAdditional,
-								onChange: ( val ) => {
-									props.setAttributes( { buttonAdditional: val } );
-								},
-							}),
-
-							el( TextControl, {
-								label: __( 'Additional Button url', 'knd' ),
-								value: props.attributes.buttonAdditionalUrl,
-								onChange: ( val ) => {
-									props.setAttributes( { buttonAdditionalUrl: val } );
-								},
-							}),
-
-							el( ColorPaletteControl,
-								{
-									label: __( 'Button Background', 'knd' ),
-									disableAlpha: false,
-									value: props.attributes.buttonBackground,
-									onChange: function( val ) {
-										props.setAttributes({ buttonBackground: val });
-									}
-								}
-							),
-
-							el( ColorPaletteControl,
-								{
-									label: __( 'Button Color', 'knd' ),
-									disableAlpha: false,
-									value: props.attributes.buttonColor,
-									onChange: function( val ) {
-										props.setAttributes({ buttonColor: val });
-									}
-								}
-							),
-
-							el( ColorPaletteControl,
-								{
-									label: __( 'Button Hover Background', 'knd' ),
-									disableAlpha: false,
-									value: props.attributes.buttonBackgroundHover,
-									onChange: function( val ) {
-										props.setAttributes({ buttonBackgroundHover: val });
-									}
-								}
-							),
-
-							el( ColorPaletteControl,
-								{
-									label: __( 'Button Hover Color', 'knd' ),
-									disableAlpha: false,
-									value: props.attributes.buttonColorHover,
-									onChange: function( val ) {
-										props.setAttributes({ buttonColorHover: val });
-									}
-								}
-							),
-
-						),
-
-						// Background Panel
-						el( PanelBody,
-							{
-								title: __( 'Background', 'knd' ),
-								initialOpen: false
-							},
-
-							el( BaseControl, {},
 
 								el( 'div',
 									{
-										className: 'knd-components-heading',
+										className: 'knd-components-heading__label'
 									},
-									el( 'div',
-										{
-											className: 'knd-components-heading__label'
-										},
-										__( 'Background Image', 'knd' )
-									),
-									el( 'div',
-										{
-											className: 'knd-components-heading__help'
-										},
-										__( 'Recommended size 1600x663px', 'knd' )
-									),
+									__( 'Recommended size 1600x663px', 'knd' )
 								),
 
 								el( MediaUploadCheck, null,
@@ -1697,18 +1508,46 @@
 									}),
 								),
 							),
+						),
 
-							el( ColorPaletteControl,
-								{
-									label: __( 'Background Color', 'knd' ),
-									disableAlpha: false,
-									value: props.attributes.backgroundColor,
-									
-									onChange: function( val ) {
-										props.setAttributes({ backgroundColor: val });
-									}
-								}
-							),
+						// Buttons Panel
+						el( PanelBody,
+							{
+								title: __( 'Buttons', 'knd' ),
+								initialOpen: false
+							},
+
+							el( TextControl, {
+								label: __( 'Button text', 'knd' ),
+								value: props.attributes.button,
+								onChange: ( val ) => {
+									props.setAttributes( { button: val } );
+								},
+							}),
+
+							el( TextControl, {
+								label: __( 'Button url', 'knd' ),
+								value: props.attributes.buttonUrl,
+								onChange: ( val ) => {
+									props.setAttributes( { buttonUrl: val } );
+								},
+							}),
+
+							el( TextControl, {
+								label: __( 'Additional Button text', 'knd' ),
+								value: props.attributes.buttonAdditional,
+								onChange: ( val ) => {
+									props.setAttributes( { buttonAdditional: val } );
+								},
+							}),
+
+							el( TextControl, {
+								label: __( 'Additional Button url', 'knd' ),
+								value: props.attributes.buttonAdditionalUrl,
+								onChange: ( val ) => {
+									props.setAttributes( { buttonAdditionalUrl: val } );
+								},
+							}),
 						),
 
 						// Overlay Panel
@@ -1873,6 +1712,63 @@
 						),
 					),
 
+
+					el( InspectorControls, {
+							group: 'styles',
+						},
+
+						el( PanelColorSettings, {
+							title: __( 'Colors', 'knd' ),
+							initialOpen: true,
+							enableAlpha: true,
+
+							colorSettings: [
+								{
+									label: __( 'Text Color', 'knd' ),
+									value: props.attributes.textColor,
+									onChange: ( val ) => {
+										props.setAttributes( { textColor: val } );
+									}
+								},
+								{
+									label: __( 'Background Color', 'knd' ),
+									value: props.attributes.backgroundColor,
+									onChange: ( val ) => {
+										props.setAttributes( { backgroundColor: val } );
+									}
+								},
+								{
+									label: __( 'Button Background', 'knd' ),
+									value: props.attributes.buttonBackground,
+									onChange: ( val ) => {
+										props.setAttributes( { buttonBackground: val } );
+									}
+								},
+								{
+									label: __( 'Button Color', 'knd' ),
+									value: props.attributes.buttonColor,
+									onChange: ( val ) => {
+										props.setAttributes( { buttonColor: val } );
+									}
+								},
+								{
+									label: __( 'Button Hover Background', 'knd' ),
+									value: props.attributes.buttonBackgroundHover,
+									onChange: ( val ) => {
+										props.setAttributes( { buttonBackgroundHover: val } );
+									}
+								},
+								{
+									label: __( 'Button Hover Color', 'knd' ),
+									value: props.attributes.buttonColorHover,
+									onChange: ( val ) => {
+										props.setAttributes( { buttonColorHover: val } );
+									}
+								}
+							]
+						}),
+					),
+
 					el(	Disabled,
 						null,
 						el( ServerSideRender, {
@@ -1892,11 +1788,9 @@
 
 }(
 	window.wp.blocks,
-	window.wp.editor,
 	window.wp.blockEditor,
 	window.wp.element,
 	window.wp.components,
-	window.wp.compose,
 	window.wp.i18n,
 	window.wp.serverSideRender,
 ) );
@@ -2458,7 +2352,7 @@
  * News Block
  */
 
-( function( blocks, editor, blockEditor, element, components, compose, i18n, serverSideRender, date ) {
+( function( blocks, editor, blockEditor, element, components, compose, i18n, serverSideRender, data, date ) {
 
 	const ServerSideRender = serverSideRender;
 
@@ -2466,12 +2360,14 @@
 
 	const { dateI18n } = date;
 
-	const { TextControl, SelectControl, RangeControl, ColorPalette, Dashicon, PanelBody, ToggleControl, Button, IconButton, Disabled, BaseControl, FontSizePicker, __experimentalUnitControl, __experimentalDivider } = components;
+	const { TextControl, SelectControl, RangeControl, Dashicon, PanelBody, ToggleControl, Button, IconButton, Disabled, BaseControl, __experimentalUnitControl, __experimentalDivider } = components;
 
-	const { registerBlockType, withColors, getColorClassName } = blocks;
-	const { InspectorControls, InspectorAdvancedControls, ColorPaletteControl, useBlockProps, PanelColorSettings, BlockControls,__experimentalBlockAlignmentMatrixControl, BlockSettingsMenu, BlockTitle } = blockEditor;
+	const { registerBlockType } = blocks;
+	const { InspectorControls, useBlockProps, PanelColorSettings, BlockControls,__experimentalBlockAlignmentMatrixControl } = blockEditor;
 
 	const { Fragment } = element;
+
+	const { useSelect } = data;
 
 	const { withState } = compose;
 
@@ -2568,9 +2464,6 @@
 			titleHoverColor: {
 				type: 'string',
 			},
-
-			
-
 			linkColor: {
 				type: 'string',
 			},
@@ -2629,8 +2522,6 @@
 				type: 'string',
 				default: 'left',
 			},
-			
-			
 			date: {
 				type: 'boolean',
 				default: true,
@@ -2947,7 +2838,6 @@
 						label: __('Change content position','knd'),
 						value: props.attributes.alignment,
 						onChange: ( val ) => {
-							//console.log(val);
 							props.setAttributes( { alignment: val } );
 						},
 					} )
@@ -3263,9 +3153,6 @@
 								}
 							]
 						}),
-
-						
-
 					),
 
 					el( InspectorControls, {},
@@ -3612,6 +3499,7 @@
 	window.wp.compose,
 	window.wp.i18n,
 	window.wp.serverSideRender,
+	window.wp.data,
 	window.wp.date,
 ) );
 
@@ -3619,7 +3507,7 @@
  * Partners Block
  */
 
-( function( blocks, editor, blockEditor, element, components, compose, i18n, serverSideRender, hooks ) {
+( function( blocks, editor, blockEditor, element, components, compose, i18n, serverSideRender, data, hooks ) {
 
 	const ServerSideRender = serverSideRender;
 
@@ -3631,6 +3519,8 @@
 	const { InspectorControls, ColorPaletteControl } = blockEditor;
 
 	const { Fragment } = element;
+
+	const { useSelect } = data;
 
 	const { withState } = compose;
 
@@ -3987,6 +3877,7 @@
 	window.wp.compose,
 	window.wp.i18n,
 	window.wp.serverSideRender,
+	window.wp.data,
 	window.wp.hooks,
 ) );
 

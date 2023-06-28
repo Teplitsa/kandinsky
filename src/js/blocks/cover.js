@@ -6,14 +6,12 @@
 
 	const el = element.createElement;
 
-	const { TextControl, TextareaControl, SelectControl, RangeControl, ColorPalette, PanelBody, PanelRow, ToggleControl, BaseControl, Button,  Disabled, __experimentalUnitControl } = components;
+	const { TextControl, TextareaControl, ColorPalette, PanelBody, BaseControl, Button, Disabled, __experimentalUnitControl } = components;
 
-	const { registerBlockType, withColors, PanelColorSettings, getColorClassName, useBlockProps } = blocks;
-	const { InspectorControls, ColorPaletteControl, MediaUpload, MediaUploadCheck } = blockEditor;
+	const { registerBlockType } = blocks;
+	const { InspectorControls, ColorPaletteControl, PanelColorSettings, MediaUpload, MediaUploadCheck } = blockEditor;
 
 	const { Fragment } = element;
-
-	const { withState } = compose;
 
 	const { __ } = i18n;
 
@@ -181,19 +179,9 @@
 								},
 							}),
 
-							el( BaseControl, {},
-
-								el( 'div',
-									{
-										className: 'knd-components-heading',
-									},
-									el( 'div',
-										{
-											className: 'knd-components-heading__label'
-										},
-										__( 'Background Image', 'knd' )
-									),
-								),
+							el( BaseControl, {
+									label: __( 'Background Image', 'knd' ),
+								},
 
 								el( MediaUploadCheck, null,
 
@@ -210,7 +198,6 @@
 												}
 											});
 										},
-
 
 										render: function render(_ref) {
 											var open = _ref.open;
@@ -252,9 +239,7 @@
 													)
 												)
 											}
-
 										}
-
 									}),
 								),
 							), // Background Image
@@ -275,68 +260,57 @@
 									]
 								}
 							)
-
 						),
+					),
 
-						// Background Panel
-						el( PanelBody,
-							{
-								title: __( 'Colors', 'knd' ),
-								initialOpen: false
-							},
+					el( InspectorControls, {
+							group: 'styles',
+						},
 
-							el( ColorPaletteControl,
+						el( PanelColorSettings, {
+							title: __( 'Colors', 'knd' ),
+							initialOpen: true,
+							enableAlpha: true,
+
+							colorSettings: [
 								{
 									label: __( 'Background Color', 'knd' ),
 									value: props.attributes.backgroundColor,
-									onChange: function( val ) {
-										props.setAttributes({ backgroundColor: val });
+									onChange: ( val ) => {
+										props.setAttributes( { backgroundColor: val } );
 									}
-								}
-							),
-
-							el( ColorPaletteControl,
+								},
 								{
 									label: __( 'Text Color', 'knd' ),
 									value: props.attributes.textColor,
-									onChange: function( val ) {
-										props.setAttributes({ textColor: val });
+									onChange: ( val ) => {
+										props.setAttributes( { textColor: val } );
 									}
-								}
-							),
-
-							el( ColorPaletteControl,
+								},
 								{
 									label: __( 'Content Background Color', 'knd' ),
 									value: props.attributes.contentColor,
-									onChange: function( val ) {
-										props.setAttributes({ contentColor: val });
+									onChange: ( val ) => {
+										props.setAttributes( { contentColor: val } );
 									}
-								}
-							),
-
-							el( ColorPaletteControl,
+								},
 								{
 									label: __( 'Recommendation Color', 'knd' ),
 									value: props.attributes.recommendColor,
-									onChange: function( val ) {
-										props.setAttributes({ recommendColor: val });
+									onChange: ( val ) => {
+										props.setAttributes( { recommendColor: val } );
 									}
-								}
-							),
-
-							el( ColorPaletteControl,
+								},
 								{
 									label: __( 'Recommendation Background Color', 'knd' ),
 									value: props.attributes.recommendBgColor,
-									onChange: function( val ) {
-										props.setAttributes({ recommendBgColor: val });
+									onChange: ( val ) => {
+										props.setAttributes( { recommendBgColor: val } );
 									}
 								}
-							),
-
+							]
+						}),
 						),
-					),
 
 					el(	Disabled,
 						null,
