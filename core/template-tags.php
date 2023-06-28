@@ -856,7 +856,7 @@ if ( ! function_exists( 'knd_block_post_title' ) ) {
 			$title_class .= ' knd-font-weight-' . $options['titleFontWeight'];
 		}
 
-		$title = sprintf( the_title( '<h3 class="' . esc_attr( $title_class ) . '"><a href="%s">', '</a></h3>', false ), get_the_permalink() );
+		$title = the_title( '<h3 class="' . esc_attr( $title_class ) . '"><a href="' . get_the_permalink() . '">', '</a></h3>', false );
 
 		return $title;
 	}
