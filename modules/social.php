@@ -196,8 +196,8 @@ function knd_social_share_no_js() {
 				$on_click = 'onClick="window.open(\'' . $item['url'] . '\',\'' . $item['label'] . '\',\'top=320,left=325,width=650,height=430,status=no,scrollbars=no,menubar=no,tollbars=no\');return false;"';
 			}
 			?>
-			<div title="<?php echo esc_attr( $item['label']);?>" class="social-likes__widget social-likes__widget_<?php echo esc_attr( $slug ); ?>">
-				<a href="<?php echo esc_attr( $item['url'] );?>" class="social-likes__button social-likes__button_<?php echo esc_attr( $slug ); ?>" target="_blank" <?php echo $on_click; ?>>
+			<div class="social-likes__widget social-likes__widget_<?php echo esc_attr( $slug ); ?>">
+				<a href="<?php echo esc_attr( $item['url'] );?>" title="<?php echo esc_attr( $item['label']);?>" class="social-likes__button social-likes__button_<?php echo esc_attr( $slug ); ?>" target="_blank" <?php echo $on_click; ?>>
 					<svg class="svg-icon"><use xlink:href="#<?php echo esc_attr( $item['icon'] ); ?>" /></svg>
 					<span class="sh-text"><?php echo esc_html( $item['txt'] ); ?></span>
 				</a>
