@@ -4,7 +4,8 @@
   "description": "Kandinsky",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "default": "gulp default",
+    "zip": "gulp zip"
   },
   "keywords": [
     "website"
