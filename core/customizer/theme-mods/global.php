@@ -207,7 +207,7 @@ if( class_exists( 'Kirki\Field\Repeater' ) ) {
 				'label'   => [
 					'type'        => 'text',
 					'label'       => esc_html__( 'Name', 'knd' ),
-					'default'     => esc_html__( '', 'knd' ),
+					'default'     => '',
 				],
 				'url'    => [
 					'type'  => 'text',
@@ -254,6 +254,25 @@ foreach ( knd_social_shares() as $slug => $item ) {
 		'default'     => $default,
 	) );
 }
+
+Kirki::add_field( 'knd_theme_mod', array(
+	'type'     => 'custom',
+	'settings' => 'header_' . wp_unique_id( 'divider_' ),
+	'section'     => 'knd_share',
+	'default'  => '<div class="knd-customizer-divider"></div>',
+) );
+
+Kirki::add_field( 'knd_theme_mod', array(
+		'type'     => 'radio',
+		'settings' => 'social_share_location',
+		'label'    => esc_html__( 'Location', 'knd' ),
+		'section'  => 'knd_share',
+		'default'  => 'left',
+		'choices'  => array(
+			'left'   => esc_html__( 'Left Side', 'knd' ),
+			'bottom' => esc_html__( 'After Content', 'knd' ),
+		),
+) );
 
 /* Miscellaneous Settings Section */
 Kirki::add_section(

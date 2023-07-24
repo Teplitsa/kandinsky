@@ -686,6 +686,22 @@ if ( ! function_exists( 'knd_entry_tags' ) ) {
 	}
 }
 
+
+if ( ! function_exists( 'knd_entry_shares' ) ) {
+	/**
+	 * Entry Shares
+	 */
+	function knd_entry_shares() {
+		if ( get_theme_mod( 'social_share_location' ) === 'bottom' ) {
+			?>
+			<div class="knd-entry-shares">
+				<?php echo knd_social_share_no_js(); ?>
+			</div>
+			<?php
+		}
+	}
+}
+
 if ( ! function_exists( 'knd_entry_related' ) ) {
 	/**
 	 * Entry Related

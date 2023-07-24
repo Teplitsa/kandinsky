@@ -3,3 +3,21 @@
  */
 
 @import 'related';
+
+.knd-entry-shares {
+	margin-top: 26px;
+
+	.social-likes {
+		display: flex;
+		gap: 15px;
+		flex-wrap: wrap;
+
+		@media (max-width: 575px) {
+			gap: 10px;
+		}
+	}
+
+	.social-likes__widget + .social-likes__widget {
+		margin-top: 0;
+	}
+}

@@ -70,7 +70,7 @@ while ( have_posts() ) :
 			<div class="flex-row entry-content-single knd-entry-event__main">
 
 				<div class="flex-cell flex-md-1 single-sharing-col hide-upto-medium">
-					<?php if ( get_theme_mod( 'post_social_shares', true ) ) { ?>
+					<?php if ( get_theme_mod( 'post_social_shares', true ) && get_theme_mod( 'social_share_location', 'left' ) === 'left' ) { ?>
 						<div id="knd_sharing" class="regular-sharing knd-entry-event__sharing">
 							<?php echo knd_social_share_no_js();?>
 						</div>
@@ -89,6 +89,8 @@ while ( have_posts() ) :
 						<?php knd_entry_event_question(); ?>
 
 					</div>
+
+					<?php knd_entry_shares(); ?>
 
 				</main>
 

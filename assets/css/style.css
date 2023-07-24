@@ -4355,6 +4355,28 @@ div[id*="leyka-pf-"] .inpage-card__thumb {
 	}
 }
 
+.knd-entry-shares {
+	margin-top: 26px;
+}
+
+.knd-entry-shares .social-likes {
+	display: -ms-flexbox;
+	display: flex;
+	gap: 15px;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+
+@media (max-width: 575px) {
+	.knd-entry-shares .social-likes {
+		gap: 10px;
+	}
+}
+
+.knd-entry-shares .social-likes__widget + .social-likes__widget {
+	margin-top: 0;
+}
+
 /**
  * Comments
  */
