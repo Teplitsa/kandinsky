@@ -3974,6 +3974,14 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 	margin-right: 6px;
 }
 
+.single-post-terms {
+	margin-top: 26px;
+}
+
+.single-post-terms a {
+	color: var(--knd-color-main);
+}
+
 /** == Pages (_pages.scss) == **/
 /** Parts **/
 .page-header {
