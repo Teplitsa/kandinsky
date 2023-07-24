@@ -158,7 +158,7 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'transport' => 'auto',
 	'output'    => array(
 		array(
-			'element'  => '.knd-header-logo',
+			'element'  => '.knd-header-logo, .knd-header-mobile-logo',
 			'property' => '--knd-color-logo',
 		),
 	),

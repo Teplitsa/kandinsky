@@ -112,7 +112,8 @@ $css .= '
 	--knd-header-height: ' . get_theme_mod( 'header_height', '124px' ) . ';
 	--knd-header-background: ' . get_theme_mod( 'header_background', '#ffffff' ) . ';
 }
-.knd-header-logo {
+.knd-header-logo,
+.knd-header-mobile-logo {
 	--knd-color-logo: ' . get_theme_mod( 'header_logo_color', '#183343' ) . ';
 	--knd-color-logo-desc: ' . get_theme_mod( 'header_logo_desc_color', '#4d606a' ) . ';
 	' . $header_logo_font . '
