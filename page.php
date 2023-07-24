@@ -22,7 +22,7 @@ if ( knd_is_page_title() ) { ?>
 
 			<?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
 
-			<?php if ( has_excerpt() ) { ?>
+			<?php if ( trim( $post->post_excerpt ) ) { ?>
 				<div class="page-intro">
 					<?php the_excerpt(); ?>
 				</div>
