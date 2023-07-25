@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-25 01:26+0300\n"
-"PO-Revision-Date: 2023-07-25 01:34+0300\n"
+"POT-Creation-Date: 2023-07-25 16:27+0300\n"
+"PO-Revision-Date: 2023-07-25 16:27+0300\n"
 "Last-Translator: ahaenor <ahaenor@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -1152,16 +1152,16 @@ msgid ""
 msgstr ""
 
 #: core/editor/blocks/info.php:38
-msgid "Кто мы?"
-msgstr ""
+msgid "Who are we?"
+msgstr "Кто мы?"
 
-#: core/editor/blocks/info.php:42
-msgid "Что делаем?"
-msgstr ""
+#: core/editor/blocks/info.php:42 src/js/blocks/info.js:81
+msgid "What we do?"
+msgstr "Что мы делаем?"
 
 #: core/editor/blocks/info.php:46
-msgid "Для кого/Как помочь?"
-msgstr ""
+msgid "For whom / How to help?"
+msgstr "Для кого/Как помочь?"
 
 #: core/editor/blocks/info.php:50
 msgid ""
@@ -2452,10 +2452,6 @@ msgstr "Подзаголовок, заголовок и три колонки."
 #: src/js/blocks/info.js:77
 msgid "Who we are?"
 msgstr "Кто мы?"
-
-#: src/js/blocks/info.js:81
-msgid "What we do?"
-msgstr "Что мы делаем?"
 
 #: src/js/blocks/info.js:85
 msgid "Stop drinking?"
@@ -3911,6 +3907,9 @@ msgstr ""
 #: vendor/envato_setup/steps/support.php:67
 msgid "OK, I've got it!"
 msgstr "Понятно!"
+
+#~ msgid "What are we doing?"
+#~ msgstr "Что делаем?"
 
 #~ msgid "Updating Kandisky theme is in progress..."
 #~ msgstr "Обновление Кандинского работает..."

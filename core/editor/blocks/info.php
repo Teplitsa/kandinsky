@@ -35,15 +35,15 @@ register_block_type( 'knd/info', array(
 		),
 		'heading1'         => array(
 			'type'    => 'string',
-			'default' => esc_html__( 'Кто мы?', 'knd' ),
+			'default' => esc_html__( 'Who are we?', 'knd' ),
 		),
 		'heading2'         => array(
 			'type'    => 'string',
-			'default' => esc_html__( 'Что делаем?', 'knd' ),
+			'default' => esc_html__( 'What we do?', 'knd' ),
 		),
 		'heading3'         => array(
 			'type'    => 'string',
-			'default' => esc_html__( 'Для кого/Как помочь?', 'knd' ),
+			'default' => esc_html__( 'For whom / How to help?', 'knd' ),
 		),
 		'text1'         => array(
 			'type'    => 'string',
@@ -139,6 +139,8 @@ function knd_block_info_render_callback( $attr ) {
 	} else {
 		$classes['align'] = 'alignnone';
 	}
+
+	//var_dump($attr['heading2']);
 
 	// Background Color
 	$style = '';
