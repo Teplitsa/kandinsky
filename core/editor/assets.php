@@ -120,7 +120,6 @@ function knd_enqueue_block_assets() {
 	$css_dependencies = array(
 		'wp-block-library',
 		'flickity',
-		'classic-theme-styles',
 	);
 
 	$js_dependencies = array(
@@ -132,7 +131,7 @@ function knd_enqueue_block_assets() {
 	if ( is_admin() ) {
 		$css_dependencies[] = 'wp-edit-blocks';
 	} else {
-		if ( wp_style_is( 'classic-theme-styles', 'registered' ) ) {
+		if ( function_exists( 'wp_enqueue_classic_theme_styles' ) ) {
 			$css_dependencies[] = 'classic-theme-styles';
 		}
 	}
