@@ -120,6 +120,7 @@ function knd_enqueue_block_assets() {
 	$css_dependencies = array(
 		'wp-block-library',
 		'flickity',
+		'classic-theme-styles',
 	);
 
 	$js_dependencies = array(
