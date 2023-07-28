@@ -145,9 +145,9 @@ function knd_block_hero_render_callback( $attr ) {
 		$classes['class_name'] = $attr['className'];
 	}
 
-	$style = '';
-
+	$style            = '';
 	$background_image = '';
+	$cover_image      = '';
 
 	if ( isset( $attr['backgroundImage'] ) ) {
 		$background_image = $attr['backgroundImage'];
@@ -156,7 +156,8 @@ function knd_block_hero_render_callback( $attr ) {
 	if ( isset( $background_image['id'] ) && $background_image['id'] ) {
 		$background_image_url = wp_get_attachment_image_url( $background_image['id'], 'full' );
 
-		$style .= 'background-image: url(' . esc_url( $background_image_url ) . ');';
+		//$style .= 'background-image: url(' . esc_url( $background_image_url ) . ');';
+		$cover_image = wp_get_attachment_image( $background_image['id'], 'full', false, array('class' => 'knd-block-hero__image-background' ) );
 
 	} elseif ( isset( $background_image['title'] ) && $background_image['title'] ){
 		$background_attach = knd_get_post_by_title(  $background_image['title'], 'attachment' );
@@ -243,6 +244,7 @@ function knd_block_hero_render_callback( $attr ) {
 	}
 
 	$html = '<div class="' . knd_block_class( $classes ) . '"' . $attr_id . ' style="' . $style . '">
+		' . $cover_image . '
 		<div class="knd-block-hero__inner">
 			<div class="knd-block-hero__content">
 				' . $heading . '

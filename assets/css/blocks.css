@@ -529,9 +529,6 @@
 
 .knd-block-hero {
 	background-color: var(--knd-block-hero-background);
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: cover;
 	position: relative;
 }
 
@@ -546,6 +543,20 @@
 	left: 0;
 	background: linear-gradient(to bottom, var(--knd-block-hero-overlay-start) 10%, var(--knd-block-hero-overlay-end) 100%);
 	pointer-events: none;
+}
+
+.knd-block-hero .knd-block-hero__image-background {
+	height: 100%;
+	width: 100%;
+	left: 0;
+	right: 0;
+	top: 0;
+	margin: 0;
+	max-height: none;
+	max-width: none;
+	object-fit: cover;
+	position: absolute;
+	z-index: 0;
 }
 
 .knd-block-hero__inner {
