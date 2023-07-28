@@ -128,6 +128,39 @@ function knd_register_patterns() {
 			)
 		);
 
+		register_block_pattern(
+			'kandinsky/card-default',
+			array(
+				'title'         => esc_html__( 'Card Default', 'knd' ),
+				'categories'    => array( 'kandinsky' ),
+				'viewportWidth' => 1200,
+				'content'       => knd_get_block_content( 'card-default' ),
+			)
+		);
+
+		register_block_pattern(
+			'kandinsky/card-horizontal',
+			array(
+				'title'         => esc_html__( 'Card Horizontal', 'knd' ),
+				'categories'    => array( 'kandinsky' ),
+				'viewportWidth' => 1200,
+				'content'       => knd_get_block_content( 'card-horizontal' ),
+			)
+		);
+
+		register_block_pattern(
+			'kandinsky/card-vertical',
+			array(
+				'title'         => esc_html__( 'Card Horizontal', 'knd' ),
+				'categories'    => array( 'kandinsky' ),
+				'viewportWidth' => 1200,
+				'content'       => knd_get_block_content( 'card-vertical' ),
+			)
+		);
+
+
+
+
 	}
 
 /**

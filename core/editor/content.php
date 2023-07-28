@@ -62,7 +62,55 @@ function knd_get_block_content( $block_name ){
 		$content = '<!-- wp:knd/news {"layout":"type-3","heading":"","postsToShow":4,"columns":4,"radius":11,"overlayColor":"#d40b6c12","overlayHoverColor":"#d40b6c24","titleColor":"#000000","titleHoverColor":"#d30a6a","linkHoverColor":"#000000","headingLinks":[],"hiddenReload":"Ссылка в шапке","thumbnail":false,"imageOrientation":"square","author":true,"avatar":true,"titleFontWeight":"medium","alignment":"bottom left"} /-->';
 	}
 
-	
+	elseif ( 'card-default' === $block_name ) {
+		$content = '<!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|50","right":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|50"}}},"backgroundColor":"light-grey","layout":{"type":"constrained"}} -->
+<div class="wp-block-group has-light-grey-background-color has-background" style="padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50)"><!-- wp:heading {"level":4} -->
+<h4 class="wp-block-heading">Заголовок</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Это первое, что видит читатель и что вызывает его интерес. Заголовок должен быть емкий, короткий и отражать суть события.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->';
+	}
+
+	elseif ( 'card-horizontal' === $block_name ) {
+		$content = '<!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|50","right":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|50"}}},"backgroundColor":"light-grey","layout":{"type":"constrained"}} -->
+<div class="wp-block-group has-light-grey-background-color has-background" style="padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50)"><!-- wp:columns -->
+<div class="wp-block-columns"><!-- wp:column {"verticalAlignment":"center","width":"33.33%"} -->
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:33.33%"><!-- wp:image {"id":114,"sizeSlug":"full","linkDestination":"none"} -->
+<figure class="wp-block-image size-full"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/cta-image.png" alt="" class="wp-image-114"/></figure>
+<!-- /wp:image --></div>
+<!-- /wp:column -->
+
+<!-- wp:column {"verticalAlignment":"center","width":"66.66%"} -->
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:66.66%"><!-- wp:heading {"level":4} -->
+<h4 class="wp-block-heading">Заголовок</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Это первое, что видит читатель и что вызывает его интерес. Заголовок должен быть емкий, короткий и отражать суть события.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns --></div>
+<!-- /wp:group -->';
+	}
+
+	elseif ( 'card-vertical' === $block_name ) {
+		$content = '<!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|50","right":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|50"}}},"backgroundColor":"light-grey","layout":{"type":"constrained"}} -->
+<div class="wp-block-group has-light-grey-background-color has-background" style="padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50)"><!-- wp:image {"id":50,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/hero.jpg" alt="" class="wp-image-50"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:heading {"textAlign":"center","level":4} -->
+<h4 class="wp-block-heading has-text-align-center">Заголовок</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"align":"center"} -->
+<p class="has-text-align-center">Это первое, что видит читатель и что вызывает его интерес. Заголовок должен быть емкий, короткий и отражать суть события.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->';
+	}
 
 	return $content;
 }
