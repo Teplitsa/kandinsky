@@ -98,6 +98,25 @@
 	}
 }
 
+/* Group */
+.wp-block-group__inner-container > *:first-child {
+	margin-top: 0;
+}
+
+.wp-block-group__inner-container *:last-child {
+	margin-bottom: 0;
+}
+
+@media (max-width: 781px) {
+	.wp-block-group__inner-container:not(:last-child) {
+		margin-bottom: 26px;
+	}
+}
+
+.entry-content .wp-block-group:not(:last-child) {
+	margin-bottom: 1.75em;
+}
+
 /* Embeds */
 .wp-block-embed figcaption {
 	color: var(--knd-page-text-color-light);
