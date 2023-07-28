@@ -56,6 +56,30 @@
 	font-weight: var(--knd-font-weight-headings);
 }
 
+.editor-styles-wrapper h1 {
+	font-size: 44px;
+}
+
+.editor-styles-wrapper h2 {
+	font-size: 37px;
+}
+
+.editor-styles-wrapper h3 {
+	font-size: 31px;
+}
+
+.editor-styles-wrapper h4 {
+	font-size: 26px;
+}
+
+.editor-styles-wrapper h5 {
+	font-size: 22px;
+}
+
+.editor-styles-wrapper h6 {
+	font-size: 18px;
+}
+
 .editor-styles-wrapper .wp-block[data-align=full] {
 	margin-left: -8px;
 	margin-right: -8px;
