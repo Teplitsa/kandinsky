@@ -125,7 +125,7 @@ function knd_enqueue_block_assets() {
 	$js_dependencies = array(
 		'jquery',
 		'flickity',
-		'fancybox',
+		'knd-fancybox',
 	);
 
 	if ( is_admin() ) {

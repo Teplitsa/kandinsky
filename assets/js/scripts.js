@@ -19,15 +19,6 @@
 		breakPointSmall = 480, // Small screens break point
 		breakPointMedium = 767; // Medium screen break point
 
-	window.knd2 = {
-		// closeOffcanvas: function(){
-		// 	console.log('');
-		// },
-		// init: function() {
-		// 	window.knd.closeOffcanvas();
-		// }
-	}
-
 	/**
 	 * Get Scrollbar width
 	 */
@@ -103,11 +94,6 @@
 	 * Accesibility Alert
 	 */
 	function kndUpdateScreenReaderAlert( message ){
-		// if ( $(e.currentTarget).data('label').length ) {
-		// 	let content = $(e.currentTarget).data('label');
-		// 	$('.knd-screen-reader-alert').html( ' ' );
-		// 	$('.knd-screen-reader-alert').html( content );
-		// }
 		$('.knd-screen-reader-alert').html( ' ' ).html( message );
 	}
 
@@ -429,17 +415,19 @@
 	/**
 	 * FancyBox
 	 */
-	$('.entry-content .wp-block-image').find('a[href$=".jpg"], a[href$=".png"], a[href$=".jpeg"], a[href$=".gif"]').attr('data-fancybox','');
+	if ( $('#knd-fancybox-js').length) {
+		$('.entry-content .wp-block-image').find('a[href$=".jpg"], a[href$=".png"], a[href$=".jpeg"], a[href$=".gif"]').attr('data-fancybox','');
 
-	$( '.entry-content' ).find('a[href$=".jpg"], a[href$=".png"], a[href$=".jpeg"], a[href$=".gif"]').each( function( index ) {
-		if ( $(this).parents('.wp-block-image').length == 0 && $(this).parents('.wp-block-gallery').length == 0 ) {
-			$(this).attr('data-fancybox', '');
-		}
-	});
+		$( '.entry-content' ).find('a[href$=".jpg"], a[href$=".png"], a[href$=".jpeg"], a[href$=".gif"]').each( function( index ) {
+			if ( $(this).parents('.wp-block-image').length == 0 && $(this).parents('.wp-block-gallery').length == 0 ) {
+				$(this).attr('data-fancybox', '');
+			}
+		});
 
-	$('.entry-content .wp-block-gallery, .entry-content .gallery').each( function( index ) {
-		$( this ).find('a[href$=".jpg"], a[href$=".png"], a[href$=".jpeg"], a[href$=".gif"]').attr('data-fancybox', 'gallery-' + ( index + 1 ) );
-	});
+		$('.entry-content .wp-block-gallery, .entry-content .gallery').each( function( index ) {
+			$( this ).find('a[href$=".jpg"], a[href$=".png"], a[href$=".jpeg"], a[href$=".gif"]').attr('data-fancybox', 'gallery-' + ( index + 1 ) );
+		});
+	}
 
 	/**
 	 * Archive Events View Type

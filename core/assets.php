@@ -36,11 +36,16 @@ class KND_CssJs {
 	/** Load css */
 	public function load_styles() {
 
+		$css_dependencies = array();
+
 		// FancyBox.
-		wp_register_style( 'fancybox', get_template_directory_uri() . '/assets/css/jquery.fancybox.min.css', array(), '3.5.7' );
+		if ( ! wp_style_is( 'fancybox-for-wp' ) ) {
+			wp_register_style( 'knd-fancybox', get_template_directory_uri() . '/assets/css/jquery.fancybox.min.css', array(), '3.5.7' );
+			$css_dependencies[] = 'knd-fancybox';
+		}
 
 		// Styles.
-		wp_enqueue_style( 'knd', get_template_directory_uri() . '/assets/css/style.css', array( 'fancybox' ), knd_get_theme_version() );
+		wp_enqueue_style( 'knd', get_template_directory_uri() . '/assets/css/style.css', $css_dependencies, knd_get_theme_version() );
 
 		// Dequeue leyka styles.
 		wp_dequeue_style( 'leyka-plugin-styles' );
@@ -54,14 +59,16 @@ class KND_CssJs {
 			'jquery',
 			'imagesloaded',
 			'flickity',
-			'fancybox',
 		);
 
 		// Register Flickity script.
 		wp_register_script( 'flickity', get_template_directory_uri() . '/assets/js/flickity.pkgd.min.js', array( 'jquery' ), '2.2.2', true );
 
-		// Register theme scripts.
-		wp_register_script( 'fancybox', get_template_directory_uri() . '/assets/js/jquery.fancybox.min.js', array( 'jquery' ), '3.5.7', true );
+		// Register Fancybox script.
+		if ( ! wp_script_is( 'fancybox-for-wp' ) ) {
+			wp_register_script( 'knd-fancybox', get_template_directory_uri() . '/assets/js/jquery.fancybox.min.js', array( 'jquery' ), '3.5.7', true );
+			$dependencies[] = 'knd-fancybox';
+		}
 
 		// Scripts.
 		wp_enqueue_script( 'knd', get_template_directory_uri() . '/assets/js/scripts.js', $dependencies, knd_get_theme_version(), true );
