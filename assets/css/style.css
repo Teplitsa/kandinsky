@@ -2215,11 +2215,6 @@ body > svg {
 	margin-left: auto;
 }
 
-.knd-header-nav > .knd-nav-menu {
-	font-size: var(--knd-font-size-menu, 18px);
-	--knd-font-submenu-size: .85em;
-}
-
 .knd-header-nav > .menu {
 	height: 100%;
 	padding: 0;
@@ -2308,6 +2303,18 @@ body > svg {
 	left: 100%;
 	z-index: 1;
 	opacity: 0;
+}
+
+.knd-header-nav > .knd-nav-menu {
+	font-size: var(--knd-font-size-menu, 18px);
+	--knd-font-submenu-size: .85em;
+}
+
+.knd-header-nav > .knd-nav-menu-flex {
+	-ms-flex-wrap: nowrap;
+	flex-wrap: nowrap;
+	overflow: hidden;
+	width: 100%;
 }
 
 .knd-header-nav a {

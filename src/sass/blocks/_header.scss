@@ -684,11 +684,6 @@
 		margin-left: auto;
 	}
 
-	> .knd-nav-menu {
-		font-size: var(--knd-font-size-menu, 18px);
-		--knd-font-submenu-size: .85em;
-	}
-
 	> .menu {
 		height: 100%;
 		padding: 0;
@@ -778,6 +773,17 @@
 				// transform: translate3d(0.5rem, 0, 0);
 				//visibility: hidden;
 			}
+		}
+	}
+
+	> .knd-nav-menu {
+		font-size: var(--knd-font-size-menu, 18px);
+		--knd-font-submenu-size: .85em;
+
+		&-flex {
+			flex-wrap: nowrap;
+			overflow: hidden;
+			width: 100%;
 		}
 	}
 
