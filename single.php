@@ -7,6 +7,14 @@
 
 $cpost = get_queried_object();
 
+$featured_image = true;
+
+if ( is_singular( 'post' ) ) {
+	$featured_image = get_theme_mod( 'post_featured_image', true );
+} else if ( is_singular( 'project') ) {
+	$featured_image = get_theme_mod( 'project_featured_image', true );
+}
+
 get_header();
 ?>
 
@@ -27,7 +35,7 @@ get_header();
 
 	</div>
 
-	<?php if ( has_post_thumbnail() ) { ?>
+	<?php if ( has_post_thumbnail() && $featured_image ) { ?>
 		<div class="flex-row entry-preview-single centered">
 			<div class="flex-cell flex-md-10">
 				<?php knd_single_post_thumbnail( $cpost->ID, 'full', 'standard' ); ?>

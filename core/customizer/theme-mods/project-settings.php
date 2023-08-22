@@ -17,6 +17,14 @@ Kirki::add_section(
 
 Kirki::add_field( 'knd_theme_mod', array(
 	'type'     => 'toggle',
+	'settings' => 'project_featured_image',
+	'label'    => esc_html__( 'Featured image', 'knd' ),
+	'section'  => 'project_settings',
+	'default'  => '1',
+) );
+
+Kirki::add_field( 'knd_theme_mod', array(
+	'type'     => 'toggle',
 	'settings' => 'project_social_shares',
 	'label'    => esc_html__( 'Social Shares', 'knd' ),
 	'section'  => 'project_settings',
