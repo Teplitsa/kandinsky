@@ -653,8 +653,18 @@ if ( ! function_exists( 'knd_breadcrumbs' ) ) {
 	 * Breadcrumbs
 	 */
 	function knd_breadcrumbs() {
-		if ( function_exists('yoast_breadcrumb') ) {
+		if ( function_exists( 'yoast_breadcrumb' ) ) {
+
 			yoast_breadcrumb( '<div class="knd-breadcrumbs">', '</div>' );
+
+		} elseif ( function_exists( 'rank_math_the_breadcrumbs' ) ) {
+
+			$rank_math_args = array(
+				'wrap_before' => '<div class="knd-breadcrumbs">',
+				'wrap_after'  => '</div>',
+			);
+			rank_math_the_breadcrumbs( $rank_math_args );
+
 		}
 	}
 }
