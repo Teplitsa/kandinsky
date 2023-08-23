@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-25 16:27+0300\n"
-"PO-Revision-Date: 2023-07-25 16:27+0300\n"
+"POT-Creation-Date: 2023-08-23 08:49+0300\n"
+"PO-Revision-Date: 2023-08-23 08:49+0300\n"
 "Last-Translator: ahaenor <ahaenor@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -459,19 +459,19 @@ msgstr "её официальном сайте"
 msgid "A quick guide to working with the site - %s."
 msgstr "Краткое руководство по работе с сайтом - %s."
 
-#: core/assets.php:72 core/nav-menu.php:18 core/nav-menu.php:29
+#: core/assets.php:79 core/nav-menu.php:18 core/nav-menu.php:29
 msgid "Expand child menu"
 msgstr "Развернуть дочернее меню"
 
-#: core/assets.php:73
+#: core/assets.php:80
 msgid "Collapse child menu"
 msgstr "Свернуть дочернее меню"
 
-#: core/assets.php:74
+#: core/assets.php:81
 msgid "Off-Canvas is open"
 msgstr "Боковая панель открыта"
 
-#: core/assets.php:75
+#: core/assets.php:82
 msgid "Off-Canvas is closed"
 msgstr "Боковая панель закрыта"
 
@@ -1027,33 +1027,38 @@ msgstr "Страница поста"
 
 #: core/customizer/theme-mods/post-settings.php:21
 #: core/customizer/theme-mods/project-settings.php:21
-msgid "Social Shares"
-msgstr "Социальные сети"
+msgid "Featured image"
+msgstr "Изображение записи"
 
 #: core/customizer/theme-mods/post-settings.php:29
 #: core/customizer/theme-mods/project-settings.php:29
+msgid "Social Shares"
+msgstr "Социальные сети"
+
+#: core/customizer/theme-mods/post-settings.php:37
+#: core/customizer/theme-mods/project-settings.php:37
 #: modules/project/hooks.php:101
 msgid "Tags"
 msgstr "Теги"
 
-#: core/customizer/theme-mods/post-settings.php:37
+#: core/customizer/theme-mods/post-settings.php:45
 msgid "Related Posts"
 msgstr "Похожие статьи"
 
-#: core/customizer/theme-mods/post-settings.php:45
+#: core/customizer/theme-mods/post-settings.php:53
 msgid "Comments"
 msgstr "Комментарии"
 
-#: core/customizer/theme-mods/post-settings.php:53
+#: core/customizer/theme-mods/post-settings.php:61
 msgid "Related Posts Title"
 msgstr "Заголовок похожих статей"
 
-#: core/customizer/theme-mods/post-settings.php:55 core/template-tags.php:742
+#: core/customizer/theme-mods/post-settings.php:63 core/template-tags.php:753
 msgid "Related posts"
 msgstr "Познакомьтесь с другими проектами"
 
-#: core/customizer/theme-mods/post-settings.php:68
-#: core/customizer/theme-mods/project-settings.php:60
+#: core/customizer/theme-mods/post-settings.php:76
+#: core/customizer/theme-mods/project-settings.php:68
 msgid "Bottom Blocks"
 msgstr "Нижние блоки"
 
@@ -1061,16 +1066,16 @@ msgstr "Нижние блоки"
 msgid "Project Settings"
 msgstr "Страница проекта"
 
-#: core/customizer/theme-mods/project-settings.php:37
+#: core/customizer/theme-mods/project-settings.php:45
 msgid "Related Projects"
 msgstr "Познакомьтесь с другими проектами"
 
-#: core/customizer/theme-mods/project-settings.php:45
+#: core/customizer/theme-mods/project-settings.php:53
 msgid "Related Projects Title"
 msgstr "Заголовок похожие проекты"
 
-#: core/customizer/theme-mods/project-settings.php:47
-#: core/template-tags.php:755 vendor/envato_setup/envato_setup.php:1218
+#: core/customizer/theme-mods/project-settings.php:55
+#: core/template-tags.php:766 vendor/envato_setup/envato_setup.php:1218
 msgid "Related projects"
 msgstr "Познакомьтесь с другими проектами"
 
@@ -1220,8 +1225,8 @@ msgstr "Команда"
 
 #: core/editor/blocks/projects.php:18 modules/project/hooks.php:15
 #: modules/project/hooks.php:17 modules/starter/plot_config.php:130
-#: modules/starter/plot_config.php:148 src/js/blocks/projects.js:89
-#: src/js/blocks/projects.js:107
+#: modules/starter/plot_config.php:148 src/js/blocks/projects.js:90
+#: src/js/blocks/projects.js:108
 msgid "Projects"
 msgstr "Проекты"
 
@@ -1271,6 +1276,16 @@ msgstr ""
 
 #: core/editor/pattern.php:123 core/editor/pattern.php:126
 msgid "Четыре материала с подложками (Черта)"
+msgstr ""
+
+#: core/editor/pattern.php:134
+#, fuzzy
+#| msgid "Default"
+msgid "Card Default"
+msgstr "По умолчанию"
+
+#: core/editor/pattern.php:144 core/editor/pattern.php:154
+msgid "Card Horizontal"
 msgstr ""
 
 #: core/editor/setup.php:45
@@ -1460,11 +1475,11 @@ msgstr "Закрыть боковую панель"
 msgid "Button text"
 msgstr "Текст кнопки"
 
-#: core/template-tags.php:641 functions.php:78 template-parts/offcanvas.php:29
+#: core/template-tags.php:642 functions.php:78 template-parts/offcanvas.php:29
 msgid "Primary menu"
 msgstr "Главное меню"
 
-#: core/template-tags.php:922
+#: core/template-tags.php:933
 msgid "назад"
 msgstr ""
 
@@ -1483,7 +1498,7 @@ msgid "Our Work"
 msgstr "Наша работа"
 
 #: footer.php:76 modules/starter/plot_config.php:147
-#: modules/starter/plot_data_builder.php:563 src/js/blocks/news.js:47
+#: modules/starter/plot_data_builder.php:563 src/js/blocks/news.js:48
 #: vendor/envato_setup/envato_setup.php:1215
 #: vendor/envato_setup/envato_setup.php:1242
 msgid "News"
@@ -1709,8 +1724,8 @@ msgstr "Краткий список жертвователей"
 #: modules/donations/widgets.php:125 src/js/blocks/cover.js:159
 #: src/js/blocks/events.js:288 src/js/blocks/info.js:190
 #: src/js/blocks/info.js:229 src/js/blocks/info.js:268
-#: src/js/blocks/news.js:892 src/js/blocks/partners.js:203
-#: src/js/blocks/people.js:243 src/js/blocks/projects.js:326
+#: src/js/blocks/news.js:893 src/js/blocks/partners.js:203
+#: src/js/blocks/people.js:243 src/js/blocks/projects.js:387
 msgid "Heading"
 msgstr "Заголовок"
 
@@ -1726,7 +1741,7 @@ msgstr "Исключить кампании:"
 msgid "Partner Categories"
 msgstr "Категория партнеров"
 
-#: modules/org/hooks.php:11 src/js/blocks/news.js:266
+#: modules/org/hooks.php:11 src/js/blocks/news.js:267
 #: src/js/blocks/partners.js:162 src/js/blocks/people.js:199
 msgid "All Categories"
 msgstr "Все категории"
@@ -1846,7 +1861,7 @@ msgstr "Поиск Тегов"
 msgid "Popular Tags"
 msgstr "Популярные теги"
 
-#: modules/project/hooks.php:93 src/js/blocks/projects.js:177
+#: modules/project/hooks.php:93 src/js/blocks/projects.js:190
 msgid "All Tags"
 msgstr "Все метки"
 
@@ -2103,9 +2118,9 @@ msgstr "Нижний"
 
 #: src/js/blocks/cover.js:156 src/js/blocks/cta.js:142
 #: src/js/blocks/events.js:264 src/js/blocks/hero.js:182
-#: src/js/blocks/info.js:164 src/js/blocks/news.js:812
+#: src/js/blocks/info.js:164 src/js/blocks/news.js:813
 #: src/js/blocks/partners.js:200 src/js/blocks/people.js:239
-#: src/js/blocks/projects.js:323 vendor/envato_setup/envato_setup.php:327
+#: src/js/blocks/projects.js:365 vendor/envato_setup/envato_setup.php:327
 #: vendor/envato_setup/envato_setup.php:727
 msgid "Settings"
 msgstr "Параметры"
@@ -2137,17 +2152,17 @@ msgstr "Минимальная высота"
 
 #: src/js/blocks/cover.js:271 src/js/blocks/cta.js:268
 #: src/js/blocks/events.js:381 src/js/blocks/hero.js:587
-#: src/js/blocks/info.js:302 src/js/blocks/news.js:713
+#: src/js/blocks/info.js:302 src/js/blocks/news.js:714
 #: src/js/blocks/partners.js:273 src/js/blocks/people.js:314
-#: src/js/blocks/projects.js:374
+#: src/js/blocks/projects.js:325
 msgid "Colors"
 msgstr "Цвета"
 
 #: src/js/blocks/cover.js:277 src/js/blocks/cta.js:274
 #: src/js/blocks/events.js:387 src/js/blocks/hero.js:600
-#: src/js/blocks/info.js:308 src/js/blocks/news.js:718
+#: src/js/blocks/info.js:308 src/js/blocks/news.js:719
 #: src/js/blocks/partners.js:279 src/js/blocks/people.js:320
-#: src/js/blocks/projects.js:380 src/js/blocks/recommend.js:117
+#: src/js/blocks/projects.js:330 src/js/blocks/recommend.js:117
 msgid "Background Color"
 msgstr "Цвет фона"
 
@@ -2255,24 +2270,24 @@ msgstr "Плитка"
 msgid "Include events"
 msgstr "Включить мероприятия"
 
-#: src/js/blocks/events.js:196 src/js/blocks/news.js:324
-#: src/js/blocks/projects.js:235
+#: src/js/blocks/events.js:196 src/js/blocks/news.js:325
+#: src/js/blocks/projects.js:248
 msgid "Link Title"
 msgstr "Текст ссылки"
 
 #: src/js/blocks/events.js:207 src/js/blocks/info.js:214
 #: src/js/blocks/info.js:253 src/js/blocks/info.js:292
-#: src/js/blocks/news.js:335 src/js/blocks/projects.js:246
+#: src/js/blocks/news.js:336 src/js/blocks/projects.js:259
 msgid "Link Url"
 msgstr "Адрес ссылки"
 
-#: src/js/blocks/events.js:220 src/js/blocks/news.js:348
-#: src/js/blocks/projects.js:259
+#: src/js/blocks/events.js:220 src/js/blocks/news.js:349
+#: src/js/blocks/projects.js:272
 msgid "Remove Link"
 msgstr "Удалить ссылку"
 
-#: src/js/blocks/events.js:244 src/js/blocks/news.js:372
-#: src/js/blocks/projects.js:283
+#: src/js/blocks/events.js:244 src/js/blocks/news.js:373
+#: src/js/blocks/projects.js:296
 msgid "Add Link"
 msgstr "Добавить ссылку"
 
@@ -2284,20 +2299,20 @@ msgstr "Редактировать мероприятия"
 msgid "Events to show"
 msgstr "Сколько мероприятий показывать"
 
-#: src/js/blocks/events.js:312 src/js/blocks/news.js:926
-#: src/js/blocks/projects.js:363
+#: src/js/blocks/events.js:312 src/js/blocks/news.js:927
+#: src/js/blocks/projects.js:424
 msgid "Heading Links"
 msgstr "Ссылки в шапке"
 
-#: src/js/blocks/events.js:323 src/js/blocks/news.js:1078
+#: src/js/blocks/events.js:323 src/js/blocks/news.js:1079
 #: src/js/blocks/partners.js:301 src/js/blocks/people.js:362
-#: src/js/blocks/projects.js:422
+#: src/js/blocks/projects.js:547
 msgid "Query"
 msgstr "Сортировка и фильтрация"
 
-#: src/js/blocks/events.js:329 src/js/blocks/news.js:1084
+#: src/js/blocks/events.js:329 src/js/blocks/news.js:1085
 #: src/js/blocks/partners.js:307 src/js/blocks/people.js:368
-#: src/js/blocks/projects.js:428
+#: src/js/blocks/projects.js:553
 msgid "Order by"
 msgstr "Сортировать по"
 
@@ -2313,9 +2328,9 @@ msgstr "Дате начала мероприятия"
 msgid "Included events"
 msgstr "Включенные мероприятия"
 
-#: src/js/blocks/events.js:344 src/js/blocks/news.js:1100
+#: src/js/blocks/events.js:344 src/js/blocks/news.js:1101
 #: src/js/blocks/partners.js:323 src/js/blocks/people.js:384
-#: src/js/blocks/projects.js:444
+#: src/js/blocks/projects.js:569
 msgid "Offset"
 msgstr "Пропустить"
 
@@ -2336,12 +2351,12 @@ msgid "Future events"
 msgstr "Предстоящие мероприятия"
 
 #: src/js/blocks/events.js:394 src/js/blocks/info.js:318
-#: src/js/blocks/news.js:725 src/js/blocks/partners.js:289
-#: src/js/blocks/people.js:330 src/js/blocks/projects.js:390
+#: src/js/blocks/news.js:726 src/js/blocks/partners.js:289
+#: src/js/blocks/people.js:330 src/js/blocks/projects.js:337
 msgid "Heading Color"
 msgstr "Цвет заголовка"
 
-#: src/js/blocks/events.js:401 src/js/blocks/projects.js:410
+#: src/js/blocks/events.js:401
 msgid "Links Color"
 msgstr "Цвет ссылок"
 
@@ -2362,10 +2377,8 @@ msgid "Call to action text"
 msgstr "Текст «призыва к действию» (CTA)"
 
 #: src/js/blocks/hero.js:226
-#, fuzzy
-#| msgid "Pages"
 msgid "Images"
-msgstr "Страницы"
+msgstr "Изображения"
 
 #: src/js/blocks/hero.js:238
 msgid "Displayed on the right side of the Call to action text"
@@ -2399,7 +2412,7 @@ msgstr "Цвета начала градиента"
 msgid "Overlay Gradient End Color"
 msgstr "Цвет окончания градиента"
 
-#: src/js/blocks/hero.js:493 src/js/blocks/news.js:594
+#: src/js/blocks/hero.js:493 src/js/blocks/news.js:595
 msgid "Typography"
 msgstr "Типографика"
 
@@ -2534,299 +2547,299 @@ msgstr "Цвет ссылки колонки при наведении"
 msgid "Column Link Underline Color"
 msgstr "Цвет подчеркивание ссылки колонки"
 
-#: src/js/blocks/news.js:50 src/js/blocks/projects.js:94
+#: src/js/blocks/news.js:51 src/js/blocks/projects.js:95
 msgid "news"
 msgstr "news"
 
-#: src/js/blocks/news.js:50 src/js/blocks/projects.js:95
+#: src/js/blocks/news.js:51 src/js/blocks/projects.js:96
 msgid "posts"
 msgstr "posts"
 
-#: src/js/blocks/news.js:50 src/js/blocks/projects.js:96
+#: src/js/blocks/news.js:51 src/js/blocks/projects.js:97
 msgid "articles"
 msgstr "articles"
 
-#: src/js/blocks/news.js:51
+#: src/js/blocks/news.js:52
 msgid "News tile in three column."
 msgstr "Плитка новостей в три колонки."
 
-#: src/js/blocks/news.js:387
+#: src/js/blocks/news.js:388
 msgid "Small"
 msgstr ""
 
-#: src/js/blocks/news.js:392
+#: src/js/blocks/news.js:393
 msgid "Normal"
 msgstr ""
 
-#: src/js/blocks/news.js:397 src/js/blocks/news.js:654
+#: src/js/blocks/news.js:398 src/js/blocks/news.js:655
 msgid "Medium"
 msgstr ""
 
-#: src/js/blocks/news.js:402
+#: src/js/blocks/news.js:403
 msgid "Large"
 msgstr ""
 
-#: src/js/blocks/news.js:415
+#: src/js/blocks/news.js:416
 msgid "Показать аватар автора"
 msgstr ""
 
-#: src/js/blocks/news.js:431
+#: src/js/blocks/news.js:432
 msgid "Max number of words in excerpt"
 msgstr ""
 
-#: src/js/blocks/news.js:450
+#: src/js/blocks/news.js:451
 msgid "Формат даты"
 msgstr ""
 
-#: src/js/blocks/news.js:465
+#: src/js/blocks/news.js:466
 msgid "Относительная дата публикации"
 msgstr ""
 
-#: src/js/blocks/news.js:488
+#: src/js/blocks/news.js:489
 msgid "Change content position"
 msgstr ""
 
-#: src/js/blocks/news.js:504
+#: src/js/blocks/news.js:505
 msgid "Image Width"
 msgstr ""
 
-#: src/js/blocks/news.js:511
+#: src/js/blocks/news.js:512
 msgid "1 / 3"
 msgstr ""
 
-#: src/js/blocks/news.js:515
+#: src/js/blocks/news.js:516
 msgid "1 / 2"
 msgstr ""
 
-#: src/js/blocks/news.js:519
+#: src/js/blocks/news.js:520
 msgid "2 / 3"
 msgstr ""
 
-#: src/js/blocks/news.js:534
+#: src/js/blocks/news.js:535
 #, fuzzy
 #| msgid "Image only"
 msgid "Image Position"
 msgstr "Только изображение"
 
-#: src/js/blocks/news.js:541
+#: src/js/blocks/news.js:542
 msgid "Align Left"
 msgstr ""
 
-#: src/js/blocks/news.js:545
+#: src/js/blocks/news.js:546
 msgid "Align Right"
 msgstr "Выровнять вправо"
 
-#: src/js/blocks/news.js:556
+#: src/js/blocks/news.js:557
 msgid "Posts to show"
 msgstr "Сколько постов показывать"
 
-#: src/js/blocks/news.js:571 src/js/blocks/partners.js:246
-#: src/js/blocks/people.js:287 src/js/blocks/projects.js:348
+#: src/js/blocks/news.js:572 src/js/blocks/partners.js:246
+#: src/js/blocks/people.js:287 src/js/blocks/projects.js:409
 msgid "Columns"
 msgstr "Колонки"
 
-#: src/js/blocks/news.js:601
+#: src/js/blocks/news.js:602
 msgid "Размер шрифта заголовка (Desktop)"
 msgstr ""
 
-#: src/js/blocks/news.js:622
+#: src/js/blocks/news.js:623
 msgid "Размер шрифта заголовка (Mobile)"
 msgstr ""
 
-#: src/js/blocks/news.js:643
+#: src/js/blocks/news.js:644
 msgid "Жирность шрифта заголовка"
 msgstr ""
 
-#: src/js/blocks/news.js:650
+#: src/js/blocks/news.js:651
 msgid "Regular"
 msgstr ""
 
-#: src/js/blocks/news.js:658
+#: src/js/blocks/news.js:659
 msgid "Semi Bold"
 msgstr ""
 
-#: src/js/blocks/news.js:662
+#: src/js/blocks/news.js:663
 msgid "Bold"
 msgstr ""
 
-#: src/js/blocks/news.js:673
+#: src/js/blocks/news.js:674
 msgid "Размер шрифта цитаты (Desktop)"
 msgstr ""
 
-#: src/js/blocks/news.js:693
+#: src/js/blocks/news.js:694
 msgid "Размер шрифта цитаты (Mobile)"
 msgstr ""
 
-#: src/js/blocks/news.js:732
+#: src/js/blocks/news.js:733
 msgid "Цвет фона карточки"
 msgstr ""
 
-#: src/js/blocks/news.js:739
+#: src/js/blocks/news.js:740
 msgid "Цвет наложения"
 msgstr ""
 
-#: src/js/blocks/news.js:746
+#: src/js/blocks/news.js:747
 msgid "Цвет наложения при наведении"
 msgstr ""
 
-#: src/js/blocks/news.js:755
+#: src/js/blocks/news.js:756 src/js/blocks/projects.js:344
 msgid "Цвет названия"
 msgstr ""
 
-#: src/js/blocks/news.js:762
+#: src/js/blocks/news.js:763
 msgid "Цвет названия при наведении"
 msgstr ""
 
-#: src/js/blocks/news.js:770
+#: src/js/blocks/news.js:771
 msgid "Цвет цитаты"
 msgstr ""
 
-#: src/js/blocks/news.js:777
+#: src/js/blocks/news.js:778 src/js/blocks/projects.js:351
 msgid "Цвет ссылок"
 msgstr ""
 
-#: src/js/blocks/news.js:784
+#: src/js/blocks/news.js:785
 msgid "Цвет ссылок при наведении"
 msgstr ""
 
-#: src/js/blocks/news.js:791
+#: src/js/blocks/news.js:792
 msgid "Цвет фона ссылок при наведении"
 msgstr ""
 
-#: src/js/blocks/news.js:798
+#: src/js/blocks/news.js:799
 msgid "Date Color"
 msgstr "Цвет даты"
 
-#: src/js/blocks/news.js:825
+#: src/js/blocks/news.js:826
 msgid "Edit news"
 msgstr "Редактировать новости"
 
-#: src/js/blocks/news.js:837 src/js/blocks/partners.js:213
+#: src/js/blocks/news.js:838 src/js/blocks/partners.js:213
 #: src/js/blocks/people.js:254
 msgid "Layout"
 msgstr "Шаблон"
 
-#: src/js/blocks/news.js:848
+#: src/js/blocks/news.js:849
 msgid "Изображение над текстом"
 msgstr ""
 
-#: src/js/blocks/news.js:852
+#: src/js/blocks/news.js:853
 msgid "Изображение рядом с текстом"
 msgstr ""
 
-#: src/js/blocks/news.js:856
+#: src/js/blocks/news.js:857
 msgid "Tекст поверх изображения"
 msgstr ""
 
-#: src/js/blocks/news.js:870
+#: src/js/blocks/news.js:871
 msgid "Отступ сверху"
 msgstr ""
 
-#: src/js/blocks/news.js:880
+#: src/js/blocks/news.js:881
 msgid "Отступ снизу"
 msgstr ""
 
-#: src/js/blocks/news.js:898
+#: src/js/blocks/news.js:899
 msgid "Текст заголовка"
 msgstr ""
 
-#: src/js/blocks/news.js:906
+#: src/js/blocks/news.js:907
 msgid "Ссылка заголовка"
 msgstr ""
 
-#: src/js/blocks/news.js:915
+#: src/js/blocks/news.js:916
 msgid "Выравнивать по центру"
 msgstr ""
 
-#: src/js/blocks/news.js:935
+#: src/js/blocks/news.js:936 src/js/blocks/projects.js:483
 msgid "Настройки изображения"
 msgstr ""
 
-#: src/js/blocks/news.js:942
+#: src/js/blocks/news.js:943
 msgid "Показывать изображение"
 msgstr ""
 
-#: src/js/blocks/news.js:952
+#: src/js/blocks/news.js:953 src/js/blocks/projects.js:489
 msgid "Ориентация изображения"
 msgstr ""
 
-#: src/js/blocks/news.js:959
+#: src/js/blocks/news.js:960 src/js/blocks/projects.js:496
 msgid "Оригинал"
 msgstr ""
 
-#: src/js/blocks/news.js:963
+#: src/js/blocks/news.js:964 src/js/blocks/projects.js:500
 msgid "Альбомный 16:9"
 msgstr ""
 
-#: src/js/blocks/news.js:967
+#: src/js/blocks/news.js:968 src/js/blocks/projects.js:504
 msgid "Альбомный 4:3"
 msgstr ""
 
-#: src/js/blocks/news.js:971
+#: src/js/blocks/news.js:972 src/js/blocks/projects.js:508
 msgid "Квадтарный"
 msgstr ""
 
-#: src/js/blocks/news.js:975
+#: src/js/blocks/news.js:976 src/js/blocks/projects.js:512
 msgid "Портретный"
 msgstr ""
 
-#: src/js/blocks/news.js:984
+#: src/js/blocks/news.js:985 src/js/blocks/projects.js:521
 msgid "Размер изображения"
 msgstr ""
 
-#: src/js/blocks/news.js:1000
+#: src/js/blocks/news.js:1001 src/js/blocks/projects.js:533
 msgid "Округление углов"
 msgstr ""
 
-#: src/js/blocks/news.js:1014
+#: src/js/blocks/news.js:1015
 msgid "Метаполя"
 msgstr ""
 
-#: src/js/blocks/news.js:1021
+#: src/js/blocks/news.js:1022
 msgid "Показать автора"
 msgstr ""
 
-#: src/js/blocks/news.js:1033
+#: src/js/blocks/news.js:1034
 msgid "Показать категорию"
 msgstr ""
 
-#: src/js/blocks/news.js:1043
+#: src/js/blocks/news.js:1044
 msgid "Показать название статьи"
 msgstr ""
 
-#: src/js/blocks/news.js:1053
+#: src/js/blocks/news.js:1054
 msgid "Показать отрывок"
 msgstr ""
 
-#: src/js/blocks/news.js:1065
+#: src/js/blocks/news.js:1066
 msgid "Показать дату"
 msgstr ""
 
-#: src/js/blocks/news.js:1086 src/js/blocks/partners.js:309
-#: src/js/blocks/people.js:370 src/js/blocks/projects.js:430
+#: src/js/blocks/news.js:1087 src/js/blocks/partners.js:309
+#: src/js/blocks/people.js:370 src/js/blocks/projects.js:555
 msgid "Newest to oldest"
 msgstr "От новых к старым"
 
-#: src/js/blocks/news.js:1087 src/js/blocks/partners.js:310
-#: src/js/blocks/people.js:371 src/js/blocks/projects.js:431
+#: src/js/blocks/news.js:1088 src/js/blocks/partners.js:310
+#: src/js/blocks/people.js:371 src/js/blocks/projects.js:556
 msgid "Oldest to newest"
 msgstr "От старых к новым"
 
-#: src/js/blocks/news.js:1088 src/js/blocks/partners.js:311
-#: src/js/blocks/people.js:372 src/js/blocks/projects.js:432
+#: src/js/blocks/news.js:1089 src/js/blocks/partners.js:311
+#: src/js/blocks/people.js:372 src/js/blocks/projects.js:557
 msgid "A → Z"
 msgstr "А → Я"
 
-#: src/js/blocks/news.js:1089 src/js/blocks/partners.js:312
-#: src/js/blocks/people.js:373 src/js/blocks/projects.js:433
+#: src/js/blocks/news.js:1090 src/js/blocks/partners.js:312
+#: src/js/blocks/people.js:373 src/js/blocks/projects.js:558
 msgid "Z → A"
 msgstr "Я → А"
 
-#: src/js/blocks/news.js:1105
+#: src/js/blocks/news.js:1106
 msgid "Number of posts to skip"
 msgstr "Сколько постов пропустить"
 
-#: src/js/blocks/news.js:1114 src/js/blocks/partners.js:337
+#: src/js/blocks/news.js:1115 src/js/blocks/partners.js:337
 #: src/js/blocks/people.js:398
 msgid "Select category"
 msgstr "Выберите категорию"
@@ -2919,31 +2932,27 @@ msgstr "Цвет описания"
 msgid "Number of peoples to skip"
 msgstr "Сколько людей пропустить"
 
-#: src/js/blocks/projects.js:92
+#: src/js/blocks/projects.js:93
 msgid "Projects tile in three column."
 msgstr "Плитка проектов в три колонки."
 
-#: src/js/blocks/projects.js:97
+#: src/js/blocks/projects.js:98
 msgid "projects"
 msgstr "projects"
 
-#: src/js/blocks/projects.js:311
+#: src/js/blocks/projects.js:377
 msgid "Edit projects"
 msgstr "Редактировать проекты"
 
-#: src/js/blocks/projects.js:335
+#: src/js/blocks/projects.js:396
 msgid "Projects to show"
 msgstr "Сколько проектов показывать"
 
-#: src/js/blocks/projects.js:400
-msgid "Post Title Color"
-msgstr "Цвет названия поста"
-
-#: src/js/blocks/projects.js:449
+#: src/js/blocks/projects.js:574
 msgid "Number of projects to skip"
 msgstr "Сколько проектов пропустить"
 
-#: src/js/blocks/projects.js:458
+#: src/js/blocks/projects.js:583
 msgid "Select tag"
 msgstr "Выбрать метку"
 
@@ -3908,6 +3917,9 @@ msgstr ""
 msgid "OK, I've got it!"
 msgstr "Понятно!"
 
+#~ msgid "Post Title Color"
+#~ msgstr "Цвет названия поста"
+
 #~ msgid "What are we doing?"
 #~ msgstr "Что делаем?"
 
@@ -4154,9 +4166,6 @@ msgstr "Понятно!"
 
 #~ msgid "Remove"
 #~ msgstr "Удалить"
-
-#~ msgid "Select image"
-#~ msgstr "Выбрать изображение"
 
 #~ msgid "No File Selected"
 #~ msgstr "Изображение не выбрано"
