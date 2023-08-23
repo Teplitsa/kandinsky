@@ -95,6 +95,32 @@
 			display: block;
 			width: 100%;
 			height: auto;
+			object-fit: cover;
+			aspect-ratio: auto;
+		}
+
+		&.knd-ratio-landscape {
+			> img {
+				aspect-ratio: 4/3;
+			}
+		}
+
+		&.knd-ratio-landscape-16-9 {
+			> img {
+				aspect-ratio: 16/9;
+			}
+		}
+
+		&.knd-ratio-square {
+			> img {
+				aspect-ratio: 1/1;
+			}
+		}
+
+		&.knd-ratio-portrait {
+			> img {
+				aspect-ratio: 5/6;
+			}
 		}
 	}
 
@@ -108,6 +134,28 @@
 		align-items: flex-end;
 		flex-wrap: wrap;
 		margin-bottom: 0;
+	}
+
+	.knd-entry:not(.has-post-thumbnail) .entry-preview {
+		&:after {
+			padding: 0;
+			aspect-ratio: 16/9;
+		}
+		&.knd-ratio-landscape:after {
+			aspect-ratio: 4/3;
+		}
+
+		&.knd-ratio-landscape-16-9:after {
+			aspect-ratio: 16/9;
+		}
+
+		&.knd-ratio-square:after {
+			aspect-ratio: 1/1;
+		}
+
+		&.knd-ratio-portrait:after {
+			aspect-ratio: 5/6;
+		}
 	}
 
 }

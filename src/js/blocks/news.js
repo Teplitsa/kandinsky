@@ -13,6 +13,7 @@
 	const { TextControl, SelectControl, RangeControl, Dashicon, PanelBody, ToggleControl, Button, IconButton, Disabled, BaseControl, __experimentalUnitControl, __experimentalDivider } = components;
 
 	const { registerBlockType } = blocks;
+
 	const { InspectorControls, useBlockProps, PanelColorSettings, BlockControls,__experimentalBlockAlignmentMatrixControl } = blockEditor;
 
 	const { Fragment } = element;

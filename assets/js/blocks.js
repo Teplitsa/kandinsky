@@ -2363,6 +2363,7 @@
 	const { TextControl, SelectControl, RangeControl, Dashicon, PanelBody, ToggleControl, Button, IconButton, Disabled, BaseControl, __experimentalUnitControl, __experimentalDivider } = components;
 
 	const { registerBlockType } = blocks;
+
 	const { InspectorControls, useBlockProps, PanelColorSettings, BlockControls,__experimentalBlockAlignmentMatrixControl } = blockEditor;
 
 	const { Fragment } = element;
@@ -4336,14 +4337,15 @@
 
 	const { TextControl, SelectControl, RangeControl, ColorPalette, Button, Dashicon, PanelBody, ToggleControl, Disabled } = components;
 
-	const { registerBlockType, withColors, PanelColorSettings, getColorClassName, useBlockProps } = blocks;
-	const { InspectorControls, ColorPaletteControl } = blockEditor;
+	const { registerBlockType } = blocks;
+
+	const { InspectorControls, PanelColorSettings } = blockEditor;
 
 	const { Fragment } = element;
 
-	const { withState } = compose;
-
 	const { useSelect } = data;
+
+	const { withState } = compose;
 
 	const { __ } = i18n;
 
@@ -4440,6 +4442,10 @@
 				type: 'number',
 				default: 3
 			},
+			radius: {
+				type: 'number',
+				default: 5
+			},
 			align: {
 				type: 'string',
 				default: 'full',
@@ -4480,7 +4486,15 @@
 			queryTag: {
 				type: 'string',
 				default: 0,
-			}
+			},
+			imageOrientation: {
+				type: 'string',
+				default: 'landscape',
+			},
+			imageSize: {
+				type: 'string',
+				default: 'post-thumbnail',
+			},
 		},
 
 		example: {
@@ -4619,35 +4633,83 @@
 				)
 			};
 
+			function getImageSizes() {
+				var imageSizes = [];
+				Object.entries( kndBlock.imageSizes ).forEach( ( [ key, value ] ) => {
+					imageSizes.push({ label: value, value: key });
+				});
+				return imageSizes;
+			}
+
 			return (
 				el( Fragment, {},
 
-					el( InspectorControls, {},
+					el( InspectorControls, {
+							group: 'styles',
+						},
 
-						el( 'div',
-							{
-								className: 'knd-editor-block-card__description'
-							},
-
-							el( 'a',
+						el( PanelColorSettings, {
+							title: __( 'Colors', 'knd' ),
+							initialOpen: true,
+							enableAlpha: true,
+							colorSettings: [
 								{
-									href: kndBlock.getAdminUrl.projects,
-									target: '_blank',
-								},
-								__( 'Edit projects', 'knd' ),
-								' ',
-								el( Dashicon,
-									{
-										icon: 'external',
+									label: __( 'Background Color', 'knd' ),
+									value: props.attributes.backgroundColor,
+									onChange: ( val ) => {
+										props.setAttributes( { backgroundColor: val } );
 									}
-								),
-							),
-						),
+								},
+								{
+									label: __( 'Heading Color', 'knd' ),
+									value: props.attributes.headingColor,
+									onChange: ( val ) => {
+										props.setAttributes( { headingColor: val } );
+									}
+								},
+								{
+									label: __( 'Цвет названия', 'knd' ), // Post Title Color
+									value: props.attributes.titleColor,
+									onChange: ( val ) => {
+										props.setAttributes( { titleColor: val } );
+									}
+								},
+								{
+									label: __( 'Цвет ссылок', 'knd' ), // Links Color
+									value: props.attributes.linkColor,
+									onChange: ( val ) => {
+										props.setAttributes( { linkColor: val } );
+									}
+								},
+							]
+						}),
+					),
+
+					el( InspectorControls, {},
 
 						el( PanelBody,
 							{
 								title: __( 'Settings', 'knd' )
 							},
+							el( 'div',
+								{
+									className: 'knd-editor-block-panel__description'
+								},
+
+								el( 'a',
+									{
+										href: kndBlock.getAdminUrl.projects,
+										target: '_blank',
+									},
+									__( 'Edit projects', 'knd' ),
+									' ',
+									el( Dashicon,
+										{
+											icon: 'external',
+										}
+									),
+								),
+							),
 							el( TextControl, {
 								label: __( 'Heading', 'knd' ),
 								value: props.attributes.heading,
@@ -4695,52 +4757,116 @@
 
 						),
 
+						// el( PanelBody,
+						// 	{
+						// 		title: __( 'Colors', 'knd' ),
+						// 		initialOpen: false
+						// 	},
+
+						// 	el( ColorPaletteControl,
+						// 		{
+						// 			label: __( 'Background Color', 'knd' ),
+						// 			value: props.attributes.backgroundColor,
+						// 			onChange: ( val ) => {
+						// 				props.setAttributes( { backgroundColor: val } );
+						// 			}
+						// 		}
+						// 	),
+
+						// 	el( ColorPaletteControl,
+						// 		{
+						// 			label: __( 'Heading Color', 'knd' ),
+						// 			value: props.attributes.headingColor,
+						// 			onChange: ( val ) => {
+						// 				props.setAttributes( { headingColor: val } );
+						// 			}
+						// 		}
+						// 	),
+
+						// 	el( ColorPaletteControl,
+						// 		{
+						// 			label: __( 'Post Title Color', 'knd' ),
+						// 			value: props.attributes.titleColor,
+						// 			onChange: ( val ) => {
+						// 				props.setAttributes( { titleColor: val } );
+						// 			}
+						// 		}
+						// 	),
+
+						// 	el( ColorPaletteControl,
+						// 		{
+						// 			label: __( 'Links Color', 'knd' ),
+						// 			value: props.attributes.linkColor,
+						// 			onChange: ( val ) => {
+						// 				props.setAttributes( { linkColor: val } );
+						// 			}
+						// 		}
+						// 	),
+
+						// ),
+
 						el( PanelBody,
 							{
-								title: __( 'Colors', 'knd' ),
+								title: __( 'Настройки изображения', 'knd' ), // Featured image settings
 								initialOpen: false
 							},
 
-							el( ColorPaletteControl,
+							el( SelectControl,
 								{
-									label: __( 'Background Color', 'knd' ),
-									value: props.attributes.backgroundColor,
+									label: __( 'Ориентация изображения', 'knd' ), // Image Orientation
+									value: props.attributes.imageOrientation,
 									onChange: ( val ) => {
-										props.setAttributes( { backgroundColor: val } );
-									}
+										props.setAttributes( { imageOrientation: val } );
+									},
+									options: [
+										{
+											label: __( 'Оригинал', 'knd' ), // Original
+											value: 'original'
+										},
+										{
+											label: __( 'Альбомный 16:9', 'knd' ), // Landscape 16:9
+											value: 'landscape-16-9'
+										},
+										{
+											label: __( 'Альбомный 4:3', 'knd' ), // Landscape 4:3
+											value: 'landscape'
+										},
+										{
+											label: __( 'Квадтарный', 'knd' ), // Square
+											value: 'square'
+										},
+										{
+											label: __( 'Портретный', 'knd' ), // Portrait
+											value: 'portrait'
+										},
+									],
 								}
 							),
 
-							el( ColorPaletteControl,
+							el( SelectControl,
 								{
-									label: __( 'Heading Color', 'knd' ),
-									value: props.attributes.headingColor,
+									label: __( 'Размер изображения', 'knd' ), // Image Size
+									value: props.attributes.imageSize,
 									onChange: ( val ) => {
-										props.setAttributes( { headingColor: val } );
-									}
+										props.setAttributes( { imageSize: val } );
+									},
+									options: getImageSizes(),
+									
 								}
 							),
 
-							el( ColorPaletteControl,
+							el( RangeControl,
 								{
-									label: __( 'Post Title Color', 'knd' ),
-									value: props.attributes.titleColor,
+									label: __( 'Округление углов', 'knd' ), // Image Border Radius
+									value: props.attributes.radius,
+									initialPosition: 5,
+									min: 0,
+									max: 25,
 									onChange: ( val ) => {
-										props.setAttributes( { titleColor: val } );
+										props.setAttributes({ radius: val })
 									}
 								}
 							),
-
-							el( ColorPaletteControl,
-								{
-									label: __( 'Links Color', 'knd' ),
-									value: props.attributes.linkColor,
-									onChange: ( val ) => {
-										props.setAttributes( { linkColor: val } );
-									}
-								}
-							),
-
 						),
 
 						el( PanelBody,

@@ -25,6 +25,10 @@ register_block_type( 'knd/projects', array(
 			'type'    => 'integer',
 			'default' => 3,
 		),
+		'radius'     => array(
+			'type'    => 'integer',
+			'default' => 5,
+		),
 		'align'           => array(
 			'type'    => 'string',
 			'default' => 'full',
@@ -72,6 +76,14 @@ register_block_type( 'knd/projects', array(
 		'queryTag' => array(
 			'type' => 'string',
 			'default' => 0,
+		),
+		'imageOrientation'     => array(
+			'type'    => 'string',
+			'default' => 'landscape',
+		),
+		'imageSize'     => array(
+			'type'    => 'string',
+			'default' => 'post-thumbnail',
 		),
 	),
 ) );
@@ -136,6 +148,11 @@ function knd_block_projects_render_callback( $attr ) {
 		$style .= '--knd-block-link-color:' . $attr['linkColor'] . ';';
 	}
 
+	// Border Radius
+	if ( isset( $attr['radius'] ) ) {
+		$style .= '--knd-image-border-radius:' . $attr['radius'] . 'px;';
+	}
+
 	// Heading
 	$heading = '';
 	if ( isset( $attr['heading'] ) && $attr['heading'] ) {
@@ -146,6 +163,11 @@ function knd_block_projects_render_callback( $attr ) {
 	$attr_id = '';
 	if ( isset( $attr['anchor'] ) && $attr['anchor'] ) {
 		$attr_id = ' id="' . esc_attr( $attr['anchor'] ) . '"';
+	}
+
+	$image_size = 'post-thumbnail';
+	if ( isset( $attr['imageSize'] ) && $attr['imageSize'] ) {
+		$image_size = $attr['imageSize'];
 	}
 
 	$html  = '<div class="' . knd_block_class( $classes ) . '"' . $attr_id . ' style="' . $style . '">';
@@ -236,10 +258,12 @@ function knd_block_projects_render_callback( $attr ) {
 
 			$this_post = get_post( get_the_ID() );
 
+			$orientation_class = 'knd-ratio-' . $attr['imageOrientation'];
+
 			$html .= '<article class="' . esc_attr( join( ' ', get_post_class( 'knd-col knd-entry' ) ) ) . '">
 			<a href="' . get_the_permalink() . '" class="thumbnail-link">
-				<div class="entry-preview">
-					' . get_the_post_thumbnail( null, 'post-thumbnail', array( 'alt' => wp_trim_words( get_the_title(), 2 ), 'aria-hidden' => 'true' ) ) . '
+				<div class="entry-preview ' . $orientation_class . '">
+					' . get_the_post_thumbnail( null, $image_size, array( 'alt' => wp_trim_words( get_the_title(), 2 ), 'aria-hidden' => 'true' ) ) . '
 				</div>
 				' . the_title( '<h2 class="entry-title"><span>', '</span></h2>', false ) . '
 			</a>
