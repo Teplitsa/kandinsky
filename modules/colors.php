@@ -11,11 +11,11 @@ function knd_get_main_color() {
 
 function knd_get_theme_color( $color_name ) {
 	$main_color = knd_get_theme_mod( $color_name );
-	
+
 	if ( empty( $main_color ) ) {
 		$main_color = knd_get_deault_main_color();
 	}
-	
+
 	return $main_color;
 }
 
@@ -28,15 +28,15 @@ function knd_get_theme_color( $color_name ) {
  * https://gist.github.com/stephenharris/5532899
  */
 function knd_color_luminance( $hex, $percent ) {
-	
+
 	// validate hex string
 	$hex = preg_replace( '/[^0-9a-f]/i', '', $hex );
 	$new_hex = '#';
-	
+
 	if ( strlen( $hex ) < 6 ) {
 		$hex = $hex[0] + $hex[0] + $hex[1] + $hex[1] + $hex[2] + $hex[2];
 	}
-	
+
 	if ( $percent > 0 ) {
 		for ( $i = 0; $i <= 5; $i++ ) {
 			if ( ! $hex[$i] ) {
@@ -44,13 +44,13 @@ function knd_color_luminance( $hex, $percent ) {
 			}
 		}
 	}
-	
+
 	// convert to decimal and change luminosity
 	for ( $i = 0; $i < 3; $i++ ) {
 		$dec = hexdec( substr( $hex, $i * 2, 2 ) );
-		$dec = min( max( 0, $dec + $dec * $percent ), 255 );
+		$dec = round( min( max( 0, $dec + $dec * $percent ), 255 ) );
 		$new_hex .= str_pad( dechex( $dec ), 2, 0, STR_PAD_LEFT );
 	}
-	
+
 	return $new_hex;
 }
