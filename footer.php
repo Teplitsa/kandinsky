@@ -111,7 +111,7 @@ $copyright = sprintf( __( 'All materials of the site are avaliabe under license 
 				<div class="flex-cell flex-sm-8 flex-md-6">
 					<?php if ( get_theme_mod( 'footer_copyright', true ) ) { ?>
 						<div class="copy">
-							<?php echo get_theme_mod( 'footer_copyright_text', $copyright ); ?>
+							<?php echo do_shortcode( get_theme_mod( 'footer_copyright_text', $copyright ) ); ?>
 						</div>
 					<?php } ?>
 				</div>
