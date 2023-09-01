@@ -991,6 +991,7 @@ if ( ! function_exists( 'knd_block_post_thumbnail' ) ) {
 			$link_end   = '</a>';
 		}
 
+		$orientation_class = '';
 		if ( $options['layout'] !== 'type-3' ) {
 			$orientation_class = ' knd-ratio-' . $options['imageOrientation'];
 		}
