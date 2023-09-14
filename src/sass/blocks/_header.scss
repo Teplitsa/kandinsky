@@ -730,6 +730,7 @@
 					z-index: 11;
 					opacity: 0;
 					visibility: hidden;
+					pointer-events: none;
 				}
 
 				&:hover,
@@ -737,6 +738,7 @@
 					> .sub-menu {
 						opacity: 1;
 						visibility: visible;
+						pointer-events: all;
 					}
 				}
 			}

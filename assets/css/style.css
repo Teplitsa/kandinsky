@@ -2267,11 +2267,13 @@ body > svg {
 	z-index: 11;
 	opacity: 0;
 	visibility: hidden;
+	pointer-events: none;
 }
 
 .knd-header-nav > .menu > li.menu-item-has-children:hover > .sub-menu, .knd-header-nav > .menu > li.menu-item-has-children.focus > .sub-menu {
 	opacity: 1;
 	visibility: visible;
+	pointer-events: all;
 }
 
 .knd-header-nav > .menu > li > a {
