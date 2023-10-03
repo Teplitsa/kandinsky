@@ -8,13 +8,16 @@
 global $post;
 
 $post_index = $wp_query->current_post;
-
-$post_class = 'flex-cell flex-md-6 knd-post-item knd-entry';
+$post_type  = get_post_type( get_the_ID() );
+$post_class = array( 'flex-cell flex-md-6 knd-post-item knd-entry' );
 if ( 0 === $post_index || 1 === $post_index ) {
-	$post_class .= ' tpl-related-post';
+	$post_class['tpl'] = 'tpl-related-post';
 } else {
-	$post_class .= ' flex-lg-4 tpl-post';
+	$post_class['tpl']    = 'tpl-post';
+	$post_class['col-lg'] = 'flex-lg-4';
 }
+
+$post_class = apply_filters( 'knd_post_class', $post_class, $post_type, $post_index );
 
 ?>
 
