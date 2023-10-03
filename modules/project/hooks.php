@@ -6,6 +6,8 @@ function knd_register_post_type_project() {
 
 	// get blog page id.
 	$archive_slug = 'projects';
+	apply_filters( 'knd_project_archive_slug', $archive_slug );
+
 	if ( get_option( 'page_for_projects' ) && get_post_status( get_option( 'page_for_projects' ) ) ) {
 		$archive_slug = get_post_field( 'post_name', get_option( 'page_for_projects' ) );
 	}
