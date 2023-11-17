@@ -462,7 +462,6 @@ function knd_common_columns_names( $columns ) {
 add_filter( 'manage_posts_columns', 'knd_common_columns_names', 50, 2 );
 
 add_action( 'manage_pages_custom_column', 'knd_common_columns_content', 2, 2 );
-add_action( 'manage_posts_custom_column', 'knd_common_columns_content', 2, 2 );
 
 function knd_common_columns_content( $column_name, $post_id ) {
 	$cpost = get_post( $post_id );
