@@ -138,9 +138,9 @@ class KND_CssJs {
 		?>
 		<style>
 			:root {
-				--zoospas-color-main:  <?php echo $main_color;?>;
-				--zoospas-main-dark:   <?php echo $extra_dark_color;?>;
-				--zoospas-main-light:  <?php echo $extra_light_color;?>;
+				--zoospas-color-main:  <?php echo esc_attr( $main_color ); ?>;
+				--zoospas-main-dark:   <?php echo esc_attr( $extra_dark_color );?>;
+				--zoospas-main-light:  <?php echo esc_attr( $extra_light_color );?>;
 			}
 		</style>
 		<?php

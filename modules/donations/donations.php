@@ -43,7 +43,7 @@ function knd_amount_field($form){
 		foreach($supported_curr as $currency => $data) {
 
 		$variants = explode(',', $data['amount_settings']['fixed']);?>
-			<div class="<?php echo $currency;?> amount-variants-container" <?php echo $currency == $current_curr ? '' : 'style="display:none;"';?> >
+			<div class="<?php echo esc_attr( $currency ); ?> amount-variants-container" <?php echo $currency == $current_curr ? '' : 'style="display:none;"';?> >
 				<div class="amount-variants-row">
 					<?php foreach($variants as $i => $amount) { ?>
 						<label class="figure rdc-radio" title="<?php esc_attr_e( 'Please, specify your donation amount', 'knd' );?>">
@@ -169,9 +169,9 @@ function knd_leyka_inline_scripts(){
 	</script>
 	<style>
 		:root {
-			--color-main: 		<?php echo $colors[0];?>;
-			--color-main-dark: 	<?php echo $colors[1];?>;
-			--color-main-light: <?php echo $colors[2];?>;
+			--color-main: 		<?php echo esc_attr( $colors[0] ); ?>;
+			--color-main-dark: 	<?php echo esc_attr( $colors[1] ); ?>;
+			--color-main-light: <?php echo esc_attr( $colors[2] ); ?>;
 		}
 	</style>
 	<?php

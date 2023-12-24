@@ -42,7 +42,7 @@ function knd_related_post_card( WP_Post $cpost ) {
 function knd_related_post_link( WP_Post $cpost ) {
 	$pl = get_permalink( $cpost );
 	?>
-<a href="<?php echo $pl; ?>" class="entry-link"><?php echo get_the_title($cpost);?></h4></a>
+<a href="<?php echo esc_url( $pl ); ?>" class="entry-link"><?php echo get_the_title($cpost);?></h4></a>
 <?php
 }
 
@@ -51,7 +51,7 @@ function knd_project_card( WP_Post $cpost ) {
 	$pl = get_permalink( $cpost );?>
 
 <article <?php post_class('flex-cell flex-md-4 tpl-project card', $cpost);?>>
-	<a href="<?php echo $pl; ?>" class="entry-link">
+	<a href="<?php echo esc_url( $pl ); ?>" class="entry-link">
 		<div class="entry-preview"><?php echo knd_post_thumbnail($cpost->ID, 'post-thumbnail');?></div>
 		<h2 class="entry-title">
 			<span><?php echo get_the_title($cpost);?></span>

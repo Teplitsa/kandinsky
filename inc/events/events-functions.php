@@ -281,7 +281,7 @@ function knd_em_options_page_tab_custom(){
 					?>
 				</tbody>
 				<?php
-					echo $save_button;
+					echo wp_kses_post( $save_button );
 				?>
 			</table>
 		</div> <!-- . inside -->
@@ -367,9 +367,9 @@ function knd_em_options_booking_form_options(){
 								<i class="dashicons dashicons-ellipsis"></i>
 								<i class="dashicons dashicons-ellipsis"></i>
 							</div>
-							<input name="dbem_bookings_custom_fields[<?php echo $key; ?>][order]" class="bookings-custom-field-order" type="hidden" value="<?php echo esc_attr( $order++ ); ?>">
-							<input name="dbem_bookings_custom_fields[<?php echo $key; ?>][label]" class="bookings-custom-field-label"  type="text" value="<?php echo esc_attr( $field_label ); ?>" placeholder="<?php esc_html_e( 'Label', 'knd' ); ?>">
-							<input name="dbem_bookings_custom_fields[<?php echo $key; ?>][slug]" class="bookings-custom-field-slug"  type="text" value="<?php echo esc_attr( $field_slug ); ?>" placeholder="<?php esc_html_e( 'slug', 'knd' ); ?>" <?php wp_readonly( $disabled, true ); ?>>
+							<input name="dbem_bookings_custom_fields[<?php echo esc_attr( $key ); ?>][order]" class="bookings-custom-field-order" type="hidden" value="<?php echo esc_attr( $order++ ); ?>">
+							<input name="dbem_bookings_custom_fields[<?php echo esc_attr( $key ); ?>][label]" class="bookings-custom-field-label"  type="text" value="<?php echo esc_attr( $field_label ); ?>" placeholder="<?php esc_html_e( 'Label', 'knd' ); ?>">
+							<input name="dbem_bookings_custom_fields[<?php echo esc_attr( $key ); ?>][slug]" class="bookings-custom-field-slug"  type="text" value="<?php echo esc_attr( $field_slug ); ?>" placeholder="<?php esc_html_e( 'slug', 'knd' ); ?>" <?php wp_readonly( $disabled, true ); ?>>
 							<?php if ( ! $disabled ) { ?>
 								<a href="#" class="button button-link button-link-delete knd-booking-fields-remove"><?php esc_html_e( 'Delete', 'knd' ); ?></a>
 							<?php } ?>
@@ -431,10 +431,15 @@ function knd_em_register_form(){
 			if ( 'user_name' === $slug || 'dbem_phone' === $slug || 'user_email' === $slug ) {
 				$attr = $slug;
 			}
+
+			$value = '';
+			if ( isset( $_REQUEST[ $attr ] ) && ! empty($_REQUEST[ $attr ] ) ) {
+				$value = wp_unslash( $_REQUEST[ $attr ] );
+			}
 			?>
 			<p>
-				<label for="<?php echo $attr; ?>"><?php echo $label; ?></label>
-				<input type="text" name="<?php echo $attr; ?>" id="<?php echo $attr; ?>" class="input" value="<?php if(!empty($_REQUEST[ $attr ])) echo esc_attr($_REQUEST[ $attr ]); ?>">
+				<label for="<?php echo esc_attr( $attr ); ?>"><?php echo esc_html( $label ); ?></label>
+				<input type="text" name="<?php echo esc_attr( $attr ); ?>" id="<?php echo esc_attr( $attr ); ?>" class="input" value="<?php echo esc_attr( $value ); ?>">
 			</p>
 			<?php
 		}
