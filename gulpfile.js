@@ -338,6 +338,10 @@ gulp.task('zip', function(){
 		'!CHANGELOG.md',
 		'!package.json',
 		'!package-lock.json',
+		'!composer.json',
+		'!phpcs.xml',
+		'!phpcs.xml.dist',
+		'!security.xml',
 		'!**.zip'
 	];
 

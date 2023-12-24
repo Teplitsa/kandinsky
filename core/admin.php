@@ -469,15 +469,12 @@ function knd_common_columns_content( $column_name, $post_id ) {
 		echo intval( $cpost->ID );
 	} elseif ( $column_name == 'thumbnail' ) {
 		$img = get_the_post_thumbnail( $post_id, 'thumbnail' );
-		if ( empty( $img ) )
-			echo "&ndash;";
-		else
-			echo "<div class='admin-tmb'>{$img}</div>";
-	//} elseif ( $column_name == 'event_start' ) {
-		//$event = new TST_Event( $post_id );
-		//echo $event->get_date_mark( 'formal' );
+		if ( empty( $img ) ) {
+			echo '&ndash;';
+		} else {
+			echo '<div class="admin-tmb">' . wp_kses_post( $img ) . '</div>';
+		}
 	} elseif ( $column_name == 'menu_order' ) {
-		
 		echo intval( $cpost->menu_order );
 	}
 }
@@ -488,9 +485,9 @@ function knd_pages_columns_names( $columns ) {
 	if ( isset( $columns['author'] ) ) {
 		$columns['author'] = 'Создал';
 	}
-	
+
 	$columns['id'] = 'ID';
-	
+
 	return $columns;
 }
 
