@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<ruleset name="WordPress Coding Standards">
+	<rule ref="WordPress"/>
+	<arg name="extensions" value="php"/>
+	<file>.</file>
+	<exclude-pattern>*/vendor/*</exclude-pattern>
+	<exclude-pattern>*/node_modules/*</exclude-pattern>
+</ruleset>
