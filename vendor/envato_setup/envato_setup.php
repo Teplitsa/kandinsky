@@ -440,7 +440,11 @@ if( !class_exists('Envato_Theme_Setup_Wizard')) {
 
 		}
 
-		public function display_wizard_header() {?>
+		public function display_wizard_header() {
+			// Remove deprecated.
+			remove_action( 'admin_print_styles', 'print_emoji_styles' );
+			remove_action( 'admin_head', 'wp_admin_bar_header' );
+			?>
 
 			<!DOCTYPE html>
 			<html <?php language_attributes(); ?>>
