@@ -4,7 +4,7 @@
  */
 
 $booking_comment = '';
-if ( isset( $_REQUEST['booking_comment'] && ! empty( $_REQUEST['booking_comment'] ) ) ) {
+if ( isset( $_REQUEST['booking_comment'] ) && ! empty( $_REQUEST['booking_comment'] ) ) {
 	$booking_comment = wp_unslash( $_REQUEST['booking_comment'] );
 }
 ?>
