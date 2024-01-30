@@ -7,7 +7,7 @@
 function knd_plugin_set_options( $plugin ) {
 	if ( 'wp-seo' === $plugin ) {
 		// Get display options.
-		$display_options = get_option( 'wpseo_titles' );
+		$display_options = get_option( 'wpseo_titles' ) ? get_option( 'wpseo_titles' ) : array();
 		// Set position value.
 		$display_options['breadcrumbs-enable']      = true;
 		$display_options['breadcrumbs-sep']         = '<span class="knd-separator"></span>';

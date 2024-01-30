@@ -14,6 +14,7 @@ class KND_Plot_Data_Builder {
 	protected $parsedown = NULL;
 	protected $data_routes = array();
 	protected $cta_list = array();
+	protected $shortcode_builder = NULL;
 	
 	function __construct($imp) {
 		$this->imp = $imp;
@@ -284,18 +285,18 @@ class KND_Plot_Data_Builder {
 
 		foreach($donations_data as $donation_data) {
 			$donation_id = Leyka_Donation::add(array(
-				'gateway_id' => $donation_data['gateway_id'],
+				'gateway_id'        => $donation_data['gateway_id'],
 				'payment_method_id' => $donation_data['payment_method_id'],
-				'campaign_id' => $campaign->ID,
-				'purpose_text' => $campaign->title,
-				'status' => 'funded',
-				'payment_type' => 'single',
-				'amount' => $donation_data['amount'],
-				'currency' => 'rur',
-				'donor_name' => $donation_data['donor_name'],
-				'donor_email' => $donation_data['donor_email'],
+				'campaign_id'       => $campaign->ID,
+				'purpose_text'      => $campaign->title,
+				'status'            => 'funded',
+				'payment_type'      => 'single',
+				'amount'            => $donation_data['amount'],
+				'currency'          => 'rub',
+				'donor_name'        => $donation_data['donor_name'],
+				'donor_email'       => $donation_data['donor_email'],
 			));
-		
+
 			$donation = new Leyka_Donation($donation_id);
 			$campaign->update_total_funded_amount($donation);
 		}

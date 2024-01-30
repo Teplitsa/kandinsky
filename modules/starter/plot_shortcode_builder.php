@@ -8,6 +8,7 @@
 class KND_Shortcode_Builder {
     
     private $imp = NULL;
+    private $data_builder;
     
     function __construct($data_builder, $imp) {
         $this->imp = $imp;

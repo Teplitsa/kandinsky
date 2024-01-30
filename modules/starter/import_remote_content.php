@@ -23,10 +23,11 @@ function knd_get_wizard_plot_names($plot_name = '') {
  *
  */
 class KND_Import_Remote_Content {
-	
+
 	private $content_importer = NULL; // remote content imported (depends on content source), only KND_Import_Git_Content supported
 	private $plot_data = NULL; // array with data, represented as array and KND_Piece
 	private $plot_name = NULL; // color-line, withyou, dubrovino
+	private $parsedown;
 
 	function __construct($plot_name) {
 
@@ -520,6 +521,8 @@ class KND_Import_Git_Content {
  *
  */
 class KND_Git_Piece_Parser {
+
+	private $parsedown;
 
 	function __construct() {
 		$this->parsedown = new Parsedown();
