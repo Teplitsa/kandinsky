@@ -106,6 +106,8 @@ function knd_setup() {
 	// Add support for full and wide align images.
 	add_theme_support( 'align-wide' );
 
+	add_theme_support( 'appearance-tools' );
+
 	//add_theme_support( 'wp-block-styles' );
 
 	// Editor style.

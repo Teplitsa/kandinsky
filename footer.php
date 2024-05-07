@@ -43,7 +43,7 @@ $copyright = sprintf( __( 'All materials of the site are avaliabe under license 
 			<?php if ( get_theme_mod( 'footer_about' ) ) { ?>
 				<div class="widget-bottom widget-bottom-about">
 					<?php if ( get_theme_mod( 'footer_about_title' ) ) { ?>
-						<h2 class="widget-title"><?php echo get_theme_mod( 'footer_about_title', esc_html__( 'About Us', 'knd' ) ); ?></h2>
+						<h2 class="widget-title"><?php echo esc_html( get_theme_mod( 'footer_about_title', __( 'About Us', 'knd' ) ) ); ?></h2>
 					<?php } ?>
 					<div class="textwidget">
 						<?php echo do_shortcode( wpautop( get_theme_mod( 'footer_about' ) ) ); ?>
@@ -92,7 +92,7 @@ $copyright = sprintf( __( 'All materials of the site are avaliabe under license 
 			<?php if ( get_theme_mod( 'footer_policy' ) ) { ?>
 				<div class="widget-bottom widget-bottom-policy">
 					<?php if ( get_theme_mod( 'footer_policy_title' ) ) { ?>
-						<h2 class="widget-title"><?php echo get_theme_mod( 'footer_policy_title', esc_html__( 'Security policy', 'knd' ) ); ?></h2>
+						<h2 class="widget-title"><?php echo esc_html( get_theme_mod( 'footer_policy_title', __( 'Security policy', 'knd' ) ) ); ?></h2>
 					<?php } ?>
 					<div class="textwidget">
 						<?php echo do_shortcode( wpautop( get_theme_mod( 'footer_policy' ) ) ); ?>
