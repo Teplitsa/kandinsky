@@ -14,6 +14,7 @@ function knd_thumbnails_sizes() {
 	// Thumbnails:
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 640, 395, true ); // regular thumbnails,
+	add_image_size( 'square-small', 120, 120, true ); // square small thumbnail
 	add_image_size( 'square', 450, 450, true ); // square thumbnail
 	add_image_size( 'medium-thumbnail', 790, 488, true ); // poster in widget
 	add_image_size( 'landscape-mini', 300, 185, true ); // fixed size for embedding

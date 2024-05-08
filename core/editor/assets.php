@@ -60,15 +60,15 @@ function knd_enqueue_block_editor_assets() {
 				);
 			}
 		}
-
 	}
 
 	$kndBlock['getAdminUrl'] = array(
-		'projects' => admin_url( 'edit.php?post_type=project' ),
-		'news'     => admin_url( 'edit.php?post_type=post' ),
-		'partners' => admin_url( 'edit.php?post_type=org' ),
-		'people'   => admin_url( 'edit.php?post_type=person' ),
-		'event'   => admin_url( 'edit.php?post_type=event' ),
+		'projects'     => admin_url( 'edit.php?post_type=project' ),
+		'news'         => admin_url( 'edit.php?post_type=post' ),
+		'partners'     => admin_url( 'edit.php?post_type=org' ),
+		'people'       => admin_url( 'edit.php?post_type=person' ),
+		'testimonials' => admin_url( 'edit.php?post_type=testimonials' ),
+		'event'        => admin_url( 'edit.php?post_type=event' ),
 	);
 
 	$kndBlock['getImageUrl'] = array(

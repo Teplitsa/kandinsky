@@ -5100,3 +5100,261 @@
 	window.wp.i18n,
 	window.wp.serverSideRender,
 ) );
+
+/**
+ * Testimonials Block
+ */
+
+( function( blocks, editor, blockEditor, element, components, i18n, serverSideRender, hooks, data ) {
+
+	const ServerSideRender = serverSideRender;
+
+	const el = element.createElement;
+
+	const { TextControl, SelectControl, RangeControl, ColorPalette, PanelBody, Dashicon, ToggleControl, Disabled, Spinner, Placeholder } = components;
+
+	const { registerBlockType, withColors, getColorClassName, useBlockProps } = blocks;
+
+	const { InspectorControls, ColorPaletteControl, PanelColorSettings } = blockEditor;
+
+	const { Fragment, Component, useEffect, useState } = element;
+
+	const { subscribe, select, dispatch, withSelect, withDispatch, useSelect, useDispatch } = data;
+
+	const { doAction } = hooks;
+
+	const { __ } = i18n;
+
+	const icon = el('svg', 
+		{ 
+			width: 24, 
+			height: 24,
+			viewBox: "-100 -100 700 700"
+		},
+		el( 'path',
+			{ 
+				d: "M160 368c26.5 0 48 21.5 48 48v16l72.5-54.4c8.3-6.2 18.4-9.6 28.8-9.6H448c8.8 0 16-7.2 16-16V64c0-8.8-7.2-16-16-16H64c-8.8 0-16 7.2-16 16V352c0 8.8 7.2 16 16 16h96zm48 124l-.2 .2-5.1 3.8-17.1 12.8c-4.8 3.6-11.3 4.2-16.8 1.5s-8.8-8.2-8.8-14.3V474.7v-6.4V468v-4V416H112 64c-35.3 0-64-28.7-64-64V64C0 28.7 28.7 0 64 0H448c35.3 0 64 28.7 64 64V352c0 35.3-28.7 64-64 64H309.3L208 492z"
+			}
+		),
+	);
+
+	let autoPlayToggleControl = ( props ) => {
+
+		if ( props.attributes.layout !== 'carousel' ) {
+			return;
+		}
+
+		return el( ToggleControl, {
+			label: __( 'Auto Play', 'knd' ),
+			checked: props.attributes.autoplay,
+			onChange: val => {
+				props.setAttributes( { autoplay: ! props.attributes.autoplay } );
+			},
+		});
+	};
+
+	registerBlockType( 'knd/testimonials', {
+		title: __( 'Testimonials', 'knd' ),
+		icon: icon,
+		category: 'kandinsky',
+		keywords: [ __( 'testimonial', 'knd' ), __( 'reviews', 'knd' ), __( 'feedback', 'knd' ) ],
+		supports: {
+			align: [ 'wide', 'full' ],
+			anchor: true,
+		},
+
+		attributes: {
+			heading: {
+				type: 'string',
+				default: __( 'Testimonials', 'knd' ),
+			},
+			align: {
+				type: 'string',
+				default: 'full',
+			},
+			className: {
+				type: 'string',
+			},
+			anchor: {
+				type: 'string',
+			},
+			backgroundColor: {
+				type: 'string',
+			},
+			headingColor: {
+				type: 'string',
+			},
+			textColor: {
+				type: 'string',
+			},
+			cartBackgroundColor: {
+				type: 'string',
+			},
+			layout: {
+				type: 'string',
+				default: 'grid',
+			},
+			autoplay: {
+				type: 'boolean',
+				default: false,
+			},
+			preview: {
+				type: 'boolean',
+				default: false,
+			}
+		},
+
+		example: {
+			attributes: {
+				heading: '',
+				preview : true
+			},
+			viewportWidth: 720
+		},
+
+		edit: function( props ) {
+
+			doAction( 'knd.block.edit', props );
+
+			return (
+				el( Fragment, {},
+
+					el( InspectorControls, {},
+
+						el( PanelBody,
+							{
+								title: __( 'Settings', 'knd' )
+							},
+
+							el( 'div',
+								{
+									className: 'knd-editor-block-panel__description'
+								},
+
+								el( 'a',
+									{
+										href: kndBlock.getAdminUrl.testimonials,
+										target: '_blank',
+									},
+									__( 'Edit testimonials', 'knd' ),
+									' ',
+									el( Dashicon,
+										{
+											icon: 'external',
+										}
+									),
+								),
+							),
+
+							el( TextControl,
+								{
+									label: __( 'Heading', 'knd' ),
+									value: props.attributes.heading,
+									onChange: ( val ) => {
+										props.setAttributes( { heading: val } );
+									},
+								}
+							),
+
+							el ( SelectControl,
+								{
+									//multiple: true,
+									label: __( 'Layout', 'knd' ),
+									onChange: ( val ) => {
+										props.setAttributes( { layout: val } );
+									},
+									value: props.attributes.layout,
+									options: [
+										{
+											label: __( 'Grid', 'knd' ),
+											value: 'grid'
+										},
+										{
+											label: __( 'Carousel', 'knd' ),
+											value: 'carousel'
+										},
+									],
+
+								}
+							),
+
+							autoPlayToggleControl( props ),
+
+						),
+
+					),
+
+					el( InspectorControls, {
+							group: 'styles',
+						},
+
+						el( PanelColorSettings, {
+							title: __( 'Colors', 'knd' ),
+							initialOpen: true,
+
+							colorSettings: [
+								{
+									label: __( 'Background Color', 'knd' ),
+									value: props.attributes.backgroundColor,
+									onChange: ( val ) => {
+										props.setAttributes( { backgroundColor: val } );
+									}
+								},
+								{
+									label: __( 'Heading Color', 'knd' ),
+									value: props.attributes.headingColor,
+									onChange: ( val ) => {
+										props.setAttributes( { headingColor: val } );
+									}
+								},
+								{
+									label: __( 'Text Color', 'knd' ),
+									value: props.attributes.textColor,
+									onChange: ( val ) => {
+										props.setAttributes( { textColor: val } );
+									}
+								},
+								{
+									label: __( 'Card Background Color', 'knd' ),
+									value: props.attributes.cartBackgroundColor,
+									onChange: ( val ) => {
+										props.setAttributes( { cartBackgroundColor: val } );
+									}
+								},
+							]
+
+						}),
+					),
+
+					el( Disabled, null,
+
+						el( ServerSideRender,
+							{
+								block: 'knd/testimonials',
+								attributes: props.attributes,
+								className: 'knd-block-server-side-rendered',
+							}
+						),
+
+					)
+				)
+			)
+		},
+
+		save: function() {
+			return null;
+		}
+
+	} );
+
+}(
+	window.wp.blocks,
+	window.wp.editor,
+	window.wp.blockEditor,
+	window.wp.element,
+	window.wp.components,
+	window.wp.i18n,
+	window.wp.serverSideRender,
+	window.wp.hooks,
+	window.wp.data
+) );

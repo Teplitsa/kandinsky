@@ -183,6 +183,11 @@ require_once get_theme_file_path( '/core/typography.php' );
 require_once get_template_directory() . '/core/person.php';
 
 /**
+ * Post type testimonials
+ */
+require_once get_template_directory() . '/core/testimonials.php';
+
+/**
  * Plugins
  */
 require_once get_theme_file_path( '/core/plugins.php' );

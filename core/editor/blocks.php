@@ -13,6 +13,7 @@ function knd_register_blocks() {
 		'projects',
 		'partners',
 		'people',
+		'testimonials',
 		'cta',
 		'info',
 		'cover',
