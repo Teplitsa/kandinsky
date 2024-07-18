@@ -20,6 +20,8 @@ function knd_register_blocks() {
 		'recommend',
 	);
 
+	$blocks = apply_filters( 'knd_registered_blocks', $blocks );
+
 	if ( defined( 'LEYKA_VERSION' ) ) {
 		if ( version_compare( LEYKA_VERSION, '3.23', '<' ) ) {
 			$blocks[] = 'leyka-campaign';
