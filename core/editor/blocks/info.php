@@ -35,7 +35,7 @@ register_block_type( 'knd/info', array(
 		),
 		'heading1'         => array(
 			'type'    => 'string',
-			'default' => esc_html__( 'Who are we?', 'knd' ),
+			'default' => esc_html__( 'Who we are?', 'knd' ),
 		),
 		'heading2'         => array(
 			'type'    => 'string',
