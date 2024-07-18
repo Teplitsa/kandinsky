@@ -30,7 +30,11 @@ function knd_enqueue_block_editor_assets() {
 	wp_enqueue_script( 'knd-gutenberg', get_template_directory_uri() . '/assets/js/gutenberg.js', $dependencies, filemtime( get_template_directory() . '/assets/js/gutenberg.js' )  );
 	wp_enqueue_script( 'knd-blocks', get_template_directory_uri() . '/assets/js/blocks.js', array( 'knd-gutenberg' ), filemtime( get_template_directory() . '/assets/js/blocks.js' ) );
 
+	do_action( 'knd_enqueue_block_editor_script' );
+
 	wp_enqueue_style( 'knd-gutenberg', get_template_directory_uri() . '/assets/css/gutenberg.css', filemtime( get_template_directory() .'/assets/css/gutenberg.css' ) );
+
+	do_action( 'knd_enqueue_block_editor_style' );
 
 	$kndBlock = array();
 
@@ -149,6 +153,8 @@ function knd_enqueue_block_assets() {
 	if ( defined( 'LEYKA_VERSION' ) ) {
 		wp_enqueue_style( 'leyka-revo-plugin-styles', LEYKA_PLUGIN_BASE_URL . 'assets/css/public.css', array(), LEYKA_VERSION );
 	}
+
+	do_action( 'knd_enqueue_block_assets' );
 
 	knd_inline_style();
 
