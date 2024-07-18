@@ -8,11 +8,14 @@
 $cpost = get_queried_object();
 
 $featured_image = true;
+$social_shares  = true;
 
 if ( is_singular( 'post' ) ) {
 	$featured_image = get_theme_mod( 'post_featured_image', true );
+	$social_shares  = get_theme_mod( 'post_social_shares', true );
 } else if ( is_singular( 'project') ) {
 	$featured_image = get_theme_mod( 'project_featured_image', true );
+	$social_shares  = get_theme_mod( 'project_social_shares', true );
 }
 
 get_header();
@@ -28,7 +31,7 @@ get_header();
 			<?php do_action( 'knd_entry_header' ); ?>
 			<div class="entry-meta"><?php echo knd_posted_on( $cpost ); ?></div>
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-			<?php if ( get_theme_mod( 'post_social_shares', true ) ) { ?>
+			<?php if ( $social_shares && get_theme_mod( 'social_share_location', 'left' ) === 'left' ) { ?>
 				<div class="mobile-sharing hide-on-medium"><?php echo knd_social_share_no_js(); ?></div>
 			<?php } ?>
 		</div>
@@ -48,20 +51,10 @@ get_header();
 		<div class="flex-cell flex-md-1 hide-upto-medium"></div>
 
 		<div class="flex-cell flex-md-1 single-sharing-col hide-upto-medium">
-			<?php if ( get_theme_mod( 'social_share_location', 'left' ) === 'left' ) { ?>
-				<?php if ( get_post_type() === 'project' ) { ?>
-					<?php if ( get_theme_mod( 'project_social_shares', true ) ) { ?>
-						<div id="knd_sharing" class="regular-sharing">
-							<?php echo knd_social_share_no_js();?>
-						</div>
-					<?php } ?>
-				<?php } else { ?>
-					<?php if ( get_theme_mod( 'post_social_shares', true ) ) { ?>
-						<div id="knd_sharing" class="regular-sharing">
-							<?php echo knd_social_share_no_js();?>
-						</div>
-					<?php } ?>
-				<?php } ?>
+			<?php if ( $social_shares && get_theme_mod( 'social_share_location', 'left' ) === 'left' ) { ?>
+				<div id="knd_sharing" class="regular-sharing">
+					<?php echo knd_social_share_no_js();?>
+				</div>
 			<?php } ?>
 		</div>
 
@@ -84,7 +77,11 @@ get_header();
 
 			<?php knd_entry_tags(); ?>
 
-			<?php knd_entry_shares(); ?>
+			<?php
+			if ( $social_shares ) {
+				knd_entry_shares();
+			}
+			?>
 
 			<?php knd_entry_related(); ?>
 
