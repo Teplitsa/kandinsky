@@ -106,10 +106,7 @@ function knd_single_post_thumbnail( $post_id, $size = 'post-thumbnail', $post_fo
 		return;
 	
 	$thumb = get_post( $thumb_id );
-	$cap = ( ! empty( $thumb->post_excerpt ) ) ? $thumb->post_excerpt : get_post_meta( 
-		$thumb_id, 
-		'_wp_attachment_image_alt', 
-		true ); // to_do: make this real
+	$cap = ( ! empty( $thumb->post_excerpt ) ) ? $thumb->post_excerpt : '';
 	
 	if ( $post_format == 'standard' ) {
 		?>
