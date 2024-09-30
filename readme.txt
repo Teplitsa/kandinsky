@@ -1,5 +1,10 @@
 == Changelog ==
 
+= 2.7 =
+* Add language switcher
+* Add collapse long menu
+* Add customizer reset settings button
+
 = 2.2.0 =
 * Improved compatibility with WordPress 6.0
 * Added Filter Campaigns by type.
