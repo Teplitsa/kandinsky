@@ -345,6 +345,7 @@
 			text-align: center;
 			border: 0;
 			background-color: transparent;
+			color: var(--knd-color-base);
 
 			width: 21px + 19px + 19px;
 			height: 21px + 19px + 19px;
@@ -832,8 +833,6 @@
 		}
 	}
 }
-
-
 
 .knd-header-nav {
 	> .menu li.menu-item-has-children:hover,

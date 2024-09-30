@@ -118,7 +118,8 @@ $css .= '
 	--knd-color-logo-desc: ' . get_theme_mod( 'header_logo_desc_color', '#4d606a' ) . ';
 	' . $header_logo_font . '
 }
-.knd-header-nav {
+.knd-header-nav,
+.knd-language-switcher {
 	--knd-color-menu: ' . get_theme_mod( 'header_menu_color', '#4d606a' ) . ';
 	--knd-color-menu-hover: ' . get_theme_mod( 'header_menu_color_hover', '#dd1400' ) . ';
 }

@@ -1877,6 +1877,7 @@ body > svg {
 	text-align: center;
 	border: 0;
 	background-color: transparent;
+	color: var(--knd-color-base);
 	width: 59px;
 	height: 59px;
 	padding: 22.5px;

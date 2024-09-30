@@ -239,7 +239,7 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'transport' => 'auto',
 	'output'    => array(
 		array(
-			'element'  => '.knd-header-nav',
+			'element'  => '.knd-header-nav,.knd-language-switcher',
 			'property' => '--knd-color-menu',
 		),
 	),
@@ -266,7 +266,7 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'transport' => 'auto',
 	'output'    => array(
 		array(
-			'element'  => '.knd-header-nav',
+			'element'  => '.knd-header-nav,.knd-language-switcher',
 			'property' => '--knd-color-menu-hover',
 		),
 	),
