@@ -210,6 +210,26 @@ Kirki::add_field( 'knd_theme_mod', array(
 	),
 ) );
 
+Kirki::add_field( 'knd_theme_mod', array(
+	'type'            => 'toggle',
+	'settings'        => 'header_menu_collapse',
+	'label'           => esc_html__( 'Collapse long menu', 'knd' ),
+	'section'         => 'header',
+	'default'         => false,
+	'active_callback' => array(
+		array(
+			'setting'  => 'header_type',
+			'operator' => 'in',
+			'value'    => array( '2', '3', '4' ),
+		),
+		array(
+			'setting'  => 'header_menu',
+			'operator' => '==',
+			'value'    => true,
+		),
+	),
+) );
+
 Kirki::add_field( 'theme_config_id', [
 	'type'        => 'dimension',
 	'settings'    => 'header_menu_size',

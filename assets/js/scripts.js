@@ -174,19 +174,6 @@
 		}, 10);
 	});
 
-	/**
-	 * Keeping sub menu inside screen
-	 */
-	$(window).on('load resize', function(){
-		var subMenus = $('.knd-header-nav .menu-item-has-children > .sub-menu');
-		subMenus.each(function( index ) {
-			var subMenuLeft = $(this).offset().left;
-			if ( subMenuLeft + $(this).outerWidth() > $(window).width()) {
-				$(this).addClass('sub-menu-left');
-			}
-		});
-	});
-
 	/** Sticky elements **/
 	var position = $( window ).scrollTop(), //store intitial scroll position
 		scrollTopLimit = ($( 'body' ).hasClass( 'adminbar' )) ? 99 + 32 + 90 : 99 + 90,
@@ -527,5 +514,76 @@
 			}
 		});
 	});
+
+	/**
+	 * Keeping sub menu inside screen
+	 */
+	function kndSubmenuLeft(){
+		var subMenus = $('.knd-header-nav .menu-item-has-children > .sub-menu');
+		subMenus.each(function( index ) {
+			var subMenuLeft = $(this).offset().left;
+			if ( subMenuLeft + $(this).outerWidth() > $(window).width()) {
+				$(this).addClass('sub-menu-left');
+			}
+		});
+	}
+
+	$(window).on('resize', function(){
+		kndSubmenuLeft();
+	});
+
+	/** Collapse long menu */
+	function kndTruncateMenu() {
+		var menuContainer = $('.knd-header-nav-truncate');
+		var menu = menuContainer.find('.knd-nav-menu');
+		var moreMenuItem = menu.find('.more-menu-item');
+
+		menuContainer.addClass('truncate-hidden');
+
+		// Удаляем существующую кнопку "Еще" и возвращаем все элементы обратно в меню
+		if (moreMenuItem.length) {
+			var moreSubMenu = moreMenuItem.find('> ul');
+			moreSubMenu.children().insertBefore(moreMenuItem);  // Возвращаем элементы обратно
+			moreMenuItem.remove();  // Удаляем кнопку "Еще"
+		}
+
+		// Создаем кнопку "Еще" с подменю
+		var moreMenuItemHtml = `
+			<li class="menu-item-has-children more-menu-item">
+				<a href="#">
+					<span></span>
+				</a>
+				<ul class="sub-menu"></ul>
+			</li>`;
+		
+	   menu.append(moreMenuItemHtml);
+
+		var totalWidth = 0;
+		var maxWidth = menu.width() - 60;
+		var menuItems = menu.children('li:not(.more-menu-item)');  // Берем все пункты меню кроме "Еще"
+
+		menuItems.each(function() {
+			totalWidth += $(this).outerWidth(true);
+
+			if (totalWidth > maxWidth) {
+				menu.find('.more-menu-item > ul').append($(this));  // Переносим в подменю
+			}
+		});
+
+		menuContainer.removeClass('truncate-hidden');
+
+		// Если в подменю нет элементов, удаляем кнопку "Еще"
+		if (menu.find('.more-menu-item > ul').children().length === 0) {
+			menu.find('.more-menu-item').remove();
+		}
+		kndSubmenuLeft();
+	}
+
+	// Запускаем при загрузке страницы
+	kndTruncateMenu();
+
+	// Запускаем при изменении размера окна
+	$(window).resize(kndTruncateMenu);
+
 
 })( jQuery );

@@ -633,12 +633,16 @@ function knd_header_mobile_button(){
 function knd_header_nav_menu() {
 	if ( get_theme_mod( 'header_menu', true ) ) {
 		if ( has_nav_menu( 'primary' ) ) {
-			$menu_class = 'menu knd-nav-menu'; // knd-nav-menu-flex
+			$menu_class      = 'menu knd-nav-menu';
+			$container_class = 'knd-header-nav';
+			if ( get_theme_mod( 'header_menu_collapse' ) ) {
+				$container_class .= ' knd-header-nav-truncate truncate-hidden';
+			}
 			wp_nav_menu(
 				array(
 					'theme_location'       => 'primary',
 					'container'            => 'nav',
-					'container_class'      => 'knd-header-nav',
+					'container_class'      => $container_class,
 					'container_aria_label' => esc_attr__( 'Primary menu', 'knd' ),
 					'depth'                => 7,
 					'menu_class'           => $menu_class,

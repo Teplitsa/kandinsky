@@ -173,6 +173,9 @@ function knd_body_class( $classes ) {
 		}
 		$classes[] = 'knd-page-title-' . $is_enabled;
 	}
+
+	$classes[] = 'knd-header-type-' . knd_get_header_type();
+
 	return $classes;
 }
 add_filter( 'body_class', 'knd_body_class' );
