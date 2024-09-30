@@ -89,3 +89,21 @@
 .customize-control-repeater .upload-button {
 	width: initial;
 }
+
+#customize-control-settings_reset .accordion-section-title {
+	display: flex;
+	align-items: center;
+	cursor: initial;
+	line-height: 1.2;
+	margin-left: -12px;
+	margin-right: -12px;
+	margin-top: 10px;
+	border-left: 0;
+	border-top: 1px solid #dcdcde;
+	border-bottom: 1px solid #dcdcde !important;
+	border-bottom-color: #dcdcde !important;
+	color: #50575e !important;
+}
+#customize-control-settings_reset .accordion-section-title:after {
+	content: none;
+}

@@ -196,3 +196,16 @@ function knd_remove_kirki_override_load_textdomain() {
 }
 
 knd_remove_kirki_override_load_textdomain();
+
+/**
+ * Reset Customizer settings
+ */
+function knd_reset_customizer_settings() {
+
+	$options = get_option('theme_mods_' . get_stylesheet());
+	if ($options) {
+		delete_option('theme_mods_' . get_stylesheet());
+	}
+	wp_send_json_success();
+}
+add_action('wp_ajax_reset_customizer_settings', 'knd_reset_customizer_settings');

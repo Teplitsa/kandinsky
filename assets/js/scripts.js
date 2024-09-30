@@ -540,14 +540,12 @@
 
 		menuContainer.addClass('truncate-hidden');
 
-		// Удаляем существующую кнопку "Еще" и возвращаем все элементы обратно в меню
 		if (moreMenuItem.length) {
 			var moreSubMenu = moreMenuItem.find('> ul');
-			moreSubMenu.children().insertBefore(moreMenuItem);  // Возвращаем элементы обратно
-			moreMenuItem.remove();  // Удаляем кнопку "Еще"
+			moreSubMenu.children().insertBefore(moreMenuItem);
+			moreMenuItem.remove();
 		}
 
-		// Создаем кнопку "Еще" с подменю
 		var moreMenuItemHtml = `
 			<li class="menu-item-has-children more-menu-item">
 				<a href="#">
@@ -556,34 +554,30 @@
 				<ul class="sub-menu"></ul>
 			</li>`;
 		
-	   menu.append(moreMenuItemHtml);
+		menu.append(moreMenuItemHtml);
 
 		var totalWidth = 0;
 		var maxWidth = menu.width() - 60;
-		var menuItems = menu.children('li:not(.more-menu-item)');  // Берем все пункты меню кроме "Еще"
+		var menuItems = menu.children('li:not(.more-menu-item)');
 
 		menuItems.each(function() {
 			totalWidth += $(this).outerWidth(true);
 
 			if (totalWidth > maxWidth) {
-				menu.find('.more-menu-item > ul').append($(this));  // Переносим в подменю
+				menu.find('.more-menu-item > ul').append($(this));
 			}
 		});
 
 		menuContainer.removeClass('truncate-hidden');
 
-		// Если в подменю нет элементов, удаляем кнопку "Еще"
 		if (menu.find('.more-menu-item > ul').children().length === 0) {
 			menu.find('.more-menu-item').remove();
 		}
 		kndSubmenuLeft();
 	}
 
-	// Запускаем при загрузке страницы
 	kndTruncateMenu();
 
-	// Запускаем при изменении размера окна
 	$(window).resize(kndTruncateMenu);
-
 
 })( jQuery );

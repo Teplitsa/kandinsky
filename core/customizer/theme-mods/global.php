@@ -292,6 +292,18 @@ Kirki::add_field( 'knd_theme_mod', array(
 	'default'         => true,
 ) );
 
+
+Kirki::add_field( 'knd_theme_mod', array(
+	'type'     => 'custom',
+	'settings' => 'settings_reset',
+	'label'    => '',
+	'section'  => 'miscellaneous',
+	'default'  => '<div class="accordion-section-title">
+			<span>Сбросить настройки по умолчанию</span>
+			<button type="button" class="button knd-customizer-reset">Сбросить</button>
+	</div>',
+) );
+
 /* Analitics Section */
 Kirki::add_section(
 	'analitics',

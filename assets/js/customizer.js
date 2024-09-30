@@ -73,4 +73,32 @@
 
 	} );
 
+	/** Reset Customizer Settings */
+	function kndResetCustomizerSettings() {
+		if (confirm('Вы уверены, что хотите сбросить все настройки по умолчанию?')) {
+			jQuery.ajax({
+				url: ajaxurl,
+				type: 'POST',
+				data: {
+					action: 'reset_customizer_settings',
+				},
+				success: function(response) {
+					if (response.success) {
+						alert('Настройки успешно сброшены.');
+						location.reload();
+					} else {
+						alert('Ошибка при сбросе настроек.');
+					}
+				},
+				error: function() {
+					alert('Ошибка при сбросе настроек.');
+				}
+			});
+		}
+	}
+
+	$(document).on( 'click', '.knd-customizer-reset', function( e ) {
+		kndResetCustomizerSettings();
+	});
+
 } )( jQuery );
