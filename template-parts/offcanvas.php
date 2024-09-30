@@ -32,6 +32,8 @@
 			);
 		}
 	}
+
+	knd_language_switcher_mobile();
 	?>
 
 	<?php

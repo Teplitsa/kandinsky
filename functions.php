@@ -79,6 +79,14 @@ function knd_setup() {
 		)
 	);
 
+	if ( function_exists( 'PLL' ) ) {
+		register_nav_menus(
+			array(
+				'language' => esc_html__( 'Language switcher', 'polylang' ),
+			)
+		);
+	}
+
 	/**
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.

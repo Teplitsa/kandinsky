@@ -23,6 +23,7 @@
 					knd_social_links();
 				}
 				knd_header_button();
+				knd_language_switcher();
 				knd_offcanvas_toggle( get_theme_mod( 'header_offcanvas', true ) );
 				?>
 			</div>

@@ -648,6 +648,45 @@ function knd_header_nav_menu() {
 	}
 }
 
+if ( ! function_exists( 'knd_language_switcher' ) ) {
+	/**
+	 * Language switcher
+	 */
+	function knd_language_switcher() {
+		if ( has_nav_menu( 'language' ) ) {
+			wp_nav_menu(
+				array(
+					'theme_location'       => 'language',
+					'container'            => false,
+					'container_aria_label' => esc_attr__( 'Language switcher', 'polylang' ),
+					'depth'                => 2,
+					'menu_class'           => 'knd-language-switcher',
+				)
+			);
+		}
+	}
+}
+
+if ( ! function_exists( 'knd_language_switcher_mobile' ) ) {
+	/**
+	 * Language switcher mobile
+	 */
+	function knd_language_switcher_mobile() {
+		if ( has_nav_menu( 'language' ) ) {
+			wp_nav_menu(
+				array(
+					'theme_location'       => 'language',
+					'container'            => 'nav',
+					'container_class'      => 'nav-main-menu nav-language-switcher',
+					'container_aria_label' => esc_attr__( 'Language switcher', 'polylang' ),
+					'menu_class'           => 'main-menu',
+					'depth'                => 2,
+				)
+			);
+		}
+	}
+}
+
 if ( ! function_exists( 'knd_breadcrumbs' ) ) {
 	/**
 	 * Breadcrumbs

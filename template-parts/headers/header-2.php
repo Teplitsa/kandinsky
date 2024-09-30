@@ -22,6 +22,7 @@
 					knd_search_toggle();
 					knd_header_additional_button();
 					knd_header_button();
+					knd_language_switcher();
 					knd_offcanvas_toggle( get_theme_mod( 'header_offcanvas', true ) );
 				?>
 			</div>

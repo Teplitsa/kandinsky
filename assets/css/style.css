@@ -2414,6 +2414,78 @@ body > svg {
 	right: -20px;
 }
 
+/* Language switcher */
+.knd-language-switcher {
+	font-size: var(--knd-font-size-menu, 18px);
+	--knd-font-submenu-size: .85em;
+	display: -ms-flexbox;
+	display: flex;
+	gap: 20px;
+	font-weight: 700;
+	line-height: 120%;
+}
+
+.knd-language-switcher > li {
+	display: -ms-flexbox;
+	display: flex;
+	position: relative;
+	z-index: 1;
+}
+
+.knd-language-switcher > li > a {
+	padding: 8px 5px;
+	color: var(--knd-color-menu, #4d606a);
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
+.knd-language-switcher > li > a:hover {
+	color: var(--knd-color-menu-hover, #dd1400);
+}
+
+.knd-language-switcher > li .sub-menu {
+	top: 100%;
+	left: -12px;
+	position: absolute;
+	display: none;
+	margin: 0;
+	text-align: left;
+	list-style: none;
+	background-color: var(--knd-header-background);
+	box-shadow: 0px 3px 7px rgba(95, 93, 93, 0.25);
+}
+
+.knd-language-switcher > li .sub-menu li > a {
+	padding: 10px 20px;
+	color: var(--knd-color-menu, #4d606a);
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-align: center;
+	align-items: center;
+	font-size: var(--knd-font-submenu-size);
+}
+
+.knd-language-switcher > li .sub-menu li > a:hover {
+	color: var(--knd-color-menu-hover, #dd1400);
+}
+
+.knd-language-switcher > li .sub-menu li > a > span:not(:first-child) {
+	margin-left: 0 !important;
+	padding-left: 5px;
+}
+
+.knd-language-switcher > li:hover > .sub-menu,
+.knd-language-switcher > li:focus > .sub-menu {
+	display: block;
+}
+
+.knd-language-switcher,
+.knd-language-switcher .nav-language-switcher {
+	text-transform: uppercase;
+}
+
 body:not(.dom-loaded) .knd-header-nav .sub-menu {
 	display: none;
 }
