@@ -122,7 +122,7 @@ $is_finished = get_post_meta($campaign->ID, 'is_finished', true);
 				$exerpt = knd_get_post_excerpt( $campaign, 28, false );
 			}
 			if ( $exerpt ) { ?>
-				<div class="campaign-excerpt"><?php echo esc_html( $exerpt ); ?></div>
+				<div class="campaign-excerpt"><?php echo wp_kses_post( $exerpt ); ?></div>
 			<?php
 			}
 		?>
