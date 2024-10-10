@@ -36,4 +36,7 @@
 			<key name="knd_completed_campaigns_archive_title" />
 		</key>
 	</admin-texts>
+	<custom-types>
+		<custom-type translate="1">testimonials</custom-type>
+	</custom-types>
 </wpml-config>
