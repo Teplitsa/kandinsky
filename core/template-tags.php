@@ -261,7 +261,7 @@ function knd_get_logo_id() {
 	} elseif ( get_theme_mod( 'knd_custom_logo' ) ) {
 		$logo_id = get_theme_mod( 'knd_custom_logo' );
 	}
-	return $logo_id;
+	return apply_filters( 'knd_get_logo_id', $logo_id );
 }
 
 /**
