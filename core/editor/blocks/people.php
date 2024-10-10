@@ -229,6 +229,8 @@ function knd_block_people_render_callback( $attr ) {
 		);
 	}
 
+	$args = apply_filters('knd_block_people_query_args', $args );
+
 	$query = new WP_Query( $args );
 
 	if ( $query->have_posts() ) :
