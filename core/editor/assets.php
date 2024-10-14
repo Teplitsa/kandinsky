@@ -140,6 +140,10 @@ function knd_enqueue_block_assets() {
 		}
 	}
 
+	if ( defined( 'EM_VERSION' ) ) {
+		$css_dependencies[] = 'events-manager';
+	}
+
 	wp_enqueue_script( 'flickity', get_template_directory_uri() . '/assets/js/flickity.pkgd.min.js', array( 'jquery' ), '2.2.2' );
 
 	// Scripts.

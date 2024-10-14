@@ -23,11 +23,23 @@
 		.em-booking-section {
 			margin-left: 0;
 			margin-right: 0;
+			padding: 0;
+		}
+
+		h3.em-booking-section-title {
+			width: auto;
+			background-color: #fff;
+			color: initial;
+			border: 0;
 		}
 
 		.em-tickets {
 			margin: 0;
 			width: 100%;
+		}
+
+		.em-booking-form-section-confirm {
+			margin-top: 15px;
 		}
 	}
 
@@ -78,6 +90,8 @@
 
 		}
 	}
+
+	
 
 	.em.pixelbones.input .em-booking-buttons .em-booking-submit {
 		font-family: var(--knd-font-family-base);

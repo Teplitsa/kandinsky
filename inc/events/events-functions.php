@@ -317,7 +317,9 @@ function knd_em_options_booking_form_options(){
 	$original_fields = knd_em_booking_form_default_fields();
 
 	$custom_fields = get_option( 'dbem_bookings_custom_fields' );
-
+	echo '<pre>';
+	print_r($custom_fields);
+	echo '</pre>';
 	em_options_input_text( __( 'CTA button text', 'knd' ), 'dbem_bookings_cta_field', '', esc_html__( 'Book Now', 'knd' ) );
 
 	if ( $custom_fields && is_array( $custom_fields ) ) {
@@ -345,6 +347,7 @@ function knd_em_options_booking_form_options(){
 
 				<?php if ( $fields ) {
 					$order = 0;
+					$unique_array = array();
 					foreach ( $fields as $key => $field ) {
 
 						$field_label = '';
@@ -355,12 +358,18 @@ function knd_em_options_booking_form_options(){
 						if ( isset( $field['slug'] ) ) {
 							$field_slug = $field['slug'];
 						};
+
 						$disabled = false;
 						foreach($original_fields as $original_field){
 							if ( $original_field['slug'] === $field['slug']) {
 								$disabled = true;
 							}
+							if ( in_array( $field['slug'], $unique_array )) {
+								$disabled = false;
+							}
 						}
+						$unique_array[] = $field_slug;
+
 						?>
 						<div class="dbem-kookings-fields-group">
 							<div class="drag-icons-group">

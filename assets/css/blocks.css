@@ -4022,11 +4022,23 @@ body:not(.logged-in):not(.block-editor-page) .knd-block-hint {
 .knd-event__booking .em.em-event-booking-form .em-booking-section {
 	margin-left: 0;
 	margin-right: 0;
+	padding: 0;
+}
+
+.knd-event__booking .em.em-event-booking-form h3.em-booking-section-title {
+	width: auto;
+	background-color: #fff;
+	color: initial;
+	border: 0;
 }
 
 .knd-event__booking .em.em-event-booking-form .em-tickets {
 	margin: 0;
 	width: 100%;
+}
+
+.knd-event__booking .em.em-event-booking-form .em-booking-form-section-confirm {
+	margin-top: 15px;
 }
 
 .knd-event__booking .em-booking {
