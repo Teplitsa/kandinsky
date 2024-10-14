@@ -11,8 +11,8 @@
 	<div class="knd-event__login-form">
 		<?php wp_login_form( array(
 			'redirect'       => site_url( $_SERVER['REQUEST_URI'] ),
-			'label_username' => __( 'Username' ),
-			'label_password' => __( 'Password' ),
+			'label_username' => __( 'Username', 'knd' ),
+			'label_password' => __( 'Password', 'knd' ),
 		) ); ?>
 	</div>
 </div>
