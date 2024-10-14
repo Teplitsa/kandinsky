@@ -144,24 +144,21 @@ function knd_adminbar_voices() {
 
 function knd_after_theme_activation() {
 	flush_rewrite_rules( false );
-
-	// Disable wizard on activate theme version 2 after version 1.
-	// Deprecated. Must be deleted in future.
-	if ( get_option( 'theme_mods_kandinsky-master' ) ) {
-		set_transient( '_knd_activation_redirect_done', true );
-	}
-
-	if ( ! get_transient( '_knd_activation_redirect_done' ) ) {
-
-		set_transient( '_knd_activation_redirect_done', true );
-		wp_safe_redirect( KND_SETUP_WIZARD_URL );
-
-		exit();
-	}
 }
 add_action( 'after_switch_theme', 'knd_after_theme_activation' );
 
-add_action( 'init', 'knd_remove_scenario_unzipped_dir' );
+/** Redirect to setup wizard page after activate theme */
+function knd_setup_wizard_redirect() {
+	if ( get_transient( '_knd_activation_redirect_done' ) || ( defined( 'WP_CLI' ) && WP_CLI ) ) {
+		return;
+	}
+
+	set_transient( '_knd_activation_redirect_done', true );
+
+	wp_safe_redirect( KND_SETUP_WIZARD_URL );
+	exit;
+}
+add_action( 'admin_init', 'knd_setup_wizard_redirect' );
 
 function knd_remove_scenario_unzipped_dir() {
 
@@ -193,6 +190,7 @@ function knd_remove_scenario_unzipped_dir() {
 		}
 	}
 }
+add_action( 'init', 'knd_remove_scenario_unzipped_dir' );
 
 /**
  * Add support taxonomy post_tag for post type leyka_campaign
