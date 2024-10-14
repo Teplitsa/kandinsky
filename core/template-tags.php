@@ -272,7 +272,7 @@ function knd_get_footer_logo_id() {
 	if ( class_exists( 'Kirki' ) ) {
 		$logo_id = get_theme_mod( 'footer_logo_image', $logo_id );
 	}
-	return $logo_id;
+	return apply_filters( 'knd_get_footer_logo_id', $logo_id );
 }
 
 /**
