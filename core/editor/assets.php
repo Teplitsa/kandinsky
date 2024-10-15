@@ -140,7 +140,7 @@ function knd_enqueue_block_assets() {
 		}
 	}
 
-	if ( defined( 'EM_VERSION' ) ) {
+	if ( defined( 'EM_VERSION' ) && ! is_admin() ) {
 		$css_dependencies[] = 'events-manager';
 	}
 
