@@ -31,6 +31,7 @@ if ( ! isset( $content_width ) ) {
  */
 function knd_load_theme_textdomain() {
 	load_theme_textdomain( 'knd', get_template_directory() . '/lang' );
+	load_textdomain( 'knd', get_template_directory() . '/lang/' . determine_locale() . '.mo' );
 	do_action( 'knd_load_textdomain' );
 }
 
@@ -134,6 +135,11 @@ if ( is_customize_preview() ) {
  */
 function knd_add_page_support_excerpt() {
 	add_post_type_support( 'page', 'excerpt' );
+
+	// Service lines (to localize):.
+	esc_html__('Kandinsky', 'knd');
+	esc_html__('Teplitsa', 'knd');
+	esc_html__('The beautiful design and useful features for nonprofit website', 'knd');
 }
 add_action( 'init', 'knd_add_page_support_excerpt' );
 
@@ -243,11 +249,6 @@ if ( is_admin() || current_user_can( 'manage_options' ) ) {
 if ( ( is_admin() && ! empty( $_GET['page'] ) && $_GET['page'] == 'knd-setup-wizard' ) || wp_doing_ajax() ) {
 	get_template_part( '/vendor/envato_setup/envato_setup' ); // Run the wizard after all modules included.
 }
-
-// Service lines (to localize):.
-esc_html__('Kandinsky', 'knd');
-esc_html__('Teplitsa', 'knd');
-esc_html__('The beautiful design and useful features for nonprofit website', 'knd');
 
 /**
  * Comments
