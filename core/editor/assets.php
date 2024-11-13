@@ -140,7 +140,7 @@ function knd_enqueue_block_assets() {
 		}
 	}
 
-	if ( defined( 'EM_VERSION' ) && ! is_admin() ) {
+	if ( wp_style_is( 'events-manager' ) && ! is_admin() ) {
 		$css_dependencies[] = 'events-manager';
 	}
 
