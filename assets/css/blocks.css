@@ -2451,6 +2451,7 @@
 	color: var(--knd-block-info-text-color);
 }
 
+.knd-block-info .knd-block-info__content h2,
 .knd-block-info .knd-block-info__content h3 {
 	font-family: var(--knd-font-family-headings);
 	color: var(--knd-block-info-headings-color);
@@ -2460,7 +2461,7 @@
 	margin: 0 auto 20px;
 }
 
-.knd-block-info .knd-block-info__col p {
+.knd-block-info__col p {
 	font-size: 18px;
 	font-family: var(--knd-font-family-base);
 	line-height: 1.7;

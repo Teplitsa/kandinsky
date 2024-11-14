@@ -310,7 +310,7 @@
 								}
 							]
 						}),
-						),
+					),
 
 					el(	Disabled,
 						null,

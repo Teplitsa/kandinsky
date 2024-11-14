@@ -311,7 +311,7 @@
 								}
 							]
 						}),
-						),
+					),
 
 					el(	Disabled,
 						null,
@@ -1945,9 +1945,9 @@
 
 	const { TextControl, TextareaControl, SelectControl, RangeControl, ColorPalette, PanelBody, ToggleControl, Disabled } = components;
 
-	const { registerBlockType, withColors, PanelColorSettings, getColorClassName, useBlockProps } = blocks;
+	const { registerBlockType, withColors, getColorClassName, useBlockProps } = blocks;
 
-	const { InspectorControls, ColorPaletteControl } = blockEditor;
+	const { InspectorControls, ColorPaletteControl, PanelColorSettings } = blockEditor;
 
 	const { Fragment } = element;
 
@@ -2231,94 +2231,76 @@
 								},
 							}),
 						),
+					),
 
-						el( PanelBody,
-							{
-								title: __( 'Colors', 'knd' ),
-								initialOpen: false
-							},
+					el( InspectorControls, {
+							group: 'styles',
+						},
 
-							el( ColorPaletteControl,
+						el( PanelColorSettings, {
+							title: __( 'Colors', 'knd' ),
+							initialOpen: true,
+							enableAlpha: true,
+
+							colorSettings: [
 								{
 									label: __( 'Background Color', 'knd' ),
 									value: props.attributes.backgroundColor,
 									onChange: ( val ) => {
-										props.setAttributes({ backgroundColor: val });
+										props.setAttributes( { backgroundColor: val } );
 									}
-								}
-							),
-
-							el( ColorPaletteControl,
+								},
 								{
 									label: __( 'Heading Color', 'knd' ),
 									value: props.attributes.headingColor,
 									onChange: ( val ) => {
-										props.setAttributes({ headingColor: val });
+										props.setAttributes( { headingColor: val } );
 									}
-								}
-							),
-
-							el( ColorPaletteControl,
+								},
 								{
 									label: __( 'Second Heading Color', 'knd' ),
 									value: props.attributes.titleColor,
 									onChange: ( val ) => {
-										props.setAttributes({ titleColor: val });
+										props.setAttributes( { titleColor: val } );
 									}
-								}
-							),
-
-							el( ColorPaletteControl,
+								},
 								{
 									label: __( 'Column Heading Color', 'knd' ),
 									value: props.attributes.headingsColor,
 									onChange: ( val ) => {
-										props.setAttributes({ headingsColor: val });
+										props.setAttributes( { headingsColor: val } );
 									}
-								}
-							),
-
-							el( ColorPaletteControl,
+								},
 								{
 									label: __( 'Column Text Color', 'knd' ),
 									value: props.attributes.textColor,
 									onChange: ( val ) => {
-										props.setAttributes({ textColor: val });
+										props.setAttributes( { textColor: val } );
 									}
-								}
-							),
-
-							el( ColorPaletteControl,
+								},
 								{
 									label: __( 'Column Link Color', 'knd' ),
 									value: props.attributes.linkColor,
 									onChange: ( val ) => {
-										props.setAttributes({ linkColor: val });
+										props.setAttributes( { linkColor: val } );
 									}
-								}
-							),
-
-							el( ColorPaletteControl,
+								},
 								{
 									label: __( 'Column Link Color Hover', 'knd' ),
 									value: props.attributes.linkHoverColor,
 									onChange: ( val ) => {
-										props.setAttributes({ linkHoverColor: val });
+										props.setAttributes( { linkHoverColor: val } );
 									}
-								}
-							),
-
-							el( ColorPaletteControl,
+								},
 								{
 									label: __( 'Column Link Underline Color', 'knd' ),
 									value: props.attributes.underlineColor,
 									onChange: ( val ) => {
-										props.setAttributes({ underlineColor: val });
+										props.setAttributes( { underlineColor: val } );
 									}
 								}
-							),
-
-						),
+							]
+						}),
 					),
 
 					el(	Disabled,
