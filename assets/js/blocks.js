@@ -2484,7 +2484,6 @@
 				type: 'string',
 				default: 0,
 			},
-
 			thumbnail: {
 				type: 'boolean',
 				default: true,
@@ -3498,8 +3497,8 @@
 
 	const { TextControl, SelectControl, RangeControl, ColorPalette, Dashicon, PanelBody, ToggleControl, Disabled } = components;
 
-	const { registerBlockType, withColors, PanelColorSettings, getColorClassName, useBlockProps } = blocks;
-	const { InspectorControls, ColorPaletteControl } = blockEditor;
+	const { registerBlockType, useBlockProps } = blocks;
+	const { InspectorControls, ColorPaletteControl, PanelColorSettings } = blockEditor;
 
 	const { Fragment } = element;
 
@@ -3663,30 +3662,31 @@
 
 					el( InspectorControls, {},
 
-						el( 'div',
-							{
-								className: 'knd-editor-block-card__description'
-							},
-
-							el( 'a',
-								{
-									href: kndBlock.getAdminUrl.partners,
-									target: '_blank',
-								},
-								__( 'Edit partners', 'knd' ),
-								' ',
-								el( Dashicon,
-									{
-										icon: 'external',
-									}
-								),
-							),
-						),
-
 						el( PanelBody,
 							{
 								title: __( 'Settings', 'knd' )
 							},
+
+							el( 'div',
+								{
+									className: 'knd-editor-block-panel__description'
+								},
+
+								el( 'a',
+									{
+										href: kndBlock.getAdminUrl.partners,
+										target: '_blank',
+									},
+									__( 'Edit partners', 'knd' ),
+									' ',
+									el( Dashicon,
+										{
+											icon: 'external',
+										}
+									),
+								),
+							),
+
 							el( TextControl, {
 								label: __( 'Heading', 'knd' ),
 								value: props.attributes.heading,
@@ -3758,34 +3758,6 @@
 
 						el( PanelBody,
 							{
-								title: __( 'Colors', 'knd' ),
-								initialOpen: false
-							},
-
-							el( ColorPaletteControl,
-								{
-									label: __( 'Background Color', 'knd' ),
-									value: props.attributes.backgroundColor,
-									onChange: ( val ) => {
-										props.setAttributes( { backgroundColor: val } );
-									}
-								}
-							),
-
-							el( ColorPaletteControl,
-								{
-									label: __( 'Heading Color', 'knd' ),
-									value: props.attributes.headingColor,
-									onChange: ( val ) => {
-										props.setAttributes( { headingColor: val } );
-									}
-								}
-							),
-
-						),
-
-						el( PanelBody,
-							{
 								title: __( 'Query', 'knd' ) ,
 								initialOpen: false
 							},
@@ -3834,6 +3806,32 @@
 						),
 					),
 
+					el( InspectorControls, {
+							group: 'styles',
+						},
+
+						el( PanelColorSettings, {
+							title: __( 'Colors', 'knd' ),
+							initialOpen: true,
+							colorSettings: [
+								{
+									label: __( 'Background Color', 'knd' ),
+									value: props.attributes.backgroundColor,
+									onChange: ( val ) => {
+										props.setAttributes( { backgroundColor: val } );
+									}
+								},
+								{
+									label: __( 'Heading Color', 'knd' ),
+									value: props.attributes.headingColor,
+									onChange: ( val ) => {
+										props.setAttributes( { headingColor: val } );
+									}
+								}
+							]
+						}),
+					),
+
 					el( Disabled,
 						null,
 						el( ServerSideRender, {
@@ -3876,9 +3874,9 @@
 
 	const { TextControl, SelectControl, RangeControl, ColorPalette, PanelBody, Dashicon, ToggleControl, Disabled, Spinner, Placeholder } = components;
 
-	const { registerBlockType, withColors, PanelColorSettings, getColorClassName, useBlockProps } = blocks;
+	const { registerBlockType } = blocks;
 
-	const { InspectorControls, ColorPaletteControl } = blockEditor;
+	const { InspectorControls, ColorPaletteControl, PanelColorSettings } = blockEditor;
 
 	const { Fragment, Component, useEffect, useState } = element;
 
@@ -4080,30 +4078,31 @@
 
 					el( InspectorControls, {},
 
-						el( 'div',
-							{
-								className: 'knd-editor-block-card__description knd-editor-block-card__description-alt'
-							},
-
-							el( 'a',
-								{
-									href: kndBlock.getAdminUrl.people,
-									target: '_blank',
-								},
-								__( 'Edit team', 'knd' ),
-								' ',
-								el( Dashicon,
-									{
-										icon: 'external',
-									}
-								),
-							),
-						),
-
 						el( PanelBody,
 							{
 								title: __( 'Settings', 'knd' )
 							},
+
+							el( 'div',
+								{
+									className: 'knd-editor-block-panel__description'
+								},
+
+								el( 'a',
+									{
+										href: kndBlock.getAdminUrl.people,
+										target: '_blank',
+									},
+									__( 'Edit team', 'knd' ),
+									' ',
+									el( Dashicon,
+										{
+											icon: 'external',
+										}
+									),
+								),
+							),
+							
 							el( TextControl,
 								{
 									label: __( 'Heading', 'knd' ),
@@ -4177,54 +4176,6 @@
 
 						el( PanelBody,
 							{
-								title: __( 'Colors', 'knd' ),
-								initialOpen: false
-							},
-
-							el( ColorPaletteControl,
-								{
-									label: __( 'Background Color', 'knd' ),
-									value: props.attributes.backgroundColor,
-									onChange: ( val ) => {
-										props.setAttributes( { backgroundColor: val } );
-									}
-								}
-							),
-
-							el( ColorPaletteControl,
-								{
-									label: __( 'Heading Color', 'knd' ),
-									value: props.attributes.headingColor,
-									onChange: ( val ) => {
-										props.setAttributes( { headingColor: val } );
-									}
-								}
-							),
-
-							el( ColorPaletteControl,
-								{
-									label: __( 'Name Color', 'knd' ),
-									value: props.attributes.nameColor,
-									onChange: ( val ) => {
-										props.setAttributes( { nameColor: val } );
-									}
-								}
-							),
-
-							el( ColorPaletteControl,
-								{
-									label: __( 'Description Color', 'knd' ),
-									value: props.attributes.metaColor,
-									onChange: ( val ) => {
-										props.setAttributes( { metaColor: val } );
-									}
-								}
-							),
-
-						),
-
-						el( PanelBody,
-							{
 								title: __( 'Query', 'knd' ) ,
 								initialOpen: false
 							},
@@ -4272,6 +4223,46 @@
 
 						),
 
+					),
+
+					el( InspectorControls, {
+							group: 'styles',
+						},
+
+						el( PanelColorSettings, {
+							title: __( 'Colors', 'knd' ),
+							initialOpen: true,
+							colorSettings: [
+								{
+									label: __( 'Background Color', 'knd' ),
+									value: props.attributes.backgroundColor,
+									onChange: ( val ) => {
+										props.setAttributes( { backgroundColor: val } );
+									}
+								},
+								{
+									label: __( 'Heading Color', 'knd' ),
+									value: props.attributes.headingColor,
+									onChange: ( val ) => {
+										props.setAttributes( { headingColor: val } );
+									}
+								},
+								{
+									label: __( 'Name Color', 'knd' ),
+									value: props.attributes.nameColor,
+									onChange: ( val ) => {
+										props.setAttributes( { nameColor: val } );
+									}
+								},
+								{
+									label: __( 'Description Color', 'knd' ),
+									value: props.attributes.metaColor,
+									onChange: ( val ) => {
+										props.setAttributes( { metaColor: val } );
+									}
+								}
+							]
+						}),
 					),
 
 					el( Disabled, null,
@@ -4938,11 +4929,11 @@
 
 	const el = element.createElement;
 
-	const { TextControl, TextareaControl, SelectControl, RangeControl, ColorPalette, PanelBody, ToggleControl, BaseControl, Button,  Disabled } = components;
+	const { TextControl, TextareaControl, ColorPalette, PanelBody, Disabled } = components;
 
-	const { registerBlockType, withColors, PanelColorSettings, getColorClassName, useBlockProps } = blocks;
+	const { registerBlockType } = blocks;
 
-	const { InspectorControls, ColorPaletteControl, MediaUpload, MediaUploadCheck } = blockEditor;
+	const { InspectorControls, ColorPaletteControl, PanelColorSettings } = blockEditor;
 
 	const { Fragment } = element;
 
@@ -5034,26 +5025,35 @@
 								},
 							}),
 
-							el( ColorPaletteControl,
-								{
-									label: __( 'Text Color', 'knd' ),
-									value: props.attributes.textColor,
-									onChange: function( val ) {
-										props.setAttributes({ textColor: val });
-									}
-								}
-							),
+						),
+					),
 
-							el( ColorPaletteControl,
+					el( InspectorControls, {
+							group: 'styles',
+						},
+
+						el( PanelColorSettings, {
+							title: __( 'Colors', 'knd' ),
+							initialOpen: true,
+							enableAlpha: true,
+
+							colorSettings: [
 								{
 									label: __( 'Background Color', 'knd' ),
 									value: props.attributes.backgroundColor,
-									onChange: function( val ) {
-										props.setAttributes({ backgroundColor: val });
+									onChange: ( val ) => {
+										props.setAttributes( { backgroundColor: val } );
+									}
+								},
+								{
+									label: __( 'Text Color', 'knd' ),
+									value: props.attributes.textColor,
+									onChange: ( val ) => {
+										props.setAttributes( { textColor: val } );
 									}
 								}
-							),
-						),
+							]
+						}),
 					),
 
 					el( Disabled,

@@ -152,7 +152,6 @@
 				type: 'string',
 				default: 0,
 			},
-
 			thumbnail: {
 				type: 'boolean',
 				default: true,

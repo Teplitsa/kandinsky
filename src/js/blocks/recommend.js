@@ -6,11 +6,11 @@
 
 	const el = element.createElement;
 
-	const { TextControl, TextareaControl, SelectControl, RangeControl, ColorPalette, PanelBody, ToggleControl, BaseControl, Button,  Disabled } = components;
+	const { TextControl, TextareaControl, ColorPalette, PanelBody, Disabled } = components;
 
-	const { registerBlockType, withColors, PanelColorSettings, getColorClassName, useBlockProps } = blocks;
+	const { registerBlockType } = blocks;
 
-	const { InspectorControls, ColorPaletteControl, MediaUpload, MediaUploadCheck } = blockEditor;
+	const { InspectorControls, ColorPaletteControl, PanelColorSettings } = blockEditor;
 
 	const { Fragment } = element;
 
@@ -102,26 +102,35 @@
 								},
 							}),
 
-							el( ColorPaletteControl,
-								{
-									label: __( 'Text Color', 'knd' ),
-									value: props.attributes.textColor,
-									onChange: function( val ) {
-										props.setAttributes({ textColor: val });
-									}
-								}
-							),
+						),
+					),
 
-							el( ColorPaletteControl,
+					el( InspectorControls, {
+							group: 'styles',
+						},
+
+						el( PanelColorSettings, {
+							title: __( 'Colors', 'knd' ),
+							initialOpen: true,
+							enableAlpha: true,
+
+							colorSettings: [
 								{
 									label: __( 'Background Color', 'knd' ),
 									value: props.attributes.backgroundColor,
-									onChange: function( val ) {
-										props.setAttributes({ backgroundColor: val });
+									onChange: ( val ) => {
+										props.setAttributes( { backgroundColor: val } );
+									}
+								},
+								{
+									label: __( 'Text Color', 'knd' ),
+									value: props.attributes.textColor,
+									onChange: ( val ) => {
+										props.setAttributes( { textColor: val } );
 									}
 								}
-							),
-						),
+							]
+						}),
 					),
 
 					el( Disabled,
