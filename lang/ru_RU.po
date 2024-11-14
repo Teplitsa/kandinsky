@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-30 06:27+0300\n"
-"PO-Revision-Date: 2024-09-30 06:29+0300\n"
+"POT-Creation-Date: 2024-11-14 02:36+0200\n"
+"PO-Revision-Date: 2024-11-14 02:52+0200\n"
 "Last-Translator: ahaenor <ahaenor@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -143,7 +143,7 @@ msgstr "Пожертвования"
 msgid "Other"
 msgstr "Другое"
 
-#: core/admin.php:78 core/customizer/theme-mods/global.php:369
+#: core/admin.php:78 core/customizer/theme-mods/global.php:381
 msgid "Documentation"
 msgstr "Документация"
 
@@ -182,7 +182,7 @@ msgstr "«Кандинский» – настройки"
 
 #: core/admin.php:172 core/admin.php:214 core/admin.php:574
 #: core/editor/category.php:20 core/editor/pattern.php:20
-#: core/theme-update/theme-update-checker.php:348 functions.php:248
+#: core/theme-update/theme-update-checker.php:348 functions.php:140
 msgid "Kandinsky"
 msgstr "Кандинский"
 
@@ -853,11 +853,11 @@ msgstr "Разные настройки"
 msgid "Scroll To Top Button"
 msgstr "Кнопка наверх"
 
-#: core/customizer/theme-mods/global.php:299
+#: core/customizer/theme-mods/global.php:311
 msgid "Analytics"
 msgstr "Аналитика"
 
-#: core/customizer/theme-mods/global.php:308
+#: core/customizer/theme-mods/global.php:320
 msgid ""
 "Here you can insert the code for user analytics systems, Google Analytics or "
 "Yandex.Metrica. Below are 3 areas of the site where you can paste the code, "
@@ -869,45 +869,45 @@ msgstr ""
 "зависимости, от требований устанавливаемых систем, можете вставить код. "
 "Просто скопируйте его сюда."
 
-#: core/customizer/theme-mods/global.php:315
+#: core/customizer/theme-mods/global.php:327
 msgid "Before </head>"
 msgstr "Перед </head>"
 
-#: core/customizer/theme-mods/global.php:318
 #: core/customizer/theme-mods/global.php:330
 #: core/customizer/theme-mods/global.php:342
+#: core/customizer/theme-mods/global.php:354
 msgid "Code can be copied here."
 msgstr "Код можно скопировать сюда."
 
-#: core/customizer/theme-mods/global.php:327
+#: core/customizer/theme-mods/global.php:339
 msgid "At the beginning of <body>"
 msgstr "В начале <body>"
 
-#: core/customizer/theme-mods/global.php:339
+#: core/customizer/theme-mods/global.php:351
 msgid "Before </body>"
 msgstr "Перед </body>"
 
-#: core/customizer/theme-mods/global.php:352
+#: core/customizer/theme-mods/global.php:364
 msgid "Important Links"
 msgstr "Важные ссылки"
 
-#: core/customizer/theme-mods/global.php:361
+#: core/customizer/theme-mods/global.php:373
 msgid "Theme Info"
 msgstr "О теме"
 
-#: core/customizer/theme-mods/global.php:365
+#: core/customizer/theme-mods/global.php:377
 msgid "Support"
 msgstr "Служба поддержки"
 
-#: core/customizer/theme-mods/global.php:373
+#: core/customizer/theme-mods/global.php:385
 msgid "Changelog"
 msgstr "Changelog"
 
-#: core/customizer/theme-mods/global.php:396
+#: core/customizer/theme-mods/global.php:408
 msgid "Yoast SEO Breadcrumbs"
 msgstr "Цепочки навигации Yoast SEO"
 
-#: core/customizer/theme-mods/global.php:406
+#: core/customizer/theme-mods/global.php:418
 msgid "Additional CSS"
 msgstr "Дополнительные стили"
 
@@ -1041,7 +1041,7 @@ msgstr "Социальные сети"
 
 #: core/customizer/theme-mods/post-settings.php:37
 #: core/customizer/theme-mods/project-settings.php:37
-#: modules/project/hooks.php:103
+#: modules/project/hooks.php:91 modules/project/hooks.php:103
 msgid "Tags"
 msgstr "Теги"
 
@@ -1246,7 +1246,7 @@ msgstr ""
 #: core/testimonials.php:11 core/testimonials.php:12
 #: src/js/blocks/testimonials.js:54 src/js/blocks/testimonials.js:66
 msgid "Testimonials"
-msgstr ""
+msgstr "Отзывы"
 
 #: core/editor/functions.php:112
 msgid "White"
@@ -1289,25 +1289,23 @@ msgid "Четыре материала с подложками (Черта)"
 msgstr ""
 
 #: core/editor/pattern.php:134
-#, fuzzy
-#| msgid "Default"
 msgid "Card Default"
-msgstr "По умолчанию"
+msgstr "Карточка по умолчанию"
 
 #: core/editor/pattern.php:144 core/editor/pattern.php:154
 msgid "Card Horizontal"
-msgstr ""
+msgstr "Горизонтальная карточка"
 
 #: core/extras.php:51
 msgid "More"
 msgstr "Еще"
 
-#: core/extras.php:192 modules/starter/import_remote_content.php:406
+#: core/extras.php:189 modules/starter/import_remote_content.php:406
 #, php-format
 msgid "Old import files cleanup FAILED: %s."
 msgstr "Очистка старых импортных файлов FAILED: %s."
 
-#: core/extras.php:262
+#: core/extras.php:260
 msgid "Recommended plugins to install"
 msgstr "Рекомендуем установить плагины"
 
@@ -1482,13 +1480,13 @@ msgstr "Закрыть боковую панель"
 msgid "Button text"
 msgstr "Текст кнопки"
 
-#: core/template-tags.php:646 functions.php:78 template-parts/offcanvas.php:29
+#: core/template-tags.php:646 functions.php:79 template-parts/offcanvas.php:29
 msgid "Primary menu"
 msgstr "Главное меню"
 
-#: core/template-tags.php:665 core/template-tags.php:685 functions.php:85
+#: core/template-tags.php:665 core/template-tags.php:685 functions.php:86
 msgid "Language switcher"
-msgstr ""
+msgstr "Переключатель языков"
 
 #: core/template-tags.php:976
 msgid "назад"
@@ -1496,65 +1494,47 @@ msgstr ""
 
 #: core/testimonials.php:10
 msgid "Testimonial"
-msgstr ""
+msgstr "Отзыв"
 
 #: core/testimonials.php:14
-#, fuzzy
-#| msgid "Add new profile"
 msgid "Add new testimonial"
-msgstr "Добавление нового профиля"
+msgstr "Добавить новый отзыв"
 
 #: core/testimonials.php:15
 msgid "New testimonial"
-msgstr ""
+msgstr "Новый отзыв"
 
 #: core/testimonials.php:16
-#, fuzzy
-#| msgid "Edit team"
 msgid "Edit testimonial"
-msgstr "Редактировать команду"
+msgstr "Редактировать отзыв"
 
 #: core/testimonials.php:17
-#, fuzzy
-#| msgid "Preview profile"
 msgid "Preview testimonial"
-msgstr "Предпросмотр"
+msgstr "Предпросмотр отзыва"
 
 #: core/testimonials.php:18
-#, fuzzy
-#| msgid "All categories"
 msgid "All testimonials"
-msgstr "Все категории"
+msgstr "Все отзывы"
 
 #: core/testimonials.php:19
-#, fuzzy
-#| msgid "Search profile"
 msgid "Search testimonial"
-msgstr "Поиск"
+msgstr "Поиск отзыва"
 
 #: core/testimonials.php:20
-#, fuzzy
-#| msgid "Author"
 msgid "Author photo"
-msgstr "Автор"
+msgstr "Фото автора"
 
 #: core/testimonials.php:21
-#, fuzzy
-#| msgid "Set person photo"
 msgid "Set author photo"
-msgstr "Добавить фото человека"
+msgstr "Добавить фото автора"
 
 #: core/testimonials.php:22
-#, fuzzy
-#| msgid "Remove person photo"
 msgid "Remove author photo"
-msgstr "Удалить фото человека"
+msgstr "Удалить фото автора"
 
 #: core/testimonials.php:23
-#, fuzzy
-#| msgid "Use as person photo"
 msgid "Use as author photo"
-msgstr "Использовать как фото человека"
+msgstr "Использовать как фото автора"
 
 #: core/theme-update/theme-update-checker.php:354
 #, php-format
@@ -1585,11 +1565,11 @@ msgstr "Работает на Кандинском"
 msgid "Kandinsky logo"
 msgstr "Логотип Кандинский"
 
-#: functions.php:249
+#: functions.php:141
 msgid "Teplitsa"
 msgstr "Теплица социальных технологий"
 
-#: functions.php:250
+#: functions.php:142
 msgid "The beautiful design and useful features for nonprofit website"
 msgstr "Красивый дизайн и полезные функции для сайта НКО"
 
@@ -1638,44 +1618,44 @@ msgstr "Заголовок похожих мероприятий"
 msgid "E-mail"
 msgstr "E-mail"
 
-#: inc/events/events-functions.php:321
+#: inc/events/events-functions.php:323
 msgid "CTA button text"
 msgstr "Текст кнопки"
 
-#: inc/events/events-functions.php:321 inc/events/events-options.php:21
+#: inc/events/events-functions.php:323 inc/events/events-options.php:21
 #: single-event.php:63
 msgid "Book Now"
 msgstr "Забронировать"
 
-#: inc/events/events-functions.php:341
+#: inc/events/events-functions.php:343
 msgid "Custom Fields"
 msgstr "Настраиваемые поля"
 
-#: inc/events/events-functions.php:371 src/js/admin/admin.js:161
+#: inc/events/events-functions.php:380 src/js/admin/admin.js:161
 msgid "Label"
 msgstr "Название"
 
-#: inc/events/events-functions.php:372 src/js/admin/admin.js:162
+#: inc/events/events-functions.php:381 src/js/admin/admin.js:162
 msgid "slug"
 msgstr "слаг"
 
-#: inc/events/events-functions.php:374 src/js/admin/admin.js:163
+#: inc/events/events-functions.php:383 src/js/admin/admin.js:163
 msgid "Delete"
 msgstr "Удалить"
 
-#: inc/events/events-functions.php:381
+#: inc/events/events-functions.php:390
 msgid "Add new field"
 msgstr "Добавить новое поле"
 
-#: inc/events/events-functions.php:455
+#: inc/events/events-functions.php:464
 msgid "<strong>ERROR</strong>: Please enter a username."
 msgstr "<strong>ОШИБКА</strong>: Пожалуйста, введите ваше имя."
 
-#: inc/events/events-functions.php:460
+#: inc/events/events-functions.php:469
 msgid "<strong>ERROR</strong>: Please enter your phone number."
 msgstr "<strong>ОШИБКА</strong>: Пожалуйста, введите ваш номер телефона."
 
-#: inc/events/events-functions.php:474
+#: inc/events/events-functions.php:483
 msgid "<strong>ERROR</strong>: Please fill in the field"
 msgstr "<strong>ОШИБКА</strong>: Пожалуйста, заполните поле"
 
@@ -1797,8 +1777,8 @@ msgstr "Краткий список жертвователей"
 #: modules/donations/widgets.php:125 src/js/blocks/cover.js:159
 #: src/js/blocks/events.js:288 src/js/blocks/info.js:190
 #: src/js/blocks/info.js:229 src/js/blocks/info.js:268
-#: src/js/blocks/news.js:893 src/js/blocks/partners.js:203
-#: src/js/blocks/people.js:243 src/js/blocks/projects.js:387
+#: src/js/blocks/news.js:892 src/js/blocks/partners.js:204
+#: src/js/blocks/people.js:244 src/js/blocks/projects.js:387
 #: src/js/blocks/testimonials.js:148
 msgid "Heading"
 msgstr "Заголовок"
@@ -1815,7 +1795,7 @@ msgstr "Исключить кампании:"
 msgid "Partner Categories"
 msgstr "Категория партнеров"
 
-#: modules/org/hooks.php:11 src/js/blocks/news.js:267
+#: modules/org/hooks.php:11 src/js/blocks/news.js:266
 #: src/js/blocks/partners.js:162 src/js/blocks/people.js:199
 msgid "All Categories"
 msgstr "Все категории"
@@ -1917,13 +1897,10 @@ msgstr "Добавить новую категорию"
 msgid "New Category"
 msgstr "Новая Категория"
 
-#: modules/project/hooks.php:91
-msgctxt "taxonomy general name"
-msgid "Tags"
-msgstr "Теги"
-
 #: modules/project/hooks.php:92
-msgctxt "taxonomy singular name"
+#, fuzzy
+#| msgctxt "taxonomy singular name"
+#| msgid "Tag"
 msgid "Tag"
 msgstr "Тег"
 
@@ -2192,8 +2169,8 @@ msgstr "Нижний"
 
 #: src/js/blocks/cover.js:156 src/js/blocks/cta.js:142
 #: src/js/blocks/events.js:264 src/js/blocks/hero.js:182
-#: src/js/blocks/info.js:164 src/js/blocks/news.js:813
-#: src/js/blocks/partners.js:200 src/js/blocks/people.js:239
+#: src/js/blocks/info.js:164 src/js/blocks/news.js:812
+#: src/js/blocks/partners.js:180 src/js/blocks/people.js:219
 #: src/js/blocks/projects.js:365 src/js/blocks/testimonials.js:123
 #: vendor/envato_setup/envato_setup.php:327
 #: vendor/envato_setup/envato_setup.php:731
@@ -2227,23 +2204,24 @@ msgstr "Минимальная высота"
 
 #: src/js/blocks/cover.js:271 src/js/blocks/cta.js:268
 #: src/js/blocks/events.js:381 src/js/blocks/hero.js:587
-#: src/js/blocks/info.js:302 src/js/blocks/news.js:714
-#: src/js/blocks/partners.js:273 src/js/blocks/people.js:314
-#: src/js/blocks/projects.js:325 src/js/blocks/testimonials.js:189
+#: src/js/blocks/info.js:306 src/js/blocks/news.js:713
+#: src/js/blocks/partners.js:327 src/js/blocks/people.js:369
+#: src/js/blocks/projects.js:325 src/js/blocks/recommend.js:113
+#: src/js/blocks/testimonials.js:189
 msgid "Colors"
 msgstr "Цвета"
 
 #: src/js/blocks/cover.js:277 src/js/blocks/cta.js:274
 #: src/js/blocks/events.js:387 src/js/blocks/hero.js:600
-#: src/js/blocks/info.js:308 src/js/blocks/news.js:719
-#: src/js/blocks/partners.js:279 src/js/blocks/people.js:320
-#: src/js/blocks/projects.js:330 src/js/blocks/recommend.js:117
+#: src/js/blocks/info.js:312 src/js/blocks/news.js:718
+#: src/js/blocks/partners.js:331 src/js/blocks/people.js:373
+#: src/js/blocks/projects.js:330 src/js/blocks/recommend.js:119
 #: src/js/blocks/testimonials.js:194
 msgid "Background Color"
 msgstr "Цвет фона"
 
 #: src/js/blocks/cover.js:284 src/js/blocks/cta.js:288
-#: src/js/blocks/hero.js:593 src/js/blocks/recommend.js:107
+#: src/js/blocks/hero.js:593 src/js/blocks/recommend.js:126
 #: src/js/blocks/testimonials.js:208
 msgid "Text Color"
 msgstr "Цвет текста"
@@ -2338,8 +2316,8 @@ msgstr "мероприятия"
 msgid "List"
 msgstr "Список"
 
-#: src/js/blocks/events.js:116 src/js/blocks/partners.js:220
-#: src/js/blocks/people.js:261 src/js/blocks/testimonials.js:166
+#: src/js/blocks/events.js:116 src/js/blocks/partners.js:221
+#: src/js/blocks/people.js:262 src/js/blocks/testimonials.js:166
 msgid "Grid"
 msgstr "Плитка"
 
@@ -2347,23 +2325,23 @@ msgstr "Плитка"
 msgid "Include events"
 msgstr "Включить мероприятия"
 
-#: src/js/blocks/events.js:196 src/js/blocks/news.js:325
+#: src/js/blocks/events.js:196 src/js/blocks/news.js:324
 #: src/js/blocks/projects.js:248
 msgid "Link Title"
 msgstr "Текст ссылки"
 
 #: src/js/blocks/events.js:207 src/js/blocks/info.js:214
 #: src/js/blocks/info.js:253 src/js/blocks/info.js:292
-#: src/js/blocks/news.js:336 src/js/blocks/projects.js:259
+#: src/js/blocks/news.js:335 src/js/blocks/projects.js:259
 msgid "Link Url"
 msgstr "Адрес ссылки"
 
-#: src/js/blocks/events.js:220 src/js/blocks/news.js:349
+#: src/js/blocks/events.js:220 src/js/blocks/news.js:348
 #: src/js/blocks/projects.js:272
 msgid "Remove Link"
 msgstr "Удалить ссылку"
 
-#: src/js/blocks/events.js:244 src/js/blocks/news.js:373
+#: src/js/blocks/events.js:244 src/js/blocks/news.js:372
 #: src/js/blocks/projects.js:296
 msgid "Add Link"
 msgstr "Добавить ссылку"
@@ -2376,19 +2354,19 @@ msgstr "Редактировать мероприятия"
 msgid "Events to show"
 msgstr "Сколько мероприятий показывать"
 
-#: src/js/blocks/events.js:312 src/js/blocks/news.js:927
+#: src/js/blocks/events.js:312 src/js/blocks/news.js:926
 #: src/js/blocks/projects.js:424
 msgid "Heading Links"
 msgstr "Ссылки в шапке"
 
-#: src/js/blocks/events.js:323 src/js/blocks/news.js:1079
-#: src/js/blocks/partners.js:301 src/js/blocks/people.js:362
+#: src/js/blocks/events.js:323 src/js/blocks/news.js:1078
+#: src/js/blocks/partners.js:274 src/js/blocks/people.js:315
 #: src/js/blocks/projects.js:547
 msgid "Query"
 msgstr "Сортировка и фильтрация"
 
-#: src/js/blocks/events.js:329 src/js/blocks/news.js:1085
-#: src/js/blocks/partners.js:307 src/js/blocks/people.js:368
+#: src/js/blocks/events.js:329 src/js/blocks/news.js:1084
+#: src/js/blocks/partners.js:280 src/js/blocks/people.js:321
 #: src/js/blocks/projects.js:553
 msgid "Order by"
 msgstr "Сортировать по"
@@ -2405,8 +2383,8 @@ msgstr "Дате начала мероприятия"
 msgid "Included events"
 msgstr "Включенные мероприятия"
 
-#: src/js/blocks/events.js:344 src/js/blocks/news.js:1101
-#: src/js/blocks/partners.js:323 src/js/blocks/people.js:384
+#: src/js/blocks/events.js:344 src/js/blocks/news.js:1100
+#: src/js/blocks/partners.js:296 src/js/blocks/people.js:337
 #: src/js/blocks/projects.js:569
 msgid "Offset"
 msgstr "Пропустить"
@@ -2427,9 +2405,9 @@ msgstr "Все мероприятия"
 msgid "Future events"
 msgstr "Предстоящие мероприятия"
 
-#: src/js/blocks/events.js:394 src/js/blocks/info.js:318
-#: src/js/blocks/news.js:726 src/js/blocks/partners.js:289
-#: src/js/blocks/people.js:330 src/js/blocks/projects.js:337
+#: src/js/blocks/events.js:394 src/js/blocks/info.js:319
+#: src/js/blocks/news.js:725 src/js/blocks/partners.js:338
+#: src/js/blocks/people.js:380 src/js/blocks/projects.js:337
 #: src/js/blocks/testimonials.js:201
 msgid "Heading Color"
 msgstr "Цвет заголовка"
@@ -2490,7 +2468,7 @@ msgstr "Цвета начала градиента"
 msgid "Overlay Gradient End Color"
 msgstr "Цвет окончания градиента"
 
-#: src/js/blocks/hero.js:493 src/js/blocks/news.js:595
+#: src/js/blocks/hero.js:493 src/js/blocks/news.js:594
 msgid "Typography"
 msgstr "Типографика"
 
@@ -2597,27 +2575,27 @@ msgstr "Колонка 2"
 msgid "Column 3"
 msgstr "Колонка 3"
 
-#: src/js/blocks/info.js:328
+#: src/js/blocks/info.js:326
 msgid "Second Heading Color"
 msgstr "Цвет второго заголовка"
 
-#: src/js/blocks/info.js:338
+#: src/js/blocks/info.js:333
 msgid "Column Heading Color"
 msgstr "Цвет заголовка колонки"
 
-#: src/js/blocks/info.js:348
+#: src/js/blocks/info.js:340
 msgid "Column Text Color"
 msgstr "Цвет текста колонки"
 
-#: src/js/blocks/info.js:358
+#: src/js/blocks/info.js:347
 msgid "Column Link Color"
 msgstr "Цвет ссылки колонки"
 
-#: src/js/blocks/info.js:368
+#: src/js/blocks/info.js:354
 msgid "Column Link Color Hover"
 msgstr "Цвет ссылки колонки при наведении"
 
-#: src/js/blocks/info.js:378
+#: src/js/blocks/info.js:361
 msgid "Column Link Underline Color"
 msgstr "Цвет подчеркивание ссылки колонки"
 
@@ -2637,284 +2615,282 @@ msgstr "articles"
 msgid "News tile in three column."
 msgstr "Плитка новостей в три колонки."
 
-#: src/js/blocks/news.js:388
+#: src/js/blocks/news.js:387
 msgid "Small"
 msgstr ""
 
-#: src/js/blocks/news.js:393
+#: src/js/blocks/news.js:392
 msgid "Normal"
 msgstr ""
 
-#: src/js/blocks/news.js:398 src/js/blocks/news.js:655
+#: src/js/blocks/news.js:397 src/js/blocks/news.js:654
 msgid "Medium"
 msgstr ""
 
-#: src/js/blocks/news.js:403
+#: src/js/blocks/news.js:402
 msgid "Large"
 msgstr ""
 
-#: src/js/blocks/news.js:416
+#: src/js/blocks/news.js:415
 msgid "Показать аватар автора"
 msgstr ""
 
-#: src/js/blocks/news.js:432
+#: src/js/blocks/news.js:431
 msgid "Max number of words in excerpt"
-msgstr ""
+msgstr "Максимум слов в отрывке"
 
-#: src/js/blocks/news.js:451
+#: src/js/blocks/news.js:450
 msgid "Формат даты"
 msgstr ""
 
-#: src/js/blocks/news.js:466
+#: src/js/blocks/news.js:465
 msgid "Относительная дата публикации"
 msgstr ""
 
-#: src/js/blocks/news.js:489
+#: src/js/blocks/news.js:488
 msgid "Change content position"
-msgstr ""
+msgstr "Изменение позиции содержимого"
 
-#: src/js/blocks/news.js:505
+#: src/js/blocks/news.js:504
 msgid "Image Width"
-msgstr ""
+msgstr "Ширина изображения"
 
-#: src/js/blocks/news.js:512
+#: src/js/blocks/news.js:511
 msgid "1 / 3"
 msgstr ""
 
-#: src/js/blocks/news.js:516
+#: src/js/blocks/news.js:515
 msgid "1 / 2"
 msgstr ""
 
-#: src/js/blocks/news.js:520
+#: src/js/blocks/news.js:519
 msgid "2 / 3"
 msgstr ""
 
-#: src/js/blocks/news.js:535
-#, fuzzy
-#| msgid "Image only"
+#: src/js/blocks/news.js:534
 msgid "Image Position"
-msgstr "Только изображение"
+msgstr "Расположение изображения"
 
-#: src/js/blocks/news.js:542
+#: src/js/blocks/news.js:541
 msgid "Align Left"
-msgstr ""
+msgstr "Выровнить по левому краю"
 
-#: src/js/blocks/news.js:546
+#: src/js/blocks/news.js:545
 msgid "Align Right"
 msgstr "Выровнять вправо"
 
-#: src/js/blocks/news.js:557
+#: src/js/blocks/news.js:556
 msgid "Posts to show"
 msgstr "Сколько постов показывать"
 
-#: src/js/blocks/news.js:572 src/js/blocks/partners.js:246
-#: src/js/blocks/people.js:287 src/js/blocks/projects.js:409
+#: src/js/blocks/news.js:571 src/js/blocks/partners.js:247
+#: src/js/blocks/people.js:288 src/js/blocks/projects.js:409
 msgid "Columns"
 msgstr "Колонки"
 
-#: src/js/blocks/news.js:602
+#: src/js/blocks/news.js:601
 msgid "Размер шрифта заголовка (Desktop)"
 msgstr ""
 
-#: src/js/blocks/news.js:623
+#: src/js/blocks/news.js:622
 msgid "Размер шрифта заголовка (Mobile)"
 msgstr ""
 
-#: src/js/blocks/news.js:644
+#: src/js/blocks/news.js:643
 msgid "Жирность шрифта заголовка"
 msgstr ""
 
-#: src/js/blocks/news.js:651
+#: src/js/blocks/news.js:650
 msgid "Regular"
 msgstr ""
 
-#: src/js/blocks/news.js:659
+#: src/js/blocks/news.js:658
 msgid "Semi Bold"
 msgstr ""
 
-#: src/js/blocks/news.js:663
+#: src/js/blocks/news.js:662
 msgid "Bold"
 msgstr ""
 
-#: src/js/blocks/news.js:674
+#: src/js/blocks/news.js:673
 msgid "Размер шрифта цитаты (Desktop)"
 msgstr ""
 
-#: src/js/blocks/news.js:694
+#: src/js/blocks/news.js:693
 msgid "Размер шрифта цитаты (Mobile)"
 msgstr ""
 
-#: src/js/blocks/news.js:733
+#: src/js/blocks/news.js:732
 msgid "Цвет фона карточки"
 msgstr ""
 
-#: src/js/blocks/news.js:740
+#: src/js/blocks/news.js:739
 msgid "Цвет наложения"
 msgstr ""
 
-#: src/js/blocks/news.js:747
+#: src/js/blocks/news.js:746
 msgid "Цвет наложения при наведении"
 msgstr ""
 
-#: src/js/blocks/news.js:756 src/js/blocks/projects.js:344
+#: src/js/blocks/news.js:755 src/js/blocks/projects.js:344
 msgid "Цвет названия"
 msgstr ""
 
-#: src/js/blocks/news.js:763
+#: src/js/blocks/news.js:762
 msgid "Цвет названия при наведении"
 msgstr ""
 
-#: src/js/blocks/news.js:771
+#: src/js/blocks/news.js:770
 msgid "Цвет цитаты"
 msgstr ""
 
-#: src/js/blocks/news.js:778 src/js/blocks/projects.js:351
+#: src/js/blocks/news.js:777 src/js/blocks/projects.js:351
 msgid "Цвет ссылок"
 msgstr ""
 
-#: src/js/blocks/news.js:785
+#: src/js/blocks/news.js:784
 msgid "Цвет ссылок при наведении"
 msgstr ""
 
-#: src/js/blocks/news.js:792
+#: src/js/blocks/news.js:791
 msgid "Цвет фона ссылок при наведении"
 msgstr ""
 
-#: src/js/blocks/news.js:799
+#: src/js/blocks/news.js:798
 msgid "Date Color"
 msgstr "Цвет даты"
 
-#: src/js/blocks/news.js:826
+#: src/js/blocks/news.js:825
 msgid "Edit news"
 msgstr "Редактировать новости"
 
-#: src/js/blocks/news.js:838 src/js/blocks/partners.js:213
-#: src/js/blocks/people.js:254 src/js/blocks/testimonials.js:159
+#: src/js/blocks/news.js:837 src/js/blocks/partners.js:214
+#: src/js/blocks/people.js:255 src/js/blocks/testimonials.js:159
 msgid "Layout"
 msgstr "Шаблон"
 
-#: src/js/blocks/news.js:849
+#: src/js/blocks/news.js:848
 msgid "Изображение над текстом"
 msgstr ""
 
-#: src/js/blocks/news.js:853
+#: src/js/blocks/news.js:852
 msgid "Изображение рядом с текстом"
 msgstr ""
 
-#: src/js/blocks/news.js:857
+#: src/js/blocks/news.js:856
 msgid "Tекст поверх изображения"
 msgstr ""
 
-#: src/js/blocks/news.js:871
+#: src/js/blocks/news.js:870
 msgid "Отступ сверху"
 msgstr ""
 
-#: src/js/blocks/news.js:881
+#: src/js/blocks/news.js:880
 msgid "Отступ снизу"
 msgstr ""
 
-#: src/js/blocks/news.js:899
+#: src/js/blocks/news.js:898
 msgid "Текст заголовка"
 msgstr ""
 
-#: src/js/blocks/news.js:907
+#: src/js/blocks/news.js:906
 msgid "Ссылка заголовка"
 msgstr ""
 
-#: src/js/blocks/news.js:916
+#: src/js/blocks/news.js:915
 msgid "Выравнивать по центру"
 msgstr ""
 
-#: src/js/blocks/news.js:936 src/js/blocks/projects.js:483
+#: src/js/blocks/news.js:935 src/js/blocks/projects.js:483
 msgid "Настройки изображения"
 msgstr ""
 
-#: src/js/blocks/news.js:943
+#: src/js/blocks/news.js:942
 msgid "Показывать изображение"
 msgstr ""
 
-#: src/js/blocks/news.js:953 src/js/blocks/projects.js:489
+#: src/js/blocks/news.js:952 src/js/blocks/projects.js:489
 msgid "Ориентация изображения"
 msgstr ""
 
-#: src/js/blocks/news.js:960 src/js/blocks/projects.js:496
+#: src/js/blocks/news.js:959 src/js/blocks/projects.js:496
 msgid "Оригинал"
 msgstr ""
 
-#: src/js/blocks/news.js:964 src/js/blocks/projects.js:500
+#: src/js/blocks/news.js:963 src/js/blocks/projects.js:500
 msgid "Альбомный 16:9"
 msgstr ""
 
-#: src/js/blocks/news.js:968 src/js/blocks/projects.js:504
+#: src/js/blocks/news.js:967 src/js/blocks/projects.js:504
 msgid "Альбомный 4:3"
 msgstr ""
 
-#: src/js/blocks/news.js:972 src/js/blocks/projects.js:508
+#: src/js/blocks/news.js:971 src/js/blocks/projects.js:508
 msgid "Квадтарный"
 msgstr ""
 
-#: src/js/blocks/news.js:976 src/js/blocks/projects.js:512
+#: src/js/blocks/news.js:975 src/js/blocks/projects.js:512
 msgid "Портретный"
 msgstr ""
 
-#: src/js/blocks/news.js:985 src/js/blocks/projects.js:521
+#: src/js/blocks/news.js:984 src/js/blocks/projects.js:521
 msgid "Размер изображения"
 msgstr ""
 
-#: src/js/blocks/news.js:1001 src/js/blocks/projects.js:533
+#: src/js/blocks/news.js:1000 src/js/blocks/projects.js:533
 msgid "Округление углов"
 msgstr ""
 
-#: src/js/blocks/news.js:1015
+#: src/js/blocks/news.js:1014
 msgid "Метаполя"
 msgstr ""
 
-#: src/js/blocks/news.js:1022
+#: src/js/blocks/news.js:1021
 msgid "Показать автора"
 msgstr ""
 
-#: src/js/blocks/news.js:1034
+#: src/js/blocks/news.js:1033
 msgid "Показать категорию"
 msgstr ""
 
-#: src/js/blocks/news.js:1044
+#: src/js/blocks/news.js:1043
 msgid "Показать название статьи"
 msgstr ""
 
-#: src/js/blocks/news.js:1054
+#: src/js/blocks/news.js:1053
 msgid "Показать отрывок"
 msgstr ""
 
-#: src/js/blocks/news.js:1066
+#: src/js/blocks/news.js:1065
 msgid "Показать дату"
 msgstr ""
 
-#: src/js/blocks/news.js:1087 src/js/blocks/partners.js:309
-#: src/js/blocks/people.js:370 src/js/blocks/projects.js:555
+#: src/js/blocks/news.js:1086 src/js/blocks/partners.js:282
+#: src/js/blocks/people.js:323 src/js/blocks/projects.js:555
 msgid "Newest to oldest"
 msgstr "От новых к старым"
 
-#: src/js/blocks/news.js:1088 src/js/blocks/partners.js:310
-#: src/js/blocks/people.js:371 src/js/blocks/projects.js:556
+#: src/js/blocks/news.js:1087 src/js/blocks/partners.js:283
+#: src/js/blocks/people.js:324 src/js/blocks/projects.js:556
 msgid "Oldest to newest"
 msgstr "От старых к новым"
 
-#: src/js/blocks/news.js:1089 src/js/blocks/partners.js:311
-#: src/js/blocks/people.js:372 src/js/blocks/projects.js:557
+#: src/js/blocks/news.js:1088 src/js/blocks/partners.js:284
+#: src/js/blocks/people.js:325 src/js/blocks/projects.js:557
 msgid "A → Z"
 msgstr "А → Я"
 
-#: src/js/blocks/news.js:1090 src/js/blocks/partners.js:312
-#: src/js/blocks/people.js:373 src/js/blocks/projects.js:558
+#: src/js/blocks/news.js:1089 src/js/blocks/partners.js:285
+#: src/js/blocks/people.js:326 src/js/blocks/projects.js:558
 msgid "Z → A"
 msgstr "Я → А"
 
-#: src/js/blocks/news.js:1106
+#: src/js/blocks/news.js:1105
 msgid "Number of posts to skip"
 msgstr "Сколько постов пропустить"
 
-#: src/js/blocks/news.js:1115 src/js/blocks/partners.js:337
-#: src/js/blocks/people.js:398
+#: src/js/blocks/news.js:1114 src/js/blocks/partners.js:310
+#: src/js/blocks/people.js:351
 msgid "Select category"
 msgstr "Выберите категорию"
 
@@ -2935,24 +2911,24 @@ msgstr "logos"
 msgid "Image tile in four columns."
 msgstr "Плитка с изображениями в четыре колонки."
 
-#: src/js/blocks/partners.js:188
+#: src/js/blocks/partners.js:193
 msgid "Edit partners"
 msgstr "Редактировать партнеров"
 
-#: src/js/blocks/partners.js:224 src/js/blocks/people.js:265
+#: src/js/blocks/partners.js:225 src/js/blocks/people.js:266
 #: src/js/blocks/testimonials.js:170
 msgid "Carousel"
 msgstr "Карусель"
 
-#: src/js/blocks/partners.js:234
+#: src/js/blocks/partners.js:235
 msgid "Partners to show"
 msgstr "Сколько партнеров показывать"
 
-#: src/js/blocks/partners.js:259 src/js/blocks/people.js:300
+#: src/js/blocks/partners.js:260 src/js/blocks/people.js:301
 msgid "Enable link"
 msgstr "Включить ссылку"
 
-#: src/js/blocks/partners.js:328
+#: src/js/blocks/partners.js:301
 msgid "Number of partners to skip"
 msgstr "Сколько партнеров пропустить"
 
@@ -2988,25 +2964,25 @@ msgstr "Квадратный"
 msgid "Rounded"
 msgstr "Скругленный"
 
-#: src/js/blocks/people.js:227
+#: src/js/blocks/people.js:232
 msgid "Edit team"
 msgstr "Редактировать команду"
 
-#: src/js/blocks/people.js:275
+#: src/js/blocks/people.js:276
 msgid "People to show"
 msgstr "Сколько людей показывать"
 
-#: src/js/blocks/people.js:340
+#: src/js/blocks/people.js:342
+msgid "Number of peoples to skip"
+msgstr "Сколько людей пропустить"
+
+#: src/js/blocks/people.js:387
 msgid "Name Color"
 msgstr "Цвет имени"
 
-#: src/js/blocks/people.js:350
+#: src/js/blocks/people.js:394
 msgid "Description Color"
 msgstr "Цвет описания"
-
-#: src/js/blocks/people.js:389
-msgid "Number of peoples to skip"
-msgstr "Сколько людей пропустить"
 
 #: src/js/blocks/projects.js:93
 msgid "Projects tile in three column."
@@ -3058,27 +3034,21 @@ msgstr "phrase"
 
 #: src/js/blocks/testimonials.js:57
 msgid "testimonial"
-msgstr ""
+msgstr "отзыв"
 
 #: src/js/blocks/testimonials.js:57
-#, fuzzy
-#| msgid "Preview"
 msgid "reviews"
-msgstr "Предпросмотр"
+msgstr "отзывы"
 
 #: src/js/blocks/testimonials.js:57
 msgid "feedback"
-msgstr ""
+msgstr "обратная связи"
 
 #: src/js/blocks/testimonials.js:136
-#, fuzzy
-#| msgid "Edit team"
 msgid "Edit testimonials"
-msgstr "Редактировать команду"
+msgstr "Редактировать отзывы"
 
 #: src/js/blocks/testimonials.js:215
-#, fuzzy
-#| msgid "Card background color"
 msgid "Card Background Color"
 msgstr "Цвет фона карточки"
 
@@ -3484,10 +3454,8 @@ msgid "Ajax error"
 msgstr "Ошибка Ajax"
 
 #: vendor/envato_setup/envato_setup.php:380
-#, fuzzy
-#| msgid "Failed!"
 msgid "Failed"
-msgstr "Ошибка!"
+msgstr "Неуспешно"
 
 #: vendor/envato_setup/envato_setup.php:454
 msgid "Kandinsky - setup wizard"
@@ -4018,6 +3986,10 @@ msgstr ""
 #: vendor/envato_setup/steps/support.php:67
 msgid "OK, I've got it!"
 msgstr "Понятно!"
+
+#~ msgctxt "taxonomy general name"
+#~ msgid "Tags"
+#~ msgstr "Теги"
 
 #~ msgid "Who are we?"
 #~ msgstr "Кто мы?"
