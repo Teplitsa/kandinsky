@@ -628,13 +628,14 @@
 	align-items: center;
 	padding-top: 40px;
 	padding-bottom: 40px;
+	-ms-flex: auto;
+	flex: auto;
 }
 
 .knd-block-hero__figure > img {
 	display: block;
 	margin: 0 auto;
 	max-width: 100%;
-	width: auto;
 	height: auto;
 }
 
@@ -716,7 +717,6 @@
 	.knd-block-hero__figure > img {
 		max-width: 400px;
 		max-height: 300px;
-		width: 100%;
 	}
 }
 

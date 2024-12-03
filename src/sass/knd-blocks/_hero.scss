@@ -104,12 +104,12 @@
 		align-items: center;
 		padding-top: 40px;
 		padding-bottom: 40px;
+		flex: auto;
 
 		> img {
 			display: block;
 			margin: 0 auto;
 			max-width: 100%;
-			width: auto;
 			height: auto;
 		}
 
@@ -187,7 +187,6 @@
 	.knd-block-hero__figure > img {
 		max-width: 400px;
 		max-height: 300px;
-		width: 100%;
 	}
 }
 @media (max-width: 575px){
