@@ -1,6 +1,7 @@
 == Changelog ==
 
 = 2.7 =
+* Improve support WordPress 6.7
 * Add language switcher
 * Add collapse long menu
 * Add customizer reset settings button
