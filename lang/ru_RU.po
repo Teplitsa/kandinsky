@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TST Next Project Design\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-14 02:36+0200\n"
-"PO-Revision-Date: 2024-11-14 02:52+0200\n"
+"POT-Creation-Date: 2025-01-09 20:17+0200\n"
+"PO-Revision-Date: 2025-01-09 20:17+0200\n"
 "Last-Translator: ahaenor <ahaenor@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -566,44 +566,48 @@ msgid "Our projects"
 msgstr "Наши проекты"
 
 #: core/customizer/theme-mods/archive-settings.php:53
+msgid "Projects archive description"
+msgstr "Описание страницы проектов"
+
+#: core/customizer/theme-mods/archive-settings.php:61
 msgid "Projects Page Bottom Blocks"
 msgstr "Блоки внизу страниц проектов"
 
-#: core/customizer/theme-mods/archive-settings.php:62
+#: core/customizer/theme-mods/archive-settings.php:70
 msgid "Completed projects"
 msgstr "Завершенные проекты"
 
-#: core/customizer/theme-mods/archive-settings.php:70
+#: core/customizer/theme-mods/archive-settings.php:78
 msgid "What projects do we consider completed?"
 msgstr "Какие проекты считаем завершенными?"
 
-#: core/customizer/theme-mods/archive-settings.php:86
+#: core/customizer/theme-mods/archive-settings.php:94
 msgid "Highlight display of completed projects"
 msgstr "Выделить отображение завершенных проектов"
 
-#: core/customizer/theme-mods/archive-settings.php:106
+#: core/customizer/theme-mods/archive-settings.php:114
 msgid "Opacity"
 msgstr "Прозрачность"
 
-#: core/customizer/theme-mods/archive-settings.php:136
+#: core/customizer/theme-mods/archive-settings.php:144
 msgid "Color"
 msgstr "Цвет"
 
-#: core/customizer/theme-mods/archive-settings.php:171
+#: core/customizer/theme-mods/archive-settings.php:179
 msgid "Active campaigns archive title"
 msgstr "Заголовок страницы активных кампаний"
 
-#: core/customizer/theme-mods/archive-settings.php:173
+#: core/customizer/theme-mods/archive-settings.php:181
 #: core/template-tags.php:110 single-leyka_campaign.php:31
 #: single-leyka_campaign.php:50
 msgid "They need help"
 msgstr "Им нужна помощь"
 
-#: core/customizer/theme-mods/archive-settings.php:179
+#: core/customizer/theme-mods/archive-settings.php:187
 msgid "Completed campaigns archive title"
 msgstr "Заголовок страницы завершенных кампаний"
 
-#: core/customizer/theme-mods/archive-settings.php:181
+#: core/customizer/theme-mods/archive-settings.php:189
 #: core/template-tags.php:105 single-leyka_campaign.php:27
 #: single-leyka_campaign.php:53
 msgid "They alredy got help"

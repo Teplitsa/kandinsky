@@ -4255,6 +4255,10 @@ body:not(.dom-loaded) .knd-header-nav .sub-menu {
 	margin-top: 1rem;
 }
 
+.knd-archive-description a {
+	color: var(--knd-color-main);
+}
+
 /** Donations **/
 .leyka-campaign {
 	margin-bottom: 40px;

@@ -48,6 +48,14 @@ Kirki::add_field( 'knd_theme_mod', array(
 ) );
 
 Kirki::add_field( 'knd_theme_mod', array(
+	'type'              => 'textarea',
+	'settings'          => 'knd_projects_archive_description',
+	'label'             => esc_html__( 'Projects archive description', 'knd' ),
+	'section'           => 'archive_settings',
+	'sanitize_callback' => 'knd_kses',
+) );
+
+Kirki::add_field( 'knd_theme_mod', array(
 	'type'        => 'select',
 	'settings'    => 'projects_bottom_block',
 	'label'       => esc_html__( 'Projects Page Bottom Blocks', 'knd' ),

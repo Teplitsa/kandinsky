@@ -351,3 +351,14 @@ add_filter( 'image_sideload_extensions', 'knd_image_sideload_extensions' );
 
 add_action( 'knd_before_wp_footer', 'knd_button_totop' );
 add_action( 'knd_before_wp_footer', 'knd_screen_reader_alert' );
+
+/**
+ * Add projects archive description
+ */
+function knd_projects_archive_description() {
+	if ( is_post_type_archive( 'project' ) && get_theme_mod( 'knd_projects_archive_description' ) ) {
+		return wpautop( get_theme_mod( 'knd_projects_archive_description' ) );
+	}
+	return $description;
+}
+add_filter( 'get_the_archive_description', 'knd_projects_archive_description' );
