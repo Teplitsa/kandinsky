@@ -32,6 +32,9 @@
 
 > Справка: название «Кандинский» не является зарегистрированным товарным знаком и никак не связано ни с художественной Премией Кандинского, ни с семьей Василия Васильевича Кандинского. Фамилия великого русского художника была использована в качестве вдохновения его талантом и при полном уважении к нему. «Кандинский» продолжает «художественную» серию релизов продуктов Теплицы – прошлый релиз конструктор сайтов «Гигер» был посвящен современному немецкому художнику Хансу Руди Гигеру.
 
+## Хостинг eQPress
+Конструктор сайтов «Кандинский» доступен для установки на DDOS-устойчивом WordPress-хостинге eQpress. eQpress предоставляет свои услуги бесплатно правомочным НКО и независимым СМИ. После регистрации на [eQpress](https://deflect.ca/solutions/hosting/) «Кандинский» устанавливается в один клик из панели управления хостингом. 
+
 # Kandinsky. Beautiful websites for NGOs.
  
 # Introduction
@@ -50,3 +53,6 @@ Our solution is a website layout based on WordPress. We called it Kandinsky. Kan
 - Security
 - Documentation
 - Open Source
+
+## eQPress hosting
+Kandinsky is available for installation on the DDOS-resistant WordPress hosting eQpress. eQpress provides its services free of charge to eligible NGOs and independent media. After registering on [eQpress](https://deflect.ca/solutions/hosting/), Kandinsky can be installed in one click from the hosting control panel. 
