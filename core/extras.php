@@ -355,7 +355,7 @@ add_action( 'knd_before_wp_footer', 'knd_screen_reader_alert' );
 /**
  * Add projects archive description
  */
-function knd_projects_archive_description() {
+function knd_projects_archive_description( $description ) {
 	if ( is_post_type_archive( 'project' ) && get_theme_mod( 'knd_projects_archive_description' ) ) {
 		return wpautop( get_theme_mod( 'knd_projects_archive_description' ) );
 	}

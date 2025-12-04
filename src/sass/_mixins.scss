@@ -107,7 +107,7 @@
 
 	&:hover, &:focus, &:active {
 		color: var(--knd-color-main-active);
-		border-bottom-color: var(--knd-color-main-active);
+		border-bottom-color: transparent;
 	}
 }
 

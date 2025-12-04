@@ -478,15 +478,24 @@ h6 {
 }
 
 /** Post content elements  **/
-.the-content a {
+.the-content a:where(:not(.wp-element-button)) {
+	border-bottom: 1px solid currentColor;
+	transition: color 0.3s, background 0.3s, border 0.3s, opacity 0.3s;
+}
+
+.the-content a:where(:not(.wp-element-button)):hover {
+	border-bottom-color: transparent;
+}
+
+.the-content *:where(:not(.has-link-color)) a:where(:not(.wp-element-button)) {
 	color: var(--knd-color-main);
 	border-bottom: 1px solid var(--knd-color-main);
 	transition: color 0.3s, background 0.3s, border 0.3s, opacity 0.3s;
 }
 
-.the-content a:hover, .the-content a:focus, .the-content a:active {
+.the-content *:where(:not(.has-link-color)) a:where(:not(.wp-element-button)):hover, .the-content *:where(:not(.has-link-color)) a:where(:not(.wp-element-button)):focus, .the-content *:where(:not(.has-link-color)) a:where(:not(.wp-element-button)):active {
 	color: var(--knd-color-main-active);
-	border-bottom-color: var(--knd-color-main-active);
+	border-bottom-color: transparent;
 }
 
 .the-content h2, .the-content h3, .the-content h4, .the-content h5, .the-content h6 {
@@ -4948,15 +4957,24 @@ div[id*="leyka-pf-"] .inpage-card__thumb {
 	margin-right: auto;
 }
 
-.widget-full.widget_text .textwidget a {
+.widget-full.widget_text .textwidget a:where(:not(.wp-element-button)) {
+	border-bottom: 1px solid currentColor;
+	transition: color 0.3s, background 0.3s, border 0.3s, opacity 0.3s;
+}
+
+.widget-full.widget_text .textwidget a:where(:not(.wp-element-button)):hover {
+	border-bottom-color: transparent;
+}
+
+.widget-full.widget_text .textwidget *:where(:not(.has-link-color)) a:where(:not(.wp-element-button)) {
 	color: var(--knd-color-main);
 	border-bottom: 1px solid var(--knd-color-main);
 	transition: color 0.3s, background 0.3s, border 0.3s, opacity 0.3s;
 }
 
-.widget-full.widget_text .textwidget a:hover, .widget-full.widget_text .textwidget a:focus, .widget-full.widget_text .textwidget a:active {
+.widget-full.widget_text .textwidget *:where(:not(.has-link-color)) a:where(:not(.wp-element-button)):hover, .widget-full.widget_text .textwidget *:where(:not(.has-link-color)) a:where(:not(.wp-element-button)):focus, .widget-full.widget_text .textwidget *:where(:not(.has-link-color)) a:where(:not(.wp-element-button)):active {
 	color: var(--knd-color-main-active);
-	border-bottom-color: var(--knd-color-main-active);
+	border-bottom-color: transparent;
 }
 
 .widget-full.widget_text .textwidget h2, .widget-full.widget_text .textwidget h3, .widget-full.widget_text .textwidget h4, .widget-full.widget_text .textwidget h5, .widget-full.widget_text .textwidget h6 {

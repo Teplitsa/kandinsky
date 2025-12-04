@@ -353,6 +353,10 @@
 	}
 }
 
+.wp-block-buttons {
+	margin-bottom: 25px;
+}
+
 /**
  * Buttons
  */

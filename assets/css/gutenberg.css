@@ -85,21 +85,55 @@
 	margin-right: -8px;
 }
 
-.editor-styles-wrapper p a,
+.editor-styles-wrapper p a:where(:not(.wp-element-button)),
+.editor-styles-wrapper ol li a:where(:not(.wp-element-button)),
+.editor-styles-wrapper ul li a:where(:not(.wp-element-button)),
+.editor-styles-wrapper td a:where(:not(.wp-element-button)) {
+	text-decoration: none;
+	outline: none;
+	border-bottom: 1px solid currentColor;
+	transition: color 0.3s, background 0.3s, border-color 0.3s, opacity 0.3s;
+}
+
+.editor-styles-wrapper p a:where(:not(.wp-element-button)):hover,
+.editor-styles-wrapper ol li a:where(:not(.wp-element-button)):hover,
+.editor-styles-wrapper ul li a:where(:not(.wp-element-button)):hover,
+.editor-styles-wrapper td a:where(:not(.wp-element-button)):hover {
+	text-decoration: none;
+	border-bottom-color: transparent;
+}
+
+.editor-styles-wrapper p:where(:not(.has-link-color)) a,
 .editor-styles-wrapper ol li a,
 .editor-styles-wrapper ul li a,
 .editor-styles-wrapper td a {
 	text-decoration: none;
 	outline: none;
+	border-bottom: 1px solid currentColor;
+	transition: color 0.3s, background 0.3s, border-color 0.3s, opacity 0.3s;
+}
+
+.editor-styles-wrapper p:where(:not(.has-link-color)) a:hover,
+.editor-styles-wrapper ol li a:hover,
+.editor-styles-wrapper ul li a:hover,
+.editor-styles-wrapper td a:hover {
+	text-decoration: none;
+	border-bottom-color: transparent;
+}
+
+.editor-styles-wrapper p:where(:not(.has-link-color)) a:where(:not(.wp-element-button)),
+.editor-styles-wrapper ol li a:where(:not(.wp-element-button)),
+.editor-styles-wrapper ul li a:where(:not(.wp-element-button)),
+.editor-styles-wrapper td a:where(:not(.wp-element-button)) {
 	color: var(--knd-color-main);
 	border-bottom: 1px solid var(--knd-color-main);
 	transition: color 0.3s, background 0.3s, border-color 0.3s, opacity 0.3s;
 }
 
-.editor-styles-wrapper p a :hover,
-.editor-styles-wrapper ol li a :hover,
-.editor-styles-wrapper ul li a :hover,
-.editor-styles-wrapper td a :hover {
+.editor-styles-wrapper p:where(:not(.has-link-color)) a:where(:not(.wp-element-button)):hover,
+.editor-styles-wrapper ol li a:where(:not(.wp-element-button)):hover,
+.editor-styles-wrapper ul li a:where(:not(.wp-element-button)):hover,
+.editor-styles-wrapper td a:where(:not(.wp-element-button)):hover {
 	color: var(--knd-color-main-active);
 	text-decoration: none;
 	border-bottom-color: transparent;

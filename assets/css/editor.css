@@ -478,15 +478,24 @@ h6 {
 }
 
 /** Post content elements  **/
-.the-content a {
+.the-content a:where(:not(.wp-element-button)) {
+	border-bottom: 1px solid currentColor;
+	transition: color 0.3s, background 0.3s, border 0.3s, opacity 0.3s;
+}
+
+.the-content a:where(:not(.wp-element-button)):hover {
+	border-bottom-color: transparent;
+}
+
+.the-content *:where(:not(.has-link-color)) a:where(:not(.wp-element-button)) {
 	color: var(--knd-color-main);
 	border-bottom: 1px solid var(--knd-color-main);
 	transition: color 0.3s, background 0.3s, border 0.3s, opacity 0.3s;
 }
 
-.the-content a:hover, .the-content a:focus, .the-content a:active {
+.the-content *:where(:not(.has-link-color)) a:where(:not(.wp-element-button)):hover, .the-content *:where(:not(.has-link-color)) a:where(:not(.wp-element-button)):focus, .the-content *:where(:not(.has-link-color)) a:where(:not(.wp-element-button)):active {
 	color: var(--knd-color-main-active);
-	border-bottom-color: var(--knd-color-main-active);
+	border-bottom-color: transparent;
 }
 
 .the-content h2, .the-content h3, .the-content h4, .the-content h5, .the-content h6 {
@@ -946,15 +955,24 @@ body {
 	margin: 10px 12px;
 }
 
-#tinymce a {
+#tinymce a:where(:not(.wp-element-button)) {
+	border-bottom: 1px solid currentColor;
+	transition: color 0.3s, background 0.3s, border 0.3s, opacity 0.3s;
+}
+
+#tinymce a:where(:not(.wp-element-button)):hover {
+	border-bottom-color: transparent;
+}
+
+#tinymce *:where(:not(.has-link-color)) a:where(:not(.wp-element-button)) {
 	color: var(--knd-color-main);
 	border-bottom: 1px solid var(--knd-color-main);
 	transition: color 0.3s, background 0.3s, border 0.3s, opacity 0.3s;
 }
 
-#tinymce a:hover, #tinymce a:focus, #tinymce a:active {
+#tinymce *:where(:not(.has-link-color)) a:where(:not(.wp-element-button)):hover, #tinymce *:where(:not(.has-link-color)) a:where(:not(.wp-element-button)):focus, #tinymce *:where(:not(.has-link-color)) a:where(:not(.wp-element-button)):active {
 	color: var(--knd-color-main-active);
-	border-bottom-color: var(--knd-color-main-active);
+	border-bottom-color: transparent;
 }
 
 #tinymce h2, #tinymce h3, #tinymce h4, #tinymce h5, #tinymce h6 {

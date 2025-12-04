@@ -97,7 +97,17 @@ h6 {
 
 @mixin the-content {
 
-	a { @include link-in-content(); }
+	a:where(:not(.wp-element-button)) {
+		border-bottom: 1px solid currentColor;
+		transition: color 0.3s, background 0.3s, border 0.3s, opacity 0.3s;
+
+			&:hover {
+				border-bottom-color: transparent;
+			}
+		}
+
+	*:where(:not(.has-link-color)) a:where(:not(.wp-element-button)) { @include link-in-content(); }
+
 
 	//headings
 	h2, h3, h4, h5, h6 {
