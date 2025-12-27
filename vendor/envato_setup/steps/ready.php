@@ -32,7 +32,6 @@ update_option('knd_setup_complete', time());
 		</ul>
 	</div>
 	<div class="envato-setup-next-steps-last">
-		<?php $funny_gif_url = 'https://media.giphy.com/media/XreQmk7ETCak0/giphy.gif';?>
-		<img src="<?php echo $funny_gif_url;?>" alt="<?php esc_attr_e('#success', 'knd'); ?>">
+		<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/wizard-end.gif' );?>" alt="<?php esc_attr_e('#success', 'knd'); ?>">
 	</div>
 </div>

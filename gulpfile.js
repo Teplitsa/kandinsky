@@ -332,6 +332,7 @@ gulp.task('zip', function(){
 		'!src/**',
 		'!node_modules/**',
 		'!.gitignore',
+		'!.nvmrc',
 		'!gulpfile.js',
 		'!LICENSE.txt',
 		'!README.md',
