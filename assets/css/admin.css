@@ -137,20 +137,7 @@ div [id*="ninja_forms_metabox"] .item-edit.metabox-item-edit:before {
 }
 
 .knd-message a.knd-message-close {
-	position: absolute;
-	top: 0;
-	right: 0;
-	padding: 10px 15px 10px 21px;
-	font-size: 13px;
-	line-height: 1.23076923;
 	text-decoration: none;
-}
-
-.knd-message a.knd-message-close:before {
-	position: absolute;
-	top: 8px;
-	left: 0;
-	transition: all .1s ease-in-out;
 }
 
 .knd-dashboard h3#knd-metabox-subtitle {

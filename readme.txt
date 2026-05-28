@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 2.7.8 =
+* Improve support WordPress 7.0
+
 = 2.7 =
 * Improve support WordPress 6.7
 * Add language switcher

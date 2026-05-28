@@ -252,10 +252,7 @@ function knd_welcome_notice() {
 	?>
 
 <div id="message" class="updated knd-message">
-	<a class="knd-message-close notice-dismiss"
-		href="<?php echo esc_url(wp_nonce_url(remove_query_arg(array('activated'), add_query_arg('knd-hide-notice', 'welcome')), 'knd_hide_notices_nonce', '_knd_notice_nonce'));?>">
-			<?php esc_html_e('Dismiss', 'knd');?>
-		</a>
+	<a class="knd-message-close notice-dismiss" href="<?php echo esc_url(wp_nonce_url(remove_query_arg(array('activated'), add_query_arg('knd-hide-notice', 'welcome')), 'knd_hide_notices_nonce', '_knd_notice_nonce'));?>" aria-label="<?php esc_attr_e('Dismiss', 'knd');?>"></a>
 	<p><?php printf(esc_html__('Welcome! Thank you for choosing Kandinsky! To fully take advantage of the best our theme can offer please make sure you configured %snecessary theme settings%s.', 'knd'), '<a href="'.admin_url('customize.php').'" target="_blank">', '</a>');?></p>
 	<p class="submit">
 		<a class="button-secondary"

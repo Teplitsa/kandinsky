@@ -129,7 +129,6 @@ function knd_enqueue_block_assets() {
 	$js_dependencies = array(
 		'jquery',
 		'flickity',
-		'knd-fancybox',
 	);
 
 	if ( is_admin() ) {
@@ -145,6 +144,17 @@ function knd_enqueue_block_assets() {
 	}
 
 	wp_enqueue_script( 'flickity', get_template_directory_uri() . '/assets/js/flickity.pkgd.min.js', array( 'jquery' ), '2.2.2' );
+
+	// Register Fancybox script if not already registered (front-end registers it in KND_CssJs::load_scripts).
+	if ( ! wp_script_is( 'fancybox-for-wp', 'registered' ) && ! wp_script_is( 'knd-fancybox', 'registered' ) ) {
+		wp_register_script( 'knd-fancybox', get_template_directory_uri() . '/assets/js/jquery.fancybox.min.js', array( 'jquery' ), '3.5.7', true );
+	}
+
+	if ( wp_script_is( 'knd-fancybox', 'registered' ) ) {
+		$js_dependencies[] = 'knd-fancybox';
+	} elseif ( wp_script_is( 'fancybox-for-wp', 'registered' ) ) {
+		$js_dependencies[] = 'fancybox-for-wp';
+	}
 
 	// Scripts.
 	wp_enqueue_script( 'knd', get_template_directory_uri() . '/assets/js/scripts.js', $js_dependencies, knd_get_theme_version(), true );
