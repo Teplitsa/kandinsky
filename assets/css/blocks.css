@@ -4527,3 +4527,8 @@ body:not(.logged-in):not(.block-editor-page) .knd-block-hint {
 .wp-block-quote {
 	border-left: 0;
 }
+
+/* Fix border style */
+html :where([style*="border-width"]) {
+	border-style: solid;
+}
